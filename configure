@@ -1,0 +1,362 @@
+#!/bin/sh
+# 
+# Copyright (c) 2014 Poul-Henning Kamp
+# All rights reserved.
+# 
+# Redistribution and use in source and binary forms, with or without
+# modification, are permitted provided that the following conditions
+# are met:
+# 1. Redistributions of source code must retain the above copyright
+#    notice, this list of conditions and the following disclaimer.
+# 2. Redistributions in binary form must reproduce the above copyright
+#    notice, this list of conditions and the following disclaimer in the
+#    documentation and/or other materials provided with the distribution.
+# 
+# THIS SOFTWARE IS PROVIDED BY THE AUTHOR AND CONTRIBUTORS ``AS IS'' AND
+# ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+# IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+# ARE DISCLAIMED.  IN NO EVENT SHALL AUTHOR OR CONTRIBUTORS BE LIABLE
+# FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+# DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS
+# OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
+# HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
+# LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
+# OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
+# SUCH DAMAGE.
+# 
+# Handwritten configure script.
+# =============================
+#
+# Before you suggest I use tools for this, please read:
+#
+#	https://www.varnish-cache.org/docs/trunk/phk/autocrap.html
+# and
+#	http://queue.acm.org/detail.cfm?id=2349257
+#
+
+set -e
+
+# List of .h files
+# NB: These SHALL always be included with #include "..."
+
+HDRS='
+	arc/aos/gui/agraph.h
+	arc/aos/gui/awindow.h
+	arc/aos/sys/aconsole.h
+	arc/aos/sys/afilesystem.h
+	arc/aos/sys/aproc.h
+	arc/aos/sys/atask.h
+	arc/stdc/cconsole.h
+	arc/stdc/cfilesystem.h
+	arc/stdc/ctask.h
+	def/doc.h
+	def/help.h
+	def/io.h
+	def/lex.h
+	def/libc.h
+	def/mem.h
+	def/text.h
+	def/xdef.h
+	io/console.h
+	io/filesystem.h
+	io/task.h
+	io/thread.h
+	lib/aengine.h
+	lib/charbuf.h
+	lib/cplex.h
+	lib/fgrid.h
+	lib/graph.h
+	lib/ntext.h
+	lib/numb.h
+	lib/real.h
+	lib/dconv/dragon4.h
+	lib/dconv/math.h
+	lib/dconv/print.h
+	lib/dconv/standard.h
+	libm/cfunc.h
+	libm/cprim.h
+	libm/rfunc.h
+	libm/rprim.h
+	main/evaluator.h
+	main/functiondefs.h
+	main/functions.h
+	main/graphlist.h
+	main/lexer.h
+	main/nodes.h
+	main/operators.h
+	main/optimizer.h
+	main/parser.h
+	main/statements.h
+	main/token.h
+	main/values.h
+	main/viewer.h
+	prog/cli.h
+	prog/program.h
+	prog/test.h
+'
+
+# List of .cpp files
+
+SRCS='
+	arc/aos/sys/aconsole.cpp
+	arc/aos/sys/afilesystem.cpp
+	arc/aos/sys/aproc.cpp
+	arc/aos/sys/atask.cpp
+	arc/aos/gui/agraph.cpp
+	arc/aos/gui/awindow.cpp
+	arc/stdc/cconsole.cpp
+	arc/stdc/cfilesystem.cpp
+	arc/stdc/ctask.cpp
+	io/console.cpp
+	lib/aengine.cpp
+	lib/charbuf.cpp
+	lib/cplex.cpp
+	lib/fgrid.cpp
+	lib/graph.cpp
+	lib/ntext.cpp
+	lib/real.cpp
+	lib/dconv/dragon4.cpp
+	lib/dconv/math.cpp
+	lib/dconv/print.cpp
+	libc/calloc.cpp
+	libc/memcpy.cpp
+	libc/memset.cpp
+	libc/strcmp.cpp
+	libc/strlen.cpp
+	libm/real/acos.cpp
+	libm/real/acosh.cpp
+	libm/real/asin.cpp
+	libm/real/asinh.cpp
+	libm/real/atan.cpp
+	libm/real/atan2.cpp
+	libm/real/atanh.cpp
+	libm/real/cbrt.cpp
+	libm/real/ceil.cpp
+	libm/real/cos.cpp
+	libm/real/cosh.cpp
+	libm/real/exp.cpp
+	libm/real/expm1.cpp
+	libm/real/floor.cpp
+	libm/real/fmod.cpp
+	libm/real/hypot.cpp
+	libm/real/kcos.cpp
+	libm/real/kremp2.cpp
+	libm/real/ksin.cpp
+	libm/real/ktan.cpp
+	libm/real/log.cpp
+	libm/real/log10.cpp
+	libm/real/log1p.cpp
+	libm/real/pow.cpp
+	libm/real/remp2.cpp
+	libm/real/scalbn.cpp
+	libm/real/sin.cpp
+	libm/real/sinh.cpp
+	libm/real/sqrt.cpp
+	libm/real/tan.cpp
+	libm/real/tanh.cpp
+	libm/cplex/cacos.cpp
+	libm/cplex/cacosh.cpp
+	libm/cplex/cacot.cpp
+	libm/cplex/cacoth.cpp
+	libm/cplex/cacsc.cpp
+	libm/cplex/cacsch.cpp
+	libm/cplex/casec.cpp
+	libm/cplex/casech.cpp
+	libm/cplex/casin.cpp
+	libm/cplex/casinh.cpp
+	libm/cplex/catan.cpp
+	libm/cplex/catanh.cpp
+	libm/cplex/ccbrt.cpp
+	libm/cplex/ccos.cpp
+	libm/cplex/ccosh.cpp
+	libm/cplex/ccot.cpp
+	libm/cplex/ccoth.cpp
+	libm/cplex/ccsc.cpp
+	libm/cplex/ccsch.cpp
+	libm/cplex/cexp.cpp
+	libm/cplex/clog.cpp
+	libm/cplex/clog10.cpp
+	libm/cplex/clogb.cpp
+	libm/cplex/cpow.cpp
+	libm/cplex/csec.cpp
+	libm/cplex/csech.cpp
+	libm/cplex/csgn.cpp
+	libm/cplex/csin.cpp
+	libm/cplex/csinh.cpp
+	libm/cplex/csqrt.cpp
+	libm/cplex/ctan.cpp
+	libm/cplex/ctanh.cpp
+	main/evaluator.cpp
+	main/functions.cpp
+	main/graphlist.cpp
+	main/lexer.cpp
+	main/nodes.cpp
+	main/operators.cpp
+	main/optimizer.cpp
+	main/parser.cpp
+	main/statements.cpp
+	main/token.cpp
+	main/values.cpp
+	main/viewer.cpp
+	prog/cli.cpp
+	prog/main.cpp
+	prog/program.cpp
+	prog/test.cpp
+'
+
+if make -v 2>&1 | grep GNU > /dev/null 2>&1 ; then
+	echo "make(1) is GNU make."
+	BSD=false
+#elif [ -f /usr/share/mk/bsd.prog.mk ] ; then
+#	echo "Found bsd.prog.mk, will use it."
+#	BSD=true
+else
+	echo "Defaulting to plain makefile"
+	BSD=false
+fi
+
+if $BSD ; then
+	(
+	echo '# BSD-style Makefile generated by configure'
+	echo 'PROG	=	amath'
+	for f in ${SRCS}
+	do
+		echo "SRCS	+=	${f}"
+	done
+
+	echo 'NO_MAN	=	not_yet'
+	echo 'CFLAGS	+=	-DINTELCPU -DANSICONSOLE -I.'
+	echo 'LDADD	+=	-lstdc++'
+	echo 'WARNS	?=	6'
+	echo '.include <bsd.prog.mk>'
+	) > Makefile
+
+	msg=", remember to run 'make depend'"
+elif [ -n "$1" ] && [ $1 = "AMIGA" ] ; then
+
+	test=""
+	if [ -n "$2" ] && [ $2 = "TEST" ] ; then
+		test=" -DWITHTEST"
+	fi
+	  
+	(
+	echo "# Amiga Makefile generated by configure"
+	echo 
+	echo "all:	amath"
+	echo 
+	echo "CC = gcc"
+	echo "CFLAGS += -O2 -DAOS$test -resident -s -I. -Wall -Werror"	
+	echo "LFLAGS += -lgcc"
+	echo 
+
+	l=""
+	for f in ${SRCS}
+	do
+		b=`basename $f .cpp`
+		i=`sed -n -e '/#include.*"/{
+			s/"$//
+			s/.*"//
+			p
+		}' $f | sort -u`
+		echo "${b}.o:	${f}" ${i}
+		echo "	\${CC} \${CFLAGS} -c ${f}"
+		echo
+		l="${l} ${b}.o"
+	done
+
+	echo
+	echo "amath:	${l}"
+	echo "	\${CC} \${CFLAGS} -s -o amath ${l} \${LFLAGS}"
+	echo
+	echo "clean:"
+	echo "	rm -f ${l} amath"
+	echo
+	echo "depend:"
+	echo "	@echo Dependencies already done"
+	) > Makefile
+elif [ -n "$1" ] && [ $1 = "AROS" ] ; then
+
+	test=""
+	if [ -n "$2" ] && [ $2 = "TEST" ] ; then
+		test=" -DWITHTEST"
+	fi
+	  
+	(
+	echo "# AROS Makefile generated by configure"
+	echo 
+	echo "all:	amath"
+	echo 
+	echo "CC = gcc"
+	echo "CFLAGS += -O2 -DAROS$test -s -I. -Wall -Werror"	
+	echo "LFLAGS += -lstdc++"
+	echo 
+
+	l=""
+	for f in ${SRCS}
+	do
+		b=`basename $f .cpp`
+		i=`sed -n -e '/#include.*"/{
+			s/"$//
+			s/.*"//
+			p
+		}' $f | sort -u`
+		echo "${b}.o:	${f}" ${i}
+		echo "	\${CC} \${CFLAGS} -c ${f}"
+		echo
+		l="${l} ${b}.o"
+	done
+
+	echo
+	echo "amath:	${l}"
+	echo "	\${CC} \${CFLAGS} -s -o amath ${l} \${LFLAGS}"
+	echo
+	echo "clean:"
+	echo "	rm -f ${l} amath"
+	echo
+	echo "depend:"
+	echo "	@echo Dependencies already done"
+	) > Makefile.aros
+else
+	test=""
+	if [ -n "$1" ] && [ $1 = "TEST" ] ; then
+		test=" -DWITHTEST"
+	fi
+	
+	(
+	echo "# Portable Makefile generated by configure"
+	echo 
+	echo "all:	amath"
+	echo 
+	echo "CC = cc"
+	echo "CFLAGS += -O0 -g -DINTELCPU -DANSICONSOLE$test -I. -Wall -Werror"
+	echo "LFLAGS += -lstdc++"
+	echo 
+	
+	l=""
+	for f in ${SRCS}
+	do
+		b=`basename $f .cpp`
+		i=`sed -n -e '/#include.*"/{
+			s/"$//
+			s/.*"//
+			p
+		}' $f | sort -u`
+		echo "${b}.o:	${f}" ${i}
+		echo "	\${CC} \${CFLAGS} -c ${f}"
+		echo
+		l="${l} ${b}.o"
+	done
+
+	echo
+	echo "amath:	${l}"
+	echo "	\${CC} \${CFLAGS} -o amath ${l} \${LFLAGS}"
+	echo
+	echo "clean:"
+	echo "	rm -f ${l} amath"
+	echo
+	echo "depend:"
+	echo "	@echo Dependencies already done"
+	) > Makefile
+fi
+
+echo "Makefile generated${msg}"

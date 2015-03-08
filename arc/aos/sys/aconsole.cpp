@@ -1,0 +1,97 @@
+/*
+ * Copyright (c) 2015 Carsten Larsen
+ * All rights reserved.
+ *
+ * Redistribution and use in source and binary forms, with or without
+ * modification, are permitted provided that the following conditions
+ * are met:
+ * 1. Redistributions of source code must retain the above copyright
+ *    notice, this list of conditions and the following disclaimer.
+ * 2. Redistributions in binary form must reproduce the above copyright
+ *    notice, this list of conditions and the following disclaimer in the
+ *    documentation and/or other materials provided with the distribution.
+ *
+ * THIS SOFTWARE IS PROVIDED BY THE AUTHOR ``AS IS'' AND ANY EXPRESS OR
+ * IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES
+ * OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED.
+ * IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY DIRECT, INDIRECT,
+ * INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT
+ * NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+ * DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
+ * THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+ * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF
+ * THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+ *
+ */
+
+#include "def/libc.h"
+#include "main/nodes.h"
+#include "main/evaluator.h"
+
+#ifdef AMIGA
+#include <proto/exec.h>
+#include <proto/dos.h>
+#include "arc/aos/sys/aconsole.h"
+#include "def/xdef.h"
+
+AmigaShellConsole::AmigaShellConsole()
+{
+    line = new char[linesize];
+}
+
+AmigaShellConsole::~AmigaShellConsole()
+{
+    delete line;
+}
+
+int AmigaShellConsole::GetStackSize()
+{
+    return 100000;
+}
+
+void AmigaShellConsole::Run()
+{
+    exit = false;
+    Flush(Input());
+    StartMessage();
+
+    while(!exit) {
+        Promt();
+        ReadLine();
+
+        if (*line == '\0') {
+            break;
+        }
+
+        Evaluator *evaluator = new Evaluator(line);
+        evaluator->Evaluate();
+        const char *out = evaluator->GetResult();
+        Write(Output(), (APTR)out, StrLen(out));
+        delete evaluator;
+    }
+}
+
+void AmigaShellConsole::Exit()
+{
+    exit = true;
+}
+
+void AmigaShellConsole::ReadLine()
+{
+    Flush(Input());
+    FGets(Input(), line, linesize);
+}
+
+void AmigaShellConsole::WriteString(const char *string)
+{
+    Write(Output(), (APTR)string, StrLen(string));
+    Flush(Output());
+}
+
+void AmigaShellConsole::WriteString(const char *string, unsigned int length)
+{
+    Write(Output(), (APTR)string, length);
+    Flush(Output());
+}
+
+#endif
