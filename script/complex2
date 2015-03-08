@@ -1,0 +1,12 @@
+cosh(1+2i);
+sinh(1+2i);
+tanh(1+2i);
+coth(1+2i);
+sech(1+2i);
+csch(1+2i);
+arccosh(1+2i);
+arcsinh(1+2i);
+arctanh(1+2i);
+arccoth(1+2i);
+arcsech(1+2i);
+arccsch(1+2i);

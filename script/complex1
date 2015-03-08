@@ -1,0 +1,12 @@
+cos(1+2i);
+sin(1+2i);
+tan(1+2i);
+cot(1+2i);
+sec(1+2i);
+csc(1+2i);
+arccos(1+2i);
+arcsin(1+2i);
+arctan(1+2i);
+arccot(1+2i);
+arcsec(1+2i);
+arccsc(1+2i);

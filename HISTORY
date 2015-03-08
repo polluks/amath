@@ -1,0 +1,106 @@
+-----------------------------
+--- amath release history ---
+-----------------------------
+
+v1.5.5 March 05 2015
+- Fixed console bug causing shell to hang on AROS.
+
+v1.5.4 March 04 2015
+- Fixed several bugs in output of significant digits.
+- Fixed sign bug in addition of negative complex numbers.
+- Fixed sign bug in inverse hyperbolic cosine of complex numbers.
+- Fixed sign bug in inverse hyperbolic secant of complex numbers.
+- Fixed calculation bug in division of real number with complex number.
+- Fixed calculation bug in exponentiation with complex number.
+- Implemented reduction of unary sign in expressions.
+- Implemented reduction of complex numbers in expressions.
+- Implemented internal optimization of expression trees.
+- Miscellaneous internal code optimization.
+- Changed to Amiga hosted GCC compiler.
+- Verified calculation through 192 test cases.
+
+v1.5.3 October 26 2014
+- Changed iconed versions to run directly from Workbench.
+- Reconfigured builds to avoid erroneous calculations.
+- Removed broken support for numeral systems.
+- Switched to new floating output library.
+- Reintroduced 68020 FPU and 68030 version.
+
+v1.5.2 October 11 2014
+- Modified character handling code to comply with licenses.
+- Modified complex math code to comply with licenses.
+- Modified code base to work with Kickstart 2.04. 
+- Square root of negative numbers now yield correct result.
+- Implemented scientific notation of numbers.
+- Infinity is now shown in division with 0.
+- Fixed bug in number code sometimes yielding 0.
+- Switched to Amiga memory allocation.
+- Fixed out-of-memory bug.
+- Miscellaneous bug fixes.
+- Removed dead code.
+- Added icons.
+
+v1.5.1 September 28 2014
+- Improved navigation with arrow keys.
+- Improved text and color compositions.
+- Implemented missing complex functions.
+- Fixed bug in negative complex numbers.
+- Fixed file I/O bug in shell mode.
+- Fixed shell flush bug on AROS.
+- Fixed clear console bug on AROS.
+- Miscellaneous minor bug fixes.
+
+v1.5 September 21 2014
+- Calculation with complex numbers.
+- Fixed command line version.
+- Miscellaneous bug fixed.
+- Fixed spelling mistakes in help files.
+- Documentation including class diagrams in HTML format.
+- Scripts for porting and building the source.
+
+v1.4 August 24 2014
+- New math engine based on Sun Microsystems fdlibm (64 bit IEEE 754).
+- Support for positional numeral systems including binary, octal and hexadecimal.
+- Added pure command line version (CLI) as addition to the stand-alone version.
+- Added statement to clear all in-memory variables and functions.
+- Fixed bug causing console to close when entering an empty statement.
+- Fixed bug causing application to hang when loading files with KS 2.0.4.
+- Fixed accuracy bug when using pi and e.
+- Restructured and improved built-in help.
+- Added new 68030 and FPU versions.
+
+v1.3.2 August 11 2014
+- Fixed two severe bugs causing memory corruption.
+
+v1.3.1 August 08 2014
+- AROS i386 version released.
+
+v1.3 August 06 2014
+- All trigonometric and hyperbolic functions are now supported.
+- Runs in console window. amath no longer depends on a shell.
+- Hardened code. amath is no longer a beta version.
+- Added support for disk based activities.
+- Fixed bug in exponentiation operator.
+- Reverted back to clib math.
+- Fixed a few memory leak bugs.
+- Optimized generated binaries.
+- Comments added in source code.
+- Improved error handling.
+- Improved built-in help.
+- Simplified license.
+
+v1.2b July 21 2014
+- Root functions added.
+- User defined functions added.
+- Improved error handling.
+- Improved build-in help.
+- Binary support for additional processors.
+- Miscellaneous bug fixes.
+- Source files restructured.
+
+v1.1b July 13 2014
+- Minor bug fixes.
+- Source code released.
+
+v1.0b July 11 2014
+- First public release.
