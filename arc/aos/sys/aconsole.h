@@ -38,7 +38,6 @@
 
 #ifdef AMIGA
 #include <proto/exec.h>
-#include <proto/dos.h>
 #include "def/xdef.h"
 
 #ifdef Exit

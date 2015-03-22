@@ -48,6 +48,16 @@
 #endif
 
 #ifdef AOS
+#define DEVCONSOLE     "console.device"
+#define INTUITION_REV  37L
+#define INTUITION_NAME "intuition.library"
+#define GRAPHICS_REV   37L
+#define GRAPHICS_NAME  "graphics.library"
+#define PORTCR         "RKM.console.read"
+#define PORTCW         "RKM.console.write"
+#endif
+
+#ifdef AOS_PROTO
 #define DEVCONSOLE     (UBYTE*)"console.device"
 #define INTUITION_REV  33L
 #define INTUITION_NAME (UBYTE*)"intuition.library"

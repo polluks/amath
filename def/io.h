@@ -45,8 +45,6 @@
 #include "arc/aos/sys/afilesystem.h"
 
 #ifdef AMIGA
-#include <proto/exec.h>
-#include <proto/dos.h>
 #include "def/xdef.h"
 #else
 #include <stdio.h>

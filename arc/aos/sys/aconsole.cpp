@@ -29,8 +29,7 @@
 #include "main/evaluator.h"
 
 #ifdef AMIGA
-#include <proto/exec.h>
-#include <proto/dos.h>
+#include <clib/dos_protos.h>
 #include "arc/aos/sys/aconsole.h"
 #include "def/xdef.h"
 

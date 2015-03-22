@@ -30,10 +30,6 @@
 #include "arc/aos/sys/afilesystem.h"
 
 #ifdef AMIGA
-#include <proto/dos.h>
-#include <proto/exec.h>
-#include <dos/dos.h>
-#include <dos/dosextens.h>
 #include <dos/exall.h>
 #include <dos/var.h>
 #include <exec/memory.h>
