@@ -46,6 +46,5 @@ void ConsoleBase::StartMessage()
 
 void ConsoleBase::Promt()
 {
-    WriteString(PROMT);
+    WriteString(PROMPT);
 }
-

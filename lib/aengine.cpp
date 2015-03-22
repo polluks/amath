@@ -254,11 +254,11 @@ void AnsiConoleEngine::ShowLast()
     out->Empty();
     out->EnsureSize(
         StrLen(DELETELINE) +
-        StrLen(PROMT) +
+        StrLen(PROMPT) +
         StrLen(lines[showline]) + 1);
 
     out->Append(DELETELINE);
-    out->Append(PROMT);
+    out->Append(PROMPT);
     out->Append(lines[showline]);
 
     linebuf->Empty();
@@ -285,7 +285,7 @@ void AnsiConoleEngine::ShowNext()
 
     out->Empty();
     out->Append(DELETELINE);
-    out->Append(PROMT);
+    out->Append(PROMPT);
 
     if (showline > curline) {
         out->EnsureGrowth(StrLen(editline) + 1);

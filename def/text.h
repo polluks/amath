@@ -127,7 +127,7 @@
 // -----------------------------------------------------
 
 #define ARCH       ACPU AFPU ASYSNAME ATEST
-#define ATITLE     "amath version 1.5.5"
+#define ATITLE     "amath version 1.5.6"
 #define ACOPYRIGHT "(c) 2015 Carsten Sonne Larsen"
 #define ASTARTMSG  ATITLE SPACE ARCH SPACE ACOPYRIGHT
 
@@ -179,7 +179,7 @@
                    NORMALTEXT COLOR02 ITALICS         \
                    "Type help to show info." NEWLINE  \
                    NORMALTEXT
-#define PROMT      NORMALTEXT "-> "
+#define PROMPT     NORMALTEXT "> "
 
 #define TXTLISTDIRHEADER \
     "Type        Name" NEWLINE \
