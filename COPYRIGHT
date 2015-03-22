@@ -1,13 +1,16 @@
-This software contains copyrighted matetial by:
+This software contains copyrighted material by:
 The Regents of the University of California
 The NetBSD Foundation, Inc.
 Sun Microsystems, Inc
+Poul-Henning Kamp
 Carsten Larsen
 Ryan Juckett
 
-Code has been contributed by:
+Portions of the code have been contributed by:
 Stephen L. Moshier
+Poul-Henning Kamp
 Carsten Larsen
 Ryan Juckett
 Chris Torek
 Mike Hibler
+

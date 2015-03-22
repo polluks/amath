@@ -1,6 +1,6 @@
------------------------------
---- amath release history ---
------------------------------
+-------------------------------------------------------------------------------
+---                           amath change history                          ---
+-------------------------------------------------------------------------------
 
 v1.5.5 March 05 2015
 - Fixed console bug causing shell to hang on AROS.
@@ -24,13 +24,13 @@ v1.5.3 October 26 2014
 - Reconfigured builds to avoid erroneous calculations.
 - Removed broken support for numeral systems.
 - Switched to new floating output library.
-- Reintroduced 68020 FPU and 68030 version.
+- Reintroduced 68020 FPU and 68030 versions.
 
 v1.5.2 October 11 2014
 - Modified character handling code to comply with licenses.
 - Modified complex math code to comply with licenses.
 - Modified code base to work with Kickstart 2.04. 
-- Square root of negative numbers now yield correct result.
+- Square root of negative numbers now yields correct result.
 - Implemented scientific notation of numbers.
 - Infinity is now shown in division with 0.
 - Fixed bug in number code sometimes yielding 0.
@@ -104,3 +104,4 @@ v1.1b July 13 2014
 
 v1.0b July 11 2014
 - First public release.
+
