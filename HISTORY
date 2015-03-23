@@ -2,6 +2,10 @@
 ---                           amath change history                          ---
 -------------------------------------------------------------------------------
 
+v1.5.6 March 23 2015
+- Fixed typos and changed prompt.
+- Binaries compiled without dependency to ixemul.library
+
 v1.5.5 March 05 2015
 - Fixed console bug causing shell to hang on AROS.
 
