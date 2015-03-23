@@ -36,8 +36,5 @@ Run regression tests:
 Load amath into memory:
 > resident amath pure
 
-Reference
-=========
-
-Find out more details on the amath wiki:
-https://github.com/llsth/amath/wiki
+Get more details on usage by visiting the amath wiki:
+* https://github.com/llsth/amath/wiki
