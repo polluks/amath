@@ -7,7 +7,7 @@ Usage
 Do a calculation:
 > amath 1.2+1.4
 
-Get an interactive promt:
+Get an interactive prompt:
 > amath shell
 
 Show version string:
