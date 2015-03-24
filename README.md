@@ -18,23 +18,23 @@ Install by copying the desired amath binary to C: or any other appropriate locat
 Example of usage
 ================
 
-Open amath in its own window:
-> amath
+    Open amath in its own window:
+    > amath
 
-Do a calculation in shell (CLI mode):
-> amath 1.2+1.4
+    Do a calculation in shell:
+    > amath 1.2+1.4
 
-Get an interactive prompt in shell:
-> amath shell
+    Get an interactive prompt in shell:
+    > amath shell
 
-Show version string:
-> amath version
+    Show version string:
+    > amath version
 
-Run regression tests:
-> amath-test test
+    Run regression tests:
+    > amath-test test
 
-Load amath into memory:
-> resident amath pure
+    Load amath into memory:
+    > resident amath pure
 
 Get more details on usage by visiting the amath wiki:
 * https://github.com/llsth/amath/wiki
