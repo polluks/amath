@@ -1,5 +1,4 @@
-Features
-========
+## Features
 
 * Case sensitive command line interface
 * Native IEEE 754 with 15 significant digits
@@ -15,8 +14,7 @@ Features
 
 Install by copying the desired amath binary to C: or any other appropriate location.
 
-Example of usage
-================
+## Example of usage
 
     Open amath in its own window:
     > amath
