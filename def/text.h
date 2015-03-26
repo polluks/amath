@@ -2,6 +2,8 @@
  * Copyright (c) 2015 Carsten Larsen
  * All rights reserved.
  *
+ * This code contains contributions from Stefan Haubenthal
+ *
  * Redistribution and use in source and binary forms, with or without
  * modification, are permitted provided that the following conditions
  * are met:
@@ -98,6 +100,10 @@
 #undef ACPU
 #endif
 #define ACPU "i386"
+#endif
+
+#ifdef __powerpc__
+#define ACPU "PowerPC"
 #endif
 
 #ifdef AROS
