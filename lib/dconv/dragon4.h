@@ -20,15 +20,39 @@
 
   3. This notice may not be removed or altered from any source
      distribution.
+*******************************************************************************
+  Copyright (c) 2015 Carsten Larsen
+  All rights reserved.
+
+  Redistribution and use in source and binary forms, with or without
+  modification, are permitted provided that the following conditions
+  are met:
+  1. Redistributions of source code must retain the above copyright
+     notice, this list of conditions and the following disclaimer.
+
+  2. Redistributions in binary form must reproduce the above copyright
+     notice, this list of conditions and the following disclaimer in the
+     documentation and/or other materials provided with the distribution.
+
+  THIS SOFTWARE IS PROVIDED BY THE AUTHOR ``AS IS'' AND ANY EXPRESS OR
+  IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES
+  OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED.
+  IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY DIRECT, INDIRECT,
+  INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT
+  NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+  DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
+  THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+  (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF
+  THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+  
+  The origin source code can be obtained from:
+  http://www.ryanjuckett.com/
+  
 ******************************************************************************/
 
-#ifndef RJ__Dragon4_h
-#define RJ__Dragon4_h
+#ifndef RJX_DRAGON4_H
+#define RJX_DRAGON4_H
 
-// NOTICE: Changed
-#include "lib/dconv/standard.h"
-
-// NOTICE: Inserted
 /**
  * @file  dragon4.h
  * @brief Convert floating point format to a decimal number in string format.
@@ -42,6 +66,8 @@
  * http://www.ryanjuckett.com/
  *
  */
+
+#include "dstandard.h"
 
 //******************************************************************************
 // Different modes for terminating digit output
@@ -70,7 +96,6 @@ enum tCutoffMode
 //    http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.72.4656&rep=rep1&type=pdf
 //******************************************************************************
 
-// NOTICE: Inserted
 /**
  * @brief   Dragon4 main.
  * @details
@@ -99,7 +124,7 @@ tU32 Dragon4
     tS32        exponent,           // value exponent in base 2
     tU32        mantissaHighBitIdx, // index of the highest set mantissa bit
     tB          hasUnequalMargins,  // is the high margin twice as large as the low margin
-    tCutoffMode cutoffMode,         // how to determine output length
+    enum tCutoffMode cutoffMode,         // how to determine output length
     tU32        cutoffNumber,       // parameter to the selected cutoffMode
     tC8 *       pOutBuffer,         // buffer to output into
     tU32        bufferSize,         // maximum characters that can be printed to pOutBuffer
