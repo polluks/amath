@@ -65,7 +65,7 @@ bool AmigaPreferences::Load()
     Close(file);
     SetPrefs(text->GetString());
     delete text;
-    return (IoErr() == NULL);
+    return (IoErr() == 0);
 }
 
 bool AmigaPreferences::Keep()
@@ -89,7 +89,7 @@ bool AmigaPreferences::SavePrefs(const char* name)
     char *out = GetDescription();
     FPuts(file, (CONST_STRPTR)out);
     Close(file);
-    return (IoErr() == NULL);
+    return (IoErr() == 0);
 }
 
 #endif
