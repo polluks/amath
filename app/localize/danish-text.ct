@@ -1,0 +1,99 @@
+## version $VER: <name>.catalog <ver>.0 (29.03.2015)
+## language nolanguage
+## codeset 0
+;
+; ###################################################################
+; Static texts for amath
+; Build with:
+; flexcat text.cd text.h=text.sd
+; ###################################################################
+INTROMSG
+
+; #NORMALTEXT##BOLD##STARTMSG##NEWLINE##NORMALTEXT##COLOR02##ITALICS#Type help to show info.#NEWLINE#
+TXTLISTDIRHEADER
+
+; Type        Name#NEWLINE#-----------------------------------------------#NEWLINE#
+TXTLISTDIRTFILE
+
+; [file]
+TXTLISTDIRTDIR
+
+; [dir]
+TXTLISTDIRTUNKNOWN
+
+; [unknown]
+TXTMEMBLOCKS
+
+; Allocated blocks:#SPACE#
+TXTMEMSIZE
+
+; Memory usage:    #SPACE#
+TXTMEMMAXSIZE
+
+; Maximum usage:   #SPACE#
+HELPNOHELP
+
+; No help is available for this topic.#NEWLINE#
+HELPSYNTAX
+
+; Syntax error:#SPACE#
+HELPUERROR
+
+; Unexpected error:#SPACE#
+HELPVARNDEF
+
+; Variable is not defined:#SPACE#
+HELPFUNNDEF
+
+; Function is not defined:#SPACE#
+HELPFUNRDEF
+
+; Function cannot be redefined:#SPACE#
+HELPPNUMERA
+
+; Base value must be between 2 and 32:#SPACE#
+HELPPDIGITS
+
+; Number of digist must be between 0 and 15:#SPACE#
+HELPINPUSHOW
+
+; Numeral input system is#SPACE#
+HELPOUTPSHOW
+
+; Numeral output system is#SPACE#
+HELPINPUSETT
+
+; Input changed to#SPACE#
+HELPOUTPSETT
+
+; Output changed to#SPACE#
+HELPDIGISETT
+
+; Number of digits changed to#SPACE#
+HELPDIGISHOW
+
+; Number of digits shown are#SPACE#
+HELPVARSNDEF
+
+; No variables are defined.#NEWLINE#
+HELPFUNCNDEF
+
+; No functions are defined.#NEWLINE#
+HELPLOADSUCC
+
+; Variable and functions loaded from file.#NEWLINE#
+HELPSAVESUCC
+
+; Variable and functions saved to file.#NEWLINE#
+HELPSAVEFAIL
+
+; Cannot save to file.#NEWLINE#
+HELPSAVENOTH
+
+; Nothing to save.#NEWLINE#
+MSGNODIR
+
+; Could not open directory:#SPACE#
+MSGNOFILE
+
+; Cannot open file.#NEWLINE#

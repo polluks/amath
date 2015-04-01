@@ -1,0 +1,73 @@
+; ###################################################################
+; Static texts for amath
+; Build with:
+; flexcat text.cd text.h=text.sd
+; ###################################################################
+INTROMSG (/4/)
+#NORMALTEXT##BOLD##STARTMSG##NEWLINE##NORMALTEXT##COLOR02##ITALICS#Type help to show info.#NEWLINE#
+TXTLISTDIRHEADER (/4/)
+Type        Name#NEWLINE#-----------------------------------------------#NEWLINE#
+TXTLISTDIRTFILE (/4/)
+[file]
+TXTLISTDIRTDIR (/4/)
+[dir]
+TXTLISTDIRTUNKNOWN (/4/)
+[unknown]
+TXTMEMBLOCKS (/4/)
+Allocated blocks:#SPACE#
+TXTMEMSIZE (/4/)
+Memory usage:    #SPACE#
+TXTMEMMAXSIZE (/4/)
+Maximum usage:   #SPACE#
+HELPNOHELP (/4/)
+No help is available for this topic.#NEWLINE#
+HELPSYNTAX (/4/)
+Syntax error:#SPACE#
+HELPUERROR (/4/)
+Unexpected error:#SPACE#
+HELPVARNDEF (/4/)
+Variable is not defined:#SPACE#
+HELPFUNNDEF (/4/)
+Function is not defined:#SPACE#
+HELPFUNRDEF (/4/)
+Function cannot be redefined:#SPACE#
+HELPPNUMERA (/4/)
+Base value must be between 2 and 32:#SPACE#
+HELPPDIGITS (/4/)
+Number of digist must be between 0 and 15:#SPACE#
+HELPINPUSHOW (/4/)
+Numeral input system is#SPACE#
+HELPOUTPSHOW (/4/)
+Numeral output system is#SPACE#
+HELPINPUSETT (/4/)
+Input changed to#SPACE#
+HELPOUTPSETT (/4/)
+Output changed to#SPACE#
+HELPDIGISETT (/4/)
+Number of digits changed to#SPACE#
+HELPDIGISHOW (/4/)
+Number of digits shown are#SPACE#
+HELPVARSNDEF (/4/)
+No variables are defined.#NEWLINE#
+HELPFUNCNDEF (/4/)
+No functions are defined.#NEWLINE#
+HELPLOADSUCC (/4/)
+Variable and functions loaded from file.#NEWLINE#
+HELPSAVESUCC (/4/)
+Variable and functions saved to file.#NEWLINE#
+HELPSAVEFAIL (/4/)
+Cannot save to file.#NEWLINE#
+HELPSAVENOTH (/4/)
+Nothing to save.#NEWLINE#
+HELPPREFLOAD (/4/)
+Preferences loaded.#NEWLINE#
+HELPPREFNOLO (/4/)
+Preferences could not be loaded.#NEWLINE#
+HELPPREFSAVE (/4/)
+Preferences saved to disk.#NEWLINE#
+HELPPREFNOSA (/4/)
+Preferences could not be saved.#NEWLINE#
+MSGNODIR (/4/)
+Could not open directory:#SPACE#
+MSGNOFILE (/4/)
+Cannot open file.#NEWLINE#
