@@ -77,7 +77,7 @@ char* AmigaLanguage::GetText(int id)
         return (char*)(HELPNOHELP);
     }
 
-    const char *text = GetCatalogStr(help, def->id, def->text);
+    const char *text = GetCatalogStr(help, def->id, (char*)def->text);
     char *untagged = UntagText(text);
     return untagged;
 }
@@ -97,7 +97,7 @@ char* AmigaLanguage::GetHelpText(char* ident)
         return (char*)(HELPNOHELP);
     }
 
-    const char *text = GetCatalogStr(help, def->id, (CONST_STRPTR)def->text);
+    const char *text = GetCatalogStr(help, def->id, (char*)def->text);
     char *untagged = UntagText(text);
     return untagged;
 }
@@ -117,7 +117,7 @@ char* AmigaLanguage::GetHelpText(Symbol symbol)
         return (char*)(HELPNOHELP);
     }
 
-    const char *text = GetCatalogStr(help, def->id, (CONST_STRPTR)def->text);
+    const char *text = GetCatalogStr(help, def->id, (char*)def->text);
     char *untagged = UntagText(text);
     return untagged;
 }
@@ -159,7 +159,7 @@ bool AmigaLanguage::CharIsCntrl(long unsigned int character)
 
 bool AmigaLanguage::StrIsEqualLoc(const char* s1, const char* s2)
 {
-    return (StrnCmp(locale, s1, s2, -1, SC_COLLATE1) == 0);
+    return (StrnCmp(locale, (char*)s1, (char*)s2, -1, SC_COLLATE1) == 0);
 }
 
 /* for numeric values */

@@ -25,6 +25,7 @@
  */
 
 #include "clib.h"
+#include "platform.h"
 #include "lib/charbuf.h"
 #include "main/graphlist.h"
 #include "main/evaluator.h"
