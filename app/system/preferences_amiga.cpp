@@ -80,14 +80,14 @@ bool AmigaPreferences::Save()
 
 bool AmigaPreferences::SavePrefs(const char* name)
 {
-    BPTR file = Open((char*)name, MODE_NEWFILE);
+    BPTR file = Open((CONST_STRPTR)name, MODE_NEWFILE);
 
     if (!file) {
         return false;
     }
 
     char *out = GetDescription();
-    FPuts(out, file);
+    FPuts(file, (CONST_STRPTR)out);
     Close(file);
     return (IoErr() == NULL);
 }
