@@ -40,7 +40,7 @@ Program::Program()
     ins = new RealNumber();
 
     Preferences = CreatePreferences();
-    Preferences->Load();
+//    Preferences->Load();
 
     Language = CreateLanguage();
     Input = new DecimalSystem(Preferences->GetDigits(), Language->GetFractionPoint());
@@ -59,7 +59,7 @@ Program::~Program()
     delete Language;
     delete ins;
 
-    Preferences->Keep();
+//    Preferences->Keep();
     delete Preferences;
 
 }
