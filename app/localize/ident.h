@@ -45,10 +45,6 @@ struct identhelpdef {
 };
 
 static const identhelpdef identtexts[] = {
-    { 0, "abs", "The absolute value (or modulus) |x| of a real number x is the#NEWLINE#non-negative value of x without regard to its sign.#NEWLINE##SYNTAXHIGHLIGHT#Example: abs(-237.25)#NORMALTEXT##NEWLINE#" },
-    { 1, "sgn", "The sign function or signum function is used to extract the sign of a number.#NEWLINE#Thus sgn(x) is 1 when x is positive, and sgn(x) is -1 when x is negative.#NEWLINE##SYNTAXHIGHLIGHT#Example: sgn(-23.94)#NORMALTEXT##NEWLINE#" },
-    { 2, "round", "Rounding a numerical value means replacing it by another value that is#NEWLINE#approximately equal but has a shorter, simpler, or more explicit#NEWLINE#representation. Amath rounds a number to the nearest integer.#NEWLINE#" },
-    { 3, "trunc", "Truncation is limiting the number of digits right of the decimal point,#NEWLINE#by discarding the least significant ones. Amath truncates a number to#NEWLINE#the nearest integer.#NEWLINE##SYNTAXHIGHLIGHT#Example: trunc(-23.94#NEWLINE#" },
     { 4, "floor", "No help is available for this function.#NEWLINE#" },
     { 5, "ceil", "No help is available for this function.#NEWLINE#" },
     { 6, "sqr", "No help is available for this function.#NEWLINE#" },
@@ -61,9 +57,6 @@ static const identhelpdef identtexts[] = {
     { 13, "lg", "No help is available for this function.#NEWLINE#" },
     { 14, "log", "No help is available for this function.#NEWLINE#" },
     { 15, "log10", "No help is available for this function.#NEWLINE#" },
-    { 16, "sin", "Sine is the trigonometric function that for an acute angle is the#NEWLINE#ratio between the leg opposite the angle when it is considered#NEWLINE#part of a right triangle and the hypotenuse.#NEWLINE#" },
-    { 17, "cos", "Cosine is the trigonometric function that for an acute angle is the#NEWLINE#ratio between the leg adjacent to the angle when it is considered#NEWLINE#part of a right triangle and the hypotenuse#NEWLINE#" },
-    { 18, "tan", "Tangent is one of the trigonometry functions. In a right triangle,#NEWLINE#the tangent of an angle is the opposite side over the adjacent side.#NEWLINE#" },
     { 19, "cot", "No help is available for this function.#NEWLINE#" },
     { 20, "sec", "No help is available for this function.#NEWLINE#" },
     { 21, "csc", "No help is available for this function.#NEWLINE#" },
