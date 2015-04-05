@@ -1,8 +1,14 @@
-; ###################################################################
+; #############################################################################
+; This file is published under Creative Common License. See:
+; http://creativecommons.org/licenses/by-sa/3.0/
+;
+; Parts of the content came from Wikipedia
+;
+; #############################################################################
 ; Help texts for functions in amath
 ; Build with:
 ; flexcat ident.cd ident.h=ident.sd
-; ###################################################################
+; #############################################################################
 abs (/40/)
 The absolute value (or modulus) |x| of a real number x is the#NEWLINE#non-negative value of x without regard to its sign.#NEWLINE##SYNTAXHIGHLIGHT#Example: abs(-237.25)#NORMALTEXT##NEWLINE#
 sgn (/40/)
