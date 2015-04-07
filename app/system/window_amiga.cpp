@@ -101,7 +101,7 @@ void AmigaWindow::Create()
         WFLG_ACTIVATE |
         WFLG_SMART_REFRESH,
         NULL, NULL,           // user gadgets, user checkmark
-        (UBYTE*) ATITLE,      // title
+        (UBYTE*) TXTTITLE,    // title
         NULL, NULL,           // window screen, super bitmap
         400, 75,              // min width, height
         1600, 1050,           // max width, height

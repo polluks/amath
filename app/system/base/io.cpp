@@ -49,7 +49,7 @@
 #include "system/graph_amiga.h"
 
 class Program *Program;
-const char *vers = ADOSVERSION;
+const char *vers = TXTDOSVERSION;
 
 #ifndef AMIGA
 #include <new>

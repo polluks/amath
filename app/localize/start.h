@@ -34,71 +34,82 @@
  */
 /******************************************************************************/
 #include "clib.h"
-
 #ifdef mc68000
-#define ACPU "68000+"
+# define TXTCPU "68000+"
 #endif
 #ifdef mc68020
-#define ACPU "68020"
+# ifdef TXTCPU
+# undef TXTCPU
+# endif
+# define TXTCPU "68020"
 #endif
 #ifdef mc68030
-#define ACPU "68030"
+# ifdef TXTCPU
+# undef TXTCPU
+# endif
+# define TXTCPU "68030"
 #endif
 #ifdef mc68040
-#define ACPU "68040"
+# ifdef TXTCPU
+# undef TXTCPU
+# endif
+# define TXTCPU "68040"
 #endif
 #ifdef mc68060
-#define ACPU "68060"
+# ifdef TXTCPU
+# undef TXTCPU
+# endif
+# define TXTCPU "68060"
 #endif
 /******************************************************************************/
-#if defined(INTELCPU) || defined(i386) || defined(i486)  || \
-    defined(intel)    || defined(x86)  || defined(i86pc) || \
-    defined(__i386__) || defined(_M_IX86)
-#ifdef ACPU
-#undef ACPU
-#endif
-#define ACPU "i386"
+#if defined(INTELCPU)  || defined(i386)    || defined(i486)  ||  \
+    defined(intel)     || defined(x86)     || defined(i86pc) ||  \
+    defined(__i386__)  || defined(_M_IX86)
+# ifdef TXTCPU
+# undef TXTCPU
+# endif
+# define TXTCPU "i386"
 #endif
 #ifdef __powerpc__
-#define ACPU "PowerPC"
+# define TXTCPU "PowerPC"
 #endif
 #if defined(__x86_64__)
-#define ACPU "amd64"
+# define TXTCPU "amd64"
 #endif
-#ifndef ACPU
+#ifndef TXTCPU
 #error what cpu is this ?!
-//#define ACPU EMPTYSTRING
+//#define TXTCPU EMPTYSTRING
 #endif
 /******************************************************************************/
 #if defined(AROS)
-#define ASYSNAME SPACE "AROS"
+# define TXTSYSNAME SPACE "AROS"
 #endif
 #if defined(MORPHOS)
-#define ASYSNAME SPACE "MorphOS"
+# define TXTSYSNAME SPACE "MorphOS"
 #endif
 #if defined(AOS3) || defined(AOS4)
-#define ASYSNAME SPACE "AmigaOS"
+# define TXTSYSNAME SPACE "AmigaOS"
 #endif
-#ifndef ASYSNAME
-#define ASYSNAME EMPTYSTRING
+#ifndef TXTSYSNAME
+# define TXTSYSNAME EMPTYSTRING
 #endif
 /******************************************************************************/
 #ifdef WITHTEST
-#define ATEST SPACE "TEST"
+# define TXTTEST SPACE "TEST"
 #else
-#define ATEST EMPTYSTRING
+# define TXTTEST EMPTYSTRING
 #endif
 /******************************************************************************/
-#if defined(ACPU) && defined(__HAVE_68881__)
-#define AFPU SPACE "FPU"
+#if defined(TXTCPU) && defined(__HAVE_68881__)
+# define TXTFPU SPACE "FPU"
 #else
-#define AFPU EMPTYSTRING
+# define TXTFPU EMPTYSTRING
 #endif
 /******************************************************************************/
-#define ARCH        ACPU AFPU ASYSNAME ATEST
-#define ATITLE      "amath version 1.6.0"
-#define ACOPYRIGHT  "(c) 2015 Carsten Sonne Larsen"
-#define ASTARTMSG   ATITLE SPACE ARCH SPACE ACOPYRIGHT
-#define ADOSVERSION "\0$VER: amath 1.60 (01-04-2015)"
+#define TXTTITLE       "amath version 1.6.0"
+#define TXTDOSVERSION  "\0$VER: amath 1.60 (01-04-2015)"
+#define TXTCOPYRIGHT   "(c) 2015 Carsten Sonne Larsen"
+#define TXTARCH        TXTCPU TXTFPU TXTSYSNAME TXTTEST
+#define TXTSTARTMSG    TXTTITLE SPACE TXTARCH SPACE TXTCOPYRIGHT
 /******************************************************************************/
 #endif

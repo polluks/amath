@@ -43,7 +43,7 @@ static const texttag texttags[] = {
     { "#COLOR03#", COLOR03},
     { "#SPACE#", SPACE},
     { "#NEWLINE#", NEWLINE},
-    { "#STARTMSG#", ASTARTMSG}
+    { "#STARTMSG#", TXTSTARTMSG}
 };
 
 #endif

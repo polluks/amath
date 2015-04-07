@@ -76,10 +76,10 @@ char* VersionStatement::Execute()
     output->Empty();
     output->EnsureSize(
         StrLen(BOLD) +
-        StrLen(ASTARTMSG) +
+        StrLen(TXTSTARTMSG) +
         StrLen(NEWLINE));
     output->Append(BOLD);
-    output->Append(ASTARTMSG);
+    output->Append(TXTSTARTMSG);
     output->Append(NEWLINE);
 
     return output->GetString();
