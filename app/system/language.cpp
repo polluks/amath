@@ -53,7 +53,7 @@ char* Language::UntagText(const char* text)
     }
 
     unsigned int count = sizeof(texttags) / sizeof(texttag);
-    char *untagged = new char[StrLen(text)];
+    char *untagged = new char[StrLen(text) * 2];
     Untag(untagged, text, (texttag*)texttags, count);
 
     unsigned int len = StrLen(untagged) + 1;
