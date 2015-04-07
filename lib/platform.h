@@ -58,6 +58,9 @@
 # ifndef AMIGA
 #  define AMIGA
 # endif
+# ifndef ANSICONSOLE
+#  define ANSICONSOLE
+# endif
 # include <exec/io.h>
 # include <exec/types.h>
 # include <exec/memory.h>
@@ -69,6 +72,9 @@
 #if defined(unix) || defined(__unix__) || defined(__unix)
 # ifndef UNIX
 #  define UNIX
+# endif
+# ifndef ANSICONSOLE
+#  define ANSICONSOLE
 # endif
 # include <unistd.h>
 # include <dirent.h>
@@ -87,7 +93,6 @@
 # include <stdint.h>
 # include <sys/types.h>
 #endif
-
 #ifdef MORPHOS
 # include <stdint.h>
 # include <sys/types.h>
