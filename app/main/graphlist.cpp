@@ -61,4 +61,3 @@ GraphWindow* GraphList::CreateNewWindow()
 
     return current;
 }
-

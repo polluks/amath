@@ -36,13 +36,12 @@
 #ifndef AMIGA
 #include <stdio.h>
 #include <stdlib.h>
-#include <dirent.h>
 
 CharBuffer* StandardFilesystem::ListDirectory(const char *path)
 {
-    CharBuffer *pathbuf = new CharBuffer();
+#ifdef UNIX
+	CharBuffer *pathbuf = new CharBuffer();
     pathbuf->Empty();
-
     if (path == NOMEM) {
         pathbuf->Append(".");
     } else {
@@ -109,6 +108,11 @@ CharBuffer* StandardFilesystem::ListDirectory(const char *path)
     closedir(dir);
     delete pathbuf;
     return lines;
+#else
+	CharBuffer *lines = new CharBuffer();
+	lines->Empty();
+	return lines;
+#endif
 }
 
 CharBuffer* StandardFilesystem::LoadTextFile(const char* name)

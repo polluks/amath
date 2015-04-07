@@ -28,8 +28,6 @@
 
 #ifndef AMIGA
 #include <stdio.h>
-#include <unistd.h>
-#include <termios.h>
 #include "main/nodes.h"
 #include "main/evaluator.h"
 #include "system/console_stdc.h"
@@ -73,11 +71,13 @@ void StandardConsole::Exit()
 
 void StandardConsole::ReadLine()
 {
+#ifdef UNIX
     termios new_tio, old_tio;
     tcgetattr(STDIN_FILENO, &old_tio);
     new_tio = old_tio;
     new_tio.c_lflag &=(~ICANON & ~ECHO);
     tcsetattr(STDIN_FILENO, TCSANOW, &new_tio);
+#endif
 
     proc->StartInput();
 
@@ -90,7 +90,9 @@ void StandardConsole::ReadLine()
 
     line = proc->GetLine();
 
-    tcsetattr(STDIN_FILENO, TCSANOW, &old_tio);
+#ifdef UNIX
+	tcsetattr(STDIN_FILENO, TCSANOW, &old_tio);
+#endif
 }
 
 void StandardConsole::WriteString(const char *string)

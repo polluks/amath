@@ -42,7 +42,7 @@
 #include "prim.h"
 #include "math.h"
 
-#ifndef AOS3
+#if defined(__GNUC__) && !defined(AOS3)
 #pragma GCC diagnostic ignored "-Wunused-but-set-variable"
 #pragma GCC diagnostic ignored "-Wstrict-aliasing"
 #endif

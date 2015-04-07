@@ -63,7 +63,7 @@ public:
     void NewPositionalInput(short unsigned int base, short unsigned int digits);
     void NewPositionalOutput(short unsigned int base, short unsigned int digits);
     void SetLastResult(Number *number);
-    class Number* GetLastResult();
+	struct Number* GetLastResult();
     class Language *Language;
     class ConsoleBase *Console;
     class PreferencesBase *Preferences;
@@ -75,7 +75,7 @@ public:
     class GraphList *Graphs;
 
 private:
-    class Number* ins;
+	struct Number* ins;
 };
 
 #endif
