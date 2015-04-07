@@ -44,7 +44,7 @@
 #include "prim.h"
 #include "math.h"
 
-#ifndef AMIGA
+#if __GNUC__ > 2
 #pragma GCC diagnostic ignored "-Wstrict-aliasing"
 #endif
 
