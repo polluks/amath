@@ -24,7 +24,7 @@
  *
  * Generated with FlexCat. For more information, see:
  * http://sourceforge.net/projects/flexcat/
- *
+ * 
  */
 
 #ifndef AMATH_LOCALIZE_IDENT_HELP_H
@@ -33,7 +33,7 @@
 /**
  * @file  ident.h
  * @brief Localized help text definitions.
- *
+ * 
  */
 
 #include "clib.h"
@@ -45,6 +45,10 @@ struct identhelpdef {
 };
 
 static const identhelpdef identtexts[] = {
+    { 0, "abs", "No help is available for this function.#NEWLINE#" },
+    { 1, "sgn", "No help is available for this function.#NEWLINE#" },
+    { 2, "round", "No help is available for this function.#NEWLINE#" },
+    { 3, "trunc", "No help is available for this function.#NEWLINE#" },
     { 4, "floor", "No help is available for this function.#NEWLINE#" },
     { 5, "ceil", "No help is available for this function.#NEWLINE#" },
     { 6, "sqr", "No help is available for this function.#NEWLINE#" },
@@ -57,6 +61,9 @@ static const identhelpdef identtexts[] = {
     { 13, "lg", "No help is available for this function.#NEWLINE#" },
     { 14, "log", "No help is available for this function.#NEWLINE#" },
     { 15, "log10", "No help is available for this function.#NEWLINE#" },
+    { 16, "sin", "No help is available for this function.#NEWLINE#" },
+    { 17, "cos", "No help is available for this function.#NEWLINE#" },
+    { 18, "tan", "No help is available for this function.#NEWLINE#" },
     { 19, "cot", "No help is available for this function.#NEWLINE#" },
     { 20, "sec", "No help is available for this function.#NEWLINE#" },
     { 21, "csc", "No help is available for this function.#NEWLINE#" },

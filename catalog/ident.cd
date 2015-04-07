@@ -7,7 +7,7 @@
 ; #############################################################################
 ; Help texts for functions in amath
 ; Build with:
-; flexcat ident.cd ident.h=ident.sd
+; flexcat ident.cd ../app/localize/ident.h=ident.sd
 ; #############################################################################
 abs (/40/)
 The absolute value (or modulus) |x| of a real number x is the#NEWLINE#non-negative value of x without regard to its sign.#NEWLINE##SYNTAXHIGHLIGHT#Example: abs(-237.25)#NORMALTEXT##NEWLINE#

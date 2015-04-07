@@ -25,7 +25,7 @@
 ; #############################################################################
 ; Help texts for functions in amath
 ; Build with:
-; flexcat ident-clean.cd ident.h=ident.sd
+; flexcat ident-clean.cd ../app/localize/ident.h=ident.sd
 ; #############################################################################
 abs (/40/)
 No help is available for this function.#NEWLINE#

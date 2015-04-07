@@ -24,7 +24,7 @@
 ; OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 ; #############################################################################
 ; Build with:
-; flexcat help.cd help.h=help.sd
+; flexcat help.cd ../app/localize/help.h=help.sd
 ; #############################################################################
 #language english
 #version 0

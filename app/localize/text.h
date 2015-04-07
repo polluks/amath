@@ -24,7 +24,7 @@
  *
  * Generated with FlexCat. For more information, see:
  * http://sourceforge.net/projects/flexcat/
- *
+ * 
  */
 
 #ifndef AMATH_LOCALIZE_TEXT_H
@@ -33,7 +33,7 @@
 /**
  * @file  text.h
  * @brief Localized text definitions.
- *
+ * 
  */
 
 #include "clib.h"
