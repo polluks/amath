@@ -30,7 +30,6 @@ struct RDArgs;
 
 struct amathargs {
     long shell;
-    long quiet;
     char *input;
 };
 

@@ -39,7 +39,6 @@
 StandardProgram::StandardProgram()
     : Program()
 {
-    Graphs = NOMEM;
     Console = NOMEM;
 }
 

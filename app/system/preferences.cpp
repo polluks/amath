@@ -44,6 +44,7 @@ PreferencesBase::PreferencesBase()
 PreferencesBase::~PreferencesBase()
 {
     delete buf;
+    delete prompt;
 }
 
 void PreferencesBase::SetDefaults()
