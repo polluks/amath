@@ -25,8 +25,6 @@
  */
 
 #include "clib.h"
-#include "text.h"
-#include "ansicon.h"
 #include "lib/numb.h"
 #include "lib/real.h"
 #include "lib/ntext.h"

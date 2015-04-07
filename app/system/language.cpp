@@ -25,7 +25,6 @@
  */
 
 #include "clib.h"
-#include "text.h"
 #include "localize/tags.h"
 #include "system/language.h"
 

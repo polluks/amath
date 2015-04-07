@@ -25,8 +25,6 @@
  */
 
 #include "clib.h"
-#include "text.h"
-#include "ansicon.h"
 #include "localize/text.h"
 #include "system/console.h"
 #include "system/base/io.h"

@@ -187,7 +187,6 @@
     <ClInclude Include="app\system\task_amiga.h" />
     <ClInclude Include="app\system\task_stdc.h" />
     <ClInclude Include="app\system\window_amiga.h" />
-    <ClInclude Include="lib\ansicon.h" />
     <ClInclude Include="lib\clib.h" />
     <ClInclude Include="lib\complex.h" />
     <ClInclude Include="lib\cplex\prim.h" />
@@ -199,7 +198,6 @@
     <ClInclude Include="lib\mem.h" />
     <ClInclude Include="lib\platform.h" />
     <ClInclude Include="lib\real\prim.h" />
-    <ClInclude Include="lib\text.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{21BD69A9-7F52-48D9-9846-6943E90A87A9}</ProjectGuid>

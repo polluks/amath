@@ -25,8 +25,6 @@
  */
 
 #include "clib.h"
-#include "text.h"
-#include "ansicon.h"
 
 void Untag(char *destination, const char *source, texttag tags[], unsigned int tagcount)
 {

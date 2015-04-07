@@ -39,8 +39,6 @@
  */
 
 #include "clib.h"
-#include "text.h"
-#include "ansicon.h"
 
 #define %i Program->Language->GetText(%d)
 

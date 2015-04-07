@@ -37,8 +37,6 @@
  */
 
 #include "clib.h"
-#include "text.h"
-#include "ansicon.h"
 #include "localize/lex.h"
 
 #define symzero Symbol(0)
