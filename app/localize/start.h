@@ -53,7 +53,7 @@
 /******************************************************************************/
 #if defined(INTELCPU) || defined(i386) || defined(i486)  || \
     defined(intel)    || defined(x86)  || defined(i86pc) || \
-    defined(__i386__)
+    defined(__i386__) || defined(_M_IX86)
 #ifdef ACPU
 #undef ACPU
 #endif

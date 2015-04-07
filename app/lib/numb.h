@@ -27,7 +27,7 @@
 #ifndef _NUMBER_H
 #define _NUMBER_H
 
-#ifndef AMIGA
+#if defined(__GNUC__) && !defined(AOS3)
 #pragma GCC diagnostic ignored "-Wshadow"
 #endif
 

@@ -27,7 +27,7 @@
 #include "clib.h"
 #include "main/token.h"
 
-#ifndef AMIGA
+#if defined(__GNUC__) && !defined(AOS3)
 #pragma GCC diagnostic ignored "-Wshadow"
 #endif
 

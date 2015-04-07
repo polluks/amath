@@ -32,7 +32,7 @@
 
 #include "clib.h"
 
-#ifndef AMIGA
+#ifdef __GNUC__
 #pragma GCC diagnostic ignored "-Wcast-align"
 #endif
 

@@ -30,71 +30,81 @@
 #include <stddef.h>
 
 #ifdef  __AMIGA__
-#ifndef AOS3
-#define AOS3
-#endif
+# ifndef AOS3
+# define AOS3
+# endif
 #endif
 
 #ifdef  __AROS__
-#ifndef AROS
-#define AROS
-#endif
+# ifndef AROS
+# define AROS
+# endif
 #endif
 
 #ifdef  __MORPHOS__
-#ifndef MORPHOS
-#define MORPHOS
-#endif
+# ifndef MORPHOS
+# define MORPHOS
+# endif
 #endif
 
 #ifdef  __amigaos4__
-#ifndef AOS4
-#define AOS4
-#endif
+# ifndef AOS4
+# define AOS4
+# endif
 #endif
 
 // Check weather an AmigaOS compatible API is available
 #if defined(AOS3) || defined(AOS4) || defined(AROS) || defined (MORPHOS)
-#ifndef AMIGA
-#define AMIGA
-#endif
-#include <exec/io.h>
-#include <exec/types.h>
-#include <exec/memory.h>
-#include <exec/semaphores.h>
-#include <clib/exec_protos.h>
-#endif
-
-/* POSIX */
-#ifndef AMIGA
-#include <stdio.h>
-#include <stdint.h>
-#include <stdlib.h>
+# ifndef AMIGA
+#  define AMIGA
+# endif
+# include <exec/io.h>
+# include <exec/types.h>
+# include <exec/memory.h>
+# include <exec/semaphores.h>
+# include <clib/exec_protos.h>
 #endif
 
-/* GCC 2.95 etc */
-#ifdef AOS3
-#include <sys/types.h>
+// Check weather an POSIX compatible API is available
+#if defined(unix) || defined(__unix__) || defined(__unix)
+# ifndef UNIX
+#  define UNIX
+# endif
+# include <unistd.h>
+# include <dirent.h>
+# include <termios.h>
+#endif
+
+/* STDC */
+#ifndef AMIGA
+# include <stdio.h>
+# include <stdint.h>
+# include <stdlib.h>
+#endif
+
+/* GCC 2.95 */
+#if (_GNUC_ == 2 && __GNUC_MINOR__ == 95)
+# include <sys/types.h>
 typedef u_int8_t    uint8_t;
 typedef u_int16_t   uint16_t;
 typedef u_int32_t   uint32_t;
 typedef u_int64_t   uint64_t;
-#define IPTR LONG
+# define IPTR LONG
 #endif
 
 /* GCC 4.x & AROS API */
 #ifdef AROS
-#include <stdint.h>
-#include <sys/types.h>
+# include <stdint.h>
+# include <sys/types.h>
 #endif
 
 #ifdef MORPHOS
-#include <stdint.h>
-#include <sys/types.h>
+# include <stdint.h>
+# include <sys/types.h>
 #endif
 
 #ifdef AOS4
-#error Includedes must be defined for Amiga OS 4+
+# error Includedes must be defined for Amiga OS 4+
 #endif
 
 #endif

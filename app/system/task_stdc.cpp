@@ -28,7 +28,7 @@
 #include "system/task_stdc.h"
 #include "system/base/thread.h"
 
-#ifndef AMIGA
+#ifdef UNIX
 #include <unistd.h>
 #include <sys/types.h>
 #include <sys/wait.h>

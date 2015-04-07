@@ -33,7 +33,6 @@
  *
  */
 
-#ifdef WITHTEST // Still under development
 #include "system/graph.h"
 
 /**
@@ -51,5 +50,4 @@ private:
     GraphWindow *first;
 };
 
-#endif
 #endif

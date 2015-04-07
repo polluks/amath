@@ -72,7 +72,7 @@ int __kernel_rem_pio2(double *x, double *y, int e0, int nx, int prec, const int 
 #if defined(INTELCPU) || defined(i386)     || defined(i486)    || \
     defined(intel)    || defined(x86)      || defined(i86pc)   || \
     defined(__i386__) || defined(__alpha)  || defined(__osf__) || \
-    defined(__x86_64__)
+    defined(__x86_64__) || defined(_M_IX86) || defined(_M_AMD64)
 #define __IEEE_LITTLE_ENDIAN
 #endif
 

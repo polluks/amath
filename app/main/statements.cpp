@@ -751,7 +751,6 @@ char* ExecuteStatement::Execute()
 // ------------------ PlotStatement --------------------
 // -----------------------------------------------------
 
-#ifdef WITHTEST // Still under development
 PlotStatement::PlotStatement(const char* name, const char* parameter, const char* file) :
     StatementNode()
 {
@@ -880,4 +879,4 @@ char* DrawStatement::Execute()
 
     return (char*)EMPTYSTRING;
 }
-#endif
+
