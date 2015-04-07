@@ -25,7 +25,7 @@
 ; #############################################################################
 ; Static texts for amath
 ; Build with:
-; flexcat text.cd text.h=text.sd
+; flexcat text.cd ../app/localize/text.h=text.sd
 ; #############################################################################
 INTROMSG (/4/)
 #NORMALTEXT##BOLD##STARTMSG##NEWLINE##NORMALTEXT##COLOR02##ITALICS#Type help to show info.#NEWLINE#
