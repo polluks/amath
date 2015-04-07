@@ -163,6 +163,7 @@ LIBC2SRCS='
 	lib/dconv/dmath.cpp
 	lib/dconv/dprint.cpp
 '
+
 if make -v 2>&1 | grep GNU > /dev/null 2>&1 ; then
 	echo "make(1) is GNU make."
 	VALID=true
@@ -193,47 +194,44 @@ if $VALID ; then
 		CROSSCOMPILEFLAGS=""
 	fi
 	
-#	if [ ! "$PARAMS" = "NO" ] ; then
-#		read -p "Build for Amiga OS3 [y/N]? " AOS
-#		read -p "Use ANSI console [Y/n]? " ANSICON
-#		read -p "Include regression test [Y/n]? " REGTEST
-#	fi
+#	read -p "Build for Amiga OS3 [y/N]? " AOS
+#	read -p "Include regression test [Y/n]? " REGTEST
 	
-	if [ "$ANSICON" = "n" ] || [ "$ANSICON" = "N" ];
+	if [ -n "$AOS" ];
 	then
-		options=""
-		ansicon=""
-	else
-		options="-DANSICONSOLE"
-		ansicon="-DANSICONSOLE "
-	fi
-	
-	if [ "$REGTEST" = "n" ] || [ "$REGTEST" = "N" ];
-	then
-		options="${options}"
-	else
-		options="${options} -DWITHTEST"
-	fi
-
-	if [ "$AOS" = "y" ] || [ "$AOS" = "Y" ];
-	then
-		gcclib="-lgcc"
-		osext="-DAOS3 "
+		if [ "$AOS" = "y" ] || [ "$AOS" = "Y" ];
+		then
+			gcclib="-lgcc"
+			osext="-DAOS3 "
+		fi
 	else
 		gcclib="-lstdc++"
 		osext=""
 	fi
 	
-#	if [ "$DEBUG" = "y" || "$DEBUG" = "Y" ];
-#	then
-		appop="-O0 -g"
-		libop="-O0 -g"
-		exestrip=""
-#	else
-#		appop="-O2"
-#		libop="-O3"
-#		exestrip="-s"
-#	fi
+	if [ -n "$REGTEST" ];
+	then
+		if [ "$REGTEST" = "n" ] || [ "$REGTEST" = "N" ];
+		then
+			options="${options}"
+		fi
+	else
+		options="${options} -DWITHTEST"
+	fi
+
+	if [ -n "$DEBUG" ];
+	then
+		if [ "$DEBUG" = "y" || "$DEBUG" = "Y" ];
+		then
+			appop="-O0 -g"
+			libop="-O0 -g"
+			exestrip=""
+		fi
+	else
+		appop="-O2"
+		libop="-O3"
+		exestrip="-s"
+	fi
 	
 	# Use under certain circumstances when GCC is causing problems with FPU
 	nff="-fno-strict-aliasing -ffloat-store "
@@ -281,7 +279,7 @@ if $VALID ; then
 	do
 		b=`basename $f .c`
 		echo "${b}.o:	${f}"
-		echo "	\${CC} ${libop} -std=c99 ${ARCFLAG}${osext}-fno-builtin ${nff}-Wall -Werror -Ilib -Ilib/real -c ${f}"
+		echo "	\${CC} ${libop} -std=c9x ${ARCFLAG}${osext}-fno-builtin ${nff}-Wall -Werror -Ilib -Ilib/real -c ${f}"
 		echo
 		libamath="${libamath} ${b}.o"
 	done
@@ -291,7 +289,7 @@ if $VALID ; then
 	do
 		b=`basename $f .c`
 		echo "${b}.o:	${f}"
-		echo "	\${CC} ${libop} -std=c99 ${ARCFLAG}${osext}-fno-builtin -Wall -Werror -Ilib -Ilib/cplex -c ${f}"
+		echo "	\${CC} ${libop} -std=c9x ${ARCFLAG}${osext}-fno-builtin -Wall -Werror -Ilib -Ilib/cplex -c ${f}"
 		echo
 		libcomplex="${libcomplex} ${b}.o"
 	done
@@ -301,7 +299,7 @@ if $VALID ; then
 	do
 		b=`basename $f .c`
 		echo "${b}.o:	${f}"
-		echo "	\${CC} ${libop} -std=c99 ${ARCFLAG}${ansicon}${osext}-fno-builtin -Wall -Werror -Ilib -c ${f}"
+		echo "	\${CC} ${libop} -std=c9x ${ARCFLAG}${ansicon}${osext}-fno-builtin -Wall -Werror -Ilib -c ${f}"
 		echo
 		libc="${libc} ${b}.o"
 	done
