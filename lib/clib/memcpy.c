@@ -32,7 +32,7 @@
 
 #include "clib.h"
 
-#ifdef __GNUC__
+#if defined(__GNUC__)  && !defined(AOS3)
 #pragma GCC diagnostic ignored "-Wcast-align"
 #endif
 

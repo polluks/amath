@@ -83,7 +83,7 @@
 #endif
 
 /* GCC 2.95 */
-#if (_GNUC_ == 2 && __GNUC_MINOR__ == 95)
+#if (__GNUC__ == 2 && __GNUC_MINOR__ == 95)
 # include <sys/types.h>
 typedef u_int8_t    uint8_t;
 typedef u_int16_t   uint16_t;
