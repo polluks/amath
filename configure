@@ -221,7 +221,7 @@ if $VALID ; then
 
 	if [ -n "$DEBUG" ];
 	then
-		if [ "$DEBUG" = "y" || "$DEBUG" = "Y" ];
+		if [ "$DEBUG" = "y" ] || [ "$DEBUG" = "Y" ];
 		then
 			appop="-O0 -g"
 			libop="-O0 -g"
