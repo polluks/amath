@@ -44,7 +44,7 @@
 #include "prim.h"
 #include "math.h"
 
-#if defined(__GNUC__) && !defined(AOS3)
+#if __GNUC__ > 2
 #pragma GCC diagnostic ignored "-Wstrict-aliasing"
 #endif
 

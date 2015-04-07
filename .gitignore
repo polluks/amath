@@ -1,0 +1,6 @@
+*.kdev4
+*.o
+*.a
+amath
+amath-test
+catalog/flexcat
