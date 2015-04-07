@@ -27,7 +27,7 @@
 #ifndef _NUMBER_H
 #define _NUMBER_H
 
-#if defined(__GNUC__) && !defined(AOS3)
+#if __GNUC__ > 2
 #pragma GCC diagnostic ignored "-Wshadow"
 #endif
 

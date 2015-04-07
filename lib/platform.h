@@ -82,16 +82,6 @@
 # include <stdlib.h>
 #endif
 
-/* GCC 2.95 */
-#if (__GNUC__ == 2 && __GNUC_MINOR__ == 95)
-# include <sys/types.h>
-typedef u_int8_t    uint8_t;
-typedef u_int16_t   uint16_t;
-typedef u_int32_t   uint32_t;
-typedef u_int64_t   uint64_t;
-# define IPTR LONG
-#endif
-
 /* GCC 4.x & AROS API */
 #ifdef AROS
 # include <stdint.h>
@@ -105,6 +95,16 @@ typedef u_int64_t   uint64_t;
 
 #ifdef AOS4
 # error Includedes must be defined for Amiga OS 4+
+#endif
+
+/* GCC 2.95 */
+#if (__GNUC__ == 2 && __GNUC_MINOR__ == 95)
+# include <sys/types.h>
+typedef u_int8_t    uint8_t;
+typedef u_int16_t   uint16_t;
+typedef u_int32_t   uint32_t;
+typedef u_int64_t   uint64_t;
+# define IPTR LONG
 #endif
 
 #endif
