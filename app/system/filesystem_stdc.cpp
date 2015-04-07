@@ -26,7 +26,6 @@
 
 
 #include "clib.h"
-#include "text.h"
 #include "lib/charbuf.h"
 #include "localize/text.h"
 #include "system/program.h"

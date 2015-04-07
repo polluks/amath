@@ -81,19 +81,6 @@
 //#define TXTCPU EMPTYSTRING
 #endif
 /******************************************************************************/
-#if defined(AROS)
-# define TXTSYSNAME SPACE "AROS"
-#endif
-#if defined(MORPHOS)
-# define TXTSYSNAME SPACE "MorphOS"
-#endif
-#if defined(AOS3) || defined(AOS4)
-# define TXTSYSNAME SPACE "AmigaOS"
-#endif
-#ifndef TXTSYSNAME
-# define TXTSYSNAME EMPTYSTRING
-#endif
-/******************************************************************************/
 #ifdef WITHTEST
 # define TXTTEST SPACE "TEST"
 #else
@@ -109,7 +96,6 @@
 #define TXTTITLE       "amath version 1.6.0"
 #define TXTDOSVERSION  "\0$VER: amath 1.60 (01-04-2015)"
 #define TXTCOPYRIGHT   "(c) 2015 Carsten Sonne Larsen"
-#define TXTARCH        TXTCPU TXTFPU TXTSYSNAME TXTTEST
-#define TXTSTARTMSG    TXTTITLE SPACE TXTARCH SPACE TXTCOPYRIGHT
+#define TXTSTARTMSG    TXTTITLE SPACE TXTCPU TXTFPU TXTTEST SPACE TXTCOPYRIGHT
 /******************************************************************************/
 #endif

@@ -29,6 +29,20 @@
 
 #include <stddef.h>
 
+#define EMPTYSTRING ""
+#define SPACE       " "
+#define NEWLINE     "\n"
+#define NOMEM       0
+#define LONG_BIT    32
+#define wsize       sizeof(unsigned int)
+#define wmask       (wsize - 1)
+
+#ifndef __cplusplus
+typedef int bool;
+#define true  1
+#define false 0
+#endif
+
 #ifdef  __AMIGA__
 # ifndef AOS3
 # define AOS3
@@ -110,6 +124,42 @@ typedef u_int16_t   uint16_t;
 typedef u_int32_t   uint32_t;
 typedef u_int64_t   uint64_t;
 # define IPTR LONG*
+#endif
+
+#if defined(ANSICONSOLE)
+#define HEADLINE         "\x1B[1m"
+#define SYNTAXHIGHLIGHT  "\x1B[3m\x1B[32m"
+#define NORMALTEXT       "\x1B[0m"
+#define BOLD             "\x1B[1m"
+#define ITALICS          "\x1B[3m"
+#define UNDERLINE        "\x1B[4m"
+#define COLOR01          "\x1B[31m"
+#define COLOR02          "\x1B[32m"
+#define COLOR03          "\x1B[33m"
+#define CURSORFORWARD    "\x1B[1C"
+#define CURSORBACKWARD   "\x1B[1D"
+#define ERASEINLINE      "\x1B[K"
+#define INSERT1CHAR      "\x1B[1@"
+#define DELETE1CHAR      "\x1B[1P"
+#define DELETELINE       "\x0D\x1B[K"
+#define CLEARWINDOW      "\x1B[1;1H\x1B[J"
+#else
+#define HEADLINE         EMPTYSTRING
+#define SYNTAXHIGHLIGHT  EMPTYSTRING
+#define NORMALTEXT       EMPTYSTRING
+#define BOLD             EMPTYSTRING
+#define ITALICS          EMPTYSTRING
+#define UNDERLINE        EMPTYSTRING
+#define COLOR01          EMPTYSTRING
+#define COLOR02          EMPTYSTRING
+#define COLOR03          EMPTYSTRING
+#define CURSORFORWARD    EMPTYSTRING
+#define CURSORBACKWARD   EMPTYSTRING
+#define ERASEINLINE      EMPTYSTRING
+#define INSERT1CHAR      EMPTYSTRING
+#define DELETE1CHAR      EMPTYSTRING
+#define DELETELINE       EMPTYSTRING
+#define CLEARWINDOW      EMPTYSTRING
 #endif
 
 #endif

@@ -560,9 +560,6 @@
     <ClInclude Include="app\system\base\thread.h">
       <Filter>app\system\io</Filter>
     </ClInclude>
-    <ClInclude Include="lib\ansicon.h">
-      <Filter>lib</Filter>
-    </ClInclude>
     <ClInclude Include="lib\clib.h">
       <Filter>lib</Filter>
     </ClInclude>
@@ -582,9 +579,6 @@
       <Filter>lib</Filter>
     </ClInclude>
     <ClInclude Include="lib\platform.h">
-      <Filter>lib</Filter>
-    </ClInclude>
-    <ClInclude Include="lib\text.h">
       <Filter>lib</Filter>
     </ClInclude>
     <ClInclude Include="lib\dconv\dmath.h">

@@ -26,7 +26,6 @@
 
 #include "mem.h"
 #include "clib.h"
-#include "text.h"
 #include "lib/real.h"
 #include "lib/charbuf.h"
 #include "localize/help.h"

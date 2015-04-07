@@ -37,8 +37,6 @@
  */
 
 #include "clib.h"
-#include "text.h"
-#include "ansicon.h"
 
 #define INTROMSG Program->Language->GetText(0)
 #define TXTLISTDIRHEADER Program->Language->GetText(1)

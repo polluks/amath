@@ -26,8 +26,6 @@
 
 #include "mem.h"
 #include "clib.h"
-#include "text.h"
-#include "ansicon.h"
 #include "localize/start.h"
 #include "system/program.h"
 #include "system/program_stdc.h"

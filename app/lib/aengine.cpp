@@ -25,8 +25,6 @@
  */
 
 #include "clib.h"
-#include "text.h"
-#include "ansicon.h"
 #include "lib/charbuf.h"
 #include "lib/aengine.h"
 

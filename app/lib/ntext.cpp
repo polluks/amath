@@ -26,7 +26,6 @@
 
 #include "clib.h"
 #include "math.h"
-#include "text.h"
 #include "dprint.h"
 #include "complex.h"
 #include "lib/real.h"

@@ -27,8 +27,7 @@
 #ifndef AMATH_TEXT_TAGS_H
 #define AMATH_TEXT_TAGS_H
 
-#include "text.h"
-#include "ansicon.h"
+#include "clib.h"
 #include "localize/start.h"
 
 static const texttag texttags[] = {

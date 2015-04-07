@@ -25,7 +25,6 @@
  */
 
 #include "clib.h"
-#include "text.h"
 #include "lib/numb.h"
 #include "main/values.h"
 #include "main/functions.h"

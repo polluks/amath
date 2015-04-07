@@ -31,41 +31,26 @@
  * @file  clib.h
  * @brief C functions for manipulating strings and memory.
  *
- * This file contains classless C functions. Similar functions can
- * be found in standard C libraries.
- *
  */
 
-#include "text.h"
 #include "platform.h"
-
-/**
- * @brief NULL pointer for non allocated memory.
- *
- * Use the NOMEM to avoid unnecessary dependency to stdio NULL.
- */
-#define NOMEM      0
-
-// Defintions used i CLib functions
-#define LONG_BIT   32
-#define wsize      sizeof(unsigned int)
-#define wmask      (wsize - 1)
-
-#ifndef __cplusplus
-typedef int bool;
-#define true  1
-#define false 0
-#endif
 
 #ifdef __cplusplus
 extern "C" {
 #endif
+
+typedef struct {
+    const char *tag;
+    const char *text;
+} texttag;
 
 int StrLen(const char *string);
 bool StrIsEqual(const char *s1, const char *s2);
 void MemSet(void *destination, int c0, unsigned int length);
 void MemCopy(void *destination, const void *source, unsigned int length);
 unsigned int AllocAndCopy(char **destination, const char *source);
+void Untag(char *destination, const char *source,
+           texttag tags[], unsigned int tagcount);
 
 #ifdef __cplusplus
 }
