@@ -414,9 +414,9 @@ clean:
 dist: catalogs app
 	mkdir dist
 	mkdir dist/catalog
-	mkdir dist/catalog/danish
+	mkdir dist/catalog/dansk
 	mkdir dist/catalog/english
-	cp catalog/danish/*.catalog dist/catalog/danish/
+	cp catalog/danish/*.catalog dist/catalog/dansk/
 	cp catalog/english/*.catalog dist/catalog/english/
 	cp amath dist/
 	cp LICENSE dist/
