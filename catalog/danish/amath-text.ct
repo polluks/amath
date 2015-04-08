@@ -1,0 +1,99 @@
+## version $VER: help.catalog 1.60 (08.04.2015)
+## language danish
+## codeset 0
+; #############################################################################
+; Copyright (c) 2015, Carsten Larsen
+; All rights reserved.
+; 
+; Redistribution and use in source and binary forms, with or without
+; modification, are permitted provided that the following conditions are met:
+; 
+; * Redistributions of source code must retain the above copyright notice, this
+;   list of conditions and the following disclaimer.
+; 
+; * Redistributions in binary form must reproduce the above copyright notice,
+;   this list of conditions and the following disclaimer in the documentation
+;   and/or other materials provided with the distribution.
+; 
+; THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+; AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+; IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+; DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE
+; FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+; DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
+; SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
+; CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
+; OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+; OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+; #############################################################################
+; ### flexcat catalog/text.cd NEWCTFILE catalog/danish/amath-text.ct
+; flexcat catalog/text.cd catalog/danish/amath-text.ct CATALOG catalog/danish/amath-text.catalog
+; #############################################################################
+INTROMSG
+#NORMALTEXT##BOLD##STARTMSG##NEWLINE##NORMALTEXT##COLOR02##ITALICS#Skriv help for at få vist mere information.#NEWLINE#
+TXTLISTDIRHEADER
+Type        Navn#NEWLINE#-----------------------------------------------#NEWLINE#
+TXTLISTDIRTFILE
+[fil]
+TXTLISTDIRTDIR
+[mappe]
+TXTLISTDIRTUNKNOWN
+[ukendt]
+TXTMEMBLOCKS
+Allokerede blokke: #SPACE#
+TXTMEMSIZE
+Hukommelsesforbrug:#SPACE#
+TXTMEMMAXSIZE
+Højeste forbrug:   #SPACE#
+HELPNOHELP
+Der er ingen hjælp tilgængelig om det emne.#NEWLINE#
+HELPSYNTAX
+Syntaktiske fejl:#SPACE#
+HELPUERROR
+Uventet fejl:#SPACE#
+HELPVARNDEF
+Variablen er ikke defineret:#SPACE#
+HELPFUNNDEF
+Funktionen er ikke defineret:#SPACE#
+HELPFUNRDEF
+Funktionen kan ikke omdefineres:#SPACE#
+HELPPNUMERA
+Basen skal være mellem 2 og 32:#SPACE#
+HELPPDIGITS
+Antal decimaler skal være mellem 0 og 15:#SPACE#
+HELPINPUSHOW
+Talsystemet når computeren læser er#SPACE#
+HELPOUTPSHOW
+Talsystemet når computeren skriver er#SPACE#
+HELPINPUSETT
+Talsystemet ved læsning ændret til#SPACE#
+HELPOUTPSETT
+Talsystemet ved skrivning ændret til#SPACE#
+HELPDIGISETT
+Antal decimaler ændret til#SPACE#
+HELPDIGISHOW
+Antal decimaler der vises er#SPACE#
+HELPVARSNDEF
+Der er ikke defineret nogle variabler.#NEWLINE#
+HELPFUNCNDEF
+Der er ikke defineret nogle funktioner.#NEWLINE#
+HELPLOADSUCC
+Variabler og funktioner indlæst fra fil.#NEWLINE#
+HELPSAVESUCC
+Variabler og funktioner gemt til fil.#NEWLINE#
+HELPSAVEFAIL
+Kan ikke gemme til fil.#NEWLINE#
+HELPSAVENOTH
+Der er ikke noget og gemme.#NEWLINE#
+HELPPREFLOAD
+Præferencer indlæst.#NEWLINE#
+HELPPREFNOLO
+Præferencer kunne ikke indlæses.#NEWLINE#
+HELPPREFSAVE
+Præferencer blev gemt.#NEWLINE#
+HELPPREFNOSA
+Præferencer kunne ikke gemmes.#NEWLINE#
+MSGNODIR
+Mappen kan ikke åbnes:#SPACE#
+MSGNOFILE
+Filen kan ikke åbnes.#NEWLINE#

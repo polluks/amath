@@ -38,6 +38,10 @@
 
 AmigaLanguage::AmigaLanguage()
 {
+    // OpenCatalog searches for files in the following locations:
+    // PROGDIR:Catalogs/languageName/name
+    // LOCALE:Catalogs/languageName/name
+
     base = (struct LocaleBase*)OpenLibrary("locale.library", 38L);
     locale = OpenLocale(NULL);
     help =   OpenCatalog(NULL, "amath-help.catalog",
@@ -187,3 +191,4 @@ bool AmigaLanguage::StrIsEqualLoc(const char* s1, const char* s2)
 //#define CLOSEQUOTE	46	/* end of quoted block	 */
 
 #endif
+
