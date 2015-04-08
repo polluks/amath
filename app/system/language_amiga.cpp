@@ -79,7 +79,7 @@ char* AmigaLanguage::GetText(int id)
         return (char*)(HELPNOHELP);
     }
 
-    const char *text = GetCatalogStr(help, def->id, (char*)def->text);
+    const char *text = GetCatalogStr(help, def->key, (char*)def->text);
     char *untagged = UntagText(text);
     return untagged;
 }
@@ -99,7 +99,7 @@ char* AmigaLanguage::GetHelpText(char* ident)
         return (char*)(HELPNOHELP);
     }
 
-    const char *text = GetCatalogStr(help, def->id, (char*)def->text);
+    const char *text = GetCatalogStr(help, def->ident, (char*)def->text);
     char *untagged = UntagText(text);
     return untagged;
 }
@@ -119,7 +119,7 @@ char* AmigaLanguage::GetHelpText(Symbol symbol)
         return (char*)(HELPNOHELP);
     }
 
-    const char *text = GetCatalogStr(help, def->id, (char*)def->text);
+    const char *text = GetCatalogStr(help, def->key, (char*)def->text);
     char *untagged = UntagText(text);
     return untagged;
 }
