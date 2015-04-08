@@ -229,7 +229,7 @@ const char* PositionalNumeralSystem::GetText(double number)
         while (buf->RemoveTrailing('0'))
             ;
 
-        buf->RemoveTrailing('.');
+        buf->RemoveTrailing(fractionpoint);
     }
 
     // Add exponent
@@ -446,7 +446,7 @@ const char* DecimalSystem::GetRealText(double value)
     buf->Append(out);
     while (buf->RemoveTrailing('0'))
         ;
-    buf->RemoveTrailing('.');
+    buf->RemoveTrailing(fractionpoint);
     delete out;
 
     return buf->GetString();
