@@ -118,7 +118,7 @@ bool StandardLanguage::CharIsSpace(long unsigned int character)
 
 bool StandardLanguage::CharIsCntrl(long unsigned int character)
 {
-    return (character <= 32 || character >= 126);
+    return (character < 32 || character > 125);
 }
 
 bool StandardLanguage::StrIsEqualLoc(const char* s1, const char* s2)

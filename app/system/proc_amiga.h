@@ -37,7 +37,6 @@
 #include "system/task.h"
 #include "system/base/thread.h"
 
-#ifdef WITHTEST // Still under development
 #ifdef AMIGA
 #include <exec/io.h>
 #include <exec/memory.h>
@@ -68,6 +67,5 @@ private:
     Process *proc;
 };
 
-#endif
 #endif
 #endif

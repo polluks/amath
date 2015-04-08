@@ -104,10 +104,7 @@ char* PromptStatement::Execute()
     buf->ClearAndCopy(prompt);
     while(buf->RemoveTrailing(' '));
     buf->Append(' ');
-
-    Program->Console->SetPrompt(buf->GetString());
-    Program->Preferences->SetPrompt(buf->GetString());
-
+    Program->SetPrompt(buf->GetString());
     delete buf;
     return (char*)EMPTYSTRING;
 }

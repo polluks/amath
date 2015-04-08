@@ -29,7 +29,6 @@
 #include "system/task_amiga.h"
 
 #ifdef AMIGA
-#ifdef DEVNOTFINISH // Still under development
 #include <exec/io.h>
 #include <exec/memory.h>
 #include <intuition/intuition.h>
@@ -85,5 +84,4 @@ void AmigaTask::WaitExit()
     Wait(1U << signal | SIGBREAKF_CTRL_C | SIGBREAKF_CTRL_D);
 }
 
-#endif
 #endif

@@ -98,7 +98,6 @@ class Program* CreateProgram(int argc, char **argv) {
         out = new StandardProgram();
 #endif
     }
-    out->Initialize(argc, argv);
     return out;
 }
 

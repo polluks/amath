@@ -47,15 +47,16 @@ PreferencesBase::~PreferencesBase()
 
 void PreferencesBase::SetDefaults()
 {
-    AllocAndCopy(&this->prompt, ">>> ");
+    AllocAndCopy(&this->prompt, "> ");
     digits = 9;
 }
 
 char* PreferencesBase::GetDescription()
 {
-    static const char *promptq = "\"";
-    static const char *sprompt = "prompt";
+    static const char promptq   = '"';
+    static const char *sprompt  = "prompt";
     static const char *sdigits  = "digits";
+    static const char delimitor = ';';
 
     Number *d = new RealNumber(GetDigits());
     NumeralSystem *ns = new DecimalSystem(2);
@@ -64,20 +65,22 @@ char* PreferencesBase::GetDescription()
 
     buf->Empty();
     buf->EnsureSize(
-        StrLen(sprompt) + StrLen(SPACE) + StrLen(promptq) +
-        StrLen(prompt) + StrLen(promptq) + StrLen(NEWLINE) +
-        StrLen(sdigits) + StrLen(SPACE) + StrLen(dtext) +
-        StrLen(NEWLINE) + 1);
+        sizeof(sprompt) + sizeof(SPACE) + sizeof(promptq) + StrLen(prompt) +
+        sizeof(promptq) + sizeof(delimitor) + sizeof(NEWLINE) +
+        sizeof(sdigits) + sizeof(SPACE) + StrLen(dtext) + sizeof(delimitor) +
+        sizeof(NEWLINE) + 1);
 
     buf->Append(sprompt);
     buf->Append(SPACE);
     buf->Append(promptq);
     buf->Append(prompt);
     buf->Append(promptq);
+    buf->Append(delimitor);
     buf->Append(NEWLINE);
     buf->Append(sdigits);
     buf->Append(SPACE);
     buf->Append(dtext);
+    buf->Append(delimitor);
     buf->Append(NEWLINE);
 
     delete ns;
@@ -86,6 +89,10 @@ char* PreferencesBase::GetDescription()
 
 void PreferencesBase::SetPrefs(char* prefs)
 {
+    if (prefs == NOMEM) {
+        return;
+    }
+
     Parser *parser = new Parser(prefs);
     SyntaxNode *node = parser->Parse();
     delete parser;

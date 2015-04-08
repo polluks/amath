@@ -25,7 +25,6 @@
  */
 
 #include "clib.h"
-#include "platform.h"
 #include "lib/charbuf.h"
 #include "main/graphlist.h"
 #include "main/evaluator.h"
@@ -40,11 +39,6 @@
 #include "system/base/io.h"
 
 #ifdef AMIGA
-#include <exec/types.h>
-#include <clib/exec_protos.h>
-#include <clib/alib_protos.h>
-#include <clib/dos_protos.h>
-
 #define ARGS_FORMAT "SHELL/S,INPUT/F"
 
 AmigaProgram::AmigaProgram()
@@ -88,6 +82,8 @@ void AmigaProgram::Initialize(int argc, char **argv)
 
 void AmigaProgram::Run()
 {
+    Preferences->Load();
+
     if (Console != NULL) {
         Console->Run();
     } else if (args.input != NULL) {
@@ -105,4 +101,5 @@ void AmigaProgram::Exit()
 }
 
 #endif
+
 

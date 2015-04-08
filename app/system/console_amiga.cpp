@@ -27,10 +27,9 @@
 #include "clib.h"
 #include "main/nodes.h"
 #include "main/evaluator.h"
+#include "system/console_amiga.h"
 
 #ifdef AMIGA
-#include <clib/dos_protos.h>
-#include "system/console_amiga.h"
 
 AmigaShellConsole::AmigaShellConsole(const char *prompt) :
     ConsoleBase(prompt)

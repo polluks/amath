@@ -75,11 +75,15 @@ typedef int bool;
 # ifndef ANSICONSOLE
 #  define ANSICONSOLE
 # endif
+# include <dos/var.h>
+# include <dos/exall.h>
 # include <exec/io.h>
 # include <exec/types.h>
 # include <exec/memory.h>
 # include <exec/semaphores.h>
+# include <clib/alib_protos.h>
 # include <clib/exec_protos.h>
+# include <clib/dos_protos.h>
 #endif
 
 // Check weather an POSIX compatible API is available

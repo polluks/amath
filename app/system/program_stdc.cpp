@@ -79,6 +79,8 @@ void StandardProgram::Initialize(int argc, char **argv)
 
 void StandardProgram::Run()
 {
+    Preferences->Load();
+
     if (Console != NOMEM) {
         Console->Run();
         return;

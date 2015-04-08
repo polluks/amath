@@ -24,7 +24,7 @@
  *
  * Generated with FlexCat. For more information, see:
  * http://sourceforge.net/projects/flexcat/
- * 
+ *
  */
 
 #ifndef AMATH_LOCALIZE_IDENT_HELP_H
@@ -33,7 +33,7 @@
 /**
  * @file  ident.h
  * @brief Localized help text definitions.
- * 
+ *
  */
 
 #include "clib.h"

@@ -56,7 +56,9 @@ void TestProgram::Run()
 }
 
 void TestProgram::Initialize(int argc, char** argv)
-{ }
+{
+    Preferences->Load();
+}
 
 void TestProgram::Exit()
 { }

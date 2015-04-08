@@ -31,12 +31,6 @@
 #include "system/filesystem_amiga.h"
 
 #ifdef AMIGA
-#include <dos/exall.h>
-#include <dos/var.h>
-#include <exec/memory.h>
-#include <exec/types.h>
-#include <clib/exec_protos.h>
-#include <clib/dos_protos.h>
 
 /**
  * @brief

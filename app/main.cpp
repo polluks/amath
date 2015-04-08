@@ -31,6 +31,7 @@
 int main(int argc, char **argv)
 {
     Program = CreateProgram(argc, argv);
+    Program->Initialize(argc, argv);
     Program->Run();
     delete Program;
     FreeAllSafe();
