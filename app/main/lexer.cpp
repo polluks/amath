@@ -78,7 +78,7 @@ void Lexer::Tokenize()
 void Lexer::GetNextToken()
 {
     // Skip spaces and non visible characters
-    while (*str != 0 && (Program->Language->CharIsCntrl(*str) || Program->Language->CharIsSpace(*str))) {
+    while (*str != 0 && ShouldSkip(*str)) {
         str++;
         if (Program->Language->CharIsSpace(*str)) {
             pos++;
@@ -222,4 +222,40 @@ Symbol Lexer::FindKeyword(const char *ident)
     }
 
     return (Symbol)0;
+}
+
+char* Lexer::FindKeyword(Symbol symbol)
+{
+    static const unsigned int kwcount = sizeof(keywords) / sizeof(keyworddef);
+    for (unsigned int i = 0; i < kwcount; i++) {
+        if (keywords[i].symbol == symbol) {
+            return (char*)keywords[i].name;
+        }
+    }
+
+    static const unsigned int ocount = sizeof(operators) / sizeof(operatordef);
+    for (unsigned int i = 0; i < ocount; i++) {
+        if (operators[i].symbol == symbol) {
+            return (char*)&(operators[i].chr);
+        }
+    }
+
+    return NOMEM;
+}
+
+bool Lexer::ShouldSkip(char character)
+{
+    if (character == '\n') {
+        return false;
+    }
+
+    if (Program->Language->CharIsCntrl(character)) {
+        return true;
+    }
+
+    if (Program->Language->CharIsSpace(character)) {
+        return true;
+    }
+
+    return false;
 }
