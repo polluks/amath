@@ -2,9 +2,9 @@
 
 all:	libs app
 
-CC     = m68k.amigaos-gcc
-AR     = m68k.amigaos-ar
-RANLIB = m68k.amigaos-ranlib
+CC     = gcc-amigaos-gcc
+AR     = gcc-amigaos-ar
+RANLIB = gcc-amigaos-ranlib
 CFLAGS = -mc68020  -DWITHTEST -noixemul -I. -Wall -Werror
 LFLAGS = -lgcc -lamathapp -lcamath -lcomplex -lamath
 FLXCAT = flexcat
