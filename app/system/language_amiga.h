@@ -51,9 +51,9 @@ public:
 private:
     struct LocaleBase* base;
     struct Locale* locale;
-    struct Catalog *help;
-    struct Catalog *ident;
-    struct Catalog *text;
+    struct Catalog *helpcatalog;
+    struct Catalog *identcatalog;
+    struct Catalog *textcatalog;
 };
 
 #endif
