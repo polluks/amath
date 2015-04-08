@@ -9,6 +9,8 @@
 ; Build with:
 ; flexcat ident.cd ../app/localize/ident.h=ident.sd
 ; #############################################################################
+#language english
+#version 0
 abs (/40/)
 The absolute value (or modulus) |x| of a real number x is the#NEWLINE#non-negative value of x without regard to its sign.#NEWLINE##SYNTAXHIGHLIGHT#Example: abs(-237.25)#NORMALTEXT##NEWLINE#
 sgn (/40/)
