@@ -39,7 +39,7 @@
 CharBuffer* StandardFilesystem::ListDirectory(const char *path)
 {
 #ifdef UNIX
-	CharBuffer *pathbuf = new CharBuffer();
+    CharBuffer *pathbuf = new CharBuffer();
     pathbuf->Empty();
     if (path == NOMEM) {
         pathbuf->Append(".");
@@ -108,9 +108,9 @@ CharBuffer* StandardFilesystem::ListDirectory(const char *path)
     delete pathbuf;
     return lines;
 #else
-	CharBuffer *lines = new CharBuffer();
-	lines->Empty();
-	return lines;
+    CharBuffer *lines = new CharBuffer();
+    lines->Empty();
+    return lines;
 #endif
 }
 

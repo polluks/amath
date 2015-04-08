@@ -34,11 +34,11 @@
  */
 
 #include "clib.h"
+#include "system/task.h"
 #include "system/task_amiga.h"
 #include "system/base/thread.h"
 
 #ifdef AMIGA
-#ifdef DEVNOTFINISH // Still under development
 #include <exec/io.h>
 #include <exec/memory.h>
 #include <libraries/dos.h>
@@ -74,6 +74,5 @@ private:
     Task *task;
 };
 
-#endif
 #endif
 #endif

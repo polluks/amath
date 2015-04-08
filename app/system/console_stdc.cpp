@@ -91,7 +91,7 @@ void StandardConsole::ReadLine()
     line = proc->GetLine();
 
 #ifdef UNIX
-	tcsetattr(STDIN_FILENO, TCSANOW, &old_tio);
+    tcsetattr(STDIN_FILENO, TCSANOW, &old_tio);
 #endif
 }
 

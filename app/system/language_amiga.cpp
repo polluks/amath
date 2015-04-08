@@ -34,9 +34,7 @@
 #include "system/language_amiga.h"
 
 #ifdef AMIGA
-#include "clib/locale_protos.h"
-//#include <inline/locale.h>
-#include <clib/exec_protos.h>
+#include <clib/locale_protos.h>
 
 AmigaLanguage::AmigaLanguage()
 {

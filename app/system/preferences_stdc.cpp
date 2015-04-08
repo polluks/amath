@@ -38,6 +38,7 @@ static const char *permname = "/usr/local/etc/amath.conf";
 
 bool StandardPreferences::Load()
 {
+#ifdef UNIX
     FILE *file = fopen(tempname, "r");
     if (!file) {
         return false;
@@ -49,10 +50,12 @@ bool StandardPreferences::Load()
     const int bufsize = 64;
     char* buf = new char[bufsize];
     char* c;
+    int s = 1;
 
     do {
         c = fgets(buf, bufsize, file);
         if (c != NULL) {
+            text->EnsureSize(s++);
             text->Append(c);
         }
     } while (c != NULL);
@@ -61,6 +64,7 @@ bool StandardPreferences::Load()
     fclose(file);
     SetPrefs(text->GetString());
     delete text;
+#endif
     return true;
 }
 
@@ -76,6 +80,7 @@ bool StandardPreferences::Save()
 
 bool StandardPreferences::SavePrefs(const char* name)
 {
+#ifdef UNIX
     FILE *file = fopen(name, "w");
     if (!file) {
         return false;
@@ -84,6 +89,7 @@ bool StandardPreferences::SavePrefs(const char* name)
     char *out = GetDescription();
     fputs(out, file);
     fclose(file);
+#endif
     return true;
 }
 

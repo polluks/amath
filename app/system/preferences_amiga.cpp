@@ -30,12 +30,6 @@
 #include "system/preferences_amiga.h"
 
 #ifdef AMIGA
-#include <dos/exall.h>
-#include <dos/var.h>
-#include <exec/memory.h>
-#include <exec/types.h>
-#include <clib/exec_protos.h>
-#include <clib/dos_protos.h>
 
 static const char *tempname = "ENV:amath.prefs";
 static const char *permname = "ENVARC:amath.prefs";
@@ -53,10 +47,12 @@ bool AmigaPreferences::Load()
     const int bufsize = 64;
     char* buf = new char[bufsize];
     char* c;
+    int s = 1;
 
     do {
         c = FGets(file, buf, bufsize);
         if (c != NULL) {
+            text->EnsureSize(s++);
             text->Append(c);
         }
     } while (c != NULL);

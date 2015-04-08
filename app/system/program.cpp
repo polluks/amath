@@ -38,14 +38,11 @@ Program::Program()
     Functions = new FunctionList();
     Graphs = new GraphList();
     ins = new RealNumber();
-
-    Preferences = CreatePreferences();
-//    Preferences->Load();
-
     Language = CreateLanguage();
+    Filesystem = CreateFilesystem();
+    Preferences = CreatePreferences();
     Input = new DecimalSystem(Preferences->GetDigits(), Language->GetFractionPoint());
     Output = new DecimalSystem(Preferences->GetDigits(), Language->GetFractionPoint());
-    Filesystem = CreateFilesystem();
 }
 
 Program::~Program()
@@ -59,9 +56,8 @@ Program::~Program()
     delete Language;
     delete ins;
 
-//    Preferences->Keep();
+    Preferences->Keep();
     delete Preferences;
-
 }
 
 void Program::NewPositionalInput(short unsigned int base, short unsigned int digits)
@@ -88,6 +84,14 @@ void Program::NewPositionalOutput(short unsigned int base, short unsigned int di
     } else {
         Output = new PositionalNumeralSystem(base, digits, fractionpoint);
     }
+}
+
+void Program::SetPrompt(const char* text)
+{
+    if (Console != NOMEM) {
+        Console->SetPrompt(text);
+    }
+    Preferences->SetPrompt(text);
 }
 
 Number* Program::GetLastResult()
