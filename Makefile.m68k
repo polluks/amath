@@ -5,7 +5,7 @@ all:	libs app
 CC     = m68k-amigaos-gcc
 AR     = m68k-amigaos-ar
 RANLIB = m68k-amigaos-ranlib
-CFLAGS = -DAOS3 -mc68020  -DWITHTEST -DAOS3 -noixemul -I. -Wall -Werror
+CFLAGS = -mc68020  -DWITHTEST -noixemul -I. -Wall -Werror
 LFLAGS = -lgcc -lamathapp -lcamath -lcomplex -lamath
 
 evaluator.o:	app/main/evaluator.cpp
@@ -135,244 +135,244 @@ real.o:	app/lib/real.cpp
 	${CC} -O2 ${CFLAGS} -Ilib -Iapp -Wall -Werror -c app/lib/real.cpp
 
 acos.o:	lib/real/acos.c
-	${CC} -O3 -std=c9x -DAOS3 -mc68020 -DAOS3 -fno-builtin -fno-strict-aliasing -ffloat-store -Wall -Werror -Ilib -Ilib/real -c lib/real/acos.c
+	${CC} -O3 -std=c9x -mc68020 -fno-builtin -fno-strict-aliasing -ffloat-store -Wall -Werror -Ilib -Ilib/real -c lib/real/acos.c
 
 acosh.o:	lib/real/acosh.c
-	${CC} -O3 -std=c9x -DAOS3 -mc68020 -DAOS3 -fno-builtin -fno-strict-aliasing -ffloat-store -Wall -Werror -Ilib -Ilib/real -c lib/real/acosh.c
+	${CC} -O3 -std=c9x -mc68020 -fno-builtin -fno-strict-aliasing -ffloat-store -Wall -Werror -Ilib -Ilib/real -c lib/real/acosh.c
 
 asin.o:	lib/real/asin.c
-	${CC} -O3 -std=c9x -DAOS3 -mc68020 -DAOS3 -fno-builtin -fno-strict-aliasing -ffloat-store -Wall -Werror -Ilib -Ilib/real -c lib/real/asin.c
+	${CC} -O3 -std=c9x -mc68020 -fno-builtin -fno-strict-aliasing -ffloat-store -Wall -Werror -Ilib -Ilib/real -c lib/real/asin.c
 
 asinh.o:	lib/real/asinh.c
-	${CC} -O3 -std=c9x -DAOS3 -mc68020 -DAOS3 -fno-builtin -fno-strict-aliasing -ffloat-store -Wall -Werror -Ilib -Ilib/real -c lib/real/asinh.c
+	${CC} -O3 -std=c9x -mc68020 -fno-builtin -fno-strict-aliasing -ffloat-store -Wall -Werror -Ilib -Ilib/real -c lib/real/asinh.c
 
 atan.o:	lib/real/atan.c
-	${CC} -O3 -std=c9x -DAOS3 -mc68020 -DAOS3 -fno-builtin -fno-strict-aliasing -ffloat-store -Wall -Werror -Ilib -Ilib/real -c lib/real/atan.c
+	${CC} -O3 -std=c9x -mc68020 -fno-builtin -fno-strict-aliasing -ffloat-store -Wall -Werror -Ilib -Ilib/real -c lib/real/atan.c
 
 atan2.o:	lib/real/atan2.c
-	${CC} -O3 -std=c9x -DAOS3 -mc68020 -DAOS3 -fno-builtin -fno-strict-aliasing -ffloat-store -Wall -Werror -Ilib -Ilib/real -c lib/real/atan2.c
+	${CC} -O3 -std=c9x -mc68020 -fno-builtin -fno-strict-aliasing -ffloat-store -Wall -Werror -Ilib -Ilib/real -c lib/real/atan2.c
 
 atanh.o:	lib/real/atanh.c
-	${CC} -O3 -std=c9x -DAOS3 -mc68020 -DAOS3 -fno-builtin -fno-strict-aliasing -ffloat-store -Wall -Werror -Ilib -Ilib/real -c lib/real/atanh.c
+	${CC} -O3 -std=c9x -mc68020 -fno-builtin -fno-strict-aliasing -ffloat-store -Wall -Werror -Ilib -Ilib/real -c lib/real/atanh.c
 
 cbrt.o:	lib/real/cbrt.c
-	${CC} -O3 -std=c9x -DAOS3 -mc68020 -DAOS3 -fno-builtin -fno-strict-aliasing -ffloat-store -Wall -Werror -Ilib -Ilib/real -c lib/real/cbrt.c
+	${CC} -O3 -std=c9x -mc68020 -fno-builtin -fno-strict-aliasing -ffloat-store -Wall -Werror -Ilib -Ilib/real -c lib/real/cbrt.c
 
 ceil.o:	lib/real/ceil.c
-	${CC} -O3 -std=c9x -DAOS3 -mc68020 -DAOS3 -fno-builtin -fno-strict-aliasing -ffloat-store -Wall -Werror -Ilib -Ilib/real -c lib/real/ceil.c
+	${CC} -O3 -std=c9x -mc68020 -fno-builtin -fno-strict-aliasing -ffloat-store -Wall -Werror -Ilib -Ilib/real -c lib/real/ceil.c
 
 copysign.o:	lib/real/copysign.c
-	${CC} -O3 -std=c9x -DAOS3 -mc68020 -DAOS3 -fno-builtin -fno-strict-aliasing -ffloat-store -Wall -Werror -Ilib -Ilib/real -c lib/real/copysign.c
+	${CC} -O3 -std=c9x -mc68020 -fno-builtin -fno-strict-aliasing -ffloat-store -Wall -Werror -Ilib -Ilib/real -c lib/real/copysign.c
 
 cos.o:	lib/real/cos.c
-	${CC} -O3 -std=c9x -DAOS3 -mc68020 -DAOS3 -fno-builtin -fno-strict-aliasing -ffloat-store -Wall -Werror -Ilib -Ilib/real -c lib/real/cos.c
+	${CC} -O3 -std=c9x -mc68020 -fno-builtin -fno-strict-aliasing -ffloat-store -Wall -Werror -Ilib -Ilib/real -c lib/real/cos.c
 
 cosh.o:	lib/real/cosh.c
-	${CC} -O3 -std=c9x -DAOS3 -mc68020 -DAOS3 -fno-builtin -fno-strict-aliasing -ffloat-store -Wall -Werror -Ilib -Ilib/real -c lib/real/cosh.c
+	${CC} -O3 -std=c9x -mc68020 -fno-builtin -fno-strict-aliasing -ffloat-store -Wall -Werror -Ilib -Ilib/real -c lib/real/cosh.c
 
 exp.o:	lib/real/exp.c
-	${CC} -O3 -std=c9x -DAOS3 -mc68020 -DAOS3 -fno-builtin -fno-strict-aliasing -ffloat-store -Wall -Werror -Ilib -Ilib/real -c lib/real/exp.c
+	${CC} -O3 -std=c9x -mc68020 -fno-builtin -fno-strict-aliasing -ffloat-store -Wall -Werror -Ilib -Ilib/real -c lib/real/exp.c
 
 expm1.o:	lib/real/expm1.c
-	${CC} -O3 -std=c9x -DAOS3 -mc68020 -DAOS3 -fno-builtin -fno-strict-aliasing -ffloat-store -Wall -Werror -Ilib -Ilib/real -c lib/real/expm1.c
+	${CC} -O3 -std=c9x -mc68020 -fno-builtin -fno-strict-aliasing -ffloat-store -Wall -Werror -Ilib -Ilib/real -c lib/real/expm1.c
 
 fabs.o:	lib/real/fabs.c
-	${CC} -O3 -std=c9x -DAOS3 -mc68020 -DAOS3 -fno-builtin -fno-strict-aliasing -ffloat-store -Wall -Werror -Ilib -Ilib/real -c lib/real/fabs.c
+	${CC} -O3 -std=c9x -mc68020 -fno-builtin -fno-strict-aliasing -ffloat-store -Wall -Werror -Ilib -Ilib/real -c lib/real/fabs.c
 
 finite.o:	lib/real/finite.c
-	${CC} -O3 -std=c9x -DAOS3 -mc68020 -DAOS3 -fno-builtin -fno-strict-aliasing -ffloat-store -Wall -Werror -Ilib -Ilib/real -c lib/real/finite.c
+	${CC} -O3 -std=c9x -mc68020 -fno-builtin -fno-strict-aliasing -ffloat-store -Wall -Werror -Ilib -Ilib/real -c lib/real/finite.c
 
 floor.o:	lib/real/floor.c
-	${CC} -O3 -std=c9x -DAOS3 -mc68020 -DAOS3 -fno-builtin -fno-strict-aliasing -ffloat-store -Wall -Werror -Ilib -Ilib/real -c lib/real/floor.c
+	${CC} -O3 -std=c9x -mc68020 -fno-builtin -fno-strict-aliasing -ffloat-store -Wall -Werror -Ilib -Ilib/real -c lib/real/floor.c
 
 fmod.o:	lib/real/fmod.c
-	${CC} -O3 -std=c9x -DAOS3 -mc68020 -DAOS3 -fno-builtin -fno-strict-aliasing -ffloat-store -Wall -Werror -Ilib -Ilib/real -c lib/real/fmod.c
+	${CC} -O3 -std=c9x -mc68020 -fno-builtin -fno-strict-aliasing -ffloat-store -Wall -Werror -Ilib -Ilib/real -c lib/real/fmod.c
 
 hypot.o:	lib/real/hypot.c
-	${CC} -O3 -std=c9x -DAOS3 -mc68020 -DAOS3 -fno-builtin -fno-strict-aliasing -ffloat-store -Wall -Werror -Ilib -Ilib/real -c lib/real/hypot.c
+	${CC} -O3 -std=c9x -mc68020 -fno-builtin -fno-strict-aliasing -ffloat-store -Wall -Werror -Ilib -Ilib/real -c lib/real/hypot.c
 
 isnan.o:	lib/real/isnan.c
-	${CC} -O3 -std=c9x -DAOS3 -mc68020 -DAOS3 -fno-builtin -fno-strict-aliasing -ffloat-store -Wall -Werror -Ilib -Ilib/real -c lib/real/isnan.c
+	${CC} -O3 -std=c9x -mc68020 -fno-builtin -fno-strict-aliasing -ffloat-store -Wall -Werror -Ilib -Ilib/real -c lib/real/isnan.c
 
 kcos.o:	lib/real/kcos.c
-	${CC} -O3 -std=c9x -DAOS3 -mc68020 -DAOS3 -fno-builtin -fno-strict-aliasing -ffloat-store -Wall -Werror -Ilib -Ilib/real -c lib/real/kcos.c
+	${CC} -O3 -std=c9x -mc68020 -fno-builtin -fno-strict-aliasing -ffloat-store -Wall -Werror -Ilib -Ilib/real -c lib/real/kcos.c
 
 kremp2.o:	lib/real/kremp2.c
-	${CC} -O3 -std=c9x -DAOS3 -mc68020 -DAOS3 -fno-builtin -fno-strict-aliasing -ffloat-store -Wall -Werror -Ilib -Ilib/real -c lib/real/kremp2.c
+	${CC} -O3 -std=c9x -mc68020 -fno-builtin -fno-strict-aliasing -ffloat-store -Wall -Werror -Ilib -Ilib/real -c lib/real/kremp2.c
 
 ksin.o:	lib/real/ksin.c
-	${CC} -O3 -std=c9x -DAOS3 -mc68020 -DAOS3 -fno-builtin -fno-strict-aliasing -ffloat-store -Wall -Werror -Ilib -Ilib/real -c lib/real/ksin.c
+	${CC} -O3 -std=c9x -mc68020 -fno-builtin -fno-strict-aliasing -ffloat-store -Wall -Werror -Ilib -Ilib/real -c lib/real/ksin.c
 
 ktan.o:	lib/real/ktan.c
-	${CC} -O3 -std=c9x -DAOS3 -mc68020 -DAOS3 -fno-builtin -fno-strict-aliasing -ffloat-store -Wall -Werror -Ilib -Ilib/real -c lib/real/ktan.c
+	${CC} -O3 -std=c9x -mc68020 -fno-builtin -fno-strict-aliasing -ffloat-store -Wall -Werror -Ilib -Ilib/real -c lib/real/ktan.c
 
 log.o:	lib/real/log.c
-	${CC} -O3 -std=c9x -DAOS3 -mc68020 -DAOS3 -fno-builtin -fno-strict-aliasing -ffloat-store -Wall -Werror -Ilib -Ilib/real -c lib/real/log.c
+	${CC} -O3 -std=c9x -mc68020 -fno-builtin -fno-strict-aliasing -ffloat-store -Wall -Werror -Ilib -Ilib/real -c lib/real/log.c
 
 log10.o:	lib/real/log10.c
-	${CC} -O3 -std=c9x -DAOS3 -mc68020 -DAOS3 -fno-builtin -fno-strict-aliasing -ffloat-store -Wall -Werror -Ilib -Ilib/real -c lib/real/log10.c
+	${CC} -O3 -std=c9x -mc68020 -fno-builtin -fno-strict-aliasing -ffloat-store -Wall -Werror -Ilib -Ilib/real -c lib/real/log10.c
 
 log1p.o:	lib/real/log1p.c
-	${CC} -O3 -std=c9x -DAOS3 -mc68020 -DAOS3 -fno-builtin -fno-strict-aliasing -ffloat-store -Wall -Werror -Ilib -Ilib/real -c lib/real/log1p.c
+	${CC} -O3 -std=c9x -mc68020 -fno-builtin -fno-strict-aliasing -ffloat-store -Wall -Werror -Ilib -Ilib/real -c lib/real/log1p.c
 
 pow.o:	lib/real/pow.c
-	${CC} -O3 -std=c9x -DAOS3 -mc68020 -DAOS3 -fno-builtin -fno-strict-aliasing -ffloat-store -Wall -Werror -Ilib -Ilib/real -c lib/real/pow.c
+	${CC} -O3 -std=c9x -mc68020 -fno-builtin -fno-strict-aliasing -ffloat-store -Wall -Werror -Ilib -Ilib/real -c lib/real/pow.c
 
 remp2.o:	lib/real/remp2.c
-	${CC} -O3 -std=c9x -DAOS3 -mc68020 -DAOS3 -fno-builtin -fno-strict-aliasing -ffloat-store -Wall -Werror -Ilib -Ilib/real -c lib/real/remp2.c
+	${CC} -O3 -std=c9x -mc68020 -fno-builtin -fno-strict-aliasing -ffloat-store -Wall -Werror -Ilib -Ilib/real -c lib/real/remp2.c
 
 round.o:	lib/real/round.c
-	${CC} -O3 -std=c9x -DAOS3 -mc68020 -DAOS3 -fno-builtin -fno-strict-aliasing -ffloat-store -Wall -Werror -Ilib -Ilib/real -c lib/real/round.c
+	${CC} -O3 -std=c9x -mc68020 -fno-builtin -fno-strict-aliasing -ffloat-store -Wall -Werror -Ilib -Ilib/real -c lib/real/round.c
 
 scalbn.o:	lib/real/scalbn.c
-	${CC} -O3 -std=c9x -DAOS3 -mc68020 -DAOS3 -fno-builtin -fno-strict-aliasing -ffloat-store -Wall -Werror -Ilib -Ilib/real -c lib/real/scalbn.c
+	${CC} -O3 -std=c9x -mc68020 -fno-builtin -fno-strict-aliasing -ffloat-store -Wall -Werror -Ilib -Ilib/real -c lib/real/scalbn.c
 
 sin.o:	lib/real/sin.c
-	${CC} -O3 -std=c9x -DAOS3 -mc68020 -DAOS3 -fno-builtin -fno-strict-aliasing -ffloat-store -Wall -Werror -Ilib -Ilib/real -c lib/real/sin.c
+	${CC} -O3 -std=c9x -mc68020 -fno-builtin -fno-strict-aliasing -ffloat-store -Wall -Werror -Ilib -Ilib/real -c lib/real/sin.c
 
 sinh.o:	lib/real/sinh.c
-	${CC} -O3 -std=c9x -DAOS3 -mc68020 -DAOS3 -fno-builtin -fno-strict-aliasing -ffloat-store -Wall -Werror -Ilib -Ilib/real -c lib/real/sinh.c
+	${CC} -O3 -std=c9x -mc68020 -fno-builtin -fno-strict-aliasing -ffloat-store -Wall -Werror -Ilib -Ilib/real -c lib/real/sinh.c
 
 sqrt.o:	lib/real/sqrt.c
-	${CC} -O3 -std=c9x -DAOS3 -mc68020 -DAOS3 -fno-builtin -fno-strict-aliasing -ffloat-store -Wall -Werror -Ilib -Ilib/real -c lib/real/sqrt.c
+	${CC} -O3 -std=c9x -mc68020 -fno-builtin -fno-strict-aliasing -ffloat-store -Wall -Werror -Ilib -Ilib/real -c lib/real/sqrt.c
 
 tan.o:	lib/real/tan.c
-	${CC} -O3 -std=c9x -DAOS3 -mc68020 -DAOS3 -fno-builtin -fno-strict-aliasing -ffloat-store -Wall -Werror -Ilib -Ilib/real -c lib/real/tan.c
+	${CC} -O3 -std=c9x -mc68020 -fno-builtin -fno-strict-aliasing -ffloat-store -Wall -Werror -Ilib -Ilib/real -c lib/real/tan.c
 
 tanh.o:	lib/real/tanh.c
-	${CC} -O3 -std=c9x -DAOS3 -mc68020 -DAOS3 -fno-builtin -fno-strict-aliasing -ffloat-store -Wall -Werror -Ilib -Ilib/real -c lib/real/tanh.c
+	${CC} -O3 -std=c9x -mc68020 -fno-builtin -fno-strict-aliasing -ffloat-store -Wall -Werror -Ilib -Ilib/real -c lib/real/tanh.c
 
 trunc.o:	lib/real/trunc.c
-	${CC} -O3 -std=c9x -DAOS3 -mc68020 -DAOS3 -fno-builtin -fno-strict-aliasing -ffloat-store -Wall -Werror -Ilib -Ilib/real -c lib/real/trunc.c
+	${CC} -O3 -std=c9x -mc68020 -fno-builtin -fno-strict-aliasing -ffloat-store -Wall -Werror -Ilib -Ilib/real -c lib/real/trunc.c
 
 cacos.o:	lib/cplex/cacos.c
-	${CC} -O3 -std=c9x -DAOS3 -mc68020 -DAOS3 -fno-builtin -Wall -Werror -Ilib -Ilib/cplex -c lib/cplex/cacos.c
+	${CC} -O3 -std=c9x -mc68020 -fno-builtin -Wall -Werror -Ilib -Ilib/cplex -c lib/cplex/cacos.c
 
 cacosh.o:	lib/cplex/cacosh.c
-	${CC} -O3 -std=c9x -DAOS3 -mc68020 -DAOS3 -fno-builtin -Wall -Werror -Ilib -Ilib/cplex -c lib/cplex/cacosh.c
+	${CC} -O3 -std=c9x -mc68020 -fno-builtin -Wall -Werror -Ilib -Ilib/cplex -c lib/cplex/cacosh.c
 
 cacot.o:	lib/cplex/cacot.c
-	${CC} -O3 -std=c9x -DAOS3 -mc68020 -DAOS3 -fno-builtin -Wall -Werror -Ilib -Ilib/cplex -c lib/cplex/cacot.c
+	${CC} -O3 -std=c9x -mc68020 -fno-builtin -Wall -Werror -Ilib -Ilib/cplex -c lib/cplex/cacot.c
 
 cacoth.o:	lib/cplex/cacoth.c
-	${CC} -O3 -std=c9x -DAOS3 -mc68020 -DAOS3 -fno-builtin -Wall -Werror -Ilib -Ilib/cplex -c lib/cplex/cacoth.c
+	${CC} -O3 -std=c9x -mc68020 -fno-builtin -Wall -Werror -Ilib -Ilib/cplex -c lib/cplex/cacoth.c
 
 cacsc.o:	lib/cplex/cacsc.c
-	${CC} -O3 -std=c9x -DAOS3 -mc68020 -DAOS3 -fno-builtin -Wall -Werror -Ilib -Ilib/cplex -c lib/cplex/cacsc.c
+	${CC} -O3 -std=c9x -mc68020 -fno-builtin -Wall -Werror -Ilib -Ilib/cplex -c lib/cplex/cacsc.c
 
 cacsch.o:	lib/cplex/cacsch.c
-	${CC} -O3 -std=c9x -DAOS3 -mc68020 -DAOS3 -fno-builtin -Wall -Werror -Ilib -Ilib/cplex -c lib/cplex/cacsch.c
+	${CC} -O3 -std=c9x -mc68020 -fno-builtin -Wall -Werror -Ilib -Ilib/cplex -c lib/cplex/cacsch.c
 
 casec.o:	lib/cplex/casec.c
-	${CC} -O3 -std=c9x -DAOS3 -mc68020 -DAOS3 -fno-builtin -Wall -Werror -Ilib -Ilib/cplex -c lib/cplex/casec.c
+	${CC} -O3 -std=c9x -mc68020 -fno-builtin -Wall -Werror -Ilib -Ilib/cplex -c lib/cplex/casec.c
 
 casech.o:	lib/cplex/casech.c
-	${CC} -O3 -std=c9x -DAOS3 -mc68020 -DAOS3 -fno-builtin -Wall -Werror -Ilib -Ilib/cplex -c lib/cplex/casech.c
+	${CC} -O3 -std=c9x -mc68020 -fno-builtin -Wall -Werror -Ilib -Ilib/cplex -c lib/cplex/casech.c
 
 casin.o:	lib/cplex/casin.c
-	${CC} -O3 -std=c9x -DAOS3 -mc68020 -DAOS3 -fno-builtin -Wall -Werror -Ilib -Ilib/cplex -c lib/cplex/casin.c
+	${CC} -O3 -std=c9x -mc68020 -fno-builtin -Wall -Werror -Ilib -Ilib/cplex -c lib/cplex/casin.c
 
 casinh.o:	lib/cplex/casinh.c
-	${CC} -O3 -std=c9x -DAOS3 -mc68020 -DAOS3 -fno-builtin -Wall -Werror -Ilib -Ilib/cplex -c lib/cplex/casinh.c
+	${CC} -O3 -std=c9x -mc68020 -fno-builtin -Wall -Werror -Ilib -Ilib/cplex -c lib/cplex/casinh.c
 
 catan.o:	lib/cplex/catan.c
-	${CC} -O3 -std=c9x -DAOS3 -mc68020 -DAOS3 -fno-builtin -Wall -Werror -Ilib -Ilib/cplex -c lib/cplex/catan.c
+	${CC} -O3 -std=c9x -mc68020 -fno-builtin -Wall -Werror -Ilib -Ilib/cplex -c lib/cplex/catan.c
 
 catanh.o:	lib/cplex/catanh.c
-	${CC} -O3 -std=c9x -DAOS3 -mc68020 -DAOS3 -fno-builtin -Wall -Werror -Ilib -Ilib/cplex -c lib/cplex/catanh.c
+	${CC} -O3 -std=c9x -mc68020 -fno-builtin -Wall -Werror -Ilib -Ilib/cplex -c lib/cplex/catanh.c
 
 ccbrt.o:	lib/cplex/ccbrt.c
-	${CC} -O3 -std=c9x -DAOS3 -mc68020 -DAOS3 -fno-builtin -Wall -Werror -Ilib -Ilib/cplex -c lib/cplex/ccbrt.c
+	${CC} -O3 -std=c9x -mc68020 -fno-builtin -Wall -Werror -Ilib -Ilib/cplex -c lib/cplex/ccbrt.c
 
 ccos.o:	lib/cplex/ccos.c
-	${CC} -O3 -std=c9x -DAOS3 -mc68020 -DAOS3 -fno-builtin -Wall -Werror -Ilib -Ilib/cplex -c lib/cplex/ccos.c
+	${CC} -O3 -std=c9x -mc68020 -fno-builtin -Wall -Werror -Ilib -Ilib/cplex -c lib/cplex/ccos.c
 
 ccosh.o:	lib/cplex/ccosh.c
-	${CC} -O3 -std=c9x -DAOS3 -mc68020 -DAOS3 -fno-builtin -Wall -Werror -Ilib -Ilib/cplex -c lib/cplex/ccosh.c
+	${CC} -O3 -std=c9x -mc68020 -fno-builtin -Wall -Werror -Ilib -Ilib/cplex -c lib/cplex/ccosh.c
 
 ccot.o:	lib/cplex/ccot.c
-	${CC} -O3 -std=c9x -DAOS3 -mc68020 -DAOS3 -fno-builtin -Wall -Werror -Ilib -Ilib/cplex -c lib/cplex/ccot.c
+	${CC} -O3 -std=c9x -mc68020 -fno-builtin -Wall -Werror -Ilib -Ilib/cplex -c lib/cplex/ccot.c
 
 ccoth.o:	lib/cplex/ccoth.c
-	${CC} -O3 -std=c9x -DAOS3 -mc68020 -DAOS3 -fno-builtin -Wall -Werror -Ilib -Ilib/cplex -c lib/cplex/ccoth.c
+	${CC} -O3 -std=c9x -mc68020 -fno-builtin -Wall -Werror -Ilib -Ilib/cplex -c lib/cplex/ccoth.c
 
 ccsc.o:	lib/cplex/ccsc.c
-	${CC} -O3 -std=c9x -DAOS3 -mc68020 -DAOS3 -fno-builtin -Wall -Werror -Ilib -Ilib/cplex -c lib/cplex/ccsc.c
+	${CC} -O3 -std=c9x -mc68020 -fno-builtin -Wall -Werror -Ilib -Ilib/cplex -c lib/cplex/ccsc.c
 
 ccsch.o:	lib/cplex/ccsch.c
-	${CC} -O3 -std=c9x -DAOS3 -mc68020 -DAOS3 -fno-builtin -Wall -Werror -Ilib -Ilib/cplex -c lib/cplex/ccsch.c
+	${CC} -O3 -std=c9x -mc68020 -fno-builtin -Wall -Werror -Ilib -Ilib/cplex -c lib/cplex/ccsch.c
 
 cexp.o:	lib/cplex/cexp.c
-	${CC} -O3 -std=c9x -DAOS3 -mc68020 -DAOS3 -fno-builtin -Wall -Werror -Ilib -Ilib/cplex -c lib/cplex/cexp.c
+	${CC} -O3 -std=c9x -mc68020 -fno-builtin -Wall -Werror -Ilib -Ilib/cplex -c lib/cplex/cexp.c
 
 clog.o:	lib/cplex/clog.c
-	${CC} -O3 -std=c9x -DAOS3 -mc68020 -DAOS3 -fno-builtin -Wall -Werror -Ilib -Ilib/cplex -c lib/cplex/clog.c
+	${CC} -O3 -std=c9x -mc68020 -fno-builtin -Wall -Werror -Ilib -Ilib/cplex -c lib/cplex/clog.c
 
 clog10.o:	lib/cplex/clog10.c
-	${CC} -O3 -std=c9x -DAOS3 -mc68020 -DAOS3 -fno-builtin -Wall -Werror -Ilib -Ilib/cplex -c lib/cplex/clog10.c
+	${CC} -O3 -std=c9x -mc68020 -fno-builtin -Wall -Werror -Ilib -Ilib/cplex -c lib/cplex/clog10.c
 
 clogb.o:	lib/cplex/clogb.c
-	${CC} -O3 -std=c9x -DAOS3 -mc68020 -DAOS3 -fno-builtin -Wall -Werror -Ilib -Ilib/cplex -c lib/cplex/clogb.c
+	${CC} -O3 -std=c9x -mc68020 -fno-builtin -Wall -Werror -Ilib -Ilib/cplex -c lib/cplex/clogb.c
 
 cpow.o:	lib/cplex/cpow.c
-	${CC} -O3 -std=c9x -DAOS3 -mc68020 -DAOS3 -fno-builtin -Wall -Werror -Ilib -Ilib/cplex -c lib/cplex/cpow.c
+	${CC} -O3 -std=c9x -mc68020 -fno-builtin -Wall -Werror -Ilib -Ilib/cplex -c lib/cplex/cpow.c
 
 csec.o:	lib/cplex/csec.c
-	${CC} -O3 -std=c9x -DAOS3 -mc68020 -DAOS3 -fno-builtin -Wall -Werror -Ilib -Ilib/cplex -c lib/cplex/csec.c
+	${CC} -O3 -std=c9x -mc68020 -fno-builtin -Wall -Werror -Ilib -Ilib/cplex -c lib/cplex/csec.c
 
 csech.o:	lib/cplex/csech.c
-	${CC} -O3 -std=c9x -DAOS3 -mc68020 -DAOS3 -fno-builtin -Wall -Werror -Ilib -Ilib/cplex -c lib/cplex/csech.c
+	${CC} -O3 -std=c9x -mc68020 -fno-builtin -Wall -Werror -Ilib -Ilib/cplex -c lib/cplex/csech.c
 
 csgn.o:	lib/cplex/csgn.c
-	${CC} -O3 -std=c9x -DAOS3 -mc68020 -DAOS3 -fno-builtin -Wall -Werror -Ilib -Ilib/cplex -c lib/cplex/csgn.c
+	${CC} -O3 -std=c9x -mc68020 -fno-builtin -Wall -Werror -Ilib -Ilib/cplex -c lib/cplex/csgn.c
 
 csin.o:	lib/cplex/csin.c
-	${CC} -O3 -std=c9x -DAOS3 -mc68020 -DAOS3 -fno-builtin -Wall -Werror -Ilib -Ilib/cplex -c lib/cplex/csin.c
+	${CC} -O3 -std=c9x -mc68020 -fno-builtin -Wall -Werror -Ilib -Ilib/cplex -c lib/cplex/csin.c
 
 csinh.o:	lib/cplex/csinh.c
-	${CC} -O3 -std=c9x -DAOS3 -mc68020 -DAOS3 -fno-builtin -Wall -Werror -Ilib -Ilib/cplex -c lib/cplex/csinh.c
+	${CC} -O3 -std=c9x -mc68020 -fno-builtin -Wall -Werror -Ilib -Ilib/cplex -c lib/cplex/csinh.c
 
 csqrt.o:	lib/cplex/csqrt.c
-	${CC} -O3 -std=c9x -DAOS3 -mc68020 -DAOS3 -fno-builtin -Wall -Werror -Ilib -Ilib/cplex -c lib/cplex/csqrt.c
+	${CC} -O3 -std=c9x -mc68020 -fno-builtin -Wall -Werror -Ilib -Ilib/cplex -c lib/cplex/csqrt.c
 
 ctan.o:	lib/cplex/ctan.c
-	${CC} -O3 -std=c9x -DAOS3 -mc68020 -DAOS3 -fno-builtin -Wall -Werror -Ilib -Ilib/cplex -c lib/cplex/ctan.c
+	${CC} -O3 -std=c9x -mc68020 -fno-builtin -Wall -Werror -Ilib -Ilib/cplex -c lib/cplex/ctan.c
 
 ctanh.o:	lib/cplex/ctanh.c
-	${CC} -O3 -std=c9x -DAOS3 -mc68020 -DAOS3 -fno-builtin -Wall -Werror -Ilib -Ilib/cplex -c lib/cplex/ctanh.c
+	${CC} -O3 -std=c9x -mc68020 -fno-builtin -Wall -Werror -Ilib -Ilib/cplex -c lib/cplex/ctanh.c
 
 prim.o:	lib/cplex/prim.c
-	${CC} -O3 -std=c9x -DAOS3 -mc68020 -DAOS3 -fno-builtin -Wall -Werror -Ilib -Ilib/cplex -c lib/cplex/prim.c
+	${CC} -O3 -std=c9x -mc68020 -fno-builtin -Wall -Werror -Ilib -Ilib/cplex -c lib/cplex/prim.c
 
 alloccpy.o:	lib/clib/alloccpy.c
-	${CC} -O3 -std=c9x -DAOS3 -mc68020 -DAOS3 -fno-builtin -Wall -Werror -Ilib -c lib/clib/alloccpy.c
+	${CC} -O3 -std=c9x -mc68020 -fno-builtin -Wall -Werror -Ilib -c lib/clib/alloccpy.c
 
 mem.o:	lib/clib/mem.c
-	${CC} -O3 -std=c9x -DAOS3 -mc68020 -DAOS3 -fno-builtin -Wall -Werror -Ilib -c lib/clib/mem.c
+	${CC} -O3 -std=c9x -mc68020 -fno-builtin -Wall -Werror -Ilib -c lib/clib/mem.c
 
 memcpy.o:	lib/clib/memcpy.c
-	${CC} -O3 -std=c9x -DAOS3 -mc68020 -DAOS3 -fno-builtin -Wall -Werror -Ilib -c lib/clib/memcpy.c
+	${CC} -O3 -std=c9x -mc68020 -fno-builtin -Wall -Werror -Ilib -c lib/clib/memcpy.c
 
 memset.o:	lib/clib/memset.c
-	${CC} -O3 -std=c9x -DAOS3 -mc68020 -DAOS3 -fno-builtin -Wall -Werror -Ilib -c lib/clib/memset.c
+	${CC} -O3 -std=c9x -mc68020 -fno-builtin -Wall -Werror -Ilib -c lib/clib/memset.c
 
 strcmp.o:	lib/clib/strcmp.c
-	${CC} -O3 -std=c9x -DAOS3 -mc68020 -DAOS3 -fno-builtin -Wall -Werror -Ilib -c lib/clib/strcmp.c
+	${CC} -O3 -std=c9x -mc68020 -fno-builtin -Wall -Werror -Ilib -c lib/clib/strcmp.c
 
 strlen.o:	lib/clib/strlen.c
-	${CC} -O3 -std=c9x -DAOS3 -mc68020 -DAOS3 -fno-builtin -Wall -Werror -Ilib -c lib/clib/strlen.c
+	${CC} -O3 -std=c9x -mc68020 -fno-builtin -Wall -Werror -Ilib -c lib/clib/strlen.c
 
 untag.o:	lib/clib/untag.c
-	${CC} -O3 -std=c9x -DAOS3 -mc68020 -DAOS3 -fno-builtin -Wall -Werror -Ilib -c lib/clib/untag.c
+	${CC} -O3 -std=c9x -mc68020 -fno-builtin -Wall -Werror -Ilib -c lib/clib/untag.c
 
 dragon4.o:	lib/dconv/dragon4.cpp
-	${CC} -O3 -DAOS3 -mc68020 -DAOS3 -fno-builtin -Wall -Werror -Ilib -Ilib/dconv -c lib/dconv/dragon4.cpp
+	${CC} -O3 -mc68020 -fno-builtin -Wall -Werror -Ilib -Ilib/dconv -c lib/dconv/dragon4.cpp
 
 dmath.o:	lib/dconv/dmath.cpp
-	${CC} -O3 -DAOS3 -mc68020 -DAOS3 -fno-builtin -Wall -Werror -Ilib -Ilib/dconv -c lib/dconv/dmath.cpp
+	${CC} -O3 -mc68020 -fno-builtin -Wall -Werror -Ilib -Ilib/dconv -c lib/dconv/dmath.cpp
 
 dprint.o:	lib/dconv/dprint.cpp
-	${CC} -O3 -DAOS3 -mc68020 -DAOS3 -fno-builtin -Wall -Werror -Ilib -Ilib/dconv -c lib/dconv/dprint.cpp
+	${CC} -O3 -mc68020 -fno-builtin -Wall -Werror -Ilib -Ilib/dconv -c lib/dconv/dprint.cpp
 
 libs:	libamath libcomplex libcamath libamathapp
 
@@ -393,7 +393,7 @@ libcamath:	 alloccpy.o mem.o memcpy.o memset.o strcmp.o strlen.o untag.o dragon4
 	${RANLIB} libcamath.a
 
 app:	libs  evaluator.o functions.o graphlist.o lexer.o nodes.o operators.o optimizer.o parser.o statements.o token.o values.o viewer.o console.o console_amiga.o console_stdc.o filesystem_amiga.o filesystem_stdc.o graph.o graph_amiga.o graph_gtk.o language.o language_amiga.o language_stdc.o preferences.o preferences_amiga.o preferences_stdc.o proc_amiga.o program.o program_amiga.o program_stdc.o program_test.o task_amiga.o task_stdc.o window_amiga.o io.o main.o
-	${CC} ${CFLAGS} -DAOS3 -mc68020 -noixemul -s -L. -o amath  evaluator.o functions.o graphlist.o lexer.o nodes.o operators.o optimizer.o parser.o statements.o token.o values.o viewer.o console.o console_amiga.o console_stdc.o filesystem_amiga.o filesystem_stdc.o graph.o graph_amiga.o graph_gtk.o language.o language_amiga.o language_stdc.o preferences.o preferences_amiga.o preferences_stdc.o proc_amiga.o program.o program_amiga.o program_stdc.o program_test.o task_amiga.o task_stdc.o window_amiga.o io.o main.o ${LFLAGS}
+	${CC} ${CFLAGS} -mc68020 -noixemul -s -L. -o amath  evaluator.o functions.o graphlist.o lexer.o nodes.o operators.o optimizer.o parser.o statements.o token.o values.o viewer.o console.o console_amiga.o console_stdc.o filesystem_amiga.o filesystem_stdc.o graph.o graph_amiga.o graph_gtk.o language.o language_amiga.o language_stdc.o preferences.o preferences_amiga.o preferences_stdc.o proc_amiga.o program.o program_amiga.o program_stdc.o program_test.o task_amiga.o task_stdc.o window_amiga.o io.o main.o ${LFLAGS}
 
 clean:
 	rm -f  aengine.o charbuf.o cplex.o fgrid.o ntext.o real.o  acos.o acosh.o asin.o asinh.o atan.o atan2.o atanh.o cbrt.o ceil.o copysign.o cos.o cosh.o exp.o expm1.o fabs.o finite.o floor.o fmod.o hypot.o isnan.o kcos.o kremp2.o ksin.o ktan.o log.o log10.o log1p.o pow.o remp2.o round.o scalbn.o sin.o sinh.o sqrt.o tan.o tanh.o trunc.o  cacos.o cacosh.o cacot.o cacoth.o cacsc.o cacsch.o casec.o casech.o casin.o casinh.o catan.o catanh.o ccbrt.o ccos.o ccosh.o ccot.o ccoth.o ccsc.o ccsch.o cexp.o clog.o clog10.o clogb.o cpow.o csec.o csech.o csgn.o csin.o csinh.o csqrt.o ctan.o ctanh.o prim.o  alloccpy.o mem.o memcpy.o memset.o strcmp.o strlen.o untag.o dragon4.o dmath.o dprint.o  evaluator.o functions.o graphlist.o lexer.o nodes.o operators.o optimizer.o parser.o statements.o token.o values.o viewer.o console.o console_amiga.o console_stdc.o filesystem_amiga.o filesystem_stdc.o graph.o graph_amiga.o graph_gtk.o language.o language_amiga.o language_stdc.o preferences.o preferences_amiga.o preferences_stdc.o proc_amiga.o program.o program_amiga.o program_stdc.o program_test.o task_amiga.o task_stdc.o window_amiga.o io.o main.o libamath.a libcamath.a libcomplex.a libamathapp.a amath

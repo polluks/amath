@@ -193,20 +193,15 @@ if $VALID ; then
 	else
 		CROSSCOMPILEFLAGS=""
 	fi
-	
-#	read -p "Build for Amiga OS3 [y/N]? " AOS
-#	read -p "Include regression test [Y/n]? " REGTEST
-	
-	if [ -n "$AOS" ];
+
+	if [ -n "$GCC295" ];
 	then
-		if [ "$AOS" = "y" ] || [ "$AOS" = "Y" ];
+		if [ "$GCC295" = "y" ] || [ "$GCC295" = "Y" ];
 		then
 			gcclib="-lgcc"
-			osext="-DAOS3 "
 		fi
 	else
 		gcclib="-lstdc++"
-		osext=""
 	fi
 	
 	if [ -n "$REGTEST" ];
@@ -244,7 +239,7 @@ if $VALID ; then
 	echo "CC     = ${CROSSCOMPILE}gcc"
 	echo "AR     = ${CROSSCOMPILE}ar"
 	echo "RANLIB = ${CROSSCOMPILE}ranlib"
-	echo "CFLAGS = ${ARCFLAG}$options ${osext}${CROSSCOMPILEFLAGS}-I. -Wall -Werror"
+	echo "CFLAGS = ${ARCFLAG}$options ${CROSSCOMPILEFLAGS}-I. -Wall -Werror"
 	echo "LFLAGS = $gcclib -lamathapp${outext} -lcamath${outext} -lcomplex${outext} -lamath${outext}"
 	echo 
 	
@@ -279,7 +274,7 @@ if $VALID ; then
 	do
 		b=`basename $f .c`
 		echo "${b}.o:	${f}"
-		echo "	\${CC} ${libop} -std=c9x ${ARCFLAG}${osext}-fno-builtin ${nff}-Wall -Werror -Ilib -Ilib/real -c ${f}"
+		echo "	\${CC} ${libop} -std=c9x ${ARCFLAG}-fno-builtin ${nff}-Wall -Werror -Ilib -Ilib/real -c ${f}"
 		echo
 		libamath="${libamath} ${b}.o"
 	done
@@ -289,7 +284,7 @@ if $VALID ; then
 	do
 		b=`basename $f .c`
 		echo "${b}.o:	${f}"
-		echo "	\${CC} ${libop} -std=c9x ${ARCFLAG}${osext}-fno-builtin -Wall -Werror -Ilib -Ilib/cplex -c ${f}"
+		echo "	\${CC} ${libop} -std=c9x ${ARCFLAG}-fno-builtin -Wall -Werror -Ilib -Ilib/cplex -c ${f}"
 		echo
 		libcomplex="${libcomplex} ${b}.o"
 	done
@@ -299,7 +294,7 @@ if $VALID ; then
 	do
 		b=`basename $f .c`
 		echo "${b}.o:	${f}"
-		echo "	\${CC} ${libop} -std=c9x ${ARCFLAG}${ansicon}${osext}-fno-builtin -Wall -Werror -Ilib -c ${f}"
+		echo "	\${CC} ${libop} -std=c9x ${ARCFLAG}${ansicon}-fno-builtin -Wall -Werror -Ilib -c ${f}"
 		echo
 		libc="${libc} ${b}.o"
 	done
@@ -308,7 +303,7 @@ if $VALID ; then
 	do
 		b=`basename $f .cpp`
 		echo "${b}.o:	${f}"
-		echo "	\${CC} ${libop} ${ARCFLAG}${osext}-fno-builtin -Wall -Werror -Ilib -Ilib/dconv -c ${f}"
+		echo "	\${CC} ${libop} ${ARCFLAG}-fno-builtin -Wall -Werror -Ilib -Ilib/dconv -c ${f}"
 		echo
 		libc="${libc} ${b}.o"
 	done
