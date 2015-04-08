@@ -46,14 +46,12 @@
 struct helptextdef {
     int id;
     Symbol symbol;
-    const char *key;
     const char *text;
 };
 
 static const helptextdef helptexts[] = {
-    { %d, %i, "%i", %s },
-    { -1, symzero, EMPTYSTRING, EMPTYSTRING }
+    { %d, %i, %s },
+    { -1, symzero, EMPTYSTRING }
 };
 
 #endif
-
