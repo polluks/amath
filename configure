@@ -310,6 +310,11 @@ if $VALID ; then
 	
 	echo "libs:	libamath libcomplex libcamath libamathapp"
 	echo
+	echo "catalogs:	"
+	echo "	flexcat catalog/help.cd app/localize/help.h=catalog/help.sd"
+	echo "	flexcat catalog/ident-clean.cd app/localize/ident.h=catalog/ident.sd"
+	echo "	flexcat catalog/text.cd app/localize/text.h=catalog/text.sd"
+	echo
 	echo "libamathapp:	${libapp}"
 	echo "	\${AR} rcs libamathapp${outext}.a ${libapp}"
 	echo "	\${RANLIB} libamathapp${outext}.a"

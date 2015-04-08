@@ -376,6 +376,11 @@ dprint.o:	lib/dconv/dprint.cpp
 
 libs:	libamath libcomplex libcamath libamathapp
 
+catalogs:	
+	flexcat catalog/help.cd app/localize/help.h=catalog/help.sd
+	flexcat catalog/ident-clean.cd app/localize/ident.h=catalog/ident.sd
+	flexcat catalog/text.cd app/localize/text.h=catalog/text.sd
+
 libamathapp:	 aengine.o charbuf.o cplex.o fgrid.o ntext.o real.o
 	${AR} rcs libamathapp.a  aengine.o charbuf.o cplex.o fgrid.o ntext.o real.o
 	${RANLIB} libamathapp.a
