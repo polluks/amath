@@ -1,5 +1,5 @@
-f(x)=x*2+1;
-g(y)=y^2+y*1.5+2;
-a=2;b=3;c=a+b;
-vars;funcs;
-f(2.2);c+1.1;
+f(x)=x*2+1
+g(y)=y^2+y*1.5+2
+a=2;b=3;c=a+b
+vars;funcs
+f(2.2);c+1.1
