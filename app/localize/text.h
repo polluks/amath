@@ -33,7 +33,7 @@
 /**
  * @file  text.h
  * @brief Localized text definitions.
- *
+ * 
  */
 
 #include "clib.h"

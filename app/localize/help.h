@@ -33,7 +33,7 @@
 /**
  * @file  help.h
  * @brief Localized help text definitions.
- *
+ * 
  */
 
 #include "clib.h"
@@ -70,16 +70,17 @@ static const helptextdef helptexts[] = {
     { 19, symsave, "The save statement saves defined variables and functions to a file in a#NEWLINE#plain text format. Saved variables and functions can be retrieved using#NEWLINE#the load statement.#NEWLINE# #SYNTAXHIGHLIGHT#Syntax: save \"worktokeep\"#NEWLINE#" },
     { 20, symversion, "Show which version of amath is running.#NEWLINE#" },
     { 21, symmem, "Show internal memory usage together with maximum usage.#NEWLINE#" },
-    { 22, symvariable, "The variable statement shows a list of variables in memory.#NEWLINE##SYNTAXHIGHLIGHT#Syntax: variables#NEWLINE##NORMALTEXT#optional syntax: vars#NEWLINE#" },
-    { 23, symexit, "The exit statement shuts down amath.#NEWLINE##SYNTAXHIGHLIGHT#Syntax: exit#NEWLINE#" },
-    { 24, syme, "Euler's number is base of the exponential function which equals its own#NEWLINE#derivative. It is approximately equal to 2.71828.#NEWLINE##SYNTAXHIGHLIGHT#Example: ln(e)#NEWLINE#" },
-    { 25, sympi, "Pi is the ratio of the circumference of a circle to its diameter. Being an#NEWLINE#irrational number, pi cannot be expressed exactly as a common fraction.#NEWLINE#The value of pi is commonly approximated as #SYNTAXHIGHLIGHT#3.14159#NORMALTEXT#.#NEWLINE#" },
-    { 26, symi, "The imaginary unit is denoted and commonly referred to as i.#NEWLINE#The imaginary unit is a number, which when multiplied#NEWLINE#by itself gives -1.#NEWLINE#" },
-    { 27, symins, "No help is available for the ins variable#NEWLINE#" },
-    { 28, symbin, "No help is available for the binary keyword#NEWLINE" },
-    { 29, symoct, "No help is available for the octal keyword#NEWLINE" },
-    { 30, symdec, "No help is available for the decimal keyword#NEWLINE" },
-    { 31, symhex, "No help is available for the hexadecimal keyword#NEWLINE" },
+    { 22, symprefs, "There is no help for prefs statement now.#NEWLINE#" },
+    { 23, symvariable, "The variable statement shows a list of variables in memory.#NEWLINE##SYNTAXHIGHLIGHT#Syntax: variables#NEWLINE##NORMALTEXT#optional syntax: vars#NEWLINE#" },
+    { 24, symexit, "The exit statement shuts down amath.#NEWLINE##SYNTAXHIGHLIGHT#Syntax: exit#NEWLINE#" },
+    { 25, syme, "Euler's number is base of the exponential function which equals its own#NEWLINE#derivative. It is approximately equal to 2.71828.#NEWLINE##SYNTAXHIGHLIGHT#Example: ln(e)#NEWLINE#" },
+    { 26, sympi, "Pi is the ratio of the circumference of a circle to its diameter. Being an#NEWLINE#irrational number, pi cannot be expressed exactly as a common fraction.#NEWLINE#The value of pi is commonly approximated as #SYNTAXHIGHLIGHT#3.14159#NORMALTEXT#.#NEWLINE#" },
+    { 27, symi, "The imaginary unit is denoted and commonly referred to as i.#NEWLINE#The imaginary unit is a number, which when multiplied#NEWLINE#by itself gives -1.#NEWLINE#" },
+    { 28, symins, "No help is available for the ins variable#NEWLINE#" },
+    { 29, symbin, "No help is available for the binary keyword#NEWLINE" },
+    { 30, symoct, "No help is available for the octal keyword#NEWLINE" },
+    { 31, symdec, "No help is available for the decimal keyword#NEWLINE" },
+    { 32, symhex, "No help is available for the hexadecimal keyword#NEWLINE" },
     { -1, symzero, EMPTYSTRING }
 };
 

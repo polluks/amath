@@ -9,8 +9,8 @@
 * Mathematical constants and rounding functions
 * Disk functions to load, save and view content
 * Comprehensive and easy to use built-in help
-* Optimized 68000, 68020, 68040 and FPU versions
-* Freely distributable sources (BSD license)
+* Full multi-lingual locale support
+* Freely distributable sources
 
 Install by copying the desired amath binary to C: or any other appropriate location.
 
