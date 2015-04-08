@@ -1,8 +1,8 @@
-sgn(2.3);sgn(-12.7);sgn(0);
-round(1.5461);round(-1.5461);
-ceil(43.5461);ceil(-43.5461);
-floor(39.9531);floor(-39.9531);
-trunc(23.827);trunc(-23.827);
-sqrt(100);sqrt(52.23);
-cbrt(1000);cbrt(52.23);
+sgn(2.3);sgn(-12.7);sgn(0)
+round(1.5461);round(-1.5461)
+ceil(43.5461);ceil(-43.5461)
+floor(39.9531);floor(-39.9531)
+trunc(23.827);trunc(-23.827)
+sqrt(100);sqrt(52.23)
+cbrt(1000);cbrt(52.23)
 

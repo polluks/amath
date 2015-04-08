@@ -1,6 +1,6 @@
-d=1.1;
-vars;
-eval d=d+1;
-eval d=d+1;
-eval d=d*2;
-vars;
+d=1.1
+vars
+eval d=d+1
+eval d=d+1
+eval d=d*2
+vars

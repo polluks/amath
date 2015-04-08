@@ -1,4 +1,4 @@
-pi; pi*2; pi/2;
-cos(pi);cos(-pi);cos(pi/2);
-sin(pi);sin(-pi);sin(pi/2);
-tan(pi);tan(-pi);tan(pi/2);
+pi; pi*2; pi/2
+cos(pi);cos(-pi);cos(pi/2)
+sin(pi);sin(-pi);sin(pi/2)
+tan(pi);tan(-pi);tan(pi/2)
