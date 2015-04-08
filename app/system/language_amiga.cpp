@@ -46,12 +46,15 @@ AmigaLanguage::AmigaLanguage()
     locale = OpenLocale(NULL);
     help =   OpenCatalog(NULL, "amath-help.catalog",
                          OC_BuiltInLanguage,"english",
+                         OC_Language,"dansk",
                          TAG_DONE);
     ident =  OpenCatalog(NULL, "amath-ident.catalog",
                          OC_BuiltInLanguage,"english",
+                         OC_Language,"dansk",
                          TAG_DONE);
     text =   OpenCatalog(NULL, "amath-text.catalog",
                          OC_BuiltInLanguage,"english",
+                         OC_Language,"dansk",
                          TAG_DONE);
 }
 
@@ -79,7 +82,7 @@ char* AmigaLanguage::GetText(int id)
         return (char*)(HELPNOHELP);
     }
 
-    const char *text = GetCatalogStr(help, def->key, (char*)def->text);
+    const char *text = GetCatalogStr(help, def->id, (char*)def->text);
     char *untagged = UntagText(text);
     return untagged;
 }
@@ -99,7 +102,7 @@ char* AmigaLanguage::GetHelpText(char* ident)
         return (char*)(HELPNOHELP);
     }
 
-    const char *text = GetCatalogStr(help, def->ident, (char*)def->text);
+    const char *text = GetCatalogStr(help, def->id, (char*)def->text);
     char *untagged = UntagText(text);
     return untagged;
 }
@@ -119,7 +122,7 @@ char* AmigaLanguage::GetHelpText(Symbol symbol)
         return (char*)(HELPNOHELP);
     }
 
-    const char *text = GetCatalogStr(help, def->key, (char*)def->text);
+    const char *text = GetCatalogStr(help, def->id, (char*)def->text);
     char *untagged = UntagText(text);
     return untagged;
 }

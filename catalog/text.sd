@@ -44,13 +44,12 @@
 
 struct textdef {
     int id;
-    const char *key;
     const char *text;
 };
 
 static const textdef textdefs[] = {
-    { %d, "%i", %s },
-    { -1, EMPTYSTRING, EMPTYSTRING }
+    { %d, %s }, /* %i */
+    { -1, EMPTYSTRING }
 };
 
 #endif
