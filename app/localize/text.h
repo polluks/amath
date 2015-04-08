@@ -33,7 +33,7 @@
 /**
  * @file  text.h
  * @brief Localized text definitions.
- * 
+ *
  */
 
 #include "clib.h"
@@ -75,45 +75,46 @@
 
 struct textdef {
     int id;
+    const char *key;
     const char *text;
 };
 
 static const textdef textdefs[] = {
-    { 0, "#NORMALTEXT##BOLD##STARTMSG##NEWLINE##NORMALTEXT##COLOR02##ITALICS#Type help to show info.#NEWLINE#" }, /* INTROMSG */
-    { 1, "Type        Name#NEWLINE#-----------------------------------------------#NEWLINE#" }, /* TXTLISTDIRHEADER */
-    { 2, "[file]" }, /* TXTLISTDIRTFILE */
-    { 3, "[dir]" }, /* TXTLISTDIRTDIR */
-    { 4, "[unknown]" }, /* TXTLISTDIRTUNKNOWN */
-    { 5, "Allocated blocks:#SPACE#" }, /* TXTMEMBLOCKS */
-    { 6, "Memory usage:    #SPACE#" }, /* TXTMEMSIZE */
-    { 7, "Maximum usage:   #SPACE#" }, /* TXTMEMMAXSIZE */
-    { 8, "No help is available for this topic.#NEWLINE#" }, /* HELPNOHELP */
-    { 9, "Syntax error:#SPACE#" }, /* HELPSYNTAX */
-    { 10, "Unexpected error:#SPACE#" }, /* HELPUERROR */
-    { 11, "Variable is not defined:#SPACE#" }, /* HELPVARNDEF */
-    { 12, "Function is not defined:#SPACE#" }, /* HELPFUNNDEF */
-    { 13, "Function cannot be redefined:#SPACE#" }, /* HELPFUNRDEF */
-    { 14, "Base value must be between 2 and 32:#SPACE#" }, /* HELPPNUMERA */
-    { 15, "Number of digist must be between 0 and 15:#SPACE#" }, /* HELPPDIGITS */
-    { 16, "Numeral input system is#SPACE#" }, /* HELPINPUSHOW */
-    { 17, "Numeral output system is#SPACE#" }, /* HELPOUTPSHOW */
-    { 18, "Input changed to#SPACE#" }, /* HELPINPUSETT */
-    { 19, "Output changed to#SPACE#" }, /* HELPOUTPSETT */
-    { 20, "Number of digits changed to#SPACE#" }, /* HELPDIGISETT */
-    { 21, "Number of digits shown are#SPACE#" }, /* HELPDIGISHOW */
-    { 22, "No variables are defined.#NEWLINE#" }, /* HELPVARSNDEF */
-    { 23, "No functions are defined.#NEWLINE#" }, /* HELPFUNCNDEF */
-    { 24, "Variable and functions loaded from file.#NEWLINE#" }, /* HELPLOADSUCC */
-    { 25, "Variable and functions saved to file.#NEWLINE#" }, /* HELPSAVESUCC */
-    { 26, "Cannot save to file.#NEWLINE#" }, /* HELPSAVEFAIL */
-    { 27, "Nothing to save.#NEWLINE#" }, /* HELPSAVENOTH */
-    { 28, "Preferences loaded.#NEWLINE#" }, /* HELPPREFLOAD */
-    { 29, "Preferences could not be loaded.#NEWLINE#" }, /* HELPPREFNOLO */
-    { 30, "Preferences saved to disk.#NEWLINE#" }, /* HELPPREFSAVE */
-    { 31, "Preferences could not be saved.#NEWLINE#" }, /* HELPPREFNOSA */
-    { 32, "Could not open directory:#SPACE#" }, /* MSGNODIR */
-    { 33, "Cannot open file.#NEWLINE#" }, /* MSGNOFILE */
-    { -1, EMPTYSTRING }
+    { 0, "INTROMSG", "#NORMALTEXT##BOLD##STARTMSG##NEWLINE##NORMALTEXT##COLOR02##ITALICS#Type help to show info.#NEWLINE#" },
+    { 1, "TXTLISTDIRHEADER", "Type        Name#NEWLINE#-----------------------------------------------#NEWLINE#" },
+    { 2, "TXTLISTDIRTFILE", "[file]" },
+    { 3, "TXTLISTDIRTDIR", "[dir]" },
+    { 4, "TXTLISTDIRTUNKNOWN", "[unknown]" },
+    { 5, "TXTMEMBLOCKS", "Allocated blocks:#SPACE#" },
+    { 6, "TXTMEMSIZE", "Memory usage:    #SPACE#" },
+    { 7, "TXTMEMMAXSIZE", "Maximum usage:   #SPACE#" },
+    { 8, "HELPNOHELP", "No help is available for this topic.#NEWLINE#" },
+    { 9, "HELPSYNTAX", "Syntax error:#SPACE#" },
+    { 10, "HELPUERROR", "Unexpected error:#SPACE#" },
+    { 11, "HELPVARNDEF", "Variable is not defined:#SPACE#" },
+    { 12, "HELPFUNNDEF", "Function is not defined:#SPACE#" },
+    { 13, "HELPFUNRDEF", "Function cannot be redefined:#SPACE#" },
+    { 14, "HELPPNUMERA", "Base value must be between 2 and 32:#SPACE#" },
+    { 15, "HELPPDIGITS", "Number of digist must be between 0 and 15:#SPACE#" },
+    { 16, "HELPINPUSHOW", "Numeral input system is#SPACE#" },
+    { 17, "HELPOUTPSHOW", "Numeral output system is#SPACE#" },
+    { 18, "HELPINPUSETT", "Input changed to#SPACE#" },
+    { 19, "HELPOUTPSETT", "Output changed to#SPACE#" },
+    { 20, "HELPDIGISETT", "Number of digits changed to#SPACE#" },
+    { 21, "HELPDIGISHOW", "Number of digits shown are#SPACE#" },
+    { 22, "HELPVARSNDEF", "No variables are defined.#NEWLINE#" },
+    { 23, "HELPFUNCNDEF", "No functions are defined.#NEWLINE#" },
+    { 24, "HELPLOADSUCC", "Variable and functions loaded from file.#NEWLINE#" },
+    { 25, "HELPSAVESUCC", "Variable and functions saved to file.#NEWLINE#" },
+    { 26, "HELPSAVEFAIL", "Cannot save to file.#NEWLINE#" },
+    { 27, "HELPSAVENOTH", "Nothing to save.#NEWLINE#" },
+    { 28, "HELPPREFLOAD", "Preferences loaded.#NEWLINE#" },
+    { 29, "HELPPREFNOLO", "Preferences could not be loaded.#NEWLINE#" },
+    { 30, "HELPPREFSAVE", "Preferences saved to disk.#NEWLINE#" },
+    { 31, "HELPPREFNOSA", "Preferences could not be saved.#NEWLINE#" },
+    { 32, "MSGNODIR", "Could not open directory:#SPACE#" },
+    { 33, "MSGNOFILE", "Cannot open file.#NEWLINE#" },
+    { -1, EMPTYSTRING, EMPTYSTRING }
 };
 
 #endif

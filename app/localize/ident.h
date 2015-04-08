@@ -33,7 +33,7 @@
 /**
  * @file  ident.h
  * @brief Localized help text definitions.
- * 
+ *
  */
 
 #include "clib.h"
