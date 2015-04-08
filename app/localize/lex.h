@@ -45,7 +45,7 @@ typedef enum {
     symhelp, symeval, symdelete, symall, symclear, symdef, symexit,
     symoperator, symstatement, symfunction, symvariable,
     symtrigon, symhyper, symcomplex,
-    syme, sympi, symi,symins, symsemicolon, symend,
+    syme, sympi, symi,symins, symdelimiter, symend,
     symshow, symlist, symload, symsave, symexecute,
     syminput, symoutput, symdigits,
     symdec, symhex, symbin, symoct,
@@ -72,7 +72,8 @@ static const operatordef operators[] = {
     { ')', symrparen},
     { '|', symabsolute},
     { '=', symassign},
-    { ';', symsemicolon}
+    { '\n', symdelimiter},
+    { ';', symdelimiter}
 };
 
 /**

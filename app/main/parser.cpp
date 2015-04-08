@@ -59,7 +59,7 @@ SyntaxNode* Parser::Parse()
         result = TryParseStatement();
 
         GetToken();
-        if (token->symbol == symsemicolon || (token->symbol == symend && block != NOMEM)) {
+        if (token->symbol == symdelimiter || (token->symbol == symend && block != NOMEM)) {
             if (block == NOMEM) {
                 block = new StatementBlockNode();
             }
@@ -68,7 +68,7 @@ SyntaxNode* Parser::Parse()
                 block->Add(result);
             }
 
-            while (token->symbol == symsemicolon) {
+            while (token->symbol == symdelimiter) {
                 GetToken();
             }
         } else if (token->symbol != symend) {
@@ -95,7 +95,7 @@ SyntaxNode* Parser::Parse()
 SyntaxNode* Parser::TryParseStatement()
 {
     GetToken();
-    if(token->symbol == symend || token->symbol == symsemicolon) {
+    if(token->symbol == symend || token->symbol == symdelimiter) {
         PutToken();
         return NOMEM;
     }
@@ -457,7 +457,7 @@ SyntaxNode* Parser::ParseHelpStatement()
 {
     GetToken();
 
-    if (token->symbol == symsemicolon || token->symbol == symend) {
+    if (token->symbol == symdelimiter || token->symbol == symend) {
         PutToken();
         return new HelpStatement();
     } else if (token->symbol == symident) {
@@ -496,7 +496,7 @@ SyntaxNode* Parser::ParseListStatement()
     GetToken();
     if (token->symbol == symqident)
         return new ListStatement(token->GetText());
-    else if (token->symbol == symend || symsemicolon) {
+    else if (token->symbol == symend || symdelimiter) {
         PutToken();
         return new ListStatement();
     } else {
@@ -536,7 +536,7 @@ SyntaxNode* Parser::ParseNumeralStatement()
     GetToken();
     switch (token->symbol) {
     case symend:
-    case symsemicolon:
+    case symdelimiter:
         PutToken();
         return (statement->symbol == syminput) ?
                (SyntaxNode*)new InputStatement() :
@@ -588,7 +588,7 @@ SyntaxNode* Parser::ParseNumeralStatement()
 SyntaxNode* Parser::ParseDigistStatement()
 {
     GetToken();
-    if (token->symbol == symsemicolon || token->symbol == symend) {
+    if (token->symbol == symdelimiter || token->symbol == symend) {
         PutToken();
         return new DigitsStatement();
     } else if (token->symbol != symnumber) {

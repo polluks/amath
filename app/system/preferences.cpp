@@ -29,6 +29,7 @@
 #include "lib/real.h"
 #include "lib/ntext.h"
 #include "lib/charbuf.h"
+#include "main/lexer.h"
 #include "main/nodes.h"
 #include "main/parser.h"
 #include "system/preferences.h"
@@ -53,10 +54,10 @@ void PreferencesBase::SetDefaults()
 
 char* PreferencesBase::GetDescription()
 {
-    static const char promptq   = '"';
-    static const char *sprompt  = "prompt";
-    static const char *sdigits  = "digits";
-    static const char delimitor = ';';
+    static char *promptkw = Lexer::FindKeyword(symprompt);
+    static char *digitkw  = Lexer::FindKeyword(symdigits);
+    static char delimiter = *(Lexer::FindKeyword(symdelimiter));
+    static char promptq   = '"';
 
     Number *d = new RealNumber(GetDigits());
     NumeralSystem *ns = new DecimalSystem(2);
@@ -65,23 +66,20 @@ char* PreferencesBase::GetDescription()
 
     buf->Empty();
     buf->EnsureSize(
-        sizeof(sprompt) + sizeof(SPACE) + sizeof(promptq) + StrLen(prompt) +
-        sizeof(promptq) + sizeof(delimitor) + sizeof(NEWLINE) +
-        sizeof(sdigits) + sizeof(SPACE) + StrLen(dtext) + sizeof(delimitor) +
-        sizeof(NEWLINE) + 1);
+        StrLen(promptkw) + sizeof(SPACE) + sizeof(promptq) +
+        StrLen(prompt) + sizeof(promptq) + sizeof(delimiter) +
+        StrLen(digitkw) + sizeof(SPACE) + StrLen(dtext) + sizeof(delimiter) + 1);
 
-    buf->Append(sprompt);
+    buf->Append(promptkw);
     buf->Append(SPACE);
     buf->Append(promptq);
     buf->Append(prompt);
     buf->Append(promptq);
-    buf->Append(delimitor);
-    buf->Append(NEWLINE);
-    buf->Append(sdigits);
+    buf->Append(delimiter);
+    buf->Append(digitkw);
     buf->Append(SPACE);
     buf->Append(dtext);
-    buf->Append(delimitor);
-    buf->Append(NEWLINE);
+    buf->Append(delimiter);
 
     delete ns;
     return buf->GetString();

@@ -50,6 +50,7 @@ public:
     void Tokenize();
     Token* GetFirstToken();
     char* GetInput();
+    static char* FindKeyword(Symbol symbol);
 
 private:
     char *input; // Input to process by lexer
@@ -63,6 +64,7 @@ private:
     bool GetQuotedIdent();
     bool GetLitteral();
     bool GetDigitValue();
+    bool ShouldSkip(char character);
     Symbol FindKeyword(const char *ident);
 };
 
