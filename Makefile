@@ -383,9 +383,10 @@ dprint.o:	lib/dconv/dprint.cpp
 libs:	libamath libcomplex libcamath libamathapp
 
 catalogs:	
-	${FLXCAT} catalog/help.cd app/localize/help.h=catalog/help.sd
-	${FLXCAT} catalog/ident-clean.cd app/localize/ident.h=catalog/ident.sd
-	${FLXCAT} catalog/text.cd app/localize/text.h=catalog/text.sd
+	${FLXCAT} text/keyword.cd app/localize/kword.h=text/keyword.sd
+	${FLXCAT} text/help.cd app/localize/help.h=text/help.sd
+	${FLXCAT} text/ident-clean.cd app/localize/ident.h=text/ident.sd
+	${FLXCAT} text/text.cd app/localize/text.h=text/text.sd
 
 libamathapp:	 aengine.o charbuf.o cplex.o fgrid.o ntext.o real.o
 	${AR} rcs libamathapp.a  aengine.o charbuf.o cplex.o fgrid.o ntext.o real.o
@@ -410,17 +411,16 @@ dist: app
 	${MKDIR} dist
 	${MKDIR} dist/catalog
 	${MKDIR} dist/catalog/english
-	${FLXCAT} catalog/help.cd catalog/english/amath-help.ct CATALOG dist/catalog/english/amath-help.catalog
-	${FLXCAT} catalog/ident.cd catalog/english/amath-ident.ct CATALOG dist/catalog/english/amath-ident.catalog
-	${FLXCAT} catalog/text.cd catalog/english/amath-text.ct CATALOG dist/catalog/english/amath-text.catalog
+	${FLXCAT} text/help.cd catalog/english/amath-help.ct CATALOG dist/catalog/english/amath-help.catalog
+	${FLXCAT} text/ident.cd catalog/english/amath-ident.ct CATALOG dist/catalog/english/amath-ident.catalog
+	${FLXCAT} text/text.cd catalog/english/amath-text.ct CATALOG dist/catalog/english/amath-text.catalog
 	${MKDIR} dist/catalog/dansk
-	${FLXCAT} catalog/help.cd catalog/dansk/amath-help.ct CATALOG dist/catalog/dansk/amath-help.catalog
-	${FLXCAT} catalog/ident.cd catalog/dansk/amath-ident.ct CATALOG dist/catalog/dansk/amath-ident.catalog
-	${FLXCAT} catalog/text.cd catalog/dansk/amath-text.ct CATALOG dist/catalog/dansk/amath-text.catalog
+	${FLXCAT} text/help.cd catalog/dansk/amath-help.ct CATALOG dist/catalog/dansk/amath-help.catalog
+	${FLXCAT} text/ident.cd catalog/dansk/amath-ident.ct CATALOG dist/catalog/dansk/amath-ident.catalog
+	${FLXCAT} text/text.cd catalog/dansk/amath-text.ct CATALOG dist/catalog/dansk/amath-text.catalog
 	${COPY} amath dist/
 	${COPY} LICENSE dist/
 	${COPY} COPYRIGHT dist/
-	${COPY} catalog/README dist/catalog/
 	${COPY} catalog/LICENSE dist/catalog/
 
 clean:
