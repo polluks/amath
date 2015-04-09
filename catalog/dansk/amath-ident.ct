@@ -2,12 +2,12 @@
 ## language dansk
 ## codeset 0
 ; #############################################################################
-; This file is published under Creative Common License. See:
-; http://creativecommons.org/licenses/by-sa/3.0/
-; Parts of the content came from wikipedia.org
-; #############################################################################
-; ### flexcat catalog/ident.cd NEWCTFILE catalog/danish/amath-ident.ct
-; flexcat catalog/ident.cd catalog/danish/amath-ident.ct CATALOG catalog/danish/amath-ident.catalog
+; ## Help texts for built-in functions in amath
+; ## ------------------------------------------
+; ##
+; ## This file is published under Creative Common License. See:
+; ## http://creativecommons.org/licenses/by-sa/3.0/
+; ## Parts of the content came from wikipedia.org
 ; #############################################################################
 abs
 Der er ikke nogen hjælp tilgængelig om den funktion.#NEWLINE#
@@ -23,23 +23,13 @@ ceil
 Der er ikke nogen hjælp tilgængelig om den funktion.#NEWLINE#
 sqr
 Der er ikke nogen hjælp tilgængelig om den funktion.#NEWLINE#
-sqrt
-Der er ikke nogen hjælp tilgængelig om den funktion.#NEWLINE#
 cbr
 Der er ikke nogen hjælp tilgængelig om den funktion.#NEWLINE#
-cbrt
-Der er ikke nogen hjælp tilgængelig om den funktion.#NEWLINE#
 lb
-Der er ikke nogen hjælp tilgængelig om den funktion.#NEWLINE#
-log2
 Der er ikke nogen hjælp tilgængelig om den funktion.#NEWLINE#
 ln
 Der er ikke nogen hjælp tilgængelig om den funktion.#NEWLINE#
 lg
-Der er ikke nogen hjælp tilgængelig om den funktion.#NEWLINE#
-log
-Der er ikke nogen hjælp tilgængelig om den funktion.#NEWLINE#
-log10
 Der er ikke nogen hjælp tilgængelig om den funktion.#NEWLINE#
 sin
 Der er ikke nogen hjælp tilgængelig om den funktion.#NEWLINE#
@@ -65,30 +55,6 @@ asec
 Der er ikke nogen hjælp tilgængelig om den funktion.#NEWLINE#
 acsc
 Der er ikke nogen hjælp tilgængelig om den funktion.#NEWLINE#
-arsin
-Der er ikke nogen hjælp tilgængelig om den funktion.#NEWLINE#
-arcos
-Der er ikke nogen hjælp tilgængelig om den funktion.#NEWLINE#
-artan
-Der er ikke nogen hjælp tilgængelig om den funktion.#NEWLINE#
-arcot
-Der er ikke nogen hjælp tilgængelig om den funktion.#NEWLINE#
-arsec
-Der er ikke nogen hjælp tilgængelig om den funktion.#NEWLINE#
-arcsc
-Der er ikke nogen hjælp tilgængelig om den funktion.#NEWLINE#
-arcsin
-Der er ikke nogen hjælp tilgængelig om den funktion.#NEWLINE#
-arccos
-Der er ikke nogen hjælp tilgængelig om den funktion.#NEWLINE#
-arctan
-Der er ikke nogen hjælp tilgængelig om den funktion.#NEWLINE#
-arccot
-Der er ikke nogen hjælp tilgængelig om den funktion.#NEWLINE#
-arcsec
-Der er ikke nogen hjælp tilgængelig om den funktion.#NEWLINE#
-arccsc
-Der er ikke nogen hjælp tilgængelig om den funktion.#NEWLINE#
 sinh
 Der er ikke nogen hjælp tilgængelig om den funktion.#NEWLINE#
 cosh
@@ -112,28 +78,4 @@ Der er ikke nogen hjælp tilgængelig om den funktion.#NEWLINE#
 asech
 Der er ikke nogen hjælp tilgængelig om den funktion.#NEWLINE#
 acsch
-Der er ikke nogen hjælp tilgængelig om den funktion.#NEWLINE#
-arsinh
-Der er ikke nogen hjælp tilgængelig om den funktion.#NEWLINE#
-arcosh
-Der er ikke nogen hjælp tilgængelig om den funktion.#NEWLINE#
-artanh
-Der er ikke nogen hjælp tilgængelig om den funktion.#NEWLINE#
-arcoth
-Der er ikke nogen hjælp tilgængelig om den funktion.#NEWLINE#
-arsech
-Der er ikke nogen hjælp tilgængelig om den funktion.#NEWLINE#
-arcsch
-Der er ikke nogen hjælp tilgængelig om den funktion.#NEWLINE#
-arcsinh
-Der er ikke nogen hjælp tilgængelig om den funktion.#NEWLINE#
-arccosh
-Der er ikke nogen hjælp tilgængelig om den funktion.#NEWLINE#
-arctanh
-Der er ikke nogen hjælp tilgængelig om den funktion.#NEWLINE#
-arccoth
-Der er ikke nogen hjælp tilgængelig om den funktion.#NEWLINE#
-arcsech
-Der er ikke nogen hjælp tilgængelig om den funktion.#NEWLINE#
-arccsch
 Der er ikke nogen hjælp tilgængelig om den funktion.#NEWLINE#
