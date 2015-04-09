@@ -2,12 +2,12 @@
 ## language english
 ## codeset 0
 ; #############################################################################
-; This file is published under Creative Common License. See:
-; http://creativecommons.org/licenses/by-sa/3.0/
-; Parts of the content came from wikipedia.org
-; #############################################################################
-; ### flexcat catalog/ident.cd NEWCTFILE catalog/english/amath-ident.ct
-; flexcat catalog/ident.cd catalog/english/amath-ident.ct CATALOG catalog/english/amath-ident.catalog
+; ## Help texts for built-in functions in amath
+; ## ------------------------------------------
+; ##
+; ## This file is published under Creative Common License. See:
+; ## http://creativecommons.org/licenses/by-sa/3.0/
+; ## Parts of the content came from wikipedia.org
 ; #############################################################################
 abs
 The absolute value (or modulus) |x| of a real number x is the#NEWLINE#non-negative value of x without regard to its sign.#NEWLINE##SYNTAXHIGHLIGHT#Example: abs(-237.25)#NORMALTEXT##NEWLINE#
@@ -23,23 +23,13 @@ ceil
 No help is available for this function.#NEWLINE#
 sqr
 No help is available for this function.#NEWLINE#
-sqrt
-No help is available for this function.#NEWLINE#
 cbr
 No help is available for this function.#NEWLINE#
-cbrt
-No help is available for this function.#NEWLINE#
 lb
-No help is available for this function.#NEWLINE#
-log2
 No help is available for this function.#NEWLINE#
 ln
 No help is available for this function.#NEWLINE#
 lg
-No help is available for this function.#NEWLINE#
-log
-No help is available for this function.#NEWLINE#
-log10
 No help is available for this function.#NEWLINE#
 sin
 Sine is the trigonometric function that for an acute angle is the#NEWLINE#ratio between the leg opposite the angle when it is considered#NEWLINE#part of a right triangle and the hypotenuse.#NEWLINE#
@@ -65,30 +55,6 @@ asec
 No help is available for this function.#NEWLINE#
 acsc
 No help is available for this function.#NEWLINE#
-arsin
-No help is available for this function.#NEWLINE#
-arcos
-No help is available for this function.#NEWLINE#
-artan
-No help is available for this function.#NEWLINE#
-arcot
-No help is available for this function.#NEWLINE#
-arsec
-No help is available for this function.#NEWLINE#
-arcsc
-No help is available for this function.#NEWLINE#
-arcsin
-No help is available for this function.#NEWLINE#
-arccos
-No help is available for this function.#NEWLINE#
-arctan
-No help is available for this function.#NEWLINE#
-arccot
-No help is available for this function.#NEWLINE#
-arcsec
-No help is available for this function.#NEWLINE#
-arccsc
-No help is available for this function.#NEWLINE#
 sinh
 No help is available for this function.#NEWLINE#
 cosh
@@ -112,28 +78,4 @@ No help is available for this function.#NEWLINE#
 asech
 No help is available for this function.#NEWLINE#
 acsch
-No help is available for this function.#NEWLINE#
-arsinh
-No help is available for this function.#NEWLINE#
-arcosh
-No help is available for this function.#NEWLINE#
-artanh
-No help is available for this function.#NEWLINE#
-arcoth
-No help is available for this function.#NEWLINE#
-arsech
-No help is available for this function.#NEWLINE#
-arcsch
-No help is available for this function.#NEWLINE#
-arcsinh
-No help is available for this function.#NEWLINE#
-arccosh
-No help is available for this function.#NEWLINE#
-arctanh
-No help is available for this function.#NEWLINE#
-arccoth
-No help is available for this function.#NEWLINE#
-arcsech
-No help is available for this function.#NEWLINE#
-arccsch
 No help is available for this function.#NEWLINE#

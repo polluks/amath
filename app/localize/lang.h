@@ -24,54 +24,31 @@
  *
  */
 
-#include "clib.h"
-#include "localize/tags.h"
-#include "localize/ialias.h"
-#include "system/language.h"
+#ifndef AMATH_TEXT_LANGUAGE_H
+#define AMATH_TEXT_LANGUAGE_H
 
-Language::Language()
-{
-    lastText = NOMEM;
-}
+/*
+english
+bosanski
+catala
+czech
+dansk
+deutsch
+espanol
+francais
+italiano
+magyar
+nederlands
+norsk
+polski
+portugues
+portugues-Brasil
+russian
+slovensko
+srpski
+suomi
+svenska
+turkce
+*/
 
-Language::~Language()
-{
-    if (lastText != NOMEM) {
-        delete lastText;
-    }
-}
-
-char* Language::FindAlias(const char* ident)
-{
-    static const unsigned int count = sizeof(identaliases) / sizeof(identalias);
-    for (unsigned int i = 0; i < count; i++) {
-        if (StrIsEqual(identaliases[i].ident, ident)) {
-            return (char*)identaliases[i].alias;
-        }
-    }
-
-    return (char*)ident;
-}
-
-char* Language::UntagText(const char* text)
-{
-    if (lastText != NOMEM) {
-        delete lastText;
-        lastText = NULL;
-    }
-
-    if (text == NOMEM) {
-        return NOMEM;
-    }
-
-    unsigned int count = sizeof(texttags) / sizeof(texttag);
-    char *untagged = new char[StrLen(text) * 2];
-    Untag(untagged, text, (texttag*)texttags, count);
-
-    unsigned int len = StrLen(untagged) + 1;
-    lastText = new char[len];
-    MemCopy(lastText, untagged, len);
-    delete untagged;
-
-    return lastText;
-}
+#endif
