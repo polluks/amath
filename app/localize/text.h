@@ -32,8 +32,8 @@
 
 /**
  * @file  text.h
- * @brief Localized text definitions.
- * 
+ * @brief Static texts in amath.
+ *
  */
 
 #include "clib.h"

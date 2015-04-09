@@ -62,6 +62,6 @@ static const identalias identaliases[] = {
     { "arccoth", "acoth" },
     { "arcsech", "asech" },
     { "arccsch", "acsch" }
-}
+};
 
 #endif

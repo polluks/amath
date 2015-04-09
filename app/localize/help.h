@@ -32,8 +32,8 @@
 
 /**
  * @file  help.h
- * @brief Localized help text definitions.
- * 
+ * @brief Help texts for statement.
+ *
  */
 
 #include "clib.h"
