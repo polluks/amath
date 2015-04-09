@@ -27,7 +27,7 @@
 ; OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 ; #############################################################################
 INTROMSG
-#NORMALTEXT##BOLD##STARTMSG##NEWLINE##NORMALTEXT##COLOR02##ITALICS#Skriv help for at fÃ¥ vist mere information.#NEWLINE#
+#NORMALTEXT##BOLD##STARTMSG##NEWLINE##NORMALTEXT##COLOR02##ITALICS#Skriv help for at få vist mere information.#NEWLINE#
 TXTLISTDIRHEADER
 Type        Navn#NEWLINE#-----------------------------------------------#NEWLINE#
 TXTLISTDIRTFILE
@@ -41,9 +41,9 @@ Allokerede blokke: #SPACE#
 TXTMEMSIZE
 Hukommelsesforbrug:#SPACE#
 TXTMEMMAXSIZE
-HÃ¸jeste forbrug:   #SPACE#
+Højeste forbrug:   #SPACE#
 HELPNOHELP
-Der er ingen hjÃ¦lp tilgÃ¦ngelig om det emne.#NEWLINE#
+Der er ingen hjælp tilgængelig om det emne.#NEWLINE#
 HELPSYNTAX
 Syntaktiske fejl:#SPACE#
 HELPUERROR
@@ -55,19 +55,19 @@ Funktionen er ikke defineret:#SPACE#
 HELPFUNRDEF
 Funktionen kan ikke omdefineres:#SPACE#
 HELPPNUMERA
-Basen skal vÃ¦re mellem 2 og 32:#SPACE#
+Basen skal være mellem 2 og 32:#SPACE#
 HELPPDIGITS
-Antal decimaler skal vÃ¦re mellem 0 og 15:#SPACE#
+Antal decimaler skal være mellem 0 og 15:#SPACE#
 HELPINPUSHOW
-Talsystemet nÃ¥r computeren lÃ¦ser er#SPACE#
+Talsystemet når computeren læser er#SPACE#
 HELPOUTPSHOW
-Talsystemet nÃ¥r computeren skriver er#SPACE#
+Talsystemet når computeren skriver er#SPACE#
 HELPINPUSETT
-Talsystemet ved lÃ¦sning Ã¦ndret til#SPACE#
+Talsystemet ved læsning ændret til#SPACE#
 HELPOUTPSETT
-Talsystemet ved skrivning Ã¦ndret til#SPACE#
+Talsystemet ved skrivning ændret til#SPACE#
 HELPDIGISETT
-Antal decimaler Ã¦ndret til#SPACE#
+Antal decimaler ændret til#SPACE#
 HELPDIGISHOW
 Antal decimaler der vises er#SPACE#
 HELPVARSNDEF
@@ -75,7 +75,7 @@ Der er ikke defineret nogle variabler.#NEWLINE#
 HELPFUNCNDEF
 Der er ikke defineret nogle funktioner.#NEWLINE#
 HELPLOADSUCC
-Variabler og funktioner indlÃ¦st fra fil.#NEWLINE#
+Variabler og funktioner indlæst fra fil.#NEWLINE#
 HELPSAVESUCC
 Variabler og funktioner gemt til fil.#NEWLINE#
 HELPSAVEFAIL
@@ -83,14 +83,14 @@ Kan ikke gemme til fil.#NEWLINE#
 HELPSAVENOTH
 Der er ikke noget og gemme.#NEWLINE#
 HELPPREFLOAD
-PrÃ¦ferencer indlÃ¦st.#NEWLINE#
+Præferencer indlæst.#NEWLINE#
 HELPPREFNOLO
-PrÃ¦ferencer kunne ikke indlÃ¦ses.#NEWLINE#
+Præferencer kunne ikke indlæses.#NEWLINE#
 HELPPREFSAVE
-PrÃ¦ferencer blev gemt.#NEWLINE#
+Præferencer blev gemt.#NEWLINE#
 HELPPREFNOSA
-PrÃ¦ferencer kunne ikke gemmes.#NEWLINE#
+Præferencer kunne ikke gemmes.#NEWLINE#
 MSGNODIR
-Mappen kan ikke Ã¥bnes:#SPACE#
+Mappen kan ikke åbnes:#SPACE#
 MSGNOFILE
-Filen kan ikke Ã¥bnes.#NEWLINE#
+Filen kan ikke åbnes.#NEWLINE#
