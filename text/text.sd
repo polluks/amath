@@ -1,5 +1,4 @@
 ##stringtype C
-##shortstrings
 /*
  * Copyright (c) 2015 Carsten Larsen
  * All rights reserved.
@@ -29,29 +28,27 @@
  *
  */
 
-#ifndef AMATH_LOCALIZE_HELP_H
-#define AMATH_LOCALIZE_HELP_H
+#ifndef AMATH_LOCALIZE_TEXT_H
+#define AMATH_LOCALIZE_TEXT_H
 
 /**
- * @file  help.h
- * @brief Help texts for statement.
+ * @file  text.h
+ * @brief Static texts in amath.
  * 
  */
 
 #include "clib.h"
-#include "localize/lex.h"
 
-#define symzero Symbol(0)
+#define %i Program->Language->GetText(%d)
 
-struct helptextdef {
+struct textdef {
     int id;
-    Symbol symbol;
     const char *text;
 };
 
-static const helptextdef helptexts[] = {
-    { %d, %i, %s },
-    { -1, symzero, EMPTYSTRING }
+static const textdef textdefs[] = {
+    { %d, %s }, /* %i */
+    { -1, EMPTYSTRING }
 };
 
 #endif

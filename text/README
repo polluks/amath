@@ -1,7 +1,7 @@
 Make catalogs for a new language:
-flexcat catalog/help.cd NEWCTFILE catalog/language/amath-help.ct
-flexcat catalog/text.cd NEWCTFILE catalog/language/amath-text.ct
-flexcat catalog/ident.cd NEWCTFILE catalog/language/amath-ident.ct
+flexcat text/help.cd NEWCTFILE catalog/language/amath-help.ct
+flexcat text/text.cd NEWCTFILE catalog/language/amath-text.ct
+flexcat text/ident.cd NEWCTFILE catalog/language/amath-ident.ct
 
 Some catalog files are distrubuted under Creative Common License.
 See individual files and license file for details. Also visit:
