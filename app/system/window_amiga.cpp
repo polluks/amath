@@ -39,6 +39,7 @@
 #include <graphics/gfxbase.h>
 #include <intuition/intuition.h>
 #include <intuition/intuitionbase.h>
+#include <devices/conunit.h>
 #include <devices/console.h>
 #include <clib/exec_protos.h>
 #include <clib/alib_protos.h>
@@ -99,7 +100,7 @@ void AmigaWindow::Create()
         WFLG_DEPTHGADGET |
         WFLG_CLOSEGADGET |
         WFLG_ACTIVATE |
-        WFLG_SMART_REFRESH,
+        WFLG_SIMPLE_REFRESH,
         NULL, NULL,           // user gadgets, user checkmark
         (UBYTE*) TXTTITLE,    // title
         NULL, NULL,           // window screen, super bitmap
@@ -120,7 +121,7 @@ void AmigaWindow::Create()
     writereq.io->io_Data = (APTR) window;
     writereq.io->io_Length = sizeof(Window);
 
-    openconsole = OpenDevice(DEVCONSOLE, 0, writereq.st, 0) == 0;
+    openconsole = OpenDevice(DEVCONSOLE, CONU_SNIPMAP, writereq.st, CONFLAG_DEFAULT) == 0;
     succeed = openconsole;
     if (!openconsole) return;
 
@@ -296,3 +297,27 @@ void AmigaWindow::SetPrompt(const char* string)
 #endif
 
 
+
+//http://amigadev.elowar.com/read/ADCD_2.1/Libraries_Manual_guide/node046C.html#line6
+
+//#include <devices/keymap.h>
+//
+//BOOL AskKeyMap(struct IOStdReq *request, struct KeyMap *keymap)
+//{
+ //   request->io_Command = CD_ASKKEYMAP;
+//    request->io_Length = sizeof(struct KeyMap);
+//    request->io_Data = (APTR)keymap;  /* where to put it */
+//    DoIO(request);
+//    if(request->io_Error) return(FALSE);
+//    else  return(TRUE); /* if no error, it worked. */
+//}
+
+//BOOL SetKeyMap(struct IOStdReq *request,struct KeyMap *keymap)
+//{
+//    request->io_Command = CD_SETKEYMAP;
+//    request->io_Length = sizeof(struct KeyMap);
+//    request->io_Data = (APTR)keymap;      /* where to get it */
+//    DoIO(request);
+//    if(request->io_Error) return(FALSE);
+//    else  return(TRUE);     /* if no error, it worked. */
+//}
