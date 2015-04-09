@@ -10,22 +10,24 @@ The catalog files are distributed under Creative Common License and therefor you
 Additional language and catalog files are also accepted. To create your own catalog translation file, look at examples in the English version. Also take a look at [Flexcat](http://sourceforge.net/projects/flexcat/).
 
 Supported languages are:
-- english
-- bosanski
-- catala
-- czech
-- dansk
-- espanol
-- francais
-- italiano
-- magyar
-- nederlands
-- polski
-- portugues
-- portugues-Brasil
-- russian
-- slovensko
-- srpski
-- suomi
-- svenska
-- turkce
+- Bosanski
+- Catala
+- Czech
+- Dansk
+- Deutsch
+- English
+- Espanol
+- Francais
+- Italiano
+- Magyar
+- Nederlands
+- Norsk
+- Polski
+- Portugues
+- Portugues do Brasil
+- Russian
+- Slovensko
+- Srpski
+- Suomi
+- Svenska
+- Turkce

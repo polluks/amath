@@ -1,32 +1,37 @@
-; #############################################################################
-; Copyright (c) 2015, Carsten Larsen
-; All rights reserved.
-; 
-; Redistribution and use in source and binary forms, with or without
-; modification, are permitted provided that the following conditions are met:
-; 
-; * Redistributions of source code must retain the above copyright notice, this
-;   list of conditions and the following disclaimer.
-; 
-; * Redistributions in binary form must reproduce the above copyright notice,
-;   this list of conditions and the following disclaimer in the documentation
-;   and/or other materials provided with the distribution.
-; 
-; THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
-; AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
-; IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
-; DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE
-; FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
-; DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
-; SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
-; CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
-; OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
-; OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-; #############################################################################
-; Help texts for functions in amath
-; Build with:
-; flexcat ident-clean.cd ../app/localize/ident.h=ident.sd
-; #############################################################################
+#language english
+#version 0
+; ###################################################################################
+; ## Help texts for built-in functions in amath
+; ## ------------------------------------------
+; ##
+; ## Generate code with:
+; ## flexcat ident-clean.cd ../app/localize/ident.h=ident.sd
+; ##
+; ###################################################################################
+; ## Copyright (c) 2015, Carsten Larsen
+; ## All rights reserved.
+; ## 
+; ## Redistribution and use in source and binary forms, with or without
+; ## modification, are permitted provided that the following conditions are met:
+; ## 
+; ##  * Redistributions of source code must retain the above copyright notice, this
+; ##    list of conditions and the following disclaimer.
+; ##  
+; ##  * Redistributions in binary form must reproduce the above copyright notice,
+; ##    this list of conditions and the following disclaimer in the documentation
+; ##    and/or other materials provided with the distribution.
+; ##  
+; ##  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+; ##  AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+; ##  IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+; ##  DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE
+; ##  FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+; ##  DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
+; ##  SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
+; ##  CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
+; ##  OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+; ##  OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+; ###################################################################################
 abs (/40/)
 No help is available for this function.#NEWLINE#
 sgn (/40/)
@@ -41,23 +46,13 @@ ceil (/10/)
 No help is available for this function.#NEWLINE#
 sqr (/10/)
 No help is available for this function.#NEWLINE#
-sqrt (/10/)
-No help is available for this function.#NEWLINE#
 cbr (/10/)
 No help is available for this function.#NEWLINE#
-cbrt (/10/)
-No help is available for this function.#NEWLINE#
 lb (/10/)
-No help is available for this function.#NEWLINE#
-log2 (/10/)
 No help is available for this function.#NEWLINE#
 ln (/10/)
 No help is available for this function.#NEWLINE#
 lg (/10/)
-No help is available for this function.#NEWLINE#
-log (/10/)
-No help is available for this function.#NEWLINE#
-log10 (/10/)
 No help is available for this function.#NEWLINE#
 sin (/10/)
 No help is available for this function.#NEWLINE#
@@ -83,30 +78,6 @@ asec (/10/)
 No help is available for this function.#NEWLINE#
 acsc (/10/)
 No help is available for this function.#NEWLINE#
-arsin (/10/)
-No help is available for this function.#NEWLINE#
-arcos (/10/)
-No help is available for this function.#NEWLINE#
-artan (/10/)
-No help is available for this function.#NEWLINE#
-arcot (/10/)
-No help is available for this function.#NEWLINE#
-arsec (/10/)
-No help is available for this function.#NEWLINE#
-arcsc (/10/)
-No help is available for this function.#NEWLINE#
-arcsin (/10/)
-No help is available for this function.#NEWLINE#
-arccos (/10/)
-No help is available for this function.#NEWLINE#
-arctan (/10/)
-No help is available for this function.#NEWLINE#
-arccot (/10/)
-No help is available for this function.#NEWLINE#
-arcsec (/10/)
-No help is available for this function.#NEWLINE#
-arccsc (/10/)
-No help is available for this function.#NEWLINE#
 sinh (/10/)
 No help is available for this function.#NEWLINE#
 cosh (/10/)
@@ -130,28 +101,4 @@ No help is available for this function.#NEWLINE#
 asech (/10/)
 No help is available for this function.#NEWLINE#
 acsch (/10/)
-No help is available for this function.#NEWLINE#
-arsinh (/10/)
-No help is available for this function.#NEWLINE#
-arcosh (/10/)
-No help is available for this function.#NEWLINE#
-artanh (/10/)
-No help is available for this function.#NEWLINE#
-arcoth (/10/)
-No help is available for this function.#NEWLINE#
-arsech (/10/)
-No help is available for this function.#NEWLINE#
-arcsch (/10/)
-No help is available for this function.#NEWLINE#
-arcsinh (/10/)
-No help is available for this function.#NEWLINE#
-arccosh (/10/)
-No help is available for this function.#NEWLINE#
-arctanh (/10/)
-No help is available for this function.#NEWLINE#
-arccoth (/10/)
-No help is available for this function.#NEWLINE#
-arcsech (/10/)
-No help is available for this function.#NEWLINE#
-arccsch (/10/)
 No help is available for this function.#NEWLINE#
