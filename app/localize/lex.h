@@ -76,15 +76,7 @@ static const operatordef operators[] = {
     { ';', symdelimiter}
 };
 
-/**
- * @brief Character representation of keyword tied with its symbol.
- *
- */
-struct keyworddef {
-    const char *name;
-    Symbol symbol;
-};
-
+/*
 static const keyworddef keywords[] = {
     { "clear", symclear},
     { "def", symdef},
@@ -133,5 +125,6 @@ static const keyworddef keywords[] = {
     { "draw", symdraw},
     { "plot", symplot}
 };
+*/
 
 #endif

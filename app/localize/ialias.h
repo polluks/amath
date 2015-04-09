@@ -24,8 +24,8 @@
  *
  */
 
-#ifndef AMATH_TEXT_IDENT_ALIAS_H
-#define AMATH_TEXT_IDENT_ALIAS_H
+#ifndef AMATH_LOCALIZE_IDENT_ALIAS_H
+#define AMATH_LOCALIZE_IDENT_ALIAS_H
 
 struct identalias {
     const char *ident;
