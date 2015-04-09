@@ -30,20 +30,20 @@
 ; flexcat catalog/help.cd catalog/danish/amath-help.ct CATALOG catalog/danish/amath-help.catalog
 ; #############################################################################
 symzero
-Indtast kommando eller udtryk.#NEWLINE##SYNTAXHIGHLIGHT#Eksempel: 2+3-cos(3)#NORMALTEXT##NEWLINE# #NEWLINE#Mere hjÃ¦lp er tilgÃ¦ngelig i udvalgte omrÃ¥der.#NEWLINE#-------------------------------------------------#NEWLINE#funktions    GrundlÃ¦ggende funktioner.#NEWLINE#trigon       Trigonometriske funktioner.#NEWLINE#hyper        Hyperbolske funktioner.#NEWLINE#complex      Komplekse tal.#NEWLINE#statements   UnderstÃ¸ttede kommondoer.#NEWLINE#operators    UnderstÃ¸ttede operatorer.#NEWLINE#-------------------------------------------------#NEWLINE##SYNTAXHIGHLIGHT#Eksemple: help trigon#NEWLINE#
+Indtast kommando eller udtryk.#NEWLINE##SYNTAXHIGHLIGHT#Eksempel: 2+3-cos(3)#NORMALTEXT##NEWLINE# #NEWLINE#Mere hjælp er tilgængelig i udvalgte områder.#NEWLINE#-------------------------------------------------#NEWLINE#funktions    Grundlæggende funktioner.#NEWLINE#trigon       Trigonometriske funktioner.#NEWLINE#hyper        Hyperbolske funktioner.#NEWLINE#complex      Komplekse tal.#NEWLINE#statements   Understøttede kommondoer.#NEWLINE#operators    Understøttede operatorer.#NEWLINE#-------------------------------------------------#NEWLINE##SYNTAXHIGHLIGHT#Eksemple: help trigon#NEWLINE#
 symoperator
--------------------------------------------------#NEWLINE#    +    Matematik addition.#NEWLINE#    -    Matematik subtraktion.#NEWLINE#    *    Matematik multiplikation.#NEWLINE#    /    Matematik division.#NEWLINE#    ^    Matematik potensoplÃ¸ftning.#NEWLINE#    =    Tildeling af variabel vÃ¦rdi.#NEWLINE#    |   Absolutte eller numerisk vÃ¦rdi.#NEWLINE#-------------------------------------------------#NEWLINE#
+-------------------------------------------------#NEWLINE#    +    Matematik addition.#NEWLINE#    -    Matematik subtraktion.#NEWLINE#    *    Matematik multiplikation.#NEWLINE#    /    Matematik division.#NEWLINE#    ^    Matematik potensopløftning.#NEWLINE#    =    Tildeling af variabel værdi.#NEWLINE#    |   Absolutte eller numerisk værdi.#NEWLINE#-------------------------------------------------#NEWLINE#
 symfunction
--------------------------------------------------#NEWLINE#abs     Absolutte eller numerisk vÃ¦rdi.#NEWLINE#sgn     Matematik signum funktion.#NEWLINE#round   Afrund til nÃ¦rmeste heltal.#NEWLINE#trunc   Fjern decimaler.#NEWLINE#floor   Afrund i positiv retning.#NEWLINE#ceil    Afrund i negativ retning.#NEWLINE#sqrt    Kvadratrodsfunktion (exponent 1/2).#NEWLINE#cbrt    Kubikrods (exponent 1/3).#NEWLINE#lb      BinÃ¦r logaritme funktion (grundtal 2).#NEWLINE#ln      Naturlig logaritme funktion (grundtal e).#NEWLINE#lg      10-talslogaritme funktion (grundtal 10).#NEWLINE#-------------------------------------------------#NEWLINE##SYNTAXHIGHLIGHT#Eksempel: round(1.55)#NORMALTEXT##NEWLINE#
+-------------------------------------------------#NEWLINE#abs     Absolutte eller numerisk værdi.#NEWLINE#sgn     Matematik signum funktion.#NEWLINE#round   Afrund til nærmeste heltal.#NEWLINE#trunc   Fjern decimaler.#NEWLINE#floor   Afrund i positiv retning.#NEWLINE#ceil    Afrund i negativ retning.#NEWLINE#sqrt    Kvadratrodsfunktion (exponent 1/2).#NEWLINE#cbrt    Kubikrods (exponent 1/3).#NEWLINE#lb      Binær logaritme funktion (grundtal 2).#NEWLINE#ln      Naturlig logaritme funktion (grundtal e).#NEWLINE#lg      10-talslogaritme funktion (grundtal 10).#NEWLINE#-------------------------------------------------#NEWLINE##SYNTAXHIGHLIGHT#Eksempel: round(1.55)#NORMALTEXT##NEWLINE#
 symtrigon
 -------------------------------------------------#NEWLINE#sin     Trigonometrisk sinus funktion.#NEWLINE#cos     Trigonometrisk cosinus funktion.#NEWLINE#tan     Trigonometrisk tangent funktion.#NEWLINE#cot     Trigonometrisk cotangent funktion.#NEWLINE#sec     Trigonometrisk secant funktion.#NEWLINE#csc     Trigonometrisk cosecant funktion.#NEWLINE#asin    Invers trigonometrisk sinus funktion.#NEWLINE#acos    Invers trigonometrisk cosinus funktion.#NEWLINE#atan    Invers trigonometrisk tangent funktion.#NEWLINE#acot    Invers trigonometrisk cotangent funktion.#NEWLINE#asec    Invers trigonometrisk secant funktion.#NEWLINE#acsc    Invers trigonometrisk cosecant funktion.#NEWLINE#-------------------------------------------------#NEWLINE#Inverse funktioner kan prefixes med ar eller arc #NEWLINE#i stedet for a.#NEWLINE#
 symhyper
 -------------------------------------------------#NEWLINE#sinh    Hyperbolsk sinus funktion.#NEWLINE#cosh    Hyperbolsk cosinus funktion.#NEWLINE#tanh    Hyperbolsk tangent funktion.#NEWLINE#coth    Hyperbolsk cotangent funktion.#NEWLINE#sech    Hyperbolsk secant funktion.#NEWLINE#csch    Hyperbolsk cosecant funktion.     #NEWLINE#asinh   Invers hyperbolsk sinus funktion.#NEWLINE#acosh   Invers hyperbolsk cosinus funktion.#NEWLINE#atanh   Invers hyperbolsk tangent funktion.#NEWLINE#acoth   Invers hyperbolsk cotangent funktion.#NEWLINE#asech   Invers hyperbolsk secant funktion.#NEWLINE#acsch   Invers hyperbolsk cosecant funktion.#NEWLINE#-------------------------------------------------#NEWLINE#Inverse funktioner kan prefixes med ar eller arc #NEWLINE#i stedet for a.#NEWLINE#
 ; Table of statements
 symstatement
----------------------------------------------------------#NEWLINE#clear      Ryd konsol vindue.#NEWLINE#def        Definer funktion.#NEWLINE#delete     Slet variabler og funktioner.#NEWLINE#digits     Angiv antal betydende cifre.#NEWLINE#eval       Beregn aritmetiske udtryk.#NEWLINE#execute    Afvikel kommondoer i en fil.#NEWLINE#funktions  Vis liste med brugerdefinerede funktioner.#NEWLINE#input      Skift numerisk talsystem ved lÃ¦sning (eksperimentelt).#NEWLINE#help       Vis grundlÃ¦ggende hjÃ¦lpetekst.#NEWLINE#output     kift numerisk talsystem ved skrivning (eksperimentelt).#NEWLINE#list       Vis indholdet af en mappe.#NEWLINE#show       Vis indholdet af en fil.#NEWLINE#load       Hent variabler og funktioner fra en fil.#NEWLINE#save       Gem variabler og funktioner til en fil.#NEWLINE#variables  Vis variabler i hukommelsen.#NEWLINE#version    Vis infomation om denne version.#NEWLINE#memory     Vis internt hukommelsesforbrug.#NEWLINE#exit       Afslut program.#NEWLINE#---------------------------------------------------------#NEWLINE#Det er valgfrit at angive def og eval kommandoerne. Kommandoerne Functions og#NEWLINE#variables kan forkortes til funcs og vars.#NEWLINE#
+---------------------------------------------------------#NEWLINE#clear      Ryd konsol vindue.#NEWLINE#def        Definer funktion.#NEWLINE#delete     Slet variabler og funktioner.#NEWLINE#digits     Angiv antal betydende cifre.#NEWLINE#eval       Beregn aritmetiske udtryk.#NEWLINE#execute    Afvikel kommondoer i en fil.#NEWLINE#funktions  Vis liste med brugerdefinerede funktioner.#NEWLINE#input      Skift numerisk talsystem ved læsning (eksperimentelt).#NEWLINE#help       Vis grundlæggende hjælpetekst.#NEWLINE#output     kift numerisk talsystem ved skrivning (eksperimentelt).#NEWLINE#list       Vis indholdet af en mappe.#NEWLINE#show       Vis indholdet af en fil.#NEWLINE#load       Hent variabler og funktioner fra en fil.#NEWLINE#save       Gem variabler og funktioner til en fil.#NEWLINE#variables  Vis variabler i hukommelsen.#NEWLINE#version    Vis infomation om denne version.#NEWLINE#memory     Vis internt hukommelsesforbrug.#NEWLINE#exit       Afslut program.#NEWLINE#---------------------------------------------------------#NEWLINE#Det er valgfrit at angive def og eval kommandoerne. Kommandoerne Functions og#NEWLINE#variables kan forkortes til funcs og vars.#NEWLINE#
 symcomplex
-Udtryk med komplekse tal skrives ved at angive 'i' sammen med den#NEWLINE#imaginÃ¦re talvÃ¦rdi. Komplekse tal kan blandes med reelle tal.#NEWLINE##SYNTAXHIGHLIGHT#Syntaks: 2+3i#NEWLINE#Eksempel: 2+3.2i*cos(-1i)+5/7#NEWLINE#
+Udtryk med komplekse tal skrives ved at angive 'i' sammen med den#NEWLINE#imaginære talværdi. Komplekse tal kan blandes med reelle tal.#NEWLINE##SYNTAXHIGHLIGHT#Syntaks: 2+3i#NEWLINE#Eksempel: 2+3.2i*cos(-1i)+5/7#NEWLINE#
 symclear
 Clear kommandoen sletter alt tekst i konsol vinduet.#NEWLINE##SYNTAXHIGHLIGHT#Syntaks: clear#NEWLINE#
 symdef
@@ -82,7 +82,7 @@ The load statement retrieves a set of defined variables and funktions from#NEWLI
 symsave
 The save statement saves defined variables and funktions to a file in a#NEWLINE#plain text format. Saved variables and funktions can be retrieved using#NEWLINE#the load statement.#NEWLINE# #SYNTAXHIGHLIGHT#Syntaks: save "worktokeep"#NEWLINE#
 symversion
-Viser hvilken version af amath der kÃ¸rer.#NEWLINE#
+Viser hvilken version af amath der kører.#NEWLINE#
 symmem
 Viser internt hukommelsesforbrug.#NEWLINE#
 ; Help for prefs statement
@@ -104,12 +104,12 @@ Pi is the ratio of the circumference of a circle to its diameter. Being an#NEWLI
 symi
 The imaginary unit is denoted and commonly referred to as i.#NEWLINE#The imaginary unit is a number, which when multiplied#NEWLINE#by itself gives -1.#NEWLINE#
 symins
-Den sidst udregnede vÃ¦rdi kan benyttes i nÃ¦ste udtryk ved hjÃ¦lp af ins variablen.#NEWLINE##SYNTAXHIGHLIGHT#Eksemple: ins*0,25#NEWLINE#
+Den sidst udregnede værdi kan benyttes i næste udtryk ved hjælp af ins variablen.#NEWLINE##SYNTAXHIGHLIGHT#Eksemple: ins*0,25#NEWLINE#
 symbin
-Der er ikke nogen hjÃ¦lp tilgÃ¦ngelig om binary nÃ¸gleordet.#NEWLINE
+Der er ikke nogen hjælp tilgængelig om binary nøgleordet.#NEWLINE
 symoct
-Der er ikke nogen hjÃ¦lp tilgÃ¦ngelig om octal nÃ¸gleordet.#NEWLINE
+Der er ikke nogen hjælp tilgængelig om octal nøgleordet.#NEWLINE
 symdec
-Der er ikke nogen hjÃ¦lp tilgÃ¦ngelig om decimal nÃ¸gleordet.#NEWLINE
+Der er ikke nogen hjælp tilgængelig om decimal nøgleordet.#NEWLINE
 symhex
-Der er ikke nogen hjÃ¦lp tilgÃ¦ngelig om hexadecimal nÃ¸gleordet.#NEWLINE
+Der er ikke nogen hjælp tilgængelig om hexadecimal nøgleordet.#NEWLINE
