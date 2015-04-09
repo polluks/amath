@@ -143,6 +143,7 @@
     <ClInclude Include="app\lib\numb.h" />
     <ClInclude Include="app\lib\real.h" />
     <ClInclude Include="app\localize\help.h" />
+    <ClInclude Include="app\localize\ialias.h" />
     <ClInclude Include="app\localize\ident.h" />
     <ClInclude Include="app\localize\lex.h" />
     <ClInclude Include="app\localize\start.h" />

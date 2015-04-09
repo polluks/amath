@@ -86,10 +86,12 @@ char* AmigaLanguage::GetText(int id)
 
 char* AmigaLanguage::GetHelpText(char* ident)
 {
+    char *s = FindAlias(ident);
+  
     identhelpdef *def = NOMEM;
     static const unsigned int count = sizeof(identtexts) / sizeof(identhelpdef);
     for (unsigned int i = 0; i < count; i++) {
-        if (StrIsEqual(identtexts[i].ident, ident)) {
+        if (StrIsEqual(identtexts[i].ident, s)) {
             def = (identhelpdef*)&identtexts[i];
             break;
         }

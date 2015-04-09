@@ -24,54 +24,44 @@
  *
  */
 
-#include "clib.h"
-#include "localize/tags.h"
-#include "localize/ialias.h"
-#include "system/language.h"
+#ifndef AMATH_TEXT_IDENT_ALIAS_H
+#define AMATH_TEXT_IDENT_ALIAS_H
 
-Language::Language()
-{
-    lastText = NOMEM;
+struct identalias {
+    const char *ident;
+    const char *alias;
+};
+
+static const identalias identaliases[] = {
+    { "sqrt", "sqr" },
+    { "cbrt",  "cbr" },
+    { "log2", "lb" },
+    { "log",  "lg" },
+    { "log10", "lg" },
+    { "arsin", "asin" },
+    { "arcos", "acos" },
+    { "artan", "atan" },
+    { "arcot", "acot" },
+    { "arsec", "asec" },
+    { "arcsc", "acsc" },
+    { "arcsin", "asin" },
+    { "arccos", "acos" },
+    { "arctan", "atan" },
+    { "arccot", "acot" },
+    { "arcsec", "asec" },
+    { "arccsc", "acsc" },
+    { "arsinh", "asinh" },
+    { "arcosh", "acosh" },
+    { "artanh", "atanh" },
+    { "arcoth", "acoth" },
+    { "arsech", "asech" },
+    { "arcsch", "acsch" },
+    { "arcsinh", "asinh" },
+    { "arccosh", "acosh" },
+    { "arctanh", "atanh" },
+    { "arccoth", "acoth" },
+    { "arcsech", "asech" },
+    { "arccsch", "acsch" }
 }
 
-Language::~Language()
-{
-    if (lastText != NOMEM) {
-        delete lastText;
-    }
-}
-
-char* Language::FindAlias(const char* ident)
-{
-    static const unsigned int count = sizeof(identaliases) / sizeof(identalias);
-    for (unsigned int i = 0; i < count; i++) {
-        if (StrIsEqual(identaliases[i].ident == ident)) {
-            return (char*)identaliases[i].alias;
-        }
-    }
-
-    return (char*)ident;
-}
-
-char* Language::UntagText(const char* text)
-{
-    if (lastText != NOMEM) {
-        delete lastText;
-        lastText = NULL;
-    }
-
-    if (text == NOMEM) {
-        return NOMEM;
-    }
-
-    unsigned int count = sizeof(texttags) / sizeof(texttag);
-    char *untagged = new char[StrLen(text) * 2];
-    Untag(untagged, text, (texttag*)texttags, count);
-
-    unsigned int len = StrLen(untagged) + 1;
-    lastText = new char[len];
-    MemCopy(lastText, untagged, len);
-    delete untagged;
-
-    return lastText;
-}
+#endif
