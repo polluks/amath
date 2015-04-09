@@ -48,6 +48,7 @@ public:
     virtual bool StrIsEqualLoc(const char *s1, const char *s2) = 0;
 
 protected:
+    char* FindAlias(const char *ident);
     char* UntagText(const char *text);
     char* lastText;
 };

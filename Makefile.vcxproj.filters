@@ -428,6 +428,9 @@
     <ClInclude Include="app\localize\help.h">
       <Filter>app\localize</Filter>
     </ClInclude>
+    <ClInclude Include="app\localize\ialias.h">
+      <Filter>app\localize</Filter>
+    </ClInclude>
     <ClInclude Include="app\localize\ident.h">
       <Filter>app\localize</Filter>
     </ClInclude>
