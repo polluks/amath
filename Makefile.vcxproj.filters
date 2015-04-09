@@ -434,6 +434,9 @@
     <ClInclude Include="app\localize\ident.h">
       <Filter>app\localize</Filter>
     </ClInclude>
+    <ClInclude Include="app\localize\kword.h">
+      <Filter>app\localize</Filter>
+    </ClInclude>
     <ClInclude Include="app\localize\lex.h">
       <Filter>app\localize</Filter>
     </ClInclude>
