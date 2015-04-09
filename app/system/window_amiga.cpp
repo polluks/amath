@@ -304,7 +304,7 @@ void AmigaWindow::SetPrompt(const char* string)
 //
 //BOOL AskKeyMap(struct IOStdReq *request, struct KeyMap *keymap)
 //{
- //   request->io_Command = CD_ASKKEYMAP;
+//   request->io_Command = CD_ASKKEYMAP;
 //    request->io_Length = sizeof(struct KeyMap);
 //    request->io_Data = (APTR)keymap;  /* where to put it */
 //    DoIO(request);

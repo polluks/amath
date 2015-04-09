@@ -28,6 +28,7 @@
 #include "main/lexer.h"
 #include "main/token.h"
 #include "localize/lex.h"
+#include "localize/kword.h"
 #include "system/program.h"
 
 Lexer::Lexer(const char *input)
