@@ -27,7 +27,7 @@
 ; OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 ; #############################################################################
 INTROMSG
-#NORMALTEXT##BOLD##STARTMSG##NEWLINE##NORMALTEXT##COLOR02##ITALICS#Skriv hjælp for at få vist uddybende information.#NEWLINE#
+#NORMALTEXT##BOLD##STARTMSG##NEWLINE##NORMALTEXT##COLOR02#Skriv hjælp for at få vist uddybende information.#NEWLINE#
 TXTLISTDIRHEADER
  Type       Navn#NEWLINE#-----------------------------------------------#NEWLINE#
 TXTLISTDIRTFILE
