@@ -36,3 +36,9 @@ Install by copying the desired amath binary to C: or any other appropriate locat
 
 Get more details on usage by visiting the amath wiki:
 * https://github.com/llsth/amath/wiki
+
+Download latest stable release:
+* https://github.com/llsth/amath/releases/tag/v1.5.6
+
+Latest preview release (unstable):
+* https://github.com/llsth/amath/releases/tag/v1.6.0.3-preview
