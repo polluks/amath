@@ -49,41 +49,6 @@
 class Program *Program;
 const char *vers = TXTDOSVERSION;
 
-#ifndef AMIGA
-#include <new>
-void* operator new (size_t size) throw(std::bad_alloc) {
-    return AllocMemSafe(size);
-}
-
-void* operator new[] (size_t size) throw(std::bad_alloc) {
-    return AllocMemSafe(size);
-}
-
-void  operator delete (void* ptr) throw() {
-    FreeMemSafe(ptr);
-}
-
-void  operator delete[] (void* ptr) throw() {
-    FreeMemSafe(ptr);
-}
-#else
-inline void* operator new (size_t size) {
-    return AllocMemSafe(size);
-}
-
-inline void* operator new[] (size_t size) {
-    return AllocMemSafe(size);
-}
-
-inline void  operator delete (void* ptr) {
-    FreeMemSafe(ptr);
-}
-
-inline void  operator delete[] (void* ptr) {
-    FreeMemSafe(ptr);
-}
-#endif
-
 class Program* CreateProgram(int argc, char **argv) {
     class Program* out;
 #ifdef WITHTEST

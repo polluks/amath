@@ -29,6 +29,7 @@
 #include "localize/help.h"
 #include "localize/text.h"
 #include "localize/ident.h"
+#include "localize/kword.h"
 #include "localize/tags.h"
 #include "system/program.h"
 #include "system/language_amiga.h"
@@ -36,23 +37,43 @@
 #ifdef AMIGA
 #include <clib/locale_protos.h>
 
+static unsigned int keywordcount;
+static unsigned int textcount;
+static unsigned int identcount;
+static unsigned int helpcount;
+
 AmigaLanguage::AmigaLanguage()
 {
+    keywordcount = sizeof(keywords) / sizeof(keyworddef);
+    textcount = sizeof(textdefs) / sizeof(textdef);
+    identcount = sizeof(identtexts) / sizeof(identhelpdef);
+    helpcount = sizeof(helptexts) / sizeof(helptextdef);
+
     // OpenCatalog searches for files in the following locations:
     // PROGDIR:Catalogs/languageName/name
     // LOCALE:Catalogs/languageName/name
 
     base = (struct LocaleBase*)OpenLibrary("locale.library", 38L);
     locale = OpenLocale(NULL);
-    helpcatalog  = OpenCatalog(locale, "amath-help.catalog",
-                               OC_BuiltInLanguage,"english",
-                               TAG_DONE);
-    identcatalog = OpenCatalog(locale, "amath-ident.catalog",
-                               OC_BuiltInLanguage,"english",
-                               TAG_DONE);
-    textcatalog  = OpenCatalog(locale, "amath-text.catalog",
-                               OC_BuiltInLanguage,"english",
-                               TAG_DONE);
+    helpcatalog    = OpenCatalog(locale, "amath-help.catalog",
+                                 OC_BuiltInLanguage,"english",
+                                 TAG_DONE);
+    identcatalog   = OpenCatalog(locale, "amath-ident.catalog",
+                                 OC_BuiltInLanguage,"english",
+                                 TAG_DONE);
+    textcatalog    = OpenCatalog(locale, "amath-text.catalog",
+                                 OC_BuiltInLanguage,"english",
+                                 TAG_DONE);
+    keywordcatalog = OpenCatalog(locale, "amath-keyword.catalog",
+                                 OC_BuiltInLanguage,"english",
+                                 TAG_DONE);
+
+    keywordsloc = new keyworddef[keywordcount];
+    for (unsigned int j = 0; j < keywordcount; j++) {
+        keywordsloc[j].id = j;
+        keywordsloc[j].name = GetCatalogStr(keywordcatalog, j, NULL);
+        keywordsloc[j].symbol = keywords[j].symbol;
+    }
 }
 
 AmigaLanguage::~AmigaLanguage()
@@ -60,15 +81,29 @@ AmigaLanguage::~AmigaLanguage()
     CloseCatalog(helpcatalog);
     CloseCatalog(identcatalog);
     CloseCatalog(textcatalog);
+    CloseCatalog(keywordcatalog);
     CloseLocale(locale);
     CloseLibrary((struct Library*)base);
+    delete [] keywordsloc;
+}
+
+Symbol AmigaLanguage::FindKeyword(const char* ident)
+{
+    for (unsigned int i = 0; i < keywordcount; i++) {
+        if (
+            Program->Language->StrIsEqualLoc(keywords[i].name, ident) ||
+            Program->Language->StrIsEqualLoc(keywordsloc[i].name, ident)) {
+            return keywords[i].symbol;
+        }
+    }
+
+    return (Symbol)0;
 }
 
 char* AmigaLanguage::GetText(int id)
 {
     textdef *def = NOMEM;
-    static const unsigned int count = sizeof(textdefs) / sizeof(textdef);
-    for (unsigned int i = 0; i < count; i++) {
+    for (unsigned int i = 0; i < textcount; i++) {
         if (textdefs[i].id == id) {
             def = (textdef*)&textdefs[i];
             break;
@@ -87,10 +122,8 @@ char* AmigaLanguage::GetText(int id)
 char* AmigaLanguage::GetHelpText(char* ident)
 {
     char *s = FindAlias(ident);
-
     identhelpdef *def = NOMEM;
-    static const unsigned int count = sizeof(identtexts) / sizeof(identhelpdef);
-    for (unsigned int i = 0; i < count; i++) {
+    for (unsigned int i = 0; i < identcount; i++) {
         if (StrIsEqual(identtexts[i].ident, s)) {
             def = (identhelpdef*)&identtexts[i];
             break;
@@ -109,8 +142,7 @@ char* AmigaLanguage::GetHelpText(char* ident)
 char* AmigaLanguage::GetHelpText(Symbol symbol)
 {
     helptextdef *def = NOMEM;
-    static const unsigned int count = sizeof(helptexts) / sizeof(helptextdef);
-    for (unsigned int i = 0; i < count; i++) {
+    for (unsigned int i = 0; i < helpcount; i++) {
         if (helptexts[i].symbol == symbol) {
             def = (helptextdef*)&helptexts[i];
             break;

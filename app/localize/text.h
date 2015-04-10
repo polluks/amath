@@ -33,7 +33,7 @@
 /**
  * @file  text.h
  * @brief Static texts in amath.
- *
+ * 
  */
 
 #include "clib.h"

@@ -1,0 +1,155 @@
+## version $VER: amath-keyword.catalog 1.60 (08.04.2015) Danish
+## language dansk
+## codeset 0
+;#############################################################################
+;Copyright (c) 2015, Carsten Larsen
+;All rights reserved.
+;
+;Redistribution and use in source and binary forms, with or without
+;modification, are permitted provided that the following conditions are met:
+;
+;* Redistributions of source code must retain the above copyright notice, this
+;  list of conditions and the following disclaimer.
+;
+;* Redistributions in binary form must reproduce the above copyright notice,
+;  this list of conditions and the following disclaimer in the documentation
+;  and/or other materials provided with the distribution.
+;
+;THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+;AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+;IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+;DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE
+;FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+;DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
+;SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
+;CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
+;OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+;OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+;#############################################################################
+;######### ClearStatement
+clear
+ryd
+;######### FunctionDefinition statement
+def
+definer
+;######### DeleteStatement and keyword 
+delete
+slet
+;######### Eulers Number keyword
+e
+e
+;######### Complex i keyword
+i
+i
+;######### pi keyword
+pi
+pi
+;######### ins variable keyword
+ins
+ins
+;######### EvalStatement
+eval
+beregn
+;######### DrawStatement
+draw
+tegn
+;######### PlotStatement
+plot
+plot
+;######### ExecuteStatement
+execute
+kør
+;######### ExitStatement
+exit
+afslut
+quit
+slut
+;######### Statements keyword
+statements
+kommandoer
+;######### Operators keyword
+operators
+operatorer
+;######### Complex keyword
+complex
+kompleks
+;######### Function keyword
+funcs
+funk
+functions
+funktioner
+;######### Trigonometric keyword
+trigon
+trigo
+trigonometric
+trigonometri
+;######### Hyperbolic keyword
+hyper
+hyper
+hyperbolic
+hyperbolsk
+;######### HelpStatement
+help
+hjælp
+;######### PromptStatement
+prompt
+prompt
+;######### VersionStatement
+version
+version
+;######### MemoryStatement
+mem
+hukommelse
+memory
+hukommelse
+;######### PrefsStatement
+prefs
+præf
+preferences
+præferencer
+;######### ListStatement and keyword
+list
+list
+;######### LoadStatement and keyword
+load
+hent
+;######### SaveStatement and keyword
+save
+gem
+;######### ShowStatement and keyword
+show
+vis
+;######### ListVariablesStatement and keyword
+vars
+var
+variables
+variabler
+;######### DigitsStatement
+digits
+cifre
+;######### InputStatement
+input
+ind
+;######### OutputStatement
+output
+ud
+;######### Binary keyword
+bin
+bin
+binary
+binær
+;######### Octal keyword
+oct
+okt
+octal
+oktal
+;######### Decimal keyword
+dec
+dec
+decimal
+decimal
+;######### Hexadecimal keyword
+hex
+hex
+hexadecimal
+hexadecimal

@@ -26,10 +26,11 @@
 
 #include "clib.h"
 #include "localize/lex.h"
+#include "localize/tags.h"
 #include "localize/help.h"
 #include "localize/text.h"
 #include "localize/ident.h"
-#include "localize/tags.h"
+#include "localize/kword.h"
 #include "system/program.h"
 #include "system/language_stdc.h"
 
@@ -40,6 +41,18 @@ StandardLanguage::StandardLanguage()
 
 StandardLanguage::~StandardLanguage()
 { }
+
+Symbol StandardLanguage::FindKeyword(const char* ident)
+{
+    static const unsigned int count = sizeof(keywords) / sizeof(keyworddef);
+    for (unsigned int i = 0; i < count; i++) {
+        if (Program->Language->StrIsEqualLoc(keywords[i].name, ident)) {
+            return keywords[i].symbol;
+        }
+    }
+
+    return (Symbol)0;
+}
 
 char* StandardLanguage::GetText(int id)
 {

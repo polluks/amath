@@ -28,10 +28,10 @@
 ;## Keywords and statement in amath
 ;###################################################################################
 ;######### ClearStatement
-clear (/8/8)
+clear (//)
 symclear
 ;######### FunctionDefinition statement
-def (/6/6)
+def (//)
 symdef
 ;######### DeleteStatement and keyword 
 delete (//)

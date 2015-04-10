@@ -27,8 +27,8 @@
  *
  */
 
-#ifndef AMATH_TEXT_KEYWORD_H
-#define AMATH_TEXT_KEYWORD_H
+#ifndef AMATH_LOCALIZE_KEYWORD_H
+#define AMATH_LOCALIZE_KEYWORD_H
 
 /**
  * @file  kword.h
@@ -44,58 +44,59 @@
  *
  */
 struct keyworddef {
-    const char *name;
+    int id;
     Symbol symbol;
+    const char *name;
 };
 
 static const keyworddef keywords[] = {
-    { "clear", symclear },
-    { "def", symdef },
-    { "delete", symdelete },
-    { "e", syme },
-    { "i", symi },
-    { "pi", sympi },
-    { "ins", symins },
-    { "eval", symeval },
-    { "draw", symdraw },
-    { "plot", symplot },
-    { "execute", symexecute },
-    { "exit", symexit },
-    { "quit", symexit },
-    { "statements", symstatement },
-    { "operators", symoperator },
-    { "complex", symcomplex },
-    { "funcs", symfunction },
-    { "functions", symfunction },
-    { "trigon", symtrigon },
-    { "trigonometric", symtrigon },
-    { "hyper", symhyper },
-    { "hyperbolic", symhyper },
-    { "help", symhelp },
-    { "prompt", symprompt },
-    { "version", symversion },
-    { "mem", symmem },
-    { "memory", symmem },
-    { "prefs", symprefs },
-    { "preferences", symprefs },
-    { "list", symlist },
-    { "load", symload },
-    { "save", symsave },
-    { "show", symshow },
-    { "vars", symvariable },
-    { "variables", symvariable },
-    { "digits", symdigits },
-    { "input", syminput },
-    { "output", symoutput },
-    { "bin", symbin },
-    { "binary", symbin },
-    { "oct", symoct },
-    { "octal", symoct },
-    { "dec", symdec },
-    { "decimal", symdec },
-    { "hex", symhex },
-    { "hexadecimal", symhex },
-    { EMPTYSTRING, Symbol(0) }
+    { 0, symclear, "clear" },
+    { 1, symdef, "def" },
+    { 2, symdelete, "delete" },
+    { 3, syme, "e" },
+    { 4, symi, "i" },
+    { 5, sympi, "pi" },
+    { 6, symins, "ins" },
+    { 7, symeval, "eval" },
+    { 8, symdraw, "draw" },
+    { 9, symplot, "plot" },
+    { 10, symexecute, "execute" },
+    { 11, symexit, "exit" },
+    { 12, symexit, "quit" },
+    { 13, symstatement, "statements" },
+    { 14, symoperator, "operators" },
+    { 15, symcomplex, "complex" },
+    { 16, symfunction, "funcs" },
+    { 17, symfunction, "functions" },
+    { 18, symtrigon, "trigon" },
+    { 19, symtrigon, "trigonometric" },
+    { 20, symhyper, "hyper" },
+    { 21, symhyper, "hyperbolic" },
+    { 22, symhelp, "help" },
+    { 23, symprompt, "prompt" },
+    { 24, symversion, "version" },
+    { 25, symmem, "mem" },
+    { 26, symmem, "memory" },
+    { 27, symprefs, "prefs" },
+    { 28, symprefs, "preferences" },
+    { 29, symlist, "list" },
+    { 30, symload, "load" },
+    { 31, symsave, "save" },
+    { 32, symshow, "show" },
+    { 33, symvariable, "vars" },
+    { 34, symvariable, "variables" },
+    { 35, symdigits, "digits" },
+    { 36, syminput, "input" },
+    { 37, symoutput, "output" },
+    { 38, symbin, "bin" },
+    { 39, symbin, "binary" },
+    { 40, symoct, "oct" },
+    { 41, symoct, "octal" },
+    { 42, symdec, "dec" },
+    { 43, symdec, "decimal" },
+    { 44, symhex, "hex" },
+    { 45, symhex, "hexadecimal" },
+    { -1, Symbol(0), EMPTYSTRING }
 };
 
 #endif

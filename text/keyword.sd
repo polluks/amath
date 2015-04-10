@@ -45,13 +45,14 @@
  *
  */
 struct keyworddef {
-    const char *name;
+    int id;
     Symbol symbol;
+    const char *name;
 };
 
 static const keyworddef keywords[] = {
-    { "%i", %s },
-    { EMPTYSTRING, Symbol(0) }
+    { %d, %s, "%i" },
+    { -1, Symbol(0), EMPTYSTRING }
 };
 
 #endif

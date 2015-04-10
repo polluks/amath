@@ -30,6 +30,7 @@
 #include "localize/lex.h"
 #include "localize/help.h"
 #include "localize/text.h"
+#include "localize/kword.h"
 #include "system/language.h"
 
 class AmigaLanguage : public Language {
@@ -47,6 +48,7 @@ public:
     bool CharIsSpace(unsigned long character);
     bool CharIsCntrl(unsigned long character);
     bool StrIsEqualLoc(const char *s1, const char *s2);
+    Symbol FindKeyword(const char *ident);
 
 private:
     struct LocaleBase* base;
@@ -54,6 +56,8 @@ private:
     struct Catalog *helpcatalog;
     struct Catalog *identcatalog;
     struct Catalog *textcatalog;
+    struct Catalog *keywordcatalog;
+    keyworddef *keywordsloc;
 };
 
 #endif

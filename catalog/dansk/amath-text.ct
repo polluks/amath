@@ -27,9 +27,9 @@
 ; OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 ; #############################################################################
 INTROMSG
-#NORMALTEXT##BOLD##STARTMSG##NEWLINE##NORMALTEXT##COLOR02##ITALICS#Skriv help for at få vist mere information.#NEWLINE#
+#NORMALTEXT##BOLD##STARTMSG##NEWLINE##NORMALTEXT##COLOR02##ITALICS#Skriv hjælp for at få vist uddybende information.#NEWLINE#
 TXTLISTDIRHEADER
-Type        Navn#NEWLINE#-----------------------------------------------#NEWLINE#
+ Type       Navn#NEWLINE#-----------------------------------------------#NEWLINE#
 TXTLISTDIRTFILE
 [fil]
 TXTLISTDIRTDIR
@@ -53,23 +53,23 @@ Variablen er ikke defineret:#SPACE#
 HELPFUNNDEF
 Funktionen er ikke defineret:#SPACE#
 HELPFUNRDEF
-Funktionen kan ikke omdefineres:#SPACE#
+Funktionen er allerede defineret:#SPACE#
 HELPPNUMERA
-Basen skal være mellem 2 og 32:#SPACE#
+Grundtallet skal være mellem 2 og 32:#SPACE#
 HELPPDIGITS
-Antal decimaler skal være mellem 0 og 15:#SPACE#
+Antal betydende cifre skal være mellem 0 og 15:#SPACE#
 HELPINPUSHOW
-Talsystemet når computeren læser er#SPACE#
+Talsystemet når computeren læser ind er#SPACE#
 HELPOUTPSHOW
-Talsystemet når computeren skriver er#SPACE#
+Talsystemet når computeren skriver ud er#SPACE#
 HELPINPUSETT
-Talsystemet ved læsning ændret til#SPACE#
+Talsystemet ved indlæsning ændret til#SPACE#
 HELPOUTPSETT
-Talsystemet ved skrivning ændret til#SPACE#
+Talsystemet ved udskrivning ændret til#SPACE#
 HELPDIGISETT
-Antal decimaler ændret til#SPACE#
+Antal betydende cifre ændret til#SPACE#
 HELPDIGISHOW
-Antal decimaler der vises er#SPACE#
+Antal betydende cifre der vises er#SPACE#
 HELPVARSNDEF
 Der er ikke defineret nogle variabler.#NEWLINE#
 HELPFUNCNDEF
@@ -79,17 +79,17 @@ Variabler og funktioner indlæst fra fil.#NEWLINE#
 HELPSAVESUCC
 Variabler og funktioner gemt til fil.#NEWLINE#
 HELPSAVEFAIL
-Kan ikke gemme til fil.#NEWLINE#
+Kan ikke gemme fil.#NEWLINE#
 HELPSAVENOTH
 Der er ikke noget og gemme.#NEWLINE#
 HELPPREFLOAD
-Præferencer indlæst.#NEWLINE#
+Præferencer blev indlæst.#NEWLINE#
 HELPPREFNOLO
-Præferencer kunne ikke indlæses.#NEWLINE#
+Kunne ikke indlæses præferencer.#NEWLINE#
 HELPPREFSAVE
 Præferencer blev gemt.#NEWLINE#
 HELPPREFNOSA
-Præferencer kunne ikke gemmes.#NEWLINE#
+Kunne ikke gemme præferencer.#NEWLINE#
 MSGNODIR
 Mappen kan ikke åbnes:#SPACE#
 MSGNOFILE

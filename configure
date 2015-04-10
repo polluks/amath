@@ -352,6 +352,7 @@ if $VALID ; then
 	echo "	\${FLXCAT} text/help.cd catalog/dansk/amath-help.ct CATALOG dist/catalog/dansk/amath-help.catalog"
 	echo "	\${FLXCAT} text/ident.cd catalog/dansk/amath-ident.ct CATALOG dist/catalog/dansk/amath-ident.catalog"
 	echo "	\${FLXCAT} text/text.cd catalog/dansk/amath-text.ct CATALOG dist/catalog/dansk/amath-text.catalog"
+	echo "	\${FLXCAT} text/keyword.cd catalog/dansk/amath-keyword.ct CATALOG dist/catalog/dansk/amath-keyword.catalog"
 	echo "	\${COPY} amath dist/"
 	echo "	\${COPY} LICENSE dist/"
 	echo "	\${COPY} COPYRIGHT dist/"
