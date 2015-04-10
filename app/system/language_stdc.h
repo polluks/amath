@@ -47,6 +47,7 @@ public:
     bool CharIsSpace(unsigned long character);
     bool CharIsCntrl(unsigned long character);
     bool StrIsEqualLoc(const char *s1, const char *s2);
+    Symbol FindKeyword(const char *ident);
 };
 
 #endif

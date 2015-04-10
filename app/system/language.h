@@ -46,6 +46,7 @@ public:
     virtual bool CharIsSpace(unsigned long character) = 0;
     virtual bool CharIsCntrl(unsigned long character) = 0;
     virtual bool StrIsEqualLoc(const char *s1, const char *s2) = 0;
+    virtual Symbol FindKeyword(const char *ident) = 0;
 
 protected:
     char* FindAlias(const char *ident);

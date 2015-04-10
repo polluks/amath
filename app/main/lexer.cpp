@@ -215,14 +215,7 @@ bool Lexer::GetDigitValue()
 
 Symbol Lexer::FindKeyword(const char *ident)
 {
-    static const unsigned int count = sizeof(keywords) / sizeof(keyworddef);
-    for (unsigned int i = 0; i < count; i++) {
-        if (Program->Language->StrIsEqualLoc(keywords[i].name, ident)) {
-            return keywords[i].symbol;
-        }
-    }
-
-    return (Symbol)0;
+    return Program->Language->FindKeyword(ident);
 }
 
 char* Lexer::FindKeyword(Symbol symbol)

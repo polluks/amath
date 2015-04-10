@@ -118,3 +118,4 @@ void PreferencesBase::SetDigits(int digits)
 {
     this->digits = digits;
 }
+
