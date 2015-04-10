@@ -150,7 +150,11 @@ inline void  operator delete[] (void* ptr) {
 
 #if defined(ANSICONSOLE)
 #define HEADLINE         "\x1B[1m"
+#ifdef UNIX
 #define SYNTAXHIGHLIGHT  "\x1B[3m\x1B[32m"
+#else
+#define SYNTAXHIGHLIGHT  "\x1B[32m"
+#endif
 #define NORMALTEXT       "\x1B[0m"
 #define BOLD             "\x1B[1m"
 #define ITALICS          "\x1B[3m"
