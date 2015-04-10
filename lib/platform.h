@@ -28,6 +28,7 @@
 #define AMATH_LIB_PLATFROM_H
 
 #include <stddef.h>
+#include "mem.h"
 
 #define EMPTYSTRING ""
 #define SPACE       " "
@@ -128,6 +129,23 @@ typedef u_int16_t   uint16_t;
 typedef u_int32_t   uint32_t;
 typedef u_int64_t   uint64_t;
 # define IPTR LONG*
+#ifdef __cplusplus
+inline void* operator new (size_t size) {
+    return AllocMemSafe(size);
+}
+
+inline void* operator new[] (size_t size) {
+    return AllocMemSafe(size);
+}
+
+inline void  operator delete (void* ptr) {
+    FreeMemSafe(ptr);
+}
+
+inline void  operator delete[] (void* ptr) {
+    FreeMemSafe(ptr);
+}
+#endif
 #endif
 
 #if defined(ANSICONSOLE)
