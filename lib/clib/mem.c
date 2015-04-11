@@ -43,29 +43,6 @@
 #define Debug(x,y,z,w)
 #endif
 
-#ifdef __cplusplus
-#if (__GNUC__ > 2)
-#include <new>
-void* operator new (size_t size) throw(std::bad_alloc) {
-    return AllocMemSafe(size);
-}
-
-void* operator new[] (size_t size) throw(std::bad_alloc) {
-    return AllocMemSafe(size);
-}
-
-void  operator delete (void* ptr) throw() {
-    FreeMemSafe(ptr);
-}
-
-void  operator delete[] (void* ptr) throw() {
-    FreeMemSafe(ptr);
-}
-#else
-
-#endif
-#endif
-
 struct MemoryBlock
 {
     struct MemoryBlock *next;
