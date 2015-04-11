@@ -217,6 +217,10 @@ void CharBuffer::Append(const char* source)
 
 bool CharBuffer::RemoveTrailing(const char c)
 {
+    if (ptr == buf) {
+        return false;
+    }
+
     if (*(--ptr) == c) {
         return true;
     }
