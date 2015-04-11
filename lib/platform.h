@@ -148,6 +148,28 @@ inline void  operator delete[] (void* ptr) {
 #endif
 #endif
 
+
+#ifdef __cplusplus
+#if (__GNUC__ > 2)
+#include <new>
+inline void* operator new (size_t size) throw(std::bad_alloc) {
+    return AllocMemSafe(size);
+}
+
+inline void* operator new[] (size_t size) throw(std::bad_alloc) {
+    return AllocMemSafe(size);
+}
+
+inline void  operator delete (void* ptr) throw() {
+    FreeMemSafe(ptr);
+}
+
+inline void  operator delete[] (void* ptr) throw() {
+    FreeMemSafe(ptr);
+}
+#endif
+#endif
+
 #if defined(ANSICONSOLE)
 #define HEADLINE         "\x1B[1m"
 #ifdef UNIX
