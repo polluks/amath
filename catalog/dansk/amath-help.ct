@@ -43,11 +43,11 @@ symhyper
 symstatement
 ----------------------------------------------------------------------#NEWLINE#ryd         Ryd konsol vindue.#NEWLINE#definer     Definer funktion.#NEWLINE#slet        Slet variabler og funktioner.#NEWLINE#cifre       Angiv antal betydende cifre.#NEWLINE#beregn      Beregn aritmetiske udtryk.#NEWLINE#kør         Afvikel kommondoer i en fil.#NEWLINE#funktioner  Vis liste med brugerdefinerede funktioner.#NEWLINE#ind         Skift numerisk talsystem ved læsning (eksperimentelt).#NEWLINE#hjælp       Vis grundlæggende hjælpetekst.#NEWLINE#ud          Skift numerisk talsystem ved skrivning (eksperimentelt).#NEWLINE#list        Vis indholdet af en mappe.#NEWLINE#vis         Vis indholdet af en fil.#NEWLINE#hent        Hent variabler og funktioner fra en fil.#NEWLINE#gem         Gem variabler og funktioner til en fil.#NEWLINE#variabler   Vis variabler i hukommelsen.#NEWLINE#version     Vis infomation om denne version.#NEWLINE#hukommelse  Vis internt hukommelsesforbrug.#NEWLINE#afslut      Afslut program.#NEWLINE#----------------------------------------------------------------------#NEWLINE#Det er valgfrit at angive definer og beregn kommandoerne. Kommandoerne#NEWLINE#funktioner og variabler kan forkortes til funk og var.#NEWLINE#
 symcomplex
-Udtryk med komplekse tal skrives ved at angive 'i' sammen med den#NEWLINE#imaginære talværdi. Komplekse tal kan blandes med reelle tal.#NEWLINE##SYNTAXHIGHLIGHT#Syntaks: 2+3i#NEWLINE#Eksempel: 2+3.2i*cos(-1i)+5/7#NEWLINE#
+Udtryk med komplekse tal skrives ved at angive i#NEWLINE#sammen med den imaginære talværdi. Komplekse tal#NEWLINE#kan blandes med reelle tal.#NEWLINE##SYNTAXHIGHLIGHT#Syntaks: 2+3i#NEWLINE#Eksempel: 2+3.2i*cos(-1i)+5/7#NEWLINE#
 symclear
 Ryd kommandoen sletter alt tekst i konsol vinduet.#NEWLINE##SYNTAXHIGHLIGHT#Syntaks: ryd#NEWLINE#
 symdef
-Definer kommandoen bruges til at definere funktioner med. Det er ikke#NEWLINE#strengt nødvendigt at angive kommandoen, når en funktion skal defineres#NEWLINE#Allerede definerede funktioner kan vises med kommandoen 'funtioner'.#NEWLINE##SYNTAXHIGHLIGHT#Syntaks: definer f(x)=2*x+3#NEWLINE#Alternativ syntaks: f(x)=2*x+3#NEWLINE#
+Definer kommandoen bruges til at definere funktioner med. Det er ikke#NEWLINE#strengt nødvendigt at angive kommandoen, når en funktion skal defineres.#NEWLINE#Allerede definerede funktioner kan vises med kommandoen #SYNTAXHIGHLIGHT#funtioner#NORMAL#.#NEWLINE##SYNTAXHIGHLIGHT#Syntaks: definer f(x)=2*x+3#NEWLINE#Alternativ syntaks: f(x)=2*x+3#NEWLINE#
 ; Help for delete statement
 symdelete
 The delete statement can delete variable and funktions. To delete a#NEWLINE#single variable or funktions use the name of the funktion or variable.#NEWLINE#To delete all funktions or variables specify either the variable or#NEWLINE#funktion keyword.#NEWLINE##SYNTAXHIGHLIGHT#Syntaks: delete f(x)#NEWLINE#Syntaks: delete variables#NEWLINE#
@@ -79,16 +79,16 @@ symload
 The load statement retrieves a set of defined variables and funktions from#NEWLINE#a file. Variables and funktions can be saved using the save statement.#NEWLINE##SYNTAXHIGHLIGHT#Syntaks: load "savedwork"#NEWLINE#
 ; Help for save statement
 symsave
-The save statement saves defined variables and funktions to a file in a#NEWLINE#plain text format. Saved variables and funktions can be retrieved using#NEWLINE#the load statement.#NEWLINE# #SYNTAXHIGHLIGHT#Syntaks: save "worktokeep"#NEWLINE#
+Med gem kommando kan variabler og funktioner i hukommelsen gemmes til en fil.#NEWLINE#Gemte variabler og funktion kan indlæstet igen med #SYNTAXHIGHLIGHT#hent#NORMAL# kommandoen.#NEWLINE##SYNTAXHIGHLIGHT#Syntaks: gem "mitarbejde"#NEWLINE#
 symversion
 Viser hvilken version af amath der kører.#NEWLINE#
 symmem
-Viser internt hukommelsesforbrug.#NEWLINE#
+Viser internt hukommelsesforbrug. Programkoden er ikke medregnet.#NEWLINE#
 ; Help for prefs statement
 symprefs
 There is no help for prefs statement now.#NEWLINE#
 symvariable
-Variabler kommandoen viser en list af definerede variabler i hukommelsen.#NEWLINE##SYNTAXHIGHLIGHT#Syntaks: variabler#NEWLINE##NORMALTEXT#Alternativ syntaks: var#NEWLINE#
+Variabler kommandoen viser en list af definerede variabler i hukommelsen.#NEWLINE##SYNTAXHIGHLIGHT#Syntaks: variabler#NEWLINE#Alternativ syntaks: var#NEWLINE#
 symexit
 Afslut kommandoen lukker amath programmet.#NEWLINE##SYNTAXHIGHLIGHT#Syntaks: afslut#NEWLINE#
 ; Help for constant epsilon
@@ -98,9 +98,9 @@ Euler's number is base of the exponential funktion which equals its own#NEWLINE#
 sympi
 Pi is the ratio of the circumference of a circle to its diameter. Being an#NEWLINE#irrational number, pi cannot be expressed exactly as a common fraction.#NEWLINE#The value of pi is commonly approximated as #SYNTAXHIGHLIGHT#3.14159#NORMALTEXT#.#NEWLINE#
 symi
-Den imaginære enhen refereres og angives almindelig vis som i.#NEWLINE#Den imaginære enhen et tal, som når det ganges med sig selv,#NEWLINE#giver resultatet -1..#NEWLINE#
+Den imaginære enhen refereres og angives almindelig vis som i.#NEWLINE#Den imaginære enhen et tal, som når det ganges med sig selv,#NEWLINE#giver resultatet -1.#NEWLINE#
 symins
-Den sidst udregnede værdi kan benyttes i næste udtryk ved hjælp af ins variablen.#NEWLINE##SYNTAXHIGHLIGHT#Eksemple: ins*0,25#NEWLINE#
+Den sidst udregnede værdi kan benyttes i næste udtryk ved hjælp af #SYNTAXHIGHLIGHT#ins#NORMAL# variablen.#NEWLINE##SYNTAXHIGHLIGHT#Eksemple: ins*0,25#NEWLINE#
 symbin
 Der er ikke nogen hjælp tilgængelig om binær nøgleordet.#NEWLINE
 symoct
