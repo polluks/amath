@@ -240,7 +240,7 @@ void PositionalNumeralSystem::IntegerToBuffer(double value, unsigned int digits,
 
     do {
         count++;
-        unsigned int intremainder = (unsigned int) trunc(fmod(value, base));
+        unsigned int intremainder = (unsigned int) fabs(trunc(fmod(value, base)));
         *chars++ = alphaNumerics[intremainder];
         value /= base;
     } while (value >= 1.0);
@@ -375,7 +375,7 @@ const char* DecimalSystem::GetText(Number* number)
 const char* DecimalSystem::GetRealText(double value)
 {
     double exponent = log10(fabs(value));
-    int formatdigits = digits - (int)trunc(exponent) - 1;
+    int formatdigits = digits - (int)fabs(trunc(exponent)) - 1;
 
     double rounddigits = digits - 1;
     if (exponent < 0.0) {
