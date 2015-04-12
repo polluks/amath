@@ -62,7 +62,7 @@ void Program::NewPositionalInput(short unsigned int base, short unsigned int dig
 {
     delete Input;
 
-    if (digits == 10) {
+    if (base == 10) {
         Input = new DecimalSystem(digits);
     } else {
         Input = new PositionalNumeralSystem(base, digits);
@@ -73,7 +73,7 @@ void Program::NewPositionalOutput(short unsigned int base, short unsigned int di
 {
     delete Output;
 
-    if (digits == 10) {
+    if (base == 10) {
         Output = new DecimalSystem(digits);
     } else {
         Output = new PositionalNumeralSystem(base, digits);
