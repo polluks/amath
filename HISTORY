@@ -2,6 +2,14 @@
 ---                           amath change history                          ---
 -------------------------------------------------------------------------------
 
+v1.5.7 April 12 2015
+- Added copy/paste in amath Window.
+- Included AmigOS version string.
+- Included MorphOS build patch.
+- Fixed unreadable texts in some AmigaOS shells.
+- Fixed rare bug in selection of numeral system.
+- Miscellaneous minor bug fixes.
+
 v1.5.6 March 23 2015
 - Fixed typos and changed prompt.
 - Binaries compiled without dependency to ixemul.library
