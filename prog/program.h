@@ -41,7 +41,7 @@
 #include "main/functions.h"
 
 class Program;
-extern Program *Program;
+extern class Program *Program;
 
 /**
 * @brief Master control class.

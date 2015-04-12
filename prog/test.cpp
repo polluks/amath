@@ -44,9 +44,10 @@ Test::~Test()
 
 void Test::Run()
 {
-    debug = false;
+    debug = true;
     RunTests();
 
+    /*
     if (fail == 0) {
         printf("All tests passed (%i).\n", pass);
     } else {
@@ -55,6 +56,7 @@ void Test::Run()
         RunTests();
         printf("Passed: %i, failed: %i\n", pass, fail);
     }
+    */
 }
 
 void Test::RunTests()
@@ -109,6 +111,7 @@ void Test::RunTestset1()
 {
     Program->Input->SetDigits(9);
     Program->Output->SetDigits(9);
+
     TestExpression("-1", "-1 = -1");
     TestExpression("-(-1)", "1 = 1");
     TestExpression("2+3*4+5", "2+3*4+5 = 19");
@@ -205,6 +208,7 @@ void Test::RunTestset3()
 {
     Program->Output->SetDigits(9);
     Program->Output->SetDigits(11);
+
     TestExpression("-(1-2i)", "-(1-2i) = -1+2i");
     TestExpression("-2i-(-3i)", "-2i-(-3i) = 1i");
     TestExpression("1-2i+5.3i-2.1", "1-2i+(-2.1+5.3i) = -1.1+3.3i");
@@ -230,9 +234,9 @@ void Test::RunTestset3()
     TestExpression("abs(2.1-3.7i)", "abs(2.1-3.7i) = 4.2544094772");
     TestExpression("abs(-2.1+3.7i)", "abs(-2.1+3.7i) = 4.2544094772");
     TestExpression("abs(-2.1-3.7i)", "abs(-2.1-3.7i) = 4.2544094772");
-    TestExpression("sgn(2.1-3.7i)", "sgn(2.1-3.7i) = 1-1i");
-    TestExpression("sgn(-2.1+3.7i)", "sgn(-2.1+3.7i) = -1+1i");
-    TestExpression("sgn(-2.1-3.7i)", "sgn(-2.1-3.7i) = -1-1i");
+    TestExpression("sgn(2.1-3.7i)", "sgn(2.1-3.7i) = 1");
+    TestExpression("sgn(-2.1+3.7i)", "sgn(-2.1+3.7i) = -1");
+    TestExpression("sgn(-2.1-3.7i)", "sgn(-2.1-3.7i) = -1");
     TestExpression("round(1.5461+2.57i)", "round(1.5461+2.57i) = 2+3i");
     TestExpression("round(-1.5461-2.57i)", "round(-1.5461-2.57i) = -2-3i");
     TestExpression("ceil(43.5461+2.57i)", "ceil(43.5461+2.57i) = 44+3i");
@@ -262,6 +266,7 @@ void Test::RunTestset4()
 {
     Program->Output->SetDigits(9);
     Program->Output->SetDigits(14);
+
     TestExpression("cos(1+2i)",       "cos(1+2i) = 2.0327230070197-3.0518977991518i");
     TestExpression("sin(1+2i)",       "sin(1+2i) = 3.1657785132162+1.9596010414216i");
     TestExpression("tan(1+2i)",       "tan(1+2i) = 0.0338128260799+1.0147936161466i");

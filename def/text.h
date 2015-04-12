@@ -94,8 +94,9 @@
 #define ACPU "68060"
 #endif
 
-#if defined(INTELCPU) || defined(i386) || defined(i486)  || \
-    defined(intel)    || defined(x86)  || defined(i86pc)
+#if defined(INTELCPU)  || defined(i386)    || defined(i486)  ||  \
+    defined(intel)     || defined(x86)     || defined(i86pc) ||  \
+    defined(__i386__)  || defined(_M_IX86)
 #ifdef ACPU
 #undef ACPU
 #endif
@@ -106,10 +107,11 @@
 #define ACPU "PowerPC"
 #endif
 
-#ifdef AROS
-#define ASYSNAME SPACE "AROS"
-#else
-#define ASYSNAME EMPTYSTRING
+#if defined(__x86_64__)
+#ifdef ACPU
+#undef ACPU
+#endif
+#define ACPU "amd64"
 #endif
 
 #ifdef WITHTEST
@@ -132,11 +134,12 @@
 // ------------ Title and copyright texts --------------
 // -----------------------------------------------------
 
-#define ARCH       ACPU AFPU ASYSNAME ATEST
-#define ATITLE     "amath version 1.5.7"
-#define ACOPYRIGHT "(c) 2015 Carsten Sonne Larsen"
-#define ASTARTMSG  ATITLE SPACE ARCH SPACE ACOPYRIGHT
-#define DOSVERSION "\0$VER: amath 1.57 (12-04-2015)"
+#define ARCH         ACPU AFPU ATEST
+#define ATITLE       "amath version 1.5.7"
+#define ACOPYRIGHT   "(c) 2015 Carsten Sonne Larsen"
+#define ASTARTMSG    ATITLE SPACE ARCH SPACE ACOPYRIGHT
+#define AVERSION     "\0$VER: amath 1.57 (12-04-2015)"
+#define DOSVERSION   AVERSION SPACE ACPU AFPU ATEST
 
 // -----------------------------------------------------
 // ------------ Console control characters -------------
