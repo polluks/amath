@@ -24,8 +24,11 @@
  *
  */
 
+#include "def/text.h"
 #include "prog/cli.h"
 #include "prog/program.h"
+
+const char *vers = DOSVERSION;
 
 int main(int argc, char **argv)
 {
