@@ -92,7 +92,7 @@ void Test::PerformTest(const char* input, const char* result, bool show)
 
     if (buf->Is(result)) {
         pass++;
-        if (!debug) {
+        if (debug) {
             printf("PASS: %s\n", show ? result : input);
         }
     } else {
