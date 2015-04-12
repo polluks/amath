@@ -296,24 +296,32 @@ double log(double x);
 #include <math.h>
 #endif
 
-double sgn(double x)
+inline double
+sgn(double x)
 {
     return x > 0.0 ? 1.0 : x < 0.0 ? -1.0 : 0.0;
 }
 
-double trunc(double x)
+#ifndef __MORPHOS__
+static
+#endif
+inline double
+trunc(double x)
 {
     return x > 0.0 ? floor(x) : ceil(x);
 }
-#endif
 
-double round(double x)
+#ifndef __MORPHOS__
+static
+#endif
+inline double
+round(double x)
 {
     return x > 0.0 ? floor(x + 0.5) : ceil(x - 0.5);
 }
-#endif
 
-double log(double y, double x)
+inline double
+log(double y, double x)
 {
     return log(x)/log(y);
 }
