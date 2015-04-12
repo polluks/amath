@@ -39,6 +39,7 @@
 #include <intuition/intuition.h>
 #include <intuition/intuitionbase.h>
 #include <devices/console.h>
+#include <devices/conunit.h>
 #include <clib/exec_protos.h>
 #include <clib/alib_protos.h>
 #include <clib/dos_protos.h>
@@ -99,7 +100,7 @@ void AmigaWindow::Create()
         WFLG_DEPTHGADGET |
         WFLG_CLOSEGADGET |
         WFLG_ACTIVATE |
-        WFLG_SMART_REFRESH,
+        SIMPLE_REFRESH,
         NULL, NULL,           // user gadgets, user checkmark
         (UBYTE*) ATITLE,      // title
         NULL, NULL,           // window screen, super bitmap
@@ -120,7 +121,7 @@ void AmigaWindow::Create()
     writereq.io->io_Data = (APTR) window;
     writereq.io->io_Length = sizeof(Window);
 
-    openconsole = OpenDevice(DEVCONSOLE, 0, writereq.st, 0) == 0;
+    openconsole = OpenDevice(DEVCONSOLE, CONU_SNIPMAP, writereq.st, CONFLAG_DEFAULT) == 0;
     succeed = openconsole;
     if (!openconsole) return;
 
