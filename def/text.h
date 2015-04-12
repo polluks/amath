@@ -133,9 +133,10 @@
 // -----------------------------------------------------
 
 #define ARCH       ACPU AFPU ASYSNAME ATEST
-#define ATITLE     "amath version 1.5.6"
+#define ATITLE     "amath version 1.5.7"
 #define ACOPYRIGHT "(c) 2015 Carsten Sonne Larsen"
 #define ASTARTMSG  ATITLE SPACE ARCH SPACE ACOPYRIGHT
+#define DOSVERSION "\0$VER: amath 1.57 (12-04-2015)"
 
 // -----------------------------------------------------
 // ------------ Console control characters -------------
@@ -143,7 +144,7 @@
 
 #if defined(AMIGA) || defined(ANSICONSOLE)
 #define HEADLINE         "\x1B[1m"
-#define SYNTAXHIGHLIGHT  "\x1B[3m\x1B[32m"
+#define SYNTAXHIGHLIGHT  "\x1B[32m"
 #define NORMALTEXT       "\x1B[0m"
 #define BOLD             "\x1B[1m"
 #define ITALICS          "\x1B[3m"
