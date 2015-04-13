@@ -25,8 +25,6 @@
  */
 
 #include "clib.h"
-
-#ifndef AMIGA
 #include <stdio.h>
 #include "main/nodes.h"
 #include "main/evaluator.h"
@@ -116,5 +114,3 @@ void StandardConsole::SetPrompt(const char* string)
     ConsoleBase::SetPrompt(string);
     proc->SetPrompt(string);
 }
-
-#endif

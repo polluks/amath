@@ -45,34 +45,68 @@
 #include "system/preferences_amiga.h"
 #include "system/window_amiga.h"
 #include "system/graph_amiga.h"
+#include "system/base/io.h"
 
-class Program *Program;
+#ifdef AMIGA
+#include <exec/types.h>
+#include <exec/io.h>
+#include <exec/memory.h>
+#include <libraries/dos.h>
+#include <graphics/gfxbase.h>
+#include <intuition/intuition.h>
+#include <intuition/intuitionbase.h>
+#include <devices/conunit.h>
+#include <devices/console.h>
+#include <clib/exec_protos.h>
+#include <clib/alib_protos.h>
+#include <clib/dos_protos.h>
+#include <clib/intuition_protos.h>
+#include <clib/locale_protos.h>
+#endif
+
 const char *vers = TXTDOSVERSION;
+class  Program *Program = NULL;
+#ifdef AMIGA
+static struct DosBase *DosBase             = NULL;
+static struct GfxBase *GfxBase             = NULL;
+static struct LocaleBase *LocaleBase       = NULL;
+static struct IntuitionBase *IntuitionBase = NULL;
+#endif
 
 class Program* CreateProgram(int argc, char **argv) {
-    class Program* out;
 #ifdef WITHTEST
     if (argc == 2 && StrIsEqual(argv[1], "test")) {
-        out = new TestProgram();
+        return new TestProgram();
     } else
 #endif
     {
 #ifdef AMIGA
-        out = new AmigaProgram();
+        IntuitionBase = (struct IntuitionBase*)OpenLibrary(INTUITION_NAME, INTUITION_REV);
+        GfxBase = (struct GfxBase*)OpenLibrary(GRAPHICS_NAME, GRAPHICS_REV);
+
+        if (IntuitionBase != NULL && GfxBase != NULL) {
+            return new AmigaProgram();
+        } else {
+            return new StandardProgram();
+        }
 #else
-        out = new StandardProgram();
+        return new StandardProgram();
 #endif
     }
-    return out;
+    return NULL;
 }
 
 class Language* CreateLanguage()
 {
 #ifdef AMIGA
-    return new AmigaLanguage();
-#else
-    return new StandardLanguage();
+    LocaleBase = (struct LocaleBase*)OpenLibrary(LOCALE_NAME, LOCALE_REV);
+    if (LocaleBase != NULL) {
+        return new AmigaLanguage();
+    } else
 #endif
+    {
+        return new StandardLanguage();
+    }
 }
 
 class PreferencesBase* CreatePreferences()
@@ -87,6 +121,10 @@ class PreferencesBase* CreatePreferences()
 class FilesystemBase* CreateFilesystem()
 {
 #ifdef AMIGA
+    DosBase = (struct DosBase*)OpenLibrary(AMIGADOS_NAME, AMIGADOS_REV);
+    if (DosBase == NULL) {
+        return NULL;
+    }
     return new AmigaFilesystem();
 #else
     return new StandardFilesystem();
@@ -110,4 +148,25 @@ void WriteToShell(const char *out) {
 #endif
 }
 
+void Cleanup()
+{
+#ifdef AMIGA
+    if (DosBase != NULL) {
+        CloseLibrary((struct Library*)DosBase);
+    }
 
+    if (LocaleBase != NULL) {
+        CloseLibrary((struct Library*)LocaleBase);
+    }
+
+    if (GfxBase != NULL) {
+        CloseLibrary((struct Library*)GfxBase);
+    }
+
+    if (IntuitionBase != NULL) {
+        CloseLibrary((struct Library*)IntuitionBase);
+    }
+#endif
+    delete Program;
+    FreeAllSafe();
+}

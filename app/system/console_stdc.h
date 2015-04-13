@@ -34,8 +34,6 @@
  */
 
 #include "clib.h"
-
-#ifndef AMIGA
 #include "lib/aengine.h"
 #include "system/console.h"
 
@@ -61,5 +59,4 @@ private:
     bool exit;
 };
 
-#endif
 #endif

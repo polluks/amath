@@ -33,7 +33,7 @@
 /**
  * @file  text.h
  * @brief Static texts in amath.
- * 
+ *
  */
 
 #include "clib.h"
@@ -79,7 +79,7 @@ struct textdef {
 };
 
 static const textdef textdefs[] = {
-    { 0, "#NORMALTEXT##BOLD##STARTMSG##NEWLINE##NORMALTEXT##COLOR02##ITALICS#Type help to show info.#NEWLINE#" }, /* INTROMSG */
+    { 0, "#NORMALTEXT##BOLD##STARTMSG##NEWLINE##NORMALTEXT##COLOR02#Type help to show info.#NEWLINE#" }, /* INTROMSG */
     { 1, "Type        Name#NEWLINE#-----------------------------------------------#NEWLINE#" }, /* TXTLISTDIRHEADER */
     { 2, "[file]" }, /* TXTLISTDIRTFILE */
     { 3, "[dir]" }, /* TXTLISTDIRTDIR */

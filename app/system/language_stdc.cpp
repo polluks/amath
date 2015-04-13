@@ -34,8 +34,6 @@
 #include "system/program.h"
 #include "system/language_stdc.h"
 
-#ifndef AMIGA
-
 StandardLanguage::StandardLanguage()
 { }
 
@@ -138,5 +136,3 @@ bool StandardLanguage::StrIsEqualLoc(const char* s1, const char* s2)
 {
     return StrIsEqual(s1, s2);
 }
-
-#endif

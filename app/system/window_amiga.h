@@ -95,9 +95,6 @@ private:
     unsigned char ReadChar(STRequest request);
     void Cleanup();
 
-    GfxBase *gfxBase;
-    IntuitionBase *intuitionBase;
-
     Window    *window;
     MsgPort   *writeport;
     MsgPort   *readport;

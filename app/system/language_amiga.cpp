@@ -32,6 +32,7 @@
 #include "localize/kword.h"
 #include "localize/tags.h"
 #include "system/program.h"
+#include "system/base/io.h"
 #include "system/language_amiga.h"
 
 #ifdef AMIGA
@@ -49,50 +50,58 @@ AmigaLanguage::AmigaLanguage()
     identcount = sizeof(identtexts) / sizeof(identhelpdef);
     helpcount = sizeof(helptexts) / sizeof(helptextdef);
 
-    // OpenCatalog searches for files in the following locations:
-    // PROGDIR:Catalogs/languageName/name
-    // LOCALE:Catalogs/languageName/name
-
-    base = (struct LocaleBase*)OpenLibrary("locale.library", 38L);
     locale = OpenLocale(NULL);
-    helpcatalog    = OpenCatalog(locale, "amath-help.catalog",
-                                 OC_BuiltInLanguage,"english",
-                                 TAG_DONE);
-    identcatalog   = OpenCatalog(locale, "amath-ident.catalog",
-                                 OC_BuiltInLanguage,"english",
-                                 TAG_DONE);
-    textcatalog    = OpenCatalog(locale, "amath-text.catalog",
-                                 OC_BuiltInLanguage,"english",
-                                 TAG_DONE);
-    keywordcatalog = OpenCatalog(locale, "amath-keyword.catalog",
-                                 OC_BuiltInLanguage,"english",
-                                 TAG_DONE);
+    helpcatalog    = OpenCatalog(locale, CATALOG_HELP, CATALOG_DEF, TAG_DONE);
+    identcatalog   = OpenCatalog(locale, CATALOG_IDEN, CATALOG_DEF, TAG_DONE);
+    textcatalog    = OpenCatalog(locale, CATALOG_TEXT, CATALOG_DEF, TAG_DONE);
+    keywordcatalog = OpenCatalog(locale, CATALOG_KEYW, CATALOG_DEF, TAG_DONE);
 
-    keywordsloc = new keyworddef[keywordcount];
-    for (unsigned int j = 0; j < keywordcount; j++) {
-        keywordsloc[j].id = j;
-        keywordsloc[j].name = GetCatalogStr(keywordcatalog, j, NULL);
-        keywordsloc[j].symbol = keywords[j].symbol;
+    if (keywordcatalog != NULL) {
+        keywordsloc = new keyworddef[keywordcount];
+        for (unsigned int j = 0; j < keywordcount; j++) {
+            keywordsloc[j].id = j;
+            keywordsloc[j].name = GetCatalogStr(keywordcatalog, j, NULL);
+            keywordsloc[j].symbol = keywords[j].symbol;
+        }
+
+    } else {
+        keywordcatalog = NULL;
     }
 }
 
 AmigaLanguage::~AmigaLanguage()
 {
-    CloseCatalog(helpcatalog);
-    CloseCatalog(identcatalog);
-    CloseCatalog(textcatalog);
-    CloseCatalog(keywordcatalog);
-    CloseLocale(locale);
-    CloseLibrary((struct Library*)base);
-    delete [] keywordsloc;
+    if (helpcatalog != NULL) {
+        CloseCatalog(helpcatalog);
+    }
+
+    if (identcatalog != NULL) {
+        CloseCatalog(identcatalog);
+    }
+
+    if (textcatalog != NULL) {
+        CloseCatalog(textcatalog);
+    }
+
+    if (keywordcatalog != NULL) {
+        CloseCatalog(keywordcatalog);
+    }
+
+    if (locale != NULL) {
+        CloseLocale(locale);
+    }
+
+    if (keywordsloc != NULL) {
+        delete [] keywordsloc;
+    }
 }
 
 Symbol AmigaLanguage::FindKeyword(const char* ident)
 {
     for (unsigned int i = 0; i < keywordcount; i++) {
         if (
-            Program->Language->StrIsEqualLoc(keywords[i].name, ident) ||
-            Program->Language->StrIsEqualLoc(keywordsloc[i].name, ident)) {
+            Program->Language->StrIsEqualLoc(keywords[i].name, ident) || (keywordsloc != NULL &&
+                    Program->Language->StrIsEqualLoc(keywordsloc[i].name, ident))) {
             return keywords[i].symbol;
         }
     }
