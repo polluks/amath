@@ -80,17 +80,17 @@ AmigaLanguage::~AmigaLanguage()
     }
 }
 
-char* AmigaLanguage::Translate(textdef def)
+char* AmigaLanguage::Translate(textdef *def)
 {
     return (char*)GetCatalogStr(textcatalog, def->id, (char*)def->text);
 }
 
-char* AmigaLanguage::Translate(helptextdef def)
+char* AmigaLanguage::Translate(helptextdef *def)
 {
     return (char*)GetCatalogStr(helpcatalog, def->id, (char*)def->text);
 }
 
-char* AmigaLanguage::Translate(identhelpdef def)
+char* AmigaLanguage::Translate(identhelpdef *def)
 {
     return (char*)GetCatalogStr(identcatalog, def->id, (char*)def->text);
 }
