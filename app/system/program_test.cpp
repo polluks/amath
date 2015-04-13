@@ -46,12 +46,12 @@ void TestProgram::Run()
     RunTests();
 
     if (fail == 0) {
-        printf("All tests passed (%i).\n", pass);
+        printf("All tests passed (%i)." NEWLINE, pass);
     } else {
-        printf("Something went wrong ...\n");
+        printf("Something went wrong ..." NEWLINE);
         debug = true;
         RunTests();
-        printf("Passed: %i, failed: %i\n", pass, fail);
+        printf("Passed: %i, failed: %i" NEWLINE, pass, fail);
     }
 }
 
@@ -93,18 +93,18 @@ void TestProgram::PerformTest(const char* input, const char* result, bool show)
 
     CharBuffer *buf = new CharBuffer();
     buf->ClearAndCopy(res);
-    buf->RemoveTrailing('\n');
+    buf->RemoveTrailing(NEWLINE);
     delete evaluator;
 
     if (buf->Is(result)) {
         pass++;
-        if (!debug) {
-            printf("PASS: %s\n", show ? result : input);
+        if (debug) {
+            printf("PASS: %s" NEWLINE, show ? result : input);
         }
     } else {
         fail++;
         if (debug) {
-            printf("FAIL: %s  Expected |%s| Got |%s|\n", input, result, buf->GetString());
+            printf("FAIL: %s  Expected |%s| Got |%s|" NEWLINE, input, result, buf->GetString());
         }
     }
 

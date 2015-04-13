@@ -33,8 +33,13 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+#ifdef UNIX
 static const char *tempname = "/tmp/amath.prefs";
 static const char *permname = "/usr/local/etc/amath.conf";
+#else
+static const char *tempname = "amath.prefs";
+static const char *permname = "amath.conf";
+#endif
 
 bool StandardPreferences::Load()
 {

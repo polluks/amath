@@ -32,21 +32,6 @@
 #include "system/base/io.h"
 
 #ifdef AMIGA
-#include <exec/types.h>
-#include <exec/io.h>
-#include <exec/memory.h>
-#include <libraries/dos.h>
-#include <graphics/gfxbase.h>
-#include <intuition/intuition.h>
-#include <intuition/intuitionbase.h>
-#include <devices/conunit.h>
-#include <devices/console.h>
-#include <clib/exec_protos.h>
-#include <clib/alib_protos.h>
-#include <clib/dos_protos.h>
-#include <clib/intuition_protos.h>
-struct GfxBase *GfxBase;
-struct IntuitionBase *IntuitionBase;
 
 AmigaWindow::AmigaWindow(const char *prompt) :
     ConsoleBase(prompt)
@@ -60,25 +45,11 @@ AmigaWindow::AmigaWindow(const char *prompt) :
     readport = NULL;
     succeed = false;
     openconsole = false;
-
-    intuitionBase = (struct IntuitionBase*)OpenLibrary(INTUITION_NAME, INTUITION_REV);
-    IntuitionBase = intuitionBase;
-    gfxBase = (struct GfxBase*)OpenLibrary(GRAPHICS_NAME, GRAPHICS_REV);
-    GfxBase = gfxBase;
 }
 
 AmigaWindow::~AmigaWindow()
 {
     Cleanup();
-
-    if (gfxBase) {
-        CloseLibrary((Library*)gfxBase);
-    }
-
-    if (intuitionBase) {
-        CloseLibrary((Library*)intuitionBase);
-    }
-
     delete proc;
 }
 
@@ -109,7 +80,7 @@ void AmigaWindow::Create()
         WBENCHSCREEN          // open on workbench screen
     };
 
-    succeed = intuitionBase != NULL && gfxBase != NULL;
+    succeed = true;
     succeed = succeed && (writeport = CreatePort(PORTCR, 0)) != 0;
     succeed = succeed && (readport = CreatePort(PORTCW, 0)) != 0;
     succeed = succeed && (writereq.st = CreateExtIO(writeport, sizeof(IOStdReq))) != 0;

@@ -33,7 +33,7 @@
 /**
  * @file  ident.h
  * @brief Help texts for built-in functions.
- * 
+ *
  */
 
 #include "clib.h"

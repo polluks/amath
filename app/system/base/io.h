@@ -40,33 +40,41 @@
 #define CPROCNAME      "amath_console"
 /******************************************************************************/
 #ifdef  AOS3
-#define DEVCONSOLE     "console.device"
+#define AMIGADOS_NAME  "dos.library"
+#define AMIGADOS_REV   33L
 #define INTUITION_REV  37L
 #define INTUITION_NAME "intuition.library"
 #define GRAPHICS_REV   37L
 #define GRAPHICS_NAME  "graphics.library"
+#define LOCALE_REV     38L
+#define LOCALE_NAME    "locale.library"
+#define DEVCONSOLE     "console.device"
 #define PORTCR         "RKM.console.read"
 #define PORTCW         "RKM.console.write"
-#endif
-/******************************************************************************/
-#ifdef  AOS_PROTO
-#define DEVCONSOLE     (UBYTE*)"console.device"
-#define INTUITION_REV  37L
-#define INTUITION_NAME (UBYTE*)"intuition.library"
-#define GRAPHICS_REV   37L
-#define GRAPHICS_NAME  (UBYTE*)"graphics.library"
-#define PORTCR         "RKM.console.read"
-#define PORTCW         "RKM.console.write"
+#define CATALOG_HELP   "amath-help.catalog"
+#define CATALOG_IDEN   "amath-ident.catalog"
+#define CATALOG_TEXT   "amath-text.catalog"
+#define CATALOG_KEYW   "amath-keyword.catalog"
+#define CATALOG_DEF    OC_BuiltInLanguage, "english"
 #endif
 /******************************************************************************/
 #if defined(AROS) || defined(MORPHOS) || defined(AOS4)
-#define DEVCONSOLE     "console.device"
+#define AMIGADOS_NAME  "dos.library"
+#define AMIGADOS_REV   33L
 #define INTUITION_REV  37L
 #define INTUITION_NAME "intuition.library"
 #define GRAPHICS_REV   37L
 #define GRAPHICS_NAME  "graphics.library"
-#define PORTCR         (STRPTR)"RKM.console.read"
-#define PORTCW         (STRPTR)"RKM.console.write"
+#define LOCALE_REV     38L
+#define LOCALE_NAME    "locale.library"
+#define DEVCONSOLE     "console.device"
+#define PORTCR         "RKM.console.read"
+#define PORTCW         "RKM.console.write"
+#define CATALOG_HELP   "amath-help.catalog"
+#define CATALOG_IDEN   "amath-ident.catalog"
+#define CATALOG_TEXT   "amath-text.catalog"
+#define CATALOG_KEYW   "amath-keyword.catalog"
+#define CATALOG_DEF    OC_BuiltInLanguage, "english"
 #endif
 /******************************************************************************/
 extern const char *vers;
@@ -77,5 +85,6 @@ class PreferencesBase* CreatePreferences();
 class FilesystemBase* CreateFilesystem();
 class GraphWindow* CreateGraphWindow();
 void WriteToShell(const char*);
+void Cleanup();
 /******************************************************************************/
 #endif

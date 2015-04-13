@@ -24,7 +24,6 @@
  *
  */
 
-#include "mem.h"
 #include "system/program.h"
 #include "system/base/io.h"
 
@@ -33,7 +32,6 @@ int main(int argc, char **argv)
     Program = CreateProgram(argc, argv);
     Program->Initialize(argc, argv);
     Program->Run();
-    delete Program;
-    FreeAllSafe();
+    Cleanup();
     return 0;
 }

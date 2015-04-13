@@ -32,8 +32,15 @@
 
 #define EMPTYSTRING ""
 #define SPACE       " "
+
+#ifdef _WIN32
+#define NEWLINE     "\r\n"
+#else
 #define NEWLINE     "\n"
+#endif
+
 #define NOMEM       0
+
 #define LONG_BIT    32
 #define wsize       sizeof(unsigned int)
 #define wmask       (wsize - 1)
@@ -85,6 +92,8 @@ typedef int bool;
 # include <clib/alib_protos.h>
 # include <clib/exec_protos.h>
 # include <clib/dos_protos.h>
+# include <devices/console.h>
+# include <devices/conunit.h>
 #endif
 
 // Check weather an POSIX compatible API is available
@@ -100,14 +109,12 @@ typedef int bool;
 # include <termios.h>
 #endif
 
-/* STDC */
-#ifndef AMIGA
+#if !defined(AMIGA) && defined(__STDC__)
 # include <stdio.h>
 # include <stdint.h>
 # include <stdlib.h>
 #endif
 
-/* GCC 4.x & AROS API */
 #ifdef AROS
 # include <stdint.h>
 # include <sys/types.h>
@@ -148,9 +155,8 @@ inline void  operator delete[] (void* ptr) {
 #endif
 #endif
 
-
 #ifdef __cplusplus
-#if (__GNUC__ > 2)
+#if (__GNUC__ > 2) || defined (_WIN32)
 #include <new>
 inline void* operator new (size_t size) throw(std::bad_alloc) {
     return AllocMemSafe(size);

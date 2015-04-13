@@ -68,7 +68,7 @@ char* PreferencesBase::GetDescription()
     buf->EnsureSize(
         StrLen(promptkw) + sizeof(SPACE) + sizeof(promptq) +
         StrLen(prompt) + sizeof(promptq) + sizeof(delimiter) +
-        StrLen(digitkw) + sizeof(SPACE) + StrLen(dtext) + sizeof(delimiter) + 1);
+        StrLen(digitkw) + sizeof(SPACE) + StrLen(dtext) + sizeof(delimiter) + sizeof(char));
 
     buf->Append(promptkw);
     buf->Append(SPACE);

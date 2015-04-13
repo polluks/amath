@@ -63,6 +63,7 @@ public:
 
     void DeleteLastChar();
     bool RemoveTrailing(const char c);
+    bool RemoveTrailing(const char *string);
     char *GetString();
 
 private:

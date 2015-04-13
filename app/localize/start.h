@@ -93,9 +93,10 @@
 # define TXTFPU EMPTYSTRING
 #endif
 /******************************************************************************/
+#define TXTARCH        TXTCPU TXTFPU TXTTEST
+#define TXTDOSVERSION  "\0$VER: amath 1.60 (01-04-2015)" SPACE TXTARCH
 #define TXTTITLE       "amath version 1.6.0"
-#define TXTDOSVERSION  "\0$VER: amath 1.60 (01-04-2015)"
 #define TXTCOPYRIGHT   "(c) 2015 Carsten Sonne Larsen"
-#define TXTSTARTMSG    TXTTITLE SPACE TXTCPU TXTFPU TXTTEST SPACE TXTCOPYRIGHT
+#define TXTSTARTMSG    TXTTITLE SPACE TXTCOPYRIGHT SPACE TXTARCH
 /******************************************************************************/
 #endif

@@ -34,8 +34,6 @@
 #include "system/preferences_stdc.h"
 #include "system/base/io.h"
 
-#ifndef AMIGA
-
 StandardProgram::StandardProgram()
     : Program()
 {
@@ -97,5 +95,3 @@ void StandardProgram::Exit()
 {
     Console->Exit();
 }
-
-#endif

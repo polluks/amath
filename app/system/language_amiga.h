@@ -51,7 +51,6 @@ public:
     Symbol FindKeyword(const char *ident);
 
 private:
-    struct LocaleBase* base;
     struct Locale* locale;
     struct Catalog *helpcatalog;
     struct Catalog *identcatalog;

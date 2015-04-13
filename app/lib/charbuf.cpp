@@ -81,7 +81,7 @@ void CharBuffer::ClearAndCopy(const char* source)
 {
     ClearBuffer();
     cursize = AllocAndCopy(&buf, source);
-    ptr = buf + cursize - 1;
+    ptr = buf + cursize - sizeof(char);
 }
 
 /**
@@ -226,6 +226,24 @@ bool CharBuffer::RemoveTrailing(const char c)
     }
 
     ptr++;
+    return false;
+}
+
+bool CharBuffer::RemoveTrailing(const char *string)
+{
+    int len = StrLen(string) * sizeof(char);
+    char* s = ptr - len;
+    if (s < buf) {
+        return false;
+    }
+
+    *ptr = '\0';
+
+    if (StrIsEqual(s, string)) {
+        ptr = s;
+        return true;
+    }
+
     return false;
 }
 
