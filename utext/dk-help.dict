@@ -1,0 +1,111 @@
+## version $VER: amath-help.catalog 1.60 (09.04.2015) Danish
+## language dansk
+## codeset 0
+; #############################################################################
+; Copyright (c) 2015, Carsten Larsen
+; All rights reserved.
+; 
+; Redistribution and use in source and binary forms, with or without
+; modification, are permitted provided that the following conditions are met:
+; 
+; * Redistributions of source code must retain the above copyright notice, this
+;   list of conditions and the following disclaimer.
+; 
+; * Redistributions in binary form must reproduce the above copyright notice,
+;   this list of conditions and the following disclaimer in the documentation
+;   and/or other materials provided with the distribution.
+; 
+; THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+; AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+; IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+; DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE
+; FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+; DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
+; SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
+; CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
+; OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+; OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+; #############################################################################
+; ### flexcat catalog/help.cd NEWCTFILE catalog/danish/amath-help.ct
+; flexcat catalog/help.cd catalog/danish/amath-help.ct CATALOG catalog/danish/amath-help.catalog
+; #############################################################################
+symzero
+Indtast kommando eller udtryk.#NEWLINE##SYNTAXHIGHLIGHT#Eksempel: 2+3-cos(3)#NORMALTEXT##NEWLINE# #NEWLINE#Mere hjælp er tilgængelig i udvalgte områder#NEWLINE#-------------------------------------------------#NEWLINE#funktioner   Grundlæggende funktioner.#NEWLINE#trigo        Trigonometriske funktioner.#NEWLINE#hyper        Hyperbolske funktioner.#NEWLINE#kompleks     Komplekse tal.#NEWLINE#kommandoer   Understøttede kommondoer.#NEWLINE#operatorer   Understøttede operatorer.#NEWLINE#-------------------------------------------------#NEWLINE##SYNTAXHIGHLIGHT#Eksemple: hjælp trigo#NEWLINE#
+symoperator
+-------------------------------------------------#NEWLINE#    +    Matematik addition.#NEWLINE#    -    Matematik subtraktion.#NEWLINE#    *    Matematik multiplikation.#NEWLINE#    /    Matematik division.#NEWLINE#    ^    Matematik potensopløftning.#NEWLINE#    =    Tildeling af variabel værdi.#NEWLINE#    |    Absolutte eller numerisk værdi.#NEWLINE#-------------------------------------------------#NEWLINE#
+symfunction
+-------------------------------------------------#NEWLINE#abs     Absolutte eller numerisk værdi.#NEWLINE#sgn     Matematik signum funktion.#NEWLINE#round   Afrund til nærmeste heltal.#NEWLINE#trunc   Fjern decimaler.#NEWLINE#floor   Afrund i positiv retning.#NEWLINE#ceil    Afrund i negativ retning.#NEWLINE#sqrt    Kvadratrodsfunktion (exponent 1/2).#NEWLINE#cbrt    Kubikrods (exponent 1/3).#NEWLINE#lb      Binær logaritme funktion (grundtal 2).#NEWLINE#ln      Naturlig logaritme funktion (grundtal e).#NEWLINE#lg      10-talslogaritme funktion (grundtal 10).#NEWLINE#-------------------------------------------------#NEWLINE##SYNTAXHIGHLIGHT#Eksempel: round(1.55)#NORMALTEXT##NEWLINE#
+symtrigon
+-------------------------------------------------#NEWLINE#sin     Trigonometrisk sinus funktion.#NEWLINE#cos     Trigonometrisk cosinus funktion.#NEWLINE#tan     Trigonometrisk tangent funktion.#NEWLINE#cot     Trigonometrisk cotangent funktion.#NEWLINE#sec     Trigonometrisk secant funktion.#NEWLINE#csc     Trigonometrisk cosecant funktion.#NEWLINE#asin    Invers trigonometrisk sinus funktion.#NEWLINE#acos    Invers trigonometrisk cosinus funktion.#NEWLINE#atan    Invers trigonometrisk tangent funktion.#NEWLINE#acot    Invers trigonometrisk cotangent funktion.#NEWLINE#asec    Invers trigonometrisk secant funktion.#NEWLINE#acsc    Invers trigonometrisk cosecant funktion.#NEWLINE#-------------------------------------------------#NEWLINE#Inverse funktioner kan prefixes med ar eller arc #NEWLINE#i stedet for a.#NEWLINE#
+symhyper
+-------------------------------------------------#NEWLINE#sinh    Hyperbolsk sinus funktion.#NEWLINE#cosh    Hyperbolsk cosinus funktion.#NEWLINE#tanh    Hyperbolsk tangent funktion.#NEWLINE#coth    Hyperbolsk cotangent funktion.#NEWLINE#sech    Hyperbolsk secant funktion.#NEWLINE#csch    Hyperbolsk cosecant funktion.     #NEWLINE#asinh   Invers hyperbolsk sinus funktion.#NEWLINE#acosh   Invers hyperbolsk cosinus funktion.#NEWLINE#atanh   Invers hyperbolsk tangent funktion.#NEWLINE#acoth   Invers hyperbolsk cotangent funktion.#NEWLINE#asech   Invers hyperbolsk secant funktion.#NEWLINE#acsch   Invers hyperbolsk cosecant funktion.#NEWLINE#-------------------------------------------------#NEWLINE#Inverse funktioner kan prefixes med ar eller arc #NEWLINE#i stedet for a.#NEWLINE#
+; Table of statements
+symstatement
+----------------------------------------------------------------------#NEWLINE#ryd         Ryd konsol vindue.#NEWLINE#definer     Definer funktion.#NEWLINE#slet        Slet variabler og funktioner.#NEWLINE#cifre       Angiv antal betydende cifre.#NEWLINE#beregn      Beregn aritmetiske udtryk.#NEWLINE#kør         Afvikel kommondoer i en fil.#NEWLINE#funktioner  Vis liste med brugerdefinerede funktioner.#NEWLINE#ind         Skift numerisk talsystem ved læsning (eksperimentelt).#NEWLINE#hjælp       Vis grundlæggende hjælpetekst.#NEWLINE#ud          Skift numerisk talsystem ved skrivning (eksperimentelt).#NEWLINE#list        Vis indholdet af en mappe.#NEWLINE#vis         Vis indholdet af en fil.#NEWLINE#hent        Hent variabler og funktioner fra en fil.#NEWLINE#gem         Gem variabler og funktioner til en fil.#NEWLINE#variabler   Vis variabler i hukommelsen.#NEWLINE#version     Vis infomation om denne version.#NEWLINE#hukommelse  Vis internt hukommelsesforbrug.#NEWLINE#afslut      Afslut program.#NEWLINE#----------------------------------------------------------------------#NEWLINE#Det er valgfrit at angive definer og beregn kommandoerne. Kommandoerne#NEWLINE#funktioner og variabler kan forkortes til funk og var.#NEWLINE#
+symcomplex
+Udtryk med komplekse tal skrives ved at angive i#NEWLINE#sammen med den imaginære talværdi. Komplekse tal#NEWLINE#kan blandes med reelle tal.#NEWLINE##SYNTAXHIGHLIGHT#Syntaks: 2+3i#NEWLINE#Eksempel: 2+3.2i*cos(-1i)+5/7#NEWLINE#
+symclear
+Ryd kommandoen sletter alt tekst i konsol vinduet.#NEWLINE##SYNTAXHIGHLIGHT#Syntaks: ryd#NEWLINE#
+symdef
+Definer kommandoen bruges til at definere funktioner med. Det er ikke#NEWLINE#strengt nødvendigt at angive kommandoen, når en funktion skal defineres.#NEWLINE#Allerede definerede funktioner kan vises med kommandoen #SYNTAXHIGHLIGHT#funtioner#NORMAL#.#NEWLINE##SYNTAXHIGHLIGHT#Syntaks: definer f(x)=2*x+3#NEWLINE#Alternativ syntaks: f(x)=2*x+3#NEWLINE#
+; Help for delete statement
+symdelete
+The delete statement can delete variable and funktions. To delete a#NEWLINE#single variable or funktions use the name of the funktion or variable.#NEWLINE#To delete all funktions or variables specify either the variable or#NEWLINE#funktion keyword.#NEWLINE##SYNTAXHIGHLIGHT#Syntaks: delete f(x)#NEWLINE#Syntaks: delete variables#NEWLINE#
+; Help for digits statement
+symdigits
+The digits statement defines the displayed number of significant digits.#NEWLINE#To show current configuration use the digits statement without specifying#NEWLINE#the number.#NEWLINE# #SYNTAXHIGHLIGHT#Syntaks: digits 7#NEWLINE#
+; Help for eval statement
+symeval
+The eval statement evaluates an expression. When evaluating an expression#NEWLINE#it is possible to omit the eval keyword.#NEWLINE##SYNTAXHIGHLIGHT#Syntaks: eval 2.4*x+3.2#NEWLINE#Optional syntax: 2.4*x+3.2#NEWLINE#
+; Help for execute statement
+symexecute
+The execute statement reads the content of a file and execute all statements.#NEWLINE##SYNTAXHIGHLIGHT#Syntaks: execute "savedfile"#NEWLINE#
+; Help for input statement
+syminput
+The input statement either changes or shows the how numeral input is interpreted.#NEWLINE#Possible input systems are: binary, octal, decimal and hexadecimal. Default is#NEWLINE#decimal. To use positional systems with other bases specify the base number.#NEWLINE#Numeral output system can be modified using the output statement.#NEWLINE##SYNTAXHIGHLIGHT#Syntaks: input hexadecimal#NEWLINE#Syntaks: input 4#NEWLINE#
+; Help for help statement
+symhelp
+The help statement can be used to display help about topics and statements.#NEWLINE##SYNTAXHIGHLIGHT#Syntaks: help variables#NEWLINE#
+; Help for output statement
+symoutput
+The output statement either changes or shows the how numeral output is shown.#NEWLINE#Possible output systems are: binary, octal, decimal and hexadecimal. Default#NEWLINE#is decimal. To use positional systems with other bases specify the base number.#NEWLINE#Numeral input system can be modified using the input statement.#NEWLINE##SYNTAXHIGHLIGHT#Syntaks: output octal#NEWLINE#
+; Help for list statement
+symlist
+No description is available for the list statement.#NEWLINE#
+symshow
+Vis kommandoen kan bruges til at vise indholdet af en fil, der ønskes kørt.#NEWLINE##SYNTAXHIGHLIGHT#Syntaks: vis "mitscript"#NEWLINE#
+; Help for load statement
+symload
+The load statement retrieves a set of defined variables and funktions from#NEWLINE#a file. Variables and funktions can be saved using the save statement.#NEWLINE##SYNTAXHIGHLIGHT#Syntaks: load "savedwork"#NEWLINE#
+; Help for save statement
+symsave
+Med gem kommando kan variabler og funktioner i hukommelsen gemmes til en fil.#NEWLINE#Gemte variabler og funktion kan indlæstet igen med #SYNTAXHIGHLIGHT#hent#NORMAL# kommandoen.#NEWLINE##SYNTAXHIGHLIGHT#Syntaks: gem "mitarbejde"#NEWLINE#
+symversion
+Viser hvilken version af amath der kører.#NEWLINE#
+symmem
+Viser internt hukommelsesforbrug. Programkoden er ikke medregnet.#NEWLINE#
+; Help for prefs statement
+symprefs
+There is no help for prefs statement now.#NEWLINE#
+symvariable
+Variabler kommandoen viser en list af definerede variabler i hukommelsen.#NEWLINE##SYNTAXHIGHLIGHT#Syntaks: variabler#NEWLINE#Alternativ syntaks: var#NEWLINE#
+symexit
+Afslut kommandoen lukker amath programmet.#NEWLINE##SYNTAXHIGHLIGHT#Syntaks: afslut#NEWLINE#
+; Help for constant epsilon
+syme
+Euler's number is base of the exponential funktion which equals its own#NEWLINE#derivative. It is approximately equal to 2.71828.#NEWLINE##SYNTAXHIGHLIGHT#Example: ln(e)#NEWLINE#
+; Help for constant pi
+sympi
+Pi is the ratio of the circumference of a circle to its diameter. Being an#NEWLINE#irrational number, pi cannot be expressed exactly as a common fraction.#NEWLINE#The value of pi is commonly approximated as #SYNTAXHIGHLIGHT#3.14159#NORMALTEXT#.#NEWLINE#
+symi
+Den imaginære enhen refereres og angives almindelig vis som i.#NEWLINE#Den imaginære enhen et tal, som når det ganges med sig selv,#NEWLINE#giver resultatet -1.#NEWLINE#
+symins
+Den sidst udregnede værdi kan benyttes i næste udtryk ved hjælp af #SYNTAXHIGHLIGHT#ins#NORMAL# variablen.#NEWLINE##SYNTAXHIGHLIGHT#Eksemple: ins*0,25#NEWLINE#
+symbin
+Der er ikke nogen hjælp tilgængelig om binær nøgleordet.#NEWLINE
+symoct
+Der er ikke nogen hjælp tilgængelig om oktal nøgleordet.#NEWLINE
+symdec
+Der er ikke nogen hjælp tilgængelig om decimal nøgleordet.#NEWLINE
+symhex
+Der er ikke nogen hjælp tilgængelig om hexadecimal nøgleordet.#NEWLINE

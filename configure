@@ -317,12 +317,18 @@ if $VALID ; then
 	
 	echo "libs:	libamath libcomplex libcamath libamathapp"
 	echo
-	echo "catalogs:	"
+	echo "catalogsa:	"
 	echo "	\${FLXCAT} text/keyword.cd app/localize/kword.h=text/keyword.sd"
 	echo "	\${FLXCAT} text/help.cd app/localize/help.h=text/help.sd"
 	echo "	\${FLXCAT} text/ident-clean.cd app/localize/ident.h=text/ident.sd"
 	echo "	\${FLXCAT} text/text.cd app/localize/text.h=text/text.sd"
 	echo 
+	echo "catalogsu:	"
+	echo "	iconv -f ISO-8859-15 -t UTF-8 catalog/dansk/amath-help.ct >utext/dk-help.dict"
+	echo "	iconv -f ISO-8859-15 -t UTF-8 catalog/dansk/amath-ident.ct >utext/dk-ident.dict"
+	echo "	iconv -f ISO-8859-15 -t UTF-8 catalog/dansk/amath-text.ct >utext/dk-text.dict"
+	echo "	iconv -f ISO-8859-15 -t UTF-8 catalog/dansk/amath-keyword.ct >utext/dk-keyword.dict"
+	echo 	
 	echo "libamathapp:	${libapp}"
 	echo "	\${AR} rcs libamathapp${outext}.a ${libapp}"
 	echo "	\${RANLIB} libamathapp${outext}.a"

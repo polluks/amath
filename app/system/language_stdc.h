@@ -36,9 +36,6 @@ class StandardLanguage : public Language {
 public:
     StandardLanguage();
     ~StandardLanguage();
-    char* GetText(int id);
-    char* GetHelpText(char *ident);
-    char* GetHelpText(Symbol symbol);
     char GetFractionPoint();
     bool CharIsAlNum(unsigned long character);
     bool CharIsAlpha(unsigned long character);
@@ -47,7 +44,28 @@ public:
     bool CharIsSpace(unsigned long character);
     bool CharIsCntrl(unsigned long character);
     bool StrIsEqualLoc(const char *s1, const char *s2);
-    Symbol FindKeyword(const char *ident);
+
+protected:
+    char* Translate(textdef *def);
+    char* Translate(helptextdef *def);
+    char* Translate(identhelpdef *def);
+
+private:
+    void LoadCatalogs();
+    void LoadCatalog(char **dest, const char *file);
+    void GetNextPair(const char **key, const char **value);
+    void GetNextLine();
+    void SkipComments();
+
+    char *textbase;
+    char *helpbase;
+    char *identbase;
+    char *kwordbase;
+
+    char *ptr;
+    textdef *textcatalog;
+    helptextdef *helpcatalog;
+    identhelpdef *identcatalog;
 };
 
 #endif

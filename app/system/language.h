@@ -30,14 +30,17 @@
 #include "localize/lex.h"
 #include "localize/help.h"
 #include "localize/text.h"
+#include "localize/ident.h"
+#include "localize/kword.h"
 
 class Language {
 public:
     Language();
     virtual ~Language();
-    virtual char* GetText(int id) = 0;
-    virtual char* GetHelpText(char *ident) = 0;
-    virtual char* GetHelpText(Symbol symbol) = 0;
+    char* GetText(int id);
+    char* GetHelpText(char *ident);
+    char* GetHelpText(Symbol symbol);
+    Symbol FindKeyword(const char *ident);
     virtual char GetFractionPoint() = 0;
     virtual bool CharIsAlNum(unsigned long character) = 0;
     virtual bool CharIsAlpha(unsigned long character) = 0;
@@ -46,9 +49,20 @@ public:
     virtual bool CharIsSpace(unsigned long character) = 0;
     virtual bool CharIsCntrl(unsigned long character) = 0;
     virtual bool StrIsEqualLoc(const char *s1, const char *s2) = 0;
-    virtual Symbol FindKeyword(const char *ident) = 0;
 
 protected:
+    virtual char* Translate(textdef *def) = 0;
+    virtual char* Translate(helptextdef *def) = 0;
+    virtual char* Translate(identhelpdef *def) = 0;
+
+    keyworddef *keywordsloc;
+    unsigned int keywordcount;
+    unsigned int textcount;
+    unsigned int identcount;
+    unsigned int helpcount;
+    unsigned int aliascount;
+
+private:
     char* FindAlias(const char *ident);
     char* UntagText(const char *text);
     char* lastText;

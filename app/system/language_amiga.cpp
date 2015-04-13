@@ -38,18 +38,9 @@
 #ifdef AMIGA
 #include <clib/locale_protos.h>
 
-static unsigned int keywordcount;
-static unsigned int textcount;
-static unsigned int identcount;
-static unsigned int helpcount;
-
-AmigaLanguage::AmigaLanguage()
+AmigaLanguage::AmigaLanguage() :
+    Language::Language()
 {
-    keywordcount = sizeof(keywords) / sizeof(keyworddef);
-    textcount = sizeof(textdefs) / sizeof(textdef);
-    identcount = sizeof(identtexts) / sizeof(identhelpdef);
-    helpcount = sizeof(helptexts) / sizeof(helptextdef);
-
     locale = OpenLocale(NULL);
     helpcatalog    = OpenCatalog(locale, CATALOG_HELP, CATALOG_DEF, TAG_DONE);
     identcatalog   = OpenCatalog(locale, CATALOG_IDEN, CATALOG_DEF, TAG_DONE);
@@ -63,9 +54,6 @@ AmigaLanguage::AmigaLanguage()
             keywordsloc[j].name = GetCatalogStr(keywordcatalog, j, NULL);
             keywordsloc[j].symbol = keywords[j].symbol;
         }
-
-    } else {
-        keywordcatalog = NULL;
     }
 }
 
@@ -90,81 +78,21 @@ AmigaLanguage::~AmigaLanguage()
     if (locale != NULL) {
         CloseLocale(locale);
     }
-
-    if (keywordsloc != NULL) {
-        delete [] keywordsloc;
-    }
 }
 
-Symbol AmigaLanguage::FindKeyword(const char* ident)
+char* AmigaLanguage::Translate(textdef def)
 {
-    for (unsigned int i = 0; i < keywordcount; i++) {
-        if (
-            Program->Language->StrIsEqualLoc(keywords[i].name, ident) || (keywordsloc != NULL &&
-                    Program->Language->StrIsEqualLoc(keywordsloc[i].name, ident))) {
-            return keywords[i].symbol;
-        }
-    }
-
-    return (Symbol)0;
+    return (char*)GetCatalogStr(textcatalog, def->id, (char*)def->text);
 }
 
-char* AmigaLanguage::GetText(int id)
+char* AmigaLanguage::Translate(helptextdef def)
 {
-    textdef *def = NOMEM;
-    for (unsigned int i = 0; i < textcount; i++) {
-        if (textdefs[i].id == id) {
-            def = (textdef*)&textdefs[i];
-            break;
-        }
-    }
-
-    if (def == NOMEM) {
-        return (char*)(HELPNOHELP);
-    }
-
-    const char *text = GetCatalogStr(textcatalog, def->id, (char*)def->text);
-    char *untagged = UntagText(text);
-    return untagged;
+    return (char*)GetCatalogStr(helpcatalog, def->id, (char*)def->text);
 }
 
-char* AmigaLanguage::GetHelpText(char* ident)
+char* AmigaLanguage::Translate(identhelpdef def)
 {
-    char *s = FindAlias(ident);
-    identhelpdef *def = NOMEM;
-    for (unsigned int i = 0; i < identcount; i++) {
-        if (StrIsEqual(identtexts[i].ident, s)) {
-            def = (identhelpdef*)&identtexts[i];
-            break;
-        }
-    }
-
-    if (def == NOMEM) {
-        return (char*)(HELPNOHELP);
-    }
-
-    const char *text = GetCatalogStr(identcatalog, def->id, (char*)def->text);
-    char *untagged = UntagText(text);
-    return untagged;
-}
-
-char* AmigaLanguage::GetHelpText(Symbol symbol)
-{
-    helptextdef *def = NOMEM;
-    for (unsigned int i = 0; i < helpcount; i++) {
-        if (helptexts[i].symbol == symbol) {
-            def = (helptextdef*)&helptexts[i];
-            break;
-        }
-    }
-
-    if (def == NOMEM) {
-        return (char*)(HELPNOHELP);
-    }
-
-    const char *text = GetCatalogStr(helpcatalog, def->id, (char*)def->text);
-    char *untagged = UntagText(text);
-    return untagged;
+    return (char*)GetCatalogStr(identcatalog, def->id, (char*)def->text);
 }
 
 char AmigaLanguage::GetFractionPoint()
