@@ -25,13 +25,25 @@
  */
 
 #include "clib.h"
+#include "localize/lex.h"
+#include "localize/help.h"
+#include "localize/kword.h"
+#include "localize/ident.h"
+#include "localize/text.h"
 #include "localize/tags.h"
 #include "localize/ialias.h"
 #include "system/language.h"
+#include "system/program.h"
 
 Language::Language()
 {
     lastText = NOMEM;
+    keywordsloc = NOMEM;
+    keywordcount = sizeof(keywords) / sizeof(keyworddef);
+    textcount = sizeof(textdefs) / sizeof(textdef);
+    identcount = sizeof(identtexts) / sizeof(identhelpdef);
+    helpcount = sizeof(helptexts) / sizeof(helptextdef);
+    aliascount = sizeof(identaliases) / sizeof(identalias);
 }
 
 Language::~Language()
@@ -39,18 +51,91 @@ Language::~Language()
     if (lastText != NOMEM) {
         delete lastText;
     }
+
+    if (keywordsloc != NOMEM) {
+        delete [] keywordsloc;
+    }
 }
 
 char* Language::FindAlias(const char* ident)
 {
-    static const unsigned int count = sizeof(identaliases) / sizeof(identalias);
-    for (unsigned int i = 0; i < count; i++) {
+    for (unsigned int i = 0; i < aliascount; i++) {
         if (StrIsEqual(identaliases[i].ident, ident)) {
             return (char*)identaliases[i].alias;
         }
     }
-
     return (char*)ident;
+}
+
+Symbol Language::FindKeyword(const char* ident)
+{
+    for (unsigned int i = 0; i < keywordcount; i++) {
+        if (
+            Program->Language->StrIsEqualLoc(keywords[i].name, ident) ||
+            (keywordsloc != NULL &&
+             Program->Language->StrIsEqualLoc(keywordsloc[i].name, ident))) {
+            return keywords[i].symbol;
+        }
+    }
+    return (Symbol)0;
+}
+
+char* Language::GetText(int id)
+{
+    textdef *def = NOMEM;
+    for (unsigned int i = 0; i < textcount; i++) {
+        if (textdefs[i].id == id) {
+            def = (textdef*)&textdefs[i];
+            break;
+        }
+    }
+
+    if (def == NOMEM) {
+        return (char*)(HELPNOHELP);
+    }
+
+    char *text = Translate(def);
+    char *untagged = UntagText(text);
+    return untagged;
+}
+
+char* Language::GetHelpText(char* ident)
+{
+    char *s = FindAlias(ident);
+    identhelpdef *def = NOMEM;
+    for (unsigned int i = 0; i < identcount; i++) {
+        if (StrIsEqual(identtexts[i].ident, s)) {
+            def = (identhelpdef*)&identtexts[i];
+            break;
+        }
+    }
+
+    if (def == NOMEM) {
+        return (char*)(HELPNOHELP);
+    }
+
+    char *text = Translate(def);
+    char *untagged = UntagText(text);
+    return untagged;
+}
+
+char* Language::GetHelpText(Symbol symbol)
+{
+    helptextdef *def = NOMEM;
+    for (unsigned int i = 0; i < helpcount; i++) {
+        if (helptexts[i].symbol == symbol) {
+            def = (helptextdef*)&helptexts[i];
+            break;
+        }
+    }
+
+    if (def == NOMEM) {
+        return (char*)(HELPNOHELP);
+    }
+
+    char *text = Translate(def);
+    char *untagged = UntagText(text);
+    return untagged;
 }
 
 char* Language::UntagText(const char* text)

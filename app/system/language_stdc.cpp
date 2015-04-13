@@ -31,67 +31,55 @@
 #include "localize/text.h"
 #include "localize/ident.h"
 #include "localize/kword.h"
+#include "system/base/io.h"
 #include "system/program.h"
 #include "system/language_stdc.h"
 
-StandardLanguage::StandardLanguage()
-{ }
+StandardLanguage::StandardLanguage() :
+    Language::Language()
+{
+    LoadCatalogs();
+}
 
 StandardLanguage::~StandardLanguage()
-{ }
-
-Symbol StandardLanguage::FindKeyword(const char* ident)
 {
-    static const unsigned int count = sizeof(keywords) / sizeof(keyworddef);
-    for (unsigned int i = 0; i < count; i++) {
-        if (Program->Language->StrIsEqualLoc(keywords[i].name, ident)) {
-            return keywords[i].symbol;
-        }
+    if (textbase != NOMEM) {
+        delete textbase;
     }
 
-    return (Symbol)0;
+    if (helpbase != NOMEM) {
+        delete helpbase;
+    }
+
+    if (identbase != NOMEM) {
+        delete identbase;
+    }
+
+    if (kwordbase != NOMEM) {
+        delete kwordbase;
+    }
+
 }
 
-char* StandardLanguage::GetText(int id)
+char* StandardLanguage::Translate(textdef* def)
 {
-    const char *text = NOMEM;
-    static const unsigned int count = sizeof(textdefs) / sizeof(textdef);
-    for (unsigned int i = 0; i < count; i++) {
-        if (textdefs[i].id == id) {
-            text = textdefs[i].text;
-            break;
-        }
-    }
-    char *untagged = UntagText(text);
-    return (char*)(untagged != NOMEM ? untagged : HELPNOHELP);
+    return textcatalog == NOMEM ?
+           (char*)def->text :
+           (char*)textcatalog[def->id].text;
 }
 
-char* StandardLanguage::GetHelpText(char* ident)
+char* StandardLanguage::Translate(helptextdef* def)
 {
-    const char *text = NOMEM;
-    static const unsigned int count = sizeof(identtexts) / sizeof(identhelpdef);
-    for (unsigned int i = 0; i < count; i++) {
-        if (StrIsEqual(identtexts[i].ident, ident)) {
-            text = identtexts[i].text;
-            break;
-        }
-    }
-    char *untagged = UntagText(text);
-    return (char*)(untagged != NOMEM ? untagged : HELPNOHELP);
+    return helpcatalog == NOMEM ?
+           (char*)def->text :
+           (char*)helpcatalog[def->id].text;
 }
 
-char* StandardLanguage::GetHelpText(Symbol symbol)
+char* StandardLanguage::Translate(identhelpdef* def)
 {
-    const char *text = NOMEM;
-    static const unsigned int count = sizeof(helptexts) / sizeof(helptextdef);
-    for (unsigned int i = 0; i < count; i++) {
-        if (helptexts[i].symbol == symbol) {
-            text = helptexts[i].text;
-            break;
-        }
-    }
-    char *untagged = UntagText(text);
-    return (char*)(untagged != NOMEM ? untagged : HELPNOHELP);
+    return identcatalog == NOMEM ?
+           (char*)def->text :
+           (char*)identcatalog[def->id].text;
 }
 
 char StandardLanguage::GetFractionPoint()
@@ -135,4 +123,107 @@ bool StandardLanguage::CharIsCntrl(long unsigned int character)
 bool StandardLanguage::StrIsEqualLoc(const char* s1, const char* s2)
 {
     return StrIsEqual(s1, s2);
+}
+
+
+void StandardLanguage::LoadCatalogs()
+{
+    const char* key;
+    const char* value;
+
+    LoadCatalog(&textbase, "utext/dk-text.dict");
+    if (textbase != NOMEM) {
+        textcatalog = new textdef[textcount];
+        for (unsigned int j = 0; j < textcount; j++) {
+            GetNextPair(&key, &value);
+            textcatalog[j].id = j;
+            textcatalog[j].text = value;
+        }
+    }
+
+    LoadCatalog(&helpbase, "utext/dk-help.dict");
+    if (helpbase != NOMEM) {
+        helpcatalog = new helptextdef[helpcount];
+        for (unsigned int j = 0; j < helpcount; j++) {
+            GetNextPair(&key, &value);
+            helpcatalog[j].id = j;
+            helpcatalog[j].symbol = helptexts[j].symbol;
+            helpcatalog[j].text = value;
+        }
+    }
+
+    LoadCatalog(&identbase, "utext/dk-ident.dict");
+    if (identbase != NOMEM) {
+        identcatalog = new identhelpdef[identcount];
+        for (unsigned int j = 0; j < identcount; j++) {
+            GetNextPair(&key, &value);
+            identcatalog[j].id = j;
+            identcatalog[j].ident = key;
+            identcatalog[j].text = value;
+        }
+    }
+
+    LoadCatalog(&kwordbase, "utext/dk-keyword.dict");
+    if (kwordbase != NOMEM) {
+        keywordsloc = new keyworddef[keywordcount];
+        for (unsigned int j = 0; j < keywordcount; j++) {
+            GetNextPair(&key, &value);
+            keywordsloc[j].id = j;
+            keywordsloc[j].name = value;
+            keywordsloc[j].symbol = keywords[j].symbol;
+        }
+    }
+}
+
+void StandardLanguage::LoadCatalog(char **dest, const char *file)
+{
+    FilesystemBase *filesystem = CreateFilesystem();
+    CharBuffer *cbuf = filesystem->LoadTextFile(file);
+
+    if (cbuf != NOMEM) {
+        AllocAndCopy(dest, cbuf->GetString());
+        ptr = *dest;
+        delete cbuf;
+    } else {
+        *dest = NOMEM;
+    }
+
+    delete filesystem;
+}
+
+void StandardLanguage::GetNextPair(const char **key, const char **value)
+{
+    SkipComments();
+    *key = ptr;
+    GetNextLine();
+    SkipComments();
+    *value = ptr;
+    GetNextLine();
+}
+
+void StandardLanguage::GetNextLine()
+{
+    while ((*ptr) != '\0' && (*ptr) != '\n') {
+        ptr++;
+    }
+
+    if ((*ptr) == '\n') {
+        *ptr++ = '\0';
+    }
+}
+
+void StandardLanguage::SkipComments()
+{
+    bool skipping;
+    do {
+        if ((*ptr) == ';') {
+            GetNextLine();
+            skipping = true;
+        } else if ((*ptr) == '#' && *(ptr + sizeof(char)) == '#') {
+            GetNextLine();
+            skipping = true;
+        } else {
+            skipping = false;
+        }
+    } while (skipping);
 }

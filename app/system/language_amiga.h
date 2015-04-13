@@ -37,9 +37,6 @@ class AmigaLanguage : public Language {
 public:
     AmigaLanguage();
     ~AmigaLanguage();
-    char* GetText(int id);
-    char* GetHelpText(char *ident);
-    char* GetHelpText(Symbol symbol);
     char GetFractionPoint();
     bool CharIsAlNum(unsigned long character);
     bool CharIsAlpha(unsigned long character);
@@ -48,7 +45,11 @@ public:
     bool CharIsSpace(unsigned long character);
     bool CharIsCntrl(unsigned long character);
     bool StrIsEqualLoc(const char *s1, const char *s2);
-    Symbol FindKeyword(const char *ident);
+
+protected:
+    char* Translate(textdef *def);
+    char* Translate(helptextdef *def);
+    char* Translate(identhelpdef *def);
 
 private:
     struct Locale* locale;
@@ -56,7 +57,6 @@ private:
     struct Catalog *identcatalog;
     struct Catalog *textcatalog;
     struct Catalog *keywordcatalog;
-    keyworddef *keywordsloc;
 };
 
 #endif
