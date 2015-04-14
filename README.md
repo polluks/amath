@@ -34,5 +34,6 @@ Install by copying the desired amath binary to C: or any other appropriate locat
     Load amath into memory:
     > resident amath pure
 
-Get more details on usage by visiting the amath wiki:
-* https://github.com/llsth/amath/wiki
+Get more details on usage by visiting the amath [wiki](https://github.com/llsth/amath/wiki).
+
+Download latest stable release [amath-1.5.7](https://github.com/llsth/amath/releases/tag/v1.5.7)
