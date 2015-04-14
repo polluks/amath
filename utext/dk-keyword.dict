@@ -58,7 +58,7 @@ plot
 plot
 ;######### ExecuteStatement
 execute
-k√∏r
+kõr
 ;######### ExitStatement
 exit
 afslut
@@ -90,7 +90,7 @@ hyperbolic
 hyperbolsk
 ;######### HelpStatement
 help
-hj√¶lp
+hjëlp
 ;######### PromptStatement
 prompt
 prompt
@@ -104,9 +104,9 @@ memory
 hukommelse
 ;######### PrefsStatement
 prefs
-pr√¶f
+prëf
 preferences
-pr√¶ferencer
+prëferencer
 ;######### ListStatement and keyword
 list
 list
@@ -137,7 +137,7 @@ ud
 bin
 bin
 binary
-bin√¶r
+binër
 ;######### Octal keyword
 oct
 okt
