@@ -44,6 +44,10 @@
 #include "prim.h"
 #include "math.h"
 
+#ifdef _WIN32
+#pragma warning( disable : 4146 )
+#endif
+
 /* atan2(y,x)
  * Method :
  *	1. Reduce y to positive by atan2(y,x)=-atan2(-y,x).

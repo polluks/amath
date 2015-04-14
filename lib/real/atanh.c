@@ -44,6 +44,10 @@
 #include "prim.h"
 #include "math.h"
 
+#ifdef _WIN32
+#pragma warning( disable : 4146 )
+#endif
+
 static const double one = 1.0, huge = 1e300;
 static double zero = 0.0;
 

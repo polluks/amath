@@ -36,7 +36,7 @@
 #include "system/language_stdc.h"
 
 StandardLanguage::StandardLanguage() :
-    Language::Language()
+    Language()
 {
     LoadCatalogs();
 }

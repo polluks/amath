@@ -43,6 +43,10 @@
 
 #include "prim.h"
 
+#ifdef _WIN32
+#pragma warning( disable : 4146 )
+#endif
+
 static const double one = 1.0, Zero[] = {0.0, -0.0,};
 
 /**
