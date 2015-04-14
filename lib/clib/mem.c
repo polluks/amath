@@ -37,10 +37,10 @@
 #define FREE_MEM(x) FreeVec(x)
 #define Debug(x,y,z,w)
 #else
-#include <stdio.h>
-#define ALLOC_MEM(x) calloc(1L,x)
-#define FREE_MEM(x) free(x)
-#define Debug(x,y,z,w)
+# include <stdlib.h>
+# define ALLOC_MEM(x) calloc(1L,x)
+# define FREE_MEM(x) free(x)
+# define Debug(x,y,z,w)
 #endif
 
 struct MemoryBlock

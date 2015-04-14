@@ -155,14 +155,19 @@ inline void  operator delete[] (void* ptr) {
 #endif
 #endif
 
+#ifdef _WIN32
+# include <stdio.h>
+# include <stdint.h>
+#endif
+
 #ifdef __cplusplus
 #if (__GNUC__ > 2) || defined (_WIN32)
 #include <new>
-inline void* operator new (size_t size) throw(std::bad_alloc) {
+inline void* operator new (size_t size) throw() {
     return AllocMemSafe(size);
 }
 
-inline void* operator new[] (size_t size) throw(std::bad_alloc) {
+inline void* operator new[] (size_t size) throw() {
     return AllocMemSafe(size);
 }
 

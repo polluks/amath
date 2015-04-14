@@ -1,3 +1,4 @@
+Makefile
 *.kdev4
 *.o
 *.a

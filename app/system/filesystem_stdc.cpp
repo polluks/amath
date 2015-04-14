@@ -116,7 +116,14 @@ CharBuffer* StandardFilesystem::ListDirectory(const char *path)
 
 CharBuffer* StandardFilesystem::LoadTextFile(const char* name)
 {
-    FILE *file = fopen(name, "r");
+    FILE *file;
+
+#if !defined(_WIN32)
+    file = fopen(name, "r");
+#else
+    fopen_s(&file, name, "r");
+#endif
+
     if (!file) {
         return NOMEM;
     }
@@ -150,7 +157,14 @@ CharBuffer* StandardFilesystem::LoadTextFile(const char* name)
 
 bool StandardFilesystem::SaveTextFile(const char *name, const char *text)
 {
-    FILE *file = fopen(name, "w");
+    FILE *file;
+
+#if !defined(_WIN32)
+    file = fopen(name, "w");
+#else
+    fopen_s(&file, name, "w");
+#endif
+
     if (!file) {
         return false;
     }
