@@ -51,6 +51,7 @@ APPSRCS='
 	app/system/graph_gtk.cpp
 	app/system/language.cpp
 	app/system/language_amiga.cpp
+	app/system/language_posix.cpp
 	app/system/language_stdc.cpp
 	app/system/preferences.cpp
 	app/system/preferences_amiga.cpp

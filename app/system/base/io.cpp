@@ -37,6 +37,7 @@
 #include "system/language.h"
 #include "system/language_stdc.h"
 #include "system/language_amiga.h"
+#include "system/language_posix.h"
 #include "system/filesystem.h"
 #include "system/filesystem_stdc.h"
 #include "system/filesystem_amiga.h"
@@ -98,6 +99,9 @@ class Program* CreateProgram(int argc, char **argv) {
 
 class Language* CreateLanguage()
 {
+#ifdef UNIX
+    return new PosixLanguage();
+#endif
 #ifdef AMIGA
     LocaleBase = (struct LocaleBase*)OpenLibrary(LOCALE_NAME, LOCALE_REV);
     if (LocaleBase != NULL) {

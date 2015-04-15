@@ -227,3 +227,4 @@ void StandardLanguage::SkipComments()
         }
     } while (skipping);
 }
+
