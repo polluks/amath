@@ -45,8 +45,10 @@
 PosixLanguage::PosixLanguage() :
     Language()
 {
-    locale = newlocale(LC_ALL, "da_DK.ISO8859-15", (locale_t)0);
-    setlocale(LC_NUMERIC, "da_DK.ISO8859-15");
+//    locale = newlocale(LC_ALL, "da_DK.ISO8859-15", (locale_t)0);
+//    setlocale(LC_NUMERIC, "da_DK.ISO8859-15");
+    locale = newlocale(LC_ALL, "", (locale_t)0);
+    setlocale(LC_NUMERIC, "");
     conv = localeconv();
 }
 
