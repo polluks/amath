@@ -1,0 +1,7 @@
+* text=auto
+*.c	text
+*.cpp	text
+*.h	text
+
+*.vcxproj text eol=crlf
+*.vcxproj.filters text eol=crlf

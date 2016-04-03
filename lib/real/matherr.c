@@ -1,7 +1,7 @@
 /* @(#)s_matherr.c 1.3 95/01/18 */
 
 /*
- * Copyright (c) 2015 Carsten Larsen
+ * Copyright (c) 2015-2016 Carsten Sonne Larsen
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without

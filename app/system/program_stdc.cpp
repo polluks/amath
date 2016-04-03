@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2015 Carsten Larsen
+ * Copyright (c) 2015-2016 Carsten Sonne Larsen
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -38,12 +38,17 @@ StandardProgram::StandardProgram()
     : Program()
 {
     Console = NOMEM;
+    line = NOMEM;
 }
 
 StandardProgram::~StandardProgram()
 {
     if (Console != NULL) {
         delete Console;
+    }
+
+    if (line != NULL) {
+        delete line;
     }
 }
 

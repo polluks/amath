@@ -1,21 +1,45 @@
 #language english
 #version 0
-; #############################################################################
+; ###################################################################################
 ; ## Help texts for built-in functions in amath
 ; ## ------------------------------------------
 ; ##
-; ## This file is published under Creative Common License. See:
-; ## http://creativecommons.org/licenses/by-sa/3.0/
-; ## Parts of the content came from wikipedia.org
-; #############################################################################
+; ## Generate code with:
+; ## flexcat ident-clean.cd ../app/localize/ident.h=ident.sd
+; ##
+; ###################################################################################
+; ## Copyright (c) 2015, Carsten Larsen
+; ## All rights reserved.
+; ## 
+; ## Redistribution and use in source and binary forms, with or without
+; ## modification, are permitted provided that the following conditions are met:
+; ## 
+; ##  * Redistributions of source code must retain the above copyright notice, this
+; ##    list of conditions and the following disclaimer.
+; ##  
+; ##  * Redistributions in binary form must reproduce the above copyright notice,
+; ##    this list of conditions and the following disclaimer in the documentation
+; ##    and/or other materials provided with the distribution.
+; ##  
+; ##  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+; ##  AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+; ##  IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+; ##  DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE
+; ##  FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+; ##  DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
+; ##  SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
+; ##  CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
+; ##  OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+; ##  OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+; ###################################################################################
 abs (/40/)
-The absolute value (or modulus) |x| of a real number x is the#NEWLINE#non-negative value of x without regard to its sign.#NEWLINE##SYNTAXHIGHLIGHT#Example: abs(-237.25)#NORMALTEXT##NEWLINE#
+No help is available for this function.#NEWLINE#
 sgn (/40/)
-The sign function or signum function is used to extract the sign of a number.#NEWLINE#Thus sgn(x) is 1 when x is positive, and sgn(x) is -1 when x is negative.#NEWLINE##SYNTAXHIGHLIGHT#Example: sgn(-23.94)#NORMALTEXT##NEWLINE#
+No help is available for this function.#NEWLINE#
 round (/40/)
-Rounding a numerical value means replacing it by another value that is#NEWLINE#approximately equal but has a shorter, simpler, or more explicit#NEWLINE#representation. Amath rounds a number to the nearest integer.#NEWLINE#
+No help is available for this function.#NEWLINE#
 trunc (/10/)
-Truncation is limiting the number of digits right of the decimal point,#NEWLINE#by discarding the least significant ones. Amath truncates a number to#NEWLINE#the nearest integer.#NEWLINE##SYNTAXHIGHLIGHT#Example: trunc(-23.94#NEWLINE#
+No help is available for this function.#NEWLINE#
 floor (/10/)
 No help is available for this function.#NEWLINE#
 ceil (/10/)
@@ -31,11 +55,11 @@ No help is available for this function.#NEWLINE#
 lg (/10/)
 No help is available for this function.#NEWLINE#
 sin (/10/)
-Sine is the trigonometric function that for an acute angle is the#NEWLINE#ratio between the leg opposite the angle when it is considered#NEWLINE#part of a right triangle and the hypotenuse.#NEWLINE#
+No help is available for this function.#NEWLINE#
 cos (/10/)
-Cosine is the trigonometric function that for an acute angle is the#NEWLINE#ratio between the leg adjacent to the angle when it is considered#NEWLINE#part of a right triangle and the hypotenuse#NEWLINE#
+No help is available for this function.#NEWLINE#
 tan (/10/)
-Tangent is one of the trigonometry functions. In a right triangle,#NEWLINE#the tangent of an angle is the opposite side over the adjacent side.#NEWLINE#
+No help is available for this function.#NEWLINE#
 cot (/10/)
 No help is available for this function.#NEWLINE#
 sec (/10/)

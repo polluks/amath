@@ -1,5 +1,5 @@
 /*-
- * Copyright (c) 2015 Carsten Larsen
+ * Copyright (c) 2015-2016 Carsten Sonne Larsen
  * All rights reserved.
  *
  * This code contains contributions to amath by Stefan Haubenthal
