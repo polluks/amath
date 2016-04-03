@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2015 Carsten Larsen
+ * Copyright (c) 2015-2016 Carsten Sonne Larsen
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -101,11 +101,6 @@ Number* Program::GetLastResult()
 
 void Program::SetLastResult(Number *number)
 {
-    if (ins == number) {
-        return;
-    }
-
     delete ins;
     ins = number->Clone();
 }
-

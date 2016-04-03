@@ -1,7 +1,6 @@
 #!/bin/sh
 # 
-# Copyright (c) 2015 Carsten Larsen
-# Copyright (c) 2014 Poul-Henning Kamp
+# Copyright (c) 2015-2016 Carsten Larsen
 # All rights reserved.
 # 
 # Redistribution and use in source and binary forms, with or without
@@ -244,7 +243,7 @@ if $VALID ; then
 	echo "CFLAGS = ${ARCFLAG}$options ${CROSSCOMPILEFLAGS}-I. -Wall -Werror"
 	echo "LFLAGS = $gcclib -lamathapp${outext} -lcamath${outext} -lcomplex${outext} -lamath${outext}"
 	echo 
-	echo "FLXCAT = flexcat"
+	echo "FLXCAT = build/flexcat"
 	echo "MKDIR  = mkdir"
 	echo "COPY   = cp"
 	echo "DEL    = rm -f"
@@ -318,19 +317,19 @@ if $VALID ; then
 	
 	echo "libs:	libamath libcomplex libcamath libamathapp"
 	echo
-	echo "catalogsa:	"
+	echo "catalogsa:	" # Application catalogs
 	echo "	\${FLXCAT} text/keyword.cd app/localize/kword.h=text/keyword.sd"
 	echo "	\${FLXCAT} text/help.cd app/localize/help.h=text/help.sd"
-	echo "	\${FLXCAT} text/ident-clean.cd app/localize/ident.h=text/ident.sd"
+	echo "	\${FLXCAT} text/ident.cd app/localize/ident.h=text/ident.sd"
 	echo "	\${FLXCAT} text/text.cd app/localize/text.h=text/text.sd"
 	echo
-	echo "catalogsu:	"
+	echo "catalogsu:	" # Unix catalogs
 	echo "	iconv -f ISO-8859-15 -t UTF-8 catalog/dansk/amath-help.ct >utext/dk-help.dict"
 	echo "	iconv -f ISO-8859-15 -t UTF-8 catalog/dansk/amath-ident.ct >utext/dk-ident.dict"
 	echo "	iconv -f ISO-8859-15 -t UTF-8 catalog/dansk/amath-text.ct >utext/dk-text.dict"
 	echo "	iconv -f ISO-8859-15 -t UTF-8 catalog/dansk/amath-keyword.ct >utext/dk-keyword.dict"
 	echo
-	echo "catalogsw:	"
+	echo "catalogsw:	" # Windows catalogs
 	echo "	iconv -f ISO-8859-15 -t CP850 catalog/dansk/amath-help.ct >utext/dk-help.dict"
 	echo "	iconv -f ISO-8859-15 -t CP850 catalog/dansk/amath-ident.ct >utext/dk-ident.dict"
 	echo "	iconv -f ISO-8859-15 -t CP850 catalog/dansk/amath-text.ct >utext/dk-text.dict"
@@ -355,24 +354,29 @@ if $VALID ; then
 	echo "app:	libs ${l}"
 	echo "	\${CC} \${CFLAGS} ${ARCFLAG}${CROSSCOMPILEFLAGS}${exestrip} -L. -o amath${outext} ${l} \${LFLAGS}"
 	echo
-	echo "dist: app"
-	echo "	\${MKDIR} dist"
-	echo "	\${MKDIR} dist/catalog"
-	echo "	\${MKDIR} dist/catalog/english"
+	echo "dist: app catalogs"
+#	echo "	\${MKDIR} dist"
+	echo "	\${COPY} amath dist/"
+	echo "	\${COPY} LICENSE dist/"
+	echo "	\${COPY} COPYRIGHT dist/"
+	echo
+	echo "amigacatalogs: "
+#	echo "	\${MKDIR}  dist"
+	echo "	\${MKDIR}  dist/catalog"
+	echo "	\${MKDIR}  dist/catalog/english"
 	echo "	\${FLXCAT} text/help.cd catalog/english/amath-help.ct CATALOG dist/catalog/english/amath-help.catalog"
 	echo "	\${FLXCAT} text/ident.cd catalog/english/amath-ident.ct CATALOG dist/catalog/english/amath-ident.catalog"
 	echo "	\${FLXCAT} text/text.cd catalog/english/amath-text.ct CATALOG dist/catalog/english/amath-text.catalog"
-	echo "	\${MKDIR} dist/catalog/dansk"
+	echo "	\${MKDIR}  dist/catalog/dansk"
 	echo "	\${FLXCAT} text/help.cd catalog/dansk/amath-help.ct CATALOG dist/catalog/dansk/amath-help.catalog"
 	echo "	\${FLXCAT} text/ident.cd catalog/dansk/amath-ident.ct CATALOG dist/catalog/dansk/amath-ident.catalog"
 	echo "	\${FLXCAT} text/text.cd catalog/dansk/amath-text.ct CATALOG dist/catalog/dansk/amath-text.catalog"
 	echo "	\${FLXCAT} text/keyword.cd catalog/dansk/amath-keyword.ct CATALOG dist/catalog/dansk/amath-keyword.catalog"
-	echo "	\${COPY} amath dist/"
-	echo "	\${COPY} LICENSE dist/"
-	echo "	\${COPY} COPYRIGHT dist/"
-	echo "	\${COPY} catalog/LICENSE dist/catalog/"
 	echo
 	echo "clean:"
+	echo "	\${DEL} ${libapp} ${libamath} ${libcomplex} ${libc} ${l} libamath${outext}.a libcamath${outext}.a libcomplex${outext}.a libamathapp${outext}.a amath${outext}"
+	echo
+	echo "distclean:"
 	echo "	\${DEL} ${libapp} ${libamath} ${libcomplex} ${libc} ${l} libamath${outext}.a libcamath${outext}.a libcomplex${outext}.a libamathapp${outext}.a amath${outext}"
 	echo "	\${DELREC} dist"
 	echo

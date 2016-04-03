@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2015 Carsten Larsen
+ * Copyright (c) 2016 Carsten Larsen
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -94,9 +94,9 @@
 #endif
 /******************************************************************************/
 #define TXTARCH        TXTCPU TXTFPU TXTTEST
-#define TXTDOSVERSION  "\0$VER: amath 1.60 (01-04-2015)" SPACE TXTARCH
+#define TXTDOSVERSION  "\0$VER: amath 1.60 (07-04-2016)" SPACE TXTARCH
 #define TXTTITLE       "amath version 1.6.0"
-#define TXTCOPYRIGHT   "(c) 2015 Carsten Sonne Larsen"
+#define TXTCOPYRIGHT   "(c) 2016 Carsten Sonne Larsen"
 #define TXTSTARTMSG    TXTTITLE SPACE TXTCOPYRIGHT
 /******************************************************************************/
 #endif

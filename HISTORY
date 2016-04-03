@@ -2,6 +2,13 @@
 ---                           amath change history                          ---
 -------------------------------------------------------------------------------
 
+v1.6.0 April 7 2016
+- Complete internal restructure of source code.
+- Fixed several minor bugs in calculation.
+- Support for Windows & Linux.
+- Custom memory handling.
+- Localization support.
+
 v1.5.6 March 23 2015
 - Fixed typos and changed prompt.
 - Binaries compiled without dependency to ixemul.library

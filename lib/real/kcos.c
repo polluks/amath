@@ -1,7 +1,7 @@
 /* @(#)k_cos.c 1.4 96/03/07 */
 
 /*
- * Copyright (c) 2015 Carsten Larsen
+ * Copyright (c) 2015-2016 Carsten Sonne Larsen
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without

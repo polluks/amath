@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2015 Carsten Larsen
+ * Copyright (c) 2015-2016 Carsten Sonne Larsen
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -37,7 +37,6 @@
 #include <ctype.h>
 #include <locale.h>
 #include <nl_types.h>
-#endif
 
 class PosixLanguage : public Language {
 public:
@@ -61,5 +60,6 @@ private:
     locale_t locale;
     struct lconv *conv;
 };
+#endif
 
 #endif
