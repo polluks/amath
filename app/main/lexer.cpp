@@ -45,7 +45,7 @@ Lexer::~Lexer()
     delete [] input;
 
     if (first != NOMEM) {
-        delete [] first;
+        delete first;
     }
 }
 
