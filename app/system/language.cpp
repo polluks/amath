@@ -156,7 +156,7 @@ char* Language::UntagText(const char* text)
     unsigned int len = StrLen(untagged) + 1;
     lastText = new char[len];
     MemCopy(lastText, untagged, len);
-    delete untagged;
+    delete [] untagged;
 
     return lastText;
 }

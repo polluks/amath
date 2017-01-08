@@ -236,7 +236,7 @@ const char* PositionalNumeralSystem::GetText(double number)
     if (exponent != 0) {
         buf->Append('e');
         buf->Append(exponent > 0 ? '+' : '-');
-        IntegerToBuffer(fabs(exponent), 3, &digitout);
+        IntegerToBuffer(abs(exponent), 3, &digitout);
     }
 
     // Make sure no rounding error is returned
@@ -447,7 +447,7 @@ const char* DecimalSystem::GetRealText(double value)
     while (buf->RemoveTrailing('0'))
         ;
     buf->RemoveTrailing(fractionpoint);
-    delete out;
+    delete[] out;
 
     return buf->GetString();
 }

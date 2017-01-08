@@ -45,7 +45,7 @@ Lexer::~Lexer()
     delete [] input;
 
     if (first != NOMEM) {
-        delete first;
+        delete [] first;
     }
 }
 
@@ -205,7 +205,7 @@ bool Lexer::GetDigitValue()
     *(text + len) = '\0';
 
     current = new Token(current, symnumber, text, pos);
-    delete text;
+    delete [] text;
     delete number;
 
     pos += len;

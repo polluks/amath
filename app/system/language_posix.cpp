@@ -98,7 +98,7 @@ bool PosixLanguage::StrIsEqualLoc(const char* s1, const char* s2)
     char *tmp = new char[len];
     strxfrm(tmp, s2, len);
     bool res = StrIsEqual(s1, tmp);
-    delete tmp;
+    delete [] tmp;
     return res;
 }
 
