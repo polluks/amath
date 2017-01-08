@@ -65,7 +65,7 @@ bool StandardPreferences::Load()
         }
     } while (c != NULL);
 
-    delete buf;
+    delete [] buf;
     fclose(file);
     SetPrefs(text->GetString());
     delete text;

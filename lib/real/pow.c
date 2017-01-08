@@ -42,9 +42,12 @@
 #include "prim.h"
 #include "math.h"
 
-#if __GNUC__ > 2
-#pragma GCC diagnostic ignored "-Wunused-but-set-variable"
-#pragma GCC diagnostic ignored "-Wstrict-aliasing"
+#ifdef __clang__
+# pragma clang diagnostic ignored "-Wunused-variable"
+# pragma clang diagnostic ignored "-Wstrict-aliasing"
+#elif defined(__GNUC__) || defined(__GNUG__) && __GNUC__ > 2
+# pragma GCC diagnostic ignored "-Wunused-but-set-variable"
+# pragma GCC diagnostic ignored "-Wstrict-aliasing"
 #endif
 
 static const double
