@@ -54,11 +54,11 @@ public:
     /**
      * @brief Parses the input into a syntax tree.
      *
-     * @return SyntaxNode* representing an pointer to the top node of the tree.
+     * @return SyntaxNode* representing a pointer to the top node of the tree.
      *         Notice: The caller is responsible for releasing memory.
      *
      */
-    SyntaxNode* Parse();
+    SyntaxNode* Parse(); // Clang ns_returns_retained
 
 private:
     Lexer *lexer;

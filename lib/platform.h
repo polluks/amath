@@ -163,11 +163,11 @@ inline void  operator delete[] (void* ptr) {
 #ifdef __cplusplus
 #if (__GNUC__ > 2) || defined (_WIN32)
 #include <new>
-inline void* operator new (size_t size) throw() {
+inline void* operator new (size_t size) throw(std::bad_alloc) {
     return AllocMemSafe(size);
 }
 
-inline void* operator new[] (size_t size) throw() {
+inline void* operator new[] (size_t size) throw(std::bad_alloc) {
     return AllocMemSafe(size);
 }
 
