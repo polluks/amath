@@ -94,9 +94,13 @@
 #endif
 /******************************************************************************/
 #define TXTARCH        TXTCPU TXTFPU TXTTEST
-#define TXTDOSVERSION  "\0$VER: amath 1.60 (07-04-2016)" SPACE TXTARCH
-#define TXTTITLE       "amath version 1.6.0"
+#define RELDATESTAMP   "(10-01-2017)"
+#define TXTDOSVERSION  "\0$VER: amath 1.61" SPACE RELDATESTAMP SPACE TXTARCH
+#define TXTTITLE       "amath version 1.6.1"
 #define TXTCOPYRIGHT   "(c) 2016 Carsten Sonne Larsen"
 #define TXTSTARTMSG    TXTTITLE SPACE TXTCOPYRIGHT
+/******************************************************************************/
+#define TXTVERSMSG     TXTTITLE SPACE RELDATESTAMP SPACE TXTARCH
+#define TXTCOMPMSG     "Compiled with " COMP_NAME SPACE COMP_VERS
 /******************************************************************************/
 #endif

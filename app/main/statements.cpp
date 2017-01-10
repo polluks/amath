@@ -75,10 +75,16 @@ char* VersionStatement::Execute()
     output->Empty();
     output->EnsureSize(
         StrLen(BOLD) +
-        StrLen(TXTSTARTMSG) +
-        StrLen(NEWLINE));
+        StrLen(TXTVERSMSG) +
+        StrLen(NEWLINE) * 2 +
+        StrLen(NORMALTEXT) +
+        StrLen(TXTCOMPMSG));
+
     output->Append(BOLD);
-    output->Append(TXTSTARTMSG);
+    output->Append(TXTVERSMSG);
+    output->Append(NORMALTEXT);
+    output->Append(NEWLINE);
+    output->Append(TXTCOMPMSG);
     output->Append(NEWLINE);
 
     return output->GetString();
