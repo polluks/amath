@@ -103,4 +103,13 @@
 #define TXTVERSMSG     TXTTITLE SPACE RELDATESTAMP SPACE TXTARCH
 #define TXTCOMPMSG     "Compiled with " COMP_NAME SPACE COMP_VERS
 /******************************************************************************/
+#define TXTEXTCOPYRIGHT \
+    "This software contains copyrighted material by:" NEWLINE \
+    "The Regents of the University of California" NEWLINE \
+    "The NetBSD Foundation, Inc." NEWLINE \
+    "Sun Microsystems, Inc." NEWLINE "Ryan Juckett" NEWLINE NEWLINE \
+    "Portions of the code have been contributed by:" NEWLINE \
+    "Stephen L. Moshier" NEWLINE "Stefan Haubenthal" NEWLINE \
+    "Ryan Juckett" NEWLINE "Chris Torek" NEWLINE "Mike Hibler"
+/******************************************************************************/
 #endif
