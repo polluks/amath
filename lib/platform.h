@@ -32,6 +32,7 @@
 
 #define EMPTYSTRING ""
 #define SPACE       " "
+#define DOT         "."
 
 #ifdef _WIN32
 #define NEWLINE     "\r\n"
@@ -179,6 +180,68 @@ inline void  operator delete[] (void* ptr) throw() {
     FreeMemSafe(ptr);
 }
 #endif
+#endif
+
+/**
+ * @brief
+ * https://sourceforge.net/p/predef/wiki/Compilers/
+ */
+
+#if defined(__clang__)
+/* Clang */
+# if defined(__apple_build_version__)
+#  define COMP_NAME      "XCode Clang"
+# else
+#  define COMP_NAME      "Clang/LLVM"
+# endif
+# define str(x)          #x
+# define CL_VER_STR(x)   str(x)
+# ifdef __clang_patchlevel__
+#  define COMP_VERS      CL_VER_STR(__clang_major__) DOT \
+                         CL_VER_STR(__clang_minor__) DOT \
+                         CL_VER_STR(__clang_patchlevel__)
+# else
+#  define COMP_VERS      CL_VER_STR(__clang_major__) DOT \
+                         CL_VER_STR(__clang_minor__)
+# endif
+/* Intel ICC/ICPC */
+#elif defined(__ECC) || defined(__ICC) || defined(__INTEL_COMPILER)
+# define COMP_NAME       "Intel ICC/ICPC"
+# define COMP_VERS       __VERSION__
+/* IBM XL C/C++ */
+#elif defined(__IBMC__) || defined(__IBMCPP__)
+# define COMP_NAME       "IBM XL"
+# define COMP_VERS       __xlc__
+/* Microsoft Visual Studio */
+#elif defined(_MSC_VER)
+# define COMP_NAME       "Microsoft Visual Studio"
+# define str(x)          #x
+# define MSC_VER_STR(x)  str(x)
+# define COMP_VERS       MSC_VER_STR(_MSC_VER / 100)
+/* Portland Group PGCC/PGCPP */
+#elif defined(__PGI)
+# define COMP_NAME       "PGCC/PGCPP"
+# define str(x)          #x
+# define PGCC_VER_STR(x) str(x)
+# ifdef __PGIC_PATCHLEVEL__
+#  define COMP_VERS      PGCC_VER_STR(__PGIC__) DOT \
+                         PGCC_VER_STR(__PGIC_MINOR) DOT \
+                         PGCC_VER_STR(__PGIC_PATCHLEVEL__)
+# else
+#  define COMP_VERS      PGCC_VER_STR(__PGIC__) DOT \
+                         PGCC_VER_STR(__PGIC_MINOR)
+# endif
+/* GNU GCC/G++ */
+#elif defined(__GNUC__) || defined(__GNUG__)
+# define COMP_NAME       "GCC"
+# define str(x)          #x
+# define GCC_VER_STR(x)  str(x)
+# ifdef __GNUC_PATCHLEVEL__
+#  define COMP_VERS      GCC_VER_STR(__GNUC__) DOT GCC_VER_STR(__GNUC_MINOR__) DOT \
+                         GCC_VER_STR(__GNUC_PATCHLEVEL__)
+# else
+#  define COMP_VERS      GCC_VER_STR(__GNUC__) DOT GCC_VER_STR(__GNUC_MINOR__)
+# endif
 #endif
 
 #if defined(ANSICONSOLE)
