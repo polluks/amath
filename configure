@@ -245,7 +245,7 @@ if $VALID ; then
 #	echo "CXXFLAGS = -Wno-inline-new-delete ${ARCFLAG}$options ${CROSSCOMPILEFLAGS}-I."
 	echo "LFLAGS   = $gcclib -lamathapp${outext} -lcamath${outext} -lcomplex${outext} -lamath${outext}"
 	echo
-	echo "FLXCAT   = build/flexcat"
+	echo "FLXCAT   = build/flexcat/flexcat"
 	echo "MKDIR    = mkdir"
 	echo "COPY     = cp"
 	echo "DEL      = rm -f"

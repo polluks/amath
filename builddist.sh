@@ -5,9 +5,15 @@ rm -Rf amath
 rm -Rf dist
 mkdir dist
 
+cd build/flexcat
+./configure
+make clean
+make
+cd ../..
+
 GCC295=Y
 
-REGTEST=N 
+REGTEST=N
 ./configure -m68000 m68k-amigaos- -noixemul
 make
 mv amath dist/amath.000
@@ -108,7 +114,7 @@ cp HISTORY dist/
 
 mkdir dist/script
 cp script/* dist/script/
-date -u >dist/buid_date 
+date -u >dist/build_date
 
 mv dist amath
 #lha-ac a amath.lha amath
