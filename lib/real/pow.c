@@ -45,7 +45,7 @@
 #ifdef __clang__
 # pragma clang diagnostic ignored "-Wunused-variable"
 # pragma clang diagnostic ignored "-Wstrict-aliasing"
-#elif defined(__GNUG__) && __GNUC__ > 2
+#elif defined(__GNUC__) && __GNUC__ > 2
 # pragma GCC diagnostic ignored "-Wunused-but-set-variable"
 # pragma GCC diagnostic ignored "-Wstrict-aliasing"
 #endif
