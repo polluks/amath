@@ -35,22 +35,26 @@
 
 TestProgram::TestProgram()
     : Program()
-{ }
+{
+    // Ignore type of locale fraction point.
+    delete Input;
+    Input = new DecimalSystem(Preferences->GetDigits(), '.');
+
+    delete Output;
+    Output = new DecimalSystem(Preferences->GetDigits(), '.');
+}
 
 TestProgram::~TestProgram()
 { }
 
 void TestProgram::Run()
 {
-    debug = true;
     RunTests();
 
     if (fail == 0) {
         printf("All tests passed (%i)." NEWLINE, pass);
     } else {
         printf("Something went wrong ..." NEWLINE);
-        debug = true;
-        RunTests();
         printf("Passed: %i, failed: %i" NEWLINE, pass, fail);
     }
 }
@@ -98,14 +102,10 @@ void TestProgram::PerformTest(const char* input, const char* result, bool show)
 
     if (buf->Is(result)) {
         pass++;
-        if (debug) {
-            printf("PASS: %s" NEWLINE, show ? result : input);
-        }
+        printf("PASS: [%s]" NEWLINE, show ? result : input);
     } else {
         fail++;
-        if (debug) {
-            printf("FAIL: %s  Expected |%s| Got |%s|" NEWLINE, input, result, buf->GetString());
-        }
+        printf("FAIL: [%s] expected [%s] but got [%s]" NEWLINE, input, result, buf->GetString());
     }
 
     delete buf;
@@ -200,7 +200,7 @@ void TestProgram::RunTestset2()
     TestExpression("coth(0.56)",     "coth(0.56) = 1.9685913885883");
     TestExpression("sech(0.56)",     "sech(0.56) = 0.86137037775075");
     TestExpression("csch(0.56)",     "csch(0.56) = 1.6956863080252");
-    TestExpression("arccosh(1.45)", "acosh(1.45) = 0.91629073187416");
+    TestExpression("arccosh(1.44)", "acosh(1.44) = 0.90670360498911");
     TestExpression("arcsinh(0.45)", "asinh(0.45) = 0.43604966885174");
     TestExpression("arctanh(0.45)", "atanh(0.45) = 0.48470027859405");
     TestExpression("arccoth(1.51)", "acoth(1.51) = 0.79681365320373");

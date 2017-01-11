@@ -50,7 +50,6 @@ public:
 private:
     int pass;
     int fail;
-    bool debug;
 
     void RunTests();
     void RunTestset1();
