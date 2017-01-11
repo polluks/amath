@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2016 Carsten Larsen
+ * Copyright (c) 2015-2017 Carsten Sonne Larsen  <cs@innolan.dk>
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -97,7 +97,7 @@
 #define RELDATESTAMP   "(10-01-2017)"
 #define TXTDOSVERSION  "\0$VER: amath 1.61" SPACE RELDATESTAMP SPACE TXTARCH
 #define TXTTITLE       "amath version 1.6.1"
-#define TXTCOPYRIGHT   "(c) 2016 Carsten Sonne Larsen"
+#define TXTCOPYRIGHT   "(c) 2017 Carsten Sonne Larsen"
 #define TXTSTARTMSG    TXTTITLE SPACE TXTCOPYRIGHT
 /******************************************************************************/
 #define TXTVERSMSG     TXTTITLE SPACE RELDATESTAMP SPACE TXTARCH
