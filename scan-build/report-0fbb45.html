@@ -1,0 +1,349 @@
+<!doctype html>
+<html>
+<head>
+<title>lib/real/expm1.c</title>
+<style type="text/css">
+ body { color:#000000; background-color:#ffffff }
+ body { font-family:Helvetica, sans-serif; font-size:10pt }
+ h1 { font-size:14pt }
+ .code { border-collapse:collapse; width:100%; }
+ .code { font-family: "Monospace", monospace; font-size:10pt }
+ .code { line-height: 1.2em }
+ .comment { color: green; font-style: oblique }
+ .keyword { color: blue }
+ .string_literal { color: red }
+ .directive { color: darkmagenta }
+ .expansion { display: none; }
+ .macro:hover .expansion { display: block; border: 2px solid #FF0000; padding: 2px; background-color:#FFF0F0; font-weight: normal;   -webkit-border-radius:5px;  -webkit-box-shadow:1px 1px 7px #000; position: absolute; top: -1em; left:10em; z-index: 1 } 
+ .macro { color: darkmagenta; background-color:LemonChiffon; position: relative }
+ .num { width:2.5em; padding-right:2ex; background-color:#eeeeee }
+ .num { text-align:right; font-size:8pt }
+ .num { color:#444444 }
+ .line { padding-left: 1ex; border-left: 3px solid #ccc }
+ .line { white-space: pre }
+ .msg { -webkit-box-shadow:1px 1px 7px #000 }
+ .msg { -webkit-border-radius:5px }
+ .msg { font-family:Helvetica, sans-serif; font-size:8pt }
+ .msg { float:left }
+ .msg { padding:0.25em 1ex 0.25em 1ex }
+ .msg { margin-top:10px; margin-bottom:10px }
+ .msg { font-weight:bold }
+ .msg { max-width:60em; word-wrap: break-word; white-space: pre-wrap }
+ .msgT { padding:0x; spacing:0x }
+ .msgEvent { background-color:#fff8b4; color:#000000 }
+ .msgControl { background-color:#bbbbbb; color:#000000 }
+ .mrange { background-color:#dfddf3 }
+ .mrange { border-bottom:1px solid #6F9DBE }
+ .PathIndex { font-weight: bold; padding:0px 5px; margin-right:5px; }
+ .PathIndex { -webkit-border-radius:8px }
+ .PathIndexEvent { background-color:#bfba87 }
+ .PathIndexControl { background-color:#8c8c8c }
+ .PathNav a { text-decoration:none; font-size: larger }
+ .CodeInsertionHint { font-weight: bold; background-color: #10dd10 }
+ .CodeRemovalHint { background-color:#de1010 }
+ .CodeRemovalHint { border-bottom:1px solid #6F9DBE }
+ table.simpletable {
+   padding: 5px;
+   font-size:12pt;
+   margin:20px;
+   border-collapse: collapse; border-spacing: 0px;
+ }
+ td.rowname {
+   text-align:right; font-weight:bold; color:#444444;
+   padding-right:2ex; }
+</style>
+</head>
+<body>
+<!-- BUGDESC Value stored to 'y' is never read -->
+
+<!-- BUGTYPE Dead assignment -->
+
+<!-- BUGCATEGORY Dead store -->
+
+<!-- BUGFILE /home/carsten/amath/lib/real/expm1.c -->
+
+<!-- FILENAME expm1.c -->
+
+<!-- FUNCTIONNAME expm1 -->
+
+<!-- ISSUEHASHCONTENTOFLINEINCONTEXT d296a4c6999f2be72e5056c718b74f21 -->
+
+<!-- BUGLINE 166 -->
+
+<!-- BUGCOLUMN 16 -->
+
+<!-- BUGPATHLENGTH 1 -->
+
+<!-- BUGMETAEND -->
+<!-- REPORTHEADER -->
+<h3>Bug Summary</h3>
+<table class="simpletable">
+<tr><td class="rowname">File:</td><td>lib/real/expm1.c</td></tr>
+<tr><td class="rowname">Location:</td><td><a href="#EndPath">line 166, column 16</a></td></tr>
+<tr><td class="rowname">Description:</td><td>Value stored to 'y' is never read</td></tr>
+</table>
+<!-- REPORTSUMMARYEXTRA -->
+<h3>Annotated Source Code</h3>
+<table class="code">
+<tr><td class="num" id="LN1">1</td><td class="line"><span class='comment'>/* @(#)s_expm1.c 1.5 04/04/22 */</span></td></tr>
+<tr><td class="num" id="LN2">2</td><td class="line"> </td></tr>
+<tr><td class="num" id="LN3">3</td><td class="line"><span class='comment'>/*</span></td></tr>
+<tr><td class="num" id="LN4">4</td><td class="line"> <span class='comment'>* Copyright (c) 2015-2017 Carsten Sonne Larsen  &lt;cs@innolan.dk&gt;</span></td></tr>
+<tr><td class="num" id="LN5">5</td><td class="line"> <span class='comment'>* All rights reserved.</span></td></tr>
+<tr><td class="num" id="LN6">6</td><td class="line"> <span class='comment'>*</span></td></tr>
+<tr><td class="num" id="LN7">7</td><td class="line"> <span class='comment'>* Redistribution and use in source and binary forms, with or without</span></td></tr>
+<tr><td class="num" id="LN8">8</td><td class="line"> <span class='comment'>* modification, are permitted provided that the following conditions</span></td></tr>
+<tr><td class="num" id="LN9">9</td><td class="line"> <span class='comment'>* are met:</span></td></tr>
+<tr><td class="num" id="LN10">10</td><td class="line"> <span class='comment'>* 1. Redistributions of source code must retain the above copyright</span></td></tr>
+<tr><td class="num" id="LN11">11</td><td class="line"> <span class='comment'>*    notice, this list of conditions and the following disclaimer.</span></td></tr>
+<tr><td class="num" id="LN12">12</td><td class="line"> <span class='comment'>* 2. Redistributions in binary form must reproduce the above copyright</span></td></tr>
+<tr><td class="num" id="LN13">13</td><td class="line"> <span class='comment'>*    notice, this list of conditions and the following disclaimer in the</span></td></tr>
+<tr><td class="num" id="LN14">14</td><td class="line"> <span class='comment'>*    documentation and/or other materials provided with the distribution.</span></td></tr>
+<tr><td class="num" id="LN15">15</td><td class="line"> <span class='comment'>*</span></td></tr>
+<tr><td class="num" id="LN16">16</td><td class="line"> <span class='comment'>* THIS SOFTWARE IS PROVIDED BY THE AUTHOR ``AS IS'' AND ANY EXPRESS OR</span></td></tr>
+<tr><td class="num" id="LN17">17</td><td class="line"> <span class='comment'>* IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES</span></td></tr>
+<tr><td class="num" id="LN18">18</td><td class="line"> <span class='comment'>* OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED.</span></td></tr>
+<tr><td class="num" id="LN19">19</td><td class="line"> <span class='comment'>* IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY DIRECT, INDIRECT,</span></td></tr>
+<tr><td class="num" id="LN20">20</td><td class="line"> <span class='comment'>* INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT</span></td></tr>
+<tr><td class="num" id="LN21">21</td><td class="line"> <span class='comment'>* NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,</span></td></tr>
+<tr><td class="num" id="LN22">22</td><td class="line"> <span class='comment'>* DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY</span></td></tr>
+<tr><td class="num" id="LN23">23</td><td class="line"> <span class='comment'>* THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT</span></td></tr>
+<tr><td class="num" id="LN24">24</td><td class="line"> <span class='comment'>* (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF</span></td></tr>
+<tr><td class="num" id="LN25">25</td><td class="line"> <span class='comment'>* THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.</span></td></tr>
+<tr><td class="num" id="LN26">26</td><td class="line"> <span class='comment'>*</span></td></tr>
+<tr><td class="num" id="LN27">27</td><td class="line"> <span class='comment'>* The origin source code can be obtained from:</span></td></tr>
+<tr><td class="num" id="LN28">28</td><td class="line"> <span class='comment'>* http://www.netlib.org/fdlibm/s_expm1.c</span></td></tr>
+<tr><td class="num" id="LN29">29</td><td class="line"> <span class='comment'>*</span> </td></tr>
+<tr><td class="num" id="LN30">30</td><td class="line"> <span class='comment'>*/</span></td></tr>
+<tr><td class="num" id="LN31">31</td><td class="line"> </td></tr>
+<tr><td class="num" id="LN32">32</td><td class="line"><span class='comment'>/*</span></td></tr>
+<tr><td class="num" id="LN33">33</td><td class="line"> <span class='comment'>* ====================================================</span></td></tr>
+<tr><td class="num" id="LN34">34</td><td class="line"> <span class='comment'>* Copyright (C) 2004 by Sun Microsystems, Inc. All rights reserved.</span></td></tr>
+<tr><td class="num" id="LN35">35</td><td class="line"> <span class='comment'>*</span></td></tr>
+<tr><td class="num" id="LN36">36</td><td class="line"> <span class='comment'>* Permission to use, copy, modify, and distribute this</span></td></tr>
+<tr><td class="num" id="LN37">37</td><td class="line"> <span class='comment'>* software is freely granted, provided that this notice</span></td></tr>
+<tr><td class="num" id="LN38">38</td><td class="line"> <span class='comment'>* is preserved.</span></td></tr>
+<tr><td class="num" id="LN39">39</td><td class="line"> <span class='comment'>* ====================================================</span></td></tr>
+<tr><td class="num" id="LN40">40</td><td class="line"> <span class='comment'>*</span></td></tr>
+<tr><td class="num" id="LN41">41</td><td class="line"> <span class='comment'>*/</span></td></tr>
+<tr><td class="num" id="LN42">42</td><td class="line"> </td></tr>
+<tr><td class="num" id="LN43">43</td><td class="line"><span class='directive'>#include "prim.h"</span></td></tr>
+<tr><td class="num" id="LN44">44</td><td class="line"><span class='directive'>#include "math.h"</span></td></tr>
+<tr><td class="num" id="LN45">45</td><td class="line"> </td></tr>
+<tr><td class="num" id="LN46">46</td><td class="line"><span class='comment'>/* expm1(x)</span></td></tr>
+<tr><td class="num" id="LN47">47</td><td class="line"> <span class='comment'>* Returns exp(x)-1, the exponential of x minus 1.</span></td></tr>
+<tr><td class="num" id="LN48">48</td><td class="line"> <span class='comment'>*</span></td></tr>
+<tr><td class="num" id="LN49">49</td><td class="line"> <span class='comment'>* Method</span></td></tr>
+<tr><td class="num" id="LN50">50</td><td class="line"> <span class='comment'>*   1. Argument reduction:</span></td></tr>
+<tr><td class="num" id="LN51">51</td><td class="line"> <span class='comment'>*	Given x, find r and integer k such that</span></td></tr>
+<tr><td class="num" id="LN52">52</td><td class="line"> <span class='comment'>*</span></td></tr>
+<tr><td class="num" id="LN53">53</td><td class="line"> <span class='comment'>*               x = k*ln2 + r,  |r| &lt;= 0.5*ln2 ~ 0.34658</span></td></tr>
+<tr><td class="num" id="LN54">54</td><td class="line"> <span class='comment'>*</span></td></tr>
+<tr><td class="num" id="LN55">55</td><td class="line"> <span class='comment'>*      Here a correction term c will be computed to compensate</span></td></tr>
+<tr><td class="num" id="LN56">56</td><td class="line"> <span class='comment'>*	the error in r when rounded to a floating-point number.</span></td></tr>
+<tr><td class="num" id="LN57">57</td><td class="line"> <span class='comment'>*</span></td></tr>
+<tr><td class="num" id="LN58">58</td><td class="line"> <span class='comment'>*   2. Approximating expm1(r) by a special rational function on</span></td></tr>
+<tr><td class="num" id="LN59">59</td><td class="line"> <span class='comment'>*	the interval [0,0.34658]:</span></td></tr>
+<tr><td class="num" id="LN60">60</td><td class="line"> <span class='comment'>*	Since</span></td></tr>
+<tr><td class="num" id="LN61">61</td><td class="line"> <span class='comment'>*	    r*(exp(r)+1)/(exp(r)-1) = 2+ r^2/6 - r^4/360 + ...</span></td></tr>
+<tr><td class="num" id="LN62">62</td><td class="line"> <span class='comment'>*	we define R1(r*r) by</span></td></tr>
+<tr><td class="num" id="LN63">63</td><td class="line"> <span class='comment'>*	    r*(exp(r)+1)/(exp(r)-1) = 2+ r^2/6 * R1(r*r)</span></td></tr>
+<tr><td class="num" id="LN64">64</td><td class="line"> <span class='comment'>*	That is,</span></td></tr>
+<tr><td class="num" id="LN65">65</td><td class="line"> <span class='comment'>*	    R1(r**2) = 6/r *((exp(r)+1)/(exp(r)-1) - 2/r)</span></td></tr>
+<tr><td class="num" id="LN66">66</td><td class="line"> <span class='comment'>*		     = 6/r * ( 1 + 2.0*(1/(exp(r)-1) - 1/r))</span></td></tr>
+<tr><td class="num" id="LN67">67</td><td class="line"> <span class='comment'>*		     = 1 - r^2/60 + r^4/2520 - r^6/100800 + ...</span></td></tr>
+<tr><td class="num" id="LN68">68</td><td class="line"> <span class='comment'>*      We use a special Remes algorithm on [0,0.347] to generate</span></td></tr>
+<tr><td class="num" id="LN69">69</td><td class="line"> <span class='comment'>* 	a polynomial of degree 5 in r*r to approximate R1. The</span></td></tr>
+<tr><td class="num" id="LN70">70</td><td class="line"> <span class='comment'>*	maximum error of this polynomial approximation is bounded</span></td></tr>
+<tr><td class="num" id="LN71">71</td><td class="line"> <span class='comment'>*	by 2**-61. In other words,</span></td></tr>
+<tr><td class="num" id="LN72">72</td><td class="line"> <span class='comment'>*	    R1(z) ~ 1.0 + Q1*z + Q2*z**2 + Q3*z**3 + Q4*z**4 + Q5*z**5</span></td></tr>
+<tr><td class="num" id="LN73">73</td><td class="line"> <span class='comment'>*	where 	Q1  =  -1.6666666666666567384E-2,</span></td></tr>
+<tr><td class="num" id="LN74">74</td><td class="line"> <span class='comment'>* 		Q2  =   3.9682539681370365873E-4,</span></td></tr>
+<tr><td class="num" id="LN75">75</td><td class="line"> <span class='comment'>* 		Q3  =  -9.9206344733435987357E-6,</span></td></tr>
+<tr><td class="num" id="LN76">76</td><td class="line"> <span class='comment'>* 		Q4  =   2.5051361420808517002E-7,</span></td></tr>
+<tr><td class="num" id="LN77">77</td><td class="line"> <span class='comment'>* 		Q5  =  -6.2843505682382617102E-9;</span></td></tr>
+<tr><td class="num" id="LN78">78</td><td class="line"> <span class='comment'>*  	(where z=r*r, and the values of Q1 to Q5 are listed below)</span></td></tr>
+<tr><td class="num" id="LN79">79</td><td class="line"> <span class='comment'>*	with error bounded by</span></td></tr>
+<tr><td class="num" id="LN80">80</td><td class="line"> <span class='comment'>*	    |                  5           |     -61</span></td></tr>
+<tr><td class="num" id="LN81">81</td><td class="line"> <span class='comment'>*	    | 1.0+Q1*z+...+Q5*z   -  R1(z) | &lt;= 2</span></td></tr>
+<tr><td class="num" id="LN82">82</td><td class="line"> <span class='comment'>*	    |                              |</span></td></tr>
+<tr><td class="num" id="LN83">83</td><td class="line"> <span class='comment'>*</span></td></tr>
+<tr><td class="num" id="LN84">84</td><td class="line"> <span class='comment'>*	expm1(r) = exp(r)-1 is then computed by the following</span></td></tr>
+<tr><td class="num" id="LN85">85</td><td class="line"> <span class='comment'>* 	specific way which minimize the accumulation rounding error:</span></td></tr>
+<tr><td class="num" id="LN86">86</td><td class="line"> <span class='comment'>*			       2     3</span></td></tr>
+<tr><td class="num" id="LN87">87</td><td class="line"> <span class='comment'>*			      r     r    [ 3 - (R1 + R1*r/2)  ]</span></td></tr>
+<tr><td class="num" id="LN88">88</td><td class="line"> <span class='comment'>*	      expm1(r) = r + --- + --- * [--------------------]</span></td></tr>
+<tr><td class="num" id="LN89">89</td><td class="line"> <span class='comment'>*		              2     2    [ 6 - r*(3 - R1*r/2) ]</span></td></tr>
+<tr><td class="num" id="LN90">90</td><td class="line"> <span class='comment'>*</span></td></tr>
+<tr><td class="num" id="LN91">91</td><td class="line"> <span class='comment'>*	To compensate the error in the argument reduction, we use</span></td></tr>
+<tr><td class="num" id="LN92">92</td><td class="line"> <span class='comment'>*		expm1(r+c) = expm1(r) + c + expm1(r)*c</span></td></tr>
+<tr><td class="num" id="LN93">93</td><td class="line"> <span class='comment'>*			   ~ expm1(r) + c + r*c</span></td></tr>
+<tr><td class="num" id="LN94">94</td><td class="line"> <span class='comment'>*	Thus c+r*c will be added in as the correction terms for</span></td></tr>
+<tr><td class="num" id="LN95">95</td><td class="line"> <span class='comment'>*	expm1(r+c). Now rearrange the term to avoid optimization</span></td></tr>
+<tr><td class="num" id="LN96">96</td><td class="line"> <span class='comment'>* 	screw up:</span></td></tr>
+<tr><td class="num" id="LN97">97</td><td class="line"> <span class='comment'>*		        (      2                                    2 )</span></td></tr>
+<tr><td class="num" id="LN98">98</td><td class="line"> <span class='comment'>*		        ({  ( r    [ R1 -  (3 - R1*r/2) ]  )  }    r  )</span></td></tr>
+<tr><td class="num" id="LN99">99</td><td class="line"> <span class='comment'>*	 expm1(r+c)~r - ({r*(--- * [--------------------]-c)-c} - --- )</span></td></tr>
+<tr><td class="num" id="LN100">100</td><td class="line"> <span class='comment'>*	                ({  ( 2    [ 6 - r*(3 - R1*r/2) ]  )  }    2  )</span></td></tr>
+<tr><td class="num" id="LN101">101</td><td class="line"> <span class='comment'>*                      (                                             )</span></td></tr>
+<tr><td class="num" id="LN102">102</td><td class="line"> <span class='comment'>*</span></td></tr>
+<tr><td class="num" id="LN103">103</td><td class="line"> <span class='comment'>*		   = r - E</span></td></tr>
+<tr><td class="num" id="LN104">104</td><td class="line"> <span class='comment'>*   3. Scale back to obtain expm1(x):</span></td></tr>
+<tr><td class="num" id="LN105">105</td><td class="line"> <span class='comment'>*	From step 1, we have</span></td></tr>
+<tr><td class="num" id="LN106">106</td><td class="line"> <span class='comment'>*	   expm1(x) = either 2^k*[expm1(r)+1] - 1</span></td></tr>
+<tr><td class="num" id="LN107">107</td><td class="line"> <span class='comment'>*		    = or     2^k*[expm1(r) + (1-2^-k)]</span></td></tr>
+<tr><td class="num" id="LN108">108</td><td class="line"> <span class='comment'>*   4. Implementation notes:</span></td></tr>
+<tr><td class="num" id="LN109">109</td><td class="line"> <span class='comment'>*	(A). To save one multiplication, we scale the coefficient Qi</span></td></tr>
+<tr><td class="num" id="LN110">110</td><td class="line"> <span class='comment'>*	     to Qi*2^i, and replace z by (x^2)/2.</span></td></tr>
+<tr><td class="num" id="LN111">111</td><td class="line"> <span class='comment'>*	(B). To achieve maximum accuracy, we compute expm1(x) by</span></td></tr>
+<tr><td class="num" id="LN112">112</td><td class="line"> <span class='comment'>*	  (i)   if x &lt; -56*ln2, return -1.0, (raise inexact if x!=inf)</span></td></tr>
+<tr><td class="num" id="LN113">113</td><td class="line"> <span class='comment'>*	  (ii)  if k=0, return r-E</span></td></tr>
+<tr><td class="num" id="LN114">114</td><td class="line"> <span class='comment'>*	  (iii) if k=-1, return 0.5*(r-E)-0.5</span></td></tr>
+<tr><td class="num" id="LN115">115</td><td class="line"> <span class='comment'>*        (iv)	if k=1 if r &lt; -0.25, return 2*((r+0.5)- E)</span></td></tr>
+<tr><td class="num" id="LN116">116</td><td class="line"> <span class='comment'>*	       	       else	     return  1.0+2.0*(r-E);</span></td></tr>
+<tr><td class="num" id="LN117">117</td><td class="line"> <span class='comment'>*	  (v)   if (k&lt;-2||k&gt;56) return 2^k(1-(E-r)) - 1 (or exp(x)-1)</span></td></tr>
+<tr><td class="num" id="LN118">118</td><td class="line"> <span class='comment'>*	  (vi)  if k &lt;= 20, return 2^k((1-2^-k)-(E-r)), else</span></td></tr>
+<tr><td class="num" id="LN119">119</td><td class="line"> <span class='comment'>*	  (vii) return 2^k(1-((E+2^-k)-r))</span></td></tr>
+<tr><td class="num" id="LN120">120</td><td class="line"> <span class='comment'>*</span></td></tr>
+<tr><td class="num" id="LN121">121</td><td class="line"> <span class='comment'>* Special cases:</span></td></tr>
+<tr><td class="num" id="LN122">122</td><td class="line"> <span class='comment'>*	expm1(INF) is INF, expm1(NaN) is NaN;</span></td></tr>
+<tr><td class="num" id="LN123">123</td><td class="line"> <span class='comment'>*	expm1(-INF) is -1, and</span></td></tr>
+<tr><td class="num" id="LN124">124</td><td class="line"> <span class='comment'>*	for finite argument, only expm1(0)=0 is exact.</span></td></tr>
+<tr><td class="num" id="LN125">125</td><td class="line"> <span class='comment'>*</span></td></tr>
+<tr><td class="num" id="LN126">126</td><td class="line"> <span class='comment'>* Accuracy:</span></td></tr>
+<tr><td class="num" id="LN127">127</td><td class="line"> <span class='comment'>*	according to an error analysis, the error is always less than</span></td></tr>
+<tr><td class="num" id="LN128">128</td><td class="line"> <span class='comment'>*	1 ulp (unit in the last place).</span></td></tr>
+<tr><td class="num" id="LN129">129</td><td class="line"> <span class='comment'>*</span></td></tr>
+<tr><td class="num" id="LN130">130</td><td class="line"> <span class='comment'>* Misc. info.</span></td></tr>
+<tr><td class="num" id="LN131">131</td><td class="line"> <span class='comment'>*	For IEEE double</span></td></tr>
+<tr><td class="num" id="LN132">132</td><td class="line"> <span class='comment'>*	    if x &gt;  7.09782712893383973096e+02 then expm1(x) overflow</span></td></tr>
+<tr><td class="num" id="LN133">133</td><td class="line"> <span class='comment'>*</span></td></tr>
+<tr><td class="num" id="LN134">134</td><td class="line"> <span class='comment'>* Constants:</span></td></tr>
+<tr><td class="num" id="LN135">135</td><td class="line"> <span class='comment'>* The hexadecimal values are the intended ones for the following</span></td></tr>
+<tr><td class="num" id="LN136">136</td><td class="line"> <span class='comment'>* constants. The decimal values may be used, provided that the</span></td></tr>
+<tr><td class="num" id="LN137">137</td><td class="line"> <span class='comment'>* compiler will convert from decimal to binary accurately enough</span></td></tr>
+<tr><td class="num" id="LN138">138</td><td class="line"> <span class='comment'>* to produce the hexadecimal values shown.</span></td></tr>
+<tr><td class="num" id="LN139">139</td><td class="line"> <span class='comment'>*/</span></td></tr>
+<tr><td class="num" id="LN140">140</td><td class="line"> </td></tr>
+<tr><td class="num" id="LN141">141</td><td class="line"><span class='keyword'>static</span> <span class='keyword'>const</span> <span class='keyword'>double</span></td></tr>
+<tr><td class="num" id="LN142">142</td><td class="line">one		= 1.0,</td></tr>
+<tr><td class="num" id="LN143">143</td><td class="line">huge		= 1.0e+300,</td></tr>
+<tr><td class="num" id="LN144">144</td><td class="line">tiny		= 1.0e-300,</td></tr>
+<tr><td class="num" id="LN145">145</td><td class="line">o_threshold	= 7.09782712893383973096e+02,<span class='comment'>/* 0x40862E42, 0xFEFA39EF */</span></td></tr>
+<tr><td class="num" id="LN146">146</td><td class="line">ln2_hi		= 6.93147180369123816490e-01,<span class='comment'>/* 0x3fe62e42, 0xfee00000 */</span></td></tr>
+<tr><td class="num" id="LN147">147</td><td class="line">ln2_lo		= 1.90821492927058770002e-10,<span class='comment'>/* 0x3dea39ef, 0x35793c76 */</span></td></tr>
+<tr><td class="num" id="LN148">148</td><td class="line">invln2		= 1.44269504088896338700e+00,<span class='comment'>/* 0x3ff71547, 0x652b82fe */</span></td></tr>
+<tr><td class="num" id="LN149">149</td><td class="line">	<span class='comment'>/* scaled coefficients related to expm1 */</span></td></tr>
+<tr><td class="num" id="LN150">150</td><td class="line">Q1  =  -3.33333333333331316428e-02, <span class='comment'>/* BFA11111 111110F4 */</span></td></tr>
+<tr><td class="num" id="LN151">151</td><td class="line">Q2  =   1.58730158725481460165e-03, <span class='comment'>/* 3F5A01A0 19FE5585 */</span></td></tr>
+<tr><td class="num" id="LN152">152</td><td class="line">Q3  =  -7.93650757867487942473e-05, <span class='comment'>/* BF14CE19 9EAADBB7 */</span></td></tr>
+<tr><td class="num" id="LN153">153</td><td class="line">Q4  =   4.00821782732936239552e-06, <span class='comment'>/* 3ED0CFCA 86E65239 */</span></td></tr>
+<tr><td class="num" id="LN154">154</td><td class="line">Q5  =  -2.01099218183624371326e-07; <span class='comment'>/* BE8AFDB7 6E09C32D */</span></td></tr>
+<tr><td class="num" id="LN155">155</td><td class="line"> </td></tr>
+<tr><td class="num" id="LN156">156</td><td class="line"><span class='keyword'>double</span> expm1(<span class='keyword'>double</span> x)</td></tr>
+<tr><td class="num" id="LN157">157</td><td class="line">{</td></tr>
+<tr><td class="num" id="LN158">158</td><td class="line">    <span class='keyword'>double</span> y,hi,lo,c,t,e,hxs,hfx,r1;</td></tr>
+<tr><td class="num" id="LN159">159</td><td class="line">    sword k,xsb;</td></tr>
+<tr><td class="num" id="LN160">160</td><td class="line">    uword hx;</td></tr>
+<tr><td class="num" id="LN161">161</td><td class="line"> </td></tr>
+<tr><td class="num" id="LN162">162</td><td class="line">    c = 0.0;</td></tr>
+<tr><td class="num" id="LN163">163</td><td class="line"> </td></tr>
+<tr><td class="num" id="LN164">164</td><td class="line">    <span class='macro'>GET_HIGH_WORD(hx,x)<span class='expansion'>do { ieee_double_shape_type gh_u; gh_u.value = (x); (hx) = gh_u<br>.parts.msw; } while (0)</span></span>; <span class='comment'>/* high word of x */</span></td></tr>
+<tr><td class="num" id="LN165">165</td><td class="line">    xsb = hx&amp;0x80000000;		<span class='comment'>/* sign bit of x */</span></td></tr>
+<tr><td class="num" id="LN166">166</td><td class="line">    <span class='keyword'>if</span>(xsb==0) y=<span class="mrange">x</span>;</td></tr>
+<tr><td class="num"></td><td class="line"><div id="EndPath" class="msg msgEvent" style="margin-left:16ex">Value stored to 'y' is never read</div></td></tr>
+<tr><td class="num" id="LN167">167</td><td class="line">    <span class='keyword'>else</span> y= -x;	<span class='comment'>/* y = |x| */</span></td></tr>
+<tr><td class="num" id="LN168">168</td><td class="line">    hx &amp;= 0x7fffffff;		<span class='comment'>/* high word of |x| */</span></td></tr>
+<tr><td class="num" id="LN169">169</td><td class="line"> </td></tr>
+<tr><td class="num" id="LN170">170</td><td class="line">    <span class='comment'>/* filter out huge and non-finite argument */</span></td></tr>
+<tr><td class="num" id="LN171">171</td><td class="line">    <span class='keyword'>if</span>(hx &gt;= 0x4043687A) {			<span class='comment'>/* if |x|&gt;=56*ln2 */</span></td></tr>
+<tr><td class="num" id="LN172">172</td><td class="line">        <span class='keyword'>if</span>(hx &gt;= 0x40862E42) {		<span class='comment'>/* if |x|&gt;=709.78... */</span></td></tr>
+<tr><td class="num" id="LN173">173</td><td class="line">            <span class='keyword'>if</span>(hx&gt;=0x7ff00000) {</td></tr>
+<tr><td class="num" id="LN174">174</td><td class="line">                uword low;</td></tr>
+<tr><td class="num" id="LN175">175</td><td class="line">                <span class='macro'>GET_LOW_WORD(low,x)<span class='expansion'>do { ieee_double_shape_type gl_u; gl_u.value = (x); (low) = gl_u<br>.parts.lsw; } while (0)</span></span>;</td></tr>
+<tr><td class="num" id="LN176">176</td><td class="line">                <span class='keyword'>if</span>(((hx&amp;0xfffff)|low)!=0)</td></tr>
+<tr><td class="num" id="LN177">177</td><td class="line">                    <span class='keyword'>return</span> x+x; 	 <span class='comment'>/* NaN */</span></td></tr>
+<tr><td class="num" id="LN178">178</td><td class="line">                <span class='keyword'>else</span> <span class='keyword'>return</span> (xsb==0)? x:-1.0;<span class='comment'>/* exp(+-inf)={inf,-1} */</span></td></tr>
+<tr><td class="num" id="LN179">179</td><td class="line">            }</td></tr>
+<tr><td class="num" id="LN180">180</td><td class="line">            <span class='keyword'>if</span>(x &gt; o_threshold) <span class='keyword'>return</span> huge*huge; <span class='comment'>/* overflow */</span></td></tr>
+<tr><td class="num" id="LN181">181</td><td class="line">        }</td></tr>
+<tr><td class="num" id="LN182">182</td><td class="line">        <span class='keyword'>if</span>(xsb!=0) { <span class='comment'>/* x &lt; -56*ln2, return -1.0 with inexact */</span></td></tr>
+<tr><td class="num" id="LN183">183</td><td class="line">            <span class='keyword'>if</span>(x+tiny&lt;0.0)		<span class='comment'>/* raise inexact */</span></td></tr>
+<tr><td class="num" id="LN184">184</td><td class="line">                <span class='keyword'>return</span> tiny-one;	<span class='comment'>/* return -1 */</span></td></tr>
+<tr><td class="num" id="LN185">185</td><td class="line">        }</td></tr>
+<tr><td class="num" id="LN186">186</td><td class="line">    }</td></tr>
+<tr><td class="num" id="LN187">187</td><td class="line"> </td></tr>
+<tr><td class="num" id="LN188">188</td><td class="line">    <span class='comment'>/* argument reduction */</span></td></tr>
+<tr><td class="num" id="LN189">189</td><td class="line">    <span class='keyword'>if</span>(hx &gt; 0x3fd62e42) {		<span class='comment'>/* if  |x| &gt; 0.5 ln2 */</span></td></tr>
+<tr><td class="num" id="LN190">190</td><td class="line">        <span class='keyword'>if</span>(hx &lt; 0x3FF0A2B2) {	<span class='comment'>/* and |x| &lt; 1.5 ln2 */</span></td></tr>
+<tr><td class="num" id="LN191">191</td><td class="line">            <span class='keyword'>if</span>(xsb==0)</td></tr>
+<tr><td class="num" id="LN192">192</td><td class="line">            {</td></tr>
+<tr><td class="num" id="LN193">193</td><td class="line">                hi = x - ln2_hi;</td></tr>
+<tr><td class="num" id="LN194">194</td><td class="line">                lo =  ln2_lo;</td></tr>
+<tr><td class="num" id="LN195">195</td><td class="line">                k =  1;</td></tr>
+<tr><td class="num" id="LN196">196</td><td class="line">            }</td></tr>
+<tr><td class="num" id="LN197">197</td><td class="line">            <span class='keyword'>else</span></td></tr>
+<tr><td class="num" id="LN198">198</td><td class="line">            {</td></tr>
+<tr><td class="num" id="LN199">199</td><td class="line">                hi = x + ln2_hi;</td></tr>
+<tr><td class="num" id="LN200">200</td><td class="line">                lo = -ln2_lo;</td></tr>
+<tr><td class="num" id="LN201">201</td><td class="line">                k = -1;</td></tr>
+<tr><td class="num" id="LN202">202</td><td class="line">            }</td></tr>
+<tr><td class="num" id="LN203">203</td><td class="line">        } <span class='keyword'>else</span> {</td></tr>
+<tr><td class="num" id="LN204">204</td><td class="line">            k  = (sword)(invln2*x+((xsb==0)?0.5:-0.5));</td></tr>
+<tr><td class="num" id="LN205">205</td><td class="line">            t  = k;</td></tr>
+<tr><td class="num" id="LN206">206</td><td class="line">            hi = x - t*ln2_hi;	<span class='comment'>/* t*ln2_hi is exact here */</span></td></tr>
+<tr><td class="num" id="LN207">207</td><td class="line">            lo = t*ln2_lo;</td></tr>
+<tr><td class="num" id="LN208">208</td><td class="line">        }</td></tr>
+<tr><td class="num" id="LN209">209</td><td class="line">        x  = hi - lo;</td></tr>
+<tr><td class="num" id="LN210">210</td><td class="line">        c  = (hi-x)-lo;</td></tr>
+<tr><td class="num" id="LN211">211</td><td class="line">    }</td></tr>
+<tr><td class="num" id="LN212">212</td><td class="line">    <span class='keyword'>else</span> <span class='keyword'>if</span>(hx &lt; 0x3c900000) {  	<span class='comment'>/* when |x|&lt;2**-54, return x */</span></td></tr>
+<tr><td class="num" id="LN213">213</td><td class="line">        t = huge+x;	<span class='comment'>/* return x with inexact flags when x!=0 */</span></td></tr>
+<tr><td class="num" id="LN214">214</td><td class="line">        <span class='keyword'>return</span> x - (t-(huge+x));</td></tr>
+<tr><td class="num" id="LN215">215</td><td class="line">    }</td></tr>
+<tr><td class="num" id="LN216">216</td><td class="line">    <span class='keyword'>else</span> k = 0;</td></tr>
+<tr><td class="num" id="LN217">217</td><td class="line"> </td></tr>
+<tr><td class="num" id="LN218">218</td><td class="line">    <span class='comment'>/* x is now in primary range */</span></td></tr>
+<tr><td class="num" id="LN219">219</td><td class="line">    hfx = 0.5*x;</td></tr>
+<tr><td class="num" id="LN220">220</td><td class="line">    hxs = x*hfx;</td></tr>
+<tr><td class="num" id="LN221">221</td><td class="line">    r1 = one+hxs*(Q1+hxs*(Q2+hxs*(Q3+hxs*(Q4+hxs*Q5))));</td></tr>
+<tr><td class="num" id="LN222">222</td><td class="line">    t  = 3.0-r1*hfx;</td></tr>
+<tr><td class="num" id="LN223">223</td><td class="line">    e  = hxs*((r1-t)/(6.0 - x*t));</td></tr>
+<tr><td class="num" id="LN224">224</td><td class="line">    <span class='keyword'>if</span>(k==0) <span class='keyword'>return</span> x - (x*e-hxs);		<span class='comment'>/* c is 0 */</span></td></tr>
+<tr><td class="num" id="LN225">225</td><td class="line">    <span class='keyword'>else</span> {</td></tr>
+<tr><td class="num" id="LN226">226</td><td class="line">        e  = (x*(e-c)-c);</td></tr>
+<tr><td class="num" id="LN227">227</td><td class="line">        e -= hxs;</td></tr>
+<tr><td class="num" id="LN228">228</td><td class="line">        <span class='keyword'>if</span>(k== -1) <span class='keyword'>return</span> 0.5*(x-e)-0.5;</td></tr>
+<tr><td class="num" id="LN229">229</td><td class="line">        <span class='keyword'>if</span>(k==1) {</td></tr>
+<tr><td class="num" id="LN230">230</td><td class="line">            <span class='keyword'>if</span>(x &lt; -0.25) <span class='keyword'>return</span> -2.0*(e-(x+0.5));</td></tr>
+<tr><td class="num" id="LN231">231</td><td class="line">            <span class='keyword'>else</span> 	      <span class='keyword'>return</span>  one+2.0*(x-e);</td></tr>
+<tr><td class="num" id="LN232">232</td><td class="line">        }</td></tr>
+<tr><td class="num" id="LN233">233</td><td class="line">        <span class='keyword'>if</span> (k &lt;= -2 || k&gt;56) {   <span class='comment'>/* suffice to return exp(x)-1 */</span></td></tr>
+<tr><td class="num" id="LN234">234</td><td class="line">            uword hy;</td></tr>
+<tr><td class="num" id="LN235">235</td><td class="line"> </td></tr>
+<tr><td class="num" id="LN236">236</td><td class="line">            y = one-(e-x);</td></tr>
+<tr><td class="num" id="LN237">237</td><td class="line">            <span class='macro'>GET_HIGH_WORD(hy,y)<span class='expansion'>do { ieee_double_shape_type gh_u; gh_u.value = (y); (hy) = gh_u<br>.parts.msw; } while (0)</span></span>;</td></tr>
+<tr><td class="num" id="LN238">238</td><td class="line">            <span class='macro'>SET_HIGH_WORD(y, hy + (k&lt;&lt;20))<span class='expansion'>do { ieee_double_shape_type sh_u; sh_u.value = (y); sh_u.parts<br>.msw = (hy + (k&lt;&lt;20)); (y) = sh_u.value; } while (0)</span></span>;	<span class='comment'>/* add k to y's exponent */</span></td></tr>
+<tr><td class="num" id="LN239">239</td><td class="line">            <span class='keyword'>return</span> y-one;</td></tr>
+<tr><td class="num" id="LN240">240</td><td class="line">        }</td></tr>
+<tr><td class="num" id="LN241">241</td><td class="line">        t = one;</td></tr>
+<tr><td class="num" id="LN242">242</td><td class="line">        <span class='keyword'>if</span>(k&lt;20) {</td></tr>
+<tr><td class="num" id="LN243">243</td><td class="line">            uword hy;</td></tr>
+<tr><td class="num" id="LN244">244</td><td class="line"> </td></tr>
+<tr><td class="num" id="LN245">245</td><td class="line">            <span class='macro'>SET_HIGH_WORD(t, 0x3ff00000 - (0x200000&gt;&gt;k))<span class='expansion'>do { ieee_double_shape_type sh_u; sh_u.value = (t); sh_u.parts<br>.msw = (0x3ff00000 - (0x200000&gt;&gt;k)); (t) = sh_u.value; }<br> while (0)</span></span>;  <span class='comment'>/* t=1-2^-k */</span></td></tr>
+<tr><td class="num" id="LN246">246</td><td class="line">            y = t-(e-x);</td></tr>
+<tr><td class="num" id="LN247">247</td><td class="line">            <span class='macro'>GET_HIGH_WORD(hy, y)<span class='expansion'>do { ieee_double_shape_type gh_u; gh_u.value = (y); (hy) = gh_u<br>.parts.msw; } while (0)</span></span>;</td></tr>
+<tr><td class="num" id="LN248">248</td><td class="line">            <span class='macro'>SET_HIGH_WORD(y, hy + (k&lt;&lt;20))<span class='expansion'>do { ieee_double_shape_type sh_u; sh_u.value = (y); sh_u.parts<br>.msw = (hy + (k&lt;&lt;20)); (y) = sh_u.value; } while (0)</span></span>;	<span class='comment'>/* add k to y's exponent */</span></td></tr>
+<tr><td class="num" id="LN249">249</td><td class="line">        } <span class='keyword'>else</span> {</td></tr>
+<tr><td class="num" id="LN250">250</td><td class="line">            uword hy;</td></tr>
+<tr><td class="num" id="LN251">251</td><td class="line"> </td></tr>
+<tr><td class="num" id="LN252">252</td><td class="line">            <span class='macro'>SET_HIGH_WORD(t, (0x3ff-k)&lt;&lt;20)<span class='expansion'>do { ieee_double_shape_type sh_u; sh_u.value = (t); sh_u.parts<br>.msw = ((0x3ff-k)&lt;&lt;20); (t) = sh_u.value; } while (0)</span></span>;	<span class='comment'>/* 2^-k */</span></td></tr>
+<tr><td class="num" id="LN253">253</td><td class="line">            y = x-(e+t);</td></tr>
+<tr><td class="num" id="LN254">254</td><td class="line">            y += one;</td></tr>
+<tr><td class="num" id="LN255">255</td><td class="line">            <span class='macro'>GET_HIGH_WORD(hy, y)<span class='expansion'>do { ieee_double_shape_type gh_u; gh_u.value = (y); (hy) = gh_u<br>.parts.msw; } while (0)</span></span>;</td></tr>
+<tr><td class="num" id="LN256">256</td><td class="line">            <span class='macro'>SET_HIGH_WORD(y, hy + (k&lt;&lt;20))<span class='expansion'>do { ieee_double_shape_type sh_u; sh_u.value = (y); sh_u.parts<br>.msw = (hy + (k&lt;&lt;20)); (y) = sh_u.value; } while (0)</span></span>;	<span class='comment'>/* add k to y's exponent */</span></td></tr>
+<tr><td class="num" id="LN257">257</td><td class="line">        }</td></tr>
+<tr><td class="num" id="LN258">258</td><td class="line">    }</td></tr>
+<tr><td class="num" id="LN259">259</td><td class="line">    <span class='keyword'>return</span> y;</td></tr>
+<tr><td class="num" id="LN260">260</td><td class="line">}</td></tr>
+</table></body></html>
