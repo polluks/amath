@@ -57,7 +57,7 @@ bool AmigaPreferences::Load()
         }
     } while (c != NULL);
 
-    delete buf;
+    delete [] buf;
     Close(file);
     SetPrefs(text->GetString());
     delete text;
