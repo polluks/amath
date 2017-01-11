@@ -114,7 +114,8 @@ cp HISTORY dist/
 
 mkdir dist/script
 cp script/* dist/script/
-date -u >dist/build_date
+date -Ru >dist/build_date
+#uname -srmo >dist/build_host
 
 mv dist amath
 #lha-ac a amath.lha amath
