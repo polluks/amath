@@ -214,10 +214,34 @@ inline void  operator delete[] (void* ptr) throw() {
 # define COMP_VERS       __xlc__
 /* Microsoft Visual Studio */
 #elif defined(_MSC_VER)
-# define COMP_NAME       "Microsoft Visual Studio"
-# define str(x)          #x
-# define MSC_VER_STR(x)  str(x)
-# define COMP_VERS       MSC_VER_STR(_MSC_VER / 100)
+# define COMP_NAME       "MSVC++"
+# if (_MSC_VER == 1100)
+#  define COMP_VERS      "5.0"
+# elif (_MSC_VER == 1200)
+#  define COMP_VERS      "6.0"
+# elif (_MSC_VER == 1300)
+#  define COMP_VERS      "7.0"
+# elif (_MSC_VER == 1310)
+#  define COMP_VERS      "7.1"
+# elif (_MSC_VER == 1400)
+#  define COMP_VERS      "8.0"
+# elif (_MSC_VER == 1500)
+#  define COMP_VERS      "9.0"
+# elif (_MSC_VER == 1600)
+#  define COMP_VERS      "10.0"
+# elif (_MSC_VER == 1700)
+#  define COMP_VERS      "11.0"
+# elif (_MSC_VER == 1800)
+#  define COMP_VERS      "12.0"
+# elif (_MSC_VER == 1900)
+#  define COMP_VERS      "14.0"
+# elif (_MSC_VER > 1900)
+#  define COMP_VERS      "15.0+"
+# else
+#  define str(x)         #x
+#  define MSC_VER_STR(x) str(x)
+#  define COMP_VERS      MSC_VER_STR(_MSC_VER)
+# endif
 /* Portland Group PGCC/PGCPP */
 #elif defined(__PGI)
 # define COMP_NAME       "PGCC/PGCPP"
