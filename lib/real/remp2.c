@@ -1,7 +1,7 @@
 /* @(#)e_rem_pio2.c 1.4 95/01/18 */
 
 /*
- * Copyright (c) 2015-2016 Carsten Sonne Larsen
+ * Copyright (c) 2015-2017 Carsten Sonne Larsen  <cs@innolan.dk>
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
