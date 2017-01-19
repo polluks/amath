@@ -1,0 +1,466 @@
+.TH "Lexer" 3 "Thu Jan 19 2017" "Version 1.6.0" "amath" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Lexer \- Encapsulates an lexical analyzer\&. Provides token for the parser\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <lexer\&.h>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBLexer\fP (const char *\fBinput\fP)"
+.br
+.ti -1c
+.RI "\fB~Lexer\fP ()"
+.br
+.ti -1c
+.RI "void \fBTokenize\fP ()"
+.br
+.ti -1c
+.RI "\fBToken\fP * \fBGetFirstToken\fP ()"
+.br
+.ti -1c
+.RI "char * \fBGetInput\fP ()"
+.br
+.in -1c
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static char * \fBFindKeyword\fP (\fBSymbol\fP symbol)"
+.br
+.in -1c
+.SS "Private Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBGetNextToken\fP ()"
+.br
+.ti -1c
+.RI "\fBbool\fP \fBGetOperator\fP ()"
+.br
+.ti -1c
+.RI "\fBbool\fP \fBGetQuotedIdent\fP ()"
+.br
+.ti -1c
+.RI "\fBbool\fP \fBGetLitteral\fP ()"
+.br
+.ti -1c
+.RI "\fBbool\fP \fBGetDigitValue\fP ()"
+.br
+.ti -1c
+.RI "\fBbool\fP \fBShouldSkip\fP (char character)"
+.br
+.ti -1c
+.RI "\fBSymbol\fP \fBFindKeyword\fP (const char *ident)"
+.br
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "char * \fBinput\fP"
+.br
+.ti -1c
+.RI "char * \fBstr\fP"
+.br
+.ti -1c
+.RI "unsigned int \fBpos\fP"
+.br
+.ti -1c
+.RI "\fBToken\fP * \fBfirst\fP"
+.br
+.ti -1c
+.RI "\fBToken\fP * \fBcurrent\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Encapsulates an lexical analyzer\&. Provides token for the parser\&. 
+
+More info on lexical analysis is available at Wikipedia: http://en.wikipedia.org/wiki/Lexical_analysis 
+.PP
+Definition at line 45 of file lexer\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "Lexer::Lexer (const char * input)"
+
+.PP
+Definition at line 34 of file lexer\&.cpp\&.
+.PP
+References AllocAndCopy(), current, first, input, pos, and str\&.
+.PP
+Referenced by Parser::Parser()\&.
+.PP
+.nf
+35 {
+36     AllocAndCopy(&this->input, input);
+37     pos = 0;
+38     str = this->input;
+39     first = NOMEM;
+40     current = NOMEM;
+41 }
+.fi
+.SS "Lexer::~Lexer ()"
+
+.PP
+Definition at line 43 of file lexer\&.cpp\&.
+.PP
+References first, and input\&.
+.PP
+.nf
+44 {
+45     delete [] input;
+46 
+47     if (first != NOMEM) {
+48         delete first;
+49     }
+50 }
+.fi
+.SH "Member Function Documentation"
+.PP 
+.SS "char * Lexer::FindKeyword (\fBSymbol\fP symbol)\fC [static]\fP"
+
+.PP
+Definition at line 221 of file lexer\&.cpp\&.
+.PP
+References operatordef::chr, keywords, keyworddef::name, operators, keyworddef::symbol, and operatordef::symbol\&.
+.PP
+Referenced by PreferencesBase::GetDescription()\&.
+.PP
+.nf
+222 {
+223     static const unsigned int kwcount = sizeof(keywords) / sizeof(keyworddef);
+224     for (unsigned int i = 0; i < kwcount; i++) {
+225         if (keywords[i]\&.symbol == symbol) {
+226             return (char*)keywords[i]\&.name;
+227         }
+228     }
+229 
+230     static const unsigned int ocount = sizeof(operators) / sizeof(operatordef);
+231     for (unsigned int i = 0; i < ocount; i++) {
+232         if (operators[i]\&.symbol == symbol) {
+233             return (char*)&(operators[i]\&.chr);
+234         }
+235     }
+236 
+237     return NOMEM;
+238 }
+.fi
+.SS "\fBSymbol\fP Lexer::FindKeyword (const char * ident)\fC [private]\fP"
+
+.PP
+Definition at line 216 of file lexer\&.cpp\&.
+.PP
+References Language::FindKeyword()\&.
+.PP
+Referenced by GetLitteral()\&.
+.PP
+.nf
+217 {
+218     return Program->Language->FindKeyword(ident);
+219 }
+.fi
+.SS "\fBbool\fP Lexer::GetDigitValue ()\fC [private]\fP"
+
+.PP
+Definition at line 190 of file lexer\&.cpp\&.
+.PP
+References current, Program::Input, MemCopy(), NumeralSystem::Parse(), pos, str, symnumber, and Token::Token()\&.
+.PP
+Referenced by GetNextToken()\&.
+.PP
+.nf
+191 {
+192     unsigned int len;
+193     char *end;
+194 
+195     // Only the numeral parser can determine if next token is a value
+196     Number *number = Program->Input->Parse(str, &len, &end);
+197 
+198     if (str == end) {
+199         delete number;
+200         return false;
+201     }
+202 
+203     char *text = new char[len + 1];
+204     MemCopy(text, str, len);
+205     *(text + len) = '\0';
+206 
+207     current = new Token(current, symnumber, text, pos);
+208     delete [] text;
+209     delete number;
+210 
+211     pos += len;
+212     str = end;
+213     return true;
+214 }
+.fi
+.SS "\fBToken\fP * Lexer::GetFirstToken ()"
+
+.PP
+Definition at line 57 of file lexer\&.cpp\&.
+.PP
+References first\&.
+.PP
+Referenced by Parser::GetToken()\&.
+.PP
+.nf
+58 {
+59     return first;
+60 }
+.fi
+.SS "char * Lexer::GetInput ()"
+
+.PP
+Definition at line 52 of file lexer\&.cpp\&.
+.PP
+References input\&.
+.PP
+Referenced by Parser::Parse(), Parser::ParseDigistStatement(), Parser::ParseFileStatement(), Parser::ParseFunctionDef(), Parser::ParseIdent(), Parser::ParseNumeralStatement(), and Parser::TryParseStatement()\&.
+.PP
+.nf
+53 {
+54     return input;
+55 }
+.fi
+.SS "\fBbool\fP Lexer::GetLitteral ()\fC [private]\fP"
+
+.PP
+Definition at line 150 of file lexer\&.cpp\&.
+.PP
+References Language::CharIsAlpha(), Language::CharIsDigit(), current, FindKeyword(), MemCopy(), pos, str, symident, and Token::Token()\&.
+.PP
+Referenced by GetNextToken()\&.
+.PP
+.nf
+151 {
+152     const char *start = str;
+153     const unsigned int startPos = pos;
+154     int unsigned len = 0;
+155     bool found = true;
+156     Symbol ksymbol;
+157 
+158     while (found) {
+159         if (Program->Language->CharIsAlpha(*str)) {
+160             str++;
+161             len++;
+162         } else if (len != 0 && Program->Language->CharIsDigit(*str)) {
+163             str++;
+164             len++;
+165         } else {
+166             found = false;
+167         }
+168     }
+169 
+170     if (len == 0) {
+171         return false;
+172     }
+173 
+174     char *ident = new char[len + 1];
+175     MemCopy(ident, start, len);
+176     ident[len] = 0;
+177 
+178     if ((ksymbol = FindKeyword(ident))) {
+179         current = new Token(current, ksymbol, startPos);
+180     } else {
+181         current = new Token(current, symident, ident, startPos);
+182     }
+183 
+184     pos += len;
+185 
+186     delete [] ident;
+187     return true;
+188 }
+.fi
+.SS "void Lexer::GetNextToken ()\fC [private]\fP"
+
+.PP
+Definition at line 79 of file lexer\&.cpp\&.
+.PP
+References Language::CharIsSpace(), current, GetDigitValue(), GetLitteral(), GetOperator(), GetQuotedIdent(), pos, ShouldSkip(), str, symend, symunknown, and Token::Token()\&.
+.PP
+Referenced by Tokenize()\&.
+.PP
+.nf
+80 {
+81     // Skip spaces and non visible characters
+82     while (*str != 0 && ShouldSkip(*str)) {
+83         str++;
+84         if (Program->Language->CharIsSpace(*str)) {
+85             pos++;
+86         }
+87     }
+88 
+89     if (*str == 0)
+90     {
+91         current = new Token(current, symend, pos);
+92     } else if (GetOperator() || GetQuotedIdent() || GetDigitValue() || GetLitteral()) {
+93         return;
+94     } else {
+95         str++;
+96         pos++;
+97         current = new Token(current, symunknown, pos - 1);
+98     }
+99 }
+.fi
+.SS "\fBbool\fP Lexer::GetOperator ()\fC [private]\fP"
+
+.PP
+Definition at line 101 of file lexer\&.cpp\&.
+.PP
+References operatordef::chr, current, operators, pos, str, operatordef::symbol, and Token::Token()\&.
+.PP
+Referenced by GetNextToken()\&.
+.PP
+.nf
+102 {
+103     static const unsigned int count = sizeof(operators) / sizeof(operatordef);
+104     for (unsigned int i = 0; i < count; i++) {
+105         if (operators[i]\&.chr == *str) {
+106             current = new Token(current, operators[i]\&.symbol, pos);
+107             str++;
+108             pos++;
+109             return true;
+110         }
+111     }
+112 
+113     return false;
+114 }
+.fi
+.SS "\fBbool\fP Lexer::GetQuotedIdent ()\fC [private]\fP"
+
+.PP
+Definition at line 116 of file lexer\&.cpp\&.
+.PP
+References Language::CharIsCntrl(), current, MemCopy(), pos, str, symqident, and Token::Token()\&.
+.PP
+Referenced by GetNextToken()\&.
+.PP
+.nf
+117 {
+118     if (*str != '"') {
+119         return false;
+120     }
+121 
+122     char *start = str;
+123     const unsigned int startPos = pos;
+124     int unsigned len = 0;
+125     str++;
+126 
+127     while (*str != 0 && *str != '"' && !Program->Language->CharIsCntrl(*str)) {
+128         str++;
+129         len++;
+130     }
+131 
+132     if (len == 0 || *str != '"') {
+133         str = start;
+134         return false;
+135     }
+136 
+137     char *ident = new char[len + 1];
+138     MemCopy(ident, start + 1, len);
+139     ident[len] = 0;
+140 
+141     current = new Token(current, symqident, ident, startPos);
+142 
+143     str++;
+144     pos += len + 1;
+145 
+146     delete [] ident;
+147     return true;
+148 }
+.fi
+.SS "\fBbool\fP Lexer::ShouldSkip (char character)\fC [private]\fP"
+
+.PP
+Definition at line 240 of file lexer\&.cpp\&.
+.PP
+References Language::CharIsCntrl(), and Language::CharIsSpace()\&.
+.PP
+Referenced by GetNextToken()\&.
+.PP
+.nf
+241 {
+242     if (character == '\n') {
+243         return false;
+244     }
+245 
+246     if (Program->Language->CharIsCntrl(character)) {
+247         return true;
+248     }
+249 
+250     if (Program->Language->CharIsSpace(character)) {
+251         return true;
+252     }
+253 
+254     return false;
+255 }
+.fi
+.SS "void Lexer::Tokenize ()"
+
+.PP
+Definition at line 62 of file lexer\&.cpp\&.
+.PP
+References current, first, GetNextToken(), input, Token::next, pos, str, Token::symbol, and symend\&.
+.PP
+Referenced by Parser::Parse()\&.
+.PP
+.nf
+63 {
+64     pos = 0;
+65     str = input;
+66     first = NOMEM;
+67     current = NOMEM;
+68 
+69     GetNextToken();
+70     first = current;
+71 
+72     do {
+73         Token* last = current;
+74         GetNextToken();
+75         last->next = current;
+76     } while (current->symbol != symend);
+77 }
+.fi
+.SH "Member Data Documentation"
+.PP 
+.SS "\fBToken\fP* Lexer::current\fC [private]\fP"
+
+.PP
+Definition at line 60 of file lexer\&.h\&.
+.PP
+Referenced by GetDigitValue(), GetLitteral(), GetNextToken(), GetOperator(), GetQuotedIdent(), Lexer(), and Tokenize()\&.
+.SS "\fBToken\fP* Lexer::first\fC [private]\fP"
+
+.PP
+Definition at line 59 of file lexer\&.h\&.
+.PP
+Referenced by GetFirstToken(), Lexer(), Tokenize(), and ~Lexer()\&.
+.SS "char* Lexer::input\fC [private]\fP"
+
+.PP
+Definition at line 56 of file lexer\&.h\&.
+.PP
+Referenced by GetInput(), Lexer(), Tokenize(), and ~Lexer()\&.
+.SS "unsigned int Lexer::pos\fC [private]\fP"
+
+.PP
+Definition at line 58 of file lexer\&.h\&.
+.PP
+Referenced by GetDigitValue(), GetLitteral(), GetNextToken(), GetOperator(), GetQuotedIdent(), Lexer(), and Tokenize()\&.
+.SS "char* Lexer::str\fC [private]\fP"
+
+.PP
+Definition at line 57 of file lexer\&.h\&.
+.PP
+Referenced by GetDigitValue(), GetLitteral(), GetNextToken(), GetOperator(), GetQuotedIdent(), Lexer(), and Tokenize()\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for amath from the source code\&.

@@ -1,0 +1,203 @@
+\hypertarget{classBinaryLogNode}{}\section{Binary\+Log\+Node Class Reference}
+\label{classBinaryLogNode}\index{Binary\+Log\+Node@{Binary\+Log\+Node}}
+
+
+{\ttfamily \#include $<$functions.\+h$>$}
+
+
+
+Inheritance diagram for Binary\+Log\+Node\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=169pt]{dd/de5/classBinaryLogNode__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Binary\+Log\+Node\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=272pt]{d9/dda/classBinaryLogNode__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classBinaryLogNode_aba9e8a080b194de67e58f19c3aef2433}{Binary\+Log\+Node} (\hyperlink{classExpressionNode}{Expression\+Node} $\ast$\hyperlink{classFunctionNode_ad7577b179a1937aaf8a0058bb5b546dc}{expression})
+\item 
+\hyperlink{structNumber}{Number} $\ast$ \hyperlink{classBinaryLogNode_a0ac91748d2e82ac41b3a86eca6cf51df}{Evaluate} ()
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{classFunctionNode}{Function\+Node} $\ast$ \hyperlink{classBinaryLogNode_a443a095bddfc93df884e96cf43c2e971}{Create} (\hyperlink{classExpressionNode}{Expression\+Node} $\ast$\hyperlink{classFunctionNode_ad7577b179a1937aaf8a0058bb5b546dc}{expression})
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+char $\ast$ \hyperlink{classBinaryLogNode_ad530e3055e387682633eb4a055c4260f}{Get\+Node\+Text} ()
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 318 of file functions.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Binary\+Log\+Node@{Binary\+Log\+Node}!Binary\+Log\+Node@{Binary\+Log\+Node}}
+\index{Binary\+Log\+Node@{Binary\+Log\+Node}!Binary\+Log\+Node@{Binary\+Log\+Node}}
+\subsubsection[{\texorpdfstring{Binary\+Log\+Node(\+Expression\+Node $\ast$expression)}{BinaryLogNode(ExpressionNode *expression)}}]{\setlength{\rightskip}{0pt plus 5cm}Binary\+Log\+Node\+::\+Binary\+Log\+Node (
+\begin{DoxyParamCaption}
+\item[{{\bf Expression\+Node} $\ast$}]{expression}
+\end{DoxyParamCaption}
+)}\hypertarget{classBinaryLogNode_aba9e8a080b194de67e58f19c3aef2433}{}\label{classBinaryLogNode_aba9e8a080b194de67e58f19c3aef2433}
+
+
+Definition at line 675 of file functions.\+cpp.
+
+
+
+References Function\+Node\+::\+Function\+Node().
+
+
+
+Referenced by Create().
+
+
+\begin{DoxyCode}
+675                                                        :
+676     \hyperlink{classFunctionNode_a41cb7db0162ffbec0902bd8ff7ea435f}{FunctionNode}(expression) \{ \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d2/d2a/classBinaryLogNode_aba9e8a080b194de67e58f19c3aef2433_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d2/d2a/classBinaryLogNode_aba9e8a080b194de67e58f19c3aef2433_icgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Member Function Documentation}
+\index{Binary\+Log\+Node@{Binary\+Log\+Node}!Create@{Create}}
+\index{Create@{Create}!Binary\+Log\+Node@{Binary\+Log\+Node}}
+\subsubsection[{\texorpdfstring{Create(\+Expression\+Node $\ast$expression)}{Create(ExpressionNode *expression)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Function\+Node} $\ast$ Binary\+Log\+Node\+::\+Create (
+\begin{DoxyParamCaption}
+\item[{{\bf Expression\+Node} $\ast$}]{expression}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{classBinaryLogNode_a443a095bddfc93df884e96cf43c2e971}{}\label{classBinaryLogNode_a443a095bddfc93df884e96cf43c2e971}
+
+
+Definition at line 678 of file functions.\+cpp.
+
+
+
+References Binary\+Log\+Node().
+
+
+\begin{DoxyCode}
+679 \{
+680     \textcolor{keywordflow}{return} \textcolor{keyword}{new} \hyperlink{classBinaryLogNode_aba9e8a080b194de67e58f19c3aef2433}{BinaryLogNode}(expression);
+681 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d2/d2a/classBinaryLogNode_a443a095bddfc93df884e96cf43c2e971_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{Binary\+Log\+Node@{Binary\+Log\+Node}!Evaluate@{Evaluate}}
+\index{Evaluate@{Evaluate}!Binary\+Log\+Node@{Binary\+Log\+Node}}
+\subsubsection[{\texorpdfstring{Evaluate()}{Evaluate()}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Number} $\ast$ Binary\+Log\+Node\+::\+Evaluate (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{classBinaryLogNode_a0ac91748d2e82ac41b3a86eca6cf51df}{}\label{classBinaryLogNode_a0ac91748d2e82ac41b3a86eca6cf51df}
+
+
+Implements \hyperlink{classExpressionNode_a64975d4dc37742228bd522f6204537f7}{Expression\+Node}.
+
+
+
+Definition at line 683 of file functions.\+cpp.
+
+
+
+References Expression\+Node\+::\+Evaluate(), Function\+Node\+::expression, Number\+::\+Log2(), and Expression\+Node\+::result.
+
+
+\begin{DoxyCode}
+684 \{
+685     \hyperlink{classExpressionNode_a1f590649f5a5cb30eb7ee912f7bc1262}{result} = \hyperlink{classFunctionNode_ad7577b179a1937aaf8a0058bb5b546dc}{expression}->\hyperlink{classExpressionNode_a64975d4dc37742228bd522f6204537f7}{Evaluate}()->\hyperlink{structNumber_a8ace103bb7d32fabc11b65d00ab70f6a}{Log2}();
+686     \textcolor{keywordflow}{return} \hyperlink{classExpressionNode_a1f590649f5a5cb30eb7ee912f7bc1262}{result};
+687 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d2/d2a/classBinaryLogNode_a0ac91748d2e82ac41b3a86eca6cf51df_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{Binary\+Log\+Node@{Binary\+Log\+Node}!Get\+Node\+Text@{Get\+Node\+Text}}
+\index{Get\+Node\+Text@{Get\+Node\+Text}!Binary\+Log\+Node@{Binary\+Log\+Node}}
+\subsubsection[{\texorpdfstring{Get\+Node\+Text()}{GetNodeText()}}]{\setlength{\rightskip}{0pt plus 5cm}char $\ast$ Binary\+Log\+Node\+::\+Get\+Node\+Text (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}\hypertarget{classBinaryLogNode_ad530e3055e387682633eb4a055c4260f}{}\label{classBinaryLogNode_ad530e3055e387682633eb4a055c4260f}
+
+
+Implements \hyperlink{classExpressionNode_a42a5e9562b0f645a19dcc83f698069b5}{Expression\+Node}.
+
+
+
+Definition at line 689 of file functions.\+cpp.
+
+
+\begin{DoxyCode}
+690 \{
+691     \textcolor{keywordflow}{return} (\textcolor{keywordtype}{char}*)\textcolor{stringliteral}{"lb"};
+692 \}
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+app/main/\hyperlink{functions_8h}{functions.\+h}\item 
+app/main/\hyperlink{functions_8cpp}{functions.\+cpp}\end{DoxyCompactItemize}

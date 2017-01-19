@@ -1,0 +1,88 @@
+.TH "VersionStatement" 3 "Thu Jan 19 2017" "Version 1.6.0" "amath" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+VersionStatement \- Show version string\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <statements\&.h>\fP
+.PP
+Inherits \fBStatementNode\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBVersionStatement\fP ()"
+.br
+.ti -1c
+.RI "\fB~VersionStatement\fP ()"
+.br
+.ti -1c
+.RI "char * \fBExecute\fP ()"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Detailed Description"
+.PP 
+Show version string\&. 
+.PP
+Definition at line 83 of file statements\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "VersionStatement::VersionStatement ()\fC [inline]\fP"
+
+.PP
+Definition at line 85 of file statements\&.h\&.
+.PP
+Referenced by Parser::ParseStatement()\&.
+.PP
+.nf
+85 { }
+.fi
+.SS "VersionStatement::~VersionStatement ()\fC [inline]\fP"
+
+.PP
+Definition at line 86 of file statements\&.h\&.
+.PP
+.nf
+86 { }
+.fi
+.SH "Member Function Documentation"
+.PP 
+.SS "char * VersionStatement::Execute ()\fC [virtual]\fP"
+
+.PP
+Implements \fBStatementNode\fP\&.
+.PP
+Definition at line 73 of file statements\&.cpp\&.
+.PP
+References CharBuffer::Append(), CharBuffer::Empty(), CharBuffer::EnsureSize(), CharBuffer::GetString(), SyntaxNode::output, and StrLen()\&.
+.PP
+.nf
+74 {
+75     output->Empty();
+76     output->EnsureSize(
+77         StrLen(BOLD) +
+78         StrLen(TXTVERSMSG) +
+79         StrLen(NEWLINE) * 2 +
+80         StrLen(NORMALTEXT) +
+81         StrLen(TXTCOMPMSG));
+82 
+83     output->Append(BOLD);
+84     output->Append(TXTVERSMSG);
+85     output->Append(NORMALTEXT);
+86     output->Append(NEWLINE);
+87     output->Append(TXTCOMPMSG);
+88     output->Append(NEWLINE);
+89 
+90     return output->GetString();
+91 }
+.fi
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for amath from the source code\&.

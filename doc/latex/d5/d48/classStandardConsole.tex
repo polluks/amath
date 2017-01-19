@@ -1,0 +1,487 @@
+\hypertarget{classStandardConsole}{}\section{Standard\+Console Class Reference}
+\label{classStandardConsole}\index{Standard\+Console@{Standard\+Console}}
+
+
+Encapsulates the IO of a console using Standard C and termios.  
+
+
+
+
+{\ttfamily \#include $<$console\+\_\+stdc.\+h$>$}
+
+
+
+Inheritance diagram for Standard\+Console\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=172pt]{d5/d99/classStandardConsole__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Standard\+Console\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=270pt]{d2/d3d/classStandardConsole__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classStandardConsole_a8b2990d83e98f8c319894246384e71e1}{Standard\+Console} (const char $\ast$\hyperlink{classConsoleBase_ac0b5764a1c339ac271d0c44943e4370c}{prompt})
+\item 
+virtual \hyperlink{classStandardConsole_abde73c34d62afc7bf1c658817d36299b}{$\sim$\+Standard\+Console} ()
+\item 
+virtual int \hyperlink{classStandardConsole_af0b69c487667723a1e33357db6132e94}{Get\+Stack\+Size} ()
+\item 
+virtual void \hyperlink{classStandardConsole_a9380023bba612b816b134589130bb254}{Run} ()
+\item 
+virtual void \hyperlink{classStandardConsole_a5cd03a0758b89c116b90fee058d612c3}{Exit} ()
+\item 
+virtual void \hyperlink{classStandardConsole_aa8e28b5271f982514c12bc6c66f310f9}{Set\+Prompt} (const char $\ast$string)
+\item 
+virtual void \hyperlink{classStandardConsole_a4357667b7d80d110aca730ccb1cdca13}{Write\+String} (const char $\ast$string)
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classStandardConsole_a387d8a0bf9d6ec722868026f58393942}{Read\+Line} ()
+\item 
+void \hyperlink{classStandardConsole_a43844eb181d640c0e4860ef21c2e8fa7}{Write} (const char $\ast$string, unsigned int length)
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classAnsiConoleEngine}{Ansi\+Conole\+Engine} $\ast$ \hyperlink{classStandardConsole_a0b6899785e858b50d8b632cc546b347a}{proc}
+\item 
+const char $\ast$ \hyperlink{classStandardConsole_a2ed234e29cf0056dfdc40bac5f7dd438}{line}
+\item 
+\hyperlink{platform_8h_a1062901a7428fdd9c7f180f5e01ea056}{bool} \hyperlink{classStandardConsole_a67538cb9ac4d002b2341386fab0b1f13}{exit}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+Encapsulates the IO of a console using Standard C and termios. 
+
+Definition at line 44 of file console\+\_\+stdc.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Standard\+Console@{Standard\+Console}!Standard\+Console@{Standard\+Console}}
+\index{Standard\+Console@{Standard\+Console}!Standard\+Console@{Standard\+Console}}
+\subsubsection[{\texorpdfstring{Standard\+Console(const char $\ast$prompt)}{StandardConsole(const char *prompt)}}]{\setlength{\rightskip}{0pt plus 5cm}Standard\+Console\+::\+Standard\+Console (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{prompt}
+\end{DoxyParamCaption}
+)}\hypertarget{classStandardConsole_a8b2990d83e98f8c319894246384e71e1}{}\label{classStandardConsole_a8b2990d83e98f8c319894246384e71e1}
+
+
+Definition at line 33 of file console\+\_\+stdc.\+cpp.
+
+
+
+References Ansi\+Conole\+Engine\+::\+Ansi\+Conole\+Engine(), Console\+Base\+::\+Console\+Base(), and proc.
+
+
+
+Referenced by Standard\+Program\+::\+Initialize().
+
+
+\begin{DoxyCode}
+33                                                    :
+34     \hyperlink{classConsoleBase_a69210c6548727255c817e70cdd167f84}{ConsoleBase}(\hyperlink{classConsoleBase_ac0b5764a1c339ac271d0c44943e4370c}{prompt})
+35 \{
+36     \hyperlink{classStandardConsole_a0b6899785e858b50d8b632cc546b347a}{proc} = \textcolor{keyword}{new} \hyperlink{classAnsiConoleEngine}{AnsiConoleEngine}(\hyperlink{classConsoleBase_ac0b5764a1c339ac271d0c44943e4370c}{prompt});
+37 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d5/d48/classStandardConsole_a8b2990d83e98f8c319894246384e71e1_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d5/d48/classStandardConsole_a8b2990d83e98f8c319894246384e71e1_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Standard\+Console@{Standard\+Console}!````~Standard\+Console@{$\sim$\+Standard\+Console}}
+\index{````~Standard\+Console@{$\sim$\+Standard\+Console}!Standard\+Console@{Standard\+Console}}
+\subsubsection[{\texorpdfstring{$\sim$\+Standard\+Console()}{~StandardConsole()}}]{\setlength{\rightskip}{0pt plus 5cm}Standard\+Console\+::$\sim$\+Standard\+Console (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{classStandardConsole_abde73c34d62afc7bf1c658817d36299b}{}\label{classStandardConsole_abde73c34d62afc7bf1c658817d36299b}
+
+
+Definition at line 39 of file console\+\_\+stdc.\+cpp.
+
+
+
+References proc.
+
+
+\begin{DoxyCode}
+40 \{
+41     \textcolor{keyword}{delete} \hyperlink{classStandardConsole_a0b6899785e858b50d8b632cc546b347a}{proc};
+42 \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\index{Standard\+Console@{Standard\+Console}!Exit@{Exit}}
+\index{Exit@{Exit}!Standard\+Console@{Standard\+Console}}
+\subsubsection[{\texorpdfstring{Exit()}{Exit()}}]{\setlength{\rightskip}{0pt plus 5cm}void Standard\+Console\+::\+Exit (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{classStandardConsole_a5cd03a0758b89c116b90fee058d612c3}{}\label{classStandardConsole_a5cd03a0758b89c116b90fee058d612c3}
+
+
+Implements \hyperlink{classConsoleBase_a2d23be5ddae9da94a486e05581ed1e35}{Console\+Base}.
+
+
+
+Definition at line 65 of file console\+\_\+stdc.\+cpp.
+
+
+
+References exit.
+
+
+\begin{DoxyCode}
+66 \{
+67     \hyperlink{classStandardConsole_a67538cb9ac4d002b2341386fab0b1f13}{exit} = \textcolor{keyword}{true};
+68 \}
+\end{DoxyCode}
+\index{Standard\+Console@{Standard\+Console}!Get\+Stack\+Size@{Get\+Stack\+Size}}
+\index{Get\+Stack\+Size@{Get\+Stack\+Size}!Standard\+Console@{Standard\+Console}}
+\subsubsection[{\texorpdfstring{Get\+Stack\+Size()}{GetStackSize()}}]{\setlength{\rightskip}{0pt plus 5cm}int Standard\+Console\+::\+Get\+Stack\+Size (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{classStandardConsole_af0b69c487667723a1e33357db6132e94}{}\label{classStandardConsole_af0b69c487667723a1e33357db6132e94}
+
+
+Implements \hyperlink{classThreadBase_a676ce2be4c9801fdfdc30f484547caef}{Thread\+Base}.
+
+
+
+Definition at line 44 of file console\+\_\+stdc.\+cpp.
+
+
+\begin{DoxyCode}
+45 \{
+46     \textcolor{keywordflow}{return} 100000;
+47 \}
+\end{DoxyCode}
+\index{Standard\+Console@{Standard\+Console}!Read\+Line@{Read\+Line}}
+\index{Read\+Line@{Read\+Line}!Standard\+Console@{Standard\+Console}}
+\subsubsection[{\texorpdfstring{Read\+Line()}{ReadLine()}}]{\setlength{\rightskip}{0pt plus 5cm}void Standard\+Console\+::\+Read\+Line (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classStandardConsole_a387d8a0bf9d6ec722868026f58393942}{}\label{classStandardConsole_a387d8a0bf9d6ec722868026f58393942}
+
+
+Definition at line 70 of file console\+\_\+stdc.\+cpp.
+
+
+
+References Ansi\+Conole\+Engine\+::\+Get\+Line(), Ansi\+Conole\+Engine\+::\+Input\+Done(), line, proc, Ansi\+Conole\+Engine\+::\+Process\+Char(), Ansi\+Conole\+Engine\+::\+Start\+Input(), and Write\+String().
+
+
+
+Referenced by Run().
+
+
+\begin{DoxyCode}
+71 \{
+72 \textcolor{preprocessor}{#ifdef UNIX}
+73     termios new\_tio, old\_tio;
+74     tcgetattr(STDIN\_FILENO, &old\_tio);
+75     new\_tio = old\_tio;
+76     new\_tio.c\_lflag &=(~ICANON & ~ECHO);
+77     tcsetattr(STDIN\_FILENO, TCSANOW, &new\_tio);
+78 \textcolor{preprocessor}{#endif}
+79 
+80     \hyperlink{classStandardConsole_a0b6899785e858b50d8b632cc546b347a}{proc}->\hyperlink{classAnsiConoleEngine_a8ad01a2ddd3ee5182deb4a74f3d2a0c1}{StartInput}();
+81 
+82     \textcolor{keywordflow}{while} (!\hyperlink{classStandardConsole_a0b6899785e858b50d8b632cc546b347a}{proc}->\hyperlink{classAnsiConoleEngine_ab136f725541608d36dedcd8ffa24e820}{InputDone}()) \{
+83         \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} c = getchar();
+84         \textcolor{comment}{//printf("%d ",c);}
+85         \textcolor{keyword}{const} \textcolor{keywordtype}{char} *out = \hyperlink{classStandardConsole_a0b6899785e858b50d8b632cc546b347a}{proc}->\hyperlink{classAnsiConoleEngine_a7bb2dea88ddc5ae76643d2303fcc4bf1}{ProcessChar}((\textcolor{keywordtype}{char})c);
+86         \hyperlink{classStandardConsole_a4357667b7d80d110aca730ccb1cdca13}{WriteString}(out);
+87     \}
+88 
+89     \hyperlink{classStandardConsole_a2ed234e29cf0056dfdc40bac5f7dd438}{line} = \hyperlink{classStandardConsole_a0b6899785e858b50d8b632cc546b347a}{proc}->\hyperlink{classAnsiConoleEngine_ae3b0bd4c66cb82f4ff939b45bd6e7446}{GetLine}();
+90 
+91 \textcolor{preprocessor}{#ifdef UNIX}
+92     tcsetattr(STDIN\_FILENO, TCSANOW, &old\_tio);
+93 \textcolor{preprocessor}{#endif}
+94 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d5/d48/classStandardConsole_a387d8a0bf9d6ec722868026f58393942_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d5/d48/classStandardConsole_a387d8a0bf9d6ec722868026f58393942_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Standard\+Console@{Standard\+Console}!Run@{Run}}
+\index{Run@{Run}!Standard\+Console@{Standard\+Console}}
+\subsubsection[{\texorpdfstring{Run()}{Run()}}]{\setlength{\rightskip}{0pt plus 5cm}void Standard\+Console\+::\+Run (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{classStandardConsole_a9380023bba612b816b134589130bb254}{}\label{classStandardConsole_a9380023bba612b816b134589130bb254}
+
+
+Implements \hyperlink{classThreadBase_a795d258c1f40c123859d0e83dce6a0ad}{Thread\+Base}.
+
+
+
+Definition at line 49 of file console\+\_\+stdc.\+cpp.
+
+
+
+References Evaluator\+::\+Evaluate(), Evaluator\+::\+Evaluator(), exit, Evaluator\+::\+Get\+Result(), line, Console\+Base\+::\+Prompt(), Read\+Line(), Console\+Base\+::\+Start\+Message(), Str\+Len(), and Write().
+
+
+\begin{DoxyCode}
+50 \{
+51     \hyperlink{classStandardConsole_a67538cb9ac4d002b2341386fab0b1f13}{exit} = \textcolor{keyword}{false};
+52     \hyperlink{classConsoleBase_a1a390339da026c37c036f87f3a084e87}{StartMessage}();
+53 
+54     \textcolor{keywordflow}{while}(!\hyperlink{classStandardConsole_a67538cb9ac4d002b2341386fab0b1f13}{exit}) \{
+55         \hyperlink{classConsoleBase_a79c5aa072ff3db35944a9825dcbfd9a7}{Prompt}();
+56         \hyperlink{classStandardConsole_a387d8a0bf9d6ec722868026f58393942}{ReadLine}();
+57         \hyperlink{classEvaluator}{Evaluator} *evaluator = \textcolor{keyword}{new} \hyperlink{classEvaluator}{Evaluator}(\hyperlink{classStandardConsole_a2ed234e29cf0056dfdc40bac5f7dd438}{line});
+58         evaluator->\hyperlink{classEvaluator_a40b30ece9d43c658877ee7f52aaec0a8}{Evaluate}();
+59         \textcolor{keyword}{const} \textcolor{keywordtype}{char} *res = evaluator->\hyperlink{classEvaluator_abcc678772175bf00127a3b307463ae4b}{GetResult}();
+60         \hyperlink{classStandardConsole_a43844eb181d640c0e4860ef21c2e8fa7}{Write}(res, \hyperlink{clib_8h_a67ec56eb98b49515d35005a5b3bf9a32}{StrLen}(res));
+61         \textcolor{keyword}{delete} evaluator;
+62     \}
+63 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d5/d48/classStandardConsole_a9380023bba612b816b134589130bb254_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{Standard\+Console@{Standard\+Console}!Set\+Prompt@{Set\+Prompt}}
+\index{Set\+Prompt@{Set\+Prompt}!Standard\+Console@{Standard\+Console}}
+\subsubsection[{\texorpdfstring{Set\+Prompt(const char $\ast$string)}{SetPrompt(const char *string)}}]{\setlength{\rightskip}{0pt plus 5cm}void Standard\+Console\+::\+Set\+Prompt (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{string}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{classStandardConsole_aa8e28b5271f982514c12bc6c66f310f9}{}\label{classStandardConsole_aa8e28b5271f982514c12bc6c66f310f9}
+
+
+Reimplemented from \hyperlink{classConsoleBase_a9d0c878a925b9f17d67c5c7ba1c1cec3}{Console\+Base}.
+
+
+
+Definition at line 112 of file console\+\_\+stdc.\+cpp.
+
+
+
+References proc, Console\+Base\+::\+Set\+Prompt(), and Ansi\+Conole\+Engine\+::\+Set\+Prompt().
+
+
+\begin{DoxyCode}
+113 \{
+114     \hyperlink{classConsoleBase_a9d0c878a925b9f17d67c5c7ba1c1cec3}{ConsoleBase::SetPrompt}(\textcolor{keywordtype}{string});
+115     \hyperlink{classStandardConsole_a0b6899785e858b50d8b632cc546b347a}{proc}->\hyperlink{classAnsiConoleEngine_a6c5dd4043aadc0b310f976eb10cbcd9f}{SetPrompt}(\textcolor{keywordtype}{string});
+116 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d5/d48/classStandardConsole_aa8e28b5271f982514c12bc6c66f310f9_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{Standard\+Console@{Standard\+Console}!Write@{Write}}
+\index{Write@{Write}!Standard\+Console@{Standard\+Console}}
+\subsubsection[{\texorpdfstring{Write(const char $\ast$string, unsigned int length)}{Write(const char *string, unsigned int length)}}]{\setlength{\rightskip}{0pt plus 5cm}void Standard\+Console\+::\+Write (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{string, }
+\item[{unsigned int}]{length}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classStandardConsole_a43844eb181d640c0e4860ef21c2e8fa7}{}\label{classStandardConsole_a43844eb181d640c0e4860ef21c2e8fa7}
+
+
+Definition at line 101 of file console\+\_\+stdc.\+cpp.
+
+
+
+Referenced by Run(), and Write\+String().
+
+
+\begin{DoxyCode}
+102 \{
+103     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} i = 0;
+104     \textcolor{keywordflow}{while}(i < length && \textcolor{keywordtype}{string}[i] != 0) \{
+105         fputc(\textcolor{keywordtype}{string}[i], stdout);
+106         i++;
+107     \}
+108 
+109     fflush(stdout);
+110 \}
+\end{DoxyCode}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d5/d48/classStandardConsole_a43844eb181d640c0e4860ef21c2e8fa7_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Standard\+Console@{Standard\+Console}!Write\+String@{Write\+String}}
+\index{Write\+String@{Write\+String}!Standard\+Console@{Standard\+Console}}
+\subsubsection[{\texorpdfstring{Write\+String(const char $\ast$string)}{WriteString(const char *string)}}]{\setlength{\rightskip}{0pt plus 5cm}void Standard\+Console\+::\+Write\+String (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{string}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{classStandardConsole_a4357667b7d80d110aca730ccb1cdca13}{}\label{classStandardConsole_a4357667b7d80d110aca730ccb1cdca13}
+
+
+Implements \hyperlink{classConsoleBase_a839801eeb5c25cd0a2cb13523e387bed}{Console\+Base}.
+
+
+
+Definition at line 96 of file console\+\_\+stdc.\+cpp.
+
+
+
+References Str\+Len(), and Write().
+
+
+
+Referenced by Read\+Line().
+
+
+\begin{DoxyCode}
+97 \{
+98     \hyperlink{classStandardConsole_a43844eb181d640c0e4860ef21c2e8fa7}{Write}(\textcolor{keywordtype}{string}, \hyperlink{clib_8h_a67ec56eb98b49515d35005a5b3bf9a32}{StrLen}(\textcolor{keywordtype}{string}));
+99 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d5/d48/classStandardConsole_a4357667b7d80d110aca730ccb1cdca13_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d5/d48/classStandardConsole_a4357667b7d80d110aca730ccb1cdca13_icgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Member Data Documentation}
+\index{Standard\+Console@{Standard\+Console}!exit@{exit}}
+\index{exit@{exit}!Standard\+Console@{Standard\+Console}}
+\subsubsection[{\texorpdfstring{exit}{exit}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} Standard\+Console\+::exit\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classStandardConsole_a67538cb9ac4d002b2341386fab0b1f13}{}\label{classStandardConsole_a67538cb9ac4d002b2341386fab0b1f13}
+
+
+Definition at line 59 of file console\+\_\+stdc.\+h.
+
+
+
+Referenced by Exit(), and Run().
+
+\index{Standard\+Console@{Standard\+Console}!line@{line}}
+\index{line@{line}!Standard\+Console@{Standard\+Console}}
+\subsubsection[{\texorpdfstring{line}{line}}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ Standard\+Console\+::line\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classStandardConsole_a2ed234e29cf0056dfdc40bac5f7dd438}{}\label{classStandardConsole_a2ed234e29cf0056dfdc40bac5f7dd438}
+
+
+Definition at line 58 of file console\+\_\+stdc.\+h.
+
+
+
+Referenced by Read\+Line(), and Run().
+
+\index{Standard\+Console@{Standard\+Console}!proc@{proc}}
+\index{proc@{proc}!Standard\+Console@{Standard\+Console}}
+\subsubsection[{\texorpdfstring{proc}{proc}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Ansi\+Conole\+Engine}$\ast$ Standard\+Console\+::proc\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classStandardConsole_a0b6899785e858b50d8b632cc546b347a}{}\label{classStandardConsole_a0b6899785e858b50d8b632cc546b347a}
+
+
+Definition at line 57 of file console\+\_\+stdc.\+h.
+
+
+
+Referenced by Read\+Line(), Set\+Prompt(), Standard\+Console(), and $\sim$\+Standard\+Console().
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+app/system/\hyperlink{console__stdc_8h}{console\+\_\+stdc.\+h}\item 
+app/system/\hyperlink{console__stdc_8cpp}{console\+\_\+stdc.\+cpp}\end{DoxyCompactItemize}

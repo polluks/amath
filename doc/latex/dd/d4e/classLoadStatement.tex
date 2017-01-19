@@ -1,0 +1,197 @@
+\hypertarget{classLoadStatement}{}\section{Load\+Statement Class Reference}
+\label{classLoadStatement}\index{Load\+Statement@{Load\+Statement}}
+
+
+{\ttfamily \#include $<$statements.\+h$>$}
+
+
+
+Inheritance diagram for Load\+Statement\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=165pt]{dc/db3/classLoadStatement__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Load\+Statement\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=210pt]{d5/dc3/classLoadStatement__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classLoadStatement_a4828300bc260971c2070947a70e710c1}{Load\+Statement} (const char $\ast$\hyperlink{classLoadStatement_acfe90dcc5509b0f26a52ef742362d46b}{file})
+\item 
+\hyperlink{classLoadStatement_a7630ca1ec4dd27427ec91678e4b951e3}{$\sim$\+Load\+Statement} ()
+\item 
+char $\ast$ \hyperlink{classLoadStatement_ae3cbd157ad8de73551ff430fa3c089d9}{Execute} ()
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+char $\ast$ \hyperlink{classLoadStatement_acfe90dcc5509b0f26a52ef742362d46b}{file}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 272 of file statements.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Load\+Statement@{Load\+Statement}!Load\+Statement@{Load\+Statement}}
+\index{Load\+Statement@{Load\+Statement}!Load\+Statement@{Load\+Statement}}
+\subsubsection[{\texorpdfstring{Load\+Statement(const char $\ast$file)}{LoadStatement(const char *file)}}]{\setlength{\rightskip}{0pt plus 5cm}Load\+Statement\+::\+Load\+Statement (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{file}
+\end{DoxyParamCaption}
+)}\hypertarget{classLoadStatement_a4828300bc260971c2070947a70e710c1}{}\label{classLoadStatement_a4828300bc260971c2070947a70e710c1}
+
+
+Definition at line 644 of file statements.\+cpp.
+
+
+
+References Alloc\+And\+Copy(), and file.
+
+
+
+Referenced by Parser\+::\+Parse\+File\+Statement().
+
+
+\begin{DoxyCode}
+645 \{
+646     \hyperlink{clib_8h_a5bed05c70cb17e541fee570b5dc32e1a}{AllocAndCopy}(&this->\hyperlink{classLoadStatement_acfe90dcc5509b0f26a52ef742362d46b}{file}, \hyperlink{classLoadStatement_acfe90dcc5509b0f26a52ef742362d46b}{file});
+647 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dd/d4e/classLoadStatement_a4828300bc260971c2070947a70e710c1_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dd/d4e/classLoadStatement_a4828300bc260971c2070947a70e710c1_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Load\+Statement@{Load\+Statement}!````~Load\+Statement@{$\sim$\+Load\+Statement}}
+\index{````~Load\+Statement@{$\sim$\+Load\+Statement}!Load\+Statement@{Load\+Statement}}
+\subsubsection[{\texorpdfstring{$\sim$\+Load\+Statement()}{~LoadStatement()}}]{\setlength{\rightskip}{0pt plus 5cm}Load\+Statement\+::$\sim$\+Load\+Statement (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classLoadStatement_a7630ca1ec4dd27427ec91678e4b951e3}{}\label{classLoadStatement_a7630ca1ec4dd27427ec91678e4b951e3}
+
+
+Definition at line 649 of file statements.\+cpp.
+
+
+
+References file.
+
+
+\begin{DoxyCode}
+650 \{
+651     \textcolor{keyword}{delete} [] \hyperlink{classLoadStatement_acfe90dcc5509b0f26a52ef742362d46b}{file};
+652 \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\index{Load\+Statement@{Load\+Statement}!Execute@{Execute}}
+\index{Execute@{Execute}!Load\+Statement@{Load\+Statement}}
+\subsubsection[{\texorpdfstring{Execute()}{Execute()}}]{\setlength{\rightskip}{0pt plus 5cm}char $\ast$ Load\+Statement\+::\+Execute (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{classLoadStatement_ae3cbd157ad8de73551ff430fa3c089d9}{}\label{classLoadStatement_ae3cbd157ad8de73551ff430fa3c089d9}
+
+
+Implements \hyperlink{classStatementNode_a721589622c930c010927b9a9c55b173e}{Statement\+Node}.
+
+
+
+Definition at line 654 of file statements.\+cpp.
+
+
+
+References Syntax\+Node\+::\+Execute(), file, Program\+::\+Filesystem, Char\+Buffer\+::\+Get\+String(), Filesystem\+Base\+::\+Load\+Text\+File(), Parser\+::\+Parse(), and Parser\+::\+Parser().
+
+
+\begin{DoxyCode}
+655 \{
+656     \hyperlink{classCharBuffer}{CharBuffer} *input = \hyperlink{classProgram}{Program}->\hyperlink{classProgram_a54fb0dc3ee40a356fe91cea64e569b26}{Filesystem}->
+      \hyperlink{classFilesystemBase_adc4a9e1dc189bcd221e3b994bc854d46}{LoadTextFile}(\hyperlink{classLoadStatement_acfe90dcc5509b0f26a52ef742362d46b}{file});
+657     \textcolor{keywordflow}{if} (input == \hyperlink{platform_8h_a46ff2bfbf0d44b8466a2251d5bd5e6f8}{NOMEM})
+658     \{
+659         \textcolor{keywordflow}{return} (\textcolor{keywordtype}{char}*)(\hyperlink{text_8h_ae0de195e949c617eb8a792aeb4d4574e}{MSGNOFILE});
+660     \}
+661 
+662     \hyperlink{classParser}{Parser} *parser = \textcolor{keyword}{new} \hyperlink{classParser}{Parser}(input->\hyperlink{classCharBuffer_a7dfd3feaaf80f318ba44efe15b1ec44b}{GetString}());
+663     \textcolor{keyword}{delete} input;
+664 
+665     \hyperlink{classSyntaxNode}{SyntaxNode} *node = parser->\hyperlink{classParser_a1861d1d9cc6165970cf07e07cacd11df}{Parse}();
+666     \textcolor{keyword}{delete} parser;
+667 
+668     node->\hyperlink{classSyntaxNode_ad8418608fa224536b48a590c87f0a509}{Execute}();
+669     \textcolor{keyword}{delete} node;
+670 
+671     \textcolor{keywordflow}{return} (\textcolor{keywordtype}{char}*)\hyperlink{text_8h_a5d4eccd5e4d8c6e6ce4e1563a01c7873}{HELPLOADSUCC};
+672 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dd/d4e/classLoadStatement_ae3cbd157ad8de73551ff430fa3c089d9_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Member Data Documentation}
+\index{Load\+Statement@{Load\+Statement}!file@{file}}
+\index{file@{file}!Load\+Statement@{Load\+Statement}}
+\subsubsection[{\texorpdfstring{file}{file}}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ Load\+Statement\+::file\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classLoadStatement_acfe90dcc5509b0f26a52ef742362d46b}{}\label{classLoadStatement_acfe90dcc5509b0f26a52ef742362d46b}
+
+
+Definition at line 279 of file statements.\+h.
+
+
+
+Referenced by Execute(), Load\+Statement(), and $\sim$\+Load\+Statement().
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+app/main/\hyperlink{statements_8h}{statements.\+h}\item 
+app/main/\hyperlink{statements_8cpp}{statements.\+cpp}\end{DoxyCompactItemize}

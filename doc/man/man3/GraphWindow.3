@@ -1,0 +1,127 @@
+.TH "GraphWindow" 3 "Thu Jan 19 2017" "Version 1.6.0" "amath" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+GraphWindow \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <graph\&.h>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBGraphWindow\fP ()"
+.br
+.ti -1c
+.RI "virtual \fB~GraphWindow\fP ()"
+.br
+.ti -1c
+.RI "virtual void \fBOpenGraphWindow\fP (\fBUserFunction\fP *function)=0"
+.br
+.ti -1c
+.RI "virtual void \fBCloseGraphWindow\fP ()=0"
+.br
+.ti -1c
+.RI "virtual void \fBDrawGraph\fP (\fBUserFunction\fP *function)=0"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "virtual void \fBDrawAxis\fP ()=0"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBGraphWindow\fP * \fBnext\fP"
+.br
+.ti -1c
+.RI "\fBGrid\fP * \fBgrid\fP"
+.br
+.in -1c
+.SS "Friends"
+
+.in +1c
+.ti -1c
+.RI "class \fBGraphList\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 42 of file graph\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "GraphWindow::GraphWindow ()"
+
+.PP
+Definition at line 30 of file graph\&.cpp\&.
+.PP
+References grid, and next\&.
+.PP
+.nf
+31 {
+32     grid = NOMEM;
+33     next = NOMEM;
+34 }
+.fi
+.SS "GraphWindow::~GraphWindow ()\fC [virtual]\fP"
+
+.PP
+Definition at line 36 of file graph\&.cpp\&.
+.PP
+References grid, and next\&.
+.PP
+.nf
+37 {
+38     if (grid != NOMEM) {
+39         delete grid;
+40     }
+41 
+42     if (next != NOMEM) {
+43         delete next;
+44     }
+45 }
+.fi
+.SH "Member Function Documentation"
+.PP 
+.SS "virtual void GraphWindow::CloseGraphWindow ()\fC [pure virtual]\fP"
+
+.SS "virtual void GraphWindow::DrawAxis ()\fC [protected]\fP, \fC [pure virtual]\fP"
+
+.SS "virtual void GraphWindow::DrawGraph (\fBUserFunction\fP * function)\fC [pure virtual]\fP"
+
+.PP
+Referenced by DrawStatement::Execute()\&.
+.SS "virtual void GraphWindow::OpenGraphWindow (\fBUserFunction\fP * function)\fC [pure virtual]\fP"
+
+.PP
+Referenced by DrawStatement::Execute()\&.
+.SH "Friends And Related Function Documentation"
+.PP 
+.SS "friend class \fBGraphList\fP\fC [friend]\fP"
+
+.PP
+Definition at line 55 of file graph\&.h\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "\fBGrid\fP* GraphWindow::grid\fC [protected]\fP"
+
+.PP
+Definition at line 53 of file graph\&.h\&.
+.PP
+Referenced by GraphWindow(), and ~GraphWindow()\&.
+.SS "\fBGraphWindow\fP* GraphWindow::next\fC [protected]\fP"
+
+.PP
+Definition at line 52 of file graph\&.h\&.
+.PP
+Referenced by GraphList::CreateNewWindow(), GraphWindow(), and ~GraphWindow()\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for amath from the source code\&.

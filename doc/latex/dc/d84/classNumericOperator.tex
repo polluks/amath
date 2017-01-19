@@ -1,0 +1,380 @@
+\hypertarget{classNumericOperator}{}\section{Numeric\+Operator Class Reference}
+\label{classNumericOperator}\index{Numeric\+Operator@{Numeric\+Operator}}
+
+
+{\ttfamily \#include $<$operators.\+h$>$}
+
+
+
+Inheritance diagram for Numeric\+Operator\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d6/dd3/classNumericOperator__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Numeric\+Operator\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=272pt]{d5/d04/classNumericOperator__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classNumericOperator_a49cd2230b867cdfca64715aaf6e37561}{Numeric\+Operator} (\hyperlink{classExpressionNode}{Expression\+Node} $\ast$\hyperlink{classNumericOperator_a55da3c4075408deff978711030fa8258}{left}, \hyperlink{classExpressionNode}{Expression\+Node} $\ast$\hyperlink{classNumericOperator_aa2c5b5bea59bbb068bc6013bc5cac483}{right})
+\item 
+\hyperlink{classNumericOperator_a230eb1128573672e1c5651bbf67ef16a}{$\sim$\+Numeric\+Operator} ()
+\item 
+\hyperlink{classSyntaxNode}{Syntax\+Node} $\ast$ \hyperlink{classNumericOperator_a008152aaef6931b7dd70d8fa4be9f7f6}{Get\+Next} ()
+\item 
+char $\ast$ \hyperlink{classNumericOperator_aaeef2885eb34d240cef0f55593354805}{Get\+Text} ()
+\item 
+void \hyperlink{classNumericOperator_ab40d02625fde750d08168ca2ef46c432}{Attach} (\hyperlink{classSyntaxNode}{Syntax\+Node} $\ast$node)
+\item 
+void \hyperlink{classNumericOperator_aacbe002fae709804679443e7fe8f2d36}{Detach} (\hyperlink{classSyntaxNode}{Syntax\+Node} $\ast$node)
+\item 
+void \hyperlink{classNumericOperator_ad8f69aec49e9a900ca592dbf972df619}{Replace} (\hyperlink{classSyntaxNode}{Syntax\+Node} $\ast$n, \hyperlink{classSyntaxNode}{Syntax\+Node} $\ast$x)
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classExpressionNode}{Expression\+Node} $\ast$ \hyperlink{classNumericOperator_a55da3c4075408deff978711030fa8258}{left}
+\item 
+\hyperlink{classExpressionNode}{Expression\+Node} $\ast$ \hyperlink{classNumericOperator_aa2c5b5bea59bbb068bc6013bc5cac483}{right}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 80 of file operators.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Numeric\+Operator@{Numeric\+Operator}!Numeric\+Operator@{Numeric\+Operator}}
+\index{Numeric\+Operator@{Numeric\+Operator}!Numeric\+Operator@{Numeric\+Operator}}
+\subsubsection[{\texorpdfstring{Numeric\+Operator(\+Expression\+Node $\ast$left, Expression\+Node $\ast$right)}{NumericOperator(ExpressionNode *left, ExpressionNode *right)}}]{\setlength{\rightskip}{0pt plus 5cm}Numeric\+Operator\+::\+Numeric\+Operator (
+\begin{DoxyParamCaption}
+\item[{{\bf Expression\+Node} $\ast$}]{left, }
+\item[{{\bf Expression\+Node} $\ast$}]{right}
+\end{DoxyParamCaption}
+)}\hypertarget{classNumericOperator_a49cd2230b867cdfca64715aaf6e37561}{}\label{classNumericOperator_a49cd2230b867cdfca64715aaf6e37561}
+
+
+Definition at line 202 of file operators.\+cpp.
+
+
+
+References Expression\+Node\+::\+Expression\+Node(), left, and right.
+
+
+
+Referenced by Addition\+Node\+::\+Addition\+Node(), Assignment\+Node\+::\+Assignment\+Node(), Division\+Node\+::\+Division\+Node(), Multiplication\+Node\+::\+Multiplication\+Node(), Power\+Node\+::\+Power\+Node(), and Subtraction\+Node\+::\+Subtraction\+Node().
+
+
+\begin{DoxyCode}
+202                                                                             :
+203     \hyperlink{classExpressionNode_adc8888de5329d356224c8a93f3ce2b75}{ExpressionNode}(), \hyperlink{classNumericOperator_a55da3c4075408deff978711030fa8258}{left}(left), \hyperlink{classNumericOperator_aa2c5b5bea59bbb068bc6013bc5cac483}{right}(right) \{ \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/d84/classNumericOperator_a49cd2230b867cdfca64715aaf6e37561_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/d84/classNumericOperator_a49cd2230b867cdfca64715aaf6e37561_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Numeric\+Operator@{Numeric\+Operator}!````~Numeric\+Operator@{$\sim$\+Numeric\+Operator}}
+\index{````~Numeric\+Operator@{$\sim$\+Numeric\+Operator}!Numeric\+Operator@{Numeric\+Operator}}
+\subsubsection[{\texorpdfstring{$\sim$\+Numeric\+Operator()}{~NumericOperator()}}]{\setlength{\rightskip}{0pt plus 5cm}Numeric\+Operator\+::$\sim$\+Numeric\+Operator (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classNumericOperator_a230eb1128573672e1c5651bbf67ef16a}{}\label{classNumericOperator_a230eb1128573672e1c5651bbf67ef16a}
+
+
+Definition at line 205 of file operators.\+cpp.
+
+
+
+References left, and right.
+
+
+\begin{DoxyCode}
+206 \{
+207     \textcolor{keywordflow}{if} (\hyperlink{classNumericOperator_a55da3c4075408deff978711030fa8258}{left} != \hyperlink{platform_8h_a46ff2bfbf0d44b8466a2251d5bd5e6f8}{NOMEM}) \{
+208         \textcolor{keyword}{delete} \hyperlink{classNumericOperator_a55da3c4075408deff978711030fa8258}{left};
+209     \}
+210 
+211     \textcolor{keywordflow}{if} (\hyperlink{classNumericOperator_aa2c5b5bea59bbb068bc6013bc5cac483}{right} != \hyperlink{platform_8h_a46ff2bfbf0d44b8466a2251d5bd5e6f8}{NOMEM}) \{
+212         \textcolor{keyword}{delete} \hyperlink{classNumericOperator_aa2c5b5bea59bbb068bc6013bc5cac483}{right};
+213     \}
+214 \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\index{Numeric\+Operator@{Numeric\+Operator}!Attach@{Attach}}
+\index{Attach@{Attach}!Numeric\+Operator@{Numeric\+Operator}}
+\subsubsection[{\texorpdfstring{Attach(\+Syntax\+Node $\ast$node)}{Attach(SyntaxNode *node)}}]{\setlength{\rightskip}{0pt plus 5cm}void Numeric\+Operator\+::\+Attach (
+\begin{DoxyParamCaption}
+\item[{{\bf Syntax\+Node} $\ast$}]{node}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{classNumericOperator_ab40d02625fde750d08168ca2ef46c432}{}\label{classNumericOperator_ab40d02625fde750d08168ca2ef46c432}
+
+
+Implements \hyperlink{classSyntaxNode_af25fd5963125bb2d6b9a1864b9ff79c8}{Syntax\+Node}.
+
+
+
+Definition at line 259 of file operators.\+cpp.
+
+
+
+References left, right, and Syntax\+Node\+::\+Set\+Parent().
+
+
+\begin{DoxyCode}
+260 \{
+261     \textcolor{keywordflow}{if}(\hyperlink{classNumericOperator_a55da3c4075408deff978711030fa8258}{left} == \hyperlink{platform_8h_a46ff2bfbf0d44b8466a2251d5bd5e6f8}{NOMEM}) \{
+262         \hyperlink{classNumericOperator_a55da3c4075408deff978711030fa8258}{left} = (\hyperlink{classExpressionNode}{ExpressionNode}*)node;
+263         node->\hyperlink{classSyntaxNode_a7902bb2c389a784c11c2b649a84824e9}{SetParent}(\textcolor{keyword}{this});
+264     \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (\hyperlink{classNumericOperator_aa2c5b5bea59bbb068bc6013bc5cac483}{right} == \hyperlink{platform_8h_a46ff2bfbf0d44b8466a2251d5bd5e6f8}{NOMEM}) \{
+265         \hyperlink{classNumericOperator_aa2c5b5bea59bbb068bc6013bc5cac483}{right} = (\hyperlink{classExpressionNode}{ExpressionNode}*)node;
+266         node->\hyperlink{classSyntaxNode_a7902bb2c389a784c11c2b649a84824e9}{SetParent}(\textcolor{keyword}{this});
+267     \}
+268 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/d84/classNumericOperator_ab40d02625fde750d08168ca2ef46c432_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{Numeric\+Operator@{Numeric\+Operator}!Detach@{Detach}}
+\index{Detach@{Detach}!Numeric\+Operator@{Numeric\+Operator}}
+\subsubsection[{\texorpdfstring{Detach(\+Syntax\+Node $\ast$node)}{Detach(SyntaxNode *node)}}]{\setlength{\rightskip}{0pt plus 5cm}void Numeric\+Operator\+::\+Detach (
+\begin{DoxyParamCaption}
+\item[{{\bf Syntax\+Node} $\ast$}]{node}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{classNumericOperator_aacbe002fae709804679443e7fe8f2d36}{}\label{classNumericOperator_aacbe002fae709804679443e7fe8f2d36}
+
+
+Implements \hyperlink{classSyntaxNode_ae57f629a5c5fa0994f036c105396da69}{Syntax\+Node}.
+
+
+
+Definition at line 270 of file operators.\+cpp.
+
+
+
+References left, and right.
+
+
+\begin{DoxyCode}
+271 \{
+272     \textcolor{keywordflow}{if} (\hyperlink{classNumericOperator_a55da3c4075408deff978711030fa8258}{left} == node) \{
+273         \hyperlink{classNumericOperator_a55da3c4075408deff978711030fa8258}{left} = \hyperlink{platform_8h_a46ff2bfbf0d44b8466a2251d5bd5e6f8}{NOMEM};
+274     \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (\hyperlink{classNumericOperator_aa2c5b5bea59bbb068bc6013bc5cac483}{right} == node) \{
+275         \hyperlink{classNumericOperator_aa2c5b5bea59bbb068bc6013bc5cac483}{right} = \hyperlink{platform_8h_a46ff2bfbf0d44b8466a2251d5bd5e6f8}{NOMEM};
+276     \}
+277 \}
+\end{DoxyCode}
+\index{Numeric\+Operator@{Numeric\+Operator}!Get\+Next@{Get\+Next}}
+\index{Get\+Next@{Get\+Next}!Numeric\+Operator@{Numeric\+Operator}}
+\subsubsection[{\texorpdfstring{Get\+Next()}{GetNext()}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Syntax\+Node} $\ast$ Numeric\+Operator\+::\+Get\+Next (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{classNumericOperator_a008152aaef6931b7dd70d8fa4be9f7f6}{}\label{classNumericOperator_a008152aaef6931b7dd70d8fa4be9f7f6}
+
+
+Implements \hyperlink{classSyntaxNode_af1fa46ba30aa4f2affa2d4e96a4be010}{Syntax\+Node}.
+
+
+
+Definition at line 246 of file operators.\+cpp.
+
+
+
+References Syntax\+Node\+::iterator, left, and right.
+
+
+\begin{DoxyCode}
+247 \{
+248     \textcolor{keywordflow}{if} (\hyperlink{classSyntaxNode_a9bd3349d05f33eaa271cca1805a86e1b}{iterator} == \hyperlink{platform_8h_a46ff2bfbf0d44b8466a2251d5bd5e6f8}{NOMEM}) \{
+249         \hyperlink{classSyntaxNode_a9bd3349d05f33eaa271cca1805a86e1b}{iterator} = \hyperlink{classNumericOperator_a55da3c4075408deff978711030fa8258}{left};
+250         \textcolor{keywordflow}{return} \hyperlink{classNumericOperator_a55da3c4075408deff978711030fa8258}{left};
+251     \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (\hyperlink{classSyntaxNode_a9bd3349d05f33eaa271cca1805a86e1b}{iterator} == \hyperlink{classNumericOperator_a55da3c4075408deff978711030fa8258}{left}) \{
+252         \hyperlink{classSyntaxNode_a9bd3349d05f33eaa271cca1805a86e1b}{iterator} = \hyperlink{classNumericOperator_aa2c5b5bea59bbb068bc6013bc5cac483}{right};
+253         \textcolor{keywordflow}{return} \hyperlink{classNumericOperator_aa2c5b5bea59bbb068bc6013bc5cac483}{right};
+254     \} \textcolor{keywordflow}{else} \{
+255         \textcolor{keywordflow}{return} \hyperlink{platform_8h_a46ff2bfbf0d44b8466a2251d5bd5e6f8}{NOMEM};
+256     \}
+257 \}
+\end{DoxyCode}
+\index{Numeric\+Operator@{Numeric\+Operator}!Get\+Text@{Get\+Text}}
+\index{Get\+Text@{Get\+Text}!Numeric\+Operator@{Numeric\+Operator}}
+\subsubsection[{\texorpdfstring{Get\+Text()}{GetText()}}]{\setlength{\rightskip}{0pt plus 5cm}char $\ast$ Numeric\+Operator\+::\+Get\+Text (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{classNumericOperator_aaeef2885eb34d240cef0f55593354805}{}\label{classNumericOperator_aaeef2885eb34d240cef0f55593354805}
+
+
+Implements \hyperlink{classExpressionNode_a0bbf243108a14eaf963a8161ffd8eb92}{Expression\+Node}.
+
+
+
+Definition at line 216 of file operators.\+cpp.
+
+
+
+References Char\+Buffer\+::\+Append(), Char\+Buffer\+::\+Empty(), Char\+Buffer\+::\+Ensure\+Size(), Expression\+Node\+::\+Get\+Node\+Text(), Expression\+Node\+::\+Get\+Precedence(), Char\+Buffer\+::\+Get\+String(), Expression\+Node\+::\+Get\+Text(), left, Syntax\+Node\+::output, right, and Str\+Len().
+
+
+\begin{DoxyCode}
+217 \{
+218     \textcolor{keyword}{const} \textcolor{keywordtype}{char} *leftText = \hyperlink{classNumericOperator_a55da3c4075408deff978711030fa8258}{left}->\hyperlink{classExpressionNode_a0bbf243108a14eaf963a8161ffd8eb92}{GetText}();
+219     \textcolor{keyword}{const} \textcolor{keywordtype}{char} *nodeText = \hyperlink{classExpressionNode_a42a5e9562b0f645a19dcc83f698069b5}{GetNodeText}();
+220     \textcolor{keyword}{const} \textcolor{keywordtype}{char} *rightText = \hyperlink{classNumericOperator_aa2c5b5bea59bbb068bc6013bc5cac483}{right}->\hyperlink{classExpressionNode_a0bbf243108a14eaf963a8161ffd8eb92}{GetText}();
+221 
+222     \hyperlink{classSyntaxNode_a1180628cbe3fce43930cee0df5a9ce5c}{output}->\hyperlink{classCharBuffer_abe39d3fd7d8b9c8ec343af2cae7adc96}{Empty}();
+223     \hyperlink{classSyntaxNode_a1180628cbe3fce43930cee0df5a9ce5c}{output}->\hyperlink{classCharBuffer_ad1907009b5ad136692b989fa96bf2f7e}{EnsureSize}(\hyperlink{clib_8h_a67ec56eb98b49515d35005a5b3bf9a32}{StrLen}(leftText) + 2 + \hyperlink{clib_8h_a67ec56eb98b49515d35005a5b3bf9a32}{StrLen}(nodeText) + 
+      \hyperlink{clib_8h_a67ec56eb98b49515d35005a5b3bf9a32}{StrLen}(rightText) + 2 + 1);
+224 
+225     \textcolor{keywordflow}{if} (\hyperlink{classNumericOperator_a55da3c4075408deff978711030fa8258}{left}->\hyperlink{classExpressionNode_a161b9ea0b79bbfc101d6f687c8481ddd}{GetPrecedence}() != 0 && \hyperlink{classNumericOperator_a55da3c4075408deff978711030fa8258}{left}->\hyperlink{classExpressionNode_a161b9ea0b79bbfc101d6f687c8481ddd}{GetPrecedence}() < 
+      \hyperlink{classExpressionNode_a161b9ea0b79bbfc101d6f687c8481ddd}{GetPrecedence}()) \{
+226         \hyperlink{classSyntaxNode_a1180628cbe3fce43930cee0df5a9ce5c}{output}->\hyperlink{classCharBuffer_a045b38735f7b3007c1b98d3d7b7feafe}{Append}(\textcolor{stringliteral}{"("});
+227         \hyperlink{classSyntaxNode_a1180628cbe3fce43930cee0df5a9ce5c}{output}->\hyperlink{classCharBuffer_a045b38735f7b3007c1b98d3d7b7feafe}{Append}(leftText);
+228         \hyperlink{classSyntaxNode_a1180628cbe3fce43930cee0df5a9ce5c}{output}->\hyperlink{classCharBuffer_a045b38735f7b3007c1b98d3d7b7feafe}{Append}(\textcolor{stringliteral}{")"});
+229     \} \textcolor{keywordflow}{else} \{
+230         \hyperlink{classSyntaxNode_a1180628cbe3fce43930cee0df5a9ce5c}{output}->\hyperlink{classCharBuffer_a045b38735f7b3007c1b98d3d7b7feafe}{Append}(leftText);
+231     \}
+232 
+233     \hyperlink{classSyntaxNode_a1180628cbe3fce43930cee0df5a9ce5c}{output}->\hyperlink{classCharBuffer_a045b38735f7b3007c1b98d3d7b7feafe}{Append}(nodeText);
+234 
+235     \textcolor{keywordflow}{if} (\hyperlink{classNumericOperator_aa2c5b5bea59bbb068bc6013bc5cac483}{right}->\hyperlink{classExpressionNode_a161b9ea0b79bbfc101d6f687c8481ddd}{GetPrecedence}() != 0 && \hyperlink{classExpressionNode_a161b9ea0b79bbfc101d6f687c8481ddd}{GetPrecedence}() > 
+      \hyperlink{classNumericOperator_aa2c5b5bea59bbb068bc6013bc5cac483}{right}->\hyperlink{classExpressionNode_a161b9ea0b79bbfc101d6f687c8481ddd}{GetPrecedence}()) \{
+236         \hyperlink{classSyntaxNode_a1180628cbe3fce43930cee0df5a9ce5c}{output}->\hyperlink{classCharBuffer_a045b38735f7b3007c1b98d3d7b7feafe}{Append}(\textcolor{stringliteral}{"("});
+237         \hyperlink{classSyntaxNode_a1180628cbe3fce43930cee0df5a9ce5c}{output}->\hyperlink{classCharBuffer_a045b38735f7b3007c1b98d3d7b7feafe}{Append}(rightText);
+238         \hyperlink{classSyntaxNode_a1180628cbe3fce43930cee0df5a9ce5c}{output}->\hyperlink{classCharBuffer_a045b38735f7b3007c1b98d3d7b7feafe}{Append}(\textcolor{stringliteral}{")"});
+239     \} \textcolor{keywordflow}{else} \{
+240         \hyperlink{classSyntaxNode_a1180628cbe3fce43930cee0df5a9ce5c}{output}->\hyperlink{classCharBuffer_a045b38735f7b3007c1b98d3d7b7feafe}{Append}(rightText);
+241     \}
+242 
+243     \textcolor{keywordflow}{return} \hyperlink{classSyntaxNode_a1180628cbe3fce43930cee0df5a9ce5c}{output}->\hyperlink{classCharBuffer_a7dfd3feaaf80f318ba44efe15b1ec44b}{GetString}();
+244 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/d84/classNumericOperator_aaeef2885eb34d240cef0f55593354805_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{Numeric\+Operator@{Numeric\+Operator}!Replace@{Replace}}
+\index{Replace@{Replace}!Numeric\+Operator@{Numeric\+Operator}}
+\subsubsection[{\texorpdfstring{Replace(\+Syntax\+Node $\ast$n, Syntax\+Node $\ast$x)}{Replace(SyntaxNode *n, SyntaxNode *x)}}]{\setlength{\rightskip}{0pt plus 5cm}void Numeric\+Operator\+::\+Replace (
+\begin{DoxyParamCaption}
+\item[{{\bf Syntax\+Node} $\ast$}]{n, }
+\item[{{\bf Syntax\+Node} $\ast$}]{x}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{classNumericOperator_ad8f69aec49e9a900ca592dbf972df619}{}\label{classNumericOperator_ad8f69aec49e9a900ca592dbf972df619}
+
+
+Implements \hyperlink{classSyntaxNode_a2797ff5eb05f3a36ae1be41b70105e05}{Syntax\+Node}.
+
+
+
+Definition at line 279 of file operators.\+cpp.
+
+
+
+References Syntax\+Node\+::iterator, left, and right.
+
+
+\begin{DoxyCode}
+280 \{
+281     \textcolor{keywordflow}{if} (\hyperlink{classNumericOperator_a55da3c4075408deff978711030fa8258}{left} == n) \{
+282         \textcolor{keywordflow}{if}(\hyperlink{classSyntaxNode_a9bd3349d05f33eaa271cca1805a86e1b}{iterator} == \hyperlink{classNumericOperator_a55da3c4075408deff978711030fa8258}{left}) \{
+283             \hyperlink{classSyntaxNode_a9bd3349d05f33eaa271cca1805a86e1b}{iterator} = (\hyperlink{classExpressionNode}{ExpressionNode}*)x;
+284         \}
+285         \textcolor{keyword}{delete} \hyperlink{classNumericOperator_a55da3c4075408deff978711030fa8258}{left};
+286         \hyperlink{classNumericOperator_a55da3c4075408deff978711030fa8258}{left} = (\hyperlink{classExpressionNode}{ExpressionNode}*)x;
+287 
+288     \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (\hyperlink{classNumericOperator_aa2c5b5bea59bbb068bc6013bc5cac483}{right} == n) \{
+289         \textcolor{keywordflow}{if}(\hyperlink{classSyntaxNode_a9bd3349d05f33eaa271cca1805a86e1b}{iterator} == \hyperlink{classNumericOperator_aa2c5b5bea59bbb068bc6013bc5cac483}{right}) \{
+290             \hyperlink{classSyntaxNode_a9bd3349d05f33eaa271cca1805a86e1b}{iterator} = (\hyperlink{classExpressionNode}{ExpressionNode}*)x;
+291         \}
+292         \textcolor{keyword}{delete} \hyperlink{classNumericOperator_aa2c5b5bea59bbb068bc6013bc5cac483}{right};
+293         \hyperlink{classNumericOperator_aa2c5b5bea59bbb068bc6013bc5cac483}{right} = (\hyperlink{classExpressionNode}{ExpressionNode}*)x;
+294     \}
+295 \}
+\end{DoxyCode}
+
+
+\subsection{Member Data Documentation}
+\index{Numeric\+Operator@{Numeric\+Operator}!left@{left}}
+\index{left@{left}!Numeric\+Operator@{Numeric\+Operator}}
+\subsubsection[{\texorpdfstring{left}{left}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Expression\+Node}$\ast$ Numeric\+Operator\+::left\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{classNumericOperator_a55da3c4075408deff978711030fa8258}{}\label{classNumericOperator_a55da3c4075408deff978711030fa8258}
+
+
+Definition at line 92 of file operators.\+h.
+
+
+
+Referenced by Attach(), Detach(), Addition\+Node\+::\+Evaluate(), Subtraction\+Node\+::\+Evaluate(), Multiplication\+Node\+::\+Evaluate(), Division\+Node\+::\+Evaluate(), Power\+Node\+::\+Evaluate(), Get\+Next(), Get\+Text(), Numeric\+Operator(), Replace(), and $\sim$\+Numeric\+Operator().
+
+\index{Numeric\+Operator@{Numeric\+Operator}!right@{right}}
+\index{right@{right}!Numeric\+Operator@{Numeric\+Operator}}
+\subsubsection[{\texorpdfstring{right}{right}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Expression\+Node}$\ast$ Numeric\+Operator\+::right\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{classNumericOperator_aa2c5b5bea59bbb068bc6013bc5cac483}{}\label{classNumericOperator_aa2c5b5bea59bbb068bc6013bc5cac483}
+
+
+Definition at line 93 of file operators.\+h.
+
+
+
+Referenced by Attach(), Detach(), Addition\+Node\+::\+Evaluate(), Subtraction\+Node\+::\+Evaluate(), Multiplication\+Node\+::\+Evaluate(), Division\+Node\+::\+Evaluate(), Power\+Node\+::\+Evaluate(), Get\+Next(), Get\+Text(), Numeric\+Operator(), Replace(), and $\sim$\+Numeric\+Operator().
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+app/main/\hyperlink{operators_8h}{operators.\+h}\item 
+app/main/\hyperlink{operators_8cpp}{operators.\+cpp}\end{DoxyCompactItemize}

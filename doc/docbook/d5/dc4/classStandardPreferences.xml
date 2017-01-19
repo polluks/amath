@@ -1,0 +1,83 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="d5/dc4/classStandardPreferences">
+<title>StandardPreferences class Reference</title>
+<para>
+    <programlisting>#include <link linkend="d3/dff/preferences__stdc_8h">&lt;preferences_stdc.h&gt;</link></programlisting>
+</para>
+<para>Inheritance diagram for StandardPreferences</para>
+<para>
+    <figure>
+        <title>Inheritance graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="../../d5/d84/classStandardPreferences__inherit__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+<para>Collaboration diagram for StandardPreferences</para>
+<para>
+    <figure>
+        <title>Collaboration graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="../../db/d0b/classStandardPreferences__coll__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>virtual <link linkend="de/d03/platform_8h_1a1062901a7428fdd9c7f180f5e01ea056">bool</link> <link linkend="d5/dc4/classStandardPreferences_1a883449eac37fb47c01fa2ae23a02bdc4">Load</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>virtual <link linkend="de/d03/platform_8h_1a1062901a7428fdd9c7f180f5e01ea056">bool</link> <link linkend="d5/dc4/classStandardPreferences_1a98a76348fca4d6519fb851b5d8382437">Keep</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>virtual <link linkend="de/d03/platform_8h_1a1062901a7428fdd9c7f180f5e01ea056">bool</link> <link linkend="d5/dc4/classStandardPreferences_1aa6a0a0f9746d2fba5d00cc896937b950">Save</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="de/d03/platform_8h_1a1062901a7428fdd9c7f180f5e01ea056">bool</link> <link linkend="d5/dc4/classStandardPreferences_1af4d99d40f18776348f76fc0b9f5cdda4">SavePrefs</link> (
+const char * file)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+            <section xml:id="d5/dc4/classStandardPreferences_1a883449eac37fb47c01fa2ae23a02bdc4">
+                <title>bool StandardPreferences::Load ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d5/dc4/classStandardPreferences_1a98a76348fca4d6519fb851b5d8382437">
+                <title>bool StandardPreferences::Keep ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d5/dc4/classStandardPreferences_1aa6a0a0f9746d2fba5d00cc896937b950">
+                <title>bool StandardPreferences::Save ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d5/dc4/classStandardPreferences_1af4d99d40f18776348f76fc0b9f5cdda4">
+                <title>bool StandardPreferences::SavePrefs (const char *file)</title> <emphasis></emphasis>
+                
+            </section>
+</section>

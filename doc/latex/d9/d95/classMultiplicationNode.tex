@@ -1,0 +1,189 @@
+\hypertarget{classMultiplicationNode}{}\section{Multiplication\+Node Class Reference}
+\label{classMultiplicationNode}\index{Multiplication\+Node@{Multiplication\+Node}}
+
+
+{\ttfamily \#include $<$operators.\+h$>$}
+
+
+
+Inheritance diagram for Multiplication\+Node\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=177pt]{d7/d7e/classMultiplicationNode__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Multiplication\+Node\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=272pt]{d8/d6a/classMultiplicationNode__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classMultiplicationNode_a3f96a30f283caa7991dd67be334e71af}{Multiplication\+Node} (\hyperlink{classExpressionNode}{Expression\+Node} $\ast$\hyperlink{classNumericOperator_a55da3c4075408deff978711030fa8258}{left}, \hyperlink{classExpressionNode}{Expression\+Node} $\ast$\hyperlink{classNumericOperator_aa2c5b5bea59bbb068bc6013bc5cac483}{right})
+\item 
+int \hyperlink{classMultiplicationNode_ac4b9d0e5f279a0a2d2b51a2872c298df}{Get\+Precedence} ()
+\item 
+\hyperlink{structNumber}{Number} $\ast$ \hyperlink{classMultiplicationNode_a6f8b2f1b4a4779fd99acc6cef50545cc}{Evaluate} ()
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+char $\ast$ \hyperlink{classMultiplicationNode_a27cfb5744a3f963fa59e9b79d6c14499}{Get\+Node\+Text} ()
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 118 of file operators.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Multiplication\+Node@{Multiplication\+Node}!Multiplication\+Node@{Multiplication\+Node}}
+\index{Multiplication\+Node@{Multiplication\+Node}!Multiplication\+Node@{Multiplication\+Node}}
+\subsubsection[{\texorpdfstring{Multiplication\+Node(\+Expression\+Node $\ast$left, Expression\+Node $\ast$right)}{MultiplicationNode(ExpressionNode *left, ExpressionNode *right)}}]{\setlength{\rightskip}{0pt plus 5cm}Multiplication\+Node\+::\+Multiplication\+Node (
+\begin{DoxyParamCaption}
+\item[{{\bf Expression\+Node} $\ast$}]{left, }
+\item[{{\bf Expression\+Node} $\ast$}]{right}
+\end{DoxyParamCaption}
+)}\hypertarget{classMultiplicationNode_a3f96a30f283caa7991dd67be334e71af}{}\label{classMultiplicationNode_a3f96a30f283caa7991dd67be334e71af}
+
+
+Definition at line 357 of file operators.\+cpp.
+
+
+
+References Numeric\+Operator\+::\+Numeric\+Operator().
+
+
+
+Referenced by Parser\+::\+Parse\+Factor().
+
+
+\begin{DoxyCode}
+357                                                                                   :
+358     \hyperlink{classNumericOperator_a49cd2230b867cdfca64715aaf6e37561}{NumericOperator}(left, right) \{ \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d9/d95/classMultiplicationNode_a3f96a30f283caa7991dd67be334e71af_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d9/d95/classMultiplicationNode_a3f96a30f283caa7991dd67be334e71af_icgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Member Function Documentation}
+\index{Multiplication\+Node@{Multiplication\+Node}!Evaluate@{Evaluate}}
+\index{Evaluate@{Evaluate}!Multiplication\+Node@{Multiplication\+Node}}
+\subsubsection[{\texorpdfstring{Evaluate()}{Evaluate()}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Number} $\ast$ Multiplication\+Node\+::\+Evaluate (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{classMultiplicationNode_a6f8b2f1b4a4779fd99acc6cef50545cc}{}\label{classMultiplicationNode_a6f8b2f1b4a4779fd99acc6cef50545cc}
+
+
+Implements \hyperlink{classExpressionNode_a64975d4dc37742228bd522f6204537f7}{Expression\+Node}.
+
+
+
+Definition at line 365 of file operators.\+cpp.
+
+
+
+References Expression\+Node\+::\+Evaluate(), Numeric\+Operator\+::left, Number\+::\+Mul(), Expression\+Node\+::result, and Numeric\+Operator\+::right.
+
+
+\begin{DoxyCode}
+366 \{
+367     \hyperlink{classExpressionNode_a1f590649f5a5cb30eb7ee912f7bc1262}{result} = \hyperlink{classNumericOperator_a55da3c4075408deff978711030fa8258}{left}->\hyperlink{classExpressionNode_a64975d4dc37742228bd522f6204537f7}{Evaluate}()->\hyperlink{structNumber_ab853199817c9cd4e43c43aaedc4eef35}{Mul}(\hyperlink{classNumericOperator_aa2c5b5bea59bbb068bc6013bc5cac483}{right}->\hyperlink{classExpressionNode_a64975d4dc37742228bd522f6204537f7}{Evaluate}());
+368     \textcolor{keywordflow}{return} \hyperlink{classExpressionNode_a1f590649f5a5cb30eb7ee912f7bc1262}{result};
+369 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=346pt]{d9/d95/classMultiplicationNode_a6f8b2f1b4a4779fd99acc6cef50545cc_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{Multiplication\+Node@{Multiplication\+Node}!Get\+Node\+Text@{Get\+Node\+Text}}
+\index{Get\+Node\+Text@{Get\+Node\+Text}!Multiplication\+Node@{Multiplication\+Node}}
+\subsubsection[{\texorpdfstring{Get\+Node\+Text()}{GetNodeText()}}]{\setlength{\rightskip}{0pt plus 5cm}char $\ast$ Multiplication\+Node\+::\+Get\+Node\+Text (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}\hypertarget{classMultiplicationNode_a27cfb5744a3f963fa59e9b79d6c14499}{}\label{classMultiplicationNode_a27cfb5744a3f963fa59e9b79d6c14499}
+
+
+Implements \hyperlink{classExpressionNode_a42a5e9562b0f645a19dcc83f698069b5}{Expression\+Node}.
+
+
+
+Definition at line 371 of file operators.\+cpp.
+
+
+\begin{DoxyCode}
+372 \{
+373     \textcolor{keywordflow}{return} (\textcolor{keywordtype}{char}*)\textcolor{stringliteral}{"*"};
+374 \}
+\end{DoxyCode}
+\index{Multiplication\+Node@{Multiplication\+Node}!Get\+Precedence@{Get\+Precedence}}
+\index{Get\+Precedence@{Get\+Precedence}!Multiplication\+Node@{Multiplication\+Node}}
+\subsubsection[{\texorpdfstring{Get\+Precedence()}{GetPrecedence()}}]{\setlength{\rightskip}{0pt plus 5cm}int Multiplication\+Node\+::\+Get\+Precedence (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{classMultiplicationNode_ac4b9d0e5f279a0a2d2b51a2872c298df}{}\label{classMultiplicationNode_ac4b9d0e5f279a0a2d2b51a2872c298df}
+
+
+Implements \hyperlink{classExpressionNode_a161b9ea0b79bbfc101d6f687c8481ddd}{Expression\+Node}.
+
+
+
+Definition at line 360 of file operators.\+cpp.
+
+
+\begin{DoxyCode}
+361 \{
+362     \textcolor{keywordflow}{return} 3;
+363 \}
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+app/main/\hyperlink{operators_8h}{operators.\+h}\item 
+app/main/\hyperlink{operators_8cpp}{operators.\+cpp}\end{DoxyCompactItemize}

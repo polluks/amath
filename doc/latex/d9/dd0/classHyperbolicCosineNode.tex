@@ -1,0 +1,202 @@
+\hypertarget{classHyperbolicCosineNode}{}\section{Hyperbolic\+Cosine\+Node Class Reference}
+\label{classHyperbolicCosineNode}\index{Hyperbolic\+Cosine\+Node@{Hyperbolic\+Cosine\+Node}}
+
+
+{\ttfamily \#include $<$functions.\+h$>$}
+
+
+
+Inheritance diagram for Hyperbolic\+Cosine\+Node\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=197pt]{d2/de1/classHyperbolicCosineNode__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Hyperbolic\+Cosine\+Node\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=272pt]{d8/d62/classHyperbolicCosineNode__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classHyperbolicCosineNode_a0b67f82a145ad333756d14613919a00c}{Hyperbolic\+Cosine\+Node} (\hyperlink{classExpressionNode}{Expression\+Node} $\ast$\hyperlink{classFunctionNode_ad7577b179a1937aaf8a0058bb5b546dc}{expression})
+\item 
+\hyperlink{structNumber}{Number} $\ast$ \hyperlink{classHyperbolicCosineNode_a22a3609a695c926aa3dd0b641282bb1f}{Evaluate} ()
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{classFunctionNode}{Function\+Node} $\ast$ \hyperlink{classHyperbolicCosineNode_ae50b7e2de3943b0eda108e384dbe75a2}{Create} (\hyperlink{classExpressionNode}{Expression\+Node} $\ast$\hyperlink{classFunctionNode_ad7577b179a1937aaf8a0058bb5b546dc}{expression})
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+char $\ast$ \hyperlink{classHyperbolicCosineNode_ab646fad3a064c9d43aa0edeb36aef4d6}{Get\+Node\+Text} ()
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 470 of file functions.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Hyperbolic\+Cosine\+Node@{Hyperbolic\+Cosine\+Node}!Hyperbolic\+Cosine\+Node@{Hyperbolic\+Cosine\+Node}}
+\index{Hyperbolic\+Cosine\+Node@{Hyperbolic\+Cosine\+Node}!Hyperbolic\+Cosine\+Node@{Hyperbolic\+Cosine\+Node}}
+\subsubsection[{\texorpdfstring{Hyperbolic\+Cosine\+Node(\+Expression\+Node $\ast$expression)}{HyperbolicCosineNode(ExpressionNode *expression)}}]{\setlength{\rightskip}{0pt plus 5cm}Hyperbolic\+Cosine\+Node\+::\+Hyperbolic\+Cosine\+Node (
+\begin{DoxyParamCaption}
+\item[{{\bf Expression\+Node} $\ast$}]{expression}
+\end{DoxyParamCaption}
+)}\hypertarget{classHyperbolicCosineNode_a0b67f82a145ad333756d14613919a00c}{}\label{classHyperbolicCosineNode_a0b67f82a145ad333756d14613919a00c}
+
+
+Definition at line 1000 of file functions.\+cpp.
+
+
+
+References Function\+Node\+::\+Function\+Node().
+
+
+
+Referenced by Create().
+
+
+\begin{DoxyCode}
+1001     : \hyperlink{classFunctionNode_a41cb7db0162ffbec0902bd8ff7ea435f}{FunctionNode}(expression) \{ \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d9/dd0/classHyperbolicCosineNode_a0b67f82a145ad333756d14613919a00c_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d9/dd0/classHyperbolicCosineNode_a0b67f82a145ad333756d14613919a00c_icgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Member Function Documentation}
+\index{Hyperbolic\+Cosine\+Node@{Hyperbolic\+Cosine\+Node}!Create@{Create}}
+\index{Create@{Create}!Hyperbolic\+Cosine\+Node@{Hyperbolic\+Cosine\+Node}}
+\subsubsection[{\texorpdfstring{Create(\+Expression\+Node $\ast$expression)}{Create(ExpressionNode *expression)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Function\+Node} $\ast$ Hyperbolic\+Cosine\+Node\+::\+Create (
+\begin{DoxyParamCaption}
+\item[{{\bf Expression\+Node} $\ast$}]{expression}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{classHyperbolicCosineNode_ae50b7e2de3943b0eda108e384dbe75a2}{}\label{classHyperbolicCosineNode_ae50b7e2de3943b0eda108e384dbe75a2}
+
+
+Definition at line 1003 of file functions.\+cpp.
+
+
+
+References Hyperbolic\+Cosine\+Node().
+
+
+\begin{DoxyCode}
+1004 \{
+1005     \textcolor{keywordflow}{return} \textcolor{keyword}{new} \hyperlink{classHyperbolicCosineNode_a0b67f82a145ad333756d14613919a00c}{HyperbolicCosineNode}(expression);
+1006 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d9/dd0/classHyperbolicCosineNode_ae50b7e2de3943b0eda108e384dbe75a2_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{Hyperbolic\+Cosine\+Node@{Hyperbolic\+Cosine\+Node}!Evaluate@{Evaluate}}
+\index{Evaluate@{Evaluate}!Hyperbolic\+Cosine\+Node@{Hyperbolic\+Cosine\+Node}}
+\subsubsection[{\texorpdfstring{Evaluate()}{Evaluate()}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Number} $\ast$ Hyperbolic\+Cosine\+Node\+::\+Evaluate (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{classHyperbolicCosineNode_a22a3609a695c926aa3dd0b641282bb1f}{}\label{classHyperbolicCosineNode_a22a3609a695c926aa3dd0b641282bb1f}
+
+
+Implements \hyperlink{classExpressionNode_a64975d4dc37742228bd522f6204537f7}{Expression\+Node}.
+
+
+
+Definition at line 1008 of file functions.\+cpp.
+
+
+
+References Expression\+Node\+::\+Evaluate(), Function\+Node\+::expression, Number\+::\+Hyp\+Cosine(), and Expression\+Node\+::result.
+
+
+\begin{DoxyCode}
+1009 \{
+1010     \hyperlink{classExpressionNode_a1f590649f5a5cb30eb7ee912f7bc1262}{result} = \hyperlink{classFunctionNode_ad7577b179a1937aaf8a0058bb5b546dc}{expression}->\hyperlink{classExpressionNode_a64975d4dc37742228bd522f6204537f7}{Evaluate}()->\hyperlink{structNumber_abab40aa368d554af3e94c410aeb6c636}{HypCosine}();
+1011     \textcolor{keywordflow}{return} \hyperlink{classExpressionNode_a1f590649f5a5cb30eb7ee912f7bc1262}{result};
+1012 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d9/dd0/classHyperbolicCosineNode_a22a3609a695c926aa3dd0b641282bb1f_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{Hyperbolic\+Cosine\+Node@{Hyperbolic\+Cosine\+Node}!Get\+Node\+Text@{Get\+Node\+Text}}
+\index{Get\+Node\+Text@{Get\+Node\+Text}!Hyperbolic\+Cosine\+Node@{Hyperbolic\+Cosine\+Node}}
+\subsubsection[{\texorpdfstring{Get\+Node\+Text()}{GetNodeText()}}]{\setlength{\rightskip}{0pt plus 5cm}char $\ast$ Hyperbolic\+Cosine\+Node\+::\+Get\+Node\+Text (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}\hypertarget{classHyperbolicCosineNode_ab646fad3a064c9d43aa0edeb36aef4d6}{}\label{classHyperbolicCosineNode_ab646fad3a064c9d43aa0edeb36aef4d6}
+
+
+Implements \hyperlink{classExpressionNode_a42a5e9562b0f645a19dcc83f698069b5}{Expression\+Node}.
+
+
+
+Definition at line 1014 of file functions.\+cpp.
+
+
+\begin{DoxyCode}
+1015 \{
+1016     \textcolor{keywordflow}{return} (\textcolor{keywordtype}{char}*)\textcolor{stringliteral}{"cosh"};
+1017 \}
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+app/main/\hyperlink{functions_8h}{functions.\+h}\item 
+app/main/\hyperlink{functions_8cpp}{functions.\+cpp}\end{DoxyCompactItemize}

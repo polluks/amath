@@ -1,0 +1,101 @@
+.TH "ArcSineNode" 3 "Thu Jan 19 2017" "Version 1.6.0" "amath" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+ArcSineNode \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <functions\&.h>\fP
+.PP
+Inherits \fBFunctionNode\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBArcSineNode\fP (\fBExpressionNode\fP *\fBexpression\fP)"
+.br
+.ti -1c
+.RI "\fBNumber\fP * \fBEvaluate\fP ()"
+.br
+.in -1c
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static \fBFunctionNode\fP * \fBCreate\fP (\fBExpressionNode\fP *\fBexpression\fP)"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "char * \fBGetNodeText\fP ()"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Detailed Description"
+.PP 
+Definition at line 396 of file functions\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "ArcSineNode::ArcSineNode (\fBExpressionNode\fP * expression)"
+
+.PP
+Definition at line 862 of file functions\&.cpp\&.
+.PP
+References FunctionNode::FunctionNode()\&.
+.PP
+Referenced by Create()\&.
+.PP
+.nf
+862                                                    :
+863     FunctionNode(expression) { }
+.fi
+.SH "Member Function Documentation"
+.PP 
+.SS "\fBFunctionNode\fP * ArcSineNode::Create (\fBExpressionNode\fP * expression)\fC [static]\fP"
+
+.PP
+Definition at line 865 of file functions\&.cpp\&.
+.PP
+References ArcSineNode()\&.
+.PP
+.nf
+866 {
+867     return new ArcSineNode(expression);
+868 }
+.fi
+.SS "\fBNumber\fP * ArcSineNode::Evaluate ()\fC [virtual]\fP"
+
+.PP
+Implements \fBExpressionNode\fP\&.
+.PP
+Definition at line 870 of file functions\&.cpp\&.
+.PP
+References Number::ArcSine(), ExpressionNode::Evaluate(), FunctionNode::expression, and ExpressionNode::result\&.
+.PP
+.nf
+871 {
+872     result = expression->Evaluate()->ArcSine();
+873     return result;
+874 }
+.fi
+.SS "char * ArcSineNode::GetNodeText ()\fC [protected]\fP, \fC [virtual]\fP"
+
+.PP
+Implements \fBExpressionNode\fP\&.
+.PP
+Definition at line 876 of file functions\&.cpp\&.
+.PP
+.nf
+877 {
+878     return (char*)"asin";
+879 }
+.fi
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for amath from the source code\&.

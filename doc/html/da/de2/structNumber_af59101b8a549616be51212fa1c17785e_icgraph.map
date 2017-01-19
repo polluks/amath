@@ -1,0 +1,19 @@
+<map id="Number::Clone" name="Number::Clone">
+<area shape="rect" id="node2" href="$d6/d1c/classVariable.html#ad8c997ea0edab8bf72ada85963800211" title="Variable::AssignValue" alt="" coords="170,101,321,128"/>
+<area shape="rect" id="node10" href="$d6/d1c/classVariable.html#adb77b2681374245b5d606a1d149d0d91" title="Variable::GetValue" alt="" coords="180,164,311,191"/>
+<area shape="rect" id="node17" href="$dc/db5/classProgram.html#ad54464237ceca1f54a46c2223cfbcda0" title="Program::SetLastResult" alt="" coords="164,240,327,267"/>
+<area shape="rect" id="node3" href="$d0/daf/classGrid.html#a9e403482f403a28e3a152b435526829b" title="Grid::FunctionValue" alt="" coords="401,5,539,32"/>
+<area shape="rect" id="node7" href="$d8/df0/classUserFunctionNode.html#a2efcbf95707c44463017973693c891db" title="UserFunctionNode::Evaluate" alt="" coords="375,56,565,83"/>
+<area shape="rect" id="node8" href="$d5/d93/classVariableNode.html#a8134cc1627925a0327e6c62eef810cdc" title="VariableNode::AssignValue" alt="" coords="379,107,561,133"/>
+<area shape="rect" id="node4" href="$d0/daf/classGrid.html#a430009c581ae9350ec310f63c1b89140" title="Grid::GetScreenCoordinates" alt="" coords="615,5,801,32"/>
+<area shape="rect" id="node6" href="$d0/daf/classGrid.html#ace057fbd3a401428399996eec3cb1577" title="Grid::SetFunctionBounderies" alt="" coords="613,56,803,83"/>
+<area shape="rect" id="node5" href="$d6/d40/classPlotStatement.html#a653ff64c2c918b3209be426f7c243459" title="PlotStatement::Execute" alt="" coords="854,31,1015,57"/>
+<area shape="rect" id="node9" href="$df/d93/classAssignmentNode.html#ae6b454a04ec82aa97fa8e09c3752deb6" title="AssignmentNode::Evaluate" alt="" coords="617,132,799,159"/>
+<area shape="rect" id="node11" href="$d3/d0e/classVariableList.html#a2898791757231a476a994741a0f8ab94" title="VariableList::ListContent" alt="" coords="387,208,553,235"/>
+<area shape="rect" id="node16" href="$d5/d93/classVariableNode.html#a7ebbe9072eb78b5790befed3a42b2dc2" title="VariableNode::Evaluate" alt="" coords="391,157,549,184"/>
+<area shape="rect" id="node12" href="$d3/d0e/classVariableList.html#a8ddefb92c0c2f18f096f0fc4363d5af6" title="VariableList::List" alt="" coords="649,195,767,221"/>
+<area shape="rect" id="node14" href="$d3/d0e/classVariableList.html#aa2726674491d8cd5625859f79df39c9d" title="VariableList::ListDefinitions" alt="" coords="617,249,799,276"/>
+<area shape="rect" id="node13" href="$d7/d64/classListVariablesStatement.html#a2ca734439e1c118b8b62d550baac8dc0" title="ListVariablesStatement\l::Execute" alt="" coords="856,185,1013,226"/>
+<area shape="rect" id="node15" href="$da/d7d/classSaveStatement.html#ae94aa8533f620634f97b2835cee1eaa2" title="SaveStatement::Execute" alt="" coords="851,251,1019,277"/>
+<area shape="rect" id="node18" href="$dc/d7f/classEvalStatement.html#a6d3e0e2db3ed8cbdaa3250bf959a0be7" title="EvalStatement::Execute" alt="" coords="388,259,552,285"/>
+</map>

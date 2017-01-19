@@ -1,0 +1,83 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="d1/d31/classAmigaPreferences">
+<title>AmigaPreferences class Reference</title>
+<para>
+    <programlisting>#include <link linkend="de/d8c/preferences__amiga_8h">&lt;preferences_amiga.h&gt;</link></programlisting>
+</para>
+<para>Inheritance diagram for AmigaPreferences</para>
+<para>
+    <figure>
+        <title>Inheritance graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="../../da/de8/classAmigaPreferences__inherit__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+<para>Collaboration diagram for AmigaPreferences</para>
+<para>
+    <figure>
+        <title>Collaboration graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="../../d7/d9a/classAmigaPreferences__coll__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>virtual <link linkend="de/d03/platform_8h_1a1062901a7428fdd9c7f180f5e01ea056">bool</link> <link linkend="d1/d31/classAmigaPreferences_1ad0afe7aca1e01de83e31d07c0b21dde1">Load</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>virtual <link linkend="de/d03/platform_8h_1a1062901a7428fdd9c7f180f5e01ea056">bool</link> <link linkend="d1/d31/classAmigaPreferences_1a1501b1d109e18004f12d9cf7747bfbdb">Keep</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>virtual <link linkend="de/d03/platform_8h_1a1062901a7428fdd9c7f180f5e01ea056">bool</link> <link linkend="d1/d31/classAmigaPreferences_1a4bfa0037af64c4c7a16b31c85b20444a">Save</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="de/d03/platform_8h_1a1062901a7428fdd9c7f180f5e01ea056">bool</link> <link linkend="d1/d31/classAmigaPreferences_1ae9f6c44c86e85aadd46cb486478cec11">SavePrefs</link> (
+const char * file)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+            <section xml:id="d1/d31/classAmigaPreferences_1ad0afe7aca1e01de83e31d07c0b21dde1">
+                <title>virtual bool AmigaPreferences::Load ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d1/d31/classAmigaPreferences_1a1501b1d109e18004f12d9cf7747bfbdb">
+                <title>virtual bool AmigaPreferences::Keep ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d1/d31/classAmigaPreferences_1a4bfa0037af64c4c7a16b31c85b20444a">
+                <title>virtual bool AmigaPreferences::Save ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d1/d31/classAmigaPreferences_1ae9f6c44c86e85aadd46cb486478cec11">
+                <title>bool AmigaPreferences::SavePrefs (const char *file)</title> <emphasis></emphasis>
+                
+            </section>
+</section>

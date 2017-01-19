@@ -1,0 +1,86 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="d0/dee/classHyperbolicArcCosecantNode">
+<title>HyperbolicArcCosecantNode class Reference</title>
+<para>
+    <programlisting>#include <link linkend="d8/d5c/functions_8h">&lt;functions.h&gt;</link></programlisting>
+</para>
+<para>Inheritance diagram for HyperbolicArcCosecantNode</para>
+<para>
+    <figure>
+        <title>Inheritance graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="../../dc/d10/classHyperbolicArcCosecantNode__inherit__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+<para>Collaboration diagram for HyperbolicArcCosecantNode</para>
+<para>
+    <figure>
+        <title>Collaboration graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="../../da/d32/classHyperbolicArcCosecantNode__coll__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d0/dee/classHyperbolicArcCosecantNode_1afb3223e893556ffadca8796cec9062f5">HyperbolicArcCosecantNode</link> (
+<link linkend="dd/d06/classExpressionNode">ExpressionNode</link> * expression)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="da/de2/structNumber">Number</link> * <link linkend="d0/dee/classHyperbolicArcCosecantNode_1acefcd296ae5574bc5f57b3b234f23dba">Evaluate</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>static <link linkend="d7/d06/classFunctionNode">FunctionNode</link> * <link linkend="d0/dee/classHyperbolicArcCosecantNode_1ad40421e2519b6a034f02e5411dbcc58e">Create</link> (
+<link linkend="dd/d06/classExpressionNode">ExpressionNode</link> * expression)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>char * <link linkend="d0/dee/classHyperbolicArcCosecantNode_1adfeb956f89ecdab30e57a4e80b2ca5aa">GetNodeText</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+            <section xml:id="d0/dee/classHyperbolicArcCosecantNode_1afb3223e893556ffadca8796cec9062f5">
+                <title>HyperbolicArcCosecantNode::HyperbolicArcCosecantNode (ExpressionNode *expression)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d0/dee/classHyperbolicArcCosecantNode_1acefcd296ae5574bc5f57b3b234f23dba">
+                <title>Number * HyperbolicArcCosecantNode::Evaluate ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d0/dee/classHyperbolicArcCosecantNode_1ad40421e2519b6a034f02e5411dbcc58e">
+                <title>FunctionNode * HyperbolicArcCosecantNode::Create (ExpressionNode *expression)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d0/dee/classHyperbolicArcCosecantNode_1adfeb956f89ecdab30e57a4e80b2ca5aa">
+                <title>char * HyperbolicArcCosecantNode::GetNodeText ()</title> <emphasis></emphasis>
+                
+            </section>
+</section>

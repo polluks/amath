@@ -1,0 +1,131 @@
+\hypertarget{classThreadBase}{}\section{Thread\+Base Class Reference}
+\label{classThreadBase}\index{Thread\+Base@{Thread\+Base}}
+
+
+Abstract base class encapsulating runable component.  
+
+
+
+
+{\ttfamily \#include $<$thread.\+h$>$}
+
+
+
+Inheritance diagram for Thread\+Base\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=172pt]{db/d6e/classThreadBase__inherit__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classThreadBase_af66330f2f5605a8f104ec346014da976}{Thread\+Base} ()
+\item 
+virtual \hyperlink{classThreadBase_a3dbbd3714a3a446c74258c34bf9f6da0}{$\sim$\+Thread\+Base} ()
+\item 
+virtual void \hyperlink{classThreadBase_a795d258c1f40c123859d0e83dce6a0ad}{Run} ()=0
+\item 
+virtual const char $\ast$ \hyperlink{classThreadBase_a1d02a7e6cd287e1d72b9cac00e8061d4}{Get\+Name} ()=0
+\item 
+virtual int \hyperlink{classThreadBase_a676ce2be4c9801fdfdc30f484547caef}{Get\+Stack\+Size} ()=0
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Abstract base class encapsulating runable component. 
+
+Definition at line 40 of file thread.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Thread\+Base@{Thread\+Base}!Thread\+Base@{Thread\+Base}}
+\index{Thread\+Base@{Thread\+Base}!Thread\+Base@{Thread\+Base}}
+\subsubsection[{\texorpdfstring{Thread\+Base()}{ThreadBase()}}]{\setlength{\rightskip}{0pt plus 5cm}Thread\+Base\+::\+Thread\+Base (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classThreadBase_af66330f2f5605a8f104ec346014da976}{}\label{classThreadBase_af66330f2f5605a8f104ec346014da976}
+
+
+Definition at line 42 of file thread.\+h.
+
+
+\begin{DoxyCode}
+42 \{ \}
+\end{DoxyCode}
+\index{Thread\+Base@{Thread\+Base}!````~Thread\+Base@{$\sim$\+Thread\+Base}}
+\index{````~Thread\+Base@{$\sim$\+Thread\+Base}!Thread\+Base@{Thread\+Base}}
+\subsubsection[{\texorpdfstring{$\sim$\+Thread\+Base()}{~ThreadBase()}}]{\setlength{\rightskip}{0pt plus 5cm}virtual Thread\+Base\+::$\sim$\+Thread\+Base (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}\hypertarget{classThreadBase_a3dbbd3714a3a446c74258c34bf9f6da0}{}\label{classThreadBase_a3dbbd3714a3a446c74258c34bf9f6da0}
+
+
+Definition at line 43 of file thread.\+h.
+
+
+\begin{DoxyCode}
+43 \{ \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\index{Thread\+Base@{Thread\+Base}!Get\+Name@{Get\+Name}}
+\index{Get\+Name@{Get\+Name}!Thread\+Base@{Thread\+Base}}
+\subsubsection[{\texorpdfstring{Get\+Name()=0}{GetName()=0}}]{\setlength{\rightskip}{0pt plus 5cm}virtual const char$\ast$ Thread\+Base\+::\+Get\+Name (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\hypertarget{classThreadBase_a1d02a7e6cd287e1d72b9cac00e8061d4}{}\label{classThreadBase_a1d02a7e6cd287e1d72b9cac00e8061d4}
+
+
+Implemented in \hyperlink{classConsoleBase_a787ac1707ea23d457c452ade014bec1f}{Console\+Base}.
+
+\index{Thread\+Base@{Thread\+Base}!Get\+Stack\+Size@{Get\+Stack\+Size}}
+\index{Get\+Stack\+Size@{Get\+Stack\+Size}!Thread\+Base@{Thread\+Base}}
+\subsubsection[{\texorpdfstring{Get\+Stack\+Size()=0}{GetStackSize()=0}}]{\setlength{\rightskip}{0pt plus 5cm}virtual int Thread\+Base\+::\+Get\+Stack\+Size (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\hypertarget{classThreadBase_a676ce2be4c9801fdfdc30f484547caef}{}\label{classThreadBase_a676ce2be4c9801fdfdc30f484547caef}
+
+
+Implemented in \hyperlink{classStandardConsole_af0b69c487667723a1e33357db6132e94}{Standard\+Console}.
+
+\index{Thread\+Base@{Thread\+Base}!Run@{Run}}
+\index{Run@{Run}!Thread\+Base@{Thread\+Base}}
+\subsubsection[{\texorpdfstring{Run()=0}{Run()=0}}]{\setlength{\rightskip}{0pt plus 5cm}virtual void Thread\+Base\+::\+Run (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\hypertarget{classThreadBase_a795d258c1f40c123859d0e83dce6a0ad}{}\label{classThreadBase_a795d258c1f40c123859d0e83dce6a0ad}
+
+
+Implemented in \hyperlink{classStandardConsole_a9380023bba612b816b134589130bb254}{Standard\+Console}.
+
+
+
+Referenced by Standard\+Program\+::\+Run(), and Standard\+Task\+::\+Start().
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=325pt]{da/d67/classThreadBase_a795d258c1f40c123859d0e83dce6a0ad_icgraph}
+\end{center}
+\end{figure}
+
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+app/system/base/\hyperlink{thread_8h}{thread.\+h}\end{DoxyCompactItemize}

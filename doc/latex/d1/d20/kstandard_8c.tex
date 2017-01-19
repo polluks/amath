@@ -1,0 +1,728 @@
+\hypertarget{kstandard_8c}{}\section{lib/real/kstandard.c File Reference}
+\label{kstandard_8c}\index{lib/real/kstandard.\+c@{lib/real/kstandard.\+c}}
+{\ttfamily \#include \char`\"{}fdlibm.\+h\char`\"{}}\\*
+{\ttfamily \#include $<$errno.\+h$>$}\\*
+{\ttfamily \#include $<$stdio.\+h$>$}\\*
+Include dependency graph for kstandard.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=261pt]{d1/db1/kstandard_8c__incl}
+\end{center}
+\end{figure}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{kstandard_8c_ab22b8e9deca5d44fd863b5d516cb7e7b}{W\+R\+I\+T\+E2}(u,  v)~fputs(u, stderr)
+\item 
+\#define \hyperlink{kstandard_8c_af2164b2db92d8a0ed3838ad5c28db971}{H\+U\+G\+E\+\_\+\+V\+AL}~inf
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+double \hyperlink{kstandard_8c_aaa2b2c25f94d1826d2b501dd16794bf4}{\+\_\+\+\_\+kernel\+\_\+standard} (double x, double y, int type)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+static double \hyperlink{kstandard_8c_a548c77babcdf18ce7b6b96e73fb912cd}{zero} = 0.\+0
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\index{kstandard.\+c@{kstandard.\+c}!H\+U\+G\+E\+\_\+\+V\+AL@{H\+U\+G\+E\+\_\+\+V\+AL}}
+\index{H\+U\+G\+E\+\_\+\+V\+AL@{H\+U\+G\+E\+\_\+\+V\+AL}!kstandard.\+c@{kstandard.\+c}}
+\subsubsection[{\texorpdfstring{H\+U\+G\+E\+\_\+\+V\+AL}{HUGE_VAL}}]{\setlength{\rightskip}{0pt plus 5cm}\#define H\+U\+G\+E\+\_\+\+V\+AL~inf}\hypertarget{kstandard_8c_af2164b2db92d8a0ed3838ad5c28db971}{}\label{kstandard_8c_af2164b2db92d8a0ed3838ad5c28db971}
+\index{kstandard.\+c@{kstandard.\+c}!W\+R\+I\+T\+E2@{W\+R\+I\+T\+E2}}
+\index{W\+R\+I\+T\+E2@{W\+R\+I\+T\+E2}!kstandard.\+c@{kstandard.\+c}}
+\subsubsection[{\texorpdfstring{W\+R\+I\+T\+E2}{WRITE2}}]{\setlength{\rightskip}{0pt plus 5cm}\#define W\+R\+I\+T\+E2(
+\begin{DoxyParamCaption}
+\item[{}]{u, }
+\item[{}]{v}
+\end{DoxyParamCaption}
+)~fputs(u, stderr)}\hypertarget{kstandard_8c_ab22b8e9deca5d44fd863b5d516cb7e7b}{}\label{kstandard_8c_ab22b8e9deca5d44fd863b5d516cb7e7b}
+
+
+Definition at line 51 of file kstandard.\+c.
+
+
+
+\subsection{Function Documentation}
+\index{kstandard.\+c@{kstandard.\+c}!\+\_\+\+\_\+kernel\+\_\+standard@{\+\_\+\+\_\+kernel\+\_\+standard}}
+\index{\+\_\+\+\_\+kernel\+\_\+standard@{\+\_\+\+\_\+kernel\+\_\+standard}!kstandard.\+c@{kstandard.\+c}}
+\subsubsection[{\texorpdfstring{\+\_\+\+\_\+kernel\+\_\+standard(double x, double y, int type)}{__kernel_standard(double x, double y, int type)}}]{\setlength{\rightskip}{0pt plus 5cm}double \+\_\+\+\_\+kernel\+\_\+standard (
+\begin{DoxyParamCaption}
+\item[{double}]{x, }
+\item[{double}]{y, }
+\item[{int}]{type}
+\end{DoxyParamCaption}
+)}\hypertarget{kstandard_8c_aaa2b2c25f94d1826d2b501dd16794bf4}{}\label{kstandard_8c_aaa2b2c25f94d1826d2b501dd16794bf4}
+
+
+Definition at line 111 of file kstandard.\+c.
+
+
+\begin{DoxyCode}
+115 \{
+116     \textcolor{keyword}{struct }exception exc;
+117 \textcolor{preprocessor}{#ifndef HUGE\_VAL    }\textcolor{comment}{/* this is the only routine that uses HUGE\_VAL */}\textcolor{preprocessor}{}
+118 \textcolor{preprocessor}{#define HUGE\_VAL inf}
+119     \textcolor{keywordtype}{double} inf = 0.0;
+120 
+121     \_\_HI(inf) = 0x7ff00000; \textcolor{comment}{/* set inf to infinite */}
+122 \textcolor{preprocessor}{#endif}
+123 
+124 \textcolor{preprocessor}{#ifdef \_USE\_WRITE}
+125     (void) fflush(stdout);
+126 \textcolor{preprocessor}{#endif}
+127     exc.arg1 = x;
+128     exc.arg2 = y;
+129     \textcolor{keywordflow}{switch}(type) \{
+130     \textcolor{keywordflow}{case} 1:
+131         \textcolor{comment}{/* acos(|x|>1) */}
+132         exc.type = DOMAIN;
+133         exc.name = \textcolor{stringliteral}{"acos"};
+134         exc.retval = \hyperlink{kstandard_8c_a548c77babcdf18ce7b6b96e73fb912cd}{zero};
+135         \textcolor{keywordflow}{if} (\_LIB\_VERSION == \_POSIX\_)
+136             errno = EDOM;
+137         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (!\hyperlink{matherr_8c_ae79ea974e2ce3b701e2c122c394c260f}{matherr}(&exc)) \{
+138             \textcolor{keywordflow}{if}(\_LIB\_VERSION == \_SVID\_) \{
+139                 (void) \hyperlink{kstandard_8c_ab22b8e9deca5d44fd863b5d516cb7e7b}{WRITE2}(\textcolor{stringliteral}{"acos: DOMAIN error\(\backslash\)n"}, 19);
+140             \}
+141             errno = EDOM;
+142         \}
+143         \textcolor{keywordflow}{break};
+144     \textcolor{keywordflow}{case} 2:
+145         \textcolor{comment}{/* asin(|x|>1) */}
+146         exc.type = DOMAIN;
+147         exc.name = \textcolor{stringliteral}{"asin"};
+148         exc.retval = \hyperlink{kstandard_8c_a548c77babcdf18ce7b6b96e73fb912cd}{zero};
+149         \textcolor{keywordflow}{if}(\_LIB\_VERSION == \_POSIX\_)
+150             errno = EDOM;
+151         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (!\hyperlink{matherr_8c_ae79ea974e2ce3b701e2c122c394c260f}{matherr}(&exc)) \{
+152             \textcolor{keywordflow}{if}(\_LIB\_VERSION == \_SVID\_) \{
+153                 (void) \hyperlink{kstandard_8c_ab22b8e9deca5d44fd863b5d516cb7e7b}{WRITE2}(\textcolor{stringliteral}{"asin: DOMAIN error\(\backslash\)n"}, 19);
+154             \}
+155             errno = EDOM;
+156         \}
+157         \textcolor{keywordflow}{break};
+158     \textcolor{keywordflow}{case} 3:
+159         \textcolor{comment}{/* atan2(+-0,+-0) */}
+160         exc.arg1 = y;
+161         exc.arg2 = x;
+162         exc.type = DOMAIN;
+163         exc.name = \textcolor{stringliteral}{"atan2"};
+164         exc.retval = \hyperlink{kstandard_8c_a548c77babcdf18ce7b6b96e73fb912cd}{zero};
+165         \textcolor{keywordflow}{if}(\_LIB\_VERSION == \_POSIX\_)
+166             errno = EDOM;
+167         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (!\hyperlink{matherr_8c_ae79ea974e2ce3b701e2c122c394c260f}{matherr}(&exc)) \{
+168             \textcolor{keywordflow}{if}(\_LIB\_VERSION == \_SVID\_) \{
+169                 (void) \hyperlink{kstandard_8c_ab22b8e9deca5d44fd863b5d516cb7e7b}{WRITE2}(\textcolor{stringliteral}{"atan2: DOMAIN error\(\backslash\)n"}, 20);
+170             \}
+171             errno = EDOM;
+172         \}
+173         \textcolor{keywordflow}{break};
+174     \textcolor{keywordflow}{case} 4:
+175         \textcolor{comment}{/* hypot(finite,finite) overflow */}
+176         exc.type = OVERFLOW;
+177         exc.name = \textcolor{stringliteral}{"hypot"};
+178         \textcolor{keywordflow}{if} (\_LIB\_VERSION == \_SVID\_)
+179             exc.retval = \hyperlink{cplex_2prim_8h_a5f3d17bf39f78da3422ca52e475d7724}{HUGE};
+180         \textcolor{keywordflow}{else}
+181             exc.retval = \hyperlink{kstandard_8c_af2164b2db92d8a0ed3838ad5c28db971}{HUGE\_VAL};
+182         \textcolor{keywordflow}{if} (\_LIB\_VERSION == \_POSIX\_)
+183             errno = ERANGE;
+184         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (!\hyperlink{matherr_8c_ae79ea974e2ce3b701e2c122c394c260f}{matherr}(&exc)) \{
+185             errno = ERANGE;
+186         \}
+187         \textcolor{keywordflow}{break};
+188     \textcolor{keywordflow}{case} 5:
+189         \textcolor{comment}{/* cosh(finite) overflow */}
+190         exc.type = OVERFLOW;
+191         exc.name = \textcolor{stringliteral}{"cosh"};
+192         \textcolor{keywordflow}{if} (\_LIB\_VERSION == \_SVID\_)
+193             exc.retval = \hyperlink{cplex_2prim_8h_a5f3d17bf39f78da3422ca52e475d7724}{HUGE};
+194         \textcolor{keywordflow}{else}
+195             exc.retval = \hyperlink{kstandard_8c_af2164b2db92d8a0ed3838ad5c28db971}{HUGE\_VAL};
+196         \textcolor{keywordflow}{if} (\_LIB\_VERSION == \_POSIX\_)
+197             errno = ERANGE;
+198         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (!\hyperlink{matherr_8c_ae79ea974e2ce3b701e2c122c394c260f}{matherr}(&exc)) \{
+199             errno = ERANGE;
+200         \}
+201         \textcolor{keywordflow}{break};
+202     \textcolor{keywordflow}{case} 6:
+203         \textcolor{comment}{/* exp(finite) overflow */}
+204         exc.type = OVERFLOW;
+205         exc.name = \textcolor{stringliteral}{"exp"};
+206         \textcolor{keywordflow}{if} (\_LIB\_VERSION == \_SVID\_)
+207             exc.retval = \hyperlink{cplex_2prim_8h_a5f3d17bf39f78da3422ca52e475d7724}{HUGE};
+208         \textcolor{keywordflow}{else}
+209             exc.retval = \hyperlink{kstandard_8c_af2164b2db92d8a0ed3838ad5c28db971}{HUGE\_VAL};
+210         \textcolor{keywordflow}{if} (\_LIB\_VERSION == \_POSIX\_)
+211             errno = ERANGE;
+212         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (!\hyperlink{matherr_8c_ae79ea974e2ce3b701e2c122c394c260f}{matherr}(&exc)) \{
+213             errno = ERANGE;
+214         \}
+215         \textcolor{keywordflow}{break};
+216     \textcolor{keywordflow}{case} 7:
+217         \textcolor{comment}{/* exp(finite) underflow */}
+218         exc.type = UNDERFLOW;
+219         exc.name = \textcolor{stringliteral}{"exp"};
+220         exc.retval = \hyperlink{kstandard_8c_a548c77babcdf18ce7b6b96e73fb912cd}{zero};
+221         \textcolor{keywordflow}{if} (\_LIB\_VERSION == \_POSIX\_)
+222             errno = ERANGE;
+223         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (!\hyperlink{matherr_8c_ae79ea974e2ce3b701e2c122c394c260f}{matherr}(&exc)) \{
+224             errno = ERANGE;
+225         \}
+226         \textcolor{keywordflow}{break};
+227     \textcolor{keywordflow}{case} 8:
+228         \textcolor{comment}{/* y0(0) = -inf */}
+229         exc.type = DOMAIN;  \textcolor{comment}{/* should be SING for IEEE */}
+230         exc.name = \textcolor{stringliteral}{"y0"};
+231         \textcolor{keywordflow}{if} (\_LIB\_VERSION == \_SVID\_)
+232             exc.retval = -\hyperlink{cplex_2prim_8h_a5f3d17bf39f78da3422ca52e475d7724}{HUGE};
+233         \textcolor{keywordflow}{else}
+234             exc.retval = -\hyperlink{kstandard_8c_af2164b2db92d8a0ed3838ad5c28db971}{HUGE\_VAL};
+235         \textcolor{keywordflow}{if} (\_LIB\_VERSION == \_POSIX\_)
+236             errno = EDOM;
+237         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (!\hyperlink{matherr_8c_ae79ea974e2ce3b701e2c122c394c260f}{matherr}(&exc)) \{
+238             \textcolor{keywordflow}{if} (\_LIB\_VERSION == \_SVID\_) \{
+239                 (void) \hyperlink{kstandard_8c_ab22b8e9deca5d44fd863b5d516cb7e7b}{WRITE2}(\textcolor{stringliteral}{"y0: DOMAIN error\(\backslash\)n"}, 17);
+240             \}
+241             errno = EDOM;
+242         \}
+243         \textcolor{keywordflow}{break};
+244     \textcolor{keywordflow}{case} 9:
+245         \textcolor{comment}{/* y0(x<0) = NaN */}
+246         exc.type = DOMAIN;
+247         exc.name = \textcolor{stringliteral}{"y0"};
+248         \textcolor{keywordflow}{if} (\_LIB\_VERSION == \_SVID\_)
+249             exc.retval = -\hyperlink{cplex_2prim_8h_a5f3d17bf39f78da3422ca52e475d7724}{HUGE};
+250         \textcolor{keywordflow}{else}
+251             exc.retval = -\hyperlink{kstandard_8c_af2164b2db92d8a0ed3838ad5c28db971}{HUGE\_VAL};
+252         \textcolor{keywordflow}{if} (\_LIB\_VERSION == \_POSIX\_)
+253             errno = EDOM;
+254         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (!\hyperlink{matherr_8c_ae79ea974e2ce3b701e2c122c394c260f}{matherr}(&exc)) \{
+255             \textcolor{keywordflow}{if} (\_LIB\_VERSION == \_SVID\_) \{
+256                 (void) \hyperlink{kstandard_8c_ab22b8e9deca5d44fd863b5d516cb7e7b}{WRITE2}(\textcolor{stringliteral}{"y0: DOMAIN error\(\backslash\)n"}, 17);
+257             \}
+258             errno = EDOM;
+259         \}
+260         \textcolor{keywordflow}{break};
+261     \textcolor{keywordflow}{case} 10:
+262         \textcolor{comment}{/* y1(0) = -inf */}
+263         exc.type = DOMAIN;  \textcolor{comment}{/* should be SING for IEEE */}
+264         exc.name = \textcolor{stringliteral}{"y1"};
+265         \textcolor{keywordflow}{if} (\_LIB\_VERSION == \_SVID\_)
+266             exc.retval = -\hyperlink{cplex_2prim_8h_a5f3d17bf39f78da3422ca52e475d7724}{HUGE};
+267         \textcolor{keywordflow}{else}
+268             exc.retval = -\hyperlink{kstandard_8c_af2164b2db92d8a0ed3838ad5c28db971}{HUGE\_VAL};
+269         \textcolor{keywordflow}{if} (\_LIB\_VERSION == \_POSIX\_)
+270             errno = EDOM;
+271         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (!\hyperlink{matherr_8c_ae79ea974e2ce3b701e2c122c394c260f}{matherr}(&exc)) \{
+272             \textcolor{keywordflow}{if} (\_LIB\_VERSION == \_SVID\_) \{
+273                 (void) \hyperlink{kstandard_8c_ab22b8e9deca5d44fd863b5d516cb7e7b}{WRITE2}(\textcolor{stringliteral}{"y1: DOMAIN error\(\backslash\)n"}, 17);
+274             \}
+275             errno = EDOM;
+276         \}
+277         \textcolor{keywordflow}{break};
+278     \textcolor{keywordflow}{case} 11:
+279         \textcolor{comment}{/* y1(x<0) = NaN */}
+280         exc.type = DOMAIN;
+281         exc.name = \textcolor{stringliteral}{"y1"};
+282         \textcolor{keywordflow}{if} (\_LIB\_VERSION == \_SVID\_)
+283             exc.retval = -\hyperlink{cplex_2prim_8h_a5f3d17bf39f78da3422ca52e475d7724}{HUGE};
+284         \textcolor{keywordflow}{else}
+285             exc.retval = -\hyperlink{kstandard_8c_af2164b2db92d8a0ed3838ad5c28db971}{HUGE\_VAL};
+286         \textcolor{keywordflow}{if} (\_LIB\_VERSION == \_POSIX\_)
+287             errno = EDOM;
+288         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (!\hyperlink{matherr_8c_ae79ea974e2ce3b701e2c122c394c260f}{matherr}(&exc)) \{
+289             \textcolor{keywordflow}{if} (\_LIB\_VERSION == \_SVID\_) \{
+290                 (void) \hyperlink{kstandard_8c_ab22b8e9deca5d44fd863b5d516cb7e7b}{WRITE2}(\textcolor{stringliteral}{"y1: DOMAIN error\(\backslash\)n"}, 17);
+291             \}
+292             errno = EDOM;
+293         \}
+294         \textcolor{keywordflow}{break};
+295     \textcolor{keywordflow}{case} 12:
+296         \textcolor{comment}{/* yn(n,0) = -inf */}
+297         exc.type = DOMAIN;  \textcolor{comment}{/* should be SING for IEEE */}
+298         exc.name = \textcolor{stringliteral}{"yn"};
+299         \textcolor{keywordflow}{if} (\_LIB\_VERSION == \_SVID\_)
+300             exc.retval = -\hyperlink{cplex_2prim_8h_a5f3d17bf39f78da3422ca52e475d7724}{HUGE};
+301         \textcolor{keywordflow}{else}
+302             exc.retval = -\hyperlink{kstandard_8c_af2164b2db92d8a0ed3838ad5c28db971}{HUGE\_VAL};
+303         \textcolor{keywordflow}{if} (\_LIB\_VERSION == \_POSIX\_)
+304             errno = EDOM;
+305         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (!\hyperlink{matherr_8c_ae79ea974e2ce3b701e2c122c394c260f}{matherr}(&exc)) \{
+306             \textcolor{keywordflow}{if} (\_LIB\_VERSION == \_SVID\_) \{
+307                 (void) \hyperlink{kstandard_8c_ab22b8e9deca5d44fd863b5d516cb7e7b}{WRITE2}(\textcolor{stringliteral}{"yn: DOMAIN error\(\backslash\)n"}, 17);
+308             \}
+309             errno = EDOM;
+310         \}
+311         \textcolor{keywordflow}{break};
+312     \textcolor{keywordflow}{case} 13:
+313         \textcolor{comment}{/* yn(x<0) = NaN */}
+314         exc.type = DOMAIN;
+315         exc.name = \textcolor{stringliteral}{"yn"};
+316         \textcolor{keywordflow}{if} (\_LIB\_VERSION == \_SVID\_)
+317             exc.retval = -\hyperlink{cplex_2prim_8h_a5f3d17bf39f78da3422ca52e475d7724}{HUGE};
+318         \textcolor{keywordflow}{else}
+319             exc.retval = -\hyperlink{kstandard_8c_af2164b2db92d8a0ed3838ad5c28db971}{HUGE\_VAL};
+320         \textcolor{keywordflow}{if} (\_LIB\_VERSION == \_POSIX\_)
+321             errno = EDOM;
+322         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (!\hyperlink{matherr_8c_ae79ea974e2ce3b701e2c122c394c260f}{matherr}(&exc)) \{
+323             \textcolor{keywordflow}{if} (\_LIB\_VERSION == \_SVID\_) \{
+324                 (void) \hyperlink{kstandard_8c_ab22b8e9deca5d44fd863b5d516cb7e7b}{WRITE2}(\textcolor{stringliteral}{"yn: DOMAIN error\(\backslash\)n"}, 17);
+325             \}
+326             errno = EDOM;
+327         \}
+328         \textcolor{keywordflow}{break};
+329     \textcolor{keywordflow}{case} 14:
+330         \textcolor{comment}{/* lgamma(finite) overflow */}
+331         exc.type = OVERFLOW;
+332         exc.name = \textcolor{stringliteral}{"lgamma"};
+333         \textcolor{keywordflow}{if} (\_LIB\_VERSION == \_SVID\_)
+334             exc.retval = \hyperlink{cplex_2prim_8h_a5f3d17bf39f78da3422ca52e475d7724}{HUGE};
+335         \textcolor{keywordflow}{else}
+336             exc.retval = \hyperlink{kstandard_8c_af2164b2db92d8a0ed3838ad5c28db971}{HUGE\_VAL};
+337         \textcolor{keywordflow}{if} (\_LIB\_VERSION == \_POSIX\_)
+338             errno = ERANGE;
+339         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (!\hyperlink{matherr_8c_ae79ea974e2ce3b701e2c122c394c260f}{matherr}(&exc)) \{
+340             errno = ERANGE;
+341         \}
+342         \textcolor{keywordflow}{break};
+343     \textcolor{keywordflow}{case} 15:
+344         \textcolor{comment}{/* lgamma(-integer) or lgamma(0) */}
+345         exc.type = SING;
+346         exc.name = \textcolor{stringliteral}{"lgamma"};
+347         \textcolor{keywordflow}{if} (\_LIB\_VERSION == \_SVID\_)
+348             exc.retval = \hyperlink{cplex_2prim_8h_a5f3d17bf39f78da3422ca52e475d7724}{HUGE};
+349         \textcolor{keywordflow}{else}
+350             exc.retval = \hyperlink{kstandard_8c_af2164b2db92d8a0ed3838ad5c28db971}{HUGE\_VAL};
+351         \textcolor{keywordflow}{if} (\_LIB\_VERSION == \_POSIX\_)
+352             errno = EDOM;
+353         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (!\hyperlink{matherr_8c_ae79ea974e2ce3b701e2c122c394c260f}{matherr}(&exc)) \{
+354             \textcolor{keywordflow}{if} (\_LIB\_VERSION == \_SVID\_) \{
+355                 (void) \hyperlink{kstandard_8c_ab22b8e9deca5d44fd863b5d516cb7e7b}{WRITE2}(\textcolor{stringliteral}{"lgamma: SING error\(\backslash\)n"}, 19);
+356             \}
+357             errno = EDOM;
+358         \}
+359         \textcolor{keywordflow}{break};
+360     \textcolor{keywordflow}{case} 16:
+361         \textcolor{comment}{/* log(0) */}
+362         exc.type = SING;
+363         exc.name = \textcolor{stringliteral}{"log"};
+364         \textcolor{keywordflow}{if} (\_LIB\_VERSION == \_SVID\_)
+365             exc.retval = -\hyperlink{cplex_2prim_8h_a5f3d17bf39f78da3422ca52e475d7724}{HUGE};
+366         \textcolor{keywordflow}{else}
+367             exc.retval = -\hyperlink{kstandard_8c_af2164b2db92d8a0ed3838ad5c28db971}{HUGE\_VAL};
+368         \textcolor{keywordflow}{if} (\_LIB\_VERSION == \_POSIX\_)
+369             errno = ERANGE;
+370         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (!\hyperlink{matherr_8c_ae79ea974e2ce3b701e2c122c394c260f}{matherr}(&exc)) \{
+371             \textcolor{keywordflow}{if} (\_LIB\_VERSION == \_SVID\_) \{
+372                 (void) \hyperlink{kstandard_8c_ab22b8e9deca5d44fd863b5d516cb7e7b}{WRITE2}(\textcolor{stringliteral}{"log: SING error\(\backslash\)n"}, 16);
+373             \}
+374             errno = EDOM;
+375         \}
+376         \textcolor{keywordflow}{break};
+377     \textcolor{keywordflow}{case} 17:
+378         \textcolor{comment}{/* log(x<0) */}
+379         exc.type = DOMAIN;
+380         exc.name = \textcolor{stringliteral}{"log"};
+381         \textcolor{keywordflow}{if} (\_LIB\_VERSION == \_SVID\_)
+382             exc.retval = -\hyperlink{cplex_2prim_8h_a5f3d17bf39f78da3422ca52e475d7724}{HUGE};
+383         \textcolor{keywordflow}{else}
+384             exc.retval = -\hyperlink{kstandard_8c_af2164b2db92d8a0ed3838ad5c28db971}{HUGE\_VAL};
+385         \textcolor{keywordflow}{if} (\_LIB\_VERSION == \_POSIX\_)
+386             errno = EDOM;
+387         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (!\hyperlink{matherr_8c_ae79ea974e2ce3b701e2c122c394c260f}{matherr}(&exc)) \{
+388             \textcolor{keywordflow}{if} (\_LIB\_VERSION == \_SVID\_) \{
+389                 (void) \hyperlink{kstandard_8c_ab22b8e9deca5d44fd863b5d516cb7e7b}{WRITE2}(\textcolor{stringliteral}{"log: DOMAIN error\(\backslash\)n"}, 18);
+390             \}
+391             errno = EDOM;
+392         \}
+393         \textcolor{keywordflow}{break};
+394     \textcolor{keywordflow}{case} 18:
+395         \textcolor{comment}{/* log10(0) */}
+396         exc.type = SING;
+397         exc.name = \textcolor{stringliteral}{"log10"};
+398         \textcolor{keywordflow}{if} (\_LIB\_VERSION == \_SVID\_)
+399             exc.retval = -\hyperlink{cplex_2prim_8h_a5f3d17bf39f78da3422ca52e475d7724}{HUGE};
+400         \textcolor{keywordflow}{else}
+401             exc.retval = -\hyperlink{kstandard_8c_af2164b2db92d8a0ed3838ad5c28db971}{HUGE\_VAL};
+402         \textcolor{keywordflow}{if} (\_LIB\_VERSION == \_POSIX\_)
+403             errno = ERANGE;
+404         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (!\hyperlink{matherr_8c_ae79ea974e2ce3b701e2c122c394c260f}{matherr}(&exc)) \{
+405             \textcolor{keywordflow}{if} (\_LIB\_VERSION == \_SVID\_) \{
+406                 (void) \hyperlink{kstandard_8c_ab22b8e9deca5d44fd863b5d516cb7e7b}{WRITE2}(\textcolor{stringliteral}{"log10: SING error\(\backslash\)n"}, 18);
+407             \}
+408             errno = EDOM;
+409         \}
+410         \textcolor{keywordflow}{break};
+411     \textcolor{keywordflow}{case} 19:
+412         \textcolor{comment}{/* log10(x<0) */}
+413         exc.type = DOMAIN;
+414         exc.name = \textcolor{stringliteral}{"log10"};
+415         \textcolor{keywordflow}{if} (\_LIB\_VERSION == \_SVID\_)
+416             exc.retval = -\hyperlink{cplex_2prim_8h_a5f3d17bf39f78da3422ca52e475d7724}{HUGE};
+417         \textcolor{keywordflow}{else}
+418             exc.retval = -\hyperlink{kstandard_8c_af2164b2db92d8a0ed3838ad5c28db971}{HUGE\_VAL};
+419         \textcolor{keywordflow}{if} (\_LIB\_VERSION == \_POSIX\_)
+420             errno = EDOM;
+421         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (!\hyperlink{matherr_8c_ae79ea974e2ce3b701e2c122c394c260f}{matherr}(&exc)) \{
+422             \textcolor{keywordflow}{if} (\_LIB\_VERSION == \_SVID\_) \{
+423                 (void) \hyperlink{kstandard_8c_ab22b8e9deca5d44fd863b5d516cb7e7b}{WRITE2}(\textcolor{stringliteral}{"log10: DOMAIN error\(\backslash\)n"}, 20);
+424             \}
+425             errno = EDOM;
+426         \}
+427         \textcolor{keywordflow}{break};
+428     \textcolor{keywordflow}{case} 20:
+429         \textcolor{comment}{/* pow(0.0,0.0) */}
+430         \textcolor{comment}{/* error only if \_LIB\_VERSION == \_SVID\_ */}
+431         exc.type = DOMAIN;
+432         exc.name = \textcolor{stringliteral}{"pow"};
+433         exc.retval = \hyperlink{kstandard_8c_a548c77babcdf18ce7b6b96e73fb912cd}{zero};
+434         \textcolor{keywordflow}{if} (\_LIB\_VERSION != \_SVID\_) exc.retval = 1.0;
+435         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (!\hyperlink{matherr_8c_ae79ea974e2ce3b701e2c122c394c260f}{matherr}(&exc)) \{
+436             (void) \hyperlink{kstandard_8c_ab22b8e9deca5d44fd863b5d516cb7e7b}{WRITE2}(\textcolor{stringliteral}{"pow(0,0): DOMAIN error\(\backslash\)n"}, 23);
+437             errno = EDOM;
+438         \}
+439         \textcolor{keywordflow}{break};
+440     \textcolor{keywordflow}{case} 21:
+441         \textcolor{comment}{/* pow(x,y) overflow */}
+442         exc.type = OVERFLOW;
+443         exc.name = \textcolor{stringliteral}{"pow"};
+444         \textcolor{keywordflow}{if} (\_LIB\_VERSION == \_SVID\_) \{
+445             exc.retval = \hyperlink{cplex_2prim_8h_a5f3d17bf39f78da3422ca52e475d7724}{HUGE};
+446             y *= 0.5;
+447             \textcolor{keywordflow}{if}(x<\hyperlink{kstandard_8c_a548c77babcdf18ce7b6b96e73fb912cd}{zero}&&\hyperlink{rint_8c_ae1f9edd5049d3ff63b0373a3c15c38c1}{rint}(y)!=y) exc.retval = -\hyperlink{cplex_2prim_8h_a5f3d17bf39f78da3422ca52e475d7724}{HUGE};
+448         \} \textcolor{keywordflow}{else} \{
+449             exc.retval = \hyperlink{kstandard_8c_af2164b2db92d8a0ed3838ad5c28db971}{HUGE\_VAL};
+450             y *= 0.5;
+451             \textcolor{keywordflow}{if}(x<\hyperlink{kstandard_8c_a548c77babcdf18ce7b6b96e73fb912cd}{zero}&&\hyperlink{rint_8c_ae1f9edd5049d3ff63b0373a3c15c38c1}{rint}(y)!=y) exc.retval = -\hyperlink{kstandard_8c_af2164b2db92d8a0ed3838ad5c28db971}{HUGE\_VAL};
+452         \}
+453         \textcolor{keywordflow}{if} (\_LIB\_VERSION == \_POSIX\_)
+454             errno = ERANGE;
+455         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (!\hyperlink{matherr_8c_ae79ea974e2ce3b701e2c122c394c260f}{matherr}(&exc)) \{
+456             errno = ERANGE;
+457         \}
+458         \textcolor{keywordflow}{break};
+459     \textcolor{keywordflow}{case} 22:
+460         \textcolor{comment}{/* pow(x,y) underflow */}
+461         exc.type = UNDERFLOW;
+462         exc.name = \textcolor{stringliteral}{"pow"};
+463         exc.retval =  \hyperlink{kstandard_8c_a548c77babcdf18ce7b6b96e73fb912cd}{zero};
+464         \textcolor{keywordflow}{if} (\_LIB\_VERSION == \_POSIX\_)
+465             errno = ERANGE;
+466         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (!\hyperlink{matherr_8c_ae79ea974e2ce3b701e2c122c394c260f}{matherr}(&exc)) \{
+467             errno = ERANGE;
+468         \}
+469         \textcolor{keywordflow}{break};
+470     \textcolor{keywordflow}{case} 23:
+471         \textcolor{comment}{/* 0**neg */}
+472         exc.type = DOMAIN;
+473         exc.name = \textcolor{stringliteral}{"pow"};
+474         \textcolor{keywordflow}{if} (\_LIB\_VERSION == \_SVID\_)
+475             exc.retval = \hyperlink{kstandard_8c_a548c77babcdf18ce7b6b96e73fb912cd}{zero};
+476         \textcolor{keywordflow}{else}
+477             exc.retval = -\hyperlink{kstandard_8c_af2164b2db92d8a0ed3838ad5c28db971}{HUGE\_VAL};
+478         \textcolor{keywordflow}{if} (\_LIB\_VERSION == \_POSIX\_)
+479             errno = EDOM;
+480         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (!\hyperlink{matherr_8c_ae79ea974e2ce3b701e2c122c394c260f}{matherr}(&exc)) \{
+481             \textcolor{keywordflow}{if} (\_LIB\_VERSION == \_SVID\_) \{
+482                 (void) \hyperlink{kstandard_8c_ab22b8e9deca5d44fd863b5d516cb7e7b}{WRITE2}(\textcolor{stringliteral}{"pow(0,neg): DOMAIN error\(\backslash\)n"}, 25);
+483             \}
+484             errno = EDOM;
+485         \}
+486         \textcolor{keywordflow}{break};
+487     \textcolor{keywordflow}{case} 24:
+488         \textcolor{comment}{/* neg**non-integral */}
+489         exc.type = DOMAIN;
+490         exc.name = \textcolor{stringliteral}{"pow"};
+491         \textcolor{keywordflow}{if} (\_LIB\_VERSION == \_SVID\_)
+492             exc.retval = \hyperlink{kstandard_8c_a548c77babcdf18ce7b6b96e73fb912cd}{zero};
+493         \textcolor{keywordflow}{else}
+494             exc.retval = \hyperlink{kstandard_8c_a548c77babcdf18ce7b6b96e73fb912cd}{zero}/\hyperlink{kstandard_8c_a548c77babcdf18ce7b6b96e73fb912cd}{zero}; \textcolor{comment}{/* X/Open allow NaN */}
+495         \textcolor{keywordflow}{if} (\_LIB\_VERSION == \_POSIX\_)
+496             errno = EDOM;
+497         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (!\hyperlink{matherr_8c_ae79ea974e2ce3b701e2c122c394c260f}{matherr}(&exc)) \{
+498             \textcolor{keywordflow}{if} (\_LIB\_VERSION == \_SVID\_) \{
+499                 (void) \hyperlink{kstandard_8c_ab22b8e9deca5d44fd863b5d516cb7e7b}{WRITE2}(\textcolor{stringliteral}{"neg**non-integral: DOMAIN error\(\backslash\)n"}, 32);
+500             \}
+501             errno = EDOM;
+502         \}
+503         \textcolor{keywordflow}{break};
+504     \textcolor{keywordflow}{case} 25:
+505         \textcolor{comment}{/* sinh(finite) overflow */}
+506         exc.type = OVERFLOW;
+507         exc.name = \textcolor{stringliteral}{"sinh"};
+508         \textcolor{keywordflow}{if} (\_LIB\_VERSION == \_SVID\_)
+509             exc.retval = ( (x>\hyperlink{kstandard_8c_a548c77babcdf18ce7b6b96e73fb912cd}{zero}) ? \hyperlink{cplex_2prim_8h_a5f3d17bf39f78da3422ca52e475d7724}{HUGE} : -\hyperlink{cplex_2prim_8h_a5f3d17bf39f78da3422ca52e475d7724}{HUGE});
+510         \textcolor{keywordflow}{else}
+511             exc.retval = ( (x>\hyperlink{kstandard_8c_a548c77babcdf18ce7b6b96e73fb912cd}{zero}) ? \hyperlink{kstandard_8c_af2164b2db92d8a0ed3838ad5c28db971}{HUGE\_VAL} : -\hyperlink{kstandard_8c_af2164b2db92d8a0ed3838ad5c28db971}{HUGE\_VAL});
+512         \textcolor{keywordflow}{if} (\_LIB\_VERSION == \_POSIX\_)
+513             errno = ERANGE;
+514         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (!\hyperlink{matherr_8c_ae79ea974e2ce3b701e2c122c394c260f}{matherr}(&exc)) \{
+515             errno = ERANGE;
+516         \}
+517         \textcolor{keywordflow}{break};
+518     \textcolor{keywordflow}{case} 26:
+519         \textcolor{comment}{/* sqrt(x<0) */}
+520         exc.type = DOMAIN;
+521         exc.name = \textcolor{stringliteral}{"sqrt"};
+522         \textcolor{keywordflow}{if} (\_LIB\_VERSION == \_SVID\_)
+523             exc.retval = \hyperlink{kstandard_8c_a548c77babcdf18ce7b6b96e73fb912cd}{zero};
+524         \textcolor{keywordflow}{else}
+525             exc.retval = \hyperlink{kstandard_8c_a548c77babcdf18ce7b6b96e73fb912cd}{zero}/\hyperlink{kstandard_8c_a548c77babcdf18ce7b6b96e73fb912cd}{zero};
+526         \textcolor{keywordflow}{if} (\_LIB\_VERSION == \_POSIX\_)
+527             errno = EDOM;
+528         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (!\hyperlink{matherr_8c_ae79ea974e2ce3b701e2c122c394c260f}{matherr}(&exc)) \{
+529             \textcolor{keywordflow}{if} (\_LIB\_VERSION == \_SVID\_) \{
+530                 (void) \hyperlink{kstandard_8c_ab22b8e9deca5d44fd863b5d516cb7e7b}{WRITE2}(\textcolor{stringliteral}{"sqrt: DOMAIN error\(\backslash\)n"}, 19);
+531             \}
+532             errno = EDOM;
+533         \}
+534         \textcolor{keywordflow}{break};
+535     \textcolor{keywordflow}{case} 27:
+536         \textcolor{comment}{/* fmod(x,0) */}
+537         exc.type = DOMAIN;
+538         exc.name = \textcolor{stringliteral}{"fmod"};
+539         \textcolor{keywordflow}{if} (\_LIB\_VERSION == \_SVID\_)
+540             exc.retval = x;
+541         \textcolor{keywordflow}{else}
+542             exc.retval = \hyperlink{kstandard_8c_a548c77babcdf18ce7b6b96e73fb912cd}{zero}/\hyperlink{kstandard_8c_a548c77babcdf18ce7b6b96e73fb912cd}{zero};
+543         \textcolor{keywordflow}{if} (\_LIB\_VERSION == \_POSIX\_)
+544             errno = EDOM;
+545         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (!\hyperlink{matherr_8c_ae79ea974e2ce3b701e2c122c394c260f}{matherr}(&exc)) \{
+546             \textcolor{keywordflow}{if} (\_LIB\_VERSION == \_SVID\_) \{
+547                 (void) \hyperlink{kstandard_8c_ab22b8e9deca5d44fd863b5d516cb7e7b}{WRITE2}(\textcolor{stringliteral}{"fmod:  DOMAIN error\(\backslash\)n"}, 20);
+548             \}
+549             errno = EDOM;
+550         \}
+551         \textcolor{keywordflow}{break};
+552     \textcolor{keywordflow}{case} 28:
+553         \textcolor{comment}{/* remainder(x,0) */}
+554         exc.type = DOMAIN;
+555         exc.name = \textcolor{stringliteral}{"remainder"};
+556         exc.retval = \hyperlink{kstandard_8c_a548c77babcdf18ce7b6b96e73fb912cd}{zero}/\hyperlink{kstandard_8c_a548c77babcdf18ce7b6b96e73fb912cd}{zero};
+557         \textcolor{keywordflow}{if} (\_LIB\_VERSION == \_POSIX\_)
+558             errno = EDOM;
+559         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (!\hyperlink{matherr_8c_ae79ea974e2ce3b701e2c122c394c260f}{matherr}(&exc)) \{
+560             \textcolor{keywordflow}{if} (\_LIB\_VERSION == \_SVID\_) \{
+561                 (void) \hyperlink{kstandard_8c_ab22b8e9deca5d44fd863b5d516cb7e7b}{WRITE2}(\textcolor{stringliteral}{"remainder: DOMAIN error\(\backslash\)n"}, 24);
+562             \}
+563             errno = EDOM;
+564         \}
+565         \textcolor{keywordflow}{break};
+566     \textcolor{keywordflow}{case} 29:
+567         \textcolor{comment}{/* acosh(x<1) */}
+568         exc.type = DOMAIN;
+569         exc.name = \textcolor{stringliteral}{"acosh"};
+570         exc.retval = \hyperlink{kstandard_8c_a548c77babcdf18ce7b6b96e73fb912cd}{zero}/\hyperlink{kstandard_8c_a548c77babcdf18ce7b6b96e73fb912cd}{zero};
+571         \textcolor{keywordflow}{if} (\_LIB\_VERSION == \_POSIX\_)
+572             errno = EDOM;
+573         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (!\hyperlink{matherr_8c_ae79ea974e2ce3b701e2c122c394c260f}{matherr}(&exc)) \{
+574             \textcolor{keywordflow}{if} (\_LIB\_VERSION == \_SVID\_) \{
+575                 (void) \hyperlink{kstandard_8c_ab22b8e9deca5d44fd863b5d516cb7e7b}{WRITE2}(\textcolor{stringliteral}{"acosh: DOMAIN error\(\backslash\)n"}, 20);
+576             \}
+577             errno = EDOM;
+578         \}
+579         \textcolor{keywordflow}{break};
+580     \textcolor{keywordflow}{case} 30:
+581         \textcolor{comment}{/* atanh(|x|>1) */}
+582         exc.type = DOMAIN;
+583         exc.name = \textcolor{stringliteral}{"atanh"};
+584         exc.retval = \hyperlink{kstandard_8c_a548c77babcdf18ce7b6b96e73fb912cd}{zero}/\hyperlink{kstandard_8c_a548c77babcdf18ce7b6b96e73fb912cd}{zero};
+585         \textcolor{keywordflow}{if} (\_LIB\_VERSION == \_POSIX\_)
+586             errno = EDOM;
+587         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (!\hyperlink{matherr_8c_ae79ea974e2ce3b701e2c122c394c260f}{matherr}(&exc)) \{
+588             \textcolor{keywordflow}{if} (\_LIB\_VERSION == \_SVID\_) \{
+589                 (void) \hyperlink{kstandard_8c_ab22b8e9deca5d44fd863b5d516cb7e7b}{WRITE2}(\textcolor{stringliteral}{"atanh: DOMAIN error\(\backslash\)n"}, 20);
+590             \}
+591             errno = EDOM;
+592         \}
+593         \textcolor{keywordflow}{break};
+594     \textcolor{keywordflow}{case} 31:
+595         \textcolor{comment}{/* atanh(|x|=1) */}
+596         exc.type = SING;
+597         exc.name = \textcolor{stringliteral}{"atanh"};
+598         exc.retval = x/\hyperlink{kstandard_8c_a548c77babcdf18ce7b6b96e73fb912cd}{zero};    \textcolor{comment}{/* sign(x)*inf */}
+599         \textcolor{keywordflow}{if} (\_LIB\_VERSION == \_POSIX\_)
+600             errno = EDOM;
+601         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (!\hyperlink{matherr_8c_ae79ea974e2ce3b701e2c122c394c260f}{matherr}(&exc)) \{
+602             \textcolor{keywordflow}{if} (\_LIB\_VERSION == \_SVID\_) \{
+603                 (void) \hyperlink{kstandard_8c_ab22b8e9deca5d44fd863b5d516cb7e7b}{WRITE2}(\textcolor{stringliteral}{"atanh: SING error\(\backslash\)n"}, 18);
+604             \}
+605             errno = EDOM;
+606         \}
+607         \textcolor{keywordflow}{break};
+608     \textcolor{keywordflow}{case} 32:
+609         \textcolor{comment}{/* scalb overflow; SVID also returns +-HUGE\_VAL */}
+610         exc.type = OVERFLOW;
+611         exc.name = \textcolor{stringliteral}{"scalb"};
+612         exc.retval = x > \hyperlink{kstandard_8c_a548c77babcdf18ce7b6b96e73fb912cd}{zero} ? \hyperlink{kstandard_8c_af2164b2db92d8a0ed3838ad5c28db971}{HUGE\_VAL} : -\hyperlink{kstandard_8c_af2164b2db92d8a0ed3838ad5c28db971}{HUGE\_VAL};
+613         \textcolor{keywordflow}{if} (\_LIB\_VERSION == \_POSIX\_)
+614             errno = ERANGE;
+615         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (!\hyperlink{matherr_8c_ae79ea974e2ce3b701e2c122c394c260f}{matherr}(&exc)) \{
+616             errno = ERANGE;
+617         \}
+618         \textcolor{keywordflow}{break};
+619     \textcolor{keywordflow}{case} 33:
+620         \textcolor{comment}{/* scalb underflow */}
+621         exc.type = UNDERFLOW;
+622         exc.name = \textcolor{stringliteral}{"scalb"};
+623         exc.retval = \hyperlink{math_8h_ad8d1296592a3e783acdd0de21ff58e2e}{copysign}(\hyperlink{kstandard_8c_a548c77babcdf18ce7b6b96e73fb912cd}{zero},x);
+624         \textcolor{keywordflow}{if} (\_LIB\_VERSION == \_POSIX\_)
+625             errno = ERANGE;
+626         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (!\hyperlink{matherr_8c_ae79ea974e2ce3b701e2c122c394c260f}{matherr}(&exc)) \{
+627             errno = ERANGE;
+628         \}
+629         \textcolor{keywordflow}{break};
+630     \textcolor{keywordflow}{case} 34:
+631         \textcolor{comment}{/* j0(|x|>X\_TLOSS) */}
+632         exc.type = TLOSS;
+633         exc.name = \textcolor{stringliteral}{"j0"};
+634         exc.retval = \hyperlink{kstandard_8c_a548c77babcdf18ce7b6b96e73fb912cd}{zero};
+635         \textcolor{keywordflow}{if} (\_LIB\_VERSION == \_POSIX\_)
+636             errno = ERANGE;
+637         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (!\hyperlink{matherr_8c_ae79ea974e2ce3b701e2c122c394c260f}{matherr}(&exc)) \{
+638             \textcolor{keywordflow}{if} (\_LIB\_VERSION == \_SVID\_) \{
+639                 (void) \hyperlink{kstandard_8c_ab22b8e9deca5d44fd863b5d516cb7e7b}{WRITE2}(exc.name, 2);
+640                 (void) \hyperlink{kstandard_8c_ab22b8e9deca5d44fd863b5d516cb7e7b}{WRITE2}(\textcolor{stringliteral}{": TLOSS error\(\backslash\)n"}, 14);
+641             \}
+642             errno = ERANGE;
+643         \}
+644         \textcolor{keywordflow}{break};
+645     \textcolor{keywordflow}{case} 35:
+646         \textcolor{comment}{/* y0(x>X\_TLOSS) */}
+647         exc.type = TLOSS;
+648         exc.name = \textcolor{stringliteral}{"y0"};
+649         exc.retval = \hyperlink{kstandard_8c_a548c77babcdf18ce7b6b96e73fb912cd}{zero};
+650         \textcolor{keywordflow}{if} (\_LIB\_VERSION == \_POSIX\_)
+651             errno = ERANGE;
+652         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (!\hyperlink{matherr_8c_ae79ea974e2ce3b701e2c122c394c260f}{matherr}(&exc)) \{
+653             \textcolor{keywordflow}{if} (\_LIB\_VERSION == \_SVID\_) \{
+654                 (void) \hyperlink{kstandard_8c_ab22b8e9deca5d44fd863b5d516cb7e7b}{WRITE2}(exc.name, 2);
+655                 (void) \hyperlink{kstandard_8c_ab22b8e9deca5d44fd863b5d516cb7e7b}{WRITE2}(\textcolor{stringliteral}{": TLOSS error\(\backslash\)n"}, 14);
+656             \}
+657             errno = ERANGE;
+658         \}
+659         \textcolor{keywordflow}{break};
+660     \textcolor{keywordflow}{case} 36:
+661         \textcolor{comment}{/* j1(|x|>X\_TLOSS) */}
+662         exc.type = TLOSS;
+663         exc.name = \textcolor{stringliteral}{"j1"};
+664         exc.retval = \hyperlink{kstandard_8c_a548c77babcdf18ce7b6b96e73fb912cd}{zero};
+665         \textcolor{keywordflow}{if} (\_LIB\_VERSION == \_POSIX\_)
+666             errno = ERANGE;
+667         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (!\hyperlink{matherr_8c_ae79ea974e2ce3b701e2c122c394c260f}{matherr}(&exc)) \{
+668             \textcolor{keywordflow}{if} (\_LIB\_VERSION == \_SVID\_) \{
+669                 (void) \hyperlink{kstandard_8c_ab22b8e9deca5d44fd863b5d516cb7e7b}{WRITE2}(exc.name, 2);
+670                 (void) \hyperlink{kstandard_8c_ab22b8e9deca5d44fd863b5d516cb7e7b}{WRITE2}(\textcolor{stringliteral}{": TLOSS error\(\backslash\)n"}, 14);
+671             \}
+672             errno = ERANGE;
+673         \}
+674         \textcolor{keywordflow}{break};
+675     \textcolor{keywordflow}{case} 37:
+676         \textcolor{comment}{/* y1(x>X\_TLOSS) */}
+677         exc.type = TLOSS;
+678         exc.name = \textcolor{stringliteral}{"y1"};
+679         exc.retval = \hyperlink{kstandard_8c_a548c77babcdf18ce7b6b96e73fb912cd}{zero};
+680         \textcolor{keywordflow}{if} (\_LIB\_VERSION == \_POSIX\_)
+681             errno = ERANGE;
+682         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (!\hyperlink{matherr_8c_ae79ea974e2ce3b701e2c122c394c260f}{matherr}(&exc)) \{
+683             \textcolor{keywordflow}{if} (\_LIB\_VERSION == \_SVID\_) \{
+684                 (void) \hyperlink{kstandard_8c_ab22b8e9deca5d44fd863b5d516cb7e7b}{WRITE2}(exc.name, 2);
+685                 (void) \hyperlink{kstandard_8c_ab22b8e9deca5d44fd863b5d516cb7e7b}{WRITE2}(\textcolor{stringliteral}{": TLOSS error\(\backslash\)n"}, 14);
+686             \}
+687             errno = ERANGE;
+688         \}
+689         \textcolor{keywordflow}{break};
+690     \textcolor{keywordflow}{case} 38:
+691         \textcolor{comment}{/* jn(|x|>X\_TLOSS) */}
+692         exc.type = TLOSS;
+693         exc.name = \textcolor{stringliteral}{"jn"};
+694         exc.retval = \hyperlink{kstandard_8c_a548c77babcdf18ce7b6b96e73fb912cd}{zero};
+695         \textcolor{keywordflow}{if} (\_LIB\_VERSION == \_POSIX\_)
+696             errno = ERANGE;
+697         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (!\hyperlink{matherr_8c_ae79ea974e2ce3b701e2c122c394c260f}{matherr}(&exc)) \{
+698             \textcolor{keywordflow}{if} (\_LIB\_VERSION == \_SVID\_) \{
+699                 (void) \hyperlink{kstandard_8c_ab22b8e9deca5d44fd863b5d516cb7e7b}{WRITE2}(exc.name, 2);
+700                 (void) \hyperlink{kstandard_8c_ab22b8e9deca5d44fd863b5d516cb7e7b}{WRITE2}(\textcolor{stringliteral}{": TLOSS error\(\backslash\)n"}, 14);
+701             \}
+702             errno = ERANGE;
+703         \}
+704         \textcolor{keywordflow}{break};
+705     \textcolor{keywordflow}{case} 39:
+706         \textcolor{comment}{/* yn(x>X\_TLOSS) */}
+707         exc.type = TLOSS;
+708         exc.name = \textcolor{stringliteral}{"yn"};
+709         exc.retval = \hyperlink{kstandard_8c_a548c77babcdf18ce7b6b96e73fb912cd}{zero};
+710         \textcolor{keywordflow}{if} (\_LIB\_VERSION == \_POSIX\_)
+711             errno = ERANGE;
+712         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (!\hyperlink{matherr_8c_ae79ea974e2ce3b701e2c122c394c260f}{matherr}(&exc)) \{
+713             \textcolor{keywordflow}{if} (\_LIB\_VERSION == \_SVID\_) \{
+714                 (void) \hyperlink{kstandard_8c_ab22b8e9deca5d44fd863b5d516cb7e7b}{WRITE2}(exc.name, 2);
+715                 (void) \hyperlink{kstandard_8c_ab22b8e9deca5d44fd863b5d516cb7e7b}{WRITE2}(\textcolor{stringliteral}{": TLOSS error\(\backslash\)n"}, 14);
+716             \}
+717             errno = ERANGE;
+718         \}
+719         \textcolor{keywordflow}{break};
+720     \textcolor{keywordflow}{case} 40:
+721         \textcolor{comment}{/* gamma(finite) overflow */}
+722         exc.type = OVERFLOW;
+723         exc.name = \textcolor{stringliteral}{"gamma"};
+724         \textcolor{keywordflow}{if} (\_LIB\_VERSION == \_SVID\_)
+725             exc.retval = \hyperlink{cplex_2prim_8h_a5f3d17bf39f78da3422ca52e475d7724}{HUGE};
+726         \textcolor{keywordflow}{else}
+727             exc.retval = \hyperlink{kstandard_8c_af2164b2db92d8a0ed3838ad5c28db971}{HUGE\_VAL};
+728         \textcolor{keywordflow}{if} (\_LIB\_VERSION == \_POSIX\_)
+729             errno = ERANGE;
+730         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (!\hyperlink{matherr_8c_ae79ea974e2ce3b701e2c122c394c260f}{matherr}(&exc)) \{
+731             errno = ERANGE;
+732         \}
+733         \textcolor{keywordflow}{break};
+734     \textcolor{keywordflow}{case} 41:
+735         \textcolor{comment}{/* gamma(-integer) or gamma(0) */}
+736         exc.type = SING;
+737         exc.name = \textcolor{stringliteral}{"gamma"};
+738         \textcolor{keywordflow}{if} (\_LIB\_VERSION == \_SVID\_)
+739             exc.retval = \hyperlink{cplex_2prim_8h_a5f3d17bf39f78da3422ca52e475d7724}{HUGE};
+740         \textcolor{keywordflow}{else}
+741             exc.retval = \hyperlink{kstandard_8c_af2164b2db92d8a0ed3838ad5c28db971}{HUGE\_VAL};
+742         \textcolor{keywordflow}{if} (\_LIB\_VERSION == \_POSIX\_)
+743             errno = EDOM;
+744         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (!\hyperlink{matherr_8c_ae79ea974e2ce3b701e2c122c394c260f}{matherr}(&exc)) \{
+745             \textcolor{keywordflow}{if} (\_LIB\_VERSION == \_SVID\_) \{
+746                 (void) \hyperlink{kstandard_8c_ab22b8e9deca5d44fd863b5d516cb7e7b}{WRITE2}(\textcolor{stringliteral}{"gamma: SING error\(\backslash\)n"}, 18);
+747             \}
+748             errno = EDOM;
+749         \}
+750         \textcolor{keywordflow}{break};
+751     \textcolor{keywordflow}{case} 42:
+752         \textcolor{comment}{/* pow(NaN,0.0) */}
+753         \textcolor{comment}{/* error only if \_LIB\_VERSION == \_SVID\_ & \_XOPEN\_ */}
+754         exc.type = DOMAIN;
+755         exc.name = \textcolor{stringliteral}{"pow"};
+756         exc.retval = x;
+757         \textcolor{keywordflow}{if} (\_LIB\_VERSION == \_IEEE\_ ||
+758                 \_LIB\_VERSION == \_POSIX\_) exc.retval = 1.0;
+759         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (!\hyperlink{matherr_8c_ae79ea974e2ce3b701e2c122c394c260f}{matherr}(&exc)) \{
+760             errno = EDOM;
+761         \}
+762         \textcolor{keywordflow}{break};
+763     \}
+764     \textcolor{keywordflow}{return} exc.retval;
+765 \}
+\end{DoxyCode}
+
+
+\subsection{Variable Documentation}
+\index{kstandard.\+c@{kstandard.\+c}!zero@{zero}}
+\index{zero@{zero}!kstandard.\+c@{kstandard.\+c}}
+\subsubsection[{\texorpdfstring{zero}{zero}}]{\setlength{\rightskip}{0pt plus 5cm}double zero = 0.\+0\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{kstandard_8c_a548c77babcdf18ce7b6b96e73fb912cd}{}\label{kstandard_8c_a548c77babcdf18ce7b6b96e73fb912cd}
+
+
+Definition at line 58 of file kstandard.\+c.
+

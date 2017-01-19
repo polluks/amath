@@ -1,0 +1,191 @@
+.TH "ConsoleBase" 3 "Thu Jan 19 2017" "Version 1.6.0" "amath" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+ConsoleBase \- Abstract base class encapsulating console logic\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <console\&.h>\fP
+.PP
+Inherits \fBThreadBase\fP\&.
+.PP
+Inherited by \fBStandardConsole\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBConsoleBase\fP (const char *\fBprompt\fP)"
+.br
+.ti -1c
+.RI "virtual \fB~ConsoleBase\fP ()"
+.br
+.ti -1c
+.RI "const char * \fBGetName\fP ()"
+.br
+.ti -1c
+.RI "virtual void \fBClear\fP ()"
+.br
+.ti -1c
+.RI "virtual void \fBExit\fP ()=0"
+.br
+.ti -1c
+.RI "virtual void \fBSetPrompt\fP (const char *string)"
+.br
+.ti -1c
+.RI "virtual void \fBWriteString\fP (const char *string)=0"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBStartMessage\fP ()"
+.br
+.ti -1c
+.RI "void \fBPrompt\fP ()"
+.br
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "char * \fBprompt\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Abstract base class encapsulating console logic\&. 
+.PP
+Definition at line 42 of file console\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "ConsoleBase::ConsoleBase (const char * prompt)"
+
+.PP
+Definition at line 32 of file console\&.cpp\&.
+.PP
+References AllocAndCopy(), and prompt\&.
+.PP
+Referenced by StandardConsole::StandardConsole()\&.
+.PP
+.nf
+33 {
+34     AllocAndCopy(&this->prompt, prompt);
+35 }
+.fi
+.SS "ConsoleBase::~ConsoleBase ()\fC [virtual]\fP"
+
+.PP
+Definition at line 37 of file console\&.cpp\&.
+.PP
+References prompt\&.
+.PP
+.nf
+38 {
+39     delete prompt;
+40 }
+.fi
+.SH "Member Function Documentation"
+.PP 
+.SS "void ConsoleBase::Clear ()\fC [virtual]\fP"
+
+.PP
+Definition at line 47 of file console\&.cpp\&.
+.PP
+References WriteString()\&.
+.PP
+Referenced by ClearStatement::Execute()\&.
+.PP
+.nf
+48 {
+49     WriteString(CLEARWINDOW);
+50     WriteString(NORMALTEXT);
+51 }
+.fi
+.SS "virtual void ConsoleBase::Exit ()\fC [pure virtual]\fP"
+
+.PP
+Implemented in \fBStandardConsole\fP\&.
+.PP
+Referenced by StandardProgram::Exit()\&.
+.SS "const char * ConsoleBase::GetName ()\fC [virtual]\fP"
+
+.PP
+Implements \fBThreadBase\fP\&.
+.PP
+Definition at line 42 of file console\&.cpp\&.
+.PP
+.nf
+43 {
+44     return CPROCNAME;
+45 }
+.fi
+.SS "void ConsoleBase::Prompt ()\fC [protected]\fP"
+
+.PP
+Definition at line 59 of file console\&.cpp\&.
+.PP
+References prompt, and WriteString()\&.
+.PP
+Referenced by StandardConsole::Run()\&.
+.PP
+.nf
+60 {
+61     WriteString(NORMALTEXT);
+62     WriteString(prompt);
+63     WriteString(NORMALTEXT);
+64 }
+.fi
+.SS "void ConsoleBase::SetPrompt (const char * string)\fC [virtual]\fP"
+
+.PP
+Reimplemented in \fBStandardConsole\fP\&.
+.PP
+Definition at line 66 of file console\&.cpp\&.
+.PP
+References AllocAndCopy(), and prompt\&.
+.PP
+Referenced by PrefsStatement::Execute(), StandardConsole::SetPrompt(), and Program::SetPrompt()\&.
+.PP
+.nf
+67 {
+68     delete prompt;
+69     AllocAndCopy(&prompt, string);
+70 }
+.fi
+.SS "void ConsoleBase::StartMessage ()\fC [protected]\fP"
+
+.PP
+Definition at line 53 of file console\&.cpp\&.
+.PP
+References WriteString()\&.
+.PP
+Referenced by StandardConsole::Run()\&.
+.PP
+.nf
+54 {
+55     WriteString(INTROMSG);
+56     WriteString(NORMALTEXT);
+57 }
+.fi
+.SS "virtual void ConsoleBase::WriteString (const char * string)\fC [pure virtual]\fP"
+
+.PP
+Implemented in \fBStandardConsole\fP\&.
+.PP
+Referenced by Clear(), Prompt(), and StartMessage()\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "char* ConsoleBase::prompt\fC [private]\fP"
+
+.PP
+Definition at line 57 of file console\&.h\&.
+.PP
+Referenced by ConsoleBase(), Prompt(), SetPrompt(), and ~ConsoleBase()\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for amath from the source code\&.

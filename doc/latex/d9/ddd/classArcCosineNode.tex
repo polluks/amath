@@ -1,0 +1,203 @@
+\hypertarget{classArcCosineNode}{}\section{Arc\+Cosine\+Node Class Reference}
+\label{classArcCosineNode}\index{Arc\+Cosine\+Node@{Arc\+Cosine\+Node}}
+
+
+{\ttfamily \#include $<$functions.\+h$>$}
+
+
+
+Inheritance diagram for Arc\+Cosine\+Node\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=169pt]{d5/de8/classArcCosineNode__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Arc\+Cosine\+Node\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=272pt]{dc/df5/classArcCosineNode__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classArcCosineNode_aa152120e8ec71299525f1e8054a32f04}{Arc\+Cosine\+Node} (\hyperlink{classExpressionNode}{Expression\+Node} $\ast$\hyperlink{classFunctionNode_ad7577b179a1937aaf8a0058bb5b546dc}{expression})
+\item 
+\hyperlink{structNumber}{Number} $\ast$ \hyperlink{classArcCosineNode_a67a999999c34f043bd65778669d5d819}{Evaluate} ()
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{classFunctionNode}{Function\+Node} $\ast$ \hyperlink{classArcCosineNode_a72c4decd858fbf8db24f81581fd693cb}{Create} (\hyperlink{classExpressionNode}{Expression\+Node} $\ast$\hyperlink{classFunctionNode_ad7577b179a1937aaf8a0058bb5b546dc}{expression})
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+char $\ast$ \hyperlink{classArcCosineNode_a9f519aed56ef36e4bf6c1ffbe269a015}{Get\+Node\+Text} ()
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 406 of file functions.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Arc\+Cosine\+Node@{Arc\+Cosine\+Node}!Arc\+Cosine\+Node@{Arc\+Cosine\+Node}}
+\index{Arc\+Cosine\+Node@{Arc\+Cosine\+Node}!Arc\+Cosine\+Node@{Arc\+Cosine\+Node}}
+\subsubsection[{\texorpdfstring{Arc\+Cosine\+Node(\+Expression\+Node $\ast$expression)}{ArcCosineNode(ExpressionNode *expression)}}]{\setlength{\rightskip}{0pt plus 5cm}Arc\+Cosine\+Node\+::\+Arc\+Cosine\+Node (
+\begin{DoxyParamCaption}
+\item[{{\bf Expression\+Node} $\ast$}]{expression}
+\end{DoxyParamCaption}
+)}\hypertarget{classArcCosineNode_aa152120e8ec71299525f1e8054a32f04}{}\label{classArcCosineNode_aa152120e8ec71299525f1e8054a32f04}
+
+
+Definition at line 881 of file functions.\+cpp.
+
+
+
+References Function\+Node\+::\+Function\+Node().
+
+
+
+Referenced by Create().
+
+
+\begin{DoxyCode}
+881                                                        :
+882     \hyperlink{classFunctionNode_a41cb7db0162ffbec0902bd8ff7ea435f}{FunctionNode}(expression) \{ \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d9/ddd/classArcCosineNode_aa152120e8ec71299525f1e8054a32f04_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d9/ddd/classArcCosineNode_aa152120e8ec71299525f1e8054a32f04_icgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Member Function Documentation}
+\index{Arc\+Cosine\+Node@{Arc\+Cosine\+Node}!Create@{Create}}
+\index{Create@{Create}!Arc\+Cosine\+Node@{Arc\+Cosine\+Node}}
+\subsubsection[{\texorpdfstring{Create(\+Expression\+Node $\ast$expression)}{Create(ExpressionNode *expression)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Function\+Node} $\ast$ Arc\+Cosine\+Node\+::\+Create (
+\begin{DoxyParamCaption}
+\item[{{\bf Expression\+Node} $\ast$}]{expression}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{classArcCosineNode_a72c4decd858fbf8db24f81581fd693cb}{}\label{classArcCosineNode_a72c4decd858fbf8db24f81581fd693cb}
+
+
+Definition at line 884 of file functions.\+cpp.
+
+
+
+References Arc\+Cosine\+Node().
+
+
+\begin{DoxyCode}
+885 \{
+886     \textcolor{keywordflow}{return} \textcolor{keyword}{new} \hyperlink{classArcCosineNode_aa152120e8ec71299525f1e8054a32f04}{ArcCosineNode}(expression);
+887 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d9/ddd/classArcCosineNode_a72c4decd858fbf8db24f81581fd693cb_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{Arc\+Cosine\+Node@{Arc\+Cosine\+Node}!Evaluate@{Evaluate}}
+\index{Evaluate@{Evaluate}!Arc\+Cosine\+Node@{Arc\+Cosine\+Node}}
+\subsubsection[{\texorpdfstring{Evaluate()}{Evaluate()}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Number} $\ast$ Arc\+Cosine\+Node\+::\+Evaluate (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{classArcCosineNode_a67a999999c34f043bd65778669d5d819}{}\label{classArcCosineNode_a67a999999c34f043bd65778669d5d819}
+
+
+Implements \hyperlink{classExpressionNode_a64975d4dc37742228bd522f6204537f7}{Expression\+Node}.
+
+
+
+Definition at line 889 of file functions.\+cpp.
+
+
+
+References Number\+::\+Arc\+Cosine(), Expression\+Node\+::\+Evaluate(), Function\+Node\+::expression, and Expression\+Node\+::result.
+
+
+\begin{DoxyCode}
+890 \{
+891     \hyperlink{classExpressionNode_a1f590649f5a5cb30eb7ee912f7bc1262}{result} = \hyperlink{classFunctionNode_ad7577b179a1937aaf8a0058bb5b546dc}{expression}->\hyperlink{classExpressionNode_a64975d4dc37742228bd522f6204537f7}{Evaluate}()->\hyperlink{structNumber_a0056c25bf82bef6565963740ebab7517}{ArcCosine}();
+892     \textcolor{keywordflow}{return} \hyperlink{classExpressionNode_a1f590649f5a5cb30eb7ee912f7bc1262}{result};
+893 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d9/ddd/classArcCosineNode_a67a999999c34f043bd65778669d5d819_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{Arc\+Cosine\+Node@{Arc\+Cosine\+Node}!Get\+Node\+Text@{Get\+Node\+Text}}
+\index{Get\+Node\+Text@{Get\+Node\+Text}!Arc\+Cosine\+Node@{Arc\+Cosine\+Node}}
+\subsubsection[{\texorpdfstring{Get\+Node\+Text()}{GetNodeText()}}]{\setlength{\rightskip}{0pt plus 5cm}char $\ast$ Arc\+Cosine\+Node\+::\+Get\+Node\+Text (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}\hypertarget{classArcCosineNode_a9f519aed56ef36e4bf6c1ffbe269a015}{}\label{classArcCosineNode_a9f519aed56ef36e4bf6c1ffbe269a015}
+
+
+Implements \hyperlink{classExpressionNode_a42a5e9562b0f645a19dcc83f698069b5}{Expression\+Node}.
+
+
+
+Definition at line 895 of file functions.\+cpp.
+
+
+\begin{DoxyCode}
+896 \{
+897     \textcolor{keywordflow}{return} (\textcolor{keywordtype}{char}*)\textcolor{stringliteral}{"acos"};
+898 \}
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+app/main/\hyperlink{functions_8h}{functions.\+h}\item 
+app/main/\hyperlink{functions_8cpp}{functions.\+cpp}\end{DoxyCompactItemize}

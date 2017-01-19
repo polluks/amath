@@ -1,0 +1,65 @@
+.TH "ListFunctionsStatement" 3 "Thu Jan 19 2017" "Version 1.6.0" "amath" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+ListFunctionsStatement \- A syntax node able to list all user defined functions\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <functions\&.h>\fP
+.PP
+Inherits \fBStatementNode\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBListFunctionsStatement\fP ()"
+.br
+.ti -1c
+.RI "char * \fBExecute\fP ()"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Detailed Description"
+.PP 
+A syntax node able to list all user defined functions\&. 
+.PP
+Definition at line 137 of file functions\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "ListFunctionsStatement::ListFunctionsStatement ()"
+
+.PP
+Definition at line 479 of file functions\&.cpp\&.
+.PP
+References StatementNode::StatementNode()\&.
+.PP
+Referenced by Parser::ParseStatement()\&.
+.PP
+.nf
+479                                                :
+480     StatementNode() { }
+.fi
+.SH "Member Function Documentation"
+.PP 
+.SS "char * ListFunctionsStatement::Execute ()\fC [virtual]\fP"
+
+.PP
+Implements \fBStatementNode\fP\&.
+.PP
+Definition at line 482 of file functions\&.cpp\&.
+.PP
+References Program::Functions, and FunctionList::List()\&.
+.PP
+.nf
+483 {
+484     return Program->Functions->List();
+485 }
+.fi
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for amath from the source code\&.

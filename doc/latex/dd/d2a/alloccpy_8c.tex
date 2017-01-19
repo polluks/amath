@@ -1,0 +1,79 @@
+\hypertarget{alloccpy_8c}{}\section{lib/clib/alloccpy.c File Reference}
+\label{alloccpy_8c}\index{lib/clib/alloccpy.\+c@{lib/clib/alloccpy.\+c}}
+{\ttfamily \#include \char`\"{}mem.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}clib.\+h\char`\"{}}\\*
+Include dependency graph for alloccpy.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=188pt]{d2/d65/alloccpy_8c__incl}
+\end{center}
+\end{figure}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+unsigned int \hyperlink{alloccpy_8c_a5bed05c70cb17e541fee570b5dc32e1a}{Alloc\+And\+Copy} (char $\ast$$\ast$destination, const char $\ast$source)
+\begin{DoxyCompactList}\small\item\em Allocate memory and copy a string into the array. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\index{alloccpy.\+c@{alloccpy.\+c}!Alloc\+And\+Copy@{Alloc\+And\+Copy}}
+\index{Alloc\+And\+Copy@{Alloc\+And\+Copy}!alloccpy.\+c@{alloccpy.\+c}}
+\subsubsection[{\texorpdfstring{Alloc\+And\+Copy(char $\ast$$\ast$destination, const char $\ast$source)}{AllocAndCopy(char **destination, const char *source)}}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int Alloc\+And\+Copy (
+\begin{DoxyParamCaption}
+\item[{char $\ast$$\ast$}]{destination, }
+\item[{const char $\ast$}]{source}
+\end{DoxyParamCaption}
+)}\hypertarget{alloccpy_8c_a5bed05c70cb17e541fee570b5dc32e1a}{}\label{alloccpy_8c_a5bed05c70cb17e541fee570b5dc32e1a}
+
+
+Allocate memory and copy a string into the array. 
+
+
+
+Definition at line 34 of file alloccpy.\+c.
+
+
+
+Referenced by Ansi\+Conole\+Engine\+::\+Ansi\+Conole\+Engine(), Char\+Buffer\+::\+Clear\+And\+Copy(), Console\+Base\+::\+Console\+Base(), Ansi\+Conole\+Engine\+::\+Copy\+Line(), Delete\+Statement\+::\+Delete\+Statement(), Draw\+Statement\+::\+Draw\+Statement(), Error\+Node\+::\+Error\+Node(), Execute\+Statement\+::\+Execute\+Statement(), Help\+Statement\+::\+Help\+Statement(), Lexer\+::\+Lexer(), List\+Statement\+::\+List\+Statement(), Standard\+Language\+::\+Load\+Catalog(), Load\+Statement\+::\+Load\+Statement(), Plot\+Statement\+::\+Plot\+Statement(), Prompt\+Statement\+::\+Prompt\+Statement(), Save\+Statement\+::\+Save\+Statement(), Preferences\+Base\+::\+Set\+Defaults(), Preferences\+Base\+::\+Set\+Prompt(), Console\+Base\+::\+Set\+Prompt(), Ansi\+Conole\+Engine\+::\+Set\+Prompt(), Ansi\+Conole\+Engine\+::\+Show\+Last(), Show\+Statement\+::\+Show\+Statement(), Token\+::\+Token(), User\+Function\+::\+User\+Function(), and Variable\+::\+Variable().
+
+
+\begin{DoxyCode}
+35 \{
+36     \textcolor{keywordtype}{char} *i, *s, *d;
+37     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} n, size;
+38 
+39     \textcolor{keywordflow}{if} (source == \hyperlink{platform_8h_a46ff2bfbf0d44b8466a2251d5bd5e6f8}{NOMEM}) \{
+40         *destination = \hyperlink{platform_8h_a46ff2bfbf0d44b8466a2251d5bd5e6f8}{NOMEM};
+41         \textcolor{keywordflow}{return} 0;
+42     \}
+43 
+44     i = (\textcolor{keywordtype}{char}*)source;
+45     s = (\textcolor{keywordtype}{char}*)source;
+46     \textcolor{keywordflow}{while} (*i)
+47         i++;
+48 
+49     n = i - s + 1;
+50     size = n;
+51     *destination = \hyperlink{mem_8h_ad19db35dcf54d18c2a8958f1cca6b299}{AllocMemSafe}(size);
+52     d = *destination;
+53 
+54     \textcolor{keywordflow}{while} (n--)
+55         *d++ = *s++;
+56 
+57     \textcolor{keywordflow}{return} size;
+58 \}
+\end{DoxyCode}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dd/d2a/alloccpy_8c_a5bed05c70cb17e541fee570b5dc32e1a_icgraph}
+\end{center}
+\end{figure}
+
+

@@ -1,0 +1,4 @@
+<map id="ConsoleBase" name="ConsoleBase">
+<area shape="rect" id="node3" href="$d5/d48/classStandardConsole.html" title="Encapsulates the IO of a console using Standard C and termios. " alt="" coords="5,155,128,181"/>
+<area shape="rect" id="node2" href="$da/d67/classThreadBase.html" title="Abstract base class encapsulating runable component. " alt="" coords="21,5,113,32"/>
+</map>

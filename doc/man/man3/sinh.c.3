@@ -1,0 +1,147 @@
+.TH "lib/real/sinh.c" 3 "Thu Jan 19 2017" "Version 1.6.0" "amath" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+lib/real/sinh.c \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'prim\&.h'\fP
+.br
+\fC#include 'math\&.h'\fP
+.br
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "double \fBsinh\fP (double x)"
+.br
+.RI "\fIHyperbolic sine function\&. \fP"
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "static const double \fBone\fP = 1\&.0"
+.br
+.ti -1c
+.RI "static const double \fBshuge\fP = 1\&.0e307"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "double sinh (double x)"
+
+.PP
+Hyperbolic sine function\&. 
+.PP
+\fBVersion:\fP
+.RS 4
+1\&.3 
+.RE
+.PP
+\fBDate:\fP
+.RS 4
+95/01/18
+.RE
+.PP
+.PP
+.nf
+
+Method :
+mathematically sinh(x) if defined to be (exp(x)-exp(-x))/2
+ 1\&. Replace x by |x| (sinh(-x) = -sinh(x))\&.
+ 2\&.
+                                        E + E/(E+1)
+     0        <= x <= 22     :  sinh(x) := --------------, E=expm1(x)
+                                2
+.fi
+.PP
+.PP
+.PP
+.nf
+     22       <= x <= lnovft :  sinh(x) := exp(x)/2
+     lnovft   <= x <= ln2ovft:  sinh(x) := exp(x/2)/2 * exp(x/2)
+     ln2ovft  <  x      :  sinh(x) := x*shuge (overflow)
+.fi
+.PP
+.PP
+.PP
+.nf
+Special cases:
+ sinh(x) is |x| if x is +INF, -INF, or NaN\&.
+ only sinh(0)=0 is exact for finite x\&.
+.fi
+.PP
+ 
+.PP
+\fBCopyright:\fP
+.RS 4
+Copyright (C) 1993 by Sun Microsystems, Inc\&. All rights reserved\&.  Developed at SunSoft, a Sun Microsystems, Inc\&. business\&. Permission to use, copy, modify, and distribute this software is freely granted, provided that this notice is preserved\&. 
+.RE
+.PP
+
+.PP
+Definition at line 81 of file sinh\&.c\&.
+.PP
+References exp(), expm1(), one, and shuge\&.
+.PP
+Referenced by cchsh(), ccot(), ccoth(), ccsc(), ccsch(), csec(), csech(), ctan(), ctanh(), RealNumber::HypCosecant(), and RealNumber::HypSine()\&.
+.PP
+.nf
+82 {
+83     double t,w,h;
+84     sword ix,jx;
+85     uword lx;
+86 
+87     /* High word of |x|\&. */
+88     GET_HIGH_WORD(jx,x);
+89     ix = jx&0x7fffffff;
+90 
+91     /* x is INF or NaN */
+92     if(ix>=0x7ff00000) return x+x;
+93 
+94     h = 0\&.5;
+95     if (jx<0) h = -h;
+96     /* |x| in [0,22], return sign(x)*0\&.5*(E+E/(E+1))) */
+97     if (ix < 0x40360000) {      /* |x|<22 */
+98         if (ix<0x3e300000)      /* |x|<2**-28 */
+99             if(shuge+x>one) return x;/* sinh(tiny) = tiny with inexact */
+100         t = expm1(fabs(x));
+101         if(ix<0x3ff00000) return h*(2\&.0*t-t*t/(t+one));
+102         return h*(t+t/(t+one));
+103     }
+104 
+105     /* |x| in [22, log(maxdouble)] return 0\&.5*exp(|x|) */
+106     if (ix < 0x40862E42)  return h*exp(fabs(x));
+107 
+108     /* |x| in [log(maxdouble), overflowthresold] */
+109     lx = *( (((*(uword*)&one)>>29)) + (uword*)&x);
+110     if (ix<0x408633CE || ((ix==0x408633ce)&&(lx<=(uword)0x8fb9f87d))) {
+111         w = exp(0\&.5*fabs(x));
+112         t = h*w;
+113         return t*w;
+114     }
+115 
+116     /* |x| > overflowthresold, sinh(x) overflow */
+117     return x*shuge;
+118 }
+.fi
+.SH "Variable Documentation"
+.PP 
+.SS "const double one = 1\&.0\fC [static]\fP"
+
+.PP
+Definition at line 51 of file sinh\&.c\&.
+.PP
+Referenced by sinh()\&.
+.SS "const double shuge = 1\&.0e307\fC [static]\fP"
+
+.PP
+Definition at line 51 of file sinh\&.c\&.
+.PP
+Referenced by sinh()\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for amath from the source code\&.

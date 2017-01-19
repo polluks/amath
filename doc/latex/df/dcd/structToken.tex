@@ -1,0 +1,437 @@
+\hypertarget{structToken}{}\section{Token Struct Reference}
+\label{structToken}\index{Token@{Token}}
+
+
+Tokens are created by the Lexical Analyzer and provides an intermediate state for input consumed by the parser.  
+
+
+
+
+{\ttfamily \#include $<$token.\+h$>$}
+
+
+
+Collaboration diagram for Token\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=164pt]{d3/da0/structToken__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{structToken_a6331b847b4dc8cebe0e0a79c4de63204}{Token} (\hyperlink{structToken}{Token} $\ast$\hyperlink{structToken_a0ea44230386ca31fabb9a4946249d53f}{last}, \hyperlink{lex_8h_a7feef761cd73fac6e25b8bb80d2c4e54}{Symbol} \hyperlink{structToken_aa671eaaae5632c5277e89a090d864820}{symbol}, int \hyperlink{structToken_afc3014d7e8cbd70e58a55bea24fc2544}{pos})
+\item 
+\hyperlink{structToken_a5c78001ebd223017c11e5327667d458a}{Token} (\hyperlink{structToken}{Token} $\ast$\hyperlink{structToken_a0ea44230386ca31fabb9a4946249d53f}{last}, \hyperlink{lex_8h_a7feef761cd73fac6e25b8bb80d2c4e54}{Symbol} \hyperlink{structToken_aa671eaaae5632c5277e89a090d864820}{symbol}, const char $\ast$\hyperlink{structToken_ab2d6b41ba04b1a1e272d7e963303f8db}{text}, int \hyperlink{structToken_afc3014d7e8cbd70e58a55bea24fc2544}{pos})
+\item 
+\hyperlink{structToken_a3d7d59eaac1535df1433357d5d372f84}{$\sim$\+Token} ()
+\item 
+int \hyperlink{structToken_a5f93ea94940a6eeb060507e1da594599}{Get\+Pos} ()
+\item 
+char $\ast$ \hyperlink{structToken_a15f1043de07ce8e452fbf115b85def71}{Get\+Text} ()
+\item 
+\hyperlink{structToken}{Token} $\ast$ \hyperlink{structToken_af5213b25192a01f526143461ab47e6af}{Get\+Last\+Token} ()
+\item 
+\hyperlink{structToken}{Token} $\ast$ \hyperlink{structToken_ac7eb963d5eff544dd48ffc23aa274356}{Get\+Next\+Token} ()
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{lex_8h_a7feef761cd73fac6e25b8bb80d2c4e54}{Symbol} \hyperlink{structToken_aa671eaaae5632c5277e89a090d864820}{symbol}
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{structToken_afc3014d7e8cbd70e58a55bea24fc2544}{pos}
+\item 
+char $\ast$ \hyperlink{structToken_ab2d6b41ba04b1a1e272d7e963303f8db}{text}
+\item 
+\hyperlink{structToken}{Token} $\ast$ \hyperlink{structToken_a0ea44230386ca31fabb9a4946249d53f}{last}
+\item 
+\hyperlink{structToken}{Token} $\ast$ \hyperlink{structToken_a32f24a25af788c192e5b387dc8d67914}{next}
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{structToken_a2e54c4809acbcd06c4bd4f186ad91584}{Lexer}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Tokens are created by the Lexical Analyzer and provides an intermediate state for input consumed by the parser. 
+
+Definition at line 43 of file token.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Token@{Token}!Token@{Token}}
+\index{Token@{Token}!Token@{Token}}
+\subsubsection[{\texorpdfstring{Token(\+Token $\ast$last, Symbol symbol, int pos)}{Token(Token *last, Symbol symbol, int pos)}}]{\setlength{\rightskip}{0pt plus 5cm}Token\+::\+Token (
+\begin{DoxyParamCaption}
+\item[{{\bf Token} $\ast$}]{last, }
+\item[{{\bf Symbol}}]{symbol, }
+\item[{int}]{pos}
+\end{DoxyParamCaption}
+)}\hypertarget{structToken_a6331b847b4dc8cebe0e0a79c4de63204}{}\label{structToken_a6331b847b4dc8cebe0e0a79c4de63204}
+
+
+Definition at line 34 of file token.\+cpp.
+
+
+
+References last, next, pos, symbol, and text.
+
+
+
+Referenced by Lexer\+::\+Get\+Litteral(), Get\+Next\+Token(), Lexer\+::\+Get\+Next\+Token(), and Lexer\+::\+Get\+Operator().
+
+
+\begin{DoxyCode}
+35 \{
+36     this->last = \hyperlink{structToken_a0ea44230386ca31fabb9a4946249d53f}{last};
+37     this->\hyperlink{structToken_aa671eaaae5632c5277e89a090d864820}{symbol} = \hyperlink{structToken_aa671eaaae5632c5277e89a090d864820}{symbol};
+38     this->\hyperlink{structToken_afc3014d7e8cbd70e58a55bea24fc2544}{pos} = \hyperlink{structToken_afc3014d7e8cbd70e58a55bea24fc2544}{pos};
+39     this->\hyperlink{structToken_ab2d6b41ba04b1a1e272d7e963303f8db}{text} = \hyperlink{platform_8h_a46ff2bfbf0d44b8466a2251d5bd5e6f8}{NOMEM};
+40     this->\hyperlink{structToken_a32f24a25af788c192e5b387dc8d67914}{next} = \hyperlink{platform_8h_a46ff2bfbf0d44b8466a2251d5bd5e6f8}{NOMEM};
+41 \}
+\end{DoxyCode}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{df/dcd/structToken_a6331b847b4dc8cebe0e0a79c4de63204_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Token@{Token}!Token@{Token}}
+\index{Token@{Token}!Token@{Token}}
+\subsubsection[{\texorpdfstring{Token(\+Token $\ast$last, Symbol symbol, const char $\ast$text, int pos)}{Token(Token *last, Symbol symbol, const char *text, int pos)}}]{\setlength{\rightskip}{0pt plus 5cm}Token\+::\+Token (
+\begin{DoxyParamCaption}
+\item[{{\bf Token} $\ast$}]{last, }
+\item[{{\bf Symbol}}]{symbol, }
+\item[{const char $\ast$}]{text, }
+\item[{int}]{pos}
+\end{DoxyParamCaption}
+)}\hypertarget{structToken_a5c78001ebd223017c11e5327667d458a}{}\label{structToken_a5c78001ebd223017c11e5327667d458a}
+
+
+Definition at line 43 of file token.\+cpp.
+
+
+
+References Alloc\+And\+Copy(), last, next, pos, symbol, and text.
+
+
+
+Referenced by Lexer\+::\+Get\+Digit\+Value(), Lexer\+::\+Get\+Litteral(), and Lexer\+::\+Get\+Quoted\+Ident().
+
+
+\begin{DoxyCode}
+44 \{
+45     this->last = \hyperlink{structToken_a0ea44230386ca31fabb9a4946249d53f}{last};
+46     this->\hyperlink{structToken_aa671eaaae5632c5277e89a090d864820}{symbol} = \hyperlink{structToken_aa671eaaae5632c5277e89a090d864820}{symbol};
+47     this->\hyperlink{structToken_afc3014d7e8cbd70e58a55bea24fc2544}{pos} = \hyperlink{structToken_afc3014d7e8cbd70e58a55bea24fc2544}{pos};
+48     this->\hyperlink{structToken_a32f24a25af788c192e5b387dc8d67914}{next} = \hyperlink{platform_8h_a46ff2bfbf0d44b8466a2251d5bd5e6f8}{NOMEM};
+49     \hyperlink{clib_8h_a5bed05c70cb17e541fee570b5dc32e1a}{AllocAndCopy}(&this->\hyperlink{structToken_ab2d6b41ba04b1a1e272d7e963303f8db}{text}, \hyperlink{structToken_ab2d6b41ba04b1a1e272d7e963303f8db}{text});
+50 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=272pt]{df/dcd/structToken_a5c78001ebd223017c11e5327667d458a_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{df/dcd/structToken_a5c78001ebd223017c11e5327667d458a_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Token@{Token}!````~Token@{$\sim$\+Token}}
+\index{````~Token@{$\sim$\+Token}!Token@{Token}}
+\subsubsection[{\texorpdfstring{$\sim$\+Token()}{~Token()}}]{\setlength{\rightskip}{0pt plus 5cm}Token\+::$\sim$\+Token (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{structToken_a3d7d59eaac1535df1433357d5d372f84}{}\label{structToken_a3d7d59eaac1535df1433357d5d372f84}
+
+
+Definition at line 52 of file token.\+cpp.
+
+
+
+References next, and text.
+
+
+\begin{DoxyCode}
+53 \{
+54     \textcolor{keywordflow}{if} (\hyperlink{structToken_ab2d6b41ba04b1a1e272d7e963303f8db}{text} != \hyperlink{platform_8h_a46ff2bfbf0d44b8466a2251d5bd5e6f8}{NOMEM}) \{
+55         \textcolor{keyword}{delete} [] \hyperlink{structToken_ab2d6b41ba04b1a1e272d7e963303f8db}{text};
+56     \}
+57 
+58     \textcolor{keywordflow}{if} (\hyperlink{structToken_a32f24a25af788c192e5b387dc8d67914}{next} != \hyperlink{platform_8h_a46ff2bfbf0d44b8466a2251d5bd5e6f8}{NOMEM}) \{
+59         \textcolor{keyword}{delete} \hyperlink{structToken_a32f24a25af788c192e5b387dc8d67914}{next};
+60     \}
+61 \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\index{Token@{Token}!Get\+Last\+Token@{Get\+Last\+Token}}
+\index{Get\+Last\+Token@{Get\+Last\+Token}!Token@{Token}}
+\subsubsection[{\texorpdfstring{Get\+Last\+Token()}{GetLastToken()}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Token} $\ast$ Token\+::\+Get\+Last\+Token (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{structToken_af5213b25192a01f526143461ab47e6af}{}\label{structToken_af5213b25192a01f526143461ab47e6af}
+
+
+Definition at line 63 of file token.\+cpp.
+
+
+
+References last.
+
+
+
+Referenced by Parser\+::\+Put\+Token().
+
+
+\begin{DoxyCode}
+64 \{
+65     \textcolor{keywordflow}{return} \hyperlink{structToken_a0ea44230386ca31fabb9a4946249d53f}{last};
+66 \}
+\end{DoxyCode}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{df/dcd/structToken_af5213b25192a01f526143461ab47e6af_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Token@{Token}!Get\+Next\+Token@{Get\+Next\+Token}}
+\index{Get\+Next\+Token@{Get\+Next\+Token}!Token@{Token}}
+\subsubsection[{\texorpdfstring{Get\+Next\+Token()}{GetNextToken()}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Token} $\ast$ Token\+::\+Get\+Next\+Token (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{structToken_ac7eb963d5eff544dd48ffc23aa274356}{}\label{structToken_ac7eb963d5eff544dd48ffc23aa274356}
+
+
+Definition at line 68 of file token.\+cpp.
+
+
+
+References next, pos, symend, and Token().
+
+
+
+Referenced by Parser\+::\+Get\+Token().
+
+
+\begin{DoxyCode}
+69 \{
+70     \textcolor{comment}{// Always return a token if requested}
+71     \textcolor{keywordflow}{if} (\hyperlink{structToken_a32f24a25af788c192e5b387dc8d67914}{next} == \hyperlink{platform_8h_a46ff2bfbf0d44b8466a2251d5bd5e6f8}{NOMEM}) \{
+72         \hyperlink{structToken_a32f24a25af788c192e5b387dc8d67914}{next} = \textcolor{keyword}{new} \hyperlink{structToken_a6331b847b4dc8cebe0e0a79c4de63204}{Token}(\textcolor{keyword}{this}, \hyperlink{lex_8h_a7feef761cd73fac6e25b8bb80d2c4e54a9be8426421896b360944c1313abeffdb}{symend}, \hyperlink{structToken_afc3014d7e8cbd70e58a55bea24fc2544}{pos});
+73     \}
+74 
+75     \textcolor{keywordflow}{return} \hyperlink{structToken_a32f24a25af788c192e5b387dc8d67914}{next};
+76 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=306pt]{df/dcd/structToken_ac7eb963d5eff544dd48ffc23aa274356_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{df/dcd/structToken_ac7eb963d5eff544dd48ffc23aa274356_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Token@{Token}!Get\+Pos@{Get\+Pos}}
+\index{Get\+Pos@{Get\+Pos}!Token@{Token}}
+\subsubsection[{\texorpdfstring{Get\+Pos()}{GetPos()}}]{\setlength{\rightskip}{0pt plus 5cm}int Token\+::\+Get\+Pos (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{structToken_a5f93ea94940a6eeb060507e1da594599}{}\label{structToken_a5f93ea94940a6eeb060507e1da594599}
+
+
+Definition at line 83 of file token.\+cpp.
+
+
+
+References pos.
+
+
+
+Referenced by Parser\+::\+Expect(), Parser\+::\+Parse(), Parser\+::\+Parse\+Atomic(), Parser\+::\+Parse\+Delete\+Statement(), Parser\+::\+Parse\+Digist\+Statement(), Parser\+::\+Parse\+File\+Statement(), Parser\+::\+Parse\+Function\+Def(), Parser\+::\+Parse\+Ident(), Parser\+::\+Parse\+List\+Statement(), and Parser\+::\+Parse\+Numeral\+Statement().
+
+
+\begin{DoxyCode}
+84 \{
+85     \textcolor{keywordflow}{return} \hyperlink{structToken_afc3014d7e8cbd70e58a55bea24fc2544}{pos};
+86 \}
+\end{DoxyCode}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{df/dcd/structToken_a5f93ea94940a6eeb060507e1da594599_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Token@{Token}!Get\+Text@{Get\+Text}}
+\index{Get\+Text@{Get\+Text}!Token@{Token}}
+\subsubsection[{\texorpdfstring{Get\+Text()}{GetText()}}]{\setlength{\rightskip}{0pt plus 5cm}char $\ast$ Token\+::\+Get\+Text (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{structToken_a15f1043de07ce8e452fbf115b85def71}{}\label{structToken_a15f1043de07ce8e452fbf115b85def71}
+
+
+Definition at line 78 of file token.\+cpp.
+
+
+
+References text.
+
+
+
+Referenced by Parser\+::\+Parse\+Delete\+Statement(), Parser\+::\+Parse\+Digist\+Statement(), Parser\+::\+Parse\+Draw\+Statement(), Parser\+::\+Parse\+File\+Statement(), Parser\+::\+Parse\+Function\+Def(), Parser\+::\+Parse\+Help\+Statement(), Parser\+::\+Parse\+Ident(), Parser\+::\+Parse\+List\+Statement(), Parser\+::\+Parse\+Number(), Parser\+::\+Parse\+Numeral\+Statement(), and Parser\+::\+Parse\+Prompt\+Statement().
+
+
+\begin{DoxyCode}
+79 \{
+80     \textcolor{keywordflow}{return} \hyperlink{structToken_ab2d6b41ba04b1a1e272d7e963303f8db}{text};
+81 \}
+\end{DoxyCode}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{df/dcd/structToken_a15f1043de07ce8e452fbf115b85def71_icgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Friends And Related Function Documentation}
+\index{Token@{Token}!Lexer@{Lexer}}
+\index{Lexer@{Lexer}!Token@{Token}}
+\subsubsection[{\texorpdfstring{Lexer}{Lexer}}]{\setlength{\rightskip}{0pt plus 5cm}friend class {\bf Lexer}\hspace{0.3cm}{\ttfamily [friend]}}\hypertarget{structToken_a2e54c4809acbcd06c4bd4f186ad91584}{}\label{structToken_a2e54c4809acbcd06c4bd4f186ad91584}
+
+
+Definition at line 60 of file token.\+h.
+
+
+
+\subsection{Member Data Documentation}
+\index{Token@{Token}!last@{last}}
+\index{last@{last}!Token@{Token}}
+\subsubsection[{\texorpdfstring{last}{last}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Token}$\ast$ Token\+::last\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{structToken_a0ea44230386ca31fabb9a4946249d53f}{}\label{structToken_a0ea44230386ca31fabb9a4946249d53f}
+
+
+Definition at line 58 of file token.\+h.
+
+
+
+Referenced by Get\+Last\+Token(), and Token().
+
+\index{Token@{Token}!next@{next}}
+\index{next@{next}!Token@{Token}}
+\subsubsection[{\texorpdfstring{next}{next}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Token}$\ast$ Token\+::next\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{structToken_a32f24a25af788c192e5b387dc8d67914}{}\label{structToken_a32f24a25af788c192e5b387dc8d67914}
+
+
+Definition at line 59 of file token.\+h.
+
+
+
+Referenced by Get\+Next\+Token(), Token(), Lexer\+::\+Tokenize(), and $\sim$\+Token().
+
+\index{Token@{Token}!pos@{pos}}
+\index{pos@{pos}!Token@{Token}}
+\subsubsection[{\texorpdfstring{pos}{pos}}]{\setlength{\rightskip}{0pt plus 5cm}int Token\+::pos\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{structToken_afc3014d7e8cbd70e58a55bea24fc2544}{}\label{structToken_afc3014d7e8cbd70e58a55bea24fc2544}
+
+
+Definition at line 56 of file token.\+h.
+
+
+
+Referenced by Get\+Next\+Token(), Get\+Pos(), and Token().
+
+\index{Token@{Token}!symbol@{symbol}}
+\index{symbol@{symbol}!Token@{Token}}
+\subsubsection[{\texorpdfstring{symbol}{symbol}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Symbol} Token\+::symbol}\hypertarget{structToken_aa671eaaae5632c5277e89a090d864820}{}\label{structToken_aa671eaaae5632c5277e89a090d864820}
+
+
+Definition at line 49 of file token.\+h.
+
+
+
+Referenced by Parser\+::\+Expect(), Parser\+::\+Parse(), Parser\+::\+Parse\+Add\+Substract(), Parser\+::\+Parse\+Atomic(), Parser\+::\+Parse\+Delete\+Statement(), Parser\+::\+Parse\+Digist\+Statement(), Parser\+::\+Parse\+Draw\+Statement(), Parser\+::\+Parse\+Factor(), Parser\+::\+Parse\+File\+Statement(), Parser\+::\+Parse\+Help\+Statement(), Parser\+::\+Parse\+Ident(), Parser\+::\+Parse\+List\+Statement(), Parser\+::\+Parse\+Number(), Parser\+::\+Parse\+Numeral\+Statement(), Parser\+::\+Parse\+Power(), Parser\+::\+Parse\+Prefs\+Statement(), Parser\+::\+Parse\+Prompt\+Statement(), Parser\+::\+Parse\+Statement(), Parser\+::\+Parse\+Unary(), Token(), Lexer\+::\+Tokenize(), and Parser\+::\+Try\+Parse\+Statement().
+
+\index{Token@{Token}!text@{text}}
+\index{text@{text}!Token@{Token}}
+\subsubsection[{\texorpdfstring{text}{text}}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ Token\+::text\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{structToken_ab2d6b41ba04b1a1e272d7e963303f8db}{}\label{structToken_ab2d6b41ba04b1a1e272d7e963303f8db}
+
+
+Definition at line 57 of file token.\+h.
+
+
+
+Referenced by Get\+Text(), Token(), and $\sim$\+Token().
+
+
+
+The documentation for this struct was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+app/main/\hyperlink{token_8h}{token.\+h}\item 
+app/main/\hyperlink{token_8cpp}{token.\+cpp}\end{DoxyCompactItemize}

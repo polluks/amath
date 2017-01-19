@@ -1,0 +1,9 @@
+<map id="ComplexNumber::Trunc" name="ComplexNumber::Trunc">
+<area shape="rect" id="node2" href="$db/d8e/structComplexNumber.html#a0d89581ead93385331befcef51698693" title="ComplexNumber::ComplexNumber" alt="" coords="215,31,441,57"/>
+<area shape="rect" id="node4" href="$d9/dcc/prim_8c.html#aa760bac9acf6c215294e10188f3c9eb2" title="Truncated value of complex number. " alt="" coords="299,107,357,133"/>
+<area shape="rect" id="node3" href="$da/de2/structNumber.html#afd3c2f9b4b288e339f741a6e4ae54593" title="Number::Number" alt="" coords="489,5,612,32"/>
+<area shape="rect" id="node5" href="$d9/dcc/prim_8c.html#aa1fe0b9371befabef6c41ba73470774a" title="Imaginary part of complex number. " alt="" coords="522,56,579,83"/>
+<area shape="rect" id="node6" href="$d9/dcc/prim_8c.html#a980e6e049f7902b05fc9eb5614b07a5c" title="Pack two real numbers into a complex number. " alt="" coords="522,107,579,133"/>
+<area shape="rect" id="node7" href="$d9/dcc/prim_8c.html#a4a236b24c0197821e3489a35a72079ab" title="Real part of complex number. " alt="" coords="525,157,576,184"/>
+<area shape="rect" id="node8" href="$db/dc6/trunc_8c.html#a82a151adfde56b28fa8a50355c4f2ff6" title="trunc" alt="" coords="525,208,576,235"/>
+</map>

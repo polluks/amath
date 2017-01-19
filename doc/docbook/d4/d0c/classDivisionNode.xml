@@ -1,0 +1,83 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="d4/d0c/classDivisionNode">
+<title>DivisionNode class Reference</title>
+<para>
+    <programlisting>#include <link linkend="d7/d79/operators_8h">&lt;operators.h&gt;</link></programlisting>
+</para>
+<para>Inheritance diagram for DivisionNode</para>
+<para>
+    <figure>
+        <title>Inheritance graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="../../db/d42/classDivisionNode__inherit__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+<para>Collaboration diagram for DivisionNode</para>
+<para>
+    <figure>
+        <title>Collaboration graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="../../da/d33/classDivisionNode__coll__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d4/d0c/classDivisionNode_1a39951420a0f89eb5622ec55f99626c19">DivisionNode</link> (
+<link linkend="dd/d06/classExpressionNode">ExpressionNode</link> * left, <link linkend="dd/d06/classExpressionNode">ExpressionNode</link> * right)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="d4/d0c/classDivisionNode_1a53b70bccd31289a360cf046b90481941">GetPrecedence</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="da/de2/structNumber">Number</link> * <link linkend="d4/d0c/classDivisionNode_1aacd5e91fefdd7b6147c4ad02e951130e">Evaluate</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>char * <link linkend="d4/d0c/classDivisionNode_1a491761e800400517048d882d6338274f">GetNodeText</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+            <section xml:id="d4/d0c/classDivisionNode_1a39951420a0f89eb5622ec55f99626c19">
+                <title>DivisionNode::DivisionNode (ExpressionNode *left, ExpressionNode *right)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d4/d0c/classDivisionNode_1a53b70bccd31289a360cf046b90481941">
+                <title>int DivisionNode::GetPrecedence ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d4/d0c/classDivisionNode_1aacd5e91fefdd7b6147c4ad02e951130e">
+                <title>Number * DivisionNode::Evaluate ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d4/d0c/classDivisionNode_1a491761e800400517048d882d6338274f">
+                <title>char * DivisionNode::GetNodeText ()</title> <emphasis></emphasis>
+                
+            </section>
+</section>

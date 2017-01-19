@@ -1,0 +1,10 @@
+<map id="app/localize/start.h" name="app/localize/start.h">
+<area shape="rect" id="node2" href="$db/ddf/statements_8cpp.html" title="app/main/statements.cpp" alt="" coords="5,80,175,107"/>
+<area shape="rect" id="node3" href="$d5/d5a/io_8cpp.html" title="app/system/base/io.cpp" alt="" coords="199,80,360,107"/>
+<area shape="rect" id="node4" href="$d9/d03/tags_8h.html" title="app/localize/tags.h" alt="" coords="383,80,514,107"/>
+<area shape="rect" id="node9" href="$dc/d83/window__amiga_8cpp.html" title="app/system/window_amiga.cpp" alt="" coords="538,80,743,107"/>
+<area shape="rect" id="node5" href="$d2/d48/language_8cpp.html" title="app/system/language.cpp" alt="" coords="95,162,266,189"/>
+<area shape="rect" id="node6" href="$db/d9b/language__amiga_8cpp.html" title="app/system/language\l_amiga.cpp" alt="" coords="290,155,437,196"/>
+<area shape="rect" id="node7" href="$dc/d11/language__posix_8cpp.html" title="app/system/language\l_posix.cpp" alt="" coords="461,155,607,196"/>
+<area shape="rect" id="node8" href="$d5/dae/language__stdc_8cpp.html" title="app/system/language\l_stdc.cpp" alt="" coords="631,155,778,196"/>
+</map>

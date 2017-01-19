@@ -1,0 +1,11 @@
+<map id="Optimizer::ReduceUnaryNodes" name="Optimizer::ReduceUnaryNodes">
+<area shape="rect" id="node2" href="$d8/d5d/classSyntaxNode.html#ae57f629a5c5fa0994f036c105396da69" title="SyntaxNode::Detach" alt="" coords="295,5,439,32"/>
+<area shape="rect" id="node3" href="$d4/d9e/classNumericValueNode.html#abdd2e6fd1723488a24a645fec481a971" title="NumericValueNode::Evaluate" alt="" coords="269,56,464,83"/>
+<area shape="rect" id="node4" href="$d8/d5d/classSyntaxNode.html#af1fa46ba30aa4f2affa2d4e96a4be010" title="SyntaxNode::GetNext" alt="" coords="291,107,442,133"/>
+<area shape="rect" id="node5" href="$d8/d5d/classSyntaxNode.html#a4a85fd710ad44edbc5b3ac625c10cd08" title="SyntaxNode::GetParent" alt="" coords="286,157,447,184"/>
+<area shape="rect" id="node6" href="$d8/d5d/classSyntaxNode.html#a5384fc779eee947b5e09bf2adb6cc606" title="SyntaxNode::GetReductionType" alt="" coords="261,208,472,235"/>
+<area shape="rect" id="node7" href="$d8/d5d/classSyntaxNode.html#a2797ff5eb05f3a36ae1be41b70105e05" title="SyntaxNode::Replace" alt="" coords="291,259,442,285"/>
+<area shape="rect" id="node8" href="$d4/d9e/classNumericValueNode.html#ab46507560d70b5e4396f1f5fba5368ec" title="NumericValueNode::ReplaceWith" alt="" coords="257,309,476,336"/>
+<area shape="rect" id="node9" href="$d8/d5d/classSyntaxNode.html#ac51307368fb255aa760b99e137178c89" title="SyntaxNode::ResetIterator" alt="" coords="277,360,456,387"/>
+<area shape="rect" id="node10" href="$da/de2/structNumber.html#a4283e401f772614fc566db78087cf860" title="Number::Unary" alt="" coords="311,411,422,437"/>
+</map>

@@ -1,0 +1,86 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="dd/db4/classHyperbolicSineNode">
+<title>HyperbolicSineNode class Reference</title>
+<para>
+    <programlisting>#include <link linkend="d8/d5c/functions_8h">&lt;functions.h&gt;</link></programlisting>
+</para>
+<para>Inheritance diagram for HyperbolicSineNode</para>
+<para>
+    <figure>
+        <title>Inheritance graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="../../df/dce/classHyperbolicSineNode__inherit__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+<para>Collaboration diagram for HyperbolicSineNode</para>
+<para>
+    <figure>
+        <title>Collaboration graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="../../d8/d86/classHyperbolicSineNode__coll__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="dd/db4/classHyperbolicSineNode_1a3ebf3cd088c7f0d2d4a1a2f4ec7ac0b0">HyperbolicSineNode</link> (
+<link linkend="dd/d06/classExpressionNode">ExpressionNode</link> * expression)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="da/de2/structNumber">Number</link> * <link linkend="dd/db4/classHyperbolicSineNode_1a8f11c6b2d8d793856f17e3a249f20b69">Evaluate</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>static <link linkend="d7/d06/classFunctionNode">FunctionNode</link> * <link linkend="dd/db4/classHyperbolicSineNode_1a32bfb217a9351f882d1a68a76f4d2b94">Create</link> (
+<link linkend="dd/d06/classExpressionNode">ExpressionNode</link> * expression)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>char * <link linkend="dd/db4/classHyperbolicSineNode_1a953eb8445e274935e1e7f646ca444fd8">GetNodeText</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+            <section xml:id="dd/db4/classHyperbolicSineNode_1a3ebf3cd088c7f0d2d4a1a2f4ec7ac0b0">
+                <title>HyperbolicSineNode::HyperbolicSineNode (ExpressionNode *expression)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="dd/db4/classHyperbolicSineNode_1a8f11c6b2d8d793856f17e3a249f20b69">
+                <title>Number * HyperbolicSineNode::Evaluate ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="dd/db4/classHyperbolicSineNode_1a32bfb217a9351f882d1a68a76f4d2b94">
+                <title>FunctionNode * HyperbolicSineNode::Create (ExpressionNode *expression)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="dd/db4/classHyperbolicSineNode_1a953eb8445e274935e1e7f646ca444fd8">
+                <title>char * HyperbolicSineNode::GetNodeText ()</title> <emphasis></emphasis>
+                
+            </section>
+</section>

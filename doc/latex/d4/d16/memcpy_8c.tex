@@ -1,0 +1,159 @@
+\hypertarget{memcpy_8c}{}\section{lib/clib/memcpy.c File Reference}
+\label{memcpy_8c}\index{lib/clib/memcpy.\+c@{lib/clib/memcpy.\+c}}
+{\ttfamily \#include \char`\"{}clib.\+h\char`\"{}}\\*
+Include dependency graph for memcpy.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=176pt]{d8/db4/memcpy_8c__incl}
+\end{center}
+\end{figure}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{memcpy_8c_a74d8274a661a711f2c9e05a7f19eaf0f}{T\+L\+O\+OP}(s)~if (t) \hyperlink{memcpy_8c_a4d81791363bd2fd7e37c9a533be06f59}{T\+L\+O\+O\+P1}(s)
+\item 
+\#define \hyperlink{memcpy_8c_a4d81791363bd2fd7e37c9a533be06f59}{T\+L\+O\+O\+P1}(s)~do \{ s; \} while (-\/-\/t)
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef int \hyperlink{memcpy_8c_aafc9a69535613ac225df2d6195518116}{word}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{memcpy_8c_a09b7e057c69b9ddd4b481fc746997a7d}{Mem\+Copy} (void $\ast$destination, const void $\ast$source, unsigned int length)
+\begin{DoxyCompactList}\small\item\em Copy a block of memory, handling overlap. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\index{memcpy.\+c@{memcpy.\+c}!T\+L\+O\+OP@{T\+L\+O\+OP}}
+\index{T\+L\+O\+OP@{T\+L\+O\+OP}!memcpy.\+c@{memcpy.\+c}}
+\subsubsection[{\texorpdfstring{T\+L\+O\+OP}{TLOOP}}]{\setlength{\rightskip}{0pt plus 5cm}\#define T\+L\+O\+OP(
+\begin{DoxyParamCaption}
+\item[{}]{s}
+\end{DoxyParamCaption}
+)~if (t) {\bf T\+L\+O\+O\+P1}(s)}\hypertarget{memcpy_8c_a74d8274a661a711f2c9e05a7f19eaf0f}{}\label{memcpy_8c_a74d8274a661a711f2c9e05a7f19eaf0f}
+Macros\+: loop-\/t-\/times; and loop-\/t-\/times, t$>$0 
+
+Definition at line 50 of file memcpy.\+c.
+
+\index{memcpy.\+c@{memcpy.\+c}!T\+L\+O\+O\+P1@{T\+L\+O\+O\+P1}}
+\index{T\+L\+O\+O\+P1@{T\+L\+O\+O\+P1}!memcpy.\+c@{memcpy.\+c}}
+\subsubsection[{\texorpdfstring{T\+L\+O\+O\+P1}{TLOOP1}}]{\setlength{\rightskip}{0pt plus 5cm}\#define T\+L\+O\+O\+P1(
+\begin{DoxyParamCaption}
+\item[{}]{s}
+\end{DoxyParamCaption}
+)~do \{ s; \} while (-\/-\/t)}\hypertarget{memcpy_8c_a4d81791363bd2fd7e37c9a533be06f59}{}\label{memcpy_8c_a4d81791363bd2fd7e37c9a533be06f59}
+
+
+Definition at line 51 of file memcpy.\+c.
+
+
+
+\subsection{Typedef Documentation}
+\index{memcpy.\+c@{memcpy.\+c}!word@{word}}
+\index{word@{word}!memcpy.\+c@{memcpy.\+c}}
+\subsubsection[{\texorpdfstring{word}{word}}]{\setlength{\rightskip}{0pt plus 5cm}typedef int {\bf word}}\hypertarget{memcpy_8c_aafc9a69535613ac225df2d6195518116}{}\label{memcpy_8c_aafc9a69535613ac225df2d6195518116}
+sizeof(word) M\+U\+ST BE A P\+O\+W\+ER OF T\+WO SO T\+H\+AT wmask B\+E\+L\+OW IS A\+LL O\+N\+ES 
+
+Definition at line 44 of file memcpy.\+c.
+
+
+
+\subsection{Function Documentation}
+\index{memcpy.\+c@{memcpy.\+c}!Mem\+Copy@{Mem\+Copy}}
+\index{Mem\+Copy@{Mem\+Copy}!memcpy.\+c@{memcpy.\+c}}
+\subsubsection[{\texorpdfstring{Mem\+Copy(void $\ast$destination, const void $\ast$source, unsigned int length)}{MemCopy(void *destination, const void *source, unsigned int length)}}]{\setlength{\rightskip}{0pt plus 5cm}void Mem\+Copy (
+\begin{DoxyParamCaption}
+\item[{void $\ast$}]{destination, }
+\item[{const void $\ast$}]{source, }
+\item[{unsigned int}]{length}
+\end{DoxyParamCaption}
+)}\hypertarget{memcpy_8c_a09b7e057c69b9ddd4b481fc746997a7d}{}\label{memcpy_8c_a09b7e057c69b9ddd4b481fc746997a7d}
+
+
+Copy a block of memory, handling overlap. 
+
+Original file can be found at\+: \href{https://svnweb.freebsd.org/base/release/9.0.0/lib/libc/string/bcopy.c?revision=229286}{\tt https\+://svnweb.\+freebsd.\+org/base/release/9.\+0.\+0/lib/libc/string/bcopy.\+c?revision=229286} 
+
+Definition at line 60 of file memcpy.\+c.
+
+
+
+Referenced by Char\+Buffer\+::\+Ensure\+Size(), Format\+Positional(), Format\+Scientific(), Lexer\+::\+Get\+Digit\+Value(), Lexer\+::\+Get\+Litteral(), Lexer\+::\+Get\+Quoted\+Ident(), Print\+Inf\+Nan(), and Language\+::\+Untag\+Text().
+
+
+\begin{DoxyCode}
+61 \{
+62     \textcolor{keywordtype}{char} *dst = (\textcolor{keywordtype}{char}*) destination;
+63     \textcolor{keyword}{const} \textcolor{keywordtype}{char} *src = (\textcolor{keyword}{const} \textcolor{keywordtype}{char}*) source;
+64     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} t;
+65 
+66     \textcolor{keywordflow}{if} (length == 0 || dst == src) \textcolor{comment}{// nothing to do}
+67         \textcolor{keywordflow}{return};
+68 
+69     \textcolor{keywordflow}{if} ((\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{long})dst < (\textcolor{keywordtype}{unsigned} long)src) \{
+70         \textcolor{comment}{// Copy forward}
+71         t = (\textcolor{keywordtype}{unsigned} long)src; \textcolor{comment}{// only need low bits}
+72         \textcolor{keywordflow}{if} ((t | (\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{long})dst) & \hyperlink{platform_8h_ab5deaef115ff5ca6ef1457d923d8331a}{wmask}) \{
+73 
+74             \textcolor{comment}{// Try to align operands.  This cannot be done unless the low bits match.}
+75             \textcolor{keywordflow}{if} ((t ^ (\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{long})dst) & wmask || length < \hyperlink{platform_8h_a01c6b59ca21f041b23efbb9845cc4e32}{wsize})
+76                 t = length;
+77             \textcolor{keywordflow}{else}
+78                 t = \hyperlink{platform_8h_a01c6b59ca21f041b23efbb9845cc4e32}{wsize} - (t & \hyperlink{platform_8h_ab5deaef115ff5ca6ef1457d923d8331a}{wmask});
+79             length -= t;
+80 
+81             \hyperlink{memcpy_8c_a4d81791363bd2fd7e37c9a533be06f59}{TLOOP1}(*dst++ = *src++);
+82         \}
+83 
+84         \textcolor{comment}{// Copy whole words, then mop up any trailing bytes.}
+85         t = length / \hyperlink{platform_8h_a01c6b59ca21f041b23efbb9845cc4e32}{wsize};
+86         \hyperlink{memcpy_8c_a74d8274a661a711f2c9e05a7f19eaf0f}{TLOOP}(*(\hyperlink{memcpy_8c_aafc9a69535613ac225df2d6195518116}{word} *)dst = *(\hyperlink{memcpy_8c_aafc9a69535613ac225df2d6195518116}{word} *)src; src += \hyperlink{platform_8h_a01c6b59ca21f041b23efbb9845cc4e32}{wsize}; dst += 
+      \hyperlink{platform_8h_a01c6b59ca21f041b23efbb9845cc4e32}{wsize});
+87 
+88         t = length & \hyperlink{platform_8h_ab5deaef115ff5ca6ef1457d923d8331a}{wmask};
+89         \hyperlink{memcpy_8c_a74d8274a661a711f2c9e05a7f19eaf0f}{TLOOP}(*dst++ = *src++);
+90 
+91     \} \textcolor{keywordflow}{else} \{
+92         \textcolor{comment}{// Copy backwards.  Otherwise essentially the same.}
+93         \textcolor{comment}{// Alignment works as before, except that it takes}
+94         \textcolor{comment}{// (t&wmask) bytes to align, not wsize-(t&wmask).}
+95         src += length;
+96         dst += length;
+97         t = (\textcolor{keywordtype}{unsigned} long)src;
+98         \textcolor{keywordflow}{if} ((t | (\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{long})dst) & \hyperlink{platform_8h_ab5deaef115ff5ca6ef1457d923d8331a}{wmask}) \{
+99 
+100             \textcolor{keywordflow}{if} ((t ^ (\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{long})dst) & wmask || length <= \hyperlink{platform_8h_a01c6b59ca21f041b23efbb9845cc4e32}{wsize})
+101                 t = length;
+102             \textcolor{keywordflow}{else}
+103                 t &= \hyperlink{platform_8h_ab5deaef115ff5ca6ef1457d923d8331a}{wmask};
+104             length -= t;
+105 
+106             \hyperlink{memcpy_8c_a4d81791363bd2fd7e37c9a533be06f59}{TLOOP1}(*--dst = *--src);
+107         \}
+108 
+109         t = length / \hyperlink{platform_8h_a01c6b59ca21f041b23efbb9845cc4e32}{wsize};
+110         \hyperlink{memcpy_8c_a74d8274a661a711f2c9e05a7f19eaf0f}{TLOOP}(src -= \hyperlink{platform_8h_a01c6b59ca21f041b23efbb9845cc4e32}{wsize}; dst -= \hyperlink{platform_8h_a01c6b59ca21f041b23efbb9845cc4e32}{wsize}; *(\hyperlink{memcpy_8c_aafc9a69535613ac225df2d6195518116}{word} *)dst = *(
+      \hyperlink{memcpy_8c_aafc9a69535613ac225df2d6195518116}{word} *)src);
+111 
+112         t = length & \hyperlink{platform_8h_ab5deaef115ff5ca6ef1457d923d8331a}{wmask};
+113         \hyperlink{memcpy_8c_a74d8274a661a711f2c9e05a7f19eaf0f}{TLOOP}(*--dst = *--src);
+114     \}
+115 \}
+\end{DoxyCode}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d4/d16/memcpy_8c_a09b7e057c69b9ddd4b481fc746997a7d_icgraph}
+\end{center}
+\end{figure}
+
+

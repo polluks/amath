@@ -1,0 +1,52 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="da/dfb/dmath_8h">
+    <title>dmath.h File Reference</title>
+    <programlisting>#include &quot;dstandard.h&quot;</programlisting>
+<para>Include dependency diagram for dmath.h</para>
+<para>
+    <figure>
+        <title>Dependency diagram</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="../../d5/dc5/dmath_8h__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+<para>Included by dependency diagram for dmath.h</para>
+<para>
+    <figure>
+        <title>Dependency diagram</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="../../d5/ddf/dmath_8h__dep__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+        <section>
+            <title>Functions</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="dc/dac/dstandard_8h_1aee96db7e18784e05ed6b0bcaeec3f7f6">tU32</link> <link linkend="da/dfb/dmath_8h_1a835ee0ad31a196742a7a5fd3c21a738b">LogBase2</link> (
+<link linkend="dc/dac/dstandard_8h_1aee96db7e18784e05ed6b0bcaeec3f7f6">tU32</link> val)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="dc/dac/dstandard_8h_1aee96db7e18784e05ed6b0bcaeec3f7f6">tU32</link> <link linkend="da/dfb/dmath_8h_1a360b3d25a9aba33944a7e16f395f5a88">LogBase2</link> (
+<link linkend="dc/dac/dstandard_8h_1a6625ae5505b2f796350b82c7f52fcf43">tU64</link> val)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+    <simplesect>
+        <title>Detailed Description</title>
+
+<para>Math used in the Dragon4 library. </para>
+    <para>Definition in file /home/carsten/amath2/lib/dconv/dmath.h</para>
+    </simplesect>
+</section>

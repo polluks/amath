@@ -1,0 +1,286 @@
+\hypertarget{lex_8h}{}\section{app/localize/lex.h File Reference}
+\label{lex_8h}\index{app/localize/lex.\+h@{app/localize/lex.\+h}}
+
+
+\hyperlink{classLexer}{Lexer} defitions used by other classes.  
+
+
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d9/d6a/lex_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structoperatordef}{operatordef}
+\begin{DoxyCompactList}\small\item\em Character representation of operator tied with its symbol. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{lex_8h_a7feef761cd73fac6e25b8bb80d2c4e54}{Symbol} \{ \\*
+\hyperlink{lex_8h_a7feef761cd73fac6e25b8bb80d2c4e54a62771c2338fc3a6b94498cb4554e7f0b}{symunknown}, 
+\hyperlink{lex_8h_a7feef761cd73fac6e25b8bb80d2c4e54ade7694e5efc9616383548e57122faea5}{symident}, 
+\hyperlink{lex_8h_a7feef761cd73fac6e25b8bb80d2c4e54a9a4f2a8a367485e87d9faf675bec17af}{symqident}, 
+\hyperlink{lex_8h_a7feef761cd73fac6e25b8bb80d2c4e54add691c5ad44197e2c9e9dab9793450a2}{symnumber}, 
+\\*
+\hyperlink{lex_8h_a7feef761cd73fac6e25b8bb80d2c4e54a8b82e1abf6424d09e2381b95f3bd5e00}{symplus}, 
+\hyperlink{lex_8h_a7feef761cd73fac6e25b8bb80d2c4e54ac9d48bb4c6d7713a366e601a9b95c2c4}{symminus}, 
+\hyperlink{lex_8h_a7feef761cd73fac6e25b8bb80d2c4e54a99f46862dfbb8319b675d3c2663eefea}{symtimes}, 
+\hyperlink{lex_8h_a7feef761cd73fac6e25b8bb80d2c4e54abc5175af79bdc99805f433e519b622d5}{symslash}, 
+\\*
+\hyperlink{lex_8h_a7feef761cd73fac6e25b8bb80d2c4e54aebd05906bb437ef93900f895ecf6ea48}{sympower}, 
+\hyperlink{lex_8h_a7feef761cd73fac6e25b8bb80d2c4e54afd88f2e602fee26d5e068bc7920dd67c}{symabsolute}, 
+\hyperlink{lex_8h_a7feef761cd73fac6e25b8bb80d2c4e54a648933f05e3bcba968a27d425933784d}{symassign}, 
+\hyperlink{lex_8h_a7feef761cd73fac6e25b8bb80d2c4e54ad92b5471ad4a0b9fc95faae6ca2172ad}{symlparen}, 
+\\*
+\hyperlink{lex_8h_a7feef761cd73fac6e25b8bb80d2c4e54a59c8837a9f31298813b4703cefbd185e}{symrparen}, 
+\hyperlink{lex_8h_a7feef761cd73fac6e25b8bb80d2c4e54a906ac793aea14ad1c6a0b1e0f83503e2}{symfuncsqrt}, 
+\hyperlink{lex_8h_a7feef761cd73fac6e25b8bb80d2c4e54ae4862520380f7331fb1a72d0e57eb588}{symfunccbrt}, 
+\hyperlink{lex_8h_a7feef761cd73fac6e25b8bb80d2c4e54a190390eb21b826ac23a41f3d281d772a}{symfunclog}, 
+\\*
+\hyperlink{lex_8h_a7feef761cd73fac6e25b8bb80d2c4e54a656796b1eef97d3647cf6eeeb441b857}{symfuncln}, 
+\hyperlink{lex_8h_a7feef761cd73fac6e25b8bb80d2c4e54a178b07efee6cc97ffdf9f2ffba9c0cfb}{symhelp}, 
+\hyperlink{lex_8h_a7feef761cd73fac6e25b8bb80d2c4e54a57c965a74493e9751bca9cc3735b0365}{symeval}, 
+\hyperlink{lex_8h_a7feef761cd73fac6e25b8bb80d2c4e54a732ee6db8a0f3a1517c1355ded11a7cd}{symdelete}, 
+\\*
+\hyperlink{lex_8h_a7feef761cd73fac6e25b8bb80d2c4e54a3cf7435fe7c30b7d95364a822739ee39}{symall}, 
+\hyperlink{lex_8h_a7feef761cd73fac6e25b8bb80d2c4e54aa7e95e65ef9d6c567b57ba276c06cd45}{symclear}, 
+\hyperlink{lex_8h_a7feef761cd73fac6e25b8bb80d2c4e54ab6586f99b429cda6f164b7f38f5f8437}{symdef}, 
+\hyperlink{lex_8h_a7feef761cd73fac6e25b8bb80d2c4e54ae4a4f99672506beee65b40d4ffb0c991}{symexit}, 
+\\*
+\hyperlink{lex_8h_a7feef761cd73fac6e25b8bb80d2c4e54a7869db37b654a0606c42bc783338aaca}{symoperator}, 
+\hyperlink{lex_8h_a7feef761cd73fac6e25b8bb80d2c4e54a02fc8eca726eb0e8d1420835e3664c06}{symstatement}, 
+\hyperlink{lex_8h_a7feef761cd73fac6e25b8bb80d2c4e54ac0ac9c237f5df41937de351d33daeef4}{symfunction}, 
+\hyperlink{lex_8h_a7feef761cd73fac6e25b8bb80d2c4e54ae717993aa487e7090174437eb6239aec}{symvariable}, 
+\\*
+\hyperlink{lex_8h_a7feef761cd73fac6e25b8bb80d2c4e54ad52e0d39a30f40b7e9c7722f8f939455}{symtrigon}, 
+\hyperlink{lex_8h_a7feef761cd73fac6e25b8bb80d2c4e54ad56541c57ec33ce110cf8936b37a3ae1}{symhyper}, 
+\hyperlink{lex_8h_a7feef761cd73fac6e25b8bb80d2c4e54a1acb295d6e34bc0b8af0e419bc9d65ba}{symcomplex}, 
+\hyperlink{lex_8h_a7feef761cd73fac6e25b8bb80d2c4e54af579f172d6bd42ae3a9ae702189c2b80}{syme}, 
+\\*
+\hyperlink{lex_8h_a7feef761cd73fac6e25b8bb80d2c4e54ab630a8c6530de2011cdfa1bc51d47bf4}{sympi}, 
+\hyperlink{lex_8h_a7feef761cd73fac6e25b8bb80d2c4e54ad05a0339b057b1842d956222973cbd98}{symi}, 
+\hyperlink{lex_8h_a7feef761cd73fac6e25b8bb80d2c4e54a9d73d7f91bede76e486cd94f75675faf}{symins}, 
+\hyperlink{lex_8h_a7feef761cd73fac6e25b8bb80d2c4e54ac8e5e4f0940e69be4fca18ed8cbb236f}{symdelimiter}, 
+\\*
+\hyperlink{lex_8h_a7feef761cd73fac6e25b8bb80d2c4e54a9be8426421896b360944c1313abeffdb}{symend}, 
+\hyperlink{lex_8h_a7feef761cd73fac6e25b8bb80d2c4e54a880d37d6af9654b8295fd1c09794c84a}{symshow}, 
+\hyperlink{lex_8h_a7feef761cd73fac6e25b8bb80d2c4e54ae7b30d568bf897576845916870f7304e}{symlist}, 
+\hyperlink{lex_8h_a7feef761cd73fac6e25b8bb80d2c4e54a9d1e9fc653c6385101e095e83f2715a5}{symload}, 
+\\*
+\hyperlink{lex_8h_a7feef761cd73fac6e25b8bb80d2c4e54a46b88bb5b84403708ad27da26b2177f6}{symsave}, 
+\hyperlink{lex_8h_a7feef761cd73fac6e25b8bb80d2c4e54a309719a3cb6c488d29f9e1050dfc7fb1}{symexecute}, 
+\hyperlink{lex_8h_a7feef761cd73fac6e25b8bb80d2c4e54a1ec9bae9ed39ccb15f6742f30fa7e976}{syminput}, 
+\hyperlink{lex_8h_a7feef761cd73fac6e25b8bb80d2c4e54ab639ed8834b8ccb5b41a300421a96f7c}{symoutput}, 
+\\*
+\hyperlink{lex_8h_a7feef761cd73fac6e25b8bb80d2c4e54a320ad810223a8993b0e647d7ee62f99b}{symdigits}, 
+\hyperlink{lex_8h_a7feef761cd73fac6e25b8bb80d2c4e54a99414bd6a46f6a36c37d48a52b7c2d2c}{symdec}, 
+\hyperlink{lex_8h_a7feef761cd73fac6e25b8bb80d2c4e54af5932660cac7069b371047c73b3f8e05}{symhex}, 
+\hyperlink{lex_8h_a7feef761cd73fac6e25b8bb80d2c4e54a5358f1827b24c94188219802e4209e42}{symbin}, 
+\\*
+\hyperlink{lex_8h_a7feef761cd73fac6e25b8bb80d2c4e54a8b918ff25297c8b6186bb2c458eb3e06}{symoct}, 
+\hyperlink{lex_8h_a7feef761cd73fac6e25b8bb80d2c4e54a5af729ca0638c22a803d228bcc68f22d}{symmem}, 
+\hyperlink{lex_8h_a7feef761cd73fac6e25b8bb80d2c4e54a7b0c3c7dcf8e66b21e2de3e501d318ee}{symprefs}, 
+\hyperlink{lex_8h_a7feef761cd73fac6e25b8bb80d2c4e54a715a6897180c3bb57cce5033fe538a94}{symprompt}, 
+\\*
+\hyperlink{lex_8h_a7feef761cd73fac6e25b8bb80d2c4e54ac70d18e1ed45c5fa56efa52eef4e6799}{symversion}, 
+\hyperlink{lex_8h_a7feef761cd73fac6e25b8bb80d2c4e54acda5f0902987563127f09bff0f941be6}{symplot}, 
+\hyperlink{lex_8h_a7feef761cd73fac6e25b8bb80d2c4e54a15c302ffe8b27a8ff58096c76eced116}{symdraw}
+ \}\begin{DoxyCompactList}\small\item\em Symbols generated by the \hyperlink{classLexer}{Lexer}. \end{DoxyCompactList}
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+static const \hyperlink{structoperatordef}{operatordef} \hyperlink{lex_8h_aaa2a2d46273713612114ac54f424c653}{operators} \mbox{[}$\,$\mbox{]}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\hyperlink{classLexer}{Lexer} defitions used by other classes. 
+
+
+
+\subsection{Enumeration Type Documentation}
+\index{lex.\+h@{lex.\+h}!Symbol@{Symbol}}
+\index{Symbol@{Symbol}!lex.\+h@{lex.\+h}}
+\subsubsection[{\texorpdfstring{Symbol}{Symbol}}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf Symbol}}\hypertarget{lex_8h_a7feef761cd73fac6e25b8bb80d2c4e54}{}\label{lex_8h_a7feef761cd73fac6e25b8bb80d2c4e54}
+
+
+Symbols generated by the \hyperlink{classLexer}{Lexer}. 
+
+\begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{symunknown@{symunknown}!lex.\+h@{lex.\+h}}\index{lex.\+h@{lex.\+h}!symunknown@{symunknown}}\item[{\em 
+symunknown\hypertarget{lex_8h_a7feef761cd73fac6e25b8bb80d2c4e54a62771c2338fc3a6b94498cb4554e7f0b}{}\label{lex_8h_a7feef761cd73fac6e25b8bb80d2c4e54a62771c2338fc3a6b94498cb4554e7f0b}
+}]\index{symident@{symident}!lex.\+h@{lex.\+h}}\index{lex.\+h@{lex.\+h}!symident@{symident}}\item[{\em 
+symident\hypertarget{lex_8h_a7feef761cd73fac6e25b8bb80d2c4e54ade7694e5efc9616383548e57122faea5}{}\label{lex_8h_a7feef761cd73fac6e25b8bb80d2c4e54ade7694e5efc9616383548e57122faea5}
+}]\index{symqident@{symqident}!lex.\+h@{lex.\+h}}\index{lex.\+h@{lex.\+h}!symqident@{symqident}}\item[{\em 
+symqident\hypertarget{lex_8h_a7feef761cd73fac6e25b8bb80d2c4e54a9a4f2a8a367485e87d9faf675bec17af}{}\label{lex_8h_a7feef761cd73fac6e25b8bb80d2c4e54a9a4f2a8a367485e87d9faf675bec17af}
+}]\index{symnumber@{symnumber}!lex.\+h@{lex.\+h}}\index{lex.\+h@{lex.\+h}!symnumber@{symnumber}}\item[{\em 
+symnumber\hypertarget{lex_8h_a7feef761cd73fac6e25b8bb80d2c4e54add691c5ad44197e2c9e9dab9793450a2}{}\label{lex_8h_a7feef761cd73fac6e25b8bb80d2c4e54add691c5ad44197e2c9e9dab9793450a2}
+}]\index{symplus@{symplus}!lex.\+h@{lex.\+h}}\index{lex.\+h@{lex.\+h}!symplus@{symplus}}\item[{\em 
+symplus\hypertarget{lex_8h_a7feef761cd73fac6e25b8bb80d2c4e54a8b82e1abf6424d09e2381b95f3bd5e00}{}\label{lex_8h_a7feef761cd73fac6e25b8bb80d2c4e54a8b82e1abf6424d09e2381b95f3bd5e00}
+}]\index{symminus@{symminus}!lex.\+h@{lex.\+h}}\index{lex.\+h@{lex.\+h}!symminus@{symminus}}\item[{\em 
+symminus\hypertarget{lex_8h_a7feef761cd73fac6e25b8bb80d2c4e54ac9d48bb4c6d7713a366e601a9b95c2c4}{}\label{lex_8h_a7feef761cd73fac6e25b8bb80d2c4e54ac9d48bb4c6d7713a366e601a9b95c2c4}
+}]\index{symtimes@{symtimes}!lex.\+h@{lex.\+h}}\index{lex.\+h@{lex.\+h}!symtimes@{symtimes}}\item[{\em 
+symtimes\hypertarget{lex_8h_a7feef761cd73fac6e25b8bb80d2c4e54a99f46862dfbb8319b675d3c2663eefea}{}\label{lex_8h_a7feef761cd73fac6e25b8bb80d2c4e54a99f46862dfbb8319b675d3c2663eefea}
+}]\index{symslash@{symslash}!lex.\+h@{lex.\+h}}\index{lex.\+h@{lex.\+h}!symslash@{symslash}}\item[{\em 
+symslash\hypertarget{lex_8h_a7feef761cd73fac6e25b8bb80d2c4e54abc5175af79bdc99805f433e519b622d5}{}\label{lex_8h_a7feef761cd73fac6e25b8bb80d2c4e54abc5175af79bdc99805f433e519b622d5}
+}]\index{sympower@{sympower}!lex.\+h@{lex.\+h}}\index{lex.\+h@{lex.\+h}!sympower@{sympower}}\item[{\em 
+sympower\hypertarget{lex_8h_a7feef761cd73fac6e25b8bb80d2c4e54aebd05906bb437ef93900f895ecf6ea48}{}\label{lex_8h_a7feef761cd73fac6e25b8bb80d2c4e54aebd05906bb437ef93900f895ecf6ea48}
+}]\index{symabsolute@{symabsolute}!lex.\+h@{lex.\+h}}\index{lex.\+h@{lex.\+h}!symabsolute@{symabsolute}}\item[{\em 
+symabsolute\hypertarget{lex_8h_a7feef761cd73fac6e25b8bb80d2c4e54afd88f2e602fee26d5e068bc7920dd67c}{}\label{lex_8h_a7feef761cd73fac6e25b8bb80d2c4e54afd88f2e602fee26d5e068bc7920dd67c}
+}]\index{symassign@{symassign}!lex.\+h@{lex.\+h}}\index{lex.\+h@{lex.\+h}!symassign@{symassign}}\item[{\em 
+symassign\hypertarget{lex_8h_a7feef761cd73fac6e25b8bb80d2c4e54a648933f05e3bcba968a27d425933784d}{}\label{lex_8h_a7feef761cd73fac6e25b8bb80d2c4e54a648933f05e3bcba968a27d425933784d}
+}]\index{symlparen@{symlparen}!lex.\+h@{lex.\+h}}\index{lex.\+h@{lex.\+h}!symlparen@{symlparen}}\item[{\em 
+symlparen\hypertarget{lex_8h_a7feef761cd73fac6e25b8bb80d2c4e54ad92b5471ad4a0b9fc95faae6ca2172ad}{}\label{lex_8h_a7feef761cd73fac6e25b8bb80d2c4e54ad92b5471ad4a0b9fc95faae6ca2172ad}
+}]\index{symrparen@{symrparen}!lex.\+h@{lex.\+h}}\index{lex.\+h@{lex.\+h}!symrparen@{symrparen}}\item[{\em 
+symrparen\hypertarget{lex_8h_a7feef761cd73fac6e25b8bb80d2c4e54a59c8837a9f31298813b4703cefbd185e}{}\label{lex_8h_a7feef761cd73fac6e25b8bb80d2c4e54a59c8837a9f31298813b4703cefbd185e}
+}]\index{symfuncsqrt@{symfuncsqrt}!lex.\+h@{lex.\+h}}\index{lex.\+h@{lex.\+h}!symfuncsqrt@{symfuncsqrt}}\item[{\em 
+symfuncsqrt\hypertarget{lex_8h_a7feef761cd73fac6e25b8bb80d2c4e54a906ac793aea14ad1c6a0b1e0f83503e2}{}\label{lex_8h_a7feef761cd73fac6e25b8bb80d2c4e54a906ac793aea14ad1c6a0b1e0f83503e2}
+}]\index{symfunccbrt@{symfunccbrt}!lex.\+h@{lex.\+h}}\index{lex.\+h@{lex.\+h}!symfunccbrt@{symfunccbrt}}\item[{\em 
+symfunccbrt\hypertarget{lex_8h_a7feef761cd73fac6e25b8bb80d2c4e54ae4862520380f7331fb1a72d0e57eb588}{}\label{lex_8h_a7feef761cd73fac6e25b8bb80d2c4e54ae4862520380f7331fb1a72d0e57eb588}
+}]\index{symfunclog@{symfunclog}!lex.\+h@{lex.\+h}}\index{lex.\+h@{lex.\+h}!symfunclog@{symfunclog}}\item[{\em 
+symfunclog\hypertarget{lex_8h_a7feef761cd73fac6e25b8bb80d2c4e54a190390eb21b826ac23a41f3d281d772a}{}\label{lex_8h_a7feef761cd73fac6e25b8bb80d2c4e54a190390eb21b826ac23a41f3d281d772a}
+}]\index{symfuncln@{symfuncln}!lex.\+h@{lex.\+h}}\index{lex.\+h@{lex.\+h}!symfuncln@{symfuncln}}\item[{\em 
+symfuncln\hypertarget{lex_8h_a7feef761cd73fac6e25b8bb80d2c4e54a656796b1eef97d3647cf6eeeb441b857}{}\label{lex_8h_a7feef761cd73fac6e25b8bb80d2c4e54a656796b1eef97d3647cf6eeeb441b857}
+}]\index{symhelp@{symhelp}!lex.\+h@{lex.\+h}}\index{lex.\+h@{lex.\+h}!symhelp@{symhelp}}\item[{\em 
+symhelp\hypertarget{lex_8h_a7feef761cd73fac6e25b8bb80d2c4e54a178b07efee6cc97ffdf9f2ffba9c0cfb}{}\label{lex_8h_a7feef761cd73fac6e25b8bb80d2c4e54a178b07efee6cc97ffdf9f2ffba9c0cfb}
+}]\index{symeval@{symeval}!lex.\+h@{lex.\+h}}\index{lex.\+h@{lex.\+h}!symeval@{symeval}}\item[{\em 
+symeval\hypertarget{lex_8h_a7feef761cd73fac6e25b8bb80d2c4e54a57c965a74493e9751bca9cc3735b0365}{}\label{lex_8h_a7feef761cd73fac6e25b8bb80d2c4e54a57c965a74493e9751bca9cc3735b0365}
+}]\index{symdelete@{symdelete}!lex.\+h@{lex.\+h}}\index{lex.\+h@{lex.\+h}!symdelete@{symdelete}}\item[{\em 
+symdelete\hypertarget{lex_8h_a7feef761cd73fac6e25b8bb80d2c4e54a732ee6db8a0f3a1517c1355ded11a7cd}{}\label{lex_8h_a7feef761cd73fac6e25b8bb80d2c4e54a732ee6db8a0f3a1517c1355ded11a7cd}
+}]\index{symall@{symall}!lex.\+h@{lex.\+h}}\index{lex.\+h@{lex.\+h}!symall@{symall}}\item[{\em 
+symall\hypertarget{lex_8h_a7feef761cd73fac6e25b8bb80d2c4e54a3cf7435fe7c30b7d95364a822739ee39}{}\label{lex_8h_a7feef761cd73fac6e25b8bb80d2c4e54a3cf7435fe7c30b7d95364a822739ee39}
+}]\index{symclear@{symclear}!lex.\+h@{lex.\+h}}\index{lex.\+h@{lex.\+h}!symclear@{symclear}}\item[{\em 
+symclear\hypertarget{lex_8h_a7feef761cd73fac6e25b8bb80d2c4e54aa7e95e65ef9d6c567b57ba276c06cd45}{}\label{lex_8h_a7feef761cd73fac6e25b8bb80d2c4e54aa7e95e65ef9d6c567b57ba276c06cd45}
+}]\index{symdef@{symdef}!lex.\+h@{lex.\+h}}\index{lex.\+h@{lex.\+h}!symdef@{symdef}}\item[{\em 
+symdef\hypertarget{lex_8h_a7feef761cd73fac6e25b8bb80d2c4e54ab6586f99b429cda6f164b7f38f5f8437}{}\label{lex_8h_a7feef761cd73fac6e25b8bb80d2c4e54ab6586f99b429cda6f164b7f38f5f8437}
+}]\index{symexit@{symexit}!lex.\+h@{lex.\+h}}\index{lex.\+h@{lex.\+h}!symexit@{symexit}}\item[{\em 
+symexit\hypertarget{lex_8h_a7feef761cd73fac6e25b8bb80d2c4e54ae4a4f99672506beee65b40d4ffb0c991}{}\label{lex_8h_a7feef761cd73fac6e25b8bb80d2c4e54ae4a4f99672506beee65b40d4ffb0c991}
+}]\index{symoperator@{symoperator}!lex.\+h@{lex.\+h}}\index{lex.\+h@{lex.\+h}!symoperator@{symoperator}}\item[{\em 
+symoperator\hypertarget{lex_8h_a7feef761cd73fac6e25b8bb80d2c4e54a7869db37b654a0606c42bc783338aaca}{}\label{lex_8h_a7feef761cd73fac6e25b8bb80d2c4e54a7869db37b654a0606c42bc783338aaca}
+}]\index{symstatement@{symstatement}!lex.\+h@{lex.\+h}}\index{lex.\+h@{lex.\+h}!symstatement@{symstatement}}\item[{\em 
+symstatement\hypertarget{lex_8h_a7feef761cd73fac6e25b8bb80d2c4e54a02fc8eca726eb0e8d1420835e3664c06}{}\label{lex_8h_a7feef761cd73fac6e25b8bb80d2c4e54a02fc8eca726eb0e8d1420835e3664c06}
+}]\index{symfunction@{symfunction}!lex.\+h@{lex.\+h}}\index{lex.\+h@{lex.\+h}!symfunction@{symfunction}}\item[{\em 
+symfunction\hypertarget{lex_8h_a7feef761cd73fac6e25b8bb80d2c4e54ac0ac9c237f5df41937de351d33daeef4}{}\label{lex_8h_a7feef761cd73fac6e25b8bb80d2c4e54ac0ac9c237f5df41937de351d33daeef4}
+}]\index{symvariable@{symvariable}!lex.\+h@{lex.\+h}}\index{lex.\+h@{lex.\+h}!symvariable@{symvariable}}\item[{\em 
+symvariable\hypertarget{lex_8h_a7feef761cd73fac6e25b8bb80d2c4e54ae717993aa487e7090174437eb6239aec}{}\label{lex_8h_a7feef761cd73fac6e25b8bb80d2c4e54ae717993aa487e7090174437eb6239aec}
+}]\index{symtrigon@{symtrigon}!lex.\+h@{lex.\+h}}\index{lex.\+h@{lex.\+h}!symtrigon@{symtrigon}}\item[{\em 
+symtrigon\hypertarget{lex_8h_a7feef761cd73fac6e25b8bb80d2c4e54ad52e0d39a30f40b7e9c7722f8f939455}{}\label{lex_8h_a7feef761cd73fac6e25b8bb80d2c4e54ad52e0d39a30f40b7e9c7722f8f939455}
+}]\index{symhyper@{symhyper}!lex.\+h@{lex.\+h}}\index{lex.\+h@{lex.\+h}!symhyper@{symhyper}}\item[{\em 
+symhyper\hypertarget{lex_8h_a7feef761cd73fac6e25b8bb80d2c4e54ad56541c57ec33ce110cf8936b37a3ae1}{}\label{lex_8h_a7feef761cd73fac6e25b8bb80d2c4e54ad56541c57ec33ce110cf8936b37a3ae1}
+}]\index{symcomplex@{symcomplex}!lex.\+h@{lex.\+h}}\index{lex.\+h@{lex.\+h}!symcomplex@{symcomplex}}\item[{\em 
+symcomplex\hypertarget{lex_8h_a7feef761cd73fac6e25b8bb80d2c4e54a1acb295d6e34bc0b8af0e419bc9d65ba}{}\label{lex_8h_a7feef761cd73fac6e25b8bb80d2c4e54a1acb295d6e34bc0b8af0e419bc9d65ba}
+}]\index{syme@{syme}!lex.\+h@{lex.\+h}}\index{lex.\+h@{lex.\+h}!syme@{syme}}\item[{\em 
+syme\hypertarget{lex_8h_a7feef761cd73fac6e25b8bb80d2c4e54af579f172d6bd42ae3a9ae702189c2b80}{}\label{lex_8h_a7feef761cd73fac6e25b8bb80d2c4e54af579f172d6bd42ae3a9ae702189c2b80}
+}]\index{sympi@{sympi}!lex.\+h@{lex.\+h}}\index{lex.\+h@{lex.\+h}!sympi@{sympi}}\item[{\em 
+sympi\hypertarget{lex_8h_a7feef761cd73fac6e25b8bb80d2c4e54ab630a8c6530de2011cdfa1bc51d47bf4}{}\label{lex_8h_a7feef761cd73fac6e25b8bb80d2c4e54ab630a8c6530de2011cdfa1bc51d47bf4}
+}]\index{symi@{symi}!lex.\+h@{lex.\+h}}\index{lex.\+h@{lex.\+h}!symi@{symi}}\item[{\em 
+symi\hypertarget{lex_8h_a7feef761cd73fac6e25b8bb80d2c4e54ad05a0339b057b1842d956222973cbd98}{}\label{lex_8h_a7feef761cd73fac6e25b8bb80d2c4e54ad05a0339b057b1842d956222973cbd98}
+}]\index{symins@{symins}!lex.\+h@{lex.\+h}}\index{lex.\+h@{lex.\+h}!symins@{symins}}\item[{\em 
+symins\hypertarget{lex_8h_a7feef761cd73fac6e25b8bb80d2c4e54a9d73d7f91bede76e486cd94f75675faf}{}\label{lex_8h_a7feef761cd73fac6e25b8bb80d2c4e54a9d73d7f91bede76e486cd94f75675faf}
+}]\index{symdelimiter@{symdelimiter}!lex.\+h@{lex.\+h}}\index{lex.\+h@{lex.\+h}!symdelimiter@{symdelimiter}}\item[{\em 
+symdelimiter\hypertarget{lex_8h_a7feef761cd73fac6e25b8bb80d2c4e54ac8e5e4f0940e69be4fca18ed8cbb236f}{}\label{lex_8h_a7feef761cd73fac6e25b8bb80d2c4e54ac8e5e4f0940e69be4fca18ed8cbb236f}
+}]\index{symend@{symend}!lex.\+h@{lex.\+h}}\index{lex.\+h@{lex.\+h}!symend@{symend}}\item[{\em 
+symend\hypertarget{lex_8h_a7feef761cd73fac6e25b8bb80d2c4e54a9be8426421896b360944c1313abeffdb}{}\label{lex_8h_a7feef761cd73fac6e25b8bb80d2c4e54a9be8426421896b360944c1313abeffdb}
+}]\index{symshow@{symshow}!lex.\+h@{lex.\+h}}\index{lex.\+h@{lex.\+h}!symshow@{symshow}}\item[{\em 
+symshow\hypertarget{lex_8h_a7feef761cd73fac6e25b8bb80d2c4e54a880d37d6af9654b8295fd1c09794c84a}{}\label{lex_8h_a7feef761cd73fac6e25b8bb80d2c4e54a880d37d6af9654b8295fd1c09794c84a}
+}]\index{symlist@{symlist}!lex.\+h@{lex.\+h}}\index{lex.\+h@{lex.\+h}!symlist@{symlist}}\item[{\em 
+symlist\hypertarget{lex_8h_a7feef761cd73fac6e25b8bb80d2c4e54ae7b30d568bf897576845916870f7304e}{}\label{lex_8h_a7feef761cd73fac6e25b8bb80d2c4e54ae7b30d568bf897576845916870f7304e}
+}]\index{symload@{symload}!lex.\+h@{lex.\+h}}\index{lex.\+h@{lex.\+h}!symload@{symload}}\item[{\em 
+symload\hypertarget{lex_8h_a7feef761cd73fac6e25b8bb80d2c4e54a9d1e9fc653c6385101e095e83f2715a5}{}\label{lex_8h_a7feef761cd73fac6e25b8bb80d2c4e54a9d1e9fc653c6385101e095e83f2715a5}
+}]\index{symsave@{symsave}!lex.\+h@{lex.\+h}}\index{lex.\+h@{lex.\+h}!symsave@{symsave}}\item[{\em 
+symsave\hypertarget{lex_8h_a7feef761cd73fac6e25b8bb80d2c4e54a46b88bb5b84403708ad27da26b2177f6}{}\label{lex_8h_a7feef761cd73fac6e25b8bb80d2c4e54a46b88bb5b84403708ad27da26b2177f6}
+}]\index{symexecute@{symexecute}!lex.\+h@{lex.\+h}}\index{lex.\+h@{lex.\+h}!symexecute@{symexecute}}\item[{\em 
+symexecute\hypertarget{lex_8h_a7feef761cd73fac6e25b8bb80d2c4e54a309719a3cb6c488d29f9e1050dfc7fb1}{}\label{lex_8h_a7feef761cd73fac6e25b8bb80d2c4e54a309719a3cb6c488d29f9e1050dfc7fb1}
+}]\index{syminput@{syminput}!lex.\+h@{lex.\+h}}\index{lex.\+h@{lex.\+h}!syminput@{syminput}}\item[{\em 
+syminput\hypertarget{lex_8h_a7feef761cd73fac6e25b8bb80d2c4e54a1ec9bae9ed39ccb15f6742f30fa7e976}{}\label{lex_8h_a7feef761cd73fac6e25b8bb80d2c4e54a1ec9bae9ed39ccb15f6742f30fa7e976}
+}]\index{symoutput@{symoutput}!lex.\+h@{lex.\+h}}\index{lex.\+h@{lex.\+h}!symoutput@{symoutput}}\item[{\em 
+symoutput\hypertarget{lex_8h_a7feef761cd73fac6e25b8bb80d2c4e54ab639ed8834b8ccb5b41a300421a96f7c}{}\label{lex_8h_a7feef761cd73fac6e25b8bb80d2c4e54ab639ed8834b8ccb5b41a300421a96f7c}
+}]\index{symdigits@{symdigits}!lex.\+h@{lex.\+h}}\index{lex.\+h@{lex.\+h}!symdigits@{symdigits}}\item[{\em 
+symdigits\hypertarget{lex_8h_a7feef761cd73fac6e25b8bb80d2c4e54a320ad810223a8993b0e647d7ee62f99b}{}\label{lex_8h_a7feef761cd73fac6e25b8bb80d2c4e54a320ad810223a8993b0e647d7ee62f99b}
+}]\index{symdec@{symdec}!lex.\+h@{lex.\+h}}\index{lex.\+h@{lex.\+h}!symdec@{symdec}}\item[{\em 
+symdec\hypertarget{lex_8h_a7feef761cd73fac6e25b8bb80d2c4e54a99414bd6a46f6a36c37d48a52b7c2d2c}{}\label{lex_8h_a7feef761cd73fac6e25b8bb80d2c4e54a99414bd6a46f6a36c37d48a52b7c2d2c}
+}]\index{symhex@{symhex}!lex.\+h@{lex.\+h}}\index{lex.\+h@{lex.\+h}!symhex@{symhex}}\item[{\em 
+symhex\hypertarget{lex_8h_a7feef761cd73fac6e25b8bb80d2c4e54af5932660cac7069b371047c73b3f8e05}{}\label{lex_8h_a7feef761cd73fac6e25b8bb80d2c4e54af5932660cac7069b371047c73b3f8e05}
+}]\index{symbin@{symbin}!lex.\+h@{lex.\+h}}\index{lex.\+h@{lex.\+h}!symbin@{symbin}}\item[{\em 
+symbin\hypertarget{lex_8h_a7feef761cd73fac6e25b8bb80d2c4e54a5358f1827b24c94188219802e4209e42}{}\label{lex_8h_a7feef761cd73fac6e25b8bb80d2c4e54a5358f1827b24c94188219802e4209e42}
+}]\index{symoct@{symoct}!lex.\+h@{lex.\+h}}\index{lex.\+h@{lex.\+h}!symoct@{symoct}}\item[{\em 
+symoct\hypertarget{lex_8h_a7feef761cd73fac6e25b8bb80d2c4e54a8b918ff25297c8b6186bb2c458eb3e06}{}\label{lex_8h_a7feef761cd73fac6e25b8bb80d2c4e54a8b918ff25297c8b6186bb2c458eb3e06}
+}]\index{symmem@{symmem}!lex.\+h@{lex.\+h}}\index{lex.\+h@{lex.\+h}!symmem@{symmem}}\item[{\em 
+symmem\hypertarget{lex_8h_a7feef761cd73fac6e25b8bb80d2c4e54a5af729ca0638c22a803d228bcc68f22d}{}\label{lex_8h_a7feef761cd73fac6e25b8bb80d2c4e54a5af729ca0638c22a803d228bcc68f22d}
+}]\index{symprefs@{symprefs}!lex.\+h@{lex.\+h}}\index{lex.\+h@{lex.\+h}!symprefs@{symprefs}}\item[{\em 
+symprefs\hypertarget{lex_8h_a7feef761cd73fac6e25b8bb80d2c4e54a7b0c3c7dcf8e66b21e2de3e501d318ee}{}\label{lex_8h_a7feef761cd73fac6e25b8bb80d2c4e54a7b0c3c7dcf8e66b21e2de3e501d318ee}
+}]\index{symprompt@{symprompt}!lex.\+h@{lex.\+h}}\index{lex.\+h@{lex.\+h}!symprompt@{symprompt}}\item[{\em 
+symprompt\hypertarget{lex_8h_a7feef761cd73fac6e25b8bb80d2c4e54a715a6897180c3bb57cce5033fe538a94}{}\label{lex_8h_a7feef761cd73fac6e25b8bb80d2c4e54a715a6897180c3bb57cce5033fe538a94}
+}]\index{symversion@{symversion}!lex.\+h@{lex.\+h}}\index{lex.\+h@{lex.\+h}!symversion@{symversion}}\item[{\em 
+symversion\hypertarget{lex_8h_a7feef761cd73fac6e25b8bb80d2c4e54ac70d18e1ed45c5fa56efa52eef4e6799}{}\label{lex_8h_a7feef761cd73fac6e25b8bb80d2c4e54ac70d18e1ed45c5fa56efa52eef4e6799}
+}]\index{symplot@{symplot}!lex.\+h@{lex.\+h}}\index{lex.\+h@{lex.\+h}!symplot@{symplot}}\item[{\em 
+symplot\hypertarget{lex_8h_a7feef761cd73fac6e25b8bb80d2c4e54acda5f0902987563127f09bff0f941be6}{}\label{lex_8h_a7feef761cd73fac6e25b8bb80d2c4e54acda5f0902987563127f09bff0f941be6}
+}]\index{symdraw@{symdraw}!lex.\+h@{lex.\+h}}\index{lex.\+h@{lex.\+h}!symdraw@{symdraw}}\item[{\em 
+symdraw\hypertarget{lex_8h_a7feef761cd73fac6e25b8bb80d2c4e54a15c302ffe8b27a8ff58096c76eced116}{}\label{lex_8h_a7feef761cd73fac6e25b8bb80d2c4e54a15c302ffe8b27a8ff58096c76eced116}
+}]\end{description}
+\end{Desc}
+
+
+Definition at line 40 of file lex.\+h.
+
+
+\begin{DoxyCode}
+40              \{
+41     \hyperlink{lex_8h_a7feef761cd73fac6e25b8bb80d2c4e54a62771c2338fc3a6b94498cb4554e7f0b}{symunknown}, \hyperlink{lex_8h_a7feef761cd73fac6e25b8bb80d2c4e54ade7694e5efc9616383548e57122faea5}{symident}, \hyperlink{lex_8h_a7feef761cd73fac6e25b8bb80d2c4e54a9a4f2a8a367485e87d9faf675bec17af}{symqident}, \hyperlink{lex_8h_a7feef761cd73fac6e25b8bb80d2c4e54add691c5ad44197e2c9e9dab9793450a2}{symnumber},
+42     \hyperlink{lex_8h_a7feef761cd73fac6e25b8bb80d2c4e54a8b82e1abf6424d09e2381b95f3bd5e00}{symplus}, \hyperlink{lex_8h_a7feef761cd73fac6e25b8bb80d2c4e54ac9d48bb4c6d7713a366e601a9b95c2c4}{symminus}, \hyperlink{lex_8h_a7feef761cd73fac6e25b8bb80d2c4e54a99f46862dfbb8319b675d3c2663eefea}{symtimes}, \hyperlink{lex_8h_a7feef761cd73fac6e25b8bb80d2c4e54abc5175af79bdc99805f433e519b622d5}{symslash}, 
+      \hyperlink{lex_8h_a7feef761cd73fac6e25b8bb80d2c4e54aebd05906bb437ef93900f895ecf6ea48}{sympower},
+43     \hyperlink{lex_8h_a7feef761cd73fac6e25b8bb80d2c4e54afd88f2e602fee26d5e068bc7920dd67c}{symabsolute}, \hyperlink{lex_8h_a7feef761cd73fac6e25b8bb80d2c4e54a648933f05e3bcba968a27d425933784d}{symassign}, \hyperlink{lex_8h_a7feef761cd73fac6e25b8bb80d2c4e54ad92b5471ad4a0b9fc95faae6ca2172ad}{symlparen}, \hyperlink{lex_8h_a7feef761cd73fac6e25b8bb80d2c4e54a59c8837a9f31298813b4703cefbd185e}{symrparen},
+44     \hyperlink{lex_8h_a7feef761cd73fac6e25b8bb80d2c4e54a906ac793aea14ad1c6a0b1e0f83503e2}{symfuncsqrt}, \hyperlink{lex_8h_a7feef761cd73fac6e25b8bb80d2c4e54ae4862520380f7331fb1a72d0e57eb588}{symfunccbrt}, \hyperlink{lex_8h_a7feef761cd73fac6e25b8bb80d2c4e54a190390eb21b826ac23a41f3d281d772a}{symfunclog}, 
+      \hyperlink{lex_8h_a7feef761cd73fac6e25b8bb80d2c4e54a656796b1eef97d3647cf6eeeb441b857}{symfuncln},
+45     \hyperlink{lex_8h_a7feef761cd73fac6e25b8bb80d2c4e54a178b07efee6cc97ffdf9f2ffba9c0cfb}{symhelp}, \hyperlink{lex_8h_a7feef761cd73fac6e25b8bb80d2c4e54a57c965a74493e9751bca9cc3735b0365}{symeval}, \hyperlink{lex_8h_a7feef761cd73fac6e25b8bb80d2c4e54a732ee6db8a0f3a1517c1355ded11a7cd}{symdelete}, \hyperlink{lex_8h_a7feef761cd73fac6e25b8bb80d2c4e54a3cf7435fe7c30b7d95364a822739ee39}{symall}, \hyperlink{lex_8h_a7feef761cd73fac6e25b8bb80d2c4e54aa7e95e65ef9d6c567b57ba276c06cd45}{symclear}, 
+      \hyperlink{lex_8h_a7feef761cd73fac6e25b8bb80d2c4e54ab6586f99b429cda6f164b7f38f5f8437}{symdef}, \hyperlink{lex_8h_a7feef761cd73fac6e25b8bb80d2c4e54ae4a4f99672506beee65b40d4ffb0c991}{symexit},
+46     \hyperlink{lex_8h_a7feef761cd73fac6e25b8bb80d2c4e54a7869db37b654a0606c42bc783338aaca}{symoperator}, \hyperlink{lex_8h_a7feef761cd73fac6e25b8bb80d2c4e54a02fc8eca726eb0e8d1420835e3664c06}{symstatement}, \hyperlink{lex_8h_a7feef761cd73fac6e25b8bb80d2c4e54ac0ac9c237f5df41937de351d33daeef4}{symfunction}, 
+      \hyperlink{lex_8h_a7feef761cd73fac6e25b8bb80d2c4e54ae717993aa487e7090174437eb6239aec}{symvariable},
+47     \hyperlink{lex_8h_a7feef761cd73fac6e25b8bb80d2c4e54ad52e0d39a30f40b7e9c7722f8f939455}{symtrigon}, \hyperlink{lex_8h_a7feef761cd73fac6e25b8bb80d2c4e54ad56541c57ec33ce110cf8936b37a3ae1}{symhyper}, \hyperlink{lex_8h_a7feef761cd73fac6e25b8bb80d2c4e54a1acb295d6e34bc0b8af0e419bc9d65ba}{symcomplex},
+48     \hyperlink{lex_8h_a7feef761cd73fac6e25b8bb80d2c4e54af579f172d6bd42ae3a9ae702189c2b80}{syme}, \hyperlink{lex_8h_a7feef761cd73fac6e25b8bb80d2c4e54ab630a8c6530de2011cdfa1bc51d47bf4}{sympi}, \hyperlink{lex_8h_a7feef761cd73fac6e25b8bb80d2c4e54ad05a0339b057b1842d956222973cbd98}{symi},\hyperlink{lex_8h_a7feef761cd73fac6e25b8bb80d2c4e54a9d73d7f91bede76e486cd94f75675faf}{symins}, \hyperlink{lex_8h_a7feef761cd73fac6e25b8bb80d2c4e54ac8e5e4f0940e69be4fca18ed8cbb236f}{symdelimiter}, 
+      \hyperlink{lex_8h_a7feef761cd73fac6e25b8bb80d2c4e54a9be8426421896b360944c1313abeffdb}{symend},
+49     \hyperlink{lex_8h_a7feef761cd73fac6e25b8bb80d2c4e54a880d37d6af9654b8295fd1c09794c84a}{symshow}, \hyperlink{lex_8h_a7feef761cd73fac6e25b8bb80d2c4e54ae7b30d568bf897576845916870f7304e}{symlist}, \hyperlink{lex_8h_a7feef761cd73fac6e25b8bb80d2c4e54a9d1e9fc653c6385101e095e83f2715a5}{symload}, \hyperlink{lex_8h_a7feef761cd73fac6e25b8bb80d2c4e54a46b88bb5b84403708ad27da26b2177f6}{symsave}, \hyperlink{lex_8h_a7feef761cd73fac6e25b8bb80d2c4e54a309719a3cb6c488d29f9e1050dfc7fb1}{symexecute},
+50     \hyperlink{lex_8h_a7feef761cd73fac6e25b8bb80d2c4e54a1ec9bae9ed39ccb15f6742f30fa7e976}{syminput}, \hyperlink{lex_8h_a7feef761cd73fac6e25b8bb80d2c4e54ab639ed8834b8ccb5b41a300421a96f7c}{symoutput}, \hyperlink{lex_8h_a7feef761cd73fac6e25b8bb80d2c4e54a320ad810223a8993b0e647d7ee62f99b}{symdigits},
+51     \hyperlink{lex_8h_a7feef761cd73fac6e25b8bb80d2c4e54a99414bd6a46f6a36c37d48a52b7c2d2c}{symdec}, \hyperlink{lex_8h_a7feef761cd73fac6e25b8bb80d2c4e54af5932660cac7069b371047c73b3f8e05}{symhex}, \hyperlink{lex_8h_a7feef761cd73fac6e25b8bb80d2c4e54a5358f1827b24c94188219802e4209e42}{symbin}, \hyperlink{lex_8h_a7feef761cd73fac6e25b8bb80d2c4e54a8b918ff25297c8b6186bb2c458eb3e06}{symoct},
+52     \hyperlink{lex_8h_a7feef761cd73fac6e25b8bb80d2c4e54a5af729ca0638c22a803d228bcc68f22d}{symmem}, \hyperlink{lex_8h_a7feef761cd73fac6e25b8bb80d2c4e54a7b0c3c7dcf8e66b21e2de3e501d318ee}{symprefs}, \hyperlink{lex_8h_a7feef761cd73fac6e25b8bb80d2c4e54a715a6897180c3bb57cce5033fe538a94}{symprompt}, \hyperlink{lex_8h_a7feef761cd73fac6e25b8bb80d2c4e54ac70d18e1ed45c5fa56efa52eef4e6799}{symversion},
+53     \hyperlink{lex_8h_a7feef761cd73fac6e25b8bb80d2c4e54acda5f0902987563127f09bff0f941be6}{symplot}, \hyperlink{lex_8h_a7feef761cd73fac6e25b8bb80d2c4e54a15c302ffe8b27a8ff58096c76eced116}{symdraw}
+54 \} \hyperlink{lex_8h_a7feef761cd73fac6e25b8bb80d2c4e54}{Symbol};
+\end{DoxyCode}
+
+
+\subsection{Variable Documentation}
+\index{lex.\+h@{lex.\+h}!operators@{operators}}
+\index{operators@{operators}!lex.\+h@{lex.\+h}}
+\subsubsection[{\texorpdfstring{operators}{operators}}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf operatordef} operators\mbox{[}$\,$\mbox{]}\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{lex_8h_aaa2a2d46273713612114ac54f424c653}{}\label{lex_8h_aaa2a2d46273713612114ac54f424c653}
+{\bfseries Initial value\+:}
+\begin{DoxyCode}
+= \{
+    \{ \textcolor{charliteral}{'+'}, \hyperlink{lex_8h_a7feef761cd73fac6e25b8bb80d2c4e54a8b82e1abf6424d09e2381b95f3bd5e00}{symplus}\},
+    \{ \textcolor{charliteral}{'-'}, \hyperlink{lex_8h_a7feef761cd73fac6e25b8bb80d2c4e54ac9d48bb4c6d7713a366e601a9b95c2c4}{symminus}\},
+    \{ \textcolor{charliteral}{'/'}, \hyperlink{lex_8h_a7feef761cd73fac6e25b8bb80d2c4e54abc5175af79bdc99805f433e519b622d5}{symslash}\},
+    \{ \textcolor{charliteral}{'*'}, \hyperlink{lex_8h_a7feef761cd73fac6e25b8bb80d2c4e54a99f46862dfbb8319b675d3c2663eefea}{symtimes}\},
+    \{ \textcolor{charliteral}{'^'}, \hyperlink{lex_8h_a7feef761cd73fac6e25b8bb80d2c4e54aebd05906bb437ef93900f895ecf6ea48}{sympower}\},
+    \{ \textcolor{charliteral}{'('}, \hyperlink{lex_8h_a7feef761cd73fac6e25b8bb80d2c4e54ad92b5471ad4a0b9fc95faae6ca2172ad}{symlparen}\},
+    \{ \textcolor{charliteral}{')'}, \hyperlink{lex_8h_a7feef761cd73fac6e25b8bb80d2c4e54a59c8837a9f31298813b4703cefbd185e}{symrparen}\},
+    \{ \textcolor{charliteral}{'|'}, \hyperlink{lex_8h_a7feef761cd73fac6e25b8bb80d2c4e54afd88f2e602fee26d5e068bc7920dd67c}{symabsolute}\},
+    \{ \textcolor{charliteral}{'='}, \hyperlink{lex_8h_a7feef761cd73fac6e25b8bb80d2c4e54a648933f05e3bcba968a27d425933784d}{symassign}\},
+    \{ \textcolor{charliteral}{'\(\backslash\)n'}, \hyperlink{lex_8h_a7feef761cd73fac6e25b8bb80d2c4e54ac8e5e4f0940e69be4fca18ed8cbb236f}{symdelimiter}\},
+    \{ \textcolor{charliteral}{';'}, \hyperlink{lex_8h_a7feef761cd73fac6e25b8bb80d2c4e54ac8e5e4f0940e69be4fca18ed8cbb236f}{symdelimiter}\}
+\}
+\end{DoxyCode}
+
+
+Definition at line 65 of file lex.\+h.
+
+
+
+Referenced by Lexer\+::\+Find\+Keyword(), and Lexer\+::\+Get\+Operator().
+

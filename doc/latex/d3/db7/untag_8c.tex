@@ -1,0 +1,98 @@
+\hypertarget{untag_8c}{}\section{lib/clib/untag.c File Reference}
+\label{untag_8c}\index{lib/clib/untag.\+c@{lib/clib/untag.\+c}}
+{\ttfamily \#include \char`\"{}clib.\+h\char`\"{}}\\*
+Include dependency graph for untag.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=170pt]{d5/db1/untag_8c__incl}
+\end{center}
+\end{figure}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{untag_8c_a13fd37f0e8fef81a052aab4cd5588fb6}{Untag} (char $\ast$destination, const char $\ast$source, \hyperlink{structtexttag}{texttag} tags\mbox{[}$\,$\mbox{]}, unsigned int tagcount)
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\index{untag.\+c@{untag.\+c}!Untag@{Untag}}
+\index{Untag@{Untag}!untag.\+c@{untag.\+c}}
+\subsubsection[{\texorpdfstring{Untag(char $\ast$destination, const char $\ast$source, texttag tags[], unsigned int tagcount)}{Untag(char *destination, const char *source, texttag tags[], unsigned int tagcount)}}]{\setlength{\rightskip}{0pt plus 5cm}void Untag (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{destination, }
+\item[{const char $\ast$}]{source, }
+\item[{{\bf texttag}}]{tags\mbox{[}$\,$\mbox{]}, }
+\item[{unsigned int}]{tagcount}
+\end{DoxyParamCaption}
+)}\hypertarget{untag_8c_a13fd37f0e8fef81a052aab4cd5588fb6}{}\label{untag_8c_a13fd37f0e8fef81a052aab4cd5588fb6}
+
+
+Definition at line 29 of file untag.\+c.
+
+
+
+References texttag\+::tag, and texttag\+::text.
+
+
+
+Referenced by Language\+::\+Untag\+Text().
+
+
+\begin{DoxyCode}
+30 \{
+31     \textcolor{keyword}{const} \textcolor{keywordtype}{char} *pos, *tmp, *tag;
+32     \textcolor{keywordtype}{char} *dest;
+33     \textcolor{keywordtype}{int} \textcolor{keywordtype}{unsigned} i, j, found;
+34 
+35     pos = source;
+36     dest = destination;
+37 
+38     \textcolor{keywordflow}{while} (*pos != \textcolor{charliteral}{'\(\backslash\)0'}) \{
+39         \textcolor{keywordflow}{if} (*pos != \textcolor{charliteral}{'#'}) \{
+40             (*dest++ = *pos++);
+41         \} \textcolor{keywordflow}{else} \{
+42             \textcolor{comment}{// Try to replace tag}
+43             found = 0;
+44             \textcolor{keywordflow}{for} (i = 0; i < tagcount; i++) \{
+45                 tag = tags[i].\hyperlink{structtexttag_abdc442e3844ddc31013194f47bc098f8}{tag};
+46                 tmp = pos;
+47                 j = 0;
+48                 \textcolor{keywordflow}{while} (*tmp != \textcolor{charliteral}{'\(\backslash\)0'} && *tag != \textcolor{charliteral}{'\(\backslash\)0'} && *tmp == *tag) \{
+49                     tmp++;
+50                     tag++;
+51                     j++;
+52                 \}
+53 
+54                 \textcolor{keywordflow}{if} (j > 1 && *(--tag) == \textcolor{charliteral}{'#'}) \{
+55                     \textcolor{comment}{// Tag found. Now replace.}
+56                     tag = tags[i].\hyperlink{structtexttag_a50dedeb9b187ea41d2465a58e68ec424}{text};
+57                     \textcolor{keywordflow}{while} ((*dest++ = *tag++));
+58                     dest--;
+59                     pos = tmp;
+60                     found = 1;
+61                     \textcolor{keywordflow}{break};
+62                 \}
+63             \}
+64 
+65             \textcolor{keywordflow}{if}(!found) \{
+66                 (*dest++ = *pos++);
+67             \}
+68         \}
+69     \}
+70     *dest = \textcolor{charliteral}{'\(\backslash\)0'};
+71 \}
+\end{DoxyCode}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/db7/untag_8c_a13fd37f0e8fef81a052aab4cd5588fb6_icgraph}
+\end{center}
+\end{figure}
+
+

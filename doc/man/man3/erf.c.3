@@ -1,0 +1,581 @@
+.TH "lib/real/erf.c" 3 "Thu Jan 19 2017" "Version 1.6.0" "amath" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+lib/real/erf.c \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'fdlibm\&.h'\fP
+.br
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "double \fBerf\fP (double x)"
+.br
+.ti -1c
+.RI "double \fBerfc\fP (double x)"
+.br
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "static double \fBtiny\fP = 1e\-300"
+.br
+.ti -1c
+.RI "static double \fBhalf\fP = 5\&.00000000000000000000e\-01"
+.br
+.ti -1c
+.RI "static double \fBone\fP = 1\&.00000000000000000000e+00"
+.br
+.ti -1c
+.RI "static double \fBtwo\fP = 2\&.00000000000000000000e+00"
+.br
+.ti -1c
+.RI "static double \fBerx\fP = 8\&.45062911510467529297e\-01"
+.br
+.ti -1c
+.RI "static double \fBefx\fP = 1\&.28379167095512586316e\-01"
+.br
+.ti -1c
+.RI "static double \fBefx8\fP = 1\&.02703333676410069053e+00"
+.br
+.ti -1c
+.RI "static double \fBpp0\fP = 1\&.28379167095512558561e\-01"
+.br
+.ti -1c
+.RI "static double \fBpp1\fP = \-3\&.25042107247001499370e\-01"
+.br
+.ti -1c
+.RI "static double \fBpp2\fP = \-2\&.84817495755985104766e\-02"
+.br
+.ti -1c
+.RI "static double \fBpp3\fP = \-5\&.77027029648944159157e\-03"
+.br
+.ti -1c
+.RI "static double \fBpp4\fP = \-2\&.37630166566501626084e\-05"
+.br
+.ti -1c
+.RI "static double \fBqq1\fP = 3\&.97917223959155352819e\-01"
+.br
+.ti -1c
+.RI "static double \fBqq2\fP = 6\&.50222499887672944485e\-02"
+.br
+.ti -1c
+.RI "static double \fBqq3\fP = 5\&.08130628187576562776e\-03"
+.br
+.ti -1c
+.RI "static double \fBqq4\fP = 1\&.32494738004321644526e\-04"
+.br
+.ti -1c
+.RI "static double \fBqq5\fP = \-3\&.96022827877536812320e\-06"
+.br
+.ti -1c
+.RI "static double \fBpa0\fP = \-2\&.36211856075265944077e\-03"
+.br
+.ti -1c
+.RI "static double \fBpa1\fP = 4\&.14856118683748331666e\-01"
+.br
+.ti -1c
+.RI "static double \fBpa2\fP = \-3\&.72207876035701323847e\-01"
+.br
+.ti -1c
+.RI "static double \fBpa3\fP = 3\&.18346619901161753674e\-01"
+.br
+.ti -1c
+.RI "static double \fBpa4\fP = \-1\&.10894694282396677476e\-01"
+.br
+.ti -1c
+.RI "static double \fBpa5\fP = 3\&.54783043256182359371e\-02"
+.br
+.ti -1c
+.RI "static double \fBpa6\fP = \-2\&.16637559486879084300e\-03"
+.br
+.ti -1c
+.RI "static double \fBqa1\fP = 1\&.06420880400844228286e\-01"
+.br
+.ti -1c
+.RI "static double \fBqa2\fP = 5\&.40397917702171048937e\-01"
+.br
+.ti -1c
+.RI "static double \fBqa3\fP = 7\&.18286544141962662868e\-02"
+.br
+.ti -1c
+.RI "static double \fBqa4\fP = 1\&.26171219808761642112e\-01"
+.br
+.ti -1c
+.RI "static double \fBqa5\fP = 1\&.36370839120290507362e\-02"
+.br
+.ti -1c
+.RI "static double \fBqa6\fP = 1\&.19844998467991074170e\-02"
+.br
+.ti -1c
+.RI "static double \fBra0\fP = \-9\&.86494403484714822705e\-03"
+.br
+.ti -1c
+.RI "static double \fBra1\fP = \-6\&.93858572707181764372e\-01"
+.br
+.ti -1c
+.RI "static double \fBra2\fP = \-1\&.05586262253232909814e+01"
+.br
+.ti -1c
+.RI "static double \fBra3\fP = \-6\&.23753324503260060396e+01"
+.br
+.ti -1c
+.RI "static double \fBra4\fP = \-1\&.62396669462573470355e+02"
+.br
+.ti -1c
+.RI "static double \fBra5\fP = \-1\&.84605092906711035994e+02"
+.br
+.ti -1c
+.RI "static double \fBra6\fP = \-8\&.12874355063065934246e+01"
+.br
+.ti -1c
+.RI "static double \fBra7\fP = \-9\&.81432934416914548592e+00"
+.br
+.ti -1c
+.RI "static double \fBsa1\fP = 1\&.96512716674392571292e+01"
+.br
+.ti -1c
+.RI "static double \fBsa2\fP = 1\&.37657754143519042600e+02"
+.br
+.ti -1c
+.RI "static double \fBsa3\fP = 4\&.34565877475229228821e+02"
+.br
+.ti -1c
+.RI "static double \fBsa4\fP = 6\&.45387271733267880336e+02"
+.br
+.ti -1c
+.RI "static double \fBsa5\fP = 4\&.29008140027567833386e+02"
+.br
+.ti -1c
+.RI "static double \fBsa6\fP = 1\&.08635005541779435134e+02"
+.br
+.ti -1c
+.RI "static double \fBsa7\fP = 6\&.57024977031928170135e+00"
+.br
+.ti -1c
+.RI "static double \fBsa8\fP = \-6\&.04244152148580987438e\-02"
+.br
+.ti -1c
+.RI "static double \fBrb0\fP = \-9\&.86494292470009928597e\-03"
+.br
+.ti -1c
+.RI "static double \fBrb1\fP = \-7\&.99283237680523006574e\-01"
+.br
+.ti -1c
+.RI "static double \fBrb2\fP = \-1\&.77579549177547519889e+01"
+.br
+.ti -1c
+.RI "static double \fBrb3\fP = \-1\&.60636384855821916062e+02"
+.br
+.ti -1c
+.RI "static double \fBrb4\fP = \-6\&.37566443368389627722e+02"
+.br
+.ti -1c
+.RI "static double \fBrb5\fP = \-1\&.02509513161107724954e+03"
+.br
+.ti -1c
+.RI "static double \fBrb6\fP = \-4\&.83519191608651397019e+02"
+.br
+.ti -1c
+.RI "static double \fBsb1\fP = 3\&.03380607434824582924e+01"
+.br
+.ti -1c
+.RI "static double \fBsb2\fP = 3\&.25792512996573918826e+02"
+.br
+.ti -1c
+.RI "static double \fBsb3\fP = 1\&.53672958608443695994e+03"
+.br
+.ti -1c
+.RI "static double \fBsb4\fP = 3\&.19985821950859553908e+03"
+.br
+.ti -1c
+.RI "static double \fBsb5\fP = 2\&.55305040643316442583e+03"
+.br
+.ti -1c
+.RI "static double \fBsb6\fP = 4\&.74528541206955367215e+02"
+.br
+.ti -1c
+.RI "static double \fBsb7\fP = \-2\&.24409524465858183362e+01"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "double erf (double x)"
+
+.PP
+Definition at line 224 of file erf\&.c\&.
+.PP
+.nf
+227 {
+228     int hx,ix,i;
+229     double R,S,P,Q,s,y,z,r;
+230     hx = __HI(x);
+231     ix = hx&0x7fffffff;
+232     if(ix>=0x7ff00000) {        /* erf(nan)=nan */
+233         i = ((unsigned)hx>>31)<<1;
+234         return (double)(1-i)+one/x; /* erf(+-inf)=+-1 */
+235     }
+236 
+237     if(ix < 0x3feb0000) {       /* |x|<0\&.84375 */
+238         if(ix < 0x3e300000) {   /* |x|<2**-28 */
+239             if (ix < 0x00800000)
+240                 return 0\&.125*(8\&.0*x+efx8*x);  /*avoid underflow */
+241             return x + efx*x;
+242         }
+243         z = x*x;
+244         r = pp0+z*(pp1+z*(pp2+z*(pp3+z*pp4)));
+245         s = one+z*(qq1+z*(qq2+z*(qq3+z*(qq4+z*qq5))));
+246         y = r/s;
+247         return x + x*y;
+248     }
+249     if(ix < 0x3ff40000) {       /* 0\&.84375 <= |x| < 1\&.25 */
+250         s = fabs(x)-one;
+251         P = pa0+s*(pa1+s*(pa2+s*(pa3+s*(pa4+s*(pa5+s*pa6)))));
+252         Q = one+s*(qa1+s*(qa2+s*(qa3+s*(qa4+s*(qa5+s*qa6)))));
+253         if(hx>=0) return erx + P/Q;
+254         else return -erx - P/Q;
+255     }
+256     if (ix >= 0x40180000) {     /* inf>|x|>=6 */
+257         if(hx>=0) return one-tiny;
+258         else return tiny-one;
+259     }
+260     x = fabs(x);
+261     s = one/(x*x);
+262     if(ix< 0x4006DB6E) {    /* |x| < 1/0\&.35 */
+263         R=ra0+s*(ra1+s*(ra2+s*(ra3+s*(ra4+s*(
+264                                           ra5+s*(ra6+s*ra7))))));
+265         S=one+s*(sa1+s*(sa2+s*(sa3+s*(sa4+s*(
+266                                           sa5+s*(sa6+s*(sa7+s*sa8)))))));
+267     } else {    /* |x| >= 1/0\&.35 */
+268         R=rb0+s*(rb1+s*(rb2+s*(rb3+s*(rb4+s*(
+269                                           rb5+s*rb6)))));
+270         S=one+s*(sb1+s*(sb2+s*(sb3+s*(sb4+s*(
+271                                           sb5+s*(sb6+s*sb7))))));
+272     }
+273     z  = x;
+274     __LO(z) = 0;
+275     r  =  __ieee754_exp(-z*z-0\&.5625)*__ieee754_exp((z-x)*(z+x)+R/S);
+276     if(hx>=0) return one-r/x;
+277     else return  r/x-one;
+278 }
+.fi
+.SS "double erfc (double x)"
+
+.PP
+Definition at line 283 of file erf\&.c\&.
+.PP
+.nf
+286 {
+287     int hx,ix;
+288     double R,S,P,Q,s,y,z,r;
+289     hx = __HI(x);
+290     ix = hx&0x7fffffff;
+291     if(ix>=0x7ff00000) {            /* erfc(nan)=nan */
+292         /* erfc(+-inf)=0,2 */
+293         return (double)(((unsigned)hx>>31)<<1)+one/x;
+294     }
+295 
+296     if(ix < 0x3feb0000) {       /* |x|<0\&.84375 */
+297         if(ix < 0x3c700000)     /* |x|<2**-56 */
+298             return one-x;
+299         z = x*x;
+300         r = pp0+z*(pp1+z*(pp2+z*(pp3+z*pp4)));
+301         s = one+z*(qq1+z*(qq2+z*(qq3+z*(qq4+z*qq5))));
+302         y = r/s;
+303         if(hx < 0x3fd00000) {   /* x<1/4 */
+304             return one-(x+x*y);
+305         } else {
+306             r = x*y;
+307             r += (x-half);
+308             return half - r ;
+309         }
+310     }
+311     if(ix < 0x3ff40000) {       /* 0\&.84375 <= |x| < 1\&.25 */
+312         s = fabs(x)-one;
+313         P = pa0+s*(pa1+s*(pa2+s*(pa3+s*(pa4+s*(pa5+s*pa6)))));
+314         Q = one+s*(qa1+s*(qa2+s*(qa3+s*(qa4+s*(qa5+s*qa6)))));
+315         if(hx>=0) {
+316             z  = one-erx;
+317             return z - P/Q;
+318         } else {
+319             z = erx+P/Q;
+320             return one+z;
+321         }
+322     }
+323     if (ix < 0x403c0000) {      /* |x|<28 */
+324         x = fabs(x);
+325         s = one/(x*x);
+326         if(ix< 0x4006DB6D) {    /* |x| < 1/\&.35 ~ 2\&.857143*/
+327             R=ra0+s*(ra1+s*(ra2+s*(ra3+s*(ra4+s*(
+328                                               ra5+s*(ra6+s*ra7))))));
+329             S=one+s*(sa1+s*(sa2+s*(sa3+s*(sa4+s*(
+330                                               sa5+s*(sa6+s*(sa7+s*sa8)))))));
+331         } else {            /* |x| >= 1/\&.35 ~ 2\&.857143 */
+332             if(hx<0&&ix>=0x40180000) return two-tiny;/* x < -6 */
+333             R=rb0+s*(rb1+s*(rb2+s*(rb3+s*(rb4+s*(
+334                                               rb5+s*rb6)))));
+335             S=one+s*(sb1+s*(sb2+s*(sb3+s*(sb4+s*(
+336                                               sb5+s*(sb6+s*sb7))))));
+337         }
+338         z  = x;
+339         __LO(z)  = 0;
+340         r  =  __ieee754_exp(-z*z-0\&.5625)*
+341               __ieee754_exp((z-x)*(z+x)+R/S);
+342         if(hx>0) return r/x;
+343         else return two-r/x;
+344     } else {
+345         if(hx>0) return tiny*tiny;
+346         else return two-tiny;
+347     }
+348 }
+.fi
+.SH "Variable Documentation"
+.PP 
+.SS "double efx = 1\&.28379167095512586316e\-01\fC [static]\fP"
+
+.PP
+Definition at line 156 of file erf\&.c\&.
+.SS "double efx8 = 1\&.02703333676410069053e+00\fC [static]\fP"
+
+.PP
+Definition at line 157 of file erf\&.c\&.
+.SS "double erx = 8\&.45062911510467529297e\-01\fC [static]\fP"
+
+.PP
+Definition at line 152 of file erf\&.c\&.
+.SS "double half = 5\&.00000000000000000000e\-01\fC [static]\fP"
+
+.PP
+Definition at line 148 of file erf\&.c\&.
+.SS "double one = 1\&.00000000000000000000e+00\fC [static]\fP"
+
+.PP
+Definition at line 149 of file erf\&.c\&.
+.SS "double pa0 = \-2\&.36211856075265944077e\-03\fC [static]\fP"
+
+.PP
+Definition at line 171 of file erf\&.c\&.
+.SS "double pa1 = 4\&.14856118683748331666e\-01\fC [static]\fP"
+
+.PP
+Definition at line 172 of file erf\&.c\&.
+.SS "double pa2 = \-3\&.72207876035701323847e\-01\fC [static]\fP"
+
+.PP
+Definition at line 173 of file erf\&.c\&.
+.SS "double pa3 = 3\&.18346619901161753674e\-01\fC [static]\fP"
+
+.PP
+Definition at line 174 of file erf\&.c\&.
+.SS "double pa4 = \-1\&.10894694282396677476e\-01\fC [static]\fP"
+
+.PP
+Definition at line 175 of file erf\&.c\&.
+.SS "double pa5 = 3\&.54783043256182359371e\-02\fC [static]\fP"
+
+.PP
+Definition at line 176 of file erf\&.c\&.
+.SS "double pa6 = \-2\&.16637559486879084300e\-03\fC [static]\fP"
+
+.PP
+Definition at line 177 of file erf\&.c\&.
+.SS "double pp0 = 1\&.28379167095512558561e\-01\fC [static]\fP"
+
+.PP
+Definition at line 158 of file erf\&.c\&.
+.SS "double pp1 = \-3\&.25042107247001499370e\-01\fC [static]\fP"
+
+.PP
+Definition at line 159 of file erf\&.c\&.
+.SS "double pp2 = \-2\&.84817495755985104766e\-02\fC [static]\fP"
+
+.PP
+Definition at line 160 of file erf\&.c\&.
+.SS "double pp3 = \-5\&.77027029648944159157e\-03\fC [static]\fP"
+
+.PP
+Definition at line 161 of file erf\&.c\&.
+.SS "double pp4 = \-2\&.37630166566501626084e\-05\fC [static]\fP"
+
+.PP
+Definition at line 162 of file erf\&.c\&.
+.SS "double qa1 = 1\&.06420880400844228286e\-01\fC [static]\fP"
+
+.PP
+Definition at line 178 of file erf\&.c\&.
+.SS "double qa2 = 5\&.40397917702171048937e\-01\fC [static]\fP"
+
+.PP
+Definition at line 179 of file erf\&.c\&.
+.SS "double qa3 = 7\&.18286544141962662868e\-02\fC [static]\fP"
+
+.PP
+Definition at line 180 of file erf\&.c\&.
+.SS "double qa4 = 1\&.26171219808761642112e\-01\fC [static]\fP"
+
+.PP
+Definition at line 181 of file erf\&.c\&.
+.SS "double qa5 = 1\&.36370839120290507362e\-02\fC [static]\fP"
+
+.PP
+Definition at line 182 of file erf\&.c\&.
+.SS "double qa6 = 1\&.19844998467991074170e\-02\fC [static]\fP"
+
+.PP
+Definition at line 183 of file erf\&.c\&.
+.SS "double qq1 = 3\&.97917223959155352819e\-01\fC [static]\fP"
+
+.PP
+Definition at line 163 of file erf\&.c\&.
+.SS "double qq2 = 6\&.50222499887672944485e\-02\fC [static]\fP"
+
+.PP
+Definition at line 164 of file erf\&.c\&.
+.SS "double qq3 = 5\&.08130628187576562776e\-03\fC [static]\fP"
+
+.PP
+Definition at line 165 of file erf\&.c\&.
+.SS "double qq4 = 1\&.32494738004321644526e\-04\fC [static]\fP"
+
+.PP
+Definition at line 166 of file erf\&.c\&.
+.SS "double qq5 = \-3\&.96022827877536812320e\-06\fC [static]\fP"
+
+.PP
+Definition at line 167 of file erf\&.c\&.
+.SS "double ra0 = \-9\&.86494403484714822705e\-03\fC [static]\fP"
+
+.PP
+Definition at line 187 of file erf\&.c\&.
+.SS "double ra1 = \-6\&.93858572707181764372e\-01\fC [static]\fP"
+
+.PP
+Definition at line 188 of file erf\&.c\&.
+.SS "double ra2 = \-1\&.05586262253232909814e+01\fC [static]\fP"
+
+.PP
+Definition at line 189 of file erf\&.c\&.
+.SS "double ra3 = \-6\&.23753324503260060396e+01\fC [static]\fP"
+
+.PP
+Definition at line 190 of file erf\&.c\&.
+.SS "double ra4 = \-1\&.62396669462573470355e+02\fC [static]\fP"
+
+.PP
+Definition at line 191 of file erf\&.c\&.
+.SS "double ra5 = \-1\&.84605092906711035994e+02\fC [static]\fP"
+
+.PP
+Definition at line 192 of file erf\&.c\&.
+.SS "double ra6 = \-8\&.12874355063065934246e+01\fC [static]\fP"
+
+.PP
+Definition at line 193 of file erf\&.c\&.
+.SS "double ra7 = \-9\&.81432934416914548592e+00\fC [static]\fP"
+
+.PP
+Definition at line 194 of file erf\&.c\&.
+.SS "double rb0 = \-9\&.86494292470009928597e\-03\fC [static]\fP"
+
+.PP
+Definition at line 206 of file erf\&.c\&.
+.SS "double rb1 = \-7\&.99283237680523006574e\-01\fC [static]\fP"
+
+.PP
+Definition at line 207 of file erf\&.c\&.
+.SS "double rb2 = \-1\&.77579549177547519889e+01\fC [static]\fP"
+
+.PP
+Definition at line 208 of file erf\&.c\&.
+.SS "double rb3 = \-1\&.60636384855821916062e+02\fC [static]\fP"
+
+.PP
+Definition at line 209 of file erf\&.c\&.
+.SS "double rb4 = \-6\&.37566443368389627722e+02\fC [static]\fP"
+
+.PP
+Definition at line 210 of file erf\&.c\&.
+.SS "double rb5 = \-1\&.02509513161107724954e+03\fC [static]\fP"
+
+.PP
+Definition at line 211 of file erf\&.c\&.
+.SS "double rb6 = \-4\&.83519191608651397019e+02\fC [static]\fP"
+
+.PP
+Definition at line 212 of file erf\&.c\&.
+.SS "double sa1 = 1\&.96512716674392571292e+01\fC [static]\fP"
+
+.PP
+Definition at line 195 of file erf\&.c\&.
+.SS "double sa2 = 1\&.37657754143519042600e+02\fC [static]\fP"
+
+.PP
+Definition at line 196 of file erf\&.c\&.
+.SS "double sa3 = 4\&.34565877475229228821e+02\fC [static]\fP"
+
+.PP
+Definition at line 197 of file erf\&.c\&.
+.SS "double sa4 = 6\&.45387271733267880336e+02\fC [static]\fP"
+
+.PP
+Definition at line 198 of file erf\&.c\&.
+.SS "double sa5 = 4\&.29008140027567833386e+02\fC [static]\fP"
+
+.PP
+Definition at line 199 of file erf\&.c\&.
+.SS "double sa6 = 1\&.08635005541779435134e+02\fC [static]\fP"
+
+.PP
+Definition at line 200 of file erf\&.c\&.
+.SS "double sa7 = 6\&.57024977031928170135e+00\fC [static]\fP"
+
+.PP
+Definition at line 201 of file erf\&.c\&.
+.SS "double sa8 = \-6\&.04244152148580987438e\-02\fC [static]\fP"
+
+.PP
+Definition at line 202 of file erf\&.c\&.
+.SS "double sb1 = 3\&.03380607434824582924e+01\fC [static]\fP"
+
+.PP
+Definition at line 213 of file erf\&.c\&.
+.SS "double sb2 = 3\&.25792512996573918826e+02\fC [static]\fP"
+
+.PP
+Definition at line 214 of file erf\&.c\&.
+.SS "double sb3 = 1\&.53672958608443695994e+03\fC [static]\fP"
+
+.PP
+Definition at line 215 of file erf\&.c\&.
+.SS "double sb4 = 3\&.19985821950859553908e+03\fC [static]\fP"
+
+.PP
+Definition at line 216 of file erf\&.c\&.
+.SS "double sb5 = 2\&.55305040643316442583e+03\fC [static]\fP"
+
+.PP
+Definition at line 217 of file erf\&.c\&.
+.SS "double sb6 = 4\&.74528541206955367215e+02\fC [static]\fP"
+
+.PP
+Definition at line 218 of file erf\&.c\&.
+.SS "double sb7 = \-2\&.24409524465858183362e+01\fC [static]\fP"
+
+.PP
+Definition at line 219 of file erf\&.c\&.
+.SS "double tiny = 1e\-300\fC [static]\fP"
+
+.PP
+Definition at line 147 of file erf\&.c\&.
+.SS "double two = 2\&.00000000000000000000e+00\fC [static]\fP"
+
+.PP
+Definition at line 150 of file erf\&.c\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for amath from the source code\&.

@@ -1,0 +1,82 @@
+.TH "lib/cplex/casinh.c" 3 "Thu Jan 19 2017" "Version 1.6.0" "amath" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+lib/cplex/casinh.c \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'prim\&.h'\fP
+.br
+\fC#include 'math\&.h'\fP
+.br
+\fC#include 'complex\&.h'\fP
+.br
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBcomplex\fP \fBcasinh\fP (\fBcomplex\fP z)"
+.br
+.RI "\fIInverse hyperbolic sine of complex number\&. \fP"
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "\fBcomplex\fP casinh (\fBcomplex\fP z)"
+
+.PP
+Inverse hyperbolic sine of complex number\&. 
+.PP
+\fBVersion:\fP
+.RS 4
+1\&.0 
+.RE
+.PP
+\fBDate:\fP
+.RS 4
+14/09/15
+.RE
+.PP
+Inverse hyperbolic sine expressed using complex logarithms: 
+.PP
+.nf
+
+asinh(z) = log(z + sqrt(z*z + 1))
+.fi
+.PP
+.PP
+.PP
+.nf
+With branch cuts: -i INF to -i and i to i INF
+.fi
+.PP
+.PP
+.PP
+.nf
+Domain: -INF to INF
+Range:  -INF to INF
+.fi
+.PP
+ More info is available at Wikipedia: 
+.br
+ http://en.wikipedia.org/wiki/Inverse_hyperbolic_function#Logarithmic_representation 
+.PP
+Definition at line 48 of file casinh\&.c\&.
+.PP
+References cadd(), clog(), cmul(), cpack(), and csqrt()\&.
+.PP
+Referenced by ComplexNumber::HypArcSine()\&.
+.PP
+.nf
+49 {
+50     complex one = cpack(1\&.0, 0\&.0);
+51     complex a = cadd(cmul(z, z), one);
+52     complex b = cadd(z, csqrt(a));
+53     complex w = clog(b);
+54     return w;
+55 }
+.fi
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for amath from the source code\&.

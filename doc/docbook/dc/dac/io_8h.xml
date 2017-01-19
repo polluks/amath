@@ -1,0 +1,121 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="dc/dac/io_8h">
+    <title>io.h File Reference</title>
+    <programlisting>#include &quot;clib.h&quot;</programlisting>
+    <programlisting>#include &quot;platform.h&quot;</programlisting>
+    <programlisting>#include &quot;system/program.h&quot;</programlisting>
+<para>Include dependency diagram for io.h</para>
+<para>
+    <figure>
+        <title>Dependency diagram</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="../../d8/da5/io_8h__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+<para>Included by dependency diagram for io.h</para>
+<para>
+    <figure>
+        <title>Dependency diagram</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="../../da/de4/io_8h__dep__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+        <section>
+            <title>Macros</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="dc/dac/io_8h_1a555e2a159918ee08dbbb71645bf2348c">CPROCNAME</link> &quot;amath_console&quot;</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title>Variables</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>const char * <link linkend="dc/dac/io_8h_1a57d2e88965e3e6ba15ff83435ddc8ae0">vers</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>class <link linkend="dc/db5/classProgram">Program</link> * <link linkend="dc/dac/io_8h_1ad9c582bdae0ebb60daf0a7673448c9c9">Program</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title>Functions</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>class <link linkend="dc/db5/classProgram">Program</link> * <link linkend="dc/dac/io_8h_1acbfdc579e98a99dc390e2ed87a8db15d">CreateProgram</link> (
+int , char ** )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>class <link linkend="d0/d41/classLanguage">Language</link> * <link linkend="dc/dac/io_8h_1a28bdfc208e3840f49d1af4a4196013e1">CreateLanguage</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>class <link linkend="da/de5/classPreferencesBase">PreferencesBase</link> * <link linkend="dc/dac/io_8h_1ae6bd8b440ad1736316165c2f8aac43bf">CreatePreferences</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>class <link linkend="d5/d68/classFilesystemBase">FilesystemBase</link> * <link linkend="dc/dac/io_8h_1aaf891622b11e0bb888ebf08612884aa8">CreateFilesystem</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>class <link linkend="d2/d8c/classGraphWindow">GraphWindow</link> * <link linkend="dc/dac/io_8h_1a99482ffbe19cd5e821359f26620cd89f">CreateGraphWindow</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="dc/dac/io_8h_1afabbf967db247cad6ad9a6f416e99e12">WriteToShell</link> (
+const char * )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="dc/dac/io_8h_1ae89a123aad1c66a76c398b7af216aae4">Cleanup</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+    <simplesect>
+        <title>Detailed Description</title>
+
+<para>System dependent I/O. </para>
+    <para>Definition in file /home/carsten/amath2/app/system/base/io.h</para>
+    </simplesect>
+</section>

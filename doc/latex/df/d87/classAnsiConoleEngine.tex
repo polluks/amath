@@ -1,0 +1,993 @@
+\hypertarget{classAnsiConoleEngine}{}\section{Ansi\+Conole\+Engine Class Reference}
+\label{classAnsiConoleEngine}\index{Ansi\+Conole\+Engine@{Ansi\+Conole\+Engine}}
+
+
+A\+N\+SI console controller.  
+
+
+
+
+{\ttfamily \#include $<$aengine.\+h$>$}
+
+
+
+Collaboration diagram for Ansi\+Conole\+Engine\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=177pt]{db/d6d/classAnsiConoleEngine__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classAnsiConoleEngine_aac394a191db46deb09a08522bdf72218}{Ansi\+Conole\+Engine} (const char $\ast$\hyperlink{classAnsiConoleEngine_a97ebef63ba0490711ed78733b6a87be5}{prompt})
+\item 
+\hyperlink{classAnsiConoleEngine_a2023846db9703224facd0c2015528dc3}{$\sim$\+Ansi\+Conole\+Engine} ()
+\item 
+void \hyperlink{classAnsiConoleEngine_a8ad01a2ddd3ee5182deb4a74f3d2a0c1}{Start\+Input} ()
+\item 
+\hyperlink{platform_8h_a1062901a7428fdd9c7f180f5e01ea056}{bool} \hyperlink{classAnsiConoleEngine_ab136f725541608d36dedcd8ffa24e820}{Input\+Done} ()
+\item 
+const char $\ast$ \hyperlink{classAnsiConoleEngine_ae3b0bd4c66cb82f4ff939b45bd6e7446}{Get\+Line} ()
+\item 
+void \hyperlink{classAnsiConoleEngine_a6c5dd4043aadc0b310f976eb10cbcd9f}{Set\+Prompt} (const char $\ast$string)
+\item 
+const char $\ast$ \hyperlink{classAnsiConoleEngine_a7bb2dea88ddc5ae76643d2303fcc4bf1}{Process\+Char} (const unsigned char character)
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classAnsiConoleEngine_ae359fe52bf227c3db6edc42b8fc884f0}{Copy\+Line} ()
+\item 
+void \hyperlink{classAnsiConoleEngine_afc441f10d1c52dba7b3ca1a5f2514e7c}{Show\+Last} ()
+\item 
+void \hyperlink{classAnsiConoleEngine_a93c3eccd6c1458e1a82bdbf202948d90}{Show\+Next} ()
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+char $\ast$ \hyperlink{classAnsiConoleEngine_a97ebef63ba0490711ed78733b6a87be5}{prompt}
+\item 
+char $\ast$$\ast$ \hyperlink{classAnsiConoleEngine_a624ec5321c326a68de340f9b77e84c2c}{lines}
+\item 
+\hyperlink{classCharBuffer}{Char\+Buffer} $\ast$ \hyperlink{classAnsiConoleEngine_a6bf88afa72a458e3687972f9e666cd86}{linebuf}
+\item 
+unsigned int \hyperlink{classAnsiConoleEngine_ad5d65280df848947f5b2dda80dcf35c6}{len}
+\item 
+char $\ast$ \hyperlink{classAnsiConoleEngine_aea3df1b13bc8ecf2eb68ec693249800f}{cursor}
+\item 
+char $\ast$ \hyperlink{classAnsiConoleEngine_a28852245082570631c7392411fec89cc}{endpos}
+\item 
+int \hyperlink{classAnsiConoleEngine_ab029fc4a19c5fbd6f6b23c390af618b8}{curline}
+\item 
+int \hyperlink{classAnsiConoleEngine_a24fe8cd3b3321c6dd4b26731cb1a8108}{showline}
+\item 
+\hyperlink{platform_8h_a1062901a7428fdd9c7f180f5e01ea056}{bool} \hyperlink{classAnsiConoleEngine_a23b1b0d4714995d12e7b0aacdecfa0c4}{lineswap}
+\item 
+char $\ast$ \hyperlink{classAnsiConoleEngine_a465421c5488f2566d12717641a327017}{editline}
+\item 
+\hyperlink{platform_8h_a1062901a7428fdd9c7f180f5e01ea056}{bool} \hyperlink{classAnsiConoleEngine_af497f5cbdca8bbc350935a90568b06e7}{escmode}
+\item 
+\hyperlink{platform_8h_a1062901a7428fdd9c7f180f5e01ea056}{bool} \hyperlink{classAnsiConoleEngine_adf2036857a6c6de85836ee2e7b3e5d6d}{csimode}
+\item 
+\hyperlink{platform_8h_a1062901a7428fdd9c7f180f5e01ea056}{bool} \hyperlink{classAnsiConoleEngine_a5182d9a19cc1fe8681a9faf77a156657}{delmode}
+\item 
+\hyperlink{platform_8h_a1062901a7428fdd9c7f180f5e01ea056}{bool} \hyperlink{classAnsiConoleEngine_a0931686f3224f07bd3a3fe25c06e32c6}{linedone}
+\item 
+\hyperlink{classCharBuffer}{Char\+Buffer} $\ast$ \hyperlink{classAnsiConoleEngine_ad6a604fc0a0f544907513076c72434f3}{out}
+\end{DoxyCompactItemize}
+\subsection*{Static Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static const int \hyperlink{classAnsiConoleEngine_a3f94786b1610ac3f038d5115fd8047a3}{max\+Lines} = 20
+\item 
+static const int \hyperlink{classAnsiConoleEngine_a59042210f69050bdfb531841e8ac0927}{line\+Size} = 1024
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A\+N\+SI console controller. 
+
+More info on the A\+N\+SI console is available at Wikipedia\+: \href{http://en.wikipedia.org/wiki/ANSI_escape_code}{\tt http\+://en.\+wikipedia.\+org/wiki/\+A\+N\+S\+I\+\_\+escape\+\_\+code} 
+
+Definition at line 44 of file aengine.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Ansi\+Conole\+Engine@{Ansi\+Conole\+Engine}!Ansi\+Conole\+Engine@{Ansi\+Conole\+Engine}}
+\index{Ansi\+Conole\+Engine@{Ansi\+Conole\+Engine}!Ansi\+Conole\+Engine@{Ansi\+Conole\+Engine}}
+\subsubsection[{\texorpdfstring{Ansi\+Conole\+Engine(const char $\ast$prompt)}{AnsiConoleEngine(const char *prompt)}}]{\setlength{\rightskip}{0pt plus 5cm}Ansi\+Conole\+Engine\+::\+Ansi\+Conole\+Engine (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{prompt}
+\end{DoxyParamCaption}
+)}\hypertarget{classAnsiConoleEngine_aac394a191db46deb09a08522bdf72218}{}\label{classAnsiConoleEngine_aac394a191db46deb09a08522bdf72218}
+
+
+Definition at line 31 of file aengine.\+cpp.
+
+
+
+References Alloc\+And\+Copy(), Char\+Buffer\+::\+Char\+Buffer(), curline, editline, linebuf, lines, max\+Lines, out, and prompt.
+
+
+
+Referenced by Standard\+Console\+::\+Standard\+Console().
+
+
+\begin{DoxyCode}
+32 \{
+33     \hyperlink{clib_8h_a5bed05c70cb17e541fee570b5dc32e1a}{AllocAndCopy}(&this->\hyperlink{classAnsiConoleEngine_a97ebef63ba0490711ed78733b6a87be5}{prompt}, \hyperlink{classAnsiConoleEngine_a97ebef63ba0490711ed78733b6a87be5}{prompt});
+34     \hyperlink{classAnsiConoleEngine_a6bf88afa72a458e3687972f9e666cd86}{linebuf} = \textcolor{keyword}{new} \hyperlink{classCharBuffer}{CharBuffer}();
+35     \hyperlink{classAnsiConoleEngine_ad6a604fc0a0f544907513076c72434f3}{out} = \textcolor{keyword}{new} \hyperlink{classCharBuffer}{CharBuffer}();
+36 
+37     \hyperlink{classAnsiConoleEngine_a624ec5321c326a68de340f9b77e84c2c}{lines} = \textcolor{keyword}{new} \textcolor{keywordtype}{char}*[\hyperlink{classAnsiConoleEngine_a3f94786b1610ac3f038d5115fd8047a3}{maxLines}];
+38 
+39     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < \hyperlink{classAnsiConoleEngine_a3f94786b1610ac3f038d5115fd8047a3}{maxLines}; i++) \{
+40         \hyperlink{classAnsiConoleEngine_a624ec5321c326a68de340f9b77e84c2c}{lines}[i] = \hyperlink{platform_8h_a46ff2bfbf0d44b8466a2251d5bd5e6f8}{NOMEM};
+41     \}
+42 
+43     \hyperlink{classAnsiConoleEngine_a465421c5488f2566d12717641a327017}{editline} = \hyperlink{platform_8h_a46ff2bfbf0d44b8466a2251d5bd5e6f8}{NOMEM};
+44     \hyperlink{classAnsiConoleEngine_ab029fc4a19c5fbd6f6b23c390af618b8}{curline} = -1;
+45 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{df/d87/classAnsiConoleEngine_aac394a191db46deb09a08522bdf72218_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{df/d87/classAnsiConoleEngine_aac394a191db46deb09a08522bdf72218_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Ansi\+Conole\+Engine@{Ansi\+Conole\+Engine}!````~Ansi\+Conole\+Engine@{$\sim$\+Ansi\+Conole\+Engine}}
+\index{````~Ansi\+Conole\+Engine@{$\sim$\+Ansi\+Conole\+Engine}!Ansi\+Conole\+Engine@{Ansi\+Conole\+Engine}}
+\subsubsection[{\texorpdfstring{$\sim$\+Ansi\+Conole\+Engine()}{~AnsiConoleEngine()}}]{\setlength{\rightskip}{0pt plus 5cm}Ansi\+Conole\+Engine\+::$\sim$\+Ansi\+Conole\+Engine (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classAnsiConoleEngine_a2023846db9703224facd0c2015528dc3}{}\label{classAnsiConoleEngine_a2023846db9703224facd0c2015528dc3}
+
+
+Definition at line 47 of file aengine.\+cpp.
+
+
+
+References linebuf, lines, max\+Lines, out, and prompt.
+
+
+\begin{DoxyCode}
+48 \{
+49     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < \hyperlink{classAnsiConoleEngine_a3f94786b1610ac3f038d5115fd8047a3}{maxLines}; i++) \{
+50         \textcolor{keywordflow}{if} (\hyperlink{classAnsiConoleEngine_a624ec5321c326a68de340f9b77e84c2c}{lines}[i] != \hyperlink{platform_8h_a46ff2bfbf0d44b8466a2251d5bd5e6f8}{NOMEM}) \{
+51             \textcolor{keyword}{delete} [] \hyperlink{classAnsiConoleEngine_a624ec5321c326a68de340f9b77e84c2c}{lines}[i];
+52         \}
+53     \}
+54 
+55     \textcolor{keyword}{delete} [] \hyperlink{classAnsiConoleEngine_a624ec5321c326a68de340f9b77e84c2c}{lines};
+56     \textcolor{keyword}{delete} \hyperlink{classAnsiConoleEngine_a6bf88afa72a458e3687972f9e666cd86}{linebuf};
+57     \textcolor{keyword}{delete} \hyperlink{classAnsiConoleEngine_ad6a604fc0a0f544907513076c72434f3}{out};
+58     \textcolor{keyword}{delete} \hyperlink{classAnsiConoleEngine_a97ebef63ba0490711ed78733b6a87be5}{prompt};
+59 \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\index{Ansi\+Conole\+Engine@{Ansi\+Conole\+Engine}!Copy\+Line@{Copy\+Line}}
+\index{Copy\+Line@{Copy\+Line}!Ansi\+Conole\+Engine@{Ansi\+Conole\+Engine}}
+\subsubsection[{\texorpdfstring{Copy\+Line()}{CopyLine()}}]{\setlength{\rightskip}{0pt plus 5cm}void Ansi\+Conole\+Engine\+::\+Copy\+Line (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classAnsiConoleEngine_ae359fe52bf227c3db6edc42b8fc884f0}{}\label{classAnsiConoleEngine_ae359fe52bf227c3db6edc42b8fc884f0}
+
+
+Definition at line 214 of file aengine.\+cpp.
+
+
+
+References Alloc\+And\+Copy(), curline, editline, Char\+Buffer\+::\+Get\+String(), linebuf, lines, and max\+Lines.
+
+
+
+Referenced by Process\+Char().
+
+
+\begin{DoxyCode}
+215 \{
+216     \hyperlink{classAnsiConoleEngine_ab029fc4a19c5fbd6f6b23c390af618b8}{curline}++;
+217 
+218     \textcolor{keywordflow}{if} (\hyperlink{classAnsiConoleEngine_ab029fc4a19c5fbd6f6b23c390af618b8}{curline} == \hyperlink{classAnsiConoleEngine_a3f94786b1610ac3f038d5115fd8047a3}{maxLines}) \{
+219         \hyperlink{classAnsiConoleEngine_ab029fc4a19c5fbd6f6b23c390af618b8}{curline}--;
+220 
+221         \textcolor{keyword}{delete} [] \hyperlink{classAnsiConoleEngine_a624ec5321c326a68de340f9b77e84c2c}{lines}[0];
+222         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < \hyperlink{classAnsiConoleEngine_a3f94786b1610ac3f038d5115fd8047a3}{maxLines} - 1; i++) \{
+223             \hyperlink{classAnsiConoleEngine_a624ec5321c326a68de340f9b77e84c2c}{lines}[i] = \hyperlink{classAnsiConoleEngine_a624ec5321c326a68de340f9b77e84c2c}{lines}[i + 1];
+224         \}
+225     \}
+226 
+227     \hyperlink{clib_8h_a5bed05c70cb17e541fee570b5dc32e1a}{AllocAndCopy}(&(\hyperlink{classAnsiConoleEngine_a624ec5321c326a68de340f9b77e84c2c}{lines}[\hyperlink{classAnsiConoleEngine_ab029fc4a19c5fbd6f6b23c390af618b8}{curline}]), \hyperlink{classAnsiConoleEngine_a6bf88afa72a458e3687972f9e666cd86}{linebuf}->
+      \hyperlink{classCharBuffer_a7dfd3feaaf80f318ba44efe15b1ec44b}{GetString}());
+228 
+229     \textcolor{keywordflow}{if} (\hyperlink{classAnsiConoleEngine_a465421c5488f2566d12717641a327017}{editline} != \hyperlink{platform_8h_a46ff2bfbf0d44b8466a2251d5bd5e6f8}{NOMEM}) \{
+230         \textcolor{keyword}{delete} [] \hyperlink{classAnsiConoleEngine_a465421c5488f2566d12717641a327017}{editline};
+231         \hyperlink{classAnsiConoleEngine_a465421c5488f2566d12717641a327017}{editline} = \hyperlink{platform_8h_a46ff2bfbf0d44b8466a2251d5bd5e6f8}{NOMEM};
+232     \}
+233 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{df/d87/classAnsiConoleEngine_ae359fe52bf227c3db6edc42b8fc884f0_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{df/d87/classAnsiConoleEngine_ae359fe52bf227c3db6edc42b8fc884f0_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Ansi\+Conole\+Engine@{Ansi\+Conole\+Engine}!Get\+Line@{Get\+Line}}
+\index{Get\+Line@{Get\+Line}!Ansi\+Conole\+Engine@{Ansi\+Conole\+Engine}}
+\subsubsection[{\texorpdfstring{Get\+Line()}{GetLine()}}]{\setlength{\rightskip}{0pt plus 5cm}const char $\ast$ Ansi\+Conole\+Engine\+::\+Get\+Line (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classAnsiConoleEngine_ae3b0bd4c66cb82f4ff939b45bd6e7446}{}\label{classAnsiConoleEngine_ae3b0bd4c66cb82f4ff939b45bd6e7446}
+
+
+Definition at line 318 of file aengine.\+cpp.
+
+
+
+References Char\+Buffer\+::\+Get\+String(), and linebuf.
+
+
+
+Referenced by Standard\+Console\+::\+Read\+Line().
+
+
+\begin{DoxyCode}
+319 \{
+320     \textcolor{keywordflow}{return} \hyperlink{classAnsiConoleEngine_a6bf88afa72a458e3687972f9e666cd86}{linebuf}->\hyperlink{classCharBuffer_a7dfd3feaaf80f318ba44efe15b1ec44b}{GetString}();
+321 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{df/d87/classAnsiConoleEngine_ae3b0bd4c66cb82f4ff939b45bd6e7446_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{df/d87/classAnsiConoleEngine_ae3b0bd4c66cb82f4ff939b45bd6e7446_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Ansi\+Conole\+Engine@{Ansi\+Conole\+Engine}!Input\+Done@{Input\+Done}}
+\index{Input\+Done@{Input\+Done}!Ansi\+Conole\+Engine@{Ansi\+Conole\+Engine}}
+\subsubsection[{\texorpdfstring{Input\+Done()}{InputDone()}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} Ansi\+Conole\+Engine\+::\+Input\+Done (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classAnsiConoleEngine_ab136f725541608d36dedcd8ffa24e820}{}\label{classAnsiConoleEngine_ab136f725541608d36dedcd8ffa24e820}
+
+
+Definition at line 313 of file aengine.\+cpp.
+
+
+
+References linedone.
+
+
+
+Referenced by Standard\+Console\+::\+Read\+Line().
+
+
+\begin{DoxyCode}
+314 \{
+315     \textcolor{keywordflow}{return} \hyperlink{classAnsiConoleEngine_a0931686f3224f07bd3a3fe25c06e32c6}{linedone};
+316 \}
+\end{DoxyCode}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{df/d87/classAnsiConoleEngine_ab136f725541608d36dedcd8ffa24e820_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Ansi\+Conole\+Engine@{Ansi\+Conole\+Engine}!Process\+Char@{Process\+Char}}
+\index{Process\+Char@{Process\+Char}!Ansi\+Conole\+Engine@{Ansi\+Conole\+Engine}}
+\subsubsection[{\texorpdfstring{Process\+Char(const unsigned char character)}{ProcessChar(const unsigned char character)}}]{\setlength{\rightskip}{0pt plus 5cm}const char $\ast$ Ansi\+Conole\+Engine\+::\+Process\+Char (
+\begin{DoxyParamCaption}
+\item[{const unsigned char}]{character}
+\end{DoxyParamCaption}
+)}\hypertarget{classAnsiConoleEngine_a7bb2dea88ddc5ae76643d2303fcc4bf1}{}\label{classAnsiConoleEngine_a7bb2dea88ddc5ae76643d2303fcc4bf1}
+
+
+Definition at line 80 of file aengine.\+cpp.
+
+
+
+References Char\+Buffer\+::\+Append(), Char\+Buffer\+::buf, Copy\+Line(), csimode, cursor, delmode, Char\+Buffer\+::\+Empty(), endpos, escmode, Char\+Buffer\+::\+Get\+String(), len, linebuf, linedone, out, Char\+Buffer\+::ptr, Show\+Last(), and Show\+Next().
+
+
+
+Referenced by Standard\+Console\+::\+Read\+Line().
+
+
+\begin{DoxyCode}
+81 \{
+82     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} ch = character;
+83     \hyperlink{classAnsiConoleEngine_ad6a604fc0a0f544907513076c72434f3}{out}->\hyperlink{classCharBuffer_abe39d3fd7d8b9c8ec343af2cae7adc96}{Empty}();
+84 
+85     \textcolor{comment}{/*}
+86 \textcolor{comment}{    // -------------- DEUG ------------------}
+87 \textcolor{comment}{    Number *d = new RealNumber((int)ch);}
+88 \textcolor{comment}{    NumeralSystem *ns = new DecimalSystem(0);}
+89 \textcolor{comment}{    const char *dtext = ns->GetText(d);}
+90 \textcolor{comment}{    StrCopy(out->buf, dtext);}
+91 \textcolor{comment}{    StrConcat(out->buf, SPACE);}
+92 \textcolor{comment}{    delete ns;}
+93 \textcolor{comment}{    delete d;}
+94 \textcolor{comment}{    return out->buf;}
+95 \textcolor{comment}{    // -------------- DEUG ------------------}
+96 \textcolor{comment}{    */}
+97 
+98     \textcolor{keywordflow}{if} (\hyperlink{classAnsiConoleEngine_ad5d65280df848947f5b2dda80dcf35c6}{len} == 0) \{
+99         \textcolor{comment}{// TODO: double buffer}
+100     \}
+101 
+102     \textcolor{keywordtype}{bool} processed = \textcolor{keyword}{false};
+103 
+104     \textcolor{keywordflow}{if} (ch == 0) \{
+105         processed = \textcolor{keyword}{true};
+106     \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (ch == 27) \{
+107         \hyperlink{classAnsiConoleEngine_af497f5cbdca8bbc350935a90568b06e7}{escmode} = \textcolor{keyword}{true};
+108         processed = \textcolor{keyword}{true};
+109     \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (ch == 155 || (\hyperlink{classAnsiConoleEngine_af497f5cbdca8bbc350935a90568b06e7}{escmode} && ch == 91)) \{
+110         \hyperlink{classAnsiConoleEngine_adf2036857a6c6de85836ee2e7b3e5d6d}{csimode} = \textcolor{keyword}{true};
+111         processed = \textcolor{keyword}{true};
+112     \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (\hyperlink{classAnsiConoleEngine_adf2036857a6c6de85836ee2e7b3e5d6d}{csimode}) \{
+113         \textcolor{keywordflow}{switch} (ch) \{
+114         \textcolor{keywordflow}{case} 65: \textcolor{comment}{// Arrow up (27 91 65)}
+115             \hyperlink{classAnsiConoleEngine_afc441f10d1c52dba7b3ca1a5f2514e7c}{ShowLast}();
+116             \textcolor{keywordflow}{break};
+117         \textcolor{keywordflow}{case} 66: \textcolor{comment}{// Arrow down (27 91 66)}
+118             \hyperlink{classAnsiConoleEngine_a93c3eccd6c1458e1a82bdbf202948d90}{ShowNext}();
+119             \textcolor{keywordflow}{break};
+120         \textcolor{keywordflow}{case} 67: \textcolor{comment}{// Arrow right (27 91 67)}
+121             \textcolor{keywordflow}{if} (\hyperlink{classAnsiConoleEngine_aea3df1b13bc8ecf2eb68ec693249800f}{cursor} != \hyperlink{classAnsiConoleEngine_a28852245082570631c7392411fec89cc}{endpos}) \{
+122                 \hyperlink{classAnsiConoleEngine_aea3df1b13bc8ecf2eb68ec693249800f}{cursor}++;
+123                 \hyperlink{classAnsiConoleEngine_ad6a604fc0a0f544907513076c72434f3}{out}->\hyperlink{classCharBuffer_a045b38735f7b3007c1b98d3d7b7feafe}{Append}(\hyperlink{platform_8h_a67ab9b76f83cab7d4b7dab79ca50a89d}{CURSORFORWARD});
+124             \}
+125             \textcolor{keywordflow}{break};
+126         \textcolor{keywordflow}{case} 68: \textcolor{comment}{// Arrow left (27 91 68)}
+127             \textcolor{keywordflow}{if} (\hyperlink{classAnsiConoleEngine_aea3df1b13bc8ecf2eb68ec693249800f}{cursor} != \hyperlink{classAnsiConoleEngine_a6bf88afa72a458e3687972f9e666cd86}{linebuf}->\hyperlink{classCharBuffer_a8bcd8491b24db4197b311eb361609674}{buf}) \{
+128                 \hyperlink{classAnsiConoleEngine_aea3df1b13bc8ecf2eb68ec693249800f}{cursor}--;
+129                 \hyperlink{classAnsiConoleEngine_ad6a604fc0a0f544907513076c72434f3}{out}->\hyperlink{classCharBuffer_a045b38735f7b3007c1b98d3d7b7feafe}{Append}(\hyperlink{platform_8h_a0740e3bf50964c04eeaa76ae5fe9c14c}{CURSORBACKWARD});
+130             \}
+131             \textcolor{keywordflow}{break};
+132         \textcolor{keywordflow}{case} 51: \textcolor{comment}{// DEL         27 91 51 126}
+133             \hyperlink{classAnsiConoleEngine_a5182d9a19cc1fe8681a9faf77a156657}{delmode} = \textcolor{keyword}{true};
+134         \textcolor{keywordflow}{default}:
+135             \textcolor{comment}{// F1          27 79 80}
+136             \textcolor{comment}{// F2          27 79 81}
+137             \textcolor{keywordflow}{break};
+138         \}
+139 
+140         \hyperlink{classAnsiConoleEngine_af497f5cbdca8bbc350935a90568b06e7}{escmode} = \textcolor{keyword}{false};
+141         \hyperlink{classAnsiConoleEngine_adf2036857a6c6de85836ee2e7b3e5d6d}{csimode} = \textcolor{keyword}{false};
+142         processed = \textcolor{keyword}{true};
+143     \} \textcolor{keywordflow}{else} \{
+144         \hyperlink{classAnsiConoleEngine_af497f5cbdca8bbc350935a90568b06e7}{escmode} = \textcolor{keyword}{false};
+145         \hyperlink{classAnsiConoleEngine_adf2036857a6c6de85836ee2e7b3e5d6d}{csimode} = \textcolor{keyword}{false};
+146     \}
+147 
+148     \textcolor{comment}{// Delete one character to the right}
+149     \textcolor{keywordflow}{if} (\hyperlink{classAnsiConoleEngine_a5182d9a19cc1fe8681a9faf77a156657}{delmode} && ch == 126) \{
+150         \textcolor{keywordflow}{if} (\hyperlink{classAnsiConoleEngine_aea3df1b13bc8ecf2eb68ec693249800f}{cursor} != \hyperlink{classAnsiConoleEngine_a28852245082570631c7392411fec89cc}{endpos}) \{
+151             \textcolor{keywordtype}{char} *i = \hyperlink{classAnsiConoleEngine_aea3df1b13bc8ecf2eb68ec693249800f}{cursor};
+152             \textcolor{keywordflow}{do} \{
+153                 *i = *(i + 1);
+154                 i++;
+155             \} \textcolor{keywordflow}{while} (i != \hyperlink{classAnsiConoleEngine_a28852245082570631c7392411fec89cc}{endpos});
+156 
+157             \hyperlink{classAnsiConoleEngine_ad5d65280df848947f5b2dda80dcf35c6}{len}++;
+158             \hyperlink{classAnsiConoleEngine_ad6a604fc0a0f544907513076c72434f3}{out}->\hyperlink{classCharBuffer_a045b38735f7b3007c1b98d3d7b7feafe}{Append}(\hyperlink{platform_8h_a32235c847e9b93b06b2ffebafe31fbc1}{DELETE1CHAR});
+159             \hyperlink{classAnsiConoleEngine_a28852245082570631c7392411fec89cc}{endpos}--;
+160             \hyperlink{classAnsiConoleEngine_a6bf88afa72a458e3687972f9e666cd86}{linebuf}->\hyperlink{classCharBuffer_a2d313433650506fd6609e6947729dfb0}{ptr} = \hyperlink{classAnsiConoleEngine_a28852245082570631c7392411fec89cc}{endpos};
+161         \}
+162 
+163         processed = \textcolor{keyword}{true};
+164         \hyperlink{classAnsiConoleEngine_a5182d9a19cc1fe8681a9faf77a156657}{delmode} = \textcolor{keyword}{false};
+165     \}
+166 
+167     \textcolor{keywordflow}{if} (processed) \{
+168         \textcolor{keywordflow}{return} \hyperlink{classAnsiConoleEngine_ad6a604fc0a0f544907513076c72434f3}{out}->\hyperlink{classCharBuffer_a7dfd3feaaf80f318ba44efe15b1ec44b}{GetString}();
+169     \}
+170 
+171     \textcolor{keywordflow}{if} (ch == 13 || ch == 10) \{
+172         \hyperlink{classAnsiConoleEngine_ad6a604fc0a0f544907513076c72434f3}{out}->\hyperlink{classCharBuffer_a045b38735f7b3007c1b98d3d7b7feafe}{Append}(\hyperlink{platform_8h_a806511f4930171733227c99101dc0606}{NEWLINE});
+173         \hyperlink{classAnsiConoleEngine_a6bf88afa72a458e3687972f9e666cd86}{linebuf}->\hyperlink{classCharBuffer_a2d313433650506fd6609e6947729dfb0}{ptr} = \hyperlink{classAnsiConoleEngine_a28852245082570631c7392411fec89cc}{endpos};
+174         \hyperlink{classAnsiConoleEngine_ae359fe52bf227c3db6edc42b8fc884f0}{CopyLine}();
+175         \hyperlink{classAnsiConoleEngine_a0931686f3224f07bd3a3fe25c06e32c6}{linedone} = \textcolor{keyword}{true};
+176     \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (\hyperlink{classAnsiConoleEngine_aea3df1b13bc8ecf2eb68ec693249800f}{cursor} != \hyperlink{classAnsiConoleEngine_a6bf88afa72a458e3687972f9e666cd86}{linebuf}->\hyperlink{classCharBuffer_a8bcd8491b24db4197b311eb361609674}{buf} && (ch == 8 || ch == 127)) \{
+177         \textcolor{comment}{// Deleting in middle of line}
+178         \textcolor{keywordflow}{if} (\hyperlink{classAnsiConoleEngine_aea3df1b13bc8ecf2eb68ec693249800f}{cursor} != \hyperlink{classAnsiConoleEngine_a28852245082570631c7392411fec89cc}{endpos}) \{
+179             \textcolor{keywordtype}{char} *i = \hyperlink{classAnsiConoleEngine_aea3df1b13bc8ecf2eb68ec693249800f}{cursor} - 1;
+180             \textcolor{keywordflow}{do} \{
+181                 *i = *(i + 1);
+182                 i++;
+183             \} \textcolor{keywordflow}{while} (i != \hyperlink{classAnsiConoleEngine_a28852245082570631c7392411fec89cc}{endpos});
+184 
+185         \}
+186 
+187         \hyperlink{classAnsiConoleEngine_ad5d65280df848947f5b2dda80dcf35c6}{len}++;
+188         \hyperlink{classAnsiConoleEngine_ad6a604fc0a0f544907513076c72434f3}{out}->\hyperlink{classCharBuffer_a045b38735f7b3007c1b98d3d7b7feafe}{Append}(\hyperlink{platform_8h_a0740e3bf50964c04eeaa76ae5fe9c14c}{CURSORBACKWARD});
+189         \hyperlink{classAnsiConoleEngine_ad6a604fc0a0f544907513076c72434f3}{out}->\hyperlink{classCharBuffer_a045b38735f7b3007c1b98d3d7b7feafe}{Append}(\hyperlink{platform_8h_a32235c847e9b93b06b2ffebafe31fbc1}{DELETE1CHAR});
+190         \hyperlink{classAnsiConoleEngine_aea3df1b13bc8ecf2eb68ec693249800f}{cursor}--;
+191         \hyperlink{classAnsiConoleEngine_a28852245082570631c7392411fec89cc}{endpos}--;
+192         \hyperlink{classAnsiConoleEngine_a6bf88afa72a458e3687972f9e666cd86}{linebuf}->\hyperlink{classCharBuffer_a2d313433650506fd6609e6947729dfb0}{ptr} = \hyperlink{classAnsiConoleEngine_a28852245082570631c7392411fec89cc}{endpos};
+193     \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (ch >= 32 && ch <= 126) \{
+194         \textcolor{comment}{// Insert in middle of line}
+195         \textcolor{keywordflow}{if} (\hyperlink{classAnsiConoleEngine_aea3df1b13bc8ecf2eb68ec693249800f}{cursor} != \hyperlink{classAnsiConoleEngine_a28852245082570631c7392411fec89cc}{endpos}) \{
+196             \textcolor{keywordtype}{char} *i = \hyperlink{classAnsiConoleEngine_a28852245082570631c7392411fec89cc}{endpos};
+197             \textcolor{keywordflow}{do} \{
+198                 *i = *(i - 1);
+199                 i--;
+200             \} \textcolor{keywordflow}{while} (i != \hyperlink{classAnsiConoleEngine_aea3df1b13bc8ecf2eb68ec693249800f}{cursor});
+201             \hyperlink{classAnsiConoleEngine_ad6a604fc0a0f544907513076c72434f3}{out}->\hyperlink{classCharBuffer_a045b38735f7b3007c1b98d3d7b7feafe}{Append}(\hyperlink{platform_8h_af145bfe17da42ad3645a948d7881292b}{INSERT1CHAR});
+202         \}
+203 
+204         \hyperlink{classAnsiConoleEngine_ad5d65280df848947f5b2dda80dcf35c6}{len}--;
+205         \hyperlink{classAnsiConoleEngine_ad6a604fc0a0f544907513076c72434f3}{out}->\hyperlink{classCharBuffer_a045b38735f7b3007c1b98d3d7b7feafe}{Append}(ch);
+206         *\hyperlink{classAnsiConoleEngine_aea3df1b13bc8ecf2eb68ec693249800f}{cursor}++ = ch;
+207         \hyperlink{classAnsiConoleEngine_a28852245082570631c7392411fec89cc}{endpos}++;
+208         \hyperlink{classAnsiConoleEngine_a6bf88afa72a458e3687972f9e666cd86}{linebuf}->\hyperlink{classCharBuffer_a2d313433650506fd6609e6947729dfb0}{ptr} = \hyperlink{classAnsiConoleEngine_a28852245082570631c7392411fec89cc}{endpos};
+209     \}
+210 
+211     \textcolor{keywordflow}{return} \hyperlink{classAnsiConoleEngine_ad6a604fc0a0f544907513076c72434f3}{out}->\hyperlink{classCharBuffer_a7dfd3feaaf80f318ba44efe15b1ec44b}{GetString}();
+212 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{df/d87/classAnsiConoleEngine_a7bb2dea88ddc5ae76643d2303fcc4bf1_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{df/d87/classAnsiConoleEngine_a7bb2dea88ddc5ae76643d2303fcc4bf1_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Ansi\+Conole\+Engine@{Ansi\+Conole\+Engine}!Set\+Prompt@{Set\+Prompt}}
+\index{Set\+Prompt@{Set\+Prompt}!Ansi\+Conole\+Engine@{Ansi\+Conole\+Engine}}
+\subsubsection[{\texorpdfstring{Set\+Prompt(const char $\ast$string)}{SetPrompt(const char *string)}}]{\setlength{\rightskip}{0pt plus 5cm}void Ansi\+Conole\+Engine\+::\+Set\+Prompt (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{string}
+\end{DoxyParamCaption}
+)}\hypertarget{classAnsiConoleEngine_a6c5dd4043aadc0b310f976eb10cbcd9f}{}\label{classAnsiConoleEngine_a6c5dd4043aadc0b310f976eb10cbcd9f}
+
+
+Definition at line 323 of file aengine.\+cpp.
+
+
+
+References Alloc\+And\+Copy(), and prompt.
+
+
+
+Referenced by Standard\+Console\+::\+Set\+Prompt().
+
+
+\begin{DoxyCode}
+324 \{
+325     \textcolor{keyword}{delete} \hyperlink{classAnsiConoleEngine_a97ebef63ba0490711ed78733b6a87be5}{prompt};
+326     \hyperlink{clib_8h_a5bed05c70cb17e541fee570b5dc32e1a}{AllocAndCopy}(&\hyperlink{classAnsiConoleEngine_a97ebef63ba0490711ed78733b6a87be5}{prompt}, \textcolor{keywordtype}{string});
+327 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=344pt]{df/d87/classAnsiConoleEngine_a6c5dd4043aadc0b310f976eb10cbcd9f_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{df/d87/classAnsiConoleEngine_a6c5dd4043aadc0b310f976eb10cbcd9f_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Ansi\+Conole\+Engine@{Ansi\+Conole\+Engine}!Show\+Last@{Show\+Last}}
+\index{Show\+Last@{Show\+Last}!Ansi\+Conole\+Engine@{Ansi\+Conole\+Engine}}
+\subsubsection[{\texorpdfstring{Show\+Last()}{ShowLast()}}]{\setlength{\rightskip}{0pt plus 5cm}void Ansi\+Conole\+Engine\+::\+Show\+Last (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classAnsiConoleEngine_afc441f10d1c52dba7b3ca1a5f2514e7c}{}\label{classAnsiConoleEngine_afc441f10d1c52dba7b3ca1a5f2514e7c}
+
+
+Definition at line 235 of file aengine.\+cpp.
+
+
+
+References Alloc\+And\+Copy(), Char\+Buffer\+::\+Append(), Char\+Buffer\+::buf, curline, cursor, editline, Char\+Buffer\+::\+Empty(), endpos, Char\+Buffer\+::\+Ensure\+Size(), Char\+Buffer\+::\+Get\+String(), len, linebuf, lines, line\+Size, lineswap, out, prompt, showline, and Str\+Len().
+
+
+
+Referenced by Process\+Char().
+
+
+\begin{DoxyCode}
+236 \{
+237     \textcolor{keywordflow}{if} (\hyperlink{classAnsiConoleEngine_ab029fc4a19c5fbd6f6b23c390af618b8}{curline} == -1) \{
+238         \textcolor{keywordflow}{return};
+239     \}
+240 
+241     \textcolor{keywordflow}{if} (!\hyperlink{classAnsiConoleEngine_a23b1b0d4714995d12e7b0aacdecfa0c4}{lineswap}) \{
+242         \hyperlink{clib_8h_a5bed05c70cb17e541fee570b5dc32e1a}{AllocAndCopy}(&\hyperlink{classAnsiConoleEngine_a465421c5488f2566d12717641a327017}{editline}, \hyperlink{classAnsiConoleEngine_a6bf88afa72a458e3687972f9e666cd86}{linebuf}->\hyperlink{classCharBuffer_a7dfd3feaaf80f318ba44efe15b1ec44b}{GetString}());
+243         \hyperlink{classAnsiConoleEngine_a23b1b0d4714995d12e7b0aacdecfa0c4}{lineswap} = \textcolor{keyword}{true};
+244         \hyperlink{classAnsiConoleEngine_a24fe8cd3b3321c6dd4b26731cb1a8108}{showline} = \hyperlink{classAnsiConoleEngine_ab029fc4a19c5fbd6f6b23c390af618b8}{curline} + 1;
+245     \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (\hyperlink{classAnsiConoleEngine_a24fe8cd3b3321c6dd4b26731cb1a8108}{showline} == \hyperlink{classAnsiConoleEngine_ab029fc4a19c5fbd6f6b23c390af618b8}{curline} + 1) \{
+246         \textcolor{keyword}{delete} \hyperlink{classAnsiConoleEngine_a465421c5488f2566d12717641a327017}{editline};
+247         \hyperlink{clib_8h_a5bed05c70cb17e541fee570b5dc32e1a}{AllocAndCopy}(&\hyperlink{classAnsiConoleEngine_a465421c5488f2566d12717641a327017}{editline}, \hyperlink{classAnsiConoleEngine_a6bf88afa72a458e3687972f9e666cd86}{linebuf}->\hyperlink{classCharBuffer_a7dfd3feaaf80f318ba44efe15b1ec44b}{GetString}());
+248     \}
+249 
+250     \hyperlink{classAnsiConoleEngine_a24fe8cd3b3321c6dd4b26731cb1a8108}{showline}--;
+251     \textcolor{keywordflow}{if} (showline < 0) \{
+252         showline = 0;
+253     \}
+254 
+255     \hyperlink{classAnsiConoleEngine_ad6a604fc0a0f544907513076c72434f3}{out}->\hyperlink{classCharBuffer_abe39d3fd7d8b9c8ec343af2cae7adc96}{Empty}();
+256     \hyperlink{classAnsiConoleEngine_ad6a604fc0a0f544907513076c72434f3}{out}->\hyperlink{classCharBuffer_ad1907009b5ad136692b989fa96bf2f7e}{EnsureSize}(
+257         \hyperlink{clib_8h_a67ec56eb98b49515d35005a5b3bf9a32}{StrLen}(\hyperlink{platform_8h_a0fbdfe13a76e65ec4703155481a97661}{DELETELINE}) +
+258         \hyperlink{clib_8h_a67ec56eb98b49515d35005a5b3bf9a32}{StrLen}(\hyperlink{classAnsiConoleEngine_a97ebef63ba0490711ed78733b6a87be5}{prompt}) +
+259         \hyperlink{clib_8h_a67ec56eb98b49515d35005a5b3bf9a32}{StrLen}(\hyperlink{classAnsiConoleEngine_a624ec5321c326a68de340f9b77e84c2c}{lines}[showline]) + 1);
+260 
+261     \hyperlink{classAnsiConoleEngine_ad6a604fc0a0f544907513076c72434f3}{out}->\hyperlink{classCharBuffer_a045b38735f7b3007c1b98d3d7b7feafe}{Append}(\hyperlink{platform_8h_a0fbdfe13a76e65ec4703155481a97661}{DELETELINE});
+262     \hyperlink{classAnsiConoleEngine_ad6a604fc0a0f544907513076c72434f3}{out}->\hyperlink{classCharBuffer_a045b38735f7b3007c1b98d3d7b7feafe}{Append}(\hyperlink{classAnsiConoleEngine_a97ebef63ba0490711ed78733b6a87be5}{prompt});
+263     \hyperlink{classAnsiConoleEngine_ad6a604fc0a0f544907513076c72434f3}{out}->\hyperlink{classCharBuffer_a045b38735f7b3007c1b98d3d7b7feafe}{Append}(\hyperlink{classAnsiConoleEngine_a624ec5321c326a68de340f9b77e84c2c}{lines}[showline]);
+264 
+265     \hyperlink{classAnsiConoleEngine_a6bf88afa72a458e3687972f9e666cd86}{linebuf}->\hyperlink{classCharBuffer_abe39d3fd7d8b9c8ec343af2cae7adc96}{Empty}();
+266     \hyperlink{classAnsiConoleEngine_a6bf88afa72a458e3687972f9e666cd86}{linebuf}->\hyperlink{classCharBuffer_ad1907009b5ad136692b989fa96bf2f7e}{EnsureSize}(\hyperlink{clib_8h_a67ec56eb98b49515d35005a5b3bf9a32}{StrLen}(\hyperlink{classAnsiConoleEngine_a624ec5321c326a68de340f9b77e84c2c}{lines}[showline]));
+267     \hyperlink{classAnsiConoleEngine_a6bf88afa72a458e3687972f9e666cd86}{linebuf}->\hyperlink{classCharBuffer_a045b38735f7b3007c1b98d3d7b7feafe}{Append}(\hyperlink{classAnsiConoleEngine_a624ec5321c326a68de340f9b77e84c2c}{lines}[showline]);
+268 
+269     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} linelen = \hyperlink{clib_8h_a67ec56eb98b49515d35005a5b3bf9a32}{StrLen}(\hyperlink{classAnsiConoleEngine_a6bf88afa72a458e3687972f9e666cd86}{linebuf}->\hyperlink{classCharBuffer_a7dfd3feaaf80f318ba44efe15b1ec44b}{GetString}());
+270     \hyperlink{classAnsiConoleEngine_aea3df1b13bc8ecf2eb68ec693249800f}{cursor} = \hyperlink{classAnsiConoleEngine_a6bf88afa72a458e3687972f9e666cd86}{linebuf}->\hyperlink{classCharBuffer_a8bcd8491b24db4197b311eb361609674}{buf} + linelen;
+271     \hyperlink{classAnsiConoleEngine_a28852245082570631c7392411fec89cc}{endpos} = \hyperlink{classAnsiConoleEngine_aea3df1b13bc8ecf2eb68ec693249800f}{cursor};
+272     \hyperlink{classAnsiConoleEngine_ad5d65280df848947f5b2dda80dcf35c6}{len} = \hyperlink{classAnsiConoleEngine_a59042210f69050bdfb531841e8ac0927}{lineSize} - linelen;
+273 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{df/d87/classAnsiConoleEngine_afc441f10d1c52dba7b3ca1a5f2514e7c_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{df/d87/classAnsiConoleEngine_afc441f10d1c52dba7b3ca1a5f2514e7c_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Ansi\+Conole\+Engine@{Ansi\+Conole\+Engine}!Show\+Next@{Show\+Next}}
+\index{Show\+Next@{Show\+Next}!Ansi\+Conole\+Engine@{Ansi\+Conole\+Engine}}
+\subsubsection[{\texorpdfstring{Show\+Next()}{ShowNext()}}]{\setlength{\rightskip}{0pt plus 5cm}void Ansi\+Conole\+Engine\+::\+Show\+Next (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classAnsiConoleEngine_a93c3eccd6c1458e1a82bdbf202948d90}{}\label{classAnsiConoleEngine_a93c3eccd6c1458e1a82bdbf202948d90}
+
+
+Definition at line 275 of file aengine.\+cpp.
+
+
+
+References Char\+Buffer\+::\+Append(), Char\+Buffer\+::buf, curline, cursor, editline, Char\+Buffer\+::\+Empty(), endpos, Char\+Buffer\+::\+Ensure\+Growth(), Char\+Buffer\+::\+Ensure\+Size(), Char\+Buffer\+::\+Get\+String(), len, linebuf, lines, line\+Size, lineswap, out, prompt, showline, and Str\+Len().
+
+
+
+Referenced by Process\+Char().
+
+
+\begin{DoxyCode}
+276 \{
+277     \textcolor{keywordflow}{if} (!\hyperlink{classAnsiConoleEngine_a23b1b0d4714995d12e7b0aacdecfa0c4}{lineswap}) \{
+278         \textcolor{keywordflow}{return};
+279     \}
+280 
+281     \hyperlink{classAnsiConoleEngine_a24fe8cd3b3321c6dd4b26731cb1a8108}{showline}++;
+282     \textcolor{keywordflow}{if} (\hyperlink{classAnsiConoleEngine_a24fe8cd3b3321c6dd4b26731cb1a8108}{showline} > \hyperlink{classAnsiConoleEngine_ab029fc4a19c5fbd6f6b23c390af618b8}{curline} + 1) \{
+283         \hyperlink{classAnsiConoleEngine_a24fe8cd3b3321c6dd4b26731cb1a8108}{showline} = \hyperlink{classAnsiConoleEngine_ab029fc4a19c5fbd6f6b23c390af618b8}{curline} + 1;
+284         \textcolor{keywordflow}{return};
+285     \}
+286 
+287     \hyperlink{classAnsiConoleEngine_ad6a604fc0a0f544907513076c72434f3}{out}->\hyperlink{classCharBuffer_abe39d3fd7d8b9c8ec343af2cae7adc96}{Empty}();
+288     \hyperlink{classAnsiConoleEngine_ad6a604fc0a0f544907513076c72434f3}{out}->\hyperlink{classCharBuffer_a045b38735f7b3007c1b98d3d7b7feafe}{Append}(\hyperlink{platform_8h_a0fbdfe13a76e65ec4703155481a97661}{DELETELINE});
+289     \hyperlink{classAnsiConoleEngine_ad6a604fc0a0f544907513076c72434f3}{out}->\hyperlink{classCharBuffer_a045b38735f7b3007c1b98d3d7b7feafe}{Append}(\hyperlink{classAnsiConoleEngine_a97ebef63ba0490711ed78733b6a87be5}{prompt});
+290 
+291     \textcolor{keywordflow}{if} (\hyperlink{classAnsiConoleEngine_a24fe8cd3b3321c6dd4b26731cb1a8108}{showline} > \hyperlink{classAnsiConoleEngine_ab029fc4a19c5fbd6f6b23c390af618b8}{curline}) \{
+292         \hyperlink{classAnsiConoleEngine_ad6a604fc0a0f544907513076c72434f3}{out}->\hyperlink{classCharBuffer_a73c71d361110b37819a1d681a1504b0e}{EnsureGrowth}(\hyperlink{clib_8h_a67ec56eb98b49515d35005a5b3bf9a32}{StrLen}(\hyperlink{classAnsiConoleEngine_a465421c5488f2566d12717641a327017}{editline}) + 1);
+293         \hyperlink{classAnsiConoleEngine_ad6a604fc0a0f544907513076c72434f3}{out}->\hyperlink{classCharBuffer_a045b38735f7b3007c1b98d3d7b7feafe}{Append}(\hyperlink{classAnsiConoleEngine_a465421c5488f2566d12717641a327017}{editline});
+294 
+295         \hyperlink{classAnsiConoleEngine_a6bf88afa72a458e3687972f9e666cd86}{linebuf}->\hyperlink{classCharBuffer_abe39d3fd7d8b9c8ec343af2cae7adc96}{Empty}();
+296         \hyperlink{classAnsiConoleEngine_a6bf88afa72a458e3687972f9e666cd86}{linebuf}->\hyperlink{classCharBuffer_ad1907009b5ad136692b989fa96bf2f7e}{EnsureSize}(\hyperlink{clib_8h_a67ec56eb98b49515d35005a5b3bf9a32}{StrLen}(\hyperlink{classAnsiConoleEngine_a465421c5488f2566d12717641a327017}{editline}));
+297         \hyperlink{classAnsiConoleEngine_a6bf88afa72a458e3687972f9e666cd86}{linebuf}->\hyperlink{classCharBuffer_a045b38735f7b3007c1b98d3d7b7feafe}{Append}(\hyperlink{classAnsiConoleEngine_a465421c5488f2566d12717641a327017}{editline});
+298     \} \textcolor{keywordflow}{else} \{
+299         \hyperlink{classAnsiConoleEngine_ad6a604fc0a0f544907513076c72434f3}{out}->\hyperlink{classCharBuffer_a73c71d361110b37819a1d681a1504b0e}{EnsureGrowth}(\hyperlink{clib_8h_a67ec56eb98b49515d35005a5b3bf9a32}{StrLen}(\hyperlink{classAnsiConoleEngine_a624ec5321c326a68de340f9b77e84c2c}{lines}[\hyperlink{classAnsiConoleEngine_a24fe8cd3b3321c6dd4b26731cb1a8108}{showline}]) + 1);
+300         \hyperlink{classAnsiConoleEngine_ad6a604fc0a0f544907513076c72434f3}{out}->\hyperlink{classCharBuffer_a045b38735f7b3007c1b98d3d7b7feafe}{Append}(\hyperlink{classAnsiConoleEngine_a624ec5321c326a68de340f9b77e84c2c}{lines}[showline]);
+301 
+302         \hyperlink{classAnsiConoleEngine_a6bf88afa72a458e3687972f9e666cd86}{linebuf}->\hyperlink{classCharBuffer_abe39d3fd7d8b9c8ec343af2cae7adc96}{Empty}();
+303         \hyperlink{classAnsiConoleEngine_a6bf88afa72a458e3687972f9e666cd86}{linebuf}->\hyperlink{classCharBuffer_ad1907009b5ad136692b989fa96bf2f7e}{EnsureSize}(\hyperlink{clib_8h_a67ec56eb98b49515d35005a5b3bf9a32}{StrLen}(\hyperlink{classAnsiConoleEngine_a624ec5321c326a68de340f9b77e84c2c}{lines}[showline]));
+304         \hyperlink{classAnsiConoleEngine_a6bf88afa72a458e3687972f9e666cd86}{linebuf}->\hyperlink{classCharBuffer_a045b38735f7b3007c1b98d3d7b7feafe}{Append}(\hyperlink{classAnsiConoleEngine_a624ec5321c326a68de340f9b77e84c2c}{lines}[showline]);
+305     \}
+306 
+307     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} linelen = \hyperlink{clib_8h_a67ec56eb98b49515d35005a5b3bf9a32}{StrLen}(\hyperlink{classAnsiConoleEngine_a6bf88afa72a458e3687972f9e666cd86}{linebuf}->\hyperlink{classCharBuffer_a7dfd3feaaf80f318ba44efe15b1ec44b}{GetString}());
+308     \hyperlink{classAnsiConoleEngine_aea3df1b13bc8ecf2eb68ec693249800f}{cursor} = \hyperlink{classAnsiConoleEngine_a6bf88afa72a458e3687972f9e666cd86}{linebuf}->\hyperlink{classCharBuffer_a8bcd8491b24db4197b311eb361609674}{buf} + linelen;
+309     \hyperlink{classAnsiConoleEngine_a28852245082570631c7392411fec89cc}{endpos} = \hyperlink{classAnsiConoleEngine_aea3df1b13bc8ecf2eb68ec693249800f}{cursor};
+310     \hyperlink{classAnsiConoleEngine_ad5d65280df848947f5b2dda80dcf35c6}{len} = \hyperlink{classAnsiConoleEngine_a59042210f69050bdfb531841e8ac0927}{lineSize} - linelen;
+311 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{df/d87/classAnsiConoleEngine_a93c3eccd6c1458e1a82bdbf202948d90_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{df/d87/classAnsiConoleEngine_a93c3eccd6c1458e1a82bdbf202948d90_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Ansi\+Conole\+Engine@{Ansi\+Conole\+Engine}!Start\+Input@{Start\+Input}}
+\index{Start\+Input@{Start\+Input}!Ansi\+Conole\+Engine@{Ansi\+Conole\+Engine}}
+\subsubsection[{\texorpdfstring{Start\+Input()}{StartInput()}}]{\setlength{\rightskip}{0pt plus 5cm}void Ansi\+Conole\+Engine\+::\+Start\+Input (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classAnsiConoleEngine_a8ad01a2ddd3ee5182deb4a74f3d2a0c1}{}\label{classAnsiConoleEngine_a8ad01a2ddd3ee5182deb4a74f3d2a0c1}
+
+
+Definition at line 61 of file aengine.\+cpp.
+
+
+
+References Char\+Buffer\+::buf, Char\+Buffer\+::\+Clear\+And\+Alloc(), csimode, cursor, delmode, endpos, escmode, len, linebuf, linedone, line\+Size, and lineswap.
+
+
+
+Referenced by Standard\+Console\+::\+Read\+Line().
+
+
+\begin{DoxyCode}
+62 \{
+63     \hyperlink{classAnsiConoleEngine_a6bf88afa72a458e3687972f9e666cd86}{linebuf}->\hyperlink{classCharBuffer_a8c0927c2c05c954161151045f68581c6}{ClearAndAlloc}(\hyperlink{classAnsiConoleEngine_a59042210f69050bdfb531841e8ac0927}{lineSize} + 1);
+64     \hyperlink{classAnsiConoleEngine_ad5d65280df848947f5b2dda80dcf35c6}{len} = \hyperlink{classAnsiConoleEngine_a59042210f69050bdfb531841e8ac0927}{lineSize};
+65     \hyperlink{classAnsiConoleEngine_aea3df1b13bc8ecf2eb68ec693249800f}{cursor} = \hyperlink{classAnsiConoleEngine_a6bf88afa72a458e3687972f9e666cd86}{linebuf}->\hyperlink{classCharBuffer_a8bcd8491b24db4197b311eb361609674}{buf};
+66     \hyperlink{classAnsiConoleEngine_a28852245082570631c7392411fec89cc}{endpos} = \hyperlink{classAnsiConoleEngine_aea3df1b13bc8ecf2eb68ec693249800f}{cursor};
+67     *\hyperlink{classAnsiConoleEngine_a28852245082570631c7392411fec89cc}{endpos} = \textcolor{charliteral}{'\(\backslash\)0'};
+68 
+69     \hyperlink{classAnsiConoleEngine_a23b1b0d4714995d12e7b0aacdecfa0c4}{lineswap} = \textcolor{keyword}{false};
+70     \hyperlink{classAnsiConoleEngine_af497f5cbdca8bbc350935a90568b06e7}{escmode} = \textcolor{keyword}{false};
+71     \hyperlink{classAnsiConoleEngine_adf2036857a6c6de85836ee2e7b3e5d6d}{csimode} = \textcolor{keyword}{false};
+72     \hyperlink{classAnsiConoleEngine_a5182d9a19cc1fe8681a9faf77a156657}{delmode} = \textcolor{keyword}{false};
+73     \hyperlink{classAnsiConoleEngine_a0931686f3224f07bd3a3fe25c06e32c6}{linedone} = \textcolor{keyword}{false};
+74 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{df/d87/classAnsiConoleEngine_a8ad01a2ddd3ee5182deb4a74f3d2a0c1_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{df/d87/classAnsiConoleEngine_a8ad01a2ddd3ee5182deb4a74f3d2a0c1_icgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Member Data Documentation}
+\index{Ansi\+Conole\+Engine@{Ansi\+Conole\+Engine}!csimode@{csimode}}
+\index{csimode@{csimode}!Ansi\+Conole\+Engine@{Ansi\+Conole\+Engine}}
+\subsubsection[{\texorpdfstring{csimode}{csimode}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} Ansi\+Conole\+Engine\+::csimode\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classAnsiConoleEngine_adf2036857a6c6de85836ee2e7b3e5d6d}{}\label{classAnsiConoleEngine_adf2036857a6c6de85836ee2e7b3e5d6d}
+
+
+Definition at line 76 of file aengine.\+h.
+
+
+
+Referenced by Process\+Char(), and Start\+Input().
+
+\index{Ansi\+Conole\+Engine@{Ansi\+Conole\+Engine}!curline@{curline}}
+\index{curline@{curline}!Ansi\+Conole\+Engine@{Ansi\+Conole\+Engine}}
+\subsubsection[{\texorpdfstring{curline}{curline}}]{\setlength{\rightskip}{0pt plus 5cm}int Ansi\+Conole\+Engine\+::curline\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classAnsiConoleEngine_ab029fc4a19c5fbd6f6b23c390af618b8}{}\label{classAnsiConoleEngine_ab029fc4a19c5fbd6f6b23c390af618b8}
+
+
+Definition at line 70 of file aengine.\+h.
+
+
+
+Referenced by Ansi\+Conole\+Engine(), Copy\+Line(), Show\+Last(), and Show\+Next().
+
+\index{Ansi\+Conole\+Engine@{Ansi\+Conole\+Engine}!cursor@{cursor}}
+\index{cursor@{cursor}!Ansi\+Conole\+Engine@{Ansi\+Conole\+Engine}}
+\subsubsection[{\texorpdfstring{cursor}{cursor}}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ Ansi\+Conole\+Engine\+::cursor\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classAnsiConoleEngine_aea3df1b13bc8ecf2eb68ec693249800f}{}\label{classAnsiConoleEngine_aea3df1b13bc8ecf2eb68ec693249800f}
+
+
+Definition at line 67 of file aengine.\+h.
+
+
+
+Referenced by Process\+Char(), Show\+Last(), Show\+Next(), and Start\+Input().
+
+\index{Ansi\+Conole\+Engine@{Ansi\+Conole\+Engine}!delmode@{delmode}}
+\index{delmode@{delmode}!Ansi\+Conole\+Engine@{Ansi\+Conole\+Engine}}
+\subsubsection[{\texorpdfstring{delmode}{delmode}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} Ansi\+Conole\+Engine\+::delmode\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classAnsiConoleEngine_a5182d9a19cc1fe8681a9faf77a156657}{}\label{classAnsiConoleEngine_a5182d9a19cc1fe8681a9faf77a156657}
+
+
+Definition at line 77 of file aengine.\+h.
+
+
+
+Referenced by Process\+Char(), and Start\+Input().
+
+\index{Ansi\+Conole\+Engine@{Ansi\+Conole\+Engine}!editline@{editline}}
+\index{editline@{editline}!Ansi\+Conole\+Engine@{Ansi\+Conole\+Engine}}
+\subsubsection[{\texorpdfstring{editline}{editline}}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ Ansi\+Conole\+Engine\+::editline\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classAnsiConoleEngine_a465421c5488f2566d12717641a327017}{}\label{classAnsiConoleEngine_a465421c5488f2566d12717641a327017}
+
+
+Definition at line 73 of file aengine.\+h.
+
+
+
+Referenced by Ansi\+Conole\+Engine(), Copy\+Line(), Show\+Last(), and Show\+Next().
+
+\index{Ansi\+Conole\+Engine@{Ansi\+Conole\+Engine}!endpos@{endpos}}
+\index{endpos@{endpos}!Ansi\+Conole\+Engine@{Ansi\+Conole\+Engine}}
+\subsubsection[{\texorpdfstring{endpos}{endpos}}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ Ansi\+Conole\+Engine\+::endpos\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classAnsiConoleEngine_a28852245082570631c7392411fec89cc}{}\label{classAnsiConoleEngine_a28852245082570631c7392411fec89cc}
+
+
+Definition at line 68 of file aengine.\+h.
+
+
+
+Referenced by Process\+Char(), Show\+Last(), Show\+Next(), and Start\+Input().
+
+\index{Ansi\+Conole\+Engine@{Ansi\+Conole\+Engine}!escmode@{escmode}}
+\index{escmode@{escmode}!Ansi\+Conole\+Engine@{Ansi\+Conole\+Engine}}
+\subsubsection[{\texorpdfstring{escmode}{escmode}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} Ansi\+Conole\+Engine\+::escmode\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classAnsiConoleEngine_af497f5cbdca8bbc350935a90568b06e7}{}\label{classAnsiConoleEngine_af497f5cbdca8bbc350935a90568b06e7}
+
+
+Definition at line 75 of file aengine.\+h.
+
+
+
+Referenced by Process\+Char(), and Start\+Input().
+
+\index{Ansi\+Conole\+Engine@{Ansi\+Conole\+Engine}!len@{len}}
+\index{len@{len}!Ansi\+Conole\+Engine@{Ansi\+Conole\+Engine}}
+\subsubsection[{\texorpdfstring{len}{len}}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int Ansi\+Conole\+Engine\+::len\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classAnsiConoleEngine_ad5d65280df848947f5b2dda80dcf35c6}{}\label{classAnsiConoleEngine_ad5d65280df848947f5b2dda80dcf35c6}
+
+
+Definition at line 66 of file aengine.\+h.
+
+
+
+Referenced by Process\+Char(), Show\+Last(), Show\+Next(), and Start\+Input().
+
+\index{Ansi\+Conole\+Engine@{Ansi\+Conole\+Engine}!linebuf@{linebuf}}
+\index{linebuf@{linebuf}!Ansi\+Conole\+Engine@{Ansi\+Conole\+Engine}}
+\subsubsection[{\texorpdfstring{linebuf}{linebuf}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Char\+Buffer}$\ast$ Ansi\+Conole\+Engine\+::linebuf\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classAnsiConoleEngine_a6bf88afa72a458e3687972f9e666cd86}{}\label{classAnsiConoleEngine_a6bf88afa72a458e3687972f9e666cd86}
+
+
+Definition at line 65 of file aengine.\+h.
+
+
+
+Referenced by Ansi\+Conole\+Engine(), Copy\+Line(), Get\+Line(), Process\+Char(), Show\+Last(), Show\+Next(), Start\+Input(), and $\sim$\+Ansi\+Conole\+Engine().
+
+\index{Ansi\+Conole\+Engine@{Ansi\+Conole\+Engine}!linedone@{linedone}}
+\index{linedone@{linedone}!Ansi\+Conole\+Engine@{Ansi\+Conole\+Engine}}
+\subsubsection[{\texorpdfstring{linedone}{linedone}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} Ansi\+Conole\+Engine\+::linedone\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classAnsiConoleEngine_a0931686f3224f07bd3a3fe25c06e32c6}{}\label{classAnsiConoleEngine_a0931686f3224f07bd3a3fe25c06e32c6}
+
+
+Definition at line 78 of file aengine.\+h.
+
+
+
+Referenced by Input\+Done(), Process\+Char(), and Start\+Input().
+
+\index{Ansi\+Conole\+Engine@{Ansi\+Conole\+Engine}!lines@{lines}}
+\index{lines@{lines}!Ansi\+Conole\+Engine@{Ansi\+Conole\+Engine}}
+\subsubsection[{\texorpdfstring{lines}{lines}}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$$\ast$ Ansi\+Conole\+Engine\+::lines\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classAnsiConoleEngine_a624ec5321c326a68de340f9b77e84c2c}{}\label{classAnsiConoleEngine_a624ec5321c326a68de340f9b77e84c2c}
+
+
+Definition at line 64 of file aengine.\+h.
+
+
+
+Referenced by Ansi\+Conole\+Engine(), Copy\+Line(), Show\+Last(), Show\+Next(), and $\sim$\+Ansi\+Conole\+Engine().
+
+\index{Ansi\+Conole\+Engine@{Ansi\+Conole\+Engine}!line\+Size@{line\+Size}}
+\index{line\+Size@{line\+Size}!Ansi\+Conole\+Engine@{Ansi\+Conole\+Engine}}
+\subsubsection[{\texorpdfstring{line\+Size}{lineSize}}]{\setlength{\rightskip}{0pt plus 5cm}const int Ansi\+Conole\+Engine\+::line\+Size = 1024\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}\hypertarget{classAnsiConoleEngine_a59042210f69050bdfb531841e8ac0927}{}\label{classAnsiConoleEngine_a59042210f69050bdfb531841e8ac0927}
+
+
+Definition at line 63 of file aengine.\+h.
+
+
+
+Referenced by Show\+Last(), Show\+Next(), and Start\+Input().
+
+\index{Ansi\+Conole\+Engine@{Ansi\+Conole\+Engine}!lineswap@{lineswap}}
+\index{lineswap@{lineswap}!Ansi\+Conole\+Engine@{Ansi\+Conole\+Engine}}
+\subsubsection[{\texorpdfstring{lineswap}{lineswap}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} Ansi\+Conole\+Engine\+::lineswap\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classAnsiConoleEngine_a23b1b0d4714995d12e7b0aacdecfa0c4}{}\label{classAnsiConoleEngine_a23b1b0d4714995d12e7b0aacdecfa0c4}
+
+
+Definition at line 72 of file aengine.\+h.
+
+
+
+Referenced by Show\+Last(), Show\+Next(), and Start\+Input().
+
+\index{Ansi\+Conole\+Engine@{Ansi\+Conole\+Engine}!max\+Lines@{max\+Lines}}
+\index{max\+Lines@{max\+Lines}!Ansi\+Conole\+Engine@{Ansi\+Conole\+Engine}}
+\subsubsection[{\texorpdfstring{max\+Lines}{maxLines}}]{\setlength{\rightskip}{0pt plus 5cm}const int Ansi\+Conole\+Engine\+::max\+Lines = 20\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}\hypertarget{classAnsiConoleEngine_a3f94786b1610ac3f038d5115fd8047a3}{}\label{classAnsiConoleEngine_a3f94786b1610ac3f038d5115fd8047a3}
+
+
+Definition at line 62 of file aengine.\+h.
+
+
+
+Referenced by Ansi\+Conole\+Engine(), Copy\+Line(), and $\sim$\+Ansi\+Conole\+Engine().
+
+\index{Ansi\+Conole\+Engine@{Ansi\+Conole\+Engine}!out@{out}}
+\index{out@{out}!Ansi\+Conole\+Engine@{Ansi\+Conole\+Engine}}
+\subsubsection[{\texorpdfstring{out}{out}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Char\+Buffer}$\ast$ Ansi\+Conole\+Engine\+::out\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classAnsiConoleEngine_ad6a604fc0a0f544907513076c72434f3}{}\label{classAnsiConoleEngine_ad6a604fc0a0f544907513076c72434f3}
+
+
+Definition at line 79 of file aengine.\+h.
+
+
+
+Referenced by Ansi\+Conole\+Engine(), Process\+Char(), Show\+Last(), Show\+Next(), and $\sim$\+Ansi\+Conole\+Engine().
+
+\index{Ansi\+Conole\+Engine@{Ansi\+Conole\+Engine}!prompt@{prompt}}
+\index{prompt@{prompt}!Ansi\+Conole\+Engine@{Ansi\+Conole\+Engine}}
+\subsubsection[{\texorpdfstring{prompt}{prompt}}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ Ansi\+Conole\+Engine\+::prompt\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classAnsiConoleEngine_a97ebef63ba0490711ed78733b6a87be5}{}\label{classAnsiConoleEngine_a97ebef63ba0490711ed78733b6a87be5}
+
+
+Definition at line 60 of file aengine.\+h.
+
+
+
+Referenced by Ansi\+Conole\+Engine(), Set\+Prompt(), Show\+Last(), Show\+Next(), and $\sim$\+Ansi\+Conole\+Engine().
+
+\index{Ansi\+Conole\+Engine@{Ansi\+Conole\+Engine}!showline@{showline}}
+\index{showline@{showline}!Ansi\+Conole\+Engine@{Ansi\+Conole\+Engine}}
+\subsubsection[{\texorpdfstring{showline}{showline}}]{\setlength{\rightskip}{0pt plus 5cm}int Ansi\+Conole\+Engine\+::showline\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classAnsiConoleEngine_a24fe8cd3b3321c6dd4b26731cb1a8108}{}\label{classAnsiConoleEngine_a24fe8cd3b3321c6dd4b26731cb1a8108}
+
+
+Definition at line 71 of file aengine.\+h.
+
+
+
+Referenced by Show\+Last(), and Show\+Next().
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+app/lib/\hyperlink{aengine_8h}{aengine.\+h}\item 
+app/lib/\hyperlink{aengine_8cpp}{aengine.\+cpp}\end{DoxyCompactItemize}

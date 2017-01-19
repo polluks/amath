@@ -1,0 +1,168 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="d1/dc4/classOptimizer">
+<title>Optimizer class Reference</title>
+<para>
+    <programlisting>#include <link linkend="de/d77/optimizer_8h">&lt;optimizer.h&gt;</link></programlisting>
+</para>
+<para>Inheritance diagram for Optimizer</para>
+<para>
+    <figure>
+        <title>Inheritance graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="../../db/d26/classOptimizer__inherit__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+<para>Collaboration diagram for Optimizer</para>
+<para>
+    <figure>
+        <title>Collaboration graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="../../db/db8/classOptimizer__coll__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+        <section>
+            <title>Private Attributes</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>SyntaxNode * root</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d1/dc4/classOptimizer_1a7b4482e542418f5b32a1c9960428c54a">Optimizer</link> (
+<link linkend="d8/d5d/classSyntaxNode">SyntaxNode</link> * root)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d1/dc4/classOptimizer_1ab01202385afea2f09afbd73227736a17">~Optimizer</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="d1/dc4/classOptimizer_1a5764ae0825fa43921f74d8b972e53b1e">Optimize</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="d8/d5d/classSyntaxNode">SyntaxNode</link> * <link linkend="d1/dc4/classOptimizer_1ae50ae3a88ea8f5161b9bb072ccf4ea93">GetRoot</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="d1/dc4/classOptimizer_1a4a80c3e845604f1ea53a6bfc187b2bba">GetTreeDepth</link> (
+<link linkend="d8/d5d/classSyntaxNode">SyntaxNode</link> * node, int depth)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="d1/dc4/classOptimizer_1a5227e42d69dcbf08fde579642a98c78c">TagChildren</link> (
+<link linkend="d8/d5d/classSyntaxNode">SyntaxNode</link> * node)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="d1/dc4/classOptimizer_1ad84621adb872b88ab7fdb3672064cfdb">BalanceTree</link> (
+<link linkend="d8/d5d/classSyntaxNode">SyntaxNode</link> * node)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="d1/dc4/classOptimizer_1aef8d80bb6301ee01a7ed271148438733">ReduceUnaryNodes</link> (
+<link linkend="d8/d5d/classSyntaxNode">SyntaxNode</link> * node)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="d1/dc4/classOptimizer_1a5b45089aff3c6568f3531faa9e701f21">ReduceValueNodes</link> (
+<link linkend="d8/d5d/classSyntaxNode">SyntaxNode</link> * node)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="d1/dc4/classOptimizer_1a2b71012237663dc9459a908fba6fbecc">TagStartNode</link> (
+<link linkend="d8/d5d/classSyntaxNode">SyntaxNode</link> * node)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title>Member Data Documentation</title>
+        </section>
+            <section xml:id="d1/dc4/classOptimizer_1a7b4482e542418f5b32a1c9960428c54a">
+                <title>Optimizer::Optimizer (SyntaxNode *root)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d1/dc4/classOptimizer_1ab01202385afea2f09afbd73227736a17">
+                <title>Optimizer::~Optimizer ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d1/dc4/classOptimizer_1a5764ae0825fa43921f74d8b972e53b1e">
+                <title>void Optimizer::Optimize ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d1/dc4/classOptimizer_1ae50ae3a88ea8f5161b9bb072ccf4ea93">
+                <title>SyntaxNode * Optimizer::GetRoot ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d1/dc4/classOptimizer_1a4a80c3e845604f1ea53a6bfc187b2bba">
+                <title>int Optimizer::GetTreeDepth (SyntaxNode *node, int depth)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d1/dc4/classOptimizer_1a5227e42d69dcbf08fde579642a98c78c">
+                <title>void Optimizer::TagChildren (SyntaxNode *node)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d1/dc4/classOptimizer_1ad84621adb872b88ab7fdb3672064cfdb">
+                <title>void Optimizer::BalanceTree (SyntaxNode *node)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d1/dc4/classOptimizer_1aef8d80bb6301ee01a7ed271148438733">
+                <title>void Optimizer::ReduceUnaryNodes (SyntaxNode *node)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d1/dc4/classOptimizer_1a5b45089aff3c6568f3531faa9e701f21">
+                <title>void Optimizer::ReduceValueNodes (SyntaxNode *node)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d1/dc4/classOptimizer_1a2b71012237663dc9459a908fba6fbecc">
+                <title>void Optimizer::TagStartNode (SyntaxNode *node)</title> <emphasis></emphasis>
+                
+            </section>
+</section>

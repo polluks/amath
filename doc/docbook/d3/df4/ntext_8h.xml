@@ -1,0 +1,63 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="d3/df4/ntext_8h">
+    <title>ntext.h File Reference</title>
+    <programlisting>#include &quot;lib/numb.h&quot;</programlisting>
+    <programlisting>#include &quot;lib/charbuf.h&quot;</programlisting>
+<para>Include dependency diagram for ntext.h</para>
+<para>
+    <figure>
+        <title>Dependency diagram</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="../../da/dfe/ntext_8h__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+<para>Included by dependency diagram for ntext.h</para>
+<para>
+    <figure>
+        <title>Dependency diagram</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="../../df/d02/ntext_8h__dep__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+        <section>
+            <title> Classes </title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="d9/df3/classNumeralSystem">NumeralSystem</link></para>
+<para><emphasis>Base class for all numeral systems.</emphasis></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="d6/ddc/classPositionalNumeralSystem">PositionalNumeralSystem</link></para>
+<para><emphasis>Base class for all numeral systems with a
+       positional notation.</emphasis></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="df/d40/classDecimalSystem">DecimalSystem</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+    <simplesect>
+        <title>Detailed Description</title>
+
+<para>Text to numbers handling. </para>
+
+<para>Converts both between text and numbers AND between numbers and text. </para>
+    <para>Definition in file /home/carsten/amath2/app/lib/ntext.h</para>
+    </simplesect>
+</section>

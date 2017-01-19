@@ -1,0 +1,258 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="d8/d5d/classSyntaxNode">
+<title>SyntaxNode class Reference</title>
+<para>
+    <programlisting>#include <link linkend="d1/d7f/nodes_8h">&lt;nodes.h&gt;</link></programlisting>
+</para>
+<para>Inheritance diagram for SyntaxNode</para>
+<para>
+    <figure>
+        <title>Inheritance graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="../../dc/dce/classSyntaxNode__inherit__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+<para>Collaboration diagram for SyntaxNode</para>
+<para>
+    <figure>
+        <title>Collaboration graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="../../dd/dfe/classSyntaxNode__coll__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+        <section>
+            <title>Protected Attributes</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>CharBuffer * output</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>SyntaxNode * parent</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>SyntaxNode * iterator</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>bool leftBottom</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d8/d5d/classSyntaxNode_1ac94372d402f38a118b4e8cd20ba7e520">SyntaxNode</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>virtual <link linkend="d8/d5d/classSyntaxNode_1a8fa3db69c423b60a37b50c48bb79bc2b">~SyntaxNode</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="d8/d5d/classSyntaxNode_1a24e2d5b5e94a67ce55cea52cd48212e6">SetFirstNode</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="de/d03/platform_8h_1a1062901a7428fdd9c7f180f5e01ea056">bool</link> <link linkend="d8/d5d/classSyntaxNode_1a65e1789edf8ca46865592e9e6e279749">GetFirstNode</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="d8/d5d/classSyntaxNode">SyntaxNode</link> * <link linkend="d8/d5d/classSyntaxNode_1a4a85fd710ad44edbc5b3ac625c10cd08">GetParent</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="d8/d5d/classSyntaxNode_1a7902bb2c389a784c11c2b649a84824e9">SetParent</link> (
+<link linkend="d8/d5d/classSyntaxNode">SyntaxNode</link> * node)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>virtual <link linkend="d1/d7f/nodes_8h_1acac9cbaeea226ed297804c012dc12b16">NodeType</link> <link linkend="d8/d5d/classSyntaxNode_1aef71a18975535d050393f0541b3cdc6a">GetNodeType</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>virtual <link linkend="d1/d7f/nodes_8h_1ab321a69ad5704b704b8dd9e1b3984a29">ReductionType</link> <link linkend="d8/d5d/classSyntaxNode_1a5384fc779eee947b5e09bf2adb6cc606">GetReductionType</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>virtual void <link linkend="d8/d5d/classSyntaxNode_1ac51307368fb255aa760b99e137178c89">ResetIterator</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>virtual <link linkend="d8/d5d/classSyntaxNode">SyntaxNode</link> * <link linkend="d8/d5d/classSyntaxNode_1af1fa46ba30aa4f2affa2d4e96a4be010">GetNext</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>virtual char * <link linkend="d8/d5d/classSyntaxNode_1a27f7dd6d00f5c94533477d6d5c2e831c">GetTextCode</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>virtual char * <link linkend="d8/d5d/classSyntaxNode_1ad8418608fa224536b48a590c87f0a509">Execute</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>virtual void <link linkend="d8/d5d/classSyntaxNode_1af25fd5963125bb2d6b9a1864b9ff79c8">Attach</link> (
+<link linkend="d8/d5d/classSyntaxNode">SyntaxNode</link> * node)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>virtual void <link linkend="d8/d5d/classSyntaxNode_1ae57f629a5c5fa0994f036c105396da69">Detach</link> (
+<link linkend="d8/d5d/classSyntaxNode">SyntaxNode</link> * node)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>virtual void <link linkend="d8/d5d/classSyntaxNode_1a2797ff5eb05f3a36ae1be41b70105e05">Replace</link> (
+<link linkend="d8/d5d/classSyntaxNode">SyntaxNode</link> * n, <link linkend="d8/d5d/classSyntaxNode">SyntaxNode</link> * x)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+    <simplesect>
+
+<para>Base class for all nodes in a syntax tree. </para>
+    </simplesect>
+        <simplesect>
+            <title>Detailed Description</title>
+
+<para>More info is available at Wikipedia: <link xlink:href="http://en.wikipedia.org/wiki/Abstract_syntax_tree">http://en.wikipedia.org/wiki/Abstract_syntax_tree</link> </para>
+                <para>Definition at line 55 of file nodes.h</para>
+                <para>The Documentation for this struct was generated from the following file: </para>
+                <para><itemizedlist><listitem><para>nodes.h</para></listitem></itemizedlist></para>
+        </simplesect>
+        <section>
+            <title>Member Data Documentation</title>
+        </section>
+            <section xml:id="d8/d5d/classSyntaxNode_1ac94372d402f38a118b4e8cd20ba7e520">
+                <title>SyntaxNode::SyntaxNode ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d8/d5d/classSyntaxNode_1a8fa3db69c423b60a37b50c48bb79bc2b">
+                <title>SyntaxNode::~SyntaxNode ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d8/d5d/classSyntaxNode_1a24e2d5b5e94a67ce55cea52cd48212e6">
+                <title>void SyntaxNode::SetFirstNode ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d8/d5d/classSyntaxNode_1a65e1789edf8ca46865592e9e6e279749">
+                <title>bool SyntaxNode::GetFirstNode ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d8/d5d/classSyntaxNode_1a4a85fd710ad44edbc5b3ac625c10cd08">
+                <title>SyntaxNode * SyntaxNode::GetParent ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d8/d5d/classSyntaxNode_1a7902bb2c389a784c11c2b649a84824e9">
+                <title>void SyntaxNode::SetParent (SyntaxNode *node)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d8/d5d/classSyntaxNode_1aef71a18975535d050393f0541b3cdc6a">
+                <title>virtual NodeType SyntaxNode::GetNodeType ()=0</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d8/d5d/classSyntaxNode_1a5384fc779eee947b5e09bf2adb6cc606">
+                <title>ReductionType SyntaxNode::GetReductionType ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d8/d5d/classSyntaxNode_1ac51307368fb255aa760b99e137178c89">
+                <title>void SyntaxNode::ResetIterator ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d8/d5d/classSyntaxNode_1af1fa46ba30aa4f2affa2d4e96a4be010">
+                <title>virtual SyntaxNode* SyntaxNode::GetNext ()=0</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d8/d5d/classSyntaxNode_1a27f7dd6d00f5c94533477d6d5c2e831c">
+                <title>virtual char* SyntaxNode::GetTextCode ()=0</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d8/d5d/classSyntaxNode_1ad8418608fa224536b48a590c87f0a509">
+                <title>virtual char* SyntaxNode::Execute ()=0</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d8/d5d/classSyntaxNode_1af25fd5963125bb2d6b9a1864b9ff79c8">
+                <title>virtual void SyntaxNode::Attach (SyntaxNode *node)=0</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d8/d5d/classSyntaxNode_1ae57f629a5c5fa0994f036c105396da69">
+                <title>virtual void SyntaxNode::Detach (SyntaxNode *node)=0</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d8/d5d/classSyntaxNode_1a2797ff5eb05f3a36ae1be41b70105e05">
+                <title>virtual void SyntaxNode::Replace (SyntaxNode *n, SyntaxNode *x)=0</title> <emphasis></emphasis>
+                
+            </section>
+</section>

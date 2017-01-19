@@ -1,0 +1,70 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="d4/d16/memcpy_8c">
+    <title>memcpy.c File Reference</title>
+    <programlisting>#include &quot;clib.h&quot;</programlisting>
+<para>Include dependency diagram for memcpy.c</para>
+<para>
+    <figure>
+        <title>Dependency diagram</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="../../d8/db4/memcpy_8c__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+<para>Included by dependency diagram for memcpy.c</para>
+<para>
+    <figure>
+        <title>Dependency diagram</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="../../d3/d64/memcpy_8c__dep__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+        <section>
+            <title>Macros</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="d4/d16/memcpy_8c_1a74d8274a661a711f2c9e05a7f19eaf0f">TLOOP</link> if (t) <link linkend="d4/d16/memcpy_8c_1a4d81791363bd2fd7e37c9a533be06f59">TLOOP1</link>(s)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="d4/d16/memcpy_8c_1a4d81791363bd2fd7e37c9a533be06f59">TLOOP1</link> do { s; } while (--t)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title>Typedefs</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>typedef int  <link linkend="d4/d16/memcpy_8c_1aafc9a69535613ac225df2d6195518116">word</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title>Functions</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="d4/d16/memcpy_8c_1a09b7e057c69b9ddd4b481fc746997a7d">MemCopy</link> (
+void * destination, const void * source, unsigned int length)<para><emphasis>Copy a block of memory, handling overlap.</emphasis></para>
+</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+    <simplesect>
+        <title>Detailed Description</title>
+    <para>Definition in file /home/carsten/amath2/lib/clib/memcpy.c</para>
+    </simplesect>
+</section>

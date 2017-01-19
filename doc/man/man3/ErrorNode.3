@@ -1,0 +1,263 @@
+.TH "ErrorNode" 3 "Thu Jan 19 2017" "Version 1.6.0" "amath" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+ErrorNode \- Represents an error message encapsulated in a syntax tree\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <nodes\&.h>\fP
+.PP
+Inherits \fBSyntaxNode\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBErrorNode\fP (const char *\fBinput\fP, int \fBpos\fP)"
+.br
+.ti -1c
+.RI "\fBErrorNode\fP (const char *\fBinput\fP, const char *\fBmessage\fP, const char *parameter, int \fBpos\fP)"
+.br
+.ti -1c
+.RI "virtual \fB~ErrorNode\fP ()"
+.br
+.ti -1c
+.RI "\fBNodeType\fP \fBGetNodeType\fP ()"
+.br
+.ti -1c
+.RI "\fBSyntaxNode\fP * \fBGetNext\fP ()"
+.br
+.ti -1c
+.RI "char * \fBGetTextCode\fP ()"
+.br
+.ti -1c
+.RI "char * \fBExecute\fP ()"
+.br
+.ti -1c
+.RI "void \fBAttach\fP (\fBSyntaxNode\fP *node)"
+.br
+.ti -1c
+.RI "void \fBDetach\fP (\fBSyntaxNode\fP *node)"
+.br
+.ti -1c
+.RI "void \fBReplace\fP (\fBSyntaxNode\fP *n, \fBSyntaxNode\fP *x)"
+.br
+.in -1c
+.SS "Private Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBStrCopyVisible\fP (char *destination, const char *source)"
+.br
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "char * \fBmessage\fP"
+.br
+.ti -1c
+.RI "char * \fBinput\fP"
+.br
+.ti -1c
+.RI "int \fBpos\fP"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Detailed Description"
+.PP 
+Represents an error message encapsulated in a syntax tree\&. 
+.PP
+Definition at line 129 of file nodes\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "ErrorNode::ErrorNode (const char * input, int pos)"
+
+.PP
+Definition at line 170 of file nodes\&.cpp\&.
+.PP
+References AllocAndCopy(), input, message, pos, StrCopyVisible(), StrLen(), and SyntaxNode::SyntaxNode()\&.
+.PP
+Referenced by Parser::Parse(), and Parser::TryParseStatement()\&.
+.PP
+.nf
+170                                                :
+171     SyntaxNode(), pos(pos) {
+172     char *temp = HELPSYNTAX;
+173     this->input = new char[StrLen(input) + 1];
+174     StrCopyVisible(this->input, input);
+175     AllocAndCopy(&this->message, temp);
+176 }
+.fi
+.SS "ErrorNode::ErrorNode (const char * input, const char * message, const char * parameter, int pos)"
+
+.PP
+Definition at line 157 of file nodes\&.cpp\&.
+.PP
+References AllocAndCopy(), CharBuffer::Append(), CharBuffer::CharBuffer(), CharBuffer::EnsureSize(), CharBuffer::GetString(), input, message, pos, StrCopyVisible(), StrLen(), and SyntaxNode::SyntaxNode()\&.
+.PP
+Referenced by Parser::ParseDigistStatement(), Parser::ParseFileStatement(), Parser::ParseFunctionDef(), Parser::ParseIdent(), and Parser::ParseNumeralStatement()\&.
+.PP
+.nf
+157                                                                                            :
+158     SyntaxNode(), pos(pos) {
+159     this->input = new char[StrLen(input) + 1];
+160     StrCopyVisible(this->input, input);
+161 
+162     CharBuffer *temp = new CharBuffer();
+163     temp->EnsureSize(StrLen(message) + StrLen(parameter) + 1);
+164     temp->Append(message);
+165     temp->Append(parameter);
+166     AllocAndCopy(&this->message, temp->GetString());
+167     delete temp;
+168 }
+.fi
+.SS "ErrorNode::~ErrorNode ()\fC [virtual]\fP"
+
+.PP
+Definition at line 178 of file nodes\&.cpp\&.
+.PP
+References input, and message\&.
+.PP
+.nf
+179 {
+180     delete [] input;
+181     delete [] message;
+182 }
+.fi
+.SH "Member Function Documentation"
+.PP 
+.SS "void ErrorNode::Attach (\fBSyntaxNode\fP * node)\fC [virtual]\fP"
+
+.PP
+Implements \fBSyntaxNode\fP\&.
+.PP
+Definition at line 223 of file nodes\&.cpp\&.
+.PP
+.nf
+224 { }
+.fi
+.SS "void ErrorNode::Detach (\fBSyntaxNode\fP * node)\fC [virtual]\fP"
+
+.PP
+Implements \fBSyntaxNode\fP\&.
+.PP
+Definition at line 226 of file nodes\&.cpp\&.
+.PP
+.nf
+227 { }
+.fi
+.SS "char * ErrorNode::Execute ()\fC [virtual]\fP"
+
+.PP
+Implements \fBSyntaxNode\fP\&.
+.PP
+Definition at line 194 of file nodes\&.cpp\&.
+.PP
+References CharBuffer::Append(), CharBuffer::ClearAndAlloc(), CharBuffer::Empty(), CharBuffer::GetString(), input, message, SyntaxNode::output, pos, and StrLen()\&.
+.PP
+.nf
+195 {
+196     output->ClearAndAlloc(StrLen(message) + StrLen(input) + pos + 1 + StrLen(NEWLINE) * 3 + 1);
+197     output->Empty();
+198     output->Append(message);
+199     output->Append(NEWLINE);
+200     output->Append(input);
+201     output->Append(NEWLINE);
+202     output->Append(' ', pos);
+203     output->Append('^');
+204     output->Append(NEWLINE);
+205 
+206     return output->GetString();
+207 }
+.fi
+.SS "\fBSyntaxNode\fP * ErrorNode::GetNext ()\fC [virtual]\fP"
+
+.PP
+Implements \fBSyntaxNode\fP\&.
+.PP
+Definition at line 218 of file nodes\&.cpp\&.
+.PP
+.nf
+219 {
+220     return NOMEM;
+221 }
+.fi
+.SS "\fBNodeType\fP ErrorNode::GetNodeType ()\fC [virtual]\fP"
+
+.PP
+Implements \fBSyntaxNode\fP\&.
+.PP
+Definition at line 184 of file nodes\&.cpp\&.
+.PP
+References othernodetype\&.
+.PP
+.nf
+185 {
+186     return othernodetype;
+187 }
+.fi
+.SS "char * ErrorNode::GetTextCode ()\fC [virtual]\fP"
+
+.PP
+Implements \fBSyntaxNode\fP\&.
+.PP
+Definition at line 189 of file nodes\&.cpp\&.
+.PP
+.nf
+190 {
+191     return (char*)"ERRND";
+192 }
+.fi
+.SS "void ErrorNode::Replace (\fBSyntaxNode\fP * n, \fBSyntaxNode\fP * x)\fC [virtual]\fP"
+
+.PP
+Implements \fBSyntaxNode\fP\&.
+.PP
+Definition at line 229 of file nodes\&.cpp\&.
+.PP
+.nf
+230 { }
+.fi
+.SS "void ErrorNode::StrCopyVisible (char * destination, const char * source)\fC [private]\fP"
+
+.PP
+Definition at line 209 of file nodes\&.cpp\&.
+.PP
+Referenced by ErrorNode()\&.
+.PP
+.nf
+210 {
+211     while (*source != '\0' && *source >= 32 && *source <= 126) {
+212         *destination++ = *source++;
+213     }
+214 
+215     *destination = '\0';
+216 }
+.fi
+.SH "Member Data Documentation"
+.PP 
+.SS "char* ErrorNode::input\fC [private]\fP"
+
+.PP
+Definition at line 146 of file nodes\&.h\&.
+.PP
+Referenced by ErrorNode(), Execute(), and ~ErrorNode()\&.
+.SS "char* ErrorNode::message\fC [private]\fP"
+
+.PP
+Definition at line 145 of file nodes\&.h\&.
+.PP
+Referenced by ErrorNode(), Execute(), and ~ErrorNode()\&.
+.SS "int ErrorNode::pos\fC [private]\fP"
+
+.PP
+Definition at line 147 of file nodes\&.h\&.
+.PP
+Referenced by ErrorNode(), and Execute()\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for amath from the source code\&.

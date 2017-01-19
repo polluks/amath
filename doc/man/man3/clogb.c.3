@@ -1,0 +1,53 @@
+.TH "lib/cplex/clogb.c" 3 "Thu Jan 19 2017" "Version 1.6.0" "amath" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+lib/cplex/clogb.c \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'prim\&.h'\fP
+.br
+\fC#include 'complex\&.h'\fP
+.br
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBcomplex\fP \fBclogb\fP (\fBcomplex\fP z)"
+.br
+.RI "\fIBase 2 logarithmic value of complex number\&. \fP"
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "\fBcomplex\fP clogb (\fBcomplex\fP z)"
+
+.PP
+Base 2 logarithmic value of complex number\&. 
+.PP
+.nf
+
+lb z = log(z) / log(2)
+.fi
+.PP
+ More info is available at Wikipedia: 
+.br
+ http://en.wikipedia.org/wiki/Complex_logarithm 
+.PP
+Definition at line 39 of file clogb\&.c\&.
+.PP
+References cdiv(), clog(), and cpack()\&.
+.PP
+Referenced by ComplexNumber::Log2()\&.
+.PP
+.nf
+40 {
+41     complex two = cpack(2\&.0, 0\&.0);
+42     complex w = cdiv(clog(z), clog(two));
+43     return w;
+44 }
+.fi
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for amath from the source code\&.

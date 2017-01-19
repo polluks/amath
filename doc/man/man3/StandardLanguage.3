@@ -1,0 +1,507 @@
+.TH "StandardLanguage" 3 "Thu Jan 19 2017" "Version 1.6.0" "amath" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+StandardLanguage \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <language_stdc\&.h>\fP
+.PP
+Inherits \fBLanguage\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBStandardLanguage\fP ()"
+.br
+.ti -1c
+.RI "\fB~StandardLanguage\fP ()"
+.br
+.ti -1c
+.RI "char \fBGetFractionPoint\fP ()"
+.br
+.ti -1c
+.RI "\fBbool\fP \fBCharIsAlNum\fP (unsigned long character)"
+.br
+.ti -1c
+.RI "\fBbool\fP \fBCharIsAlpha\fP (unsigned long character)"
+.br
+.ti -1c
+.RI "\fBbool\fP \fBCharIsDigit\fP (unsigned long character)"
+.br
+.ti -1c
+.RI "\fBbool\fP \fBCharIsPunct\fP (unsigned long character)"
+.br
+.ti -1c
+.RI "\fBbool\fP \fBCharIsSpace\fP (unsigned long character)"
+.br
+.ti -1c
+.RI "\fBbool\fP \fBCharIsCntrl\fP (unsigned long character)"
+.br
+.ti -1c
+.RI "\fBbool\fP \fBStrIsEqualLoc\fP (const char *s1, const char *s2)"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "char * \fBTranslate\fP (\fBtextdef\fP *def)"
+.br
+.ti -1c
+.RI "char * \fBTranslate\fP (\fBhelptextdef\fP *def)"
+.br
+.ti -1c
+.RI "char * \fBTranslate\fP (\fBidenthelpdef\fP *def)"
+.br
+.in -1c
+.SS "Private Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBLoadCatalogs\fP ()"
+.br
+.ti -1c
+.RI "void \fBLoadCatalog\fP (char **dest, const char *file)"
+.br
+.ti -1c
+.RI "void \fBGetNextPair\fP (const char **key, const char **value)"
+.br
+.ti -1c
+.RI "void \fBGetNextLine\fP ()"
+.br
+.ti -1c
+.RI "void \fBSkipComments\fP ()"
+.br
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "char * \fBtextbase\fP"
+.br
+.ti -1c
+.RI "char * \fBhelpbase\fP"
+.br
+.ti -1c
+.RI "char * \fBidentbase\fP"
+.br
+.ti -1c
+.RI "char * \fBkwordbase\fP"
+.br
+.ti -1c
+.RI "char * \fBptr\fP"
+.br
+.ti -1c
+.RI "\fBtextdef\fP * \fBtextcatalog\fP"
+.br
+.ti -1c
+.RI "\fBhelptextdef\fP * \fBhelpcatalog\fP"
+.br
+.ti -1c
+.RI "\fBidenthelpdef\fP * \fBidentcatalog\fP"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Detailed Description"
+.PP 
+Definition at line 35 of file language_stdc\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "StandardLanguage::StandardLanguage ()"
+
+.PP
+Definition at line 38 of file language_stdc\&.cpp\&.
+.PP
+References Language::Language(), and LoadCatalogs()\&.
+.PP
+Referenced by CreateLanguage()\&.
+.PP
+.nf
+38                                    :
+39     Language()
+40 {
+41     LoadCatalogs();
+42 }
+.fi
+.SS "StandardLanguage::~StandardLanguage ()"
+
+.PP
+Definition at line 44 of file language_stdc\&.cpp\&.
+.PP
+References helpbase, identbase, kwordbase, and textbase\&.
+.PP
+.nf
+45 {
+46     if (textbase != NOMEM) {
+47         delete textbase;
+48     }
+49 
+50     if (helpbase != NOMEM) {
+51         delete helpbase;
+52     }
+53 
+54     if (identbase != NOMEM) {
+55         delete identbase;
+56     }
+57 
+58     if (kwordbase != NOMEM) {
+59         delete kwordbase;
+60     }
+61 
+62 }
+.fi
+.SH "Member Function Documentation"
+.PP 
+.SS "\fBbool\fP StandardLanguage::CharIsAlNum (unsigned long character)\fC [virtual]\fP"
+
+.PP
+Implements \fBLanguage\fP\&.
+.PP
+Definition at line 90 of file language_stdc\&.cpp\&.
+.PP
+.nf
+91 {
+92     return (character >= 'a' && character <= 'z') ||
+93            (character >= 'A' && character <= 'Z') ||
+94            (character >= '0' && character <= '9');
+95 }
+.fi
+.SS "\fBbool\fP StandardLanguage::CharIsAlpha (unsigned long character)\fC [virtual]\fP"
+
+.PP
+Implements \fBLanguage\fP\&.
+.PP
+Definition at line 97 of file language_stdc\&.cpp\&.
+.PP
+.nf
+98 {
+99     return (character >= 'a' && character <= 'z') ||
+100            (character >= 'A' && character <= 'Z');
+101 }
+.fi
+.SS "\fBbool\fP StandardLanguage::CharIsCntrl (unsigned long character)\fC [virtual]\fP"
+
+.PP
+Implements \fBLanguage\fP\&.
+.PP
+Definition at line 118 of file language_stdc\&.cpp\&.
+.PP
+.nf
+119 {
+120     return (character < 32 || character > 125);
+121 }
+.fi
+.SS "\fBbool\fP StandardLanguage::CharIsDigit (unsigned long character)\fC [virtual]\fP"
+
+.PP
+Implements \fBLanguage\fP\&.
+.PP
+Definition at line 103 of file language_stdc\&.cpp\&.
+.PP
+.nf
+104 {
+105     return (character >= '0' && character <= '9');
+106 }
+.fi
+.SS "\fBbool\fP StandardLanguage::CharIsPunct (unsigned long character)\fC [virtual]\fP"
+
+.PP
+Implements \fBLanguage\fP\&.
+.PP
+Definition at line 108 of file language_stdc\&.cpp\&.
+.PP
+.nf
+109 {
+110     return (character == '\&.');
+111 }
+.fi
+.SS "\fBbool\fP StandardLanguage::CharIsSpace (unsigned long character)\fC [virtual]\fP"
+
+.PP
+Implements \fBLanguage\fP\&.
+.PP
+Definition at line 113 of file language_stdc\&.cpp\&.
+.PP
+.nf
+114 {
+115     return (character == 32);
+116 }
+.fi
+.SS "char StandardLanguage::GetFractionPoint ()\fC [virtual]\fP"
+
+.PP
+Implements \fBLanguage\fP\&.
+.PP
+Definition at line 85 of file language_stdc\&.cpp\&.
+.PP
+.nf
+86 {
+87     return '\&.';
+88 }
+.fi
+.SS "void StandardLanguage::GetNextLine ()\fC [private]\fP"
+
+.PP
+Definition at line 204 of file language_stdc\&.cpp\&.
+.PP
+References ptr\&.
+.PP
+Referenced by GetNextPair(), and SkipComments()\&.
+.PP
+.nf
+205 {
+206     while ((*ptr) != '\0' && (*ptr) != '\n') {
+207         ptr++;
+208     }
+209 
+210     if ((*ptr) == '\n') {
+211         *ptr++ = '\0';
+212     }
+213 }
+.fi
+.SS "void StandardLanguage::GetNextPair (const char ** key, const char ** value)\fC [private]\fP"
+
+.PP
+Definition at line 194 of file language_stdc\&.cpp\&.
+.PP
+References GetNextLine(), ptr, and SkipComments()\&.
+.PP
+Referenced by LoadCatalogs()\&.
+.PP
+.nf
+195 {
+196     SkipComments();
+197     *key = ptr;
+198     GetNextLine();
+199     SkipComments();
+200     *value = ptr;
+201     GetNextLine();
+202 }
+.fi
+.SS "void StandardLanguage::LoadCatalog (char ** dest, const char * file)\fC [private]\fP"
+
+.PP
+Definition at line 178 of file language_stdc\&.cpp\&.
+.PP
+References AllocAndCopy(), CreateFilesystem(), CharBuffer::GetString(), FilesystemBase::LoadTextFile(), and ptr\&.
+.PP
+Referenced by LoadCatalogs()\&.
+.PP
+.nf
+179 {
+180     FilesystemBase *filesystem = CreateFilesystem();
+181     CharBuffer *cbuf = filesystem->LoadTextFile(file);
+182 
+183     if (cbuf != NOMEM) {
+184         AllocAndCopy(dest, cbuf->GetString());
+185         ptr = *dest;
+186         delete cbuf;
+187     } else {
+188         *dest = NOMEM;
+189     }
+190 
+191     delete filesystem;
+192 }
+.fi
+.SS "void StandardLanguage::LoadCatalogs ()\fC [private]\fP"
+
+.PP
+Definition at line 129 of file language_stdc\&.cpp\&.
+.PP
+References GetNextPair(), helpbase, helpcatalog, Language::helpcount, helptexts, identhelpdef::id, helptextdef::id, keyworddef::id, textdef::id, identhelpdef::ident, identbase, identcatalog, Language::identcount, Language::keywordcount, keywords, Language::keywordsloc, kwordbase, LoadCatalog(), keyworddef::name, helptextdef::symbol, keyworddef::symbol, identhelpdef::text, helptextdef::text, textdef::text, textbase, textcatalog, and Language::textcount\&.
+.PP
+Referenced by StandardLanguage()\&.
+.PP
+.nf
+130 {
+131     const char* key;
+132     const char* value;
+133 
+134     LoadCatalog(&textbase, "utext/dk-text\&.dict");
+135     if (textbase != NOMEM) {
+136         textcatalog = new textdef[textcount];
+137         for (unsigned int j = 0; j < textcount; j++) {
+138             GetNextPair(&key, &value);
+139             textcatalog[j]\&.id = j;
+140             textcatalog[j]\&.text = value;
+141         }
+142     }
+143 
+144     LoadCatalog(&helpbase, "utext/dk-help\&.dict");
+145     if (helpbase != NOMEM) {
+146         helpcatalog = new helptextdef[helpcount];
+147         for (unsigned int j = 0; j < helpcount; j++) {
+148             GetNextPair(&key, &value);
+149             helpcatalog[j]\&.id = j;
+150             helpcatalog[j]\&.symbol = helptexts[j]\&.symbol;
+151             helpcatalog[j]\&.text = value;
+152         }
+153     }
+154 
+155     LoadCatalog(&identbase, "utext/dk-ident\&.dict");
+156     if (identbase != NOMEM) {
+157         identcatalog = new identhelpdef[identcount];
+158         for (unsigned int j = 0; j < identcount; j++) {
+159             GetNextPair(&key, &value);
+160             identcatalog[j]\&.id = j;
+161             identcatalog[j]\&.ident = key;
+162             identcatalog[j]\&.text = value;
+163         }
+164     }
+165 
+166     LoadCatalog(&kwordbase, "utext/dk-keyword\&.dict");
+167     if (kwordbase != NOMEM) {
+168         keywordsloc = new keyworddef[keywordcount];
+169         for (unsigned int j = 0; j < keywordcount; j++) {
+170             GetNextPair(&key, &value);
+171             keywordsloc[j]\&.id = j;
+172             keywordsloc[j]\&.name = value;
+173             keywordsloc[j]\&.symbol = keywords[j]\&.symbol;
+174         }
+175     }
+176 }
+.fi
+.SS "void StandardLanguage::SkipComments ()\fC [private]\fP"
+
+.PP
+Definition at line 215 of file language_stdc\&.cpp\&.
+.PP
+References GetNextLine(), and ptr\&.
+.PP
+Referenced by GetNextPair()\&.
+.PP
+.nf
+216 {
+217     bool skipping;
+218     do {
+219         if ((*ptr) == ';') {
+220             GetNextLine();
+221             skipping = true;
+222         } else if ((*ptr) == '#' && *(ptr + sizeof(char)) == '#') {
+223             GetNextLine();
+224             skipping = true;
+225         } else {
+226             skipping = false;
+227         }
+228     } while (skipping);
+229 }
+.fi
+.SS "\fBbool\fP StandardLanguage::StrIsEqualLoc (const char * s1, const char * s2)\fC [virtual]\fP"
+
+.PP
+Implements \fBLanguage\fP\&.
+.PP
+Definition at line 123 of file language_stdc\&.cpp\&.
+.PP
+References StrIsEqual()\&.
+.PP
+.nf
+124 {
+125     return StrIsEqual(s1, s2);
+126 }
+.fi
+.SS "char * StandardLanguage::Translate (\fBtextdef\fP * def)\fC [protected]\fP, \fC [virtual]\fP"
+
+.PP
+Implements \fBLanguage\fP\&.
+.PP
+Definition at line 64 of file language_stdc\&.cpp\&.
+.PP
+References textdef::id, textdef::text, and textcatalog\&.
+.PP
+.nf
+65 {
+66     return textcatalog == NOMEM ?
+67            (char*)def->text :
+68            (char*)textcatalog[def->id]\&.text;
+69 }
+.fi
+.SS "char * StandardLanguage::Translate (\fBhelptextdef\fP * def)\fC [protected]\fP, \fC [virtual]\fP"
+
+.PP
+Implements \fBLanguage\fP\&.
+.PP
+Definition at line 71 of file language_stdc\&.cpp\&.
+.PP
+References helpcatalog, helptextdef::id, and helptextdef::text\&.
+.PP
+.nf
+72 {
+73     return helpcatalog == NOMEM ?
+74            (char*)def->text :
+75            (char*)helpcatalog[def->id]\&.text;
+76 }
+.fi
+.SS "char * StandardLanguage::Translate (\fBidenthelpdef\fP * def)\fC [protected]\fP, \fC [virtual]\fP"
+
+.PP
+Implements \fBLanguage\fP\&.
+.PP
+Definition at line 78 of file language_stdc\&.cpp\&.
+.PP
+References identhelpdef::id, identcatalog, and identhelpdef::text\&.
+.PP
+.nf
+79 {
+80     return identcatalog == NOMEM ?
+81            (char*)def->text :
+82            (char*)identcatalog[def->id]\&.text;
+83 }
+.fi
+.SH "Member Data Documentation"
+.PP 
+.SS "char* StandardLanguage::helpbase\fC [private]\fP"
+
+.PP
+Definition at line 61 of file language_stdc\&.h\&.
+.PP
+Referenced by LoadCatalogs(), and ~StandardLanguage()\&.
+.SS "\fBhelptextdef\fP* StandardLanguage::helpcatalog\fC [private]\fP"
+
+.PP
+Definition at line 67 of file language_stdc\&.h\&.
+.PP
+Referenced by LoadCatalogs(), and Translate()\&.
+.SS "char* StandardLanguage::identbase\fC [private]\fP"
+
+.PP
+Definition at line 62 of file language_stdc\&.h\&.
+.PP
+Referenced by LoadCatalogs(), and ~StandardLanguage()\&.
+.SS "\fBidenthelpdef\fP* StandardLanguage::identcatalog\fC [private]\fP"
+
+.PP
+Definition at line 68 of file language_stdc\&.h\&.
+.PP
+Referenced by LoadCatalogs(), and Translate()\&.
+.SS "char* StandardLanguage::kwordbase\fC [private]\fP"
+
+.PP
+Definition at line 63 of file language_stdc\&.h\&.
+.PP
+Referenced by LoadCatalogs(), and ~StandardLanguage()\&.
+.SS "char* StandardLanguage::ptr\fC [private]\fP"
+
+.PP
+Definition at line 65 of file language_stdc\&.h\&.
+.PP
+Referenced by GetNextLine(), GetNextPair(), LoadCatalog(), and SkipComments()\&.
+.SS "char* StandardLanguage::textbase\fC [private]\fP"
+
+.PP
+Definition at line 60 of file language_stdc\&.h\&.
+.PP
+Referenced by LoadCatalogs(), and ~StandardLanguage()\&.
+.SS "\fBtextdef\fP* StandardLanguage::textcatalog\fC [private]\fP"
+
+.PP
+Definition at line 66 of file language_stdc\&.h\&.
+.PP
+Referenced by LoadCatalogs(), and Translate()\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for amath from the source code\&.

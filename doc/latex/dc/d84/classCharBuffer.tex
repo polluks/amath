@@ -1,0 +1,1104 @@
+\hypertarget{classCharBuffer}{}\section{Char\+Buffer Class Reference}
+\label{classCharBuffer}\index{Char\+Buffer@{Char\+Buffer}}
+
+
+Encapsulate an character array which can be used as a string.  
+
+
+
+
+{\ttfamily \#include $<$charbuf.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCharBuffer_a4345e9a5114f5c0292e8f242f26e3a7b}{Char\+Buffer} ()
+\begin{DoxyCompactList}\small\item\em Initialize without allocating memory. \end{DoxyCompactList}\item 
+\hyperlink{classCharBuffer_a36d153c126a018c5090374ccb5c37508}{Char\+Buffer} (unsigned int size)
+\begin{DoxyCompactList}\small\item\em Initialize while allocating specified amount of memory. \end{DoxyCompactList}\item 
+\hyperlink{classCharBuffer_a9e62778016bba5191fa9eaa6ea118926}{$\sim$\+Char\+Buffer} ()
+\item 
+void \hyperlink{classCharBuffer_a0bcdd5708db4b04c887224e83a05086f}{Clear\+Buffer} ()
+\begin{DoxyCompactList}\small\item\em Release memory in buffer. \end{DoxyCompactList}\item 
+void \hyperlink{classCharBuffer_ac52ed7b91190240eb7db4cf43d1e2abb}{Clear\+And\+Copy} (const char $\ast$source)
+\begin{DoxyCompactList}\small\item\em Release memory, allocate and copy source. \end{DoxyCompactList}\item 
+void \hyperlink{classCharBuffer_a8c0927c2c05c954161151045f68581c6}{Clear\+And\+Alloc} (unsigned int size)
+\begin{DoxyCompactList}\small\item\em Release memory and allocate new size. \end{DoxyCompactList}\item 
+void \hyperlink{classCharBuffer_ad1907009b5ad136692b989fa96bf2f7e}{Ensure\+Size} (unsigned int size)
+\begin{DoxyCompactList}\small\item\em Ensure a memory block of speficied size is allocated. \end{DoxyCompactList}\item 
+void \hyperlink{classCharBuffer_a91ce4f4083b9a29c48f75e2af4071f28}{Ensure\+Size} (unsigned int blocksize, unsigned int blocks)
+\item 
+void \hyperlink{classCharBuffer_ae742439a2d5d5a0ad64411dcbf4604c8}{Ensure\+Minimum\+Size} ()
+\item 
+void \hyperlink{classCharBuffer_a73c71d361110b37819a1d681a1504b0e}{Ensure\+Growth} (unsigned int size)
+\item 
+void \hyperlink{classCharBuffer_abe39d3fd7d8b9c8ec343af2cae7adc96}{Empty} ()
+\item 
+\hyperlink{platform_8h_a1062901a7428fdd9c7f180f5e01ea056}{bool} \hyperlink{classCharBuffer_a64988275bda43dddb6d2b3b9551cefb0}{Is} (const char $\ast$string)
+\item 
+void \hyperlink{classCharBuffer_a9f35562a39a7785e73f09fbd9f6938bf}{Copy} (\hyperlink{classCharBuffer}{Char\+Buffer} $\ast$\hyperlink{classCharBuffer_a8bcd8491b24db4197b311eb361609674}{buf})
+\item 
+void \hyperlink{classCharBuffer_a045b38735f7b3007c1b98d3d7b7feafe}{Append} (const char $\ast$source)
+\item 
+void \hyperlink{classCharBuffer_a1ba545a85907bbc9ab26cdc99b031440}{Append} (const char c)
+\item 
+void \hyperlink{classCharBuffer_af0db379281b7f3f8b4746344521999c1}{Append} (const char c, unsigned int count)
+\item 
+void \hyperlink{classCharBuffer_a8bc0eaf1a874ccf76c0034299f8459a7}{Delete\+Last\+Char} ()
+\item 
+\hyperlink{platform_8h_a1062901a7428fdd9c7f180f5e01ea056}{bool} \hyperlink{classCharBuffer_a1071772d1059263f4f880965fcc349ab}{Remove\+Trailing} (const char c)
+\item 
+\hyperlink{platform_8h_a1062901a7428fdd9c7f180f5e01ea056}{bool} \hyperlink{classCharBuffer_a45beaedff09c0c079075cfced78c8002}{Remove\+Trailing} (const char $\ast$string)
+\item 
+char $\ast$ \hyperlink{classCharBuffer_a7dfd3feaaf80f318ba44efe15b1ec44b}{Get\+String} ()
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+char $\ast$ \hyperlink{classCharBuffer_a8bcd8491b24db4197b311eb361609674}{buf}
+\item 
+char $\ast$ \hyperlink{classCharBuffer_a2d313433650506fd6609e6947729dfb0}{ptr}
+\item 
+unsigned int \hyperlink{classCharBuffer_ac3265c68505802fbe8b590d5a423b0d0}{cursize}
+\end{DoxyCompactItemize}
+\subsection*{Static Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static const unsigned int \hyperlink{classCharBuffer_a42fcc0397a2d7cb6d412a124de076aff}{minimum\+Size} = 64
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classCharBuffer_ada87df74cf9242ca8f0efe5b88f9c212}{Ansi\+Conole\+Engine}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Encapsulate an character array which can be used as a string. 
+
+Eases the task of allocating a releasing memory. 
+
+Definition at line 43 of file charbuf.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Char\+Buffer@{Char\+Buffer}!Char\+Buffer@{Char\+Buffer}}
+\index{Char\+Buffer@{Char\+Buffer}!Char\+Buffer@{Char\+Buffer}}
+\subsubsection[{\texorpdfstring{Char\+Buffer()}{CharBuffer()}}]{\setlength{\rightskip}{0pt plus 5cm}Char\+Buffer\+::\+Char\+Buffer (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classCharBuffer_a4345e9a5114f5c0292e8f242f26e3a7b}{}\label{classCharBuffer_a4345e9a5114f5c0292e8f242f26e3a7b}
+
+
+Initialize without allocating memory. 
+
+
+
+Definition at line 38 of file charbuf.\+cpp.
+
+
+
+References buf, cursize, and ptr.
+
+
+
+Referenced by Ansi\+Conole\+Engine\+::\+Ansi\+Conole\+Engine(), Error\+Node\+::\+Error\+Node(), Evaluator\+::\+Evaluator(), Prompt\+Statement\+::\+Execute(), Function\+List\+::\+Function\+List(), Standard\+Filesystem\+::\+List\+Directory(), Standard\+Preferences\+::\+Load(), Standard\+Filesystem\+::\+Load\+Text\+File(), Numeral\+System\+::\+Numeral\+System(), Preferences\+Base\+::\+Preferences\+Base(), Syntax\+Node\+::\+Syntax\+Node(), User\+Function\+::\+User\+Function(), and Variable\+List\+::\+Variable\+List().
+
+
+\begin{DoxyCode}
+39 \{
+40     \hyperlink{classCharBuffer_a8bcd8491b24db4197b311eb361609674}{buf} = \hyperlink{platform_8h_a46ff2bfbf0d44b8466a2251d5bd5e6f8}{NOMEM};
+41     \hyperlink{classCharBuffer_a2d313433650506fd6609e6947729dfb0}{ptr} = \hyperlink{classCharBuffer_a8bcd8491b24db4197b311eb361609674}{buf};
+42     \hyperlink{classCharBuffer_ac3265c68505802fbe8b590d5a423b0d0}{cursize} = 0;
+43 \}
+\end{DoxyCode}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/d84/classCharBuffer_a4345e9a5114f5c0292e8f242f26e3a7b_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Char\+Buffer@{Char\+Buffer}!Char\+Buffer@{Char\+Buffer}}
+\index{Char\+Buffer@{Char\+Buffer}!Char\+Buffer@{Char\+Buffer}}
+\subsubsection[{\texorpdfstring{Char\+Buffer(unsigned int size)}{CharBuffer(unsigned int size)}}]{\setlength{\rightskip}{0pt plus 5cm}Char\+Buffer\+::\+Char\+Buffer (
+\begin{DoxyParamCaption}
+\item[{unsigned int}]{size}
+\end{DoxyParamCaption}
+)}\hypertarget{classCharBuffer_a36d153c126a018c5090374ccb5c37508}{}\label{classCharBuffer_a36d153c126a018c5090374ccb5c37508}
+
+
+Initialize while allocating specified amount of memory. 
+
+
+
+Definition at line 49 of file charbuf.\+cpp.
+
+
+
+References buf, cursize, minimum\+Size, and ptr.
+
+
+
+Referenced by Save\+Statement\+::\+Execute(), Positional\+Numeral\+System\+::\+Get\+Text(), and Standard\+Program\+::\+Initialize().
+
+
+\begin{DoxyCode}
+50 \{
+51     \hyperlink{classCharBuffer_ac3265c68505802fbe8b590d5a423b0d0}{cursize} = (size < \hyperlink{classCharBuffer_a42fcc0397a2d7cb6d412a124de076aff}{minimumSize} ? \hyperlink{classCharBuffer_a42fcc0397a2d7cb6d412a124de076aff}{minimumSize} : size);
+52     \hyperlink{classCharBuffer_a8bcd8491b24db4197b311eb361609674}{buf} = \textcolor{keyword}{new} \textcolor{keywordtype}{char}[\hyperlink{classCharBuffer_ac3265c68505802fbe8b590d5a423b0d0}{cursize}];
+53     \hyperlink{classCharBuffer_a2d313433650506fd6609e6947729dfb0}{ptr} = \hyperlink{classCharBuffer_a8bcd8491b24db4197b311eb361609674}{buf};
+54 \}
+\end{DoxyCode}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/d84/classCharBuffer_a36d153c126a018c5090374ccb5c37508_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Char\+Buffer@{Char\+Buffer}!````~Char\+Buffer@{$\sim$\+Char\+Buffer}}
+\index{````~Char\+Buffer@{$\sim$\+Char\+Buffer}!Char\+Buffer@{Char\+Buffer}}
+\subsubsection[{\texorpdfstring{$\sim$\+Char\+Buffer()}{~CharBuffer()}}]{\setlength{\rightskip}{0pt plus 5cm}Char\+Buffer\+::$\sim$\+Char\+Buffer (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classCharBuffer_a9e62778016bba5191fa9eaa6ea118926}{}\label{classCharBuffer_a9e62778016bba5191fa9eaa6ea118926}
+
+
+Definition at line 56 of file charbuf.\+cpp.
+
+
+
+References Clear\+Buffer().
+
+
+\begin{DoxyCode}
+57 \{
+58     \hyperlink{classCharBuffer_a0bcdd5708db4b04c887224e83a05086f}{ClearBuffer}();
+59 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/d84/classCharBuffer_a9e62778016bba5191fa9eaa6ea118926_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Member Function Documentation}
+\index{Char\+Buffer@{Char\+Buffer}!Append@{Append}}
+\index{Append@{Append}!Char\+Buffer@{Char\+Buffer}}
+\subsubsection[{\texorpdfstring{Append(const char $\ast$source)}{Append(const char *source)}}]{\setlength{\rightskip}{0pt plus 5cm}void Char\+Buffer\+::\+Append (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{source}
+\end{DoxyParamCaption}
+)}\hypertarget{classCharBuffer_a045b38735f7b3007c1b98d3d7b7feafe}{}\label{classCharBuffer_a045b38735f7b3007c1b98d3d7b7feafe}
+
+
+Definition at line 211 of file charbuf.\+cpp.
+
+
+
+References ptr.
+
+
+
+Referenced by Error\+Node\+::\+Error\+Node(), Version\+Statement\+::\+Execute(), Memory\+Statement\+::\+Execute(), Error\+Node\+::\+Execute(), Eval\+Statement\+::\+Execute(), Statement\+Block\+Node\+::\+Execute(), Delete\+Statement\+::\+Execute(), Input\+Statement\+::\+Execute(), Output\+Statement\+::\+Execute(), Digits\+Statement\+::\+Execute(), Save\+Statement\+::\+Execute(), Plot\+Statement\+::\+Execute(), Preferences\+Base\+::\+Get\+Description(), Positional\+Numeral\+System\+::\+Get\+Name(), Decimal\+System\+::\+Get\+Real\+Text(), Unary\+Node\+::\+Get\+Text(), Function\+Node\+::\+Get\+Text(), Absolute\+Node\+::\+Get\+Text(), Positional\+Numeral\+System\+::\+Get\+Text(), Numeric\+Operator\+::\+Get\+Text(), Standard\+Program\+::\+Initialize(), User\+Function\+::\+Initialize\+Texts(), Variable\+List\+::\+List\+Content(), Function\+List\+::\+List\+Content(), Standard\+Filesystem\+::\+List\+Directory(), Standard\+Preferences\+::\+Load(), Ansi\+Conole\+Engine\+::\+Process\+Char(), Ansi\+Conole\+Engine\+::\+Show\+Last(), and Ansi\+Conole\+Engine\+::\+Show\+Next().
+
+
+\begin{DoxyCode}
+212 \{
+213     \textcolor{keywordflow}{while} ((*\hyperlink{classCharBuffer_a2d313433650506fd6609e6947729dfb0}{ptr}++ = *source++));
+214 
+215     \hyperlink{classCharBuffer_a2d313433650506fd6609e6947729dfb0}{ptr}--;
+216 \}
+\end{DoxyCode}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/d84/classCharBuffer_a045b38735f7b3007c1b98d3d7b7feafe_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Char\+Buffer@{Char\+Buffer}!Append@{Append}}
+\index{Append@{Append}!Char\+Buffer@{Char\+Buffer}}
+\subsubsection[{\texorpdfstring{Append(const char c)}{Append(const char c)}}]{\setlength{\rightskip}{0pt plus 5cm}void Char\+Buffer\+::\+Append (
+\begin{DoxyParamCaption}
+\item[{const char}]{c}
+\end{DoxyParamCaption}
+)}\hypertarget{classCharBuffer_a1ba545a85907bbc9ab26cdc99b031440}{}\label{classCharBuffer_a1ba545a85907bbc9ab26cdc99b031440}
+
+
+Definition at line 195 of file charbuf.\+cpp.
+
+
+
+References ptr.
+
+
+
+Referenced by Prompt\+Statement\+::\+Execute(), Error\+Node\+::\+Execute(), Plot\+Statement\+::\+Execute(), Preferences\+Base\+::\+Get\+Description(), Positional\+Numeral\+System\+::\+Get\+Text(), Decimal\+System\+::\+Get\+Text(), Standard\+Program\+::\+Initialize(), User\+Function\+::\+Initialize\+Texts(), Positional\+Numeral\+System\+::\+Integer\+To\+Buffer(), Variable\+List\+::\+List\+Content(), Function\+List\+::\+List\+Content(), Standard\+Filesystem\+::\+Load\+Text\+File(), and Ansi\+Conole\+Engine\+::\+Process\+Char().
+
+
+\begin{DoxyCode}
+196 \{
+197     *\hyperlink{classCharBuffer_a2d313433650506fd6609e6947729dfb0}{ptr}++ = c;
+198 \}
+\end{DoxyCode}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/d84/classCharBuffer_a1ba545a85907bbc9ab26cdc99b031440_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Char\+Buffer@{Char\+Buffer}!Append@{Append}}
+\index{Append@{Append}!Char\+Buffer@{Char\+Buffer}}
+\subsubsection[{\texorpdfstring{Append(const char c, unsigned int count)}{Append(const char c, unsigned int count)}}]{\setlength{\rightskip}{0pt plus 5cm}void Char\+Buffer\+::\+Append (
+\begin{DoxyParamCaption}
+\item[{const char}]{c, }
+\item[{unsigned int}]{count}
+\end{DoxyParamCaption}
+)}\hypertarget{classCharBuffer_af0db379281b7f3f8b4746344521999c1}{}\label{classCharBuffer_af0db379281b7f3f8b4746344521999c1}
+
+
+Definition at line 200 of file charbuf.\+cpp.
+
+
+
+References ptr.
+
+
+
+Referenced by Error\+Node\+::\+Execute(), and Standard\+Filesystem\+::\+List\+Directory().
+
+
+\begin{DoxyCode}
+201 \{
+202     \textcolor{keywordflow}{if} (count == 0) \{
+203         \textcolor{keywordflow}{return};
+204     \}
+205 
+206     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} n = count;
+207     \textcolor{keywordflow}{while} (n--)
+208         *\hyperlink{classCharBuffer_a2d313433650506fd6609e6947729dfb0}{ptr}++ = c;
+209 \}
+\end{DoxyCode}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=323pt]{dc/d84/classCharBuffer_af0db379281b7f3f8b4746344521999c1_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Char\+Buffer@{Char\+Buffer}!Clear\+And\+Alloc@{Clear\+And\+Alloc}}
+\index{Clear\+And\+Alloc@{Clear\+And\+Alloc}!Char\+Buffer@{Char\+Buffer}}
+\subsubsection[{\texorpdfstring{Clear\+And\+Alloc(unsigned int size)}{ClearAndAlloc(unsigned int size)}}]{\setlength{\rightskip}{0pt plus 5cm}void Char\+Buffer\+::\+Clear\+And\+Alloc (
+\begin{DoxyParamCaption}
+\item[{unsigned int}]{size}
+\end{DoxyParamCaption}
+)}\hypertarget{classCharBuffer_a8c0927c2c05c954161151045f68581c6}{}\label{classCharBuffer_a8c0927c2c05c954161151045f68581c6}
+
+
+Release memory and allocate new size. 
+
+
+
+Definition at line 91 of file charbuf.\+cpp.
+
+
+
+References buf, Clear\+Buffer(), cursize, minimum\+Size, and ptr.
+
+
+
+Referenced by Error\+Node\+::\+Execute(), and Ansi\+Conole\+Engine\+::\+Start\+Input().
+
+
+\begin{DoxyCode}
+92 \{
+93     \hyperlink{classCharBuffer_a0bcdd5708db4b04c887224e83a05086f}{ClearBuffer}();
+94     \hyperlink{classCharBuffer_ac3265c68505802fbe8b590d5a423b0d0}{cursize} = (size < \hyperlink{classCharBuffer_a42fcc0397a2d7cb6d412a124de076aff}{minimumSize} ? \hyperlink{classCharBuffer_a42fcc0397a2d7cb6d412a124de076aff}{minimumSize} : size);
+95     \hyperlink{classCharBuffer_a8bcd8491b24db4197b311eb361609674}{buf} = \textcolor{keyword}{new} \textcolor{keywordtype}{char}[\hyperlink{classCharBuffer_ac3265c68505802fbe8b590d5a423b0d0}{cursize}];
+96     \hyperlink{classCharBuffer_a2d313433650506fd6609e6947729dfb0}{ptr} = \hyperlink{classCharBuffer_a8bcd8491b24db4197b311eb361609674}{buf};
+97 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/d84/classCharBuffer_a8c0927c2c05c954161151045f68581c6_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/d84/classCharBuffer_a8c0927c2c05c954161151045f68581c6_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Char\+Buffer@{Char\+Buffer}!Clear\+And\+Copy@{Clear\+And\+Copy}}
+\index{Clear\+And\+Copy@{Clear\+And\+Copy}!Char\+Buffer@{Char\+Buffer}}
+\subsubsection[{\texorpdfstring{Clear\+And\+Copy(const char $\ast$source)}{ClearAndCopy(const char *source)}}]{\setlength{\rightskip}{0pt plus 5cm}void Char\+Buffer\+::\+Clear\+And\+Copy (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{source}
+\end{DoxyParamCaption}
+)}\hypertarget{classCharBuffer_ac52ed7b91190240eb7db4cf43d1e2abb}{}\label{classCharBuffer_ac52ed7b91190240eb7db4cf43d1e2abb}
+
+
+Release memory, allocate and copy source. 
+
+
+
+Definition at line 80 of file charbuf.\+cpp.
+
+
+
+References Alloc\+And\+Copy(), buf, Clear\+Buffer(), cursize, and ptr.
+
+
+
+Referenced by Evaluator\+::\+Evaluate(), Prompt\+Statement\+::\+Execute(), Help\+Statement\+::\+Execute(), Execute\+Statement\+::\+Execute(), and Numeric\+Value\+Node\+::\+Get\+Node\+Text().
+
+
+\begin{DoxyCode}
+81 \{
+82     \hyperlink{classCharBuffer_a0bcdd5708db4b04c887224e83a05086f}{ClearBuffer}();
+83     \hyperlink{classCharBuffer_ac3265c68505802fbe8b590d5a423b0d0}{cursize} = \hyperlink{clib_8h_a5bed05c70cb17e541fee570b5dc32e1a}{AllocAndCopy}(&\hyperlink{classCharBuffer_a8bcd8491b24db4197b311eb361609674}{buf}, source);
+84     \hyperlink{classCharBuffer_a2d313433650506fd6609e6947729dfb0}{ptr} = \hyperlink{classCharBuffer_a8bcd8491b24db4197b311eb361609674}{buf} + \hyperlink{classCharBuffer_ac3265c68505802fbe8b590d5a423b0d0}{cursize} - \textcolor{keyword}{sizeof}(char);
+85 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/d84/classCharBuffer_ac52ed7b91190240eb7db4cf43d1e2abb_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/d84/classCharBuffer_ac52ed7b91190240eb7db4cf43d1e2abb_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Char\+Buffer@{Char\+Buffer}!Clear\+Buffer@{Clear\+Buffer}}
+\index{Clear\+Buffer@{Clear\+Buffer}!Char\+Buffer@{Char\+Buffer}}
+\subsubsection[{\texorpdfstring{Clear\+Buffer()}{ClearBuffer()}}]{\setlength{\rightskip}{0pt plus 5cm}void Char\+Buffer\+::\+Clear\+Buffer (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classCharBuffer_a0bcdd5708db4b04c887224e83a05086f}{}\label{classCharBuffer_a0bcdd5708db4b04c887224e83a05086f}
+
+
+Release memory in buffer. 
+
+
+
+Definition at line 65 of file charbuf.\+cpp.
+
+
+
+References buf, cursize, and ptr.
+
+
+
+Referenced by Variable\+List\+::\+Clear(), Function\+List\+::\+Clear(), Clear\+And\+Alloc(), Clear\+And\+Copy(), Evaluator\+::\+Evaluate(), Statement\+Block\+Node\+::\+Execute(), and $\sim$\+Char\+Buffer().
+
+
+\begin{DoxyCode}
+66 \{
+67     \textcolor{keywordflow}{if} (\hyperlink{classCharBuffer_a8bcd8491b24db4197b311eb361609674}{buf} != \hyperlink{platform_8h_a46ff2bfbf0d44b8466a2251d5bd5e6f8}{NOMEM}) \{
+68         \textcolor{keyword}{delete} [] \hyperlink{classCharBuffer_a8bcd8491b24db4197b311eb361609674}{buf};
+69     \}
+70 
+71     \hyperlink{classCharBuffer_a8bcd8491b24db4197b311eb361609674}{buf} = \hyperlink{platform_8h_a46ff2bfbf0d44b8466a2251d5bd5e6f8}{NOMEM};
+72     \hyperlink{classCharBuffer_a2d313433650506fd6609e6947729dfb0}{ptr} = \hyperlink{classCharBuffer_a8bcd8491b24db4197b311eb361609674}{buf};
+73     \hyperlink{classCharBuffer_ac3265c68505802fbe8b590d5a423b0d0}{cursize} = 0;
+74 \}
+\end{DoxyCode}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/d84/classCharBuffer_a0bcdd5708db4b04c887224e83a05086f_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Char\+Buffer@{Char\+Buffer}!Copy@{Copy}}
+\index{Copy@{Copy}!Char\+Buffer@{Char\+Buffer}}
+\subsubsection[{\texorpdfstring{Copy(\+Char\+Buffer $\ast$buf)}{Copy(CharBuffer *buf)}}]{\setlength{\rightskip}{0pt plus 5cm}void Char\+Buffer\+::\+Copy (
+\begin{DoxyParamCaption}
+\item[{{\bf Char\+Buffer} $\ast$}]{buf}
+\end{DoxyParamCaption}
+)}\hypertarget{classCharBuffer_a9f35562a39a7785e73f09fbd9f6938bf}{}\label{classCharBuffer_a9f35562a39a7785e73f09fbd9f6938bf}
+
+
+Definition at line 183 of file charbuf.\+cpp.
+
+
+
+References buf, cursize, Ensure\+Size(), Get\+String(), and ptr.
+
+
+
+Referenced by Positional\+Numeral\+System\+::\+Get\+Text().
+
+
+\begin{DoxyCode}
+184 \{
+185     \hyperlink{classCharBuffer_ad1907009b5ad136692b989fa96bf2f7e}{EnsureSize}(source->cursize);
+186     \textcolor{keyword}{const} \textcolor{keywordtype}{char} *s = source->GetString();
+187 
+188     \hyperlink{classCharBuffer_a2d313433650506fd6609e6947729dfb0}{ptr} = \hyperlink{classCharBuffer_a8bcd8491b24db4197b311eb361609674}{buf};
+189     \textcolor{keywordflow}{while} ((*\hyperlink{classCharBuffer_a2d313433650506fd6609e6947729dfb0}{ptr}++ = *s++))
+190         ;
+191 
+192     \hyperlink{classCharBuffer_a2d313433650506fd6609e6947729dfb0}{ptr}--;
+193 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/d84/classCharBuffer_a9f35562a39a7785e73f09fbd9f6938bf_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=339pt]{dc/d84/classCharBuffer_a9f35562a39a7785e73f09fbd9f6938bf_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Char\+Buffer@{Char\+Buffer}!Delete\+Last\+Char@{Delete\+Last\+Char}}
+\index{Delete\+Last\+Char@{Delete\+Last\+Char}!Char\+Buffer@{Char\+Buffer}}
+\subsubsection[{\texorpdfstring{Delete\+Last\+Char()}{DeleteLastChar()}}]{\setlength{\rightskip}{0pt plus 5cm}void Char\+Buffer\+::\+Delete\+Last\+Char (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classCharBuffer_a8bc0eaf1a874ccf76c0034299f8459a7}{}\label{classCharBuffer_a8bc0eaf1a874ccf76c0034299f8459a7}
+
+
+Definition at line 177 of file charbuf.\+cpp.
+
+
+
+References ptr.
+
+
+
+Referenced by Standard\+Program\+::\+Initialize().
+
+
+\begin{DoxyCode}
+178 \{
+179     \hyperlink{classCharBuffer_a2d313433650506fd6609e6947729dfb0}{ptr}--;
+180 
+181 \}
+\end{DoxyCode}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/d84/classCharBuffer_a8bc0eaf1a874ccf76c0034299f8459a7_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Char\+Buffer@{Char\+Buffer}!Empty@{Empty}}
+\index{Empty@{Empty}!Char\+Buffer@{Char\+Buffer}}
+\subsubsection[{\texorpdfstring{Empty()}{Empty()}}]{\setlength{\rightskip}{0pt plus 5cm}void Char\+Buffer\+::\+Empty (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classCharBuffer_abe39d3fd7d8b9c8ec343af2cae7adc96}{}\label{classCharBuffer_abe39d3fd7d8b9c8ec343af2cae7adc96}
+
+
+Definition at line 168 of file charbuf.\+cpp.
+
+
+
+References buf, Ensure\+Minimum\+Size(), and ptr.
+
+
+
+Referenced by Version\+Statement\+::\+Execute(), Memory\+Statement\+::\+Execute(), Error\+Node\+::\+Execute(), Eval\+Statement\+::\+Execute(), Statement\+Block\+Node\+::\+Execute(), Delete\+Statement\+::\+Execute(), Input\+Statement\+::\+Execute(), Output\+Statement\+::\+Execute(), Digits\+Statement\+::\+Execute(), Save\+Statement\+::\+Execute(), Plot\+Statement\+::\+Execute(), Function\+Definition\+Node\+::\+Function\+Definition\+Node(), Preferences\+Base\+::\+Get\+Description(), Positional\+Numeral\+System\+::\+Get\+Name(), Unary\+Node\+::\+Get\+Text(), Function\+Node\+::\+Get\+Text(), Absolute\+Node\+::\+Get\+Text(), Positional\+Numeral\+System\+::\+Get\+Text(), Numeric\+Operator\+::\+Get\+Text(), Decimal\+System\+::\+Get\+Text(), Standard\+Program\+::\+Initialize(), User\+Function\+::\+Initialize\+Texts(), Variable\+List\+::\+List\+Content(), Function\+List\+::\+List\+Content(), Standard\+Filesystem\+::\+List\+Directory(), Standard\+Preferences\+::\+Load(), Standard\+Filesystem\+::\+Load\+Text\+File(), Numeral\+System\+::\+Numeral\+System(), Ansi\+Conole\+Engine\+::\+Process\+Char(), Ansi\+Conole\+Engine\+::\+Show\+Last(), and Ansi\+Conole\+Engine\+::\+Show\+Next().
+
+
+\begin{DoxyCode}
+169 \{
+170     \textcolor{keywordflow}{if} (\hyperlink{classCharBuffer_a8bcd8491b24db4197b311eb361609674}{buf} == \hyperlink{platform_8h_a46ff2bfbf0d44b8466a2251d5bd5e6f8}{NOMEM}) \{
+171         \hyperlink{classCharBuffer_ae742439a2d5d5a0ad64411dcbf4604c8}{EnsureMinimumSize}();
+172     \}
+173 
+174     \hyperlink{classCharBuffer_a2d313433650506fd6609e6947729dfb0}{ptr} = \hyperlink{classCharBuffer_a8bcd8491b24db4197b311eb361609674}{buf};
+175 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/d84/classCharBuffer_abe39d3fd7d8b9c8ec343af2cae7adc96_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/d84/classCharBuffer_abe39d3fd7d8b9c8ec343af2cae7adc96_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Char\+Buffer@{Char\+Buffer}!Ensure\+Growth@{Ensure\+Growth}}
+\index{Ensure\+Growth@{Ensure\+Growth}!Char\+Buffer@{Char\+Buffer}}
+\subsubsection[{\texorpdfstring{Ensure\+Growth(unsigned int size)}{EnsureGrowth(unsigned int size)}}]{\setlength{\rightskip}{0pt plus 5cm}void Char\+Buffer\+::\+Ensure\+Growth (
+\begin{DoxyParamCaption}
+\item[{unsigned int}]{size}
+\end{DoxyParamCaption}
+)}\hypertarget{classCharBuffer_a73c71d361110b37819a1d681a1504b0e}{}\label{classCharBuffer_a73c71d361110b37819a1d681a1504b0e}
+
+
+Definition at line 158 of file charbuf.\+cpp.
+
+
+
+References buf, Ensure\+Size(), and ptr.
+
+
+
+Referenced by Statement\+Block\+Node\+::\+Execute(), Plot\+Statement\+::\+Execute(), Decimal\+System\+::\+Get\+Real\+Text(), Standard\+Filesystem\+::\+List\+Directory(), and Ansi\+Conole\+Engine\+::\+Show\+Next().
+
+
+\begin{DoxyCode}
+159 \{
+160     \hyperlink{classCharBuffer_ad1907009b5ad136692b989fa96bf2f7e}{EnsureSize}((\hyperlink{classCharBuffer_a2d313433650506fd6609e6947729dfb0}{ptr} - \hyperlink{classCharBuffer_a8bcd8491b24db4197b311eb361609674}{buf}) + size);
+161 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/d84/classCharBuffer_a73c71d361110b37819a1d681a1504b0e_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/d84/classCharBuffer_a73c71d361110b37819a1d681a1504b0e_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Char\+Buffer@{Char\+Buffer}!Ensure\+Minimum\+Size@{Ensure\+Minimum\+Size}}
+\index{Ensure\+Minimum\+Size@{Ensure\+Minimum\+Size}!Char\+Buffer@{Char\+Buffer}}
+\subsubsection[{\texorpdfstring{Ensure\+Minimum\+Size()}{EnsureMinimumSize()}}]{\setlength{\rightskip}{0pt plus 5cm}void Char\+Buffer\+::\+Ensure\+Minimum\+Size (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classCharBuffer_ae742439a2d5d5a0ad64411dcbf4604c8}{}\label{classCharBuffer_ae742439a2d5d5a0ad64411dcbf4604c8}
+
+
+Definition at line 99 of file charbuf.\+cpp.
+
+
+
+References buf, minimum\+Size, and ptr.
+
+
+
+Referenced by Empty(), and Function\+Definition\+Node\+::\+Function\+Definition\+Node().
+
+
+\begin{DoxyCode}
+100 \{
+101     \textcolor{keywordflow}{if} (\hyperlink{classCharBuffer_a8bcd8491b24db4197b311eb361609674}{buf} == \hyperlink{platform_8h_a46ff2bfbf0d44b8466a2251d5bd5e6f8}{NOMEM}) \{
+102         \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} size = \hyperlink{classCharBuffer_a42fcc0397a2d7cb6d412a124de076aff}{minimumSize};
+103         \hyperlink{classCharBuffer_a8bcd8491b24db4197b311eb361609674}{buf} = \textcolor{keyword}{new} \textcolor{keywordtype}{char}[size];
+104         \hyperlink{classCharBuffer_a2d313433650506fd6609e6947729dfb0}{ptr} = \hyperlink{classCharBuffer_a8bcd8491b24db4197b311eb361609674}{buf};
+105     \}
+106 \}
+\end{DoxyCode}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/d84/classCharBuffer_ae742439a2d5d5a0ad64411dcbf4604c8_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Char\+Buffer@{Char\+Buffer}!Ensure\+Size@{Ensure\+Size}}
+\index{Ensure\+Size@{Ensure\+Size}!Char\+Buffer@{Char\+Buffer}}
+\subsubsection[{\texorpdfstring{Ensure\+Size(unsigned int size)}{EnsureSize(unsigned int size)}}]{\setlength{\rightskip}{0pt plus 5cm}void Char\+Buffer\+::\+Ensure\+Size (
+\begin{DoxyParamCaption}
+\item[{unsigned int}]{size}
+\end{DoxyParamCaption}
+)}\hypertarget{classCharBuffer_ad1907009b5ad136692b989fa96bf2f7e}{}\label{classCharBuffer_ad1907009b5ad136692b989fa96bf2f7e}
+
+
+Ensure a memory block of speficied size is allocated. 
+
+
+
+Definition at line 112 of file charbuf.\+cpp.
+
+
+
+References buf, cursize, Mem\+Copy(), minimum\+Size, and ptr.
+
+
+
+Referenced by Copy(), Ensure\+Growth(), Error\+Node\+::\+Error\+Node(), Version\+Statement\+::\+Execute(), Memory\+Statement\+::\+Execute(), Eval\+Statement\+::\+Execute(), Delete\+Statement\+::\+Execute(), Input\+Statement\+::\+Execute(), Output\+Statement\+::\+Execute(), Digits\+Statement\+::\+Execute(), Preferences\+Base\+::\+Get\+Description(), Positional\+Numeral\+System\+::\+Get\+Name(), Unary\+Node\+::\+Get\+Text(), Function\+Node\+::\+Get\+Text(), Absolute\+Node\+::\+Get\+Text(), Numeric\+Operator\+::\+Get\+Text(), Variable\+List\+::\+List\+Content(), Function\+List\+::\+List\+Content(), Standard\+Filesystem\+::\+List\+Directory(), Standard\+Preferences\+::\+Load(), Ansi\+Conole\+Engine\+::\+Show\+Last(), and Ansi\+Conole\+Engine\+::\+Show\+Next().
+
+
+\begin{DoxyCode}
+113 \{
+114     \textcolor{keywordflow}{if} (\hyperlink{classCharBuffer_ac3265c68505802fbe8b590d5a423b0d0}{cursize} < size) \{
+115 
+116         \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} tempsize = \hyperlink{classCharBuffer_ac3265c68505802fbe8b590d5a423b0d0}{cursize};
+117         \hyperlink{classCharBuffer_ac3265c68505802fbe8b590d5a423b0d0}{cursize} = (size < \hyperlink{classCharBuffer_a42fcc0397a2d7cb6d412a124de076aff}{minimumSize} ? \hyperlink{classCharBuffer_a42fcc0397a2d7cb6d412a124de076aff}{minimumSize} : size);
+118 
+119         \textcolor{keywordflow}{if} (\hyperlink{classCharBuffer_a8bcd8491b24db4197b311eb361609674}{buf} == \hyperlink{platform_8h_a46ff2bfbf0d44b8466a2251d5bd5e6f8}{NOMEM}) \{ \textcolor{comment}{// Nothing allocated yet. Just allocate requested size.}
+120             \hyperlink{classCharBuffer_a8bcd8491b24db4197b311eb361609674}{buf} = \textcolor{keyword}{new} \textcolor{keywordtype}{char}[\hyperlink{classCharBuffer_ac3265c68505802fbe8b590d5a423b0d0}{cursize}];
+121             \hyperlink{classCharBuffer_a2d313433650506fd6609e6947729dfb0}{ptr} = \hyperlink{classCharBuffer_a8bcd8491b24db4197b311eb361609674}{buf};
+122         \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (\hyperlink{classCharBuffer_a8bcd8491b24db4197b311eb361609674}{buf} == \hyperlink{classCharBuffer_a2d313433650506fd6609e6947729dfb0}{ptr}) \{ \textcolor{comment}{// Already allocated but buffer is empty.}
+123             \textcolor{keyword}{delete} [] \hyperlink{classCharBuffer_a8bcd8491b24db4197b311eb361609674}{buf};
+124             \hyperlink{classCharBuffer_a8bcd8491b24db4197b311eb361609674}{buf} = \textcolor{keyword}{new} \textcolor{keywordtype}{char}[\hyperlink{classCharBuffer_ac3265c68505802fbe8b590d5a423b0d0}{cursize}];
+125             \hyperlink{classCharBuffer_a2d313433650506fd6609e6947729dfb0}{ptr} = \hyperlink{classCharBuffer_a8bcd8491b24db4197b311eb361609674}{buf};
+126         \} \textcolor{keywordflow}{else} \{ \textcolor{comment}{// Buffer already in use.}
+127             \textcolor{comment}{// Make at least double size}
+128             \hyperlink{classCharBuffer_ac3265c68505802fbe8b590d5a423b0d0}{cursize} = \hyperlink{classCharBuffer_ac3265c68505802fbe8b590d5a423b0d0}{cursize} < tempsize * 2 ? tempsize * 2 : 
+      \hyperlink{classCharBuffer_ac3265c68505802fbe8b590d5a423b0d0}{cursize};
+129             \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} offset = \hyperlink{classCharBuffer_a2d313433650506fd6609e6947729dfb0}{ptr} - \hyperlink{classCharBuffer_a8bcd8491b24db4197b311eb361609674}{buf};
+130             \textcolor{keywordtype}{char} *temp = \textcolor{keyword}{new} \textcolor{keywordtype}{char}[\hyperlink{classCharBuffer_ac3265c68505802fbe8b590d5a423b0d0}{cursize}];
+131             \hyperlink{clib_8h_a09b7e057c69b9ddd4b481fc746997a7d}{MemCopy}(temp, buf, tempsize);
+132             \textcolor{keyword}{delete} [] \hyperlink{classCharBuffer_a8bcd8491b24db4197b311eb361609674}{buf};
+133             buf = temp;
+134             \hyperlink{classCharBuffer_a2d313433650506fd6609e6947729dfb0}{ptr} = buf + offset;
+135         \}
+136     \}
+137 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=298pt]{dc/d84/classCharBuffer_ad1907009b5ad136692b989fa96bf2f7e_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/d84/classCharBuffer_ad1907009b5ad136692b989fa96bf2f7e_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Char\+Buffer@{Char\+Buffer}!Ensure\+Size@{Ensure\+Size}}
+\index{Ensure\+Size@{Ensure\+Size}!Char\+Buffer@{Char\+Buffer}}
+\subsubsection[{\texorpdfstring{Ensure\+Size(unsigned int blocksize, unsigned int blocks)}{EnsureSize(unsigned int blocksize, unsigned int blocks)}}]{\setlength{\rightskip}{0pt plus 5cm}void Char\+Buffer\+::\+Ensure\+Size (
+\begin{DoxyParamCaption}
+\item[{unsigned int}]{blocksize, }
+\item[{unsigned int}]{blocks}
+\end{DoxyParamCaption}
+)}\hypertarget{classCharBuffer_a91ce4f4083b9a29c48f75e2af4071f28}{}\label{classCharBuffer_a91ce4f4083b9a29c48f75e2af4071f28}
+
+
+Definition at line 139 of file charbuf.\+cpp.
+
+
+
+References buf, cursize, Mem\+Copy(), and ptr.
+
+
+
+Referenced by Standard\+Filesystem\+::\+Load\+Text\+File().
+
+
+\begin{DoxyCode}
+140 \{
+141     \textcolor{keywordflow}{if} (\hyperlink{classCharBuffer_ac3265c68505802fbe8b590d5a423b0d0}{cursize} < blocksize * blocks) \{
+142         \textcolor{keywordflow}{if} (\hyperlink{classCharBuffer_a8bcd8491b24db4197b311eb361609674}{buf} == \hyperlink{platform_8h_a46ff2bfbf0d44b8466a2251d5bd5e6f8}{NOMEM}) \{
+143             \hyperlink{classCharBuffer_ac3265c68505802fbe8b590d5a423b0d0}{cursize} = blocksize * blocks;
+144             \hyperlink{classCharBuffer_a8bcd8491b24db4197b311eb361609674}{buf} = \textcolor{keyword}{new} \textcolor{keywordtype}{char}[\hyperlink{classCharBuffer_ac3265c68505802fbe8b590d5a423b0d0}{cursize}];
+145             \hyperlink{classCharBuffer_a2d313433650506fd6609e6947729dfb0}{ptr} = \hyperlink{classCharBuffer_a8bcd8491b24db4197b311eb361609674}{buf};
+146         \} \textcolor{keywordflow}{else} \{
+147             \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} tptr = \hyperlink{classCharBuffer_a2d313433650506fd6609e6947729dfb0}{ptr} - \hyperlink{classCharBuffer_a8bcd8491b24db4197b311eb361609674}{buf};
+148             \textcolor{keywordtype}{char} *temp = \textcolor{keyword}{new} \textcolor{keywordtype}{char}[blocksize * blocks];
+149             \hyperlink{clib_8h_a09b7e057c69b9ddd4b481fc746997a7d}{MemCopy}(temp, buf, \hyperlink{classCharBuffer_ac3265c68505802fbe8b590d5a423b0d0}{cursize});
+150             \textcolor{keyword}{delete} [] \hyperlink{classCharBuffer_a8bcd8491b24db4197b311eb361609674}{buf};
+151             \hyperlink{classCharBuffer_ac3265c68505802fbe8b590d5a423b0d0}{cursize} = blocksize * blocks;
+152             buf = temp;
+153             \hyperlink{classCharBuffer_a2d313433650506fd6609e6947729dfb0}{ptr} = buf + tptr;
+154         \}
+155     \}
+156 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=298pt]{dc/d84/classCharBuffer_a91ce4f4083b9a29c48f75e2af4071f28_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=340pt]{dc/d84/classCharBuffer_a91ce4f4083b9a29c48f75e2af4071f28_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Char\+Buffer@{Char\+Buffer}!Get\+String@{Get\+String}}
+\index{Get\+String@{Get\+String}!Char\+Buffer@{Char\+Buffer}}
+\subsubsection[{\texorpdfstring{Get\+String()}{GetString()}}]{\setlength{\rightskip}{0pt plus 5cm}char $\ast$ Char\+Buffer\+::\+Get\+String (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classCharBuffer_a7dfd3feaaf80f318ba44efe15b1ec44b}{}\label{classCharBuffer_a7dfd3feaaf80f318ba44efe15b1ec44b}
+
+
+Definition at line 250 of file charbuf.\+cpp.
+
+
+
+References buf, and ptr.
+
+
+
+Referenced by Copy(), Ansi\+Conole\+Engine\+::\+Copy\+Line(), Error\+Node\+::\+Error\+Node(), Version\+Statement\+::\+Execute(), Memory\+Statement\+::\+Execute(), Prompt\+Statement\+::\+Execute(), Error\+Node\+::\+Execute(), Function\+Definition\+Node\+::\+Execute(), Eval\+Statement\+::\+Execute(), Statement\+Block\+Node\+::\+Execute(), Help\+Statement\+::\+Execute(), Delete\+Statement\+::\+Execute(), Input\+Statement\+::\+Execute(), Output\+Statement\+::\+Execute(), Digits\+Statement\+::\+Execute(), Show\+Statement\+::\+Execute(), List\+Statement\+::\+Execute(), Load\+Statement\+::\+Execute(), Save\+Statement\+::\+Execute(), Execute\+Statement\+::\+Execute(), Plot\+Statement\+::\+Execute(), User\+Function\+::\+Get\+Defition\+Name(), User\+Function\+::\+Get\+Defition\+Text(), Preferences\+Base\+::\+Get\+Description(), Ansi\+Conole\+Engine\+::\+Get\+Line(), Positional\+Numeral\+System\+::\+Get\+Name(), Numeric\+Value\+Node\+::\+Get\+Node\+Text(), Decimal\+System\+::\+Get\+Real\+Text(), Evaluator\+::\+Get\+Result(), Unary\+Node\+::\+Get\+Text(), Function\+Node\+::\+Get\+Text(), Absolute\+Node\+::\+Get\+Text(), Positional\+Numeral\+System\+::\+Get\+Text(), Numeric\+Operator\+::\+Get\+Text(), Decimal\+System\+::\+Get\+Text(), Function\+Definition\+Node\+::\+Get\+Text(), User\+Function\+::\+Initialize\+Texts(), Is(), Variable\+List\+::\+List\+Content(), Function\+List\+::\+List\+Content(), Standard\+Filesystem\+::\+List\+Directory(), Standard\+Preferences\+::\+Load(), Standard\+Language\+::\+Load\+Catalog(), Ansi\+Conole\+Engine\+::\+Process\+Char(), Standard\+Program\+::\+Run(), Ansi\+Conole\+Engine\+::\+Show\+Last(), and Ansi\+Conole\+Engine\+::\+Show\+Next().
+
+
+\begin{DoxyCode}
+251 \{
+252     *\hyperlink{classCharBuffer_a2d313433650506fd6609e6947729dfb0}{ptr} = \textcolor{charliteral}{'\(\backslash\)0'};
+253     \textcolor{keywordflow}{return} \hyperlink{classCharBuffer_a8bcd8491b24db4197b311eb361609674}{buf};
+254 \}
+\end{DoxyCode}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{dc/d84/classCharBuffer_a7dfd3feaaf80f318ba44efe15b1ec44b_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Char\+Buffer@{Char\+Buffer}!Is@{Is}}
+\index{Is@{Is}!Char\+Buffer@{Char\+Buffer}}
+\subsubsection[{\texorpdfstring{Is(const char $\ast$string)}{Is(const char *string)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} Char\+Buffer\+::\+Is (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{string}
+\end{DoxyParamCaption}
+)}\hypertarget{classCharBuffer_a64988275bda43dddb6d2b3b9551cefb0}{}\label{classCharBuffer_a64988275bda43dddb6d2b3b9551cefb0}
+
+
+Definition at line 163 of file charbuf.\+cpp.
+
+
+
+References Get\+String(), and Str\+Is\+Equal().
+
+
+
+Referenced by Positional\+Numeral\+System\+::\+Get\+Text(), and Standard\+Program\+::\+Initialize().
+
+
+\begin{DoxyCode}
+164 \{
+165     \textcolor{keywordflow}{return} \hyperlink{clib_8h_a2a1f39d11cbbaac992d42e67557dac4b}{StrIsEqual}(\hyperlink{classCharBuffer_a7dfd3feaaf80f318ba44efe15b1ec44b}{GetString}(), \textcolor{keywordtype}{string});
+166 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=305pt]{dc/d84/classCharBuffer_a64988275bda43dddb6d2b3b9551cefb0_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/d84/classCharBuffer_a64988275bda43dddb6d2b3b9551cefb0_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Char\+Buffer@{Char\+Buffer}!Remove\+Trailing@{Remove\+Trailing}}
+\index{Remove\+Trailing@{Remove\+Trailing}!Char\+Buffer@{Char\+Buffer}}
+\subsubsection[{\texorpdfstring{Remove\+Trailing(const char c)}{RemoveTrailing(const char c)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} Char\+Buffer\+::\+Remove\+Trailing (
+\begin{DoxyParamCaption}
+\item[{const char}]{c}
+\end{DoxyParamCaption}
+)}\hypertarget{classCharBuffer_a1071772d1059263f4f880965fcc349ab}{}\label{classCharBuffer_a1071772d1059263f4f880965fcc349ab}
+
+
+Definition at line 218 of file charbuf.\+cpp.
+
+
+
+References buf, and ptr.
+
+
+
+Referenced by Prompt\+Statement\+::\+Execute(), Decimal\+System\+::\+Get\+Real\+Text(), and Positional\+Numeral\+System\+::\+Get\+Text().
+
+
+\begin{DoxyCode}
+219 \{
+220     \textcolor{keywordflow}{if} (\hyperlink{classCharBuffer_a2d313433650506fd6609e6947729dfb0}{ptr} == \hyperlink{classCharBuffer_a8bcd8491b24db4197b311eb361609674}{buf}) \{
+221         \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+222     \}
+223 
+224     \textcolor{keywordflow}{if} (*(--\hyperlink{classCharBuffer_a2d313433650506fd6609e6947729dfb0}{ptr}) == c) \{
+225         \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+226     \}
+227 
+228     \hyperlink{classCharBuffer_a2d313433650506fd6609e6947729dfb0}{ptr}++;
+229     \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+230 \}
+\end{DoxyCode}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/d84/classCharBuffer_a1071772d1059263f4f880965fcc349ab_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Char\+Buffer@{Char\+Buffer}!Remove\+Trailing@{Remove\+Trailing}}
+\index{Remove\+Trailing@{Remove\+Trailing}!Char\+Buffer@{Char\+Buffer}}
+\subsubsection[{\texorpdfstring{Remove\+Trailing(const char $\ast$string)}{RemoveTrailing(const char *string)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} Char\+Buffer\+::\+Remove\+Trailing (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{string}
+\end{DoxyParamCaption}
+)}\hypertarget{classCharBuffer_a45beaedff09c0c079075cfced78c8002}{}\label{classCharBuffer_a45beaedff09c0c079075cfced78c8002}
+
+
+Definition at line 232 of file charbuf.\+cpp.
+
+
+
+References buf, ptr, Str\+Is\+Equal(), and Str\+Len().
+
+
+\begin{DoxyCode}
+233 \{
+234     \textcolor{keywordtype}{int} len = \hyperlink{clib_8h_a67ec56eb98b49515d35005a5b3bf9a32}{StrLen}(\textcolor{keywordtype}{string}) * \textcolor{keyword}{sizeof}(char);
+235     \textcolor{keywordtype}{char}* s = \hyperlink{classCharBuffer_a2d313433650506fd6609e6947729dfb0}{ptr} - len;
+236     \textcolor{keywordflow}{if} (s < \hyperlink{classCharBuffer_a8bcd8491b24db4197b311eb361609674}{buf}) \{
+237         \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+238     \}
+239 
+240     *\hyperlink{classCharBuffer_a2d313433650506fd6609e6947729dfb0}{ptr} = \textcolor{charliteral}{'\(\backslash\)0'};
+241 
+242     \textcolor{keywordflow}{if} (\hyperlink{clib_8h_a2a1f39d11cbbaac992d42e67557dac4b}{StrIsEqual}(s, \textcolor{keywordtype}{string})) \{
+243         \hyperlink{classCharBuffer_a2d313433650506fd6609e6947729dfb0}{ptr} = s;
+244         \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+245     \}
+246 
+247     \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+248 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=316pt]{dc/d84/classCharBuffer_a45beaedff09c0c079075cfced78c8002_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Friends And Related Function Documentation}
+\index{Char\+Buffer@{Char\+Buffer}!Ansi\+Conole\+Engine@{Ansi\+Conole\+Engine}}
+\index{Ansi\+Conole\+Engine@{Ansi\+Conole\+Engine}!Char\+Buffer@{Char\+Buffer}}
+\subsubsection[{\texorpdfstring{Ansi\+Conole\+Engine}{AnsiConoleEngine}}]{\setlength{\rightskip}{0pt plus 5cm}friend class {\bf Ansi\+Conole\+Engine}\hspace{0.3cm}{\ttfamily [friend]}}\hypertarget{classCharBuffer_ada87df74cf9242ca8f0efe5b88f9c212}{}\label{classCharBuffer_ada87df74cf9242ca8f0efe5b88f9c212}
+
+
+Definition at line 70 of file charbuf.\+h.
+
+
+
+\subsection{Member Data Documentation}
+\index{Char\+Buffer@{Char\+Buffer}!buf@{buf}}
+\index{buf@{buf}!Char\+Buffer@{Char\+Buffer}}
+\subsubsection[{\texorpdfstring{buf}{buf}}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ Char\+Buffer\+::buf\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classCharBuffer_a8bcd8491b24db4197b311eb361609674}{}\label{classCharBuffer_a8bcd8491b24db4197b311eb361609674}
+
+
+Definition at line 72 of file charbuf.\+h.
+
+
+
+Referenced by Char\+Buffer(), Clear\+And\+Alloc(), Clear\+And\+Copy(), Clear\+Buffer(), Copy(), Empty(), Ensure\+Growth(), Ensure\+Minimum\+Size(), Ensure\+Size(), Get\+String(), Ansi\+Conole\+Engine\+::\+Process\+Char(), Remove\+Trailing(), Ansi\+Conole\+Engine\+::\+Show\+Last(), Ansi\+Conole\+Engine\+::\+Show\+Next(), and Ansi\+Conole\+Engine\+::\+Start\+Input().
+
+\index{Char\+Buffer@{Char\+Buffer}!cursize@{cursize}}
+\index{cursize@{cursize}!Char\+Buffer@{Char\+Buffer}}
+\subsubsection[{\texorpdfstring{cursize}{cursize}}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int Char\+Buffer\+::cursize\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classCharBuffer_ac3265c68505802fbe8b590d5a423b0d0}{}\label{classCharBuffer_ac3265c68505802fbe8b590d5a423b0d0}
+
+
+Definition at line 74 of file charbuf.\+h.
+
+
+
+Referenced by Char\+Buffer(), Clear\+And\+Alloc(), Clear\+And\+Copy(), Clear\+Buffer(), Copy(), and Ensure\+Size().
+
+\index{Char\+Buffer@{Char\+Buffer}!minimum\+Size@{minimum\+Size}}
+\index{minimum\+Size@{minimum\+Size}!Char\+Buffer@{Char\+Buffer}}
+\subsubsection[{\texorpdfstring{minimum\+Size}{minimumSize}}]{\setlength{\rightskip}{0pt plus 5cm}const unsigned int Char\+Buffer\+::minimum\+Size = 64\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}\hypertarget{classCharBuffer_a42fcc0397a2d7cb6d412a124de076aff}{}\label{classCharBuffer_a42fcc0397a2d7cb6d412a124de076aff}
+
+
+Definition at line 75 of file charbuf.\+h.
+
+
+
+Referenced by Char\+Buffer(), Clear\+And\+Alloc(), Ensure\+Minimum\+Size(), and Ensure\+Size().
+
+\index{Char\+Buffer@{Char\+Buffer}!ptr@{ptr}}
+\index{ptr@{ptr}!Char\+Buffer@{Char\+Buffer}}
+\subsubsection[{\texorpdfstring{ptr}{ptr}}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ Char\+Buffer\+::ptr\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classCharBuffer_a2d313433650506fd6609e6947729dfb0}{}\label{classCharBuffer_a2d313433650506fd6609e6947729dfb0}
+
+
+Definition at line 73 of file charbuf.\+h.
+
+
+
+Referenced by Append(), Char\+Buffer(), Clear\+And\+Alloc(), Clear\+And\+Copy(), Clear\+Buffer(), Copy(), Delete\+Last\+Char(), Empty(), Ensure\+Growth(), Ensure\+Minimum\+Size(), Ensure\+Size(), Get\+String(), Ansi\+Conole\+Engine\+::\+Process\+Char(), and Remove\+Trailing().
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+app/lib/\hyperlink{charbuf_8h}{charbuf.\+h}\item 
+app/lib/\hyperlink{charbuf_8cpp}{charbuf.\+cpp}\end{DoxyCompactItemize}

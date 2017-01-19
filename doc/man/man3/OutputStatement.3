@@ -1,0 +1,129 @@
+.TH "OutputStatement" 3 "Thu Jan 19 2017" "Version 1.6.0" "amath" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+OutputStatement \- Change numeral output system\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <statements\&.h>\fP
+.PP
+Inherits \fBStatementNode\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBOutputStatement\fP ()"
+.br
+.RI "\fIConstructor used to show number of active digits\&. \fP"
+.ti -1c
+.RI "\fBOutputStatement\fP (unsigned int \fBbase\fP)"
+.br
+.RI "\fIConstructor used to set number of active digits\&. \fP"
+.ti -1c
+.RI "\fB~OutputStatement\fP ()"
+.br
+.ti -1c
+.RI "char * \fBExecute\fP ()"
+.br
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "unsigned int \fBbase\fP"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Detailed Description"
+.PP 
+Change numeral output system\&. 
+.PP
+Definition at line 224 of file statements\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "OutputStatement::OutputStatement ()"
+
+.PP
+Constructor used to show number of active digits\&. 
+.PP
+Definition at line 495 of file statements\&.cpp\&.
+.PP
+References base\&.
+.PP
+Referenced by Parser::ParseNumeralStatement()\&.
+.PP
+.nf
+495                                  :
+496     base(0) { }
+.fi
+.SS "OutputStatement::OutputStatement (unsigned int base)"
+
+.PP
+Constructor used to set number of active digits\&. 
+.PP
+Definition at line 502 of file statements\&.cpp\&.
+.PP
+References base, and StatementNode::StatementNode()\&.
+.PP
+Referenced by Parser::ParseNumeralStatement()\&.
+.PP
+.nf
+502                                                   :
+503     StatementNode(), base(base) { }
+.fi
+.SS "OutputStatement::~OutputStatement ()\fC [inline]\fP"
+
+.PP
+Definition at line 228 of file statements\&.h\&.
+.PP
+.nf
+228 { }
+.fi
+.SH "Member Function Documentation"
+.PP 
+.SS "char * OutputStatement::Execute ()\fC [virtual]\fP"
+
+.PP
+Implements \fBStatementNode\fP\&.
+.PP
+Definition at line 505 of file statements\&.cpp\&.
+.PP
+References CharBuffer::Append(), base, CharBuffer::Empty(), CharBuffer::EnsureSize(), NumeralSystem::GetDigits(), NumeralSystem::GetName(), CharBuffer::GetString(), Program::NewPositionalOutput(), Program::Output, SyntaxNode::output, and StrLen()\&.
+.PP
+.nf
+506 {
+507     const char *text;
+508 
+509     if (base != 0) {
+510         int digits = Program->Output->GetDigits();
+511         Program->NewPositionalOutput(base, digits);
+512         text = HELPOUTPSETT;
+513     } else {
+514         text = HELPOUTPSHOW;
+515     }
+516 
+517     const char *desc = Program->Output->GetName();
+518 
+519     output->Empty();
+520     output->EnsureSize(StrLen(text) + StrLen(desc) + StrLen(NEWLINE) + 1);
+521     output->Append(text);
+522     output->Append(desc);
+523     output->Append(NEWLINE);
+524     return output->GetString();
+525 }
+.fi
+.SH "Member Data Documentation"
+.PP 
+.SS "unsigned int OutputStatement::base\fC [private]\fP"
+
+.PP
+Definition at line 232 of file statements\&.h\&.
+.PP
+Referenced by Execute(), and OutputStatement()\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for amath from the source code\&.

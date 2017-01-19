@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="d8/d29/program__stdc_8cpp">
+    <title>program_stdc.cpp File Reference</title>
+    <programlisting>#include &quot;clib.h&quot;</programlisting>
+    <programlisting>#include &quot;lib/charbuf.h&quot;</programlisting>
+    <programlisting>#include &quot;main/evaluator.h&quot;</programlisting>
+    <programlisting>#include &quot;system/program_stdc.h&quot;</programlisting>
+    <programlisting>#include &quot;system/console_stdc.h&quot;</programlisting>
+    <programlisting>#include &quot;system/language_stdc.h&quot;</programlisting>
+    <programlisting>#include &quot;system/filesystem_stdc.h&quot;</programlisting>
+    <programlisting>#include &quot;system/preferences_stdc.h&quot;</programlisting>
+    <programlisting>#include &quot;system/base/io.h&quot;</programlisting>
+<para>Include dependency diagram for program_stdc.cpp</para>
+<para>
+    <figure>
+        <title>Dependency diagram</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="../../da/d95/program__stdc_8cpp__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+<para>Included by dependency diagram for program_stdc.cpp</para>
+<para>
+    <figure>
+        <title>Dependency diagram</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="../../d5/dd7/program__stdc_8cpp__dep__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+    <simplesect>
+        <title>Detailed Description</title>
+    <para>Definition in file /home/carsten/amath2/app/system/program_stdc.cpp</para>
+    </simplesect>
+</section>

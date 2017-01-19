@@ -1,0 +1,101 @@
+.TH "HyperbolicArcSecantNode" 3 "Thu Jan 19 2017" "Version 1.6.0" "amath" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+HyperbolicArcSecantNode \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <functions\&.h>\fP
+.PP
+Inherits \fBFunctionNode\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBHyperbolicArcSecantNode\fP (\fBExpressionNode\fP *\fBexpression\fP)"
+.br
+.ti -1c
+.RI "\fBNumber\fP * \fBEvaluate\fP ()"
+.br
+.in -1c
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static \fBFunctionNode\fP * \fBCreate\fP (\fBExpressionNode\fP *\fBexpression\fP)"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "char * \fBGetNodeText\fP ()"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Detailed Description"
+.PP 
+Definition at line 574 of file functions\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "HyperbolicArcSecantNode::HyperbolicArcSecantNode (\fBExpressionNode\fP * expression)"
+
+.PP
+Definition at line 1175 of file functions\&.cpp\&.
+.PP
+References FunctionNode::FunctionNode()\&.
+.PP
+Referenced by Create()\&.
+.PP
+.nf
+1175                                                                            :
+1176     FunctionNode(expression) { }
+.fi
+.SH "Member Function Documentation"
+.PP 
+.SS "\fBFunctionNode\fP * HyperbolicArcSecantNode::Create (\fBExpressionNode\fP * expression)\fC [static]\fP"
+
+.PP
+Definition at line 1178 of file functions\&.cpp\&.
+.PP
+References HyperbolicArcSecantNode()\&.
+.PP
+.nf
+1179 {
+1180     return new HyperbolicArcSecantNode(expression);
+1181 }
+.fi
+.SS "\fBNumber\fP * HyperbolicArcSecantNode::Evaluate ()\fC [virtual]\fP"
+
+.PP
+Implements \fBExpressionNode\fP\&.
+.PP
+Definition at line 1183 of file functions\&.cpp\&.
+.PP
+References ExpressionNode::Evaluate(), FunctionNode::expression, Number::HypArcSecant(), and ExpressionNode::result\&.
+.PP
+.nf
+1184 {
+1185     result = expression->Evaluate()->HypArcSecant();
+1186     return result;
+1187 }
+.fi
+.SS "char * HyperbolicArcSecantNode::GetNodeText ()\fC [protected]\fP, \fC [virtual]\fP"
+
+.PP
+Implements \fBExpressionNode\fP\&.
+.PP
+Definition at line 1189 of file functions\&.cpp\&.
+.PP
+.nf
+1190 {
+1191     return (char*)"asech";
+1192 }
+.fi
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for amath from the source code\&.

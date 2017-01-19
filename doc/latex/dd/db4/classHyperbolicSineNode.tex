@@ -1,0 +1,203 @@
+\hypertarget{classHyperbolicSineNode}{}\section{Hyperbolic\+Sine\+Node Class Reference}
+\label{classHyperbolicSineNode}\index{Hyperbolic\+Sine\+Node@{Hyperbolic\+Sine\+Node}}
+
+
+{\ttfamily \#include $<$functions.\+h$>$}
+
+
+
+Inheritance diagram for Hyperbolic\+Sine\+Node\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=186pt]{df/dce/classHyperbolicSineNode__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Hyperbolic\+Sine\+Node\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=272pt]{d8/d86/classHyperbolicSineNode__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classHyperbolicSineNode_a3ebf3cd088c7f0d2d4a1a2f4ec7ac0b0}{Hyperbolic\+Sine\+Node} (\hyperlink{classExpressionNode}{Expression\+Node} $\ast$\hyperlink{classFunctionNode_ad7577b179a1937aaf8a0058bb5b546dc}{expression})
+\item 
+\hyperlink{structNumber}{Number} $\ast$ \hyperlink{classHyperbolicSineNode_a8f11c6b2d8d793856f17e3a249f20b69}{Evaluate} ()
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{classFunctionNode}{Function\+Node} $\ast$ \hyperlink{classHyperbolicSineNode_a32bfb217a9351f882d1a68a76f4d2b94}{Create} (\hyperlink{classExpressionNode}{Expression\+Node} $\ast$\hyperlink{classFunctionNode_ad7577b179a1937aaf8a0058bb5b546dc}{expression})
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+char $\ast$ \hyperlink{classHyperbolicSineNode_a953eb8445e274935e1e7f646ca444fd8}{Get\+Node\+Text} ()
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 460 of file functions.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Hyperbolic\+Sine\+Node@{Hyperbolic\+Sine\+Node}!Hyperbolic\+Sine\+Node@{Hyperbolic\+Sine\+Node}}
+\index{Hyperbolic\+Sine\+Node@{Hyperbolic\+Sine\+Node}!Hyperbolic\+Sine\+Node@{Hyperbolic\+Sine\+Node}}
+\subsubsection[{\texorpdfstring{Hyperbolic\+Sine\+Node(\+Expression\+Node $\ast$expression)}{HyperbolicSineNode(ExpressionNode *expression)}}]{\setlength{\rightskip}{0pt plus 5cm}Hyperbolic\+Sine\+Node\+::\+Hyperbolic\+Sine\+Node (
+\begin{DoxyParamCaption}
+\item[{{\bf Expression\+Node} $\ast$}]{expression}
+\end{DoxyParamCaption}
+)}\hypertarget{classHyperbolicSineNode_a3ebf3cd088c7f0d2d4a1a2f4ec7ac0b0}{}\label{classHyperbolicSineNode_a3ebf3cd088c7f0d2d4a1a2f4ec7ac0b0}
+
+
+Definition at line 981 of file functions.\+cpp.
+
+
+
+References Function\+Node\+::\+Function\+Node().
+
+
+
+Referenced by Create().
+
+
+\begin{DoxyCode}
+981                                                                  :
+982     \hyperlink{classFunctionNode_a41cb7db0162ffbec0902bd8ff7ea435f}{FunctionNode}(expression) \{ \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dd/db4/classHyperbolicSineNode_a3ebf3cd088c7f0d2d4a1a2f4ec7ac0b0_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=334pt]{dd/db4/classHyperbolicSineNode_a3ebf3cd088c7f0d2d4a1a2f4ec7ac0b0_icgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Member Function Documentation}
+\index{Hyperbolic\+Sine\+Node@{Hyperbolic\+Sine\+Node}!Create@{Create}}
+\index{Create@{Create}!Hyperbolic\+Sine\+Node@{Hyperbolic\+Sine\+Node}}
+\subsubsection[{\texorpdfstring{Create(\+Expression\+Node $\ast$expression)}{Create(ExpressionNode *expression)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Function\+Node} $\ast$ Hyperbolic\+Sine\+Node\+::\+Create (
+\begin{DoxyParamCaption}
+\item[{{\bf Expression\+Node} $\ast$}]{expression}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{classHyperbolicSineNode_a32bfb217a9351f882d1a68a76f4d2b94}{}\label{classHyperbolicSineNode_a32bfb217a9351f882d1a68a76f4d2b94}
+
+
+Definition at line 984 of file functions.\+cpp.
+
+
+
+References Hyperbolic\+Sine\+Node().
+
+
+\begin{DoxyCode}
+985 \{
+986     \textcolor{keywordflow}{return} \textcolor{keyword}{new} \hyperlink{classHyperbolicSineNode_a3ebf3cd088c7f0d2d4a1a2f4ec7ac0b0}{HyperbolicSineNode}(expression);
+987 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dd/db4/classHyperbolicSineNode_a32bfb217a9351f882d1a68a76f4d2b94_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{Hyperbolic\+Sine\+Node@{Hyperbolic\+Sine\+Node}!Evaluate@{Evaluate}}
+\index{Evaluate@{Evaluate}!Hyperbolic\+Sine\+Node@{Hyperbolic\+Sine\+Node}}
+\subsubsection[{\texorpdfstring{Evaluate()}{Evaluate()}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Number} $\ast$ Hyperbolic\+Sine\+Node\+::\+Evaluate (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{classHyperbolicSineNode_a8f11c6b2d8d793856f17e3a249f20b69}{}\label{classHyperbolicSineNode_a8f11c6b2d8d793856f17e3a249f20b69}
+
+
+Implements \hyperlink{classExpressionNode_a64975d4dc37742228bd522f6204537f7}{Expression\+Node}.
+
+
+
+Definition at line 989 of file functions.\+cpp.
+
+
+
+References Expression\+Node\+::\+Evaluate(), Function\+Node\+::expression, Number\+::\+Hyp\+Sine(), and Expression\+Node\+::result.
+
+
+\begin{DoxyCode}
+990 \{
+991     \hyperlink{classExpressionNode_a1f590649f5a5cb30eb7ee912f7bc1262}{result} = \hyperlink{classFunctionNode_ad7577b179a1937aaf8a0058bb5b546dc}{expression}->\hyperlink{classExpressionNode_a64975d4dc37742228bd522f6204537f7}{Evaluate}()->\hyperlink{structNumber_a5e05df2319f17aa33da95560f9274042}{HypSine}();
+992     \textcolor{keywordflow}{return} \hyperlink{classExpressionNode_a1f590649f5a5cb30eb7ee912f7bc1262}{result};
+993 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dd/db4/classHyperbolicSineNode_a8f11c6b2d8d793856f17e3a249f20b69_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{Hyperbolic\+Sine\+Node@{Hyperbolic\+Sine\+Node}!Get\+Node\+Text@{Get\+Node\+Text}}
+\index{Get\+Node\+Text@{Get\+Node\+Text}!Hyperbolic\+Sine\+Node@{Hyperbolic\+Sine\+Node}}
+\subsubsection[{\texorpdfstring{Get\+Node\+Text()}{GetNodeText()}}]{\setlength{\rightskip}{0pt plus 5cm}char $\ast$ Hyperbolic\+Sine\+Node\+::\+Get\+Node\+Text (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}\hypertarget{classHyperbolicSineNode_a953eb8445e274935e1e7f646ca444fd8}{}\label{classHyperbolicSineNode_a953eb8445e274935e1e7f646ca444fd8}
+
+
+Implements \hyperlink{classExpressionNode_a42a5e9562b0f645a19dcc83f698069b5}{Expression\+Node}.
+
+
+
+Definition at line 995 of file functions.\+cpp.
+
+
+\begin{DoxyCode}
+996 \{
+997     \textcolor{keywordflow}{return} (\textcolor{keywordtype}{char}*)\textcolor{stringliteral}{"sinh"};
+998 \}
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+app/main/\hyperlink{functions_8h}{functions.\+h}\item 
+app/main/\hyperlink{functions_8cpp}{functions.\+cpp}\end{DoxyCompactItemize}

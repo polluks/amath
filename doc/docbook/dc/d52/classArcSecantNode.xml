@@ -1,0 +1,86 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="dc/d52/classArcSecantNode">
+<title>ArcSecantNode class Reference</title>
+<para>
+    <programlisting>#include <link linkend="d8/d5c/functions_8h">&lt;functions.h&gt;</link></programlisting>
+</para>
+<para>Inheritance diagram for ArcSecantNode</para>
+<para>
+    <figure>
+        <title>Inheritance graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="../../da/d77/classArcSecantNode__inherit__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+<para>Collaboration diagram for ArcSecantNode</para>
+<para>
+    <figure>
+        <title>Collaboration graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="../../de/dd1/classArcSecantNode__coll__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="dc/d52/classArcSecantNode_1af52359509f3d178954501b477ff1db5e">ArcSecantNode</link> (
+<link linkend="dd/d06/classExpressionNode">ExpressionNode</link> * expression)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="da/de2/structNumber">Number</link> * <link linkend="dc/d52/classArcSecantNode_1a4440babc181bf1763a0dca583ad5adbb">Evaluate</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>static <link linkend="d7/d06/classFunctionNode">FunctionNode</link> * <link linkend="dc/d52/classArcSecantNode_1abe48bdd0e47a2dd5e5478f551f20c357">Create</link> (
+<link linkend="dd/d06/classExpressionNode">ExpressionNode</link> * expression)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>char * <link linkend="dc/d52/classArcSecantNode_1a75e25b2005cd24caf6b374a662df9975">GetNodeText</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+            <section xml:id="dc/d52/classArcSecantNode_1af52359509f3d178954501b477ff1db5e">
+                <title>ArcSecantNode::ArcSecantNode (ExpressionNode *expression)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="dc/d52/classArcSecantNode_1a4440babc181bf1763a0dca583ad5adbb">
+                <title>Number * ArcSecantNode::Evaluate ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="dc/d52/classArcSecantNode_1abe48bdd0e47a2dd5e5478f551f20c357">
+                <title>FunctionNode * ArcSecantNode::Create (ExpressionNode *expression)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="dc/d52/classArcSecantNode_1a75e25b2005cd24caf6b374a662df9975">
+                <title>char * ArcSecantNode::GetNodeText ()</title> <emphasis></emphasis>
+                
+            </section>
+</section>

@@ -1,0 +1,41 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="dc/ddd/parser_8cpp">
+    <title>parser.cpp File Reference</title>
+    <programlisting>#include &quot;clib.h&quot;</programlisting>
+    <programlisting>#include &quot;lib/numb.h&quot;</programlisting>
+    <programlisting>#include &quot;lib/real.h&quot;</programlisting>
+    <programlisting>#include &quot;lib/cplex.h&quot;</programlisting>
+    <programlisting>#include &quot;main/parser.h&quot;</programlisting>
+    <programlisting>#include &quot;main/values.h&quot;</programlisting>
+    <programlisting>#include &quot;main/operators.h&quot;</programlisting>
+    <programlisting>#include &quot;main/functions.h&quot;</programlisting>
+    <programlisting>#include &quot;main/statements.h&quot;</programlisting>
+    <programlisting>#include &quot;localize/text.h&quot;</programlisting>
+    <programlisting>#include &quot;system/program.h&quot;</programlisting>
+<para>Include dependency diagram for parser.cpp</para>
+<para>
+    <figure>
+        <title>Dependency diagram</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="../../d0/d8e/parser_8cpp__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+<para>Included by dependency diagram for parser.cpp</para>
+<para>
+    <figure>
+        <title>Dependency diagram</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="../../d7/dba/parser_8cpp__dep__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+    <simplesect>
+        <title>Detailed Description</title>
+    <para>Definition in file /home/carsten/amath2/app/main/parser.cpp</para>
+    </simplesect>
+</section>

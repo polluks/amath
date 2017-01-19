@@ -1,0 +1,169 @@
+\hypertarget{uniontFloatUnion32}{}\section{t\+Float\+Union32 Union Reference}
+\label{uniontFloatUnion32}\index{t\+Float\+Union32@{t\+Float\+Union32}}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{dstandard_8h_ad203aed3ab57b120eb54c2043f60dc49}{tB} \hyperlink{uniontFloatUnion32_a712fc8a147092d725afef356b58e222d}{Is\+Negative} () const 
+\item 
+\hyperlink{dstandard_8h_aee96db7e18784e05ed6b0bcaeec3f7f6}{t\+U32} \hyperlink{uniontFloatUnion32_a5fdea8e6c84f336aa35050476f3cd776}{Get\+Exponent} () const 
+\item 
+\hyperlink{dstandard_8h_aee96db7e18784e05ed6b0bcaeec3f7f6}{t\+U32} \hyperlink{uniontFloatUnion32_a09e9d4d1db976209ea3a5720ae55b373}{Get\+Mantissa} () const 
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{dstandard_8h_adfd1aaaa5a9470e6009d2770939ae5ba}{t\+F32} \hyperlink{uniontFloatUnion32_ad1a5322bcde302e59bcd001125651e6a}{m\+\_\+floating\+Point}
+\item 
+\hyperlink{dstandard_8h_aee96db7e18784e05ed6b0bcaeec3f7f6}{t\+U32} \hyperlink{uniontFloatUnion32_af3cba3a9212a20888a1a1a6848bd5c26}{m\+\_\+integer}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 68 of file dprint.\+cpp.
+
+
+
+\subsection{Member Function Documentation}
+\index{t\+Float\+Union32@{t\+Float\+Union32}!Get\+Exponent@{Get\+Exponent}}
+\index{Get\+Exponent@{Get\+Exponent}!t\+Float\+Union32@{t\+Float\+Union32}}
+\subsubsection[{\texorpdfstring{Get\+Exponent() const }{GetExponent() const }}]{\setlength{\rightskip}{0pt plus 5cm}{\bf t\+U32} t\+Float\+Union32\+::\+Get\+Exponent (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{uniontFloatUnion32_a5fdea8e6c84f336aa35050476f3cd776}{}\label{uniontFloatUnion32_a5fdea8e6c84f336aa35050476f3cd776}
+
+
+Definition at line 73 of file dprint.\+cpp.
+
+
+
+References m\+\_\+integer.
+
+
+
+Referenced by Print\+Float32().
+
+
+\begin{DoxyCode}
+73                              \{
+74         \textcolor{keywordflow}{return} (\hyperlink{uniontFloatUnion32_af3cba3a9212a20888a1a1a6848bd5c26}{m\_integer} >> 23) & 0xFF;
+75     \}
+\end{DoxyCode}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=325pt]{dd/dd9/uniontFloatUnion32_a5fdea8e6c84f336aa35050476f3cd776_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{t\+Float\+Union32@{t\+Float\+Union32}!Get\+Mantissa@{Get\+Mantissa}}
+\index{Get\+Mantissa@{Get\+Mantissa}!t\+Float\+Union32@{t\+Float\+Union32}}
+\subsubsection[{\texorpdfstring{Get\+Mantissa() const }{GetMantissa() const }}]{\setlength{\rightskip}{0pt plus 5cm}{\bf t\+U32} t\+Float\+Union32\+::\+Get\+Mantissa (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{uniontFloatUnion32_a09e9d4d1db976209ea3a5720ae55b373}{}\label{uniontFloatUnion32_a09e9d4d1db976209ea3a5720ae55b373}
+
+
+Definition at line 76 of file dprint.\+cpp.
+
+
+
+References m\+\_\+integer.
+
+
+
+Referenced by Print\+Float32().
+
+
+\begin{DoxyCode}
+76                              \{
+77         \textcolor{keywordflow}{return} \hyperlink{uniontFloatUnion32_af3cba3a9212a20888a1a1a6848bd5c26}{m\_integer} & 0x7FFFFF;
+78     \}
+\end{DoxyCode}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=324pt]{dd/dd9/uniontFloatUnion32_a09e9d4d1db976209ea3a5720ae55b373_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{t\+Float\+Union32@{t\+Float\+Union32}!Is\+Negative@{Is\+Negative}}
+\index{Is\+Negative@{Is\+Negative}!t\+Float\+Union32@{t\+Float\+Union32}}
+\subsubsection[{\texorpdfstring{Is\+Negative() const }{IsNegative() const }}]{\setlength{\rightskip}{0pt plus 5cm}{\bf tB} t\+Float\+Union32\+::\+Is\+Negative (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{uniontFloatUnion32_a712fc8a147092d725afef356b58e222d}{}\label{uniontFloatUnion32_a712fc8a147092d725afef356b58e222d}
+
+
+Definition at line 70 of file dprint.\+cpp.
+
+
+
+References m\+\_\+integer.
+
+
+
+Referenced by Print\+Float32().
+
+
+\begin{DoxyCode}
+70                              \{
+71         \textcolor{keywordflow}{return} (\hyperlink{uniontFloatUnion32_af3cba3a9212a20888a1a1a6848bd5c26}{m\_integer} >> 31) != 0;
+72     \}
+\end{DoxyCode}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=316pt]{dd/dd9/uniontFloatUnion32_a712fc8a147092d725afef356b58e222d_icgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Member Data Documentation}
+\index{t\+Float\+Union32@{t\+Float\+Union32}!m\+\_\+floating\+Point@{m\+\_\+floating\+Point}}
+\index{m\+\_\+floating\+Point@{m\+\_\+floating\+Point}!t\+Float\+Union32@{t\+Float\+Union32}}
+\subsubsection[{\texorpdfstring{m\+\_\+floating\+Point}{m_floatingPoint}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf t\+F32} t\+Float\+Union32\+::m\+\_\+floating\+Point}\hypertarget{uniontFloatUnion32_ad1a5322bcde302e59bcd001125651e6a}{}\label{uniontFloatUnion32_ad1a5322bcde302e59bcd001125651e6a}
+
+
+Definition at line 80 of file dprint.\+cpp.
+
+
+
+Referenced by Print\+Float32().
+
+\index{t\+Float\+Union32@{t\+Float\+Union32}!m\+\_\+integer@{m\+\_\+integer}}
+\index{m\+\_\+integer@{m\+\_\+integer}!t\+Float\+Union32@{t\+Float\+Union32}}
+\subsubsection[{\texorpdfstring{m\+\_\+integer}{m_integer}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf t\+U32} t\+Float\+Union32\+::m\+\_\+integer}\hypertarget{uniontFloatUnion32_af3cba3a9212a20888a1a1a6848bd5c26}{}\label{uniontFloatUnion32_af3cba3a9212a20888a1a1a6848bd5c26}
+
+
+Definition at line 81 of file dprint.\+cpp.
+
+
+
+Referenced by Get\+Exponent(), Get\+Mantissa(), and Is\+Negative().
+
+
+
+The documentation for this union was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+lib/dconv/\hyperlink{dprint_8cpp}{dprint.\+cpp}\end{DoxyCompactItemize}

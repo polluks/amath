@@ -1,0 +1,203 @@
+\hypertarget{classArcTangentNode}{}\section{Arc\+Tangent\+Node Class Reference}
+\label{classArcTangentNode}\index{Arc\+Tangent\+Node@{Arc\+Tangent\+Node}}
+
+
+{\ttfamily \#include $<$functions.\+h$>$}
+
+
+
+Inheritance diagram for Arc\+Tangent\+Node\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=170pt]{d8/dac/classArcTangentNode__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Arc\+Tangent\+Node\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=272pt]{d4/dad/classArcTangentNode__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classArcTangentNode_a2b174bed5fa2e62b858ce79654e7bb3c}{Arc\+Tangent\+Node} (\hyperlink{classExpressionNode}{Expression\+Node} $\ast$\hyperlink{classFunctionNode_ad7577b179a1937aaf8a0058bb5b546dc}{expression})
+\item 
+\hyperlink{structNumber}{Number} $\ast$ \hyperlink{classArcTangentNode_a61ce03a435f72dde99caba3547a0a2a8}{Evaluate} ()
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{classFunctionNode}{Function\+Node} $\ast$ \hyperlink{classArcTangentNode_a39aefe24ffd196b99a8c110619e5db2b}{Create} (\hyperlink{classExpressionNode}{Expression\+Node} $\ast$\hyperlink{classFunctionNode_ad7577b179a1937aaf8a0058bb5b546dc}{expression})
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+char $\ast$ \hyperlink{classArcTangentNode_afd1b56cd9bf1c3a3da5191bf9604881d}{Get\+Node\+Text} ()
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 416 of file functions.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Arc\+Tangent\+Node@{Arc\+Tangent\+Node}!Arc\+Tangent\+Node@{Arc\+Tangent\+Node}}
+\index{Arc\+Tangent\+Node@{Arc\+Tangent\+Node}!Arc\+Tangent\+Node@{Arc\+Tangent\+Node}}
+\subsubsection[{\texorpdfstring{Arc\+Tangent\+Node(\+Expression\+Node $\ast$expression)}{ArcTangentNode(ExpressionNode *expression)}}]{\setlength{\rightskip}{0pt plus 5cm}Arc\+Tangent\+Node\+::\+Arc\+Tangent\+Node (
+\begin{DoxyParamCaption}
+\item[{{\bf Expression\+Node} $\ast$}]{expression}
+\end{DoxyParamCaption}
+)}\hypertarget{classArcTangentNode_a2b174bed5fa2e62b858ce79654e7bb3c}{}\label{classArcTangentNode_a2b174bed5fa2e62b858ce79654e7bb3c}
+
+
+Definition at line 900 of file functions.\+cpp.
+
+
+
+References Function\+Node\+::\+Function\+Node().
+
+
+
+Referenced by Create().
+
+
+\begin{DoxyCode}
+900                                                          :
+901     \hyperlink{classFunctionNode_a41cb7db0162ffbec0902bd8ff7ea435f}{FunctionNode}(expression) \{ \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d9/d88/classArcTangentNode_a2b174bed5fa2e62b858ce79654e7bb3c_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d9/d88/classArcTangentNode_a2b174bed5fa2e62b858ce79654e7bb3c_icgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Member Function Documentation}
+\index{Arc\+Tangent\+Node@{Arc\+Tangent\+Node}!Create@{Create}}
+\index{Create@{Create}!Arc\+Tangent\+Node@{Arc\+Tangent\+Node}}
+\subsubsection[{\texorpdfstring{Create(\+Expression\+Node $\ast$expression)}{Create(ExpressionNode *expression)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Function\+Node} $\ast$ Arc\+Tangent\+Node\+::\+Create (
+\begin{DoxyParamCaption}
+\item[{{\bf Expression\+Node} $\ast$}]{expression}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{classArcTangentNode_a39aefe24ffd196b99a8c110619e5db2b}{}\label{classArcTangentNode_a39aefe24ffd196b99a8c110619e5db2b}
+
+
+Definition at line 903 of file functions.\+cpp.
+
+
+
+References Arc\+Tangent\+Node().
+
+
+\begin{DoxyCode}
+904 \{
+905     \textcolor{keywordflow}{return} \textcolor{keyword}{new} \hyperlink{classArcTangentNode_a2b174bed5fa2e62b858ce79654e7bb3c}{ArcTangentNode}(expression);
+906 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d9/d88/classArcTangentNode_a39aefe24ffd196b99a8c110619e5db2b_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{Arc\+Tangent\+Node@{Arc\+Tangent\+Node}!Evaluate@{Evaluate}}
+\index{Evaluate@{Evaluate}!Arc\+Tangent\+Node@{Arc\+Tangent\+Node}}
+\subsubsection[{\texorpdfstring{Evaluate()}{Evaluate()}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Number} $\ast$ Arc\+Tangent\+Node\+::\+Evaluate (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{classArcTangentNode_a61ce03a435f72dde99caba3547a0a2a8}{}\label{classArcTangentNode_a61ce03a435f72dde99caba3547a0a2a8}
+
+
+Implements \hyperlink{classExpressionNode_a64975d4dc37742228bd522f6204537f7}{Expression\+Node}.
+
+
+
+Definition at line 908 of file functions.\+cpp.
+
+
+
+References Number\+::\+Arc\+Tangent(), Expression\+Node\+::\+Evaluate(), Function\+Node\+::expression, and Expression\+Node\+::result.
+
+
+\begin{DoxyCode}
+909 \{
+910     \hyperlink{classExpressionNode_a1f590649f5a5cb30eb7ee912f7bc1262}{result} = \hyperlink{classFunctionNode_ad7577b179a1937aaf8a0058bb5b546dc}{expression}->\hyperlink{classExpressionNode_a64975d4dc37742228bd522f6204537f7}{Evaluate}()->\hyperlink{structNumber_aaf001a24205a4062b2cfc79873d2884d}{ArcTangent}();
+911     \textcolor{keywordflow}{return} \hyperlink{classExpressionNode_a1f590649f5a5cb30eb7ee912f7bc1262}{result};
+912 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d9/d88/classArcTangentNode_a61ce03a435f72dde99caba3547a0a2a8_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{Arc\+Tangent\+Node@{Arc\+Tangent\+Node}!Get\+Node\+Text@{Get\+Node\+Text}}
+\index{Get\+Node\+Text@{Get\+Node\+Text}!Arc\+Tangent\+Node@{Arc\+Tangent\+Node}}
+\subsubsection[{\texorpdfstring{Get\+Node\+Text()}{GetNodeText()}}]{\setlength{\rightskip}{0pt plus 5cm}char $\ast$ Arc\+Tangent\+Node\+::\+Get\+Node\+Text (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}\hypertarget{classArcTangentNode_afd1b56cd9bf1c3a3da5191bf9604881d}{}\label{classArcTangentNode_afd1b56cd9bf1c3a3da5191bf9604881d}
+
+
+Implements \hyperlink{classExpressionNode_a42a5e9562b0f645a19dcc83f698069b5}{Expression\+Node}.
+
+
+
+Definition at line 914 of file functions.\+cpp.
+
+
+\begin{DoxyCode}
+915 \{
+916     \textcolor{keywordflow}{return} (\textcolor{keywordtype}{char}*)\textcolor{stringliteral}{"atan"};
+917 \}
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+app/main/\hyperlink{functions_8h}{functions.\+h}\item 
+app/main/\hyperlink{functions_8cpp}{functions.\+cpp}\end{DoxyCompactItemize}

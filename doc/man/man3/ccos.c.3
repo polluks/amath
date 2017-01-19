@@ -1,0 +1,73 @@
+.TH "lib/cplex/ccos.c" 3 "Thu Jan 19 2017" "Version 1.6.0" "amath" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+lib/cplex/ccos.c \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'prim\&.h'\fP
+.br
+\fC#include 'math\&.h'\fP
+.br
+\fC#include 'complex\&.h'\fP
+.br
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBcomplex\fP \fBccos\fP (\fBcomplex\fP z)"
+.br
+.RI "\fICosine of complex number\&. \fP"
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "\fBcomplex\fP ccos (\fBcomplex\fP z)"
+
+.PP
+Cosine of complex number\&. 
+.PP
+\fBVersion:\fP
+.RS 4
+1\&.1 
+.RE
+.PP
+\fBDate:\fP
+.RS 4
+2007/08/20
+.RE
+.PP
+.PP
+.nf
+
+a+bi
+real =  cos(a) * cosh(b)
+imag = -sin(a) * sinh(b)
+.fi
+.PP
+ 
+.PP
+Definition at line 51 of file ccos\&.c\&.
+.PP
+References cchsh(), cimag(), cos(), cpack(), creal(), and sin()\&.
+.PP
+Referenced by ComplexNumber::Cosine()\&.
+.PP
+.nf
+52 {
+53     complex w;
+54     double a, b;
+55     double ch, sh;
+56 
+57     a = creal(z);
+58     b = cimag(z);
+59     cchsh(b, &ch, &sh);
+60     w = cpack((cos(a) * ch), (-sin(a) * sh));
+61 
+62     return w;
+63 }
+.fi
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for amath from the source code\&.

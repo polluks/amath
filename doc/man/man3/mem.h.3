@@ -1,0 +1,196 @@
+.TH "lib/mem.h" 3 "Thu Jan 19 2017" "Version 1.6.0" "amath" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+lib/mem.h \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <stddef\&.h>\fP
+.br
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "void * \fBAllocMemSafe\fP (size_t)"
+.br
+.ti -1c
+.RI "void \fBFreeMemSafe\fP (void *)"
+.br
+.ti -1c
+.RI "void \fBFreeAllSafe\fP ()"
+.br
+.ti -1c
+.RI "void \fBMemUsage\fP (long *, long *, long *)"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "void* AllocMemSafe (size_t)"
+
+.PP
+Definition at line 67 of file mem\&.c\&.
+.PP
+References MemoryBlock::address, alloc_error(), MemoryList::count, MemoryList::first, MemoryList::last, list, MemoryBlock::next, MemoryList::peak, and MemoryList::size\&.
+.PP
+.nf
+68 {
+69     struct MemoryBlock *newblock;
+70     size_t allocsize;
+71 
+72     if (list == NULL) {
+73         list = (struct MemoryList*)ALLOC_MEM(sizeof(struct MemoryList));
+74         if (!list) {
+75             alloc_error("list", sizeof(struct MemoryList));
+76             return 0;
+77         }
+78 
+79         list->first = NULL;
+80         list->last = NULL;
+81         list->peak = 0;
+82         list->size = 0;
+83         list->count = 0;
+84     }
+85 
+86     // Align to bytes of 4
+87     allocsize = (size + 3) & ~0x03;
+88 
+89     newblock = (struct MemoryBlock*)ALLOC_MEM(sizeof(struct MemoryBlock));
+90     if (!newblock) {
+91         alloc_error("block", sizeof(struct MemoryBlock));
+92         return 0;
+93     }
+94 
+95     newblock->address = (struct MemoryBlock*)ALLOC_MEM(allocsize);
+96     if (!newblock->address) {
+97         FREE_MEM(newblock);
+98         alloc_error("memory", allocsize);
+99         return 0;
+100     }
+101 
+102     newblock->size = allocsize;
+103     newblock->next = NULL;
+104 
+105     if(list->first == NULL) {
+106         list->first = newblock;
+107         list->last = newblock;
+108     } else {
+109         list->last->next = newblock;
+110         list->last = newblock;
+111     }
+112 
+113     list->size += allocsize;
+114     list->count++;
+115 
+116     if (list->size > list->peak) {
+117         list->peak = list->size;
+118     }
+119 
+120     // DEBUG code
+121     // Debug(NULL, "Mememory allocated at address (%x)\n", newblock->address);
+122 
+123     return newblock->address;
+124 }
+.fi
+.SS "void FreeAllSafe ()"
+
+.PP
+Definition at line 172 of file mem\&.c\&.
+.PP
+References MemoryBlock::address, MemoryList::first, list, and MemoryBlock::next\&.
+.PP
+Referenced by Cleanup()\&.
+.PP
+.nf
+173 {
+174     struct MemoryBlock *current, *next;
+175 
+176     if (list == NULL) {
+177         return;
+178     }
+179 
+180     current = list->first;
+181     while (current != NULL) {
+182         next = current->next;
+183         FREE_MEM(current->address);
+184         FREE_MEM(current);
+185         current = next;
+186     }
+187 
+188     FREE_MEM(list);
+189     list = NULL;
+190 }
+.fi
+.SS "void FreeMemSafe (void *)"
+
+.PP
+Definition at line 126 of file mem\&.c\&.
+.PP
+References MemoryBlock::address, MemoryList::count, dealloc_error(), MemoryList::first, MemoryList::last, list, and MemoryBlock::next\&.
+.PP
+.nf
+127 {
+128     struct MemoryBlock *current, *last;
+129 
+130     if (list == NULL || block == NULL) {
+131         dealloc_error("list", 0);
+132         return;
+133     }
+134 
+135     if (block == NULL) {
+136         dealloc_error("memory", 0);
+137         return;
+138     }
+139 
+140     last = NULL;
+141     current = list->first;
+142     while (current != NULL && current->address != block) {
+143         last = current;
+144         current = current->next;
+145     }
+146 
+147     if (current == NULL) {
+148         dealloc_error("address not found", block);
+149         return;
+150     }
+151 
+152     list->size -= current->size;
+153     list->count--;
+154 
+155     if (list->first == current) {
+156         list->first = NULL;
+157         list->last = NULL;
+158     } else if (list->last == current) {
+159         last->next = current->next;
+160         list->last = last;
+161     } else {
+162         last->next = current->next;
+163     }
+164 
+165     FREE_MEM(current->address);
+166     FREE_MEM(current);
+167 
+168     // DEBUG code
+169     // Debug(NULL, "Mememory deallocated at address (%x)\n", block);
+170 }
+.fi
+.SS "void MemUsage (long *, long *, long *)"
+
+.PP
+Definition at line 192 of file mem\&.c\&.
+.PP
+References MemoryList::count, list, MemoryList::peak, and MemoryList::size\&.
+.PP
+Referenced by MemoryStatement::Execute()\&.
+.PP
+.nf
+193 {
+194     *blocks = list->count;
+195     *size = list->size;
+196     *peak = list->peak;;
+197 }
+.fi
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for amath from the source code\&.

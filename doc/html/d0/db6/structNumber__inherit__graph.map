@@ -1,0 +1,4 @@
+<map id="Number" name="Number">
+<area shape="rect" id="node2" href="$db/d8e/structComplexNumber.html" title="Represent a complex number with 2 componts of 15 siginificant digits. " alt="" coords="5,80,125,107"/>
+<area shape="rect" id="node3" href="$d2/d49/structRealNumber.html" title="Represent a real number with 15 siginificant digits. " alt="" coords="150,80,245,107"/>
+</map>

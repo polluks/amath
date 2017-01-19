@@ -1,0 +1,85 @@
+\hypertarget{clog_8c}{}\section{lib/cplex/clog.c File Reference}
+\label{clog_8c}\index{lib/cplex/clog.\+c@{lib/cplex/clog.\+c}}
+{\ttfamily \#include \char`\"{}prim.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}math.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}complex.\+h\char`\"{}}\\*
+Include dependency graph for clog.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=221pt]{d9/d89/clog_8c__incl}
+\end{center}
+\end{figure}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{unioncomplex}{complex} \hyperlink{clog_8c_a888b8eb5ccc46411e68f6d7b99035888}{clog} (\hyperlink{unioncomplex}{complex} z)
+\begin{DoxyCompactList}\small\item\em Natural logarithm of a complex number. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\index{clog.\+c@{clog.\+c}!clog@{clog}}
+\index{clog@{clog}!clog.\+c@{clog.\+c}}
+\subsubsection[{\texorpdfstring{clog(complex z)}{clog(complex z)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf complex} clog (
+\begin{DoxyParamCaption}
+\item[{{\bf complex}}]{z}
+\end{DoxyParamCaption}
+)}\hypertarget{clog_8c_a888b8eb5ccc46411e68f6d7b99035888}{}\label{clog_8c_a888b8eb5ccc46411e68f6d7b99035888}
+
+
+Natural logarithm of a complex number. 
+
+\begin{DoxyVersion}{Version}
+1.\+1 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+2007/08/20 
+\end{DoxyDate}
+
+
+Definition at line 46 of file clog.\+c.
+
+
+
+References atan2(), cabs(), cimag(), cpack(), and creal().
+
+
+
+Referenced by cacos(), cacosh(), cacot(), cacoth(), cacsc(), cacsch(), casec(), casech(), casin(), casinh(), catan(), catanh(), ccbrt(), clog10(), clogb(), and Complex\+Number\+::\+Log().
+
+
+\begin{DoxyCode}
+47 \{
+48     \hyperlink{unioncomplex}{complex} w;
+49     \textcolor{keywordtype}{double} p, q;
+50     p = \hyperlink{math_8h_adb302c9aafbaa5e180d9f60ee954bb82}{log}(\hyperlink{complex_8h_af6e02ba9d2566b52e3b0faf2d4ed973a}{cabs}(z));
+51     q = \hyperlink{math_8h_a349377202ca14f79eb335b1a421fe4d8}{atan2}(\hyperlink{complex_8h_aa1fe0b9371befabef6c41ba73470774a}{cimag}(z), \hyperlink{complex_8h_a4a236b24c0197821e3489a35a72079ab}{creal}(z));
+52     w = \hyperlink{complex_8h_a980e6e049f7902b05fc9eb5614b07a5c}{cpack}(p, q);
+53     \textcolor{keywordflow}{return} w;
+54 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=342pt]{d9/d2d/clog_8c_a888b8eb5ccc46411e68f6d7b99035888_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d9/d2d/clog_8c_a888b8eb5ccc46411e68f6d7b99035888_icgraph}
+\end{center}
+\end{figure}
+
+

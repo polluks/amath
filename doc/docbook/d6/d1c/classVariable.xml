@@ -1,0 +1,145 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="d6/d1c/classVariable">
+<title>Variable class Reference</title>
+<para>
+    <programlisting>#include <link linkend="d2/d9a/values_8h">&lt;values.h&gt;</link></programlisting>
+</para>
+<para>Inheritance diagram for Variable</para>
+<para>
+    <figure>
+        <title>Inheritance graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="../../d6/d13/classVariable__inherit__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+<para>Collaboration diagram for Variable</para>
+<para>
+    <figure>
+        <title>Collaboration graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="../../db/d48/classVariable__coll__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+        <section>
+            <title>Public Attributes</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>Variable * Next</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title>Private Attributes</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>char * name</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>Number * value</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>bool chainDelete</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d6/d1c/classVariable_1a230014211eb4309bcec965df5799a7eb">Variable</link> (
+const char * name)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d6/d1c/classVariable_1acfc14d0ad77af53025f890b4d3a7745a">~Variable</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>char * <link linkend="d6/d1c/classVariable_1accf221d35cec8a9707e84891b715fb6c">GetName</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="da/de2/structNumber">Number</link> * <link linkend="d6/d1c/classVariable_1adb77b2681374245b5d606a1d149d0d91">GetValue</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="d6/d1c/classVariable_1ad8c997ea0edab8bf72ada85963800211">AssignValue</link> (
+<link linkend="da/de2/structNumber">Number</link> * value)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+    <simplesect>
+
+<para>A user defined variable. </para>
+    </simplesect>
+        <section>
+            <title>Member Data Documentation</title>
+        </section>
+        <section>
+            <title>Member Data Documentation</title>
+        </section>
+            <section xml:id="d6/d1c/classVariable_1a230014211eb4309bcec965df5799a7eb">
+                <title>Variable::Variable (const char *name)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d6/d1c/classVariable_1acfc14d0ad77af53025f890b4d3a7745a">
+                <title>Variable::~Variable ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d6/d1c/classVariable_1accf221d35cec8a9707e84891b715fb6c">
+                <title>char * Variable::GetName ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d6/d1c/classVariable_1adb77b2681374245b5d606a1d149d0d91">
+                <title>Number * Variable::GetValue ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d6/d1c/classVariable_1ad8c997ea0edab8bf72ada85963800211">
+                <title>void Variable::AssignValue (Number *value)</title> <emphasis></emphasis>
+                
+            </section>
+</section>

@@ -1,0 +1,246 @@
+\hypertarget{classAssignmentNode}{}\section{Assignment\+Node Class Reference}
+\label{classAssignmentNode}\index{Assignment\+Node@{Assignment\+Node}}
+
+
+{\ttfamily \#include $<$operators.\+h$>$}
+
+
+
+Inheritance diagram for Assignment\+Node\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=172pt]{df/df2/classAssignmentNode__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Assignment\+Node\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/d55/classAssignmentNode__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classAssignmentNode_a8b2b07073d9900677a8ffe93f7d4171d}{Assignment\+Node} (\hyperlink{classVariableNode}{Variable\+Node} $\ast$\hyperlink{classAssignmentNode_ac22933c48c43391f969b412158c729dc}{variable}, \hyperlink{classExpressionNode}{Expression\+Node} $\ast$\hyperlink{classAssignmentNode_a7a3400b79798f10506405c6a242deeaa}{expression})
+\item 
+int \hyperlink{classAssignmentNode_a8101830017b851c84364ca3ca6f0f204}{Get\+Precedence} ()
+\item 
+\hyperlink{platform_8h_a1062901a7428fdd9c7f180f5e01ea056}{bool} \hyperlink{classAssignmentNode_ad8468049bcb780828405ccddc06fc79a}{Is\+Silent} ()
+\item 
+\hyperlink{structNumber}{Number} $\ast$ \hyperlink{classAssignmentNode_ae6b454a04ec82aa97fa8e09c3752deb6}{Evaluate} ()
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+char $\ast$ \hyperlink{classAssignmentNode_aabd296f88450781851cb521be3b647d4}{Get\+Node\+Text} ()
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classVariableNode}{Variable\+Node} $\ast$ \hyperlink{classAssignmentNode_ac22933c48c43391f969b412158c729dc}{variable}
+\item 
+\hyperlink{classExpressionNode}{Expression\+Node} $\ast$ \hyperlink{classAssignmentNode_a7a3400b79798f10506405c6a242deeaa}{expression}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 148 of file operators.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Assignment\+Node@{Assignment\+Node}!Assignment\+Node@{Assignment\+Node}}
+\index{Assignment\+Node@{Assignment\+Node}!Assignment\+Node@{Assignment\+Node}}
+\subsubsection[{\texorpdfstring{Assignment\+Node(\+Variable\+Node $\ast$variable, Expression\+Node $\ast$expression)}{AssignmentNode(VariableNode *variable, ExpressionNode *expression)}}]{\setlength{\rightskip}{0pt plus 5cm}Assignment\+Node\+::\+Assignment\+Node (
+\begin{DoxyParamCaption}
+\item[{{\bf Variable\+Node} $\ast$}]{variable, }
+\item[{{\bf Expression\+Node} $\ast$}]{expression}
+\end{DoxyParamCaption}
+)}\hypertarget{classAssignmentNode_a8b2b07073d9900677a8ffe93f7d4171d}{}\label{classAssignmentNode_a8b2b07073d9900677a8ffe93f7d4171d}
+
+
+Definition at line 427 of file operators.\+cpp.
+
+
+
+References expression, Numeric\+Operator\+::\+Numeric\+Operator(), and variable.
+
+
+
+Referenced by Parser\+::\+Parse\+Ident().
+
+
+\begin{DoxyCode}
+427                                                                                 :
+428     \hyperlink{classNumericOperator_a49cd2230b867cdfca64715aaf6e37561}{NumericOperator}(variable, expression),
+429     \hyperlink{classAssignmentNode_ac22933c48c43391f969b412158c729dc}{variable}(variable), \hyperlink{classAssignmentNode_a7a3400b79798f10506405c6a242deeaa}{expression}(expression) \{ \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{df/d93/classAssignmentNode_a8b2b07073d9900677a8ffe93f7d4171d_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{df/d93/classAssignmentNode_a8b2b07073d9900677a8ffe93f7d4171d_icgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Member Function Documentation}
+\index{Assignment\+Node@{Assignment\+Node}!Evaluate@{Evaluate}}
+\index{Evaluate@{Evaluate}!Assignment\+Node@{Assignment\+Node}}
+\subsubsection[{\texorpdfstring{Evaluate()}{Evaluate()}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Number} $\ast$ Assignment\+Node\+::\+Evaluate (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{classAssignmentNode_ae6b454a04ec82aa97fa8e09c3752deb6}{}\label{classAssignmentNode_ae6b454a04ec82aa97fa8e09c3752deb6}
+
+
+Implements \hyperlink{classExpressionNode_a64975d4dc37742228bd522f6204537f7}{Expression\+Node}.
+
+
+
+Definition at line 436 of file operators.\+cpp.
+
+
+
+References Variable\+Node\+::\+Assign\+Value(), Expression\+Node\+::\+Evaluate(), Variable\+Node\+::\+Evaluate(), expression, and variable.
+
+
+\begin{DoxyCode}
+437 \{
+438     \textcolor{comment}{// NOTICE: Assignment does not generate a value itself.}
+439     \hyperlink{classAssignmentNode_ac22933c48c43391f969b412158c729dc}{variable}->\hyperlink{classVariableNode_a8134cc1627925a0327e6c62eef810cdc}{AssignValue}(\hyperlink{classAssignmentNode_a7a3400b79798f10506405c6a242deeaa}{expression}->\hyperlink{classExpressionNode_a64975d4dc37742228bd522f6204537f7}{Evaluate}());
+440     \textcolor{keywordflow}{return} \hyperlink{classAssignmentNode_ac22933c48c43391f969b412158c729dc}{variable}->\hyperlink{classVariableNode_a7ebbe9072eb78b5790befed3a42b2dc2}{Evaluate}();
+441 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{df/d93/classAssignmentNode_ae6b454a04ec82aa97fa8e09c3752deb6_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{Assignment\+Node@{Assignment\+Node}!Get\+Node\+Text@{Get\+Node\+Text}}
+\index{Get\+Node\+Text@{Get\+Node\+Text}!Assignment\+Node@{Assignment\+Node}}
+\subsubsection[{\texorpdfstring{Get\+Node\+Text()}{GetNodeText()}}]{\setlength{\rightskip}{0pt plus 5cm}char $\ast$ Assignment\+Node\+::\+Get\+Node\+Text (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}\hypertarget{classAssignmentNode_aabd296f88450781851cb521be3b647d4}{}\label{classAssignmentNode_aabd296f88450781851cb521be3b647d4}
+
+
+Implements \hyperlink{classExpressionNode_a42a5e9562b0f645a19dcc83f698069b5}{Expression\+Node}.
+
+
+
+Definition at line 448 of file operators.\+cpp.
+
+
+\begin{DoxyCode}
+449 \{
+450     \textcolor{keywordflow}{return} (\textcolor{keywordtype}{char}*)\textcolor{stringliteral}{"="};
+451 \}
+\end{DoxyCode}
+\index{Assignment\+Node@{Assignment\+Node}!Get\+Precedence@{Get\+Precedence}}
+\index{Get\+Precedence@{Get\+Precedence}!Assignment\+Node@{Assignment\+Node}}
+\subsubsection[{\texorpdfstring{Get\+Precedence()}{GetPrecedence()}}]{\setlength{\rightskip}{0pt plus 5cm}int Assignment\+Node\+::\+Get\+Precedence (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{classAssignmentNode_a8101830017b851c84364ca3ca6f0f204}{}\label{classAssignmentNode_a8101830017b851c84364ca3ca6f0f204}
+
+
+Implements \hyperlink{classExpressionNode_a161b9ea0b79bbfc101d6f687c8481ddd}{Expression\+Node}.
+
+
+
+Definition at line 431 of file operators.\+cpp.
+
+
+\begin{DoxyCode}
+432 \{
+433     \textcolor{keywordflow}{return} 6;
+434 \}
+\end{DoxyCode}
+\index{Assignment\+Node@{Assignment\+Node}!Is\+Silent@{Is\+Silent}}
+\index{Is\+Silent@{Is\+Silent}!Assignment\+Node@{Assignment\+Node}}
+\subsubsection[{\texorpdfstring{Is\+Silent()}{IsSilent()}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} Assignment\+Node\+::\+Is\+Silent (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{classAssignmentNode_ad8468049bcb780828405ccddc06fc79a}{}\label{classAssignmentNode_ad8468049bcb780828405ccddc06fc79a}
+
+
+Reimplemented from \hyperlink{classExpressionNode_adc58a4c102b7fa18e9c3a0be361b0663}{Expression\+Node}.
+
+
+
+Definition at line 443 of file operators.\+cpp.
+
+
+\begin{DoxyCode}
+444 \{
+445     \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+446 \}
+\end{DoxyCode}
+
+
+\subsection{Member Data Documentation}
+\index{Assignment\+Node@{Assignment\+Node}!expression@{expression}}
+\index{expression@{expression}!Assignment\+Node@{Assignment\+Node}}
+\subsubsection[{\texorpdfstring{expression}{expression}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Expression\+Node}$\ast$ Assignment\+Node\+::expression\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classAssignmentNode_a7a3400b79798f10506405c6a242deeaa}{}\label{classAssignmentNode_a7a3400b79798f10506405c6a242deeaa}
+
+
+Definition at line 160 of file operators.\+h.
+
+
+
+Referenced by Assignment\+Node(), and Evaluate().
+
+\index{Assignment\+Node@{Assignment\+Node}!variable@{variable}}
+\index{variable@{variable}!Assignment\+Node@{Assignment\+Node}}
+\subsubsection[{\texorpdfstring{variable}{variable}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Variable\+Node}$\ast$ Assignment\+Node\+::variable\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classAssignmentNode_ac22933c48c43391f969b412158c729dc}{}\label{classAssignmentNode_ac22933c48c43391f969b412158c729dc}
+
+
+Definition at line 159 of file operators.\+h.
+
+
+
+Referenced by Assignment\+Node(), and Evaluate().
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+app/main/\hyperlink{operators_8h}{operators.\+h}\item 
+app/main/\hyperlink{operators_8cpp}{operators.\+cpp}\end{DoxyCompactItemize}

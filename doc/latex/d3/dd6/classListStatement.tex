@@ -1,0 +1,247 @@
+\hypertarget{classListStatement}{}\section{List\+Statement Class Reference}
+\label{classListStatement}\index{List\+Statement@{List\+Statement}}
+
+
+{\ttfamily \#include $<$statements.\+h$>$}
+
+
+
+Inheritance diagram for List\+Statement\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=165pt]{d3/d4c/classListStatement__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for List\+Statement\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=210pt]{dc/d02/classListStatement__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classListStatement_af21b0471e6e3eea7f3f5a282e92d2cb9}{List\+Statement} ()
+\item 
+\hyperlink{classListStatement_a13b22290109d3bffce78fdd2dcffb51d}{List\+Statement} (const char $\ast$\hyperlink{classListStatement_a248d7a5e3b315fb582dff3cf51e36006}{directory})
+\item 
+\hyperlink{classListStatement_a5e1210934bc86990e7fc9fdb2d105b37}{$\sim$\+List\+Statement} ()
+\item 
+char $\ast$ \hyperlink{classListStatement_a49cc9fe49b665a1276f288c069e1c78b}{Execute} ()
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+char $\ast$ \hyperlink{classListStatement_a248d7a5e3b315fb582dff3cf51e36006}{directory}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 261 of file statements.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{List\+Statement@{List\+Statement}!List\+Statement@{List\+Statement}}
+\index{List\+Statement@{List\+Statement}!List\+Statement@{List\+Statement}}
+\subsubsection[{\texorpdfstring{List\+Statement()}{ListStatement()}}]{\setlength{\rightskip}{0pt plus 5cm}List\+Statement\+::\+List\+Statement (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classListStatement_af21b0471e6e3eea7f3f5a282e92d2cb9}{}\label{classListStatement_af21b0471e6e3eea7f3f5a282e92d2cb9}
+
+
+Definition at line 608 of file statements.\+cpp.
+
+
+
+References directory, and Statement\+Node\+::\+Statement\+Node().
+
+
+
+Referenced by Parser\+::\+Parse\+List\+Statement().
+
+
+\begin{DoxyCode}
+608                              :
+609     \hyperlink{classStatementNode_a586026d6009a39d087792d621de86360}{StatementNode}()
+610 \{
+611     \hyperlink{classListStatement_a248d7a5e3b315fb582dff3cf51e36006}{directory} = \hyperlink{platform_8h_a46ff2bfbf0d44b8466a2251d5bd5e6f8}{NOMEM};
+612 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/dd6/classListStatement_af21b0471e6e3eea7f3f5a282e92d2cb9_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/dd6/classListStatement_af21b0471e6e3eea7f3f5a282e92d2cb9_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{List\+Statement@{List\+Statement}!List\+Statement@{List\+Statement}}
+\index{List\+Statement@{List\+Statement}!List\+Statement@{List\+Statement}}
+\subsubsection[{\texorpdfstring{List\+Statement(const char $\ast$directory)}{ListStatement(const char *directory)}}]{\setlength{\rightskip}{0pt plus 5cm}List\+Statement\+::\+List\+Statement (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{directory}
+\end{DoxyParamCaption}
+)}\hypertarget{classListStatement_a13b22290109d3bffce78fdd2dcffb51d}{}\label{classListStatement_a13b22290109d3bffce78fdd2dcffb51d}
+
+
+Definition at line 614 of file statements.\+cpp.
+
+
+
+References Alloc\+And\+Copy(), directory, and Statement\+Node\+::\+Statement\+Node().
+
+
+
+Referenced by Parser\+::\+Parse\+List\+Statement().
+
+
+\begin{DoxyCode}
+614                                                   :
+615     \hyperlink{classStatementNode_a586026d6009a39d087792d621de86360}{StatementNode}()
+616 \{
+617     \hyperlink{clib_8h_a5bed05c70cb17e541fee570b5dc32e1a}{AllocAndCopy}(&this->\hyperlink{classListStatement_a248d7a5e3b315fb582dff3cf51e36006}{directory},  \hyperlink{classListStatement_a248d7a5e3b315fb582dff3cf51e36006}{directory});
+618 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/dd6/classListStatement_a13b22290109d3bffce78fdd2dcffb51d_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/dd6/classListStatement_a13b22290109d3bffce78fdd2dcffb51d_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{List\+Statement@{List\+Statement}!````~List\+Statement@{$\sim$\+List\+Statement}}
+\index{````~List\+Statement@{$\sim$\+List\+Statement}!List\+Statement@{List\+Statement}}
+\subsubsection[{\texorpdfstring{$\sim$\+List\+Statement()}{~ListStatement()}}]{\setlength{\rightskip}{0pt plus 5cm}List\+Statement\+::$\sim$\+List\+Statement (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classListStatement_a5e1210934bc86990e7fc9fdb2d105b37}{}\label{classListStatement_a5e1210934bc86990e7fc9fdb2d105b37}
+
+
+Definition at line 620 of file statements.\+cpp.
+
+
+
+References directory.
+
+
+\begin{DoxyCode}
+621 \{
+622     \textcolor{keywordflow}{if} (\hyperlink{classListStatement_a248d7a5e3b315fb582dff3cf51e36006}{directory} != \hyperlink{platform_8h_a46ff2bfbf0d44b8466a2251d5bd5e6f8}{NOMEM}) \{
+623         \textcolor{keyword}{delete} [] \hyperlink{classListStatement_a248d7a5e3b315fb582dff3cf51e36006}{directory};
+624     \}
+625 \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\index{List\+Statement@{List\+Statement}!Execute@{Execute}}
+\index{Execute@{Execute}!List\+Statement@{List\+Statement}}
+\subsubsection[{\texorpdfstring{Execute()}{Execute()}}]{\setlength{\rightskip}{0pt plus 5cm}char $\ast$ List\+Statement\+::\+Execute (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{classListStatement_a49cc9fe49b665a1276f288c069e1c78b}{}\label{classListStatement_a49cc9fe49b665a1276f288c069e1c78b}
+
+
+Implements \hyperlink{classStatementNode_a721589622c930c010927b9a9c55b173e}{Statement\+Node}.
+
+
+
+Definition at line 627 of file statements.\+cpp.
+
+
+
+References directory, Program\+::\+Filesystem, Char\+Buffer\+::\+Get\+String(), Filesystem\+Base\+::\+List\+Directory(), and Syntax\+Node\+::output.
+
+
+\begin{DoxyCode}
+628 \{
+629     \hyperlink{classCharBuffer}{CharBuffer} *text = \hyperlink{classProgram}{Program}->\hyperlink{classProgram_a54fb0dc3ee40a356fe91cea64e569b26}{Filesystem}->
+      \hyperlink{classFilesystemBase_a2f48a44b0b99b3c23e7c1a7587b5fc9c}{ListDirectory}(\hyperlink{classListStatement_a248d7a5e3b315fb582dff3cf51e36006}{directory});
+630     \textcolor{keywordflow}{if} (text == \hyperlink{platform_8h_a46ff2bfbf0d44b8466a2251d5bd5e6f8}{NOMEM})
+631     \{
+632         \textcolor{keywordflow}{return} (\textcolor{keywordtype}{char}*)(\hyperlink{text_8h_af217b701d2c7369bd72aa21239e94642}{MSGNODIR});
+633     \}
+634 
+635     \textcolor{keyword}{delete} \hyperlink{classSyntaxNode_a1180628cbe3fce43930cee0df5a9ce5c}{output};
+636     \hyperlink{classSyntaxNode_a1180628cbe3fce43930cee0df5a9ce5c}{output} = text;
+637     \textcolor{keywordflow}{return} text->\hyperlink{classCharBuffer_a7dfd3feaaf80f318ba44efe15b1ec44b}{GetString}();
+638 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/dd6/classListStatement_a49cc9fe49b665a1276f288c069e1c78b_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Member Data Documentation}
+\index{List\+Statement@{List\+Statement}!directory@{directory}}
+\index{directory@{directory}!List\+Statement@{List\+Statement}}
+\subsubsection[{\texorpdfstring{directory}{directory}}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ List\+Statement\+::directory\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classListStatement_a248d7a5e3b315fb582dff3cf51e36006}{}\label{classListStatement_a248d7a5e3b315fb582dff3cf51e36006}
+
+
+Definition at line 269 of file statements.\+h.
+
+
+
+Referenced by Execute(), List\+Statement(), and $\sim$\+List\+Statement().
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+app/main/\hyperlink{statements_8h}{statements.\+h}\item 
+app/main/\hyperlink{statements_8cpp}{statements.\+cpp}\end{DoxyCompactItemize}

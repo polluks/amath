@@ -1,0 +1,81 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="dd/d4e/classLoadStatement">
+<title>LoadStatement class Reference</title>
+<para>
+    <programlisting>#include <link linkend="dd/d6a/statements_8h">&lt;statements.h&gt;</link></programlisting>
+</para>
+<para>Inheritance diagram for LoadStatement</para>
+<para>
+    <figure>
+        <title>Inheritance graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="../../dc/db3/classLoadStatement__inherit__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+<para>Collaboration diagram for LoadStatement</para>
+<para>
+    <figure>
+        <title>Collaboration graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="../../d5/dc3/classLoadStatement__coll__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+        <section>
+            <title>Private Attributes</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>char * file</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="dd/d4e/classLoadStatement_1a4828300bc260971c2070947a70e710c1">LoadStatement</link> (
+const char * file)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="dd/d4e/classLoadStatement_1a7630ca1ec4dd27427ec91678e4b951e3">~LoadStatement</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>char * <link linkend="dd/d4e/classLoadStatement_1ae3cbd157ad8de73551ff430fa3c089d9">Execute</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title>Member Data Documentation</title>
+        </section>
+            <section xml:id="dd/d4e/classLoadStatement_1a4828300bc260971c2070947a70e710c1">
+                <title>LoadStatement::LoadStatement (const char *file)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="dd/d4e/classLoadStatement_1a7630ca1ec4dd27427ec91678e4b951e3">
+                <title>LoadStatement::~LoadStatement ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="dd/d4e/classLoadStatement_1ae3cbd157ad8de73551ff430fa3c089d9">
+                <title>char * LoadStatement::Execute ()</title> <emphasis></emphasis>
+                
+            </section>
+</section>

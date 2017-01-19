@@ -1,0 +1,60 @@
+.TH "app/main/functiondefs.h" 3 "Thu Jan 19 2017" "Version 1.6.0" "amath" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+app/main/functiondefs.h \- Function defitions for math logic\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'main/nodes\&.h'\fP
+.br
+\fC#include 'main/functions\&.h'\fP
+.br
+
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "struct \fBfunctiondef\fP"
+.br
+.RI "\fIFunction defitions of known mathematical functions\&. \fP"
+.in -1c
+.SS "Typedefs"
+
+.in +1c
+.ti -1c
+.RI "typedef \fBFunctionNode\fP *(* \fBCreateFunctionNode\fP) (\fBExpressionNode\fP *)"
+.br
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "static const \fBfunctiondef\fP \fBfunctiondefs\fP []"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Function defitions for math logic\&. 
+
+
+.PP
+Definition in file \fBfunctiondefs\&.h\fP\&.
+.SH "Typedef Documentation"
+.PP 
+.SS "typedef \fBFunctionNode\fP*(* CreateFunctionNode) (\fBExpressionNode\fP *)"
+
+.PP
+Definition at line 40 of file functiondefs\&.h\&.
+.SH "Variable Documentation"
+.PP 
+.SS "const \fBfunctiondef\fP functiondefs[]\fC [static]\fP"
+
+.PP
+Definition at line 51 of file functiondefs\&.h\&.
+.PP
+Referenced by FunctionList::GetSystemFunction()\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for amath from the source code\&.

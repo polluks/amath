@@ -1,0 +1,12 @@
+<map id="HelpStatement::Execute" name="HelpStatement::Execute">
+<area shape="rect" id="node2" href="$dc/d84/classCharBuffer.html#ac52ed7b91190240eb7db4cf43d1e2abb" title="Release memory, allocate and copy source. " alt="" coords="219,56,397,83"/>
+<area shape="rect" id="node5" href="$d0/d41/classLanguage.html#ad2c5b22fcacde4bbff0e3c013dce4a96" title="Language::GetHelpText" alt="" coords="228,107,388,133"/>
+<area shape="rect" id="node11" href="$dc/d84/classCharBuffer.html#a7dfd3feaaf80f318ba44efe15b1ec44b" title="CharBuffer::GetString" alt="" coords="234,157,382,184"/>
+<area shape="rect" id="node3" href="$dd/d2a/alloccpy_8c.html#a5bed05c70cb17e541fee570b5dc32e1a" title="Allocate memory and copy a string into the array. " alt="" coords="472,5,577,32"/>
+<area shape="rect" id="node4" href="$dc/d84/classCharBuffer.html#a0bcdd5708db4b04c887224e83a05086f" title="Release memory in buffer. " alt="" coords="445,56,604,83"/>
+<area shape="rect" id="node6" href="$d0/d41/classLanguage.html#aa51c505262ca738bf4675fc87f96dbf6" title="Language::Translate" alt="" coords="455,107,595,133"/>
+<area shape="rect" id="node7" href="$d0/d41/classLanguage.html#a69c5b3269ec8570a2f8f28e8e632cf44" title="Language::UntagText" alt="" coords="451,157,598,184"/>
+<area shape="rect" id="node8" href="$d9/de5/clib_8h.html#a67ec56eb98b49515d35005a5b3bf9a32" title="Get the length of a null terminated string. " alt="" coords="663,107,723,133"/>
+<area shape="rect" id="node9" href="$d3/db7/untag_8c.html#a13fd37f0e8fef81a052aab4cd5588fb6" title="Untag" alt="" coords="665,157,722,184"/>
+<area shape="rect" id="node10" href="$d4/d16/memcpy_8c.html#a09b7e057c69b9ddd4b481fc746997a7d" title="Copy a block of memory, handling overlap. " alt="" coords="652,208,735,235"/>
+</map>

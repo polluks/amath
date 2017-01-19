@@ -1,0 +1,4 @@
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="node1" href="$da/d8f/classTaskBase.html" title="Abstract base class encapsulating a system thread. " alt="" coords="5,5,87,32"/>
+<area shape="rect" id="node2" href="$df/d4e/classStandardTask.html" title="Encapsulates calls to POSIX task. " alt="" coords="135,5,237,32"/>
+</map>

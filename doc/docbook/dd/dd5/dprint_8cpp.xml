@@ -1,0 +1,120 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="dd/dd5/dprint_8cpp">
+    <title>dprint.cpp File Reference</title>
+    <programlisting>#include &quot;clib.h&quot;</programlisting>
+    <programlisting>#include &quot;dmath.h&quot;</programlisting>
+    <programlisting>#include &quot;dprint.h&quot;</programlisting>
+    <programlisting>#include &quot;dragon4.h&quot;</programlisting>
+    <programlisting>#include &lt;dstandard.h&gt;</programlisting>
+<para>Include dependency diagram for dprint.cpp</para>
+<para>
+    <figure>
+        <title>Dependency diagram</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="../../d5/dd4/dprint_8cpp__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+<para>Included by dependency diagram for dprint.cpp</para>
+<para>
+    <figure>
+        <title>Dependency diagram</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="../../d8/d26/dprint_8cpp__dep__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+        <section>
+            <title> Classes </title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="dd/dd9/uniontFloatUnion32">tFloatUnion32</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="d4/d4a/uniontFloatUnion64">tFloatUnion64</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title>Macros</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="dd/dd5/dprint_8cpp_1a30c75e139b07107ef1c8d3f8490aee7d">memcpy</link> <link linkend="d4/d16/memcpy_8c_1a09b7e057c69b9ddd4b481fc746997a7d">MemCopy</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="dd/dd5/dprint_8cpp_1a7263e7ed2c459f2c42e067c30775ed41">memmove</link> <link linkend="d4/d16/memcpy_8c_1a09b7e057c69b9ddd4b481fc746997a7d">MemCopy</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title>Functions</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="dc/dac/dstandard_8h_1aee96db7e18784e05ed6b0bcaeec3f7f6">tU32</link> <link linkend="dd/dd5/dprint_8cpp_1a73aa4cbb8052f400f03f1706a3eced16">FormatPositional</link> (
+<link linkend="dc/dac/dstandard_8h_1a0dd9590397b73cba91a188b94be20ee1">tC8</link> * pOutBuffer, <link linkend="dc/dac/dstandard_8h_1aee96db7e18784e05ed6b0bcaeec3f7f6">tU32</link> bufferSize, <link linkend="dc/dac/dstandard_8h_1a6625ae5505b2f796350b82c7f52fcf43">tU64</link> mantissa, <link linkend="dc/dac/dstandard_8h_1ae3b25aefaa14d98873818cceec369577">tS32</link> exponent, <link linkend="dc/dac/dstandard_8h_1aee96db7e18784e05ed6b0bcaeec3f7f6">tU32</link> mantissaHighBitIdx, <link linkend="dc/dac/dstandard_8h_1ad203aed3ab57b120eb54c2043f60dc49">tB</link> hasUnequalMargins, <link linkend="dc/dac/dstandard_8h_1ae3b25aefaa14d98873818cceec369577">tS32</link> precision, <link linkend="dc/dac/dstandard_8h_1a0dd9590397b73cba91a188b94be20ee1">tC8</link> decimalPoint)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="dc/dac/dstandard_8h_1aee96db7e18784e05ed6b0bcaeec3f7f6">tU32</link> <link linkend="dd/dd5/dprint_8cpp_1a1fce61f37a054297f0b8898d52dc9f28">FormatScientific</link> (
+<link linkend="dc/dac/dstandard_8h_1a0dd9590397b73cba91a188b94be20ee1">tC8</link> * pOutBuffer, <link linkend="dc/dac/dstandard_8h_1aee96db7e18784e05ed6b0bcaeec3f7f6">tU32</link> bufferSize, <link linkend="dc/dac/dstandard_8h_1a6625ae5505b2f796350b82c7f52fcf43">tU64</link> mantissa, <link linkend="dc/dac/dstandard_8h_1ae3b25aefaa14d98873818cceec369577">tS32</link> exponent, <link linkend="dc/dac/dstandard_8h_1aee96db7e18784e05ed6b0bcaeec3f7f6">tU32</link> mantissaHighBitIdx, <link linkend="dc/dac/dstandard_8h_1ad203aed3ab57b120eb54c2043f60dc49">tB</link> hasUnequalMargins, <link linkend="dc/dac/dstandard_8h_1ae3b25aefaa14d98873818cceec369577">tS32</link> precision, <link linkend="dc/dac/dstandard_8h_1a0dd9590397b73cba91a188b94be20ee1">tC8</link> decimalPoint)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>static <link linkend="dc/dac/dstandard_8h_1aee96db7e18784e05ed6b0bcaeec3f7f6">tU32</link> <link linkend="dd/dd5/dprint_8cpp_1ad8dae51a6e8f43f36e5c7866583f0e05">PrintHex</link> (
+<link linkend="dc/dac/dstandard_8h_1a0dd9590397b73cba91a188b94be20ee1">tC8</link> * pOutBuffer, <link linkend="dc/dac/dstandard_8h_1aee96db7e18784e05ed6b0bcaeec3f7f6">tU32</link> bufferSize, <link linkend="dc/dac/dstandard_8h_1a6625ae5505b2f796350b82c7f52fcf43">tU64</link> value, <link linkend="dc/dac/dstandard_8h_1aee96db7e18784e05ed6b0bcaeec3f7f6">tU32</link> width)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>static <link linkend="dc/dac/dstandard_8h_1aee96db7e18784e05ed6b0bcaeec3f7f6">tU32</link> <link linkend="dd/dd5/dprint_8cpp_1ac1192be7b47f41c6b593be33d0ad423f">PrintInfNan</link> (
+<link linkend="dc/dac/dstandard_8h_1a0dd9590397b73cba91a188b94be20ee1">tC8</link> * pOutBuffer, <link linkend="dc/dac/dstandard_8h_1aee96db7e18784e05ed6b0bcaeec3f7f6">tU32</link> bufferSize, <link linkend="dc/dac/dstandard_8h_1a6625ae5505b2f796350b82c7f52fcf43">tU64</link> mantissa, <link linkend="dc/dac/dstandard_8h_1aee96db7e18784e05ed6b0bcaeec3f7f6">tU32</link> mantissaHexWidth)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="dc/dac/dstandard_8h_1aee96db7e18784e05ed6b0bcaeec3f7f6">tU32</link> <link linkend="dd/dd5/dprint_8cpp_1a83d135741203dce4201423de8063b2c2">PrintFloat32</link> (
+<link linkend="dc/dac/dstandard_8h_1a0dd9590397b73cba91a188b94be20ee1">tC8</link> * pOutBuffer, <link linkend="dc/dac/dstandard_8h_1aee96db7e18784e05ed6b0bcaeec3f7f6">tU32</link> bufferSize, <link linkend="dc/dac/dstandard_8h_1adfd1aaaa5a9470e6009d2770939ae5ba">tF32</link> value, <link linkend="df/d29/dprint_8h_1ad1a8e21d8398e3c6f757fffea595fbe2">tPrintFloatFormat</link> format, <link linkend="dc/dac/dstandard_8h_1ae3b25aefaa14d98873818cceec369577">tS32</link> precision, <link linkend="dc/dac/dstandard_8h_1a0dd9590397b73cba91a188b94be20ee1">tC8</link> decimalPoint)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="dc/dac/dstandard_8h_1aee96db7e18784e05ed6b0bcaeec3f7f6">tU32</link> <link linkend="dd/dd5/dprint_8cpp_1abd2c48bc16cbab3eb5ec361153f21cbe">PrintFloat64</link> (
+<link linkend="dc/dac/dstandard_8h_1a0dd9590397b73cba91a188b94be20ee1">tC8</link> * pOutBuffer, <link linkend="dc/dac/dstandard_8h_1aee96db7e18784e05ed6b0bcaeec3f7f6">tU32</link> bufferSize, <link linkend="dc/dac/dstandard_8h_1a401388ecc207be71d44743e3b4cc4b4d">tF64</link> value, <link linkend="df/d29/dprint_8h_1ad1a8e21d8398e3c6f757fffea595fbe2">tPrintFloatFormat</link> format, <link linkend="dc/dac/dstandard_8h_1ae3b25aefaa14d98873818cceec369577">tS32</link> precision, <link linkend="dc/dac/dstandard_8h_1a0dd9590397b73cba91a188b94be20ee1">tC8</link> decimalPoint)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+    <simplesect>
+        <title>Detailed Description</title>
+    <para>Definition in file /home/carsten/amath2/lib/dconv/dprint.cpp</para>
+    </simplesect>
+</section>

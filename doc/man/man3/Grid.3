@@ -1,0 +1,382 @@
+.TH "Grid" 3 "Thu Jan 19 2017" "Version 1.6.0" "amath" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Grid \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <fgrid\&.h>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBGrid\fP (\fBUserFunction\fP *\fBfunction\fP)"
+.br
+.ti -1c
+.RI "\fB~Grid\fP ()"
+.br
+.ti -1c
+.RI "void \fBSetFunctionBounderies\fP (double \fBminX\fP, double \fBmaxX\fP)"
+.br
+.ti -1c
+.RI "void \fBSetScreenBounderues\fP (int \fBminX\fP, int \fBmaxX\fP, int \fBminY\fP, int \fBmaxY\fP)"
+.br
+.ti -1c
+.RI "void \fBGetScreenCoordinates\fP (double value, int *x, int *y)"
+.br
+.ti -1c
+.RI "void \fBGetScreenCoordinates\fP (double xval, int *x, double yval, int *y)"
+.br
+.ti -1c
+.RI "double \fBGetHorizontalResolution\fP ()"
+.br
+.ti -1c
+.RI "void \fBGetXAxis\fP (int *xstart, int *xend, int *ystart, int *yend)"
+.br
+.ti -1c
+.RI "void \fBGetYAxis\fP (int *xstart, int *xend, int *ystart, int *yend)"
+.br
+.in -1c
+.SS "Private Member Functions"
+
+.in +1c
+.ti -1c
+.RI "double \fBFunctionValue\fP (double \fBparameter\fP)"
+.br
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBUserFunction\fP * \fBfunction\fP"
+.br
+.ti -1c
+.RI "\fBRealNumber\fP * \fBparameter\fP"
+.br
+.ti -1c
+.RI "double \fBminX\fP"
+.br
+.ti -1c
+.RI "double \fBmaxX\fP"
+.br
+.ti -1c
+.RI "double \fBminY\fP"
+.br
+.ti -1c
+.RI "double \fBmaxY\fP"
+.br
+.ti -1c
+.RI "int \fBpad\fP"
+.br
+.ti -1c
+.RI "int \fBscreenMinX\fP"
+.br
+.ti -1c
+.RI "int \fBscreenMaxX\fP"
+.br
+.ti -1c
+.RI "int \fBscreenMinY\fP"
+.br
+.ti -1c
+.RI "int \fBscreenMaxY\fP"
+.br
+.ti -1c
+.RI "int \fBoriginX\fP"
+.br
+.ti -1c
+.RI "int \fBoriginY\fP"
+.br
+.ti -1c
+.RI "double \fBzoom\fP"
+.br
+.ti -1c
+.RI "double \fBscaleX\fP"
+.br
+.ti -1c
+.RI "double \fBscaleY\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 39 of file fgrid\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "Grid::Grid (\fBUserFunction\fP * function)"
+
+.PP
+Definition at line 31 of file fgrid\&.cpp\&.
+.PP
+References function, pad, parameter, RealNumber::RealNumber(), and zoom\&.
+.PP
+Referenced by PlotStatement::Execute()\&.
+.PP
+.nf
+31                                  :
+32     function(function)
+33 {
+34     parameter = new RealNumber();
+35     zoom = 1\&.0;
+36     pad = 8;
+37 }
+.fi
+.SS "Grid::~Grid ()"
+
+.PP
+Definition at line 39 of file fgrid\&.cpp\&.
+.PP
+References parameter\&.
+.PP
+.nf
+40 {
+41     delete parameter;
+42 }
+.fi
+.SH "Member Function Documentation"
+.PP 
+.SS "double Grid::FunctionValue (double parameter)\fC [private]\fP"
+
+.PP
+Definition at line 78 of file fgrid\&.cpp\&.
+.PP
+References Variable::AssignValue(), ExpressionNode::Evaluate(), function, UserFunction::GetExpression(), Number::GetRealValue(), UserFunction::GetVariable(), parameter, and RealNumber::SetRealValue()\&.
+.PP
+Referenced by GetScreenCoordinates(), and SetFunctionBounderies()\&.
+.PP
+.nf
+79 {
+80     this->parameter->SetRealValue(parameter);
+81     function->GetVariable()->AssignValue(this->parameter);
+82     Number *res = function->GetExpression()->Evaluate();
+83     double value = res->GetRealValue();
+84     return value;
+85 }
+.fi
+.SS "double Grid::GetHorizontalResolution ()"
+
+.PP
+Definition at line 44 of file fgrid\&.cpp\&.
+.PP
+References maxX, minX, screenMaxX, and screenMinX\&.
+.PP
+Referenced by PlotStatement::Execute()\&.
+.PP
+.nf
+45 {
+46     return (maxX - minX) / (screenMaxX - screenMinX);
+47 }
+.fi
+.SS "void Grid::GetScreenCoordinates (double value, int * x, int * y)"
+
+.PP
+Definition at line 87 of file fgrid\&.cpp\&.
+.PP
+References FunctionValue(), originX, originY, scaleX, scaleY, screenMaxX, screenMaxY, screenMinX, screenMinY, and zoom\&.
+.PP
+Referenced by PlotStatement::Execute()\&.
+.PP
+.nf
+88 {
+89     double valueX = value * scaleX * zoom + originX;
+90     double valueY = FunctionValue(value) * scaleY * zoom + originY;
+91 
+92     *x = valueX < screenMinX || valueX > screenMaxX ? -1 : (int)valueX;
+93     *y = valueY < screenMinY || valueY > screenMaxY ? -1 : (int)valueY;
+94 }
+.fi
+.SS "void Grid::GetScreenCoordinates (double xval, int * x, double yval, int * y)"
+
+.PP
+Definition at line 96 of file fgrid\&.cpp\&.
+.PP
+References originX, originY, scaleX, scaleY, screenMaxX, screenMaxY, screenMinX, screenMinY, and zoom\&.
+.PP
+.nf
+97 {
+98     double valueX = xval * scaleX * zoom + originX;
+99     double valueY = yval * scaleY * zoom + originY;
+100 
+101     *x = valueX < screenMinX || valueX > screenMaxX ? -1 : (int)valueX;
+102     *y = valueY < screenMinY || valueY > screenMaxY ? -1 : (int)valueY;
+103 }
+.fi
+.SS "void Grid::GetXAxis (int * xstart, int * xend, int * ystart, int * yend)"
+
+.PP
+Definition at line 105 of file fgrid\&.cpp\&.
+.PP
+References originY, screenMaxX, and screenMinX\&.
+.PP
+.nf
+106 {
+107     *xstart = screenMinX;
+108     *xend = screenMaxX;
+109     *ystart = originY;
+110     *yend = originY;
+111 }
+.fi
+.SS "void Grid::GetYAxis (int * xstart, int * xend, int * ystart, int * yend)"
+
+.PP
+Definition at line 113 of file fgrid\&.cpp\&.
+.PP
+References originX, screenMaxY, and screenMinY\&.
+.PP
+.nf
+114 {
+115     *xstart = originX;
+116     *xend = originX;
+117     *ystart = screenMinY;
+118     *yend = screenMaxY;
+119 }
+.fi
+.SS "void Grid::SetFunctionBounderies (double minX, double maxX)"
+
+.PP
+Definition at line 49 of file fgrid\&.cpp\&.
+.PP
+References FunctionValue(), maxX, maxY, minX, minY, scaleX, scaleY, screenMaxX, screenMaxY, screenMinX, and screenMinY\&.
+.PP
+Referenced by PlotStatement::Execute()\&.
+.PP
+.nf
+50 {
+51     this->minX = minX;
+52     this->maxX = maxX;
+53     minY = FunctionValue(minX);
+54     maxY = FunctionValue(maxX);
+55 
+56     scaleX =  (screenMaxX - screenMinX) / (maxX - minX);
+57     scaleY =  (screenMaxY - screenMinY) / (maxY - minY);
+58 
+59     // Keep ascpect ratio
+60     if (scaleX < scaleY) {
+61         scaleX = scaleY;
+62     } else {
+63         scaleY = scaleX;
+64     }
+65 }
+.fi
+.SS "void Grid::SetScreenBounderues (int minX, int maxX, int minY, int maxY)"
+
+.PP
+Definition at line 67 of file fgrid\&.cpp\&.
+.PP
+References originX, originY, pad, screenMaxX, screenMaxY, screenMinX, and screenMinY\&.
+.PP
+Referenced by PlotStatement::Execute()\&.
+.PP
+.nf
+68 {
+69     screenMinX = minX + pad;
+70     screenMaxX = maxX - pad;
+71     screenMinY = minY + pad;
+72     screenMaxY = maxY - pad;
+73 
+74     originX = (screenMaxX - screenMinX) / 2;
+75     originY = (screenMaxY - screenMinY) / 2;
+76 }
+.fi
+.SH "Member Data Documentation"
+.PP 
+.SS "\fBUserFunction\fP* Grid::function\fC [private]\fP"
+
+.PP
+Definition at line 55 of file fgrid\&.h\&.
+.PP
+Referenced by FunctionValue(), and Grid()\&.
+.SS "double Grid::maxX\fC [private]\fP"
+
+.PP
+Definition at line 59 of file fgrid\&.h\&.
+.PP
+Referenced by GetHorizontalResolution(), and SetFunctionBounderies()\&.
+.SS "double Grid::maxY\fC [private]\fP"
+
+.PP
+Definition at line 61 of file fgrid\&.h\&.
+.PP
+Referenced by SetFunctionBounderies()\&.
+.SS "double Grid::minX\fC [private]\fP"
+
+.PP
+Definition at line 58 of file fgrid\&.h\&.
+.PP
+Referenced by GetHorizontalResolution(), and SetFunctionBounderies()\&.
+.SS "double Grid::minY\fC [private]\fP"
+
+.PP
+Definition at line 60 of file fgrid\&.h\&.
+.PP
+Referenced by SetFunctionBounderies()\&.
+.SS "int Grid::originX\fC [private]\fP"
+
+.PP
+Definition at line 69 of file fgrid\&.h\&.
+.PP
+Referenced by GetScreenCoordinates(), GetYAxis(), and SetScreenBounderues()\&.
+.SS "int Grid::originY\fC [private]\fP"
+
+.PP
+Definition at line 70 of file fgrid\&.h\&.
+.PP
+Referenced by GetScreenCoordinates(), GetXAxis(), and SetScreenBounderues()\&.
+.SS "int Grid::pad\fC [private]\fP"
+
+.PP
+Definition at line 63 of file fgrid\&.h\&.
+.PP
+Referenced by Grid(), and SetScreenBounderues()\&.
+.SS "\fBRealNumber\fP* Grid::parameter\fC [private]\fP"
+
+.PP
+Definition at line 56 of file fgrid\&.h\&.
+.PP
+Referenced by FunctionValue(), Grid(), and ~Grid()\&.
+.SS "double Grid::scaleX\fC [private]\fP"
+
+.PP
+Definition at line 72 of file fgrid\&.h\&.
+.PP
+Referenced by GetScreenCoordinates(), and SetFunctionBounderies()\&.
+.SS "double Grid::scaleY\fC [private]\fP"
+
+.PP
+Definition at line 73 of file fgrid\&.h\&.
+.PP
+Referenced by GetScreenCoordinates(), and SetFunctionBounderies()\&.
+.SS "int Grid::screenMaxX\fC [private]\fP"
+
+.PP
+Definition at line 65 of file fgrid\&.h\&.
+.PP
+Referenced by GetHorizontalResolution(), GetScreenCoordinates(), GetXAxis(), SetFunctionBounderies(), and SetScreenBounderues()\&.
+.SS "int Grid::screenMaxY\fC [private]\fP"
+
+.PP
+Definition at line 67 of file fgrid\&.h\&.
+.PP
+Referenced by GetScreenCoordinates(), GetYAxis(), SetFunctionBounderies(), and SetScreenBounderues()\&.
+.SS "int Grid::screenMinX\fC [private]\fP"
+
+.PP
+Definition at line 64 of file fgrid\&.h\&.
+.PP
+Referenced by GetHorizontalResolution(), GetScreenCoordinates(), GetXAxis(), SetFunctionBounderies(), and SetScreenBounderues()\&.
+.SS "int Grid::screenMinY\fC [private]\fP"
+
+.PP
+Definition at line 66 of file fgrid\&.h\&.
+.PP
+Referenced by GetScreenCoordinates(), GetYAxis(), SetFunctionBounderies(), and SetScreenBounderues()\&.
+.SS "double Grid::zoom\fC [private]\fP"
+
+.PP
+Definition at line 71 of file fgrid\&.h\&.
+.PP
+Referenced by GetScreenCoordinates(), and Grid()\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for amath from the source code\&.

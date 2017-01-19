@@ -1,0 +1,93 @@
+\hypertarget{casin_8c}{}\section{lib/cplex/casin.c File Reference}
+\label{casin_8c}\index{lib/cplex/casin.\+c@{lib/cplex/casin.\+c}}
+{\ttfamily \#include \char`\"{}prim.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}math.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}complex.\+h\char`\"{}}\\*
+Include dependency graph for casin.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=221pt]{d3/d90/casin_8c__incl}
+\end{center}
+\end{figure}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{unioncomplex}{complex} \hyperlink{casin_8c_a411c00ad70bc1b91a5de261b64d0f131}{casin} (\hyperlink{unioncomplex}{complex} z)
+\begin{DoxyCompactList}\small\item\em Inverse sine of complex number. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\index{casin.\+c@{casin.\+c}!casin@{casin}}
+\index{casin@{casin}!casin.\+c@{casin.\+c}}
+\subsubsection[{\texorpdfstring{casin(complex z)}{casin(complex z)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf complex} casin (
+\begin{DoxyParamCaption}
+\item[{{\bf complex}}]{z}
+\end{DoxyParamCaption}
+)}\hypertarget{casin_8c_a411c00ad70bc1b91a5de261b64d0f131}{}\label{casin_8c_a411c00ad70bc1b91a5de261b64d0f131}
+
+
+Inverse sine of complex number. 
+
+\begin{DoxyVersion}{Version}
+1.\+1 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+14/10/01
+\end{DoxyDate}
+Inverse sine expressed using complex logarithms\+: 
+\begin{DoxyPre}
+arcsin z = -i * log(iz + sqrt(1 - z*z))
+\end{DoxyPre}
+ More info is available at Wikipedia\+: ~\newline
+ \href{http://en.wikipedia.org/wiki/Inverse_trigonometric_functions#Logarithmic_forms}{\tt http\+://en.\+wikipedia.\+org/wiki/\+Inverse\+\_\+trigonometric\+\_\+functions\#\+Logarithmic\+\_\+forms} 
+
+Definition at line 43 of file casin.\+c.
+
+
+
+References cadd(), clog(), cmul(), cpack(), csqrt(), and csub().
+
+
+
+Referenced by Complex\+Number\+::\+Arc\+Sine().
+
+
+\begin{DoxyCode}
+44 \{
+45     \hyperlink{unioncomplex}{complex} \hyperlink{ktan_8c_a7cf126dbeb6f30c606e3b42fea65cfef}{one} = \hyperlink{complex_8h_a980e6e049f7902b05fc9eb5614b07a5c}{cpack}(1.0, 0.0);
+46     \hyperlink{unioncomplex}{complex} i = \hyperlink{complex_8h_a980e6e049f7902b05fc9eb5614b07a5c}{cpack}(0.0, 1.0);
+47     \hyperlink{unioncomplex}{complex} j = \hyperlink{complex_8h_a980e6e049f7902b05fc9eb5614b07a5c}{cpack}(0.0, -1.0);
+48     \hyperlink{unioncomplex}{complex} iz = \hyperlink{complex_8h_a340ad83d03bcc727538d25dcf6dd26e9}{cmul}(i, z);
+49     \hyperlink{unioncomplex}{complex} z2 = \hyperlink{complex_8h_a340ad83d03bcc727538d25dcf6dd26e9}{cmul}(z, z);
+50     \hyperlink{unioncomplex}{complex} p = \hyperlink{complex_8h_afe5b814a44414f20d0f98fe974737edd}{csqrt}(\hyperlink{complex_8h_a46bb0dd64d87c3aeb85417d1dadf6ddd}{csub}(one, z2));
+51     \hyperlink{unioncomplex}{complex} q = \hyperlink{complex_8h_a888b8eb5ccc46411e68f6d7b99035888}{clog}(\hyperlink{complex_8h_a02d8fd1ce9c4fa4e25b1fa676ca96d4e}{cadd}(iz, p));
+52     \hyperlink{unioncomplex}{complex} w = \hyperlink{complex_8h_a340ad83d03bcc727538d25dcf6dd26e9}{cmul}(j, q);
+53     \textcolor{keywordflow}{return} w;
+54 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d9/dcf/casin_8c_a411c00ad70bc1b91a5de261b64d0f131_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=287pt]{d9/dcf/casin_8c_a411c00ad70bc1b91a5de261b64d0f131_icgraph}
+\end{center}
+\end{figure}
+
+

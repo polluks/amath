@@ -1,0 +1,123 @@
+.TH "ListStatement" 3 "Thu Jan 19 2017" "Version 1.6.0" "amath" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+ListStatement \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <statements\&.h>\fP
+.PP
+Inherits \fBStatementNode\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBListStatement\fP ()"
+.br
+.ti -1c
+.RI "\fBListStatement\fP (const char *\fBdirectory\fP)"
+.br
+.ti -1c
+.RI "\fB~ListStatement\fP ()"
+.br
+.ti -1c
+.RI "char * \fBExecute\fP ()"
+.br
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "char * \fBdirectory\fP"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Detailed Description"
+.PP 
+Definition at line 261 of file statements\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "ListStatement::ListStatement ()"
+
+.PP
+Definition at line 608 of file statements\&.cpp\&.
+.PP
+References directory, and StatementNode::StatementNode()\&.
+.PP
+Referenced by Parser::ParseListStatement()\&.
+.PP
+.nf
+608                              :
+609     StatementNode()
+610 {
+611     directory = NOMEM;
+612 }
+.fi
+.SS "ListStatement::ListStatement (const char * directory)"
+
+.PP
+Definition at line 614 of file statements\&.cpp\&.
+.PP
+References AllocAndCopy(), directory, and StatementNode::StatementNode()\&.
+.PP
+Referenced by Parser::ParseListStatement()\&.
+.PP
+.nf
+614                                                   :
+615     StatementNode()
+616 {
+617     AllocAndCopy(&this->directory,  directory);
+618 }
+.fi
+.SS "ListStatement::~ListStatement ()"
+
+.PP
+Definition at line 620 of file statements\&.cpp\&.
+.PP
+References directory\&.
+.PP
+.nf
+621 {
+622     if (directory != NOMEM) {
+623         delete [] directory;
+624     }
+625 }
+.fi
+.SH "Member Function Documentation"
+.PP 
+.SS "char * ListStatement::Execute ()\fC [virtual]\fP"
+
+.PP
+Implements \fBStatementNode\fP\&.
+.PP
+Definition at line 627 of file statements\&.cpp\&.
+.PP
+References directory, Program::Filesystem, CharBuffer::GetString(), FilesystemBase::ListDirectory(), and SyntaxNode::output\&.
+.PP
+.nf
+628 {
+629     CharBuffer *text = Program->Filesystem->ListDirectory(directory);
+630     if (text == NOMEM)
+631     {
+632         return (char*)(MSGNODIR);
+633     }
+634 
+635     delete output;
+636     output = text;
+637     return text->GetString();
+638 }
+.fi
+.SH "Member Data Documentation"
+.PP 
+.SS "char* ListStatement::directory\fC [private]\fP"
+
+.PP
+Definition at line 269 of file statements\&.h\&.
+.PP
+Referenced by Execute(), ListStatement(), and ~ListStatement()\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for amath from the source code\&.

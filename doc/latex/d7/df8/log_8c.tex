@@ -1,0 +1,318 @@
+\hypertarget{log_8c}{}\section{lib/real/log.c File Reference}
+\label{log_8c}\index{lib/real/log.\+c@{lib/real/log.\+c}}
+{\ttfamily \#include \char`\"{}prim.\+h\char`\"{}}\\*
+Include dependency graph for log.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=149pt]{de/d6f/log_8c__incl}
+\end{center}
+\end{figure}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+double \hyperlink{log_8c_adb302c9aafbaa5e180d9f60ee954bb82}{log} (double x)
+\begin{DoxyCompactList}\small\item\em Natural logarithm function (base e). \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+static const double \hyperlink{log_8c_a681dec71eb3b6048386c010ec2444fa4}{ln2\+\_\+hi} = 6.\+93147180369123816490e-\/01
+\item 
+static const double \hyperlink{log_8c_aad361cc103aeef29c711917f539eb9bd}{ln2\+\_\+lo} = 1.\+90821492927058770002e-\/10
+\item 
+static const double \hyperlink{log_8c_a38da01c416294eaf7ebdae8ba3afe2e0}{two54} = 1.\+80143985094819840000e+16
+\item 
+static const double \hyperlink{log_8c_aee6b9e56932bed1ba4ee033ddf822554}{Lg1} = 6.\+666666666666735130e-\/01
+\item 
+static const double \hyperlink{log_8c_ac1a4f6174aa4dd099e0a734fc11b0c3e}{Lg2} = 3.\+999999999940941908e-\/01
+\item 
+static const double \hyperlink{log_8c_abbb475ec79f62ee366fdb3f250c70ca2}{Lg3} = 2.\+857142874366239149e-\/01
+\item 
+static const double \hyperlink{log_8c_a75ba95a9dce0de304a80d47b4031a594}{Lg4} = 2.\+222219843214978396e-\/01
+\item 
+static const double \hyperlink{log_8c_aa722e2f0e2ac3b021fb393d166a358d7}{Lg5} = 1.\+818357216161805012e-\/01
+\item 
+static const double \hyperlink{log_8c_a37c6fabdfdd55cf0a7166ec4cf6cb72f}{Lg6} = 1.\+531383769920937332e-\/01
+\item 
+static const double \hyperlink{log_8c_a2d7c634068cd4f7a636178956c67d37c}{Lg7} = 1.\+479819860511658591e-\/01
+\item 
+static double \hyperlink{log_8c_a548c77babcdf18ce7b6b96e73fb912cd}{zero} = 0.\+0
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\index{log.\+c@{log.\+c}!log@{log}}
+\index{log@{log}!log.\+c@{log.\+c}}
+\subsubsection[{\texorpdfstring{log(double x)}{log(double x)}}]{\setlength{\rightskip}{0pt plus 5cm}double log (
+\begin{DoxyParamCaption}
+\item[{double}]{x}
+\end{DoxyParamCaption}
+)}\hypertarget{log_8c_adb302c9aafbaa5e180d9f60ee954bb82}{}\label{log_8c_adb302c9aafbaa5e180d9f60ee954bb82}
+
+
+Natural logarithm function (base e). 
+
+\begin{DoxyVersion}{Version}
+1.\+4 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+96/03/07
+\end{DoxyDate}
+
+\begin{DoxyPre}
+Method :
+  1. Argument Reduction: find k and f such that
+        x = 2^k * (1+f),
+    where  sqrt(2)/2 < 1+f < sqrt(2) .\end{DoxyPre}
+
+
+
+\begin{DoxyPre}  2. Approximation of log(1+f).
+ Let s = f/(2+f) ; based on log(1+f) = log(1+s) - log(1-s)
+     = 2s + 2/3 s**3 + 2/5 s**5 + .....,
+         = 2s + s*R
+     We use a special Remes algorithm on [0,0.1716] to generate
+    a polynomial of degree 14 to approximate R The maximum error
+ of this polynomial approximation is bounded by 2**-58.45. In
+ other words,
+            2      4      6      8      10      12      14
+     R(z) ~ Lg1*s +Lg2*s +Lg3*s +Lg4*s +Lg5*s  +Lg6*s  +Lg7*s
+    (the values of Lg1 to Lg7 are listed in the program)
+ and
+     |      2          14          |     -58.45
+     | Lg1*s +...+Lg7*s    -  R(z) | <= 2
+     |                             |
+ Note that 2s = f - s*f = f - hfsq + s*hfsq, where hfsq = f*f/2.
+ In order to guarantee error in log below 1ulp, we compute log
+ by
+    log(1+f) = f - s*(f - R)    (if f is not too large)
+    log(1+f) = f - (hfsq - s*(hfsq+R)). (better accuracy)\end{DoxyPre}
+
+
+
+\begin{DoxyPre} 3. Finally,  log(x) = k*ln2 + log(1+f).
+            = k*ln2\_hi+(f-(hfsq-(s*(hfsq+R)+k*ln2\_lo)))
+    Here ln2 is split into two floating point number:
+        ln2\_hi + ln2\_lo,
+    where n*ln2\_hi is always exact for |n| < 2000.\end{DoxyPre}
+
+
+
+\begin{DoxyPre}Special cases:
+ log(x) is NaN with signal if x < 0 (including -INF) ;
+ log(+INF) is +INF; log(0) is -INF with signal;
+ log(NaN) is that NaN with no signal.\end{DoxyPre}
+
+
+
+\begin{DoxyPre}Accuracy:
+ according to an error analysis, the error is always less than
+ 1 ulp (unit in the last place).\end{DoxyPre}
+
+
+
+\begin{DoxyPre}Constants:
+The hexadecimal values are the intended ones for the following
+constants. The decimal values may be used, provided that the
+compiler will convert from decimal to binary accurately enough
+to produce the hexadecimal values shown.
+\end{DoxyPre}
+ \begin{DoxyCopyright}{Copyright}
+Copyright (C) 1993 by Sun Microsystems, Inc. All rights reserved.  Developed at Sun\+Soft, a Sun Microsystems, Inc. business. Permission to use, copy, modify, and distribute this software is freely granted, provided that this notice is preserved. 
+\end{DoxyCopyright}
+
+
+Definition at line 118 of file log.\+c.
+
+
+
+References Lg1, Lg2, Lg3, Lg4, Lg5, Lg6, Lg7, ln2\+\_\+hi, ln2\+\_\+lo, two54, and zero.
+
+
+\begin{DoxyCode}
+119 \{
+120     \textcolor{keywordtype}{double} hfsq,f,s,z,R,w,t1,t2,dk;
+121     \hyperlink{real_2prim_8h_ae91287c8a5f73a8a22a100f50dc4de77}{sword} k,hx,i,j;
+122     \hyperlink{real_2prim_8h_a6e60fe0e0f9f8801507e15fe2d893751}{uword} lx;
+123 
+124     \hyperlink{real_2prim_8h_a6dadc713499e14ba3088a55409a18983}{EXTRACT\_WORDS}(hx,lx,x);
+125 
+126     k=0;
+127     \textcolor{keywordflow}{if} (hx < 0x00100000) \{          \textcolor{comment}{/* x < 2**-1022  */}
+128         \textcolor{keywordflow}{if} (((hx&0x7fffffff)|lx)==0)
+129             \textcolor{keywordflow}{return} -\hyperlink{log_8c_a38da01c416294eaf7ebdae8ba3afe2e0}{two54}/\hyperlink{log_8c_a548c77babcdf18ce7b6b96e73fb912cd}{zero};        \textcolor{comment}{/* log(+-0)=-inf */}
+130         \textcolor{keywordflow}{if} (hx<0) \textcolor{keywordflow}{return} (x-x)/\hyperlink{log_8c_a548c77babcdf18ce7b6b96e73fb912cd}{zero};    \textcolor{comment}{/* log(-#) = NaN */}
+131         k -= 54;
+132         x *= \hyperlink{log_8c_a38da01c416294eaf7ebdae8ba3afe2e0}{two54}; \textcolor{comment}{/* subnormal number, scale up x */}
+133         \hyperlink{real_2prim_8h_ae62ee08d06ab4cc06d61dc1246b73195}{GET\_HIGH\_WORD}(hx,x);       \textcolor{comment}{/* high word of x */}
+134     \}
+135     \textcolor{keywordflow}{if} (hx >= 0x7ff00000) \textcolor{keywordflow}{return} x+x;
+136     k += (hx>>20)-1023;
+137     hx &= 0x000fffff;
+138     i = (hx+0x95f64)&0x100000;
+139     \hyperlink{real_2prim_8h_a6ca54776127e20149f84c290bf52f89e}{SET\_HIGH\_WORD}(x,hx|(i^0x3ff00000));    \textcolor{comment}{/* normalize x or x/2 */}
+140     k += (i>>20);
+141     f = x-1.0;
+142     \textcolor{keywordflow}{if}((0x000fffff&(2+hx))<3) \{ \textcolor{comment}{/* |f| < 2**-20 */}
+143         \textcolor{keywordflow}{if}(f==\hyperlink{log_8c_a548c77babcdf18ce7b6b96e73fb912cd}{zero}) \{
+144             \textcolor{keywordflow}{if}(k==0)
+145                 \textcolor{keywordflow}{return} \hyperlink{log_8c_a548c77babcdf18ce7b6b96e73fb912cd}{zero};
+146             \textcolor{keywordflow}{else} \{
+147                 dk=(double)k;
+148                 \textcolor{keywordflow}{return} dk*\hyperlink{log_8c_a681dec71eb3b6048386c010ec2444fa4}{ln2\_hi}+dk*\hyperlink{log_8c_aad361cc103aeef29c711917f539eb9bd}{ln2\_lo};
+149             \}
+150         \}
+151         R = f*f*(0.5-0.33333333333333333*f);
+152         \textcolor{keywordflow}{if}(k==0) \textcolor{keywordflow}{return} f-R;
+153         \textcolor{keywordflow}{else} \{
+154             dk=(double)k;
+155             \textcolor{keywordflow}{return} dk*\hyperlink{log_8c_a681dec71eb3b6048386c010ec2444fa4}{ln2\_hi}-((R-dk*\hyperlink{log_8c_aad361cc103aeef29c711917f539eb9bd}{ln2\_lo})-f);
+156         \}
+157     \}
+158     s = f/(2.0+f);
+159     dk = (double)k;
+160     z = s*s;
+161     i = hx-0x6147a;
+162     w = z*z;
+163     j = 0x6b851-hx;
+164     t1= w*(\hyperlink{log_8c_ac1a4f6174aa4dd099e0a734fc11b0c3e}{Lg2}+w*(\hyperlink{log_8c_a75ba95a9dce0de304a80d47b4031a594}{Lg4}+w*\hyperlink{log_8c_a37c6fabdfdd55cf0a7166ec4cf6cb72f}{Lg6}));
+165     t2= z*(\hyperlink{log_8c_aee6b9e56932bed1ba4ee033ddf822554}{Lg1}+w*(\hyperlink{log_8c_abbb475ec79f62ee366fdb3f250c70ca2}{Lg3}+w*(\hyperlink{log_8c_aa722e2f0e2ac3b021fb393d166a358d7}{Lg5}+w*\hyperlink{log_8c_a2d7c634068cd4f7a636178956c67d37c}{Lg7})));
+166     i |= j;
+167     R = t2+t1;
+168     \textcolor{keywordflow}{if}(i>0) \{
+169         hfsq=0.5*f*f;
+170         \textcolor{keywordflow}{if}(k==0) \textcolor{keywordflow}{return} f-(hfsq-s*(hfsq+R));
+171         \textcolor{keywordflow}{else}
+172             \textcolor{keywordflow}{return} dk*\hyperlink{log_8c_a681dec71eb3b6048386c010ec2444fa4}{ln2\_hi}-((hfsq-(s*(hfsq+R)+dk*\hyperlink{log_8c_aad361cc103aeef29c711917f539eb9bd}{ln2\_lo}))-f);
+173     \} \textcolor{keywordflow}{else} \{
+174         \textcolor{keywordflow}{if}(k==0) \textcolor{keywordflow}{return} f-s*(f-R);
+175         \textcolor{keywordflow}{else}
+176             \textcolor{keywordflow}{return} dk*\hyperlink{log_8c_a681dec71eb3b6048386c010ec2444fa4}{ln2\_hi}-((s*(f-R)-dk*\hyperlink{log_8c_aad361cc103aeef29c711917f539eb9bd}{ln2\_lo})-f);
+177     \}
+178 \}
+\end{DoxyCode}
+
+
+\subsection{Variable Documentation}
+\index{log.\+c@{log.\+c}!Lg1@{Lg1}}
+\index{Lg1@{Lg1}!log.\+c@{log.\+c}}
+\subsubsection[{\texorpdfstring{Lg1}{Lg1}}]{\setlength{\rightskip}{0pt plus 5cm}const double Lg1 = 6.\+666666666666735130e-\/01\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{log_8c_aee6b9e56932bed1ba4ee033ddf822554}{}\label{log_8c_aee6b9e56932bed1ba4ee033ddf822554}
+
+
+Definition at line 49 of file log.\+c.
+
+
+
+Referenced by log().
+
+\index{log.\+c@{log.\+c}!Lg2@{Lg2}}
+\index{Lg2@{Lg2}!log.\+c@{log.\+c}}
+\subsubsection[{\texorpdfstring{Lg2}{Lg2}}]{\setlength{\rightskip}{0pt plus 5cm}const double Lg2 = 3.\+999999999940941908e-\/01\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{log_8c_ac1a4f6174aa4dd099e0a734fc11b0c3e}{}\label{log_8c_ac1a4f6174aa4dd099e0a734fc11b0c3e}
+
+
+Definition at line 50 of file log.\+c.
+
+
+
+Referenced by log().
+
+\index{log.\+c@{log.\+c}!Lg3@{Lg3}}
+\index{Lg3@{Lg3}!log.\+c@{log.\+c}}
+\subsubsection[{\texorpdfstring{Lg3}{Lg3}}]{\setlength{\rightskip}{0pt plus 5cm}const double Lg3 = 2.\+857142874366239149e-\/01\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{log_8c_abbb475ec79f62ee366fdb3f250c70ca2}{}\label{log_8c_abbb475ec79f62ee366fdb3f250c70ca2}
+
+
+Definition at line 51 of file log.\+c.
+
+
+
+Referenced by log().
+
+\index{log.\+c@{log.\+c}!Lg4@{Lg4}}
+\index{Lg4@{Lg4}!log.\+c@{log.\+c}}
+\subsubsection[{\texorpdfstring{Lg4}{Lg4}}]{\setlength{\rightskip}{0pt plus 5cm}const double Lg4 = 2.\+222219843214978396e-\/01\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{log_8c_a75ba95a9dce0de304a80d47b4031a594}{}\label{log_8c_a75ba95a9dce0de304a80d47b4031a594}
+
+
+Definition at line 52 of file log.\+c.
+
+
+
+Referenced by log().
+
+\index{log.\+c@{log.\+c}!Lg5@{Lg5}}
+\index{Lg5@{Lg5}!log.\+c@{log.\+c}}
+\subsubsection[{\texorpdfstring{Lg5}{Lg5}}]{\setlength{\rightskip}{0pt plus 5cm}const double Lg5 = 1.\+818357216161805012e-\/01\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{log_8c_aa722e2f0e2ac3b021fb393d166a358d7}{}\label{log_8c_aa722e2f0e2ac3b021fb393d166a358d7}
+
+
+Definition at line 53 of file log.\+c.
+
+
+
+Referenced by log().
+
+\index{log.\+c@{log.\+c}!Lg6@{Lg6}}
+\index{Lg6@{Lg6}!log.\+c@{log.\+c}}
+\subsubsection[{\texorpdfstring{Lg6}{Lg6}}]{\setlength{\rightskip}{0pt plus 5cm}const double Lg6 = 1.\+531383769920937332e-\/01\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{log_8c_a37c6fabdfdd55cf0a7166ec4cf6cb72f}{}\label{log_8c_a37c6fabdfdd55cf0a7166ec4cf6cb72f}
+
+
+Definition at line 54 of file log.\+c.
+
+
+
+Referenced by log().
+
+\index{log.\+c@{log.\+c}!Lg7@{Lg7}}
+\index{Lg7@{Lg7}!log.\+c@{log.\+c}}
+\subsubsection[{\texorpdfstring{Lg7}{Lg7}}]{\setlength{\rightskip}{0pt plus 5cm}const double Lg7 = 1.\+479819860511658591e-\/01\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{log_8c_a2d7c634068cd4f7a636178956c67d37c}{}\label{log_8c_a2d7c634068cd4f7a636178956c67d37c}
+
+
+Definition at line 55 of file log.\+c.
+
+
+
+Referenced by log().
+
+\index{log.\+c@{log.\+c}!ln2\+\_\+hi@{ln2\+\_\+hi}}
+\index{ln2\+\_\+hi@{ln2\+\_\+hi}!log.\+c@{log.\+c}}
+\subsubsection[{\texorpdfstring{ln2\+\_\+hi}{ln2_hi}}]{\setlength{\rightskip}{0pt plus 5cm}const double ln2\+\_\+hi = 6.\+93147180369123816490e-\/01\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{log_8c_a681dec71eb3b6048386c010ec2444fa4}{}\label{log_8c_a681dec71eb3b6048386c010ec2444fa4}
+
+
+Definition at line 46 of file log.\+c.
+
+
+
+Referenced by log().
+
+\index{log.\+c@{log.\+c}!ln2\+\_\+lo@{ln2\+\_\+lo}}
+\index{ln2\+\_\+lo@{ln2\+\_\+lo}!log.\+c@{log.\+c}}
+\subsubsection[{\texorpdfstring{ln2\+\_\+lo}{ln2_lo}}]{\setlength{\rightskip}{0pt plus 5cm}const double ln2\+\_\+lo = 1.\+90821492927058770002e-\/10\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{log_8c_aad361cc103aeef29c711917f539eb9bd}{}\label{log_8c_aad361cc103aeef29c711917f539eb9bd}
+
+
+Definition at line 47 of file log.\+c.
+
+
+
+Referenced by log().
+
+\index{log.\+c@{log.\+c}!two54@{two54}}
+\index{two54@{two54}!log.\+c@{log.\+c}}
+\subsubsection[{\texorpdfstring{two54}{two54}}]{\setlength{\rightskip}{0pt plus 5cm}const double two54 = 1.\+80143985094819840000e+16\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{log_8c_a38da01c416294eaf7ebdae8ba3afe2e0}{}\label{log_8c_a38da01c416294eaf7ebdae8ba3afe2e0}
+
+
+Definition at line 48 of file log.\+c.
+
+
+
+Referenced by log().
+
+\index{log.\+c@{log.\+c}!zero@{zero}}
+\index{zero@{zero}!log.\+c@{log.\+c}}
+\subsubsection[{\texorpdfstring{zero}{zero}}]{\setlength{\rightskip}{0pt plus 5cm}double zero = 0.\+0\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{log_8c_a548c77babcdf18ce7b6b96e73fb912cd}{}\label{log_8c_a548c77babcdf18ce7b6b96e73fb912cd}
+
+
+Definition at line 57 of file log.\+c.
+
+
+
+Referenced by log().
+

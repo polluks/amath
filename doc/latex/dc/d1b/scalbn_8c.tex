@@ -1,0 +1,141 @@
+\hypertarget{scalbn_8c}{}\section{lib/real/scalbn.c File Reference}
+\label{scalbn_8c}\index{lib/real/scalbn.\+c@{lib/real/scalbn.\+c}}
+{\ttfamily \#include \char`\"{}prim.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}math.\+h\char`\"{}}\\*
+Include dependency graph for scalbn.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=190pt]{d9/d6c/scalbn_8c__incl}
+\end{center}
+\end{figure}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+double \hyperlink{scalbn_8c_a0353978ec1ae247f2d95f2dc75856ed6}{scalbn} (double x, int n)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+static const double \hyperlink{scalbn_8c_a38da01c416294eaf7ebdae8ba3afe2e0}{two54} = 1.\+80143985094819840000e+16
+\item 
+static const double \hyperlink{scalbn_8c_ac941f00c94834d7be49faedc1a4ed033}{twom54} = 5.\+55111512312578270212e-\/17
+\item 
+static const double \hyperlink{scalbn_8c_acbd466133274923cc0785707fbdeea9a}{huge} = 1.\+0e+300
+\item 
+static const double \hyperlink{scalbn_8c_a4f41fc56ffc7d06df51b6fbccd8c0846}{tiny} = 1.\+0e-\/300
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\index{scalbn.\+c@{scalbn.\+c}!scalbn@{scalbn}}
+\index{scalbn@{scalbn}!scalbn.\+c@{scalbn.\+c}}
+\subsubsection[{\texorpdfstring{scalbn(double x, int n)}{scalbn(double x, int n)}}]{\setlength{\rightskip}{0pt plus 5cm}double scalbn (
+\begin{DoxyParamCaption}
+\item[{double}]{x, }
+\item[{int}]{n}
+\end{DoxyParamCaption}
+)}\hypertarget{scalbn_8c_a0353978ec1ae247f2d95f2dc75856ed6}{}\label{scalbn_8c_a0353978ec1ae247f2d95f2dc75856ed6}
+
+
+Definition at line 60 of file scalbn.\+c.
+
+
+
+References huge, tiny, two54, and twom54.
+
+
+
+Referenced by \+\_\+\+\_\+kernel\+\_\+rem\+\_\+pio2(), and pow().
+
+
+\begin{DoxyCode}
+61 \{
+62     \hyperlink{real_2prim_8h_ae91287c8a5f73a8a22a100f50dc4de77}{sword}  k,hx,lx;
+63     \hyperlink{real_2prim_8h_a6dadc713499e14ba3088a55409a18983}{EXTRACT\_WORDS}(hx,lx,x);
+64     k = (hx&0x7ff00000)>>20;        \textcolor{comment}{/* extract exponent */}
+65     \textcolor{keywordflow}{if} (k==0) \{             \textcolor{comment}{/* 0 or subnormal x */}
+66         \textcolor{keywordflow}{if} ((lx|(hx&0x7fffffff))==0) \textcolor{keywordflow}{return} x; \textcolor{comment}{/* +-0 */}
+67         x *= \hyperlink{scalbn_8c_a38da01c416294eaf7ebdae8ba3afe2e0}{two54};
+68         \hyperlink{real_2prim_8h_ae62ee08d06ab4cc06d61dc1246b73195}{GET\_HIGH\_WORD}(hx,x);
+69         k = ((hx&0x7ff00000)>>20) - 54;
+70         \textcolor{keywordflow}{if} (n< -50000) \textcolor{keywordflow}{return} \hyperlink{scalbn_8c_a4f41fc56ffc7d06df51b6fbccd8c0846}{tiny}*x;   \textcolor{comment}{/*underflow*/}
+71     \}
+72     \textcolor{keywordflow}{if} (k==0x7ff) \textcolor{keywordflow}{return} x+x;       \textcolor{comment}{/* NaN or Inf */}
+73     k = k+n;
+74     \textcolor{keywordflow}{if} (k >  0x7fe) \textcolor{keywordflow}{return} \hyperlink{scalbn_8c_acbd466133274923cc0785707fbdeea9a}{huge}*\hyperlink{math_8h_ad8d1296592a3e783acdd0de21ff58e2e}{copysign}(\hyperlink{scalbn_8c_acbd466133274923cc0785707fbdeea9a}{huge},x); \textcolor{comment}{/* overflow  */}
+75     \textcolor{keywordflow}{if} (k > 0)              \textcolor{comment}{/* normal result */}
+76     \{
+77         \hyperlink{real_2prim_8h_a6ca54776127e20149f84c290bf52f89e}{SET\_HIGH\_WORD}(x,(hx&0x800fffff)|(k<<20));
+78         \textcolor{keywordflow}{return} x;
+79     \}
+80     \textcolor{keywordflow}{if} (k <= -54) \{
+81         \textcolor{keywordflow}{if} (n > 50000)      \textcolor{comment}{/* in case integer overflow in n+k */}
+82             \textcolor{keywordflow}{return} \hyperlink{scalbn_8c_acbd466133274923cc0785707fbdeea9a}{huge}*\hyperlink{math_8h_ad8d1296592a3e783acdd0de21ff58e2e}{copysign}(\hyperlink{scalbn_8c_acbd466133274923cc0785707fbdeea9a}{huge},x);   \textcolor{comment}{/*overflow*/}
+83         \textcolor{keywordflow}{else} \textcolor{keywordflow}{return} \hyperlink{scalbn_8c_a4f41fc56ffc7d06df51b6fbccd8c0846}{tiny}*\hyperlink{math_8h_ad8d1296592a3e783acdd0de21ff58e2e}{copysign}(\hyperlink{scalbn_8c_a4f41fc56ffc7d06df51b6fbccd8c0846}{tiny},x);  \textcolor{comment}{/*underflow*/}
+84     \}
+85     k += 54;                \textcolor{comment}{/* subnormal result */}
+86     \hyperlink{real_2prim_8h_a6ca54776127e20149f84c290bf52f89e}{SET\_HIGH\_WORD}(x,(hx&0x800fffff)|(k<<20));
+87     \textcolor{keywordflow}{return} x*\hyperlink{scalbn_8c_ac941f00c94834d7be49faedc1a4ed033}{twom54};
+88 \}
+\end{DoxyCode}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/d1b/scalbn_8c_a0353978ec1ae247f2d95f2dc75856ed6_icgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Variable Documentation}
+\index{scalbn.\+c@{scalbn.\+c}!huge@{huge}}
+\index{huge@{huge}!scalbn.\+c@{scalbn.\+c}}
+\subsubsection[{\texorpdfstring{huge}{huge}}]{\setlength{\rightskip}{0pt plus 5cm}const double huge = 1.\+0e+300\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{scalbn_8c_acbd466133274923cc0785707fbdeea9a}{}\label{scalbn_8c_acbd466133274923cc0785707fbdeea9a}
+
+
+Definition at line 57 of file scalbn.\+c.
+
+
+
+Referenced by scalbn().
+
+\index{scalbn.\+c@{scalbn.\+c}!tiny@{tiny}}
+\index{tiny@{tiny}!scalbn.\+c@{scalbn.\+c}}
+\subsubsection[{\texorpdfstring{tiny}{tiny}}]{\setlength{\rightskip}{0pt plus 5cm}const double tiny = 1.\+0e-\/300\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{scalbn_8c_a4f41fc56ffc7d06df51b6fbccd8c0846}{}\label{scalbn_8c_a4f41fc56ffc7d06df51b6fbccd8c0846}
+
+
+Definition at line 58 of file scalbn.\+c.
+
+
+
+Referenced by scalbn().
+
+\index{scalbn.\+c@{scalbn.\+c}!two54@{two54}}
+\index{two54@{two54}!scalbn.\+c@{scalbn.\+c}}
+\subsubsection[{\texorpdfstring{two54}{two54}}]{\setlength{\rightskip}{0pt plus 5cm}const double two54 = 1.\+80143985094819840000e+16\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{scalbn_8c_a38da01c416294eaf7ebdae8ba3afe2e0}{}\label{scalbn_8c_a38da01c416294eaf7ebdae8ba3afe2e0}
+
+
+Definition at line 55 of file scalbn.\+c.
+
+
+
+Referenced by scalbn().
+
+\index{scalbn.\+c@{scalbn.\+c}!twom54@{twom54}}
+\index{twom54@{twom54}!scalbn.\+c@{scalbn.\+c}}
+\subsubsection[{\texorpdfstring{twom54}{twom54}}]{\setlength{\rightskip}{0pt plus 5cm}const double twom54 = 5.\+55111512312578270212e-\/17\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{scalbn_8c_ac941f00c94834d7be49faedc1a4ed033}{}\label{scalbn_8c_ac941f00c94834d7be49faedc1a4ed033}
+
+
+Definition at line 56 of file scalbn.\+c.
+
+
+
+Referenced by scalbn().
+

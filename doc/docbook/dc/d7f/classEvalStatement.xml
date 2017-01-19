@@ -1,0 +1,133 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="dc/d7f/classEvalStatement">
+<title>EvalStatement class Reference</title>
+<para>
+    <programlisting>#include <link linkend="dd/d6a/statements_8h">&lt;statements.h&gt;</link></programlisting>
+</para>
+<para>Inheritance diagram for EvalStatement</para>
+<para>
+    <figure>
+        <title>Inheritance graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="../../da/ddc/classEvalStatement__inherit__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+<para>Collaboration diagram for EvalStatement</para>
+<para>
+    <figure>
+        <title>Collaboration graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="../../d6/dee/classEvalStatement__coll__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+        <section>
+            <title>Private Attributes</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>ExpressionNode * expression</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="dc/d7f/classEvalStatement_1aca4069dd093c588724a5516598ec413f">EvalStatement</link> (
+<link linkend="dd/d06/classExpressionNode">ExpressionNode</link> * expression)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="dc/d7f/classEvalStatement_1a448472b7904f2733d4b027b873ff6508">~EvalStatement</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>char * <link linkend="dc/d7f/classEvalStatement_1a6d3e0e2db3ed8cbdaa3250bf959a0be7">Execute</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="d8/d5d/classSyntaxNode">SyntaxNode</link> * <link linkend="dc/d7f/classEvalStatement_1acd7b7d1c82b17b819c899ae574681b79">GetNext</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="dc/d7f/classEvalStatement_1a1b689a777c3022a40d042410fc3fac77">Attach</link> (
+<link linkend="d8/d5d/classSyntaxNode">SyntaxNode</link> * node)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="dc/d7f/classEvalStatement_1a64257c56418096b0615280fe19008f88">Detach</link> (
+<link linkend="d8/d5d/classSyntaxNode">SyntaxNode</link> * node)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="dc/d7f/classEvalStatement_1a9b77319533fab13e48c720b47a4d26b7">Replace</link> (
+<link linkend="d8/d5d/classSyntaxNode">SyntaxNode</link> * n, <link linkend="d8/d5d/classSyntaxNode">SyntaxNode</link> * x)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+    <simplesect>
+
+<para>Evaluate arithmetic expression. </para>
+    </simplesect>
+        <section>
+            <title>Member Data Documentation</title>
+        </section>
+            <section xml:id="dc/d7f/classEvalStatement_1aca4069dd093c588724a5516598ec413f">
+                <title>EvalStatement::EvalStatement (ExpressionNode *expression)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="dc/d7f/classEvalStatement_1a448472b7904f2733d4b027b873ff6508">
+                <title>EvalStatement::~EvalStatement ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="dc/d7f/classEvalStatement_1a6d3e0e2db3ed8cbdaa3250bf959a0be7">
+                <title>char * EvalStatement::Execute ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="dc/d7f/classEvalStatement_1acd7b7d1c82b17b819c899ae574681b79">
+                <title>SyntaxNode * EvalStatement::GetNext ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="dc/d7f/classEvalStatement_1a1b689a777c3022a40d042410fc3fac77">
+                <title>void EvalStatement::Attach (SyntaxNode *node)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="dc/d7f/classEvalStatement_1a64257c56418096b0615280fe19008f88">
+                <title>void EvalStatement::Detach (SyntaxNode *node)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="dc/d7f/classEvalStatement_1a9b77319533fab13e48c720b47a4d26b7">
+                <title>void EvalStatement::Replace (SyntaxNode *n, SyntaxNode *x)</title> <emphasis></emphasis>
+                
+            </section>
+</section>

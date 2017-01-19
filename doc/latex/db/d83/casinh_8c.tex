@@ -1,0 +1,98 @@
+\hypertarget{casinh_8c}{}\section{lib/cplex/casinh.c File Reference}
+\label{casinh_8c}\index{lib/cplex/casinh.\+c@{lib/cplex/casinh.\+c}}
+{\ttfamily \#include \char`\"{}prim.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}math.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}complex.\+h\char`\"{}}\\*
+Include dependency graph for casinh.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=221pt]{d1/d6d/casinh_8c__incl}
+\end{center}
+\end{figure}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{unioncomplex}{complex} \hyperlink{casinh_8c_a333c9aa02a58163693f67e1d47aa9887}{casinh} (\hyperlink{unioncomplex}{complex} z)
+\begin{DoxyCompactList}\small\item\em Inverse hyperbolic sine of complex number. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\index{casinh.\+c@{casinh.\+c}!casinh@{casinh}}
+\index{casinh@{casinh}!casinh.\+c@{casinh.\+c}}
+\subsubsection[{\texorpdfstring{casinh(complex z)}{casinh(complex z)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf complex} casinh (
+\begin{DoxyParamCaption}
+\item[{{\bf complex}}]{z}
+\end{DoxyParamCaption}
+)}\hypertarget{casinh_8c_a333c9aa02a58163693f67e1d47aa9887}{}\label{casinh_8c_a333c9aa02a58163693f67e1d47aa9887}
+
+
+Inverse hyperbolic sine of complex number. 
+
+\begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+14/09/15
+\end{DoxyDate}
+Inverse hyperbolic sine expressed using complex logarithms\+: 
+\begin{DoxyPre}
+asinh(z) = log(z + sqrt(z*z + 1))\end{DoxyPre}
+
+
+
+\begin{DoxyPre}With branch cuts: -i INF to -i and i to i INF\end{DoxyPre}
+
+
+
+\begin{DoxyPre}Domain: -INF to INF
+Range:  -INF to INF
+\end{DoxyPre}
+ More info is available at Wikipedia\+: ~\newline
+ \href{http://en.wikipedia.org/wiki/Inverse_hyperbolic_function#Logarithmic_representation}{\tt http\+://en.\+wikipedia.\+org/wiki/\+Inverse\+\_\+hyperbolic\+\_\+function\#\+Logarithmic\+\_\+representation} 
+
+Definition at line 48 of file casinh.\+c.
+
+
+
+References cadd(), clog(), cmul(), cpack(), and csqrt().
+
+
+
+Referenced by Complex\+Number\+::\+Hyp\+Arc\+Sine().
+
+
+\begin{DoxyCode}
+49 \{
+50     \hyperlink{unioncomplex}{complex} \hyperlink{ktan_8c_a7cf126dbeb6f30c606e3b42fea65cfef}{one} = \hyperlink{complex_8h_a980e6e049f7902b05fc9eb5614b07a5c}{cpack}(1.0, 0.0);
+51     \hyperlink{unioncomplex}{complex} a = \hyperlink{complex_8h_a02d8fd1ce9c4fa4e25b1fa676ca96d4e}{cadd}(\hyperlink{complex_8h_a340ad83d03bcc727538d25dcf6dd26e9}{cmul}(z, z), one);
+52     \hyperlink{unioncomplex}{complex} b = \hyperlink{complex_8h_a02d8fd1ce9c4fa4e25b1fa676ca96d4e}{cadd}(z, \hyperlink{complex_8h_afe5b814a44414f20d0f98fe974737edd}{csqrt}(a));
+53     \hyperlink{unioncomplex}{complex} w = \hyperlink{complex_8h_a888b8eb5ccc46411e68f6d7b99035888}{clog}(b);
+54     \textcolor{keywordflow}{return} w;
+55 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{db/d83/casinh_8c_a333c9aa02a58163693f67e1d47aa9887_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=310pt]{db/d83/casinh_8c_a333c9aa02a58163693f67e1d47aa9887_icgraph}
+\end{center}
+\end{figure}
+
+

@@ -1,0 +1,91 @@
+\hypertarget{catanh_8c}{}\section{lib/cplex/catanh.c File Reference}
+\label{catanh_8c}\index{lib/cplex/catanh.\+c@{lib/cplex/catanh.\+c}}
+{\ttfamily \#include \char`\"{}prim.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}math.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}complex.\+h\char`\"{}}\\*
+Include dependency graph for catanh.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=221pt]{d3/dc3/catanh_8c__incl}
+\end{center}
+\end{figure}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{unioncomplex}{complex} \hyperlink{catanh_8c_a0808614b4e465dc4b4827382a9f77447}{catanh} (\hyperlink{unioncomplex}{complex} z)
+\begin{DoxyCompactList}\small\item\em Inverse hyperbolic tangent of complex number. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\index{catanh.\+c@{catanh.\+c}!catanh@{catanh}}
+\index{catanh@{catanh}!catanh.\+c@{catanh.\+c}}
+\subsubsection[{\texorpdfstring{catanh(complex z)}{catanh(complex z)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf complex} catanh (
+\begin{DoxyParamCaption}
+\item[{{\bf complex}}]{z}
+\end{DoxyParamCaption}
+)}\hypertarget{catanh_8c_a0808614b4e465dc4b4827382a9f77447}{}\label{catanh_8c_a0808614b4e465dc4b4827382a9f77447}
+
+
+Inverse hyperbolic tangent of complex number. 
+
+\begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+14/09/15
+\end{DoxyDate}
+Inverse hyperbolic tangent expressed using complex logarithms\+: 
+\begin{DoxyPre}
+atanh(z) = 1/2 * ((log(1 + z) - log(1 - z))
+\end{DoxyPre}
+ More info is available at Wikipedia\+: ~\newline
+ \href{http://en.wikipedia.org/wiki/Inverse_hyperbolic_function#Logarithmic_representation}{\tt http\+://en.\+wikipedia.\+org/wiki/\+Inverse\+\_\+hyperbolic\+\_\+function\#\+Logarithmic\+\_\+representation} 
+
+Definition at line 43 of file catanh.\+c.
+
+
+
+References cadd(), clog(), cmul(), cpack(), and csub().
+
+
+
+Referenced by Complex\+Number\+::\+Hyp\+Arc\+Tangent().
+
+
+\begin{DoxyCode}
+44 \{
+45     \hyperlink{unioncomplex}{complex} \hyperlink{cosh_8c_a701d1f7de8380226dbc8825672ae4ef0}{half} = \hyperlink{complex_8h_a980e6e049f7902b05fc9eb5614b07a5c}{cpack}(0.5, 0.0);
+46     \hyperlink{unioncomplex}{complex} \hyperlink{ktan_8c_a7cf126dbeb6f30c606e3b42fea65cfef}{one} = \hyperlink{complex_8h_a980e6e049f7902b05fc9eb5614b07a5c}{cpack}(1.0, 0.0);
+47     \hyperlink{unioncomplex}{complex} a = \hyperlink{complex_8h_a888b8eb5ccc46411e68f6d7b99035888}{clog}(\hyperlink{complex_8h_a02d8fd1ce9c4fa4e25b1fa676ca96d4e}{cadd}(one, z));
+48     \hyperlink{unioncomplex}{complex} b = \hyperlink{complex_8h_a888b8eb5ccc46411e68f6d7b99035888}{clog}(\hyperlink{complex_8h_a46bb0dd64d87c3aeb85417d1dadf6ddd}{csub}(one, z));
+49     \hyperlink{unioncomplex}{complex} c = \hyperlink{complex_8h_a46bb0dd64d87c3aeb85417d1dadf6ddd}{csub}(a, b);
+50     \hyperlink{unioncomplex}{complex} w = \hyperlink{complex_8h_a340ad83d03bcc727538d25dcf6dd26e9}{cmul}(half, c);
+51     \textcolor{keywordflow}{return} w;
+52 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d2/da0/catanh_8c_a0808614b4e465dc4b4827382a9f77447_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=326pt]{d2/da0/catanh_8c_a0808614b4e465dc4b4827382a9f77447_icgraph}
+\end{center}
+\end{figure}
+
+

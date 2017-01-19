@@ -1,0 +1,672 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="da/de2/structNumber">
+<title>Number struct Reference</title>
+<para>
+    <programlisting>#include <link linkend="dd/d30/numb_8h">&lt;numb.h&gt;</link></programlisting>
+</para>
+<para>Inheritance diagram for Number</para>
+<para>
+    <figure>
+        <title>Inheritance graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="../../d0/db6/structNumber__inherit__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+<para>Collaboration diagram for Number</para>
+<para>
+    <figure>
+        <title>Collaboration graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="../../d7/df5/structNumber__coll__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title>Protected Attributes</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>NumberSystem system</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="da/de2/structNumber_1afd3c2f9b4b288e339f741a6e4ae54593">Number</link> (
+<link linkend="dd/d30/numb_8h_1a1475a201d2346881ce88dfbacf628c7d">NumberSystem</link> system)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>virtual <link linkend="da/de2/structNumber_1abafeb830a1397e50435815a183228739">~Number</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>virtual <link linkend="da/de2/structNumber">Number</link> * <link linkend="da/de2/structNumber_1af59101b8a549616be51212fa1c17785e">Clone</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>virtual int <link linkend="da/de2/structNumber_1aa2c4b207ac557a8bdbc1cf5696d37160">GetIntegerValue</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>virtual double <link linkend="da/de2/structNumber_1a83da654d465f1344162ce8b8f8c564b9">GetRealValue</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>virtual <link linkend="de/d03/platform_8h_1a1062901a7428fdd9c7f180f5e01ea056">bool</link> <link linkend="da/de2/structNumber_1a037b461c2c9189c00b11f395a325735d">PureComplexValue</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>virtual int <link linkend="da/de2/structNumber_1a283da553cc9b328c3805611f2d96523d">GetPrecedence</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>virtual int <link linkend="da/de2/structNumber_1a63541fd80102c9fc36f8f913446700df">GetDefaultPrecedence</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>virtual <link linkend="da/de2/structNumber">Number</link> * <link linkend="da/de2/structNumber_1a4283e401f772614fc566db78087cf860">Unary</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>virtual <link linkend="da/de2/structNumber">Number</link> * <link linkend="da/de2/structNumber_1af38172a47d725f10b8586846cb06e8a4">Add</link> (
+<link linkend="da/de2/structNumber">Number</link> * other)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>virtual <link linkend="da/de2/structNumber">Number</link> * <link linkend="da/de2/structNumber_1ae64075f6f73ded559499d3156bde0bdb">Sub</link> (
+<link linkend="da/de2/structNumber">Number</link> * other)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>virtual <link linkend="da/de2/structNumber">Number</link> * <link linkend="da/de2/structNumber_1ab853199817c9cd4e43c43aaedc4eef35">Mul</link> (
+<link linkend="da/de2/structNumber">Number</link> * other)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>virtual <link linkend="da/de2/structNumber">Number</link> * <link linkend="da/de2/structNumber_1a63917f8ad27c63f6616107d480ef9b5e">Div</link> (
+<link linkend="da/de2/structNumber">Number</link> * other)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>virtual <link linkend="da/de2/structNumber">Number</link> * <link linkend="da/de2/structNumber_1ad258f0357483820672fe2bc41a569dd3">Raise</link> (
+<link linkend="da/de2/structNumber">Number</link> * exponent)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>virtual <link linkend="da/de2/structNumber">Number</link> * <link linkend="da/de2/structNumber_1ab855ebca1f99be092914ae41aff52204">Signum</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>virtual <link linkend="da/de2/structNumber">Number</link> * <link linkend="da/de2/structNumber_1a18dc6a153c55c3b0295b5d5fe1f6ab7d">Trunc</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>virtual <link linkend="da/de2/structNumber">Number</link> * <link linkend="da/de2/structNumber_1abc34ae359f4b660cccd21d36e7e46334">Round</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>virtual <link linkend="da/de2/structNumber">Number</link> * <link linkend="da/de2/structNumber_1ae0f6a7e7552384f7a2781aaf0c6c2837">Floor</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>virtual <link linkend="da/de2/structNumber">Number</link> * <link linkend="da/de2/structNumber_1af6cc655e7d0eeb4f68a091456dddc25a">Ceiling</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>virtual <link linkend="da/de2/structNumber">Number</link> * <link linkend="da/de2/structNumber_1acdbe13cd9862bb73225a893fb14de2a5">Absolute</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>virtual <link linkend="da/de2/structNumber">Number</link> * <link linkend="da/de2/structNumber_1a388fb639e9a8232cb4083e581352311c">SquareRoot</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>virtual <link linkend="da/de2/structNumber">Number</link> * <link linkend="da/de2/structNumber_1a2c1fed99c53bc717da667e037fbf871b">CubeRoot</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>virtual <link linkend="da/de2/structNumber">Number</link> * <link linkend="da/de2/structNumber_1a3048907149c34115a40461c848a34e9e">Reciprocal</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>virtual <link linkend="da/de2/structNumber">Number</link> * <link linkend="da/de2/structNumber_1a50a23b917c744ce16f0a4eb4e6f76071">Log</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>virtual <link linkend="da/de2/structNumber">Number</link> * <link linkend="da/de2/structNumber_1a8ace103bb7d32fabc11b65d00ab70f6a">Log2</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>virtual <link linkend="da/de2/structNumber">Number</link> * <link linkend="da/de2/structNumber_1a53f6451df2a81d0ab48887e41f9c98f9">Log10</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>virtual <link linkend="da/de2/structNumber">Number</link> * <link linkend="da/de2/structNumber_1a493b5d26f9791985315624a0e9cb9dd6">Sine</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>virtual <link linkend="da/de2/structNumber">Number</link> * <link linkend="da/de2/structNumber_1a39425d97b36e17af4a26f8494a4b6ac4">Cosine</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>virtual <link linkend="da/de2/structNumber">Number</link> * <link linkend="da/de2/structNumber_1a4a49daab06d7311db480e2cf81e1da67">Tangent</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>virtual <link linkend="da/de2/structNumber">Number</link> * <link linkend="da/de2/structNumber_1a267a79888fd185d689e2877b449128d8">Cosecant</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>virtual <link linkend="da/de2/structNumber">Number</link> * <link linkend="da/de2/structNumber_1a63ddfeb7b264f76845a0414dc8ade3e6">Secant</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>virtual <link linkend="da/de2/structNumber">Number</link> * <link linkend="da/de2/structNumber_1a651d9569abac017baaac7b2edb8f09a8">Cotangent</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>virtual <link linkend="da/de2/structNumber">Number</link> * <link linkend="da/de2/structNumber_1aabfd7afb2309911d8f1bc26b6927e4ef">ArcSine</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>virtual <link linkend="da/de2/structNumber">Number</link> * <link linkend="da/de2/structNumber_1a0056c25bf82bef6565963740ebab7517">ArcCosine</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>virtual <link linkend="da/de2/structNumber">Number</link> * <link linkend="da/de2/structNumber_1aaf001a24205a4062b2cfc79873d2884d">ArcTangent</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>virtual <link linkend="da/de2/structNumber">Number</link> * <link linkend="da/de2/structNumber_1a31dc5fa52529b5a7e76459bb984505e8">ArcCosecant</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>virtual <link linkend="da/de2/structNumber">Number</link> * <link linkend="da/de2/structNumber_1aa7056bfff596b8d78757cac21a708094">ArcSecant</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>virtual <link linkend="da/de2/structNumber">Number</link> * <link linkend="da/de2/structNumber_1a859439f92698a61407238c4be5c1f1f5">ArcCotangent</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>virtual <link linkend="da/de2/structNumber">Number</link> * <link linkend="da/de2/structNumber_1a5e05df2319f17aa33da95560f9274042">HypSine</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>virtual <link linkend="da/de2/structNumber">Number</link> * <link linkend="da/de2/structNumber_1abab40aa368d554af3e94c410aeb6c636">HypCosine</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>virtual <link linkend="da/de2/structNumber">Number</link> * <link linkend="da/de2/structNumber_1a0e121d7ed52086bf35a166355101051a">HypTangent</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>virtual <link linkend="da/de2/structNumber">Number</link> * <link linkend="da/de2/structNumber_1a0f75e1e5a241d6a639e20d8a6c427541">HypCosecant</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>virtual <link linkend="da/de2/structNumber">Number</link> * <link linkend="da/de2/structNumber_1a88a320bdba4f338347207f82f71bd287">HypSecant</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>virtual <link linkend="da/de2/structNumber">Number</link> * <link linkend="da/de2/structNumber_1a854b3416ab11151bf64247fcfeb69757">HypCotangent</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>virtual <link linkend="da/de2/structNumber">Number</link> * <link linkend="da/de2/structNumber_1aab0a62427355e8139c6d853c7c7ef8d2">HypArcSine</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>virtual <link linkend="da/de2/structNumber">Number</link> * <link linkend="da/de2/structNumber_1ae919ea5844a071f26f61a069055429ea">HypArcCosine</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>virtual <link linkend="da/de2/structNumber">Number</link> * <link linkend="da/de2/structNumber_1aa1af1928e54054a73c43340fd5238299">HypArcTangent</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>virtual <link linkend="da/de2/structNumber">Number</link> * <link linkend="da/de2/structNumber_1a161ee9528f4ba95e95e1310d840f7092">HypArcCosecant</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>virtual <link linkend="da/de2/structNumber">Number</link> * <link linkend="da/de2/structNumber_1aa58d792da89672016b2f58beea9009d7">HypArcSecant</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>virtual <link linkend="da/de2/structNumber">Number</link> * <link linkend="da/de2/structNumber_1a41bd8f9dadae875b260ee4fe50280d3e">HypArcCotangent</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title>Member Data Documentation</title>
+        </section>
+            <section xml:id="da/de2/structNumber_1afd3c2f9b4b288e339f741a6e4ae54593">
+                <title>Number::Number (NumberSystem system)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="da/de2/structNumber_1abafeb830a1397e50435815a183228739">
+                <title>virtual Number::~Number ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="da/de2/structNumber_1af59101b8a549616be51212fa1c17785e">
+                <title>virtual Number* Number::Clone ()=0</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="da/de2/structNumber_1aa2c4b207ac557a8bdbc1cf5696d37160">
+                <title>virtual int Number::GetIntegerValue ()=0</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="da/de2/structNumber_1a83da654d465f1344162ce8b8f8c564b9">
+                <title>virtual double Number::GetRealValue ()=0</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="da/de2/structNumber_1a037b461c2c9189c00b11f395a325735d">
+                <title>virtual bool Number::PureComplexValue ()=0</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="da/de2/structNumber_1a283da553cc9b328c3805611f2d96523d">
+                <title>virtual int Number::GetPrecedence ()=0</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="da/de2/structNumber_1a63541fd80102c9fc36f8f913446700df">
+                <title>virtual int Number::GetDefaultPrecedence ()=0</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="da/de2/structNumber_1a4283e401f772614fc566db78087cf860">
+                <title>virtual Number* Number::Unary ()=0</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="da/de2/structNumber_1af38172a47d725f10b8586846cb06e8a4">
+                <title>virtual Number* Number::Add (Number *other)=0</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="da/de2/structNumber_1ae64075f6f73ded559499d3156bde0bdb">
+                <title>virtual Number* Number::Sub (Number *other)=0</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="da/de2/structNumber_1ab853199817c9cd4e43c43aaedc4eef35">
+                <title>virtual Number* Number::Mul (Number *other)=0</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="da/de2/structNumber_1a63917f8ad27c63f6616107d480ef9b5e">
+                <title>virtual Number* Number::Div (Number *other)=0</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="da/de2/structNumber_1ad258f0357483820672fe2bc41a569dd3">
+                <title>virtual Number* Number::Raise (Number *exponent)=0</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="da/de2/structNumber_1ab855ebca1f99be092914ae41aff52204">
+                <title>virtual Number* Number::Signum ()=0</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="da/de2/structNumber_1a18dc6a153c55c3b0295b5d5fe1f6ab7d">
+                <title>virtual Number* Number::Trunc ()=0</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="da/de2/structNumber_1abc34ae359f4b660cccd21d36e7e46334">
+                <title>virtual Number* Number::Round ()=0</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="da/de2/structNumber_1ae0f6a7e7552384f7a2781aaf0c6c2837">
+                <title>virtual Number* Number::Floor ()=0</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="da/de2/structNumber_1af6cc655e7d0eeb4f68a091456dddc25a">
+                <title>virtual Number* Number::Ceiling ()=0</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="da/de2/structNumber_1acdbe13cd9862bb73225a893fb14de2a5">
+                <title>virtual Number* Number::Absolute ()=0</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="da/de2/structNumber_1a388fb639e9a8232cb4083e581352311c">
+                <title>virtual Number* Number::SquareRoot ()=0</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="da/de2/structNumber_1a2c1fed99c53bc717da667e037fbf871b">
+                <title>virtual Number* Number::CubeRoot ()=0</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="da/de2/structNumber_1a3048907149c34115a40461c848a34e9e">
+                <title>virtual Number* Number::Reciprocal ()=0</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="da/de2/structNumber_1a50a23b917c744ce16f0a4eb4e6f76071">
+                <title>virtual Number* Number::Log ()=0</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="da/de2/structNumber_1a8ace103bb7d32fabc11b65d00ab70f6a">
+                <title>virtual Number* Number::Log2 ()=0</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="da/de2/structNumber_1a53f6451df2a81d0ab48887e41f9c98f9">
+                <title>virtual Number* Number::Log10 ()=0</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="da/de2/structNumber_1a493b5d26f9791985315624a0e9cb9dd6">
+                <title>virtual Number* Number::Sine ()=0</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="da/de2/structNumber_1a39425d97b36e17af4a26f8494a4b6ac4">
+                <title>virtual Number* Number::Cosine ()=0</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="da/de2/structNumber_1a4a49daab06d7311db480e2cf81e1da67">
+                <title>virtual Number* Number::Tangent ()=0</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="da/de2/structNumber_1a267a79888fd185d689e2877b449128d8">
+                <title>virtual Number* Number::Cosecant ()=0</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="da/de2/structNumber_1a63ddfeb7b264f76845a0414dc8ade3e6">
+                <title>virtual Number* Number::Secant ()=0</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="da/de2/structNumber_1a651d9569abac017baaac7b2edb8f09a8">
+                <title>virtual Number* Number::Cotangent ()=0</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="da/de2/structNumber_1aabfd7afb2309911d8f1bc26b6927e4ef">
+                <title>virtual Number* Number::ArcSine ()=0</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="da/de2/structNumber_1a0056c25bf82bef6565963740ebab7517">
+                <title>virtual Number* Number::ArcCosine ()=0</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="da/de2/structNumber_1aaf001a24205a4062b2cfc79873d2884d">
+                <title>virtual Number* Number::ArcTangent ()=0</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="da/de2/structNumber_1a31dc5fa52529b5a7e76459bb984505e8">
+                <title>virtual Number* Number::ArcCosecant ()=0</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="da/de2/structNumber_1aa7056bfff596b8d78757cac21a708094">
+                <title>virtual Number* Number::ArcSecant ()=0</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="da/de2/structNumber_1a859439f92698a61407238c4be5c1f1f5">
+                <title>virtual Number* Number::ArcCotangent ()=0</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="da/de2/structNumber_1a5e05df2319f17aa33da95560f9274042">
+                <title>virtual Number* Number::HypSine ()=0</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="da/de2/structNumber_1abab40aa368d554af3e94c410aeb6c636">
+                <title>virtual Number* Number::HypCosine ()=0</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="da/de2/structNumber_1a0e121d7ed52086bf35a166355101051a">
+                <title>virtual Number* Number::HypTangent ()=0</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="da/de2/structNumber_1a0f75e1e5a241d6a639e20d8a6c427541">
+                <title>virtual Number* Number::HypCosecant ()=0</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="da/de2/structNumber_1a88a320bdba4f338347207f82f71bd287">
+                <title>virtual Number* Number::HypSecant ()=0</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="da/de2/structNumber_1a854b3416ab11151bf64247fcfeb69757">
+                <title>virtual Number* Number::HypCotangent ()=0</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="da/de2/structNumber_1aab0a62427355e8139c6d853c7c7ef8d2">
+                <title>virtual Number* Number::HypArcSine ()=0</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="da/de2/structNumber_1ae919ea5844a071f26f61a069055429ea">
+                <title>virtual Number* Number::HypArcCosine ()=0</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="da/de2/structNumber_1aa1af1928e54054a73c43340fd5238299">
+                <title>virtual Number* Number::HypArcTangent ()=0</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="da/de2/structNumber_1a161ee9528f4ba95e95e1310d840f7092">
+                <title>virtual Number* Number::HypArcCosecant ()=0</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="da/de2/structNumber_1aa58d792da89672016b2f58beea9009d7">
+                <title>virtual Number* Number::HypArcSecant ()=0</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="da/de2/structNumber_1a41bd8f9dadae875b260ee4fe50280d3e">
+                <title>virtual Number* Number::HypArcCotangent ()=0</title> <emphasis></emphasis>
+                
+            </section>
+</section>

@@ -1,0 +1,94 @@
+.TH "StandardTask" 3 "Thu Jan 19 2017" "Version 1.6.0" "amath" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+StandardTask \- Encapsulates calls to POSIX task\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <task_stdc\&.h>\fP
+.PP
+Inherits \fBTaskBase\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBStandardTask\fP ()"
+.br
+.ti -1c
+.RI "\fB~StandardTask\fP ()"
+.br
+.ti -1c
+.RI "void \fBStart\fP (\fBThreadBase\fP *thread)"
+.br
+.ti -1c
+.RI "void \fBWaitExit\fP ()"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Encapsulates calls to POSIX task\&. 
+
+Based on fork and wait\&. 
+.PP
+Definition at line 48 of file task_stdc\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "StandardTask::StandardTask ()"
+
+.PP
+Definition at line 37 of file task_stdc\&.cpp\&.
+.PP
+.nf
+38 { }
+.fi
+.SS "StandardTask::~StandardTask ()"
+
+.PP
+Definition at line 40 of file task_stdc\&.cpp\&.
+.PP
+.nf
+41 { }
+.fi
+.SH "Member Function Documentation"
+.PP 
+.SS "void StandardTask::Start (\fBThreadBase\fP * thread)\fC [virtual]\fP"
+
+.PP
+Implements \fBTaskBase\fP\&.
+.PP
+Definition at line 43 of file task_stdc\&.cpp\&.
+.PP
+References ThreadBase::Run()\&.
+.PP
+.nf
+44 {
+45     pid_t childpid = fork();
+46 
+47     // fork() returns 0 to the child process
+48     if (childpid == 0)
+49     {
+50         thread->Run();
+51         exit(0);
+52     }
+53 }
+.fi
+.SS "void StandardTask::WaitExit ()\fC [virtual]\fP"
+
+.PP
+Implements \fBTaskBase\fP\&.
+.PP
+Definition at line 55 of file task_stdc\&.cpp\&.
+.PP
+.nf
+56 {
+57     wait(NULL);
+58 }
+.fi
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for amath from the source code\&.

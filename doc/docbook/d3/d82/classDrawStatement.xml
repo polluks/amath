@@ -1,0 +1,88 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="d3/d82/classDrawStatement">
+<title>DrawStatement class Reference</title>
+<para>
+    <programlisting>#include <link linkend="dd/d6a/statements_8h">&lt;statements.h&gt;</link></programlisting>
+</para>
+<para>Inheritance diagram for DrawStatement</para>
+<para>
+    <figure>
+        <title>Inheritance graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="../../d9/d4b/classDrawStatement__inherit__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+<para>Collaboration diagram for DrawStatement</para>
+<para>
+    <figure>
+        <title>Collaboration graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="../../d8/d75/classDrawStatement__coll__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+        <section>
+            <title>Private Attributes</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>char * name</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>char * parameter</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d3/d82/classDrawStatement_1a370abbf650f311ecbcc9ff5faf9a451c">DrawStatement</link> (
+const char * name, const char * parameter)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d3/d82/classDrawStatement_1a83bf222c75c05d3a083b1d5d68d24ebc">~DrawStatement</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>char * <link linkend="d3/d82/classDrawStatement_1af3be5149199ab9940b43ee5a2360ba80">Execute</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title>Member Data Documentation</title>
+        </section>
+            <section xml:id="d3/d82/classDrawStatement_1a370abbf650f311ecbcc9ff5faf9a451c">
+                <title>DrawStatement::DrawStatement (const char *name, const char *parameter)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d3/d82/classDrawStatement_1a83bf222c75c05d3a083b1d5d68d24ebc">
+                <title>DrawStatement::~DrawStatement ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d3/d82/classDrawStatement_1af3be5149199ab9940b43ee5a2360ba80">
+                <title>char * DrawStatement::Execute ()</title> <emphasis></emphasis>
+                
+            </section>
+</section>

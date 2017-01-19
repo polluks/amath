@@ -1,0 +1,210 @@
+.TH "DeleteStatement" 3 "Thu Jan 19 2017" "Version 1.6.0" "amath" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+DeleteStatement \- Delete variable or function\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <statements\&.h>\fP
+.PP
+Inherits \fBStatementNode\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBDeleteStatement\fP (\fBSymbol\fP symbol)"
+.br
+.RI "\fIConstructor used to delete either all variable or functions\&. \fP"
+.ti -1c
+.RI "\fBDeleteStatement\fP (const char *\fBname\fP)"
+.br
+.RI "\fIConstructor used to delete a \fBVariable\fP\&. \fP"
+.ti -1c
+.RI "\fBDeleteStatement\fP (const char *\fBname\fP, const char *\fBargument\fP)"
+.br
+.RI "\fIConstructor used to delete a function\&. \fP"
+.ti -1c
+.RI "\fB~DeleteStatement\fP ()"
+.br
+.ti -1c
+.RI "char * \fBExecute\fP ()"
+.br
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBSymbol\fP \fBtype\fP"
+.br
+.ti -1c
+.RI "char * \fBname\fP"
+.br
+.ti -1c
+.RI "char * \fBargument\fP"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Detailed Description"
+.PP 
+Delete variable or function\&. 
+.PP
+Definition at line 191 of file statements\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "DeleteStatement::DeleteStatement (\fBSymbol\fP symbol)"
+
+.PP
+Constructor used to delete either all variable or functions\&. 
+.PP
+Definition at line 361 of file statements\&.cpp\&.
+.PP
+References argument, name, and type\&.
+.PP
+Referenced by Parser::ParseDeleteStatement()\&.
+.PP
+.nf
+362 {
+363     type = symbol;
+364     name = NOMEM;
+365     argument = NOMEM;
+366 }
+.fi
+.SS "DeleteStatement::DeleteStatement (const char * name)"
+
+.PP
+Constructor used to delete a \fBVariable\fP\&. 
+.PP
+Definition at line 372 of file statements\&.cpp\&.
+.PP
+References AllocAndCopy(), argument, name, StatementNode::StatementNode(), symvariable, and type\&.
+.PP
+Referenced by Parser::ParseDeleteStatement()\&.
+.PP
+.nf
+372                                                  :
+373     StatementNode()
+374 {
+375     type = symvariable;
+376     AllocAndCopy(&this->name, name);
+377     argument = NOMEM;
+378 }
+.fi
+.SS "DeleteStatement::DeleteStatement (const char * name, const char * argument)"
+
+.PP
+Constructor used to delete a function\&. 
+.PP
+Definition at line 384 of file statements\&.cpp\&.
+.PP
+References AllocAndCopy(), argument, name, StatementNode::StatementNode(), symfunction, and type\&.
+.PP
+Referenced by Parser::ParseDeleteStatement()\&.
+.PP
+.nf
+384                                                                        :
+385     StatementNode()
+386 {
+387     type = symfunction;
+388     AllocAndCopy(&this->name, name);
+389     AllocAndCopy(&this->argument, argument);
+390 }
+.fi
+.SS "DeleteStatement::~DeleteStatement ()"
+
+.PP
+Definition at line 393 of file statements\&.cpp\&.
+.PP
+References argument, and name\&.
+.PP
+.nf
+394 {
+395     if (name != NOMEM) {
+396         delete [] name;
+397     }
+398 
+399     if (argument != NOMEM) {
+400         delete [] argument;
+401     }
+402 }
+.fi
+.SH "Member Function Documentation"
+.PP 
+.SS "char * DeleteStatement::Execute ()\fC [virtual]\fP"
+
+.PP
+Implements \fBStatementNode\fP\&.
+.PP
+Definition at line 404 of file statements\&.cpp\&.
+.PP
+References CharBuffer::Append(), argument, VariableList::Clear(), FunctionList::Clear(), VariableList::Delete(), FunctionList::Delete(), CharBuffer::Empty(), CharBuffer::EnsureSize(), Program::Functions, CharBuffer::GetString(), name, SyntaxNode::output, StrLen(), symfunction, symvariable, type, and Program::Variables\&.
+.PP
+.nf
+405 {
+406     bool success = true;
+407     output->Empty();
+408 
+409     if (type == symvariable && name == NOMEM) {
+410         Program->Variables->Clear();
+411     } else if (type == symvariable && name != NOMEM) {
+412         success = Program->Variables->Delete(name);
+413         const char *msg = HELPVARNDEF;
+414 
+415         output->EnsureSize(
+416             StrLen(msg) +
+417             StrLen(name) +
+418             StrLen(NEWLINE) + 1);
+419 
+420         output->Append(msg);
+421         output->Append(name);
+422         output->Append(NEWLINE);
+423 
+424     } else if (type == symfunction && name == NOMEM) {
+425         Program->Functions->Clear();
+426     } else if (type == symfunction && name != NOMEM) {
+427         success = Program->Functions->Delete(name, argument);
+428         const char *msg = HELPFUNNDEF;
+429 
+430         output->EnsureSize(
+431             StrLen(msg) +
+432             StrLen(name) + 2 +
+433             StrLen(argument) +
+434             StrLen(NEWLINE) + 1);
+435 
+436         output->Append(msg);
+437         output->Append(name);
+438         output->Append("(");
+439         output->Append(argument);
+440         output->Append(")");
+441         output->Append(NEWLINE);
+442     }
+443 
+444     return (char*)(success ? EMPTYSTRING : output->GetString());
+445 }
+.fi
+.SH "Member Data Documentation"
+.PP 
+.SS "char* DeleteStatement::argument\fC [private]\fP"
+
+.PP
+Definition at line 202 of file statements\&.h\&.
+.PP
+Referenced by DeleteStatement(), Execute(), and ~DeleteStatement()\&.
+.SS "char* DeleteStatement::name\fC [private]\fP"
+
+.PP
+Definition at line 201 of file statements\&.h\&.
+.PP
+Referenced by DeleteStatement(), Execute(), and ~DeleteStatement()\&.
+.SS "\fBSymbol\fP DeleteStatement::type\fC [private]\fP"
+
+.PP
+Definition at line 200 of file statements\&.h\&.
+.PP
+Referenced by DeleteStatement(), and Execute()\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for amath from the source code\&.

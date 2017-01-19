@@ -1,0 +1,27 @@
+<map id="StandardProgram::StandardProgram" name="StandardProgram::StandardProgram">
+<area shape="rect" id="node2" href="$dc/db5/classProgram.html#aaefaa0df08f3484476fc4d61e97acbdc" title="Program::Program" alt="" coords="236,247,364,274"/>
+<area shape="rect" id="node3" href="$d5/d5a/io_8cpp.html#aaf891622b11e0bb888ebf08612884aa8" title="CreateFilesystem" alt="" coords="1509,8,1634,35"/>
+<area shape="rect" id="node4" href="$d5/d5a/io_8cpp.html#a28bdfc208e3840f49d1af4a4196013e1" title="CreateLanguage" alt="" coords="461,70,579,96"/>
+<area shape="rect" id="node16" href="$d5/d5a/io_8cpp.html#ae6bd8b440ad1736316165c2f8aac43bf" title="CreatePreferences" alt="" coords="455,120,585,147"/>
+<area shape="rect" id="node17" href="$df/d40/classDecimalSystem.html#a0622c834a7a4a0dc452ab4cab8d84902" title="DecimalSystem::DecimalSystem" alt="" coords="412,171,628,198"/>
+<area shape="rect" id="node19" href="$d1/d79/classFunctionList.html#a602bd0647dbe5ef4911100c52d1c9388" title="FunctionList::FunctionList" alt="" coords="434,222,606,248"/>
+<area shape="rect" id="node21" href="$da/de5/classPreferencesBase.html#a8d693cb289d1f5282f13c0cfb698b8cc" title="PreferencesBase::GetDigits" alt="" coords="427,272,613,299"/>
+<area shape="rect" id="node22" href="$d0/d41/classLanguage.html#a4c214f08d47e84d53f37bcb5b1fe1b65" title="Language::GetFractionPoint" alt="" coords="428,323,612,350"/>
+<area shape="rect" id="node23" href="$d1/d57/classGraphList.html#a7a5c8bcb31e753f7b32cbd7da34db063" title="GraphList::GraphList" alt="" coords="449,374,591,400"/>
+<area shape="rect" id="node24" href="$d2/d49/structRealNumber.html#aa61264f519c95ec9b63ab94c352bcc67" title="RealNumber::RealNumber" alt="" coords="432,475,608,502"/>
+<area shape="rect" id="node26" href="$d3/d0e/classVariableList.html#ab1d9c24d3b93598ee87bc47c9b964ec0" title="VariableList::VariableList" alt="" coords="437,424,603,451"/>
+<area shape="rect" id="node5" href="$d7/db4/classPosixLanguage.html#adec9134e7ac6b7519f9c0de05432a670" title="PosixLanguage::PosixLanguage" alt="" coords="676,59,884,86"/>
+<area shape="rect" id="node7" href="$d6/db6/classStandardLanguage.html#a0d604e2af2f2bf4dc4abbe7b18c05cea" title="StandardLanguage::Standard\lLanguage" alt="" coords="685,110,875,152"/>
+<area shape="rect" id="node6" href="$d0/d41/classLanguage.html#a09448361f9188bceaaeebc5576cd6896" title="Language::Language" alt="" coords="970,63,1113,90"/>
+<area shape="rect" id="node8" href="$d6/db6/classStandardLanguage.html#afd0037d341b94b08497842470007e59b" title="StandardLanguage::LoadCatalogs" alt="" coords="932,118,1151,144"/>
+<area shape="rect" id="node9" href="$d6/db6/classStandardLanguage.html#ab1945e2e3503ce12eac28c0d08234cfb" title="StandardLanguage::GetNextPair" alt="" coords="1199,211,1409,238"/>
+<area shape="rect" id="node12" href="$d6/db6/classStandardLanguage.html#a4fe22e49f3ce358690242d0b1058ccfa" title="StandardLanguage::LoadCatalog" alt="" coords="1199,110,1409,136"/>
+<area shape="rect" id="node10" href="$d6/db6/classStandardLanguage.html#a8a4a4a2879f1e907c17f36dfafdebd66" title="StandardLanguage::GetNextLine" alt="" coords="1733,236,1944,263"/>
+<area shape="rect" id="node11" href="$d6/db6/classStandardLanguage.html#af0078bbe8a06f6e4fb35ddfda1170e19" title="StandardLanguage::SkipComments" alt="" coords="1457,211,1685,238"/>
+<area shape="rect" id="node13" href="$dd/d2a/alloccpy_8c.html#a5bed05c70cb17e541fee570b5dc32e1a" title="Allocate memory and copy a string into the array. " alt="" coords="1519,59,1624,86"/>
+<area shape="rect" id="node14" href="$dc/d84/classCharBuffer.html#a7dfd3feaaf80f318ba44efe15b1ec44b" title="CharBuffer::GetString" alt="" coords="1497,110,1645,136"/>
+<area shape="rect" id="node15" href="$d5/d68/classFilesystemBase.html#adc4a9e1dc189bcd221e3b994bc854d46" title="FilesystemBase::LoadTextFile" alt="" coords="1472,160,1671,187"/>
+<area shape="rect" id="node18" href="$d6/ddc/classPositionalNumeralSystem.html#a923f36569ecc830f17bcf56dd2811754" title="PositionalNumeralSystem\l::PositionalNumeralSystem" alt="" coords="689,176,871,217"/>
+<area shape="rect" id="node20" href="$dc/d84/classCharBuffer.html#a4345e9a5114f5c0292e8f242f26e3a7b" title="Initialize without allocating memory. " alt="" coords="702,339,858,366"/>
+<area shape="rect" id="node25" href="$da/de2/structNumber.html#afd3c2f9b4b288e339f741a6e4ae54593" title="Number::Number" alt="" coords="719,475,841,502"/>
+</map>
