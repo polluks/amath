@@ -1,0 +1,360 @@
+.TH "lib/real/exp.c" 3 "Thu Jan 19 2017" "Version 1.6.0" "amath" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+lib/real/exp.c \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'prim\&.h'\fP
+.br
+\fC#include 'math\&.h'\fP
+.br
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "double \fBexp\fP (double x)"
+.br
+.RI "\fIReturns the exponential of x\&. \fP"
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "static const double \fBone\fP = 1\&.0"
+.br
+.ti -1c
+.RI "static const double \fBhalF\fP [2] = {0\&.5,\-0\&.5,}"
+.br
+.ti -1c
+.RI "static const double \fBhuge\fP = 1\&.0e+300"
+.br
+.ti -1c
+.RI "static const double \fBtwom1000\fP = 9\&.33263618503218878990e\-302"
+.br
+.ti -1c
+.RI "static const double \fBo_threshold\fP = 7\&.09782712893383973096e+02"
+.br
+.ti -1c
+.RI "static const double \fBu_threshold\fP = \-7\&.45133219101941108420e+02"
+.br
+.ti -1c
+.RI "static const double \fBln2HI\fP [2]"
+.br
+.ti -1c
+.RI "static const double \fBln2LO\fP [2]"
+.br
+.ti -1c
+.RI "static const double \fBinvln2\fP = 1\&.44269504088896338700e+00"
+.br
+.ti -1c
+.RI "static const double \fBP1\fP = 1\&.66666666666666019037e\-01"
+.br
+.ti -1c
+.RI "static const double \fBP2\fP = \-2\&.77777777770155933842e\-03"
+.br
+.ti -1c
+.RI "static const double \fBP3\fP = 6\&.61375632143793436117e\-05"
+.br
+.ti -1c
+.RI "static const double \fBP4\fP = \-1\&.65339022054652515390e\-06"
+.br
+.ti -1c
+.RI "static const double \fBP5\fP = 4\&.13813679705723846039e\-08"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "double exp (double x)"
+
+.PP
+Returns the exponential of x\&. 
+.PP
+\fBVersion:\fP
+.RS 4
+1\&.6 
+.RE
+.PP
+\fBDate:\fP
+.RS 4
+04/04/22
+.RE
+.PP
+.PP
+.nf
+
+Method
+  1\&. Argument reduction:
+     Reduce x to an r so that |r| <= 0\&.5*ln2 ~ 0\&.34658\&.
+ Given x, find r and integer k such that
+.fi
+.PP
+.PP
+.PP
+.nf
+              x = k*ln2 + r,  |r| <= 0\&.5*ln2\&.
+.fi
+.PP
+.PP
+.PP
+.nf
+     Here r will be represented as r = hi-lo for better
+ accuracy\&.
+.fi
+.PP
+.PP
+.PP
+.nf
+  2\&. Approximation of exp(r) by a special rational function on
+ the interval [0,0\&.34658]:
+ Write
+     R(r**2) = r*(exp(r)+1)/(exp(r)-1) = 2 + r*r/6 - r**4/360 + \&.\&.\&.
+     We use a special Remes algorithm on [0,0\&.34658] to generate
+    a polynomial of degree 5 to approximate R\&. The maximum error
+ of this polynomial approximation is bounded by 2**-59\&. In
+ other words,
+     R(z) ~ 2\&.0 + P1*z + P2*z**2 + P3*z**3 + P4*z**4 + P5*z**5
+    (where z=r*r, and the values of P1 to P5 are listed below)
+ and
+     |                  5          |     -59
+     | 2\&.0+P1*z+\&.\&.\&.+P5*z   -  R(z) | <= 2
+     |                             |
+ The computation of exp(r) thus becomes
+                            2*r
+    exp(r) = 1 + -------
+                  R - r
+                                r*R1(r)
+           = 1 + r + ----------- (for better accuracy)
+                      2 - R1(r)
+ where
+                 2       4             10
+    R1(r) = r - (P1*r  + P2*r  + \&.\&.\&. + P5*r   )\&.
+.fi
+.PP
+.PP
+.PP
+.nf
+  3\&. Scale back to obtain exp(x):
+ From step 1, we have
+    exp(x) = 2^k * exp(r)
+.fi
+.PP
+.PP
+.PP
+.nf
+Special cases:
+ exp(INF) is INF, exp(NaN) is NaN;
+ exp(-INF) is 0, and
+ for finite argument, only exp(0)=1 is exact\&.
+.fi
+.PP
+.PP
+.PP
+.nf
+Accuracy:
+ according to an error analysis, the error is always less than
+ 1 ulp (unit in the last place)\&.
+.fi
+.PP
+.PP
+.PP
+.nf
+Misc\&. info\&.
+ For IEEE double
+     if x >  7\&.09782712893383973096e+02 then exp(x) overflow
+     if x < -7\&.45133219101941108420e+02 then exp(x) underflow
+.fi
+.PP
+.PP
+.PP
+.nf
+Constants:
+The hexadecimal values are the intended ones for the following
+constants\&. The decimal values may be used, provided that the
+compiler will convert from decimal to binary accurately enough
+to produce the hexadecimal values shown\&.
+.fi
+.PP
+ 
+.PP
+\fBCopyright:\fP
+.RS 4
+Copyright (C) 1993 by Sun Microsystems, Inc\&. All rights reserved\&.  Developed at SunSoft, a Sun Microsystems, Inc\&. business\&. Permission to use, copy, modify, and distribute this software is freely granted, provided that this notice is preserved\&. 
+.RE
+.PP
+
+.PP
+Definition at line 134 of file exp\&.c\&.
+.PP
+References halF, huge, invln2, ln2HI, ln2LO, o_threshold, one, P1, P2, P3, P4, P5, twom1000, and u_threshold\&.
+.PP
+Referenced by cchsh(), cexp(), cosh(), cpow(), and sinh()\&.
+.PP
+.nf
+135 {
+136     double y,hi,lo,c,t;
+137     sword k,xsb;
+138     uword hx;
+139 
+140     lo = 0\&.0;
+141     hi = 0\&.0;
+142 
+143     GET_HIGH_WORD(hx,x);    /* high word of x */
+144     xsb = (hx>>31)&1;       /* sign bit of x */
+145     hx &= 0x7fffffff;       /* high word of |x| */
+146 
+147     /* filter out non-finite argument */
+148     if(hx >= 0x40862E42) {          /* if |x|>=709\&.78\&.\&.\&. */
+149         if(hx>=0x7ff00000) {
+150             uword lx;
+151             GET_LOW_WORD(lx,x);
+152             if(((hx&0xfffff)|lx)!=0)
+153                 return x+x;             /* NaN */
+154             else return (xsb==0)? x:0\&.0; /* exp(+-inf)={inf,0} */
+155         }
+156         if(x > o_threshold) return huge*huge; /* overflow */
+157         if(x < u_threshold) return twom1000*twom1000; /* underflow */
+158     }
+159 
+160     /* argument reduction */
+161     if(hx > 0x3fd62e42) {       /* if  |x| > 0\&.5 ln2 */
+162         if(hx < 0x3FF0A2B2) {       /* and |x| < 1\&.5 ln2 */
+163             hi = x-ln2HI[xsb];
+164             lo=ln2LO[xsb];
+165             k = 1-xsb-xsb;
+166         } else {
+167             k  = (sword)(invln2*x+halF[xsb]);
+168             t  = k;
+169             hi = x - t*ln2HI[0];    /* t*ln2HI is exact here */
+170             lo = t*ln2LO[0];
+171         }
+172         x  = hi - lo;
+173     }
+174     else if(hx < 0x3e300000)  {     /* when |x|<2**-28 */
+175         if(huge+x>one) {
+176             return one+x;   /* trigger inexact */
+177         } else {
+178             k = 0;
+179         }
+180     }
+181     else k = 0;
+182 
+183     /* x is now in primary range */
+184     t  = x*x;
+185     c  = x - t*(P1+t*(P2+t*(P3+t*(P4+t*P5))));
+186     if(k==0)    return one-((x*c)/(c-2\&.0)-x);
+187     else        y = one-((lo-(x*c)/(2\&.0-c))-hi);
+188     if(k >= -1021) {
+189         uword hy;
+190         GET_HIGH_WORD(hy, y);
+191         SET_HIGH_WORD(y, hy + (k<<20)); /* add k to y's exponent */
+192         return y;
+193     } else {
+194         uword hy;
+195         GET_HIGH_WORD(hy, y);
+196         SET_HIGH_WORD(y, hy + ((k+1000)<<20));/* add k to y's exponent */
+197         return y*twom1000;
+198     }
+199 }
+.fi
+.SH "Variable Documentation"
+.PP 
+.SS "const double halF[2] = {0\&.5,\-0\&.5,}\fC [static]\fP"
+
+.PP
+Definition at line 47 of file exp\&.c\&.
+.PP
+Referenced by exp()\&.
+.SS "const double huge = 1\&.0e+300\fC [static]\fP"
+
+.PP
+Definition at line 48 of file exp\&.c\&.
+.PP
+Referenced by exp()\&.
+.SS "const double invln2 = 1\&.44269504088896338700e+00\fC [static]\fP"
+
+.PP
+Definition at line 56 of file exp\&.c\&.
+.PP
+Referenced by exp()\&.
+.SS "const double ln2HI[2]\fC [static]\fP"
+\fBInitial value:\fP
+.PP
+.nf
+={ 6\&.93147180369123816490e-01,  
+         -6\&.93147180369123816490e-01,}
+.fi
+.PP
+Definition at line 52 of file exp\&.c\&.
+.PP
+Referenced by exp()\&.
+.SS "const double ln2LO[2]\fC [static]\fP"
+\fBInitial value:\fP
+.PP
+.nf
+={ 1\&.90821492927058770002e-10,  
+         -1\&.90821492927058770002e-10,}
+.fi
+.PP
+Definition at line 54 of file exp\&.c\&.
+.PP
+Referenced by exp()\&.
+.SS "const double o_threshold = 7\&.09782712893383973096e+02\fC [static]\fP"
+
+.PP
+Definition at line 50 of file exp\&.c\&.
+.PP
+Referenced by exp()\&.
+.SS "const double one = 1\&.0\fC [static]\fP"
+
+.PP
+Definition at line 46 of file exp\&.c\&.
+.PP
+Referenced by exp()\&.
+.SS "const double P1 = 1\&.66666666666666019037e\-01\fC [static]\fP"
+
+.PP
+Definition at line 57 of file exp\&.c\&.
+.PP
+Referenced by exp()\&.
+.SS "const double P2 = \-2\&.77777777770155933842e\-03\fC [static]\fP"
+
+.PP
+Definition at line 58 of file exp\&.c\&.
+.PP
+Referenced by exp()\&.
+.SS "const double P3 = 6\&.61375632143793436117e\-05\fC [static]\fP"
+
+.PP
+Definition at line 59 of file exp\&.c\&.
+.PP
+Referenced by exp()\&.
+.SS "const double P4 = \-1\&.65339022054652515390e\-06\fC [static]\fP"
+
+.PP
+Definition at line 60 of file exp\&.c\&.
+.PP
+Referenced by exp()\&.
+.SS "const double P5 = 4\&.13813679705723846039e\-08\fC [static]\fP"
+
+.PP
+Definition at line 61 of file exp\&.c\&.
+.PP
+Referenced by exp()\&.
+.SS "const double twom1000 = 9\&.33263618503218878990e\-302\fC [static]\fP"
+
+.PP
+Definition at line 49 of file exp\&.c\&.
+.PP
+Referenced by exp()\&.
+.SS "const double u_threshold = \-7\&.45133219101941108420e+02\fC [static]\fP"
+
+.PP
+Definition at line 51 of file exp\&.c\&.
+.PP
+Referenced by exp()\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for amath from the source code\&.

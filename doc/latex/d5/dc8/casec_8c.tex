@@ -1,0 +1,93 @@
+\hypertarget{casec_8c}{}\section{lib/cplex/casec.c File Reference}
+\label{casec_8c}\index{lib/cplex/casec.\+c@{lib/cplex/casec.\+c}}
+{\ttfamily \#include \char`\"{}prim.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}math.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}complex.\+h\char`\"{}}\\*
+Include dependency graph for casec.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=221pt]{de/da9/casec_8c__incl}
+\end{center}
+\end{figure}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{unioncomplex}{complex} \hyperlink{casec_8c_ae509596503bb6ea1142d470882e074a7}{casec} (\hyperlink{unioncomplex}{complex} z)
+\begin{DoxyCompactList}\small\item\em Inverse secant expressed using complex logarithms\+: \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\index{casec.\+c@{casec.\+c}!casec@{casec}}
+\index{casec@{casec}!casec.\+c@{casec.\+c}}
+\subsubsection[{\texorpdfstring{casec(complex z)}{casec(complex z)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf complex} casec (
+\begin{DoxyParamCaption}
+\item[{{\bf complex}}]{z}
+\end{DoxyParamCaption}
+)}\hypertarget{casec_8c_ae509596503bb6ea1142d470882e074a7}{}\label{casec_8c_ae509596503bb6ea1142d470882e074a7}
+
+
+Inverse secant expressed using complex logarithms\+: 
+
+\begin{DoxyVersion}{Version}
+1.\+1 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+14/10/01
+\end{DoxyDate}
+Inverse secant expressed using complex logarithms\+: 
+\begin{DoxyPre}
+arcsec z = -i * log(i * sqr(1 - 1/(z*z)) + 1/z)
+\end{DoxyPre}
+ More info is available at Wikipedia\+: ~\newline
+ \href{http://en.wikipedia.org/wiki/Inverse_trigonometric_functions#Logarithmic_forms}{\tt http\+://en.\+wikipedia.\+org/wiki/\+Inverse\+\_\+trigonometric\+\_\+functions\#\+Logarithmic\+\_\+forms} 
+
+Definition at line 43 of file casec.\+c.
+
+
+
+References cadd(), cdiv(), clog(), cmul(), cpack(), creci(), csqrt(), and csub().
+
+
+
+Referenced by Complex\+Number\+::\+Arc\+Secant().
+
+
+\begin{DoxyCode}
+44 \{
+45     \hyperlink{unioncomplex}{complex} \hyperlink{ktan_8c_a7cf126dbeb6f30c606e3b42fea65cfef}{one} = \hyperlink{complex_8h_a980e6e049f7902b05fc9eb5614b07a5c}{cpack}(1.0, 0.0);
+46     \hyperlink{unioncomplex}{complex} i = \hyperlink{complex_8h_a980e6e049f7902b05fc9eb5614b07a5c}{cpack}(0.0, 1.0);
+47     \hyperlink{unioncomplex}{complex} j = \hyperlink{complex_8h_a980e6e049f7902b05fc9eb5614b07a5c}{cpack}(0.0, -1.0);
+48     \hyperlink{unioncomplex}{complex} rz = \hyperlink{complex_8h_a78cdeb0bf6f229c2be3065fc697dac68}{creci}(z);
+49     \hyperlink{unioncomplex}{complex} z2 = \hyperlink{complex_8h_a340ad83d03bcc727538d25dcf6dd26e9}{cmul}(z, z);
+50     \hyperlink{unioncomplex}{complex} p = \hyperlink{complex_8h_ace985b5f12a681b496bd3ae5f8a966b4}{cdiv}(one, z2);
+51     \hyperlink{unioncomplex}{complex} q = \hyperlink{complex_8h_afe5b814a44414f20d0f98fe974737edd}{csqrt}(\hyperlink{complex_8h_a46bb0dd64d87c3aeb85417d1dadf6ddd}{csub}(one, p));
+52     \hyperlink{unioncomplex}{complex} w = \hyperlink{complex_8h_a340ad83d03bcc727538d25dcf6dd26e9}{cmul}(j, \hyperlink{complex_8h_a888b8eb5ccc46411e68f6d7b99035888}{clog}(\hyperlink{complex_8h_a02d8fd1ce9c4fa4e25b1fa676ca96d4e}{cadd}(\hyperlink{complex_8h_a340ad83d03bcc727538d25dcf6dd26e9}{cmul}(i, q), rz)));
+53     \textcolor{keywordflow}{return} w;
+54 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d5/dc8/casec_8c_ae509596503bb6ea1142d470882e074a7_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=301pt]{d5/dc8/casec_8c_ae509596503bb6ea1142d470882e074a7_icgraph}
+\end{center}
+\end{figure}
+
+

@@ -1,0 +1,66 @@
+.TH "app/main/values.h" 3 "Thu Jan 19 2017" "Version 1.6.0" "amath" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+app/main/values.h \- Application logic tied to numbers and values\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'clib\&.h'\fP
+.br
+\fC#include 'lib/numb\&.h'\fP
+.br
+\fC#include 'main/nodes\&.h'\fP
+.br
+
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "class \fBVariableList\fP"
+.br
+.RI "\fIA list of user defined variables\&. \fP"
+.ti -1c
+.RI "class \fBVariable\fP"
+.br
+.RI "\fIA user defined variable\&. \fP"
+.ti -1c
+.RI "class \fBListVariablesStatement\fP"
+.br
+.RI "\fIStatement to list all user defined variables\&. \fP"
+.ti -1c
+.RI "class \fBVariableNode\fP"
+.br
+.RI "\fIUse of a variable in a syntax tree\&. \fP"
+.ti -1c
+.RI "class \fBInsVariableNode\fP"
+.br
+.RI "\fIUse of last result in a syntax tree\&. \fP"
+.ti -1c
+.RI "class \fBNumericValueNode\fP"
+.br
+.RI "\fIUse of a numeric value in a syntax tree\&. \fP"
+.ti -1c
+.RI "class \fBEulersNumberNode\fP"
+.br
+.RI "\fIUse of Eulers number in a syntax tree\&. \fP"
+.ti -1c
+.RI "class \fBPiNode\fP"
+.br
+.RI "\fIUse of PI in a syntax tree\&. \fP"
+.ti -1c
+.RI "class \fBComplexiNode\fP"
+.br
+.RI "\fIUse of the square root of -2 in a syntax tree\&. \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+Application logic tied to numbers and values\&. 
+
+
+.PP
+Definition in file \fBvalues\&.h\fP\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for amath from the source code\&.

@@ -1,0 +1,86 @@
+.TH "lib/real/modf.c" 3 "Thu Jan 19 2017" "Version 1.6.0" "amath" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+lib/real/modf.c \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'fdlibm\&.h'\fP
+.br
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "double \fBmodf\fP (double x, double *iptr)"
+.br
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "static double \fBone\fP = 1\&.0"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "double modf (double x, double* iptr)"
+
+.PP
+Definition at line 66 of file modf\&.c\&.
+.PP
+.nf
+69 {
+70     int i0,i1,j0;
+71     unsigned i;
+72     i0 =  __HI(x);      /* high x */
+73     i1 =  __LO(x);      /* low  x */
+74     j0 = ((i0>>20)&0x7ff)-0x3ff;    /* exponent of x */
+75     if(j0<20) {         /* integer part in high x */
+76         if(j0<0) {          /* |x|<1 */
+77             __HIp(iptr) = i0&0x80000000;
+78             __LOp(iptr) = 0;        /* *iptr = +-0 */
+79             return x;
+80         } else {
+81             i = (0x000fffff)>>j0;
+82             if(((i0&i)|i1)==0) {        /* x is integral */
+83                 *iptr = x;
+84                 __HI(x) &= 0x80000000;
+85                 __LO(x)  = 0;   /* return +-0 */
+86                 return x;
+87             } else {
+88                 __HIp(iptr) = i0&(~i);
+89                 __LOp(iptr) = 0;
+90                 return x - *iptr;
+91             }
+92         }
+93     } else if (j0>51) {     /* no fraction part */
+94         *iptr = x*one;
+95         __HI(x) &= 0x80000000;
+96         __LO(x)  = 0;   /* return +-0 */
+97         return x;
+98     } else {            /* fraction part in low x */
+99         i = ((unsigned)(0xffffffff))>>(j0-20);
+100         if((i1&i)==0) {         /* x is integral */
+101             *iptr = x;
+102             __HI(x) &= 0x80000000;
+103             __LO(x)  = 0;   /* return +-0 */
+104             return x;
+105         } else {
+106             __HIp(iptr) = i0;
+107             __LOp(iptr) = i1&(~i);
+108             return x - *iptr;
+109         }
+110     }
+111 }
+.fi
+.SH "Variable Documentation"
+.PP 
+.SS "double one = 1\&.0\fC [static]\fP"
+
+.PP
+Definition at line 60 of file modf\&.c\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for amath from the source code\&.

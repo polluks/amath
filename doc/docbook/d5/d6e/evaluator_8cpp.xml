@@ -1,0 +1,35 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="d5/d6e/evaluator_8cpp">
+    <title>evaluator.cpp File Reference</title>
+    <programlisting>#include &quot;clib.h&quot;</programlisting>
+    <programlisting>#include &quot;main/parser.h&quot;</programlisting>
+    <programlisting>#include &quot;main/viewer.h&quot;</programlisting>
+    <programlisting>#include &quot;main/optimizer.h&quot;</programlisting>
+    <programlisting>#include &quot;main/evaluator.h&quot;</programlisting>
+<para>Include dependency diagram for evaluator.cpp</para>
+<para>
+    <figure>
+        <title>Dependency diagram</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="../../d5/de1/evaluator_8cpp__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+<para>Included by dependency diagram for evaluator.cpp</para>
+<para>
+    <figure>
+        <title>Dependency diagram</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="../../d2/d53/evaluator_8cpp__dep__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+    <simplesect>
+        <title>Detailed Description</title>
+    <para>Definition in file /home/carsten/amath2/app/main/evaluator.cpp</para>
+    </simplesect>
+</section>

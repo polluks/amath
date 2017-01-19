@@ -1,0 +1,86 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="d7/db5/classSineNode">
+<title>SineNode class Reference</title>
+<para>
+    <programlisting>#include <link linkend="d8/d5c/functions_8h">&lt;functions.h&gt;</link></programlisting>
+</para>
+<para>Inheritance diagram for SineNode</para>
+<para>
+    <figure>
+        <title>Inheritance graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="../../d1/df2/classSineNode__inherit__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+<para>Collaboration diagram for SineNode</para>
+<para>
+    <figure>
+        <title>Collaboration graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="../../d3/d79/classSineNode__coll__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d7/db5/classSineNode_1ab53ea597377849c487fc4e63157d4f6d">SineNode</link> (
+<link linkend="dd/d06/classExpressionNode">ExpressionNode</link> * expression)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="da/de2/structNumber">Number</link> * <link linkend="d7/db5/classSineNode_1a9b1ee27ee5d63e44ce09602b91f633cc">Evaluate</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>static <link linkend="d7/d06/classFunctionNode">FunctionNode</link> * <link linkend="d7/db5/classSineNode_1ae1c55d727e6560dfc00a7c66d818c47a">Create</link> (
+<link linkend="dd/d06/classExpressionNode">ExpressionNode</link> * expression)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>char * <link linkend="d7/db5/classSineNode_1aceeb647bdd020764589ec00039157ae0">GetNodeText</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+            <section xml:id="d7/db5/classSineNode_1ab53ea597377849c487fc4e63157d4f6d">
+                <title>SineNode::SineNode (ExpressionNode *expression)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d7/db5/classSineNode_1a9b1ee27ee5d63e44ce09602b91f633cc">
+                <title>Number * SineNode::Evaluate ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d7/db5/classSineNode_1ae1c55d727e6560dfc00a7c66d818c47a">
+                <title>FunctionNode * SineNode::Create (ExpressionNode *expression)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d7/db5/classSineNode_1aceeb647bdd020764589ec00039157ae0">
+                <title>char * SineNode::GetNodeText ()</title> <emphasis></emphasis>
+                
+            </section>
+</section>

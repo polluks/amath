@@ -1,0 +1,600 @@
+\hypertarget{classSyntaxNode}{}\section{Syntax\+Node Class Reference}
+\label{classSyntaxNode}\index{Syntax\+Node@{Syntax\+Node}}
+
+
+Base class for all nodes in a syntax tree.  
+
+
+
+
+{\ttfamily \#include $<$nodes.\+h$>$}
+
+
+
+Inheritance diagram for Syntax\+Node\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{dc/dce/classSyntaxNode__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Syntax\+Node\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=203pt]{dd/dfe/classSyntaxNode__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classSyntaxNode_ac94372d402f38a118b4e8cd20ba7e520}{Syntax\+Node} ()
+\item 
+virtual \hyperlink{classSyntaxNode_a8fa3db69c423b60a37b50c48bb79bc2b}{$\sim$\+Syntax\+Node} ()
+\item 
+void \hyperlink{classSyntaxNode_a24e2d5b5e94a67ce55cea52cd48212e6}{Set\+First\+Node} ()
+\item 
+\hyperlink{platform_8h_a1062901a7428fdd9c7f180f5e01ea056}{bool} \hyperlink{classSyntaxNode_a65e1789edf8ca46865592e9e6e279749}{Get\+First\+Node} ()
+\item 
+\hyperlink{classSyntaxNode}{Syntax\+Node} $\ast$ \hyperlink{classSyntaxNode_a4a85fd710ad44edbc5b3ac625c10cd08}{Get\+Parent} ()
+\item 
+void \hyperlink{classSyntaxNode_a7902bb2c389a784c11c2b649a84824e9}{Set\+Parent} (\hyperlink{classSyntaxNode}{Syntax\+Node} $\ast$node)
+\item 
+virtual \hyperlink{nodes_8h_acac9cbaeea226ed297804c012dc12b16}{Node\+Type} \hyperlink{classSyntaxNode_aef71a18975535d050393f0541b3cdc6a}{Get\+Node\+Type} ()=0
+\item 
+virtual \hyperlink{nodes_8h_ab321a69ad5704b704b8dd9e1b3984a29}{Reduction\+Type} \hyperlink{classSyntaxNode_a5384fc779eee947b5e09bf2adb6cc606}{Get\+Reduction\+Type} ()
+\item 
+virtual void \hyperlink{classSyntaxNode_ac51307368fb255aa760b99e137178c89}{Reset\+Iterator} ()
+\item 
+virtual \hyperlink{classSyntaxNode}{Syntax\+Node} $\ast$ \hyperlink{classSyntaxNode_af1fa46ba30aa4f2affa2d4e96a4be010}{Get\+Next} ()=0
+\item 
+virtual char $\ast$ \hyperlink{classSyntaxNode_a27f7dd6d00f5c94533477d6d5c2e831c}{Get\+Text\+Code} ()=0
+\item 
+virtual char $\ast$ \hyperlink{classSyntaxNode_ad8418608fa224536b48a590c87f0a509}{Execute} ()=0
+\item 
+virtual void \hyperlink{classSyntaxNode_af25fd5963125bb2d6b9a1864b9ff79c8}{Attach} (\hyperlink{classSyntaxNode}{Syntax\+Node} $\ast$node)=0
+\item 
+virtual void \hyperlink{classSyntaxNode_ae57f629a5c5fa0994f036c105396da69}{Detach} (\hyperlink{classSyntaxNode}{Syntax\+Node} $\ast$node)=0
+\item 
+virtual void \hyperlink{classSyntaxNode_a2797ff5eb05f3a36ae1be41b70105e05}{Replace} (\hyperlink{classSyntaxNode}{Syntax\+Node} $\ast$n, \hyperlink{classSyntaxNode}{Syntax\+Node} $\ast$x)=0
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCharBuffer}{Char\+Buffer} $\ast$ \hyperlink{classSyntaxNode_a1180628cbe3fce43930cee0df5a9ce5c}{output}
+\item 
+\hyperlink{classSyntaxNode}{Syntax\+Node} $\ast$ \hyperlink{classSyntaxNode_a890b17a9d4446c2d2aec4f6e4838e8bd}{parent}
+\item 
+\hyperlink{classSyntaxNode}{Syntax\+Node} $\ast$ \hyperlink{classSyntaxNode_a9bd3349d05f33eaa271cca1805a86e1b}{iterator}
+\item 
+\hyperlink{platform_8h_a1062901a7428fdd9c7f180f5e01ea056}{bool} \hyperlink{classSyntaxNode_ae0488f07ad7cc43143e44e89ec27bc40}{left\+Bottom}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Base class for all nodes in a syntax tree. 
+
+More info is available at Wikipedia\+: \href{http://en.wikipedia.org/wiki/Abstract_syntax_tree}{\tt http\+://en.\+wikipedia.\+org/wiki/\+Abstract\+\_\+syntax\+\_\+tree} 
+
+Definition at line 55 of file nodes.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Syntax\+Node@{Syntax\+Node}!Syntax\+Node@{Syntax\+Node}}
+\index{Syntax\+Node@{Syntax\+Node}!Syntax\+Node@{Syntax\+Node}}
+\subsubsection[{\texorpdfstring{Syntax\+Node()}{SyntaxNode()}}]{\setlength{\rightskip}{0pt plus 5cm}Syntax\+Node\+::\+Syntax\+Node (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classSyntaxNode_ac94372d402f38a118b4e8cd20ba7e520}{}\label{classSyntaxNode_ac94372d402f38a118b4e8cd20ba7e520}
+
+
+Definition at line 38 of file nodes.\+cpp.
+
+
+
+References Char\+Buffer\+::\+Char\+Buffer(), iterator, left\+Bottom, output, and parent.
+
+
+
+Referenced by Error\+Node\+::\+Error\+Node(), Expression\+Node\+::\+Expression\+Node(), Statement\+Block\+Node\+::\+Statement\+Block\+Node(), and Statement\+Node\+::\+Statement\+Node().
+
+
+\begin{DoxyCode}
+39 \{
+40     \hyperlink{classSyntaxNode_a1180628cbe3fce43930cee0df5a9ce5c}{output} = \textcolor{keyword}{new} \hyperlink{classCharBuffer}{CharBuffer}();
+41     \hyperlink{classSyntaxNode_a890b17a9d4446c2d2aec4f6e4838e8bd}{parent} = \hyperlink{platform_8h_a46ff2bfbf0d44b8466a2251d5bd5e6f8}{NOMEM};
+42     \hyperlink{classSyntaxNode_a9bd3349d05f33eaa271cca1805a86e1b}{iterator} = \hyperlink{platform_8h_a46ff2bfbf0d44b8466a2251d5bd5e6f8}{NOMEM};
+43     \hyperlink{classSyntaxNode_ae0488f07ad7cc43143e44e89ec27bc40}{leftBottom} = \textcolor{keyword}{false};
+44 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d8/d5d/classSyntaxNode_ac94372d402f38a118b4e8cd20ba7e520_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d8/d5d/classSyntaxNode_ac94372d402f38a118b4e8cd20ba7e520_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Syntax\+Node@{Syntax\+Node}!````~Syntax\+Node@{$\sim$\+Syntax\+Node}}
+\index{````~Syntax\+Node@{$\sim$\+Syntax\+Node}!Syntax\+Node@{Syntax\+Node}}
+\subsubsection[{\texorpdfstring{$\sim$\+Syntax\+Node()}{~SyntaxNode()}}]{\setlength{\rightskip}{0pt plus 5cm}Syntax\+Node\+::$\sim$\+Syntax\+Node (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{classSyntaxNode_a8fa3db69c423b60a37b50c48bb79bc2b}{}\label{classSyntaxNode_a8fa3db69c423b60a37b50c48bb79bc2b}
+
+
+Definition at line 46 of file nodes.\+cpp.
+
+
+
+References output.
+
+
+\begin{DoxyCode}
+47 \{
+48     \textcolor{keyword}{delete} \hyperlink{classSyntaxNode_a1180628cbe3fce43930cee0df5a9ce5c}{output};
+49 \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\index{Syntax\+Node@{Syntax\+Node}!Attach@{Attach}}
+\index{Attach@{Attach}!Syntax\+Node@{Syntax\+Node}}
+\subsubsection[{\texorpdfstring{Attach(\+Syntax\+Node $\ast$node)=0}{Attach(SyntaxNode *node)=0}}]{\setlength{\rightskip}{0pt plus 5cm}virtual void Syntax\+Node\+::\+Attach (
+\begin{DoxyParamCaption}
+\item[{{\bf Syntax\+Node} $\ast$}]{node}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\hypertarget{classSyntaxNode_af25fd5963125bb2d6b9a1864b9ff79c8}{}\label{classSyntaxNode_af25fd5963125bb2d6b9a1864b9ff79c8}
+
+
+Implemented in \hyperlink{classStatementBlockNode_ac84d5c0d9afe4dd8c06dccd345f12310}{Statement\+Block\+Node}, \hyperlink{classUserFunctionNode_ab05c0002a4c62551813238bbdd5632a2}{User\+Function\+Node}, \hyperlink{classEvalStatement_a1b689a777c3022a40d042410fc3fac77}{Eval\+Statement}, \hyperlink{classNumericValueNode_a566d4509edd41f495d4508bd1bd14949}{Numeric\+Value\+Node}, \hyperlink{classSilentStatement_aa8aa6ca07dca7f225b45610436b1d34b}{Silent\+Statement}, \hyperlink{classErrorNode_ae56dac4fba9187e37fc4270871e05a56}{Error\+Node}, \hyperlink{classStatementNode_a9467acb7f6c6c6c0027637475e94fba2}{Statement\+Node}, \hyperlink{classVariableNode_a9ef2e7ff5c7636e789ef9385190a0660}{Variable\+Node}, \hyperlink{classNumericOperator_ab40d02625fde750d08168ca2ef46c432}{Numeric\+Operator}, \hyperlink{classAbsoluteNode_a4f947588881076306bf79f69145713b7}{Absolute\+Node}, \hyperlink{classFunctionNode_aec646af849e98f7aee604398dccf1385}{Function\+Node}, and \hyperlink{classUnaryNode_ab3290a52eba94622c917f0f701883aad}{Unary\+Node}.
+
+
+
+Referenced by Optimizer\+::\+Balance\+Tree().
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d8/d5d/classSyntaxNode_af25fd5963125bb2d6b9a1864b9ff79c8_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Syntax\+Node@{Syntax\+Node}!Detach@{Detach}}
+\index{Detach@{Detach}!Syntax\+Node@{Syntax\+Node}}
+\subsubsection[{\texorpdfstring{Detach(\+Syntax\+Node $\ast$node)=0}{Detach(SyntaxNode *node)=0}}]{\setlength{\rightskip}{0pt plus 5cm}virtual void Syntax\+Node\+::\+Detach (
+\begin{DoxyParamCaption}
+\item[{{\bf Syntax\+Node} $\ast$}]{node}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\hypertarget{classSyntaxNode_ae57f629a5c5fa0994f036c105396da69}{}\label{classSyntaxNode_ae57f629a5c5fa0994f036c105396da69}
+
+
+Implemented in \hyperlink{classStatementBlockNode_a719b8e541136408805916adbb46829ad}{Statement\+Block\+Node}, \hyperlink{classUserFunctionNode_aec00fdd81b01b4257f1631771e50cf28}{User\+Function\+Node}, \hyperlink{classEvalStatement_a64257c56418096b0615280fe19008f88}{Eval\+Statement}, \hyperlink{classNumericValueNode_ac2a2b87d3cff4f113c57df82e64b76cd}{Numeric\+Value\+Node}, \hyperlink{classSilentStatement_abb1fe13d3e3f85ac304c39379242ae49}{Silent\+Statement}, \hyperlink{classErrorNode_a26cd4f0a90f8f5fa86efb4d9a707b938}{Error\+Node}, \hyperlink{classStatementNode_a68b34bad1cf1a5d9281cd055760e9fec}{Statement\+Node}, \hyperlink{classVariableNode_a7d241e4c22a3443a7aca3b73d4882b89}{Variable\+Node}, \hyperlink{classNumericOperator_aacbe002fae709804679443e7fe8f2d36}{Numeric\+Operator}, \hyperlink{classAbsoluteNode_a5bf1491e1f71c87b38360e0d9231ac11}{Absolute\+Node}, \hyperlink{classFunctionNode_a3af90509cddcec47bdf454665c622412}{Function\+Node}, and \hyperlink{classUnaryNode_ad5ed9848bc7cdb4911a79f86ec3e8a43}{Unary\+Node}.
+
+
+
+Referenced by Optimizer\+::\+Balance\+Tree(), and Optimizer\+::\+Reduce\+Unary\+Nodes().
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d8/d5d/classSyntaxNode_ae57f629a5c5fa0994f036c105396da69_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Syntax\+Node@{Syntax\+Node}!Execute@{Execute}}
+\index{Execute@{Execute}!Syntax\+Node@{Syntax\+Node}}
+\subsubsection[{\texorpdfstring{Execute()=0}{Execute()=0}}]{\setlength{\rightskip}{0pt plus 5cm}virtual char$\ast$ Syntax\+Node\+::\+Execute (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\hypertarget{classSyntaxNode_ad8418608fa224536b48a590c87f0a509}{}\label{classSyntaxNode_ad8418608fa224536b48a590c87f0a509}
+
+
+Implemented in \hyperlink{classDrawStatement_af3be5149199ab9940b43ee5a2360ba80}{Draw\+Statement}, \hyperlink{classPlotStatement_a653ff64c2c918b3209be426f7c243459}{Plot\+Statement}, \hyperlink{classExecuteStatement_a8a3bbafeb8739749eab6eaf8a4b9969c}{Execute\+Statement}, \hyperlink{classSaveStatement_ae94aa8533f620634f97b2835cee1eaa2}{Save\+Statement}, \hyperlink{classLoadStatement_ae3cbd157ad8de73551ff430fa3c089d9}{Load\+Statement}, \hyperlink{classListStatement_a49cc9fe49b665a1276f288c069e1c78b}{List\+Statement}, \hyperlink{classShowStatement_a8466ad7e0e61918cda0e399713abb6a8}{Show\+Statement}, \hyperlink{classDigitsStatement_a5a16b621b4759cdc0bf980b01858350b}{Digits\+Statement}, \hyperlink{classOutputStatement_a870c0d2b4bffb94e542d1e5890ec3c20}{Output\+Statement}, \hyperlink{classInputStatement_ac4a9288ba2fe5002ae78d65c270222a5}{Input\+Statement}, \hyperlink{classDeleteStatement_a709e8696c9ca4be32679e6a72b82de86}{Delete\+Statement}, \hyperlink{classHelpStatement_a733d3471c3bcfdd2d07d4766bbdbf6db}{Help\+Statement}, \hyperlink{classStatementBlockNode_a820aeba99ce1f44084a3f07c734ea4a3}{Statement\+Block\+Node}, \hyperlink{classEvalStatement_a6d3e0e2db3ed8cbdaa3250bf959a0be7}{Eval\+Statement}, \hyperlink{classFunctionDefinitionNode_af51888496269ad95052794a6898ccc07}{Function\+Definition\+Node}, \hyperlink{classSilentStatement_a8fdf9e3c83dafa43d092282db0bd47b4}{Silent\+Statement}, \hyperlink{classListFunctionsStatement_aecbd17235ded16103ebed33a8fcca90e}{List\+Functions\+Statement}, \hyperlink{classErrorNode_a351cbedab751832da6a67b12ac0abcab}{Error\+Node}, \hyperlink{classPrefsStatement_ac53922eb842ba389957300fef95cd98f}{Prefs\+Statement}, \hyperlink{classStatementNode_a721589622c930c010927b9a9c55b173e}{Statement\+Node}, \hyperlink{classPromptStatement_ad315c8cc58132641e9b8a62902566318}{Prompt\+Statement}, \hyperlink{classExpressionNode_a923ac9b73f5568dd6bc65620d549c4ce}{Expression\+Node}, \hyperlink{classMemoryStatement_a0cfd7aae34f2103c7734980907426f4e}{Memory\+Statement}, \hyperlink{classListVariablesStatement_a2ca734439e1c118b8b62d550baac8dc0}{List\+Variables\+Statement}, \hyperlink{classVersionStatement_a0601a810472862583ef4c702c6f1fd0a}{Version\+Statement}, \hyperlink{classEmptyStatement_a5d873e1f5f9b48abe4201319f5e687b0}{Empty\+Statement}, \hyperlink{classExitStatement_a0c7aef922938d7f7f02b8ca402a3bd38}{Exit\+Statement}, and \hyperlink{classClearStatement_ad01255515180fd5271c491386df560a8}{Clear\+Statement}.
+
+
+
+Referenced by Evaluator\+::\+Evaluate(), Statement\+Block\+Node\+::\+Execute(), Load\+Statement\+::\+Execute(), Execute\+Statement\+::\+Execute(), and Preferences\+Base\+::\+Set\+Prefs().
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d8/d5d/classSyntaxNode_ad8418608fa224536b48a590c87f0a509_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Syntax\+Node@{Syntax\+Node}!Get\+First\+Node@{Get\+First\+Node}}
+\index{Get\+First\+Node@{Get\+First\+Node}!Syntax\+Node@{Syntax\+Node}}
+\subsubsection[{\texorpdfstring{Get\+First\+Node()}{GetFirstNode()}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} Syntax\+Node\+::\+Get\+First\+Node (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classSyntaxNode_a65e1789edf8ca46865592e9e6e279749}{}\label{classSyntaxNode_a65e1789edf8ca46865592e9e6e279749}
+
+
+Definition at line 56 of file nodes.\+cpp.
+
+
+
+References left\+Bottom.
+
+
+\begin{DoxyCode}
+57 \{
+58     \textcolor{keywordflow}{return} \hyperlink{classSyntaxNode_ae0488f07ad7cc43143e44e89ec27bc40}{leftBottom};
+59 \}
+\end{DoxyCode}
+\index{Syntax\+Node@{Syntax\+Node}!Get\+Next@{Get\+Next}}
+\index{Get\+Next@{Get\+Next}!Syntax\+Node@{Syntax\+Node}}
+\subsubsection[{\texorpdfstring{Get\+Next()=0}{GetNext()=0}}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf Syntax\+Node}$\ast$ Syntax\+Node\+::\+Get\+Next (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\hypertarget{classSyntaxNode_af1fa46ba30aa4f2affa2d4e96a4be010}{}\label{classSyntaxNode_af1fa46ba30aa4f2affa2d4e96a4be010}
+
+
+Implemented in \hyperlink{classUserFunctionNode_acc4c2efb6727a6aa8d216556434c8a27}{User\+Function\+Node}, \hyperlink{classStatementBlockNode_a9bf1b52dd2f683539d0fa1824be52b51}{Statement\+Block\+Node}, \hyperlink{classEvalStatement_acd7b7d1c82b17b819c899ae574681b79}{Eval\+Statement}, \hyperlink{classNumericValueNode_aaed4656d8f0dfc697b75a47b4852baa4}{Numeric\+Value\+Node}, \hyperlink{classSilentStatement_a8ace65e0240c3063ef33e231704fc3ad}{Silent\+Statement}, \hyperlink{classErrorNode_acf4a67072dae31ff931446541b873b81}{Error\+Node}, \hyperlink{classStatementNode_a40b21f16cdb3b0e480b552007368f176}{Statement\+Node}, \hyperlink{classVariableNode_a3559e2232ef0e0778fde92883ff8957f}{Variable\+Node}, \hyperlink{classNumericOperator_a008152aaef6931b7dd70d8fa4be9f7f6}{Numeric\+Operator}, \hyperlink{classAbsoluteNode_adcc7a1dd7bd20d811c5b9ac8d9e5efb1}{Absolute\+Node}, \hyperlink{classFunctionNode_a8f6d3631e6b06af048a87463f34f0b8e}{Function\+Node}, and \hyperlink{classUnaryNode_aea757690dc96439db3d88a69321c605a}{Unary\+Node}.
+
+
+
+Referenced by Optimizer\+::\+Balance\+Tree(), Optimizer\+::\+Get\+Tree\+Depth(), Optimizer\+::\+Reduce\+Unary\+Nodes(), Optimizer\+::\+Reduce\+Value\+Nodes(), Optimizer\+::\+Tag\+Children(), and Optimizer\+::\+Tag\+Start\+Node().
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d8/d5d/classSyntaxNode_af1fa46ba30aa4f2affa2d4e96a4be010_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Syntax\+Node@{Syntax\+Node}!Get\+Node\+Type@{Get\+Node\+Type}}
+\index{Get\+Node\+Type@{Get\+Node\+Type}!Syntax\+Node@{Syntax\+Node}}
+\subsubsection[{\texorpdfstring{Get\+Node\+Type()=0}{GetNodeType()=0}}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf Node\+Type} Syntax\+Node\+::\+Get\+Node\+Type (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\hypertarget{classSyntaxNode_aef71a18975535d050393f0541b3cdc6a}{}\label{classSyntaxNode_aef71a18975535d050393f0541b3cdc6a}
+
+
+Implemented in \hyperlink{classStatementBlockNode_ac7222752fa573a816eb2786c3f427a78}{Statement\+Block\+Node}, \hyperlink{classErrorNode_ae4ef9fa304ae75c7c8fd04627143a8b1}{Error\+Node}, \hyperlink{classStatementNode_acde95037b93e7154cae2ce176b155bb3}{Statement\+Node}, and \hyperlink{classExpressionNode_aaa0ecd3971c182bbc605623b83afc519}{Expression\+Node}.
+
+
+
+Referenced by Optimizer\+::\+Balance\+Tree(), and Optimizer\+::\+Reduce\+Value\+Nodes().
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d8/d5d/classSyntaxNode_aef71a18975535d050393f0541b3cdc6a_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Syntax\+Node@{Syntax\+Node}!Get\+Parent@{Get\+Parent}}
+\index{Get\+Parent@{Get\+Parent}!Syntax\+Node@{Syntax\+Node}}
+\subsubsection[{\texorpdfstring{Get\+Parent()}{GetParent()}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Syntax\+Node} $\ast$ Syntax\+Node\+::\+Get\+Parent (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classSyntaxNode_a4a85fd710ad44edbc5b3ac625c10cd08}{}\label{classSyntaxNode_a4a85fd710ad44edbc5b3ac625c10cd08}
+
+
+Definition at line 66 of file nodes.\+cpp.
+
+
+
+References parent.
+
+
+
+Referenced by Optimizer\+::\+Balance\+Tree(), Optimizer\+::\+Reduce\+Unary\+Nodes(), and Optimizer\+::\+Reduce\+Value\+Nodes().
+
+
+\begin{DoxyCode}
+67 \{
+68     \textcolor{keywordflow}{return} \hyperlink{classSyntaxNode_a890b17a9d4446c2d2aec4f6e4838e8bd}{parent};
+69 \}
+\end{DoxyCode}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d8/d5d/classSyntaxNode_a4a85fd710ad44edbc5b3ac625c10cd08_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Syntax\+Node@{Syntax\+Node}!Get\+Reduction\+Type@{Get\+Reduction\+Type}}
+\index{Get\+Reduction\+Type@{Get\+Reduction\+Type}!Syntax\+Node@{Syntax\+Node}}
+\subsubsection[{\texorpdfstring{Get\+Reduction\+Type()}{GetReductionType()}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Reduction\+Type} Syntax\+Node\+::\+Get\+Reduction\+Type (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{classSyntaxNode_a5384fc779eee947b5e09bf2adb6cc606}{}\label{classSyntaxNode_a5384fc779eee947b5e09bf2adb6cc606}
+
+
+Reimplemented in \hyperlink{classComplexiNode_a3c22cac05a059da3b361a1b9ca7638ba}{Complexi\+Node}, \hyperlink{classPiNode_a508dc055cbe7e287ff4e7640d60d67d4}{Pi\+Node}, \hyperlink{classEulersNumberNode_a60821ba3ae914a0e008581b1f591e237}{Eulers\+Number\+Node}, \hyperlink{classNumericValueNode_ad75510c6a6e06f4004248d072cd5c3cb}{Numeric\+Value\+Node}, \hyperlink{classSubtractionNode_a4116ea8e86864be1a1ae9420d2b93ac4}{Subtraction\+Node}, \hyperlink{classAdditionNode_a0e397ee6a3a4c8936e6c5a366c030dee}{Addition\+Node}, and \hyperlink{classUnaryNode_af0a3f842557e89f22bb14d1124a57a80}{Unary\+Node}.
+
+
+
+Definition at line 51 of file nodes.\+cpp.
+
+
+
+References nonereduc.
+
+
+
+Referenced by Optimizer\+::\+Reduce\+Unary\+Nodes(), and Optimizer\+::\+Reduce\+Value\+Nodes().
+
+
+\begin{DoxyCode}
+52 \{
+53     \textcolor{keywordflow}{return} \hyperlink{nodes_8h_ab321a69ad5704b704b8dd9e1b3984a29aea5f0caa41174fec24bdbc41967fadb2}{nonereduc};
+54 \}
+\end{DoxyCode}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d8/d5d/classSyntaxNode_a5384fc779eee947b5e09bf2adb6cc606_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Syntax\+Node@{Syntax\+Node}!Get\+Text\+Code@{Get\+Text\+Code}}
+\index{Get\+Text\+Code@{Get\+Text\+Code}!Syntax\+Node@{Syntax\+Node}}
+\subsubsection[{\texorpdfstring{Get\+Text\+Code()=0}{GetTextCode()=0}}]{\setlength{\rightskip}{0pt plus 5cm}virtual char$\ast$ Syntax\+Node\+::\+Get\+Text\+Code (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\hypertarget{classSyntaxNode_a27f7dd6d00f5c94533477d6d5c2e831c}{}\label{classSyntaxNode_a27f7dd6d00f5c94533477d6d5c2e831c}
+
+
+Implemented in \hyperlink{classStatementBlockNode_a1b0102189a2ce420661be514b227ea78}{Statement\+Block\+Node}, \hyperlink{classErrorNode_aed876f8645b44aa8081fa62d7e4e3bca}{Error\+Node}, \hyperlink{classStatementNode_a51c8ea87d60a7a28a4a823bfa7851942}{Statement\+Node}, and \hyperlink{classExpressionNode_abb495de256b8c9a1c7bb61910fab25ab}{Expression\+Node}.
+
+\index{Syntax\+Node@{Syntax\+Node}!Replace@{Replace}}
+\index{Replace@{Replace}!Syntax\+Node@{Syntax\+Node}}
+\subsubsection[{\texorpdfstring{Replace(\+Syntax\+Node $\ast$n, Syntax\+Node $\ast$x)=0}{Replace(SyntaxNode *n, SyntaxNode *x)=0}}]{\setlength{\rightskip}{0pt plus 5cm}virtual void Syntax\+Node\+::\+Replace (
+\begin{DoxyParamCaption}
+\item[{{\bf Syntax\+Node} $\ast$}]{n, }
+\item[{{\bf Syntax\+Node} $\ast$}]{x}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\hypertarget{classSyntaxNode_a2797ff5eb05f3a36ae1be41b70105e05}{}\label{classSyntaxNode_a2797ff5eb05f3a36ae1be41b70105e05}
+
+
+Implemented in \hyperlink{classStatementBlockNode_ac896dd0efd4a59fca0a5d834d0e89022}{Statement\+Block\+Node}, \hyperlink{classUserFunctionNode_ad12ad72165eb03f17d7fbb1c2a80038b}{User\+Function\+Node}, \hyperlink{classEvalStatement_a9b77319533fab13e48c720b47a4d26b7}{Eval\+Statement}, \hyperlink{classNumericValueNode_a5df4820b27e2e69367cb88d973717f1c}{Numeric\+Value\+Node}, \hyperlink{classSilentStatement_a5778745fefed52ad409b26e778805b03}{Silent\+Statement}, \hyperlink{classErrorNode_a21d26027d05d8051ac3a1add5466dc37}{Error\+Node}, \hyperlink{classStatementNode_a713efe48098d7f07c6014ca7ba337553}{Statement\+Node}, \hyperlink{classVariableNode_aaea4810a27f9b07552df4bcdf6d59d86}{Variable\+Node}, \hyperlink{classNumericOperator_ad8f69aec49e9a900ca592dbf972df619}{Numeric\+Operator}, \hyperlink{classAbsoluteNode_a675d28427432b9947af9441c3bcf5401}{Absolute\+Node}, \hyperlink{classFunctionNode_a951101d50e4b4428871986923d5657d8}{Function\+Node}, and \hyperlink{classUnaryNode_a82d9151314ef46f671da1127b98b7789}{Unary\+Node}.
+
+
+
+Referenced by Optimizer\+::\+Reduce\+Unary\+Nodes(), and Optimizer\+::\+Reduce\+Value\+Nodes().
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d8/d5d/classSyntaxNode_a2797ff5eb05f3a36ae1be41b70105e05_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Syntax\+Node@{Syntax\+Node}!Reset\+Iterator@{Reset\+Iterator}}
+\index{Reset\+Iterator@{Reset\+Iterator}!Syntax\+Node@{Syntax\+Node}}
+\subsubsection[{\texorpdfstring{Reset\+Iterator()}{ResetIterator()}}]{\setlength{\rightskip}{0pt plus 5cm}void Syntax\+Node\+::\+Reset\+Iterator (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{classSyntaxNode_ac51307368fb255aa760b99e137178c89}{}\label{classSyntaxNode_ac51307368fb255aa760b99e137178c89}
+
+
+Definition at line 76 of file nodes.\+cpp.
+
+
+
+References iterator.
+
+
+
+Referenced by Optimizer\+::\+Balance\+Tree(), Optimizer\+::\+Get\+Tree\+Depth(), Optimizer\+::\+Reduce\+Unary\+Nodes(), Optimizer\+::\+Reduce\+Value\+Nodes(), Optimizer\+::\+Tag\+Children(), and Optimizer\+::\+Tag\+Start\+Node().
+
+
+\begin{DoxyCode}
+77 \{
+78     \hyperlink{classSyntaxNode_a9bd3349d05f33eaa271cca1805a86e1b}{iterator} = \hyperlink{platform_8h_a46ff2bfbf0d44b8466a2251d5bd5e6f8}{NOMEM};
+79 \}
+\end{DoxyCode}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d8/d5d/classSyntaxNode_ac51307368fb255aa760b99e137178c89_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Syntax\+Node@{Syntax\+Node}!Set\+First\+Node@{Set\+First\+Node}}
+\index{Set\+First\+Node@{Set\+First\+Node}!Syntax\+Node@{Syntax\+Node}}
+\subsubsection[{\texorpdfstring{Set\+First\+Node()}{SetFirstNode()}}]{\setlength{\rightskip}{0pt plus 5cm}void Syntax\+Node\+::\+Set\+First\+Node (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classSyntaxNode_a24e2d5b5e94a67ce55cea52cd48212e6}{}\label{classSyntaxNode_a24e2d5b5e94a67ce55cea52cd48212e6}
+
+
+Definition at line 61 of file nodes.\+cpp.
+
+
+
+References left\+Bottom.
+
+
+
+Referenced by Optimizer\+::\+Tag\+Start\+Node().
+
+
+\begin{DoxyCode}
+62 \{
+63     \hyperlink{classSyntaxNode_ae0488f07ad7cc43143e44e89ec27bc40}{leftBottom} = \textcolor{keyword}{true};
+64 \}
+\end{DoxyCode}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d8/d5d/classSyntaxNode_a24e2d5b5e94a67ce55cea52cd48212e6_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Syntax\+Node@{Syntax\+Node}!Set\+Parent@{Set\+Parent}}
+\index{Set\+Parent@{Set\+Parent}!Syntax\+Node@{Syntax\+Node}}
+\subsubsection[{\texorpdfstring{Set\+Parent(\+Syntax\+Node $\ast$node)}{SetParent(SyntaxNode *node)}}]{\setlength{\rightskip}{0pt plus 5cm}void Syntax\+Node\+::\+Set\+Parent (
+\begin{DoxyParamCaption}
+\item[{{\bf Syntax\+Node} $\ast$}]{node}
+\end{DoxyParamCaption}
+)}\hypertarget{classSyntaxNode_a7902bb2c389a784c11c2b649a84824e9}{}\label{classSyntaxNode_a7902bb2c389a784c11c2b649a84824e9}
+
+
+Definition at line 71 of file nodes.\+cpp.
+
+
+
+References parent.
+
+
+
+Referenced by Unary\+Node\+::\+Attach(), Function\+Node\+::\+Attach(), Absolute\+Node\+::\+Attach(), Numeric\+Operator\+::\+Attach(), Silent\+Statement\+::\+Attach(), Eval\+Statement\+::\+Attach(), and Optimizer\+::\+Tag\+Children().
+
+
+\begin{DoxyCode}
+72 \{
+73     \hyperlink{classSyntaxNode_a890b17a9d4446c2d2aec4f6e4838e8bd}{parent} = node;
+74 \}
+\end{DoxyCode}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d8/d5d/classSyntaxNode_a7902bb2c389a784c11c2b649a84824e9_icgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Member Data Documentation}
+\index{Syntax\+Node@{Syntax\+Node}!iterator@{iterator}}
+\index{iterator@{iterator}!Syntax\+Node@{Syntax\+Node}}
+\subsubsection[{\texorpdfstring{iterator}{iterator}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Syntax\+Node}$\ast$ Syntax\+Node\+::iterator\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{classSyntaxNode_a9bd3349d05f33eaa271cca1805a86e1b}{}\label{classSyntaxNode_a9bd3349d05f33eaa271cca1805a86e1b}
+
+
+Definition at line 76 of file nodes.\+h.
+
+
+
+Referenced by Unary\+Node\+::\+Get\+Next(), Function\+Node\+::\+Get\+Next(), Absolute\+Node\+::\+Get\+Next(), Numeric\+Operator\+::\+Get\+Next(), Silent\+Statement\+::\+Get\+Next(), Eval\+Statement\+::\+Get\+Next(), User\+Function\+Node\+::\+Get\+Next(), Numeric\+Operator\+::\+Replace(), Reset\+Iterator(), Statement\+Block\+Node\+::\+Statement\+Block\+Node(), and Syntax\+Node().
+
+\index{Syntax\+Node@{Syntax\+Node}!left\+Bottom@{left\+Bottom}}
+\index{left\+Bottom@{left\+Bottom}!Syntax\+Node@{Syntax\+Node}}
+\subsubsection[{\texorpdfstring{left\+Bottom}{leftBottom}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} Syntax\+Node\+::left\+Bottom\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{classSyntaxNode_ae0488f07ad7cc43143e44e89ec27bc40}{}\label{classSyntaxNode_ae0488f07ad7cc43143e44e89ec27bc40}
+
+
+Definition at line 77 of file nodes.\+h.
+
+
+
+Referenced by Get\+First\+Node(), Numeric\+Value\+Node\+::\+Get\+Precedence(), Set\+First\+Node(), and Syntax\+Node().
+
+\index{Syntax\+Node@{Syntax\+Node}!output@{output}}
+\index{output@{output}!Syntax\+Node@{Syntax\+Node}}
+\subsubsection[{\texorpdfstring{output}{output}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Char\+Buffer}$\ast$ Syntax\+Node\+::output\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{classSyntaxNode_a1180628cbe3fce43930cee0df5a9ce5c}{}\label{classSyntaxNode_a1180628cbe3fce43930cee0df5a9ce5c}
+
+
+Definition at line 74 of file nodes.\+h.
+
+
+
+Referenced by Version\+Statement\+::\+Execute(), Memory\+Statement\+::\+Execute(), Error\+Node\+::\+Execute(), Function\+Definition\+Node\+::\+Execute(), Eval\+Statement\+::\+Execute(), Statement\+Block\+Node\+::\+Execute(), Help\+Statement\+::\+Execute(), Delete\+Statement\+::\+Execute(), Input\+Statement\+::\+Execute(), Output\+Statement\+::\+Execute(), Digits\+Statement\+::\+Execute(), Show\+Statement\+::\+Execute(), List\+Statement\+::\+Execute(), Execute\+Statement\+::\+Execute(), Plot\+Statement\+::\+Execute(), Function\+Definition\+Node\+::\+Function\+Definition\+Node(), Numeric\+Value\+Node\+::\+Get\+Node\+Text(), Unary\+Node\+::\+Get\+Text(), Function\+Node\+::\+Get\+Text(), Absolute\+Node\+::\+Get\+Text(), Numeric\+Operator\+::\+Get\+Text(), Function\+Definition\+Node\+::\+Get\+Text(), Syntax\+Node(), and $\sim$\+Syntax\+Node().
+
+\index{Syntax\+Node@{Syntax\+Node}!parent@{parent}}
+\index{parent@{parent}!Syntax\+Node@{Syntax\+Node}}
+\subsubsection[{\texorpdfstring{parent}{parent}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Syntax\+Node}$\ast$ Syntax\+Node\+::parent\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{classSyntaxNode_a890b17a9d4446c2d2aec4f6e4838e8bd}{}\label{classSyntaxNode_a890b17a9d4446c2d2aec4f6e4838e8bd}
+
+
+Definition at line 75 of file nodes.\+h.
+
+
+
+Referenced by Get\+Parent(), Set\+Parent(), and Syntax\+Node().
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+app/main/\hyperlink{nodes_8h}{nodes.\+h}\item 
+app/main/\hyperlink{nodes_8cpp}{nodes.\+cpp}\end{DoxyCompactItemize}

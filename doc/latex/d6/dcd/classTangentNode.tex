@@ -1,0 +1,203 @@
+\hypertarget{classTangentNode}{}\section{Tangent\+Node Class Reference}
+\label{classTangentNode}\index{Tangent\+Node@{Tangent\+Node}}
+
+
+{\ttfamily \#include $<$functions.\+h$>$}
+
+
+
+Inheritance diagram for Tangent\+Node\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=169pt]{d2/d1f/classTangentNode__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Tangent\+Node\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=272pt]{d9/d4f/classTangentNode__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classTangentNode_a6feab62e09d65651a67a11e691afd9c0}{Tangent\+Node} (\hyperlink{classExpressionNode}{Expression\+Node} $\ast$\hyperlink{classFunctionNode_ad7577b179a1937aaf8a0058bb5b546dc}{expression})
+\item 
+\hyperlink{structNumber}{Number} $\ast$ \hyperlink{classTangentNode_a1ec2c48b6f174080a3f121773cf86237}{Evaluate} ()
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{classFunctionNode}{Function\+Node} $\ast$ \hyperlink{classTangentNode_ae71e32f065988aa0536e2d5420b23b52}{Create} (\hyperlink{classExpressionNode}{Expression\+Node} $\ast$\hyperlink{classFunctionNode_ad7577b179a1937aaf8a0058bb5b546dc}{expression})
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+char $\ast$ \hyperlink{classTangentNode_a2e5cdc4ca56b858386120cd5e8d89e56}{Get\+Node\+Text} ()
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 352 of file functions.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Tangent\+Node@{Tangent\+Node}!Tangent\+Node@{Tangent\+Node}}
+\index{Tangent\+Node@{Tangent\+Node}!Tangent\+Node@{Tangent\+Node}}
+\subsubsection[{\texorpdfstring{Tangent\+Node(\+Expression\+Node $\ast$expression)}{TangentNode(ExpressionNode *expression)}}]{\setlength{\rightskip}{0pt plus 5cm}Tangent\+Node\+::\+Tangent\+Node (
+\begin{DoxyParamCaption}
+\item[{{\bf Expression\+Node} $\ast$}]{expression}
+\end{DoxyParamCaption}
+)}\hypertarget{classTangentNode_a6feab62e09d65651a67a11e691afd9c0}{}\label{classTangentNode_a6feab62e09d65651a67a11e691afd9c0}
+
+
+Definition at line 782 of file functions.\+cpp.
+
+
+
+References Function\+Node\+::\+Function\+Node().
+
+
+
+Referenced by Create().
+
+
+\begin{DoxyCode}
+782                                                    :
+783     \hyperlink{classFunctionNode_a41cb7db0162ffbec0902bd8ff7ea435f}{FunctionNode}(expression) \{ \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d6/dcd/classTangentNode_a6feab62e09d65651a67a11e691afd9c0_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d6/dcd/classTangentNode_a6feab62e09d65651a67a11e691afd9c0_icgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Member Function Documentation}
+\index{Tangent\+Node@{Tangent\+Node}!Create@{Create}}
+\index{Create@{Create}!Tangent\+Node@{Tangent\+Node}}
+\subsubsection[{\texorpdfstring{Create(\+Expression\+Node $\ast$expression)}{Create(ExpressionNode *expression)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Function\+Node} $\ast$ Tangent\+Node\+::\+Create (
+\begin{DoxyParamCaption}
+\item[{{\bf Expression\+Node} $\ast$}]{expression}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{classTangentNode_ae71e32f065988aa0536e2d5420b23b52}{}\label{classTangentNode_ae71e32f065988aa0536e2d5420b23b52}
+
+
+Definition at line 785 of file functions.\+cpp.
+
+
+
+References Tangent\+Node().
+
+
+\begin{DoxyCode}
+786 \{
+787     \textcolor{keywordflow}{return} \textcolor{keyword}{new} \hyperlink{classTangentNode_a6feab62e09d65651a67a11e691afd9c0}{TangentNode}(expression);
+788 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d6/dcd/classTangentNode_ae71e32f065988aa0536e2d5420b23b52_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{Tangent\+Node@{Tangent\+Node}!Evaluate@{Evaluate}}
+\index{Evaluate@{Evaluate}!Tangent\+Node@{Tangent\+Node}}
+\subsubsection[{\texorpdfstring{Evaluate()}{Evaluate()}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Number} $\ast$ Tangent\+Node\+::\+Evaluate (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{classTangentNode_a1ec2c48b6f174080a3f121773cf86237}{}\label{classTangentNode_a1ec2c48b6f174080a3f121773cf86237}
+
+
+Implements \hyperlink{classExpressionNode_a64975d4dc37742228bd522f6204537f7}{Expression\+Node}.
+
+
+
+Definition at line 790 of file functions.\+cpp.
+
+
+
+References Expression\+Node\+::\+Evaluate(), Function\+Node\+::expression, Expression\+Node\+::result, and Number\+::\+Tangent().
+
+
+\begin{DoxyCode}
+791 \{
+792     \hyperlink{classExpressionNode_a1f590649f5a5cb30eb7ee912f7bc1262}{result} = \hyperlink{classFunctionNode_ad7577b179a1937aaf8a0058bb5b546dc}{expression}->\hyperlink{classExpressionNode_a64975d4dc37742228bd522f6204537f7}{Evaluate}()->\hyperlink{structNumber_a4a49daab06d7311db480e2cf81e1da67}{Tangent}();
+793     \textcolor{keywordflow}{return} \hyperlink{classExpressionNode_a1f590649f5a5cb30eb7ee912f7bc1262}{result};
+794 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d6/dcd/classTangentNode_a1ec2c48b6f174080a3f121773cf86237_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{Tangent\+Node@{Tangent\+Node}!Get\+Node\+Text@{Get\+Node\+Text}}
+\index{Get\+Node\+Text@{Get\+Node\+Text}!Tangent\+Node@{Tangent\+Node}}
+\subsubsection[{\texorpdfstring{Get\+Node\+Text()}{GetNodeText()}}]{\setlength{\rightskip}{0pt plus 5cm}char $\ast$ Tangent\+Node\+::\+Get\+Node\+Text (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}\hypertarget{classTangentNode_a2e5cdc4ca56b858386120cd5e8d89e56}{}\label{classTangentNode_a2e5cdc4ca56b858386120cd5e8d89e56}
+
+
+Implements \hyperlink{classExpressionNode_a42a5e9562b0f645a19dcc83f698069b5}{Expression\+Node}.
+
+
+
+Definition at line 796 of file functions.\+cpp.
+
+
+\begin{DoxyCode}
+797 \{
+798     \textcolor{keywordflow}{return} (\textcolor{keywordtype}{char}*)\textcolor{stringliteral}{"tan"};
+799 \}
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+app/main/\hyperlink{functions_8h}{functions.\+h}\item 
+app/main/\hyperlink{functions_8cpp}{functions.\+cpp}\end{DoxyCompactItemize}

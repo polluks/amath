@@ -1,0 +1,203 @@
+\hypertarget{classHyperbolicArcSecantNode}{}\section{Hyperbolic\+Arc\+Secant\+Node Class Reference}
+\label{classHyperbolicArcSecantNode}\index{Hyperbolic\+Arc\+Secant\+Node@{Hyperbolic\+Arc\+Secant\+Node}}
+
+
+{\ttfamily \#include $<$functions.\+h$>$}
+
+
+
+Inheritance diagram for Hyperbolic\+Arc\+Secant\+Node\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=212pt]{db/d8a/classHyperbolicArcSecantNode__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Hyperbolic\+Arc\+Secant\+Node\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=280pt]{d5/d49/classHyperbolicArcSecantNode__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classHyperbolicArcSecantNode_a07e699822af1ff2ab863550b3f0a50c2}{Hyperbolic\+Arc\+Secant\+Node} (\hyperlink{classExpressionNode}{Expression\+Node} $\ast$\hyperlink{classFunctionNode_ad7577b179a1937aaf8a0058bb5b546dc}{expression})
+\item 
+\hyperlink{structNumber}{Number} $\ast$ \hyperlink{classHyperbolicArcSecantNode_a1432e0c3a61b8418994289e11cb7f1a0}{Evaluate} ()
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{classFunctionNode}{Function\+Node} $\ast$ \hyperlink{classHyperbolicArcSecantNode_a767d2539da79424ae9d5b8a004995cbc}{Create} (\hyperlink{classExpressionNode}{Expression\+Node} $\ast$\hyperlink{classFunctionNode_ad7577b179a1937aaf8a0058bb5b546dc}{expression})
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+char $\ast$ \hyperlink{classHyperbolicArcSecantNode_a4585803d2a87bc7de7f5260187139865}{Get\+Node\+Text} ()
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 574 of file functions.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Hyperbolic\+Arc\+Secant\+Node@{Hyperbolic\+Arc\+Secant\+Node}!Hyperbolic\+Arc\+Secant\+Node@{Hyperbolic\+Arc\+Secant\+Node}}
+\index{Hyperbolic\+Arc\+Secant\+Node@{Hyperbolic\+Arc\+Secant\+Node}!Hyperbolic\+Arc\+Secant\+Node@{Hyperbolic\+Arc\+Secant\+Node}}
+\subsubsection[{\texorpdfstring{Hyperbolic\+Arc\+Secant\+Node(\+Expression\+Node $\ast$expression)}{HyperbolicArcSecantNode(ExpressionNode *expression)}}]{\setlength{\rightskip}{0pt plus 5cm}Hyperbolic\+Arc\+Secant\+Node\+::\+Hyperbolic\+Arc\+Secant\+Node (
+\begin{DoxyParamCaption}
+\item[{{\bf Expression\+Node} $\ast$}]{expression}
+\end{DoxyParamCaption}
+)}\hypertarget{classHyperbolicArcSecantNode_a07e699822af1ff2ab863550b3f0a50c2}{}\label{classHyperbolicArcSecantNode_a07e699822af1ff2ab863550b3f0a50c2}
+
+
+Definition at line 1175 of file functions.\+cpp.
+
+
+
+References Function\+Node\+::\+Function\+Node().
+
+
+
+Referenced by Create().
+
+
+\begin{DoxyCode}
+1175                                                                            :
+1176     \hyperlink{classFunctionNode_a41cb7db0162ffbec0902bd8ff7ea435f}{FunctionNode}(expression) \{ \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d8/d04/classHyperbolicArcSecantNode_a07e699822af1ff2ab863550b3f0a50c2_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d8/d04/classHyperbolicArcSecantNode_a07e699822af1ff2ab863550b3f0a50c2_icgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Member Function Documentation}
+\index{Hyperbolic\+Arc\+Secant\+Node@{Hyperbolic\+Arc\+Secant\+Node}!Create@{Create}}
+\index{Create@{Create}!Hyperbolic\+Arc\+Secant\+Node@{Hyperbolic\+Arc\+Secant\+Node}}
+\subsubsection[{\texorpdfstring{Create(\+Expression\+Node $\ast$expression)}{Create(ExpressionNode *expression)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Function\+Node} $\ast$ Hyperbolic\+Arc\+Secant\+Node\+::\+Create (
+\begin{DoxyParamCaption}
+\item[{{\bf Expression\+Node} $\ast$}]{expression}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{classHyperbolicArcSecantNode_a767d2539da79424ae9d5b8a004995cbc}{}\label{classHyperbolicArcSecantNode_a767d2539da79424ae9d5b8a004995cbc}
+
+
+Definition at line 1178 of file functions.\+cpp.
+
+
+
+References Hyperbolic\+Arc\+Secant\+Node().
+
+
+\begin{DoxyCode}
+1179 \{
+1180     \textcolor{keywordflow}{return} \textcolor{keyword}{new} \hyperlink{classHyperbolicArcSecantNode_a07e699822af1ff2ab863550b3f0a50c2}{HyperbolicArcSecantNode}(expression);
+1181 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d8/d04/classHyperbolicArcSecantNode_a767d2539da79424ae9d5b8a004995cbc_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{Hyperbolic\+Arc\+Secant\+Node@{Hyperbolic\+Arc\+Secant\+Node}!Evaluate@{Evaluate}}
+\index{Evaluate@{Evaluate}!Hyperbolic\+Arc\+Secant\+Node@{Hyperbolic\+Arc\+Secant\+Node}}
+\subsubsection[{\texorpdfstring{Evaluate()}{Evaluate()}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Number} $\ast$ Hyperbolic\+Arc\+Secant\+Node\+::\+Evaluate (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{classHyperbolicArcSecantNode_a1432e0c3a61b8418994289e11cb7f1a0}{}\label{classHyperbolicArcSecantNode_a1432e0c3a61b8418994289e11cb7f1a0}
+
+
+Implements \hyperlink{classExpressionNode_a64975d4dc37742228bd522f6204537f7}{Expression\+Node}.
+
+
+
+Definition at line 1183 of file functions.\+cpp.
+
+
+
+References Expression\+Node\+::\+Evaluate(), Function\+Node\+::expression, Number\+::\+Hyp\+Arc\+Secant(), and Expression\+Node\+::result.
+
+
+\begin{DoxyCode}
+1184 \{
+1185     \hyperlink{classExpressionNode_a1f590649f5a5cb30eb7ee912f7bc1262}{result} = \hyperlink{classFunctionNode_ad7577b179a1937aaf8a0058bb5b546dc}{expression}->\hyperlink{classExpressionNode_a64975d4dc37742228bd522f6204537f7}{Evaluate}()->\hyperlink{structNumber_aa58d792da89672016b2f58beea9009d7}{HypArcSecant}();
+1186     \textcolor{keywordflow}{return} \hyperlink{classExpressionNode_a1f590649f5a5cb30eb7ee912f7bc1262}{result};
+1187 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d8/d04/classHyperbolicArcSecantNode_a1432e0c3a61b8418994289e11cb7f1a0_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{Hyperbolic\+Arc\+Secant\+Node@{Hyperbolic\+Arc\+Secant\+Node}!Get\+Node\+Text@{Get\+Node\+Text}}
+\index{Get\+Node\+Text@{Get\+Node\+Text}!Hyperbolic\+Arc\+Secant\+Node@{Hyperbolic\+Arc\+Secant\+Node}}
+\subsubsection[{\texorpdfstring{Get\+Node\+Text()}{GetNodeText()}}]{\setlength{\rightskip}{0pt plus 5cm}char $\ast$ Hyperbolic\+Arc\+Secant\+Node\+::\+Get\+Node\+Text (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}\hypertarget{classHyperbolicArcSecantNode_a4585803d2a87bc7de7f5260187139865}{}\label{classHyperbolicArcSecantNode_a4585803d2a87bc7de7f5260187139865}
+
+
+Implements \hyperlink{classExpressionNode_a42a5e9562b0f645a19dcc83f698069b5}{Expression\+Node}.
+
+
+
+Definition at line 1189 of file functions.\+cpp.
+
+
+\begin{DoxyCode}
+1190 \{
+1191     \textcolor{keywordflow}{return} (\textcolor{keywordtype}{char}*)\textcolor{stringliteral}{"asech"};
+1192 \}
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+app/main/\hyperlink{functions_8h}{functions.\+h}\item 
+app/main/\hyperlink{functions_8cpp}{functions.\+cpp}\end{DoxyCompactItemize}

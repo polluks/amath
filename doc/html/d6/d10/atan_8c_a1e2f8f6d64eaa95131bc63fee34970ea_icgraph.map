@@ -1,0 +1,40 @@
+<map id="atan" name="atan">
+<area shape="rect" id="node2" href="$d2/d49/structRealNumber.html#af805be2ef7c041b677160859da753893" title="Inverse trigonometric cotangent function. " alt="" coords="100,411,283,437"/>
+<area shape="rect" id="node3" href="$d2/d49/structRealNumber.html#a3e1c71bcd7ec27804247d5efa538b877" title="Inverse trigonometric tangent function. " alt="" coords="106,461,277,488"/>
+<area shape="rect" id="node4" href="$d4/d16/atan2_8c.html#a349377202ca14f79eb335b1a421fe4d8" title="atan2" alt="" coords="164,512,219,539"/>
+<area shape="rect" id="node5" href="$d9/d2d/clog_8c.html#a888b8eb5ccc46411e68f6d7b99035888" title="Natural logarithm of a complex number. " alt="" coords="334,411,381,437"/>
+<area shape="rect" id="node37" href="$d5/d7a/cpow_8c.html#a2c8af642928f3ec79a10a52983981ffa" title="Complex number raised to a power. " alt="" coords="331,715,384,741"/>
+<area shape="rect" id="node6" href="$d0/d7f/cacos_8c.html#ac182d6022bdabf7f2b6eccb6a0ea497b" title="Inverse cosine of complex number. " alt="" coords="485,5,542,32"/>
+<area shape="rect" id="node8" href="$d7/d52/cacosh_8c.html#a451ef5c81d4091e547e52a9a03af260d" title="Inverse hyperbolic cosine of complex number. " alt="" coords="481,56,545,83"/>
+<area shape="rect" id="node10" href="$d2/d1c/cacot_8c.html#a9fe610b52824ffaa0764c77e462c9815" title="Inverse cotangent of complex number. " alt="" coords="486,107,541,133"/>
+<area shape="rect" id="node12" href="$d5/db4/cacoth_8c.html#ab9d5fbd365098aa6a35e8599e13d7adb" title="Inverse hyperbolic cotangent of complex number. " alt="" coords="483,157,544,184"/>
+<area shape="rect" id="node14" href="$d5/db0/cacsc_8c.html#aa8a49b2418f7bbcf0a8f72a15fbb4984" title="Inverse cosecant of complex number. " alt="" coords="485,208,542,235"/>
+<area shape="rect" id="node16" href="$d6/d51/cacsch_8c.html#a1a3241a96a0225c9ef3113f5e5c48acf" title="Inverse hyperbolic cosecant of complex number. " alt="" coords="481,259,545,285"/>
+<area shape="rect" id="node18" href="$d5/dc8/casec_8c.html#ae509596503bb6ea1142d470882e074a7" title="Inverse secant expressed using complex logarithms: " alt="" coords="485,309,542,336"/>
+<area shape="rect" id="node20" href="$d9/dd5/casech_8c.html#ad47f8259620b339981f876087f195cb4" title="Inverse hyperbolic secant of complex numbers. " alt="" coords="481,360,545,387"/>
+<area shape="rect" id="node22" href="$d9/dcf/casin_8c.html#a411c00ad70bc1b91a5de261b64d0f131" title="Inverse sine of complex number. " alt="" coords="487,411,540,437"/>
+<area shape="rect" id="node24" href="$db/d83/casinh_8c.html#a333c9aa02a58163693f67e1d47aa9887" title="Inverse hyperbolic sine of complex number. " alt="" coords="483,461,543,488"/>
+<area shape="rect" id="node26" href="$dc/d63/catan_8c.html#aa4ec5b4617afd43de3b6c7a11e850f04" title="Inverse tangent of complex number. " alt="" coords="486,512,541,539"/>
+<area shape="rect" id="node28" href="$d2/da0/catanh_8c.html#a0808614b4e465dc4b4827382a9f77447" title="Inverse hyperbolic tangent of complex number. " alt="" coords="483,563,544,589"/>
+<area shape="rect" id="node30" href="$d8/d0f/ccbrt_8c.html#a9411d07785a32ac077d24d6c8a5c5554" title="Cube root of complex number. " alt="" coords="488,613,539,640"/>
+<area shape="rect" id="node32" href="$df/df7/clog10_8c.html#a5e20d88f7f7f17d510ddf62f269c8343" title="Base 10 logarithmic value of complex number. " alt="" coords="483,664,543,691"/>
+<area shape="rect" id="node34" href="$db/dd0/clogb_8c.html#a3951e04bc6370fb9fd7b0ff2c2558d7b" title="Base 2 logarithmic value of complex number. " alt="" coords="487,715,540,741"/>
+<area shape="rect" id="node36" href="$db/d8e/structComplexNumber.html#af2b337a76672ec647dbe707d3287d6df" title="ComplexNumber::Log" alt="" coords="439,765,588,792"/>
+<area shape="rect" id="node7" href="$db/d8e/structComplexNumber.html#a5f9bdc56dba5fc8cdf8afb8cd232e7e4" title="ComplexNumber::ArcCosine" alt="" coords="664,5,853,32"/>
+<area shape="rect" id="node9" href="$db/d8e/structComplexNumber.html#a9d1b26167fb3e3c84e18b724bcfbb48a" title="ComplexNumber::HypArcCosine" alt="" coords="652,56,865,83"/>
+<area shape="rect" id="node11" href="$db/d8e/structComplexNumber.html#a412a4480826c808d9358ccc84f24a75f" title="ComplexNumber::ArcCotangent" alt="" coords="655,107,863,133"/>
+<area shape="rect" id="node13" href="$db/d8e/structComplexNumber.html#acf624375cf09c48f5209ec3605ca01f6" title="ComplexNumber::HypArcCotangent" alt="" coords="643,157,875,184"/>
+<area shape="rect" id="node15" href="$db/d8e/structComplexNumber.html#a904a9af5470b037c1931d7d090410c94" title="ComplexNumber::ArcCosecant" alt="" coords="657,208,861,235"/>
+<area shape="rect" id="node17" href="$db/d8e/structComplexNumber.html#af53cdbbf59f07f40118cf05a51cf3d0a" title="ComplexNumber::HypArcCosecant" alt="" coords="645,259,873,285"/>
+<area shape="rect" id="node19" href="$db/d8e/structComplexNumber.html#a66cb3904e4b3127f0e3714ba23a0c981" title="ComplexNumber::ArcSecant" alt="" coords="664,309,853,336"/>
+<area shape="rect" id="node21" href="$db/d8e/structComplexNumber.html#af0d9ceb661b6bf3052d3806c84ab6faf" title="ComplexNumber::HypArcSecant" alt="" coords="652,360,865,387"/>
+<area shape="rect" id="node23" href="$db/d8e/structComplexNumber.html#ab52b2cfd9cd0ba862346408c580e385c" title="ComplexNumber::ArcSine" alt="" coords="671,411,846,437"/>
+<area shape="rect" id="node25" href="$db/d8e/structComplexNumber.html#a0081fb3057a6ab825ac0b3dbea62406b" title="ComplexNumber::HypArcSine" alt="" coords="659,461,858,488"/>
+<area shape="rect" id="node27" href="$db/d8e/structComplexNumber.html#a69dc018433e7409d5b6b6d87568ae232" title="ComplexNumber::ArcTangent" alt="" coords="661,512,856,539"/>
+<area shape="rect" id="node29" href="$db/d8e/structComplexNumber.html#a9c1090310f2f9e656467625e0137c8dc" title="ComplexNumber::HypArcTangent" alt="" coords="649,563,868,589"/>
+<area shape="rect" id="node31" href="$db/d8e/structComplexNumber.html#a1589eac796ec230625298d196fe84c25" title="ComplexNumber::CubeRoot" alt="" coords="665,613,852,640"/>
+<area shape="rect" id="node33" href="$db/d8e/structComplexNumber.html#a77a7c95712136b6beeded79210a18c00" title="ComplexNumber::Log10" alt="" coords="677,664,840,691"/>
+<area shape="rect" id="node35" href="$db/d8e/structComplexNumber.html#ae8ff446ea20c3b1e4dfa979eaed9ea86" title="ComplexNumber::Log2" alt="" coords="681,715,837,741"/>
+<area shape="rect" id="node38" href="$db/d8e/structComplexNumber.html#a0ab40e1cbe5c25629fe62643ed8b9352" title="ComplexNumber::Raise" alt="" coords="432,816,595,843"/>
+<area shape="rect" id="node39" href="$d2/d49/structRealNumber.html#aaf9c066a4b9e9d845edefd40f614a517" title="Expontation function. " alt="" coords="690,816,827,843"/>
+</map>

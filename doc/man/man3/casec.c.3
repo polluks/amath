@@ -1,0 +1,73 @@
+.TH "lib/cplex/casec.c" 3 "Thu Jan 19 2017" "Version 1.6.0" "amath" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+lib/cplex/casec.c \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'prim\&.h'\fP
+.br
+\fC#include 'math\&.h'\fP
+.br
+\fC#include 'complex\&.h'\fP
+.br
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBcomplex\fP \fBcasec\fP (\fBcomplex\fP z)"
+.br
+.RI "\fIInverse secant expressed using complex logarithms: \fP"
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "\fBcomplex\fP casec (\fBcomplex\fP z)"
+
+.PP
+Inverse secant expressed using complex logarithms: 
+.PP
+\fBVersion:\fP
+.RS 4
+1\&.1 
+.RE
+.PP
+\fBDate:\fP
+.RS 4
+14/10/01
+.RE
+.PP
+Inverse secant expressed using complex logarithms: 
+.PP
+.nf
+
+arcsec z = -i * log(i * sqr(1 - 1/(z*z)) + 1/z)
+.fi
+.PP
+ More info is available at Wikipedia: 
+.br
+ http://en.wikipedia.org/wiki/Inverse_trigonometric_functions#Logarithmic_forms 
+.PP
+Definition at line 43 of file casec\&.c\&.
+.PP
+References cadd(), cdiv(), clog(), cmul(), cpack(), creci(), csqrt(), and csub()\&.
+.PP
+Referenced by ComplexNumber::ArcSecant()\&.
+.PP
+.nf
+44 {
+45     complex one = cpack(1\&.0, 0\&.0);
+46     complex i = cpack(0\&.0, 1\&.0);
+47     complex j = cpack(0\&.0, -1\&.0);
+48     complex rz = creci(z);
+49     complex z2 = cmul(z, z);
+50     complex p = cdiv(one, z2);
+51     complex q = csqrt(csub(one, p));
+52     complex w = cmul(j, clog(cadd(cmul(i, q), rz)));
+53     return w;
+54 }
+.fi
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for amath from the source code\&.

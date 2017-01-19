@@ -1,0 +1,216 @@
+.TH "lib/real/log1p.c" 3 "Thu Jan 19 2017" "Version 1.6.0" "amath" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+lib/real/log1p.c \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'prim\&.h'\fP
+.br
+\fC#include 'math\&.h'\fP
+.br
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "double \fBlog1p\fP (double x)"
+.br
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "static const double \fBln2_hi\fP = 6\&.93147180369123816490e\-01"
+.br
+.ti -1c
+.RI "static const double \fBln2_lo\fP = 1\&.90821492927058770002e\-10"
+.br
+.ti -1c
+.RI "static const double \fBtwo54\fP = 1\&.80143985094819840000e+16"
+.br
+.ti -1c
+.RI "static const double \fBLp1\fP = 6\&.666666666666735130e\-01"
+.br
+.ti -1c
+.RI "static const double \fBLp2\fP = 3\&.999999999940941908e\-01"
+.br
+.ti -1c
+.RI "static const double \fBLp3\fP = 2\&.857142874366239149e\-01"
+.br
+.ti -1c
+.RI "static const double \fBLp4\fP = 2\&.222219843214978396e\-01"
+.br
+.ti -1c
+.RI "static const double \fBLp5\fP = 1\&.818357216161805012e\-01"
+.br
+.ti -1c
+.RI "static const double \fBLp6\fP = 1\&.531383769920937332e\-01"
+.br
+.ti -1c
+.RI "static const double \fBLp7\fP = 1\&.479819860511658591e\-01"
+.br
+.ti -1c
+.RI "static double \fBzero\fP = 0\&.0"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "double log1p (double x)"
+
+.PP
+Definition at line 125 of file log1p\&.c\&.
+.PP
+References ln2_hi, ln2_lo, Lp1, Lp2, Lp3, Lp4, Lp5, Lp6, Lp7, two54, and zero\&.
+.PP
+Referenced by acosh(), asinh(), and atanh()\&.
+.PP
+.nf
+126 {
+127     double hfsq,f,c,s,z,R,u;
+128     sword k,hx,hu,ax;
+129 
+130     f = 0\&.0;
+131     c = 0\&.0;
+132     hu = 0;
+133 
+134     GET_HIGH_WORD(hx,x); /* high word of x */
+135     ax = hx&0x7fffffff;
+136 
+137     k = 1;
+138     if (hx < 0x3FDA827A) {          /* x < 0\&.41422  */
+139         if(ax>=0x3ff00000) {        /* x <= -1\&.0 */
+140             if(x==-1\&.0) return -two54/zero; /* log1p(-1)=+inf */
+141             else return (x-x)/(x-x);    /* log1p(x<-1)=NaN */
+142         }
+143         if(ax<0x3e200000) {         /* |x| < 2**-29 */
+144             if(two54+x>zero         /* raise inexact */
+145                     &&ax<0x3c900000)        /* |x| < 2**-54 */
+146                 return x;
+147             else
+148                 return x - x*x*0\&.5;
+149         }
+150         if(hx>0||hx<=((int)0xbfd2bec3)) {
+151             k=0;
+152             f=x;
+153             hu=1;
+154         }   /* -0\&.2929<x<0\&.41422 */
+155     }
+156     if (hx >= 0x7ff00000) return x+x;
+157     if(k!=0) {
+158         if(hx<0x43400000) {
+159             u  = 1\&.0+x;
+160             GET_HIGH_WORD(hu,u); /* high word of u */
+161             k  = (hu>>20)-1023;
+162             c  = (k>0)? 1\&.0-(u-x):x-(u-1\&.0);/* correction term */
+163             c /= u;
+164         } else {
+165             u  = x;
+166             GET_HIGH_WORD(hu,u); /* high word of u */
+167             k  = (hu>>20)-1023;
+168             c  = 0;
+169         }
+170         hu &= 0x000fffff;
+171         if(hu<0x6a09e) {
+172             SET_HIGH_WORD(u, hu|0x3ff00000);    /* normalize u */
+173         } else {
+174             k += 1;
+175             SET_HIGH_WORD(u, hu|0x3fe00000);    /* normalize u/2 */
+176             hu = (0x00100000-hu)>>2;
+177         }
+178         f = u-1\&.0;
+179     }
+180     hfsq=0\&.5*f*f;
+181     if(hu==0) { /* |f| < 2**-20 */
+182         if(f==zero) {
+183             if(k==0) return zero;
+184             else {
+185                 c += k*ln2_lo;
+186                 return k*ln2_hi+c;
+187             }
+188         }
+189         R = hfsq*(1\&.0-0\&.66666666666666666*f);
+190         if(k==0) return f-R;
+191         else
+192             return k*ln2_hi-((R-(k*ln2_lo+c))-f);
+193     }
+194     s = f/(2\&.0+f);
+195     z = s*s;
+196     R = z*(Lp1+z*(Lp2+z*(Lp3+z*(Lp4+z*(Lp5+z*(Lp6+z*Lp7))))));
+197     if(k==0) return f-(hfsq-s*(hfsq+R));
+198     else
+199         return k*ln2_hi-((hfsq-(s*(hfsq+R)+(k*ln2_lo+c)))-f);
+200 }
+.fi
+.SH "Variable Documentation"
+.PP 
+.SS "const double ln2_hi = 6\&.93147180369123816490e\-01\fC [static]\fP"
+
+.PP
+Definition at line 112 of file log1p\&.c\&.
+.PP
+Referenced by log1p()\&.
+.SS "const double ln2_lo = 1\&.90821492927058770002e\-10\fC [static]\fP"
+
+.PP
+Definition at line 113 of file log1p\&.c\&.
+.PP
+Referenced by log1p()\&.
+.SS "const double Lp1 = 6\&.666666666666735130e\-01\fC [static]\fP"
+
+.PP
+Definition at line 115 of file log1p\&.c\&.
+.PP
+Referenced by log1p()\&.
+.SS "const double Lp2 = 3\&.999999999940941908e\-01\fC [static]\fP"
+
+.PP
+Definition at line 116 of file log1p\&.c\&.
+.PP
+Referenced by log1p()\&.
+.SS "const double Lp3 = 2\&.857142874366239149e\-01\fC [static]\fP"
+
+.PP
+Definition at line 117 of file log1p\&.c\&.
+.PP
+Referenced by log1p()\&.
+.SS "const double Lp4 = 2\&.222219843214978396e\-01\fC [static]\fP"
+
+.PP
+Definition at line 118 of file log1p\&.c\&.
+.PP
+Referenced by log1p()\&.
+.SS "const double Lp5 = 1\&.818357216161805012e\-01\fC [static]\fP"
+
+.PP
+Definition at line 119 of file log1p\&.c\&.
+.PP
+Referenced by log1p()\&.
+.SS "const double Lp6 = 1\&.531383769920937332e\-01\fC [static]\fP"
+
+.PP
+Definition at line 120 of file log1p\&.c\&.
+.PP
+Referenced by log1p()\&.
+.SS "const double Lp7 = 1\&.479819860511658591e\-01\fC [static]\fP"
+
+.PP
+Definition at line 121 of file log1p\&.c\&.
+.PP
+Referenced by log1p()\&.
+.SS "const double two54 = 1\&.80143985094819840000e+16\fC [static]\fP"
+
+.PP
+Definition at line 114 of file log1p\&.c\&.
+.PP
+Referenced by log1p()\&.
+.SS "double zero = 0\&.0\fC [static]\fP"
+
+.PP
+Definition at line 123 of file log1p\&.c\&.
+.PP
+Referenced by log1p()\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for amath from the source code\&.

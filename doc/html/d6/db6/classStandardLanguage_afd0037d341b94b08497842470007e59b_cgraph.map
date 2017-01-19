@@ -1,0 +1,10 @@
+<map id="StandardLanguage::LoadCatalogs" name="StandardLanguage::LoadCatalogs">
+<area shape="rect" id="node2" href="$d6/db6/classStandardLanguage.html#ab1945e2e3503ce12eac28c0d08234cfb" title="StandardLanguage::GetNextPair" alt="" coords="272,31,483,57"/>
+<area shape="rect" id="node5" href="$d6/db6/classStandardLanguage.html#a4fe22e49f3ce358690242d0b1058ccfa" title="StandardLanguage::LoadCatalog" alt="" coords="272,132,483,159"/>
+<area shape="rect" id="node3" href="$d6/db6/classStandardLanguage.html#a8a4a4a2879f1e907c17f36dfafdebd66" title="StandardLanguage::GetNextLine" alt="" coords="807,5,1017,32"/>
+<area shape="rect" id="node4" href="$d6/db6/classStandardLanguage.html#af0078bbe8a06f6e4fb35ddfda1170e19" title="StandardLanguage::SkipComments" alt="" coords="531,31,759,57"/>
+<area shape="rect" id="node6" href="$dd/d2a/alloccpy_8c.html#a5bed05c70cb17e541fee570b5dc32e1a" title="Allocate memory and copy a string into the array. " alt="" coords="592,81,697,108"/>
+<area shape="rect" id="node7" href="$d5/d5a/io_8cpp.html#aaf891622b11e0bb888ebf08612884aa8" title="CreateFilesystem" alt="" coords="582,132,707,159"/>
+<area shape="rect" id="node8" href="$dc/d84/classCharBuffer.html#a7dfd3feaaf80f318ba44efe15b1ec44b" title="CharBuffer::GetString" alt="" coords="571,183,719,209"/>
+<area shape="rect" id="node9" href="$d5/d68/classFilesystemBase.html#adc4a9e1dc189bcd221e3b994bc854d46" title="FilesystemBase::LoadTextFile" alt="" coords="545,233,744,260"/>
+</map>

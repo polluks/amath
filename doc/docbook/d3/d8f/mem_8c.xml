@@ -1,0 +1,135 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="d3/d8f/mem_8c">
+    <title>mem.c File Reference</title>
+    <programlisting>#include &quot;mem.h&quot;</programlisting>
+    <programlisting>#include &quot;clib.h&quot;</programlisting>
+    <programlisting>#include &lt;stdlib.h&gt;</programlisting>
+<para>Include dependency diagram for mem.c</para>
+<para>
+    <figure>
+        <title>Dependency diagram</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="../../d9/d41/mem_8c__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+<para>Included by dependency diagram for mem.c</para>
+<para>
+    <figure>
+        <title>Dependency diagram</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="../../d8/db8/mem_8c__dep__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+        <section>
+            <title> Classes </title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="d6/d9d/structMemoryBlock">MemoryBlock</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="d1/db9/structMemoryList">MemoryList</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title>Macros</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="d3/d8f/mem_8c_1a10e2f4ab980f721b99607b350e2b78a6">ALLOC_MEM</link> calloc(1L,x)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="d3/d8f/mem_8c_1ab9a68304873c8c763a501b384e9fe9b6">FREE_MEM</link> free(x)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="d3/d8f/mem_8c_1ac50c155efcb03f50543b3ae9cca8f09e">Debug</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title>Variables</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="d1/db9/structMemoryList">MemoryList</link> * <link linkend="d3/d8f/mem_8c_1a0c8f6ac3ab8d4ceae90436f3bfc06616">list</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title>Functions</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="d3/d8f/mem_8c_1addd1a224479313960a376ac194ea467a">alloc_error</link> (
+char * , size_t )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="d3/d8f/mem_8c_1a96cb78338e02e8381392c81761887323">dealloc_error</link> (
+char * , void * )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void * <link linkend="d3/d8f/mem_8c_1a9bce7ee26e868552b3784e98e8a75f0b">AllocMemSafe</link> (
+size_t size)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="d3/d8f/mem_8c_1ab4b822e060386ea562cdf7cdb94d57ea">FreeMemSafe</link> (
+void * block)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="d3/d8f/mem_8c_1adcb19646ed930d44f25ddc9f7767a182">FreeAllSafe</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="d3/d8f/mem_8c_1ad57dfcaf475445feb7cf1274d489707d">MemUsage</link> (
+long * blocks, long * size, long * peak)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+    <simplesect>
+        <title>Detailed Description</title>
+    <para>Definition in file /home/carsten/amath2/lib/clib/mem.c</para>
+    </simplesect>
+</section>

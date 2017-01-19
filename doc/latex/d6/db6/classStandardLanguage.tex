@@ -1,0 +1,870 @@
+\hypertarget{classStandardLanguage}{}\section{Standard\+Language Class Reference}
+\label{classStandardLanguage}\index{Standard\+Language@{Standard\+Language}}
+
+
+{\ttfamily \#include $<$language\+\_\+stdc.\+h$>$}
+
+
+
+Inheritance diagram for Standard\+Language\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=178pt]{d0/dab/classStandardLanguage__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Standard\+Language\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d4/d68/classStandardLanguage__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classStandardLanguage_a0d604e2af2f2bf4dc4abbe7b18c05cea}{Standard\+Language} ()
+\item 
+\hyperlink{classStandardLanguage_a21a7e329043a38b838b73feee36ebcfa}{$\sim$\+Standard\+Language} ()
+\item 
+char \hyperlink{classStandardLanguage_a291d9c45352a324482f63738f8cbfe9f}{Get\+Fraction\+Point} ()
+\item 
+\hyperlink{platform_8h_a1062901a7428fdd9c7f180f5e01ea056}{bool} \hyperlink{classStandardLanguage_a1de5d6a7b40037afc079e1d5a3ce65e7}{Char\+Is\+Al\+Num} (unsigned long character)
+\item 
+\hyperlink{platform_8h_a1062901a7428fdd9c7f180f5e01ea056}{bool} \hyperlink{classStandardLanguage_a615e7e7fe6fd04084f0a59ecaed2f7d6}{Char\+Is\+Alpha} (unsigned long character)
+\item 
+\hyperlink{platform_8h_a1062901a7428fdd9c7f180f5e01ea056}{bool} \hyperlink{classStandardLanguage_aa884e2cd9f3778bb85bf4b7c67a1d62d}{Char\+Is\+Digit} (unsigned long character)
+\item 
+\hyperlink{platform_8h_a1062901a7428fdd9c7f180f5e01ea056}{bool} \hyperlink{classStandardLanguage_a3dbeae5f049069a2646ebf137c6cb4a5}{Char\+Is\+Punct} (unsigned long character)
+\item 
+\hyperlink{platform_8h_a1062901a7428fdd9c7f180f5e01ea056}{bool} \hyperlink{classStandardLanguage_afcc504da29308380fd0ada0f46ad940d}{Char\+Is\+Space} (unsigned long character)
+\item 
+\hyperlink{platform_8h_a1062901a7428fdd9c7f180f5e01ea056}{bool} \hyperlink{classStandardLanguage_a6e79e25699739742aa2abd43bf3fd469}{Char\+Is\+Cntrl} (unsigned long character)
+\item 
+\hyperlink{platform_8h_a1062901a7428fdd9c7f180f5e01ea056}{bool} \hyperlink{classStandardLanguage_ac3062fe9cb6298205f0deee955ebf36e}{Str\+Is\+Equal\+Loc} (const char $\ast$s1, const char $\ast$s2)
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+char $\ast$ \hyperlink{classStandardLanguage_a0472d7747cfb0985f20b483756327fdc}{Translate} (\hyperlink{structtextdef}{textdef} $\ast$def)
+\item 
+char $\ast$ \hyperlink{classStandardLanguage_a5a7011f9307a053509a28706f02f835f}{Translate} (\hyperlink{structhelptextdef}{helptextdef} $\ast$def)
+\item 
+char $\ast$ \hyperlink{classStandardLanguage_a623162a4830eaec08bc266cd3fa6068e}{Translate} (\hyperlink{structidenthelpdef}{identhelpdef} $\ast$def)
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classStandardLanguage_afd0037d341b94b08497842470007e59b}{Load\+Catalogs} ()
+\item 
+void \hyperlink{classStandardLanguage_a4fe22e49f3ce358690242d0b1058ccfa}{Load\+Catalog} (char $\ast$$\ast$dest, const char $\ast$file)
+\item 
+void \hyperlink{classStandardLanguage_ab1945e2e3503ce12eac28c0d08234cfb}{Get\+Next\+Pair} (const char $\ast$$\ast$key, const char $\ast$$\ast$value)
+\item 
+void \hyperlink{classStandardLanguage_a8a4a4a2879f1e907c17f36dfafdebd66}{Get\+Next\+Line} ()
+\item 
+void \hyperlink{classStandardLanguage_af0078bbe8a06f6e4fb35ddfda1170e19}{Skip\+Comments} ()
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+char $\ast$ \hyperlink{classStandardLanguage_a6b73c841d7401e608576087468ccc088}{textbase}
+\item 
+char $\ast$ \hyperlink{classStandardLanguage_a59e4ecff11a3a1f03aeff6af81004c2a}{helpbase}
+\item 
+char $\ast$ \hyperlink{classStandardLanguage_af3bade0473bfa891d45f7938043df84f}{identbase}
+\item 
+char $\ast$ \hyperlink{classStandardLanguage_a02ebeba276a3f355b73533eb8a664673}{kwordbase}
+\item 
+char $\ast$ \hyperlink{classStandardLanguage_a4cf91a3b08223744f1ef342b0f98bb3b}{ptr}
+\item 
+\hyperlink{structtextdef}{textdef} $\ast$ \hyperlink{classStandardLanguage_a2b32cc8ca90d4e3da23b83647ce83031}{textcatalog}
+\item 
+\hyperlink{structhelptextdef}{helptextdef} $\ast$ \hyperlink{classStandardLanguage_a75febfaeb78c26265b46b77d6fc5869c}{helpcatalog}
+\item 
+\hyperlink{structidenthelpdef}{identhelpdef} $\ast$ \hyperlink{classStandardLanguage_afecc69960bfb65e8658c7bc10d99fd51}{identcatalog}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 35 of file language\+\_\+stdc.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Standard\+Language@{Standard\+Language}!Standard\+Language@{Standard\+Language}}
+\index{Standard\+Language@{Standard\+Language}!Standard\+Language@{Standard\+Language}}
+\subsubsection[{\texorpdfstring{Standard\+Language()}{StandardLanguage()}}]{\setlength{\rightskip}{0pt plus 5cm}Standard\+Language\+::\+Standard\+Language (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classStandardLanguage_a0d604e2af2f2bf4dc4abbe7b18c05cea}{}\label{classStandardLanguage_a0d604e2af2f2bf4dc4abbe7b18c05cea}
+
+
+Definition at line 38 of file language\+\_\+stdc.\+cpp.
+
+
+
+References Language\+::\+Language(), and Load\+Catalogs().
+
+
+
+Referenced by Create\+Language().
+
+
+\begin{DoxyCode}
+38                                    :
+39     \hyperlink{classLanguage_a09448361f9188bceaaeebc5576cd6896}{Language}()
+40 \{
+41     \hyperlink{classStandardLanguage_afd0037d341b94b08497842470007e59b}{LoadCatalogs}();
+42 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d6/db6/classStandardLanguage_a0d604e2af2f2bf4dc4abbe7b18c05cea_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d6/db6/classStandardLanguage_a0d604e2af2f2bf4dc4abbe7b18c05cea_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Standard\+Language@{Standard\+Language}!````~Standard\+Language@{$\sim$\+Standard\+Language}}
+\index{````~Standard\+Language@{$\sim$\+Standard\+Language}!Standard\+Language@{Standard\+Language}}
+\subsubsection[{\texorpdfstring{$\sim$\+Standard\+Language()}{~StandardLanguage()}}]{\setlength{\rightskip}{0pt plus 5cm}Standard\+Language\+::$\sim$\+Standard\+Language (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classStandardLanguage_a21a7e329043a38b838b73feee36ebcfa}{}\label{classStandardLanguage_a21a7e329043a38b838b73feee36ebcfa}
+
+
+Definition at line 44 of file language\+\_\+stdc.\+cpp.
+
+
+
+References helpbase, identbase, kwordbase, and textbase.
+
+
+\begin{DoxyCode}
+45 \{
+46     \textcolor{keywordflow}{if} (\hyperlink{classStandardLanguage_a6b73c841d7401e608576087468ccc088}{textbase} != \hyperlink{platform_8h_a46ff2bfbf0d44b8466a2251d5bd5e6f8}{NOMEM}) \{
+47         \textcolor{keyword}{delete} \hyperlink{classStandardLanguage_a6b73c841d7401e608576087468ccc088}{textbase};
+48     \}
+49 
+50     \textcolor{keywordflow}{if} (\hyperlink{classStandardLanguage_a59e4ecff11a3a1f03aeff6af81004c2a}{helpbase} != \hyperlink{platform_8h_a46ff2bfbf0d44b8466a2251d5bd5e6f8}{NOMEM}) \{
+51         \textcolor{keyword}{delete} \hyperlink{classStandardLanguage_a59e4ecff11a3a1f03aeff6af81004c2a}{helpbase};
+52     \}
+53 
+54     \textcolor{keywordflow}{if} (\hyperlink{classStandardLanguage_af3bade0473bfa891d45f7938043df84f}{identbase} != \hyperlink{platform_8h_a46ff2bfbf0d44b8466a2251d5bd5e6f8}{NOMEM}) \{
+55         \textcolor{keyword}{delete} \hyperlink{classStandardLanguage_af3bade0473bfa891d45f7938043df84f}{identbase};
+56     \}
+57 
+58     \textcolor{keywordflow}{if} (\hyperlink{classStandardLanguage_a02ebeba276a3f355b73533eb8a664673}{kwordbase} != \hyperlink{platform_8h_a46ff2bfbf0d44b8466a2251d5bd5e6f8}{NOMEM}) \{
+59         \textcolor{keyword}{delete} \hyperlink{classStandardLanguage_a02ebeba276a3f355b73533eb8a664673}{kwordbase};
+60     \}
+61 
+62 \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\index{Standard\+Language@{Standard\+Language}!Char\+Is\+Al\+Num@{Char\+Is\+Al\+Num}}
+\index{Char\+Is\+Al\+Num@{Char\+Is\+Al\+Num}!Standard\+Language@{Standard\+Language}}
+\subsubsection[{\texorpdfstring{Char\+Is\+Al\+Num(unsigned long character)}{CharIsAlNum(unsigned long character)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} Standard\+Language\+::\+Char\+Is\+Al\+Num (
+\begin{DoxyParamCaption}
+\item[{unsigned long}]{character}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{classStandardLanguage_a1de5d6a7b40037afc079e1d5a3ce65e7}{}\label{classStandardLanguage_a1de5d6a7b40037afc079e1d5a3ce65e7}
+
+
+Implements \hyperlink{classLanguage_aae4b207df20ebca6181cf336b4d7bccb}{Language}.
+
+
+
+Definition at line 90 of file language\+\_\+stdc.\+cpp.
+
+
+\begin{DoxyCode}
+91 \{
+92     \textcolor{keywordflow}{return} (character >= \textcolor{charliteral}{'a'} && character <= \textcolor{charliteral}{'z'}) ||
+93            (character >= \textcolor{charliteral}{'A'} && character <= \textcolor{charliteral}{'Z'}) ||
+94            (character >= \textcolor{charliteral}{'0'} && character <= \textcolor{charliteral}{'9'});
+95 \}
+\end{DoxyCode}
+\index{Standard\+Language@{Standard\+Language}!Char\+Is\+Alpha@{Char\+Is\+Alpha}}
+\index{Char\+Is\+Alpha@{Char\+Is\+Alpha}!Standard\+Language@{Standard\+Language}}
+\subsubsection[{\texorpdfstring{Char\+Is\+Alpha(unsigned long character)}{CharIsAlpha(unsigned long character)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} Standard\+Language\+::\+Char\+Is\+Alpha (
+\begin{DoxyParamCaption}
+\item[{unsigned long}]{character}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{classStandardLanguage_a615e7e7fe6fd04084f0a59ecaed2f7d6}{}\label{classStandardLanguage_a615e7e7fe6fd04084f0a59ecaed2f7d6}
+
+
+Implements \hyperlink{classLanguage_a179619af0ab0e5159b9fd4158dcac3a9}{Language}.
+
+
+
+Definition at line 97 of file language\+\_\+stdc.\+cpp.
+
+
+\begin{DoxyCode}
+98 \{
+99     \textcolor{keywordflow}{return} (character >= \textcolor{charliteral}{'a'} && character <= \textcolor{charliteral}{'z'}) ||
+100            (character >= \textcolor{charliteral}{'A'} && character <= \textcolor{charliteral}{'Z'});
+101 \}
+\end{DoxyCode}
+\index{Standard\+Language@{Standard\+Language}!Char\+Is\+Cntrl@{Char\+Is\+Cntrl}}
+\index{Char\+Is\+Cntrl@{Char\+Is\+Cntrl}!Standard\+Language@{Standard\+Language}}
+\subsubsection[{\texorpdfstring{Char\+Is\+Cntrl(unsigned long character)}{CharIsCntrl(unsigned long character)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} Standard\+Language\+::\+Char\+Is\+Cntrl (
+\begin{DoxyParamCaption}
+\item[{unsigned long}]{character}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{classStandardLanguage_a6e79e25699739742aa2abd43bf3fd469}{}\label{classStandardLanguage_a6e79e25699739742aa2abd43bf3fd469}
+
+
+Implements \hyperlink{classLanguage_a392214aa8de840d1cf7b738945ce1799}{Language}.
+
+
+
+Definition at line 118 of file language\+\_\+stdc.\+cpp.
+
+
+\begin{DoxyCode}
+119 \{
+120     \textcolor{keywordflow}{return} (character < 32 || character > 125);
+121 \}
+\end{DoxyCode}
+\index{Standard\+Language@{Standard\+Language}!Char\+Is\+Digit@{Char\+Is\+Digit}}
+\index{Char\+Is\+Digit@{Char\+Is\+Digit}!Standard\+Language@{Standard\+Language}}
+\subsubsection[{\texorpdfstring{Char\+Is\+Digit(unsigned long character)}{CharIsDigit(unsigned long character)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} Standard\+Language\+::\+Char\+Is\+Digit (
+\begin{DoxyParamCaption}
+\item[{unsigned long}]{character}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{classStandardLanguage_aa884e2cd9f3778bb85bf4b7c67a1d62d}{}\label{classStandardLanguage_aa884e2cd9f3778bb85bf4b7c67a1d62d}
+
+
+Implements \hyperlink{classLanguage_a9f165e7098006b44eadd61e0c95f925b}{Language}.
+
+
+
+Definition at line 103 of file language\+\_\+stdc.\+cpp.
+
+
+\begin{DoxyCode}
+104 \{
+105     \textcolor{keywordflow}{return} (character >= \textcolor{charliteral}{'0'} && character <= \textcolor{charliteral}{'9'});
+106 \}
+\end{DoxyCode}
+\index{Standard\+Language@{Standard\+Language}!Char\+Is\+Punct@{Char\+Is\+Punct}}
+\index{Char\+Is\+Punct@{Char\+Is\+Punct}!Standard\+Language@{Standard\+Language}}
+\subsubsection[{\texorpdfstring{Char\+Is\+Punct(unsigned long character)}{CharIsPunct(unsigned long character)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} Standard\+Language\+::\+Char\+Is\+Punct (
+\begin{DoxyParamCaption}
+\item[{unsigned long}]{character}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{classStandardLanguage_a3dbeae5f049069a2646ebf137c6cb4a5}{}\label{classStandardLanguage_a3dbeae5f049069a2646ebf137c6cb4a5}
+
+
+Implements \hyperlink{classLanguage_a7f94a1b716febb63aec10f9f10bed945}{Language}.
+
+
+
+Definition at line 108 of file language\+\_\+stdc.\+cpp.
+
+
+\begin{DoxyCode}
+109 \{
+110     \textcolor{keywordflow}{return} (character == \textcolor{charliteral}{'.'});
+111 \}
+\end{DoxyCode}
+\index{Standard\+Language@{Standard\+Language}!Char\+Is\+Space@{Char\+Is\+Space}}
+\index{Char\+Is\+Space@{Char\+Is\+Space}!Standard\+Language@{Standard\+Language}}
+\subsubsection[{\texorpdfstring{Char\+Is\+Space(unsigned long character)}{CharIsSpace(unsigned long character)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} Standard\+Language\+::\+Char\+Is\+Space (
+\begin{DoxyParamCaption}
+\item[{unsigned long}]{character}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{classStandardLanguage_afcc504da29308380fd0ada0f46ad940d}{}\label{classStandardLanguage_afcc504da29308380fd0ada0f46ad940d}
+
+
+Implements \hyperlink{classLanguage_a1470832710ca9c4e4695bb442759c0a7}{Language}.
+
+
+
+Definition at line 113 of file language\+\_\+stdc.\+cpp.
+
+
+\begin{DoxyCode}
+114 \{
+115     \textcolor{keywordflow}{return} (character == 32);
+116 \}
+\end{DoxyCode}
+\index{Standard\+Language@{Standard\+Language}!Get\+Fraction\+Point@{Get\+Fraction\+Point}}
+\index{Get\+Fraction\+Point@{Get\+Fraction\+Point}!Standard\+Language@{Standard\+Language}}
+\subsubsection[{\texorpdfstring{Get\+Fraction\+Point()}{GetFractionPoint()}}]{\setlength{\rightskip}{0pt plus 5cm}char Standard\+Language\+::\+Get\+Fraction\+Point (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{classStandardLanguage_a291d9c45352a324482f63738f8cbfe9f}{}\label{classStandardLanguage_a291d9c45352a324482f63738f8cbfe9f}
+
+
+Implements \hyperlink{classLanguage_a4c214f08d47e84d53f37bcb5b1fe1b65}{Language}.
+
+
+
+Definition at line 85 of file language\+\_\+stdc.\+cpp.
+
+
+\begin{DoxyCode}
+86 \{
+87     \textcolor{keywordflow}{return} \textcolor{charliteral}{'.'};
+88 \}
+\end{DoxyCode}
+\index{Standard\+Language@{Standard\+Language}!Get\+Next\+Line@{Get\+Next\+Line}}
+\index{Get\+Next\+Line@{Get\+Next\+Line}!Standard\+Language@{Standard\+Language}}
+\subsubsection[{\texorpdfstring{Get\+Next\+Line()}{GetNextLine()}}]{\setlength{\rightskip}{0pt plus 5cm}void Standard\+Language\+::\+Get\+Next\+Line (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classStandardLanguage_a8a4a4a2879f1e907c17f36dfafdebd66}{}\label{classStandardLanguage_a8a4a4a2879f1e907c17f36dfafdebd66}
+
+
+Definition at line 204 of file language\+\_\+stdc.\+cpp.
+
+
+
+References ptr.
+
+
+
+Referenced by Get\+Next\+Pair(), and Skip\+Comments().
+
+
+\begin{DoxyCode}
+205 \{
+206     \textcolor{keywordflow}{while} ((*\hyperlink{classStandardLanguage_a4cf91a3b08223744f1ef342b0f98bb3b}{ptr}) != \textcolor{charliteral}{'\(\backslash\)0'} && (*\hyperlink{classStandardLanguage_a4cf91a3b08223744f1ef342b0f98bb3b}{ptr}) != \textcolor{charliteral}{'\(\backslash\)n'}) \{
+207         \hyperlink{classStandardLanguage_a4cf91a3b08223744f1ef342b0f98bb3b}{ptr}++;
+208     \}
+209 
+210     \textcolor{keywordflow}{if} ((*\hyperlink{classStandardLanguage_a4cf91a3b08223744f1ef342b0f98bb3b}{ptr}) == \textcolor{charliteral}{'\(\backslash\)n'}) \{
+211         *\hyperlink{classStandardLanguage_a4cf91a3b08223744f1ef342b0f98bb3b}{ptr}++ = \textcolor{charliteral}{'\(\backslash\)0'};
+212     \}
+213 \}
+\end{DoxyCode}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d6/db6/classStandardLanguage_a8a4a4a2879f1e907c17f36dfafdebd66_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Standard\+Language@{Standard\+Language}!Get\+Next\+Pair@{Get\+Next\+Pair}}
+\index{Get\+Next\+Pair@{Get\+Next\+Pair}!Standard\+Language@{Standard\+Language}}
+\subsubsection[{\texorpdfstring{Get\+Next\+Pair(const char $\ast$$\ast$key, const char $\ast$$\ast$value)}{GetNextPair(const char **key, const char **value)}}]{\setlength{\rightskip}{0pt plus 5cm}void Standard\+Language\+::\+Get\+Next\+Pair (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$$\ast$}]{key, }
+\item[{const char $\ast$$\ast$}]{value}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classStandardLanguage_ab1945e2e3503ce12eac28c0d08234cfb}{}\label{classStandardLanguage_ab1945e2e3503ce12eac28c0d08234cfb}
+
+
+Definition at line 194 of file language\+\_\+stdc.\+cpp.
+
+
+
+References Get\+Next\+Line(), ptr, and Skip\+Comments().
+
+
+
+Referenced by Load\+Catalogs().
+
+
+\begin{DoxyCode}
+195 \{
+196     \hyperlink{classStandardLanguage_af0078bbe8a06f6e4fb35ddfda1170e19}{SkipComments}();
+197     *key = \hyperlink{classStandardLanguage_a4cf91a3b08223744f1ef342b0f98bb3b}{ptr};
+198     \hyperlink{classStandardLanguage_a8a4a4a2879f1e907c17f36dfafdebd66}{GetNextLine}();
+199     \hyperlink{classStandardLanguage_af0078bbe8a06f6e4fb35ddfda1170e19}{SkipComments}();
+200     *value = \hyperlink{classStandardLanguage_a4cf91a3b08223744f1ef342b0f98bb3b}{ptr};
+201     \hyperlink{classStandardLanguage_a8a4a4a2879f1e907c17f36dfafdebd66}{GetNextLine}();
+202 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d6/db6/classStandardLanguage_ab1945e2e3503ce12eac28c0d08234cfb_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d6/db6/classStandardLanguage_ab1945e2e3503ce12eac28c0d08234cfb_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Standard\+Language@{Standard\+Language}!Load\+Catalog@{Load\+Catalog}}
+\index{Load\+Catalog@{Load\+Catalog}!Standard\+Language@{Standard\+Language}}
+\subsubsection[{\texorpdfstring{Load\+Catalog(char $\ast$$\ast$dest, const char $\ast$file)}{LoadCatalog(char **dest, const char *file)}}]{\setlength{\rightskip}{0pt plus 5cm}void Standard\+Language\+::\+Load\+Catalog (
+\begin{DoxyParamCaption}
+\item[{char $\ast$$\ast$}]{dest, }
+\item[{const char $\ast$}]{file}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classStandardLanguage_a4fe22e49f3ce358690242d0b1058ccfa}{}\label{classStandardLanguage_a4fe22e49f3ce358690242d0b1058ccfa}
+
+
+Definition at line 178 of file language\+\_\+stdc.\+cpp.
+
+
+
+References Alloc\+And\+Copy(), Create\+Filesystem(), Char\+Buffer\+::\+Get\+String(), Filesystem\+Base\+::\+Load\+Text\+File(), and ptr.
+
+
+
+Referenced by Load\+Catalogs().
+
+
+\begin{DoxyCode}
+179 \{
+180     \hyperlink{classFilesystemBase}{FilesystemBase} *filesystem = \hyperlink{io_8h_aaf891622b11e0bb888ebf08612884aa8}{CreateFilesystem}();
+181     \hyperlink{classCharBuffer}{CharBuffer} *cbuf = filesystem->\hyperlink{classFilesystemBase_adc4a9e1dc189bcd221e3b994bc854d46}{LoadTextFile}(file);
+182 
+183     \textcolor{keywordflow}{if} (cbuf != \hyperlink{platform_8h_a46ff2bfbf0d44b8466a2251d5bd5e6f8}{NOMEM}) \{
+184         \hyperlink{clib_8h_a5bed05c70cb17e541fee570b5dc32e1a}{AllocAndCopy}(dest, cbuf->\hyperlink{classCharBuffer_a7dfd3feaaf80f318ba44efe15b1ec44b}{GetString}());
+185         \hyperlink{classStandardLanguage_a4cf91a3b08223744f1ef342b0f98bb3b}{ptr} = *dest;
+186         \textcolor{keyword}{delete} cbuf;
+187     \} \textcolor{keywordflow}{else} \{
+188         *dest = \hyperlink{platform_8h_a46ff2bfbf0d44b8466a2251d5bd5e6f8}{NOMEM};
+189     \}
+190 
+191     \textcolor{keyword}{delete} filesystem;
+192 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d6/db6/classStandardLanguage_a4fe22e49f3ce358690242d0b1058ccfa_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d6/db6/classStandardLanguage_a4fe22e49f3ce358690242d0b1058ccfa_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Standard\+Language@{Standard\+Language}!Load\+Catalogs@{Load\+Catalogs}}
+\index{Load\+Catalogs@{Load\+Catalogs}!Standard\+Language@{Standard\+Language}}
+\subsubsection[{\texorpdfstring{Load\+Catalogs()}{LoadCatalogs()}}]{\setlength{\rightskip}{0pt plus 5cm}void Standard\+Language\+::\+Load\+Catalogs (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classStandardLanguage_afd0037d341b94b08497842470007e59b}{}\label{classStandardLanguage_afd0037d341b94b08497842470007e59b}
+
+
+Definition at line 129 of file language\+\_\+stdc.\+cpp.
+
+
+
+References Get\+Next\+Pair(), helpbase, helpcatalog, Language\+::helpcount, helptexts, identhelpdef\+::id, helptextdef\+::id, keyworddef\+::id, textdef\+::id, identhelpdef\+::ident, identbase, identcatalog, Language\+::identcount, Language\+::keywordcount, keywords, Language\+::keywordsloc, kwordbase, Load\+Catalog(), keyworddef\+::name, helptextdef\+::symbol, keyworddef\+::symbol, identhelpdef\+::text, helptextdef\+::text, textdef\+::text, textbase, textcatalog, and Language\+::textcount.
+
+
+
+Referenced by Standard\+Language().
+
+
+\begin{DoxyCode}
+130 \{
+131     \textcolor{keyword}{const} \textcolor{keywordtype}{char}* key;
+132     \textcolor{keyword}{const} \textcolor{keywordtype}{char}* value;
+133 
+134     \hyperlink{classStandardLanguage_a4fe22e49f3ce358690242d0b1058ccfa}{LoadCatalog}(&\hyperlink{classStandardLanguage_a6b73c841d7401e608576087468ccc088}{textbase}, \textcolor{stringliteral}{"utext/dk-text.dict"});
+135     \textcolor{keywordflow}{if} (\hyperlink{classStandardLanguage_a6b73c841d7401e608576087468ccc088}{textbase} != \hyperlink{platform_8h_a46ff2bfbf0d44b8466a2251d5bd5e6f8}{NOMEM}) \{
+136         \hyperlink{classStandardLanguage_a2b32cc8ca90d4e3da23b83647ce83031}{textcatalog} = \textcolor{keyword}{new} \hyperlink{structtextdef}{textdef}[\hyperlink{classLanguage_ac648059e4bb481a66c5a075ab8684cb8}{textcount}];
+137         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} j = 0; j < \hyperlink{classLanguage_ac648059e4bb481a66c5a075ab8684cb8}{textcount}; j++) \{
+138             \hyperlink{classStandardLanguage_ab1945e2e3503ce12eac28c0d08234cfb}{GetNextPair}(&key, &value);
+139             \hyperlink{classStandardLanguage_a2b32cc8ca90d4e3da23b83647ce83031}{textcatalog}[j].\hyperlink{structtextdef_a2e28e2dfda198136301df4c8cab970a6}{id} = j;
+140             \hyperlink{classStandardLanguage_a2b32cc8ca90d4e3da23b83647ce83031}{textcatalog}[j].\hyperlink{structtextdef_a24f4d3af836a1f3c840833df7e388b60}{text} = value;
+141         \}
+142     \}
+143 
+144     \hyperlink{classStandardLanguage_a4fe22e49f3ce358690242d0b1058ccfa}{LoadCatalog}(&\hyperlink{classStandardLanguage_a59e4ecff11a3a1f03aeff6af81004c2a}{helpbase}, \textcolor{stringliteral}{"utext/dk-help.dict"});
+145     \textcolor{keywordflow}{if} (\hyperlink{classStandardLanguage_a59e4ecff11a3a1f03aeff6af81004c2a}{helpbase} != \hyperlink{platform_8h_a46ff2bfbf0d44b8466a2251d5bd5e6f8}{NOMEM}) \{
+146         \hyperlink{classStandardLanguage_a75febfaeb78c26265b46b77d6fc5869c}{helpcatalog} = \textcolor{keyword}{new} \hyperlink{structhelptextdef}{helptextdef}[\hyperlink{classLanguage_a9eb566a53c9e64a9abd406a77e97d2f0}{helpcount}];
+147         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} j = 0; j < \hyperlink{classLanguage_a9eb566a53c9e64a9abd406a77e97d2f0}{helpcount}; j++) \{
+148             \hyperlink{classStandardLanguage_ab1945e2e3503ce12eac28c0d08234cfb}{GetNextPair}(&key, &value);
+149             \hyperlink{classStandardLanguage_a75febfaeb78c26265b46b77d6fc5869c}{helpcatalog}[j].\hyperlink{structhelptextdef_a1966e6b243fd4f0c76c550399caeb2b7}{id} = j;
+150             \hyperlink{classStandardLanguage_a75febfaeb78c26265b46b77d6fc5869c}{helpcatalog}[j].\hyperlink{structhelptextdef_ab81d2160beaa0a3ffd69a4ec3eaa14ba}{symbol} = \hyperlink{help_8h_acdb22c8ec8de155872a1d1e34bcc4a7f}{helptexts}[j].
+      \hyperlink{structhelptextdef_ab81d2160beaa0a3ffd69a4ec3eaa14ba}{symbol};
+151             \hyperlink{classStandardLanguage_a75febfaeb78c26265b46b77d6fc5869c}{helpcatalog}[j].\hyperlink{structhelptextdef_af80f06e37a0841530529a97d359afba0}{text} = value;
+152         \}
+153     \}
+154 
+155     \hyperlink{classStandardLanguage_a4fe22e49f3ce358690242d0b1058ccfa}{LoadCatalog}(&\hyperlink{classStandardLanguage_af3bade0473bfa891d45f7938043df84f}{identbase}, \textcolor{stringliteral}{"utext/dk-ident.dict"});
+156     \textcolor{keywordflow}{if} (\hyperlink{classStandardLanguage_af3bade0473bfa891d45f7938043df84f}{identbase} != \hyperlink{platform_8h_a46ff2bfbf0d44b8466a2251d5bd5e6f8}{NOMEM}) \{
+157         \hyperlink{classStandardLanguage_afecc69960bfb65e8658c7bc10d99fd51}{identcatalog} = \textcolor{keyword}{new} \hyperlink{structidenthelpdef}{identhelpdef}[\hyperlink{classLanguage_a470e68c0f7517f8f8ffa9ba315b52b0a}{identcount}];
+158         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} j = 0; j < \hyperlink{classLanguage_a470e68c0f7517f8f8ffa9ba315b52b0a}{identcount}; j++) \{
+159             \hyperlink{classStandardLanguage_ab1945e2e3503ce12eac28c0d08234cfb}{GetNextPair}(&key, &value);
+160             \hyperlink{classStandardLanguage_afecc69960bfb65e8658c7bc10d99fd51}{identcatalog}[j].\hyperlink{structidenthelpdef_a7591721a8d15073664b95690c21ba57f}{id} = j;
+161             \hyperlink{classStandardLanguage_afecc69960bfb65e8658c7bc10d99fd51}{identcatalog}[j].\hyperlink{structidenthelpdef_a9b9e38ad0068a6ee3c9a075f6412e10c}{ident} = key;
+162             \hyperlink{classStandardLanguage_afecc69960bfb65e8658c7bc10d99fd51}{identcatalog}[j].\hyperlink{structidenthelpdef_ad2ce2c9f74dd7949618568812da41142}{text} = value;
+163         \}
+164     \}
+165 
+166     \hyperlink{classStandardLanguage_a4fe22e49f3ce358690242d0b1058ccfa}{LoadCatalog}(&\hyperlink{classStandardLanguage_a02ebeba276a3f355b73533eb8a664673}{kwordbase}, \textcolor{stringliteral}{"utext/dk-keyword.dict"});
+167     \textcolor{keywordflow}{if} (\hyperlink{classStandardLanguage_a02ebeba276a3f355b73533eb8a664673}{kwordbase} != \hyperlink{platform_8h_a46ff2bfbf0d44b8466a2251d5bd5e6f8}{NOMEM}) \{
+168         \hyperlink{classLanguage_a14560ed53cf2860b61199d2882c52f67}{keywordsloc} = \textcolor{keyword}{new} \hyperlink{structkeyworddef}{keyworddef}[\hyperlink{classLanguage_ab392fc18ba79a2a47bdde99eec400aa1}{keywordcount}];
+169         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} j = 0; j < \hyperlink{classLanguage_ab392fc18ba79a2a47bdde99eec400aa1}{keywordcount}; j++) \{
+170             \hyperlink{classStandardLanguage_ab1945e2e3503ce12eac28c0d08234cfb}{GetNextPair}(&key, &value);
+171             \hyperlink{classLanguage_a14560ed53cf2860b61199d2882c52f67}{keywordsloc}[j].\hyperlink{structkeyworddef_a7f5bc29bae784c5b8af94f858d500be5}{id} = j;
+172             \hyperlink{classLanguage_a14560ed53cf2860b61199d2882c52f67}{keywordsloc}[j].\hyperlink{structkeyworddef_a03b3d7dd316565c6fac8786186ec66c2}{name} = value;
+173             \hyperlink{classLanguage_a14560ed53cf2860b61199d2882c52f67}{keywordsloc}[j].\hyperlink{structkeyworddef_aec6598e221bbce9e131b30989f7e2cce}{symbol} = \hyperlink{kword_8h_ae24629a120e041e6b687315832fca587}{keywords}[j].\hyperlink{structkeyworddef_aec6598e221bbce9e131b30989f7e2cce}{symbol};
+174         \}
+175     \}
+176 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d6/db6/classStandardLanguage_afd0037d341b94b08497842470007e59b_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d6/db6/classStandardLanguage_afd0037d341b94b08497842470007e59b_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Standard\+Language@{Standard\+Language}!Skip\+Comments@{Skip\+Comments}}
+\index{Skip\+Comments@{Skip\+Comments}!Standard\+Language@{Standard\+Language}}
+\subsubsection[{\texorpdfstring{Skip\+Comments()}{SkipComments()}}]{\setlength{\rightskip}{0pt plus 5cm}void Standard\+Language\+::\+Skip\+Comments (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classStandardLanguage_af0078bbe8a06f6e4fb35ddfda1170e19}{}\label{classStandardLanguage_af0078bbe8a06f6e4fb35ddfda1170e19}
+
+
+Definition at line 215 of file language\+\_\+stdc.\+cpp.
+
+
+
+References Get\+Next\+Line(), and ptr.
+
+
+
+Referenced by Get\+Next\+Pair().
+
+
+\begin{DoxyCode}
+216 \{
+217     \textcolor{keywordtype}{bool} skipping;
+218     \textcolor{keywordflow}{do} \{
+219         \textcolor{keywordflow}{if} ((*\hyperlink{classStandardLanguage_a4cf91a3b08223744f1ef342b0f98bb3b}{ptr}) == \textcolor{charliteral}{';'}) \{
+220             \hyperlink{classStandardLanguage_a8a4a4a2879f1e907c17f36dfafdebd66}{GetNextLine}();
+221             skipping = \textcolor{keyword}{true};
+222         \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} ((*\hyperlink{classStandardLanguage_a4cf91a3b08223744f1ef342b0f98bb3b}{ptr}) == \textcolor{charliteral}{'#'} && *(\hyperlink{classStandardLanguage_a4cf91a3b08223744f1ef342b0f98bb3b}{ptr} + \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{char})) == \textcolor{charliteral}{'#'}) \{
+223             \hyperlink{classStandardLanguage_a8a4a4a2879f1e907c17f36dfafdebd66}{GetNextLine}();
+224             skipping = \textcolor{keyword}{true};
+225         \} \textcolor{keywordflow}{else} \{
+226             skipping = \textcolor{keyword}{false};
+227         \}
+228     \} \textcolor{keywordflow}{while} (skipping);
+229 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d6/db6/classStandardLanguage_af0078bbe8a06f6e4fb35ddfda1170e19_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d6/db6/classStandardLanguage_af0078bbe8a06f6e4fb35ddfda1170e19_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Standard\+Language@{Standard\+Language}!Str\+Is\+Equal\+Loc@{Str\+Is\+Equal\+Loc}}
+\index{Str\+Is\+Equal\+Loc@{Str\+Is\+Equal\+Loc}!Standard\+Language@{Standard\+Language}}
+\subsubsection[{\texorpdfstring{Str\+Is\+Equal\+Loc(const char $\ast$s1, const char $\ast$s2)}{StrIsEqualLoc(const char *s1, const char *s2)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} Standard\+Language\+::\+Str\+Is\+Equal\+Loc (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{s1, }
+\item[{const char $\ast$}]{s2}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{classStandardLanguage_ac3062fe9cb6298205f0deee955ebf36e}{}\label{classStandardLanguage_ac3062fe9cb6298205f0deee955ebf36e}
+
+
+Implements \hyperlink{classLanguage_a68d70b8d5232b4fa0b03268531dca0a3}{Language}.
+
+
+
+Definition at line 123 of file language\+\_\+stdc.\+cpp.
+
+
+
+References Str\+Is\+Equal().
+
+
+\begin{DoxyCode}
+124 \{
+125     \textcolor{keywordflow}{return} \hyperlink{clib_8h_a2a1f39d11cbbaac992d42e67557dac4b}{StrIsEqual}(s1, s2);
+126 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=343pt]{d6/db6/classStandardLanguage_ac3062fe9cb6298205f0deee955ebf36e_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{Standard\+Language@{Standard\+Language}!Translate@{Translate}}
+\index{Translate@{Translate}!Standard\+Language@{Standard\+Language}}
+\subsubsection[{\texorpdfstring{Translate(textdef $\ast$def)}{Translate(textdef *def)}}]{\setlength{\rightskip}{0pt plus 5cm}char $\ast$ Standard\+Language\+::\+Translate (
+\begin{DoxyParamCaption}
+\item[{{\bf textdef} $\ast$}]{def}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}\hypertarget{classStandardLanguage_a0472d7747cfb0985f20b483756327fdc}{}\label{classStandardLanguage_a0472d7747cfb0985f20b483756327fdc}
+
+
+Implements \hyperlink{classLanguage_ae4515a9a4191e57c5ccab61e99687818}{Language}.
+
+
+
+Definition at line 64 of file language\+\_\+stdc.\+cpp.
+
+
+
+References textdef\+::id, textdef\+::text, and textcatalog.
+
+
+\begin{DoxyCode}
+65 \{
+66     \textcolor{keywordflow}{return} \hyperlink{classStandardLanguage_a2b32cc8ca90d4e3da23b83647ce83031}{textcatalog} == \hyperlink{platform_8h_a46ff2bfbf0d44b8466a2251d5bd5e6f8}{NOMEM} ?
+67            (\textcolor{keywordtype}{char}*)def->\hyperlink{structtextdef_a24f4d3af836a1f3c840833df7e388b60}{text} :
+68            (\textcolor{keywordtype}{char}*)\hyperlink{classStandardLanguage_a2b32cc8ca90d4e3da23b83647ce83031}{textcatalog}[def->\hyperlink{structtextdef_a2e28e2dfda198136301df4c8cab970a6}{id}].\hyperlink{structtextdef_a24f4d3af836a1f3c840833df7e388b60}{text};
+69 \}
+\end{DoxyCode}
+\index{Standard\+Language@{Standard\+Language}!Translate@{Translate}}
+\index{Translate@{Translate}!Standard\+Language@{Standard\+Language}}
+\subsubsection[{\texorpdfstring{Translate(helptextdef $\ast$def)}{Translate(helptextdef *def)}}]{\setlength{\rightskip}{0pt plus 5cm}char $\ast$ Standard\+Language\+::\+Translate (
+\begin{DoxyParamCaption}
+\item[{{\bf helptextdef} $\ast$}]{def}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}\hypertarget{classStandardLanguage_a5a7011f9307a053509a28706f02f835f}{}\label{classStandardLanguage_a5a7011f9307a053509a28706f02f835f}
+
+
+Implements \hyperlink{classLanguage_aa51c505262ca738bf4675fc87f96dbf6}{Language}.
+
+
+
+Definition at line 71 of file language\+\_\+stdc.\+cpp.
+
+
+
+References helpcatalog, helptextdef\+::id, and helptextdef\+::text.
+
+
+\begin{DoxyCode}
+72 \{
+73     \textcolor{keywordflow}{return} \hyperlink{classStandardLanguage_a75febfaeb78c26265b46b77d6fc5869c}{helpcatalog} == \hyperlink{platform_8h_a46ff2bfbf0d44b8466a2251d5bd5e6f8}{NOMEM} ?
+74            (\textcolor{keywordtype}{char}*)def->\hyperlink{structhelptextdef_af80f06e37a0841530529a97d359afba0}{text} :
+75            (\textcolor{keywordtype}{char}*)\hyperlink{classStandardLanguage_a75febfaeb78c26265b46b77d6fc5869c}{helpcatalog}[def->\hyperlink{structhelptextdef_a1966e6b243fd4f0c76c550399caeb2b7}{id}].\hyperlink{structhelptextdef_af80f06e37a0841530529a97d359afba0}{text};
+76 \}
+\end{DoxyCode}
+\index{Standard\+Language@{Standard\+Language}!Translate@{Translate}}
+\index{Translate@{Translate}!Standard\+Language@{Standard\+Language}}
+\subsubsection[{\texorpdfstring{Translate(identhelpdef $\ast$def)}{Translate(identhelpdef *def)}}]{\setlength{\rightskip}{0pt plus 5cm}char $\ast$ Standard\+Language\+::\+Translate (
+\begin{DoxyParamCaption}
+\item[{{\bf identhelpdef} $\ast$}]{def}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}\hypertarget{classStandardLanguage_a623162a4830eaec08bc266cd3fa6068e}{}\label{classStandardLanguage_a623162a4830eaec08bc266cd3fa6068e}
+
+
+Implements \hyperlink{classLanguage_a232a8b51c7866013363b9916fe89299c}{Language}.
+
+
+
+Definition at line 78 of file language\+\_\+stdc.\+cpp.
+
+
+
+References identhelpdef\+::id, identcatalog, and identhelpdef\+::text.
+
+
+\begin{DoxyCode}
+79 \{
+80     \textcolor{keywordflow}{return} \hyperlink{classStandardLanguage_afecc69960bfb65e8658c7bc10d99fd51}{identcatalog} == \hyperlink{platform_8h_a46ff2bfbf0d44b8466a2251d5bd5e6f8}{NOMEM} ?
+81            (\textcolor{keywordtype}{char}*)def->\hyperlink{structidenthelpdef_ad2ce2c9f74dd7949618568812da41142}{text} :
+82            (\textcolor{keywordtype}{char}*)\hyperlink{classStandardLanguage_afecc69960bfb65e8658c7bc10d99fd51}{identcatalog}[def->\hyperlink{structidenthelpdef_a7591721a8d15073664b95690c21ba57f}{id}].\hyperlink{structidenthelpdef_ad2ce2c9f74dd7949618568812da41142}{text};
+83 \}
+\end{DoxyCode}
+
+
+\subsection{Member Data Documentation}
+\index{Standard\+Language@{Standard\+Language}!helpbase@{helpbase}}
+\index{helpbase@{helpbase}!Standard\+Language@{Standard\+Language}}
+\subsubsection[{\texorpdfstring{helpbase}{helpbase}}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ Standard\+Language\+::helpbase\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classStandardLanguage_a59e4ecff11a3a1f03aeff6af81004c2a}{}\label{classStandardLanguage_a59e4ecff11a3a1f03aeff6af81004c2a}
+
+
+Definition at line 61 of file language\+\_\+stdc.\+h.
+
+
+
+Referenced by Load\+Catalogs(), and $\sim$\+Standard\+Language().
+
+\index{Standard\+Language@{Standard\+Language}!helpcatalog@{helpcatalog}}
+\index{helpcatalog@{helpcatalog}!Standard\+Language@{Standard\+Language}}
+\subsubsection[{\texorpdfstring{helpcatalog}{helpcatalog}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf helptextdef}$\ast$ Standard\+Language\+::helpcatalog\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classStandardLanguage_a75febfaeb78c26265b46b77d6fc5869c}{}\label{classStandardLanguage_a75febfaeb78c26265b46b77d6fc5869c}
+
+
+Definition at line 67 of file language\+\_\+stdc.\+h.
+
+
+
+Referenced by Load\+Catalogs(), and Translate().
+
+\index{Standard\+Language@{Standard\+Language}!identbase@{identbase}}
+\index{identbase@{identbase}!Standard\+Language@{Standard\+Language}}
+\subsubsection[{\texorpdfstring{identbase}{identbase}}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ Standard\+Language\+::identbase\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classStandardLanguage_af3bade0473bfa891d45f7938043df84f}{}\label{classStandardLanguage_af3bade0473bfa891d45f7938043df84f}
+
+
+Definition at line 62 of file language\+\_\+stdc.\+h.
+
+
+
+Referenced by Load\+Catalogs(), and $\sim$\+Standard\+Language().
+
+\index{Standard\+Language@{Standard\+Language}!identcatalog@{identcatalog}}
+\index{identcatalog@{identcatalog}!Standard\+Language@{Standard\+Language}}
+\subsubsection[{\texorpdfstring{identcatalog}{identcatalog}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf identhelpdef}$\ast$ Standard\+Language\+::identcatalog\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classStandardLanguage_afecc69960bfb65e8658c7bc10d99fd51}{}\label{classStandardLanguage_afecc69960bfb65e8658c7bc10d99fd51}
+
+
+Definition at line 68 of file language\+\_\+stdc.\+h.
+
+
+
+Referenced by Load\+Catalogs(), and Translate().
+
+\index{Standard\+Language@{Standard\+Language}!kwordbase@{kwordbase}}
+\index{kwordbase@{kwordbase}!Standard\+Language@{Standard\+Language}}
+\subsubsection[{\texorpdfstring{kwordbase}{kwordbase}}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ Standard\+Language\+::kwordbase\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classStandardLanguage_a02ebeba276a3f355b73533eb8a664673}{}\label{classStandardLanguage_a02ebeba276a3f355b73533eb8a664673}
+
+
+Definition at line 63 of file language\+\_\+stdc.\+h.
+
+
+
+Referenced by Load\+Catalogs(), and $\sim$\+Standard\+Language().
+
+\index{Standard\+Language@{Standard\+Language}!ptr@{ptr}}
+\index{ptr@{ptr}!Standard\+Language@{Standard\+Language}}
+\subsubsection[{\texorpdfstring{ptr}{ptr}}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ Standard\+Language\+::ptr\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classStandardLanguage_a4cf91a3b08223744f1ef342b0f98bb3b}{}\label{classStandardLanguage_a4cf91a3b08223744f1ef342b0f98bb3b}
+
+
+Definition at line 65 of file language\+\_\+stdc.\+h.
+
+
+
+Referenced by Get\+Next\+Line(), Get\+Next\+Pair(), Load\+Catalog(), and Skip\+Comments().
+
+\index{Standard\+Language@{Standard\+Language}!textbase@{textbase}}
+\index{textbase@{textbase}!Standard\+Language@{Standard\+Language}}
+\subsubsection[{\texorpdfstring{textbase}{textbase}}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ Standard\+Language\+::textbase\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classStandardLanguage_a6b73c841d7401e608576087468ccc088}{}\label{classStandardLanguage_a6b73c841d7401e608576087468ccc088}
+
+
+Definition at line 60 of file language\+\_\+stdc.\+h.
+
+
+
+Referenced by Load\+Catalogs(), and $\sim$\+Standard\+Language().
+
+\index{Standard\+Language@{Standard\+Language}!textcatalog@{textcatalog}}
+\index{textcatalog@{textcatalog}!Standard\+Language@{Standard\+Language}}
+\subsubsection[{\texorpdfstring{textcatalog}{textcatalog}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf textdef}$\ast$ Standard\+Language\+::textcatalog\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classStandardLanguage_a2b32cc8ca90d4e3da23b83647ce83031}{}\label{classStandardLanguage_a2b32cc8ca90d4e3da23b83647ce83031}
+
+
+Definition at line 66 of file language\+\_\+stdc.\+h.
+
+
+
+Referenced by Load\+Catalogs(), and Translate().
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+app/system/\hyperlink{language__stdc_8h}{language\+\_\+stdc.\+h}\item 
+app/system/\hyperlink{language__stdc_8cpp}{language\+\_\+stdc.\+cpp}\end{DoxyCompactItemize}

@@ -1,0 +1,87 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="d0/d05/classInsVariableNode">
+<title>InsVariableNode class Reference</title>
+<para>
+    <programlisting>#include <link linkend="d2/d9a/values_8h">&lt;values.h&gt;</link></programlisting>
+</para>
+<para>Inheritance diagram for InsVariableNode</para>
+<para>
+    <figure>
+        <title>Inheritance graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="../../d5/d9f/classInsVariableNode__inherit__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+<para>Collaboration diagram for InsVariableNode</para>
+<para>
+    <figure>
+        <title>Collaboration graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="../../da/d09/classInsVariableNode__coll__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d0/d05/classInsVariableNode_1a76772ab88bcb3dd4d8f5b299ed4bf8ee">InsVariableNode</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>char * <link linkend="d0/d05/classInsVariableNode_1a5b116b7004cd061536a4ed3dc2a06abb">GetText</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="da/de2/structNumber">Number</link> * <link linkend="d0/d05/classInsVariableNode_1aad01cefd8321d0a6ddaf0d4ef5e62ddf">Evaluate</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>char * <link linkend="d0/d05/classInsVariableNode_1a38651b169dbcb8ff1b40546facb88017">GetNodeText</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+    <simplesect>
+
+<para>Use of last result in a syntax tree. </para>
+    </simplesect>
+            <section xml:id="d0/d05/classInsVariableNode_1a76772ab88bcb3dd4d8f5b299ed4bf8ee">
+                <title>InsVariableNode::InsVariableNode ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d0/d05/classInsVariableNode_1a5b116b7004cd061536a4ed3dc2a06abb">
+                <title>char * InsVariableNode::GetText ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d0/d05/classInsVariableNode_1aad01cefd8321d0a6ddaf0d4ef5e62ddf">
+                <title>Number * InsVariableNode::Evaluate ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d0/d05/classInsVariableNode_1a38651b169dbcb8ff1b40546facb88017">
+                <title>char * InsVariableNode::GetNodeText ()</title> <emphasis></emphasis>
+                
+            </section>
+</section>

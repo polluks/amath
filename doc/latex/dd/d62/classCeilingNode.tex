@@ -1,0 +1,203 @@
+\hypertarget{classCeilingNode}{}\section{Ceiling\+Node Class Reference}
+\label{classCeilingNode}\index{Ceiling\+Node@{Ceiling\+Node}}
+
+
+{\ttfamily \#include $<$functions.\+h$>$}
+
+
+
+Inheritance diagram for Ceiling\+Node\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=169pt]{d1/d4b/classCeilingNode__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Ceiling\+Node\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=272pt]{d2/da7/classCeilingNode__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCeilingNode_ab3c7e409e41fe1f5c6561e907ff4a5bf}{Ceiling\+Node} (\hyperlink{classExpressionNode}{Expression\+Node} $\ast$\hyperlink{classFunctionNode_ad7577b179a1937aaf8a0058bb5b546dc}{expression})
+\item 
+\hyperlink{structNumber}{Number} $\ast$ \hyperlink{classCeilingNode_ac5a24bd7b0ef5d280dc9da0723983541}{Evaluate} ()
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{classFunctionNode}{Function\+Node} $\ast$ \hyperlink{classCeilingNode_a6b935b420b30e2ce311a7fe179585baf}{Create} (\hyperlink{classExpressionNode}{Expression\+Node} $\ast$\hyperlink{classFunctionNode_ad7577b179a1937aaf8a0058bb5b546dc}{expression})
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+char $\ast$ \hyperlink{classCeilingNode_a42887bd7fd45fdd658a60e6cc1114129}{Get\+Node\+Text} ()
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 260 of file functions.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Ceiling\+Node@{Ceiling\+Node}!Ceiling\+Node@{Ceiling\+Node}}
+\index{Ceiling\+Node@{Ceiling\+Node}!Ceiling\+Node@{Ceiling\+Node}}
+\subsubsection[{\texorpdfstring{Ceiling\+Node(\+Expression\+Node $\ast$expression)}{CeilingNode(ExpressionNode *expression)}}]{\setlength{\rightskip}{0pt plus 5cm}Ceiling\+Node\+::\+Ceiling\+Node (
+\begin{DoxyParamCaption}
+\item[{{\bf Expression\+Node} $\ast$}]{expression}
+\end{DoxyParamCaption}
+)}\hypertarget{classCeilingNode_ab3c7e409e41fe1f5c6561e907ff4a5bf}{}\label{classCeilingNode_ab3c7e409e41fe1f5c6561e907ff4a5bf}
+
+
+Definition at line 606 of file functions.\+cpp.
+
+
+
+References Function\+Node\+::\+Function\+Node().
+
+
+
+Referenced by Create().
+
+
+\begin{DoxyCode}
+606                                                    :
+607     \hyperlink{classFunctionNode_a41cb7db0162ffbec0902bd8ff7ea435f}{FunctionNode}(expression) \{ \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dd/d62/classCeilingNode_ab3c7e409e41fe1f5c6561e907ff4a5bf_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dd/d62/classCeilingNode_ab3c7e409e41fe1f5c6561e907ff4a5bf_icgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Member Function Documentation}
+\index{Ceiling\+Node@{Ceiling\+Node}!Create@{Create}}
+\index{Create@{Create}!Ceiling\+Node@{Ceiling\+Node}}
+\subsubsection[{\texorpdfstring{Create(\+Expression\+Node $\ast$expression)}{Create(ExpressionNode *expression)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Function\+Node} $\ast$ Ceiling\+Node\+::\+Create (
+\begin{DoxyParamCaption}
+\item[{{\bf Expression\+Node} $\ast$}]{expression}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{classCeilingNode_a6b935b420b30e2ce311a7fe179585baf}{}\label{classCeilingNode_a6b935b420b30e2ce311a7fe179585baf}
+
+
+Definition at line 609 of file functions.\+cpp.
+
+
+
+References Ceiling\+Node().
+
+
+\begin{DoxyCode}
+610 \{
+611     \textcolor{keywordflow}{return} \textcolor{keyword}{new} \hyperlink{classCeilingNode_ab3c7e409e41fe1f5c6561e907ff4a5bf}{CeilingNode}(expression);
+612 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dd/d62/classCeilingNode_a6b935b420b30e2ce311a7fe179585baf_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{Ceiling\+Node@{Ceiling\+Node}!Evaluate@{Evaluate}}
+\index{Evaluate@{Evaluate}!Ceiling\+Node@{Ceiling\+Node}}
+\subsubsection[{\texorpdfstring{Evaluate()}{Evaluate()}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Number} $\ast$ Ceiling\+Node\+::\+Evaluate (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{classCeilingNode_ac5a24bd7b0ef5d280dc9da0723983541}{}\label{classCeilingNode_ac5a24bd7b0ef5d280dc9da0723983541}
+
+
+Implements \hyperlink{classExpressionNode_a64975d4dc37742228bd522f6204537f7}{Expression\+Node}.
+
+
+
+Definition at line 614 of file functions.\+cpp.
+
+
+
+References Number\+::\+Ceiling(), Expression\+Node\+::\+Evaluate(), Function\+Node\+::expression, and Expression\+Node\+::result.
+
+
+\begin{DoxyCode}
+615 \{
+616     \hyperlink{classExpressionNode_a1f590649f5a5cb30eb7ee912f7bc1262}{result} = \hyperlink{classFunctionNode_ad7577b179a1937aaf8a0058bb5b546dc}{expression}->\hyperlink{classExpressionNode_a64975d4dc37742228bd522f6204537f7}{Evaluate}()->\hyperlink{structNumber_af6cc655e7d0eeb4f68a091456dddc25a}{Ceiling}();
+617     \textcolor{keywordflow}{return} \hyperlink{classExpressionNode_a1f590649f5a5cb30eb7ee912f7bc1262}{result};
+618 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dd/d62/classCeilingNode_ac5a24bd7b0ef5d280dc9da0723983541_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{Ceiling\+Node@{Ceiling\+Node}!Get\+Node\+Text@{Get\+Node\+Text}}
+\index{Get\+Node\+Text@{Get\+Node\+Text}!Ceiling\+Node@{Ceiling\+Node}}
+\subsubsection[{\texorpdfstring{Get\+Node\+Text()}{GetNodeText()}}]{\setlength{\rightskip}{0pt plus 5cm}char $\ast$ Ceiling\+Node\+::\+Get\+Node\+Text (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}\hypertarget{classCeilingNode_a42887bd7fd45fdd658a60e6cc1114129}{}\label{classCeilingNode_a42887bd7fd45fdd658a60e6cc1114129}
+
+
+Implements \hyperlink{classExpressionNode_a42a5e9562b0f645a19dcc83f698069b5}{Expression\+Node}.
+
+
+
+Definition at line 620 of file functions.\+cpp.
+
+
+\begin{DoxyCode}
+621 \{
+622     \textcolor{keywordflow}{return} (\textcolor{keywordtype}{char}*)\textcolor{stringliteral}{"ceil"};
+623 \}
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+app/main/\hyperlink{functions_8h}{functions.\+h}\item 
+app/main/\hyperlink{functions_8cpp}{functions.\+cpp}\end{DoxyCompactItemize}

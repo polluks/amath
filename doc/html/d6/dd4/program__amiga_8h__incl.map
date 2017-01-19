@@ -1,0 +1,29 @@
+<map id="app/system/program_amiga.h" name="app/system/program_amiga.h">
+<area shape="rect" id="node2" href="$d1/dea/program_8h.html" title="Program flow and global states. " alt="" coords="314,95,441,121"/>
+<area shape="rect" id="node3" href="$dd/d30/numb_8h.html" title="Classbase handling of numbers. " alt="" coords="119,617,202,644"/>
+<area shape="rect" id="node4" href="$d3/df4/ntext_8h.html" title="Text to numbers handling. " alt="" coords="44,543,122,569"/>
+<area shape="rect" id="node7" href="$d2/d9a/values_8h.html" title="Application logic tied to numbers and values. " alt="" coords="178,468,281,495"/>
+<area shape="rect" id="node13" href="$da/d3a/graphlist_8h.html" title="Memory maintainance for function of graphs. " alt="" coords="320,169,435,196"/>
+<area shape="rect" id="node17" href="$d8/d5c/functions_8h.html" title="Application logic tied to functions. " alt="" coords="266,393,385,420"/>
+<area shape="rect" id="node21" href="$d0/de3/console_8h.html" title="Generic console system calls. " alt="" coords="739,169,864,196"/>
+<area shape="rect" id="node23" href="$d8/dce/language_8h.html" title="system/language.h" alt="" coords="966,468,1098,495"/>
+<area shape="rect" id="node28" href="$dd/dd8/filesystem_8h.html" title="Generic file system calls. " alt="" coords="422,319,562,345"/>
+<area shape="rect" id="node29" href="$dd/d7d/preferences_8h.html" title="system/preferences.h" alt="" coords="510,244,658,271"/>
+<area shape="rect" id="node5" href="$d0/d1e/charbuf_8h.html" title="String and character array logic. " alt="" coords="366,617,459,644"/>
+<area shape="rect" id="node6" href="$dc/d99/aengine_8h.html" title="ANSI Conole Engine. " alt="" coords="365,692,460,719"/>
+<area shape="rect" id="node8" href="$d9/de5/clib_8h.html" title="C functions for manipulating strings and memory. " alt="" coords="810,617,863,644"/>
+<area shape="rect" id="node12" href="$d1/d7f/nodes_8h.html" title="Top nodes in syntax trees. " alt="" coords="302,543,402,569"/>
+<area shape="rect" id="node9" href="$de/d03/platform_8h.html" title="platform.h" alt="" coords="796,692,876,719"/>
+<area shape="rect" id="node11" href="$d9/d9a/mem_8h.html" title="mem.h" alt="" coords="840,767,902,793"/>
+<area shape="rect" id="node14" href="$d6/df3/graph_8h.html" title="Logic related to graph of functions. " alt="" coords="320,244,432,271"/>
+<area shape="rect" id="node15" href="$d2/dbd/fgrid_8h.html" title="Function grid used with graphs. " alt="" coords="171,319,246,345"/>
+<area shape="rect" id="node16" href="$d5/d1e/real_8h.html" title="Classbase handling of complex numbers. " alt="" coords="172,393,242,420"/>
+<area shape="rect" id="node18" href="$dd/d6a/statements_8h.html" title="General statement nodes. " alt="" coords="356,468,487,495"/>
+<area shape="rect" id="node19" href="$d1/d07/token_8h.html" title="Application logic tied to Token. " alt="" coords="664,543,761,569"/>
+<area shape="rect" id="node20" href="$de/d52/lex_8h.html" title="Lexer defitions used by other classes. " alt="" coords="1116,617,1215,644"/>
+<area shape="rect" id="node22" href="$db/dd5/thread_8h.html" title="Generic thread logic. " alt="" coords="734,244,882,271"/>
+<area shape="rect" id="node24" href="$db/df1/help_8h.html" title="Help texts for statement. " alt="" coords="1046,543,1152,569"/>
+<area shape="rect" id="node25" href="$d9/dcc/text_8h.html" title="Static texts in amath. " alt="" coords="785,543,888,569"/>
+<area shape="rect" id="node26" href="$df/d55/ident_8h.html" title="Help texts for built&#45;in functions. " alt="" coords="912,543,1022,569"/>
+<area shape="rect" id="node27" href="$dd/ddb/kword_8h.html" title="Keywords used by lexer. " alt="" coords="1176,543,1292,569"/>
+</map>

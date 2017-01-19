@@ -1,0 +1,46 @@
+.TH "lib/clib/strcmp.c" 3 "Thu Jan 19 2017" "Version 1.6.0" "amath" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+lib/clib/strcmp.c \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'clib\&.h'\fP
+.br
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBbool\fP \fBStrIsEqual\fP (const char *s1, const char *s2)"
+.br
+.RI "\fICompare two null terminated strings to each other\&. \fP"
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "\fBbool\fP StrIsEqual (const char * s1, const char * s2)"
+
+.PP
+Compare two null terminated strings to each other\&. 
+.PP
+Definition at line 48 of file strcmp\&.c\&.
+.PP
+Referenced by VariableList::CreateVariable(), FunctionList::Delete(), Language::FindAlias(), FunctionList::GetFunctionCall(), FunctionList::GetFunctionDef(), Language::GetHelpText(), FunctionList::GetSystemFunction(), VariableList::GetVariable(), CharBuffer::Is(), StandardFilesystem::ListDirectory(), CharBuffer::RemoveTrailing(), StandardLanguage::StrIsEqualLoc(), and PosixLanguage::StrIsEqualLoc()\&.
+.PP
+.nf
+49 {
+50     int r;
+51 
+52     while (*s1 == *s2++)
+53         if (*s1++ == '\0')
+54             return true;
+55 
+56     r = (*(const unsigned char *)s1 - *(const unsigned char *)(s2 - 1));
+57 
+58     return r == 0;
+59 }
+.fi
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for amath from the source code\&.

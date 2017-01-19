@@ -1,0 +1,336 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="dc/d84/classCharBuffer">
+<title>CharBuffer class Reference</title>
+<para>
+    <programlisting>#include <link linkend="d0/d1e/charbuf_8h">&lt;charbuf.h&gt;</link></programlisting>
+</para>
+<para>Inheritance diagram for CharBuffer</para>
+<para>
+    <figure>
+        <title>Inheritance graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="../../de/db3/classCharBuffer__inherit__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+<para>Collaboration diagram for CharBuffer</para>
+<para>
+    <figure>
+        <title>Collaboration graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="../../db/df5/classCharBuffer__coll__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title>Private Attributes</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>char * buf</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>char * ptr</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>unsigned int cursize</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>static const unsigned int minimumSize</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="dc/d84/classCharBuffer_1a4345e9a5114f5c0292e8f242f26e3a7b">CharBuffer</link> (
+)<para><emphasis>Initialize without allocating memory.</emphasis></para>
+</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="dc/d84/classCharBuffer_1a36d153c126a018c5090374ccb5c37508">CharBuffer</link> (
+unsigned int size)<para><emphasis>Initialize while allocating specified amount of memory.</emphasis></para>
+</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="dc/d84/classCharBuffer_1a9e62778016bba5191fa9eaa6ea118926">~CharBuffer</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="dc/d84/classCharBuffer_1a0bcdd5708db4b04c887224e83a05086f">ClearBuffer</link> (
+)<para><emphasis>Release memory in buffer.</emphasis></para>
+</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="dc/d84/classCharBuffer_1ac52ed7b91190240eb7db4cf43d1e2abb">ClearAndCopy</link> (
+const char * source)<para><emphasis>Release memory, allocate and copy source.</emphasis></para>
+</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="dc/d84/classCharBuffer_1a8c0927c2c05c954161151045f68581c6">ClearAndAlloc</link> (
+unsigned int size)<para><emphasis>Release memory and allocate new size.</emphasis></para>
+</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="dc/d84/classCharBuffer_1ad1907009b5ad136692b989fa96bf2f7e">EnsureSize</link> (
+unsigned int size)<para><emphasis>Ensure a memory block of speficied size is allocated.</emphasis></para>
+</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="dc/d84/classCharBuffer_1a91ce4f4083b9a29c48f75e2af4071f28">EnsureSize</link> (
+unsigned int blocksize, unsigned int blocks)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="dc/d84/classCharBuffer_1ae742439a2d5d5a0ad64411dcbf4604c8">EnsureMinimumSize</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="dc/d84/classCharBuffer_1a73c71d361110b37819a1d681a1504b0e">EnsureGrowth</link> (
+unsigned int size)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="dc/d84/classCharBuffer_1abe39d3fd7d8b9c8ec343af2cae7adc96">Empty</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="de/d03/platform_8h_1a1062901a7428fdd9c7f180f5e01ea056">bool</link> <link linkend="dc/d84/classCharBuffer_1a64988275bda43dddb6d2b3b9551cefb0">Is</link> (
+const char * string)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="dc/d84/classCharBuffer_1a9f35562a39a7785e73f09fbd9f6938bf">Copy</link> (
+<link linkend="dc/d84/classCharBuffer">CharBuffer</link> * buf)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="dc/d84/classCharBuffer_1a045b38735f7b3007c1b98d3d7b7feafe">Append</link> (
+const char * source)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="dc/d84/classCharBuffer_1a1ba545a85907bbc9ab26cdc99b031440">Append</link> (
+const char c)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="dc/d84/classCharBuffer_1af0db379281b7f3f8b4746344521999c1">Append</link> (
+const char c, unsigned int count)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="dc/d84/classCharBuffer_1a8bc0eaf1a874ccf76c0034299f8459a7">DeleteLastChar</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="de/d03/platform_8h_1a1062901a7428fdd9c7f180f5e01ea056">bool</link> <link linkend="dc/d84/classCharBuffer_1a1071772d1059263f4f880965fcc349ab">RemoveTrailing</link> (
+const char c)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="de/d03/platform_8h_1a1062901a7428fdd9c7f180f5e01ea056">bool</link> <link linkend="dc/d84/classCharBuffer_1a45beaedff09c0c079075cfced78c8002">RemoveTrailing</link> (
+const char * string)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>char * <link linkend="dc/d84/classCharBuffer_1a7dfd3feaaf80f318ba44efe15b1ec44b">GetString</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+    <simplesect>
+
+<para>Encapsulate an character array which can be used as a string. </para>
+    </simplesect>
+        <simplesect>
+            <title>Detailed Description</title>
+
+<para>Eases the task of allocating a releasing memory. </para>
+                <para>Definition at line 43 of file charbuf.h</para>
+                <para>The Documentation for this struct was generated from the following file: </para>
+                <para><itemizedlist><listitem><para>charbuf.h</para></listitem></itemizedlist></para>
+        </simplesect>
+        <section>
+            <title>Member Data Documentation</title>
+        </section>
+            <section xml:id="dc/d84/classCharBuffer_1a4345e9a5114f5c0292e8f242f26e3a7b">
+                <title>CharBuffer::CharBuffer ()</title> <emphasis>Initialize without allocating memory.</emphasis>
+                
+            </section>
+            <section xml:id="dc/d84/classCharBuffer_1a36d153c126a018c5090374ccb5c37508">
+                <title>CharBuffer::CharBuffer (unsigned int size)</title> <emphasis>Initialize while allocating specified amount of memory.</emphasis>
+                
+            </section>
+            <section xml:id="dc/d84/classCharBuffer_1a9e62778016bba5191fa9eaa6ea118926">
+                <title>CharBuffer::~CharBuffer ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="dc/d84/classCharBuffer_1a0bcdd5708db4b04c887224e83a05086f">
+                <title>void CharBuffer::ClearBuffer ()</title> <emphasis>Release memory in buffer.</emphasis>
+                
+            </section>
+            <section xml:id="dc/d84/classCharBuffer_1ac52ed7b91190240eb7db4cf43d1e2abb">
+                <title>void CharBuffer::ClearAndCopy (const char *source)</title> <emphasis>Release memory, allocate and copy source.</emphasis>
+                
+            </section>
+            <section xml:id="dc/d84/classCharBuffer_1a8c0927c2c05c954161151045f68581c6">
+                <title>void CharBuffer::ClearAndAlloc (unsigned int size)</title> <emphasis>Release memory and allocate new size.</emphasis>
+                
+            </section>
+            <section xml:id="dc/d84/classCharBuffer_1ad1907009b5ad136692b989fa96bf2f7e">
+                <title>void CharBuffer::EnsureSize (unsigned int size)</title> <emphasis>Ensure a memory block of speficied size is allocated.</emphasis>
+                
+            </section>
+            <section xml:id="dc/d84/classCharBuffer_1a91ce4f4083b9a29c48f75e2af4071f28">
+                <title>void CharBuffer::EnsureSize (unsigned int blocksize, unsigned int blocks)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="dc/d84/classCharBuffer_1ae742439a2d5d5a0ad64411dcbf4604c8">
+                <title>void CharBuffer::EnsureMinimumSize ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="dc/d84/classCharBuffer_1a73c71d361110b37819a1d681a1504b0e">
+                <title>void CharBuffer::EnsureGrowth (unsigned int size)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="dc/d84/classCharBuffer_1abe39d3fd7d8b9c8ec343af2cae7adc96">
+                <title>void CharBuffer::Empty ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="dc/d84/classCharBuffer_1a64988275bda43dddb6d2b3b9551cefb0">
+                <title>bool CharBuffer::Is (const char *string)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="dc/d84/classCharBuffer_1a9f35562a39a7785e73f09fbd9f6938bf">
+                <title>void CharBuffer::Copy (CharBuffer *buf)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="dc/d84/classCharBuffer_1a045b38735f7b3007c1b98d3d7b7feafe">
+                <title>void CharBuffer::Append (const char *source)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="dc/d84/classCharBuffer_1a1ba545a85907bbc9ab26cdc99b031440">
+                <title>void CharBuffer::Append (const char c)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="dc/d84/classCharBuffer_1af0db379281b7f3f8b4746344521999c1">
+                <title>void CharBuffer::Append (const char c, unsigned int count)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="dc/d84/classCharBuffer_1a8bc0eaf1a874ccf76c0034299f8459a7">
+                <title>void CharBuffer::DeleteLastChar ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="dc/d84/classCharBuffer_1a1071772d1059263f4f880965fcc349ab">
+                <title>bool CharBuffer::RemoveTrailing (const char c)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="dc/d84/classCharBuffer_1a45beaedff09c0c079075cfced78c8002">
+                <title>bool CharBuffer::RemoveTrailing (const char *string)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="dc/d84/classCharBuffer_1a7dfd3feaaf80f318ba44efe15b1ec44b">
+                <title>char * CharBuffer::GetString ()</title> <emphasis></emphasis>
+                
+            </section>
+</section>

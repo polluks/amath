@@ -1,0 +1,100 @@
+.TH "HyperbolicCosineNode" 3 "Thu Jan 19 2017" "Version 1.6.0" "amath" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+HyperbolicCosineNode \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <functions\&.h>\fP
+.PP
+Inherits \fBFunctionNode\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBHyperbolicCosineNode\fP (\fBExpressionNode\fP *\fBexpression\fP)"
+.br
+.ti -1c
+.RI "\fBNumber\fP * \fBEvaluate\fP ()"
+.br
+.in -1c
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static \fBFunctionNode\fP * \fBCreate\fP (\fBExpressionNode\fP *\fBexpression\fP)"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "char * \fBGetNodeText\fP ()"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Detailed Description"
+.PP 
+Definition at line 470 of file functions\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "HyperbolicCosineNode::HyperbolicCosineNode (\fBExpressionNode\fP * expression)"
+
+.PP
+Definition at line 1000 of file functions\&.cpp\&.
+.PP
+References FunctionNode::FunctionNode()\&.
+.PP
+Referenced by Create()\&.
+.PP
+.nf
+1001     : FunctionNode(expression) { }
+.fi
+.SH "Member Function Documentation"
+.PP 
+.SS "\fBFunctionNode\fP * HyperbolicCosineNode::Create (\fBExpressionNode\fP * expression)\fC [static]\fP"
+
+.PP
+Definition at line 1003 of file functions\&.cpp\&.
+.PP
+References HyperbolicCosineNode()\&.
+.PP
+.nf
+1004 {
+1005     return new HyperbolicCosineNode(expression);
+1006 }
+.fi
+.SS "\fBNumber\fP * HyperbolicCosineNode::Evaluate ()\fC [virtual]\fP"
+
+.PP
+Implements \fBExpressionNode\fP\&.
+.PP
+Definition at line 1008 of file functions\&.cpp\&.
+.PP
+References ExpressionNode::Evaluate(), FunctionNode::expression, Number::HypCosine(), and ExpressionNode::result\&.
+.PP
+.nf
+1009 {
+1010     result = expression->Evaluate()->HypCosine();
+1011     return result;
+1012 }
+.fi
+.SS "char * HyperbolicCosineNode::GetNodeText ()\fC [protected]\fP, \fC [virtual]\fP"
+
+.PP
+Implements \fBExpressionNode\fP\&.
+.PP
+Definition at line 1014 of file functions\&.cpp\&.
+.PP
+.nf
+1015 {
+1016     return (char*)"cosh";
+1017 }
+.fi
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for amath from the source code\&.

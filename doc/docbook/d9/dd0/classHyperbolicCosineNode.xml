@@ -1,0 +1,86 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="d9/dd0/classHyperbolicCosineNode">
+<title>HyperbolicCosineNode class Reference</title>
+<para>
+    <programlisting>#include <link linkend="d8/d5c/functions_8h">&lt;functions.h&gt;</link></programlisting>
+</para>
+<para>Inheritance diagram for HyperbolicCosineNode</para>
+<para>
+    <figure>
+        <title>Inheritance graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="../../d2/de1/classHyperbolicCosineNode__inherit__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+<para>Collaboration diagram for HyperbolicCosineNode</para>
+<para>
+    <figure>
+        <title>Collaboration graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="../../d8/d62/classHyperbolicCosineNode__coll__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d9/dd0/classHyperbolicCosineNode_1a0b67f82a145ad333756d14613919a00c">HyperbolicCosineNode</link> (
+<link linkend="dd/d06/classExpressionNode">ExpressionNode</link> * expression)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="da/de2/structNumber">Number</link> * <link linkend="d9/dd0/classHyperbolicCosineNode_1a22a3609a695c926aa3dd0b641282bb1f">Evaluate</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>static <link linkend="d7/d06/classFunctionNode">FunctionNode</link> * <link linkend="d9/dd0/classHyperbolicCosineNode_1ae50b7e2de3943b0eda108e384dbe75a2">Create</link> (
+<link linkend="dd/d06/classExpressionNode">ExpressionNode</link> * expression)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>char * <link linkend="d9/dd0/classHyperbolicCosineNode_1ab646fad3a064c9d43aa0edeb36aef4d6">GetNodeText</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+            <section xml:id="d9/dd0/classHyperbolicCosineNode_1a0b67f82a145ad333756d14613919a00c">
+                <title>HyperbolicCosineNode::HyperbolicCosineNode (ExpressionNode *expression)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d9/dd0/classHyperbolicCosineNode_1a22a3609a695c926aa3dd0b641282bb1f">
+                <title>Number * HyperbolicCosineNode::Evaluate ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d9/dd0/classHyperbolicCosineNode_1ae50b7e2de3943b0eda108e384dbe75a2">
+                <title>FunctionNode * HyperbolicCosineNode::Create (ExpressionNode *expression)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d9/dd0/classHyperbolicCosineNode_1ab646fad3a064c9d43aa0edeb36aef4d6">
+                <title>char * HyperbolicCosineNode::GetNodeText ()</title> <emphasis></emphasis>
+                
+            </section>
+</section>

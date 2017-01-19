@@ -1,0 +1,64 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="db/df1/help_8h">
+    <title>help.h File Reference</title>
+    <programlisting>#include &quot;clib.h&quot;</programlisting>
+    <programlisting>#include &quot;localize/lex.h&quot;</programlisting>
+<para>Include dependency diagram for help.h</para>
+<para>
+    <figure>
+        <title>Dependency diagram</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="../../de/ddb/help_8h__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+<para>Included by dependency diagram for help.h</para>
+<para>
+    <figure>
+        <title>Dependency diagram</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="../../d3/d7a/help_8h__dep__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+        <section>
+            <title> Classes </title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="dc/dbc/structhelptextdef">helptextdef</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title>Macros</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="db/df1/help_8h_1a176031b8303334329794826824220f24">symzero</link> <link linkend="de/d52/lex_8h_1a7feef761cd73fac6e25b8bb80d2c4e54">Symbol</link>(0)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title>Variables</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>static const <link linkend="dc/dbc/structhelptextdef">helptextdef</link> <link linkend="db/df1/help_8h_1acdb22c8ec8de155872a1d1e34bcc4a7f">helptexts</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+    <simplesect>
+        <title>Detailed Description</title>
+
+<para>Help texts for statement. </para>
+    <para>Definition in file /home/carsten/amath2/app/localize/help.h</para>
+    </simplesect>
+</section>

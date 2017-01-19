@@ -1,0 +1,52 @@
+.TH "lib/real/finite.c" 3 "Thu Jan 19 2017" "Version 1.6.0" "amath" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+lib/real/finite.c \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'prim\&.h'\fP
+.br
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "int \fBfinite\fP (double x)"
+.br
+.RI "\fIFinite or infinite number\&. \fP"
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "int finite (double x)"
+
+.PP
+Finite or infinite number\&. 
+.PP
+\fBVersion:\fP
+.RS 4
+1\&.3 
+.RE
+.PP
+\fBDate:\fP
+.RS 4
+95/01/18
+.RE
+.PP
+finite(x) returns 1 is x is finite, else 0\&. NOTICE: No branching! 
+.PP
+Definition at line 53 of file finite\&.c\&.
+.PP
+Referenced by PositionalNumeralSystem::GetText(), and RealNumber::IsFinite()\&.
+.PP
+.nf
+54 {
+55     uword hx;
+56     GET_HIGH_WORD(hx,x);
+57     return (unsigned)((hx&0x7fffffff)-0x7ff00000)>>31;
+58 }
+.fi
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for amath from the source code\&.

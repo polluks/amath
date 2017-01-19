@@ -1,0 +1,106 @@
+.TH "lib/real/scalbn.c" 3 "Thu Jan 19 2017" "Version 1.6.0" "amath" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+lib/real/scalbn.c \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'prim\&.h'\fP
+.br
+\fC#include 'math\&.h'\fP
+.br
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "double \fBscalbn\fP (double x, int n)"
+.br
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "static const double \fBtwo54\fP = 1\&.80143985094819840000e+16"
+.br
+.ti -1c
+.RI "static const double \fBtwom54\fP = 5\&.55111512312578270212e\-17"
+.br
+.ti -1c
+.RI "static const double \fBhuge\fP = 1\&.0e+300"
+.br
+.ti -1c
+.RI "static const double \fBtiny\fP = 1\&.0e\-300"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "double scalbn (double x, int n)"
+
+.PP
+Definition at line 60 of file scalbn\&.c\&.
+.PP
+References huge, tiny, two54, and twom54\&.
+.PP
+Referenced by __kernel_rem_pio2(), and pow()\&.
+.PP
+.nf
+61 {
+62     sword  k,hx,lx;
+63     EXTRACT_WORDS(hx,lx,x);
+64     k = (hx&0x7ff00000)>>20;        /* extract exponent */
+65     if (k==0) {             /* 0 or subnormal x */
+66         if ((lx|(hx&0x7fffffff))==0) return x; /* +-0 */
+67         x *= two54;
+68         GET_HIGH_WORD(hx,x);
+69         k = ((hx&0x7ff00000)>>20) - 54;
+70         if (n< -50000) return tiny*x;   /*underflow*/
+71     }
+72     if (k==0x7ff) return x+x;       /* NaN or Inf */
+73     k = k+n;
+74     if (k >  0x7fe) return huge*copysign(huge,x); /* overflow  */
+75     if (k > 0)              /* normal result */
+76     {
+77         SET_HIGH_WORD(x,(hx&0x800fffff)|(k<<20));
+78         return x;
+79     }
+80     if (k <= -54) {
+81         if (n > 50000)      /* in case integer overflow in n+k */
+82             return huge*copysign(huge,x);   /*overflow*/
+83         else return tiny*copysign(tiny,x);  /*underflow*/
+84     }
+85     k += 54;                /* subnormal result */
+86     SET_HIGH_WORD(x,(hx&0x800fffff)|(k<<20));
+87     return x*twom54;
+88 }
+.fi
+.SH "Variable Documentation"
+.PP 
+.SS "const double huge = 1\&.0e+300\fC [static]\fP"
+
+.PP
+Definition at line 57 of file scalbn\&.c\&.
+.PP
+Referenced by scalbn()\&.
+.SS "const double tiny = 1\&.0e\-300\fC [static]\fP"
+
+.PP
+Definition at line 58 of file scalbn\&.c\&.
+.PP
+Referenced by scalbn()\&.
+.SS "const double two54 = 1\&.80143985094819840000e+16\fC [static]\fP"
+
+.PP
+Definition at line 55 of file scalbn\&.c\&.
+.PP
+Referenced by scalbn()\&.
+.SS "const double twom54 = 5\&.55111512312578270212e\-17\fC [static]\fP"
+
+.PP
+Definition at line 56 of file scalbn\&.c\&.
+.PP
+Referenced by scalbn()\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for amath from the source code\&.

@@ -1,0 +1,8 @@
+<map id="ComplexNumber::Mul" name="ComplexNumber::Mul">
+<area shape="rect" id="node2" href="$d9/dcc/prim_8c.html#a71e6e973f5b98b4c9140c0d374d9223d" title="Multiplication of two complex numbers. " alt="" coords="291,56,341,83"/>
+<area shape="rect" id="node4" href="$d9/dcc/prim_8c.html#a980e6e049f7902b05fc9eb5614b07a5c" title="Pack two real numbers into a complex number. " alt="" coords="510,107,567,133"/>
+<area shape="rect" id="node6" href="$db/d8e/structComplexNumber.html#a0d89581ead93385331befcef51698693" title="ComplexNumber::ComplexNumber" alt="" coords="203,157,429,184"/>
+<area shape="rect" id="node3" href="$d9/dcc/prim_8c.html#aa1fe0b9371befabef6c41ba73470774a" title="Imaginary part of complex number. " alt="" coords="510,5,567,32"/>
+<area shape="rect" id="node5" href="$d9/dcc/prim_8c.html#a4a236b24c0197821e3489a35a72079ab" title="Real part of complex number. " alt="" coords="513,56,564,83"/>
+<area shape="rect" id="node7" href="$da/de2/structNumber.html#afd3c2f9b4b288e339f741a6e4ae54593" title="Number::Number" alt="" coords="477,157,600,184"/>
+</map>

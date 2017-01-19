@@ -1,0 +1,212 @@
+\hypertarget{classTruncNode}{}\section{Trunc\+Node Class Reference}
+\label{classTruncNode}\index{Trunc\+Node@{Trunc\+Node}}
+
+
+A truncation function in a syntax tree.  
+
+
+
+
+{\ttfamily \#include $<$functions.\+h$>$}
+
+
+
+Inheritance diagram for Trunc\+Node\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=169pt]{dd/de5/classTruncNode__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Trunc\+Node\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=272pt]{d8/d54/classTruncNode__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classTruncNode_a32e8df2efc73ec374f93e3b60fd8c756}{Trunc\+Node} (\hyperlink{classExpressionNode}{Expression\+Node} $\ast$\hyperlink{classFunctionNode_ad7577b179a1937aaf8a0058bb5b546dc}{expression})
+\item 
+\hyperlink{structNumber}{Number} $\ast$ \hyperlink{classTruncNode_a6d999ff093e9e92e3aa288b04ba99fb2}{Evaluate} ()
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{classFunctionNode}{Function\+Node} $\ast$ \hyperlink{classTruncNode_ac3abdd88221a6ced88a01bd95eff258e}{Create} (\hyperlink{classExpressionNode}{Expression\+Node} $\ast$\hyperlink{classFunctionNode_ad7577b179a1937aaf8a0058bb5b546dc}{expression})
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+char $\ast$ \hyperlink{classTruncNode_ad19cef55faa2ef0e83d6288d4de5230e}{Get\+Node\+Text} ()
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+A truncation function in a syntax tree. 
+
+Discard the number of digits right of the decimal point. See \hyperlink{structNumber}{Number} for implementation.
+
+More info on the truncation function is available at Wikipedia\+: \href{http://en.wikipedia.org/wiki/Truncation}{\tt http\+://en.\+wikipedia.\+org/wiki/\+Truncation} 
+
+Definition at line 240 of file functions.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Trunc\+Node@{Trunc\+Node}!Trunc\+Node@{Trunc\+Node}}
+\index{Trunc\+Node@{Trunc\+Node}!Trunc\+Node@{Trunc\+Node}}
+\subsubsection[{\texorpdfstring{Trunc\+Node(\+Expression\+Node $\ast$expression)}{TruncNode(ExpressionNode *expression)}}]{\setlength{\rightskip}{0pt plus 5cm}Trunc\+Node\+::\+Trunc\+Node (
+\begin{DoxyParamCaption}
+\item[{{\bf Expression\+Node} $\ast$}]{expression}
+\end{DoxyParamCaption}
+)}\hypertarget{classTruncNode_a32e8df2efc73ec374f93e3b60fd8c756}{}\label{classTruncNode_a32e8df2efc73ec374f93e3b60fd8c756}
+
+
+Definition at line 560 of file functions.\+cpp.
+
+
+
+References Function\+Node\+::\+Function\+Node().
+
+
+
+Referenced by Create().
+
+
+\begin{DoxyCode}
+560                                                :
+561     \hyperlink{classFunctionNode_a41cb7db0162ffbec0902bd8ff7ea435f}{FunctionNode}(expression) \{ \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d6/d9c/classTruncNode_a32e8df2efc73ec374f93e3b60fd8c756_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=335pt]{d6/d9c/classTruncNode_a32e8df2efc73ec374f93e3b60fd8c756_icgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Member Function Documentation}
+\index{Trunc\+Node@{Trunc\+Node}!Create@{Create}}
+\index{Create@{Create}!Trunc\+Node@{Trunc\+Node}}
+\subsubsection[{\texorpdfstring{Create(\+Expression\+Node $\ast$expression)}{Create(ExpressionNode *expression)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Function\+Node} $\ast$ Trunc\+Node\+::\+Create (
+\begin{DoxyParamCaption}
+\item[{{\bf Expression\+Node} $\ast$}]{expression}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{classTruncNode_ac3abdd88221a6ced88a01bd95eff258e}{}\label{classTruncNode_ac3abdd88221a6ced88a01bd95eff258e}
+
+
+Definition at line 563 of file functions.\+cpp.
+
+
+
+References Trunc\+Node().
+
+
+\begin{DoxyCode}
+564 \{
+565     \textcolor{keywordflow}{return} \textcolor{keyword}{new} \hyperlink{classTruncNode_a32e8df2efc73ec374f93e3b60fd8c756}{TruncNode}(expression);
+566 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d6/d9c/classTruncNode_ac3abdd88221a6ced88a01bd95eff258e_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{Trunc\+Node@{Trunc\+Node}!Evaluate@{Evaluate}}
+\index{Evaluate@{Evaluate}!Trunc\+Node@{Trunc\+Node}}
+\subsubsection[{\texorpdfstring{Evaluate()}{Evaluate()}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Number} $\ast$ Trunc\+Node\+::\+Evaluate (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{classTruncNode_a6d999ff093e9e92e3aa288b04ba99fb2}{}\label{classTruncNode_a6d999ff093e9e92e3aa288b04ba99fb2}
+
+
+Implements \hyperlink{classExpressionNode_a64975d4dc37742228bd522f6204537f7}{Expression\+Node}.
+
+
+
+Definition at line 568 of file functions.\+cpp.
+
+
+
+References Expression\+Node\+::\+Evaluate(), Function\+Node\+::expression, Expression\+Node\+::result, and Number\+::\+Trunc().
+
+
+\begin{DoxyCode}
+569 \{
+570     \hyperlink{classExpressionNode_a1f590649f5a5cb30eb7ee912f7bc1262}{result} = \hyperlink{classFunctionNode_ad7577b179a1937aaf8a0058bb5b546dc}{expression}->\hyperlink{classExpressionNode_a64975d4dc37742228bd522f6204537f7}{Evaluate}()->\hyperlink{structNumber_a18dc6a153c55c3b0295b5d5fe1f6ab7d}{Trunc}();
+571     \textcolor{keywordflow}{return} \hyperlink{classExpressionNode_a1f590649f5a5cb30eb7ee912f7bc1262}{result};
+572 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d6/d9c/classTruncNode_a6d999ff093e9e92e3aa288b04ba99fb2_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{Trunc\+Node@{Trunc\+Node}!Get\+Node\+Text@{Get\+Node\+Text}}
+\index{Get\+Node\+Text@{Get\+Node\+Text}!Trunc\+Node@{Trunc\+Node}}
+\subsubsection[{\texorpdfstring{Get\+Node\+Text()}{GetNodeText()}}]{\setlength{\rightskip}{0pt plus 5cm}char $\ast$ Trunc\+Node\+::\+Get\+Node\+Text (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}\hypertarget{classTruncNode_ad19cef55faa2ef0e83d6288d4de5230e}{}\label{classTruncNode_ad19cef55faa2ef0e83d6288d4de5230e}
+
+
+Implements \hyperlink{classExpressionNode_a42a5e9562b0f645a19dcc83f698069b5}{Expression\+Node}.
+
+
+
+Definition at line 574 of file functions.\+cpp.
+
+
+\begin{DoxyCode}
+575 \{
+576     \textcolor{keywordflow}{return} (\textcolor{keywordtype}{char}*)\textcolor{stringliteral}{"trunc"};
+577 \}
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+app/main/\hyperlink{functions_8h}{functions.\+h}\item 
+app/main/\hyperlink{functions_8cpp}{functions.\+cpp}\end{DoxyCompactItemize}

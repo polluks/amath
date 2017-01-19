@@ -1,0 +1,73 @@
+.TH "EmptyStatement" 3 "Thu Jan 19 2017" "Version 1.6.0" "amath" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+EmptyStatement \- An empty statement\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <statements\&.h>\fP
+.PP
+Inherits \fBStatementNode\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBEmptyStatement\fP ()"
+.br
+.ti -1c
+.RI "\fB~EmptyStatement\fP ()"
+.br
+.ti -1c
+.RI "char * \fBExecute\fP ()"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Detailed Description"
+.PP 
+An empty statement\&. 
+
+Statement node which encapsulate an empty statment\&. This happens fx\&. if the user only enters a line feed\&. 
+.PP
+Definition at line 72 of file statements\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "EmptyStatement::EmptyStatement ()\fC [inline]\fP"
+
+.PP
+Definition at line 74 of file statements\&.h\&.
+.PP
+Referenced by Parser::Parse()\&.
+.PP
+.nf
+74 { }
+.fi
+.SS "EmptyStatement::~EmptyStatement ()\fC [inline]\fP"
+
+.PP
+Definition at line 75 of file statements\&.h\&.
+.PP
+.nf
+75 { }
+.fi
+.SH "Member Function Documentation"
+.PP 
+.SS "char * EmptyStatement::Execute ()\fC [virtual]\fP"
+
+.PP
+Implements \fBStatementNode\fP\&.
+.PP
+Definition at line 64 of file statements\&.cpp\&.
+.PP
+.nf
+65 {
+66     return (char*)EMPTYSTRING;
+67 }
+.fi
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for amath from the source code\&.

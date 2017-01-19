@@ -1,0 +1,42 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="d4/d29/dmath_8cpp">
+    <title>dmath.cpp File Reference</title>
+    <programlisting>#include &quot;dstandard.h&quot;</programlisting>
+<para>Include dependency diagram for dmath.cpp</para>
+<para>
+    <figure>
+        <title>Dependency diagram</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="../../d8/d00/dmath_8cpp__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+<para>Included by dependency diagram for dmath.cpp</para>
+<para>
+    <figure>
+        <title>Dependency diagram</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="../../da/d1d/dmath_8cpp__dep__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+        <section>
+            <title>Functions</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="dc/dac/dstandard_8h_1aee96db7e18784e05ed6b0bcaeec3f7f6">tU32</link> <link linkend="d4/d29/dmath_8cpp_1a835ee0ad31a196742a7a5fd3c21a738b">LogBase2</link> (
+<link linkend="dc/dac/dstandard_8h_1aee96db7e18784e05ed6b0bcaeec3f7f6">tU32</link> val)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+    <simplesect>
+        <title>Detailed Description</title>
+    <para>Definition in file /home/carsten/amath2/lib/dconv/dmath.cpp</para>
+    </simplesect>
+</section>

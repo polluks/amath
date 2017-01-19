@@ -1,0 +1,18 @@
+<map id="ComplexNumber::ArcTangent" name="ComplexNumber::ArcTangent">
+<area shape="rect" id="node2" href="$dc/d63/catan_8c.html#aa4ec5b4617afd43de3b6c7a11e850f04" title="Inverse tangent of complex number. " alt="" coords="334,309,389,336"/>
+<area shape="rect" id="node16" href="$db/d8e/structComplexNumber.html#a0d89581ead93385331befcef51698693" title="ComplexNumber::ComplexNumber" alt="" coords="248,436,475,463"/>
+<area shape="rect" id="node3" href="$d9/dcc/prim_8c.html#aa334a54c40e3eeb301f2a510a7675070" title="Addition of two complex numbers. " alt="" coords="695,208,746,235"/>
+<area shape="rect" id="node5" href="$d9/dcc/prim_8c.html#a980e6e049f7902b05fc9eb5614b07a5c" title="Pack two real numbers into a complex number. " alt="" coords="796,335,853,361"/>
+<area shape="rect" id="node7" href="$d9/dcc/prim_8c.html#afeb504d8fe89e8fc7dea6e6592af70f6" title="Division of two complex numbers. " alt="" coords="697,259,744,285"/>
+<area shape="rect" id="node8" href="$d9/d2d/clog_8c.html#a888b8eb5ccc46411e68f6d7b99035888" title="Natural logarithm of a complex number. " alt="" coords="561,132,607,159"/>
+<area shape="rect" id="node14" href="$d9/dcc/prim_8c.html#a71e6e973f5b98b4c9140c0d374d9223d" title="Multiplication of two complex numbers. " alt="" coords="695,309,746,336"/>
+<area shape="rect" id="node15" href="$d9/dcc/prim_8c.html#a9bebe3fb8e9e03dbe04a2ecedbe4a114" title="Subtraction of two complex numbers. " alt="" coords="695,360,746,387"/>
+<area shape="rect" id="node4" href="$d9/dcc/prim_8c.html#aa1fe0b9371befabef6c41ba73470774a" title="Imaginary part of complex number. " alt="" coords="796,259,853,285"/>
+<area shape="rect" id="node6" href="$d9/dcc/prim_8c.html#a4a236b24c0197821e3489a35a72079ab" title="Real part of complex number. " alt="" coords="799,208,850,235"/>
+<area shape="rect" id="node9" href="$d4/d16/atan2_8c.html#a349377202ca14f79eb335b1a421fe4d8" title="atan2" alt="" coords="693,5,748,32"/>
+<area shape="rect" id="node11" href="$d9/dcc/prim_8c.html#af6e02ba9d2566b52e3b0faf2d4ed973a" title="Absolute value of complex number. " alt="" coords="695,56,746,83"/>
+<area shape="rect" id="node10" href="$d6/d10/atan_8c.html#a1e2f8f6d64eaa95131bc63fee34970ea" title="Inverse trigonometric tangent function. " alt="" coords="801,5,848,32"/>
+<area shape="rect" id="node12" href="$d1/db2/hypot_8c.html#a6d6a905f61d535f8454190433b8c0ea5" title="hypot" alt="" coords="797,56,852,83"/>
+<area shape="rect" id="node13" href="$dd/de3/sqrt_8c.html#ab87521a75ef827a85807f89a6c10629a" title="Square root function. " alt="" coords="901,56,945,83"/>
+<area shape="rect" id="node17" href="$da/de2/structNumber.html#afd3c2f9b4b288e339f741a6e4ae54593" title="Number::Number" alt="" coords="523,512,645,539"/>
+</map>

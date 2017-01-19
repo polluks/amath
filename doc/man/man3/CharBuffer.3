@@ -1,0 +1,541 @@
+.TH "CharBuffer" 3 "Thu Jan 19 2017" "Version 1.6.0" "amath" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+CharBuffer \- Encapsulate an character array which can be used as a string\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <charbuf\&.h>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBCharBuffer\fP ()"
+.br
+.RI "\fIInitialize without allocating memory\&. \fP"
+.ti -1c
+.RI "\fBCharBuffer\fP (unsigned int size)"
+.br
+.RI "\fIInitialize while allocating specified amount of memory\&. \fP"
+.ti -1c
+.RI "\fB~CharBuffer\fP ()"
+.br
+.ti -1c
+.RI "void \fBClearBuffer\fP ()"
+.br
+.RI "\fIRelease memory in buffer\&. \fP"
+.ti -1c
+.RI "void \fBClearAndCopy\fP (const char *source)"
+.br
+.RI "\fIRelease memory, allocate and copy source\&. \fP"
+.ti -1c
+.RI "void \fBClearAndAlloc\fP (unsigned int size)"
+.br
+.RI "\fIRelease memory and allocate new size\&. \fP"
+.ti -1c
+.RI "void \fBEnsureSize\fP (unsigned int size)"
+.br
+.RI "\fIEnsure a memory block of speficied size is allocated\&. \fP"
+.ti -1c
+.RI "void \fBEnsureSize\fP (unsigned int blocksize, unsigned int blocks)"
+.br
+.ti -1c
+.RI "void \fBEnsureMinimumSize\fP ()"
+.br
+.ti -1c
+.RI "void \fBEnsureGrowth\fP (unsigned int size)"
+.br
+.ti -1c
+.RI "void \fBEmpty\fP ()"
+.br
+.ti -1c
+.RI "\fBbool\fP \fBIs\fP (const char *string)"
+.br
+.ti -1c
+.RI "void \fBCopy\fP (\fBCharBuffer\fP *\fBbuf\fP)"
+.br
+.ti -1c
+.RI "void \fBAppend\fP (const char *source)"
+.br
+.ti -1c
+.RI "void \fBAppend\fP (const char c)"
+.br
+.ti -1c
+.RI "void \fBAppend\fP (const char c, unsigned int count)"
+.br
+.ti -1c
+.RI "void \fBDeleteLastChar\fP ()"
+.br
+.ti -1c
+.RI "\fBbool\fP \fBRemoveTrailing\fP (const char c)"
+.br
+.ti -1c
+.RI "\fBbool\fP \fBRemoveTrailing\fP (const char *string)"
+.br
+.ti -1c
+.RI "char * \fBGetString\fP ()"
+.br
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "char * \fBbuf\fP"
+.br
+.ti -1c
+.RI "char * \fBptr\fP"
+.br
+.ti -1c
+.RI "unsigned int \fBcursize\fP"
+.br
+.in -1c
+.SS "Static Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "static const unsigned int \fBminimumSize\fP = 64"
+.br
+.in -1c
+.SS "Friends"
+
+.in +1c
+.ti -1c
+.RI "class \fBAnsiConoleEngine\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Encapsulate an character array which can be used as a string\&. 
+
+Eases the task of allocating a releasing memory\&. 
+.PP
+Definition at line 43 of file charbuf\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "CharBuffer::CharBuffer ()"
+
+.PP
+Initialize without allocating memory\&. 
+.PP
+Definition at line 38 of file charbuf\&.cpp\&.
+.PP
+References buf, cursize, and ptr\&.
+.PP
+Referenced by AnsiConoleEngine::AnsiConoleEngine(), ErrorNode::ErrorNode(), Evaluator::Evaluator(), PromptStatement::Execute(), FunctionList::FunctionList(), StandardFilesystem::ListDirectory(), StandardPreferences::Load(), StandardFilesystem::LoadTextFile(), NumeralSystem::NumeralSystem(), PreferencesBase::PreferencesBase(), SyntaxNode::SyntaxNode(), UserFunction::UserFunction(), and VariableList::VariableList()\&.
+.PP
+.nf
+39 {
+40     buf = NOMEM;
+41     ptr = buf;
+42     cursize = 0;
+43 }
+.fi
+.SS "CharBuffer::CharBuffer (unsigned int size)"
+
+.PP
+Initialize while allocating specified amount of memory\&. 
+.PP
+Definition at line 49 of file charbuf\&.cpp\&.
+.PP
+References buf, cursize, minimumSize, and ptr\&.
+.PP
+Referenced by SaveStatement::Execute(), PositionalNumeralSystem::GetText(), and StandardProgram::Initialize()\&.
+.PP
+.nf
+50 {
+51     cursize = (size < minimumSize ? minimumSize : size);
+52     buf = new char[cursize];
+53     ptr = buf;
+54 }
+.fi
+.SS "CharBuffer::~CharBuffer ()"
+
+.PP
+Definition at line 56 of file charbuf\&.cpp\&.
+.PP
+References ClearBuffer()\&.
+.PP
+.nf
+57 {
+58     ClearBuffer();
+59 }
+.fi
+.SH "Member Function Documentation"
+.PP 
+.SS "void CharBuffer::Append (const char * source)"
+
+.PP
+Definition at line 211 of file charbuf\&.cpp\&.
+.PP
+References ptr\&.
+.PP
+Referenced by ErrorNode::ErrorNode(), VersionStatement::Execute(), MemoryStatement::Execute(), ErrorNode::Execute(), EvalStatement::Execute(), StatementBlockNode::Execute(), DeleteStatement::Execute(), InputStatement::Execute(), OutputStatement::Execute(), DigitsStatement::Execute(), SaveStatement::Execute(), PlotStatement::Execute(), PreferencesBase::GetDescription(), PositionalNumeralSystem::GetName(), DecimalSystem::GetRealText(), UnaryNode::GetText(), FunctionNode::GetText(), AbsoluteNode::GetText(), PositionalNumeralSystem::GetText(), NumericOperator::GetText(), StandardProgram::Initialize(), UserFunction::InitializeTexts(), VariableList::ListContent(), FunctionList::ListContent(), StandardFilesystem::ListDirectory(), StandardPreferences::Load(), AnsiConoleEngine::ProcessChar(), AnsiConoleEngine::ShowLast(), and AnsiConoleEngine::ShowNext()\&.
+.PP
+.nf
+212 {
+213     while ((*ptr++ = *source++));
+214 
+215     ptr--;
+216 }
+.fi
+.SS "void CharBuffer::Append (const char c)"
+
+.PP
+Definition at line 195 of file charbuf\&.cpp\&.
+.PP
+References ptr\&.
+.PP
+Referenced by PromptStatement::Execute(), ErrorNode::Execute(), PlotStatement::Execute(), PreferencesBase::GetDescription(), PositionalNumeralSystem::GetText(), DecimalSystem::GetText(), StandardProgram::Initialize(), UserFunction::InitializeTexts(), PositionalNumeralSystem::IntegerToBuffer(), VariableList::ListContent(), FunctionList::ListContent(), StandardFilesystem::LoadTextFile(), and AnsiConoleEngine::ProcessChar()\&.
+.PP
+.nf
+196 {
+197     *ptr++ = c;
+198 }
+.fi
+.SS "void CharBuffer::Append (const char c, unsigned int count)"
+
+.PP
+Definition at line 200 of file charbuf\&.cpp\&.
+.PP
+References ptr\&.
+.PP
+Referenced by ErrorNode::Execute(), and StandardFilesystem::ListDirectory()\&.
+.PP
+.nf
+201 {
+202     if (count == 0) {
+203         return;
+204     }
+205 
+206     unsigned int n = count;
+207     while (n--)
+208         *ptr++ = c;
+209 }
+.fi
+.SS "void CharBuffer::ClearAndAlloc (unsigned int size)"
+
+.PP
+Release memory and allocate new size\&. 
+.PP
+Definition at line 91 of file charbuf\&.cpp\&.
+.PP
+References buf, ClearBuffer(), cursize, minimumSize, and ptr\&.
+.PP
+Referenced by ErrorNode::Execute(), and AnsiConoleEngine::StartInput()\&.
+.PP
+.nf
+92 {
+93     ClearBuffer();
+94     cursize = (size < minimumSize ? minimumSize : size);
+95     buf = new char[cursize];
+96     ptr = buf;
+97 }
+.fi
+.SS "void CharBuffer::ClearAndCopy (const char * source)"
+
+.PP
+Release memory, allocate and copy source\&. 
+.PP
+Definition at line 80 of file charbuf\&.cpp\&.
+.PP
+References AllocAndCopy(), buf, ClearBuffer(), cursize, and ptr\&.
+.PP
+Referenced by Evaluator::Evaluate(), PromptStatement::Execute(), HelpStatement::Execute(), ExecuteStatement::Execute(), and NumericValueNode::GetNodeText()\&.
+.PP
+.nf
+81 {
+82     ClearBuffer();
+83     cursize = AllocAndCopy(&buf, source);
+84     ptr = buf + cursize - sizeof(char);
+85 }
+.fi
+.SS "void CharBuffer::ClearBuffer ()"
+
+.PP
+Release memory in buffer\&. 
+.PP
+Definition at line 65 of file charbuf\&.cpp\&.
+.PP
+References buf, cursize, and ptr\&.
+.PP
+Referenced by VariableList::Clear(), FunctionList::Clear(), ClearAndAlloc(), ClearAndCopy(), Evaluator::Evaluate(), StatementBlockNode::Execute(), and ~CharBuffer()\&.
+.PP
+.nf
+66 {
+67     if (buf != NOMEM) {
+68         delete [] buf;
+69     }
+70 
+71     buf = NOMEM;
+72     ptr = buf;
+73     cursize = 0;
+74 }
+.fi
+.SS "void CharBuffer::Copy (\fBCharBuffer\fP * buf)"
+
+.PP
+Definition at line 183 of file charbuf\&.cpp\&.
+.PP
+References buf, cursize, EnsureSize(), GetString(), and ptr\&.
+.PP
+Referenced by PositionalNumeralSystem::GetText()\&.
+.PP
+.nf
+184 {
+185     EnsureSize(source->cursize);
+186     const char *s = source->GetString();
+187 
+188     ptr = buf;
+189     while ((*ptr++ = *s++))
+190         ;
+191 
+192     ptr--;
+193 }
+.fi
+.SS "void CharBuffer::DeleteLastChar ()"
+
+.PP
+Definition at line 177 of file charbuf\&.cpp\&.
+.PP
+References ptr\&.
+.PP
+Referenced by StandardProgram::Initialize()\&.
+.PP
+.nf
+178 {
+179     ptr--;
+180 
+181 }
+.fi
+.SS "void CharBuffer::Empty ()"
+
+.PP
+Definition at line 168 of file charbuf\&.cpp\&.
+.PP
+References buf, EnsureMinimumSize(), and ptr\&.
+.PP
+Referenced by VersionStatement::Execute(), MemoryStatement::Execute(), ErrorNode::Execute(), EvalStatement::Execute(), StatementBlockNode::Execute(), DeleteStatement::Execute(), InputStatement::Execute(), OutputStatement::Execute(), DigitsStatement::Execute(), SaveStatement::Execute(), PlotStatement::Execute(), FunctionDefinitionNode::FunctionDefinitionNode(), PreferencesBase::GetDescription(), PositionalNumeralSystem::GetName(), UnaryNode::GetText(), FunctionNode::GetText(), AbsoluteNode::GetText(), PositionalNumeralSystem::GetText(), NumericOperator::GetText(), DecimalSystem::GetText(), StandardProgram::Initialize(), UserFunction::InitializeTexts(), VariableList::ListContent(), FunctionList::ListContent(), StandardFilesystem::ListDirectory(), StandardPreferences::Load(), StandardFilesystem::LoadTextFile(), NumeralSystem::NumeralSystem(), AnsiConoleEngine::ProcessChar(), AnsiConoleEngine::ShowLast(), and AnsiConoleEngine::ShowNext()\&.
+.PP
+.nf
+169 {
+170     if (buf == NOMEM) {
+171         EnsureMinimumSize();
+172     }
+173 
+174     ptr = buf;
+175 }
+.fi
+.SS "void CharBuffer::EnsureGrowth (unsigned int size)"
+
+.PP
+Definition at line 158 of file charbuf\&.cpp\&.
+.PP
+References buf, EnsureSize(), and ptr\&.
+.PP
+Referenced by StatementBlockNode::Execute(), PlotStatement::Execute(), DecimalSystem::GetRealText(), StandardFilesystem::ListDirectory(), and AnsiConoleEngine::ShowNext()\&.
+.PP
+.nf
+159 {
+160     EnsureSize((ptr - buf) + size);
+161 }
+.fi
+.SS "void CharBuffer::EnsureMinimumSize ()"
+
+.PP
+Definition at line 99 of file charbuf\&.cpp\&.
+.PP
+References buf, minimumSize, and ptr\&.
+.PP
+Referenced by Empty(), and FunctionDefinitionNode::FunctionDefinitionNode()\&.
+.PP
+.nf
+100 {
+101     if (buf == NOMEM) {
+102         unsigned int size = minimumSize;
+103         buf = new char[size];
+104         ptr = buf;
+105     }
+106 }
+.fi
+.SS "void CharBuffer::EnsureSize (unsigned int size)"
+
+.PP
+Ensure a memory block of speficied size is allocated\&. 
+.PP
+Definition at line 112 of file charbuf\&.cpp\&.
+.PP
+References buf, cursize, MemCopy(), minimumSize, and ptr\&.
+.PP
+Referenced by Copy(), EnsureGrowth(), ErrorNode::ErrorNode(), VersionStatement::Execute(), MemoryStatement::Execute(), EvalStatement::Execute(), DeleteStatement::Execute(), InputStatement::Execute(), OutputStatement::Execute(), DigitsStatement::Execute(), PreferencesBase::GetDescription(), PositionalNumeralSystem::GetName(), UnaryNode::GetText(), FunctionNode::GetText(), AbsoluteNode::GetText(), NumericOperator::GetText(), VariableList::ListContent(), FunctionList::ListContent(), StandardFilesystem::ListDirectory(), StandardPreferences::Load(), AnsiConoleEngine::ShowLast(), and AnsiConoleEngine::ShowNext()\&.
+.PP
+.nf
+113 {
+114     if (cursize < size) {
+115 
+116         unsigned int tempsize = cursize;
+117         cursize = (size < minimumSize ? minimumSize : size);
+118 
+119         if (buf == NOMEM) { // Nothing allocated yet\&. Just allocate requested size\&.
+120             buf = new char[cursize];
+121             ptr = buf;
+122         } else if (buf == ptr) { // Already allocated but buffer is empty\&.
+123             delete [] buf;
+124             buf = new char[cursize];
+125             ptr = buf;
+126         } else { // Buffer already in use\&.
+127             // Make at least double size
+128             cursize = cursize < tempsize * 2 ? tempsize * 2 : cursize;
+129             unsigned int offset = ptr - buf;
+130             char *temp = new char[cursize];
+131             MemCopy(temp, buf, tempsize);
+132             delete [] buf;
+133             buf = temp;
+134             ptr = buf + offset;
+135         }
+136     }
+137 }
+.fi
+.SS "void CharBuffer::EnsureSize (unsigned int blocksize, unsigned int blocks)"
+
+.PP
+Definition at line 139 of file charbuf\&.cpp\&.
+.PP
+References buf, cursize, MemCopy(), and ptr\&.
+.PP
+Referenced by StandardFilesystem::LoadTextFile()\&.
+.PP
+.nf
+140 {
+141     if (cursize < blocksize * blocks) {
+142         if (buf == NOMEM) {
+143             cursize = blocksize * blocks;
+144             buf = new char[cursize];
+145             ptr = buf;
+146         } else {
+147             unsigned int tptr = ptr - buf;
+148             char *temp = new char[blocksize * blocks];
+149             MemCopy(temp, buf, cursize);
+150             delete [] buf;
+151             cursize = blocksize * blocks;
+152             buf = temp;
+153             ptr = buf + tptr;
+154         }
+155     }
+156 }
+.fi
+.SS "char * CharBuffer::GetString ()"
+
+.PP
+Definition at line 250 of file charbuf\&.cpp\&.
+.PP
+References buf, and ptr\&.
+.PP
+Referenced by Copy(), AnsiConoleEngine::CopyLine(), ErrorNode::ErrorNode(), VersionStatement::Execute(), MemoryStatement::Execute(), PromptStatement::Execute(), ErrorNode::Execute(), FunctionDefinitionNode::Execute(), EvalStatement::Execute(), StatementBlockNode::Execute(), HelpStatement::Execute(), DeleteStatement::Execute(), InputStatement::Execute(), OutputStatement::Execute(), DigitsStatement::Execute(), ShowStatement::Execute(), ListStatement::Execute(), LoadStatement::Execute(), SaveStatement::Execute(), ExecuteStatement::Execute(), PlotStatement::Execute(), UserFunction::GetDefitionName(), UserFunction::GetDefitionText(), PreferencesBase::GetDescription(), AnsiConoleEngine::GetLine(), PositionalNumeralSystem::GetName(), NumericValueNode::GetNodeText(), DecimalSystem::GetRealText(), Evaluator::GetResult(), UnaryNode::GetText(), FunctionNode::GetText(), AbsoluteNode::GetText(), PositionalNumeralSystem::GetText(), NumericOperator::GetText(), DecimalSystem::GetText(), FunctionDefinitionNode::GetText(), UserFunction::InitializeTexts(), Is(), VariableList::ListContent(), FunctionList::ListContent(), StandardFilesystem::ListDirectory(), StandardPreferences::Load(), StandardLanguage::LoadCatalog(), AnsiConoleEngine::ProcessChar(), StandardProgram::Run(), AnsiConoleEngine::ShowLast(), and AnsiConoleEngine::ShowNext()\&.
+.PP
+.nf
+251 {
+252     *ptr = '\0';
+253     return buf;
+254 }
+.fi
+.SS "\fBbool\fP CharBuffer::Is (const char * string)"
+
+.PP
+Definition at line 163 of file charbuf\&.cpp\&.
+.PP
+References GetString(), and StrIsEqual()\&.
+.PP
+Referenced by PositionalNumeralSystem::GetText(), and StandardProgram::Initialize()\&.
+.PP
+.nf
+164 {
+165     return StrIsEqual(GetString(), string);
+166 }
+.fi
+.SS "\fBbool\fP CharBuffer::RemoveTrailing (const char c)"
+
+.PP
+Definition at line 218 of file charbuf\&.cpp\&.
+.PP
+References buf, and ptr\&.
+.PP
+Referenced by PromptStatement::Execute(), DecimalSystem::GetRealText(), and PositionalNumeralSystem::GetText()\&.
+.PP
+.nf
+219 {
+220     if (ptr == buf) {
+221         return false;
+222     }
+223 
+224     if (*(--ptr) == c) {
+225         return true;
+226     }
+227 
+228     ptr++;
+229     return false;
+230 }
+.fi
+.SS "\fBbool\fP CharBuffer::RemoveTrailing (const char * string)"
+
+.PP
+Definition at line 232 of file charbuf\&.cpp\&.
+.PP
+References buf, ptr, StrIsEqual(), and StrLen()\&.
+.PP
+.nf
+233 {
+234     int len = StrLen(string) * sizeof(char);
+235     char* s = ptr - len;
+236     if (s < buf) {
+237         return false;
+238     }
+239 
+240     *ptr = '\0';
+241 
+242     if (StrIsEqual(s, string)) {
+243         ptr = s;
+244         return true;
+245     }
+246 
+247     return false;
+248 }
+.fi
+.SH "Friends And Related Function Documentation"
+.PP 
+.SS "friend class \fBAnsiConoleEngine\fP\fC [friend]\fP"
+
+.PP
+Definition at line 70 of file charbuf\&.h\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "char* CharBuffer::buf\fC [private]\fP"
+
+.PP
+Definition at line 72 of file charbuf\&.h\&.
+.PP
+Referenced by CharBuffer(), ClearAndAlloc(), ClearAndCopy(), ClearBuffer(), Copy(), Empty(), EnsureGrowth(), EnsureMinimumSize(), EnsureSize(), GetString(), AnsiConoleEngine::ProcessChar(), RemoveTrailing(), AnsiConoleEngine::ShowLast(), AnsiConoleEngine::ShowNext(), and AnsiConoleEngine::StartInput()\&.
+.SS "unsigned int CharBuffer::cursize\fC [private]\fP"
+
+.PP
+Definition at line 74 of file charbuf\&.h\&.
+.PP
+Referenced by CharBuffer(), ClearAndAlloc(), ClearAndCopy(), ClearBuffer(), Copy(), and EnsureSize()\&.
+.SS "const unsigned int CharBuffer::minimumSize = 64\fC [static]\fP, \fC [private]\fP"
+
+.PP
+Definition at line 75 of file charbuf\&.h\&.
+.PP
+Referenced by CharBuffer(), ClearAndAlloc(), EnsureMinimumSize(), and EnsureSize()\&.
+.SS "char* CharBuffer::ptr\fC [private]\fP"
+
+.PP
+Definition at line 73 of file charbuf\&.h\&.
+.PP
+Referenced by Append(), CharBuffer(), ClearAndAlloc(), ClearAndCopy(), ClearBuffer(), Copy(), DeleteLastChar(), Empty(), EnsureGrowth(), EnsureMinimumSize(), EnsureSize(), GetString(), AnsiConoleEngine::ProcessChar(), and RemoveTrailing()\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for amath from the source code\&.

@@ -1,0 +1,51 @@
+<map id="Parser::ParseAddSubstract" name="Parser::ParseAddSubstract">
+<area shape="rect" id="node2" href="$d1/d9d/classAdditionNode.html#ad887731026da63e83069e3c5a282b02d" title="AdditionNode::AdditionNode" alt="" coords="741,42,928,69"/>
+<area shape="rect" id="node7" href="$d0/d40/classParser.html#a415a103e66558b4d366d9a1420561fe3" title="Parser::GetToken" alt="" coords="1789,1582,1914,1609"/>
+<area shape="rect" id="node11" href="$d0/d40/classParser.html#a70c674c7b40f7a0ab1df0523c4c8c530" title="Parser::ParseFactor" alt="" coords="277,322,416,349"/>
+<area shape="rect" id="node34" href="$d0/d40/classParser.html#adb5c3a188b36f7ecb198ae30f06338b3" title="Parser::PutToken" alt="" coords="1515,359,1639,386"/>
+<area shape="rect" id="node50" href="$d6/d6b/classSubtractionNode.html#a1c08339ecfc99430eec6db0b7687c716" title="SubtractionNode::SubtractionNode" alt="" coords="235,93,459,119"/>
+<area shape="rect" id="node3" href="$dc/d84/classNumericOperator.html#a49cd2230b867cdfca64715aaf6e37561" title="NumericOperator::Numeric\lOperator" alt="" coords="1762,245,1941,287"/>
+<area shape="rect" id="node4" href="$dd/d06/classExpressionNode.html#adc8888de5329d356224c8a93f3ce2b75" title="ExpressionNode::ExpressionNode" alt="" coords="2011,461,2233,487"/>
+<area shape="rect" id="node5" href="$d8/d5d/classSyntaxNode.html#ac94372d402f38a118b4e8cd20ba7e520" title="SyntaxNode::SyntaxNode" alt="" coords="2281,629,2456,655"/>
+<area shape="rect" id="node6" href="$dc/d84/classCharBuffer.html#a4345e9a5114f5c0292e8f242f26e3a7b" title="Initialize without allocating memory. " alt="" coords="2504,654,2660,681"/>
+<area shape="rect" id="node8" href="$d6/dc0/classLexer.html#afbb12eaae7cff3bd2960f444cfe98f69" title="Lexer::GetFirstToken" alt="" coords="2049,1607,2195,1634"/>
+<area shape="rect" id="node9" href="$df/dcd/structToken.html#ac7eb963d5eff544dd48ffc23aa274356" title="Token::GetNextToken" alt="" coords="2047,1557,2197,1583"/>
+<area shape="rect" id="node10" href="$df/dcd/structToken.html#a6331b847b4dc8cebe0e0a79c4de63204" title="Token::Token" alt="" coords="2317,1557,2420,1583"/>
+<area shape="rect" id="node12" href="$d0/d40/classParser.html#ad6ccc6e873d1fb3dcfa142655a5b0732" title="Parser::ParsePower" alt="" coords="531,413,669,439"/>
+<area shape="rect" id="node48" href="$d9/d95/classMultiplicationNode.html#a3f96a30f283caa7991dd67be334e71af" title="MultiplicationNode\l::MultiplicationNode" alt="" coords="766,245,903,287"/>
+<area shape="rect" id="node49" href="$d4/d0c/classDivisionNode.html#a39951420a0f89eb5622ec55f99626c19" title="DivisionNode::DivisionNode" alt="" coords="507,213,693,239"/>
+<area shape="rect" id="node13" href="$d0/d40/classParser.html#a446237993f806a92dd3e78ba8019f4f5" title="Parser::ParseUnary" alt="" coords="766,513,903,539"/>
+<area shape="rect" id="node47" href="$d5/d72/classPowerNode.html#a55fac2d0658e6381d166c3c112a67351" title="PowerNode::PowerNode" alt="" coords="976,309,1143,335"/>
+<area shape="rect" id="node14" href="$df/de0/classUnaryNode.html#a6d08d4e122b413b28e5163900800ff66" title="UnaryNode::UnaryNode" alt="" coords="978,513,1141,539"/>
+<area shape="rect" id="node15" href="$d0/d40/classParser.html#ac1a69267c9414b54a4b592c9ad084780" title="Parser::ParseAtomic" alt="" coords="988,869,1131,895"/>
+<area shape="rect" id="node16" href="$d0/d40/classParser.html#ae46b0a87abe76f40ae117c5bdcb2f29d" title="Parser::ParseExpression" alt="" coords="1493,1506,1660,1533"/>
+<area shape="rect" id="node17" href="$d0/d40/classParser.html#a811765334b0cd3f01152c35c9f5bcaec" title="Parser::Expect" alt="" coords="1522,1405,1631,1431"/>
+<area shape="rect" id="node18" href="$df/dcd/structToken.html#a5f93ea94940a6eeb060507e1da594599" title="Token::GetPos" alt="" coords="1796,1354,1907,1381"/>
+<area shape="rect" id="node19" href="$d4/dfd/classAbsoluteNode.html#af1206a7293f334c1d544cafe95af3ba5" title="AbsoluteNode::AbsoluteNode" alt="" coords="1205,563,1399,590"/>
+<area shape="rect" id="node20" href="$d0/d40/classParser.html#a84af27a6f4e42888eba6ac36ccd0815c" title="Parser::ParseIdent" alt="" coords="1237,949,1367,975"/>
+<area shape="rect" id="node28" href="$d4/d9e/classNumericValueNode.html#a85977b96aa8e3883e409ca549139258b" title="NumericValueNode::Numeric\lValueNode" alt="" coords="1481,731,1673,772"/>
+<area shape="rect" id="node37" href="$d3/d5a/classPiNode.html#a75ae61c6fa1883bca5b253123013c047" title="PiNode::PiNode" alt="" coords="1244,681,1360,707"/>
+<area shape="rect" id="node40" href="$d1/d84/classEulersNumberNode.html#a5f2feea3aa3eca36d808303f1b10fc65" title="EulersNumberNode::Eulers\lNumberNode" alt="" coords="1211,615,1393,656"/>
+<area shape="rect" id="node41" href="$d9/db7/classComplexiNode.html#a79e05af8f2290980a8887769e925b228" title="ComplexiNode::ComplexiNode" alt="" coords="1201,767,1403,794"/>
+<area shape="rect" id="node43" href="$d0/d05/classInsVariableNode.html#a76772ab88bcb3dd4d8f5b299ed4bf8ee" title="InsVariableNode::InsVariableNode" alt="" coords="1191,818,1413,845"/>
+<area shape="rect" id="node44" href="$d0/d40/classParser.html#a769d580b14d3d097ed255ad869cc1653" title="Parser::ParseNumber" alt="" coords="1228,1101,1376,1127"/>
+<area shape="rect" id="node21" href="$d1/d79/classFunctionList.html#ae8dc9d2913429faefdfed463ae3272c1" title="FunctionList::GetFunctionCall" alt="" coords="1479,1050,1674,1077"/>
+<area shape="rect" id="node25" href="$df/dcd/structToken.html#a15f1043de07ce8e452fbf115b85def71" title="Token::GetText" alt="" coords="1520,1202,1633,1229"/>
+<area shape="rect" id="node26" href="$d7/dc9/classErrorNode.html#a1c3d4afac02da7fcc0cec125a7ac03ba" title="ErrorNode::ErrorNode" alt="" coords="2048,679,2196,706"/>
+<area shape="rect" id="node27" href="$d6/dc0/classLexer.html#a3032cbeb851294bccd61b722d9a86265" title="Lexer::GetInput" alt="" coords="1521,847,1633,874"/>
+<area shape="rect" id="node31" href="$d3/d0e/classVariableList.html#ac78b3d52283bec7cbd8e7e2d217e1608" title="VariableList::CreateVariable" alt="" coords="1759,949,1943,975"/>
+<area shape="rect" id="node32" href="$df/d93/classAssignmentNode.html#a8b2b07073d9900677a8ffe93f7d4171d" title="AssignmentNode::AssignmentNode" alt="" coords="1461,679,1692,706"/>
+<area shape="rect" id="node33" href="$d5/d93/classVariableNode.html#a0d3189fa49fab4ac738f114b6a696fd7" title="VariableNode::VariableNode" alt="" coords="1483,629,1670,655"/>
+<area shape="rect" id="node36" href="$d3/d0e/classVariableList.html#a2002862abdb75e088e2dd6bf1e140be6" title="VariableList::GetVariable" alt="" coords="1768,999,1935,1026"/>
+<area shape="rect" id="node22" href="$de/df8/classUserFunction.html#a59c59ebf5b45c5bb4aaa200a1218549d" title="UserFunction::GetName" alt="" coords="1769,1050,1933,1077"/>
+<area shape="rect" id="node23" href="$d1/d79/classFunctionList.html#aabcebb1bdf56aee163f96483dcdc603c" title="FunctionList::GetSystemFunction" alt="" coords="1743,1151,1960,1178"/>
+<area shape="rect" id="node24" href="$d7/d4b/strcmp_8c.html#a2a1f39d11cbbaac992d42e67557dac4b" title="Compare two null terminated strings to each other. " alt="" coords="2081,1050,2163,1077"/>
+<area shape="rect" id="node29" href="$dd/d06/classExpressionNode.html#a5d67579dd6c9777a18455a1360f29841" title="ExpressionNode::ExpressionNode" alt="" coords="1740,629,1963,655"/>
+<area shape="rect" id="node30" href="$d2/d49/structRealNumber.html#aa61264f519c95ec9b63ab94c352bcc67" title="RealNumber::RealNumber" alt="" coords="1763,738,1939,765"/>
+<area shape="rect" id="node35" href="$df/dcd/structToken.html#af5213b25192a01f526143461ab47e6af" title="Token::GetLastToken" alt="" coords="1777,359,1925,386"/>
+<area shape="rect" id="node38" href="$d4/d9e/classNumericValueNode.html#a5ad87623d57e875b72d8f166c578231f" title="NumericValueNode::Numeric\lValueNode" alt="" coords="1481,563,1673,604"/>
+<area shape="rect" id="node39" href="$d2/d49/structRealNumber.html#a65924261adb775498f3b1b0f41f89091" title="RealNumber::RealNumber" alt="" coords="1489,511,1665,538"/>
+<area shape="rect" id="node42" href="$db/d8e/structComplexNumber.html#af0a78be5e675c845b8dc2bf8e5e8f32b" title="ComplexNumber::ComplexNumber" alt="" coords="1463,797,1690,823"/>
+<area shape="rect" id="node45" href="$d9/df3/classNumeralSystem.html#a1f8d8a04e99540260d4fc4f16c63ddc3" title="NumeralSystem::Parse" alt="" coords="1497,1253,1656,1279"/>
+<area shape="rect" id="node46" href="$da/de2/structNumber.html#a83da654d465f1344162ce8b8f8c564b9" title="Number::GetRealValue" alt="" coords="1498,1303,1655,1330"/>
+</map>

@@ -1,0 +1,72 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="d9/dd1/classMemoryStatement">
+<title>MemoryStatement class Reference</title>
+<para>
+    <programlisting>#include <link linkend="dd/d6a/statements_8h">&lt;statements.h&gt;</link></programlisting>
+</para>
+<para>Inheritance diagram for MemoryStatement</para>
+<para>
+    <figure>
+        <title>Inheritance graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="../../d1/de5/classMemoryStatement__inherit__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+<para>Collaboration diagram for MemoryStatement</para>
+<para>
+    <figure>
+        <title>Collaboration graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="../../d2/d77/classMemoryStatement__coll__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d9/dd1/classMemoryStatement_1a7aa2d5e60c07a928e6bcbbee00d29ec6">MemoryStatement</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d9/dd1/classMemoryStatement_1ae5c26769b5a88d0bf701578791eda398">~MemoryStatement</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>char * <link linkend="d9/dd1/classMemoryStatement_1a0cfd7aae34f2103c7734980907426f4e">Execute</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+    <simplesect>
+
+<para>Show memory usage. </para>
+    </simplesect>
+            <section xml:id="d9/dd1/classMemoryStatement_1a7aa2d5e60c07a928e6bcbbee00d29ec6">
+                <title>MemoryStatement::MemoryStatement ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d9/dd1/classMemoryStatement_1ae5c26769b5a88d0bf701578791eda398">
+                <title>MemoryStatement::~MemoryStatement ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d9/dd1/classMemoryStatement_1a0cfd7aae34f2103c7734980907426f4e">
+                <title>char * MemoryStatement::Execute ()</title> <emphasis></emphasis>
+                
+            </section>
+</section>

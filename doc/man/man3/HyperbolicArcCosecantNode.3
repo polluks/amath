@@ -1,0 +1,101 @@
+.TH "HyperbolicArcCosecantNode" 3 "Thu Jan 19 2017" "Version 1.6.0" "amath" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+HyperbolicArcCosecantNode \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <functions\&.h>\fP
+.PP
+Inherits \fBFunctionNode\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBHyperbolicArcCosecantNode\fP (\fBExpressionNode\fP *\fBexpression\fP)"
+.br
+.ti -1c
+.RI "\fBNumber\fP * \fBEvaluate\fP ()"
+.br
+.in -1c
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static \fBFunctionNode\fP * \fBCreate\fP (\fBExpressionNode\fP *\fBexpression\fP)"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "char * \fBGetNodeText\fP ()"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Detailed Description"
+.PP 
+Definition at line 564 of file functions\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "HyperbolicArcCosecantNode::HyperbolicArcCosecantNode (\fBExpressionNode\fP * expression)"
+
+.PP
+Definition at line 1194 of file functions\&.cpp\&.
+.PP
+References FunctionNode::FunctionNode()\&.
+.PP
+Referenced by Create()\&.
+.PP
+.nf
+1194                                                                                :
+1195     FunctionNode(expression) { }
+.fi
+.SH "Member Function Documentation"
+.PP 
+.SS "\fBFunctionNode\fP * HyperbolicArcCosecantNode::Create (\fBExpressionNode\fP * expression)\fC [static]\fP"
+
+.PP
+Definition at line 1197 of file functions\&.cpp\&.
+.PP
+References HyperbolicArcCosecantNode()\&.
+.PP
+.nf
+1198 {
+1199     return new HyperbolicArcCosecantNode(expression);
+1200 }
+.fi
+.SS "\fBNumber\fP * HyperbolicArcCosecantNode::Evaluate ()\fC [virtual]\fP"
+
+.PP
+Implements \fBExpressionNode\fP\&.
+.PP
+Definition at line 1202 of file functions\&.cpp\&.
+.PP
+References ExpressionNode::Evaluate(), FunctionNode::expression, Number::HypArcCosecant(), and ExpressionNode::result\&.
+.PP
+.nf
+1203 {
+1204     result = expression->Evaluate()->HypArcCosecant();
+1205     return result;
+1206 }
+.fi
+.SS "char * HyperbolicArcCosecantNode::GetNodeText ()\fC [protected]\fP, \fC [virtual]\fP"
+
+.PP
+Implements \fBExpressionNode\fP\&.
+.PP
+Definition at line 1208 of file functions\&.cpp\&.
+.PP
+.nf
+1209 {
+1210     return (char*)"acsch";
+1211 }
+.fi
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for amath from the source code\&.

@@ -1,0 +1,86 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="db/d3d/classHyperbolicSecantNode">
+<title>HyperbolicSecantNode class Reference</title>
+<para>
+    <programlisting>#include <link linkend="d8/d5c/functions_8h">&lt;functions.h&gt;</link></programlisting>
+</para>
+<para>Inheritance diagram for HyperbolicSecantNode</para>
+<para>
+    <figure>
+        <title>Inheritance graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="../../d9/d4c/classHyperbolicSecantNode__inherit__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+<para>Collaboration diagram for HyperbolicSecantNode</para>
+<para>
+    <figure>
+        <title>Collaboration graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="../../d6/df7/classHyperbolicSecantNode__coll__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="db/d3d/classHyperbolicSecantNode_1a37e6e8b05d445531db7481549b921bef">HyperbolicSecantNode</link> (
+<link linkend="dd/d06/classExpressionNode">ExpressionNode</link> * expression)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="da/de2/structNumber">Number</link> * <link linkend="db/d3d/classHyperbolicSecantNode_1a1ffab630945e5272ba6da8f91f6b22ce">Evaluate</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>static <link linkend="d7/d06/classFunctionNode">FunctionNode</link> * <link linkend="db/d3d/classHyperbolicSecantNode_1a90694b7427bd82908e6bea1624f43fe1">Create</link> (
+<link linkend="dd/d06/classExpressionNode">ExpressionNode</link> * expression)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>char * <link linkend="db/d3d/classHyperbolicSecantNode_1a10e7b484494dfb038f60516388179eb9">GetNodeText</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+            <section xml:id="db/d3d/classHyperbolicSecantNode_1a37e6e8b05d445531db7481549b921bef">
+                <title>HyperbolicSecantNode::HyperbolicSecantNode (ExpressionNode *expression)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="db/d3d/classHyperbolicSecantNode_1a1ffab630945e5272ba6da8f91f6b22ce">
+                <title>Number * HyperbolicSecantNode::Evaluate ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="db/d3d/classHyperbolicSecantNode_1a90694b7427bd82908e6bea1624f43fe1">
+                <title>FunctionNode * HyperbolicSecantNode::Create (ExpressionNode *expression)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="db/d3d/classHyperbolicSecantNode_1a10e7b484494dfb038f60516388179eb9">
+                <title>char * HyperbolicSecantNode::GetNodeText ()</title> <emphasis></emphasis>
+                
+            </section>
+</section>

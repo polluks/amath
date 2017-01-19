@@ -1,0 +1,212 @@
+\hypertarget{classPrefsStatement}{}\section{Prefs\+Statement Class Reference}
+\label{classPrefsStatement}\index{Prefs\+Statement@{Prefs\+Statement}}
+
+
+Load or save preferences.  
+
+
+
+
+{\ttfamily \#include $<$statements.\+h$>$}
+
+
+
+Inheritance diagram for Prefs\+Statement\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=165pt]{d8/d02/classPrefsStatement__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Prefs\+Statement\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=210pt]{d5/d8d/classPrefsStatement__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classPrefsStatement_a4adba94c7162092a864997a259b69f14}{Prefs\+Statement} ()
+\item 
+\hyperlink{classPrefsStatement_aa24161049ff45e2dadeee7ed1b4949f6}{Prefs\+Statement} (\hyperlink{lex_8h_a7feef761cd73fac6e25b8bb80d2c4e54}{Symbol} \hyperlink{classPrefsStatement_a97e5e2a6f13e06ae966bd32afad5ab48}{argument})
+\item 
+char $\ast$ \hyperlink{classPrefsStatement_ac53922eb842ba389957300fef95cd98f}{Execute} ()
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{lex_8h_a7feef761cd73fac6e25b8bb80d2c4e54}{Symbol} \hyperlink{classPrefsStatement_a97e5e2a6f13e06ae966bd32afad5ab48}{argument}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+Load or save preferences. 
+
+Definition at line 119 of file statements.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Prefs\+Statement@{Prefs\+Statement}!Prefs\+Statement@{Prefs\+Statement}}
+\index{Prefs\+Statement@{Prefs\+Statement}!Prefs\+Statement@{Prefs\+Statement}}
+\subsubsection[{\texorpdfstring{Prefs\+Statement()}{PrefsStatement()}}]{\setlength{\rightskip}{0pt plus 5cm}Prefs\+Statement\+::\+Prefs\+Statement (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classPrefsStatement_a4adba94c7162092a864997a259b69f14}{}\label{classPrefsStatement_a4adba94c7162092a864997a259b69f14}
+
+
+Definition at line 122 of file statements.\+cpp.
+
+
+
+References argument.
+
+
+
+Referenced by Parser\+::\+Parse\+Prefs\+Statement().
+
+
+\begin{DoxyCode}
+123 \{
+124     \hyperlink{classPrefsStatement_a97e5e2a6f13e06ae966bd32afad5ab48}{argument} = \hyperlink{lex_8h_a7feef761cd73fac6e25b8bb80d2c4e54}{Symbol}(0);
+125 \}
+\end{DoxyCode}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/daf/classPrefsStatement_a4adba94c7162092a864997a259b69f14_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Prefs\+Statement@{Prefs\+Statement}!Prefs\+Statement@{Prefs\+Statement}}
+\index{Prefs\+Statement@{Prefs\+Statement}!Prefs\+Statement@{Prefs\+Statement}}
+\subsubsection[{\texorpdfstring{Prefs\+Statement(\+Symbol argument)}{PrefsStatement(Symbol argument)}}]{\setlength{\rightskip}{0pt plus 5cm}Prefs\+Statement\+::\+Prefs\+Statement (
+\begin{DoxyParamCaption}
+\item[{{\bf Symbol}}]{argument}
+\end{DoxyParamCaption}
+)}\hypertarget{classPrefsStatement_aa24161049ff45e2dadeee7ed1b4949f6}{}\label{classPrefsStatement_aa24161049ff45e2dadeee7ed1b4949f6}
+
+
+Definition at line 127 of file statements.\+cpp.
+
+
+
+References argument.
+
+
+
+Referenced by Parser\+::\+Parse\+Prefs\+Statement().
+
+
+\begin{DoxyCode}
+128 \{
+129     this->\hyperlink{classPrefsStatement_a97e5e2a6f13e06ae966bd32afad5ab48}{argument} = \hyperlink{classPrefsStatement_a97e5e2a6f13e06ae966bd32afad5ab48}{argument};
+130 \}
+\end{DoxyCode}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/daf/classPrefsStatement_aa24161049ff45e2dadeee7ed1b4949f6_icgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Member Function Documentation}
+\index{Prefs\+Statement@{Prefs\+Statement}!Execute@{Execute}}
+\index{Execute@{Execute}!Prefs\+Statement@{Prefs\+Statement}}
+\subsubsection[{\texorpdfstring{Execute()}{Execute()}}]{\setlength{\rightskip}{0pt plus 5cm}char $\ast$ Prefs\+Statement\+::\+Execute (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{classPrefsStatement_ac53922eb842ba389957300fef95cd98f}{}\label{classPrefsStatement_ac53922eb842ba389957300fef95cd98f}
+
+
+Implements \hyperlink{classStatementNode_a721589622c930c010927b9a9c55b173e}{Statement\+Node}.
+
+
+
+Definition at line 132 of file statements.\+cpp.
+
+
+
+References argument, Program\+::\+Console, Preferences\+Base\+::\+Get\+Description(), Preferences\+Base\+::\+Get\+Digits(), Preferences\+Base\+::\+Get\+Prompt(), Program\+::\+Input, Preferences\+Base\+::\+Keep(), Preferences\+Base\+::\+Load(), Program\+::\+Output, Program\+::\+Preferences, Preferences\+Base\+::\+Save(), Numeral\+System\+::\+Set\+Digits(), Console\+Base\+::\+Set\+Prompt(), symload, and symsave.
+
+
+\begin{DoxyCode}
+133 \{
+134     \textcolor{keywordtype}{bool} success;
+135 
+136     \textcolor{keywordflow}{if} (\hyperlink{classPrefsStatement_a97e5e2a6f13e06ae966bd32afad5ab48}{argument} == \hyperlink{lex_8h_a7feef761cd73fac6e25b8bb80d2c4e54a46b88bb5b84403708ad27da26b2177f6}{symsave}) \{
+137         success = \hyperlink{classProgram}{Program}->\hyperlink{classProgram_ad6baa89972cb4938db341c77c1510793}{Preferences}->\hyperlink{classPreferencesBase_a83f5750e2780a0bf03cb7a394230637a}{Keep}();
+138         success &= \hyperlink{classProgram}{Program}->\hyperlink{classProgram_ad6baa89972cb4938db341c77c1510793}{Preferences}->\hyperlink{classPreferencesBase_af0c96d85f242caead85d92d2c68fb30b}{Save}();
+139         \textcolor{keywordflow}{return} (success ? \hyperlink{text_8h_a6406c1a605e5e338fed7c0de1c9f85cf}{HELPPREFSAVE} : \hyperlink{text_8h_a0cc6b1f0deb22fa87f8b97e1b63dc87f}{HELPPREFNOSA});
+140     \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (\hyperlink{classPrefsStatement_a97e5e2a6f13e06ae966bd32afad5ab48}{argument} == \hyperlink{lex_8h_a7feef761cd73fac6e25b8bb80d2c4e54a9d1e9fc653c6385101e095e83f2715a5}{symload}) \{
+141         success = \hyperlink{classProgram}{Program}->\hyperlink{classProgram_ad6baa89972cb4938db341c77c1510793}{Preferences}->\hyperlink{classPreferencesBase_ab4e17e21f4377c44fa0ba16a0868a206}{Load}();
+142 
+143         \textcolor{keywordflow}{if} (success) \{
+144             \hyperlink{classProgram}{Program}->\hyperlink{classProgram_a7edba60e839230f20ce29716567bc892}{Console}->\hyperlink{classConsoleBase_a9d0c878a925b9f17d67c5c7ba1c1cec3}{SetPrompt}(
+145                 \hyperlink{classProgram}{Program}->\hyperlink{classProgram_ad6baa89972cb4938db341c77c1510793}{Preferences}->\hyperlink{classPreferencesBase_af6a5391be98aa10d191eed80d683723d}{GetPrompt}());
+146             \hyperlink{classProgram}{Program}->\hyperlink{classProgram_a6327f15962926e4f74f15e8ff56e04e5}{Input}->\hyperlink{classNumeralSystem_acd05f991ab35e808f46eacef6d7a4fb8}{SetDigits}(
+147                 \hyperlink{classProgram}{Program}->\hyperlink{classProgram_ad6baa89972cb4938db341c77c1510793}{Preferences}->\hyperlink{classPreferencesBase_a8d693cb289d1f5282f13c0cfb698b8cc}{GetDigits}());
+148             \hyperlink{classProgram}{Program}->\hyperlink{classProgram_ac6e84e81a8bbdf99de5beea93713d8ee}{Output}->\hyperlink{classNumeralSystem_acd05f991ab35e808f46eacef6d7a4fb8}{SetDigits}(
+149                 \hyperlink{classProgram}{Program}->\hyperlink{classProgram_ad6baa89972cb4938db341c77c1510793}{Preferences}->\hyperlink{classPreferencesBase_a8d693cb289d1f5282f13c0cfb698b8cc}{GetDigits}());
+150             \textcolor{keywordflow}{return}(\hyperlink{text_8h_a255674aee4051e34328ec2ddbaf97e67}{HELPPREFLOAD});
+151         \} \textcolor{keywordflow}{else} \{
+152             \textcolor{keywordflow}{return}(\hyperlink{text_8h_a61315ef3b31f57f61180bc6ad3156e48}{HELPPREFNOLO});
+153         \}
+154     \}
+155 
+156     \textcolor{keywordflow}{return} \hyperlink{classProgram}{Program}->\hyperlink{classProgram_ad6baa89972cb4938db341c77c1510793}{Preferences}->\hyperlink{classPreferencesBase_a9452038c67c6592334b6f3908c86833a}{GetDescription}();
+157 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/daf/classPrefsStatement_ac53922eb842ba389957300fef95cd98f_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Member Data Documentation}
+\index{Prefs\+Statement@{Prefs\+Statement}!argument@{argument}}
+\index{argument@{argument}!Prefs\+Statement@{Prefs\+Statement}}
+\subsubsection[{\texorpdfstring{argument}{argument}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Symbol} Prefs\+Statement\+::argument\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classPrefsStatement_a97e5e2a6f13e06ae966bd32afad5ab48}{}\label{classPrefsStatement_a97e5e2a6f13e06ae966bd32afad5ab48}
+
+
+Definition at line 126 of file statements.\+h.
+
+
+
+Referenced by Execute(), and Prefs\+Statement().
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+app/main/\hyperlink{statements_8h}{statements.\+h}\item 
+app/main/\hyperlink{statements_8cpp}{statements.\+cpp}\end{DoxyCompactItemize}

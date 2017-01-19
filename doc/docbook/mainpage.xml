@@ -1,0 +1,78 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<chapter xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Simple command line calculator</title>
+<section xml:id="index_1intro_sec">
+<title>Introduction</title>
+
+<para>A mathematical calculator capable of evaluating arithmetic expressions. Main features include:<itemizedlist>
+<listitem>
+<para>Case sensitive command line interface</para>
+</listitem><listitem>
+<para>Native IEEE 754 with 15 significant digits</para>
+</listitem><listitem>
+<para>Calculations with real and complex numbers</para>
+</listitem><listitem>
+<para>Variables and user defined functions</para>
+</listitem><listitem>
+<para>Logarithmic and exponential functions</para>
+</listitem><listitem>
+<para>Trigonometric and hyperbolic functions</para>
+</listitem><listitem>
+<para>Mathematical constants and rounding functions</para>
+</listitem><listitem>
+<para>Disk functions to load, save and view content</para>
+</listitem><listitem>
+<para>Comprehensive and easy to use built-in help</para>
+</listitem><listitem>
+<para>Freely distributable sources (BSD <link linkend="license_page">License</link>)</para>
+</listitem></itemizedlist>
+</para>
+<section xml:id="index_1install">
+<title>Installation</title>
+
+<para>Install by copying the desired amath binary to C: or any other appropriate location.</para>
+</section>
+<section xml:id="index_1usage">
+<title>Usage</title>
+
+<para>amath supply 50 <link linkend="command_page">Statements and functions</link> combined with 7 arithmetic operators: <literallayout>    +     Mathematical addition.
+    -     Mathematical subtraction.
+    *     Mathematical multiplication.
+    /     Mathematical division.
+    ^     Mathematical exponentiation.
+    =     Assignment of variable values.
+    |     Absolute value of number.
+</literallayout></para>
+
+<para>Do a calculation in shell (CLI mode): <blockquote>
+<para>amath 1.2+1.4 </para>
+</blockquote></para>
+
+<para>Get an interactive promt in shell: <blockquote>
+<para>amath shell </para>
+</blockquote></para>
+
+<para>Show version string: <blockquote>
+<para>amath version </para>
+</blockquote></para>
+
+<para>Open amath in its own window: <blockquote>
+<para>amath </para>
+</blockquote></para>
+</section>
+<section xml:id="index_1license">
+<title>License</title>
+
+<para>amath is open source. The main repository is located at gitlab:
+<literallayout>
+</literallayout>
+ <link xlink:href="https://gitlab.com/rnger/amath">https://gitlab.com/rnger/amath</link></para>
+</section>
+<section xml:id="index_1history">
+<title>History</title>
+
+<para>A full <link linkend="release_page">Release history</link> is available for amath. </para>
+</section>
+</section>
+
+</chapter>

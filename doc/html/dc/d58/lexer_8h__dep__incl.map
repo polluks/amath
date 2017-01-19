@@ -1,0 +1,8 @@
+<map id="app/main/lexer.h" name="app/main/lexer.h">
+<area shape="rect" id="node2" href="$d5/d36/parser_8h.html" title="Application logic tied to Parser. " alt="" coords="373,80,499,107"/>
+<area shape="rect" id="node6" href="$d3/d49/preferences_8cpp.html" title="app/system/preferences.cpp" alt="" coords="545,155,732,181"/>
+<area shape="rect" id="node7" href="$d4/d79/lexer_8cpp.html" title="app/main/lexer.cpp" alt="" coords="626,80,758,107"/>
+<area shape="rect" id="node3" href="$d5/d6e/evaluator_8cpp.html" title="app/main/evaluator.cpp" alt="" coords="5,155,163,181"/>
+<area shape="rect" id="node4" href="$dc/ddd/parser_8cpp.html" title="app/main/parser.cpp" alt="" coords="187,155,327,181"/>
+<area shape="rect" id="node5" href="$db/ddf/statements_8cpp.html" title="app/main/statements.cpp" alt="" coords="351,155,521,181"/>
+</map>

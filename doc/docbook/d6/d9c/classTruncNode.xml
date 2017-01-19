@@ -1,0 +1,100 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="d6/d9c/classTruncNode">
+<title>TruncNode class Reference</title>
+<para>
+    <programlisting>#include <link linkend="d8/d5c/functions_8h">&lt;functions.h&gt;</link></programlisting>
+</para>
+<para>Inheritance diagram for TruncNode</para>
+<para>
+    <figure>
+        <title>Inheritance graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="../../dd/de5/classTruncNode__inherit__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+<para>Collaboration diagram for TruncNode</para>
+<para>
+    <figure>
+        <title>Collaboration graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="../../d8/d54/classTruncNode__coll__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d6/d9c/classTruncNode_1a32e8df2efc73ec374f93e3b60fd8c756">TruncNode</link> (
+<link linkend="dd/d06/classExpressionNode">ExpressionNode</link> * expression)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="da/de2/structNumber">Number</link> * <link linkend="d6/d9c/classTruncNode_1a6d999ff093e9e92e3aa288b04ba99fb2">Evaluate</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>static <link linkend="d7/d06/classFunctionNode">FunctionNode</link> * <link linkend="d6/d9c/classTruncNode_1ac3abdd88221a6ced88a01bd95eff258e">Create</link> (
+<link linkend="dd/d06/classExpressionNode">ExpressionNode</link> * expression)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>char * <link linkend="d6/d9c/classTruncNode_1ad19cef55faa2ef0e83d6288d4de5230e">GetNodeText</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+    <simplesect>
+
+<para>A truncation function in a syntax tree. </para>
+    </simplesect>
+        <simplesect>
+            <title>Detailed Description</title>
+
+<para>Discard the number of digits right of the decimal point. See <link linkend="da/de2/structNumber">Number</link> for implementation.</para>
+
+<para>More info on the truncation function is available at Wikipedia: <link xlink:href="http://en.wikipedia.org/wiki/Truncation">http://en.wikipedia.org/wiki/Truncation</link> </para>
+                <para>Definition at line 240 of file functions.h</para>
+                <para>The Documentation for this struct was generated from the following file: </para>
+                <para><itemizedlist><listitem><para>functions.h</para></listitem></itemizedlist></para>
+        </simplesect>
+            <section xml:id="d6/d9c/classTruncNode_1a32e8df2efc73ec374f93e3b60fd8c756">
+                <title>TruncNode::TruncNode (ExpressionNode *expression)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d6/d9c/classTruncNode_1a6d999ff093e9e92e3aa288b04ba99fb2">
+                <title>Number * TruncNode::Evaluate ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d6/d9c/classTruncNode_1ac3abdd88221a6ced88a01bd95eff258e">
+                <title>FunctionNode * TruncNode::Create (ExpressionNode *expression)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d6/d9c/classTruncNode_1ad19cef55faa2ef0e83d6288d4de5230e">
+                <title>char * TruncNode::GetNodeText ()</title> <emphasis></emphasis>
+                
+            </section>
+</section>

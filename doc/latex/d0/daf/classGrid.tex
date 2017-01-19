@@ -1,0 +1,688 @@
+\hypertarget{classGrid}{}\section{Grid Class Reference}
+\label{classGrid}\index{Grid@{Grid}}
+
+
+{\ttfamily \#include $<$fgrid.\+h$>$}
+
+
+
+Collaboration diagram for Grid\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d24/classGrid__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classGrid_af3a182cffb3b2f18ab0de9fb0184c3ca}{Grid} (\hyperlink{classUserFunction}{User\+Function} $\ast$\hyperlink{classGrid_a69d704fb7924b50175b937798fe6d67d}{function})
+\item 
+\hyperlink{classGrid_a3661d0a7f998caaaf8627d7a67072116}{$\sim$\+Grid} ()
+\item 
+void \hyperlink{classGrid_ace057fbd3a401428399996eec3cb1577}{Set\+Function\+Bounderies} (double \hyperlink{classGrid_a70c775fad6a2cfa910a7e1f8c5b3e9b2}{minX}, double \hyperlink{classGrid_ad093fee95a663d4b82c85bea9a1241ec}{maxX})
+\item 
+void \hyperlink{classGrid_ac5386f4f62d3aae6a518fa11d25c7e59}{Set\+Screen\+Bounderues} (int \hyperlink{classGrid_a70c775fad6a2cfa910a7e1f8c5b3e9b2}{minX}, int \hyperlink{classGrid_ad093fee95a663d4b82c85bea9a1241ec}{maxX}, int \hyperlink{classGrid_af592907852d983fe13ef9581ffd77e6b}{minY}, int \hyperlink{classGrid_acca4c514021d9f6733579b699ac68436}{maxY})
+\item 
+void \hyperlink{classGrid_a430009c581ae9350ec310f63c1b89140}{Get\+Screen\+Coordinates} (double value, int $\ast$x, int $\ast$y)
+\item 
+void \hyperlink{classGrid_a4a708195cc7b75e134be0c25adac662e}{Get\+Screen\+Coordinates} (double xval, int $\ast$x, double yval, int $\ast$y)
+\item 
+double \hyperlink{classGrid_a9fa683c5f40922b5da39c647c4f4622d}{Get\+Horizontal\+Resolution} ()
+\item 
+void \hyperlink{classGrid_aa399e261008779d3d8c442959b1bafaa}{Get\+X\+Axis} (int $\ast$xstart, int $\ast$xend, int $\ast$ystart, int $\ast$yend)
+\item 
+void \hyperlink{classGrid_a2d97a1b941c705d7e803f90d59024de7}{Get\+Y\+Axis} (int $\ast$xstart, int $\ast$xend, int $\ast$ystart, int $\ast$yend)
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+double \hyperlink{classGrid_a9e403482f403a28e3a152b435526829b}{Function\+Value} (double \hyperlink{classGrid_a37df3261f985852f871847769c8b833c}{parameter})
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classUserFunction}{User\+Function} $\ast$ \hyperlink{classGrid_a69d704fb7924b50175b937798fe6d67d}{function}
+\item 
+\hyperlink{structRealNumber}{Real\+Number} $\ast$ \hyperlink{classGrid_a37df3261f985852f871847769c8b833c}{parameter}
+\item 
+double \hyperlink{classGrid_a70c775fad6a2cfa910a7e1f8c5b3e9b2}{minX}
+\item 
+double \hyperlink{classGrid_ad093fee95a663d4b82c85bea9a1241ec}{maxX}
+\item 
+double \hyperlink{classGrid_af592907852d983fe13ef9581ffd77e6b}{minY}
+\item 
+double \hyperlink{classGrid_acca4c514021d9f6733579b699ac68436}{maxY}
+\item 
+int \hyperlink{classGrid_a2bf4a157b130ed18d78d2e9a6760a6a8}{pad}
+\item 
+int \hyperlink{classGrid_a5876a8eaa41c1ac49fec464475d7cbb6}{screen\+MinX}
+\item 
+int \hyperlink{classGrid_ad662ef34930a80011080a45a975cae79}{screen\+MaxX}
+\item 
+int \hyperlink{classGrid_a18e1493a917be10c5454f44e1114fbdc}{screen\+MinY}
+\item 
+int \hyperlink{classGrid_a9ff802b20cf95e066646d24aa284a547}{screen\+MaxY}
+\item 
+int \hyperlink{classGrid_a0c0e10fa32d7fa78985cba0df1a34a0f}{originX}
+\item 
+int \hyperlink{classGrid_add0854295a7e36ab9f77889862bfda0e}{originY}
+\item 
+double \hyperlink{classGrid_a9a224c7ba4c55ff3672ae1b950796768}{zoom}
+\item 
+double \hyperlink{classGrid_a33d8811a6746553710cd815a535a9f13}{scaleX}
+\item 
+double \hyperlink{classGrid_ab973a5a172794c1e8d87f2cad3f7cea9}{scaleY}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 39 of file fgrid.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Grid@{Grid}!Grid@{Grid}}
+\index{Grid@{Grid}!Grid@{Grid}}
+\subsubsection[{\texorpdfstring{Grid(\+User\+Function $\ast$function)}{Grid(UserFunction *function)}}]{\setlength{\rightskip}{0pt plus 5cm}Grid\+::\+Grid (
+\begin{DoxyParamCaption}
+\item[{{\bf User\+Function} $\ast$}]{function}
+\end{DoxyParamCaption}
+)}\hypertarget{classGrid_af3a182cffb3b2f18ab0de9fb0184c3ca}{}\label{classGrid_af3a182cffb3b2f18ab0de9fb0184c3ca}
+
+
+Definition at line 31 of file fgrid.\+cpp.
+
+
+
+References function, pad, parameter, Real\+Number\+::\+Real\+Number(), and zoom.
+
+
+
+Referenced by Plot\+Statement\+::\+Execute().
+
+
+\begin{DoxyCode}
+31                                  :
+32     \textcolor{keyword}{function}(\textcolor{keyword}{function})
+33 \{
+34     \hyperlink{classGrid_a37df3261f985852f871847769c8b833c}{parameter} = \textcolor{keyword}{new} \hyperlink{structRealNumber}{RealNumber}();
+35     \hyperlink{classGrid_a9a224c7ba4c55ff3672ae1b950796768}{zoom} = 1.0;
+36     \hyperlink{classGrid_a2bf4a157b130ed18d78d2e9a6760a6a8}{pad} = 8;
+37 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d0/daf/classGrid_af3a182cffb3b2f18ab0de9fb0184c3ca_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=296pt]{d0/daf/classGrid_af3a182cffb3b2f18ab0de9fb0184c3ca_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Grid@{Grid}!````~Grid@{$\sim$\+Grid}}
+\index{````~Grid@{$\sim$\+Grid}!Grid@{Grid}}
+\subsubsection[{\texorpdfstring{$\sim$\+Grid()}{~Grid()}}]{\setlength{\rightskip}{0pt plus 5cm}Grid\+::$\sim$\+Grid (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classGrid_a3661d0a7f998caaaf8627d7a67072116}{}\label{classGrid_a3661d0a7f998caaaf8627d7a67072116}
+
+
+Definition at line 39 of file fgrid.\+cpp.
+
+
+
+References parameter.
+
+
+\begin{DoxyCode}
+40 \{
+41     \textcolor{keyword}{delete} \hyperlink{classGrid_a37df3261f985852f871847769c8b833c}{parameter};
+42 \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\index{Grid@{Grid}!Function\+Value@{Function\+Value}}
+\index{Function\+Value@{Function\+Value}!Grid@{Grid}}
+\subsubsection[{\texorpdfstring{Function\+Value(double parameter)}{FunctionValue(double parameter)}}]{\setlength{\rightskip}{0pt plus 5cm}double Grid\+::\+Function\+Value (
+\begin{DoxyParamCaption}
+\item[{double}]{parameter}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classGrid_a9e403482f403a28e3a152b435526829b}{}\label{classGrid_a9e403482f403a28e3a152b435526829b}
+
+
+Definition at line 78 of file fgrid.\+cpp.
+
+
+
+References Variable\+::\+Assign\+Value(), Expression\+Node\+::\+Evaluate(), function, User\+Function\+::\+Get\+Expression(), Number\+::\+Get\+Real\+Value(), User\+Function\+::\+Get\+Variable(), parameter, and Real\+Number\+::\+Set\+Real\+Value().
+
+
+
+Referenced by Get\+Screen\+Coordinates(), and Set\+Function\+Bounderies().
+
+
+\begin{DoxyCode}
+79 \{
+80     this->\hyperlink{classGrid_a37df3261f985852f871847769c8b833c}{parameter}->\hyperlink{structRealNumber_a47b13da91334faba56ece7292f3a8566}{SetRealValue}(\hyperlink{classGrid_a37df3261f985852f871847769c8b833c}{parameter});
+81     \textcolor{keyword}{function}->GetVariable()->AssignValue(this->\hyperlink{classGrid_a37df3261f985852f871847769c8b833c}{parameter});
+82     \hyperlink{structNumber}{Number} *res = \textcolor{keyword}{function}->GetExpression()->Evaluate();
+83     \textcolor{keywordtype}{double} value = res->\hyperlink{structNumber_a83da654d465f1344162ce8b8f8c564b9}{GetRealValue}();
+84     \textcolor{keywordflow}{return} value;
+85 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d0/daf/classGrid_a9e403482f403a28e3a152b435526829b_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d0/daf/classGrid_a9e403482f403a28e3a152b435526829b_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Grid@{Grid}!Get\+Horizontal\+Resolution@{Get\+Horizontal\+Resolution}}
+\index{Get\+Horizontal\+Resolution@{Get\+Horizontal\+Resolution}!Grid@{Grid}}
+\subsubsection[{\texorpdfstring{Get\+Horizontal\+Resolution()}{GetHorizontalResolution()}}]{\setlength{\rightskip}{0pt plus 5cm}double Grid\+::\+Get\+Horizontal\+Resolution (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classGrid_a9fa683c5f40922b5da39c647c4f4622d}{}\label{classGrid_a9fa683c5f40922b5da39c647c4f4622d}
+
+
+Definition at line 44 of file fgrid.\+cpp.
+
+
+
+References maxX, minX, screen\+MaxX, and screen\+MinX.
+
+
+
+Referenced by Plot\+Statement\+::\+Execute().
+
+
+\begin{DoxyCode}
+45 \{
+46     \textcolor{keywordflow}{return} (\hyperlink{classGrid_ad093fee95a663d4b82c85bea9a1241ec}{maxX} - \hyperlink{classGrid_a70c775fad6a2cfa910a7e1f8c5b3e9b2}{minX}) / (\hyperlink{classGrid_ad662ef34930a80011080a45a975cae79}{screenMaxX} - \hyperlink{classGrid_a5876a8eaa41c1ac49fec464475d7cbb6}{screenMinX});
+47 \}
+\end{DoxyCode}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d0/daf/classGrid_a9fa683c5f40922b5da39c647c4f4622d_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Grid@{Grid}!Get\+Screen\+Coordinates@{Get\+Screen\+Coordinates}}
+\index{Get\+Screen\+Coordinates@{Get\+Screen\+Coordinates}!Grid@{Grid}}
+\subsubsection[{\texorpdfstring{Get\+Screen\+Coordinates(double value, int $\ast$x, int $\ast$y)}{GetScreenCoordinates(double value, int *x, int *y)}}]{\setlength{\rightskip}{0pt plus 5cm}void Grid\+::\+Get\+Screen\+Coordinates (
+\begin{DoxyParamCaption}
+\item[{double}]{value, }
+\item[{int $\ast$}]{x, }
+\item[{int $\ast$}]{y}
+\end{DoxyParamCaption}
+)}\hypertarget{classGrid_a430009c581ae9350ec310f63c1b89140}{}\label{classGrid_a430009c581ae9350ec310f63c1b89140}
+
+
+Definition at line 87 of file fgrid.\+cpp.
+
+
+
+References Function\+Value(), originX, originY, scaleX, scaleY, screen\+MaxX, screen\+MaxY, screen\+MinX, screen\+MinY, and zoom.
+
+
+
+Referenced by Plot\+Statement\+::\+Execute().
+
+
+\begin{DoxyCode}
+88 \{
+89     \textcolor{keywordtype}{double} valueX = value * \hyperlink{classGrid_a33d8811a6746553710cd815a535a9f13}{scaleX} * \hyperlink{classGrid_a9a224c7ba4c55ff3672ae1b950796768}{zoom} + \hyperlink{classGrid_a0c0e10fa32d7fa78985cba0df1a34a0f}{originX};
+90     \textcolor{keywordtype}{double} valueY = \hyperlink{classGrid_a9e403482f403a28e3a152b435526829b}{FunctionValue}(value) * \hyperlink{classGrid_ab973a5a172794c1e8d87f2cad3f7cea9}{scaleY} * \hyperlink{classGrid_a9a224c7ba4c55ff3672ae1b950796768}{zoom} + 
+      \hyperlink{classGrid_add0854295a7e36ab9f77889862bfda0e}{originY};
+91 
+92     *x = valueX < screenMinX || valueX > \hyperlink{classGrid_ad662ef34930a80011080a45a975cae79}{screenMaxX} ? -1 : (int)valueX;
+93     *y = valueY < screenMinY || valueY > \hyperlink{classGrid_a9ff802b20cf95e066646d24aa284a547}{screenMaxY} ? -1 : (int)valueY;
+94 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d0/daf/classGrid_a430009c581ae9350ec310f63c1b89140_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d0/daf/classGrid_a430009c581ae9350ec310f63c1b89140_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Grid@{Grid}!Get\+Screen\+Coordinates@{Get\+Screen\+Coordinates}}
+\index{Get\+Screen\+Coordinates@{Get\+Screen\+Coordinates}!Grid@{Grid}}
+\subsubsection[{\texorpdfstring{Get\+Screen\+Coordinates(double xval, int $\ast$x, double yval, int $\ast$y)}{GetScreenCoordinates(double xval, int *x, double yval, int *y)}}]{\setlength{\rightskip}{0pt plus 5cm}void Grid\+::\+Get\+Screen\+Coordinates (
+\begin{DoxyParamCaption}
+\item[{double}]{xval, }
+\item[{int $\ast$}]{x, }
+\item[{double}]{yval, }
+\item[{int $\ast$}]{y}
+\end{DoxyParamCaption}
+)}\hypertarget{classGrid_a4a708195cc7b75e134be0c25adac662e}{}\label{classGrid_a4a708195cc7b75e134be0c25adac662e}
+
+
+Definition at line 96 of file fgrid.\+cpp.
+
+
+
+References originX, originY, scaleX, scaleY, screen\+MaxX, screen\+MaxY, screen\+MinX, screen\+MinY, and zoom.
+
+
+\begin{DoxyCode}
+97 \{
+98     \textcolor{keywordtype}{double} valueX = xval * \hyperlink{classGrid_a33d8811a6746553710cd815a535a9f13}{scaleX} * \hyperlink{classGrid_a9a224c7ba4c55ff3672ae1b950796768}{zoom} + \hyperlink{classGrid_a0c0e10fa32d7fa78985cba0df1a34a0f}{originX};
+99     \textcolor{keywordtype}{double} valueY = yval * \hyperlink{classGrid_ab973a5a172794c1e8d87f2cad3f7cea9}{scaleY} * \hyperlink{classGrid_a9a224c7ba4c55ff3672ae1b950796768}{zoom} + \hyperlink{classGrid_add0854295a7e36ab9f77889862bfda0e}{originY};
+100 
+101     *x = valueX < screenMinX || valueX > \hyperlink{classGrid_ad662ef34930a80011080a45a975cae79}{screenMaxX} ? -1 : (int)valueX;
+102     *y = valueY < screenMinY || valueY > \hyperlink{classGrid_a9ff802b20cf95e066646d24aa284a547}{screenMaxY} ? -1 : (int)valueY;
+103 \}
+\end{DoxyCode}
+\index{Grid@{Grid}!Get\+X\+Axis@{Get\+X\+Axis}}
+\index{Get\+X\+Axis@{Get\+X\+Axis}!Grid@{Grid}}
+\subsubsection[{\texorpdfstring{Get\+X\+Axis(int $\ast$xstart, int $\ast$xend, int $\ast$ystart, int $\ast$yend)}{GetXAxis(int *xstart, int *xend, int *ystart, int *yend)}}]{\setlength{\rightskip}{0pt plus 5cm}void Grid\+::\+Get\+X\+Axis (
+\begin{DoxyParamCaption}
+\item[{int $\ast$}]{xstart, }
+\item[{int $\ast$}]{xend, }
+\item[{int $\ast$}]{ystart, }
+\item[{int $\ast$}]{yend}
+\end{DoxyParamCaption}
+)}\hypertarget{classGrid_aa399e261008779d3d8c442959b1bafaa}{}\label{classGrid_aa399e261008779d3d8c442959b1bafaa}
+
+
+Definition at line 105 of file fgrid.\+cpp.
+
+
+
+References originY, screen\+MaxX, and screen\+MinX.
+
+
+\begin{DoxyCode}
+106 \{
+107     *xstart = \hyperlink{classGrid_a5876a8eaa41c1ac49fec464475d7cbb6}{screenMinX};
+108     *xend = \hyperlink{classGrid_ad662ef34930a80011080a45a975cae79}{screenMaxX};
+109     *ystart = \hyperlink{classGrid_add0854295a7e36ab9f77889862bfda0e}{originY};
+110     *yend = \hyperlink{classGrid_add0854295a7e36ab9f77889862bfda0e}{originY};
+111 \}
+\end{DoxyCode}
+\index{Grid@{Grid}!Get\+Y\+Axis@{Get\+Y\+Axis}}
+\index{Get\+Y\+Axis@{Get\+Y\+Axis}!Grid@{Grid}}
+\subsubsection[{\texorpdfstring{Get\+Y\+Axis(int $\ast$xstart, int $\ast$xend, int $\ast$ystart, int $\ast$yend)}{GetYAxis(int *xstart, int *xend, int *ystart, int *yend)}}]{\setlength{\rightskip}{0pt plus 5cm}void Grid\+::\+Get\+Y\+Axis (
+\begin{DoxyParamCaption}
+\item[{int $\ast$}]{xstart, }
+\item[{int $\ast$}]{xend, }
+\item[{int $\ast$}]{ystart, }
+\item[{int $\ast$}]{yend}
+\end{DoxyParamCaption}
+)}\hypertarget{classGrid_a2d97a1b941c705d7e803f90d59024de7}{}\label{classGrid_a2d97a1b941c705d7e803f90d59024de7}
+
+
+Definition at line 113 of file fgrid.\+cpp.
+
+
+
+References originX, screen\+MaxY, and screen\+MinY.
+
+
+\begin{DoxyCode}
+114 \{
+115     *xstart = \hyperlink{classGrid_a0c0e10fa32d7fa78985cba0df1a34a0f}{originX};
+116     *xend = \hyperlink{classGrid_a0c0e10fa32d7fa78985cba0df1a34a0f}{originX};
+117     *ystart = \hyperlink{classGrid_a18e1493a917be10c5454f44e1114fbdc}{screenMinY};
+118     *yend = \hyperlink{classGrid_a9ff802b20cf95e066646d24aa284a547}{screenMaxY};
+119 \}
+\end{DoxyCode}
+\index{Grid@{Grid}!Set\+Function\+Bounderies@{Set\+Function\+Bounderies}}
+\index{Set\+Function\+Bounderies@{Set\+Function\+Bounderies}!Grid@{Grid}}
+\subsubsection[{\texorpdfstring{Set\+Function\+Bounderies(double min\+X, double max\+X)}{SetFunctionBounderies(double minX, double maxX)}}]{\setlength{\rightskip}{0pt plus 5cm}void Grid\+::\+Set\+Function\+Bounderies (
+\begin{DoxyParamCaption}
+\item[{double}]{minX, }
+\item[{double}]{maxX}
+\end{DoxyParamCaption}
+)}\hypertarget{classGrid_ace057fbd3a401428399996eec3cb1577}{}\label{classGrid_ace057fbd3a401428399996eec3cb1577}
+
+
+Definition at line 49 of file fgrid.\+cpp.
+
+
+
+References Function\+Value(), maxX, maxY, minX, minY, scaleX, scaleY, screen\+MaxX, screen\+MaxY, screen\+MinX, and screen\+MinY.
+
+
+
+Referenced by Plot\+Statement\+::\+Execute().
+
+
+\begin{DoxyCode}
+50 \{
+51     this->\hyperlink{classGrid_a70c775fad6a2cfa910a7e1f8c5b3e9b2}{minX} = \hyperlink{classGrid_a70c775fad6a2cfa910a7e1f8c5b3e9b2}{minX};
+52     this->\hyperlink{classGrid_ad093fee95a663d4b82c85bea9a1241ec}{maxX} = \hyperlink{classGrid_ad093fee95a663d4b82c85bea9a1241ec}{maxX};
+53     \hyperlink{classGrid_af592907852d983fe13ef9581ffd77e6b}{minY} = \hyperlink{classGrid_a9e403482f403a28e3a152b435526829b}{FunctionValue}(\hyperlink{classGrid_a70c775fad6a2cfa910a7e1f8c5b3e9b2}{minX});
+54     \hyperlink{classGrid_acca4c514021d9f6733579b699ac68436}{maxY} = \hyperlink{classGrid_a9e403482f403a28e3a152b435526829b}{FunctionValue}(\hyperlink{classGrid_ad093fee95a663d4b82c85bea9a1241ec}{maxX});
+55 
+56     \hyperlink{classGrid_a33d8811a6746553710cd815a535a9f13}{scaleX} =  (\hyperlink{classGrid_ad662ef34930a80011080a45a975cae79}{screenMaxX} - \hyperlink{classGrid_a5876a8eaa41c1ac49fec464475d7cbb6}{screenMinX}) / (\hyperlink{classGrid_ad093fee95a663d4b82c85bea9a1241ec}{maxX} - 
+      \hyperlink{classGrid_a70c775fad6a2cfa910a7e1f8c5b3e9b2}{minX});
+57     \hyperlink{classGrid_ab973a5a172794c1e8d87f2cad3f7cea9}{scaleY} =  (\hyperlink{classGrid_a9ff802b20cf95e066646d24aa284a547}{screenMaxY} - \hyperlink{classGrid_a18e1493a917be10c5454f44e1114fbdc}{screenMinY}) / (\hyperlink{classGrid_acca4c514021d9f6733579b699ac68436}{maxY} - 
+      \hyperlink{classGrid_af592907852d983fe13ef9581ffd77e6b}{minY});
+58 
+59     \textcolor{comment}{// Keep ascpect ratio}
+60     \textcolor{keywordflow}{if} (\hyperlink{classGrid_a33d8811a6746553710cd815a535a9f13}{scaleX} < \hyperlink{classGrid_ab973a5a172794c1e8d87f2cad3f7cea9}{scaleY}) \{
+61         \hyperlink{classGrid_a33d8811a6746553710cd815a535a9f13}{scaleX} = \hyperlink{classGrid_ab973a5a172794c1e8d87f2cad3f7cea9}{scaleY};
+62     \} \textcolor{keywordflow}{else} \{
+63         \hyperlink{classGrid_ab973a5a172794c1e8d87f2cad3f7cea9}{scaleY} = \hyperlink{classGrid_a33d8811a6746553710cd815a535a9f13}{scaleX};
+64     \}
+65 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d0/daf/classGrid_ace057fbd3a401428399996eec3cb1577_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d0/daf/classGrid_ace057fbd3a401428399996eec3cb1577_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Grid@{Grid}!Set\+Screen\+Bounderues@{Set\+Screen\+Bounderues}}
+\index{Set\+Screen\+Bounderues@{Set\+Screen\+Bounderues}!Grid@{Grid}}
+\subsubsection[{\texorpdfstring{Set\+Screen\+Bounderues(int min\+X, int max\+X, int min\+Y, int max\+Y)}{SetScreenBounderues(int minX, int maxX, int minY, int maxY)}}]{\setlength{\rightskip}{0pt plus 5cm}void Grid\+::\+Set\+Screen\+Bounderues (
+\begin{DoxyParamCaption}
+\item[{int}]{minX, }
+\item[{int}]{maxX, }
+\item[{int}]{minY, }
+\item[{int}]{maxY}
+\end{DoxyParamCaption}
+)}\hypertarget{classGrid_ac5386f4f62d3aae6a518fa11d25c7e59}{}\label{classGrid_ac5386f4f62d3aae6a518fa11d25c7e59}
+
+
+Definition at line 67 of file fgrid.\+cpp.
+
+
+
+References originX, originY, pad, screen\+MaxX, screen\+MaxY, screen\+MinX, and screen\+MinY.
+
+
+
+Referenced by Plot\+Statement\+::\+Execute().
+
+
+\begin{DoxyCode}
+68 \{
+69     \hyperlink{classGrid_a5876a8eaa41c1ac49fec464475d7cbb6}{screenMinX} = \hyperlink{classGrid_a70c775fad6a2cfa910a7e1f8c5b3e9b2}{minX} + \hyperlink{classGrid_a2bf4a157b130ed18d78d2e9a6760a6a8}{pad};
+70     \hyperlink{classGrid_ad662ef34930a80011080a45a975cae79}{screenMaxX} = \hyperlink{classGrid_ad093fee95a663d4b82c85bea9a1241ec}{maxX} - \hyperlink{classGrid_a2bf4a157b130ed18d78d2e9a6760a6a8}{pad};
+71     \hyperlink{classGrid_a18e1493a917be10c5454f44e1114fbdc}{screenMinY} = \hyperlink{classGrid_af592907852d983fe13ef9581ffd77e6b}{minY} + \hyperlink{classGrid_a2bf4a157b130ed18d78d2e9a6760a6a8}{pad};
+72     \hyperlink{classGrid_a9ff802b20cf95e066646d24aa284a547}{screenMaxY} = \hyperlink{classGrid_acca4c514021d9f6733579b699ac68436}{maxY} - \hyperlink{classGrid_a2bf4a157b130ed18d78d2e9a6760a6a8}{pad};
+73 
+74     \hyperlink{classGrid_a0c0e10fa32d7fa78985cba0df1a34a0f}{originX} = (\hyperlink{classGrid_ad662ef34930a80011080a45a975cae79}{screenMaxX} - \hyperlink{classGrid_a5876a8eaa41c1ac49fec464475d7cbb6}{screenMinX}) / 2;
+75     \hyperlink{classGrid_add0854295a7e36ab9f77889862bfda0e}{originY} = (\hyperlink{classGrid_a9ff802b20cf95e066646d24aa284a547}{screenMaxY} - \hyperlink{classGrid_a18e1493a917be10c5454f44e1114fbdc}{screenMinY}) / 2;
+76 \}
+\end{DoxyCode}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d0/daf/classGrid_ac5386f4f62d3aae6a518fa11d25c7e59_icgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Member Data Documentation}
+\index{Grid@{Grid}!function@{function}}
+\index{function@{function}!Grid@{Grid}}
+\subsubsection[{\texorpdfstring{function}{function}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf User\+Function}$\ast$ Grid\+::function\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classGrid_a69d704fb7924b50175b937798fe6d67d}{}\label{classGrid_a69d704fb7924b50175b937798fe6d67d}
+
+
+Definition at line 55 of file fgrid.\+h.
+
+
+
+Referenced by Function\+Value(), and Grid().
+
+\index{Grid@{Grid}!maxX@{maxX}}
+\index{maxX@{maxX}!Grid@{Grid}}
+\subsubsection[{\texorpdfstring{maxX}{maxX}}]{\setlength{\rightskip}{0pt plus 5cm}double Grid\+::maxX\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classGrid_ad093fee95a663d4b82c85bea9a1241ec}{}\label{classGrid_ad093fee95a663d4b82c85bea9a1241ec}
+
+
+Definition at line 59 of file fgrid.\+h.
+
+
+
+Referenced by Get\+Horizontal\+Resolution(), and Set\+Function\+Bounderies().
+
+\index{Grid@{Grid}!maxY@{maxY}}
+\index{maxY@{maxY}!Grid@{Grid}}
+\subsubsection[{\texorpdfstring{maxY}{maxY}}]{\setlength{\rightskip}{0pt plus 5cm}double Grid\+::maxY\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classGrid_acca4c514021d9f6733579b699ac68436}{}\label{classGrid_acca4c514021d9f6733579b699ac68436}
+
+
+Definition at line 61 of file fgrid.\+h.
+
+
+
+Referenced by Set\+Function\+Bounderies().
+
+\index{Grid@{Grid}!minX@{minX}}
+\index{minX@{minX}!Grid@{Grid}}
+\subsubsection[{\texorpdfstring{minX}{minX}}]{\setlength{\rightskip}{0pt plus 5cm}double Grid\+::minX\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classGrid_a70c775fad6a2cfa910a7e1f8c5b3e9b2}{}\label{classGrid_a70c775fad6a2cfa910a7e1f8c5b3e9b2}
+
+
+Definition at line 58 of file fgrid.\+h.
+
+
+
+Referenced by Get\+Horizontal\+Resolution(), and Set\+Function\+Bounderies().
+
+\index{Grid@{Grid}!minY@{minY}}
+\index{minY@{minY}!Grid@{Grid}}
+\subsubsection[{\texorpdfstring{minY}{minY}}]{\setlength{\rightskip}{0pt plus 5cm}double Grid\+::minY\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classGrid_af592907852d983fe13ef9581ffd77e6b}{}\label{classGrid_af592907852d983fe13ef9581ffd77e6b}
+
+
+Definition at line 60 of file fgrid.\+h.
+
+
+
+Referenced by Set\+Function\+Bounderies().
+
+\index{Grid@{Grid}!originX@{originX}}
+\index{originX@{originX}!Grid@{Grid}}
+\subsubsection[{\texorpdfstring{originX}{originX}}]{\setlength{\rightskip}{0pt plus 5cm}int Grid\+::originX\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classGrid_a0c0e10fa32d7fa78985cba0df1a34a0f}{}\label{classGrid_a0c0e10fa32d7fa78985cba0df1a34a0f}
+
+
+Definition at line 69 of file fgrid.\+h.
+
+
+
+Referenced by Get\+Screen\+Coordinates(), Get\+Y\+Axis(), and Set\+Screen\+Bounderues().
+
+\index{Grid@{Grid}!originY@{originY}}
+\index{originY@{originY}!Grid@{Grid}}
+\subsubsection[{\texorpdfstring{originY}{originY}}]{\setlength{\rightskip}{0pt plus 5cm}int Grid\+::originY\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classGrid_add0854295a7e36ab9f77889862bfda0e}{}\label{classGrid_add0854295a7e36ab9f77889862bfda0e}
+
+
+Definition at line 70 of file fgrid.\+h.
+
+
+
+Referenced by Get\+Screen\+Coordinates(), Get\+X\+Axis(), and Set\+Screen\+Bounderues().
+
+\index{Grid@{Grid}!pad@{pad}}
+\index{pad@{pad}!Grid@{Grid}}
+\subsubsection[{\texorpdfstring{pad}{pad}}]{\setlength{\rightskip}{0pt plus 5cm}int Grid\+::pad\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classGrid_a2bf4a157b130ed18d78d2e9a6760a6a8}{}\label{classGrid_a2bf4a157b130ed18d78d2e9a6760a6a8}
+
+
+Definition at line 63 of file fgrid.\+h.
+
+
+
+Referenced by Grid(), and Set\+Screen\+Bounderues().
+
+\index{Grid@{Grid}!parameter@{parameter}}
+\index{parameter@{parameter}!Grid@{Grid}}
+\subsubsection[{\texorpdfstring{parameter}{parameter}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Real\+Number}$\ast$ Grid\+::parameter\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classGrid_a37df3261f985852f871847769c8b833c}{}\label{classGrid_a37df3261f985852f871847769c8b833c}
+
+
+Definition at line 56 of file fgrid.\+h.
+
+
+
+Referenced by Function\+Value(), Grid(), and $\sim$\+Grid().
+
+\index{Grid@{Grid}!scaleX@{scaleX}}
+\index{scaleX@{scaleX}!Grid@{Grid}}
+\subsubsection[{\texorpdfstring{scaleX}{scaleX}}]{\setlength{\rightskip}{0pt plus 5cm}double Grid\+::scaleX\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classGrid_a33d8811a6746553710cd815a535a9f13}{}\label{classGrid_a33d8811a6746553710cd815a535a9f13}
+
+
+Definition at line 72 of file fgrid.\+h.
+
+
+
+Referenced by Get\+Screen\+Coordinates(), and Set\+Function\+Bounderies().
+
+\index{Grid@{Grid}!scaleY@{scaleY}}
+\index{scaleY@{scaleY}!Grid@{Grid}}
+\subsubsection[{\texorpdfstring{scaleY}{scaleY}}]{\setlength{\rightskip}{0pt plus 5cm}double Grid\+::scaleY\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classGrid_ab973a5a172794c1e8d87f2cad3f7cea9}{}\label{classGrid_ab973a5a172794c1e8d87f2cad3f7cea9}
+
+
+Definition at line 73 of file fgrid.\+h.
+
+
+
+Referenced by Get\+Screen\+Coordinates(), and Set\+Function\+Bounderies().
+
+\index{Grid@{Grid}!screen\+MaxX@{screen\+MaxX}}
+\index{screen\+MaxX@{screen\+MaxX}!Grid@{Grid}}
+\subsubsection[{\texorpdfstring{screen\+MaxX}{screenMaxX}}]{\setlength{\rightskip}{0pt plus 5cm}int Grid\+::screen\+MaxX\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classGrid_ad662ef34930a80011080a45a975cae79}{}\label{classGrid_ad662ef34930a80011080a45a975cae79}
+
+
+Definition at line 65 of file fgrid.\+h.
+
+
+
+Referenced by Get\+Horizontal\+Resolution(), Get\+Screen\+Coordinates(), Get\+X\+Axis(), Set\+Function\+Bounderies(), and Set\+Screen\+Bounderues().
+
+\index{Grid@{Grid}!screen\+MaxY@{screen\+MaxY}}
+\index{screen\+MaxY@{screen\+MaxY}!Grid@{Grid}}
+\subsubsection[{\texorpdfstring{screen\+MaxY}{screenMaxY}}]{\setlength{\rightskip}{0pt plus 5cm}int Grid\+::screen\+MaxY\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classGrid_a9ff802b20cf95e066646d24aa284a547}{}\label{classGrid_a9ff802b20cf95e066646d24aa284a547}
+
+
+Definition at line 67 of file fgrid.\+h.
+
+
+
+Referenced by Get\+Screen\+Coordinates(), Get\+Y\+Axis(), Set\+Function\+Bounderies(), and Set\+Screen\+Bounderues().
+
+\index{Grid@{Grid}!screen\+MinX@{screen\+MinX}}
+\index{screen\+MinX@{screen\+MinX}!Grid@{Grid}}
+\subsubsection[{\texorpdfstring{screen\+MinX}{screenMinX}}]{\setlength{\rightskip}{0pt plus 5cm}int Grid\+::screen\+MinX\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classGrid_a5876a8eaa41c1ac49fec464475d7cbb6}{}\label{classGrid_a5876a8eaa41c1ac49fec464475d7cbb6}
+
+
+Definition at line 64 of file fgrid.\+h.
+
+
+
+Referenced by Get\+Horizontal\+Resolution(), Get\+Screen\+Coordinates(), Get\+X\+Axis(), Set\+Function\+Bounderies(), and Set\+Screen\+Bounderues().
+
+\index{Grid@{Grid}!screen\+MinY@{screen\+MinY}}
+\index{screen\+MinY@{screen\+MinY}!Grid@{Grid}}
+\subsubsection[{\texorpdfstring{screen\+MinY}{screenMinY}}]{\setlength{\rightskip}{0pt plus 5cm}int Grid\+::screen\+MinY\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classGrid_a18e1493a917be10c5454f44e1114fbdc}{}\label{classGrid_a18e1493a917be10c5454f44e1114fbdc}
+
+
+Definition at line 66 of file fgrid.\+h.
+
+
+
+Referenced by Get\+Screen\+Coordinates(), Get\+Y\+Axis(), Set\+Function\+Bounderies(), and Set\+Screen\+Bounderues().
+
+\index{Grid@{Grid}!zoom@{zoom}}
+\index{zoom@{zoom}!Grid@{Grid}}
+\subsubsection[{\texorpdfstring{zoom}{zoom}}]{\setlength{\rightskip}{0pt plus 5cm}double Grid\+::zoom\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classGrid_a9a224c7ba4c55ff3672ae1b950796768}{}\label{classGrid_a9a224c7ba4c55ff3672ae1b950796768}
+
+
+Definition at line 71 of file fgrid.\+h.
+
+
+
+Referenced by Get\+Screen\+Coordinates(), and Grid().
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+app/lib/\hyperlink{fgrid_8h}{fgrid.\+h}\item 
+app/lib/\hyperlink{fgrid_8cpp}{fgrid.\+cpp}\end{DoxyCompactItemize}

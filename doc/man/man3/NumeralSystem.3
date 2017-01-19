@@ -1,0 +1,163 @@
+.TH "NumeralSystem" 3 "Thu Jan 19 2017" "Version 1.6.0" "amath" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+NumeralSystem \- Base class for all numeral systems\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <ntext\&.h>\fP
+.PP
+Inherited by \fBPositionalNumeralSystem\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBNumeralSystem\fP ()"
+.br
+.ti -1c
+.RI "virtual \fB~NumeralSystem\fP ()"
+.br
+.ti -1c
+.RI "virtual const char * \fBGetName\fP ()=0"
+.br
+.ti -1c
+.RI "virtual const char * \fBGetPrefix\fP ()=0"
+.br
+.ti -1c
+.RI "virtual unsigned int \fBGetDigits\fP ()=0"
+.br
+.ti -1c
+.RI "virtual void \fBSetDigits\fP (unsigned int digits)=0"
+.br
+.ti -1c
+.RI "virtual const char \fBGetFractionPoint\fP ()=0"
+.br
+.ti -1c
+.RI "virtual void \fBSetFractionPoint\fP (const char fractionpoint)=0"
+.br
+.ti -1c
+.RI "virtual const char * \fBGetText\fP (\fBNumber\fP *number)=0"
+.br
+.ti -1c
+.RI "virtual \fBNumber\fP * \fBParse\fP (const char *text, unsigned int *length, char **end)=0"
+.br
+.ti -1c
+.RI "virtual \fBNumber\fP * \fBParse\fP (const char *text)"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBCharBuffer\fP * \fBbuf\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Base class for all numeral systems\&. 
+
+More info on numeral systems is available at Wikipedia: http://en.wikipedia.org/wiki/Numeral_system 
+.PP
+Definition at line 48 of file ntext\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "NumeralSystem::NumeralSystem ()"
+
+.PP
+Definition at line 38 of file ntext\&.cpp\&.
+.PP
+References buf, CharBuffer::CharBuffer(), and CharBuffer::Empty()\&.
+.PP
+.nf
+39 {
+40     buf = new CharBuffer();
+41     buf->Empty();
+42 }
+.fi
+.SS "NumeralSystem::~NumeralSystem ()\fC [virtual]\fP"
+
+.PP
+Definition at line 44 of file ntext\&.cpp\&.
+.PP
+References buf\&.
+.PP
+.nf
+45 {
+46     delete buf;
+47 }
+.fi
+.SH "Member Function Documentation"
+.PP 
+.SS "virtual unsigned int NumeralSystem::GetDigits ()\fC [pure virtual]\fP"
+
+.PP
+Implemented in \fBPositionalNumeralSystem\fP\&.
+.PP
+Referenced by InputStatement::Execute(), OutputStatement::Execute(), and DigitsStatement::Execute()\&.
+.SS "virtual const char NumeralSystem::GetFractionPoint ()\fC [pure virtual]\fP"
+
+.PP
+Implemented in \fBPositionalNumeralSystem\fP\&.
+.SS "virtual const char* NumeralSystem::GetName ()\fC [pure virtual]\fP"
+
+.PP
+Implemented in \fBPositionalNumeralSystem\fP\&.
+.PP
+Referenced by InputStatement::Execute(), and OutputStatement::Execute()\&.
+.SS "virtual const char* NumeralSystem::GetPrefix ()\fC [pure virtual]\fP"
+
+.PP
+Implemented in \fBPositionalNumeralSystem\fP\&.
+.SS "virtual const char* NumeralSystem::GetText (\fBNumber\fP * number)\fC [pure virtual]\fP"
+
+.PP
+Implemented in \fBDecimalSystem\fP, and \fBPositionalNumeralSystem\fP\&.
+.PP
+Referenced by MemoryStatement::Execute(), EvalStatement::Execute(), DigitsStatement::Execute(), PlotStatement::Execute(), PreferencesBase::GetDescription(), PositionalNumeralSystem::GetName(), NumericValueNode::GetNodeText(), and VariableList::ListContent()\&.
+.SS "virtual \fBNumber\fP* NumeralSystem::Parse (const char * text, unsigned int * length, char ** end)\fC [pure virtual]\fP"
+
+.PP
+Implemented in \fBPositionalNumeralSystem\fP\&.
+.PP
+Referenced by Lexer::GetDigitValue(), and Parse()\&.
+.SS "\fBNumber\fP * NumeralSystem::Parse (const char * text)\fC [virtual]\fP"
+
+.PP
+Definition at line 49 of file ntext\&.cpp\&.
+.PP
+References Parse()\&.
+.PP
+Referenced by Parser::ParseDigistStatement(), Parser::ParseNumber(), and Parser::ParseNumeralStatement()\&.
+.PP
+.nf
+50 {
+51     unsigned int length;
+52     char *end;
+53     return Parse(text, &length, &end);
+54 }
+.fi
+.SS "virtual void NumeralSystem::SetDigits (unsigned int digits)\fC [pure virtual]\fP"
+
+.PP
+Implemented in \fBPositionalNumeralSystem\fP\&.
+.PP
+Referenced by PrefsStatement::Execute(), and DigitsStatement::Execute()\&.
+.SS "virtual void NumeralSystem::SetFractionPoint (const char fractionpoint)\fC [pure virtual]\fP"
+
+.PP
+Implemented in \fBPositionalNumeralSystem\fP\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "\fBCharBuffer\fP* NumeralSystem::buf\fC [protected]\fP"
+
+.PP
+Definition at line 63 of file ntext\&.h\&.
+.PP
+Referenced by PositionalNumeralSystem::GetName(), DecimalSystem::GetRealText(), PositionalNumeralSystem::GetText(), DecimalSystem::GetText(), PositionalNumeralSystem::IntegerToBuffer(), NumeralSystem(), and ~NumeralSystem()\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for amath from the source code\&.

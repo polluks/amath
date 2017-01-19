@@ -1,0 +1,137 @@
+.TH "AssignmentNode" 3 "Thu Jan 19 2017" "Version 1.6.0" "amath" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+AssignmentNode \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <operators\&.h>\fP
+.PP
+Inherits \fBNumericOperator\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBAssignmentNode\fP (\fBVariableNode\fP *\fBvariable\fP, \fBExpressionNode\fP *\fBexpression\fP)"
+.br
+.ti -1c
+.RI "int \fBGetPrecedence\fP ()"
+.br
+.ti -1c
+.RI "\fBbool\fP \fBIsSilent\fP ()"
+.br
+.ti -1c
+.RI "\fBNumber\fP * \fBEvaluate\fP ()"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "char * \fBGetNodeText\fP ()"
+.br
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBVariableNode\fP * \fBvariable\fP"
+.br
+.ti -1c
+.RI "\fBExpressionNode\fP * \fBexpression\fP"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Detailed Description"
+.PP 
+Definition at line 148 of file operators\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "AssignmentNode::AssignmentNode (\fBVariableNode\fP * variable, \fBExpressionNode\fP * expression)"
+
+.PP
+Definition at line 427 of file operators\&.cpp\&.
+.PP
+References expression, NumericOperator::NumericOperator(), and variable\&.
+.PP
+Referenced by Parser::ParseIdent()\&.
+.PP
+.nf
+427                                                                                 :
+428     NumericOperator(variable, expression),
+429     variable(variable), expression(expression) { }
+.fi
+.SH "Member Function Documentation"
+.PP 
+.SS "\fBNumber\fP * AssignmentNode::Evaluate ()\fC [virtual]\fP"
+
+.PP
+Implements \fBExpressionNode\fP\&.
+.PP
+Definition at line 436 of file operators\&.cpp\&.
+.PP
+References VariableNode::AssignValue(), ExpressionNode::Evaluate(), VariableNode::Evaluate(), expression, and variable\&.
+.PP
+.nf
+437 {
+438     // NOTICE: Assignment does not generate a value itself\&.
+439     variable->AssignValue(expression->Evaluate());
+440     return variable->Evaluate();
+441 }
+.fi
+.SS "char * AssignmentNode::GetNodeText ()\fC [protected]\fP, \fC [virtual]\fP"
+
+.PP
+Implements \fBExpressionNode\fP\&.
+.PP
+Definition at line 448 of file operators\&.cpp\&.
+.PP
+.nf
+449 {
+450     return (char*)"=";
+451 }
+.fi
+.SS "int AssignmentNode::GetPrecedence ()\fC [virtual]\fP"
+
+.PP
+Implements \fBExpressionNode\fP\&.
+.PP
+Definition at line 431 of file operators\&.cpp\&.
+.PP
+.nf
+432 {
+433     return 6;
+434 }
+.fi
+.SS "\fBbool\fP AssignmentNode::IsSilent ()\fC [virtual]\fP"
+
+.PP
+Reimplemented from \fBExpressionNode\fP\&.
+.PP
+Definition at line 443 of file operators\&.cpp\&.
+.PP
+.nf
+444 {
+445     return true;
+446 }
+.fi
+.SH "Member Data Documentation"
+.PP 
+.SS "\fBExpressionNode\fP* AssignmentNode::expression\fC [private]\fP"
+
+.PP
+Definition at line 160 of file operators\&.h\&.
+.PP
+Referenced by AssignmentNode(), and Evaluate()\&.
+.SS "\fBVariableNode\fP* AssignmentNode::variable\fC [private]\fP"
+
+.PP
+Definition at line 159 of file operators\&.h\&.
+.PP
+Referenced by AssignmentNode(), and Evaluate()\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for amath from the source code\&.

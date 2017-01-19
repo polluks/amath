@@ -1,0 +1,51 @@
+.TH "lib/real/fabs.c" 3 "Thu Jan 19 2017" "Version 1.6.0" "amath" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+lib/real/fabs.c \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'prim\&.h'\fP
+.br
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "double \fBfabs\fP (double x)"
+.br
+.RI "\fIReturns the absolute value of x\&. \fP"
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "double fabs (double x)"
+
+.PP
+Returns the absolute value of x\&. 
+.PP
+\fBVersion:\fP
+.RS 4
+1\&.3 
+.RE
+.PP
+\fBDate:\fP
+.RS 4
+95/01/18 
+.RE
+.PP
+
+.PP
+Definition at line 51 of file fabs\&.c\&.
+.PP
+.nf
+52 {
+53     uword hx;
+54     GET_HIGH_WORD(hx,x);
+55     SET_HIGH_WORD(x, hx & 0x7fffffff);
+56     return x;
+57 }
+.fi
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for amath from the source code\&.

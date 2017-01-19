@@ -1,0 +1,45 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="db/d83/casinh_8c">
+    <title>casinh.c File Reference</title>
+    <programlisting>#include &quot;prim.h&quot;</programlisting>
+    <programlisting>#include &quot;math.h&quot;</programlisting>
+    <programlisting>#include &quot;complex.h&quot;</programlisting>
+<para>Include dependency diagram for casinh.c</para>
+<para>
+    <figure>
+        <title>Dependency diagram</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="../../d1/d6d/casinh_8c__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+<para>Included by dependency diagram for casinh.c</para>
+<para>
+    <figure>
+        <title>Dependency diagram</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="../../d9/d18/casinh_8c__dep__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+        <section>
+            <title>Functions</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="da/dc0/unioncomplex">complex</link> <link linkend="db/d83/casinh_8c_1a333c9aa02a58163693f67e1d47aa9887">casinh</link> (
+<link linkend="da/dc0/unioncomplex">complex</link> z)<para><emphasis>Inverse hyperbolic sine of complex number.</emphasis></para>
+</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+    <simplesect>
+        <title>Detailed Description</title>
+    <para>Definition in file /home/carsten/amath2/lib/cplex/casinh.c</para>
+    </simplesect>
+</section>

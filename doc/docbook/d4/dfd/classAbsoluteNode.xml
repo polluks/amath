@@ -1,0 +1,168 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="d4/dfd/classAbsoluteNode">
+<title>AbsoluteNode class Reference</title>
+<para>
+    <programlisting>#include <link linkend="d7/d79/operators_8h">&lt;operators.h&gt;</link></programlisting>
+</para>
+<para>Inheritance diagram for AbsoluteNode</para>
+<para>
+    <figure>
+        <title>Inheritance graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="../../d4/df2/classAbsoluteNode__inherit__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+<para>Collaboration diagram for AbsoluteNode</para>
+<para>
+    <figure>
+        <title>Collaboration graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="../../db/d74/classAbsoluteNode__coll__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+        <section>
+            <title>Private Attributes</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>ExpressionNode * expression</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d4/dfd/classAbsoluteNode_1af1206a7293f334c1d544cafe95af3ba5">AbsoluteNode</link> (
+<link linkend="dd/d06/classExpressionNode">ExpressionNode</link> * expression)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d4/dfd/classAbsoluteNode_1ac4805b3b37437bb1fd4acb14eb4eeced">~AbsoluteNode</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>char * <link linkend="d4/dfd/classAbsoluteNode_1ada1094b5e5ed6033f193ac151058c364">GetText</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="da/de2/structNumber">Number</link> * <link linkend="d4/dfd/classAbsoluteNode_1a35e012fdac8bff4c5252021254f07cbe">Evaluate</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="d4/dfd/classAbsoluteNode_1a6fb0f08b41c558e8746b24fa79552545">GetPrecedence</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="d8/d5d/classSyntaxNode">SyntaxNode</link> * <link linkend="d4/dfd/classAbsoluteNode_1adcc7a1dd7bd20d811c5b9ac8d9e5efb1">GetNext</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="d4/dfd/classAbsoluteNode_1a4f947588881076306bf79f69145713b7">Attach</link> (
+<link linkend="d8/d5d/classSyntaxNode">SyntaxNode</link> * node)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="d4/dfd/classAbsoluteNode_1a5bf1491e1f71c87b38360e0d9231ac11">Detach</link> (
+<link linkend="d8/d5d/classSyntaxNode">SyntaxNode</link> * node)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="d4/dfd/classAbsoluteNode_1a675d28427432b9947af9441c3bcf5401">Replace</link> (
+<link linkend="d8/d5d/classSyntaxNode">SyntaxNode</link> * n, <link linkend="d8/d5d/classSyntaxNode">SyntaxNode</link> * x)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>char * <link linkend="d4/dfd/classAbsoluteNode_1ae5e2148cb9fedaee9137d3c124399c76">GetNodeText</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title>Member Data Documentation</title>
+        </section>
+            <section xml:id="d4/dfd/classAbsoluteNode_1af1206a7293f334c1d544cafe95af3ba5">
+                <title>AbsoluteNode::AbsoluteNode (ExpressionNode *expression)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d4/dfd/classAbsoluteNode_1ac4805b3b37437bb1fd4acb14eb4eeced">
+                <title>AbsoluteNode::~AbsoluteNode ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d4/dfd/classAbsoluteNode_1ada1094b5e5ed6033f193ac151058c364">
+                <title>char * AbsoluteNode::GetText ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d4/dfd/classAbsoluteNode_1a35e012fdac8bff4c5252021254f07cbe">
+                <title>Number * AbsoluteNode::Evaluate ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d4/dfd/classAbsoluteNode_1a6fb0f08b41c558e8746b24fa79552545">
+                <title>int AbsoluteNode::GetPrecedence ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d4/dfd/classAbsoluteNode_1adcc7a1dd7bd20d811c5b9ac8d9e5efb1">
+                <title>SyntaxNode * AbsoluteNode::GetNext ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d4/dfd/classAbsoluteNode_1a4f947588881076306bf79f69145713b7">
+                <title>void AbsoluteNode::Attach (SyntaxNode *node)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d4/dfd/classAbsoluteNode_1a5bf1491e1f71c87b38360e0d9231ac11">
+                <title>void AbsoluteNode::Detach (SyntaxNode *node)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d4/dfd/classAbsoluteNode_1a675d28427432b9947af9441c3bcf5401">
+                <title>void AbsoluteNode::Replace (SyntaxNode *n, SyntaxNode *x)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d4/dfd/classAbsoluteNode_1ae5e2148cb9fedaee9137d3c124399c76">
+                <title>char * AbsoluteNode::GetNodeText ()</title> <emphasis></emphasis>
+                
+            </section>
+</section>

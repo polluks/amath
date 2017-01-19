@@ -1,0 +1,439 @@
+\hypertarget{io_8h}{}\section{app/system/base/io.h File Reference}
+\label{io_8h}\index{app/system/base/io.\+h@{app/system/base/io.\+h}}
+
+
+System dependent I/O.  
+
+
+{\ttfamily \#include \char`\"{}clib.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}platform.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}system/program.\+h\char`\"{}}\\*
+Include dependency graph for io.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d8/da5/io_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{da/de4/io_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{io_8h_a555e2a159918ee08dbbb71645bf2348c}{C\+P\+R\+O\+C\+N\+A\+ME}~\char`\"{}amath\+\_\+console\char`\"{}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classProgram}{Program} $\ast$ \hyperlink{io_8h_acbfdc579e98a99dc390e2ed87a8db15d}{Create\+Program} (int, char $\ast$$\ast$)
+\item 
+class \hyperlink{classLanguage}{Language} $\ast$ \hyperlink{io_8h_a28bdfc208e3840f49d1af4a4196013e1}{Create\+Language} ()
+\item 
+class \hyperlink{classPreferencesBase}{Preferences\+Base} $\ast$ \hyperlink{io_8h_ae6bd8b440ad1736316165c2f8aac43bf}{Create\+Preferences} ()
+\item 
+class \hyperlink{classFilesystemBase}{Filesystem\+Base} $\ast$ \hyperlink{io_8h_aaf891622b11e0bb888ebf08612884aa8}{Create\+Filesystem} ()
+\item 
+class \hyperlink{classGraphWindow}{Graph\+Window} $\ast$ \hyperlink{io_8h_a99482ffbe19cd5e821359f26620cd89f}{Create\+Graph\+Window} ()
+\item 
+void \hyperlink{io_8h_afabbf967db247cad6ad9a6f416e99e12}{Write\+To\+Shell} (const char $\ast$)
+\item 
+void \hyperlink{io_8h_ae89a123aad1c66a76c398b7af216aae4}{Cleanup} ()
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const char $\ast$ \hyperlink{io_8h_a57d2e88965e3e6ba15ff83435ddc8ae0}{vers}
+\item 
+class \hyperlink{classProgram}{Program} $\ast$ \hyperlink{io_8h_ad9c582bdae0ebb60daf0a7673448c9c9}{Program}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+System dependent I/O. 
+
+
+
+\subsection{Macro Definition Documentation}
+\index{io.\+h@{io.\+h}!C\+P\+R\+O\+C\+N\+A\+ME@{C\+P\+R\+O\+C\+N\+A\+ME}}
+\index{C\+P\+R\+O\+C\+N\+A\+ME@{C\+P\+R\+O\+C\+N\+A\+ME}!io.\+h@{io.\+h}}
+\subsubsection[{\texorpdfstring{C\+P\+R\+O\+C\+N\+A\+ME}{CPROCNAME}}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\+P\+R\+O\+C\+N\+A\+ME~\char`\"{}amath\+\_\+console\char`\"{}}\hypertarget{io_8h_a555e2a159918ee08dbbb71645bf2348c}{}\label{io_8h_a555e2a159918ee08dbbb71645bf2348c}
+
+
+Definition at line 40 of file io.\+h.
+
+
+
+\subsection{Function Documentation}
+\index{io.\+h@{io.\+h}!Cleanup@{Cleanup}}
+\index{Cleanup@{Cleanup}!io.\+h@{io.\+h}}
+\subsubsection[{\texorpdfstring{Cleanup()}{Cleanup()}}]{\setlength{\rightskip}{0pt plus 5cm}void Cleanup (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{io_8h_ae89a123aad1c66a76c398b7af216aae4}{}\label{io_8h_ae89a123aad1c66a76c398b7af216aae4}
+
+
+Definition at line 155 of file io.\+cpp.
+
+
+
+References Free\+All\+Safe().
+
+
+
+Referenced by main().
+
+
+\begin{DoxyCode}
+156 \{
+157 \textcolor{preprocessor}{#ifdef AMIGA}
+158     \textcolor{keywordflow}{if} (DosBase != NULL) \{
+159         CloseLibrary((\textcolor{keyword}{struct} Library*)DosBase);
+160     \}
+161 
+162     \textcolor{keywordflow}{if} (LocaleBase != NULL) \{
+163         CloseLibrary((\textcolor{keyword}{struct} Library*)LocaleBase);
+164     \}
+165 
+166     \textcolor{keywordflow}{if} (GfxBase != NULL) \{
+167         CloseLibrary((\textcolor{keyword}{struct} Library*)GfxBase);
+168     \}
+169 
+170     \textcolor{keywordflow}{if} (IntuitionBase != NULL) \{
+171         CloseLibrary((\textcolor{keyword}{struct} Library*)IntuitionBase);
+172     \}
+173 \textcolor{preprocessor}{#endif}
+174     \textcolor{keyword}{delete} \hyperlink{io_8cpp_ad9c582bdae0ebb60daf0a7673448c9c9}{Program};
+175     \hyperlink{mem_8h_adcb19646ed930d44f25ddc9f7767a182}{FreeAllSafe}();
+176 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=237pt]{dc/dac/io_8h_ae89a123aad1c66a76c398b7af216aae4_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=207pt]{dc/dac/io_8h_ae89a123aad1c66a76c398b7af216aae4_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{io.\+h@{io.\+h}!Create\+Filesystem@{Create\+Filesystem}}
+\index{Create\+Filesystem@{Create\+Filesystem}!io.\+h@{io.\+h}}
+\subsubsection[{\texorpdfstring{Create\+Filesystem()}{CreateFilesystem()}}]{\setlength{\rightskip}{0pt plus 5cm}class {\bf Filesystem\+Base}$\ast$ Create\+Filesystem (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{io_8h_aaf891622b11e0bb888ebf08612884aa8}{}\label{io_8h_aaf891622b11e0bb888ebf08612884aa8}
+
+
+Definition at line 125 of file io.\+cpp.
+
+
+
+Referenced by Standard\+Language\+::\+Load\+Catalog(), and Program\+::\+Program().
+
+
+\begin{DoxyCode}
+126 \{
+127 \textcolor{preprocessor}{#ifdef AMIGA}
+128     DosBase = (\textcolor{keyword}{struct }DosBase*)OpenLibrary(AMIGADOS\_NAME, AMIGADOS\_REV);
+129     \textcolor{keywordflow}{if} (DosBase == NULL) \{
+130         \textcolor{keywordflow}{return} NULL;
+131     \}
+132     \textcolor{keywordflow}{return} \textcolor{keyword}{new} AmigaFilesystem();
+133 \textcolor{preprocessor}{#else}
+134     \textcolor{keywordflow}{return} \textcolor{keyword}{new} \hyperlink{classStandardFilesystem}{StandardFilesystem}();
+135 \textcolor{preprocessor}{#endif}
+136 \}
+\end{DoxyCode}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/dac/io_8h_aaf891622b11e0bb888ebf08612884aa8_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{io.\+h@{io.\+h}!Create\+Graph\+Window@{Create\+Graph\+Window}}
+\index{Create\+Graph\+Window@{Create\+Graph\+Window}!io.\+h@{io.\+h}}
+\subsubsection[{\texorpdfstring{Create\+Graph\+Window()}{CreateGraphWindow()}}]{\setlength{\rightskip}{0pt plus 5cm}class {\bf Graph\+Window}$\ast$ Create\+Graph\+Window (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{io_8h_a99482ffbe19cd5e821359f26620cd89f}{}\label{io_8h_a99482ffbe19cd5e821359f26620cd89f}
+
+
+Definition at line 138 of file io.\+cpp.
+
+
+
+Referenced by Graph\+List\+::\+Create\+New\+Window().
+
+
+\begin{DoxyCode}
+138                                  \{
+139 \textcolor{preprocessor}{#ifdef AMIGA}
+140     \textcolor{keywordflow}{return} \textcolor{keyword}{new} AmigaGraphWindow();
+141 \textcolor{preprocessor}{#else}
+142     \textcolor{keywordflow}{return} \hyperlink{platform_8h_a46ff2bfbf0d44b8466a2251d5bd5e6f8}{NOMEM};
+143 \textcolor{preprocessor}{#endif}
+144 \}
+\end{DoxyCode}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/dac/io_8h_a99482ffbe19cd5e821359f26620cd89f_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{io.\+h@{io.\+h}!Create\+Language@{Create\+Language}}
+\index{Create\+Language@{Create\+Language}!io.\+h@{io.\+h}}
+\subsubsection[{\texorpdfstring{Create\+Language()}{CreateLanguage()}}]{\setlength{\rightskip}{0pt plus 5cm}class {\bf Language}$\ast$ Create\+Language (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{io_8h_a28bdfc208e3840f49d1af4a4196013e1}{}\label{io_8h_a28bdfc208e3840f49d1af4a4196013e1}
+
+
+Definition at line 100 of file io.\+cpp.
+
+
+
+References Posix\+Language\+::\+Posix\+Language(), and Standard\+Language\+::\+Standard\+Language().
+
+
+
+Referenced by Program\+::\+Program().
+
+
+\begin{DoxyCode}
+101 \{
+102 \textcolor{preprocessor}{#ifdef UNIX}
+103     \textcolor{keywordflow}{return} \textcolor{keyword}{new} \hyperlink{classPosixLanguage}{PosixLanguage}();
+104 \textcolor{preprocessor}{#endif}
+105 \textcolor{preprocessor}{#ifdef AMIGA}
+106     LocaleBase = (\textcolor{keyword}{struct }LocaleBase*)OpenLibrary(LOCALE\_NAME, LOCALE\_REV);
+107     \textcolor{keywordflow}{if} (LocaleBase != NULL) \{
+108         \textcolor{keywordflow}{return} \textcolor{keyword}{new} \hyperlink{classAmigaLanguage}{AmigaLanguage}();
+109     \} \textcolor{keywordflow}{else}
+110 \textcolor{preprocessor}{#endif}
+111     \{
+112         \textcolor{keywordflow}{return} \textcolor{keyword}{new} \hyperlink{classStandardLanguage}{StandardLanguage}();
+113     \}
+114 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/dac/io_8h_a28bdfc208e3840f49d1af4a4196013e1_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/dac/io_8h_a28bdfc208e3840f49d1af4a4196013e1_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{io.\+h@{io.\+h}!Create\+Preferences@{Create\+Preferences}}
+\index{Create\+Preferences@{Create\+Preferences}!io.\+h@{io.\+h}}
+\subsubsection[{\texorpdfstring{Create\+Preferences()}{CreatePreferences()}}]{\setlength{\rightskip}{0pt plus 5cm}class {\bf Preferences\+Base}$\ast$ Create\+Preferences (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{io_8h_ae6bd8b440ad1736316165c2f8aac43bf}{}\label{io_8h_ae6bd8b440ad1736316165c2f8aac43bf}
+
+
+Definition at line 116 of file io.\+cpp.
+
+
+
+Referenced by Program\+::\+Program().
+
+
+\begin{DoxyCode}
+117 \{
+118 \textcolor{preprocessor}{#ifdef AMIGA}
+119     \textcolor{keywordflow}{return} \textcolor{keyword}{new} \hyperlink{classAmigaPreferences}{AmigaPreferences}();
+120 \textcolor{preprocessor}{#else}
+121     \textcolor{keywordflow}{return} \textcolor{keyword}{new} \hyperlink{classStandardPreferences}{StandardPreferences}();
+122 \textcolor{preprocessor}{#endif}
+123 \}
+\end{DoxyCode}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/dac/io_8h_ae6bd8b440ad1736316165c2f8aac43bf_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{io.\+h@{io.\+h}!Create\+Program@{Create\+Program}}
+\index{Create\+Program@{Create\+Program}!io.\+h@{io.\+h}}
+\subsubsection[{\texorpdfstring{Create\+Program(int, char $\ast$$\ast$)}{CreateProgram(int, char **)}}]{\setlength{\rightskip}{0pt plus 5cm}class {\bf Program}$\ast$ Create\+Program (
+\begin{DoxyParamCaption}
+\item[{int}]{, }
+\item[{char $\ast$$\ast$}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{io_8h_acbfdc579e98a99dc390e2ed87a8db15d}{}\label{io_8h_acbfdc579e98a99dc390e2ed87a8db15d}
+
+
+Definition at line 77 of file io.\+cpp.
+
+
+
+References Standard\+Program\+::\+Standard\+Program().
+
+
+
+Referenced by main().
+
+
+\begin{DoxyCode}
+77                                                     \{
+78 \textcolor{preprocessor}{#ifdef WITHTEST}
+79     \textcolor{keywordflow}{if} (argc == 2 && \hyperlink{clib_8h_a2a1f39d11cbbaac992d42e67557dac4b}{StrIsEqual}(argv[1], \textcolor{stringliteral}{"test"})) \{
+80         \textcolor{keywordflow}{return} \textcolor{keyword}{new} \hyperlink{classTestProgram}{TestProgram}();
+81     \} \textcolor{keywordflow}{else}
+82 \textcolor{preprocessor}{#endif}
+83     \{
+84 \textcolor{preprocessor}{#ifdef AMIGA}
+85         IntuitionBase = (\textcolor{keyword}{struct }IntuitionBase*)OpenLibrary(INTUITION\_NAME, INTUITION\_REV);
+86         GfxBase = (\textcolor{keyword}{struct }GfxBase*)OpenLibrary(GRAPHICS\_NAME, GRAPHICS\_REV);
+87 
+88         \textcolor{keywordflow}{if} (IntuitionBase != NULL && GfxBase != NULL) \{
+89             \textcolor{keywordflow}{return} \textcolor{keyword}{new} \hyperlink{classAmigaProgram}{AmigaProgram}();
+90         \} \textcolor{keywordflow}{else} \{
+91             \textcolor{keywordflow}{return} \textcolor{keyword}{new} \hyperlink{classStandardProgram}{StandardProgram}();
+92         \}
+93 \textcolor{preprocessor}{#else}
+94         \textcolor{keywordflow}{return} \textcolor{keyword}{new} \hyperlink{classStandardProgram}{StandardProgram}();
+95 \textcolor{preprocessor}{#endif}
+96     \}
+97     \textcolor{keywordflow}{return} NULL;
+98 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/dac/io_8h_acbfdc579e98a99dc390e2ed87a8db15d_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=237pt]{dc/dac/io_8h_acbfdc579e98a99dc390e2ed87a8db15d_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{io.\+h@{io.\+h}!Write\+To\+Shell@{Write\+To\+Shell}}
+\index{Write\+To\+Shell@{Write\+To\+Shell}!io.\+h@{io.\+h}}
+\subsubsection[{\texorpdfstring{Write\+To\+Shell(const char $\ast$)}{WriteToShell(const char *)}}]{\setlength{\rightskip}{0pt plus 5cm}void Write\+To\+Shell (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{io_8h_afabbf967db247cad6ad9a6f416e99e12}{}\label{io_8h_afabbf967db247cad6ad9a6f416e99e12}
+
+
+Definition at line 146 of file io.\+cpp.
+
+
+
+Referenced by Standard\+Program\+::\+Run().
+
+
+\begin{DoxyCode}
+146                                    \{
+147 \textcolor{preprocessor}{#ifdef AMIGA}
+148     Write(Output(), (APTR)out, \hyperlink{clib_8h_a67ec56eb98b49515d35005a5b3bf9a32}{StrLen}(out));
+149     Write(Output(), (APTR)\hyperlink{platform_8h_abf175904907a69e0ce17289cdc282b59}{NORMALTEXT}, \hyperlink{clib_8h_a67ec56eb98b49515d35005a5b3bf9a32}{StrLen}(NORMALTEXT));
+150 \textcolor{preprocessor}{#else}
+151     printf(\textcolor{stringliteral}{"%s%s"}, out, NORMALTEXT);
+152 \textcolor{preprocessor}{#endif}
+153 \}
+\end{DoxyCode}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=305pt]{dc/dac/io_8h_afabbf967db247cad6ad9a6f416e99e12_icgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Variable Documentation}
+\index{io.\+h@{io.\+h}!Program@{Program}}
+\index{Program@{Program}!io.\+h@{io.\+h}}
+\subsubsection[{\texorpdfstring{Program}{Program}}]{\setlength{\rightskip}{0pt plus 5cm}class {\bf Program}$\ast$ {\bf Program}}\hypertarget{io_8h_ad9c582bdae0ebb60daf0a7673448c9c9}{}\label{io_8h_ad9c582bdae0ebb60daf0a7673448c9c9}
+
+
+Definition at line 69 of file io.\+cpp.
+
+\index{io.\+h@{io.\+h}!vers@{vers}}
+\index{vers@{vers}!io.\+h@{io.\+h}}
+\subsubsection[{\texorpdfstring{vers}{vers}}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ vers}\hypertarget{io_8h_a57d2e88965e3e6ba15ff83435ddc8ae0}{}\label{io_8h_a57d2e88965e3e6ba15ff83435ddc8ae0}
+
+
+Definition at line 68 of file io.\+cpp.
+

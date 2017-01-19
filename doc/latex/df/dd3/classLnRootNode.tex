@@ -1,0 +1,203 @@
+\hypertarget{classLnRootNode}{}\section{Ln\+Root\+Node Class Reference}
+\label{classLnRootNode}\index{Ln\+Root\+Node@{Ln\+Root\+Node}}
+
+
+{\ttfamily \#include $<$functions.\+h$>$}
+
+
+
+Inheritance diagram for Ln\+Root\+Node\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=169pt]{d8/d8b/classLnRootNode__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Ln\+Root\+Node\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=272pt]{d3/df7/classLnRootNode__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classLnRootNode_a4424f5992bbad7bc9787c6b13f12b020}{Ln\+Root\+Node} (\hyperlink{classExpressionNode}{Expression\+Node} $\ast$\hyperlink{classFunctionNode_ad7577b179a1937aaf8a0058bb5b546dc}{expression})
+\item 
+\hyperlink{structNumber}{Number} $\ast$ \hyperlink{classLnRootNode_a549db364d3661c94bb9edb587d191439}{Evaluate} ()
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{classFunctionNode}{Function\+Node} $\ast$ \hyperlink{classLnRootNode_a4d634842fba548eabb422ee40032bac6}{Create} (\hyperlink{classExpressionNode}{Expression\+Node} $\ast$\hyperlink{classFunctionNode_ad7577b179a1937aaf8a0058bb5b546dc}{expression})
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+char $\ast$ \hyperlink{classLnRootNode_a6a222d2d605103fe7a6c5d25512d62ce}{Get\+Node\+Text} ()
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 308 of file functions.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Ln\+Root\+Node@{Ln\+Root\+Node}!Ln\+Root\+Node@{Ln\+Root\+Node}}
+\index{Ln\+Root\+Node@{Ln\+Root\+Node}!Ln\+Root\+Node@{Ln\+Root\+Node}}
+\subsubsection[{\texorpdfstring{Ln\+Root\+Node(\+Expression\+Node $\ast$expression)}{LnRootNode(ExpressionNode *expression)}}]{\setlength{\rightskip}{0pt plus 5cm}Ln\+Root\+Node\+::\+Ln\+Root\+Node (
+\begin{DoxyParamCaption}
+\item[{{\bf Expression\+Node} $\ast$}]{expression}
+\end{DoxyParamCaption}
+)}\hypertarget{classLnRootNode_a4424f5992bbad7bc9787c6b13f12b020}{}\label{classLnRootNode_a4424f5992bbad7bc9787c6b13f12b020}
+
+
+Definition at line 698 of file functions.\+cpp.
+
+
+
+References Function\+Node\+::\+Function\+Node().
+
+
+
+Referenced by Create().
+
+
+\begin{DoxyCode}
+698                                                  :
+699     \hyperlink{classFunctionNode_a41cb7db0162ffbec0902bd8ff7ea435f}{FunctionNode}(expression) \{ \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{df/dd3/classLnRootNode_a4424f5992bbad7bc9787c6b13f12b020_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{df/dd3/classLnRootNode_a4424f5992bbad7bc9787c6b13f12b020_icgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Member Function Documentation}
+\index{Ln\+Root\+Node@{Ln\+Root\+Node}!Create@{Create}}
+\index{Create@{Create}!Ln\+Root\+Node@{Ln\+Root\+Node}}
+\subsubsection[{\texorpdfstring{Create(\+Expression\+Node $\ast$expression)}{Create(ExpressionNode *expression)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Function\+Node} $\ast$ Ln\+Root\+Node\+::\+Create (
+\begin{DoxyParamCaption}
+\item[{{\bf Expression\+Node} $\ast$}]{expression}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{classLnRootNode_a4d634842fba548eabb422ee40032bac6}{}\label{classLnRootNode_a4d634842fba548eabb422ee40032bac6}
+
+
+Definition at line 701 of file functions.\+cpp.
+
+
+
+References Ln\+Root\+Node().
+
+
+\begin{DoxyCode}
+702 \{
+703     \textcolor{keywordflow}{return} \textcolor{keyword}{new} \hyperlink{classLnRootNode_a4424f5992bbad7bc9787c6b13f12b020}{LnRootNode}(expression);
+704 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{df/dd3/classLnRootNode_a4d634842fba548eabb422ee40032bac6_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{Ln\+Root\+Node@{Ln\+Root\+Node}!Evaluate@{Evaluate}}
+\index{Evaluate@{Evaluate}!Ln\+Root\+Node@{Ln\+Root\+Node}}
+\subsubsection[{\texorpdfstring{Evaluate()}{Evaluate()}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Number} $\ast$ Ln\+Root\+Node\+::\+Evaluate (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{classLnRootNode_a549db364d3661c94bb9edb587d191439}{}\label{classLnRootNode_a549db364d3661c94bb9edb587d191439}
+
+
+Implements \hyperlink{classExpressionNode_a64975d4dc37742228bd522f6204537f7}{Expression\+Node}.
+
+
+
+Definition at line 706 of file functions.\+cpp.
+
+
+
+References Expression\+Node\+::\+Evaluate(), Function\+Node\+::expression, Number\+::\+Log(), and Expression\+Node\+::result.
+
+
+\begin{DoxyCode}
+707 \{
+708     \hyperlink{classExpressionNode_a1f590649f5a5cb30eb7ee912f7bc1262}{result} = \hyperlink{classFunctionNode_ad7577b179a1937aaf8a0058bb5b546dc}{expression}->\hyperlink{classExpressionNode_a64975d4dc37742228bd522f6204537f7}{Evaluate}()->\hyperlink{structNumber_a50a23b917c744ce16f0a4eb4e6f76071}{Log}();
+709     \textcolor{keywordflow}{return} \hyperlink{classExpressionNode_a1f590649f5a5cb30eb7ee912f7bc1262}{result};
+710 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{df/dd3/classLnRootNode_a549db364d3661c94bb9edb587d191439_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{Ln\+Root\+Node@{Ln\+Root\+Node}!Get\+Node\+Text@{Get\+Node\+Text}}
+\index{Get\+Node\+Text@{Get\+Node\+Text}!Ln\+Root\+Node@{Ln\+Root\+Node}}
+\subsubsection[{\texorpdfstring{Get\+Node\+Text()}{GetNodeText()}}]{\setlength{\rightskip}{0pt plus 5cm}char $\ast$ Ln\+Root\+Node\+::\+Get\+Node\+Text (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}\hypertarget{classLnRootNode_a6a222d2d605103fe7a6c5d25512d62ce}{}\label{classLnRootNode_a6a222d2d605103fe7a6c5d25512d62ce}
+
+
+Implements \hyperlink{classExpressionNode_a42a5e9562b0f645a19dcc83f698069b5}{Expression\+Node}.
+
+
+
+Definition at line 712 of file functions.\+cpp.
+
+
+\begin{DoxyCode}
+713 \{
+714     \textcolor{keywordflow}{return} (\textcolor{keywordtype}{char}*)\textcolor{stringliteral}{"ln"};
+715 \}
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+app/main/\hyperlink{functions_8h}{functions.\+h}\item 
+app/main/\hyperlink{functions_8cpp}{functions.\+cpp}\end{DoxyCompactItemize}

@@ -1,0 +1,735 @@
+\hypertarget{classVariableList}{}\section{Variable\+List Class Reference}
+\label{classVariableList}\index{Variable\+List@{Variable\+List}}
+
+
+A list of user defined variables.  
+
+
+
+
+{\ttfamily \#include $<$values.\+h$>$}
+
+
+
+Collaboration diagram for Variable\+List\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=257pt]{dd/dce/classVariableList__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classVariableList_ab1d9c24d3b93598ee87bc47c9b964ec0}{Variable\+List} ()
+\item 
+\hyperlink{classVariableList_aade67c5eeb8f3516b6b1f10da7096ba2}{$\sim$\+Variable\+List} ()
+\item 
+void \hyperlink{classVariableList_adef9da37cea5f80b9f2cdc899b3235c2}{Clear} ()
+\item 
+\hyperlink{platform_8h_a1062901a7428fdd9c7f180f5e01ea056}{bool} \hyperlink{classVariableList_a6f9e2f3a5cb1f8b4e71b0d8123e98264}{Delete} (const char $\ast$name)
+\item 
+\hyperlink{classVariable}{Variable} $\ast$ \hyperlink{classVariableList_a4b3bb4c1886ef7e0b15bfa5ecf4c52f4}{Get\+First\+Variable} ()
+\item 
+\hyperlink{classVariable}{Variable} $\ast$ \hyperlink{classVariableList_a2002862abdb75e088e2dd6bf1e140be6}{Get\+Variable} (const char $\ast$name)
+\item 
+\hyperlink{classVariable}{Variable} $\ast$ \hyperlink{classVariableList_ac78b3d52283bec7cbd8e7e2d217e1608}{Create\+Variable} (const char $\ast$name)
+\item 
+\hyperlink{classVariable}{Variable} $\ast$ \hyperlink{classVariableList_a4e8c2b729d346ff56cf01c5349931c62}{Insert\+Temporary\+Variable} (\hyperlink{classVariable}{Variable} $\ast$variable)
+\item 
+void \hyperlink{classVariableList_a489608dbcd6989a9ffd4092234a8052c}{Remove\+Temporary\+Variable} ()
+\item 
+char $\ast$ \hyperlink{classVariableList_a8ddefb92c0c2f18f096f0fc4363d5af6}{List} ()
+\item 
+char $\ast$ \hyperlink{classVariableList_aa2726674491d8cd5625859f79df39c9d}{List\+Definitions} ()
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+char $\ast$ \hyperlink{classVariableList_a2898791757231a476a994741a0f8ab94}{List\+Content} (\hyperlink{platform_8h_a1062901a7428fdd9c7f180f5e01ea056}{bool} cmd\+Format)
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCharBuffer}{Char\+Buffer} $\ast$ \hyperlink{classVariableList_a11bf03542fab82869135f3f300890376}{buf}
+\item 
+\hyperlink{classVariable}{Variable} $\ast$ \hyperlink{classVariableList_a353a26f311a6d98716485f50c6907f7e}{first}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A list of user defined variables. 
+
+Definition at line 46 of file values.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Variable\+List@{Variable\+List}!Variable\+List@{Variable\+List}}
+\index{Variable\+List@{Variable\+List}!Variable\+List@{Variable\+List}}
+\subsubsection[{\texorpdfstring{Variable\+List()}{VariableList()}}]{\setlength{\rightskip}{0pt plus 5cm}Variable\+List\+::\+Variable\+List (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classVariableList_ab1d9c24d3b93598ee87bc47c9b964ec0}{}\label{classVariableList_ab1d9c24d3b93598ee87bc47c9b964ec0}
+
+
+Definition at line 86 of file values.\+cpp.
+
+
+
+References buf, Char\+Buffer\+::\+Char\+Buffer(), and first.
+
+
+
+Referenced by Program\+::\+Program().
+
+
+\begin{DoxyCode}
+87 \{
+88     \hyperlink{classVariableList_a353a26f311a6d98716485f50c6907f7e}{first} = \hyperlink{platform_8h_a46ff2bfbf0d44b8466a2251d5bd5e6f8}{NOMEM};
+89     \hyperlink{classVariableList_a11bf03542fab82869135f3f300890376}{buf} = \textcolor{keyword}{new} \hyperlink{classCharBuffer}{CharBuffer}();
+90 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/d0e/classVariableList_ab1d9c24d3b93598ee87bc47c9b964ec0_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/d0e/classVariableList_ab1d9c24d3b93598ee87bc47c9b964ec0_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Variable\+List@{Variable\+List}!````~Variable\+List@{$\sim$\+Variable\+List}}
+\index{````~Variable\+List@{$\sim$\+Variable\+List}!Variable\+List@{Variable\+List}}
+\subsubsection[{\texorpdfstring{$\sim$\+Variable\+List()}{~VariableList()}}]{\setlength{\rightskip}{0pt plus 5cm}Variable\+List\+::$\sim$\+Variable\+List (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classVariableList_aade67c5eeb8f3516b6b1f10da7096ba2}{}\label{classVariableList_aade67c5eeb8f3516b6b1f10da7096ba2}
+
+
+Definition at line 92 of file values.\+cpp.
+
+
+
+References buf, and first.
+
+
+\begin{DoxyCode}
+93 \{
+94     \textcolor{keywordflow}{if} (\hyperlink{classVariableList_a353a26f311a6d98716485f50c6907f7e}{first} != \hyperlink{platform_8h_a46ff2bfbf0d44b8466a2251d5bd5e6f8}{NOMEM}) \{
+95         \textcolor{keyword}{delete} \hyperlink{classVariableList_a353a26f311a6d98716485f50c6907f7e}{first};
+96     \}
+97 
+98     \textcolor{keyword}{delete} \hyperlink{classVariableList_a11bf03542fab82869135f3f300890376}{buf};
+99 \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\index{Variable\+List@{Variable\+List}!Clear@{Clear}}
+\index{Clear@{Clear}!Variable\+List@{Variable\+List}}
+\subsubsection[{\texorpdfstring{Clear()}{Clear()}}]{\setlength{\rightskip}{0pt plus 5cm}void Variable\+List\+::\+Clear (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classVariableList_adef9da37cea5f80b9f2cdc899b3235c2}{}\label{classVariableList_adef9da37cea5f80b9f2cdc899b3235c2}
+
+
+Definition at line 101 of file values.\+cpp.
+
+
+
+References buf, Char\+Buffer\+::\+Clear\+Buffer(), and first.
+
+
+
+Referenced by Delete\+Statement\+::\+Execute().
+
+
+\begin{DoxyCode}
+102 \{
+103     \textcolor{keywordflow}{if} (\hyperlink{classVariableList_a353a26f311a6d98716485f50c6907f7e}{first} != \hyperlink{platform_8h_a46ff2bfbf0d44b8466a2251d5bd5e6f8}{NOMEM}) \{
+104         \textcolor{keyword}{delete} \hyperlink{classVariableList_a353a26f311a6d98716485f50c6907f7e}{first};
+105         \hyperlink{classVariableList_a353a26f311a6d98716485f50c6907f7e}{first} = \hyperlink{platform_8h_a46ff2bfbf0d44b8466a2251d5bd5e6f8}{NOMEM};
+106     \}
+107 
+108     \hyperlink{classVariableList_a11bf03542fab82869135f3f300890376}{buf}->\hyperlink{classCharBuffer_a0bcdd5708db4b04c887224e83a05086f}{ClearBuffer}();
+109 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=332pt]{d3/d0e/classVariableList_adef9da37cea5f80b9f2cdc899b3235c2_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=345pt]{d3/d0e/classVariableList_adef9da37cea5f80b9f2cdc899b3235c2_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Variable\+List@{Variable\+List}!Create\+Variable@{Create\+Variable}}
+\index{Create\+Variable@{Create\+Variable}!Variable\+List@{Variable\+List}}
+\subsubsection[{\texorpdfstring{Create\+Variable(const char $\ast$name)}{CreateVariable(const char *name)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Variable} $\ast$ Variable\+List\+::\+Create\+Variable (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{name}
+\end{DoxyParamCaption}
+)}\hypertarget{classVariableList_ac78b3d52283bec7cbd8e7e2d217e1608}{}\label{classVariableList_ac78b3d52283bec7cbd8e7e2d217e1608}
+
+
+Definition at line 159 of file values.\+cpp.
+
+
+
+References first, Variable\+::\+Get\+Name(), Variable\+::\+Next, Str\+Is\+Equal(), and Variable\+::\+Variable().
+
+
+
+Referenced by Parser\+::\+Parse\+Ident().
+
+
+\begin{DoxyCode}
+160 \{
+161     \textcolor{keywordflow}{if} (\hyperlink{classVariableList_a353a26f311a6d98716485f50c6907f7e}{first} == \hyperlink{platform_8h_a46ff2bfbf0d44b8466a2251d5bd5e6f8}{NOMEM}) \{
+162         \hyperlink{classVariableList_a353a26f311a6d98716485f50c6907f7e}{first} = \textcolor{keyword}{new} \hyperlink{classVariable}{Variable}(name);
+163         \textcolor{keywordflow}{return} \hyperlink{classVariableList_a353a26f311a6d98716485f50c6907f7e}{first};
+164     \}
+165 
+166     \hyperlink{classVariable}{Variable}* current = \hyperlink{classVariableList_a353a26f311a6d98716485f50c6907f7e}{first};
+167     \hyperlink{classVariable}{Variable}* last = \hyperlink{platform_8h_a46ff2bfbf0d44b8466a2251d5bd5e6f8}{NOMEM};
+168 
+169     \textcolor{keywordflow}{while} (current != \hyperlink{platform_8h_a46ff2bfbf0d44b8466a2251d5bd5e6f8}{NOMEM}) \{
+170         \textcolor{keywordflow}{if} (\hyperlink{clib_8h_a2a1f39d11cbbaac992d42e67557dac4b}{StrIsEqual}(name, current->\hyperlink{classVariable_accf221d35cec8a9707e84891b715fb6c}{GetName}())) \{
+171             \textcolor{keywordflow}{return} current;
+172         \}
+173 
+174         last = current;
+175         current = current->\hyperlink{classVariable_ac5662d23fccccf25e3565793841ce580}{Next};
+176     \}
+177 
+178     current = \textcolor{keyword}{new} \hyperlink{classVariable}{Variable}(name);
+179     last->\hyperlink{classVariable_ac5662d23fccccf25e3565793841ce580}{Next} = current;
+180 
+181     \textcolor{keywordflow}{return} current;
+182 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/d0e/classVariableList_ac78b3d52283bec7cbd8e7e2d217e1608_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/d0e/classVariableList_ac78b3d52283bec7cbd8e7e2d217e1608_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Variable\+List@{Variable\+List}!Delete@{Delete}}
+\index{Delete@{Delete}!Variable\+List@{Variable\+List}}
+\subsubsection[{\texorpdfstring{Delete(const char $\ast$name)}{Delete(const char *name)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} Variable\+List\+::\+Delete (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{name}
+\end{DoxyParamCaption}
+)}\hypertarget{classVariableList_a6f9e2f3a5cb1f8b4e71b0d8123e98264}{}\label{classVariableList_a6f9e2f3a5cb1f8b4e71b0d8123e98264}
+
+
+Definition at line 111 of file values.\+cpp.
+
+
+
+References Variable\+::chain\+Delete, first, Get\+Variable(), and Variable\+::\+Next.
+
+
+
+Referenced by Delete\+Statement\+::\+Execute().
+
+
+\begin{DoxyCode}
+112 \{
+113     \hyperlink{classVariable}{Variable}* var = \hyperlink{classVariableList_a2002862abdb75e088e2dd6bf1e140be6}{GetVariable}(name);
+114 
+115     \textcolor{keywordflow}{if} (var == \hyperlink{platform_8h_a46ff2bfbf0d44b8466a2251d5bd5e6f8}{NOMEM}) \{
+116         \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+117     \}
+118 
+119     \textcolor{keywordflow}{if} (var == \hyperlink{classVariableList_a353a26f311a6d98716485f50c6907f7e}{first}) \{
+120         \hyperlink{classVariableList_a353a26f311a6d98716485f50c6907f7e}{first} = var->\hyperlink{classVariable_ac5662d23fccccf25e3565793841ce580}{Next};
+121         var->\hyperlink{classVariable_a6e66c424bc0100bf3d4ab2bb64576a5a}{chainDelete} = \textcolor{keyword}{false};
+122         \textcolor{keyword}{delete} var;
+123         \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+124     \}
+125 
+126     \hyperlink{classVariable}{Variable} *current = \hyperlink{classVariableList_a353a26f311a6d98716485f50c6907f7e}{first}->\hyperlink{classVariable_ac5662d23fccccf25e3565793841ce580}{Next};
+127     \hyperlink{classVariable}{Variable} *last = \hyperlink{classVariableList_a353a26f311a6d98716485f50c6907f7e}{first};
+128 
+129     \textcolor{keywordflow}{while} (current != var) \{
+130         current = current->\hyperlink{classVariable_ac5662d23fccccf25e3565793841ce580}{Next};
+131         last = last->\hyperlink{classVariable_ac5662d23fccccf25e3565793841ce580}{Next};
+132     \}
+133 
+134     last->\hyperlink{classVariable_ac5662d23fccccf25e3565793841ce580}{Next} = var->\hyperlink{classVariable_ac5662d23fccccf25e3565793841ce580}{Next};
+135 
+136     \textcolor{comment}{// Only delete this variable. Not the whole chain.}
+137     var->\hyperlink{classVariable_a6e66c424bc0100bf3d4ab2bb64576a5a}{chainDelete} = \textcolor{keyword}{false};
+138     \textcolor{keyword}{delete} var;
+139 
+140     \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+141 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/d0e/classVariableList_a6f9e2f3a5cb1f8b4e71b0d8123e98264_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/d0e/classVariableList_a6f9e2f3a5cb1f8b4e71b0d8123e98264_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Variable\+List@{Variable\+List}!Get\+First\+Variable@{Get\+First\+Variable}}
+\index{Get\+First\+Variable@{Get\+First\+Variable}!Variable\+List@{Variable\+List}}
+\subsubsection[{\texorpdfstring{Get\+First\+Variable()}{GetFirstVariable()}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Variable} $\ast$ Variable\+List\+::\+Get\+First\+Variable (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classVariableList_a4b3bb4c1886ef7e0b15bfa5ecf4c52f4}{}\label{classVariableList_a4b3bb4c1886ef7e0b15bfa5ecf4c52f4}
+
+
+Definition at line 143 of file values.\+cpp.
+
+
+
+References first.
+
+
+
+Referenced by List\+Content().
+
+
+\begin{DoxyCode}
+144 \{
+145     \textcolor{keywordflow}{return} \hyperlink{classVariableList_a353a26f311a6d98716485f50c6907f7e}{first};
+146 \}
+\end{DoxyCode}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/d0e/classVariableList_a4b3bb4c1886ef7e0b15bfa5ecf4c52f4_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Variable\+List@{Variable\+List}!Get\+Variable@{Get\+Variable}}
+\index{Get\+Variable@{Get\+Variable}!Variable\+List@{Variable\+List}}
+\subsubsection[{\texorpdfstring{Get\+Variable(const char $\ast$name)}{GetVariable(const char *name)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Variable} $\ast$ Variable\+List\+::\+Get\+Variable (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{name}
+\end{DoxyParamCaption}
+)}\hypertarget{classVariableList_a2002862abdb75e088e2dd6bf1e140be6}{}\label{classVariableList_a2002862abdb75e088e2dd6bf1e140be6}
+
+
+Definition at line 148 of file values.\+cpp.
+
+
+
+References first, Variable\+::\+Get\+Name(), Variable\+::\+Next, and Str\+Is\+Equal().
+
+
+
+Referenced by Delete(), and Parser\+::\+Parse\+Ident().
+
+
+\begin{DoxyCode}
+149 \{
+150     \hyperlink{classVariable}{Variable}* current = \hyperlink{classVariableList_a353a26f311a6d98716485f50c6907f7e}{first};
+151 
+152     \textcolor{keywordflow}{while} (current != \hyperlink{platform_8h_a46ff2bfbf0d44b8466a2251d5bd5e6f8}{NOMEM} && !\hyperlink{clib_8h_a2a1f39d11cbbaac992d42e67557dac4b}{StrIsEqual}(current->\hyperlink{classVariable_accf221d35cec8a9707e84891b715fb6c}{GetName}(), name)) \{
+153         current = current->\hyperlink{classVariable_ac5662d23fccccf25e3565793841ce580}{Next};
+154     \}
+155 
+156     \textcolor{keywordflow}{return} current;
+157 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=341pt]{d3/d0e/classVariableList_a2002862abdb75e088e2dd6bf1e140be6_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/d0e/classVariableList_a2002862abdb75e088e2dd6bf1e140be6_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Variable\+List@{Variable\+List}!Insert\+Temporary\+Variable@{Insert\+Temporary\+Variable}}
+\index{Insert\+Temporary\+Variable@{Insert\+Temporary\+Variable}!Variable\+List@{Variable\+List}}
+\subsubsection[{\texorpdfstring{Insert\+Temporary\+Variable(\+Variable $\ast$variable)}{InsertTemporaryVariable(Variable *variable)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Variable} $\ast$ Variable\+List\+::\+Insert\+Temporary\+Variable (
+\begin{DoxyParamCaption}
+\item[{{\bf Variable} $\ast$}]{variable}
+\end{DoxyParamCaption}
+)}\hypertarget{classVariableList_a4e8c2b729d346ff56cf01c5349931c62}{}\label{classVariableList_a4e8c2b729d346ff56cf01c5349931c62}
+
+
+Definition at line 184 of file values.\+cpp.
+
+
+
+References first, and Variable\+::\+Next.
+
+
+
+Referenced by Parser\+::\+Parse\+Function\+Def().
+
+
+\begin{DoxyCode}
+185 \{
+186     \textcolor{comment}{// Temporary variables are always inserted at the beginning of the list.}
+187     \hyperlink{classVariable}{Variable}* oldFirst = \hyperlink{classVariableList_a353a26f311a6d98716485f50c6907f7e}{first};
+188     \hyperlink{classVariableList_a353a26f311a6d98716485f50c6907f7e}{first} = variable;
+189     variable->\hyperlink{classVariable_ac5662d23fccccf25e3565793841ce580}{Next} = oldFirst;
+190 
+191     \textcolor{keywordflow}{return} variable;
+192 \}
+\end{DoxyCode}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/d0e/classVariableList_a4e8c2b729d346ff56cf01c5349931c62_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Variable\+List@{Variable\+List}!List@{List}}
+\index{List@{List}!Variable\+List@{Variable\+List}}
+\subsubsection[{\texorpdfstring{List()}{List()}}]{\setlength{\rightskip}{0pt plus 5cm}char $\ast$ Variable\+List\+::\+List (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classVariableList_a8ddefb92c0c2f18f096f0fc4363d5af6}{}\label{classVariableList_a8ddefb92c0c2f18f096f0fc4363d5af6}
+
+
+Definition at line 202 of file values.\+cpp.
+
+
+
+References List\+Content().
+
+
+
+Referenced by List\+Variables\+Statement\+::\+Execute().
+
+
+\begin{DoxyCode}
+203 \{
+204     \textcolor{keywordflow}{return} \hyperlink{classVariableList_a2898791757231a476a994741a0f8ab94}{ListContent}(\textcolor{keyword}{false});
+205 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/d0e/classVariableList_a8ddefb92c0c2f18f096f0fc4363d5af6_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=323pt]{d3/d0e/classVariableList_a8ddefb92c0c2f18f096f0fc4363d5af6_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Variable\+List@{Variable\+List}!List\+Content@{List\+Content}}
+\index{List\+Content@{List\+Content}!Variable\+List@{Variable\+List}}
+\subsubsection[{\texorpdfstring{List\+Content(bool cmd\+Format)}{ListContent(bool cmdFormat)}}]{\setlength{\rightskip}{0pt plus 5cm}char $\ast$ Variable\+List\+::\+List\+Content (
+\begin{DoxyParamCaption}
+\item[{{\bf bool}}]{cmd\+Format}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classVariableList_a2898791757231a476a994741a0f8ab94}{}\label{classVariableList_a2898791757231a476a994741a0f8ab94}
+
+
+Definition at line 212 of file values.\+cpp.
+
+
+
+References Char\+Buffer\+::\+Append(), buf, Char\+Buffer\+::\+Empty(), Char\+Buffer\+::\+Ensure\+Size(), Get\+First\+Variable(), Variable\+::\+Get\+Name(), Char\+Buffer\+::\+Get\+String(), Numeral\+System\+::\+Get\+Text(), Variable\+::\+Get\+Value(), Variable\+::\+Next, Program\+::\+Output, and Str\+Len().
+
+
+
+Referenced by List(), and List\+Definitions().
+
+
+\begin{DoxyCode}
+213 \{
+214     \hyperlink{classVariableList_a11bf03542fab82869135f3f300890376}{buf}->\hyperlink{classCharBuffer_abe39d3fd7d8b9c8ec343af2cae7adc96}{Empty}();
+215 
+216     \textcolor{keywordflow}{if} (\hyperlink{classVariableList_a4b3bb4c1886ef7e0b15bfa5ecf4c52f4}{GetFirstVariable}() == \hyperlink{platform_8h_a46ff2bfbf0d44b8466a2251d5bd5e6f8}{NOMEM}) \{
+217         \textcolor{keywordflow}{return} (\textcolor{keywordtype}{char}*)(cmdFormat ? \hyperlink{platform_8h_a46ff2bfbf0d44b8466a2251d5bd5e6f8}{NOMEM} : \hyperlink{text_8h_acff3b9ae20508bdc3020e2ff65665508}{HELPVARSNDEF});
+218     \}
+219 
+220     \textcolor{keywordtype}{int} len = 0;
+221     \hyperlink{classVariable}{Variable}* current = \hyperlink{classVariableList_a4b3bb4c1886ef7e0b15bfa5ecf4c52f4}{GetFirstVariable}();
+222 
+223     \textcolor{keywordflow}{while} (current != \hyperlink{platform_8h_a46ff2bfbf0d44b8466a2251d5bd5e6f8}{NOMEM}) \{
+224         len += \hyperlink{clib_8h_a67ec56eb98b49515d35005a5b3bf9a32}{StrLen}(current->\hyperlink{classVariable_accf221d35cec8a9707e84891b715fb6c}{GetName}());
+225         len += 3;
+226         len += 32; \textcolor{comment}{// Max length of value}
+227         len += cmdFormat ? 2 : 1;
+228         current = current->\hyperlink{classVariable_ac5662d23fccccf25e3565793841ce580}{Next};
+229     \}
+230 
+231     current = \hyperlink{classVariableList_a4b3bb4c1886ef7e0b15bfa5ecf4c52f4}{GetFirstVariable}();
+232 
+233     \hyperlink{classVariableList_a11bf03542fab82869135f3f300890376}{buf}->\hyperlink{classCharBuffer_ad1907009b5ad136692b989fa96bf2f7e}{EnsureSize}(len);
+234 
+235     \textcolor{keywordflow}{while} (current != \hyperlink{platform_8h_a46ff2bfbf0d44b8466a2251d5bd5e6f8}{NOMEM}) \{
+236         \hyperlink{classVariableList_a11bf03542fab82869135f3f300890376}{buf}->\hyperlink{classCharBuffer_a045b38735f7b3007c1b98d3d7b7feafe}{Append}(current->\hyperlink{classVariable_accf221d35cec8a9707e84891b715fb6c}{GetName}());
+237         \hyperlink{classVariableList_a11bf03542fab82869135f3f300890376}{buf}->\hyperlink{classCharBuffer_a045b38735f7b3007c1b98d3d7b7feafe}{Append}(\textcolor{stringliteral}{" = "});
+238 
+239         \hyperlink{structNumber}{Number} *num = current->\hyperlink{classVariable_adb77b2681374245b5d606a1d149d0d91}{GetValue}();
+240         \textcolor{keyword}{const} \textcolor{keywordtype}{char} *val = \hyperlink{classProgram}{Program}->\hyperlink{classProgram_ac6e84e81a8bbdf99de5beea93713d8ee}{Output}->\hyperlink{classNumeralSystem_a74dc91c4dbab4a88a123b2a32753f485}{GetText}(num);
+241         \hyperlink{classVariableList_a11bf03542fab82869135f3f300890376}{buf}->\hyperlink{classCharBuffer_a045b38735f7b3007c1b98d3d7b7feafe}{Append}(val);
+242         \textcolor{keyword}{delete} num;
+243 
+244         \textcolor{keywordflow}{if} (cmdFormat) \{
+245             \hyperlink{classVariableList_a11bf03542fab82869135f3f300890376}{buf}->\hyperlink{classCharBuffer_a045b38735f7b3007c1b98d3d7b7feafe}{Append}(\textcolor{charliteral}{';'});
+246         \}
+247 
+248         \hyperlink{classVariableList_a11bf03542fab82869135f3f300890376}{buf}->\hyperlink{classCharBuffer_a045b38735f7b3007c1b98d3d7b7feafe}{Append}(\hyperlink{platform_8h_a806511f4930171733227c99101dc0606}{NEWLINE});
+249         current = current->\hyperlink{classVariable_ac5662d23fccccf25e3565793841ce580}{Next};
+250     \}
+251 
+252     \textcolor{keywordflow}{return} \hyperlink{classVariableList_a11bf03542fab82869135f3f300890376}{buf}->\hyperlink{classCharBuffer_a7dfd3feaaf80f318ba44efe15b1ec44b}{GetString}();
+253 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/d0e/classVariableList_a2898791757231a476a994741a0f8ab94_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/d0e/classVariableList_a2898791757231a476a994741a0f8ab94_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Variable\+List@{Variable\+List}!List\+Definitions@{List\+Definitions}}
+\index{List\+Definitions@{List\+Definitions}!Variable\+List@{Variable\+List}}
+\subsubsection[{\texorpdfstring{List\+Definitions()}{ListDefinitions()}}]{\setlength{\rightskip}{0pt plus 5cm}char $\ast$ Variable\+List\+::\+List\+Definitions (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classVariableList_aa2726674491d8cd5625859f79df39c9d}{}\label{classVariableList_aa2726674491d8cd5625859f79df39c9d}
+
+
+Definition at line 207 of file values.\+cpp.
+
+
+
+References List\+Content().
+
+
+
+Referenced by Save\+Statement\+::\+Execute().
+
+
+\begin{DoxyCode}
+208 \{
+209     \textcolor{keywordflow}{return} \hyperlink{classVariableList_a2898791757231a476a994741a0f8ab94}{ListContent}(\textcolor{keyword}{true});
+210 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/d0e/classVariableList_aa2726674491d8cd5625859f79df39c9d_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/d0e/classVariableList_aa2726674491d8cd5625859f79df39c9d_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Variable\+List@{Variable\+List}!Remove\+Temporary\+Variable@{Remove\+Temporary\+Variable}}
+\index{Remove\+Temporary\+Variable@{Remove\+Temporary\+Variable}!Variable\+List@{Variable\+List}}
+\subsubsection[{\texorpdfstring{Remove\+Temporary\+Variable()}{RemoveTemporaryVariable()}}]{\setlength{\rightskip}{0pt plus 5cm}void Variable\+List\+::\+Remove\+Temporary\+Variable (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classVariableList_a489608dbcd6989a9ffd4092234a8052c}{}\label{classVariableList_a489608dbcd6989a9ffd4092234a8052c}
+
+
+Definition at line 194 of file values.\+cpp.
+
+
+
+References first, and Variable\+::\+Next.
+
+
+
+Referenced by Parser\+::\+Parse\+Function\+Def().
+
+
+\begin{DoxyCode}
+195 \{
+196     \textcolor{comment}{// Temporary variables are not owned by the variable list. Do not free memory.}
+197     \hyperlink{classVariable}{Variable} *newFirst = \hyperlink{classVariableList_a353a26f311a6d98716485f50c6907f7e}{first}->\hyperlink{classVariable_ac5662d23fccccf25e3565793841ce580}{Next};
+198     \hyperlink{classVariableList_a353a26f311a6d98716485f50c6907f7e}{first}->\hyperlink{classVariable_ac5662d23fccccf25e3565793841ce580}{Next} = \hyperlink{platform_8h_a46ff2bfbf0d44b8466a2251d5bd5e6f8}{NOMEM};
+199     \hyperlink{classVariableList_a353a26f311a6d98716485f50c6907f7e}{first} = newFirst;
+200 \}
+\end{DoxyCode}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/d0e/classVariableList_a489608dbcd6989a9ffd4092234a8052c_icgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Member Data Documentation}
+\index{Variable\+List@{Variable\+List}!buf@{buf}}
+\index{buf@{buf}!Variable\+List@{Variable\+List}}
+\subsubsection[{\texorpdfstring{buf}{buf}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Char\+Buffer}$\ast$ Variable\+List\+::buf\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classVariableList_a11bf03542fab82869135f3f300890376}{}\label{classVariableList_a11bf03542fab82869135f3f300890376}
+
+
+Definition at line 64 of file values.\+h.
+
+
+
+Referenced by Clear(), List\+Content(), Variable\+List(), and $\sim$\+Variable\+List().
+
+\index{Variable\+List@{Variable\+List}!first@{first}}
+\index{first@{first}!Variable\+List@{Variable\+List}}
+\subsubsection[{\texorpdfstring{first}{first}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Variable}$\ast$ Variable\+List\+::first\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classVariableList_a353a26f311a6d98716485f50c6907f7e}{}\label{classVariableList_a353a26f311a6d98716485f50c6907f7e}
+
+
+Definition at line 65 of file values.\+h.
+
+
+
+Referenced by Clear(), Create\+Variable(), Delete(), Get\+First\+Variable(), Get\+Variable(), Insert\+Temporary\+Variable(), Remove\+Temporary\+Variable(), Variable\+List(), and $\sim$\+Variable\+List().
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+app/main/\hyperlink{values_8h}{values.\+h}\item 
+app/main/\hyperlink{values_8cpp}{values.\+cpp}\end{DoxyCompactItemize}

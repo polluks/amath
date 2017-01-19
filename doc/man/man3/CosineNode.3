@@ -1,0 +1,101 @@
+.TH "CosineNode" 3 "Thu Jan 19 2017" "Version 1.6.0" "amath" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+CosineNode \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <functions\&.h>\fP
+.PP
+Inherits \fBFunctionNode\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBCosineNode\fP (\fBExpressionNode\fP *\fBexpression\fP)"
+.br
+.ti -1c
+.RI "\fBNumber\fP * \fBEvaluate\fP ()"
+.br
+.in -1c
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static \fBFunctionNode\fP * \fBCreate\fP (\fBExpressionNode\fP *\fBexpression\fP)"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "char * \fBGetNodeText\fP ()"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Detailed Description"
+.PP 
+Definition at line 342 of file functions\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "CosineNode::CosineNode (\fBExpressionNode\fP * expression)"
+
+.PP
+Definition at line 763 of file functions\&.cpp\&.
+.PP
+References FunctionNode::FunctionNode()\&.
+.PP
+Referenced by Create()\&.
+.PP
+.nf
+763                                                  :
+764     FunctionNode(expression) { }
+.fi
+.SH "Member Function Documentation"
+.PP 
+.SS "\fBFunctionNode\fP * CosineNode::Create (\fBExpressionNode\fP * expression)\fC [static]\fP"
+
+.PP
+Definition at line 766 of file functions\&.cpp\&.
+.PP
+References CosineNode()\&.
+.PP
+.nf
+767 {
+768     return new CosineNode(expression);
+769 }
+.fi
+.SS "\fBNumber\fP * CosineNode::Evaluate ()\fC [virtual]\fP"
+
+.PP
+Implements \fBExpressionNode\fP\&.
+.PP
+Definition at line 771 of file functions\&.cpp\&.
+.PP
+References Number::Cosine(), ExpressionNode::Evaluate(), FunctionNode::expression, and ExpressionNode::result\&.
+.PP
+.nf
+772 {
+773     result = expression->Evaluate()->Cosine();
+774     return result;
+775 }
+.fi
+.SS "char * CosineNode::GetNodeText ()\fC [protected]\fP, \fC [virtual]\fP"
+
+.PP
+Implements \fBExpressionNode\fP\&.
+.PP
+Definition at line 777 of file functions\&.cpp\&.
+.PP
+.nf
+778 {
+779     return (char*)"cos";
+780 }
+.fi
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for amath from the source code\&.

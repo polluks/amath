@@ -1,0 +1,203 @@
+\hypertarget{classSecantNode}{}\section{Secant\+Node Class Reference}
+\label{classSecantNode}\index{Secant\+Node@{Secant\+Node}}
+
+
+{\ttfamily \#include $<$functions.\+h$>$}
+
+
+
+Inheritance diagram for Secant\+Node\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=169pt]{d9/d36/classSecantNode__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Secant\+Node\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=272pt]{df/d0f/classSecantNode__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classSecantNode_a78f1fa342c03aa179720103c514d0ee7}{Secant\+Node} (\hyperlink{classExpressionNode}{Expression\+Node} $\ast$\hyperlink{classFunctionNode_ad7577b179a1937aaf8a0058bb5b546dc}{expression})
+\item 
+\hyperlink{structNumber}{Number} $\ast$ \hyperlink{classSecantNode_a114c4b9606adcf184123e7d4a6a95056}{Evaluate} ()
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{classFunctionNode}{Function\+Node} $\ast$ \hyperlink{classSecantNode_a8878d4c01c876fe1b9741cced07ef86b}{Create} (\hyperlink{classExpressionNode}{Expression\+Node} $\ast$\hyperlink{classFunctionNode_ad7577b179a1937aaf8a0058bb5b546dc}{expression})
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+char $\ast$ \hyperlink{classSecantNode_a7d33d09f02a8b56d10c73366be1c792d}{Get\+Node\+Text} ()
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 382 of file functions.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Secant\+Node@{Secant\+Node}!Secant\+Node@{Secant\+Node}}
+\index{Secant\+Node@{Secant\+Node}!Secant\+Node@{Secant\+Node}}
+\subsubsection[{\texorpdfstring{Secant\+Node(\+Expression\+Node $\ast$expression)}{SecantNode(ExpressionNode *expression)}}]{\setlength{\rightskip}{0pt plus 5cm}Secant\+Node\+::\+Secant\+Node (
+\begin{DoxyParamCaption}
+\item[{{\bf Expression\+Node} $\ast$}]{expression}
+\end{DoxyParamCaption}
+)}\hypertarget{classSecantNode_a78f1fa342c03aa179720103c514d0ee7}{}\label{classSecantNode_a78f1fa342c03aa179720103c514d0ee7}
+
+
+Definition at line 820 of file functions.\+cpp.
+
+
+
+References Function\+Node\+::\+Function\+Node().
+
+
+
+Referenced by Create().
+
+
+\begin{DoxyCode}
+820                                                  :
+821     \hyperlink{classFunctionNode_a41cb7db0162ffbec0902bd8ff7ea435f}{FunctionNode}(expression) \{ \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d9a/classSecantNode_a78f1fa342c03aa179720103c514d0ee7_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d9a/classSecantNode_a78f1fa342c03aa179720103c514d0ee7_icgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Member Function Documentation}
+\index{Secant\+Node@{Secant\+Node}!Create@{Create}}
+\index{Create@{Create}!Secant\+Node@{Secant\+Node}}
+\subsubsection[{\texorpdfstring{Create(\+Expression\+Node $\ast$expression)}{Create(ExpressionNode *expression)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Function\+Node} $\ast$ Secant\+Node\+::\+Create (
+\begin{DoxyParamCaption}
+\item[{{\bf Expression\+Node} $\ast$}]{expression}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{classSecantNode_a8878d4c01c876fe1b9741cced07ef86b}{}\label{classSecantNode_a8878d4c01c876fe1b9741cced07ef86b}
+
+
+Definition at line 823 of file functions.\+cpp.
+
+
+
+References Secant\+Node().
+
+
+\begin{DoxyCode}
+824 \{
+825     \textcolor{keywordflow}{return} \textcolor{keyword}{new} \hyperlink{classSecantNode_a78f1fa342c03aa179720103c514d0ee7}{SecantNode}(expression);
+826 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d9a/classSecantNode_a8878d4c01c876fe1b9741cced07ef86b_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{Secant\+Node@{Secant\+Node}!Evaluate@{Evaluate}}
+\index{Evaluate@{Evaluate}!Secant\+Node@{Secant\+Node}}
+\subsubsection[{\texorpdfstring{Evaluate()}{Evaluate()}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Number} $\ast$ Secant\+Node\+::\+Evaluate (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{classSecantNode_a114c4b9606adcf184123e7d4a6a95056}{}\label{classSecantNode_a114c4b9606adcf184123e7d4a6a95056}
+
+
+Implements \hyperlink{classExpressionNode_a64975d4dc37742228bd522f6204537f7}{Expression\+Node}.
+
+
+
+Definition at line 828 of file functions.\+cpp.
+
+
+
+References Expression\+Node\+::\+Evaluate(), Function\+Node\+::expression, Expression\+Node\+::result, and Number\+::\+Secant().
+
+
+\begin{DoxyCode}
+829 \{
+830     \hyperlink{classExpressionNode_a1f590649f5a5cb30eb7ee912f7bc1262}{result} = \hyperlink{classFunctionNode_ad7577b179a1937aaf8a0058bb5b546dc}{expression}->\hyperlink{classExpressionNode_a64975d4dc37742228bd522f6204537f7}{Evaluate}()->\hyperlink{structNumber_a63ddfeb7b264f76845a0414dc8ade3e6}{Secant}();
+831     \textcolor{keywordflow}{return} \hyperlink{classExpressionNode_a1f590649f5a5cb30eb7ee912f7bc1262}{result};
+832 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d9a/classSecantNode_a114c4b9606adcf184123e7d4a6a95056_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{Secant\+Node@{Secant\+Node}!Get\+Node\+Text@{Get\+Node\+Text}}
+\index{Get\+Node\+Text@{Get\+Node\+Text}!Secant\+Node@{Secant\+Node}}
+\subsubsection[{\texorpdfstring{Get\+Node\+Text()}{GetNodeText()}}]{\setlength{\rightskip}{0pt plus 5cm}char $\ast$ Secant\+Node\+::\+Get\+Node\+Text (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}\hypertarget{classSecantNode_a7d33d09f02a8b56d10c73366be1c792d}{}\label{classSecantNode_a7d33d09f02a8b56d10c73366be1c792d}
+
+
+Implements \hyperlink{classExpressionNode_a42a5e9562b0f645a19dcc83f698069b5}{Expression\+Node}.
+
+
+
+Definition at line 834 of file functions.\+cpp.
+
+
+\begin{DoxyCode}
+835 \{
+836     \textcolor{keywordflow}{return} (\textcolor{keywordtype}{char}*)\textcolor{stringliteral}{"sec"};
+837 \}
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+app/main/\hyperlink{functions_8h}{functions.\+h}\item 
+app/main/\hyperlink{functions_8cpp}{functions.\+cpp}\end{DoxyCompactItemize}

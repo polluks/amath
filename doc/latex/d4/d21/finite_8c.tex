@@ -1,0 +1,64 @@
+\hypertarget{finite_8c}{}\section{lib/real/finite.c File Reference}
+\label{finite_8c}\index{lib/real/finite.\+c@{lib/real/finite.\+c}}
+{\ttfamily \#include \char`\"{}prim.\+h\char`\"{}}\\*
+Include dependency graph for finite.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=157pt]{d1/d44/finite_8c__incl}
+\end{center}
+\end{figure}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{finite_8c_a08e754462e6ec13bc05fd41cff9cdd4a}{finite} (double x)
+\begin{DoxyCompactList}\small\item\em Finite or infinite number. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\index{finite.\+c@{finite.\+c}!finite@{finite}}
+\index{finite@{finite}!finite.\+c@{finite.\+c}}
+\subsubsection[{\texorpdfstring{finite(double x)}{finite(double x)}}]{\setlength{\rightskip}{0pt plus 5cm}int finite (
+\begin{DoxyParamCaption}
+\item[{double}]{x}
+\end{DoxyParamCaption}
+)}\hypertarget{finite_8c_a08e754462e6ec13bc05fd41cff9cdd4a}{}\label{finite_8c_a08e754462e6ec13bc05fd41cff9cdd4a}
+
+
+Finite or infinite number. 
+
+\begin{DoxyVersion}{Version}
+1.\+3 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+95/01/18
+\end{DoxyDate}
+finite(x) returns 1 is x is finite, else 0. N\+O\+T\+I\+CE\+: No branching! 
+
+Definition at line 53 of file finite.\+c.
+
+
+
+Referenced by Positional\+Numeral\+System\+::\+Get\+Text(), and Real\+Number\+::\+Is\+Finite().
+
+
+\begin{DoxyCode}
+54 \{
+55     \hyperlink{real_2prim_8h_a6e60fe0e0f9f8801507e15fe2d893751}{uword} hx;
+56     \hyperlink{real_2prim_8h_ae62ee08d06ab4cc06d61dc1246b73195}{GET\_HIGH\_WORD}(hx,x);
+57     \textcolor{keywordflow}{return} (\textcolor{keywordtype}{unsigned})((hx&0x7fffffff)-0x7ff00000)>>31;
+58 \}
+\end{DoxyCode}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d4/d21/finite_8c_a08e754462e6ec13bc05fd41cff9cdd4a_icgraph}
+\end{center}
+\end{figure}
+
+

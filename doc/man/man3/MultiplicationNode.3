@@ -1,0 +1,97 @@
+.TH "MultiplicationNode" 3 "Thu Jan 19 2017" "Version 1.6.0" "amath" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+MultiplicationNode \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <operators\&.h>\fP
+.PP
+Inherits \fBNumericOperator\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBMultiplicationNode\fP (\fBExpressionNode\fP *\fBleft\fP, \fBExpressionNode\fP *\fBright\fP)"
+.br
+.ti -1c
+.RI "int \fBGetPrecedence\fP ()"
+.br
+.ti -1c
+.RI "\fBNumber\fP * \fBEvaluate\fP ()"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "char * \fBGetNodeText\fP ()"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Detailed Description"
+.PP 
+Definition at line 118 of file operators\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "MultiplicationNode::MultiplicationNode (\fBExpressionNode\fP * left, \fBExpressionNode\fP * right)"
+
+.PP
+Definition at line 357 of file operators\&.cpp\&.
+.PP
+References NumericOperator::NumericOperator()\&.
+.PP
+Referenced by Parser::ParseFactor()\&.
+.PP
+.nf
+357                                                                                   :
+358     NumericOperator(left, right) { }
+.fi
+.SH "Member Function Documentation"
+.PP 
+.SS "\fBNumber\fP * MultiplicationNode::Evaluate ()\fC [virtual]\fP"
+
+.PP
+Implements \fBExpressionNode\fP\&.
+.PP
+Definition at line 365 of file operators\&.cpp\&.
+.PP
+References ExpressionNode::Evaluate(), NumericOperator::left, Number::Mul(), ExpressionNode::result, and NumericOperator::right\&.
+.PP
+.nf
+366 {
+367     result = left->Evaluate()->Mul(right->Evaluate());
+368     return result;
+369 }
+.fi
+.SS "char * MultiplicationNode::GetNodeText ()\fC [protected]\fP, \fC [virtual]\fP"
+
+.PP
+Implements \fBExpressionNode\fP\&.
+.PP
+Definition at line 371 of file operators\&.cpp\&.
+.PP
+.nf
+372 {
+373     return (char*)"*";
+374 }
+.fi
+.SS "int MultiplicationNode::GetPrecedence ()\fC [virtual]\fP"
+
+.PP
+Implements \fBExpressionNode\fP\&.
+.PP
+Definition at line 360 of file operators\&.cpp\&.
+.PP
+.nf
+361 {
+362     return 3;
+363 }
+.fi
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for amath from the source code\&.

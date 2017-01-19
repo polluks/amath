@@ -1,0 +1,472 @@
+\hypertarget{classErrorNode}{}\section{Error\+Node Class Reference}
+\label{classErrorNode}\index{Error\+Node@{Error\+Node}}
+
+
+Represents an error message encapsulated in a syntax tree.  
+
+
+
+
+{\ttfamily \#include $<$nodes.\+h$>$}
+
+
+
+Inheritance diagram for Error\+Node\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=151pt]{de/da4/classErrorNode__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Error\+Node\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=203pt]{d1/d7f/classErrorNode__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classErrorNode_ac47d46061f61fb60a5c1cf2a61f24a44}{Error\+Node} (const char $\ast$\hyperlink{classErrorNode_ac2cc563162c10fff090113340184bb4b}{input}, int \hyperlink{classErrorNode_a2f9577d7885985f6a5671a14d64a75cf}{pos})
+\item 
+\hyperlink{classErrorNode_a1c3d4afac02da7fcc0cec125a7ac03ba}{Error\+Node} (const char $\ast$\hyperlink{classErrorNode_ac2cc563162c10fff090113340184bb4b}{input}, const char $\ast$\hyperlink{classErrorNode_abd0f6fbd4876d013fbb7b6a9d5ce673e}{message}, const char $\ast$parameter, int \hyperlink{classErrorNode_a2f9577d7885985f6a5671a14d64a75cf}{pos})
+\item 
+virtual \hyperlink{classErrorNode_a49380518442827777fa57e620d24d49b}{$\sim$\+Error\+Node} ()
+\item 
+\hyperlink{nodes_8h_acac9cbaeea226ed297804c012dc12b16}{Node\+Type} \hyperlink{classErrorNode_ae4ef9fa304ae75c7c8fd04627143a8b1}{Get\+Node\+Type} ()
+\item 
+\hyperlink{classSyntaxNode}{Syntax\+Node} $\ast$ \hyperlink{classErrorNode_acf4a67072dae31ff931446541b873b81}{Get\+Next} ()
+\item 
+char $\ast$ \hyperlink{classErrorNode_aed876f8645b44aa8081fa62d7e4e3bca}{Get\+Text\+Code} ()
+\item 
+char $\ast$ \hyperlink{classErrorNode_a351cbedab751832da6a67b12ac0abcab}{Execute} ()
+\item 
+void \hyperlink{classErrorNode_ae56dac4fba9187e37fc4270871e05a56}{Attach} (\hyperlink{classSyntaxNode}{Syntax\+Node} $\ast$node)
+\item 
+void \hyperlink{classErrorNode_a26cd4f0a90f8f5fa86efb4d9a707b938}{Detach} (\hyperlink{classSyntaxNode}{Syntax\+Node} $\ast$node)
+\item 
+void \hyperlink{classErrorNode_a21d26027d05d8051ac3a1add5466dc37}{Replace} (\hyperlink{classSyntaxNode}{Syntax\+Node} $\ast$n, \hyperlink{classSyntaxNode}{Syntax\+Node} $\ast$x)
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classErrorNode_a2e51822b04905fc867d13546af61abb8}{Str\+Copy\+Visible} (char $\ast$destination, const char $\ast$source)
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+char $\ast$ \hyperlink{classErrorNode_abd0f6fbd4876d013fbb7b6a9d5ce673e}{message}
+\item 
+char $\ast$ \hyperlink{classErrorNode_ac2cc563162c10fff090113340184bb4b}{input}
+\item 
+int \hyperlink{classErrorNode_a2f9577d7885985f6a5671a14d64a75cf}{pos}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+Represents an error message encapsulated in a syntax tree. 
+
+Definition at line 129 of file nodes.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Error\+Node@{Error\+Node}!Error\+Node@{Error\+Node}}
+\index{Error\+Node@{Error\+Node}!Error\+Node@{Error\+Node}}
+\subsubsection[{\texorpdfstring{Error\+Node(const char $\ast$input, int pos)}{ErrorNode(const char *input, int pos)}}]{\setlength{\rightskip}{0pt plus 5cm}Error\+Node\+::\+Error\+Node (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{input, }
+\item[{int}]{pos}
+\end{DoxyParamCaption}
+)}\hypertarget{classErrorNode_ac47d46061f61fb60a5c1cf2a61f24a44}{}\label{classErrorNode_ac47d46061f61fb60a5c1cf2a61f24a44}
+
+
+Definition at line 170 of file nodes.\+cpp.
+
+
+
+References Alloc\+And\+Copy(), input, message, pos, Str\+Copy\+Visible(), Str\+Len(), and Syntax\+Node\+::\+Syntax\+Node().
+
+
+
+Referenced by Parser\+::\+Parse(), and Parser\+::\+Try\+Parse\+Statement().
+
+
+\begin{DoxyCode}
+170                                                :
+171     \hyperlink{classSyntaxNode_ac94372d402f38a118b4e8cd20ba7e520}{SyntaxNode}(), \hyperlink{classErrorNode_a2f9577d7885985f6a5671a14d64a75cf}{pos}(\hyperlink{classErrorNode_a2f9577d7885985f6a5671a14d64a75cf}{pos}) \{
+172     \textcolor{keywordtype}{char} *temp = \hyperlink{text_8h_a466f4e6c46f3b09b46f495231a5afc9c}{HELPSYNTAX};
+173     this->\hyperlink{classErrorNode_ac2cc563162c10fff090113340184bb4b}{input} = \textcolor{keyword}{new} \textcolor{keywordtype}{char}[\hyperlink{clib_8h_a67ec56eb98b49515d35005a5b3bf9a32}{StrLen}(\hyperlink{classErrorNode_ac2cc563162c10fff090113340184bb4b}{input}) + 1];
+174     \hyperlink{classErrorNode_a2e51822b04905fc867d13546af61abb8}{StrCopyVisible}(this->\hyperlink{classErrorNode_ac2cc563162c10fff090113340184bb4b}{input}, \hyperlink{classErrorNode_ac2cc563162c10fff090113340184bb4b}{input});
+175     \hyperlink{clib_8h_a5bed05c70cb17e541fee570b5dc32e1a}{AllocAndCopy}(&this->\hyperlink{classErrorNode_abd0f6fbd4876d013fbb7b6a9d5ce673e}{message}, temp);
+176 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/dc9/classErrorNode_ac47d46061f61fb60a5c1cf2a61f24a44_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/dc9/classErrorNode_ac47d46061f61fb60a5c1cf2a61f24a44_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Error\+Node@{Error\+Node}!Error\+Node@{Error\+Node}}
+\index{Error\+Node@{Error\+Node}!Error\+Node@{Error\+Node}}
+\subsubsection[{\texorpdfstring{Error\+Node(const char $\ast$input, const char $\ast$message, const char $\ast$parameter, int pos)}{ErrorNode(const char *input, const char *message, const char *parameter, int pos)}}]{\setlength{\rightskip}{0pt plus 5cm}Error\+Node\+::\+Error\+Node (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{input, }
+\item[{const char $\ast$}]{message, }
+\item[{const char $\ast$}]{parameter, }
+\item[{int}]{pos}
+\end{DoxyParamCaption}
+)}\hypertarget{classErrorNode_a1c3d4afac02da7fcc0cec125a7ac03ba}{}\label{classErrorNode_a1c3d4afac02da7fcc0cec125a7ac03ba}
+
+
+Definition at line 157 of file nodes.\+cpp.
+
+
+
+References Alloc\+And\+Copy(), Char\+Buffer\+::\+Append(), Char\+Buffer\+::\+Char\+Buffer(), Char\+Buffer\+::\+Ensure\+Size(), Char\+Buffer\+::\+Get\+String(), input, message, pos, Str\+Copy\+Visible(), Str\+Len(), and Syntax\+Node\+::\+Syntax\+Node().
+
+
+
+Referenced by Parser\+::\+Parse\+Digist\+Statement(), Parser\+::\+Parse\+File\+Statement(), Parser\+::\+Parse\+Function\+Def(), Parser\+::\+Parse\+Ident(), and Parser\+::\+Parse\+Numeral\+Statement().
+
+
+\begin{DoxyCode}
+157                                                                                            :
+158     \hyperlink{classSyntaxNode_ac94372d402f38a118b4e8cd20ba7e520}{SyntaxNode}(), \hyperlink{classErrorNode_a2f9577d7885985f6a5671a14d64a75cf}{pos}(\hyperlink{classErrorNode_a2f9577d7885985f6a5671a14d64a75cf}{pos}) \{
+159     this->\hyperlink{classErrorNode_ac2cc563162c10fff090113340184bb4b}{input} = \textcolor{keyword}{new} \textcolor{keywordtype}{char}[\hyperlink{clib_8h_a67ec56eb98b49515d35005a5b3bf9a32}{StrLen}(\hyperlink{classErrorNode_ac2cc563162c10fff090113340184bb4b}{input}) + 1];
+160     \hyperlink{classErrorNode_a2e51822b04905fc867d13546af61abb8}{StrCopyVisible}(this->\hyperlink{classErrorNode_ac2cc563162c10fff090113340184bb4b}{input}, \hyperlink{classErrorNode_ac2cc563162c10fff090113340184bb4b}{input});
+161 
+162     \hyperlink{classCharBuffer}{CharBuffer} *temp = \textcolor{keyword}{new} \hyperlink{classCharBuffer}{CharBuffer}();
+163     temp->\hyperlink{classCharBuffer_ad1907009b5ad136692b989fa96bf2f7e}{EnsureSize}(\hyperlink{clib_8h_a67ec56eb98b49515d35005a5b3bf9a32}{StrLen}(\hyperlink{classErrorNode_abd0f6fbd4876d013fbb7b6a9d5ce673e}{message}) + \hyperlink{clib_8h_a67ec56eb98b49515d35005a5b3bf9a32}{StrLen}(parameter) + 1);
+164     temp->\hyperlink{classCharBuffer_a045b38735f7b3007c1b98d3d7b7feafe}{Append}(\hyperlink{classErrorNode_abd0f6fbd4876d013fbb7b6a9d5ce673e}{message});
+165     temp->\hyperlink{classCharBuffer_a045b38735f7b3007c1b98d3d7b7feafe}{Append}(parameter);
+166     \hyperlink{clib_8h_a5bed05c70cb17e541fee570b5dc32e1a}{AllocAndCopy}(&this->\hyperlink{classErrorNode_abd0f6fbd4876d013fbb7b6a9d5ce673e}{message}, temp->\hyperlink{classCharBuffer_a7dfd3feaaf80f318ba44efe15b1ec44b}{GetString}());
+167     \textcolor{keyword}{delete} temp;
+168 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/dc9/classErrorNode_a1c3d4afac02da7fcc0cec125a7ac03ba_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/dc9/classErrorNode_a1c3d4afac02da7fcc0cec125a7ac03ba_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Error\+Node@{Error\+Node}!````~Error\+Node@{$\sim$\+Error\+Node}}
+\index{````~Error\+Node@{$\sim$\+Error\+Node}!Error\+Node@{Error\+Node}}
+\subsubsection[{\texorpdfstring{$\sim$\+Error\+Node()}{~ErrorNode()}}]{\setlength{\rightskip}{0pt plus 5cm}Error\+Node\+::$\sim$\+Error\+Node (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{classErrorNode_a49380518442827777fa57e620d24d49b}{}\label{classErrorNode_a49380518442827777fa57e620d24d49b}
+
+
+Definition at line 178 of file nodes.\+cpp.
+
+
+
+References input, and message.
+
+
+\begin{DoxyCode}
+179 \{
+180     \textcolor{keyword}{delete} [] \hyperlink{classErrorNode_ac2cc563162c10fff090113340184bb4b}{input};
+181     \textcolor{keyword}{delete} [] \hyperlink{classErrorNode_abd0f6fbd4876d013fbb7b6a9d5ce673e}{message};
+182 \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\index{Error\+Node@{Error\+Node}!Attach@{Attach}}
+\index{Attach@{Attach}!Error\+Node@{Error\+Node}}
+\subsubsection[{\texorpdfstring{Attach(\+Syntax\+Node $\ast$node)}{Attach(SyntaxNode *node)}}]{\setlength{\rightskip}{0pt plus 5cm}void Error\+Node\+::\+Attach (
+\begin{DoxyParamCaption}
+\item[{{\bf Syntax\+Node} $\ast$}]{node}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{classErrorNode_ae56dac4fba9187e37fc4270871e05a56}{}\label{classErrorNode_ae56dac4fba9187e37fc4270871e05a56}
+
+
+Implements \hyperlink{classSyntaxNode_af25fd5963125bb2d6b9a1864b9ff79c8}{Syntax\+Node}.
+
+
+
+Definition at line 223 of file nodes.\+cpp.
+
+
+\begin{DoxyCode}
+224 \{ \}
+\end{DoxyCode}
+\index{Error\+Node@{Error\+Node}!Detach@{Detach}}
+\index{Detach@{Detach}!Error\+Node@{Error\+Node}}
+\subsubsection[{\texorpdfstring{Detach(\+Syntax\+Node $\ast$node)}{Detach(SyntaxNode *node)}}]{\setlength{\rightskip}{0pt plus 5cm}void Error\+Node\+::\+Detach (
+\begin{DoxyParamCaption}
+\item[{{\bf Syntax\+Node} $\ast$}]{node}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{classErrorNode_a26cd4f0a90f8f5fa86efb4d9a707b938}{}\label{classErrorNode_a26cd4f0a90f8f5fa86efb4d9a707b938}
+
+
+Implements \hyperlink{classSyntaxNode_ae57f629a5c5fa0994f036c105396da69}{Syntax\+Node}.
+
+
+
+Definition at line 226 of file nodes.\+cpp.
+
+
+\begin{DoxyCode}
+227 \{ \}
+\end{DoxyCode}
+\index{Error\+Node@{Error\+Node}!Execute@{Execute}}
+\index{Execute@{Execute}!Error\+Node@{Error\+Node}}
+\subsubsection[{\texorpdfstring{Execute()}{Execute()}}]{\setlength{\rightskip}{0pt plus 5cm}char $\ast$ Error\+Node\+::\+Execute (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{classErrorNode_a351cbedab751832da6a67b12ac0abcab}{}\label{classErrorNode_a351cbedab751832da6a67b12ac0abcab}
+
+
+Implements \hyperlink{classSyntaxNode_ad8418608fa224536b48a590c87f0a509}{Syntax\+Node}.
+
+
+
+Definition at line 194 of file nodes.\+cpp.
+
+
+
+References Char\+Buffer\+::\+Append(), Char\+Buffer\+::\+Clear\+And\+Alloc(), Char\+Buffer\+::\+Empty(), Char\+Buffer\+::\+Get\+String(), input, message, Syntax\+Node\+::output, pos, and Str\+Len().
+
+
+\begin{DoxyCode}
+195 \{
+196     \hyperlink{classSyntaxNode_a1180628cbe3fce43930cee0df5a9ce5c}{output}->\hyperlink{classCharBuffer_a8c0927c2c05c954161151045f68581c6}{ClearAndAlloc}(\hyperlink{clib_8h_a67ec56eb98b49515d35005a5b3bf9a32}{StrLen}(\hyperlink{classErrorNode_abd0f6fbd4876d013fbb7b6a9d5ce673e}{message}) + 
+      \hyperlink{clib_8h_a67ec56eb98b49515d35005a5b3bf9a32}{StrLen}(\hyperlink{classErrorNode_ac2cc563162c10fff090113340184bb4b}{input}) + \hyperlink{classErrorNode_a2f9577d7885985f6a5671a14d64a75cf}{pos} + 1 + \hyperlink{clib_8h_a67ec56eb98b49515d35005a5b3bf9a32}{StrLen}(\hyperlink{platform_8h_a806511f4930171733227c99101dc0606}{NEWLINE}) * 3 + 1);
+197     \hyperlink{classSyntaxNode_a1180628cbe3fce43930cee0df5a9ce5c}{output}->\hyperlink{classCharBuffer_abe39d3fd7d8b9c8ec343af2cae7adc96}{Empty}();
+198     \hyperlink{classSyntaxNode_a1180628cbe3fce43930cee0df5a9ce5c}{output}->\hyperlink{classCharBuffer_a045b38735f7b3007c1b98d3d7b7feafe}{Append}(\hyperlink{classErrorNode_abd0f6fbd4876d013fbb7b6a9d5ce673e}{message});
+199     \hyperlink{classSyntaxNode_a1180628cbe3fce43930cee0df5a9ce5c}{output}->\hyperlink{classCharBuffer_a045b38735f7b3007c1b98d3d7b7feafe}{Append}(\hyperlink{platform_8h_a806511f4930171733227c99101dc0606}{NEWLINE});
+200     \hyperlink{classSyntaxNode_a1180628cbe3fce43930cee0df5a9ce5c}{output}->\hyperlink{classCharBuffer_a045b38735f7b3007c1b98d3d7b7feafe}{Append}(\hyperlink{classErrorNode_ac2cc563162c10fff090113340184bb4b}{input});
+201     \hyperlink{classSyntaxNode_a1180628cbe3fce43930cee0df5a9ce5c}{output}->\hyperlink{classCharBuffer_a045b38735f7b3007c1b98d3d7b7feafe}{Append}(\hyperlink{platform_8h_a806511f4930171733227c99101dc0606}{NEWLINE});
+202     \hyperlink{classSyntaxNode_a1180628cbe3fce43930cee0df5a9ce5c}{output}->\hyperlink{classCharBuffer_a045b38735f7b3007c1b98d3d7b7feafe}{Append}(\textcolor{charliteral}{' '}, \hyperlink{classErrorNode_a2f9577d7885985f6a5671a14d64a75cf}{pos});
+203     \hyperlink{classSyntaxNode_a1180628cbe3fce43930cee0df5a9ce5c}{output}->\hyperlink{classCharBuffer_a045b38735f7b3007c1b98d3d7b7feafe}{Append}(\textcolor{charliteral}{'^'});
+204     \hyperlink{classSyntaxNode_a1180628cbe3fce43930cee0df5a9ce5c}{output}->\hyperlink{classCharBuffer_a045b38735f7b3007c1b98d3d7b7feafe}{Append}(\hyperlink{platform_8h_a806511f4930171733227c99101dc0606}{NEWLINE});
+205 
+206     \textcolor{keywordflow}{return} \hyperlink{classSyntaxNode_a1180628cbe3fce43930cee0df5a9ce5c}{output}->\hyperlink{classCharBuffer_a7dfd3feaaf80f318ba44efe15b1ec44b}{GetString}();
+207 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/dc9/classErrorNode_a351cbedab751832da6a67b12ac0abcab_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{Error\+Node@{Error\+Node}!Get\+Next@{Get\+Next}}
+\index{Get\+Next@{Get\+Next}!Error\+Node@{Error\+Node}}
+\subsubsection[{\texorpdfstring{Get\+Next()}{GetNext()}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Syntax\+Node} $\ast$ Error\+Node\+::\+Get\+Next (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{classErrorNode_acf4a67072dae31ff931446541b873b81}{}\label{classErrorNode_acf4a67072dae31ff931446541b873b81}
+
+
+Implements \hyperlink{classSyntaxNode_af1fa46ba30aa4f2affa2d4e96a4be010}{Syntax\+Node}.
+
+
+
+Definition at line 218 of file nodes.\+cpp.
+
+
+\begin{DoxyCode}
+219 \{
+220     \textcolor{keywordflow}{return} \hyperlink{platform_8h_a46ff2bfbf0d44b8466a2251d5bd5e6f8}{NOMEM};
+221 \}
+\end{DoxyCode}
+\index{Error\+Node@{Error\+Node}!Get\+Node\+Type@{Get\+Node\+Type}}
+\index{Get\+Node\+Type@{Get\+Node\+Type}!Error\+Node@{Error\+Node}}
+\subsubsection[{\texorpdfstring{Get\+Node\+Type()}{GetNodeType()}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Node\+Type} Error\+Node\+::\+Get\+Node\+Type (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{classErrorNode_ae4ef9fa304ae75c7c8fd04627143a8b1}{}\label{classErrorNode_ae4ef9fa304ae75c7c8fd04627143a8b1}
+
+
+Implements \hyperlink{classSyntaxNode_aef71a18975535d050393f0541b3cdc6a}{Syntax\+Node}.
+
+
+
+Definition at line 184 of file nodes.\+cpp.
+
+
+
+References othernodetype.
+
+
+\begin{DoxyCode}
+185 \{
+186     \textcolor{keywordflow}{return} \hyperlink{nodes_8h_acac9cbaeea226ed297804c012dc12b16a0bdeb2d4e763063449aa298ccde52466}{othernodetype};
+187 \}
+\end{DoxyCode}
+\index{Error\+Node@{Error\+Node}!Get\+Text\+Code@{Get\+Text\+Code}}
+\index{Get\+Text\+Code@{Get\+Text\+Code}!Error\+Node@{Error\+Node}}
+\subsubsection[{\texorpdfstring{Get\+Text\+Code()}{GetTextCode()}}]{\setlength{\rightskip}{0pt plus 5cm}char $\ast$ Error\+Node\+::\+Get\+Text\+Code (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{classErrorNode_aed876f8645b44aa8081fa62d7e4e3bca}{}\label{classErrorNode_aed876f8645b44aa8081fa62d7e4e3bca}
+
+
+Implements \hyperlink{classSyntaxNode_a27f7dd6d00f5c94533477d6d5c2e831c}{Syntax\+Node}.
+
+
+
+Definition at line 189 of file nodes.\+cpp.
+
+
+\begin{DoxyCode}
+190 \{
+191     \textcolor{keywordflow}{return} (\textcolor{keywordtype}{char}*)\textcolor{stringliteral}{"ERRND"};
+192 \}
+\end{DoxyCode}
+\index{Error\+Node@{Error\+Node}!Replace@{Replace}}
+\index{Replace@{Replace}!Error\+Node@{Error\+Node}}
+\subsubsection[{\texorpdfstring{Replace(\+Syntax\+Node $\ast$n, Syntax\+Node $\ast$x)}{Replace(SyntaxNode *n, SyntaxNode *x)}}]{\setlength{\rightskip}{0pt plus 5cm}void Error\+Node\+::\+Replace (
+\begin{DoxyParamCaption}
+\item[{{\bf Syntax\+Node} $\ast$}]{n, }
+\item[{{\bf Syntax\+Node} $\ast$}]{x}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{classErrorNode_a21d26027d05d8051ac3a1add5466dc37}{}\label{classErrorNode_a21d26027d05d8051ac3a1add5466dc37}
+
+
+Implements \hyperlink{classSyntaxNode_a2797ff5eb05f3a36ae1be41b70105e05}{Syntax\+Node}.
+
+
+
+Definition at line 229 of file nodes.\+cpp.
+
+
+\begin{DoxyCode}
+230 \{ \}
+\end{DoxyCode}
+\index{Error\+Node@{Error\+Node}!Str\+Copy\+Visible@{Str\+Copy\+Visible}}
+\index{Str\+Copy\+Visible@{Str\+Copy\+Visible}!Error\+Node@{Error\+Node}}
+\subsubsection[{\texorpdfstring{Str\+Copy\+Visible(char $\ast$destination, const char $\ast$source)}{StrCopyVisible(char *destination, const char *source)}}]{\setlength{\rightskip}{0pt plus 5cm}void Error\+Node\+::\+Str\+Copy\+Visible (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{destination, }
+\item[{const char $\ast$}]{source}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classErrorNode_a2e51822b04905fc867d13546af61abb8}{}\label{classErrorNode_a2e51822b04905fc867d13546af61abb8}
+
+
+Definition at line 209 of file nodes.\+cpp.
+
+
+
+Referenced by Error\+Node().
+
+
+\begin{DoxyCode}
+210 \{
+211     \textcolor{keywordflow}{while} (*source != \textcolor{charliteral}{'\(\backslash\)0'} && *source >= 32 && *source <= 126) \{
+212         *destination++ = *source++;
+213     \}
+214 
+215     *destination = \textcolor{charliteral}{'\(\backslash\)0'};
+216 \}
+\end{DoxyCode}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/dc9/classErrorNode_a2e51822b04905fc867d13546af61abb8_icgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Member Data Documentation}
+\index{Error\+Node@{Error\+Node}!input@{input}}
+\index{input@{input}!Error\+Node@{Error\+Node}}
+\subsubsection[{\texorpdfstring{input}{input}}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ Error\+Node\+::input\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classErrorNode_ac2cc563162c10fff090113340184bb4b}{}\label{classErrorNode_ac2cc563162c10fff090113340184bb4b}
+
+
+Definition at line 146 of file nodes.\+h.
+
+
+
+Referenced by Error\+Node(), Execute(), and $\sim$\+Error\+Node().
+
+\index{Error\+Node@{Error\+Node}!message@{message}}
+\index{message@{message}!Error\+Node@{Error\+Node}}
+\subsubsection[{\texorpdfstring{message}{message}}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ Error\+Node\+::message\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classErrorNode_abd0f6fbd4876d013fbb7b6a9d5ce673e}{}\label{classErrorNode_abd0f6fbd4876d013fbb7b6a9d5ce673e}
+
+
+Definition at line 145 of file nodes.\+h.
+
+
+
+Referenced by Error\+Node(), Execute(), and $\sim$\+Error\+Node().
+
+\index{Error\+Node@{Error\+Node}!pos@{pos}}
+\index{pos@{pos}!Error\+Node@{Error\+Node}}
+\subsubsection[{\texorpdfstring{pos}{pos}}]{\setlength{\rightskip}{0pt plus 5cm}int Error\+Node\+::pos\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classErrorNode_a2f9577d7885985f6a5671a14d64a75cf}{}\label{classErrorNode_a2f9577d7885985f6a5671a14d64a75cf}
+
+
+Definition at line 147 of file nodes.\+h.
+
+
+
+Referenced by Error\+Node(), and Execute().
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+app/main/\hyperlink{nodes_8h}{nodes.\+h}\item 
+app/main/\hyperlink{nodes_8cpp}{nodes.\+cpp}\end{DoxyCompactItemize}

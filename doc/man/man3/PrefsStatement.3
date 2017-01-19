@@ -1,0 +1,119 @@
+.TH "PrefsStatement" 3 "Thu Jan 19 2017" "Version 1.6.0" "amath" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+PrefsStatement \- Load or save preferences\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <statements\&.h>\fP
+.PP
+Inherits \fBStatementNode\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBPrefsStatement\fP ()"
+.br
+.ti -1c
+.RI "\fBPrefsStatement\fP (\fBSymbol\fP \fBargument\fP)"
+.br
+.ti -1c
+.RI "char * \fBExecute\fP ()"
+.br
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBSymbol\fP \fBargument\fP"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Detailed Description"
+.PP 
+Load or save preferences\&. 
+.PP
+Definition at line 119 of file statements\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "PrefsStatement::PrefsStatement ()"
+
+.PP
+Definition at line 122 of file statements\&.cpp\&.
+.PP
+References argument\&.
+.PP
+Referenced by Parser::ParsePrefsStatement()\&.
+.PP
+.nf
+123 {
+124     argument = Symbol(0);
+125 }
+.fi
+.SS "PrefsStatement::PrefsStatement (\fBSymbol\fP argument)"
+
+.PP
+Definition at line 127 of file statements\&.cpp\&.
+.PP
+References argument\&.
+.PP
+Referenced by Parser::ParsePrefsStatement()\&.
+.PP
+.nf
+128 {
+129     this->argument = argument;
+130 }
+.fi
+.SH "Member Function Documentation"
+.PP 
+.SS "char * PrefsStatement::Execute ()\fC [virtual]\fP"
+
+.PP
+Implements \fBStatementNode\fP\&.
+.PP
+Definition at line 132 of file statements\&.cpp\&.
+.PP
+References argument, Program::Console, PreferencesBase::GetDescription(), PreferencesBase::GetDigits(), PreferencesBase::GetPrompt(), Program::Input, PreferencesBase::Keep(), PreferencesBase::Load(), Program::Output, Program::Preferences, PreferencesBase::Save(), NumeralSystem::SetDigits(), ConsoleBase::SetPrompt(), symload, and symsave\&.
+.PP
+.nf
+133 {
+134     bool success;
+135 
+136     if (argument == symsave) {
+137         success = Program->Preferences->Keep();
+138         success &= Program->Preferences->Save();
+139         return (success ? HELPPREFSAVE : HELPPREFNOSA);
+140     } else if (argument == symload) {
+141         success = Program->Preferences->Load();
+142 
+143         if (success) {
+144             Program->Console->SetPrompt(
+145                 Program->Preferences->GetPrompt());
+146             Program->Input->SetDigits(
+147                 Program->Preferences->GetDigits());
+148             Program->Output->SetDigits(
+149                 Program->Preferences->GetDigits());
+150             return(HELPPREFLOAD);
+151         } else {
+152             return(HELPPREFNOLO);
+153         }
+154     }
+155 
+156     return Program->Preferences->GetDescription();
+157 }
+.fi
+.SH "Member Data Documentation"
+.PP 
+.SS "\fBSymbol\fP PrefsStatement::argument\fC [private]\fP"
+
+.PP
+Definition at line 126 of file statements\&.h\&.
+.PP
+Referenced by Execute(), and PrefsStatement()\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for amath from the source code\&.

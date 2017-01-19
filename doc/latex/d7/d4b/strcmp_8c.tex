@@ -1,0 +1,65 @@
+\hypertarget{strcmp_8c}{}\section{lib/clib/strcmp.c File Reference}
+\label{strcmp_8c}\index{lib/clib/strcmp.\+c@{lib/clib/strcmp.\+c}}
+{\ttfamily \#include \char`\"{}clib.\+h\char`\"{}}\\*
+Include dependency graph for strcmp.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=173pt]{dc/d6e/strcmp_8c__incl}
+\end{center}
+\end{figure}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{platform_8h_a1062901a7428fdd9c7f180f5e01ea056}{bool} \hyperlink{strcmp_8c_a2a1f39d11cbbaac992d42e67557dac4b}{Str\+Is\+Equal} (const char $\ast$s1, const char $\ast$s2)
+\begin{DoxyCompactList}\small\item\em Compare two null terminated strings to each other. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\index{strcmp.\+c@{strcmp.\+c}!Str\+Is\+Equal@{Str\+Is\+Equal}}
+\index{Str\+Is\+Equal@{Str\+Is\+Equal}!strcmp.\+c@{strcmp.\+c}}
+\subsubsection[{\texorpdfstring{Str\+Is\+Equal(const char $\ast$s1, const char $\ast$s2)}{StrIsEqual(const char *s1, const char *s2)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} Str\+Is\+Equal (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{s1, }
+\item[{const char $\ast$}]{s2}
+\end{DoxyParamCaption}
+)}\hypertarget{strcmp_8c_a2a1f39d11cbbaac992d42e67557dac4b}{}\label{strcmp_8c_a2a1f39d11cbbaac992d42e67557dac4b}
+
+
+Compare two null terminated strings to each other. 
+
+
+
+Definition at line 48 of file strcmp.\+c.
+
+
+
+Referenced by Variable\+List\+::\+Create\+Variable(), Function\+List\+::\+Delete(), Language\+::\+Find\+Alias(), Function\+List\+::\+Get\+Function\+Call(), Function\+List\+::\+Get\+Function\+Def(), Language\+::\+Get\+Help\+Text(), Function\+List\+::\+Get\+System\+Function(), Variable\+List\+::\+Get\+Variable(), Char\+Buffer\+::\+Is(), Standard\+Filesystem\+::\+List\+Directory(), Char\+Buffer\+::\+Remove\+Trailing(), Standard\+Language\+::\+Str\+Is\+Equal\+Loc(), and Posix\+Language\+::\+Str\+Is\+Equal\+Loc().
+
+
+\begin{DoxyCode}
+49 \{
+50     \textcolor{keywordtype}{int} r;
+51 
+52     \textcolor{keywordflow}{while} (*s1 == *s2++)
+53         \textcolor{keywordflow}{if} (*s1++ == \textcolor{charliteral}{'\(\backslash\)0'})
+54             \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+55 
+56     r = (*(\textcolor{keyword}{const} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} *)s1 - *(\textcolor{keyword}{const} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} *)(s2 - 1));
+57 
+58     \textcolor{keywordflow}{return} r == 0;
+59 \}
+\end{DoxyCode}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d4b/strcmp_8c_a2a1f39d11cbbaac992d42e67557dac4b_icgraph}
+\end{center}
+\end{figure}
+
+

@@ -1,0 +1,5 @@
+<map id="StandardConsole::SetPrompt" name="StandardConsole::SetPrompt">
+<area shape="rect" id="node2" href="$d2/dbb/classConsoleBase.html#a9d0c878a925b9f17d67c5c7ba1c1cec3" title="ConsoleBase::SetPrompt" alt="" coords="259,5,430,32"/>
+<area shape="rect" id="node4" href="$df/d87/classAnsiConoleEngine.html#a6c5dd4043aadc0b310f976eb10cbcd9f" title="AnsiConoleEngine::SetPrompt" alt="" coords="245,56,444,83"/>
+<area shape="rect" id="node3" href="$dd/d2a/alloccpy_8c.html#a5bed05c70cb17e541fee570b5dc32e1a" title="Allocate memory and copy a string into the array. " alt="" coords="492,31,597,57"/>
+</map>

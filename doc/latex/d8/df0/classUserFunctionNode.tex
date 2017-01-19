@@ -1,0 +1,321 @@
+\hypertarget{classUserFunctionNode}{}\section{User\+Function\+Node Class Reference}
+\label{classUserFunctionNode}\index{User\+Function\+Node@{User\+Function\+Node}}
+
+
+An expression node able to compute a function value.  
+
+
+
+
+{\ttfamily \#include $<$functions.\+h$>$}
+
+
+
+Inheritance diagram for User\+Function\+Node\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=178pt]{d9/d67/classUserFunctionNode__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for User\+Function\+Node\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=325pt]{d2/d5b/classUserFunctionNode__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classUserFunctionNode_af7a261eca3785022389cd02d36fa33d5}{User\+Function\+Node} (\hyperlink{classUserFunction}{User\+Function} $\ast$\hyperlink{classUserFunctionNode_aea2ba2bacd83f3cceb891b0b3e45580c}{function}, \hyperlink{classExpressionNode}{Expression\+Node} $\ast$parameter)
+\item 
+\hyperlink{structNumber}{Number} $\ast$ \hyperlink{classUserFunctionNode_a2efcbf95707c44463017973693c891db}{Evaluate} ()
+\item 
+\hyperlink{classSyntaxNode}{Syntax\+Node} $\ast$ \hyperlink{classUserFunctionNode_acc4c2efb6727a6aa8d216556434c8a27}{Get\+Next} ()
+\item 
+void \hyperlink{classUserFunctionNode_ab05c0002a4c62551813238bbdd5632a2}{Attach} (\hyperlink{classSyntaxNode}{Syntax\+Node} $\ast$node)
+\item 
+void \hyperlink{classUserFunctionNode_aec00fdd81b01b4257f1631771e50cf28}{Detach} (\hyperlink{classSyntaxNode}{Syntax\+Node} $\ast$node)
+\item 
+void \hyperlink{classUserFunctionNode_ad12ad72165eb03f17d7fbb1c2a80038b}{Replace} (\hyperlink{classSyntaxNode}{Syntax\+Node} $\ast$n, \hyperlink{classSyntaxNode}{Syntax\+Node} $\ast$x)
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+char $\ast$ \hyperlink{classUserFunctionNode_a89ead37ddfb2fcd44ba3dd7cc2157838}{Get\+Node\+Text} ()
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classUserFunction}{User\+Function} $\ast$ \hyperlink{classUserFunctionNode_aea2ba2bacd83f3cceb891b0b3e45580c}{function}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+An expression node able to compute a function value. 
+
+Definition at line 158 of file functions.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{User\+Function\+Node@{User\+Function\+Node}!User\+Function\+Node@{User\+Function\+Node}}
+\index{User\+Function\+Node@{User\+Function\+Node}!User\+Function\+Node@{User\+Function\+Node}}
+\subsubsection[{\texorpdfstring{User\+Function\+Node(\+User\+Function $\ast$function, Expression\+Node $\ast$parameter)}{UserFunctionNode(UserFunction *function, ExpressionNode *parameter)}}]{\setlength{\rightskip}{0pt plus 5cm}User\+Function\+Node\+::\+User\+Function\+Node (
+\begin{DoxyParamCaption}
+\item[{{\bf User\+Function} $\ast$}]{function, }
+\item[{{\bf Expression\+Node} $\ast$}]{parameter}
+\end{DoxyParamCaption}
+)}\hypertarget{classUserFunctionNode_af7a261eca3785022389cd02d36fa33d5}{}\label{classUserFunctionNode_af7a261eca3785022389cd02d36fa33d5}
+
+
+Definition at line 214 of file functions.\+cpp.
+
+
+
+References function, and Function\+Node\+::\+Function\+Node().
+
+
+
+Referenced by Function\+List\+::\+Get\+Function\+Call().
+
+
+\begin{DoxyCode}
+214                                                                                     :
+215     \hyperlink{classFunctionNode_a41cb7db0162ffbec0902bd8ff7ea435f}{FunctionNode}(parameter), \textcolor{keyword}{function}(\textcolor{keyword}{function}) \{ \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d8/df0/classUserFunctionNode_af7a261eca3785022389cd02d36fa33d5_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d8/df0/classUserFunctionNode_af7a261eca3785022389cd02d36fa33d5_icgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Member Function Documentation}
+\index{User\+Function\+Node@{User\+Function\+Node}!Attach@{Attach}}
+\index{Attach@{Attach}!User\+Function\+Node@{User\+Function\+Node}}
+\subsubsection[{\texorpdfstring{Attach(\+Syntax\+Node $\ast$node)}{Attach(SyntaxNode *node)}}]{\setlength{\rightskip}{0pt plus 5cm}void User\+Function\+Node\+::\+Attach (
+\begin{DoxyParamCaption}
+\item[{{\bf Syntax\+Node} $\ast$}]{node}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{classUserFunctionNode_ab05c0002a4c62551813238bbdd5632a2}{}\label{classUserFunctionNode_ab05c0002a4c62551813238bbdd5632a2}
+
+
+Reimplemented from \hyperlink{classFunctionNode_aec646af849e98f7aee604398dccf1385}{Function\+Node}.
+
+
+
+Definition at line 239 of file functions.\+cpp.
+
+
+\begin{DoxyCode}
+240 \{
+241     \textcolor{comment}{// TODO: Implement}
+242 \}
+\end{DoxyCode}
+\index{User\+Function\+Node@{User\+Function\+Node}!Detach@{Detach}}
+\index{Detach@{Detach}!User\+Function\+Node@{User\+Function\+Node}}
+\subsubsection[{\texorpdfstring{Detach(\+Syntax\+Node $\ast$node)}{Detach(SyntaxNode *node)}}]{\setlength{\rightskip}{0pt plus 5cm}void User\+Function\+Node\+::\+Detach (
+\begin{DoxyParamCaption}
+\item[{{\bf Syntax\+Node} $\ast$}]{node}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{classUserFunctionNode_aec00fdd81b01b4257f1631771e50cf28}{}\label{classUserFunctionNode_aec00fdd81b01b4257f1631771e50cf28}
+
+
+Reimplemented from \hyperlink{classFunctionNode_a3af90509cddcec47bdf454665c622412}{Function\+Node}.
+
+
+
+Definition at line 244 of file functions.\+cpp.
+
+
+\begin{DoxyCode}
+245 \{
+246     \textcolor{comment}{// TODO: Implement}
+247 \}
+\end{DoxyCode}
+\index{User\+Function\+Node@{User\+Function\+Node}!Evaluate@{Evaluate}}
+\index{Evaluate@{Evaluate}!User\+Function\+Node@{User\+Function\+Node}}
+\subsubsection[{\texorpdfstring{Evaluate()}{Evaluate()}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Number} $\ast$ User\+Function\+Node\+::\+Evaluate (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{classUserFunctionNode_a2efcbf95707c44463017973693c891db}{}\label{classUserFunctionNode_a2efcbf95707c44463017973693c891db}
+
+
+Implements \hyperlink{classExpressionNode_a64975d4dc37742228bd522f6204537f7}{Expression\+Node}.
+
+
+
+Definition at line 222 of file functions.\+cpp.
+
+
+
+References Variable\+::\+Assign\+Value(), Expression\+Node\+::\+Evaluate(), Function\+Node\+::expression, function, User\+Function\+::\+Get\+Expression(), and User\+Function\+::\+Get\+Variable().
+
+
+\begin{DoxyCode}
+223 \{
+224     \textcolor{comment}{// Set value of function parameter and then evaluate function.}
+225     \textcolor{keyword}{function}->GetVariable()->AssignValue(\hyperlink{classFunctionNode_ad7577b179a1937aaf8a0058bb5b546dc}{expression}->\hyperlink{classExpressionNode_a64975d4dc37742228bd522f6204537f7}{Evaluate}());
+226     \textcolor{keywordflow}{return} \textcolor{keyword}{function}->GetExpression()->Evaluate();
+227 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d8/df0/classUserFunctionNode_a2efcbf95707c44463017973693c891db_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{User\+Function\+Node@{User\+Function\+Node}!Get\+Next@{Get\+Next}}
+\index{Get\+Next@{Get\+Next}!User\+Function\+Node@{User\+Function\+Node}}
+\subsubsection[{\texorpdfstring{Get\+Next()}{GetNext()}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Syntax\+Node} $\ast$ User\+Function\+Node\+::\+Get\+Next (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{classUserFunctionNode_acc4c2efb6727a6aa8d216556434c8a27}{}\label{classUserFunctionNode_acc4c2efb6727a6aa8d216556434c8a27}
+
+
+Reimplemented from \hyperlink{classFunctionNode_a8f6d3631e6b06af048a87463f34f0b8e}{Function\+Node}.
+
+
+
+Definition at line 229 of file functions.\+cpp.
+
+
+
+References function, User\+Function\+::\+Get\+Expression(), and Syntax\+Node\+::iterator.
+
+
+\begin{DoxyCode}
+230 \{
+231     \textcolor{keywordflow}{if} (\hyperlink{classSyntaxNode_a9bd3349d05f33eaa271cca1805a86e1b}{iterator} == \hyperlink{platform_8h_a46ff2bfbf0d44b8466a2251d5bd5e6f8}{NOMEM}) \{
+232         \hyperlink{classSyntaxNode_a9bd3349d05f33eaa271cca1805a86e1b}{iterator} = \textcolor{keyword}{function}->GetExpression();
+233         \textcolor{keywordflow}{return} \hyperlink{classSyntaxNode_a9bd3349d05f33eaa271cca1805a86e1b}{iterator};
+234     \}
+235 
+236     \textcolor{keywordflow}{return} \hyperlink{platform_8h_a46ff2bfbf0d44b8466a2251d5bd5e6f8}{NOMEM};
+237 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d8/df0/classUserFunctionNode_acc4c2efb6727a6aa8d216556434c8a27_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{User\+Function\+Node@{User\+Function\+Node}!Get\+Node\+Text@{Get\+Node\+Text}}
+\index{Get\+Node\+Text@{Get\+Node\+Text}!User\+Function\+Node@{User\+Function\+Node}}
+\subsubsection[{\texorpdfstring{Get\+Node\+Text()}{GetNodeText()}}]{\setlength{\rightskip}{0pt plus 5cm}char $\ast$ User\+Function\+Node\+::\+Get\+Node\+Text (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}\hypertarget{classUserFunctionNode_a89ead37ddfb2fcd44ba3dd7cc2157838}{}\label{classUserFunctionNode_a89ead37ddfb2fcd44ba3dd7cc2157838}
+
+
+Implements \hyperlink{classExpressionNode_a42a5e9562b0f645a19dcc83f698069b5}{Expression\+Node}.
+
+
+
+Definition at line 217 of file functions.\+cpp.
+
+
+
+References function, and User\+Function\+::\+Get\+Name().
+
+
+\begin{DoxyCode}
+218 \{
+219     \textcolor{keywordflow}{return} \textcolor{keyword}{function}->GetName();
+220 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d8/df0/classUserFunctionNode_a89ead37ddfb2fcd44ba3dd7cc2157838_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{User\+Function\+Node@{User\+Function\+Node}!Replace@{Replace}}
+\index{Replace@{Replace}!User\+Function\+Node@{User\+Function\+Node}}
+\subsubsection[{\texorpdfstring{Replace(\+Syntax\+Node $\ast$n, Syntax\+Node $\ast$x)}{Replace(SyntaxNode *n, SyntaxNode *x)}}]{\setlength{\rightskip}{0pt plus 5cm}void User\+Function\+Node\+::\+Replace (
+\begin{DoxyParamCaption}
+\item[{{\bf Syntax\+Node} $\ast$}]{n, }
+\item[{{\bf Syntax\+Node} $\ast$}]{x}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{classUserFunctionNode_ad12ad72165eb03f17d7fbb1c2a80038b}{}\label{classUserFunctionNode_ad12ad72165eb03f17d7fbb1c2a80038b}
+
+
+Reimplemented from \hyperlink{classFunctionNode_a951101d50e4b4428871986923d5657d8}{Function\+Node}.
+
+
+
+Definition at line 249 of file functions.\+cpp.
+
+
+\begin{DoxyCode}
+250 \{
+251     \textcolor{comment}{// TODO: Implement}
+252 \}
+\end{DoxyCode}
+
+
+\subsection{Member Data Documentation}
+\index{User\+Function\+Node@{User\+Function\+Node}!function@{function}}
+\index{function@{function}!User\+Function\+Node@{User\+Function\+Node}}
+\subsubsection[{\texorpdfstring{function}{function}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf User\+Function}$\ast$ User\+Function\+Node\+::function\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classUserFunctionNode_aea2ba2bacd83f3cceb891b0b3e45580c}{}\label{classUserFunctionNode_aea2ba2bacd83f3cceb891b0b3e45580c}
+
+
+Definition at line 171 of file functions.\+h.
+
+
+
+Referenced by Evaluate(), Get\+Next(), Get\+Node\+Text(), and User\+Function\+Node().
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+app/main/\hyperlink{functions_8h}{functions.\+h}\item 
+app/main/\hyperlink{functions_8cpp}{functions.\+cpp}\end{DoxyCompactItemize}

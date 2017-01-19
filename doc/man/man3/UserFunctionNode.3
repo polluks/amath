@@ -1,0 +1,169 @@
+.TH "UserFunctionNode" 3 "Thu Jan 19 2017" "Version 1.6.0" "amath" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+UserFunctionNode \- An expression node able to compute a function value\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <functions\&.h>\fP
+.PP
+Inherits \fBFunctionNode\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBUserFunctionNode\fP (\fBUserFunction\fP *\fBfunction\fP, \fBExpressionNode\fP *parameter)"
+.br
+.ti -1c
+.RI "\fBNumber\fP * \fBEvaluate\fP ()"
+.br
+.ti -1c
+.RI "\fBSyntaxNode\fP * \fBGetNext\fP ()"
+.br
+.ti -1c
+.RI "void \fBAttach\fP (\fBSyntaxNode\fP *node)"
+.br
+.ti -1c
+.RI "void \fBDetach\fP (\fBSyntaxNode\fP *node)"
+.br
+.ti -1c
+.RI "void \fBReplace\fP (\fBSyntaxNode\fP *n, \fBSyntaxNode\fP *x)"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "char * \fBGetNodeText\fP ()"
+.br
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBUserFunction\fP * \fBfunction\fP"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Detailed Description"
+.PP 
+An expression node able to compute a function value\&. 
+.PP
+Definition at line 158 of file functions\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "UserFunctionNode::UserFunctionNode (\fBUserFunction\fP * function, \fBExpressionNode\fP * parameter)"
+
+.PP
+Definition at line 214 of file functions\&.cpp\&.
+.PP
+References function, and FunctionNode::FunctionNode()\&.
+.PP
+Referenced by FunctionList::GetFunctionCall()\&.
+.PP
+.nf
+214                                                                                     :
+215     FunctionNode(parameter), function(function) { }
+.fi
+.SH "Member Function Documentation"
+.PP 
+.SS "void UserFunctionNode::Attach (\fBSyntaxNode\fP * node)\fC [virtual]\fP"
+
+.PP
+Reimplemented from \fBFunctionNode\fP\&.
+.PP
+Definition at line 239 of file functions\&.cpp\&.
+.PP
+.nf
+240 {
+241     // TODO: Implement
+242 }
+.fi
+.SS "void UserFunctionNode::Detach (\fBSyntaxNode\fP * node)\fC [virtual]\fP"
+
+.PP
+Reimplemented from \fBFunctionNode\fP\&.
+.PP
+Definition at line 244 of file functions\&.cpp\&.
+.PP
+.nf
+245 {
+246     // TODO: Implement
+247 }
+.fi
+.SS "\fBNumber\fP * UserFunctionNode::Evaluate ()\fC [virtual]\fP"
+
+.PP
+Implements \fBExpressionNode\fP\&.
+.PP
+Definition at line 222 of file functions\&.cpp\&.
+.PP
+References Variable::AssignValue(), ExpressionNode::Evaluate(), FunctionNode::expression, function, UserFunction::GetExpression(), and UserFunction::GetVariable()\&.
+.PP
+.nf
+223 {
+224     // Set value of function parameter and then evaluate function\&.
+225     function->GetVariable()->AssignValue(expression->Evaluate());
+226     return function->GetExpression()->Evaluate();
+227 }
+.fi
+.SS "\fBSyntaxNode\fP * UserFunctionNode::GetNext ()\fC [virtual]\fP"
+
+.PP
+Reimplemented from \fBFunctionNode\fP\&.
+.PP
+Definition at line 229 of file functions\&.cpp\&.
+.PP
+References function, UserFunction::GetExpression(), and SyntaxNode::iterator\&.
+.PP
+.nf
+230 {
+231     if (iterator == NOMEM) {
+232         iterator = function->GetExpression();
+233         return iterator;
+234     }
+235 
+236     return NOMEM;
+237 }
+.fi
+.SS "char * UserFunctionNode::GetNodeText ()\fC [protected]\fP, \fC [virtual]\fP"
+
+.PP
+Implements \fBExpressionNode\fP\&.
+.PP
+Definition at line 217 of file functions\&.cpp\&.
+.PP
+References function, and UserFunction::GetName()\&.
+.PP
+.nf
+218 {
+219     return function->GetName();
+220 }
+.fi
+.SS "void UserFunctionNode::Replace (\fBSyntaxNode\fP * n, \fBSyntaxNode\fP * x)\fC [virtual]\fP"
+
+.PP
+Reimplemented from \fBFunctionNode\fP\&.
+.PP
+Definition at line 249 of file functions\&.cpp\&.
+.PP
+.nf
+250 {
+251     // TODO: Implement
+252 }
+.fi
+.SH "Member Data Documentation"
+.PP 
+.SS "\fBUserFunction\fP* UserFunctionNode::function\fC [private]\fP"
+
+.PP
+Definition at line 171 of file functions\&.h\&.
+.PP
+Referenced by Evaluate(), GetNext(), GetNodeText(), and UserFunctionNode()\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for amath from the source code\&.

@@ -1,0 +1,272 @@
+.TH "SyntaxNode" 3 "Thu Jan 19 2017" "Version 1.6.0" "amath" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SyntaxNode \- Base class for all nodes in a syntax tree\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <nodes\&.h>\fP
+.PP
+Inherited by \fBErrorNode\fP\fC [virtual]\fP, \fBExpressionNode\fP, \fBStatementBlockNode\fP\fC [virtual]\fP, and \fBStatementNode\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBSyntaxNode\fP ()"
+.br
+.ti -1c
+.RI "virtual \fB~SyntaxNode\fP ()"
+.br
+.ti -1c
+.RI "void \fBSetFirstNode\fP ()"
+.br
+.ti -1c
+.RI "\fBbool\fP \fBGetFirstNode\fP ()"
+.br
+.ti -1c
+.RI "\fBSyntaxNode\fP * \fBGetParent\fP ()"
+.br
+.ti -1c
+.RI "void \fBSetParent\fP (\fBSyntaxNode\fP *node)"
+.br
+.ti -1c
+.RI "virtual \fBNodeType\fP \fBGetNodeType\fP ()=0"
+.br
+.ti -1c
+.RI "virtual \fBReductionType\fP \fBGetReductionType\fP ()"
+.br
+.ti -1c
+.RI "virtual void \fBResetIterator\fP ()"
+.br
+.ti -1c
+.RI "virtual \fBSyntaxNode\fP * \fBGetNext\fP ()=0"
+.br
+.ti -1c
+.RI "virtual char * \fBGetTextCode\fP ()=0"
+.br
+.ti -1c
+.RI "virtual char * \fBExecute\fP ()=0"
+.br
+.ti -1c
+.RI "virtual void \fBAttach\fP (\fBSyntaxNode\fP *node)=0"
+.br
+.ti -1c
+.RI "virtual void \fBDetach\fP (\fBSyntaxNode\fP *node)=0"
+.br
+.ti -1c
+.RI "virtual void \fBReplace\fP (\fBSyntaxNode\fP *n, \fBSyntaxNode\fP *x)=0"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBCharBuffer\fP * \fBoutput\fP"
+.br
+.ti -1c
+.RI "\fBSyntaxNode\fP * \fBparent\fP"
+.br
+.ti -1c
+.RI "\fBSyntaxNode\fP * \fBiterator\fP"
+.br
+.ti -1c
+.RI "\fBbool\fP \fBleftBottom\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Base class for all nodes in a syntax tree\&. 
+
+More info is available at Wikipedia: http://en.wikipedia.org/wiki/Abstract_syntax_tree 
+.PP
+Definition at line 55 of file nodes\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "SyntaxNode::SyntaxNode ()"
+
+.PP
+Definition at line 38 of file nodes\&.cpp\&.
+.PP
+References CharBuffer::CharBuffer(), iterator, leftBottom, output, and parent\&.
+.PP
+Referenced by ErrorNode::ErrorNode(), ExpressionNode::ExpressionNode(), StatementBlockNode::StatementBlockNode(), and StatementNode::StatementNode()\&.
+.PP
+.nf
+39 {
+40     output = new CharBuffer();
+41     parent = NOMEM;
+42     iterator = NOMEM;
+43     leftBottom = false;
+44 }
+.fi
+.SS "SyntaxNode::~SyntaxNode ()\fC [virtual]\fP"
+
+.PP
+Definition at line 46 of file nodes\&.cpp\&.
+.PP
+References output\&.
+.PP
+.nf
+47 {
+48     delete output;
+49 }
+.fi
+.SH "Member Function Documentation"
+.PP 
+.SS "virtual void SyntaxNode::Attach (\fBSyntaxNode\fP * node)\fC [pure virtual]\fP"
+
+.PP
+Implemented in \fBStatementBlockNode\fP, \fBUserFunctionNode\fP, \fBEvalStatement\fP, \fBNumericValueNode\fP, \fBSilentStatement\fP, \fBErrorNode\fP, \fBStatementNode\fP, \fBVariableNode\fP, \fBNumericOperator\fP, \fBAbsoluteNode\fP, \fBFunctionNode\fP, and \fBUnaryNode\fP\&.
+.PP
+Referenced by Optimizer::BalanceTree()\&.
+.SS "virtual void SyntaxNode::Detach (\fBSyntaxNode\fP * node)\fC [pure virtual]\fP"
+
+.PP
+Implemented in \fBStatementBlockNode\fP, \fBUserFunctionNode\fP, \fBEvalStatement\fP, \fBNumericValueNode\fP, \fBSilentStatement\fP, \fBErrorNode\fP, \fBStatementNode\fP, \fBVariableNode\fP, \fBNumericOperator\fP, \fBAbsoluteNode\fP, \fBFunctionNode\fP, and \fBUnaryNode\fP\&.
+.PP
+Referenced by Optimizer::BalanceTree(), and Optimizer::ReduceUnaryNodes()\&.
+.SS "virtual char* SyntaxNode::Execute ()\fC [pure virtual]\fP"
+
+.PP
+Implemented in \fBDrawStatement\fP, \fBPlotStatement\fP, \fBExecuteStatement\fP, \fBSaveStatement\fP, \fBLoadStatement\fP, \fBListStatement\fP, \fBShowStatement\fP, \fBDigitsStatement\fP, \fBOutputStatement\fP, \fBInputStatement\fP, \fBDeleteStatement\fP, \fBHelpStatement\fP, \fBStatementBlockNode\fP, \fBEvalStatement\fP, \fBFunctionDefinitionNode\fP, \fBSilentStatement\fP, \fBListFunctionsStatement\fP, \fBErrorNode\fP, \fBPrefsStatement\fP, \fBStatementNode\fP, \fBPromptStatement\fP, \fBExpressionNode\fP, \fBMemoryStatement\fP, \fBListVariablesStatement\fP, \fBVersionStatement\fP, \fBEmptyStatement\fP, \fBExitStatement\fP, and \fBClearStatement\fP\&.
+.PP
+Referenced by Evaluator::Evaluate(), StatementBlockNode::Execute(), LoadStatement::Execute(), ExecuteStatement::Execute(), and PreferencesBase::SetPrefs()\&.
+.SS "\fBbool\fP SyntaxNode::GetFirstNode ()"
+
+.PP
+Definition at line 56 of file nodes\&.cpp\&.
+.PP
+References leftBottom\&.
+.PP
+.nf
+57 {
+58     return leftBottom;
+59 }
+.fi
+.SS "virtual \fBSyntaxNode\fP* SyntaxNode::GetNext ()\fC [pure virtual]\fP"
+
+.PP
+Implemented in \fBUserFunctionNode\fP, \fBStatementBlockNode\fP, \fBEvalStatement\fP, \fBNumericValueNode\fP, \fBSilentStatement\fP, \fBErrorNode\fP, \fBStatementNode\fP, \fBVariableNode\fP, \fBNumericOperator\fP, \fBAbsoluteNode\fP, \fBFunctionNode\fP, and \fBUnaryNode\fP\&.
+.PP
+Referenced by Optimizer::BalanceTree(), Optimizer::GetTreeDepth(), Optimizer::ReduceUnaryNodes(), Optimizer::ReduceValueNodes(), Optimizer::TagChildren(), and Optimizer::TagStartNode()\&.
+.SS "virtual \fBNodeType\fP SyntaxNode::GetNodeType ()\fC [pure virtual]\fP"
+
+.PP
+Implemented in \fBStatementBlockNode\fP, \fBErrorNode\fP, \fBStatementNode\fP, and \fBExpressionNode\fP\&.
+.PP
+Referenced by Optimizer::BalanceTree(), and Optimizer::ReduceValueNodes()\&.
+.SS "\fBSyntaxNode\fP * SyntaxNode::GetParent ()"
+
+.PP
+Definition at line 66 of file nodes\&.cpp\&.
+.PP
+References parent\&.
+.PP
+Referenced by Optimizer::BalanceTree(), Optimizer::ReduceUnaryNodes(), and Optimizer::ReduceValueNodes()\&.
+.PP
+.nf
+67 {
+68     return parent;
+69 }
+.fi
+.SS "\fBReductionType\fP SyntaxNode::GetReductionType ()\fC [virtual]\fP"
+
+.PP
+Reimplemented in \fBComplexiNode\fP, \fBPiNode\fP, \fBEulersNumberNode\fP, \fBNumericValueNode\fP, \fBSubtractionNode\fP, \fBAdditionNode\fP, and \fBUnaryNode\fP\&.
+.PP
+Definition at line 51 of file nodes\&.cpp\&.
+.PP
+References nonereduc\&.
+.PP
+Referenced by Optimizer::ReduceUnaryNodes(), and Optimizer::ReduceValueNodes()\&.
+.PP
+.nf
+52 {
+53     return nonereduc;
+54 }
+.fi
+.SS "virtual char* SyntaxNode::GetTextCode ()\fC [pure virtual]\fP"
+
+.PP
+Implemented in \fBStatementBlockNode\fP, \fBErrorNode\fP, \fBStatementNode\fP, and \fBExpressionNode\fP\&.
+.SS "virtual void SyntaxNode::Replace (\fBSyntaxNode\fP * n, \fBSyntaxNode\fP * x)\fC [pure virtual]\fP"
+
+.PP
+Implemented in \fBStatementBlockNode\fP, \fBUserFunctionNode\fP, \fBEvalStatement\fP, \fBNumericValueNode\fP, \fBSilentStatement\fP, \fBErrorNode\fP, \fBStatementNode\fP, \fBVariableNode\fP, \fBNumericOperator\fP, \fBAbsoluteNode\fP, \fBFunctionNode\fP, and \fBUnaryNode\fP\&.
+.PP
+Referenced by Optimizer::ReduceUnaryNodes(), and Optimizer::ReduceValueNodes()\&.
+.SS "void SyntaxNode::ResetIterator ()\fC [virtual]\fP"
+
+.PP
+Definition at line 76 of file nodes\&.cpp\&.
+.PP
+References iterator\&.
+.PP
+Referenced by Optimizer::BalanceTree(), Optimizer::GetTreeDepth(), Optimizer::ReduceUnaryNodes(), Optimizer::ReduceValueNodes(), Optimizer::TagChildren(), and Optimizer::TagStartNode()\&.
+.PP
+.nf
+77 {
+78     iterator = NOMEM;
+79 }
+.fi
+.SS "void SyntaxNode::SetFirstNode ()"
+
+.PP
+Definition at line 61 of file nodes\&.cpp\&.
+.PP
+References leftBottom\&.
+.PP
+Referenced by Optimizer::TagStartNode()\&.
+.PP
+.nf
+62 {
+63     leftBottom = true;
+64 }
+.fi
+.SS "void SyntaxNode::SetParent (\fBSyntaxNode\fP * node)"
+
+.PP
+Definition at line 71 of file nodes\&.cpp\&.
+.PP
+References parent\&.
+.PP
+Referenced by UnaryNode::Attach(), FunctionNode::Attach(), AbsoluteNode::Attach(), NumericOperator::Attach(), SilentStatement::Attach(), EvalStatement::Attach(), and Optimizer::TagChildren()\&.
+.PP
+.nf
+72 {
+73     parent = node;
+74 }
+.fi
+.SH "Member Data Documentation"
+.PP 
+.SS "\fBSyntaxNode\fP* SyntaxNode::iterator\fC [protected]\fP"
+
+.PP
+Definition at line 76 of file nodes\&.h\&.
+.PP
+Referenced by UnaryNode::GetNext(), FunctionNode::GetNext(), AbsoluteNode::GetNext(), NumericOperator::GetNext(), SilentStatement::GetNext(), EvalStatement::GetNext(), UserFunctionNode::GetNext(), NumericOperator::Replace(), ResetIterator(), StatementBlockNode::StatementBlockNode(), and SyntaxNode()\&.
+.SS "\fBbool\fP SyntaxNode::leftBottom\fC [protected]\fP"
+
+.PP
+Definition at line 77 of file nodes\&.h\&.
+.PP
+Referenced by GetFirstNode(), NumericValueNode::GetPrecedence(), SetFirstNode(), and SyntaxNode()\&.
+.SS "\fBCharBuffer\fP* SyntaxNode::output\fC [protected]\fP"
+
+.PP
+Definition at line 74 of file nodes\&.h\&.
+.PP
+Referenced by VersionStatement::Execute(), MemoryStatement::Execute(), ErrorNode::Execute(), FunctionDefinitionNode::Execute(), EvalStatement::Execute(), StatementBlockNode::Execute(), HelpStatement::Execute(), DeleteStatement::Execute(), InputStatement::Execute(), OutputStatement::Execute(), DigitsStatement::Execute(), ShowStatement::Execute(), ListStatement::Execute(), ExecuteStatement::Execute(), PlotStatement::Execute(), FunctionDefinitionNode::FunctionDefinitionNode(), NumericValueNode::GetNodeText(), UnaryNode::GetText(), FunctionNode::GetText(), AbsoluteNode::GetText(), NumericOperator::GetText(), FunctionDefinitionNode::GetText(), SyntaxNode(), and ~SyntaxNode()\&.
+.SS "\fBSyntaxNode\fP* SyntaxNode::parent\fC [protected]\fP"
+
+.PP
+Definition at line 75 of file nodes\&.h\&.
+.PP
+Referenced by GetParent(), SetParent(), and SyntaxNode()\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for amath from the source code\&.

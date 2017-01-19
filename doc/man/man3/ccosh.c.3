@@ -1,0 +1,73 @@
+.TH "lib/cplex/ccosh.c" 3 "Thu Jan 19 2017" "Version 1.6.0" "amath" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+lib/cplex/ccosh.c \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'prim\&.h'\fP
+.br
+\fC#include 'math\&.h'\fP
+.br
+\fC#include 'complex\&.h'\fP
+.br
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBcomplex\fP \fBccosh\fP (\fBcomplex\fP z)"
+.br
+.RI "\fIHyperbolic cosine of a complex number\&. \fP"
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "\fBcomplex\fP ccosh (\fBcomplex\fP z)"
+
+.PP
+Hyperbolic cosine of a complex number\&. 
+.PP
+\fBVersion:\fP
+.RS 4
+1\&.1 
+.RE
+.PP
+\fBDate:\fP
+.RS 4
+2007/08/20
+.RE
+.PP
+.PP
+.nf
+
+a+bi
+real = cosh(a) * cos(b)
+imag = sinh(a) * sin(b)
+.fi
+.PP
+ 
+.PP
+Definition at line 51 of file ccosh\&.c\&.
+.PP
+References cchsh(), cimag(), cos(), cpack(), creal(), and sin()\&.
+.PP
+Referenced by ComplexNumber::HypCosine()\&.
+.PP
+.nf
+52 {
+53     complex w;
+54     double a, b;
+55     double ch, sh;
+56 
+57     a = creal(z);
+58     b = cimag(z);
+59     cchsh(a, &ch, &sh);
+60     w = cpack(cos(b) * ch, sin(b) * sh);
+61 
+62     return w;
+63 }
+.fi
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for amath from the source code\&.

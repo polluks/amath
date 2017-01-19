@@ -1,0 +1,51 @@
+<map id="LoadStatement::Execute" name="LoadStatement::Execute">
+<area shape="rect" id="node2" href="$d8/d5d/classSyntaxNode.html#ad8418608fa224536b48a590c87f0a509" title="SyntaxNode::Execute" alt="" coords="244,1223,395,1249"/>
+<area shape="rect" id="node3" href="$dc/d84/classCharBuffer.html#a7dfd3feaaf80f318ba44efe15b1ec44b" title="CharBuffer::GetString" alt="" coords="245,1273,393,1300"/>
+<area shape="rect" id="node4" href="$d5/d68/classFilesystemBase.html#adc4a9e1dc189bcd221e3b994bc854d46" title="FilesystemBase::LoadTextFile" alt="" coords="220,1324,419,1351"/>
+<area shape="rect" id="node5" href="$d0/d40/classParser.html#a1861d1d9cc6165970cf07e07cacd11df" title="Parses the input into a syntax tree. " alt="" coords="268,1375,371,1401"/>
+<area shape="rect" id="node49" href="$d0/d40/classParser.html#a40600baa2c3d4262fd8b770a4615aed0" title="Parser::Parser" alt="" coords="527,1600,633,1627"/>
+<area shape="rect" id="node6" href="$d6/dc0/classLexer.html#a02696cb1f974ae74116c2b746dcba365" title="Lexer::Tokenize" alt="" coords="765,105,880,132"/>
+<area shape="rect" id="node15" href="$d0/d40/classParser.html#aeef41071b484e09942290ab55953dc4f" title="Parser::TryParseStatement" alt="" coords="489,1085,671,1112"/>
+<area shape="rect" id="node16" href="$d0/d40/classParser.html#a415a103e66558b4d366d9a1420561fe3" title="Parser::GetToken" alt="" coords="1255,467,1380,493"/>
+<area shape="rect" id="node19" href="$d0/d40/classParser.html#adb5c3a188b36f7ecb198ae30f06338b3" title="Parser::PutToken" alt="" coords="1255,543,1379,569"/>
+<area shape="rect" id="node24" href="$df/dcd/structToken.html#a5f93ea94940a6eeb060507e1da594599" title="Token::GetPos" alt="" coords="1262,821,1373,848"/>
+<area shape="rect" id="node26" href="$d6/dc0/classLexer.html#a3032cbeb851294bccd61b722d9a86265" title="Lexer::GetInput" alt="" coords="1261,1099,1373,1125"/>
+<area shape="rect" id="node41" href="$d7/dc9/classErrorNode.html#ac47d46061f61fb60a5c1cf2a61f24a44" title="ErrorNode::ErrorNode" alt="" coords="749,1480,897,1507"/>
+<area shape="rect" id="node46" href="$d5/d22/classStatementBlockNode.html#ab7b27f5f9fa24acc63fd588477232c0b" title="StatementBlockNode\l::StatementBlockNode" alt="" coords="745,1549,900,1590"/>
+<area shape="rect" id="node47" href="$d5/d22/classStatementBlockNode.html#a7cdae86c013121c1fdab0ee885c2b559" title="StatementBlockNode::Add" alt="" coords="491,1527,669,1553"/>
+<area shape="rect" id="node48" href="$d1/d77/classEmptyStatement.html#a9e2080de25e56a7f44f9f64836c2236e" title="EmptyStatement::EmptyStatement" alt="" coords="467,151,693,177"/>
+<area shape="rect" id="node7" href="$d6/dc0/classLexer.html#a0f32556fc91f85a9ad55ed52321d2ae0" title="Lexer::GetNextToken" alt="" coords="1244,132,1391,159"/>
+<area shape="rect" id="node8" href="$d0/d41/classLanguage.html#a1470832710ca9c4e4695bb442759c0a7" title="Language::CharIsSpace" alt="" coords="1641,81,1804,108"/>
+<area shape="rect" id="node9" href="$d6/dc0/classLexer.html#a9cb42b9797270ecbd944d5c5f3043c3a" title="Lexer::GetDigitValue" alt="" coords="1445,5,1587,32"/>
+<area shape="rect" id="node10" href="$d6/dc0/classLexer.html#a1a2555bec4f29b19fc0edd3989237110" title="Lexer::GetLitteral" alt="" coords="1455,309,1577,336"/>
+<area shape="rect" id="node11" href="$df/dcd/structToken.html#a6331b847b4dc8cebe0e0a79c4de63204" title="Token::Token" alt="" coords="1671,284,1774,311"/>
+<area shape="rect" id="node12" href="$d6/dc0/classLexer.html#a6d8ab3a715307bf89fdfa8f83879c3cf" title="Lexer::GetOperator" alt="" coords="1449,157,1583,184"/>
+<area shape="rect" id="node13" href="$d6/dc0/classLexer.html#a3444c8c0450b3cd82bb395627095769b" title="Lexer::GetQuotedIdent" alt="" coords="1439,208,1593,235"/>
+<area shape="rect" id="node14" href="$d6/dc0/classLexer.html#a864c73023ef6b437a8d58c8158fbc6be" title="Lexer::ShouldSkip" alt="" coords="1452,56,1580,83"/>
+<area shape="rect" id="node21" href="$d0/d40/classParser.html#a370277018ad3e0e157a8ff5849892f7d" title="Parser::ParseStatement" alt="" coords="741,847,904,873"/>
+<area shape="rect" id="node17" href="$d6/dc0/classLexer.html#afbb12eaae7cff3bd2960f444cfe98f69" title="Lexer::GetFirstToken" alt="" coords="1443,467,1589,493"/>
+<area shape="rect" id="node18" href="$df/dcd/structToken.html#ac7eb963d5eff544dd48ffc23aa274356" title="Token::GetNextToken" alt="" coords="1441,379,1591,405"/>
+<area shape="rect" id="node20" href="$df/dcd/structToken.html#af5213b25192a01f526143461ab47e6af" title="Token::GetLastToken" alt="" coords="1442,543,1590,569"/>
+<area shape="rect" id="node22" href="$d0/d40/classParser.html#a1e00b1a9ee0541508953564442312526" title="Parser::ParseHelpStatement" alt="" coords="979,467,1169,493"/>
+<area shape="rect" id="node23" href="$d0/d40/classParser.html#a41008319e22949c5a6045e3859335000" title="Parser::ParseDeleteStatement" alt="" coords="974,669,1174,696"/>
+<area shape="rect" id="node25" href="$d0/d40/classParser.html#a0e8b1f794af2b9923bc3fcb7498004f9" title="Parser::ParseFunctionDef" alt="" coords="987,872,1161,899"/>
+<area shape="rect" id="node27" href="$d0/d40/classParser.html#aa0642d13c500401b168035f9fcdbe1f4" title="Parser::ParseListStatement" alt="" coords="983,720,1165,747"/>
+<area shape="rect" id="node28" href="$d0/d40/classParser.html#a3c671b953bee260ed4eb3f5c30ededc2" title="Parser::ParseFileStatement" alt="" coords="983,1324,1165,1351"/>
+<area shape="rect" id="node29" href="$d0/d40/classParser.html#ae2a3cdedfb708c19c7552fd402a224c6" title="Parser::ParseNumeralStatement" alt="" coords="969,771,1179,797"/>
+<area shape="rect" id="node30" href="$d0/d40/classParser.html#a3ff34c9305bf6b5f10aacf27e5d20c28" title="Parser::ParsePromptStatement" alt="" coords="972,517,1176,544"/>
+<area shape="rect" id="node31" href="$d0/d40/classParser.html#ab655f0d3ad73a8ec8a299d2e2e3248ea" title="Parser::ParsePrefsStatement" alt="" coords="977,416,1171,443"/>
+<area shape="rect" id="node32" href="$d0/d40/classParser.html#a14aa2850063f998f76530e027c3ef399" title="Parser::ParseDigistStatement" alt="" coords="976,821,1172,848"/>
+<area shape="rect" id="node33" href="$d0/d40/classParser.html#a38a55851f31c226c193090403dfbaff8" title="Parser::ParseDrawStatement" alt="" coords="977,923,1171,949"/>
+<area shape="rect" id="node34" href="$de/de7/classVersionStatement.html#a3df915fa8eccedc266750224ff297716" title="VersionStatement::Version\lStatement" alt="" coords="985,974,1163,1015"/>
+<area shape="rect" id="node35" href="$d7/dba/classExitStatement.html#aa023a4db5bc1cef8841913c74861c8e3" title="ExitStatement::ExitStatement" alt="" coords="976,1040,1172,1067"/>
+<area shape="rect" id="node36" href="$df/d28/classClearStatement.html#a5c3069808cd784d6f98916bae6b1b94c" title="ClearStatement::ClearStatement" alt="" coords="968,1091,1180,1117"/>
+<area shape="rect" id="node37" href="$d9/dd1/classMemoryStatement.html#a7aa2d5e60c07a928e6bcbbee00d29ec6" title="MemoryStatement::MemoryStatement" alt="" coords="952,1141,1196,1168"/>
+<area shape="rect" id="node38" href="$d7/d64/classListVariablesStatement.html#a99567f05d8c7b39f9d64246584024b83" title="ListVariablesStatement\l::ListVariablesStatement" alt="" coords="991,1193,1157,1234"/>
+<area shape="rect" id="node39" href="$da/d2e/classListFunctionsStatement.html#a45535c4ae1a1d56a617d82b51d775e32" title="ListFunctionsStatement\l::ListFunctionsStatement" alt="" coords="990,1258,1158,1299"/>
+<area shape="rect" id="node40" href="$dc/d7f/classEvalStatement.html#aca4069dd093c588724a5516598ec413f" title="EvalStatement::EvalStatement" alt="" coords="973,619,1175,645"/>
+<area shape="rect" id="node42" href="$dd/d2a/alloccpy_8c.html#a5bed05c70cb17e541fee570b5dc32e1a" title="Allocate memory and copy a string into the array. " alt="" coords="1021,1628,1127,1655"/>
+<area shape="rect" id="node43" href="$d7/dc9/classErrorNode.html#a2e51822b04905fc867d13546af61abb8" title="ErrorNode::StrCopyVisible" alt="" coords="986,1527,1162,1553"/>
+<area shape="rect" id="node44" href="$d9/de5/clib_8h.html#a67ec56eb98b49515d35005a5b3bf9a32" title="Get the length of a null terminated string. " alt="" coords="1044,1476,1104,1503"/>
+<area shape="rect" id="node45" href="$d8/d5d/classSyntaxNode.html#ac94372d402f38a118b4e8cd20ba7e520" title="SyntaxNode::SyntaxNode" alt="" coords="987,1577,1161,1604"/>
+<area shape="rect" id="node50" href="$d6/dc0/classLexer.html#a8e12946738ee015bac381da30e2b03b0" title="Lexer::Lexer" alt="" coords="775,1623,870,1649"/>
+</map>

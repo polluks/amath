@@ -1,0 +1,35 @@
+.TH "lib/real/matherr.c" 3 "Thu Jan 19 2017" "Version 1.6.0" "amath" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+lib/real/matherr.c \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'fdlibm\&.h'\fP
+.br
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "int \fBmatherr\fP (struct exception *x)"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "int matherr (struct exception * x)"
+
+.PP
+Definition at line 50 of file matherr\&.c\&.
+.PP
+.nf
+53 {
+54     int n=0;
+55     if(x->arg1!=x->arg1) return 0;
+56     return n;
+57 }
+.fi
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for amath from the source code\&.

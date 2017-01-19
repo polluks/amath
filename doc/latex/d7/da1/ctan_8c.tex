@@ -1,0 +1,107 @@
+\hypertarget{ctan_8c}{}\section{lib/cplex/ctan.c File Reference}
+\label{ctan_8c}\index{lib/cplex/ctan.\+c@{lib/cplex/ctan.\+c}}
+{\ttfamily \#include \char`\"{}prim.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}math.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}complex.\+h\char`\"{}}\\*
+Include dependency graph for ctan.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=221pt]{de/d59/ctan_8c__incl}
+\end{center}
+\end{figure}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{unioncomplex}{complex} \hyperlink{ctan_8c_a2bd0de3a2299ec26164641bc8f6e117f}{ctan} (\hyperlink{unioncomplex}{complex} z)
+\begin{DoxyCompactList}\small\item\em Tangent of a complex number. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\index{ctan.\+c@{ctan.\+c}!ctan@{ctan}}
+\index{ctan@{ctan}!ctan.\+c@{ctan.\+c}}
+\subsubsection[{\texorpdfstring{ctan(complex z)}{ctan(complex z)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf complex} ctan (
+\begin{DoxyParamCaption}
+\item[{{\bf complex}}]{z}
+\end{DoxyParamCaption}
+)}\hypertarget{ctan_8c_a2bd0de3a2299ec26164641bc8f6e117f}{}\label{ctan_8c_a2bd0de3a2299ec26164641bc8f6e117f}
+
+
+Tangent of a complex number. 
+
+\begin{DoxyVersion}{Version}
+1.\+1 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+2007/08/20
+\end{DoxyDate}
+Calculated as in Open Office\+:~\newline
+ \href{https://wiki.openoffice.org/wiki/Documentation/How_Tos/Calc:_IMTAN_function}{\tt https\+://wiki.\+openoffice.\+org/wiki/\+Documentation/\+How\+\_\+\+Tos/\+Calc\+:\+\_\+\+I\+M\+T\+A\+N\+\_\+function} 
+\begin{DoxyPre}
+a+bi
+               sin(2.0 * a)
+real  = ------------------------------
+         cos(2.0 * a) + cosh(2.0 * b)
+\begin{DoxyVerb}  sinh(2.0 * b)
+\end{DoxyVerb}
+
+imag  = ------------------------------
+         cos(2.0 * a) + cosh(2.0 * b)
+\end{DoxyPre}
+ 
+
+Definition at line 58 of file ctan.\+c.
+
+
+
+References cimag(), cos(), cosh(), cpack(), creal(), sin(), and sinh().
+
+
+
+Referenced by Complex\+Number\+::\+Tangent().
+
+
+\begin{DoxyCode}
+59 \{
+60     \hyperlink{unioncomplex}{complex} w;
+61     \textcolor{keywordtype}{double} a, b;
+62     \textcolor{keywordtype}{double} d;
+63 
+64     a = \hyperlink{complex_8h_a4a236b24c0197821e3489a35a72079ab}{creal}(z);
+65     b = \hyperlink{complex_8h_aa1fe0b9371befabef6c41ba73470774a}{cimag}(z);
+66     d = \hyperlink{math_8h_a5e7b53a694b3cf0f2d7debd444140fbd}{cos}(2.0 * a) + \hyperlink{math_8h_a3795d3c1f1d30819be56da4e4d67f64b}{cosh}(2.0 * b);
+67 
+68     \textcolor{keywordflow}{if} (d == 0.0) \{
+69         w = \hyperlink{complex_8h_a980e6e049f7902b05fc9eb5614b07a5c}{cpack}(\hyperlink{cplex_2prim_8h_a5f3d17bf39f78da3422ca52e475d7724}{HUGE}, \hyperlink{cplex_2prim_8h_a5f3d17bf39f78da3422ca52e475d7724}{HUGE}); \textcolor{comment}{// TODO: INF, INF}
+70     \} \textcolor{keywordflow}{else} \{
+71         w = \hyperlink{complex_8h_a980e6e049f7902b05fc9eb5614b07a5c}{cpack}((\hyperlink{math_8h_aad4af25633b071b0e2cdb8ebd87eca77}{sin}(2.0 * a) / d), (\hyperlink{math_8h_a862012e970c977c482507064e2793b45}{sinh}(2.0 * b) / d));
+72     \}
+73 
+74     \textcolor{keywordflow}{return} w;
+75 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/da1/ctan_8c_a2bd0de3a2299ec26164641bc8f6e117f_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=282pt]{d7/da1/ctan_8c_a2bd0de3a2299ec26164641bc8f6e117f_icgraph}
+\end{center}
+\end{figure}
+
+

@@ -1,0 +1,8 @@
+<map id="ComplexNumber::Ceiling" name="ComplexNumber::Ceiling">
+<area shape="rect" id="node2" href="$d9/dcc/prim_8c.html#a48443015efbd58ce5da6d64d9858f168" title="Ceiling value of complex number. " alt="" coords="310,69,359,96"/>
+<area shape="rect" id="node6" href="$db/d8e/structComplexNumber.html#a0d89581ead93385331befcef51698693" title="ComplexNumber::ComplexNumber" alt="" coords="221,132,448,159"/>
+<area shape="rect" id="node3" href="$d9/dcc/prim_8c.html#aa1fe0b9371befabef6c41ba73470774a" title="Imaginary part of complex number. " alt="" coords="529,5,586,32"/>
+<area shape="rect" id="node4" href="$d9/dcc/prim_8c.html#a980e6e049f7902b05fc9eb5614b07a5c" title="Pack two real numbers into a complex number. " alt="" coords="529,56,586,83"/>
+<area shape="rect" id="node5" href="$d9/dcc/prim_8c.html#a4a236b24c0197821e3489a35a72079ab" title="Real part of complex number. " alt="" coords="532,107,583,133"/>
+<area shape="rect" id="node7" href="$da/de2/structNumber.html#afd3c2f9b4b288e339f741a6e4ae54593" title="Number::Number" alt="" coords="496,157,619,184"/>
+</map>

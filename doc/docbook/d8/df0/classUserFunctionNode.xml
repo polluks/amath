@@ -1,0 +1,136 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="d8/df0/classUserFunctionNode">
+<title>UserFunctionNode class Reference</title>
+<para>
+    <programlisting>#include <link linkend="d8/d5c/functions_8h">&lt;functions.h&gt;</link></programlisting>
+</para>
+<para>Inheritance diagram for UserFunctionNode</para>
+<para>
+    <figure>
+        <title>Inheritance graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="../../d9/d67/classUserFunctionNode__inherit__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+<para>Collaboration diagram for UserFunctionNode</para>
+<para>
+    <figure>
+        <title>Collaboration graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="../../d2/d5b/classUserFunctionNode__coll__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+        <section>
+            <title>Private Attributes</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>UserFunction * function</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d8/df0/classUserFunctionNode_1af7a261eca3785022389cd02d36fa33d5">UserFunctionNode</link> (
+<link linkend="de/df8/classUserFunction">UserFunction</link> * function, <link linkend="dd/d06/classExpressionNode">ExpressionNode</link> * parameter)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="da/de2/structNumber">Number</link> * <link linkend="d8/df0/classUserFunctionNode_1a2efcbf95707c44463017973693c891db">Evaluate</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="d8/d5d/classSyntaxNode">SyntaxNode</link> * <link linkend="d8/df0/classUserFunctionNode_1acc4c2efb6727a6aa8d216556434c8a27">GetNext</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="d8/df0/classUserFunctionNode_1ab05c0002a4c62551813238bbdd5632a2">Attach</link> (
+<link linkend="d8/d5d/classSyntaxNode">SyntaxNode</link> * node)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="d8/df0/classUserFunctionNode_1aec00fdd81b01b4257f1631771e50cf28">Detach</link> (
+<link linkend="d8/d5d/classSyntaxNode">SyntaxNode</link> * node)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="d8/df0/classUserFunctionNode_1ad12ad72165eb03f17d7fbb1c2a80038b">Replace</link> (
+<link linkend="d8/d5d/classSyntaxNode">SyntaxNode</link> * n, <link linkend="d8/d5d/classSyntaxNode">SyntaxNode</link> * x)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>char * <link linkend="d8/df0/classUserFunctionNode_1a89ead37ddfb2fcd44ba3dd7cc2157838">GetNodeText</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+    <simplesect>
+
+<para>An expression node able to compute a function value. </para>
+    </simplesect>
+        <section>
+            <title>Member Data Documentation</title>
+        </section>
+            <section xml:id="d8/df0/classUserFunctionNode_1af7a261eca3785022389cd02d36fa33d5">
+                <title>UserFunctionNode::UserFunctionNode (UserFunction *function, ExpressionNode *parameter)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d8/df0/classUserFunctionNode_1a2efcbf95707c44463017973693c891db">
+                <title>Number * UserFunctionNode::Evaluate ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d8/df0/classUserFunctionNode_1acc4c2efb6727a6aa8d216556434c8a27">
+                <title>SyntaxNode * UserFunctionNode::GetNext ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d8/df0/classUserFunctionNode_1ab05c0002a4c62551813238bbdd5632a2">
+                <title>void UserFunctionNode::Attach (SyntaxNode *node)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d8/df0/classUserFunctionNode_1aec00fdd81b01b4257f1631771e50cf28">
+                <title>void UserFunctionNode::Detach (SyntaxNode *node)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d8/df0/classUserFunctionNode_1ad12ad72165eb03f17d7fbb1c2a80038b">
+                <title>void UserFunctionNode::Replace (SyntaxNode *n, SyntaxNode *x)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d8/df0/classUserFunctionNode_1a89ead37ddfb2fcd44ba3dd7cc2157838">
+                <title>char * UserFunctionNode::GetNodeText ()</title> <emphasis></emphasis>
+                
+            </section>
+</section>

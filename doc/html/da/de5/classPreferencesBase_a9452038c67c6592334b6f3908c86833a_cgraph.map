@@ -1,0 +1,16 @@
+<map id="PreferencesBase::GetDescription" name="PreferencesBase::GetDescription">
+<area shape="rect" id="node2" href="$dc/d84/classCharBuffer.html#a045b38735f7b3007c1b98d3d7b7feafe" title="CharBuffer::Append" alt="" coords="310,5,447,32"/>
+<area shape="rect" id="node3" href="$df/d40/classDecimalSystem.html#a726d1a38079ae571c54adfbd0724a0a3" title="DecimalSystem::DecimalSystem" alt="" coords="271,56,487,83"/>
+<area shape="rect" id="node5" href="$dc/d84/classCharBuffer.html#abe39d3fd7d8b9c8ec343af2cae7adc96" title="CharBuffer::Empty" alt="" coords="313,107,444,133"/>
+<area shape="rect" id="node7" href="$dc/d84/classCharBuffer.html#ad1907009b5ad136692b989fa96bf2f7e" title="Ensure a memory block of speficied size is allocated. " alt="" coords="299,157,459,184"/>
+<area shape="rect" id="node9" href="$d6/dc0/classLexer.html#affd4bac61db830383302be71198a372a" title="Lexer::FindKeyword" alt="" coords="309,208,448,235"/>
+<area shape="rect" id="node10" href="$da/de5/classPreferencesBase.html#a8d693cb289d1f5282f13c0cfb698b8cc" title="PreferencesBase::GetDigits" alt="" coords="286,259,471,285"/>
+<area shape="rect" id="node11" href="$dc/d84/classCharBuffer.html#a7dfd3feaaf80f318ba44efe15b1ec44b" title="CharBuffer::GetString" alt="" coords="305,309,453,336"/>
+<area shape="rect" id="node12" href="$d9/df3/classNumeralSystem.html#a74dc91c4dbab4a88a123b2a32753f485" title="NumeralSystem::GetText" alt="" coords="293,360,464,387"/>
+<area shape="rect" id="node13" href="$d2/d49/structRealNumber.html#ab4c47ea1155b9ee8b4a2794e7836f892" title="RealNumber::RealNumber" alt="" coords="291,411,467,437"/>
+<area shape="rect" id="node15" href="$d9/de5/clib_8h.html#a67ec56eb98b49515d35005a5b3bf9a32" title="Get the length of a null terminated string. " alt="" coords="349,461,409,488"/>
+<area shape="rect" id="node4" href="$d6/ddc/classPositionalNumeralSystem.html#a923f36569ecc830f17bcf56dd2811754" title="PositionalNumeralSystem\l::PositionalNumeralSystem" alt="" coords="551,41,732,82"/>
+<area shape="rect" id="node6" href="$dc/d84/classCharBuffer.html#ae742439a2d5d5a0ad64411dcbf4604c8" title="CharBuffer::EnsureMinimumSize" alt="" coords="535,107,748,133"/>
+<area shape="rect" id="node8" href="$d4/d16/memcpy_8c.html#a09b7e057c69b9ddd4b481fc746997a7d" title="Copy a block of memory, handling overlap. " alt="" coords="600,157,683,184"/>
+<area shape="rect" id="node14" href="$da/de2/structNumber.html#afd3c2f9b4b288e339f741a6e4ae54593" title="Number::Number" alt="" coords="580,411,703,437"/>
+</map>

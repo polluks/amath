@@ -1,0 +1,96 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="da/d67/classThreadBase">
+<title>ThreadBase class Reference</title>
+<para>
+    <programlisting>#include <link linkend="db/dd5/thread_8h">&lt;thread.h&gt;</link></programlisting>
+</para>
+<para>Inheritance diagram for ThreadBase</para>
+<para>
+    <figure>
+        <title>Inheritance graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="../../db/d6e/classThreadBase__inherit__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+<para>Collaboration diagram for ThreadBase</para>
+<para>
+    <figure>
+        <title>Collaboration graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="../../dc/d70/classThreadBase__coll__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="da/d67/classThreadBase_1af66330f2f5605a8f104ec346014da976">ThreadBase</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>virtual <link linkend="da/d67/classThreadBase_1a3dbbd3714a3a446c74258c34bf9f6da0">~ThreadBase</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>virtual void <link linkend="da/d67/classThreadBase_1a795d258c1f40c123859d0e83dce6a0ad">Run</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>virtual const char * <link linkend="da/d67/classThreadBase_1a1d02a7e6cd287e1d72b9cac00e8061d4">GetName</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>virtual int <link linkend="da/d67/classThreadBase_1a676ce2be4c9801fdfdc30f484547caef">GetStackSize</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+    <simplesect>
+
+<para>Abstract base class encapsulating runable component. </para>
+    </simplesect>
+            <section xml:id="da/d67/classThreadBase_1af66330f2f5605a8f104ec346014da976">
+                <title>ThreadBase::ThreadBase ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="da/d67/classThreadBase_1a3dbbd3714a3a446c74258c34bf9f6da0">
+                <title>virtual ThreadBase::~ThreadBase ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="da/d67/classThreadBase_1a795d258c1f40c123859d0e83dce6a0ad">
+                <title>virtual void ThreadBase::Run ()=0</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="da/d67/classThreadBase_1a1d02a7e6cd287e1d72b9cac00e8061d4">
+                <title>virtual const char* ThreadBase::GetName ()=0</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="da/d67/classThreadBase_1a676ce2be4c9801fdfdc30f484547caef">
+                <title>virtual int ThreadBase::GetStackSize ()=0</title> <emphasis></emphasis>
+                
+            </section>
+</section>

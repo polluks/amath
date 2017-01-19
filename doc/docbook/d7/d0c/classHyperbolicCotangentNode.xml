@@ -1,0 +1,86 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="d7/d0c/classHyperbolicCotangentNode">
+<title>HyperbolicCotangentNode class Reference</title>
+<para>
+    <programlisting>#include <link linkend="d8/d5c/functions_8h">&lt;functions.h&gt;</link></programlisting>
+</para>
+<para>Inheritance diagram for HyperbolicCotangentNode</para>
+<para>
+    <figure>
+        <title>Inheritance graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="../../df/da3/classHyperbolicCotangentNode__inherit__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+<para>Collaboration diagram for HyperbolicCotangentNode</para>
+<para>
+    <figure>
+        <title>Collaboration graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="../../de/d7f/classHyperbolicCotangentNode__coll__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d7/d0c/classHyperbolicCotangentNode_1a10ec2c243e9572bc4ae3ac43ab654822">HyperbolicCotangentNode</link> (
+<link linkend="dd/d06/classExpressionNode">ExpressionNode</link> * expression)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="da/de2/structNumber">Number</link> * <link linkend="d7/d0c/classHyperbolicCotangentNode_1a399d6bc7f6cb8b8b07b5a55f54c47aef">Evaluate</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>static <link linkend="d7/d06/classFunctionNode">FunctionNode</link> * <link linkend="d7/d0c/classHyperbolicCotangentNode_1aae6696fb8049c3b34d9389e81e583697">Create</link> (
+<link linkend="dd/d06/classExpressionNode">ExpressionNode</link> * expression)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>char * <link linkend="d7/d0c/classHyperbolicCotangentNode_1a488a6f668cd2870e3715d478457267f9">GetNodeText</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+            <section xml:id="d7/d0c/classHyperbolicCotangentNode_1a10ec2c243e9572bc4ae3ac43ab654822">
+                <title>HyperbolicCotangentNode::HyperbolicCotangentNode (ExpressionNode *expression)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d7/d0c/classHyperbolicCotangentNode_1a399d6bc7f6cb8b8b07b5a55f54c47aef">
+                <title>Number * HyperbolicCotangentNode::Evaluate ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d7/d0c/classHyperbolicCotangentNode_1aae6696fb8049c3b34d9389e81e583697">
+                <title>FunctionNode * HyperbolicCotangentNode::Create (ExpressionNode *expression)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d7/d0c/classHyperbolicCotangentNode_1a488a6f668cd2870e3715d478457267f9">
+                <title>char * HyperbolicCotangentNode::GetNodeText ()</title> <emphasis></emphasis>
+                
+            </section>
+</section>

@@ -1,0 +1,127 @@
+.TH "lib/real/ceil.c" 3 "Thu Jan 19 2017" "Version 1.6.0" "amath" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+lib/real/ceil.c \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'prim\&.h'\fP
+.br
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "double \fBceil\fP (double x)"
+.br
+.RI "\fIMathematical ceiling function\&. \fP"
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "static const double \fBhuge\fP = 1\&.0e300"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "double ceil (double x)"
+
+.PP
+Mathematical ceiling function\&. 
+.PP
+\fBVersion:\fP
+.RS 4
+1\&.3 
+.RE
+.PP
+\fBDate:\fP
+.RS 4
+95/01/18
+.RE
+.PP
+.PP
+.nf
+
+Return x rounded toward -inf to integral value
+Method:
+ Bit twiddling\&.
+Exception:
+ Inexact flag raised if x not equal to ceil(x)\&.
+.fi
+.PP
+ 
+.PP
+\fBCopyright:\fP
+.RS 4
+Copyright (C) 1993 by Sun Microsystems, Inc\&. All rights reserved\&.  Developed at SunSoft, a Sun Microsystems, Inc\&. business\&. Permission to use, copy, modify, and distribute this software is freely granted, provided that this notice is preserved\&. 
+.RE
+.PP
+
+.PP
+Definition at line 65 of file ceil\&.c\&.
+.PP
+References huge\&.
+.PP
+.nf
+66 {
+67     sword i0,i1,j0;
+68     uword i,j;
+69     EXTRACT_WORDS(i0,i1,x);
+70     j0 = ((i0>>20)&0x7ff)-0x3ff;
+71     if(j0<20) {
+72         if(j0<0) {          /* raise inexact if x != 0 */
+73             if(huge+x>0\&.0) {     /* return 0*sign(x) if |x|<1 */
+74                 if(i0<0) {
+75                     i0=0x80000000;
+76                     i1=0;
+77                 }
+78                 else if((i0|i1)!=0) {
+79                     i0=0x3ff00000;
+80                     i1=0;
+81                 }
+82             }
+83         } else {
+84             i = (0x000fffff)>>j0;
+85             if(((i0&i)|i1)==0) return x; /* x is integral */
+86             if(huge+x>0\&.0) {     /* raise inexact flag */
+87                 if(i0>0) i0 += (0x00100000)>>j0;
+88                 i0 &= (~i);
+89                 i1=0;
+90             }
+91         }
+92     } else if (j0>51) {
+93         if(j0==0x400) return x+x;   /* inf or NaN */
+94         else return x;          /* x is integral */
+95     } else {
+96         i = ((uword)(0xffffffff))>>(j0-20);
+97         if((i1&i)==0) return x;     /* x is integral */
+98         if(huge+x>0\&.0) {         /* raise inexact flag */
+99             if(i0>0) {
+100                 if(j0==20) i0+=1;
+101                 else {
+102                     j = i1 + (1<<(52-j0));
+103                     // NOTICE: Is this a correct cast?
+104                     if((sword)j<(sword)i1) i0+=1;   /* got a carry */
+105                     i1 = j;
+106                 }
+107             }
+108             i1 &= (~i);
+109         }
+110     }
+111     INSERT_WORDS(x,i0,i1);
+112     return x;
+113 }
+.fi
+.SH "Variable Documentation"
+.PP 
+.SS "const double huge = 1\&.0e300\fC [static]\fP"
+
+.PP
+Definition at line 46 of file ceil\&.c\&.
+.PP
+Referenced by ceil()\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for amath from the source code\&.

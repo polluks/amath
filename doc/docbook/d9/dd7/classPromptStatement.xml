@@ -1,0 +1,85 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="d9/dd7/classPromptStatement">
+<title>PromptStatement class Reference</title>
+<para>
+    <programlisting>#include <link linkend="dd/d6a/statements_8h">&lt;statements.h&gt;</link></programlisting>
+</para>
+<para>Inheritance diagram for PromptStatement</para>
+<para>
+    <figure>
+        <title>Inheritance graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="../../dc/d70/classPromptStatement__inherit__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+<para>Collaboration diagram for PromptStatement</para>
+<para>
+    <figure>
+        <title>Collaboration graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="../../de/d46/classPromptStatement__coll__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+        <section>
+            <title>Private Attributes</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>char * prompt</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d9/dd7/classPromptStatement_1a5a84d6b630d6eec8807ddff3d3b07894">PromptStatement</link> (
+char * prompt)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d9/dd7/classPromptStatement_1ad96a3773c8411d585d10f34850a5f55b">~PromptStatement</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>char * <link linkend="d9/dd7/classPromptStatement_1ad315c8cc58132641e9b8a62902566318">Execute</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+    <simplesect>
+
+<para>Set prompt string. </para>
+    </simplesect>
+        <section>
+            <title>Member Data Documentation</title>
+        </section>
+            <section xml:id="d9/dd7/classPromptStatement_1a5a84d6b630d6eec8807ddff3d3b07894">
+                <title>PromptStatement::PromptStatement (char *prompt)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d9/dd7/classPromptStatement_1ad96a3773c8411d585d10f34850a5f55b">
+                <title>PromptStatement::~PromptStatement ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d9/dd7/classPromptStatement_1ad315c8cc58132641e9b8a62902566318">
+                <title>char * PromptStatement::Execute ()</title> <emphasis></emphasis>
+                
+            </section>
+</section>

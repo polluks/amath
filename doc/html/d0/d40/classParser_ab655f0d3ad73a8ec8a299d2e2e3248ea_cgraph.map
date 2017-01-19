@@ -1,0 +1,9 @@
+<map id="Parser::ParsePrefsStatement" name="Parser::ParsePrefsStatement">
+<area shape="rect" id="node2" href="$d0/d40/classParser.html#a415a103e66558b4d366d9a1420561fe3" title="Parser::GetToken" alt="" coords="290,31,415,57"/>
+<area shape="rect" id="node6" href="$dc/daf/classPrefsStatement.html#aa24161049ff45e2dadeee7ed1b4949f6" title="PrefsStatement::PrefsStatement" alt="" coords="247,81,459,108"/>
+<area shape="rect" id="node7" href="$d0/d40/classParser.html#adb5c3a188b36f7ecb198ae30f06338b3" title="Parser::PutToken" alt="" coords="291,132,415,159"/>
+<area shape="rect" id="node3" href="$d6/dc0/classLexer.html#afbb12eaae7cff3bd2960f444cfe98f69" title="Lexer::GetFirstToken" alt="" coords="509,5,655,32"/>
+<area shape="rect" id="node4" href="$df/dcd/structToken.html#ac7eb963d5eff544dd48ffc23aa274356" title="Token::GetNextToken" alt="" coords="507,56,657,83"/>
+<area shape="rect" id="node5" href="$df/dcd/structToken.html#a6331b847b4dc8cebe0e0a79c4de63204" title="Token::Token" alt="" coords="705,56,808,83"/>
+<area shape="rect" id="node8" href="$df/dcd/structToken.html#af5213b25192a01f526143461ab47e6af" title="Token::GetLastToken" alt="" coords="508,132,656,159"/>
+</map>

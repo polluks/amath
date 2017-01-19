@@ -1,0 +1,2258 @@
+\hypertarget{structComplexNumber}{}\section{Complex\+Number Struct Reference}
+\label{structComplexNumber}\index{Complex\+Number@{Complex\+Number}}
+
+
+Represent a complex number with 2 componts of 15 siginificant digits.  
+
+
+
+
+{\ttfamily \#include $<$cplex.\+h$>$}
+
+
+
+Inheritance diagram for Complex\+Number\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=170pt]{d8/dea/structComplexNumber__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Complex\+Number\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=202pt]{d1/d07/structComplexNumber__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{structComplexNumber_a610e9db9ff0ddb0140e30d235ab64e44}{Complex\+Number} ()
+\item 
+\hyperlink{structComplexNumber_a0d89581ead93385331befcef51698693}{Complex\+Number} (\hyperlink{unioncomplex}{complex} \hyperlink{structComplexNumber_a5f72da71f4ce0d88076a391369239042}{z})
+\item 
+\hyperlink{structComplexNumber_af0a78be5e675c845b8dc2bf8e5e8f32b}{Complex\+Number} (double real, double imag)
+\item 
+\hyperlink{structComplexNumber_abc3b759a61e4964ccd712622ce00e0d1}{$\sim$\+Complex\+Number} ()
+\item 
+\hyperlink{structNumber}{Number} $\ast$ \hyperlink{structComplexNumber_acae8fd1b1c3cd871b9975053b9bcc4d1}{Clone} ()
+\item 
+int \hyperlink{structComplexNumber_a5d9fb1157a99a97244b306821b1d30c1}{Get\+Integer\+Value} ()
+\item 
+double \hyperlink{structComplexNumber_ae9f6a3f46c067286dec298358dee3cd7}{Get\+Real\+Value} ()
+\item 
+double \hyperlink{structComplexNumber_a4b26887c940f046a442815ac154cda66}{Get\+Imag\+Value} ()
+\item 
+\hyperlink{unioncomplex}{complex} \hyperlink{structComplexNumber_a711b2ce78037a97680c46a5e1e9a4bb8}{Get\+Complex\+Value} ()
+\item 
+\hyperlink{platform_8h_a1062901a7428fdd9c7f180f5e01ea056}{bool} \hyperlink{structComplexNumber_a5343b272e85da4ea67a5b8aaa53fdac0}{Pure\+Complex\+Value} ()
+\item 
+int \hyperlink{structComplexNumber_a14e7e0bfb5fe65d667c9ff50634cfdf6}{Get\+Precedence} ()
+\item 
+int \hyperlink{structComplexNumber_a703a1afdc3223e5cdacff225903e62ef}{Get\+Default\+Precedence} ()
+\item 
+\hyperlink{structNumber}{Number} $\ast$ \hyperlink{structComplexNumber_a52bb791f848e90072a65841c7402b2c4}{Unary} ()
+\item 
+\hyperlink{structNumber}{Number} $\ast$ \hyperlink{structComplexNumber_ad6b9fb6fe480c3a626f4e105024d2375}{Add} (\hyperlink{structNumber}{Number} $\ast$other)
+\item 
+\hyperlink{structNumber}{Number} $\ast$ \hyperlink{structComplexNumber_a8f196f990620e30495f69338a1e40316}{Sub} (\hyperlink{structNumber}{Number} $\ast$other)
+\item 
+\hyperlink{structNumber}{Number} $\ast$ \hyperlink{structComplexNumber_a8b876b0e7e776fa2f0fa2bc034cc224b}{Mul} (\hyperlink{structNumber}{Number} $\ast$other)
+\item 
+\hyperlink{structNumber}{Number} $\ast$ \hyperlink{structComplexNumber_a78f07b5e0e9d481629e3814b6037522b}{Div} (\hyperlink{structNumber}{Number} $\ast$other)
+\item 
+\hyperlink{structNumber}{Number} $\ast$ \hyperlink{structComplexNumber_a0ab40e1cbe5c25629fe62643ed8b9352}{Raise} (\hyperlink{structNumber}{Number} $\ast$exponent)
+\item 
+\hyperlink{structNumber}{Number} $\ast$ \hyperlink{structComplexNumber_a0dc0f3ef7885f9d6b5a30e6ce983ceeb}{Signum} ()
+\item 
+\hyperlink{structNumber}{Number} $\ast$ \hyperlink{structComplexNumber_aab24afa1330c3777b0e29c6d85114bf1}{Trunc} ()
+\item 
+\hyperlink{structNumber}{Number} $\ast$ \hyperlink{structComplexNumber_a5026a3ed13a525843d02acbd0d94a4aa}{Round} ()
+\item 
+\hyperlink{structNumber}{Number} $\ast$ \hyperlink{structComplexNumber_abf02b60fa622fae2724b7a6768acf2d6}{Floor} ()
+\item 
+\hyperlink{structNumber}{Number} $\ast$ \hyperlink{structComplexNumber_a4788f638a16773706510bdc2edd0ea49}{Ceiling} ()
+\item 
+\hyperlink{structNumber}{Number} $\ast$ \hyperlink{structComplexNumber_a7fb865f9bca992bb78dc057f3d8cfd82}{Absolute} ()
+\item 
+\hyperlink{structNumber}{Number} $\ast$ \hyperlink{structComplexNumber_a9c2d08c5faba8c3db38186264f2361a9}{Square\+Root} ()
+\item 
+\hyperlink{structNumber}{Number} $\ast$ \hyperlink{structComplexNumber_a1589eac796ec230625298d196fe84c25}{Cube\+Root} ()
+\item 
+\hyperlink{structNumber}{Number} $\ast$ \hyperlink{structComplexNumber_ac85979812dffce5a38ccf3cab090b320}{Reciprocal} ()
+\item 
+\hyperlink{structNumber}{Number} $\ast$ \hyperlink{structComplexNumber_af2b337a76672ec647dbe707d3287d6df}{Log} ()
+\item 
+\hyperlink{structNumber}{Number} $\ast$ \hyperlink{structComplexNumber_ae8ff446ea20c3b1e4dfa979eaed9ea86}{Log2} ()
+\item 
+\hyperlink{structNumber}{Number} $\ast$ \hyperlink{structComplexNumber_a77a7c95712136b6beeded79210a18c00}{Log10} ()
+\item 
+\hyperlink{structNumber}{Number} $\ast$ \hyperlink{structComplexNumber_a5125e77b2c28147688cf65f596c9ccb7}{Sine} ()
+\item 
+\hyperlink{structNumber}{Number} $\ast$ \hyperlink{structComplexNumber_a9c52151f9a5111bf5163f43e5e697f9e}{Cosine} ()
+\item 
+\hyperlink{structNumber}{Number} $\ast$ \hyperlink{structComplexNumber_a6b7cb0a68c9d44e3367c9a42748af045}{Tangent} ()
+\item 
+\hyperlink{structNumber}{Number} $\ast$ \hyperlink{structComplexNumber_a9740a470743b92208243140c3f7a8b35}{Cosecant} ()
+\item 
+\hyperlink{structNumber}{Number} $\ast$ \hyperlink{structComplexNumber_a214e1ed3096e8ed3aa0a3c446fe2ef8a}{Secant} ()
+\item 
+\hyperlink{structNumber}{Number} $\ast$ \hyperlink{structComplexNumber_a922c244a14dbee2e17bd5dc6dbec7625}{Cotangent} ()
+\item 
+\hyperlink{structNumber}{Number} $\ast$ \hyperlink{structComplexNumber_ab52b2cfd9cd0ba862346408c580e385c}{Arc\+Sine} ()
+\item 
+\hyperlink{structNumber}{Number} $\ast$ \hyperlink{structComplexNumber_a5f9bdc56dba5fc8cdf8afb8cd232e7e4}{Arc\+Cosine} ()
+\item 
+\hyperlink{structNumber}{Number} $\ast$ \hyperlink{structComplexNumber_a69dc018433e7409d5b6b6d87568ae232}{Arc\+Tangent} ()
+\item 
+\hyperlink{structNumber}{Number} $\ast$ \hyperlink{structComplexNumber_a904a9af5470b037c1931d7d090410c94}{Arc\+Cosecant} ()
+\item 
+\hyperlink{structNumber}{Number} $\ast$ \hyperlink{structComplexNumber_a66cb3904e4b3127f0e3714ba23a0c981}{Arc\+Secant} ()
+\item 
+\hyperlink{structNumber}{Number} $\ast$ \hyperlink{structComplexNumber_a412a4480826c808d9358ccc84f24a75f}{Arc\+Cotangent} ()
+\item 
+\hyperlink{structNumber}{Number} $\ast$ \hyperlink{structComplexNumber_a800a3cce573a4952ffdc61591ef781cc}{Hyp\+Sine} ()
+\item 
+\hyperlink{structNumber}{Number} $\ast$ \hyperlink{structComplexNumber_a3de3278838400b94d6da3aabc264e467}{Hyp\+Cosine} ()
+\item 
+\hyperlink{structNumber}{Number} $\ast$ \hyperlink{structComplexNumber_a313bade9f3fdc7171f907c9fbafa06a0}{Hyp\+Tangent} ()
+\item 
+\hyperlink{structNumber}{Number} $\ast$ \hyperlink{structComplexNumber_ab4ee0dc45e8e43e1fa647bef6c65542c}{Hyp\+Cosecant} ()
+\item 
+\hyperlink{structNumber}{Number} $\ast$ \hyperlink{structComplexNumber_af3c80a4c100e00445f5e4c52be29c031}{Hyp\+Secant} ()
+\item 
+\hyperlink{structNumber}{Number} $\ast$ \hyperlink{structComplexNumber_aecf508c5b54725938ffe98f97088d4db}{Hyp\+Cotangent} ()
+\item 
+\hyperlink{structNumber}{Number} $\ast$ \hyperlink{structComplexNumber_a0081fb3057a6ab825ac0b3dbea62406b}{Hyp\+Arc\+Sine} ()
+\item 
+\hyperlink{structNumber}{Number} $\ast$ \hyperlink{structComplexNumber_a9d1b26167fb3e3c84e18b724bcfbb48a}{Hyp\+Arc\+Cosine} ()
+\item 
+\hyperlink{structNumber}{Number} $\ast$ \hyperlink{structComplexNumber_a9c1090310f2f9e656467625e0137c8dc}{Hyp\+Arc\+Tangent} ()
+\item 
+\hyperlink{structNumber}{Number} $\ast$ \hyperlink{structComplexNumber_af53cdbbf59f07f40118cf05a51cf3d0a}{Hyp\+Arc\+Cosecant} ()
+\item 
+\hyperlink{structNumber}{Number} $\ast$ \hyperlink{structComplexNumber_af0d9ceb661b6bf3052d3806c84ab6faf}{Hyp\+Arc\+Secant} ()
+\item 
+\hyperlink{structNumber}{Number} $\ast$ \hyperlink{structComplexNumber_acf624375cf09c48f5209ec3605ca01f6}{Hyp\+Arc\+Cotangent} ()
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{unioncomplex}{complex} \hyperlink{structComplexNumber_a5f72da71f4ce0d88076a391369239042}{z}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+Represent a complex number with 2 componts of 15 siginificant digits. 
+
+Calculations are done using 64 bit I\+E\+EE 754 arithmetics. 
+
+Definition at line 46 of file cplex.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Complex\+Number@{Complex\+Number}!Complex\+Number@{Complex\+Number}}
+\index{Complex\+Number@{Complex\+Number}!Complex\+Number@{Complex\+Number}}
+\subsubsection[{\texorpdfstring{Complex\+Number()}{ComplexNumber()}}]{\setlength{\rightskip}{0pt plus 5cm}Complex\+Number\+::\+Complex\+Number (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{structComplexNumber_a610e9db9ff0ddb0140e30d235ab64e44}{}\label{structComplexNumber_a610e9db9ff0ddb0140e30d235ab64e44}
+
+
+Definition at line 33 of file cplex.\+cpp.
+
+
+
+References cpack(), nsyscomplex, Number\+::\+Number(), and z.
+
+
+
+Referenced by Add(), Div(), Mul(), Raise(), and Sub().
+
+
+\begin{DoxyCode}
+33                              :
+34     \hyperlink{structNumber_afd3c2f9b4b288e339f741a6e4ae54593}{Number}(\hyperlink{numb_8h_a1475a201d2346881ce88dfbacf628c7da3b38c947375a3db3a4bc184a11c8ee42}{nsyscomplex}) \{
+35     \hyperlink{structComplexNumber_a5f72da71f4ce0d88076a391369239042}{z} = \hyperlink{complex_8h_a980e6e049f7902b05fc9eb5614b07a5c}{cpack}(0.0, 0.0);
+36 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{db/d8e/structComplexNumber_a610e9db9ff0ddb0140e30d235ab64e44_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{db/d8e/structComplexNumber_a610e9db9ff0ddb0140e30d235ab64e44_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Complex\+Number@{Complex\+Number}!Complex\+Number@{Complex\+Number}}
+\index{Complex\+Number@{Complex\+Number}!Complex\+Number@{Complex\+Number}}
+\subsubsection[{\texorpdfstring{Complex\+Number(complex z)}{ComplexNumber(complex z)}}]{\setlength{\rightskip}{0pt plus 5cm}Complex\+Number\+::\+Complex\+Number (
+\begin{DoxyParamCaption}
+\item[{{\bf complex}}]{z}
+\end{DoxyParamCaption}
+)}\hypertarget{structComplexNumber_a0d89581ead93385331befcef51698693}{}\label{structComplexNumber_a0d89581ead93385331befcef51698693}
+
+
+Definition at line 38 of file cplex.\+cpp.
+
+
+
+References nsyscomplex, Number\+::\+Number(), and z.
+
+
+
+Referenced by Add(), Arc\+Cosecant(), Arc\+Cosine(), Arc\+Cotangent(), Arc\+Secant(), Arc\+Sine(), Arc\+Tangent(), Ceiling(), Clone(), Cosecant(), Cosine(), Cotangent(), Cube\+Root(), Div(), Floor(), Hyp\+Arc\+Cosecant(), Hyp\+Arc\+Cosine(), Hyp\+Arc\+Cotangent(), Hyp\+Arc\+Secant(), Hyp\+Arc\+Sine(), Hyp\+Arc\+Tangent(), Hyp\+Cosecant(), Hyp\+Cosine(), Hyp\+Cotangent(), Hyp\+Secant(), Hyp\+Sine(), Hyp\+Tangent(), Log(), Log10(), Log2(), Mul(), Raise(), Reciprocal(), Round(), Secant(), Sine(), Square\+Root(), Sub(), Tangent(), Trunc(), and Unary().
+
+
+\begin{DoxyCode}
+38                                       :
+39     \hyperlink{structNumber_afd3c2f9b4b288e339f741a6e4ae54593}{Number}(\hyperlink{numb_8h_a1475a201d2346881ce88dfbacf628c7da3b38c947375a3db3a4bc184a11c8ee42}{nsyscomplex}) \{
+40     this->z = \hyperlink{structComplexNumber_a5f72da71f4ce0d88076a391369239042}{z};
+41 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{db/d8e/structComplexNumber_a0d89581ead93385331befcef51698693_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{db/d8e/structComplexNumber_a0d89581ead93385331befcef51698693_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Complex\+Number@{Complex\+Number}!Complex\+Number@{Complex\+Number}}
+\index{Complex\+Number@{Complex\+Number}!Complex\+Number@{Complex\+Number}}
+\subsubsection[{\texorpdfstring{Complex\+Number(double real, double imag)}{ComplexNumber(double real, double imag)}}]{\setlength{\rightskip}{0pt plus 5cm}Complex\+Number\+::\+Complex\+Number (
+\begin{DoxyParamCaption}
+\item[{double}]{real, }
+\item[{double}]{imag}
+\end{DoxyParamCaption}
+)}\hypertarget{structComplexNumber_af0a78be5e675c845b8dc2bf8e5e8f32b}{}\label{structComplexNumber_af0a78be5e675c845b8dc2bf8e5e8f32b}
+
+
+Definition at line 43 of file cplex.\+cpp.
+
+
+
+References cpack(), nsyscomplex, Number\+::\+Number(), and z.
+
+
+
+Referenced by Complexi\+Node\+::\+Complexi\+Node(), Parser\+::\+Parse\+Number(), Real\+Number\+::\+Raise(), and Real\+Number\+::\+Square\+Root().
+
+
+\begin{DoxyCode}
+43                                                      :
+44     \hyperlink{structNumber_afd3c2f9b4b288e339f741a6e4ae54593}{Number}(\hyperlink{numb_8h_a1475a201d2346881ce88dfbacf628c7da3b38c947375a3db3a4bc184a11c8ee42}{nsyscomplex}) \{
+45     \hyperlink{structComplexNumber_a5f72da71f4ce0d88076a391369239042}{z} = \hyperlink{complex_8h_a980e6e049f7902b05fc9eb5614b07a5c}{cpack}(real, imag);
+46 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{db/d8e/structComplexNumber_af0a78be5e675c845b8dc2bf8e5e8f32b_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{db/d8e/structComplexNumber_af0a78be5e675c845b8dc2bf8e5e8f32b_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Complex\+Number@{Complex\+Number}!````~Complex\+Number@{$\sim$\+Complex\+Number}}
+\index{````~Complex\+Number@{$\sim$\+Complex\+Number}!Complex\+Number@{Complex\+Number}}
+\subsubsection[{\texorpdfstring{$\sim$\+Complex\+Number()}{~ComplexNumber()}}]{\setlength{\rightskip}{0pt plus 5cm}Complex\+Number\+::$\sim$\+Complex\+Number (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{structComplexNumber_abc3b759a61e4964ccd712622ce00e0d1}{}\label{structComplexNumber_abc3b759a61e4964ccd712622ce00e0d1}
+
+
+Definition at line 48 of file cplex.\+cpp.
+
+
+\begin{DoxyCode}
+49 \{ \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\index{Complex\+Number@{Complex\+Number}!Absolute@{Absolute}}
+\index{Absolute@{Absolute}!Complex\+Number@{Complex\+Number}}
+\subsubsection[{\texorpdfstring{Absolute()}{Absolute()}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Number} $\ast$ Complex\+Number\+::\+Absolute (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{structComplexNumber_a7fb865f9bca992bb78dc057f3d8cfd82}{}\label{structComplexNumber_a7fb865f9bca992bb78dc057f3d8cfd82}
+
+
+Implements \hyperlink{structNumber_acdbe13cd9862bb73225a893fb14de2a5}{Number}.
+
+
+
+Definition at line 173 of file cplex.\+cpp.
+
+
+
+References cabs(), Real\+Number\+::\+Real\+Number(), and z.
+
+
+\begin{DoxyCode}
+174 \{
+175     \textcolor{keywordflow}{return} \textcolor{keyword}{new} \hyperlink{structNumber_a405f5c7ef806c4c45a1de7647daa6306}{RealNumber}(\hyperlink{complex_8h_af6e02ba9d2566b52e3b0faf2d4ed973a}{cabs}(\hyperlink{structComplexNumber_a5f72da71f4ce0d88076a391369239042}{z}));
+176 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{db/d8e/structComplexNumber_a7fb865f9bca992bb78dc057f3d8cfd82_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{Complex\+Number@{Complex\+Number}!Add@{Add}}
+\index{Add@{Add}!Complex\+Number@{Complex\+Number}}
+\subsubsection[{\texorpdfstring{Add(\+Number $\ast$other)}{Add(Number *other)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Number} $\ast$ Complex\+Number\+::\+Add (
+\begin{DoxyParamCaption}
+\item[{{\bf Number} $\ast$}]{other}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{structComplexNumber_ad6b9fb6fe480c3a626f4e105024d2375}{}\label{structComplexNumber_ad6b9fb6fe480c3a626f4e105024d2375}
+
+
+Implements \hyperlink{structNumber_af38172a47d725f10b8586846cb06e8a4}{Number}.
+
+
+
+Definition at line 103 of file cplex.\+cpp.
+
+
+
+References cadd(), Complex\+Number(), cpack(), nsyscomplex, nsysreal, Number\+::system, Real\+Number\+::x, and z.
+
+
+\begin{DoxyCode}
+104 \{
+105     \textcolor{keywordflow}{if} (other->\hyperlink{structNumber_a2ceda5601c42288626e76b06878e7476}{system} == \hyperlink{numb_8h_a1475a201d2346881ce88dfbacf628c7da3b38c947375a3db3a4bc184a11c8ee42}{nsyscomplex}) \{
+106         \hyperlink{structComplexNumber}{ComplexNumber} *w = (\hyperlink{structComplexNumber}{ComplexNumber}*)other;
+107         \textcolor{keywordflow}{return} \textcolor{keyword}{new} \hyperlink{structComplexNumber_a610e9db9ff0ddb0140e30d235ab64e44}{ComplexNumber}(\hyperlink{complex_8h_a02d8fd1ce9c4fa4e25b1fa676ca96d4e}{cadd}(\hyperlink{structComplexNumber_a5f72da71f4ce0d88076a391369239042}{z}, w->\hyperlink{structComplexNumber_a5f72da71f4ce0d88076a391369239042}{z}));
+108     \} \textcolor{keywordflow}{else}  \textcolor{keywordflow}{if} (other->\hyperlink{structNumber_a2ceda5601c42288626e76b06878e7476}{system} == \hyperlink{numb_8h_a1475a201d2346881ce88dfbacf628c7dae72cf8673109b15268d1c0837e8bff86}{nsysreal}) \{
+109         \hyperlink{structRealNumber}{RealNumber} *a = (\hyperlink{structRealNumber}{RealNumber}*)other;
+110         \textcolor{keywordflow}{return} \textcolor{keyword}{new} \hyperlink{structComplexNumber_a610e9db9ff0ddb0140e30d235ab64e44}{ComplexNumber}(\hyperlink{complex_8h_a02d8fd1ce9c4fa4e25b1fa676ca96d4e}{cadd}(\hyperlink{structComplexNumber_a5f72da71f4ce0d88076a391369239042}{z}, \hyperlink{complex_8h_a980e6e049f7902b05fc9eb5614b07a5c}{cpack}(a->\hyperlink{structRealNumber_ac33d80bee75448490199a0aa48ccce1e}{x}, 0.0)));
+111     \} \textcolor{keywordflow}{else} \{
+112         \textcolor{keywordflow}{return} \textcolor{keyword}{new} \hyperlink{structComplexNumber_a610e9db9ff0ddb0140e30d235ab64e44}{ComplexNumber}();
+113     \}
+114 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{db/d8e/structComplexNumber_ad6b9fb6fe480c3a626f4e105024d2375_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{Complex\+Number@{Complex\+Number}!Arc\+Cosecant@{Arc\+Cosecant}}
+\index{Arc\+Cosecant@{Arc\+Cosecant}!Complex\+Number@{Complex\+Number}}
+\subsubsection[{\texorpdfstring{Arc\+Cosecant()}{ArcCosecant()}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Number} $\ast$ Complex\+Number\+::\+Arc\+Cosecant (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{structComplexNumber_a904a9af5470b037c1931d7d090410c94}{}\label{structComplexNumber_a904a9af5470b037c1931d7d090410c94}
+
+
+Implements \hyperlink{structNumber_a31dc5fa52529b5a7e76459bb984505e8}{Number}.
+
+
+
+Definition at line 278 of file cplex.\+cpp.
+
+
+
+References cacsc(), Complex\+Number(), and z.
+
+
+\begin{DoxyCode}
+279 \{
+280     \textcolor{keywordflow}{return} \textcolor{keyword}{new} \hyperlink{structComplexNumber_a610e9db9ff0ddb0140e30d235ab64e44}{ComplexNumber}(\hyperlink{complex_8h_aa8a49b2418f7bbcf0a8f72a15fbb4984}{cacsc}(\hyperlink{structComplexNumber_a5f72da71f4ce0d88076a391369239042}{z}));
+281 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{db/d8e/structComplexNumber_a904a9af5470b037c1931d7d090410c94_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{Complex\+Number@{Complex\+Number}!Arc\+Cosine@{Arc\+Cosine}}
+\index{Arc\+Cosine@{Arc\+Cosine}!Complex\+Number@{Complex\+Number}}
+\subsubsection[{\texorpdfstring{Arc\+Cosine()}{ArcCosine()}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Number} $\ast$ Complex\+Number\+::\+Arc\+Cosine (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{structComplexNumber_a5f9bdc56dba5fc8cdf8afb8cd232e7e4}{}\label{structComplexNumber_a5f9bdc56dba5fc8cdf8afb8cd232e7e4}
+
+
+Implements \hyperlink{structNumber_a0056c25bf82bef6565963740ebab7517}{Number}.
+
+
+
+Definition at line 263 of file cplex.\+cpp.
+
+
+
+References cacos(), Complex\+Number(), and z.
+
+
+\begin{DoxyCode}
+264 \{
+265     \textcolor{keywordflow}{return} \textcolor{keyword}{new} \hyperlink{structComplexNumber_a610e9db9ff0ddb0140e30d235ab64e44}{ComplexNumber}(\hyperlink{complex_8h_ac182d6022bdabf7f2b6eccb6a0ea497b}{cacos}(\hyperlink{structComplexNumber_a5f72da71f4ce0d88076a391369239042}{z}));
+266 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{db/d8e/structComplexNumber_a5f9bdc56dba5fc8cdf8afb8cd232e7e4_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{Complex\+Number@{Complex\+Number}!Arc\+Cotangent@{Arc\+Cotangent}}
+\index{Arc\+Cotangent@{Arc\+Cotangent}!Complex\+Number@{Complex\+Number}}
+\subsubsection[{\texorpdfstring{Arc\+Cotangent()}{ArcCotangent()}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Number} $\ast$ Complex\+Number\+::\+Arc\+Cotangent (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{structComplexNumber_a412a4480826c808d9358ccc84f24a75f}{}\label{structComplexNumber_a412a4480826c808d9358ccc84f24a75f}
+
+
+Implements \hyperlink{structNumber_a859439f92698a61407238c4be5c1f1f5}{Number}.
+
+
+
+Definition at line 283 of file cplex.\+cpp.
+
+
+
+References cacot(), Complex\+Number(), and z.
+
+
+\begin{DoxyCode}
+284 \{
+285     \textcolor{keywordflow}{return} \textcolor{keyword}{new} \hyperlink{structComplexNumber_a610e9db9ff0ddb0140e30d235ab64e44}{ComplexNumber}(\hyperlink{complex_8h_a9fe610b52824ffaa0764c77e462c9815}{cacot}(\hyperlink{structComplexNumber_a5f72da71f4ce0d88076a391369239042}{z}));
+286 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{db/d8e/structComplexNumber_a412a4480826c808d9358ccc84f24a75f_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{Complex\+Number@{Complex\+Number}!Arc\+Secant@{Arc\+Secant}}
+\index{Arc\+Secant@{Arc\+Secant}!Complex\+Number@{Complex\+Number}}
+\subsubsection[{\texorpdfstring{Arc\+Secant()}{ArcSecant()}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Number} $\ast$ Complex\+Number\+::\+Arc\+Secant (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{structComplexNumber_a66cb3904e4b3127f0e3714ba23a0c981}{}\label{structComplexNumber_a66cb3904e4b3127f0e3714ba23a0c981}
+
+
+Implements \hyperlink{structNumber_aa7056bfff596b8d78757cac21a708094}{Number}.
+
+
+
+Definition at line 273 of file cplex.\+cpp.
+
+
+
+References casec(), Complex\+Number(), and z.
+
+
+\begin{DoxyCode}
+274 \{
+275     \textcolor{keywordflow}{return} \textcolor{keyword}{new} \hyperlink{structComplexNumber_a610e9db9ff0ddb0140e30d235ab64e44}{ComplexNumber}(\hyperlink{complex_8h_ae509596503bb6ea1142d470882e074a7}{casec}(\hyperlink{structComplexNumber_a5f72da71f4ce0d88076a391369239042}{z}));
+276 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{db/d8e/structComplexNumber_a66cb3904e4b3127f0e3714ba23a0c981_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{Complex\+Number@{Complex\+Number}!Arc\+Sine@{Arc\+Sine}}
+\index{Arc\+Sine@{Arc\+Sine}!Complex\+Number@{Complex\+Number}}
+\subsubsection[{\texorpdfstring{Arc\+Sine()}{ArcSine()}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Number} $\ast$ Complex\+Number\+::\+Arc\+Sine (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{structComplexNumber_ab52b2cfd9cd0ba862346408c580e385c}{}\label{structComplexNumber_ab52b2cfd9cd0ba862346408c580e385c}
+
+
+Implements \hyperlink{structNumber_aabfd7afb2309911d8f1bc26b6927e4ef}{Number}.
+
+
+
+Definition at line 258 of file cplex.\+cpp.
+
+
+
+References casin(), Complex\+Number(), and z.
+
+
+\begin{DoxyCode}
+259 \{
+260     \textcolor{keywordflow}{return} \textcolor{keyword}{new} \hyperlink{structComplexNumber_a610e9db9ff0ddb0140e30d235ab64e44}{ComplexNumber}(\hyperlink{complex_8h_a411c00ad70bc1b91a5de261b64d0f131}{casin}(\hyperlink{structComplexNumber_a5f72da71f4ce0d88076a391369239042}{z}));
+261 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{db/d8e/structComplexNumber_ab52b2cfd9cd0ba862346408c580e385c_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{Complex\+Number@{Complex\+Number}!Arc\+Tangent@{Arc\+Tangent}}
+\index{Arc\+Tangent@{Arc\+Tangent}!Complex\+Number@{Complex\+Number}}
+\subsubsection[{\texorpdfstring{Arc\+Tangent()}{ArcTangent()}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Number} $\ast$ Complex\+Number\+::\+Arc\+Tangent (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{structComplexNumber_a69dc018433e7409d5b6b6d87568ae232}{}\label{structComplexNumber_a69dc018433e7409d5b6b6d87568ae232}
+
+
+Implements \hyperlink{structNumber_aaf001a24205a4062b2cfc79873d2884d}{Number}.
+
+
+
+Definition at line 268 of file cplex.\+cpp.
+
+
+
+References catan(), Complex\+Number(), and z.
+
+
+\begin{DoxyCode}
+269 \{
+270     \textcolor{keywordflow}{return} \textcolor{keyword}{new} \hyperlink{structComplexNumber_a610e9db9ff0ddb0140e30d235ab64e44}{ComplexNumber}(\hyperlink{complex_8h_aa4ec5b4617afd43de3b6c7a11e850f04}{catan}(\hyperlink{structComplexNumber_a5f72da71f4ce0d88076a391369239042}{z}));
+271 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{db/d8e/structComplexNumber_a69dc018433e7409d5b6b6d87568ae232_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{Complex\+Number@{Complex\+Number}!Ceiling@{Ceiling}}
+\index{Ceiling@{Ceiling}!Complex\+Number@{Complex\+Number}}
+\subsubsection[{\texorpdfstring{Ceiling()}{Ceiling()}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Number} $\ast$ Complex\+Number\+::\+Ceiling (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{structComplexNumber_a4788f638a16773706510bdc2edd0ea49}{}\label{structComplexNumber_a4788f638a16773706510bdc2edd0ea49}
+
+
+Implements \hyperlink{structNumber_af6cc655e7d0eeb4f68a091456dddc25a}{Number}.
+
+
+
+Definition at line 193 of file cplex.\+cpp.
+
+
+
+References cceil(), Complex\+Number(), and z.
+
+
+\begin{DoxyCode}
+194 \{
+195     \textcolor{keywordflow}{return} \textcolor{keyword}{new} \hyperlink{structComplexNumber_a610e9db9ff0ddb0140e30d235ab64e44}{ComplexNumber}(\hyperlink{complex_8h_a48443015efbd58ce5da6d64d9858f168}{cceil}(\hyperlink{structComplexNumber_a5f72da71f4ce0d88076a391369239042}{z}));
+196 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{db/d8e/structComplexNumber_a4788f638a16773706510bdc2edd0ea49_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{Complex\+Number@{Complex\+Number}!Clone@{Clone}}
+\index{Clone@{Clone}!Complex\+Number@{Complex\+Number}}
+\subsubsection[{\texorpdfstring{Clone()}{Clone()}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Number} $\ast$ Complex\+Number\+::\+Clone (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{structComplexNumber_acae8fd1b1c3cd871b9975053b9bcc4d1}{}\label{structComplexNumber_acae8fd1b1c3cd871b9975053b9bcc4d1}
+
+
+Implements \hyperlink{structNumber_af59101b8a549616be51212fa1c17785e}{Number}.
+
+
+
+Definition at line 51 of file cplex.\+cpp.
+
+
+
+References Complex\+Number(), and z.
+
+
+\begin{DoxyCode}
+52 \{
+53     \textcolor{keywordflow}{return} \textcolor{keyword}{new} \hyperlink{structComplexNumber_a610e9db9ff0ddb0140e30d235ab64e44}{ComplexNumber}(\hyperlink{structComplexNumber_a5f72da71f4ce0d88076a391369239042}{z});
+54 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{db/d8e/structComplexNumber_acae8fd1b1c3cd871b9975053b9bcc4d1_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{Complex\+Number@{Complex\+Number}!Cosecant@{Cosecant}}
+\index{Cosecant@{Cosecant}!Complex\+Number@{Complex\+Number}}
+\subsubsection[{\texorpdfstring{Cosecant()}{Cosecant()}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Number} $\ast$ Complex\+Number\+::\+Cosecant (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{structComplexNumber_a9740a470743b92208243140c3f7a8b35}{}\label{structComplexNumber_a9740a470743b92208243140c3f7a8b35}
+
+
+Implements \hyperlink{structNumber_a267a79888fd185d689e2877b449128d8}{Number}.
+
+
+
+Definition at line 248 of file cplex.\+cpp.
+
+
+
+References ccsc(), Complex\+Number(), and z.
+
+
+\begin{DoxyCode}
+249 \{
+250     \textcolor{keywordflow}{return} \textcolor{keyword}{new} \hyperlink{structComplexNumber_a610e9db9ff0ddb0140e30d235ab64e44}{ComplexNumber}(\hyperlink{complex_8h_a1a06d41ae4e946bed755fe51ffb6ed24}{ccsc}(\hyperlink{structComplexNumber_a5f72da71f4ce0d88076a391369239042}{z}));
+251 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{db/d8e/structComplexNumber_a9740a470743b92208243140c3f7a8b35_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{Complex\+Number@{Complex\+Number}!Cosine@{Cosine}}
+\index{Cosine@{Cosine}!Complex\+Number@{Complex\+Number}}
+\subsubsection[{\texorpdfstring{Cosine()}{Cosine()}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Number} $\ast$ Complex\+Number\+::\+Cosine (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{structComplexNumber_a9c52151f9a5111bf5163f43e5e697f9e}{}\label{structComplexNumber_a9c52151f9a5111bf5163f43e5e697f9e}
+
+
+Implements \hyperlink{structNumber_a39425d97b36e17af4a26f8494a4b6ac4}{Number}.
+
+
+
+Definition at line 233 of file cplex.\+cpp.
+
+
+
+References ccos(), Complex\+Number(), and z.
+
+
+\begin{DoxyCode}
+234 \{
+235     \textcolor{keywordflow}{return} \textcolor{keyword}{new} \hyperlink{structComplexNumber_a610e9db9ff0ddb0140e30d235ab64e44}{ComplexNumber}(\hyperlink{complex_8h_a68da54d02ea0d55bb90dcb06f56d10f5}{ccos}(\hyperlink{structComplexNumber_a5f72da71f4ce0d88076a391369239042}{z}));
+236 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{db/d8e/structComplexNumber_a9c52151f9a5111bf5163f43e5e697f9e_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{Complex\+Number@{Complex\+Number}!Cotangent@{Cotangent}}
+\index{Cotangent@{Cotangent}!Complex\+Number@{Complex\+Number}}
+\subsubsection[{\texorpdfstring{Cotangent()}{Cotangent()}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Number} $\ast$ Complex\+Number\+::\+Cotangent (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{structComplexNumber_a922c244a14dbee2e17bd5dc6dbec7625}{}\label{structComplexNumber_a922c244a14dbee2e17bd5dc6dbec7625}
+
+
+Implements \hyperlink{structNumber_a651d9569abac017baaac7b2edb8f09a8}{Number}.
+
+
+
+Definition at line 253 of file cplex.\+cpp.
+
+
+
+References ccot(), Complex\+Number(), and z.
+
+
+\begin{DoxyCode}
+254 \{
+255     \textcolor{keywordflow}{return} \textcolor{keyword}{new} \hyperlink{structComplexNumber_a610e9db9ff0ddb0140e30d235ab64e44}{ComplexNumber}(\hyperlink{complex_8h_af55c6dec4ec4d7992aea8418480c221c}{ccot}(\hyperlink{structComplexNumber_a5f72da71f4ce0d88076a391369239042}{z}));
+256 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{db/d8e/structComplexNumber_a922c244a14dbee2e17bd5dc6dbec7625_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{Complex\+Number@{Complex\+Number}!Cube\+Root@{Cube\+Root}}
+\index{Cube\+Root@{Cube\+Root}!Complex\+Number@{Complex\+Number}}
+\subsubsection[{\texorpdfstring{Cube\+Root()}{CubeRoot()}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Number} $\ast$ Complex\+Number\+::\+Cube\+Root (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{structComplexNumber_a1589eac796ec230625298d196fe84c25}{}\label{structComplexNumber_a1589eac796ec230625298d196fe84c25}
+
+
+Implements \hyperlink{structNumber_a2c1fed99c53bc717da667e037fbf871b}{Number}.
+
+
+
+Definition at line 208 of file cplex.\+cpp.
+
+
+
+References ccbrt(), Complex\+Number(), and z.
+
+
+\begin{DoxyCode}
+209 \{
+210     \textcolor{keywordflow}{return} \textcolor{keyword}{new} \hyperlink{structComplexNumber_a610e9db9ff0ddb0140e30d235ab64e44}{ComplexNumber}(\hyperlink{complex_8h_a9411d07785a32ac077d24d6c8a5c5554}{ccbrt}(\hyperlink{structComplexNumber_a5f72da71f4ce0d88076a391369239042}{z}));
+211 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{db/d8e/structComplexNumber_a1589eac796ec230625298d196fe84c25_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{Complex\+Number@{Complex\+Number}!Div@{Div}}
+\index{Div@{Div}!Complex\+Number@{Complex\+Number}}
+\subsubsection[{\texorpdfstring{Div(\+Number $\ast$other)}{Div(Number *other)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Number} $\ast$ Complex\+Number\+::\+Div (
+\begin{DoxyParamCaption}
+\item[{{\bf Number} $\ast$}]{other}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{structComplexNumber_a78f07b5e0e9d481629e3814b6037522b}{}\label{structComplexNumber_a78f07b5e0e9d481629e3814b6037522b}
+
+
+Implements \hyperlink{structNumber_a63917f8ad27c63f6616107d480ef9b5e}{Number}.
+
+
+
+Definition at line 142 of file cplex.\+cpp.
+
+
+
+References cdiv(), Complex\+Number(), cpack(), nsyscomplex, nsysreal, Number\+::system, Real\+Number\+::x, and z.
+
+
+\begin{DoxyCode}
+143 \{
+144     \textcolor{keywordflow}{if} (other->\hyperlink{structNumber_a2ceda5601c42288626e76b06878e7476}{system} == \hyperlink{numb_8h_a1475a201d2346881ce88dfbacf628c7da3b38c947375a3db3a4bc184a11c8ee42}{nsyscomplex}) \{
+145         \hyperlink{structComplexNumber}{ComplexNumber} *w = (\hyperlink{structComplexNumber}{ComplexNumber}*)other;
+146         \textcolor{keywordflow}{return} \textcolor{keyword}{new} \hyperlink{structComplexNumber_a610e9db9ff0ddb0140e30d235ab64e44}{ComplexNumber}(\hyperlink{complex_8h_ace985b5f12a681b496bd3ae5f8a966b4}{cdiv}(\hyperlink{structComplexNumber_a5f72da71f4ce0d88076a391369239042}{z}, w->\hyperlink{structComplexNumber_a5f72da71f4ce0d88076a391369239042}{z}));
+147     \} \textcolor{keywordflow}{else}  \textcolor{keywordflow}{if} (other->\hyperlink{structNumber_a2ceda5601c42288626e76b06878e7476}{system} == \hyperlink{numb_8h_a1475a201d2346881ce88dfbacf628c7dae72cf8673109b15268d1c0837e8bff86}{nsysreal}) \{
+148         \hyperlink{structRealNumber}{RealNumber} *a = (\hyperlink{structRealNumber}{RealNumber}*)other;
+149         \textcolor{keywordflow}{return} \textcolor{keyword}{new} \hyperlink{structComplexNumber_a610e9db9ff0ddb0140e30d235ab64e44}{ComplexNumber}(\hyperlink{complex_8h_ace985b5f12a681b496bd3ae5f8a966b4}{cdiv}(\hyperlink{structComplexNumber_a5f72da71f4ce0d88076a391369239042}{z}, \hyperlink{complex_8h_a980e6e049f7902b05fc9eb5614b07a5c}{cpack}(a->\hyperlink{structRealNumber_ac33d80bee75448490199a0aa48ccce1e}{x}, 0.0)));
+150     \} \textcolor{keywordflow}{else} \{
+151         \textcolor{keywordflow}{return} \textcolor{keyword}{new} \hyperlink{structComplexNumber_a610e9db9ff0ddb0140e30d235ab64e44}{ComplexNumber}();
+152     \}
+153 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{db/d8e/structComplexNumber_a78f07b5e0e9d481629e3814b6037522b_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{Complex\+Number@{Complex\+Number}!Floor@{Floor}}
+\index{Floor@{Floor}!Complex\+Number@{Complex\+Number}}
+\subsubsection[{\texorpdfstring{Floor()}{Floor()}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Number} $\ast$ Complex\+Number\+::\+Floor (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{structComplexNumber_abf02b60fa622fae2724b7a6768acf2d6}{}\label{structComplexNumber_abf02b60fa622fae2724b7a6768acf2d6}
+
+
+Implements \hyperlink{structNumber_ae0f6a7e7552384f7a2781aaf0c6c2837}{Number}.
+
+
+
+Definition at line 188 of file cplex.\+cpp.
+
+
+
+References cfloor(), Complex\+Number(), and z.
+
+
+\begin{DoxyCode}
+189 \{
+190     \textcolor{keywordflow}{return} \textcolor{keyword}{new} \hyperlink{structComplexNumber_a610e9db9ff0ddb0140e30d235ab64e44}{ComplexNumber}(\hyperlink{complex_8h_a12886361ac7d752a46ec5cf3bdd0687e}{cfloor}(\hyperlink{structComplexNumber_a5f72da71f4ce0d88076a391369239042}{z}));
+191 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{db/d8e/structComplexNumber_abf02b60fa622fae2724b7a6768acf2d6_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{Complex\+Number@{Complex\+Number}!Get\+Complex\+Value@{Get\+Complex\+Value}}
+\index{Get\+Complex\+Value@{Get\+Complex\+Value}!Complex\+Number@{Complex\+Number}}
+\subsubsection[{\texorpdfstring{Get\+Complex\+Value()}{GetComplexValue()}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf complex} Complex\+Number\+::\+Get\+Complex\+Value (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{structComplexNumber_a711b2ce78037a97680c46a5e1e9a4bb8}{}\label{structComplexNumber_a711b2ce78037a97680c46a5e1e9a4bb8}
+
+
+Definition at line 71 of file cplex.\+cpp.
+
+
+
+References z.
+
+
+
+Referenced by Positional\+Numeral\+System\+::\+Get\+Text(), and Decimal\+System\+::\+Get\+Text().
+
+
+\begin{DoxyCode}
+72 \{
+73     \textcolor{keywordflow}{return} \hyperlink{structComplexNumber_a5f72da71f4ce0d88076a391369239042}{z};
+74 \}
+\end{DoxyCode}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{db/d8e/structComplexNumber_a711b2ce78037a97680c46a5e1e9a4bb8_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Complex\+Number@{Complex\+Number}!Get\+Default\+Precedence@{Get\+Default\+Precedence}}
+\index{Get\+Default\+Precedence@{Get\+Default\+Precedence}!Complex\+Number@{Complex\+Number}}
+\subsubsection[{\texorpdfstring{Get\+Default\+Precedence()}{GetDefaultPrecedence()}}]{\setlength{\rightskip}{0pt plus 5cm}int Complex\+Number\+::\+Get\+Default\+Precedence (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{structComplexNumber_a703a1afdc3223e5cdacff225903e62ef}{}\label{structComplexNumber_a703a1afdc3223e5cdacff225903e62ef}
+
+
+Implements \hyperlink{structNumber_a63541fd80102c9fc36f8f913446700df}{Number}.
+
+
+
+Definition at line 92 of file cplex.\+cpp.
+
+
+
+References cimag(), creal(), and z.
+
+
+\begin{DoxyCode}
+93 \{
+94     \textcolor{keywordflow}{return} (\hyperlink{complex_8h_a4a236b24c0197821e3489a35a72079ab}{creal}(\hyperlink{structComplexNumber_a5f72da71f4ce0d88076a391369239042}{z}) != 0.0 && \hyperlink{complex_8h_aa1fe0b9371befabef6c41ba73470774a}{cimag}(\hyperlink{structComplexNumber_a5f72da71f4ce0d88076a391369239042}{z}) != 0.0) ? 2 : 0;
+95 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=302pt]{db/d8e/structComplexNumber_a703a1afdc3223e5cdacff225903e62ef_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{Complex\+Number@{Complex\+Number}!Get\+Imag\+Value@{Get\+Imag\+Value}}
+\index{Get\+Imag\+Value@{Get\+Imag\+Value}!Complex\+Number@{Complex\+Number}}
+\subsubsection[{\texorpdfstring{Get\+Imag\+Value()}{GetImagValue()}}]{\setlength{\rightskip}{0pt plus 5cm}double Complex\+Number\+::\+Get\+Imag\+Value (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{structComplexNumber_a4b26887c940f046a442815ac154cda66}{}\label{structComplexNumber_a4b26887c940f046a442815ac154cda66}
+
+
+Definition at line 66 of file cplex.\+cpp.
+
+
+
+References cimag(), and z.
+
+
+\begin{DoxyCode}
+67 \{
+68     \textcolor{keywordflow}{return} \hyperlink{complex_8h_aa1fe0b9371befabef6c41ba73470774a}{cimag}(\hyperlink{structComplexNumber_a5f72da71f4ce0d88076a391369239042}{z});
+69 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=317pt]{db/d8e/structComplexNumber_a4b26887c940f046a442815ac154cda66_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{Complex\+Number@{Complex\+Number}!Get\+Integer\+Value@{Get\+Integer\+Value}}
+\index{Get\+Integer\+Value@{Get\+Integer\+Value}!Complex\+Number@{Complex\+Number}}
+\subsubsection[{\texorpdfstring{Get\+Integer\+Value()}{GetIntegerValue()}}]{\setlength{\rightskip}{0pt plus 5cm}int Complex\+Number\+::\+Get\+Integer\+Value (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{structComplexNumber_a5d9fb1157a99a97244b306821b1d30c1}{}\label{structComplexNumber_a5d9fb1157a99a97244b306821b1d30c1}
+
+
+Implements \hyperlink{structNumber_aa2c4b207ac557a8bdbc1cf5696d37160}{Number}.
+
+
+
+Definition at line 56 of file cplex.\+cpp.
+
+
+
+References creal(), and z.
+
+
+\begin{DoxyCode}
+57 \{
+58     \textcolor{keywordflow}{return} (\textcolor{keywordtype}{int}) \hyperlink{complex_8h_a4a236b24c0197821e3489a35a72079ab}{creal}(\hyperlink{structComplexNumber_a5f72da71f4ce0d88076a391369239042}{z});
+59 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=296pt]{db/d8e/structComplexNumber_a5d9fb1157a99a97244b306821b1d30c1_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{Complex\+Number@{Complex\+Number}!Get\+Precedence@{Get\+Precedence}}
+\index{Get\+Precedence@{Get\+Precedence}!Complex\+Number@{Complex\+Number}}
+\subsubsection[{\texorpdfstring{Get\+Precedence()}{GetPrecedence()}}]{\setlength{\rightskip}{0pt plus 5cm}int Complex\+Number\+::\+Get\+Precedence (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{structComplexNumber_a14e7e0bfb5fe65d667c9ff50634cfdf6}{}\label{structComplexNumber_a14e7e0bfb5fe65d667c9ff50634cfdf6}
+
+
+Implements \hyperlink{structNumber_a283da553cc9b328c3805611f2d96523d}{Number}.
+
+
+
+Definition at line 81 of file cplex.\+cpp.
+
+
+
+References cimag(), creal(), and z.
+
+
+\begin{DoxyCode}
+82 \{
+83     \textcolor{keywordflow}{if} ((\hyperlink{complex_8h_a4a236b24c0197821e3489a35a72079ab}{creal}(\hyperlink{structComplexNumber_a5f72da71f4ce0d88076a391369239042}{z}) < 0.0) || (\hyperlink{complex_8h_a4a236b24c0197821e3489a35a72079ab}{creal}(\hyperlink{structComplexNumber_a5f72da71f4ce0d88076a391369239042}{z}) == 0.0 && \hyperlink{complex_8h_aa1fe0b9371befabef6c41ba73470774a}{cimag}(\hyperlink{structComplexNumber_a5f72da71f4ce0d88076a391369239042}{z}) < 0.0)) \{
+84         \textcolor{keywordflow}{return} -1;
+85     \} \textcolor{keywordflow}{else}  \textcolor{keywordflow}{if} (\hyperlink{complex_8h_a4a236b24c0197821e3489a35a72079ab}{creal}(\hyperlink{structComplexNumber_a5f72da71f4ce0d88076a391369239042}{z}) != 0.0 && \hyperlink{complex_8h_aa1fe0b9371befabef6c41ba73470774a}{cimag}(\hyperlink{structComplexNumber_a5f72da71f4ce0d88076a391369239042}{z}) != 0.0) \{
+86         \textcolor{keywordflow}{return} 2;
+87     \} \textcolor{keywordflow}{else} \{
+88         \textcolor{keywordflow}{return} 0;
+89     \}
+90 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=323pt]{db/d8e/structComplexNumber_a14e7e0bfb5fe65d667c9ff50634cfdf6_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{Complex\+Number@{Complex\+Number}!Get\+Real\+Value@{Get\+Real\+Value}}
+\index{Get\+Real\+Value@{Get\+Real\+Value}!Complex\+Number@{Complex\+Number}}
+\subsubsection[{\texorpdfstring{Get\+Real\+Value()}{GetRealValue()}}]{\setlength{\rightskip}{0pt plus 5cm}double Complex\+Number\+::\+Get\+Real\+Value (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{structComplexNumber_ae9f6a3f46c067286dec298358dee3cd7}{}\label{structComplexNumber_ae9f6a3f46c067286dec298358dee3cd7}
+
+
+Implements \hyperlink{structNumber_a83da654d465f1344162ce8b8f8c564b9}{Number}.
+
+
+
+Definition at line 61 of file cplex.\+cpp.
+
+
+
+References creal(), and z.
+
+
+\begin{DoxyCode}
+62 \{
+63     \textcolor{keywordflow}{return} \hyperlink{complex_8h_a4a236b24c0197821e3489a35a72079ab}{creal}(\hyperlink{structComplexNumber_a5f72da71f4ce0d88076a391369239042}{z});
+64 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=311pt]{db/d8e/structComplexNumber_ae9f6a3f46c067286dec298358dee3cd7_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{Complex\+Number@{Complex\+Number}!Hyp\+Arc\+Cosecant@{Hyp\+Arc\+Cosecant}}
+\index{Hyp\+Arc\+Cosecant@{Hyp\+Arc\+Cosecant}!Complex\+Number@{Complex\+Number}}
+\subsubsection[{\texorpdfstring{Hyp\+Arc\+Cosecant()}{HypArcCosecant()}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Number} $\ast$ Complex\+Number\+::\+Hyp\+Arc\+Cosecant (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{structComplexNumber_af53cdbbf59f07f40118cf05a51cf3d0a}{}\label{structComplexNumber_af53cdbbf59f07f40118cf05a51cf3d0a}
+
+
+Implements \hyperlink{structNumber_a161ee9528f4ba95e95e1310d840f7092}{Number}.
+
+
+
+Definition at line 338 of file cplex.\+cpp.
+
+
+
+References cacsch(), Complex\+Number(), and z.
+
+
+\begin{DoxyCode}
+339 \{
+340     \textcolor{keywordflow}{return} \textcolor{keyword}{new} \hyperlink{structComplexNumber_a610e9db9ff0ddb0140e30d235ab64e44}{ComplexNumber}(\hyperlink{complex_8h_a1a3241a96a0225c9ef3113f5e5c48acf}{cacsch}(\hyperlink{structComplexNumber_a5f72da71f4ce0d88076a391369239042}{z}));
+341 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{db/d8e/structComplexNumber_af53cdbbf59f07f40118cf05a51cf3d0a_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{Complex\+Number@{Complex\+Number}!Hyp\+Arc\+Cosine@{Hyp\+Arc\+Cosine}}
+\index{Hyp\+Arc\+Cosine@{Hyp\+Arc\+Cosine}!Complex\+Number@{Complex\+Number}}
+\subsubsection[{\texorpdfstring{Hyp\+Arc\+Cosine()}{HypArcCosine()}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Number} $\ast$ Complex\+Number\+::\+Hyp\+Arc\+Cosine (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{structComplexNumber_a9d1b26167fb3e3c84e18b724bcfbb48a}{}\label{structComplexNumber_a9d1b26167fb3e3c84e18b724bcfbb48a}
+
+
+Implements \hyperlink{structNumber_ae919ea5844a071f26f61a069055429ea}{Number}.
+
+
+
+Definition at line 323 of file cplex.\+cpp.
+
+
+
+References cacosh(), Complex\+Number(), and z.
+
+
+\begin{DoxyCode}
+324 \{
+325     \textcolor{keywordflow}{return} \textcolor{keyword}{new} \hyperlink{structComplexNumber_a610e9db9ff0ddb0140e30d235ab64e44}{ComplexNumber}(\hyperlink{complex_8h_a451ef5c81d4091e547e52a9a03af260d}{cacosh}(\hyperlink{structComplexNumber_a5f72da71f4ce0d88076a391369239042}{z}));
+326 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{db/d8e/structComplexNumber_a9d1b26167fb3e3c84e18b724bcfbb48a_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{Complex\+Number@{Complex\+Number}!Hyp\+Arc\+Cotangent@{Hyp\+Arc\+Cotangent}}
+\index{Hyp\+Arc\+Cotangent@{Hyp\+Arc\+Cotangent}!Complex\+Number@{Complex\+Number}}
+\subsubsection[{\texorpdfstring{Hyp\+Arc\+Cotangent()}{HypArcCotangent()}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Number} $\ast$ Complex\+Number\+::\+Hyp\+Arc\+Cotangent (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{structComplexNumber_acf624375cf09c48f5209ec3605ca01f6}{}\label{structComplexNumber_acf624375cf09c48f5209ec3605ca01f6}
+
+
+Implements \hyperlink{structNumber_a41bd8f9dadae875b260ee4fe50280d3e}{Number}.
+
+
+
+Definition at line 343 of file cplex.\+cpp.
+
+
+
+References cacoth(), Complex\+Number(), and z.
+
+
+\begin{DoxyCode}
+344 \{
+345     \textcolor{keywordflow}{return} \textcolor{keyword}{new} \hyperlink{structComplexNumber_a610e9db9ff0ddb0140e30d235ab64e44}{ComplexNumber}(\hyperlink{complex_8h_ab9d5fbd365098aa6a35e8599e13d7adb}{cacoth}(\hyperlink{structComplexNumber_a5f72da71f4ce0d88076a391369239042}{z}));
+346 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{db/d8e/structComplexNumber_acf624375cf09c48f5209ec3605ca01f6_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{Complex\+Number@{Complex\+Number}!Hyp\+Arc\+Secant@{Hyp\+Arc\+Secant}}
+\index{Hyp\+Arc\+Secant@{Hyp\+Arc\+Secant}!Complex\+Number@{Complex\+Number}}
+\subsubsection[{\texorpdfstring{Hyp\+Arc\+Secant()}{HypArcSecant()}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Number} $\ast$ Complex\+Number\+::\+Hyp\+Arc\+Secant (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{structComplexNumber_af0d9ceb661b6bf3052d3806c84ab6faf}{}\label{structComplexNumber_af0d9ceb661b6bf3052d3806c84ab6faf}
+
+
+Implements \hyperlink{structNumber_aa58d792da89672016b2f58beea9009d7}{Number}.
+
+
+
+Definition at line 333 of file cplex.\+cpp.
+
+
+
+References casech(), Complex\+Number(), and z.
+
+
+\begin{DoxyCode}
+334 \{
+335     \textcolor{keywordflow}{return} \textcolor{keyword}{new} \hyperlink{structComplexNumber_a610e9db9ff0ddb0140e30d235ab64e44}{ComplexNumber}(\hyperlink{complex_8h_ad47f8259620b339981f876087f195cb4}{casech}(\hyperlink{structComplexNumber_a5f72da71f4ce0d88076a391369239042}{z}));
+336 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{db/d8e/structComplexNumber_af0d9ceb661b6bf3052d3806c84ab6faf_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{Complex\+Number@{Complex\+Number}!Hyp\+Arc\+Sine@{Hyp\+Arc\+Sine}}
+\index{Hyp\+Arc\+Sine@{Hyp\+Arc\+Sine}!Complex\+Number@{Complex\+Number}}
+\subsubsection[{\texorpdfstring{Hyp\+Arc\+Sine()}{HypArcSine()}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Number} $\ast$ Complex\+Number\+::\+Hyp\+Arc\+Sine (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{structComplexNumber_a0081fb3057a6ab825ac0b3dbea62406b}{}\label{structComplexNumber_a0081fb3057a6ab825ac0b3dbea62406b}
+
+
+Implements \hyperlink{structNumber_aab0a62427355e8139c6d853c7c7ef8d2}{Number}.
+
+
+
+Definition at line 318 of file cplex.\+cpp.
+
+
+
+References casinh(), Complex\+Number(), and z.
+
+
+\begin{DoxyCode}
+319 \{
+320     \textcolor{keywordflow}{return} \textcolor{keyword}{new} \hyperlink{structComplexNumber_a610e9db9ff0ddb0140e30d235ab64e44}{ComplexNumber}(\hyperlink{complex_8h_a333c9aa02a58163693f67e1d47aa9887}{casinh}(\hyperlink{structComplexNumber_a5f72da71f4ce0d88076a391369239042}{z}));
+321 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{db/d8e/structComplexNumber_a0081fb3057a6ab825ac0b3dbea62406b_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{Complex\+Number@{Complex\+Number}!Hyp\+Arc\+Tangent@{Hyp\+Arc\+Tangent}}
+\index{Hyp\+Arc\+Tangent@{Hyp\+Arc\+Tangent}!Complex\+Number@{Complex\+Number}}
+\subsubsection[{\texorpdfstring{Hyp\+Arc\+Tangent()}{HypArcTangent()}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Number} $\ast$ Complex\+Number\+::\+Hyp\+Arc\+Tangent (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{structComplexNumber_a9c1090310f2f9e656467625e0137c8dc}{}\label{structComplexNumber_a9c1090310f2f9e656467625e0137c8dc}
+
+
+Implements \hyperlink{structNumber_aa1af1928e54054a73c43340fd5238299}{Number}.
+
+
+
+Definition at line 328 of file cplex.\+cpp.
+
+
+
+References catanh(), Complex\+Number(), and z.
+
+
+\begin{DoxyCode}
+329 \{
+330     \textcolor{keywordflow}{return} \textcolor{keyword}{new} \hyperlink{structComplexNumber_a610e9db9ff0ddb0140e30d235ab64e44}{ComplexNumber}(\hyperlink{complex_8h_a0808614b4e465dc4b4827382a9f77447}{catanh}(\hyperlink{structComplexNumber_a5f72da71f4ce0d88076a391369239042}{z}));
+331 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{db/d8e/structComplexNumber_a9c1090310f2f9e656467625e0137c8dc_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{Complex\+Number@{Complex\+Number}!Hyp\+Cosecant@{Hyp\+Cosecant}}
+\index{Hyp\+Cosecant@{Hyp\+Cosecant}!Complex\+Number@{Complex\+Number}}
+\subsubsection[{\texorpdfstring{Hyp\+Cosecant()}{HypCosecant()}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Number} $\ast$ Complex\+Number\+::\+Hyp\+Cosecant (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{structComplexNumber_ab4ee0dc45e8e43e1fa647bef6c65542c}{}\label{structComplexNumber_ab4ee0dc45e8e43e1fa647bef6c65542c}
+
+
+Implements \hyperlink{structNumber_a0f75e1e5a241d6a639e20d8a6c427541}{Number}.
+
+
+
+Definition at line 308 of file cplex.\+cpp.
+
+
+
+References ccsch(), Complex\+Number(), and z.
+
+
+\begin{DoxyCode}
+309 \{
+310     \textcolor{keywordflow}{return} \textcolor{keyword}{new} \hyperlink{structComplexNumber_a610e9db9ff0ddb0140e30d235ab64e44}{ComplexNumber}(\hyperlink{complex_8h_a57a12e1badffcb670631844ad876ceba}{ccsch}(\hyperlink{structComplexNumber_a5f72da71f4ce0d88076a391369239042}{z}));
+311 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{db/d8e/structComplexNumber_ab4ee0dc45e8e43e1fa647bef6c65542c_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{Complex\+Number@{Complex\+Number}!Hyp\+Cosine@{Hyp\+Cosine}}
+\index{Hyp\+Cosine@{Hyp\+Cosine}!Complex\+Number@{Complex\+Number}}
+\subsubsection[{\texorpdfstring{Hyp\+Cosine()}{HypCosine()}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Number} $\ast$ Complex\+Number\+::\+Hyp\+Cosine (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{structComplexNumber_a3de3278838400b94d6da3aabc264e467}{}\label{structComplexNumber_a3de3278838400b94d6da3aabc264e467}
+
+
+Implements \hyperlink{structNumber_abab40aa368d554af3e94c410aeb6c636}{Number}.
+
+
+
+Definition at line 293 of file cplex.\+cpp.
+
+
+
+References ccosh(), Complex\+Number(), and z.
+
+
+\begin{DoxyCode}
+294 \{
+295     \textcolor{keywordflow}{return} \textcolor{keyword}{new} \hyperlink{structComplexNumber_a610e9db9ff0ddb0140e30d235ab64e44}{ComplexNumber}(\hyperlink{complex_8h_aa90df67e0430d042887fa77812458f47}{ccosh}(\hyperlink{structComplexNumber_a5f72da71f4ce0d88076a391369239042}{z}));
+296 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{db/d8e/structComplexNumber_a3de3278838400b94d6da3aabc264e467_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{Complex\+Number@{Complex\+Number}!Hyp\+Cotangent@{Hyp\+Cotangent}}
+\index{Hyp\+Cotangent@{Hyp\+Cotangent}!Complex\+Number@{Complex\+Number}}
+\subsubsection[{\texorpdfstring{Hyp\+Cotangent()}{HypCotangent()}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Number} $\ast$ Complex\+Number\+::\+Hyp\+Cotangent (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{structComplexNumber_aecf508c5b54725938ffe98f97088d4db}{}\label{structComplexNumber_aecf508c5b54725938ffe98f97088d4db}
+
+
+Implements \hyperlink{structNumber_a854b3416ab11151bf64247fcfeb69757}{Number}.
+
+
+
+Definition at line 313 of file cplex.\+cpp.
+
+
+
+References ccoth(), Complex\+Number(), and z.
+
+
+\begin{DoxyCode}
+314 \{
+315     \textcolor{keywordflow}{return} \textcolor{keyword}{new} \hyperlink{structComplexNumber_a610e9db9ff0ddb0140e30d235ab64e44}{ComplexNumber}(\hyperlink{complex_8h_abcc180facc4c06148ed64b7bd028e643}{ccoth}(\hyperlink{structComplexNumber_a5f72da71f4ce0d88076a391369239042}{z}));
+316 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{db/d8e/structComplexNumber_aecf508c5b54725938ffe98f97088d4db_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{Complex\+Number@{Complex\+Number}!Hyp\+Secant@{Hyp\+Secant}}
+\index{Hyp\+Secant@{Hyp\+Secant}!Complex\+Number@{Complex\+Number}}
+\subsubsection[{\texorpdfstring{Hyp\+Secant()}{HypSecant()}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Number} $\ast$ Complex\+Number\+::\+Hyp\+Secant (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{structComplexNumber_af3c80a4c100e00445f5e4c52be29c031}{}\label{structComplexNumber_af3c80a4c100e00445f5e4c52be29c031}
+
+
+Implements \hyperlink{structNumber_a88a320bdba4f338347207f82f71bd287}{Number}.
+
+
+
+Definition at line 303 of file cplex.\+cpp.
+
+
+
+References Complex\+Number(), csech(), and z.
+
+
+\begin{DoxyCode}
+304 \{
+305     \textcolor{keywordflow}{return} \textcolor{keyword}{new} \hyperlink{structComplexNumber_a610e9db9ff0ddb0140e30d235ab64e44}{ComplexNumber}(\hyperlink{complex_8h_aa639638fbf6b2c819fd8fb3c093ca012}{csech}(\hyperlink{structComplexNumber_a5f72da71f4ce0d88076a391369239042}{z}));
+306 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{db/d8e/structComplexNumber_af3c80a4c100e00445f5e4c52be29c031_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{Complex\+Number@{Complex\+Number}!Hyp\+Sine@{Hyp\+Sine}}
+\index{Hyp\+Sine@{Hyp\+Sine}!Complex\+Number@{Complex\+Number}}
+\subsubsection[{\texorpdfstring{Hyp\+Sine()}{HypSine()}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Number} $\ast$ Complex\+Number\+::\+Hyp\+Sine (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{structComplexNumber_a800a3cce573a4952ffdc61591ef781cc}{}\label{structComplexNumber_a800a3cce573a4952ffdc61591ef781cc}
+
+
+Implements \hyperlink{structNumber_a5e05df2319f17aa33da95560f9274042}{Number}.
+
+
+
+Definition at line 288 of file cplex.\+cpp.
+
+
+
+References Complex\+Number(), csinh(), and z.
+
+
+\begin{DoxyCode}
+289 \{
+290     \textcolor{keywordflow}{return} \textcolor{keyword}{new} \hyperlink{structComplexNumber_a610e9db9ff0ddb0140e30d235ab64e44}{ComplexNumber}(\hyperlink{complex_8h_a5a9923cad15c34351bb15bd46d5d6331}{csinh}(\hyperlink{structComplexNumber_a5f72da71f4ce0d88076a391369239042}{z}));
+291 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{db/d8e/structComplexNumber_a800a3cce573a4952ffdc61591ef781cc_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{Complex\+Number@{Complex\+Number}!Hyp\+Tangent@{Hyp\+Tangent}}
+\index{Hyp\+Tangent@{Hyp\+Tangent}!Complex\+Number@{Complex\+Number}}
+\subsubsection[{\texorpdfstring{Hyp\+Tangent()}{HypTangent()}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Number} $\ast$ Complex\+Number\+::\+Hyp\+Tangent (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{structComplexNumber_a313bade9f3fdc7171f907c9fbafa06a0}{}\label{structComplexNumber_a313bade9f3fdc7171f907c9fbafa06a0}
+
+
+Implements \hyperlink{structNumber_a0e121d7ed52086bf35a166355101051a}{Number}.
+
+
+
+Definition at line 298 of file cplex.\+cpp.
+
+
+
+References Complex\+Number(), ctanh(), and z.
+
+
+\begin{DoxyCode}
+299 \{
+300     \textcolor{keywordflow}{return} \textcolor{keyword}{new} \hyperlink{structComplexNumber_a610e9db9ff0ddb0140e30d235ab64e44}{ComplexNumber}(\hyperlink{complex_8h_ad8db0bdd6fef8ff43876c845dc1cfb47}{ctanh}(\hyperlink{structComplexNumber_a5f72da71f4ce0d88076a391369239042}{z}));
+301 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{db/d8e/structComplexNumber_a313bade9f3fdc7171f907c9fbafa06a0_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{Complex\+Number@{Complex\+Number}!Log@{Log}}
+\index{Log@{Log}!Complex\+Number@{Complex\+Number}}
+\subsubsection[{\texorpdfstring{Log()}{Log()}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Number} $\ast$ Complex\+Number\+::\+Log (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{structComplexNumber_af2b337a76672ec647dbe707d3287d6df}{}\label{structComplexNumber_af2b337a76672ec647dbe707d3287d6df}
+
+
+Implements \hyperlink{structNumber_a50a23b917c744ce16f0a4eb4e6f76071}{Number}.
+
+
+
+Definition at line 213 of file cplex.\+cpp.
+
+
+
+References clog(), Complex\+Number(), and z.
+
+
+\begin{DoxyCode}
+214 \{
+215     \textcolor{keywordflow}{return} \textcolor{keyword}{new} \hyperlink{structComplexNumber_a610e9db9ff0ddb0140e30d235ab64e44}{ComplexNumber}(\hyperlink{complex_8h_a888b8eb5ccc46411e68f6d7b99035888}{clog}(\hyperlink{structComplexNumber_a5f72da71f4ce0d88076a391369239042}{z}));
+216 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{db/d8e/structComplexNumber_af2b337a76672ec647dbe707d3287d6df_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{Complex\+Number@{Complex\+Number}!Log10@{Log10}}
+\index{Log10@{Log10}!Complex\+Number@{Complex\+Number}}
+\subsubsection[{\texorpdfstring{Log10()}{Log10()}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Number} $\ast$ Complex\+Number\+::\+Log10 (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{structComplexNumber_a77a7c95712136b6beeded79210a18c00}{}\label{structComplexNumber_a77a7c95712136b6beeded79210a18c00}
+
+
+Implements \hyperlink{structNumber_a53f6451df2a81d0ab48887e41f9c98f9}{Number}.
+
+
+
+Definition at line 223 of file cplex.\+cpp.
+
+
+
+References clog10(), Complex\+Number(), and z.
+
+
+\begin{DoxyCode}
+224 \{
+225     \textcolor{keywordflow}{return} \textcolor{keyword}{new} \hyperlink{structComplexNumber_a610e9db9ff0ddb0140e30d235ab64e44}{ComplexNumber}(\hyperlink{complex_8h_a5e20d88f7f7f17d510ddf62f269c8343}{clog10}(\hyperlink{structComplexNumber_a5f72da71f4ce0d88076a391369239042}{z}));
+226 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{db/d8e/structComplexNumber_a77a7c95712136b6beeded79210a18c00_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{Complex\+Number@{Complex\+Number}!Log2@{Log2}}
+\index{Log2@{Log2}!Complex\+Number@{Complex\+Number}}
+\subsubsection[{\texorpdfstring{Log2()}{Log2()}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Number} $\ast$ Complex\+Number\+::\+Log2 (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{structComplexNumber_ae8ff446ea20c3b1e4dfa979eaed9ea86}{}\label{structComplexNumber_ae8ff446ea20c3b1e4dfa979eaed9ea86}
+
+
+Implements \hyperlink{structNumber_a8ace103bb7d32fabc11b65d00ab70f6a}{Number}.
+
+
+
+Definition at line 218 of file cplex.\+cpp.
+
+
+
+References clogb(), Complex\+Number(), and z.
+
+
+\begin{DoxyCode}
+219 \{
+220     \textcolor{keywordflow}{return} \textcolor{keyword}{new} \hyperlink{structComplexNumber_a610e9db9ff0ddb0140e30d235ab64e44}{ComplexNumber}(\hyperlink{complex_8h_a3951e04bc6370fb9fd7b0ff2c2558d7b}{clogb}(\hyperlink{structComplexNumber_a5f72da71f4ce0d88076a391369239042}{z}));
+221 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{db/d8e/structComplexNumber_ae8ff446ea20c3b1e4dfa979eaed9ea86_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{Complex\+Number@{Complex\+Number}!Mul@{Mul}}
+\index{Mul@{Mul}!Complex\+Number@{Complex\+Number}}
+\subsubsection[{\texorpdfstring{Mul(\+Number $\ast$other)}{Mul(Number *other)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Number} $\ast$ Complex\+Number\+::\+Mul (
+\begin{DoxyParamCaption}
+\item[{{\bf Number} $\ast$}]{other}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{structComplexNumber_a8b876b0e7e776fa2f0fa2bc034cc224b}{}\label{structComplexNumber_a8b876b0e7e776fa2f0fa2bc034cc224b}
+
+
+Implements \hyperlink{structNumber_ab853199817c9cd4e43c43aaedc4eef35}{Number}.
+
+
+
+Definition at line 129 of file cplex.\+cpp.
+
+
+
+References cmul(), Complex\+Number(), cpack(), nsyscomplex, nsysreal, Number\+::system, Real\+Number\+::x, and z.
+
+
+\begin{DoxyCode}
+130 \{
+131     \textcolor{keywordflow}{if} (other->\hyperlink{structNumber_a2ceda5601c42288626e76b06878e7476}{system} == \hyperlink{numb_8h_a1475a201d2346881ce88dfbacf628c7da3b38c947375a3db3a4bc184a11c8ee42}{nsyscomplex}) \{
+132         \hyperlink{structComplexNumber}{ComplexNumber} *w = (\hyperlink{structComplexNumber}{ComplexNumber}*)other;
+133         \textcolor{keywordflow}{return} \textcolor{keyword}{new} \hyperlink{structComplexNumber_a610e9db9ff0ddb0140e30d235ab64e44}{ComplexNumber}(\hyperlink{complex_8h_a340ad83d03bcc727538d25dcf6dd26e9}{cmul}(\hyperlink{structComplexNumber_a5f72da71f4ce0d88076a391369239042}{z}, w->\hyperlink{structComplexNumber_a5f72da71f4ce0d88076a391369239042}{z}));
+134     \} \textcolor{keywordflow}{else}  \textcolor{keywordflow}{if} (other->\hyperlink{structNumber_a2ceda5601c42288626e76b06878e7476}{system} == \hyperlink{numb_8h_a1475a201d2346881ce88dfbacf628c7dae72cf8673109b15268d1c0837e8bff86}{nsysreal}) \{
+135         \hyperlink{structRealNumber}{RealNumber} *a = (\hyperlink{structRealNumber}{RealNumber}*)other;
+136         \textcolor{keywordflow}{return} \textcolor{keyword}{new} \hyperlink{structComplexNumber_a610e9db9ff0ddb0140e30d235ab64e44}{ComplexNumber}(\hyperlink{complex_8h_a340ad83d03bcc727538d25dcf6dd26e9}{cmul}(\hyperlink{structComplexNumber_a5f72da71f4ce0d88076a391369239042}{z}, \hyperlink{complex_8h_a980e6e049f7902b05fc9eb5614b07a5c}{cpack}(a->\hyperlink{structRealNumber_ac33d80bee75448490199a0aa48ccce1e}{x}, 0.0)));
+137     \} \textcolor{keywordflow}{else} \{
+138         \textcolor{keywordflow}{return} \textcolor{keyword}{new} \hyperlink{structComplexNumber_a610e9db9ff0ddb0140e30d235ab64e44}{ComplexNumber}();
+139     \}
+140 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{db/d8e/structComplexNumber_a8b876b0e7e776fa2f0fa2bc034cc224b_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{Complex\+Number@{Complex\+Number}!Pure\+Complex\+Value@{Pure\+Complex\+Value}}
+\index{Pure\+Complex\+Value@{Pure\+Complex\+Value}!Complex\+Number@{Complex\+Number}}
+\subsubsection[{\texorpdfstring{Pure\+Complex\+Value()}{PureComplexValue()}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} Complex\+Number\+::\+Pure\+Complex\+Value (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{structComplexNumber_a5343b272e85da4ea67a5b8aaa53fdac0}{}\label{structComplexNumber_a5343b272e85da4ea67a5b8aaa53fdac0}
+
+
+Implements \hyperlink{structNumber_a037b461c2c9189c00b11f395a325735d}{Number}.
+
+
+
+Definition at line 76 of file cplex.\+cpp.
+
+
+
+References creal(), and z.
+
+
+\begin{DoxyCode}
+77 \{
+78     \textcolor{keywordflow}{return} (\hyperlink{complex_8h_a4a236b24c0197821e3489a35a72079ab}{creal}(\hyperlink{structComplexNumber_a5f72da71f4ce0d88076a391369239042}{z}) == 0.0);
+79 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=309pt]{db/d8e/structComplexNumber_a5343b272e85da4ea67a5b8aaa53fdac0_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{Complex\+Number@{Complex\+Number}!Raise@{Raise}}
+\index{Raise@{Raise}!Complex\+Number@{Complex\+Number}}
+\subsubsection[{\texorpdfstring{Raise(\+Number $\ast$exponent)}{Raise(Number *exponent)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Number} $\ast$ Complex\+Number\+::\+Raise (
+\begin{DoxyParamCaption}
+\item[{{\bf Number} $\ast$}]{exponent}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{structComplexNumber_a0ab40e1cbe5c25629fe62643ed8b9352}{}\label{structComplexNumber_a0ab40e1cbe5c25629fe62643ed8b9352}
+
+
+Implements \hyperlink{structNumber_ad258f0357483820672fe2bc41a569dd3}{Number}.
+
+
+
+Definition at line 155 of file cplex.\+cpp.
+
+
+
+References Complex\+Number(), cpack(), cpow(), nsyscomplex, nsysreal, Number\+::system, Real\+Number\+::x, and z.
+
+
+
+Referenced by Real\+Number\+::\+Raise().
+
+
+\begin{DoxyCode}
+156 \{
+157     \textcolor{keywordflow}{if} (exponent->\hyperlink{structNumber_a2ceda5601c42288626e76b06878e7476}{system} == \hyperlink{numb_8h_a1475a201d2346881ce88dfbacf628c7da3b38c947375a3db3a4bc184a11c8ee42}{nsyscomplex}) \{
+158         \hyperlink{structComplexNumber}{ComplexNumber} *w = (\hyperlink{structComplexNumber}{ComplexNumber}*)exponent;
+159         \textcolor{keywordflow}{return} \textcolor{keyword}{new} \hyperlink{structComplexNumber_a610e9db9ff0ddb0140e30d235ab64e44}{ComplexNumber}(\hyperlink{complex_8h_a8d165b5dcf96f12ff8de000474dd020e}{cpow}(\hyperlink{structComplexNumber_a5f72da71f4ce0d88076a391369239042}{z}, w->\hyperlink{structComplexNumber_a5f72da71f4ce0d88076a391369239042}{z}));
+160     \} \textcolor{keywordflow}{else}  \textcolor{keywordflow}{if} (exponent->\hyperlink{structNumber_a2ceda5601c42288626e76b06878e7476}{system} == \hyperlink{numb_8h_a1475a201d2346881ce88dfbacf628c7dae72cf8673109b15268d1c0837e8bff86}{nsysreal}) \{
+161         \hyperlink{structRealNumber}{RealNumber} *a = (\hyperlink{structRealNumber}{RealNumber}*)exponent;
+162         \textcolor{keywordflow}{return} \textcolor{keyword}{new} \hyperlink{structComplexNumber_a610e9db9ff0ddb0140e30d235ab64e44}{ComplexNumber}(\hyperlink{complex_8h_a8d165b5dcf96f12ff8de000474dd020e}{cpow}(\hyperlink{structComplexNumber_a5f72da71f4ce0d88076a391369239042}{z}, \hyperlink{complex_8h_a980e6e049f7902b05fc9eb5614b07a5c}{cpack}(a->\hyperlink{structRealNumber_ac33d80bee75448490199a0aa48ccce1e}{x}, 0.0)));
+163     \} \textcolor{keywordflow}{else} \{
+164         \textcolor{keywordflow}{return} \textcolor{keyword}{new} \hyperlink{structComplexNumber_a610e9db9ff0ddb0140e30d235ab64e44}{ComplexNumber}();
+165     \}
+166 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{db/d8e/structComplexNumber_a0ab40e1cbe5c25629fe62643ed8b9352_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=341pt]{db/d8e/structComplexNumber_a0ab40e1cbe5c25629fe62643ed8b9352_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Complex\+Number@{Complex\+Number}!Reciprocal@{Reciprocal}}
+\index{Reciprocal@{Reciprocal}!Complex\+Number@{Complex\+Number}}
+\subsubsection[{\texorpdfstring{Reciprocal()}{Reciprocal()}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Number} $\ast$ Complex\+Number\+::\+Reciprocal (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{structComplexNumber_ac85979812dffce5a38ccf3cab090b320}{}\label{structComplexNumber_ac85979812dffce5a38ccf3cab090b320}
+
+
+Implements \hyperlink{structNumber_a3048907149c34115a40461c848a34e9e}{Number}.
+
+
+
+Definition at line 203 of file cplex.\+cpp.
+
+
+
+References Complex\+Number(), creci(), and z.
+
+
+\begin{DoxyCode}
+204 \{
+205     \textcolor{keywordflow}{return} \textcolor{keyword}{new} \hyperlink{structComplexNumber_a610e9db9ff0ddb0140e30d235ab64e44}{ComplexNumber}(\hyperlink{complex_8h_a78cdeb0bf6f229c2be3065fc697dac68}{creci}(\hyperlink{structComplexNumber_a5f72da71f4ce0d88076a391369239042}{z}));
+206 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{db/d8e/structComplexNumber_ac85979812dffce5a38ccf3cab090b320_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{Complex\+Number@{Complex\+Number}!Round@{Round}}
+\index{Round@{Round}!Complex\+Number@{Complex\+Number}}
+\subsubsection[{\texorpdfstring{Round()}{Round()}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Number} $\ast$ Complex\+Number\+::\+Round (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{structComplexNumber_a5026a3ed13a525843d02acbd0d94a4aa}{}\label{structComplexNumber_a5026a3ed13a525843d02acbd0d94a4aa}
+
+
+Implements \hyperlink{structNumber_abc34ae359f4b660cccd21d36e7e46334}{Number}.
+
+
+
+Definition at line 183 of file cplex.\+cpp.
+
+
+
+References Complex\+Number(), cround(), and z.
+
+
+\begin{DoxyCode}
+184 \{
+185     \textcolor{keywordflow}{return} \textcolor{keyword}{new} \hyperlink{structComplexNumber_a610e9db9ff0ddb0140e30d235ab64e44}{ComplexNumber}(\hyperlink{complex_8h_a83b50ec7fc882d884c8b740026ab3ef5}{cround}(\hyperlink{structComplexNumber_a5f72da71f4ce0d88076a391369239042}{z}));
+186 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{db/d8e/structComplexNumber_a5026a3ed13a525843d02acbd0d94a4aa_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{Complex\+Number@{Complex\+Number}!Secant@{Secant}}
+\index{Secant@{Secant}!Complex\+Number@{Complex\+Number}}
+\subsubsection[{\texorpdfstring{Secant()}{Secant()}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Number} $\ast$ Complex\+Number\+::\+Secant (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{structComplexNumber_a214e1ed3096e8ed3aa0a3c446fe2ef8a}{}\label{structComplexNumber_a214e1ed3096e8ed3aa0a3c446fe2ef8a}
+
+
+Implements \hyperlink{structNumber_a63ddfeb7b264f76845a0414dc8ade3e6}{Number}.
+
+
+
+Definition at line 243 of file cplex.\+cpp.
+
+
+
+References Complex\+Number(), csec(), and z.
+
+
+\begin{DoxyCode}
+244 \{
+245     \textcolor{keywordflow}{return} \textcolor{keyword}{new} \hyperlink{structComplexNumber_a610e9db9ff0ddb0140e30d235ab64e44}{ComplexNumber}(\hyperlink{complex_8h_a1bbe43785d2b3cc364e50153f203c50d}{csec}(\hyperlink{structComplexNumber_a5f72da71f4ce0d88076a391369239042}{z}));
+246 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{db/d8e/structComplexNumber_a214e1ed3096e8ed3aa0a3c446fe2ef8a_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{Complex\+Number@{Complex\+Number}!Signum@{Signum}}
+\index{Signum@{Signum}!Complex\+Number@{Complex\+Number}}
+\subsubsection[{\texorpdfstring{Signum()}{Signum()}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Number} $\ast$ Complex\+Number\+::\+Signum (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{structComplexNumber_a0dc0f3ef7885f9d6b5a30e6ce983ceeb}{}\label{structComplexNumber_a0dc0f3ef7885f9d6b5a30e6ce983ceeb}
+
+
+Implements \hyperlink{structNumber_ab855ebca1f99be092914ae41aff52204}{Number}.
+
+
+
+Definition at line 168 of file cplex.\+cpp.
+
+
+
+References csgn(), Real\+Number\+::\+Real\+Number(), and z.
+
+
+\begin{DoxyCode}
+169 \{
+170     \textcolor{keywordflow}{return} \textcolor{keyword}{new} \hyperlink{structNumber_a405f5c7ef806c4c45a1de7647daa6306}{RealNumber}(\hyperlink{complex_8h_aaab921fc8e26fcfee85a89e662e41a74}{csgn}(\hyperlink{structComplexNumber_a5f72da71f4ce0d88076a391369239042}{z}));
+171 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{db/d8e/structComplexNumber_a0dc0f3ef7885f9d6b5a30e6ce983ceeb_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{Complex\+Number@{Complex\+Number}!Sine@{Sine}}
+\index{Sine@{Sine}!Complex\+Number@{Complex\+Number}}
+\subsubsection[{\texorpdfstring{Sine()}{Sine()}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Number} $\ast$ Complex\+Number\+::\+Sine (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{structComplexNumber_a5125e77b2c28147688cf65f596c9ccb7}{}\label{structComplexNumber_a5125e77b2c28147688cf65f596c9ccb7}
+
+
+Implements \hyperlink{structNumber_a493b5d26f9791985315624a0e9cb9dd6}{Number}.
+
+
+
+Definition at line 228 of file cplex.\+cpp.
+
+
+
+References Complex\+Number(), csin(), and z.
+
+
+\begin{DoxyCode}
+229 \{
+230     \textcolor{keywordflow}{return} \textcolor{keyword}{new} \hyperlink{structComplexNumber_a610e9db9ff0ddb0140e30d235ab64e44}{ComplexNumber}(\hyperlink{complex_8h_ae17495bc828b9bea6f64da3c21fe0fc7}{csin}(\hyperlink{structComplexNumber_a5f72da71f4ce0d88076a391369239042}{z}));
+231 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{db/d8e/structComplexNumber_a5125e77b2c28147688cf65f596c9ccb7_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{Complex\+Number@{Complex\+Number}!Square\+Root@{Square\+Root}}
+\index{Square\+Root@{Square\+Root}!Complex\+Number@{Complex\+Number}}
+\subsubsection[{\texorpdfstring{Square\+Root()}{SquareRoot()}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Number} $\ast$ Complex\+Number\+::\+Square\+Root (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{structComplexNumber_a9c2d08c5faba8c3db38186264f2361a9}{}\label{structComplexNumber_a9c2d08c5faba8c3db38186264f2361a9}
+
+
+Implements \hyperlink{structNumber_a388fb639e9a8232cb4083e581352311c}{Number}.
+
+
+
+Definition at line 198 of file cplex.\+cpp.
+
+
+
+References Complex\+Number(), csqrt(), and z.
+
+
+\begin{DoxyCode}
+199 \{
+200     \textcolor{keywordflow}{return} \textcolor{keyword}{new} \hyperlink{structComplexNumber_a610e9db9ff0ddb0140e30d235ab64e44}{ComplexNumber}(\hyperlink{complex_8h_afe5b814a44414f20d0f98fe974737edd}{csqrt}(\hyperlink{structComplexNumber_a5f72da71f4ce0d88076a391369239042}{z}));
+201 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{db/d8e/structComplexNumber_a9c2d08c5faba8c3db38186264f2361a9_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{Complex\+Number@{Complex\+Number}!Sub@{Sub}}
+\index{Sub@{Sub}!Complex\+Number@{Complex\+Number}}
+\subsubsection[{\texorpdfstring{Sub(\+Number $\ast$other)}{Sub(Number *other)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Number} $\ast$ Complex\+Number\+::\+Sub (
+\begin{DoxyParamCaption}
+\item[{{\bf Number} $\ast$}]{other}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{structComplexNumber_a8f196f990620e30495f69338a1e40316}{}\label{structComplexNumber_a8f196f990620e30495f69338a1e40316}
+
+
+Implements \hyperlink{structNumber_ae64075f6f73ded559499d3156bde0bdb}{Number}.
+
+
+
+Definition at line 116 of file cplex.\+cpp.
+
+
+
+References Complex\+Number(), cpack(), csub(), nsyscomplex, nsysreal, Number\+::system, Real\+Number\+::x, and z.
+
+
+\begin{DoxyCode}
+117 \{
+118     \textcolor{keywordflow}{if} (other->\hyperlink{structNumber_a2ceda5601c42288626e76b06878e7476}{system} == \hyperlink{numb_8h_a1475a201d2346881ce88dfbacf628c7da3b38c947375a3db3a4bc184a11c8ee42}{nsyscomplex}) \{
+119         \hyperlink{structComplexNumber}{ComplexNumber} *w = (\hyperlink{structComplexNumber}{ComplexNumber}*)other;
+120         \textcolor{keywordflow}{return} \textcolor{keyword}{new} \hyperlink{structComplexNumber_a610e9db9ff0ddb0140e30d235ab64e44}{ComplexNumber}(\hyperlink{complex_8h_a46bb0dd64d87c3aeb85417d1dadf6ddd}{csub}(\hyperlink{structComplexNumber_a5f72da71f4ce0d88076a391369239042}{z}, w->\hyperlink{structComplexNumber_a5f72da71f4ce0d88076a391369239042}{z}));
+121     \} \textcolor{keywordflow}{else}  \textcolor{keywordflow}{if} (other->\hyperlink{structNumber_a2ceda5601c42288626e76b06878e7476}{system} == \hyperlink{numb_8h_a1475a201d2346881ce88dfbacf628c7dae72cf8673109b15268d1c0837e8bff86}{nsysreal}) \{
+122         \hyperlink{structRealNumber}{RealNumber} *a = (\hyperlink{structRealNumber}{RealNumber}*)other;
+123         \textcolor{keywordflow}{return} \textcolor{keyword}{new} \hyperlink{structComplexNumber_a610e9db9ff0ddb0140e30d235ab64e44}{ComplexNumber}(\hyperlink{complex_8h_a46bb0dd64d87c3aeb85417d1dadf6ddd}{csub}(\hyperlink{structComplexNumber_a5f72da71f4ce0d88076a391369239042}{z}, \hyperlink{complex_8h_a980e6e049f7902b05fc9eb5614b07a5c}{cpack}(a->\hyperlink{structRealNumber_ac33d80bee75448490199a0aa48ccce1e}{x}, 0.0)));
+124     \} \textcolor{keywordflow}{else} \{
+125         \textcolor{keywordflow}{return} \textcolor{keyword}{new} \hyperlink{structComplexNumber_a610e9db9ff0ddb0140e30d235ab64e44}{ComplexNumber}();
+126     \}
+127 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{db/d8e/structComplexNumber_a8f196f990620e30495f69338a1e40316_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{Complex\+Number@{Complex\+Number}!Tangent@{Tangent}}
+\index{Tangent@{Tangent}!Complex\+Number@{Complex\+Number}}
+\subsubsection[{\texorpdfstring{Tangent()}{Tangent()}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Number} $\ast$ Complex\+Number\+::\+Tangent (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{structComplexNumber_a6b7cb0a68c9d44e3367c9a42748af045}{}\label{structComplexNumber_a6b7cb0a68c9d44e3367c9a42748af045}
+
+
+Implements \hyperlink{structNumber_a4a49daab06d7311db480e2cf81e1da67}{Number}.
+
+
+
+Definition at line 238 of file cplex.\+cpp.
+
+
+
+References Complex\+Number(), ctan(), and z.
+
+
+\begin{DoxyCode}
+239 \{
+240     \textcolor{keywordflow}{return} \textcolor{keyword}{new} \hyperlink{structComplexNumber_a610e9db9ff0ddb0140e30d235ab64e44}{ComplexNumber}(\hyperlink{complex_8h_a2bd0de3a2299ec26164641bc8f6e117f}{ctan}(\hyperlink{structComplexNumber_a5f72da71f4ce0d88076a391369239042}{z}));
+241 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{db/d8e/structComplexNumber_a6b7cb0a68c9d44e3367c9a42748af045_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{Complex\+Number@{Complex\+Number}!Trunc@{Trunc}}
+\index{Trunc@{Trunc}!Complex\+Number@{Complex\+Number}}
+\subsubsection[{\texorpdfstring{Trunc()}{Trunc()}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Number} $\ast$ Complex\+Number\+::\+Trunc (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{structComplexNumber_aab24afa1330c3777b0e29c6d85114bf1}{}\label{structComplexNumber_aab24afa1330c3777b0e29c6d85114bf1}
+
+
+Implements \hyperlink{structNumber_a18dc6a153c55c3b0295b5d5fe1f6ab7d}{Number}.
+
+
+
+Definition at line 178 of file cplex.\+cpp.
+
+
+
+References Complex\+Number(), ctrunc(), and z.
+
+
+\begin{DoxyCode}
+179 \{
+180     \textcolor{keywordflow}{return} \textcolor{keyword}{new} \hyperlink{structComplexNumber_a610e9db9ff0ddb0140e30d235ab64e44}{ComplexNumber}(\hyperlink{complex_8h_aa760bac9acf6c215294e10188f3c9eb2}{ctrunc}(\hyperlink{structComplexNumber_a5f72da71f4ce0d88076a391369239042}{z}));
+181 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{db/d8e/structComplexNumber_aab24afa1330c3777b0e29c6d85114bf1_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{Complex\+Number@{Complex\+Number}!Unary@{Unary}}
+\index{Unary@{Unary}!Complex\+Number@{Complex\+Number}}
+\subsubsection[{\texorpdfstring{Unary()}{Unary()}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Number} $\ast$ Complex\+Number\+::\+Unary (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{structComplexNumber_a52bb791f848e90072a65841c7402b2c4}{}\label{structComplexNumber_a52bb791f848e90072a65841c7402b2c4}
+
+
+Implements \hyperlink{structNumber_a4283e401f772614fc566db78087cf860}{Number}.
+
+
+
+Definition at line 97 of file cplex.\+cpp.
+
+
+
+References cimag(), Complex\+Number(), cpack(), creal(), and z.
+
+
+\begin{DoxyCode}
+98 \{
+99     \hyperlink{unioncomplex}{complex} w = \hyperlink{complex_8h_a980e6e049f7902b05fc9eb5614b07a5c}{cpack}(-\hyperlink{complex_8h_a4a236b24c0197821e3489a35a72079ab}{creal}(\hyperlink{structComplexNumber_a5f72da71f4ce0d88076a391369239042}{z}), -\hyperlink{complex_8h_aa1fe0b9371befabef6c41ba73470774a}{cimag}(\hyperlink{structComplexNumber_a5f72da71f4ce0d88076a391369239042}{z}));
+100     \textcolor{keywordflow}{return} \textcolor{keyword}{new} \hyperlink{structComplexNumber_a610e9db9ff0ddb0140e30d235ab64e44}{ComplexNumber}(w);
+101 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{db/d8e/structComplexNumber_a52bb791f848e90072a65841c7402b2c4_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Member Data Documentation}
+\index{Complex\+Number@{Complex\+Number}!z@{z}}
+\index{z@{z}!Complex\+Number@{Complex\+Number}}
+\subsubsection[{\texorpdfstring{z}{z}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf complex} Complex\+Number\+::z\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{structComplexNumber_a5f72da71f4ce0d88076a391369239042}{}\label{structComplexNumber_a5f72da71f4ce0d88076a391369239042}
+
+
+Definition at line 112 of file cplex.\+h.
+
+
+
+Referenced by Absolute(), Add(), Arc\+Cosecant(), Arc\+Cosine(), Arc\+Cotangent(), Arc\+Secant(), Arc\+Sine(), Arc\+Tangent(), Ceiling(), Clone(), Complex\+Number(), Cosecant(), Cosine(), Cotangent(), Cube\+Root(), Div(), Floor(), Get\+Complex\+Value(), Get\+Default\+Precedence(), Get\+Imag\+Value(), Get\+Integer\+Value(), Get\+Precedence(), Get\+Real\+Value(), Hyp\+Arc\+Cosecant(), Hyp\+Arc\+Cosine(), Hyp\+Arc\+Cotangent(), Hyp\+Arc\+Secant(), Hyp\+Arc\+Sine(), Hyp\+Arc\+Tangent(), Hyp\+Cosecant(), Hyp\+Cosine(), Hyp\+Cotangent(), Hyp\+Secant(), Hyp\+Sine(), Hyp\+Tangent(), Log(), Log10(), Log2(), Mul(), Pure\+Complex\+Value(), Raise(), Reciprocal(), Round(), Secant(), Signum(), Sine(), Square\+Root(), Sub(), Tangent(), Trunc(), and Unary().
+
+
+
+The documentation for this struct was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+app/lib/\hyperlink{cplex_8h}{cplex.\+h}\item 
+app/lib/\hyperlink{cplex_8cpp}{cplex.\+cpp}\end{DoxyCompactItemize}

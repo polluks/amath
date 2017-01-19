@@ -1,0 +1,19 @@
+<map id="ComplexNumber::HypTangent" name="ComplexNumber::HypTangent">
+<area shape="rect" id="node2" href="$db/d8e/structComplexNumber.html#a0d89581ead93385331befcef51698693" title="ComplexNumber::ComplexNumber" alt="" coords="252,56,479,83"/>
+<area shape="rect" id="node4" href="$d8/d5e/ctanh_8c.html#ad8db0bdd6fef8ff43876c845dc1cfb47" title="Hyperbolic tangent of a complex number. " alt="" coords="338,183,393,209"/>
+<area shape="rect" id="node3" href="$da/de2/structNumber.html#afd3c2f9b4b288e339f741a6e4ae54593" title="Number::Number" alt="" coords="527,5,649,32"/>
+<area shape="rect" id="node5" href="$d9/dcc/prim_8c.html#aa1fe0b9371befabef6c41ba73470774a" title="Imaginary part of complex number. " alt="" coords="559,208,617,235"/>
+<area shape="rect" id="node6" href="$d1/d09/cos_8c.html#a5e7b53a694b3cf0f2d7debd444140fbd" title="Trigonometric cosine function. " alt="" coords="567,309,609,336"/>
+<area shape="rect" id="node12" href="$de/d21/cosh_8c.html#a3795d3c1f1d30819be56da4e4d67f64b" title="Hyperbolic cosine function. " alt="" coords="563,259,613,285"/>
+<area shape="rect" id="node15" href="$d9/dcc/prim_8c.html#a980e6e049f7902b05fc9eb5614b07a5c" title="Pack two real numbers into a complex number. " alt="" coords="559,107,617,133"/>
+<area shape="rect" id="node16" href="$d9/dcc/prim_8c.html#a4a236b24c0197821e3489a35a72079ab" title="Real part of complex number. " alt="" coords="563,157,613,184"/>
+<area shape="rect" id="node17" href="$d3/ded/sin_8c.html#aad4af25633b071b0e2cdb8ebd87eca77" title="Trigonometric sine function. " alt="" coords="569,360,607,387"/>
+<area shape="rect" id="node18" href="$d8/dea/sinh_8c.html#a862012e970c977c482507064e2793b45" title="Hyperbolic sine function. " alt="" coords="565,56,611,83"/>
+<area shape="rect" id="node7" href="$d1/d11/kcos_8c.html#a5468a5a3c3d5d5e34e73fac9d6bc0122" title="Kernel cos function. " alt="" coords="697,335,796,361"/>
+<area shape="rect" id="node8" href="$d2/d7b/ksin_8c.html#adcc3cb89edf47f34f1e8058e198be293" title="Kernel sin function. " alt="" coords="699,385,794,412"/>
+<area shape="rect" id="node9" href="$d0/d27/remp2_8c.html#a320ce87737d621d713124124e2c02cdc" title="rempio2" alt="" coords="713,284,781,311"/>
+<area shape="rect" id="node10" href="$de/db9/kremp2_8c.html#a8a5e87d33974881295c4ed0d09732f71" title="Kernel reduction function. " alt="" coords="844,284,975,311"/>
+<area shape="rect" id="node11" href="$dc/d1b/scalbn_8c.html#a0353978ec1ae247f2d95f2dc75856ed6" title="scalbn" alt="" coords="1023,284,1083,311"/>
+<area shape="rect" id="node13" href="$d5/d6f/exp_8c.html#ae09128febbbe6372cde4fa0c65608a42" title="Returns the exponential of x. " alt="" coords="725,208,768,235"/>
+<area shape="rect" id="node14" href="$db/ded/expm1_8c.html#ae4963ac40f96d4b1fe8af1b1e90a20bb" title="expm1" alt="" coords="716,107,777,133"/>
+</map>

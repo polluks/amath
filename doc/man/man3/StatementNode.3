@@ -1,0 +1,166 @@
+.TH "StatementNode" 3 "Thu Jan 19 2017" "Version 1.6.0" "amath" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+StatementNode \- Base class for all statements in a syntax tree\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <nodes\&.h>\fP
+.PP
+Inherits \fBSyntaxNode\fP\&.
+.PP
+Inherited by \fBClearStatement\fP\fC [virtual]\fP, \fBDeleteStatement\fP\fC [virtual]\fP, \fBDigitsStatement\fP\fC [virtual]\fP, \fBDrawStatement\fP\fC [virtual]\fP, \fBEmptyStatement\fP\fC [virtual]\fP, \fBEvalStatement\fP\fC [virtual]\fP, \fBExecuteStatement\fP\fC [virtual]\fP, \fBExitStatement\fP\fC [virtual]\fP, \fBFunctionDefinitionNode\fP, \fBHelpStatement\fP\fC [virtual]\fP, \fBInputStatement\fP\fC [virtual]\fP, \fBListFunctionsStatement\fP, \fBListStatement\fP\fC [virtual]\fP, \fBListVariablesStatement\fP\fC [virtual]\fP, \fBLoadStatement\fP\fC [virtual]\fP, \fBMemoryStatement\fP\fC [virtual]\fP, \fBOutputStatement\fP\fC [virtual]\fP, \fBPlotStatement\fP\fC [virtual]\fP, \fBPrefsStatement\fP\fC [virtual]\fP, \fBPromptStatement\fP\fC [virtual]\fP, \fBSaveStatement\fP\fC [virtual]\fP, \fBShowStatement\fP\fC [virtual]\fP, \fBSilentStatement\fP\fC [virtual]\fP, and \fBVersionStatement\fP\fC [virtual]\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBStatementNode\fP ()"
+.br
+.ti -1c
+.RI "virtual \fB~StatementNode\fP ()"
+.br
+.ti -1c
+.RI "\fBNodeType\fP \fBGetNodeType\fP ()"
+.br
+.ti -1c
+.RI "virtual \fBSyntaxNode\fP * \fBGetNext\fP ()"
+.br
+.ti -1c
+.RI "virtual char * \fBGetTextCode\fP ()"
+.br
+.ti -1c
+.RI "virtual char * \fBExecute\fP ()=0"
+.br
+.ti -1c
+.RI "void \fBAttach\fP (\fBSyntaxNode\fP *node)"
+.br
+.ti -1c
+.RI "void \fBDetach\fP (\fBSyntaxNode\fP *node)"
+.br
+.ti -1c
+.RI "void \fBReplace\fP (\fBSyntaxNode\fP *n, \fBSyntaxNode\fP *x)"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Detailed Description"
+.PP 
+Base class for all statements in a syntax tree\&. 
+.PP
+Definition at line 111 of file nodes\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "StatementNode::StatementNode ()"
+
+.PP
+Definition at line 85 of file nodes\&.cpp\&.
+.PP
+References SyntaxNode::SyntaxNode()\&.
+.PP
+Referenced by DeleteStatement::DeleteStatement(), EvalStatement::EvalStatement(), FunctionDefinitionNode::FunctionDefinitionNode(), HelpStatement::HelpStatement(), InputStatement::InputStatement(), ListFunctionsStatement::ListFunctionsStatement(), ListStatement::ListStatement(), ListVariablesStatement::ListVariablesStatement(), OutputStatement::OutputStatement(), and PlotStatement::PlotStatement()\&.
+.PP
+.nf
+85                              :
+86     SyntaxNode() { }
+.fi
+.SS "virtual StatementNode::~StatementNode ()\fC [inline]\fP, \fC [virtual]\fP"
+
+.PP
+Definition at line 114 of file nodes\&.h\&.
+.PP
+.nf
+114 { }
+.fi
+.SH "Member Function Documentation"
+.PP 
+.SS "void StatementNode::Attach (\fBSyntaxNode\fP * node)\fC [virtual]\fP"
+
+.PP
+Implements \fBSyntaxNode\fP\&.
+.PP
+Reimplemented in \fBEvalStatement\fP, and \fBSilentStatement\fP\&.
+.PP
+Definition at line 103 of file nodes\&.cpp\&.
+.PP
+.nf
+104 { }
+.fi
+.SS "void StatementNode::Detach (\fBSyntaxNode\fP * node)\fC [virtual]\fP"
+
+.PP
+Implements \fBSyntaxNode\fP\&.
+.PP
+Reimplemented in \fBEvalStatement\fP, and \fBSilentStatement\fP\&.
+.PP
+Definition at line 106 of file nodes\&.cpp\&.
+.PP
+.nf
+107 { }
+.fi
+.SS "virtual char* StatementNode::Execute ()\fC [pure virtual]\fP"
+
+.PP
+Implements \fBSyntaxNode\fP\&.
+.PP
+Implemented in \fBDrawStatement\fP, \fBPlotStatement\fP, \fBExecuteStatement\fP, \fBSaveStatement\fP, \fBLoadStatement\fP, \fBListStatement\fP, \fBShowStatement\fP, \fBDigitsStatement\fP, \fBOutputStatement\fP, \fBInputStatement\fP, \fBDeleteStatement\fP, \fBHelpStatement\fP, \fBEvalStatement\fP, \fBFunctionDefinitionNode\fP, \fBSilentStatement\fP, \fBListFunctionsStatement\fP, \fBPrefsStatement\fP, \fBPromptStatement\fP, \fBMemoryStatement\fP, \fBListVariablesStatement\fP, \fBVersionStatement\fP, \fBEmptyStatement\fP, \fBExitStatement\fP, and \fBClearStatement\fP\&.
+.PP
+Referenced by SilentStatement::Execute()\&.
+.SS "\fBSyntaxNode\fP * StatementNode::GetNext ()\fC [virtual]\fP"
+
+.PP
+Implements \fBSyntaxNode\fP\&.
+.PP
+Reimplemented in \fBEvalStatement\fP, and \fBSilentStatement\fP\&.
+.PP
+Definition at line 98 of file nodes\&.cpp\&.
+.PP
+.nf
+99 {
+100     return NOMEM;
+101 }
+.fi
+.SS "\fBNodeType\fP StatementNode::GetNodeType ()\fC [virtual]\fP"
+
+.PP
+Implements \fBSyntaxNode\fP\&.
+.PP
+Definition at line 88 of file nodes\&.cpp\&.
+.PP
+References statement\&.
+.PP
+.nf
+89 {
+90     return statement;
+91 }
+.fi
+.SS "char * StatementNode::GetTextCode ()\fC [virtual]\fP"
+
+.PP
+Implements \fBSyntaxNode\fP\&.
+.PP
+Definition at line 93 of file nodes\&.cpp\&.
+.PP
+.nf
+94 {
+95     return (char*)"STA";
+96 }
+.fi
+.SS "void StatementNode::Replace (\fBSyntaxNode\fP * n, \fBSyntaxNode\fP * x)\fC [virtual]\fP"
+
+.PP
+Implements \fBSyntaxNode\fP\&.
+.PP
+Reimplemented in \fBEvalStatement\fP, and \fBSilentStatement\fP\&.
+.PP
+Definition at line 109 of file nodes\&.cpp\&.
+.PP
+.nf
+110 { }
+.fi
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for amath from the source code\&.

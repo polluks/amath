@@ -1,0 +1,362 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="df/db1/math_8h">
+    <title>math.h File Reference</title>
+<para>Include dependency diagram for math.h</para>
+<para>
+    <figure>
+        <title>Dependency diagram</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="../../d8/d0d/math_8h__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+<para>Included by dependency diagram for math.h</para>
+<para>
+    <figure>
+        <title>Dependency diagram</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="../../d7/dcb/math_8h__dep__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+        <section>
+            <title>Macros</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="df/db1/math_8h_1a598a3330b3c21701223ee0ca14316eca">PI</link> 3.141592653589793238462643383279</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="df/db1/math_8h_1a3864675e7c86521b47396080e59ba03e">EULERS</link> 2.718281828459045235360287471352</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="df/db1/math_8h_1ae1b5a554c1d4d97654c06032a92f800a">sgn</link> x &gt; 0.0 ? 1.0 : x &lt; 0.0 ? -1.0 : 0.0</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="df/db1/math_8h_1a2df129f972d9b1faeabee4d7aeb1b439">log2p</link> <link linkend="d7/df8/log_8c_1adb302c9aafbaa5e180d9f60ee954bb82">log</link>(x)/<link linkend="d7/df8/log_8c_1adb302c9aafbaa5e180d9f60ee954bb82">log</link>(y)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title>Functions</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="df/db1/math_8h_1afdf433fdb158cbe82ce818a3a2de736b">isnan</link> (
+double x)<para><emphasis>isnan(x) returns 1 is x is nan, else 0.</emphasis></para>
+</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="df/db1/math_8h_1a08e754462e6ec13bc05fd41cff9cdd4a">finite</link> (
+double x)<para><emphasis>Finite or infinite number.</emphasis></para>
+</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>double <link linkend="df/db1/math_8h_1a8fb5c0b9b43a108724b355136d29d2f9">fabs</link> (
+double x)<para><emphasis>Returns the absolute value of x.</emphasis></para>
+</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>double <link linkend="df/db1/math_8h_1a1ea6d7b591132268abc2e843ababd084">ceil</link> (
+double x)<para><emphasis>Mathematical ceiling function.</emphasis></para>
+</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>double <link linkend="df/db1/math_8h_1a6de60a3e907dcf0bfe3ea8d64f1e8873">floor</link> (
+double x)<para><emphasis>Mathematical floor function.</emphasis></para>
+</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>double <link linkend="df/db1/math_8h_1a7df19cf730447c00150569250a4b5e1d">round</link> (
+double x)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>double <link linkend="df/db1/math_8h_1a82a151adfde56b28fa8a50355c4f2ff6">trunc</link> (
+double x)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>double <link linkend="df/db1/math_8h_1ae09128febbbe6372cde4fa0c65608a42">exp</link> (
+double x)<para><emphasis>Returns the exponential of x.</emphasis></para>
+</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>double <link linkend="df/db1/math_8h_1ab87521a75ef827a85807f89a6c10629a">sqrt</link> (
+double x)<para><emphasis>Square root function.</emphasis></para>
+</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>double <link linkend="df/db1/math_8h_1a8af00e2203928978e0242b4afd1d899f">cbrt</link> (
+double x)<para><emphasis>Cube root function.</emphasis></para>
+</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>double <link linkend="df/db1/math_8h_1adb302c9aafbaa5e180d9f60ee954bb82">log</link> (
+double x)<para><emphasis>Natural logarithm function (base e).</emphasis></para>
+</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>double <link linkend="df/db1/math_8h_1a6572e82a4891917a9ba7fb2a964f8182">log10</link> (
+double x)<para><emphasis>Base 10 logarithm function.</emphasis></para>
+</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>double <link linkend="df/db1/math_8h_1a5e7b53a694b3cf0f2d7debd444140fbd">cos</link> (
+double x)<para><emphasis>Trigonometric cosine function.</emphasis></para>
+</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>double <link linkend="df/db1/math_8h_1aad4af25633b071b0e2cdb8ebd87eca77">sin</link> (
+double x)<para><emphasis>Trigonometric sine function.</emphasis></para>
+</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>double <link linkend="df/db1/math_8h_1aa48fdfd5eea5f4f9c33496402b9e4039">tan</link> (
+double x)<para><emphasis>Trigonometric tangent function.</emphasis></para>
+</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>double <link linkend="df/db1/math_8h_1ae93afe22ff34c79ee97ea3eaf77557db">acos</link> (
+double x)<para><emphasis>Inverse trigonometric cosine function.</emphasis></para>
+</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>double <link linkend="df/db1/math_8h_1aa9528d92a3ae44ad6484da0774604454">asin</link> (
+double x)<para><emphasis>Inverse trigonometric sine function.</emphasis></para>
+</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>double <link linkend="df/db1/math_8h_1a1e2f8f6d64eaa95131bc63fee34970ea">atan</link> (
+double x)<para><emphasis>Inverse trigonometric tangent function.</emphasis></para>
+</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>double <link linkend="df/db1/math_8h_1a3795d3c1f1d30819be56da4e4d67f64b">cosh</link> (
+double x)<para><emphasis>Hyperbolic cosine function.</emphasis></para>
+</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>double <link linkend="df/db1/math_8h_1a862012e970c977c482507064e2793b45">sinh</link> (
+double x)<para><emphasis>Hyperbolic sine function.</emphasis></para>
+</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>double <link linkend="df/db1/math_8h_1af85bcf153d7ae805733927f12329dac1">tanh</link> (
+double x)<para><emphasis>Hyperbolic tangent function.</emphasis></para>
+</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>double <link linkend="df/db1/math_8h_1ac862445bcb46911b1782c284829d5e46">acosh</link> (
+double x)<para><emphasis>Inverse hyperbolic cosine function.</emphasis></para>
+</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>double <link linkend="df/db1/math_8h_1a907297107e93ea9c8a0c8409a8e65079">asinh</link> (
+double x)<para><emphasis>Inverse hyperbolic sine function.</emphasis></para>
+</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>double <link linkend="df/db1/math_8h_1ac07fd7b77fa341563abccf9efcc1a711">atanh</link> (
+double x)<para><emphasis>Inverse hyperbolic tangent function.</emphasis></para>
+</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>double <link linkend="df/db1/math_8h_1aa56c9494c95edf68386375e97d64159b">pow</link> (
+double x, double y)<para><emphasis>Expontation function.</emphasis></para>
+</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>double <link linkend="df/db1/math_8h_1a537296d1a8f9fb621676038b99ba7edf">fmod</link> (
+double x, double y)<para><emphasis>Return x mod y in exact arithmetic.</emphasis></para>
+</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>double <link linkend="df/db1/math_8h_1a349377202ca14f79eb335b1a421fe4d8">atan2</link> (
+double y, double x)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>double <link linkend="df/db1/math_8h_1a6d6a905f61d535f8454190433b8c0ea5">hypot</link> (
+double x, double y)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>double <link linkend="df/db1/math_8h_1ac2aac20ab1347498e6e4f209148fea84">log1p</link> (
+double x)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>double <link linkend="df/db1/math_8h_1ae4963ac40f96d4b1fe8af1b1e90a20bb">expm1</link> (
+double x)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>double <link linkend="df/db1/math_8h_1a0353978ec1ae247f2d95f2dc75856ed6">scalbn</link> (
+double x, int n)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>double <link linkend="df/db1/math_8h_1ad8d1296592a3e783acdd0de21ff58e2e">copysign</link> (
+double x, double y)<para><emphasis>Returns a value with the magnitude of x and
+         with the sign bit of y.</emphasis></para>
+</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="df/db1/math_8h_1a320ce87737d621d713124124e2c02cdc">rempio2</link> (
+double x, double * y)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+    <simplesect>
+        <title>Detailed Description</title>
+
+<para>Functions in math library for handling real numbers. </para>
+
+<para>The library is based on fdlib by Sun Microsystems. The original library can be downloaded at: <link xlink:href="http://www.netlib.org/fdlibm/">http://www.netlib.org/fdlibm/</link></para>
+
+<para>or from mirros site: <link xlink:href="http://www.hensa.ac.uk/">http://www.hensa.ac.uk/</link></para>
+
+<para>All headers and dates are preserved. </para>
+    <para>Definition in file /home/carsten/amath2/lib/math.h</para>
+    </simplesect>
+</section>

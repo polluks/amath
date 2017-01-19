@@ -1,0 +1,337 @@
+\hypertarget{classEvalStatement}{}\section{Eval\+Statement Class Reference}
+\label{classEvalStatement}\index{Eval\+Statement@{Eval\+Statement}}
+
+
+Evaluate arithmetic expression.  
+
+
+
+
+{\ttfamily \#include $<$statements.\+h$>$}
+
+
+
+Inheritance diagram for Eval\+Statement\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=165pt]{da/ddc/classEvalStatement__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Eval\+Statement\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=304pt]{d6/dee/classEvalStatement__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classEvalStatement_aca4069dd093c588724a5516598ec413f}{Eval\+Statement} (\hyperlink{classExpressionNode}{Expression\+Node} $\ast$\hyperlink{classEvalStatement_a5fe66c1e5aea9236af19ad0bae09b01e}{expression})
+\item 
+\hyperlink{classEvalStatement_a448472b7904f2733d4b027b873ff6508}{$\sim$\+Eval\+Statement} ()
+\item 
+char $\ast$ \hyperlink{classEvalStatement_a6d3e0e2db3ed8cbdaa3250bf959a0be7}{Execute} ()
+\item 
+\hyperlink{classSyntaxNode}{Syntax\+Node} $\ast$ \hyperlink{classEvalStatement_acd7b7d1c82b17b819c899ae574681b79}{Get\+Next} ()
+\item 
+void \hyperlink{classEvalStatement_a1b689a777c3022a40d042410fc3fac77}{Attach} (\hyperlink{classSyntaxNode}{Syntax\+Node} $\ast$node)
+\item 
+void \hyperlink{classEvalStatement_a64257c56418096b0615280fe19008f88}{Detach} (\hyperlink{classSyntaxNode}{Syntax\+Node} $\ast$node)
+\item 
+void \hyperlink{classEvalStatement_a9b77319533fab13e48c720b47a4d26b7}{Replace} (\hyperlink{classSyntaxNode}{Syntax\+Node} $\ast$n, \hyperlink{classSyntaxNode}{Syntax\+Node} $\ast$x)
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classExpressionNode}{Expression\+Node} $\ast$ \hyperlink{classEvalStatement_a5fe66c1e5aea9236af19ad0bae09b01e}{expression}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+Evaluate arithmetic expression. 
+
+Definition at line 155 of file statements.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Eval\+Statement@{Eval\+Statement}!Eval\+Statement@{Eval\+Statement}}
+\index{Eval\+Statement@{Eval\+Statement}!Eval\+Statement@{Eval\+Statement}}
+\subsubsection[{\texorpdfstring{Eval\+Statement(\+Expression\+Node $\ast$expression)}{EvalStatement(ExpressionNode *expression)}}]{\setlength{\rightskip}{0pt plus 5cm}Eval\+Statement\+::\+Eval\+Statement (
+\begin{DoxyParamCaption}
+\item[{{\bf Expression\+Node} $\ast$}]{expression}
+\end{DoxyParamCaption}
+)}\hypertarget{classEvalStatement_aca4069dd093c588724a5516598ec413f}{}\label{classEvalStatement_aca4069dd093c588724a5516598ec413f}
+
+
+Definition at line 251 of file statements.\+cpp.
+
+
+
+References expression, and Statement\+Node\+::\+Statement\+Node().
+
+
+
+Referenced by Parser\+::\+Parse\+Evaluation(), and Parser\+::\+Parse\+Statement().
+
+
+\begin{DoxyCode}
+251                                                        :
+252     \hyperlink{classStatementNode_a586026d6009a39d087792d621de86360}{StatementNode}(), \hyperlink{classEvalStatement_a5fe66c1e5aea9236af19ad0bae09b01e}{expression}(expression) \{ \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/d7f/classEvalStatement_aca4069dd093c588724a5516598ec413f_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/d7f/classEvalStatement_aca4069dd093c588724a5516598ec413f_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Eval\+Statement@{Eval\+Statement}!````~Eval\+Statement@{$\sim$\+Eval\+Statement}}
+\index{````~Eval\+Statement@{$\sim$\+Eval\+Statement}!Eval\+Statement@{Eval\+Statement}}
+\subsubsection[{\texorpdfstring{$\sim$\+Eval\+Statement()}{~EvalStatement()}}]{\setlength{\rightskip}{0pt plus 5cm}Eval\+Statement\+::$\sim$\+Eval\+Statement (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classEvalStatement_a448472b7904f2733d4b027b873ff6508}{}\label{classEvalStatement_a448472b7904f2733d4b027b873ff6508}
+
+
+Definition at line 254 of file statements.\+cpp.
+
+
+
+References expression.
+
+
+\begin{DoxyCode}
+255 \{
+256     \textcolor{keywordflow}{if} (\hyperlink{classEvalStatement_a5fe66c1e5aea9236af19ad0bae09b01e}{expression} != \hyperlink{platform_8h_a46ff2bfbf0d44b8466a2251d5bd5e6f8}{NOMEM}) \{
+257         \textcolor{keyword}{delete} \hyperlink{classEvalStatement_a5fe66c1e5aea9236af19ad0bae09b01e}{expression};
+258     \}
+259 \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\index{Eval\+Statement@{Eval\+Statement}!Attach@{Attach}}
+\index{Attach@{Attach}!Eval\+Statement@{Eval\+Statement}}
+\subsubsection[{\texorpdfstring{Attach(\+Syntax\+Node $\ast$node)}{Attach(SyntaxNode *node)}}]{\setlength{\rightskip}{0pt plus 5cm}void Eval\+Statement\+::\+Attach (
+\begin{DoxyParamCaption}
+\item[{{\bf Syntax\+Node} $\ast$}]{node}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{classEvalStatement_a1b689a777c3022a40d042410fc3fac77}{}\label{classEvalStatement_a1b689a777c3022a40d042410fc3fac77}
+
+
+Reimplemented from \hyperlink{classStatementNode_a9467acb7f6c6c6c0027637475e94fba2}{Statement\+Node}.
+
+
+
+Definition at line 292 of file statements.\+cpp.
+
+
+
+References expression, and Syntax\+Node\+::\+Set\+Parent().
+
+
+\begin{DoxyCode}
+293 \{
+294     \textcolor{keywordflow}{if} (\hyperlink{classEvalStatement_a5fe66c1e5aea9236af19ad0bae09b01e}{expression} == \hyperlink{platform_8h_a46ff2bfbf0d44b8466a2251d5bd5e6f8}{NOMEM}) \{
+295         \hyperlink{classEvalStatement_a5fe66c1e5aea9236af19ad0bae09b01e}{expression} = (\hyperlink{classExpressionNode}{ExpressionNode}*)node;
+296         node->\hyperlink{classSyntaxNode_a7902bb2c389a784c11c2b649a84824e9}{SetParent}(\textcolor{keyword}{this});
+297     \}
+298 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/d7f/classEvalStatement_a1b689a777c3022a40d042410fc3fac77_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{Eval\+Statement@{Eval\+Statement}!Detach@{Detach}}
+\index{Detach@{Detach}!Eval\+Statement@{Eval\+Statement}}
+\subsubsection[{\texorpdfstring{Detach(\+Syntax\+Node $\ast$node)}{Detach(SyntaxNode *node)}}]{\setlength{\rightskip}{0pt plus 5cm}void Eval\+Statement\+::\+Detach (
+\begin{DoxyParamCaption}
+\item[{{\bf Syntax\+Node} $\ast$}]{node}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{classEvalStatement_a64257c56418096b0615280fe19008f88}{}\label{classEvalStatement_a64257c56418096b0615280fe19008f88}
+
+
+Reimplemented from \hyperlink{classStatementNode_a68b34bad1cf1a5d9281cd055760e9fec}{Statement\+Node}.
+
+
+
+Definition at line 300 of file statements.\+cpp.
+
+
+
+References expression.
+
+
+\begin{DoxyCode}
+301 \{
+302     \textcolor{keywordflow}{if} (\hyperlink{classEvalStatement_a5fe66c1e5aea9236af19ad0bae09b01e}{expression} == node) \{
+303         \hyperlink{classEvalStatement_a5fe66c1e5aea9236af19ad0bae09b01e}{expression} = \hyperlink{platform_8h_a46ff2bfbf0d44b8466a2251d5bd5e6f8}{NOMEM};
+304     \}
+305 \}
+\end{DoxyCode}
+\index{Eval\+Statement@{Eval\+Statement}!Execute@{Execute}}
+\index{Execute@{Execute}!Eval\+Statement@{Eval\+Statement}}
+\subsubsection[{\texorpdfstring{Execute()}{Execute()}}]{\setlength{\rightskip}{0pt plus 5cm}char $\ast$ Eval\+Statement\+::\+Execute (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{classEvalStatement_a6d3e0e2db3ed8cbdaa3250bf959a0be7}{}\label{classEvalStatement_a6d3e0e2db3ed8cbdaa3250bf959a0be7}
+
+
+Implements \hyperlink{classStatementNode_a721589622c930c010927b9a9c55b173e}{Statement\+Node}.
+
+
+
+Definition at line 261 of file statements.\+cpp.
+
+
+
+References Char\+Buffer\+::\+Append(), Char\+Buffer\+::\+Empty(), Char\+Buffer\+::\+Ensure\+Size(), Expression\+Node\+::\+Evaluate(), expression, Char\+Buffer\+::\+Get\+String(), Numeral\+System\+::\+Get\+Text(), Expression\+Node\+::\+Get\+Text(), Program\+::\+Output, Syntax\+Node\+::output, Program\+::\+Set\+Last\+Result(), and Str\+Len().
+
+
+\begin{DoxyCode}
+262 \{
+263     \hyperlink{structNumber}{Number}* result = \hyperlink{classEvalStatement_a5fe66c1e5aea9236af19ad0bae09b01e}{expression}->\hyperlink{classExpressionNode_a64975d4dc37742228bd522f6204537f7}{Evaluate}();
+264     \hyperlink{classProgram}{Program}->\hyperlink{classProgram_ad54464237ceca1f54a46c2223cfbcda0}{SetLastResult}(result);
+265     \textcolor{keyword}{const} \textcolor{keywordtype}{char} *text = \hyperlink{classEvalStatement_a5fe66c1e5aea9236af19ad0bae09b01e}{expression}->\hyperlink{classExpressionNode_a0bbf243108a14eaf963a8161ffd8eb92}{GetText}();
+266     \textcolor{keyword}{const} \textcolor{keywordtype}{char} *val = \hyperlink{classProgram}{Program}->\hyperlink{classProgram_ac6e84e81a8bbdf99de5beea93713d8ee}{Output}->\hyperlink{classNumeralSystem_a74dc91c4dbab4a88a123b2a32753f485}{GetText}(result);
+267 
+268     \hyperlink{classSyntaxNode_a1180628cbe3fce43930cee0df5a9ce5c}{output}->\hyperlink{classCharBuffer_abe39d3fd7d8b9c8ec343af2cae7adc96}{Empty}();
+269     \hyperlink{classSyntaxNode_a1180628cbe3fce43930cee0df5a9ce5c}{output}->\hyperlink{classCharBuffer_ad1907009b5ad136692b989fa96bf2f7e}{EnsureSize}(
+270         \hyperlink{clib_8h_a67ec56eb98b49515d35005a5b3bf9a32}{StrLen}(text) + 3 +
+271         \hyperlink{clib_8h_a67ec56eb98b49515d35005a5b3bf9a32}{StrLen}(val) +
+272         \hyperlink{clib_8h_a67ec56eb98b49515d35005a5b3bf9a32}{StrLen}(\hyperlink{platform_8h_a806511f4930171733227c99101dc0606}{NEWLINE}) + 1);
+273 
+274     \hyperlink{classSyntaxNode_a1180628cbe3fce43930cee0df5a9ce5c}{output}->\hyperlink{classCharBuffer_a045b38735f7b3007c1b98d3d7b7feafe}{Append}(text);
+275     \hyperlink{classSyntaxNode_a1180628cbe3fce43930cee0df5a9ce5c}{output}->\hyperlink{classCharBuffer_a045b38735f7b3007c1b98d3d7b7feafe}{Append}(\textcolor{stringliteral}{" = "});
+276     \hyperlink{classSyntaxNode_a1180628cbe3fce43930cee0df5a9ce5c}{output}->\hyperlink{classCharBuffer_a045b38735f7b3007c1b98d3d7b7feafe}{Append}(val);
+277     \hyperlink{classSyntaxNode_a1180628cbe3fce43930cee0df5a9ce5c}{output}->\hyperlink{classCharBuffer_a045b38735f7b3007c1b98d3d7b7feafe}{Append}(\hyperlink{platform_8h_a806511f4930171733227c99101dc0606}{NEWLINE});
+278 
+279     \textcolor{keywordflow}{return} \hyperlink{classSyntaxNode_a1180628cbe3fce43930cee0df5a9ce5c}{output}->\hyperlink{classCharBuffer_a7dfd3feaaf80f318ba44efe15b1ec44b}{GetString}();
+280 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/d7f/classEvalStatement_a6d3e0e2db3ed8cbdaa3250bf959a0be7_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{Eval\+Statement@{Eval\+Statement}!Get\+Next@{Get\+Next}}
+\index{Get\+Next@{Get\+Next}!Eval\+Statement@{Eval\+Statement}}
+\subsubsection[{\texorpdfstring{Get\+Next()}{GetNext()}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Syntax\+Node} $\ast$ Eval\+Statement\+::\+Get\+Next (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{classEvalStatement_acd7b7d1c82b17b819c899ae574681b79}{}\label{classEvalStatement_acd7b7d1c82b17b819c899ae574681b79}
+
+
+Reimplemented from \hyperlink{classStatementNode_a40b21f16cdb3b0e480b552007368f176}{Statement\+Node}.
+
+
+
+Definition at line 282 of file statements.\+cpp.
+
+
+
+References expression, and Syntax\+Node\+::iterator.
+
+
+\begin{DoxyCode}
+283 \{
+284     \textcolor{keywordflow}{if} (\hyperlink{classSyntaxNode_a9bd3349d05f33eaa271cca1805a86e1b}{iterator} == \hyperlink{platform_8h_a46ff2bfbf0d44b8466a2251d5bd5e6f8}{NOMEM}) \{
+285         \hyperlink{classSyntaxNode_a9bd3349d05f33eaa271cca1805a86e1b}{iterator} = \hyperlink{classEvalStatement_a5fe66c1e5aea9236af19ad0bae09b01e}{expression};
+286         \textcolor{keywordflow}{return} \hyperlink{classSyntaxNode_a9bd3349d05f33eaa271cca1805a86e1b}{iterator};
+287     \}
+288 
+289     \textcolor{keywordflow}{return} \hyperlink{platform_8h_a46ff2bfbf0d44b8466a2251d5bd5e6f8}{NOMEM};
+290 \}
+\end{DoxyCode}
+\index{Eval\+Statement@{Eval\+Statement}!Replace@{Replace}}
+\index{Replace@{Replace}!Eval\+Statement@{Eval\+Statement}}
+\subsubsection[{\texorpdfstring{Replace(\+Syntax\+Node $\ast$n, Syntax\+Node $\ast$x)}{Replace(SyntaxNode *n, SyntaxNode *x)}}]{\setlength{\rightskip}{0pt plus 5cm}void Eval\+Statement\+::\+Replace (
+\begin{DoxyParamCaption}
+\item[{{\bf Syntax\+Node} $\ast$}]{n, }
+\item[{{\bf Syntax\+Node} $\ast$}]{x}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{classEvalStatement_a9b77319533fab13e48c720b47a4d26b7}{}\label{classEvalStatement_a9b77319533fab13e48c720b47a4d26b7}
+
+
+Reimplemented from \hyperlink{classStatementNode_a713efe48098d7f07c6014ca7ba337553}{Statement\+Node}.
+
+
+
+Definition at line 307 of file statements.\+cpp.
+
+
+
+References expression.
+
+
+\begin{DoxyCode}
+308 \{
+309     \textcolor{keywordflow}{if} (\hyperlink{classEvalStatement_a5fe66c1e5aea9236af19ad0bae09b01e}{expression} == n) \{
+310         \textcolor{keyword}{delete} \hyperlink{classEvalStatement_a5fe66c1e5aea9236af19ad0bae09b01e}{expression};
+311         \hyperlink{classEvalStatement_a5fe66c1e5aea9236af19ad0bae09b01e}{expression} = (\hyperlink{classExpressionNode}{ExpressionNode}*)x;
+312     \}
+313 \}
+\end{DoxyCode}
+
+
+\subsection{Member Data Documentation}
+\index{Eval\+Statement@{Eval\+Statement}!expression@{expression}}
+\index{expression@{expression}!Eval\+Statement@{Eval\+Statement}}
+\subsubsection[{\texorpdfstring{expression}{expression}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Expression\+Node}$\ast$ Eval\+Statement\+::expression\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classEvalStatement_a5fe66c1e5aea9236af19ad0bae09b01e}{}\label{classEvalStatement_a5fe66c1e5aea9236af19ad0bae09b01e}
+
+
+Definition at line 167 of file statements.\+h.
+
+
+
+Referenced by Attach(), Detach(), Eval\+Statement(), Execute(), Get\+Next(), Replace(), and $\sim$\+Eval\+Statement().
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+app/main/\hyperlink{statements_8h}{statements.\+h}\item 
+app/main/\hyperlink{statements_8cpp}{statements.\+cpp}\end{DoxyCompactItemize}

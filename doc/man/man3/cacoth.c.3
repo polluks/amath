@@ -1,0 +1,71 @@
+.TH "lib/cplex/cacoth.c" 3 "Thu Jan 19 2017" "Version 1.6.0" "amath" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+lib/cplex/cacoth.c \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'prim\&.h'\fP
+.br
+\fC#include 'math\&.h'\fP
+.br
+\fC#include 'complex\&.h'\fP
+.br
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBcomplex\fP \fBcacoth\fP (\fBcomplex\fP z)"
+.br
+.RI "\fIInverse hyperbolic cotangent of complex number\&. \fP"
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "\fBcomplex\fP cacoth (\fBcomplex\fP z)"
+
+.PP
+Inverse hyperbolic cotangent of complex number\&. 
+.PP
+\fBVersion:\fP
+.RS 4
+1\&.0 
+.RE
+.PP
+\fBDate:\fP
+.RS 4
+14/09/15
+.RE
+.PP
+Inverse hyperbolic cotangent expressed using complex logarithms: 
+.PP
+.nf
+
+acoth(z) = 1/2 * ((log(z + 1) - log(z - 1))
+.fi
+.PP
+ More info is available at Wikipedia: 
+.br
+ http://en.wikipedia.org/wiki/Inverse_hyperbolic_function#Logarithmic_representation 
+.PP
+Definition at line 43 of file cacoth\&.c\&.
+.PP
+References cadd(), clog(), cmul(), cpack(), and csub()\&.
+.PP
+Referenced by ComplexNumber::HypArcCotangent()\&.
+.PP
+.nf
+44 {
+45     complex half = cpack(0\&.5, 0\&.0);
+46     complex one = cpack(1\&.0, 0\&.0);
+47     complex a = clog(cadd(z, one));
+48     complex b = clog(csub(z, one));
+49     complex c = csub(a, b);
+50     complex w = cmul(half, c);
+51     return w;
+52 }
+.fi
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for amath from the source code\&.

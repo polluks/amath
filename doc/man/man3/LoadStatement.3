@@ -1,0 +1,107 @@
+.TH "LoadStatement" 3 "Thu Jan 19 2017" "Version 1.6.0" "amath" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+LoadStatement \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <statements\&.h>\fP
+.PP
+Inherits \fBStatementNode\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBLoadStatement\fP (const char *\fBfile\fP)"
+.br
+.ti -1c
+.RI "\fB~LoadStatement\fP ()"
+.br
+.ti -1c
+.RI "char * \fBExecute\fP ()"
+.br
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "char * \fBfile\fP"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Detailed Description"
+.PP 
+Definition at line 272 of file statements\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "LoadStatement::LoadStatement (const char * file)"
+
+.PP
+Definition at line 644 of file statements\&.cpp\&.
+.PP
+References AllocAndCopy(), and file\&.
+.PP
+Referenced by Parser::ParseFileStatement()\&.
+.PP
+.nf
+645 {
+646     AllocAndCopy(&this->file, file);
+647 }
+.fi
+.SS "LoadStatement::~LoadStatement ()"
+
+.PP
+Definition at line 649 of file statements\&.cpp\&.
+.PP
+References file\&.
+.PP
+.nf
+650 {
+651     delete [] file;
+652 }
+.fi
+.SH "Member Function Documentation"
+.PP 
+.SS "char * LoadStatement::Execute ()\fC [virtual]\fP"
+
+.PP
+Implements \fBStatementNode\fP\&.
+.PP
+Definition at line 654 of file statements\&.cpp\&.
+.PP
+References SyntaxNode::Execute(), file, Program::Filesystem, CharBuffer::GetString(), FilesystemBase::LoadTextFile(), Parser::Parse(), and Parser::Parser()\&.
+.PP
+.nf
+655 {
+656     CharBuffer *input = Program->Filesystem->LoadTextFile(file);
+657     if (input == NOMEM)
+658     {
+659         return (char*)(MSGNOFILE);
+660     }
+661 
+662     Parser *parser = new Parser(input->GetString());
+663     delete input;
+664 
+665     SyntaxNode *node = parser->Parse();
+666     delete parser;
+667 
+668     node->Execute();
+669     delete node;
+670 
+671     return (char*)HELPLOADSUCC;
+672 }
+.fi
+.SH "Member Data Documentation"
+.PP 
+.SS "char* LoadStatement::file\fC [private]\fP"
+
+.PP
+Definition at line 279 of file statements\&.h\&.
+.PP
+Referenced by Execute(), LoadStatement(), and ~LoadStatement()\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for amath from the source code\&.

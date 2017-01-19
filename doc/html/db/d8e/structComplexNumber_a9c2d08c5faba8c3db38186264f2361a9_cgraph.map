@@ -1,0 +1,11 @@
+<map id="ComplexNumber::SquareRoot" name="ComplexNumber::SquareRoot">
+<area shape="rect" id="node2" href="$db/d8e/structComplexNumber.html#a0d89581ead93385331befcef51698693" title="ComplexNumber::ComplexNumber" alt="" coords="251,31,477,57"/>
+<area shape="rect" id="node4" href="$d2/dac/csqrt_8c.html#afe5b814a44414f20d0f98fe974737edd" title="Square root of complex number. " alt="" coords="339,132,389,159"/>
+<area shape="rect" id="node3" href="$da/de2/structNumber.html#afd3c2f9b4b288e339f741a6e4ae54593" title="Number::Number" alt="" coords="525,5,648,32"/>
+<area shape="rect" id="node5" href="$d9/dcc/prim_8c.html#af6e02ba9d2566b52e3b0faf2d4ed973a" title="Absolute value of complex number. " alt="" coords="561,107,612,133"/>
+<area shape="rect" id="node6" href="$d9/dcc/prim_8c.html#aa1fe0b9371befabef6c41ba73470774a" title="Imaginary part of complex number. " alt="" coords="696,56,753,83"/>
+<area shape="rect" id="node7" href="$d9/dcc/prim_8c.html#a4a236b24c0197821e3489a35a72079ab" title="Real part of complex number. " alt="" coords="699,157,750,184"/>
+<area shape="rect" id="node9" href="$dd/de3/sqrt_8c.html#ab87521a75ef827a85807f89a6c10629a" title="Square root function. " alt="" coords="801,157,845,184"/>
+<area shape="rect" id="node10" href="$d9/dcc/prim_8c.html#a980e6e049f7902b05fc9eb5614b07a5c" title="Pack two real numbers into a complex number. " alt="" coords="558,259,615,285"/>
+<area shape="rect" id="node8" href="$d1/db2/hypot_8c.html#a6d6a905f61d535f8454190433b8c0ea5" title="hypot" alt="" coords="697,107,752,133"/>
+</map>

@@ -1,0 +1,193 @@
+\hypertarget{classInsVariableNode}{}\section{Ins\+Variable\+Node Class Reference}
+\label{classInsVariableNode}\index{Ins\+Variable\+Node@{Ins\+Variable\+Node}}
+
+
+Use of last result in a syntax tree.  
+
+
+
+
+{\ttfamily \#include $<$values.\+h$>$}
+
+
+
+Inheritance diagram for Ins\+Variable\+Node\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=169pt]{d5/d9f/classInsVariableNode__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Ins\+Variable\+Node\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=316pt]{da/d09/classInsVariableNode__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classInsVariableNode_a76772ab88bcb3dd4d8f5b299ed4bf8ee}{Ins\+Variable\+Node} ()
+\item 
+char $\ast$ \hyperlink{classInsVariableNode_a5b116b7004cd061536a4ed3dc2a06abb}{Get\+Text} ()
+\item 
+\hyperlink{structNumber}{Number} $\ast$ \hyperlink{classInsVariableNode_aad01cefd8321d0a6ddaf0d4ef5e62ddf}{Evaluate} ()
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+char $\ast$ \hyperlink{classInsVariableNode_a38651b169dbcb8ff1b40546facb88017}{Get\+Node\+Text} ()
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+Use of last result in a syntax tree. 
+
+Definition at line 128 of file values.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Ins\+Variable\+Node@{Ins\+Variable\+Node}!Ins\+Variable\+Node@{Ins\+Variable\+Node}}
+\index{Ins\+Variable\+Node@{Ins\+Variable\+Node}!Ins\+Variable\+Node@{Ins\+Variable\+Node}}
+\subsubsection[{\texorpdfstring{Ins\+Variable\+Node()}{InsVariableNode()}}]{\setlength{\rightskip}{0pt plus 5cm}Ins\+Variable\+Node\+::\+Ins\+Variable\+Node (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classInsVariableNode_a76772ab88bcb3dd4d8f5b299ed4bf8ee}{}\label{classInsVariableNode_a76772ab88bcb3dd4d8f5b299ed4bf8ee}
+
+
+Definition at line 318 of file values.\+cpp.
+
+
+
+References Variable\+Node\+::\+Variable\+Node().
+
+
+
+Referenced by Parser\+::\+Parse\+Atomic().
+
+
+\begin{DoxyCode}
+318                                  :
+319     \hyperlink{classVariableNode_a0d3189fa49fab4ac738f114b6a696fd7}{VariableNode}(\hyperlink{platform_8h_a46ff2bfbf0d44b8466a2251d5bd5e6f8}{NOMEM})
+320 \{ \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d0/d05/classInsVariableNode_a76772ab88bcb3dd4d8f5b299ed4bf8ee_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d0/d05/classInsVariableNode_a76772ab88bcb3dd4d8f5b299ed4bf8ee_icgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Member Function Documentation}
+\index{Ins\+Variable\+Node@{Ins\+Variable\+Node}!Evaluate@{Evaluate}}
+\index{Evaluate@{Evaluate}!Ins\+Variable\+Node@{Ins\+Variable\+Node}}
+\subsubsection[{\texorpdfstring{Evaluate()}{Evaluate()}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Number} $\ast$ Ins\+Variable\+Node\+::\+Evaluate (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{classInsVariableNode_aad01cefd8321d0a6ddaf0d4ef5e62ddf}{}\label{classInsVariableNode_aad01cefd8321d0a6ddaf0d4ef5e62ddf}
+
+
+Reimplemented from \hyperlink{classVariableNode_a7ebbe9072eb78b5790befed3a42b2dc2}{Variable\+Node}.
+
+
+
+Definition at line 322 of file values.\+cpp.
+
+
+
+References Program\+::\+Get\+Last\+Result().
+
+
+\begin{DoxyCode}
+323 \{
+324     \textcolor{keywordflow}{return} \hyperlink{classProgram}{Program}->\hyperlink{classProgram_a17fa68f9eb4bb5d0cd72b26dc6a381f5}{GetLastResult}();
+325 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d0/d05/classInsVariableNode_aad01cefd8321d0a6ddaf0d4ef5e62ddf_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{Ins\+Variable\+Node@{Ins\+Variable\+Node}!Get\+Node\+Text@{Get\+Node\+Text}}
+\index{Get\+Node\+Text@{Get\+Node\+Text}!Ins\+Variable\+Node@{Ins\+Variable\+Node}}
+\subsubsection[{\texorpdfstring{Get\+Node\+Text()}{GetNodeText()}}]{\setlength{\rightskip}{0pt plus 5cm}char $\ast$ Ins\+Variable\+Node\+::\+Get\+Node\+Text (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}\hypertarget{classInsVariableNode_a38651b169dbcb8ff1b40546facb88017}{}\label{classInsVariableNode_a38651b169dbcb8ff1b40546facb88017}
+
+
+Reimplemented from \hyperlink{classVariableNode_ab76eda982f1625774b982fd148462102}{Variable\+Node}.
+
+
+
+Definition at line 332 of file values.\+cpp.
+
+
+\begin{DoxyCode}
+333 \{
+334     \textcolor{keywordflow}{return} (\textcolor{keywordtype}{char}*)\textcolor{stringliteral}{"ins"};
+335 \}
+\end{DoxyCode}
+\index{Ins\+Variable\+Node@{Ins\+Variable\+Node}!Get\+Text@{Get\+Text}}
+\index{Get\+Text@{Get\+Text}!Ins\+Variable\+Node@{Ins\+Variable\+Node}}
+\subsubsection[{\texorpdfstring{Get\+Text()}{GetText()}}]{\setlength{\rightskip}{0pt plus 5cm}char $\ast$ Ins\+Variable\+Node\+::\+Get\+Text (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{classInsVariableNode_a5b116b7004cd061536a4ed3dc2a06abb}{}\label{classInsVariableNode_a5b116b7004cd061536a4ed3dc2a06abb}
+
+
+Reimplemented from \hyperlink{classVariableNode_ae1ebd067d7cb5f996fe629d06db5ec77}{Variable\+Node}.
+
+
+
+Definition at line 327 of file values.\+cpp.
+
+
+\begin{DoxyCode}
+328 \{
+329     \textcolor{keywordflow}{return} (\textcolor{keywordtype}{char}*)\textcolor{stringliteral}{"ins"};
+330 \}
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+app/main/\hyperlink{values_8h}{values.\+h}\item 
+app/main/\hyperlink{values_8cpp}{values.\+cpp}\end{DoxyCompactItemize}

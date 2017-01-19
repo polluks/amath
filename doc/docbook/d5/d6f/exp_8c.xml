@@ -1,0 +1,145 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="d5/d6f/exp_8c">
+    <title>exp.c File Reference</title>
+    <programlisting>#include &quot;prim.h&quot;</programlisting>
+    <programlisting>#include &quot;math.h&quot;</programlisting>
+<para>Include dependency diagram for exp.c</para>
+<para>
+    <figure>
+        <title>Dependency diagram</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="../../d0/db6/exp_8c__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+<para>Included by dependency diagram for exp.c</para>
+<para>
+    <figure>
+        <title>Dependency diagram</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="../../d8/d69/exp_8c__dep__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+        <section>
+            <title>Variables</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>static const double <link linkend="d5/d6f/exp_8c_1ada85e349d35971b32c8ea4238881ff8b">one</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>static const double <link linkend="d5/d6f/exp_8c_1a3569bfad37f52891aa371c2f31e70dac">halF</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>static const double <link linkend="d5/d6f/exp_8c_1acbd466133274923cc0785707fbdeea9a">huge</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>static const double <link linkend="d5/d6f/exp_8c_1a705fc686c40b3a746e9b61d4d73018ec">twom1000</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>static const double <link linkend="d5/d6f/exp_8c_1acbb7fb31d7634234372850576e110c91">o_threshold</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>static const double <link linkend="d5/d6f/exp_8c_1aa36ad5f2244c82ebc142bbdbbc7af9bb">u_threshold</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>static const double <link linkend="d5/d6f/exp_8c_1a93ef32de5f0d2bce9014ace3505dee8d">ln2HI</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>static const double <link linkend="d5/d6f/exp_8c_1a72b91c46421cdfaaa1d53ff6013422b4">ln2LO</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>static const double <link linkend="d5/d6f/exp_8c_1a4cf65ab9c76c64c084e1abd8fe5da216">invln2</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>static const double <link linkend="d5/d6f/exp_8c_1a5c2e2e6dd711ceae83536551926d6dd3">P1</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>static const double <link linkend="d5/d6f/exp_8c_1acddba71b086f9e3c2b621baef51e45ac">P2</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>static const double <link linkend="d5/d6f/exp_8c_1ab48f05f97efef9ea9f554c91a980520a">P3</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>static const double <link linkend="d5/d6f/exp_8c_1af783f4afa9878be962b9904dc22e8bab">P4</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>static const double <link linkend="d5/d6f/exp_8c_1afdc64323c3afde906f161bdf28e5e319">P5</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title>Functions</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>double <link linkend="d5/d6f/exp_8c_1ae09128febbbe6372cde4fa0c65608a42">exp</link> (
+double x)<para><emphasis>Returns the exponential of x.</emphasis></para>
+</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+    <simplesect>
+        <title>Detailed Description</title>
+    <para>Definition in file /home/carsten/amath2/lib/real/exp.c</para>
+    </simplesect>
+</section>
