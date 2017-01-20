@@ -1,0 +1,112 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="classAmigaProgram">
+<title>AmigaProgram class Reference</title>
+<para>
+    <programlisting>#include <link linkend="program__amiga_8h">&lt;program_amiga.h&gt;</link></programlisting>
+</para>
+<para>Inheritance diagram for AmigaProgram</para>
+<para>
+    <figure>
+        <title>Inheritance graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="classAmigaProgram__inherit__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+<para>Collaboration diagram for AmigaProgram</para>
+<para>
+    <figure>
+        <title>Collaboration graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="classAmigaProgram__coll__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+        <section>
+            <title>Private Attributes</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>RDArgs * rdargs</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>amathargs args</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="classAmigaProgram_1adaf7552b13bf6526381c5bceb438e1ef">AmigaProgram</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>virtual <link linkend="classAmigaProgram_1aa93f40c4cba28c4a88c9854c4c5bea6a">~AmigaProgram</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>virtual void <link linkend="classAmigaProgram_1ac98b0caed0ea8fcb4e8a8a922f9b93de">Initialize</link> (
+int argc, char ** argv)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>virtual void <link linkend="classAmigaProgram_1a1bfed5f5b69a85aa3ef1a39ea02dc457">Run</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>virtual void <link linkend="classAmigaProgram_1ad662b535d612f6ed9df4f59ad60fe6a0">Exit</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title>Member Data Documentation</title>
+        </section>
+            <section xml:id="classAmigaProgram_1adaf7552b13bf6526381c5bceb438e1ef">
+                <title>AmigaProgram::AmigaProgram ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="classAmigaProgram_1aa93f40c4cba28c4a88c9854c4c5bea6a">
+                <title>virtual AmigaProgram::~AmigaProgram ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="classAmigaProgram_1ac98b0caed0ea8fcb4e8a8a922f9b93de">
+                <title>virtual void AmigaProgram::Initialize (int argc, char **argv)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="classAmigaProgram_1a1bfed5f5b69a85aa3ef1a39ea02dc457">
+                <title>virtual void AmigaProgram::Run ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="classAmigaProgram_1ad662b535d612f6ed9df4f59ad60fe6a0">
+                <title>virtual void AmigaProgram::Exit ()</title> <emphasis></emphasis>
+                
+            </section>
+</section>

@@ -1,9 +1,0 @@
-<map id="app/main/values.h" name="app/main/values.h">
-<area shape="rect" id="node2" href="$d9/de5/clib_8h.html" title="C functions for manipulating strings and memory. " alt="" coords="25,155,79,181"/>
-<area shape="rect" id="node6" href="$dd/d30/numb_8h.html" title="Classbase handling of numbers. " alt="" coords="220,155,303,181"/>
-<area shape="rect" id="node7" href="$d1/d7f/nodes_8h.html" title="Top nodes in syntax trees. " alt="" coords="99,80,199,107"/>
-<area shape="rect" id="node3" href="$de/d03/platform_8h.html" title="platform.h" alt="" coords="5,229,85,256"/>
-<area shape="rect" id="node5" href="$d9/d9a/mem_8h.html" title="mem.h" alt="" coords="49,304,111,331"/>
-<area shape="rect" id="node8" href="$d0/d1e/charbuf_8h.html" title="String and character array logic. " alt="" coords="103,155,196,181"/>
-<area shape="rect" id="node9" href="$dc/d99/aengine_8h.html" title="ANSI Conole Engine. " alt="" coords="110,229,205,256"/>
-</map>

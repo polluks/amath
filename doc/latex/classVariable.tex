@@ -1,0 +1,341 @@
+\hypertarget{classVariable}{}\section{Variable Class Reference}
+\label{classVariable}\index{Variable@{Variable}}
+
+
+A user defined variable.  
+
+
+
+
+{\ttfamily \#include $<$values.\+h$>$}
+
+
+
+Collaboration diagram for Variable\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=175pt]{classVariable__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classVariable_a230014211eb4309bcec965df5799a7eb}{Variable} (const char $\ast$\hyperlink{classVariable_a821b09d0920ea8685fc2e4c804106416}{name})
+\item 
+\hyperlink{classVariable_acfc14d0ad77af53025f890b4d3a7745a}{$\sim$\+Variable} ()
+\item 
+char $\ast$ \hyperlink{classVariable_accf221d35cec8a9707e84891b715fb6c}{Get\+Name} ()
+\item 
+\hyperlink{structNumber}{Number} $\ast$ \hyperlink{classVariable_adb77b2681374245b5d606a1d149d0d91}{Get\+Value} ()
+\item 
+void \hyperlink{classVariable_ad8c997ea0edab8bf72ada85963800211}{Assign\+Value} (\hyperlink{structNumber}{Number} $\ast$\hyperlink{classVariable_a97f7747dc30797f29b247e26ca585c94}{value})
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classVariable}{Variable} $\ast$ \hyperlink{classVariable_ac5662d23fccccf25e3565793841ce580}{Next}
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+char $\ast$ \hyperlink{classVariable_a821b09d0920ea8685fc2e4c804106416}{name}
+\item 
+\hyperlink{structNumber}{Number} $\ast$ \hyperlink{classVariable_a97f7747dc30797f29b247e26ca585c94}{value}
+\item 
+\hyperlink{platform_8h_a1062901a7428fdd9c7f180f5e01ea056}{bool} \hyperlink{classVariable_a6e66c424bc0100bf3d4ab2bb64576a5a}{chain\+Delete}
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{platform_8h_a1062901a7428fdd9c7f180f5e01ea056}{bool} \hyperlink{classVariable_ad5c7006b0b5c87423c5b8217d5e96bde}{Variable\+List\+::\+Delete} (const char $\ast$\hyperlink{classVariable_a821b09d0920ea8685fc2e4c804106416}{name})
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A user defined variable. 
+
+Definition at line 72 of file values.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Variable@{Variable}!Variable@{Variable}}
+\index{Variable@{Variable}!Variable@{Variable}}
+\subsubsection[{\texorpdfstring{Variable(const char $\ast$name)}{Variable(const char *name)}}]{\setlength{\rightskip}{0pt plus 5cm}Variable\+::\+Variable (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{name}
+\end{DoxyParamCaption}
+)}\hypertarget{classVariable_a230014211eb4309bcec965df5799a7eb}{}\label{classVariable_a230014211eb4309bcec965df5799a7eb}
+
+
+Definition at line 42 of file values.\+cpp.
+
+
+
+References Alloc\+And\+Copy(), chain\+Delete, name, Next, and value.
+
+
+
+Referenced by Variable\+List\+::\+Create\+Variable(), User\+Function\+::\+Create\+Variable(), and User\+Function\+::\+User\+Function().
+
+
+\begin{DoxyCode}
+43 \{
+44     \hyperlink{clib_8h_a5bed05c70cb17e541fee570b5dc32e1a}{AllocAndCopy}(&this->\hyperlink{classVariable_a821b09d0920ea8685fc2e4c804106416}{name}, \hyperlink{classVariable_a821b09d0920ea8685fc2e4c804106416}{name});
+45     \hyperlink{classVariable_a97f7747dc30797f29b247e26ca585c94}{value} = \hyperlink{platform_8h_a46ff2bfbf0d44b8466a2251d5bd5e6f8}{NOMEM};
+46     \hyperlink{classVariable_ac5662d23fccccf25e3565793841ce580}{Next} = \hyperlink{platform_8h_a46ff2bfbf0d44b8466a2251d5bd5e6f8}{NOMEM};
+47     \hyperlink{classVariable_a6e66c424bc0100bf3d4ab2bb64576a5a}{chainDelete} = \textcolor{keyword}{true};
+48 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=288pt]{classVariable_a230014211eb4309bcec965df5799a7eb_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classVariable_a230014211eb4309bcec965df5799a7eb_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Variable@{Variable}!````~Variable@{$\sim$\+Variable}}
+\index{````~Variable@{$\sim$\+Variable}!Variable@{Variable}}
+\subsubsection[{\texorpdfstring{$\sim$\+Variable()}{~Variable()}}]{\setlength{\rightskip}{0pt plus 5cm}Variable\+::$\sim$\+Variable (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classVariable_acfc14d0ad77af53025f890b4d3a7745a}{}\label{classVariable_acfc14d0ad77af53025f890b4d3a7745a}
+
+
+Definition at line 50 of file values.\+cpp.
+
+
+
+References chain\+Delete, name, Next, and value.
+
+
+\begin{DoxyCode}
+51 \{
+52     \textcolor{keyword}{delete} [] \hyperlink{classVariable_a821b09d0920ea8685fc2e4c804106416}{name};
+53 
+54     \textcolor{keywordflow}{if} (\hyperlink{classVariable_a97f7747dc30797f29b247e26ca585c94}{value} != \hyperlink{platform_8h_a46ff2bfbf0d44b8466a2251d5bd5e6f8}{NOMEM}) \{
+55         \textcolor{keyword}{delete} \hyperlink{classVariable_a97f7747dc30797f29b247e26ca585c94}{value};
+56     \}
+57 
+58     \textcolor{keywordflow}{if} (\hyperlink{classVariable_a6e66c424bc0100bf3d4ab2bb64576a5a}{chainDelete} && \hyperlink{classVariable_ac5662d23fccccf25e3565793841ce580}{Next} != \hyperlink{platform_8h_a46ff2bfbf0d44b8466a2251d5bd5e6f8}{NOMEM}) \{
+59         \textcolor{keyword}{delete} \hyperlink{classVariable_ac5662d23fccccf25e3565793841ce580}{Next};
+60     \}
+61 \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\index{Variable@{Variable}!Assign\+Value@{Assign\+Value}}
+\index{Assign\+Value@{Assign\+Value}!Variable@{Variable}}
+\subsubsection[{\texorpdfstring{Assign\+Value(\+Number $\ast$value)}{AssignValue(Number *value)}}]{\setlength{\rightskip}{0pt plus 5cm}void Variable\+::\+Assign\+Value (
+\begin{DoxyParamCaption}
+\item[{{\bf Number} $\ast$}]{value}
+\end{DoxyParamCaption}
+)}\hypertarget{classVariable_ad8c997ea0edab8bf72ada85963800211}{}\label{classVariable_ad8c997ea0edab8bf72ada85963800211}
+
+
+Definition at line 73 of file values.\+cpp.
+
+
+
+References Number\+::\+Clone(), and value.
+
+
+
+Referenced by Variable\+Node\+::\+Assign\+Value(), User\+Function\+Node\+::\+Evaluate(), and Grid\+::\+Function\+Value().
+
+
+\begin{DoxyCode}
+74 \{
+75     \textcolor{keywordflow}{if} (this->value != \hyperlink{platform_8h_a46ff2bfbf0d44b8466a2251d5bd5e6f8}{NOMEM}) \{
+76         \textcolor{keyword}{delete} this->\hyperlink{classVariable_a97f7747dc30797f29b247e26ca585c94}{value};
+77     \}
+78 
+79     this->value = value->\hyperlink{structNumber_af59101b8a549616be51212fa1c17785e}{Clone}();
+80 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=312pt]{classVariable_ad8c997ea0edab8bf72ada85963800211_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classVariable_ad8c997ea0edab8bf72ada85963800211_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Variable@{Variable}!Get\+Name@{Get\+Name}}
+\index{Get\+Name@{Get\+Name}!Variable@{Variable}}
+\subsubsection[{\texorpdfstring{Get\+Name()}{GetName()}}]{\setlength{\rightskip}{0pt plus 5cm}char $\ast$ Variable\+::\+Get\+Name (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classVariable_accf221d35cec8a9707e84891b715fb6c}{}\label{classVariable_accf221d35cec8a9707e84891b715fb6c}
+
+
+Definition at line 63 of file values.\+cpp.
+
+
+
+References name.
+
+
+
+Referenced by Variable\+List\+::\+Create\+Variable(), Function\+List\+::\+Delete(), Function\+List\+::\+Get\+Function\+Def(), Variable\+Node\+::\+Get\+Node\+Text(), Variable\+Node\+::\+Get\+Text(), Variable\+List\+::\+Get\+Variable(), User\+Function\+::\+Initialize\+Texts(), Variable\+List\+::\+List\+Content(), and Function\+List\+::\+List\+Content().
+
+
+\begin{DoxyCode}
+64 \{
+65     \textcolor{keywordflow}{return} \hyperlink{classVariable_a821b09d0920ea8685fc2e4c804106416}{name};
+66 \}
+\end{DoxyCode}
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classVariable_accf221d35cec8a9707e84891b715fb6c_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Variable@{Variable}!Get\+Value@{Get\+Value}}
+\index{Get\+Value@{Get\+Value}!Variable@{Variable}}
+\subsubsection[{\texorpdfstring{Get\+Value()}{GetValue()}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Number} $\ast$ Variable\+::\+Get\+Value (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classVariable_adb77b2681374245b5d606a1d149d0d91}{}\label{classVariable_adb77b2681374245b5d606a1d149d0d91}
+
+
+Definition at line 68 of file values.\+cpp.
+
+
+
+References Number\+::\+Clone(), and value.
+
+
+
+Referenced by Variable\+Node\+::\+Evaluate(), and Variable\+List\+::\+List\+Content().
+
+
+\begin{DoxyCode}
+69 \{
+70     \textcolor{keywordflow}{return} \hyperlink{classVariable_a97f7747dc30797f29b247e26ca585c94}{value}->\hyperlink{structNumber_af59101b8a549616be51212fa1c17785e}{Clone}();;
+71 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=297pt]{classVariable_adb77b2681374245b5d606a1d149d0d91_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classVariable_adb77b2681374245b5d606a1d149d0d91_icgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Friends And Related Function Documentation}
+\index{Variable@{Variable}!Variable\+List\+::\+Delete@{Variable\+List\+::\+Delete}}
+\index{Variable\+List\+::\+Delete@{Variable\+List\+::\+Delete}!Variable@{Variable}}
+\subsubsection[{\texorpdfstring{Variable\+List\+::\+Delete}{VariableList::Delete}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} {\bf Variable\+List\+::\+Delete} (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{name}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [friend]}}\hypertarget{classVariable_ad5c7006b0b5c87423c5b8217d5e96bde}{}\label{classVariable_ad5c7006b0b5c87423c5b8217d5e96bde}
+
+
+\subsection{Member Data Documentation}
+\index{Variable@{Variable}!chain\+Delete@{chain\+Delete}}
+\index{chain\+Delete@{chain\+Delete}!Variable@{Variable}}
+\subsubsection[{\texorpdfstring{chain\+Delete}{chainDelete}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} Variable\+::chain\+Delete\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classVariable_a6e66c424bc0100bf3d4ab2bb64576a5a}{}\label{classVariable_a6e66c424bc0100bf3d4ab2bb64576a5a}
+
+
+Definition at line 86 of file values.\+h.
+
+
+
+Referenced by Variable\+List\+::\+Delete(), Variable(), and $\sim$\+Variable().
+
+\index{Variable@{Variable}!name@{name}}
+\index{name@{name}!Variable@{Variable}}
+\subsubsection[{\texorpdfstring{name}{name}}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ Variable\+::name\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classVariable_a821b09d0920ea8685fc2e4c804106416}{}\label{classVariable_a821b09d0920ea8685fc2e4c804106416}
+
+
+Definition at line 84 of file values.\+h.
+
+
+
+Referenced by Get\+Name(), Variable(), and $\sim$\+Variable().
+
+\index{Variable@{Variable}!Next@{Next}}
+\index{Next@{Next}!Variable@{Variable}}
+\subsubsection[{\texorpdfstring{Next}{Next}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Variable}$\ast$ Variable\+::\+Next}\hypertarget{classVariable_ac5662d23fccccf25e3565793841ce580}{}\label{classVariable_ac5662d23fccccf25e3565793841ce580}
+
+
+Definition at line 81 of file values.\+h.
+
+
+
+Referenced by Variable\+List\+::\+Create\+Variable(), Variable\+List\+::\+Delete(), Variable\+List\+::\+Get\+Variable(), Variable\+List\+::\+Insert\+Temporary\+Variable(), Variable\+List\+::\+List\+Content(), Variable\+List\+::\+Remove\+Temporary\+Variable(), Variable(), and $\sim$\+Variable().
+
+\index{Variable@{Variable}!value@{value}}
+\index{value@{value}!Variable@{Variable}}
+\subsubsection[{\texorpdfstring{value}{value}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Number}$\ast$ Variable\+::value\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classVariable_a97f7747dc30797f29b247e26ca585c94}{}\label{classVariable_a97f7747dc30797f29b247e26ca585c94}
+
+
+Definition at line 85 of file values.\+h.
+
+
+
+Referenced by Assign\+Value(), Get\+Value(), Variable(), and $\sim$\+Variable().
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+app/main/\hyperlink{values_8h}{values.\+h}\item 
+app/main/\hyperlink{values_8cpp}{values.\+cpp}\end{DoxyCompactItemize}

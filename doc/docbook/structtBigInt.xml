@@ -1,0 +1,145 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="structtBigInt">
+<title>tBigInt struct Reference</title>
+<para>Inheritance diagram for tBigInt</para>
+<para>
+    <figure>
+        <title>Inheritance graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="structtBigInt__inherit__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+<para>Collaboration diagram for tBigInt</para>
+<para>
+    <figure>
+        <title>Collaboration graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="structtBigInt__coll__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+        <section>
+            <title>Public Attributes</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>tU32 m_length</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>tU32 m_blocks[c_BigInt_MaxBlocks]</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="structtBigInt">tBigInt</link> &amp; <link linkend="structtBigInt_1a6527277620819a6ff4f9386ad2ad0a41">operator=</link> (
+const <link linkend="structtBigInt">tBigInt</link> &amp; rhs)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="dstandard_8h_1aee96db7e18784e05ed6b0bcaeec3f7f6">tU32</link> <link linkend="structtBigInt_1aee567e4c77187577f77fc1643dc427ba">GetLength</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="dstandard_8h_1aee96db7e18784e05ed6b0bcaeec3f7f6">tU32</link> <link linkend="structtBigInt_1a22350ff8e7010047b7ac5be70e8906bd">GetBlock</link> (
+<link linkend="dstandard_8h_1aee96db7e18784e05ed6b0bcaeec3f7f6">tU32</link> idx)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="structtBigInt_1ae3c29c64e80671de21feffc84d2c18c7">SetZero</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="dstandard_8h_1ad203aed3ab57b120eb54c2043f60dc49">tB</link> <link linkend="structtBigInt_1a4e0c59f15fcb292ea4ec5d448fa10b58">IsZero</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="structtBigInt_1ab25f77e908d231d8836355cf4586f983">SetU64</link> (
+<link linkend="dstandard_8h_1a6625ae5505b2f796350b82c7f52fcf43">tU64</link> val)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="structtBigInt_1a1aec50a9a3a9129b283c43eecc6df8c3">SetU32</link> (
+<link linkend="dstandard_8h_1aee96db7e18784e05ed6b0bcaeec3f7f6">tU32</link> val)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="dstandard_8h_1aee96db7e18784e05ed6b0bcaeec3f7f6">tU32</link> <link linkend="structtBigInt_1ac12a9ba9bd8e710b3853a13a7b789151">GetU32</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title>Member Data Documentation</title>
+        </section>
+            <section xml:id="structtBigInt_1a6527277620819a6ff4f9386ad2ad0a41">
+                <title>tBigInt&amp; tBigInt::operator= (const tBigInt &amp;rhs)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="structtBigInt_1aee567e4c77187577f77fc1643dc427ba">
+                <title>tU32 tBigInt::GetLength () const </title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="structtBigInt_1a22350ff8e7010047b7ac5be70e8906bd">
+                <title>tU32 tBigInt::GetBlock (tU32 idx) const </title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="structtBigInt_1ae3c29c64e80671de21feffc84d2c18c7">
+                <title>void tBigInt::SetZero ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="structtBigInt_1a4e0c59f15fcb292ea4ec5d448fa10b58">
+                <title>tB tBigInt::IsZero () const </title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="structtBigInt_1ab25f77e908d231d8836355cf4586f983">
+                <title>void tBigInt::SetU64 (tU64 val)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="structtBigInt_1a1aec50a9a3a9129b283c43eecc6df8c3">
+                <title>void tBigInt::SetU32 (tU32 val)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="structtBigInt_1ac12a9ba9bd8e710b3853a13a7b789151">
+                <title>tU32 tBigInt::GetU32 () const </title> <emphasis></emphasis>
+                
+            </section>
+</section>

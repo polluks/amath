@@ -1,0 +1,185 @@
+\hypertarget{classShowStatement}{}\section{Show\+Statement Class Reference}
+\label{classShowStatement}\index{Show\+Statement@{Show\+Statement}}
+
+
+{\ttfamily \#include $<$statements.\+h$>$}
+
+
+
+Inheritance diagram for Show\+Statement\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=166pt]{classShowStatement__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Show\+Statement\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=211pt]{classShowStatement__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classShowStatement_aab6fd0439344f35d8af36009d994bcb4}{Show\+Statement} (const char $\ast$\hyperlink{classShowStatement_a2f2e42fedd30adf1fee5f68dabcd1f3f}{file})
+\item 
+\hyperlink{classShowStatement_a023fd6372f6d0831009a31a495836863}{$\sim$\+Show\+Statement} ()
+\item 
+char $\ast$ \hyperlink{classShowStatement_a8466ad7e0e61918cda0e399713abb6a8}{Execute} ()
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+char $\ast$ \hyperlink{classShowStatement_a2f2e42fedd30adf1fee5f68dabcd1f3f}{file}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 251 of file statements.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Show\+Statement@{Show\+Statement}!Show\+Statement@{Show\+Statement}}
+\index{Show\+Statement@{Show\+Statement}!Show\+Statement@{Show\+Statement}}
+\subsubsection[{\texorpdfstring{Show\+Statement(const char $\ast$file)}{ShowStatement(const char *file)}}]{\setlength{\rightskip}{0pt plus 5cm}Show\+Statement\+::\+Show\+Statement (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{file}
+\end{DoxyParamCaption}
+)}\hypertarget{classShowStatement_aab6fd0439344f35d8af36009d994bcb4}{}\label{classShowStatement_aab6fd0439344f35d8af36009d994bcb4}
+
+
+Definition at line 581 of file statements.\+cpp.
+
+
+
+References Alloc\+And\+Copy(), and file.
+
+
+
+Referenced by Parser\+::\+Parse\+File\+Statement().
+
+
+\begin{DoxyCode}
+582 \{
+583     \hyperlink{clib_8h_a5bed05c70cb17e541fee570b5dc32e1a}{AllocAndCopy}(&this->\hyperlink{classShowStatement_a2f2e42fedd30adf1fee5f68dabcd1f3f}{file}, \hyperlink{classShowStatement_a2f2e42fedd30adf1fee5f68dabcd1f3f}{file});
+584 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classShowStatement_aab6fd0439344f35d8af36009d994bcb4_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classShowStatement_aab6fd0439344f35d8af36009d994bcb4_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Show\+Statement@{Show\+Statement}!````~Show\+Statement@{$\sim$\+Show\+Statement}}
+\index{````~Show\+Statement@{$\sim$\+Show\+Statement}!Show\+Statement@{Show\+Statement}}
+\subsubsection[{\texorpdfstring{$\sim$\+Show\+Statement()}{~ShowStatement()}}]{\setlength{\rightskip}{0pt plus 5cm}Show\+Statement\+::$\sim$\+Show\+Statement (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classShowStatement_a023fd6372f6d0831009a31a495836863}{}\label{classShowStatement_a023fd6372f6d0831009a31a495836863}
+
+
+Definition at line 586 of file statements.\+cpp.
+
+
+
+References file.
+
+
+\begin{DoxyCode}
+587 \{
+588     \textcolor{keyword}{delete} [] \hyperlink{classShowStatement_a2f2e42fedd30adf1fee5f68dabcd1f3f}{file};
+589 \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\index{Show\+Statement@{Show\+Statement}!Execute@{Execute}}
+\index{Execute@{Execute}!Show\+Statement@{Show\+Statement}}
+\subsubsection[{\texorpdfstring{Execute()}{Execute()}}]{\setlength{\rightskip}{0pt plus 5cm}char $\ast$ Show\+Statement\+::\+Execute (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{classShowStatement_a8466ad7e0e61918cda0e399713abb6a8}{}\label{classShowStatement_a8466ad7e0e61918cda0e399713abb6a8}
+
+
+Implements \hyperlink{classStatementNode_a721589622c930c010927b9a9c55b173e}{Statement\+Node}.
+
+
+
+Definition at line 591 of file statements.\+cpp.
+
+
+
+References file, Program\+::\+Filesystem, Char\+Buffer\+::\+Get\+String(), Filesystem\+Base\+::\+Load\+Text\+File(), and Syntax\+Node\+::output.
+
+
+\begin{DoxyCode}
+592 \{
+593     \hyperlink{classCharBuffer}{CharBuffer} *text = \hyperlink{classProgram}{Program}->\hyperlink{classProgram_a54fb0dc3ee40a356fe91cea64e569b26}{Filesystem}->
+      \hyperlink{classFilesystemBase_adc4a9e1dc189bcd221e3b994bc854d46}{LoadTextFile}(\hyperlink{classShowStatement_a2f2e42fedd30adf1fee5f68dabcd1f3f}{file});
+594     \textcolor{keywordflow}{if} (text == \hyperlink{platform_8h_a46ff2bfbf0d44b8466a2251d5bd5e6f8}{NOMEM})
+595     \{
+596         \textcolor{keywordflow}{return} (\textcolor{keywordtype}{char}*)(\hyperlink{text_8h_ae0de195e949c617eb8a792aeb4d4574e}{MSGNOFILE});
+597     \}
+598 
+599     \textcolor{keyword}{delete} \hyperlink{classSyntaxNode_a1180628cbe3fce43930cee0df5a9ce5c}{output};
+600     \hyperlink{classSyntaxNode_a1180628cbe3fce43930cee0df5a9ce5c}{output} = text;
+601     \textcolor{keywordflow}{return} text->\hyperlink{classCharBuffer_a7dfd3feaaf80f318ba44efe15b1ec44b}{GetString}();
+602 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classShowStatement_a8466ad7e0e61918cda0e399713abb6a8_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Member Data Documentation}
+\index{Show\+Statement@{Show\+Statement}!file@{file}}
+\index{file@{file}!Show\+Statement@{Show\+Statement}}
+\subsubsection[{\texorpdfstring{file}{file}}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ Show\+Statement\+::file\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classShowStatement_a2f2e42fedd30adf1fee5f68dabcd1f3f}{}\label{classShowStatement_a2f2e42fedd30adf1fee5f68dabcd1f3f}
+
+
+Definition at line 258 of file statements.\+h.
+
+
+
+Referenced by Execute(), Show\+Statement(), and $\sim$\+Show\+Statement().
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+app/main/\hyperlink{statements_8h}{statements.\+h}\item 
+app/main/\hyperlink{statements_8cpp}{statements.\+cpp}\end{DoxyCompactItemize}

@@ -1,7 +1,0 @@
-<map id="UserFunctionNode::Evaluate" name="UserFunctionNode::Evaluate">
-<area shape="rect" id="node2" href="$d6/d1c/classVariable.html#ad8c997ea0edab8bf72ada85963800211" title="Variable::AssignValue" alt="" coords="266,5,417,32"/>
-<area shape="rect" id="node4" href="$dd/d06/classExpressionNode.html#a64975d4dc37742228bd522f6204537f7" title="ExpressionNode::Evaluate" alt="" coords="253,56,430,83"/>
-<area shape="rect" id="node5" href="$de/df8/classUserFunction.html#a41abe1afc9d481786b78ce7d7ffbde80" title="UserFunction::GetExpression" alt="" coords="244,107,439,133"/>
-<area shape="rect" id="node6" href="$de/df8/classUserFunction.html#a4580afdaa5124951a523de07f3c454a6" title="UserFunction::GetVariable" alt="" coords="253,157,429,184"/>
-<area shape="rect" id="node3" href="$da/de2/structNumber.html#af59101b8a549616be51212fa1c17785e" title="Number::Clone" alt="" coords="487,5,597,32"/>
-</map>

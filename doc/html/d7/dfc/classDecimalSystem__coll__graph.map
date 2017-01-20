@@ -1,5 +1,0 @@
-<map id="DecimalSystem" name="DecimalSystem">
-<area shape="rect" id="node2" href="$d6/ddc/classPositionalNumeralSystem.html" title="Base class for all numeral systems with a positional notation. " alt="" coords="5,171,179,197"/>
-<area shape="rect" id="node3" href="$d9/df3/classNumeralSystem.html" title="Base class for all numeral systems. " alt="" coords="34,95,150,121"/>
-<area shape="rect" id="node4" href="$dc/d84/classCharBuffer.html" title="Encapsulate an character array which can be used as a string. " alt="" coords="49,5,135,32"/>
-</map>

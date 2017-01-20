@@ -1,0 +1,9 @@
+<map id="ExpressionNode::GetPrecedence" name="ExpressionNode::GetPrecedence">
+<area shape="rect" id="node2" href="$classOptimizer.html#ad84621adb872b88ab7fdb3672064cfdb" title="Optimizer::BalanceTree" alt="" coords="278,31,437,57"/>
+<area shape="rect" id="node7" href="$classUnaryNode.html#ad753fe89681dca1cf2d9ee840aedf86b" title="UnaryNode::GetText" alt="" coords="286,81,429,108"/>
+<area shape="rect" id="node8" href="$classNumericOperator.html#aaeef2885eb34d240cef0f55593354805" title="NumericOperator::GetText" alt="" coords="269,132,445,159"/>
+<area shape="rect" id="node3" href="$classOptimizer.html#a5764ae0825fa43921f74d8b972e53b1e" title="Optimizer::Optimize" alt="" coords="493,31,632,57"/>
+<area shape="rect" id="node4" href="$classEvaluator.html#a40b30ece9d43c658877ee7f52aaec0a8" title="Evaluator::Evaluate" alt="" coords="680,31,816,57"/>
+<area shape="rect" id="node5" href="$classStandardProgram.html#a71dce9fdccf23ac49ba2362dcae744d3" title="StandardProgram::Run" alt="" coords="864,5,1019,32"/>
+<area shape="rect" id="node6" href="$classStandardConsole.html#a9380023bba612b816b134589130bb254" title="StandardConsole::Run" alt="" coords="864,56,1019,83"/>
+</map>

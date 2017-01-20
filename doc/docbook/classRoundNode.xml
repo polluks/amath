@@ -1,0 +1,100 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="classRoundNode">
+<title>RoundNode class Reference</title>
+<para>
+    <programlisting>#include <link linkend="functions_8h">&lt;functions.h&gt;</link></programlisting>
+</para>
+<para>Inheritance diagram for RoundNode</para>
+<para>
+    <figure>
+        <title>Inheritance graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="classRoundNode__inherit__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+<para>Collaboration diagram for RoundNode</para>
+<para>
+    <figure>
+        <title>Collaboration graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="classRoundNode__coll__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="classRoundNode_1a4f9524cf769e2c45f2556dd7455eb852">RoundNode</link> (
+<link linkend="classExpressionNode">ExpressionNode</link> * expression)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="structNumber">Number</link> * <link linkend="classRoundNode_1a128e5cfa1f3829cacb373f6740c7f193">Evaluate</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>static <link linkend="classFunctionNode">FunctionNode</link> * <link linkend="classRoundNode_1a4f767ae60f5ec52d1750a3f5a35be246">Create</link> (
+<link linkend="classExpressionNode">ExpressionNode</link> * expression)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>char * <link linkend="classRoundNode_1a8045a1a8d7e229a2aface954950f52da">GetNodeText</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+    <simplesect>
+
+<para>A rounding function in a syntax tree. </para>
+    </simplesect>
+        <simplesect>
+            <title>Detailed Description</title>
+
+<para>Round to nearest integer. See <link linkend="structNumber">Number</link> for implementation.</para>
+
+<para>More info on the rounding function is available at Wikipedia: <link xlink:href="http://en.wikipedia.org/wiki/Rounding">http://en.wikipedia.org/wiki/Rounding</link> </para>
+                <para>Definition at line 220 of file functions.h</para>
+                <para>The Documentation for this struct was generated from the following file: </para>
+                <para><itemizedlist><listitem><para>functions.h</para></listitem></itemizedlist></para>
+        </simplesect>
+            <section xml:id="classRoundNode_1a4f9524cf769e2c45f2556dd7455eb852">
+                <title>RoundNode::RoundNode (ExpressionNode *expression)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="classRoundNode_1a128e5cfa1f3829cacb373f6740c7f193">
+                <title>Number * RoundNode::Evaluate ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="classRoundNode_1a4f767ae60f5ec52d1750a3f5a35be246">
+                <title>FunctionNode * RoundNode::Create (ExpressionNode *expression)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="classRoundNode_1a8045a1a8d7e229a2aface954950f52da">
+                <title>char * RoundNode::GetNodeText ()</title> <emphasis></emphasis>
+                
+            </section>
+</section>

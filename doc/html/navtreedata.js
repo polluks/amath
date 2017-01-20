@@ -71,17 +71,17 @@ var NAVTREE =
 
 var NAVTREEINDEX =
 [
-"annotated.html",
-"d1/d79/classFunctionList.html#af7c68faadee0f219109e02f486b0f239",
-"d2/dda/classSilentStatement.html#abb1fe13d3e3f85ac304c39379242ae49",
-"d5/d48/classStandardConsole.html#af0b69c487667723a1e33357db6132e94",
-"d7/d06/classFunctionNode.html#a951101d50e4b4428871986923d5657d8",
-"d9/d2d/clog_8c.html",
-"da/de2/structNumber.html#abc34ae359f4b660cccd21d36e7e46334",
-"dc/d84/classNumericOperator.html#ad8f69aec49e9a900ca592dbf972df619",
-"dd/de3/sqrt_8c_source.html",
-"df/d89/dragon4_8cpp.html#a706f0dc60cee9f4e28a81787aec73470",
-"globals_vars.html"
+"acos_8c.html",
+"classArcCotangentNode.html#aa67c2c4d48741e686b660c010c49bd41",
+"classGraphWindow.html#af84f61254f44fd2ef6b45ab703e45feb",
+"classParser.html#a38a55851f31c226c193090403dfbaff8",
+"classSubtractionNode.html",
+"cplex_2prim_8h.html#a5f3d17bf39f78da3422ca52e475d7724",
+"functiondefs_8h.html#a60118af1b6a3c96367614016418cc6ea",
+"ktan_8c.html#a0acb682b8260ab1c60b918599864e2e5",
+"platform_8h.html#a0fbdfe13a76e65ec4703155481a97661",
+"structComplexNumber.html#a9c1090310f2f9e656467625e0137c8dc",
+"text_8h.html#a9a06b887cb924e98bf181b08a517e072"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

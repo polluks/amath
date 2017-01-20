@@ -1,0 +1,11 @@
+<map id="app/system/language_stdc.h" name="app/system/language_stdc.h">
+<area shape="rect" id="node2" href="$lex_8h.html" title="Lexer defitions used by other classes. " alt="" coords="70,244,169,271"/>
+<area shape="rect" id="node3" href="$help_8h.html" title="Help texts for statement. " alt="" coords="22,169,127,196"/>
+<area shape="rect" id="node8" href="$text_8h.html" title="Static texts in amath. " alt="" coords="478,169,580,196"/>
+<area shape="rect" id="node9" href="$language_8h.html" title="system/language.h" alt="" coords="174,95,306,121"/>
+<area shape="rect" id="node4" href="$clib_8h.html" title="C functions for manipulating strings and memory. " alt="" coords="302,244,356,271"/>
+<area shape="rect" id="node5" href="$platform_8h.html" title="platform.h" alt="" coords="289,319,369,345"/>
+<area shape="rect" id="node7" href="$mem_8h.html" title="mem.h" alt="" coords="332,393,395,420"/>
+<area shape="rect" id="node10" href="$ident_8h.html" title="Help texts for built&#45;in functions. " alt="" coords="344,169,453,196"/>
+<area shape="rect" id="node11" href="$kword_8h.html" title="Keywords used by lexer. " alt="" coords="203,169,319,196"/>
+</map>

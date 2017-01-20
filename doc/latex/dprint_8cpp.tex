@@ -1,0 +1,830 @@
+\hypertarget{dprint_8cpp}{}\section{lib/dconv/dprint.cpp File Reference}
+\label{dprint_8cpp}\index{lib/dconv/dprint.\+cpp@{lib/dconv/dprint.\+cpp}}
+{\ttfamily \#include \char`\"{}clib.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}dmath.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}dprint.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}dragon4.\+h\char`\"{}}\\*
+{\ttfamily \#include $<$dstandard.\+h$>$}\\*
+Include dependency graph for dprint.\+cpp\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=331pt]{dprint_8cpp__incl}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+union \hyperlink{uniontFloatUnion32}{t\+Float\+Union32}
+\item 
+union \hyperlink{uniontFloatUnion64}{t\+Float\+Union64}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{dprint_8cpp_a30c75e139b07107ef1c8d3f8490aee7d}{memcpy}~\hyperlink{memcpy_8c_a09b7e057c69b9ddd4b481fc746997a7d}{Mem\+Copy}
+\item 
+\#define \hyperlink{dprint_8cpp_a7263e7ed2c459f2c42e067c30775ed41}{memmove}~\hyperlink{memcpy_8c_a09b7e057c69b9ddd4b481fc746997a7d}{Mem\+Copy}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{dstandard_8h_aee96db7e18784e05ed6b0bcaeec3f7f6}{t\+U32} \hyperlink{dprint_8cpp_a73aa4cbb8052f400f03f1706a3eced16}{Format\+Positional} (\hyperlink{dstandard_8h_a0dd9590397b73cba91a188b94be20ee1}{t\+C8} $\ast$p\+Out\+Buffer, \hyperlink{dstandard_8h_aee96db7e18784e05ed6b0bcaeec3f7f6}{t\+U32} buffer\+Size, \hyperlink{dstandard_8h_a6625ae5505b2f796350b82c7f52fcf43}{t\+U64} mantissa, \hyperlink{dstandard_8h_ae3b25aefaa14d98873818cceec369577}{t\+S32} exponent, \hyperlink{dstandard_8h_aee96db7e18784e05ed6b0bcaeec3f7f6}{t\+U32} mantissa\+High\+Bit\+Idx, \hyperlink{dstandard_8h_ad203aed3ab57b120eb54c2043f60dc49}{tB} has\+Unequal\+Margins, \hyperlink{dstandard_8h_ae3b25aefaa14d98873818cceec369577}{t\+S32} precision, \hyperlink{dstandard_8h_a0dd9590397b73cba91a188b94be20ee1}{t\+C8} decimal\+Point)
+\item 
+\hyperlink{dstandard_8h_aee96db7e18784e05ed6b0bcaeec3f7f6}{t\+U32} \hyperlink{dprint_8cpp_a1fce61f37a054297f0b8898d52dc9f28}{Format\+Scientific} (\hyperlink{dstandard_8h_a0dd9590397b73cba91a188b94be20ee1}{t\+C8} $\ast$p\+Out\+Buffer, \hyperlink{dstandard_8h_aee96db7e18784e05ed6b0bcaeec3f7f6}{t\+U32} buffer\+Size, \hyperlink{dstandard_8h_a6625ae5505b2f796350b82c7f52fcf43}{t\+U64} mantissa, \hyperlink{dstandard_8h_ae3b25aefaa14d98873818cceec369577}{t\+S32} exponent, \hyperlink{dstandard_8h_aee96db7e18784e05ed6b0bcaeec3f7f6}{t\+U32} mantissa\+High\+Bit\+Idx, \hyperlink{dstandard_8h_ad203aed3ab57b120eb54c2043f60dc49}{tB} has\+Unequal\+Margins, \hyperlink{dstandard_8h_ae3b25aefaa14d98873818cceec369577}{t\+S32} precision, \hyperlink{dstandard_8h_a0dd9590397b73cba91a188b94be20ee1}{t\+C8} decimal\+Point)
+\item 
+static \hyperlink{dstandard_8h_aee96db7e18784e05ed6b0bcaeec3f7f6}{t\+U32} \hyperlink{dprint_8cpp_ad8dae51a6e8f43f36e5c7866583f0e05}{Print\+Hex} (\hyperlink{dstandard_8h_a0dd9590397b73cba91a188b94be20ee1}{t\+C8} $\ast$p\+Out\+Buffer, \hyperlink{dstandard_8h_aee96db7e18784e05ed6b0bcaeec3f7f6}{t\+U32} buffer\+Size, \hyperlink{dstandard_8h_a6625ae5505b2f796350b82c7f52fcf43}{t\+U64} value, \hyperlink{dstandard_8h_aee96db7e18784e05ed6b0bcaeec3f7f6}{t\+U32} width)
+\item 
+static \hyperlink{dstandard_8h_aee96db7e18784e05ed6b0bcaeec3f7f6}{t\+U32} \hyperlink{dprint_8cpp_ac1192be7b47f41c6b593be33d0ad423f}{Print\+Inf\+Nan} (\hyperlink{dstandard_8h_a0dd9590397b73cba91a188b94be20ee1}{t\+C8} $\ast$p\+Out\+Buffer, \hyperlink{dstandard_8h_aee96db7e18784e05ed6b0bcaeec3f7f6}{t\+U32} buffer\+Size, \hyperlink{dstandard_8h_a6625ae5505b2f796350b82c7f52fcf43}{t\+U64} mantissa, \hyperlink{dstandard_8h_aee96db7e18784e05ed6b0bcaeec3f7f6}{t\+U32} mantissa\+Hex\+Width)
+\item 
+\hyperlink{dstandard_8h_aee96db7e18784e05ed6b0bcaeec3f7f6}{t\+U32} \hyperlink{dprint_8cpp_a83d135741203dce4201423de8063b2c2}{Print\+Float32} (\hyperlink{dstandard_8h_a0dd9590397b73cba91a188b94be20ee1}{t\+C8} $\ast$p\+Out\+Buffer, \hyperlink{dstandard_8h_aee96db7e18784e05ed6b0bcaeec3f7f6}{t\+U32} buffer\+Size, \hyperlink{dstandard_8h_adfd1aaaa5a9470e6009d2770939ae5ba}{t\+F32} value, \hyperlink{dprint_8h_ad1a8e21d8398e3c6f757fffea595fbe2}{t\+Print\+Float\+Format} format, \hyperlink{dstandard_8h_ae3b25aefaa14d98873818cceec369577}{t\+S32} precision, \hyperlink{dstandard_8h_a0dd9590397b73cba91a188b94be20ee1}{t\+C8} decimal\+Point)
+\item 
+\hyperlink{dstandard_8h_aee96db7e18784e05ed6b0bcaeec3f7f6}{t\+U32} \hyperlink{dprint_8cpp_abd2c48bc16cbab3eb5ec361153f21cbe}{Print\+Float64} (\hyperlink{dstandard_8h_a0dd9590397b73cba91a188b94be20ee1}{t\+C8} $\ast$p\+Out\+Buffer, \hyperlink{dstandard_8h_aee96db7e18784e05ed6b0bcaeec3f7f6}{t\+U32} buffer\+Size, \hyperlink{dstandard_8h_a401388ecc207be71d44743e3b4cc4b4d}{t\+F64} value, \hyperlink{dprint_8h_ad1a8e21d8398e3c6f757fffea595fbe2}{t\+Print\+Float\+Format} format, \hyperlink{dstandard_8h_ae3b25aefaa14d98873818cceec369577}{t\+S32} precision, \hyperlink{dstandard_8h_a0dd9590397b73cba91a188b94be20ee1}{t\+C8} decimal\+Point)
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\index{dprint.\+cpp@{dprint.\+cpp}!memcpy@{memcpy}}
+\index{memcpy@{memcpy}!dprint.\+cpp@{dprint.\+cpp}}
+\subsubsection[{\texorpdfstring{memcpy}{memcpy}}]{\setlength{\rightskip}{0pt plus 5cm}\#define memcpy~{\bf Mem\+Copy}}\hypertarget{dprint_8cpp_a30c75e139b07107ef1c8d3f8490aee7d}{}\label{dprint_8cpp_a30c75e139b07107ef1c8d3f8490aee7d}
+
+
+Definition at line 59 of file dprint.\+cpp.
+
+\index{dprint.\+cpp@{dprint.\+cpp}!memmove@{memmove}}
+\index{memmove@{memmove}!dprint.\+cpp@{dprint.\+cpp}}
+\subsubsection[{\texorpdfstring{memmove}{memmove}}]{\setlength{\rightskip}{0pt plus 5cm}\#define memmove~{\bf Mem\+Copy}}\hypertarget{dprint_8cpp_a7263e7ed2c459f2c42e067c30775ed41}{}\label{dprint_8cpp_a7263e7ed2c459f2c42e067c30775ed41}
+
+
+Definition at line 60 of file dprint.\+cpp.
+
+
+
+\subsection{Function Documentation}
+\index{dprint.\+cpp@{dprint.\+cpp}!Format\+Positional@{Format\+Positional}}
+\index{Format\+Positional@{Format\+Positional}!dprint.\+cpp@{dprint.\+cpp}}
+\subsubsection[{\texorpdfstring{Format\+Positional(t\+C8 $\ast$p\+Out\+Buffer, t\+U32 buffer\+Size, t\+U64 mantissa, t\+S32 exponent, t\+U32 mantissa\+High\+Bit\+Idx, t\+B has\+Unequal\+Margins, t\+S32 precision, t\+C8 decimal\+Point)}{FormatPositional(tC8 *pOutBuffer, tU32 bufferSize, tU64 mantissa, tS32 exponent, tU32 mantissaHighBitIdx, tB hasUnequalMargins, tS32 precision, tC8 decimalPoint)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf t\+U32} Format\+Positional (
+\begin{DoxyParamCaption}
+\item[{{\bf t\+C8} $\ast$}]{p\+Out\+Buffer, }
+\item[{{\bf t\+U32}}]{buffer\+Size, }
+\item[{{\bf t\+U64}}]{mantissa, }
+\item[{{\bf t\+S32}}]{exponent, }
+\item[{{\bf t\+U32}}]{mantissa\+High\+Bit\+Idx, }
+\item[{{\bf tB}}]{has\+Unequal\+Margins, }
+\item[{{\bf t\+S32}}]{precision, }
+\item[{{\bf t\+C8}}]{decimal\+Point}
+\end{DoxyParamCaption}
+)}\hypertarget{dprint_8cpp_a73aa4cbb8052f400f03f1706a3eced16}{}\label{dprint_8cpp_a73aa4cbb8052f400f03f1706a3eced16}
+
+
+Definition at line 112 of file dprint.\+cpp.
+
+
+
+References Cutoff\+Mode\+\_\+\+Fraction\+Length, Cutoff\+Mode\+\_\+\+Unique, Dragon4(), and Mem\+Copy().
+
+
+
+Referenced by Print\+Float32(), and Print\+Float64().
+
+
+\begin{DoxyCode}
+124 \{
+125     \hyperlink{dstandard_8h_a89136b38084a3e1d69a63af0db6fec17}{RJ\_ASSERT}(bufferSize > 0);
+126 
+127     \hyperlink{dstandard_8h_ae3b25aefaa14d98873818cceec369577}{tS32} printExponent;
+128     \hyperlink{dstandard_8h_aee96db7e18784e05ed6b0bcaeec3f7f6}{tU32} numPrintDigits;
+129 
+130     \hyperlink{dstandard_8h_aee96db7e18784e05ed6b0bcaeec3f7f6}{tU32} maxPrintLen = bufferSize - 1;
+131 
+132     \textcolor{keywordflow}{if} (precision < 0)
+133     \{
+134         numPrintDigits = \hyperlink{dragon4_8h_a001c1140205cd87fc22f3a9a8de7547e}{Dragon4}(   mantissa,
+135                                     exponent,
+136                                     mantissaHighBitIdx,
+137                                     hasUnequalMargins,
+138                                     \hyperlink{dragon4_8h_ae285d109bd9f429145b2656fb0b3220da076774f759c6005f59bf2b5535abf570}{CutoffMode\_Unique},
+139                                     0,
+140                                     pOutBuffer,
+141                                     maxPrintLen,
+142                                     &printExponent );
+143     \}
+144     \textcolor{keywordflow}{else}
+145     \{
+146         numPrintDigits = \hyperlink{dragon4_8h_a001c1140205cd87fc22f3a9a8de7547e}{Dragon4}(   mantissa,
+147                                     exponent,
+148                                     mantissaHighBitIdx,
+149                                     hasUnequalMargins,
+150                                     \hyperlink{dragon4_8h_ae285d109bd9f429145b2656fb0b3220da5ca840f5638b86f243a799c44c16898e}{CutoffMode\_FractionLength},
+151                                     precision,
+152                                     pOutBuffer,
+153                                     maxPrintLen,
+154                                     &printExponent );
+155     \}
+156 
+157     \hyperlink{dstandard_8h_a89136b38084a3e1d69a63af0db6fec17}{RJ\_ASSERT}( numPrintDigits > 0 );
+158     \hyperlink{dstandard_8h_a89136b38084a3e1d69a63af0db6fec17}{RJ\_ASSERT}( numPrintDigits <= bufferSize );
+159 
+160     \textcolor{comment}{// track the number of digits past the decimal point that have been printed}
+161     \hyperlink{dstandard_8h_aee96db7e18784e05ed6b0bcaeec3f7f6}{tU32} numFractionDigits = 0;
+162 
+163     \textcolor{comment}{// if output has a whole number}
+164     \textcolor{keywordflow}{if} (printExponent >= 0)
+165     \{
+166         \textcolor{comment}{// leave the whole number at the start of the buffer}
+167         \hyperlink{dstandard_8h_aee96db7e18784e05ed6b0bcaeec3f7f6}{tU32} numWholeDigits = printExponent+1;
+168         \textcolor{keywordflow}{if} (numPrintDigits < numWholeDigits)
+169         \{
+170             \textcolor{comment}{// don't overflow the buffer}
+171             \textcolor{keywordflow}{if} (numWholeDigits > maxPrintLen)
+172                 numWholeDigits = maxPrintLen;
+173 
+174             \textcolor{comment}{// add trailing zeros up to the decimal point}
+175             \textcolor{keywordflow}{for} ( ; numPrintDigits < numWholeDigits; ++numPrintDigits )
+176                 pOutBuffer[numPrintDigits] = \textcolor{charliteral}{'0'};
+177         \}
+178         \textcolor{comment}{// insert the decimal point prior to the fraction}
+179         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (numPrintDigits > (\hyperlink{dstandard_8h_aee96db7e18784e05ed6b0bcaeec3f7f6}{tU32})numWholeDigits)
+180         \{
+181             numFractionDigits = numPrintDigits - numWholeDigits;
+182             \hyperlink{dstandard_8h_aee96db7e18784e05ed6b0bcaeec3f7f6}{tU32} maxFractionDigits = maxPrintLen - numWholeDigits - 1;
+183             \textcolor{keywordflow}{if} (numFractionDigits > maxFractionDigits)
+184                 numFractionDigits = maxFractionDigits;
+185 
+186             \hyperlink{dprint_8cpp_a7263e7ed2c459f2c42e067c30775ed41}{memmove}(pOutBuffer + numWholeDigits + 1, pOutBuffer + numWholeDigits, numFractionDigits)
+      ;
+187             pOutBuffer[numWholeDigits] = decimalPoint;
+188             numPrintDigits = numWholeDigits + 1 + numFractionDigits;
+189         \}
+190     \}
+191     \textcolor{keywordflow}{else}
+192     \{
+193         \textcolor{comment}{// shift out the fraction to make room for the leading zeros}
+194         \textcolor{keywordflow}{if} (maxPrintLen > 2)
+195         \{
+196             \hyperlink{dstandard_8h_aee96db7e18784e05ed6b0bcaeec3f7f6}{tU32} numFractionZeros = (\hyperlink{dstandard_8h_aee96db7e18784e05ed6b0bcaeec3f7f6}{tU32})-printExponent - 1;
+197             \hyperlink{dstandard_8h_aee96db7e18784e05ed6b0bcaeec3f7f6}{tU32} maxFractionZeros = maxPrintLen - 2;
+198             \textcolor{keywordflow}{if} (numFractionZeros > maxFractionZeros)
+199                 numFractionZeros = maxFractionZeros;
+200 
+201             \hyperlink{dstandard_8h_aee96db7e18784e05ed6b0bcaeec3f7f6}{tU32} digitsStartIdx = 2 + numFractionZeros;
+202 
+203             \textcolor{comment}{// shift the significant digits right such that there is room for leading zeros}
+204             numFractionDigits = numPrintDigits;
+205             \hyperlink{dstandard_8h_aee96db7e18784e05ed6b0bcaeec3f7f6}{tU32} maxFractionDigits = maxPrintLen - digitsStartIdx;
+206             \textcolor{keywordflow}{if} (numFractionDigits > maxFractionDigits)
+207                 numFractionDigits = maxFractionDigits;
+208 
+209             \hyperlink{dprint_8cpp_a7263e7ed2c459f2c42e067c30775ed41}{memmove}(pOutBuffer + digitsStartIdx, pOutBuffer, numFractionDigits);
+210 
+211             \textcolor{comment}{// insert the leading zeros}
+212             \textcolor{keywordflow}{for} (\hyperlink{dstandard_8h_aee96db7e18784e05ed6b0bcaeec3f7f6}{tU32} i = 2; i < digitsStartIdx; ++i)
+213                 pOutBuffer[i] = \textcolor{charliteral}{'0'};
+214 
+215             \textcolor{comment}{// update the counts}
+216             numFractionDigits += numFractionZeros;
+217             numPrintDigits = numFractionDigits;
+218         \}
+219 
+220         \textcolor{comment}{// add the decimal point}
+221         \textcolor{keywordflow}{if} (maxPrintLen > 1)
+222         \{
+223             pOutBuffer[1] = decimalPoint;
+224             numPrintDigits += 1;
+225         \}
+226 
+227         \textcolor{comment}{// add the initial zero}
+228         \textcolor{keywordflow}{if} (maxPrintLen > 0)
+229         \{
+230             pOutBuffer[0] = \textcolor{charliteral}{'0'};
+231             numPrintDigits += 1;
+232         \}
+233     \}
+234 
+235     \textcolor{comment}{// add trailing zeros up to precision length}
+236     \textcolor{keywordflow}{if} (precision > (\hyperlink{dstandard_8h_ae3b25aefaa14d98873818cceec369577}{tS32})numFractionDigits && numPrintDigits < maxPrintLen)
+237     \{
+238         \textcolor{comment}{// add a decimal point if this is the first fractional digit we are printing}
+239         \textcolor{keywordflow}{if} (numFractionDigits == 0)
+240         \{
+241             pOutBuffer[numPrintDigits++] = decimalPoint;
+242         \}
+243 
+244         \textcolor{comment}{// compute the number of trailing zeros needed}
+245         \hyperlink{dstandard_8h_aee96db7e18784e05ed6b0bcaeec3f7f6}{tU32} totalDigits = numPrintDigits + (precision - numFractionDigits);
+246         \textcolor{keywordflow}{if} (totalDigits > maxPrintLen)
+247             totalDigits = maxPrintLen;
+248 
+249         \textcolor{keywordflow}{for} ( ; numPrintDigits < totalDigits; ++numPrintDigits )
+250             pOutBuffer[numPrintDigits] = \textcolor{charliteral}{'0'};
+251     \}
+252 
+253     \textcolor{comment}{// terminate the buffer}
+254     \hyperlink{dstandard_8h_a89136b38084a3e1d69a63af0db6fec17}{RJ\_ASSERT}( numPrintDigits <= maxPrintLen );
+255     pOutBuffer[numPrintDigits] = \textcolor{charliteral}{'\(\backslash\)0'};
+256 
+257     \textcolor{keywordflow}{return} numPrintDigits;
+258 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dprint_8cpp_a73aa4cbb8052f400f03f1706a3eced16_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dprint_8cpp_a73aa4cbb8052f400f03f1706a3eced16_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{dprint.\+cpp@{dprint.\+cpp}!Format\+Scientific@{Format\+Scientific}}
+\index{Format\+Scientific@{Format\+Scientific}!dprint.\+cpp@{dprint.\+cpp}}
+\subsubsection[{\texorpdfstring{Format\+Scientific(t\+C8 $\ast$p\+Out\+Buffer, t\+U32 buffer\+Size, t\+U64 mantissa, t\+S32 exponent, t\+U32 mantissa\+High\+Bit\+Idx, t\+B has\+Unequal\+Margins, t\+S32 precision, t\+C8 decimal\+Point)}{FormatScientific(tC8 *pOutBuffer, tU32 bufferSize, tU64 mantissa, tS32 exponent, tU32 mantissaHighBitIdx, tB hasUnequalMargins, tS32 precision, tC8 decimalPoint)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf t\+U32} Format\+Scientific (
+\begin{DoxyParamCaption}
+\item[{{\bf t\+C8} $\ast$}]{p\+Out\+Buffer, }
+\item[{{\bf t\+U32}}]{buffer\+Size, }
+\item[{{\bf t\+U64}}]{mantissa, }
+\item[{{\bf t\+S32}}]{exponent, }
+\item[{{\bf t\+U32}}]{mantissa\+High\+Bit\+Idx, }
+\item[{{\bf tB}}]{has\+Unequal\+Margins, }
+\item[{{\bf t\+S32}}]{precision, }
+\item[{{\bf t\+C8}}]{decimal\+Point}
+\end{DoxyParamCaption}
+)}\hypertarget{dprint_8cpp_a1fce61f37a054297f0b8898d52dc9f28}{}\label{dprint_8cpp_a1fce61f37a054297f0b8898d52dc9f28}
+
+
+Definition at line 266 of file dprint.\+cpp.
+
+
+
+References Cutoff\+Mode\+\_\+\+Total\+Length, Cutoff\+Mode\+\_\+\+Unique, Dragon4(), and Mem\+Copy().
+
+
+
+Referenced by Print\+Float32(), and Print\+Float64().
+
+
+\begin{DoxyCode}
+278 \{
+279     \hyperlink{dstandard_8h_a89136b38084a3e1d69a63af0db6fec17}{RJ\_ASSERT}(bufferSize > 0);
+280 
+281     \hyperlink{dstandard_8h_ae3b25aefaa14d98873818cceec369577}{tS32} printExponent;
+282     \hyperlink{dstandard_8h_aee96db7e18784e05ed6b0bcaeec3f7f6}{tU32} numPrintDigits;
+283 
+284     \textcolor{keywordflow}{if} (precision < 0)
+285     \{
+286         numPrintDigits = \hyperlink{dragon4_8h_a001c1140205cd87fc22f3a9a8de7547e}{Dragon4}(   mantissa,
+287                                     exponent,
+288                                     mantissaHighBitIdx,
+289                                     hasUnequalMargins,
+290                                     \hyperlink{dragon4_8h_ae285d109bd9f429145b2656fb0b3220da076774f759c6005f59bf2b5535abf570}{CutoffMode\_Unique},
+291                                     0,
+292                                     pOutBuffer,
+293                                     bufferSize,
+294                                     &printExponent );
+295     \}
+296     \textcolor{keywordflow}{else}
+297     \{
+298         numPrintDigits = \hyperlink{dragon4_8h_a001c1140205cd87fc22f3a9a8de7547e}{Dragon4}(   mantissa,
+299                                     exponent,
+300                                     mantissaHighBitIdx,
+301                                     hasUnequalMargins,
+302                                     \hyperlink{dragon4_8h_ae285d109bd9f429145b2656fb0b3220dad8310b28d0e03277f3ca31dbf052f112}{CutoffMode\_TotalLength},
+303                                     precision + 1,
+304                                     pOutBuffer,
+305                                     bufferSize,
+306                                     &printExponent );
+307     \}
+308 
+309     \hyperlink{dstandard_8h_a89136b38084a3e1d69a63af0db6fec17}{RJ\_ASSERT}( numPrintDigits > 0 );
+310     \hyperlink{dstandard_8h_a89136b38084a3e1d69a63af0db6fec17}{RJ\_ASSERT}( numPrintDigits <= bufferSize );
+311 
+312     \hyperlink{dstandard_8h_a0dd9590397b73cba91a188b94be20ee1}{tC8} * pCurOut = pOutBuffer;
+313 
+314     \textcolor{comment}{// keep the whole number as the first digit}
+315     \textcolor{keywordflow}{if} (bufferSize > 1)
+316     \{
+317         pCurOut += 1;
+318         bufferSize -= 1;
+319     \}
+320 
+321     \textcolor{comment}{// insert the decimal point prior to the fractional number}
+322     \hyperlink{dstandard_8h_aee96db7e18784e05ed6b0bcaeec3f7f6}{tU32} numFractionDigits = numPrintDigits-1;
+323     \textcolor{keywordflow}{if} (numFractionDigits > 0 && bufferSize > 1)
+324     \{
+325         \hyperlink{dstandard_8h_aee96db7e18784e05ed6b0bcaeec3f7f6}{tU32} maxFractionDigits = bufferSize-2;
+326         \textcolor{keywordflow}{if} (numFractionDigits > maxFractionDigits)
+327             numFractionDigits =  maxFractionDigits;
+328 
+329         \hyperlink{dprint_8cpp_a7263e7ed2c459f2c42e067c30775ed41}{memmove}(pCurOut + 1, pCurOut, numFractionDigits);
+330         pCurOut[0] = decimalPoint;
+331         pCurOut += (1 + numFractionDigits);
+332         bufferSize -= (1 + numFractionDigits);
+333     \}
+334 
+335     \textcolor{comment}{// add trailing zeros up to precision length}
+336     \textcolor{keywordflow}{if} (precision > (\hyperlink{dstandard_8h_ae3b25aefaa14d98873818cceec369577}{tS32})numFractionDigits && bufferSize > 1)
+337     \{
+338         \textcolor{comment}{// add a decimal point if this is the first fractional digit we are printing}
+339         \textcolor{keywordflow}{if} (numFractionDigits == 0)
+340         \{
+341             *pCurOut = decimalPoint;
+342             ++pCurOut;
+343             --bufferSize;
+344         \}
+345 
+346         \textcolor{comment}{// compute the number of trailing zeros needed}
+347         \hyperlink{dstandard_8h_aee96db7e18784e05ed6b0bcaeec3f7f6}{tU32} numZeros = (precision - numFractionDigits);
+348         \textcolor{keywordflow}{if} (numZeros > bufferSize-1)
+349             numZeros = bufferSize-1;
+350 
+351         \textcolor{keywordflow}{for} (\hyperlink{dstandard_8h_a0dd9590397b73cba91a188b94be20ee1}{tC8} * pEnd = pCurOut + numZeros; pCurOut < pEnd; ++pCurOut )
+352             *pCurOut = \textcolor{charliteral}{'0'};
+353     \}
+354 
+355     \textcolor{comment}{// print the exponent into a local buffer and copy into output buffer}
+356     \textcolor{keywordflow}{if} (bufferSize > 1)
+357     \{
+358         \hyperlink{dstandard_8h_a0dd9590397b73cba91a188b94be20ee1}{tC8} exponentBuffer[5];
+359         exponentBuffer[0] = \textcolor{charliteral}{'e'};
+360         \textcolor{keywordflow}{if} (printExponent >= 0)
+361         \{
+362             exponentBuffer[1] = \textcolor{charliteral}{'+'};
+363         \}
+364         \textcolor{keywordflow}{else}
+365         \{
+366             exponentBuffer[1] = \textcolor{charliteral}{'-'};
+367             printExponent = -printExponent;
+368         \}
+369 
+370         \hyperlink{dstandard_8h_a89136b38084a3e1d69a63af0db6fec17}{RJ\_ASSERT}(printExponent < 1000);
+371         \hyperlink{dstandard_8h_aee96db7e18784e05ed6b0bcaeec3f7f6}{tU32} hundredsPlace  = printExponent / 100;
+372         \hyperlink{dstandard_8h_aee96db7e18784e05ed6b0bcaeec3f7f6}{tU32} tensPlace      = (printExponent - hundredsPlace*100) / 10;
+373         \hyperlink{dstandard_8h_aee96db7e18784e05ed6b0bcaeec3f7f6}{tU32} onesPlace      = (printExponent - hundredsPlace*100 - tensPlace*10);
+374 
+375         exponentBuffer[2] = (\hyperlink{dstandard_8h_a0dd9590397b73cba91a188b94be20ee1}{tC8})(\textcolor{charliteral}{'0'} + hundredsPlace);
+376         exponentBuffer[3] = (\hyperlink{dstandard_8h_a0dd9590397b73cba91a188b94be20ee1}{tC8})(\textcolor{charliteral}{'0'} + tensPlace);
+377         exponentBuffer[4] = (\hyperlink{dstandard_8h_a0dd9590397b73cba91a188b94be20ee1}{tC8})(\textcolor{charliteral}{'0'} + onesPlace);
+378 
+379         \textcolor{comment}{// copy the exponent buffer into the output}
+380         \hyperlink{dstandard_8h_aee96db7e18784e05ed6b0bcaeec3f7f6}{tU32} maxExponentSize = bufferSize-1;
+381         \hyperlink{dstandard_8h_aee96db7e18784e05ed6b0bcaeec3f7f6}{tU32} exponentSize = (5 < maxExponentSize) ? 5 : maxExponentSize;
+382         \hyperlink{dprint_8cpp_a30c75e139b07107ef1c8d3f8490aee7d}{memcpy}( pCurOut, exponentBuffer, exponentSize );
+383 
+384         pCurOut += exponentSize;
+385         bufferSize -= exponentSize;
+386     \}
+387 
+388     \hyperlink{dstandard_8h_a89136b38084a3e1d69a63af0db6fec17}{RJ\_ASSERT}( bufferSize > 0 );
+389     pCurOut[0] = \textcolor{charliteral}{'\(\backslash\)0'};
+390 
+391     \textcolor{keywordflow}{return} pCurOut - pOutBuffer;
+392 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dprint_8cpp_a1fce61f37a054297f0b8898d52dc9f28_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dprint_8cpp_a1fce61f37a054297f0b8898d52dc9f28_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{dprint.\+cpp@{dprint.\+cpp}!Print\+Float32@{Print\+Float32}}
+\index{Print\+Float32@{Print\+Float32}!dprint.\+cpp@{dprint.\+cpp}}
+\subsubsection[{\texorpdfstring{Print\+Float32(t\+C8 $\ast$p\+Out\+Buffer, t\+U32 buffer\+Size, t\+F32 value, t\+Print\+Float\+Format format, t\+S32 precision, t\+C8 decimal\+Point)}{PrintFloat32(tC8 *pOutBuffer, tU32 bufferSize, tF32 value, tPrintFloatFormat format, tS32 precision, tC8 decimalPoint)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf t\+U32} Print\+Float32 (
+\begin{DoxyParamCaption}
+\item[{{\bf t\+C8} $\ast$}]{p\+Out\+Buffer, }
+\item[{{\bf t\+U32}}]{buffer\+Size, }
+\item[{{\bf t\+F32}}]{value, }
+\item[{{\bf t\+Print\+Float\+Format}}]{format, }
+\item[{{\bf t\+S32}}]{precision, }
+\item[{{\bf t\+C8}}]{decimal\+Point}
+\end{DoxyParamCaption}
+)}\hypertarget{dprint_8cpp_a83d135741203dce4201423de8063b2c2}{}\label{dprint_8cpp_a83d135741203dce4201423de8063b2c2}
+
+
+Definition at line 465 of file dprint.\+cpp.
+
+
+
+References Format\+Positional(), Format\+Scientific(), t\+Float\+Union32\+::\+Get\+Exponent(), t\+Float\+Union32\+::\+Get\+Mantissa(), t\+Float\+Union32\+::\+Is\+Negative(), Log\+Base2(), t\+Float\+Union32\+::m\+\_\+floating\+Point, Print\+Float\+Format\+\_\+\+Positional, Print\+Float\+Format\+\_\+\+Scientific, and Print\+Inf\+Nan().
+
+
+\begin{DoxyCode}
+475 \{
+476     \textcolor{keywordflow}{if} (bufferSize == 0)
+477         \textcolor{keywordflow}{return} 0;
+478 
+479     \textcolor{keywordflow}{if} (bufferSize == 1)
+480     \{
+481         pOutBuffer[0] = \textcolor{charliteral}{'\(\backslash\)0'};
+482         \textcolor{keywordflow}{return} 1;
+483     \}
+484 
+485     \textcolor{comment}{// deconstruct the floating point value}
+486     \hyperlink{uniontFloatUnion32}{tFloatUnion32} floatUnion;
+487     floatUnion.\hyperlink{uniontFloatUnion32_ad1a5322bcde302e59bcd001125651e6a}{m\_floatingPoint} = value;
+488     \hyperlink{dstandard_8h_aee96db7e18784e05ed6b0bcaeec3f7f6}{tU32} floatExponent = floatUnion.\hyperlink{uniontFloatUnion32_a5fdea8e6c84f336aa35050476f3cd776}{GetExponent}();
+489     \hyperlink{dstandard_8h_aee96db7e18784e05ed6b0bcaeec3f7f6}{tU32} floatMantissa = floatUnion.\hyperlink{uniontFloatUnion32_a09e9d4d1db976209ea3a5720ae55b373}{GetMantissa}();
+490 
+491     \textcolor{comment}{// output the sign}
+492     \textcolor{keywordflow}{if} (floatUnion.\hyperlink{uniontFloatUnion32_a712fc8a147092d725afef356b58e222d}{IsNegative}())
+493     \{
+494         pOutBuffer[0] = \textcolor{charliteral}{'-'};
+495         ++pOutBuffer;
+496         --bufferSize;
+497         \hyperlink{dstandard_8h_a89136b38084a3e1d69a63af0db6fec17}{RJ\_ASSERT}(bufferSize > 0);
+498     \}
+499 
+500     \textcolor{comment}{// if this is a special value}
+501     \textcolor{keywordflow}{if} (floatExponent == 0xFF)
+502     \{
+503         \textcolor{keywordflow}{return} \hyperlink{dprint_8cpp_ac1192be7b47f41c6b593be33d0ad423f}{PrintInfNan}(pOutBuffer, bufferSize, floatMantissa, 6);
+504     \}
+505     \textcolor{comment}{// else this is a number}
+506     \textcolor{keywordflow}{else}
+507     \{
+508         \textcolor{comment}{// factor the value into its parts}
+509         \hyperlink{dstandard_8h_aee96db7e18784e05ed6b0bcaeec3f7f6}{tU32} mantissa;
+510         \hyperlink{dstandard_8h_ae3b25aefaa14d98873818cceec369577}{tS32} exponent;
+511         \hyperlink{dstandard_8h_aee96db7e18784e05ed6b0bcaeec3f7f6}{tU32} mantissaHighBitIdx;
+512         \hyperlink{dstandard_8h_ad203aed3ab57b120eb54c2043f60dc49}{tB} hasUnequalMargins;
+513         \textcolor{keywordflow}{if} (floatExponent != 0)
+514         \{
+515             \textcolor{comment}{// normalized}
+516             \textcolor{comment}{// The floating point equation is:}
+517             \textcolor{comment}{//  value = (1 + mantissa/2^23) * 2 ^ (exponent-127)}
+518             \textcolor{comment}{// We convert the integer equation by factoring a 2^23 out of the exponent}
+519             \textcolor{comment}{//  value = (1 + mantissa/2^23) * 2^23 * 2 ^ (exponent-127-23)}
+520             \textcolor{comment}{//  value = (2^23 + mantissa) * 2 ^ (exponent-127-23)}
+521             \textcolor{comment}{// Because of the implied 1 in front of the mantissa we have 24 bits of precision.}
+522             \textcolor{comment}{//   m = (2^23 + mantissa)}
+523             \textcolor{comment}{//   e = (exponent-127-23)}
+524             mantissa            = (1UL << 23) | floatMantissa;
+525             exponent            = floatExponent - 127 - 23;
+526             mantissaHighBitIdx  = 23;
+527             hasUnequalMargins   = (floatExponent != 1) && (floatMantissa == 0);
+528         \}
+529         \textcolor{keywordflow}{else}
+530         \{
+531             \textcolor{comment}{// denormalized}
+532             \textcolor{comment}{// The floating point equation is:}
+533             \textcolor{comment}{//  value = (mantissa/2^23) * 2 ^ (1-127)}
+534             \textcolor{comment}{// We convert the integer equation by factoring a 2^23 out of the exponent}
+535             \textcolor{comment}{//  value = (mantissa/2^23) * 2^23 * 2 ^ (1-127-23)}
+536             \textcolor{comment}{//  value = mantissa * 2 ^ (1-127-23)}
+537             \textcolor{comment}{// We have up to 23 bits of precision.}
+538             \textcolor{comment}{//   m = (mantissa)}
+539             \textcolor{comment}{//   e = (1-127-23)}
+540             mantissa           = floatMantissa;
+541             exponent           = 1 - 127 - 23;
+542             mantissaHighBitIdx = \hyperlink{dmath_8cpp_a835ee0ad31a196742a7a5fd3c21a738b}{LogBase2}(mantissa);
+543             hasUnequalMargins   = \textcolor{keyword}{false};
+544         \}
+545 
+546         \textcolor{comment}{// format the value}
+547         \textcolor{keywordflow}{switch} (format)
+548         \{
+549         \textcolor{keywordflow}{case} \hyperlink{dprint_8h_ad1a8e21d8398e3c6f757fffea595fbe2a8973a8ad28c6a11b3c60e559e60f741c}{PrintFloatFormat\_Positional}:
+550             \textcolor{keywordflow}{return} \hyperlink{dprint_8cpp_a73aa4cbb8052f400f03f1706a3eced16}{FormatPositional}(    pOutBuffer,
+551                                         bufferSize,
+552                                         mantissa,
+553                                         exponent,
+554                                         mantissaHighBitIdx,
+555                                         hasUnequalMargins,
+556                                         precision,
+557                                         decimalPoint );
+558 
+559         \textcolor{keywordflow}{case} \hyperlink{dprint_8h_ad1a8e21d8398e3c6f757fffea595fbe2a3503f685e7267ba72c4a17aa390d7706}{PrintFloatFormat\_Scientific}:
+560             \textcolor{keywordflow}{return} \hyperlink{dprint_8cpp_a1fce61f37a054297f0b8898d52dc9f28}{FormatScientific}(    pOutBuffer,
+561                                         bufferSize,
+562                                         mantissa,
+563                                         exponent,
+564                                         mantissaHighBitIdx,
+565                                         hasUnequalMargins,
+566                                         precision,
+567                                         decimalPoint );
+568 
+569         \textcolor{keywordflow}{default}:
+570             pOutBuffer[0] = \textcolor{charliteral}{'\(\backslash\)0'};
+571             \textcolor{keywordflow}{return} 0;
+572         \}
+573     \}
+574 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dprint_8cpp_a83d135741203dce4201423de8063b2c2_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{dprint.\+cpp@{dprint.\+cpp}!Print\+Float64@{Print\+Float64}}
+\index{Print\+Float64@{Print\+Float64}!dprint.\+cpp@{dprint.\+cpp}}
+\subsubsection[{\texorpdfstring{Print\+Float64(t\+C8 $\ast$p\+Out\+Buffer, t\+U32 buffer\+Size, t\+F64 value, t\+Print\+Float\+Format format, t\+S32 precision, t\+C8 decimal\+Point)}{PrintFloat64(tC8 *pOutBuffer, tU32 bufferSize, tF64 value, tPrintFloatFormat format, tS32 precision, tC8 decimalPoint)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf t\+U32} Print\+Float64 (
+\begin{DoxyParamCaption}
+\item[{{\bf t\+C8} $\ast$}]{p\+Out\+Buffer, }
+\item[{{\bf t\+U32}}]{buffer\+Size, }
+\item[{{\bf t\+F64}}]{value, }
+\item[{{\bf t\+Print\+Float\+Format}}]{format, }
+\item[{{\bf t\+S32}}]{precision, }
+\item[{{\bf t\+C8}}]{decimal\+Point}
+\end{DoxyParamCaption}
+)}\hypertarget{dprint_8cpp_abd2c48bc16cbab3eb5ec361153f21cbe}{}\label{dprint_8cpp_abd2c48bc16cbab3eb5ec361153f21cbe}
+
+
+Definition at line 582 of file dprint.\+cpp.
+
+
+
+References Format\+Positional(), Format\+Scientific(), t\+Float\+Union64\+::\+Get\+Exponent(), t\+Float\+Union64\+::\+Get\+Mantissa(), t\+Float\+Union64\+::\+Is\+Negative(), Log\+Base2(), t\+Float\+Union64\+::m\+\_\+floating\+Point, Print\+Float\+Format\+\_\+\+Positional, Print\+Float\+Format\+\_\+\+Scientific, and Print\+Inf\+Nan().
+
+
+
+Referenced by Decimal\+System\+::\+Get\+Real\+Text().
+
+
+\begin{DoxyCode}
+592 \{
+593     \textcolor{keywordflow}{if} (bufferSize == 0)
+594         \textcolor{keywordflow}{return} 0;
+595 
+596     \textcolor{keywordflow}{if} (bufferSize == 1)
+597     \{
+598         pOutBuffer[0] = \textcolor{charliteral}{'\(\backslash\)0'};
+599         \textcolor{keywordflow}{return} 1;
+600     \}
+601 
+602     \textcolor{comment}{// deconstruct the floating point value}
+603     \hyperlink{uniontFloatUnion64}{tFloatUnion64} floatUnion;
+604     floatUnion.\hyperlink{uniontFloatUnion64_aac8887130a7750b7ed3e38d2172e0d4d}{m\_floatingPoint} = value;
+605     \hyperlink{dstandard_8h_aee96db7e18784e05ed6b0bcaeec3f7f6}{tU32} floatExponent = floatUnion.\hyperlink{uniontFloatUnion64_a9a52499d5e9a41152da0368522121dd9}{GetExponent}();
+606     \hyperlink{dstandard_8h_a6625ae5505b2f796350b82c7f52fcf43}{tU64} floatMantissa = floatUnion.\hyperlink{uniontFloatUnion64_ac19d91a8d0950d68fb2610925e2fe43e}{GetMantissa}();
+607 
+608     \textcolor{comment}{// output the sign}
+609     \textcolor{keywordflow}{if} (floatUnion.\hyperlink{uniontFloatUnion64_acef6b9abed06d568b90ed31592e13242}{IsNegative}())
+610     \{
+611         pOutBuffer[0] = \textcolor{charliteral}{'-'};
+612         ++pOutBuffer;
+613         --bufferSize;
+614         \hyperlink{dstandard_8h_a89136b38084a3e1d69a63af0db6fec17}{RJ\_ASSERT}(bufferSize > 0);
+615     \}
+616 
+617     \textcolor{comment}{// if this is a special value}
+618     \textcolor{keywordflow}{if} (floatExponent == 0x7FF)
+619     \{
+620         \textcolor{keywordflow}{return} \hyperlink{dprint_8cpp_ac1192be7b47f41c6b593be33d0ad423f}{PrintInfNan}(pOutBuffer, bufferSize, floatMantissa, 13);
+621     \}
+622     \textcolor{comment}{// else this is a number}
+623     \textcolor{keywordflow}{else}
+624     \{
+625         \textcolor{comment}{// factor the value into its parts}
+626         \hyperlink{dstandard_8h_a6625ae5505b2f796350b82c7f52fcf43}{tU64} mantissa;
+627         \hyperlink{dstandard_8h_ae3b25aefaa14d98873818cceec369577}{tS32} exponent;
+628         \hyperlink{dstandard_8h_aee96db7e18784e05ed6b0bcaeec3f7f6}{tU32} mantissaHighBitIdx;
+629         \hyperlink{dstandard_8h_ad203aed3ab57b120eb54c2043f60dc49}{tB} hasUnequalMargins;
+630 
+631         \textcolor{keywordflow}{if} (floatExponent != 0)
+632         \{
+633             \textcolor{comment}{// normal}
+634             \textcolor{comment}{// The floating point equation is:}
+635             \textcolor{comment}{//  value = (1 + mantissa/2^52) * 2 ^ (exponent-1023)}
+636             \textcolor{comment}{// We convert the integer equation by factoring a 2^52 out of the exponent}
+637             \textcolor{comment}{//  value = (1 + mantissa/2^52) * 2^52 * 2 ^ (exponent-1023-52)}
+638             \textcolor{comment}{//  value = (2^52 + mantissa) * 2 ^ (exponent-1023-52)}
+639             \textcolor{comment}{// Because of the implied 1 in front of the mantissa we have 53 bits of precision.}
+640             \textcolor{comment}{//   m = (2^52 + mantissa)}
+641             \textcolor{comment}{//   e = (exponent-1023+1-53)}
+642             mantissa            = (1ull << 52) | floatMantissa;
+643             exponent            = floatExponent - 1023 - 52;
+644             mantissaHighBitIdx  = 52;
+645             hasUnequalMargins   = (floatExponent != 1) && (floatMantissa == 0);
+646         \}
+647         \textcolor{keywordflow}{else}
+648         \{
+649             \textcolor{comment}{// subnormal}
+650             \textcolor{comment}{// The floating point equation is:}
+651             \textcolor{comment}{//  value = (mantissa/2^52) * 2 ^ (1-1023)}
+652             \textcolor{comment}{// We convert the integer equation by factoring a 2^52 out of the exponent}
+653             \textcolor{comment}{//  value = (mantissa/2^52) * 2^52 * 2 ^ (1-1023-52)}
+654             \textcolor{comment}{//  value = mantissa * 2 ^ (1-1023-52)}
+655             \textcolor{comment}{// We have up to 52 bits of precision.}
+656             \textcolor{comment}{//   m = (mantissa)}
+657             \textcolor{comment}{//   e = (1-1023-52)}
+658             mantissa            = floatMantissa;
+659             exponent            = 1 - 1023 - 52;
+660             mantissaHighBitIdx  = \hyperlink{dmath_8cpp_a835ee0ad31a196742a7a5fd3c21a738b}{LogBase2}(mantissa);
+661             hasUnequalMargins   = \textcolor{keyword}{false};
+662         \}
+663 
+664         \textcolor{comment}{// format the value}
+665         \textcolor{keywordflow}{switch} (format)
+666         \{
+667         \textcolor{keywordflow}{case} \hyperlink{dprint_8h_ad1a8e21d8398e3c6f757fffea595fbe2a8973a8ad28c6a11b3c60e559e60f741c}{PrintFloatFormat\_Positional}:
+668             \textcolor{keywordflow}{return} \hyperlink{dprint_8cpp_a73aa4cbb8052f400f03f1706a3eced16}{FormatPositional}(    pOutBuffer,
+669                                         bufferSize,
+670                                         mantissa,
+671                                         exponent,
+672                                         mantissaHighBitIdx,
+673                                         hasUnequalMargins,
+674                                         precision,
+675                                         decimalPoint );
+676 
+677         \textcolor{keywordflow}{case} \hyperlink{dprint_8h_ad1a8e21d8398e3c6f757fffea595fbe2a3503f685e7267ba72c4a17aa390d7706}{PrintFloatFormat\_Scientific}:
+678             \textcolor{keywordflow}{return} \hyperlink{dprint_8cpp_a1fce61f37a054297f0b8898d52dc9f28}{FormatScientific}(    pOutBuffer,
+679                                         bufferSize,
+680                                         mantissa,
+681                                         exponent,
+682                                         mantissaHighBitIdx,
+683                                         hasUnequalMargins,
+684                                         precision,
+685                                         decimalPoint );
+686 
+687         \textcolor{keywordflow}{default}:
+688             pOutBuffer[0] = \textcolor{charliteral}{'\(\backslash\)0'};
+689             \textcolor{keywordflow}{return} 0;
+690         \}
+691     \}
+692 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dprint_8cpp_abd2c48bc16cbab3eb5ec361153f21cbe_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dprint_8cpp_abd2c48bc16cbab3eb5ec361153f21cbe_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{dprint.\+cpp@{dprint.\+cpp}!Print\+Hex@{Print\+Hex}}
+\index{Print\+Hex@{Print\+Hex}!dprint.\+cpp@{dprint.\+cpp}}
+\subsubsection[{\texorpdfstring{Print\+Hex(t\+C8 $\ast$p\+Out\+Buffer, t\+U32 buffer\+Size, t\+U64 value, t\+U32 width)}{PrintHex(tC8 *pOutBuffer, tU32 bufferSize, tU64 value, tU32 width)}}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf t\+U32} Print\+Hex (
+\begin{DoxyParamCaption}
+\item[{{\bf t\+C8} $\ast$}]{p\+Out\+Buffer, }
+\item[{{\bf t\+U32}}]{buffer\+Size, }
+\item[{{\bf t\+U64}}]{value, }
+\item[{{\bf t\+U32}}]{width}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{dprint_8cpp_ad8dae51a6e8f43f36e5c7866583f0e05}{}\label{dprint_8cpp_ad8dae51a6e8f43f36e5c7866583f0e05}
+
+
+Definition at line 399 of file dprint.\+cpp.
+
+
+
+Referenced by Print\+Inf\+Nan().
+
+
+\begin{DoxyCode}
+400 \{
+401     \textcolor{keyword}{const} \hyperlink{dstandard_8h_a0dd9590397b73cba91a188b94be20ee1}{tC8} digits[] = \textcolor{stringliteral}{"0123456789abcdef"};
+402 
+403     \hyperlink{dstandard_8h_a89136b38084a3e1d69a63af0db6fec17}{RJ\_ASSERT}(bufferSize > 0);
+404 
+405     \hyperlink{dstandard_8h_aee96db7e18784e05ed6b0bcaeec3f7f6}{tU32} maxPrintLen = bufferSize-1;
+406     \textcolor{keywordflow}{if} (width > maxPrintLen)
+407         width = maxPrintLen;
+408 
+409     \hyperlink{dstandard_8h_a0dd9590397b73cba91a188b94be20ee1}{tC8} * pCurOut = pOutBuffer;
+410     \textcolor{keywordflow}{while} (width > 0)
+411     \{
+412         --width;
+413 
+414         \hyperlink{dstandard_8h_af2d76b8dc67b978a5406fefa537b2eb2}{tU8} digit = (\hyperlink{dstandard_8h_af2d76b8dc67b978a5406fefa537b2eb2}{tU8})((value >> 4ull*(\hyperlink{dstandard_8h_a6625ae5505b2f796350b82c7f52fcf43}{tU64})width) & 0xF);
+415         *pCurOut = digits[digit];
+416 
+417         ++pCurOut;
+418     \}
+419 
+420     *pCurOut = \textcolor{charliteral}{'\(\backslash\)0'};
+421     \textcolor{keywordflow}{return} pCurOut - pOutBuffer;
+422 \}
+\end{DoxyCode}
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dprint_8cpp_ad8dae51a6e8f43f36e5c7866583f0e05_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{dprint.\+cpp@{dprint.\+cpp}!Print\+Inf\+Nan@{Print\+Inf\+Nan}}
+\index{Print\+Inf\+Nan@{Print\+Inf\+Nan}!dprint.\+cpp@{dprint.\+cpp}}
+\subsubsection[{\texorpdfstring{Print\+Inf\+Nan(t\+C8 $\ast$p\+Out\+Buffer, t\+U32 buffer\+Size, t\+U64 mantissa, t\+U32 mantissa\+Hex\+Width)}{PrintInfNan(tC8 *pOutBuffer, tU32 bufferSize, tU64 mantissa, tU32 mantissaHexWidth)}}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf t\+U32} Print\+Inf\+Nan (
+\begin{DoxyParamCaption}
+\item[{{\bf t\+C8} $\ast$}]{p\+Out\+Buffer, }
+\item[{{\bf t\+U32}}]{buffer\+Size, }
+\item[{{\bf t\+U64}}]{mantissa, }
+\item[{{\bf t\+U32}}]{mantissa\+Hex\+Width}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{dprint_8cpp_ac1192be7b47f41c6b593be33d0ad423f}{}\label{dprint_8cpp_ac1192be7b47f41c6b593be33d0ad423f}
+
+
+Definition at line 429 of file dprint.\+cpp.
+
+
+
+References Mem\+Copy(), and Print\+Hex().
+
+
+
+Referenced by Print\+Float32(), and Print\+Float64().
+
+
+\begin{DoxyCode}
+430 \{
+431     \hyperlink{dstandard_8h_a89136b38084a3e1d69a63af0db6fec17}{RJ\_ASSERT}(bufferSize > 0);
+432 
+433     \hyperlink{dstandard_8h_aee96db7e18784e05ed6b0bcaeec3f7f6}{tU32} maxPrintLen = bufferSize-1;
+434 
+435     \textcolor{comment}{// Check for infinity}
+436     \textcolor{keywordflow}{if} (mantissa == 0)
+437     \{
+438         \textcolor{comment}{// copy and make sure the buffer is terminated}
+439         \hyperlink{dstandard_8h_aee96db7e18784e05ed6b0bcaeec3f7f6}{tU32} printLen = (3 < maxPrintLen) ? 3 : maxPrintLen;
+440         \hyperlink{dprint_8cpp_a30c75e139b07107ef1c8d3f8490aee7d}{::memcpy}( pOutBuffer, \textcolor{stringliteral}{"Inf"}, printLen );
+441         pOutBuffer[printLen] = \textcolor{charliteral}{'\(\backslash\)0'};
+442         \textcolor{keywordflow}{return} printLen;
+443     \}
+444     \textcolor{keywordflow}{else}
+445     \{
+446         \textcolor{comment}{// copy and make sure the buffer is terminated}
+447         \hyperlink{dstandard_8h_aee96db7e18784e05ed6b0bcaeec3f7f6}{tU32} printLen = (3 < maxPrintLen) ? 3 : maxPrintLen;
+448         \hyperlink{dprint_8cpp_a30c75e139b07107ef1c8d3f8490aee7d}{::memcpy}( pOutBuffer, \textcolor{stringliteral}{"NaN"}, printLen );
+449         pOutBuffer[printLen] = \textcolor{charliteral}{'\(\backslash\)0'};
+450 
+451         \textcolor{comment}{// append HEX value}
+452         \textcolor{keywordflow}{if} (maxPrintLen > 3)
+453             printLen += \hyperlink{dprint_8cpp_ad8dae51a6e8f43f36e5c7866583f0e05}{PrintHex}(pOutBuffer+3, bufferSize-3, mantissa, mantissaHexWidth);
+454 
+455         \textcolor{keywordflow}{return} printLen;
+456     \}
+457 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=244pt]{dprint_8cpp_ac1192be7b47f41c6b593be33d0ad423f_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dprint_8cpp_ac1192be7b47f41c6b593be33d0ad423f_icgraph}
+\end{center}
+\end{figure}
+
+

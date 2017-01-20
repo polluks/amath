@@ -1,0 +1,5 @@
+<map id="Program" name="Program">
+<area shape="rect" id="node2" href="$classAmigaProgram.html" title="AmigaProgram" alt="" coords="5,80,113,107"/>
+<area shape="rect" id="node3" href="$classStandardProgram.html" title="StandardProgram" alt="" coords="138,80,261,107"/>
+<area shape="rect" id="node4" href="$classTestProgram.html" title="Test control class. " alt="" coords="285,80,383,107"/>
+</map>

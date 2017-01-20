@@ -7,7 +7,7 @@
         <title>Directory Dependency diagram</title>
         <mediaobject>
             <imageobject>
-                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="../../dir_d422163b96683743ed3963d4aac17747_dep.png"></imagedata>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="dir_d422163b96683743ed3963d4aac17747_dep.png"></imagedata>
             </imageobject>
         </mediaobject>
     </figure>
@@ -48,13 +48,13 @@
             <para>
                 <itemizedlist>
                     <listitem>
-                        <para>file <link linkend="df/d0a/main_8cpp">main.cpp</link></para>
+                        <para>file <link linkend="main_8cpp">main.cpp</link></para>
                     </listitem>
                 </itemizedlist>
             </para>
         </simplesect>
     <simplesect>
         <title>Detailed Description</title>
-    <para>Directory location is /home/carsten/amath2/app/</para>
+    <para>Directory location is /home/carsten/amath/app/</para>
     </simplesect>
 </section>

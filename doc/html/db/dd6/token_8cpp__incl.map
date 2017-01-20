@@ -1,7 +1,0 @@
-<map id="app/main/token.cpp" name="app/main/token.cpp">
-<area shape="rect" id="node2" href="$d9/de5/clib_8h.html" title="C functions for manipulating strings and memory. " alt="" coords="21,80,75,107"/>
-<area shape="rect" id="node6" href="$d1/d07/token_8h.html" title="Application logic tied to Token. " alt="" coords="106,80,203,107"/>
-<area shape="rect" id="node3" href="$de/d03/platform_8h.html" title="platform.h" alt="" coords="5,155,85,181"/>
-<area shape="rect" id="node5" href="$d9/d9a/mem_8h.html" title="mem.h" alt="" coords="49,229,111,256"/>
-<area shape="rect" id="node7" href="$de/d52/lex_8h.html" title="Lexer defitions used by other classes. " alt="" coords="109,155,208,181"/>
-</map>

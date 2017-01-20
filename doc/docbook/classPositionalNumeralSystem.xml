@@ -1,0 +1,218 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="classPositionalNumeralSystem">
+<title>PositionalNumeralSystem class Reference</title>
+<para>
+    <programlisting>#include <link linkend="ntext_8h">&lt;ntext.h&gt;</link></programlisting>
+</para>
+<para>Inheritance diagram for PositionalNumeralSystem</para>
+<para>
+    <figure>
+        <title>Inheritance graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="classPositionalNumeralSystem__inherit__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+<para>Collaboration diagram for PositionalNumeralSystem</para>
+<para>
+    <figure>
+        <title>Collaboration graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="classPositionalNumeralSystem__coll__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+        <section>
+            <title>Protected Attributes</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>double base</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>unsigned int digits</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>char fractionpoint</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="classPositionalNumeralSystem_1a923f36569ecc830f17bcf56dd2811754">PositionalNumeralSystem</link> (
+unsigned int base, unsigned int digits, const char fractionpoint)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="classPositionalNumeralSystem_1a4b33a259e571a9668ee0348a5f085f43">~PositionalNumeralSystem</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>virtual const char * <link linkend="classPositionalNumeralSystem_1ab52249b8607a9e67d4676aad39a6e15d">GetName</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>virtual const char * <link linkend="classPositionalNumeralSystem_1aad925e0a92b3130c2d7c5567bdeca665">GetPrefix</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>virtual unsigned int <link linkend="classPositionalNumeralSystem_1affe52e59623d35844771f6292b140284">GetDigits</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>virtual void <link linkend="classPositionalNumeralSystem_1aa65a40609c4bb6530507010065c7e750">SetDigits</link> (
+unsigned int digits)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>virtual const char <link linkend="classPositionalNumeralSystem_1aa5bfa3d33bce0955ace2aa4b8c8c9e4b">GetFractionPoint</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>virtual void <link linkend="classPositionalNumeralSystem_1aac54178aebc6ac802fc930e6b431f612">SetFractionPoint</link> (
+const char fractionpoint)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>virtual const char * <link linkend="classPositionalNumeralSystem_1ac4acbb807861e8ff702d9624fb5db87d">GetText</link> (
+<link linkend="structNumber">Number</link> * number)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>virtual <link linkend="structNumber">Number</link> * <link linkend="classPositionalNumeralSystem_1a6fd2861b5cd8da952191218121df7f56">Parse</link> (
+const char * text, unsigned int * length, char ** end)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>const char * <link linkend="classPositionalNumeralSystem_1a2f6ecf8dd5ebff779bd2cba4e356febe">GetText</link> (
+double number)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="classPositionalNumeralSystem_1ac2edd0c7d5b47dc04908038f3eb03556">IntegerToBuffer</link> (
+double value, unsigned int digits, int * outdigits)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+    <simplesect>
+
+<para>Base class for all numeral systems with a positional notation. </para>
+    </simplesect>
+        <simplesect>
+            <title>Detailed Description</title>
+
+<para>More info on positional notation is available at Wikipedia: <link xlink:href="http://en.wikipedia.org/wiki/Positional_notation">http://en.wikipedia.org/wiki/Positional_notation</link> </para>
+                <para>Definition at line 74 of file ntext.h</para>
+                <para>The Documentation for this struct was generated from the following file: </para>
+                <para><itemizedlist><listitem><para>ntext.h</para></listitem></itemizedlist></para>
+        </simplesect>
+        <section>
+            <title>Member Data Documentation</title>
+        </section>
+            <section xml:id="classPositionalNumeralSystem_1a923f36569ecc830f17bcf56dd2811754">
+                <title>PositionalNumeralSystem::PositionalNumeralSystem (unsigned int base, unsigned int digits, const char fractionpoint)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="classPositionalNumeralSystem_1a4b33a259e571a9668ee0348a5f085f43">
+                <title>PositionalNumeralSystem::~PositionalNumeralSystem ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="classPositionalNumeralSystem_1ab52249b8607a9e67d4676aad39a6e15d">
+                <title>const char * PositionalNumeralSystem::GetName ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="classPositionalNumeralSystem_1aad925e0a92b3130c2d7c5567bdeca665">
+                <title>const char * PositionalNumeralSystem::GetPrefix ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="classPositionalNumeralSystem_1affe52e59623d35844771f6292b140284">
+                <title>unsigned int PositionalNumeralSystem::GetDigits ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="classPositionalNumeralSystem_1aa65a40609c4bb6530507010065c7e750">
+                <title>void PositionalNumeralSystem::SetDigits (unsigned int digits)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="classPositionalNumeralSystem_1aa5bfa3d33bce0955ace2aa4b8c8c9e4b">
+                <title>const char PositionalNumeralSystem::GetFractionPoint ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="classPositionalNumeralSystem_1aac54178aebc6ac802fc930e6b431f612">
+                <title>void PositionalNumeralSystem::SetFractionPoint (const char fractionpoint)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="classPositionalNumeralSystem_1ac4acbb807861e8ff702d9624fb5db87d">
+                <title>const char * PositionalNumeralSystem::GetText (Number *number)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="classPositionalNumeralSystem_1a6fd2861b5cd8da952191218121df7f56">
+                <title>Number * PositionalNumeralSystem::Parse (const char *text, unsigned int *length, char **end)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="classPositionalNumeralSystem_1a2f6ecf8dd5ebff779bd2cba4e356febe">
+                <title>const char * PositionalNumeralSystem::GetText (double number)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="classPositionalNumeralSystem_1ac2edd0c7d5b47dc04908038f3eb03556">
+                <title>void PositionalNumeralSystem::IntegerToBuffer (double value, unsigned int digits, int *outdigits)</title> <emphasis></emphasis>
+                
+            </section>
+</section>

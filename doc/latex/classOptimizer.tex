@@ -1,0 +1,635 @@
+\hypertarget{classOptimizer}{}\section{Optimizer Class Reference}
+\label{classOptimizer}\index{Optimizer@{Optimizer}}
+
+
+{\ttfamily \#include $<$optimizer.\+h$>$}
+
+
+
+Collaboration diagram for Optimizer\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=203pt]{classOptimizer__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classOptimizer_a7b4482e542418f5b32a1c9960428c54a}{Optimizer} (\hyperlink{classSyntaxNode}{Syntax\+Node} $\ast$\hyperlink{classOptimizer_a665ceeca2e548de6fc68827fb910bd98}{root})
+\item 
+\hyperlink{classOptimizer_ab01202385afea2f09afbd73227736a17}{$\sim$\+Optimizer} ()
+\item 
+void \hyperlink{classOptimizer_a5764ae0825fa43921f74d8b972e53b1e}{Optimize} ()
+\item 
+\hyperlink{classSyntaxNode}{Syntax\+Node} $\ast$ \hyperlink{classOptimizer_ae50ae3a88ea8f5161b9bb072ccf4ea93}{Get\+Root} ()
+\item 
+int \hyperlink{classOptimizer_a4a80c3e845604f1ea53a6bfc187b2bba}{Get\+Tree\+Depth} (\hyperlink{classSyntaxNode}{Syntax\+Node} $\ast$node, int depth)
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classOptimizer_a5227e42d69dcbf08fde579642a98c78c}{Tag\+Children} (\hyperlink{classSyntaxNode}{Syntax\+Node} $\ast$node)
+\item 
+void \hyperlink{classOptimizer_ad84621adb872b88ab7fdb3672064cfdb}{Balance\+Tree} (\hyperlink{classSyntaxNode}{Syntax\+Node} $\ast$node)
+\item 
+void \hyperlink{classOptimizer_aef8d80bb6301ee01a7ed271148438733}{Reduce\+Unary\+Nodes} (\hyperlink{classSyntaxNode}{Syntax\+Node} $\ast$node)
+\item 
+void \hyperlink{classOptimizer_a5b45089aff3c6568f3531faa9e701f21}{Reduce\+Value\+Nodes} (\hyperlink{classSyntaxNode}{Syntax\+Node} $\ast$node)
+\item 
+void \hyperlink{classOptimizer_a2b71012237663dc9459a908fba6fbecc}{Tag\+Start\+Node} (\hyperlink{classSyntaxNode}{Syntax\+Node} $\ast$node)
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classSyntaxNode}{Syntax\+Node} $\ast$ \hyperlink{classOptimizer_a665ceeca2e548de6fc68827fb910bd98}{root}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 42 of file optimizer.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Optimizer@{Optimizer}!Optimizer@{Optimizer}}
+\index{Optimizer@{Optimizer}!Optimizer@{Optimizer}}
+\subsubsection[{\texorpdfstring{Optimizer(\+Syntax\+Node $\ast$root)}{Optimizer(SyntaxNode *root)}}]{\setlength{\rightskip}{0pt plus 5cm}Optimizer\+::\+Optimizer (
+\begin{DoxyParamCaption}
+\item[{{\bf Syntax\+Node} $\ast$}]{root}
+\end{DoxyParamCaption}
+)}\hypertarget{classOptimizer_a7b4482e542418f5b32a1c9960428c54a}{}\label{classOptimizer_a7b4482e542418f5b32a1c9960428c54a}
+
+
+Definition at line 31 of file optimizer.\+cpp.
+
+
+
+References root.
+
+
+
+Referenced by Evaluator\+::\+Evaluate().
+
+
+\begin{DoxyCode}
+32 \{
+33     this->root = \hyperlink{classOptimizer_a665ceeca2e548de6fc68827fb910bd98}{root};
+34 \}
+\end{DoxyCode}
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classOptimizer_a7b4482e542418f5b32a1c9960428c54a_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Optimizer@{Optimizer}!````~Optimizer@{$\sim$\+Optimizer}}
+\index{````~Optimizer@{$\sim$\+Optimizer}!Optimizer@{Optimizer}}
+\subsubsection[{\texorpdfstring{$\sim$\+Optimizer()}{~Optimizer()}}]{\setlength{\rightskip}{0pt plus 5cm}Optimizer\+::$\sim$\+Optimizer (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classOptimizer_ab01202385afea2f09afbd73227736a17}{}\label{classOptimizer_ab01202385afea2f09afbd73227736a17}
+
+
+Definition at line 36 of file optimizer.\+cpp.
+
+
+\begin{DoxyCode}
+37 \{ \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\index{Optimizer@{Optimizer}!Balance\+Tree@{Balance\+Tree}}
+\index{Balance\+Tree@{Balance\+Tree}!Optimizer@{Optimizer}}
+\subsubsection[{\texorpdfstring{Balance\+Tree(\+Syntax\+Node $\ast$node)}{BalanceTree(SyntaxNode *node)}}]{\setlength{\rightskip}{0pt plus 5cm}void Optimizer\+::\+Balance\+Tree (
+\begin{DoxyParamCaption}
+\item[{{\bf Syntax\+Node} $\ast$}]{node}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classOptimizer_ad84621adb872b88ab7fdb3672064cfdb}{}\label{classOptimizer_ad84621adb872b88ab7fdb3672064cfdb}
+
+
+Definition at line 63 of file optimizer.\+cpp.
+
+
+
+References Syntax\+Node\+::\+Attach(), Balance\+Tree(), Syntax\+Node\+::\+Detach(), expression, Syntax\+Node\+::\+Get\+Next(), Syntax\+Node\+::\+Get\+Node\+Type(), Syntax\+Node\+::\+Get\+Parent(), Expression\+Node\+::\+Get\+Precedence(), Get\+Tree\+Depth(), and Syntax\+Node\+::\+Reset\+Iterator().
+
+
+
+Referenced by Balance\+Tree(), and Optimize().
+
+
+\begin{DoxyCode}
+64 \{
+65     \textcolor{keywordflow}{if} (node == \hyperlink{platform_8h_a46ff2bfbf0d44b8466a2251d5bd5e6f8}{NOMEM}) \{
+66         \textcolor{keywordflow}{return};
+67     \} \textcolor{keywordflow}{else} \{
+68         node->\hyperlink{classSyntaxNode_ac51307368fb255aa760b99e137178c89}{ResetIterator}();
+69     \}
+70 
+71     \hyperlink{classSyntaxNode}{SyntaxNode}* current = node->\hyperlink{classSyntaxNode_af1fa46ba30aa4f2affa2d4e96a4be010}{GetNext}();
+72 
+73     \textcolor{keywordflow}{while} (current != \hyperlink{platform_8h_a46ff2bfbf0d44b8466a2251d5bd5e6f8}{NOMEM}) \{
+74         \textcolor{keywordflow}{if} (current->\hyperlink{classSyntaxNode_aef71a18975535d050393f0541b3cdc6a}{GetNodeType}() == \hyperlink{nodes_8h_acac9cbaeea226ed297804c012dc12b16ac810bbb61792a076f46cad2c89d87e1d}{expression}) \{
+75             \hyperlink{classExpressionNode}{ExpressionNode} *troot = (\hyperlink{classExpressionNode}{ExpressionNode}*)current;
+76             troot->\hyperlink{classSyntaxNode_ac51307368fb255aa760b99e137178c89}{ResetIterator}();
+77             \hyperlink{classExpressionNode}{ExpressionNode} *pivot = (\hyperlink{classExpressionNode}{ExpressionNode}*)troot->
+      \hyperlink{classSyntaxNode_af1fa46ba30aa4f2affa2d4e96a4be010}{GetNext}();
+78             \textcolor{keywordflow}{if} (pivot != \hyperlink{platform_8h_a46ff2bfbf0d44b8466a2251d5bd5e6f8}{NOMEM} && troot->\hyperlink{classExpressionNode_a161b9ea0b79bbfc101d6f687c8481ddd}{GetPrecedence}() == pivot->
+      \hyperlink{classExpressionNode_a161b9ea0b79bbfc101d6f687c8481ddd}{GetPrecedence}()) \{
+79                 \textcolor{keywordtype}{int} rdepth = \hyperlink{classOptimizer_a4a80c3e845604f1ea53a6bfc187b2bba}{GetTreeDepth}(troot, 1);
+80                 \textcolor{keywordtype}{int} pdepth = \hyperlink{classOptimizer_a4a80c3e845604f1ea53a6bfc187b2bba}{GetTreeDepth}(pivot, 0);
+81                 \textcolor{keywordflow}{if} (rdepth - pdepth > 1 || rdepth - pdepth < -1) \{
+82                     pivot->\hyperlink{classSyntaxNode_ac51307368fb255aa760b99e137178c89}{ResetIterator}();
+83                     pivot->\hyperlink{classSyntaxNode_af1fa46ba30aa4f2affa2d4e96a4be010}{GetNext}();
+84                     \hyperlink{classExpressionNode}{ExpressionNode} *child = (\hyperlink{classExpressionNode}{ExpressionNode}*)pivot->
+      \hyperlink{classSyntaxNode_af1fa46ba30aa4f2affa2d4e96a4be010}{GetNext}();
+85                     \textcolor{keywordflow}{if} (child != \hyperlink{platform_8h_a46ff2bfbf0d44b8466a2251d5bd5e6f8}{NOMEM}) \{
+86                         \hyperlink{classSyntaxNode}{SyntaxNode}* parent = troot->\hyperlink{classSyntaxNode_a4a85fd710ad44edbc5b3ac625c10cd08}{GetParent}();
+87                         parent->\hyperlink{classSyntaxNode_ae57f629a5c5fa0994f036c105396da69}{Detach}(troot);
+88                         troot->\hyperlink{classSyntaxNode_ae57f629a5c5fa0994f036c105396da69}{Detach}(pivot);
+89                         pivot->\hyperlink{classSyntaxNode_ae57f629a5c5fa0994f036c105396da69}{Detach}(child);
+90                         troot->\hyperlink{classSyntaxNode_af25fd5963125bb2d6b9a1864b9ff79c8}{Attach}(child);
+91                         pivot->\hyperlink{classSyntaxNode_af25fd5963125bb2d6b9a1864b9ff79c8}{Attach}(troot);
+92                         parent->\hyperlink{classSyntaxNode_af25fd5963125bb2d6b9a1864b9ff79c8}{Attach}(pivot);
+93                         current = pivot;
+94                         current->\hyperlink{classSyntaxNode_ac51307368fb255aa760b99e137178c89}{ResetIterator}();
+95                     \}
+96                 \}
+97             \}
+98 
+99         \}
+100 
+101         current = node->\hyperlink{classSyntaxNode_af1fa46ba30aa4f2affa2d4e96a4be010}{GetNext}();
+102         \hyperlink{classOptimizer_ad84621adb872b88ab7fdb3672064cfdb}{BalanceTree}(current);
+103     \}
+104 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classOptimizer_ad84621adb872b88ab7fdb3672064cfdb_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classOptimizer_ad84621adb872b88ab7fdb3672064cfdb_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Optimizer@{Optimizer}!Get\+Root@{Get\+Root}}
+\index{Get\+Root@{Get\+Root}!Optimizer@{Optimizer}}
+\subsubsection[{\texorpdfstring{Get\+Root()}{GetRoot()}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Syntax\+Node} $\ast$ Optimizer\+::\+Get\+Root (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classOptimizer_ae50ae3a88ea8f5161b9bb072ccf4ea93}{}\label{classOptimizer_ae50ae3a88ea8f5161b9bb072ccf4ea93}
+
+
+Definition at line 39 of file optimizer.\+cpp.
+
+
+
+References root.
+
+
+
+Referenced by Evaluator\+::\+Evaluate().
+
+
+\begin{DoxyCode}
+40 \{
+41     \textcolor{keywordflow}{return} \hyperlink{classOptimizer_a665ceeca2e548de6fc68827fb910bd98}{root};
+42 \}
+\end{DoxyCode}
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classOptimizer_ae50ae3a88ea8f5161b9bb072ccf4ea93_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Optimizer@{Optimizer}!Get\+Tree\+Depth@{Get\+Tree\+Depth}}
+\index{Get\+Tree\+Depth@{Get\+Tree\+Depth}!Optimizer@{Optimizer}}
+\subsubsection[{\texorpdfstring{Get\+Tree\+Depth(\+Syntax\+Node $\ast$node, int depth)}{GetTreeDepth(SyntaxNode *node, int depth)}}]{\setlength{\rightskip}{0pt plus 5cm}int Optimizer\+::\+Get\+Tree\+Depth (
+\begin{DoxyParamCaption}
+\item[{{\bf Syntax\+Node} $\ast$}]{node, }
+\item[{int}]{depth}
+\end{DoxyParamCaption}
+)}\hypertarget{classOptimizer_a4a80c3e845604f1ea53a6bfc187b2bba}{}\label{classOptimizer_a4a80c3e845604f1ea53a6bfc187b2bba}
+
+
+Definition at line 106 of file optimizer.\+cpp.
+
+
+
+References Syntax\+Node\+::\+Get\+Next(), Get\+Tree\+Depth(), and Syntax\+Node\+::\+Reset\+Iterator().
+
+
+
+Referenced by Balance\+Tree(), and Get\+Tree\+Depth().
+
+
+\begin{DoxyCode}
+107 \{
+108     \textcolor{keywordtype}{int} max = depth;
+109     \hyperlink{classSyntaxNode}{SyntaxNode}* current;
+110     node->\hyperlink{classSyntaxNode_ac51307368fb255aa760b99e137178c89}{ResetIterator}();
+111 
+112     \textcolor{keywordflow}{while} ((current = node->\hyperlink{classSyntaxNode_af1fa46ba30aa4f2affa2d4e96a4be010}{GetNext}()) != \hyperlink{platform_8h_a46ff2bfbf0d44b8466a2251d5bd5e6f8}{NOMEM}) \{
+113         \textcolor{keywordtype}{int} a = \hyperlink{classOptimizer_a4a80c3e845604f1ea53a6bfc187b2bba}{GetTreeDepth}(current, depth + 1);
+114         \textcolor{keywordflow}{if} (a > max) \{
+115             max = a;
+116         \}
+117     \}
+118 
+119     \textcolor{keywordflow}{return} max;
+120 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classOptimizer_a4a80c3e845604f1ea53a6bfc187b2bba_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classOptimizer_a4a80c3e845604f1ea53a6bfc187b2bba_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Optimizer@{Optimizer}!Optimize@{Optimize}}
+\index{Optimize@{Optimize}!Optimizer@{Optimizer}}
+\subsubsection[{\texorpdfstring{Optimize()}{Optimize()}}]{\setlength{\rightskip}{0pt plus 5cm}void Optimizer\+::\+Optimize (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classOptimizer_a5764ae0825fa43921f74d8b972e53b1e}{}\label{classOptimizer_a5764ae0825fa43921f74d8b972e53b1e}
+
+
+Definition at line 44 of file optimizer.\+cpp.
+
+
+
+References Balance\+Tree(), Reduce\+Unary\+Nodes(), Reduce\+Value\+Nodes(), root, Tag\+Children(), and Tag\+Start\+Node().
+
+
+
+Referenced by Evaluator\+::\+Evaluate().
+
+
+\begin{DoxyCode}
+45 \{
+46     \hyperlink{classOptimizer_a5227e42d69dcbf08fde579642a98c78c}{TagChildren}(\hyperlink{classOptimizer_a665ceeca2e548de6fc68827fb910bd98}{root});
+47     \hyperlink{classOptimizer_aef8d80bb6301ee01a7ed271148438733}{ReduceUnaryNodes}(\hyperlink{classOptimizer_a665ceeca2e548de6fc68827fb910bd98}{root});
+48     \hyperlink{classOptimizer_ad84621adb872b88ab7fdb3672064cfdb}{BalanceTree}(\hyperlink{classOptimizer_a665ceeca2e548de6fc68827fb910bd98}{root});
+49     \hyperlink{classOptimizer_a5b45089aff3c6568f3531faa9e701f21}{ReduceValueNodes}(\hyperlink{classOptimizer_a665ceeca2e548de6fc68827fb910bd98}{root});
+50     \hyperlink{classOptimizer_a2b71012237663dc9459a908fba6fbecc}{TagStartNode}(\hyperlink{classOptimizer_a665ceeca2e548de6fc68827fb910bd98}{root});
+51 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classOptimizer_a5764ae0825fa43921f74d8b972e53b1e_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classOptimizer_a5764ae0825fa43921f74d8b972e53b1e_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Optimizer@{Optimizer}!Reduce\+Unary\+Nodes@{Reduce\+Unary\+Nodes}}
+\index{Reduce\+Unary\+Nodes@{Reduce\+Unary\+Nodes}!Optimizer@{Optimizer}}
+\subsubsection[{\texorpdfstring{Reduce\+Unary\+Nodes(\+Syntax\+Node $\ast$node)}{ReduceUnaryNodes(SyntaxNode *node)}}]{\setlength{\rightskip}{0pt plus 5cm}void Optimizer\+::\+Reduce\+Unary\+Nodes (
+\begin{DoxyParamCaption}
+\item[{{\bf Syntax\+Node} $\ast$}]{node}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classOptimizer_aef8d80bb6301ee01a7ed271148438733}{}\label{classOptimizer_aef8d80bb6301ee01a7ed271148438733}
+
+
+Definition at line 122 of file optimizer.\+cpp.
+
+
+
+References Syntax\+Node\+::\+Detach(), Numeric\+Value\+Node\+::\+Evaluate(), Syntax\+Node\+::\+Get\+Next(), Syntax\+Node\+::\+Get\+Parent(), Syntax\+Node\+::\+Get\+Reduction\+Type(), Reduce\+Unary\+Nodes(), Syntax\+Node\+::\+Replace(), Numeric\+Value\+Node\+::\+Replace\+With(), Syntax\+Node\+::\+Reset\+Iterator(), Number\+::\+Unary(), unaryreduc, and valuereduc.
+
+
+
+Referenced by Optimize(), and Reduce\+Unary\+Nodes().
+
+
+\begin{DoxyCode}
+123 \{
+124     \hyperlink{classSyntaxNode}{SyntaxNode}* current;
+125     node->\hyperlink{classSyntaxNode_ac51307368fb255aa760b99e137178c89}{ResetIterator}();
+126 
+127     \textcolor{keywordflow}{while} ((current = node->\hyperlink{classSyntaxNode_af1fa46ba30aa4f2affa2d4e96a4be010}{GetNext}()) != \hyperlink{platform_8h_a46ff2bfbf0d44b8466a2251d5bd5e6f8}{NOMEM}) \{
+128         \hyperlink{classOptimizer_aef8d80bb6301ee01a7ed271148438733}{ReduceUnaryNodes}(current);
+129 
+130         \textcolor{keywordflow}{if} (current->\hyperlink{classSyntaxNode_a5384fc779eee947b5e09bf2adb6cc606}{GetReductionType}() == \hyperlink{nodes_8h_ab321a69ad5704b704b8dd9e1b3984a29aba5ebaece27f25a5bb9dcdc5eb89846e}{unaryreduc}) \{
+131             \hyperlink{classExpressionNode}{ExpressionNode} *\hyperlink{nodes_8h_acac9cbaeea226ed297804c012dc12b16ac810bbb61792a076f46cad2c89d87e1d}{expression} = (\hyperlink{classExpressionNode}{ExpressionNode}*)current;
+132             expression->\hyperlink{classSyntaxNode_ac51307368fb255aa760b99e137178c89}{ResetIterator}();
+133             \hyperlink{classExpressionNode}{ExpressionNode} *next = (\hyperlink{classExpressionNode}{ExpressionNode}*)expression->
+      \hyperlink{classSyntaxNode_af1fa46ba30aa4f2affa2d4e96a4be010}{GetNext}();
+134 
+135             \textcolor{keywordflow}{if} (next->\hyperlink{classSyntaxNode_a5384fc779eee947b5e09bf2adb6cc606}{GetReductionType}() == \hyperlink{nodes_8h_ab321a69ad5704b704b8dd9e1b3984a29aba5ebaece27f25a5bb9dcdc5eb89846e}{unaryreduc}) \{
+136                 next->\hyperlink{classSyntaxNode_ac51307368fb255aa760b99e137178c89}{ResetIterator}();
+137                 \hyperlink{classSyntaxNode}{SyntaxNode} *temp = next->\hyperlink{classSyntaxNode_af1fa46ba30aa4f2affa2d4e96a4be010}{GetNext}();
+138                 next->\hyperlink{classSyntaxNode_ae57f629a5c5fa0994f036c105396da69}{Detach}(temp);
+139                 \hyperlink{classSyntaxNode}{SyntaxNode} *parent = expression->\hyperlink{classSyntaxNode_a4a85fd710ad44edbc5b3ac625c10cd08}{GetParent}();
+140                 parent->\hyperlink{classSyntaxNode_a2797ff5eb05f3a36ae1be41b70105e05}{Replace}(expression, temp);
+141                 current = parent;
+142                 current->\hyperlink{classSyntaxNode_ac51307368fb255aa760b99e137178c89}{ResetIterator}();
+143             \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (next->\hyperlink{classSyntaxNode_a5384fc779eee947b5e09bf2adb6cc606}{GetReductionType}() == \hyperlink{nodes_8h_ab321a69ad5704b704b8dd9e1b3984a29ab28eba4ada38a77030f8d532ee98a360}{valuereduc}) \{
+144                 \hyperlink{classNumericValueNode}{NumericValueNode} *valueNode = (\hyperlink{classNumericValueNode}{NumericValueNode}*)next;
+145                 \hyperlink{structNumber}{Number} *number = valueNode->\hyperlink{classNumericValueNode_abdd2e6fd1723488a24a645fec481a971}{Evaluate}();
+146                 \hyperlink{structNumber}{Number} *modified = number->\hyperlink{structNumber_a4283e401f772614fc566db78087cf860}{Unary}();
+147                 valueNode->\hyperlink{classNumericValueNode_ab46507560d70b5e4396f1f5fba5368ec}{ReplaceWith}(modified);
+148 
+149                 current->\hyperlink{classSyntaxNode_ae57f629a5c5fa0994f036c105396da69}{Detach}(valueNode);
+150                 \hyperlink{classSyntaxNode}{SyntaxNode} *parent = current->\hyperlink{classSyntaxNode_a4a85fd710ad44edbc5b3ac625c10cd08}{GetParent}();
+151                 parent->\hyperlink{classSyntaxNode_a2797ff5eb05f3a36ae1be41b70105e05}{Replace}(current, valueNode);
+152                 current = parent;
+153                 current->\hyperlink{classSyntaxNode_ac51307368fb255aa760b99e137178c89}{ResetIterator}();
+154             \}
+155         \}
+156     \}
+157 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classOptimizer_aef8d80bb6301ee01a7ed271148438733_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classOptimizer_aef8d80bb6301ee01a7ed271148438733_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Optimizer@{Optimizer}!Reduce\+Value\+Nodes@{Reduce\+Value\+Nodes}}
+\index{Reduce\+Value\+Nodes@{Reduce\+Value\+Nodes}!Optimizer@{Optimizer}}
+\subsubsection[{\texorpdfstring{Reduce\+Value\+Nodes(\+Syntax\+Node $\ast$node)}{ReduceValueNodes(SyntaxNode *node)}}]{\setlength{\rightskip}{0pt plus 5cm}void Optimizer\+::\+Reduce\+Value\+Nodes (
+\begin{DoxyParamCaption}
+\item[{{\bf Syntax\+Node} $\ast$}]{node}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classOptimizer_a5b45089aff3c6568f3531faa9e701f21}{}\label{classOptimizer_a5b45089aff3c6568f3531faa9e701f21}
+
+
+Definition at line 159 of file optimizer.\+cpp.
+
+
+
+References Number\+::\+Add(), compladdreduc, complsubreduc, Numeric\+Value\+Node\+::\+Evaluate(), expression, Syntax\+Node\+::\+Get\+Next(), Syntax\+Node\+::\+Get\+Node\+Type(), Syntax\+Node\+::\+Get\+Parent(), Syntax\+Node\+::\+Get\+Reduction\+Type(), Numeric\+Value\+Node\+::\+Get\+Reduction\+Type(), Numeric\+Value\+Node\+::\+Numeric\+Value\+Node(), Number\+::\+Pure\+Complex\+Value(), Reduce\+Value\+Nodes(), Syntax\+Node\+::\+Replace(), Syntax\+Node\+::\+Reset\+Iterator(), Number\+::\+Sub(), and valuereduc.
+
+
+
+Referenced by Optimize(), and Reduce\+Value\+Nodes().
+
+
+\begin{DoxyCode}
+160 \{
+161     \hyperlink{classSyntaxNode}{SyntaxNode}* current;
+162     node->\hyperlink{classSyntaxNode_ac51307368fb255aa760b99e137178c89}{ResetIterator}();
+163 
+164     \textcolor{keywordflow}{while} ((current = node->\hyperlink{classSyntaxNode_af1fa46ba30aa4f2affa2d4e96a4be010}{GetNext}()) != \hyperlink{platform_8h_a46ff2bfbf0d44b8466a2251d5bd5e6f8}{NOMEM}) \{
+165         \textcolor{keywordflow}{if} (current->\hyperlink{classSyntaxNode_aef71a18975535d050393f0541b3cdc6a}{GetNodeType}() == \hyperlink{nodes_8h_acac9cbaeea226ed297804c012dc12b16ac810bbb61792a076f46cad2c89d87e1d}{expression}) \{
+166             \hyperlink{classExpressionNode}{ExpressionNode} *\hyperlink{nodes_8h_acac9cbaeea226ed297804c012dc12b16ac810bbb61792a076f46cad2c89d87e1d}{expression} = (\hyperlink{classExpressionNode}{ExpressionNode}*)current;
+167             \hyperlink{nodes_8h_ab321a69ad5704b704b8dd9e1b3984a29}{ReductionType} reduction = expression->\hyperlink{classSyntaxNode_a5384fc779eee947b5e09bf2adb6cc606}{GetReductionType}();
+168             \textcolor{keywordflow}{if} (reduction == \hyperlink{nodes_8h_ab321a69ad5704b704b8dd9e1b3984a29ac930999b75ae22f50a2fa8d774a80936}{compladdreduc} || reduction == 
+      \hyperlink{nodes_8h_ab321a69ad5704b704b8dd9e1b3984a29a86d9dc6f6ce2a9c71c6ce8b4d98567e7}{complsubreduc}) \{
+169                 expression->\hyperlink{classSyntaxNode_ac51307368fb255aa760b99e137178c89}{ResetIterator}();
+170                 \hyperlink{classNumericValueNode}{NumericValueNode} *first = (\hyperlink{classNumericValueNode}{NumericValueNode}*)expression->
+      \hyperlink{classSyntaxNode_af1fa46ba30aa4f2affa2d4e96a4be010}{GetNext}();
+171                 \hyperlink{classNumericValueNode}{NumericValueNode} *second = (\hyperlink{classNumericValueNode}{NumericValueNode}*)expression->
+      \hyperlink{classSyntaxNode_af1fa46ba30aa4f2affa2d4e96a4be010}{GetNext}();
+172                 \textcolor{keywordflow}{if} (
+173                     first->\hyperlink{classNumericValueNode_ad75510c6a6e06f4004248d072cd5c3cb}{GetReductionType}() == \hyperlink{nodes_8h_ab321a69ad5704b704b8dd9e1b3984a29ab28eba4ada38a77030f8d532ee98a360}{valuereduc} && second->
+      \hyperlink{classNumericValueNode_ad75510c6a6e06f4004248d072cd5c3cb}{GetReductionType}() == \hyperlink{nodes_8h_ab321a69ad5704b704b8dd9e1b3984a29ab28eba4ada38a77030f8d532ee98a360}{valuereduc} &&
+174                     ((first->\hyperlink{classNumericValueNode_abdd2e6fd1723488a24a645fec481a971}{Evaluate}()->\hyperlink{structNumber_a037b461c2c9189c00b11f395a325735d}{PureComplexValue}() && !second->
+      \hyperlink{classNumericValueNode_abdd2e6fd1723488a24a645fec481a971}{Evaluate}()->\hyperlink{structNumber_a037b461c2c9189c00b11f395a325735d}{PureComplexValue}()) ||
+175                      (!first->\hyperlink{classNumericValueNode_abdd2e6fd1723488a24a645fec481a971}{Evaluate}()->\hyperlink{structNumber_a037b461c2c9189c00b11f395a325735d}{PureComplexValue}() && second->
+      \hyperlink{classNumericValueNode_abdd2e6fd1723488a24a645fec481a971}{Evaluate}()->\hyperlink{structNumber_a037b461c2c9189c00b11f395a325735d}{PureComplexValue}()))
+176                 ) \{
+177                     \hyperlink{structNumber}{Number} *number =
+178                         reduction == \hyperlink{nodes_8h_ab321a69ad5704b704b8dd9e1b3984a29ac930999b75ae22f50a2fa8d774a80936}{compladdreduc} ?
+179                         first->\hyperlink{classNumericValueNode_abdd2e6fd1723488a24a645fec481a971}{Evaluate}()->\hyperlink{structNumber_af38172a47d725f10b8586846cb06e8a4}{Add}(second->\hyperlink{classNumericValueNode_abdd2e6fd1723488a24a645fec481a971}{Evaluate}()):
+180                         first->\hyperlink{classNumericValueNode_abdd2e6fd1723488a24a645fec481a971}{Evaluate}()->\hyperlink{structNumber_ae64075f6f73ded559499d3156bde0bdb}{Sub}(second->\hyperlink{classNumericValueNode_abdd2e6fd1723488a24a645fec481a971}{Evaluate}());
+181                     \hyperlink{classNumericValueNode}{NumericValueNode} *reducedNode = \textcolor{keyword}{new} 
+      \hyperlink{classNumericValueNode}{NumericValueNode}(number);
+182                     \hyperlink{classSyntaxNode}{SyntaxNode} *parent = current->\hyperlink{classSyntaxNode_a4a85fd710ad44edbc5b3ac625c10cd08}{GetParent}();
+183                     parent->\hyperlink{classSyntaxNode_a2797ff5eb05f3a36ae1be41b70105e05}{Replace}(current, reducedNode);
+184                     current = parent;
+185                     current->\hyperlink{classSyntaxNode_ac51307368fb255aa760b99e137178c89}{ResetIterator}();
+186                 \}
+187             \}
+188 
+189         \}
+190 
+191         \hyperlink{classOptimizer_a5b45089aff3c6568f3531faa9e701f21}{ReduceValueNodes}(current);
+192     \}
+193 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classOptimizer_a5b45089aff3c6568f3531faa9e701f21_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classOptimizer_a5b45089aff3c6568f3531faa9e701f21_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Optimizer@{Optimizer}!Tag\+Children@{Tag\+Children}}
+\index{Tag\+Children@{Tag\+Children}!Optimizer@{Optimizer}}
+\subsubsection[{\texorpdfstring{Tag\+Children(\+Syntax\+Node $\ast$node)}{TagChildren(SyntaxNode *node)}}]{\setlength{\rightskip}{0pt plus 5cm}void Optimizer\+::\+Tag\+Children (
+\begin{DoxyParamCaption}
+\item[{{\bf Syntax\+Node} $\ast$}]{node}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classOptimizer_a5227e42d69dcbf08fde579642a98c78c}{}\label{classOptimizer_a5227e42d69dcbf08fde579642a98c78c}
+
+
+Definition at line 53 of file optimizer.\+cpp.
+
+
+
+References Syntax\+Node\+::\+Get\+Next(), Syntax\+Node\+::\+Reset\+Iterator(), Syntax\+Node\+::\+Set\+Parent(), and Tag\+Children().
+
+
+
+Referenced by Optimize(), and Tag\+Children().
+
+
+\begin{DoxyCode}
+54 \{
+55     \hyperlink{classSyntaxNode}{SyntaxNode}* current;
+56     node->\hyperlink{classSyntaxNode_ac51307368fb255aa760b99e137178c89}{ResetIterator}();
+57     \textcolor{keywordflow}{while} ((current = node->\hyperlink{classSyntaxNode_af1fa46ba30aa4f2affa2d4e96a4be010}{GetNext}()) != \hyperlink{platform_8h_a46ff2bfbf0d44b8466a2251d5bd5e6f8}{NOMEM}) \{
+58         current->\hyperlink{classSyntaxNode_a7902bb2c389a784c11c2b649a84824e9}{SetParent}(node);
+59         \hyperlink{classOptimizer_a5227e42d69dcbf08fde579642a98c78c}{TagChildren}(current);
+60     \}
+61 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classOptimizer_a5227e42d69dcbf08fde579642a98c78c_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classOptimizer_a5227e42d69dcbf08fde579642a98c78c_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Optimizer@{Optimizer}!Tag\+Start\+Node@{Tag\+Start\+Node}}
+\index{Tag\+Start\+Node@{Tag\+Start\+Node}!Optimizer@{Optimizer}}
+\subsubsection[{\texorpdfstring{Tag\+Start\+Node(\+Syntax\+Node $\ast$node)}{TagStartNode(SyntaxNode *node)}}]{\setlength{\rightskip}{0pt plus 5cm}void Optimizer\+::\+Tag\+Start\+Node (
+\begin{DoxyParamCaption}
+\item[{{\bf Syntax\+Node} $\ast$}]{node}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classOptimizer_a2b71012237663dc9459a908fba6fbecc}{}\label{classOptimizer_a2b71012237663dc9459a908fba6fbecc}
+
+
+Definition at line 195 of file optimizer.\+cpp.
+
+
+
+References Syntax\+Node\+::\+Get\+Next(), Syntax\+Node\+::\+Reset\+Iterator(), Syntax\+Node\+::\+Set\+First\+Node(), and Tag\+Start\+Node().
+
+
+
+Referenced by Optimize(), and Tag\+Start\+Node().
+
+
+\begin{DoxyCode}
+196 \{
+197     node->\hyperlink{classSyntaxNode_ac51307368fb255aa760b99e137178c89}{ResetIterator}();
+198     \hyperlink{classSyntaxNode}{SyntaxNode}* next = node->\hyperlink{classSyntaxNode_af1fa46ba30aa4f2affa2d4e96a4be010}{GetNext}();
+199 
+200     \textcolor{keywordflow}{if} (next != \hyperlink{platform_8h_a46ff2bfbf0d44b8466a2251d5bd5e6f8}{NOMEM}) \{
+201         \hyperlink{classOptimizer_a2b71012237663dc9459a908fba6fbecc}{TagStartNode}(next);
+202     \} \textcolor{keywordflow}{else} \{
+203         node->\hyperlink{classSyntaxNode_a24e2d5b5e94a67ce55cea52cd48212e6}{SetFirstNode}();
+204     \}
+205 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classOptimizer_a2b71012237663dc9459a908fba6fbecc_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classOptimizer_a2b71012237663dc9459a908fba6fbecc_icgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Member Data Documentation}
+\index{Optimizer@{Optimizer}!root@{root}}
+\index{root@{root}!Optimizer@{Optimizer}}
+\subsubsection[{\texorpdfstring{root}{root}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Syntax\+Node}$\ast$ Optimizer\+::root\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classOptimizer_a665ceeca2e548de6fc68827fb910bd98}{}\label{classOptimizer_a665ceeca2e548de6fc68827fb910bd98}
+
+
+Definition at line 52 of file optimizer.\+h.
+
+
+
+Referenced by Get\+Root(), Optimize(), and Optimizer().
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+app/main/\hyperlink{optimizer_8h}{optimizer.\+h}\item 
+app/main/\hyperlink{optimizer_8cpp}{optimizer.\+cpp}\end{DoxyCompactItemize}

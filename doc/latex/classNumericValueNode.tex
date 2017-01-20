@@ -1,0 +1,502 @@
+\hypertarget{classNumericValueNode}{}\section{Numeric\+Value\+Node Class Reference}
+\label{classNumericValueNode}\index{Numeric\+Value\+Node@{Numeric\+Value\+Node}}
+
+
+Use of a numeric value in a syntax tree.  
+
+
+
+
+{\ttfamily \#include $<$values.\+h$>$}
+
+
+
+Inheritance diagram for Numeric\+Value\+Node\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=348pt]{classNumericValueNode__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Numeric\+Value\+Node\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=272pt]{classNumericValueNode__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classNumericValueNode_a85977b96aa8e3883e409ca549139258b}{Numeric\+Value\+Node} ()
+\item 
+\hyperlink{classNumericValueNode_a5ad87623d57e875b72d8f166c578231f}{Numeric\+Value\+Node} (\hyperlink{structNumber}{Number} $\ast$value)
+\item 
+virtual \hyperlink{nodes_8h_ab321a69ad5704b704b8dd9e1b3984a29}{Reduction\+Type} \hyperlink{classNumericValueNode_ad75510c6a6e06f4004248d072cd5c3cb}{Get\+Reduction\+Type} ()
+\item 
+int \hyperlink{classNumericValueNode_a711b5772df36814fcb92fc10a0e4924a}{Get\+Precedence} ()
+\item 
+char $\ast$ \hyperlink{classNumericValueNode_a57b1e79016279279f2567937c7e32e12}{Get\+Text} ()
+\item 
+\hyperlink{classSyntaxNode}{Syntax\+Node} $\ast$ \hyperlink{classNumericValueNode_aaed4656d8f0dfc697b75a47b4852baa4}{Get\+Next} ()
+\item 
+\hyperlink{structNumber}{Number} $\ast$ \hyperlink{classNumericValueNode_abdd2e6fd1723488a24a645fec481a971}{Evaluate} ()
+\item 
+void \hyperlink{classNumericValueNode_a566d4509edd41f495d4508bd1bd14949}{Attach} (\hyperlink{classSyntaxNode}{Syntax\+Node} $\ast$node)
+\item 
+void \hyperlink{classNumericValueNode_ac2a2b87d3cff4f113c57df82e64b76cd}{Detach} (\hyperlink{classSyntaxNode}{Syntax\+Node} $\ast$node)
+\item 
+void \hyperlink{classNumericValueNode_a5df4820b27e2e69367cb88d973717f1c}{Replace} (\hyperlink{classSyntaxNode}{Syntax\+Node} $\ast$n, \hyperlink{classSyntaxNode}{Syntax\+Node} $\ast$x)
+\item 
+void \hyperlink{classNumericValueNode_ab46507560d70b5e4396f1f5fba5368ec}{Replace\+With} (\hyperlink{structNumber}{Number} $\ast$value)
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+char $\ast$ \hyperlink{classNumericValueNode_a078bf8f0496d2afcb7e3a050110a0c0d}{Get\+Node\+Text} ()
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+Use of a numeric value in a syntax tree. 
+
+Definition at line 142 of file values.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Numeric\+Value\+Node@{Numeric\+Value\+Node}!Numeric\+Value\+Node@{Numeric\+Value\+Node}}
+\index{Numeric\+Value\+Node@{Numeric\+Value\+Node}!Numeric\+Value\+Node@{Numeric\+Value\+Node}}
+\subsubsection[{\texorpdfstring{Numeric\+Value\+Node()}{NumericValueNode()}}]{\setlength{\rightskip}{0pt plus 5cm}Numeric\+Value\+Node\+::\+Numeric\+Value\+Node (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classNumericValueNode_a85977b96aa8e3883e409ca549139258b}{}\label{classNumericValueNode_a85977b96aa8e3883e409ca549139258b}
+
+
+Definition at line 341 of file values.\+cpp.
+
+
+
+References Expression\+Node\+::\+Expression\+Node(), and Real\+Number\+::\+Real\+Number().
+
+
+
+Referenced by Parser\+::\+Parse\+Atomic(), and Parser\+::\+Parse\+Ident().
+
+
+\begin{DoxyCode}
+341                                    :
+342     \hyperlink{classExpressionNode_adc8888de5329d356224c8a93f3ce2b75}{ExpressionNode}(\textcolor{keyword}{new} \hyperlink{structRealNumber}{RealNumber}()) \{ \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classNumericValueNode_a85977b96aa8e3883e409ca549139258b_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classNumericValueNode_a85977b96aa8e3883e409ca549139258b_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Numeric\+Value\+Node@{Numeric\+Value\+Node}!Numeric\+Value\+Node@{Numeric\+Value\+Node}}
+\index{Numeric\+Value\+Node@{Numeric\+Value\+Node}!Numeric\+Value\+Node@{Numeric\+Value\+Node}}
+\subsubsection[{\texorpdfstring{Numeric\+Value\+Node(\+Number $\ast$value)}{NumericValueNode(Number *value)}}]{\setlength{\rightskip}{0pt plus 5cm}Numeric\+Value\+Node\+::\+Numeric\+Value\+Node (
+\begin{DoxyParamCaption}
+\item[{{\bf Number} $\ast$}]{value}
+\end{DoxyParamCaption}
+)}\hypertarget{classNumericValueNode_a5ad87623d57e875b72d8f166c578231f}{}\label{classNumericValueNode_a5ad87623d57e875b72d8f166c578231f}
+
+
+Definition at line 344 of file values.\+cpp.
+
+
+
+References Expression\+Node\+::\+Expression\+Node().
+
+
+
+Referenced by Complexi\+Node\+::\+Complexi\+Node(), Eulers\+Number\+Node\+::\+Eulers\+Number\+Node(), Parser\+::\+Parse\+Number(), Pi\+Node\+::\+Pi\+Node(), and Optimizer\+::\+Reduce\+Value\+Nodes().
+
+
+\begin{DoxyCode}
+344                                                 :
+345     \hyperlink{classExpressionNode_adc8888de5329d356224c8a93f3ce2b75}{ExpressionNode}(value) \{ \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classNumericValueNode_a5ad87623d57e875b72d8f166c578231f_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classNumericValueNode_a5ad87623d57e875b72d8f166c578231f_icgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Member Function Documentation}
+\index{Numeric\+Value\+Node@{Numeric\+Value\+Node}!Attach@{Attach}}
+\index{Attach@{Attach}!Numeric\+Value\+Node@{Numeric\+Value\+Node}}
+\subsubsection[{\texorpdfstring{Attach(\+Syntax\+Node $\ast$node)}{Attach(SyntaxNode *node)}}]{\setlength{\rightskip}{0pt plus 5cm}void Numeric\+Value\+Node\+::\+Attach (
+\begin{DoxyParamCaption}
+\item[{{\bf Syntax\+Node} $\ast$}]{node}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{classNumericValueNode_a566d4509edd41f495d4508bd1bd14949}{}\label{classNumericValueNode_a566d4509edd41f495d4508bd1bd14949}
+
+
+Implements \hyperlink{classSyntaxNode_af25fd5963125bb2d6b9a1864b9ff79c8}{Syntax\+Node}.
+
+
+
+Definition at line 381 of file values.\+cpp.
+
+
+\begin{DoxyCode}
+382 \{ \}
+\end{DoxyCode}
+\index{Numeric\+Value\+Node@{Numeric\+Value\+Node}!Detach@{Detach}}
+\index{Detach@{Detach}!Numeric\+Value\+Node@{Numeric\+Value\+Node}}
+\subsubsection[{\texorpdfstring{Detach(\+Syntax\+Node $\ast$node)}{Detach(SyntaxNode *node)}}]{\setlength{\rightskip}{0pt plus 5cm}void Numeric\+Value\+Node\+::\+Detach (
+\begin{DoxyParamCaption}
+\item[{{\bf Syntax\+Node} $\ast$}]{node}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{classNumericValueNode_ac2a2b87d3cff4f113c57df82e64b76cd}{}\label{classNumericValueNode_ac2a2b87d3cff4f113c57df82e64b76cd}
+
+
+Implements \hyperlink{classSyntaxNode_ae57f629a5c5fa0994f036c105396da69}{Syntax\+Node}.
+
+
+
+Definition at line 384 of file values.\+cpp.
+
+
+\begin{DoxyCode}
+385 \{ \}
+\end{DoxyCode}
+\index{Numeric\+Value\+Node@{Numeric\+Value\+Node}!Evaluate@{Evaluate}}
+\index{Evaluate@{Evaluate}!Numeric\+Value\+Node@{Numeric\+Value\+Node}}
+\subsubsection[{\texorpdfstring{Evaluate()}{Evaluate()}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Number} $\ast$ Numeric\+Value\+Node\+::\+Evaluate (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{classNumericValueNode_abdd2e6fd1723488a24a645fec481a971}{}\label{classNumericValueNode_abdd2e6fd1723488a24a645fec481a971}
+
+
+Implements \hyperlink{classExpressionNode_a64975d4dc37742228bd522f6204537f7}{Expression\+Node}.
+
+
+
+Definition at line 359 of file values.\+cpp.
+
+
+
+References Expression\+Node\+::result.
+
+
+
+Referenced by Optimizer\+::\+Reduce\+Unary\+Nodes(), and Optimizer\+::\+Reduce\+Value\+Nodes().
+
+
+\begin{DoxyCode}
+360 \{
+361     \textcolor{keywordflow}{return} \hyperlink{classExpressionNode_a1f590649f5a5cb30eb7ee912f7bc1262}{result};
+362 \}
+\end{DoxyCode}
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classNumericValueNode_abdd2e6fd1723488a24a645fec481a971_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Numeric\+Value\+Node@{Numeric\+Value\+Node}!Get\+Next@{Get\+Next}}
+\index{Get\+Next@{Get\+Next}!Numeric\+Value\+Node@{Numeric\+Value\+Node}}
+\subsubsection[{\texorpdfstring{Get\+Next()}{GetNext()}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Syntax\+Node} $\ast$ Numeric\+Value\+Node\+::\+Get\+Next (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{classNumericValueNode_aaed4656d8f0dfc697b75a47b4852baa4}{}\label{classNumericValueNode_aaed4656d8f0dfc697b75a47b4852baa4}
+
+
+Implements \hyperlink{classSyntaxNode_af1fa46ba30aa4f2affa2d4e96a4be010}{Syntax\+Node}.
+
+
+
+Definition at line 376 of file values.\+cpp.
+
+
+\begin{DoxyCode}
+377 \{
+378     \textcolor{keywordflow}{return} \hyperlink{platform_8h_a46ff2bfbf0d44b8466a2251d5bd5e6f8}{NOMEM};
+379 \}
+\end{DoxyCode}
+\index{Numeric\+Value\+Node@{Numeric\+Value\+Node}!Get\+Node\+Text@{Get\+Node\+Text}}
+\index{Get\+Node\+Text@{Get\+Node\+Text}!Numeric\+Value\+Node@{Numeric\+Value\+Node}}
+\subsubsection[{\texorpdfstring{Get\+Node\+Text()}{GetNodeText()}}]{\setlength{\rightskip}{0pt plus 5cm}char $\ast$ Numeric\+Value\+Node\+::\+Get\+Node\+Text (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}\hypertarget{classNumericValueNode_a078bf8f0496d2afcb7e3a050110a0c0d}{}\label{classNumericValueNode_a078bf8f0496d2afcb7e3a050110a0c0d}
+
+
+Implements \hyperlink{classExpressionNode_a42a5e9562b0f645a19dcc83f698069b5}{Expression\+Node}.
+
+
+
+Reimplemented in \hyperlink{classComplexiNode_a18998a544112f664e35b7158fa60491c}{Complexi\+Node}, \hyperlink{classPiNode_ada7408d6c6c1ccc945666d680b7fa299}{Pi\+Node}, and \hyperlink{classEulersNumberNode_a42f765eacbb25a3a7b8d0391ab727e6d}{Eulers\+Number\+Node}.
+
+
+
+Definition at line 369 of file values.\+cpp.
+
+
+
+References Char\+Buffer\+::\+Clear\+And\+Copy(), Char\+Buffer\+::\+Get\+String(), Numeral\+System\+::\+Get\+Text(), Program\+::\+Input, Syntax\+Node\+::output, and Expression\+Node\+::result.
+
+
+
+Referenced by Get\+Text().
+
+
+\begin{DoxyCode}
+370 \{
+371     \textcolor{keyword}{const} \textcolor{keywordtype}{char} *val = \hyperlink{classProgram}{Program}->\hyperlink{classProgram_a6327f15962926e4f74f15e8ff56e04e5}{Input}->\hyperlink{classNumeralSystem_a74dc91c4dbab4a88a123b2a32753f485}{GetText}(\hyperlink{classExpressionNode_a1f590649f5a5cb30eb7ee912f7bc1262}{result});
+372     \hyperlink{classSyntaxNode_a1180628cbe3fce43930cee0df5a9ce5c}{output}->\hyperlink{classCharBuffer_ac52ed7b91190240eb7db4cf43d1e2abb}{ClearAndCopy}(val);
+373     \textcolor{keywordflow}{return} \hyperlink{classSyntaxNode_a1180628cbe3fce43930cee0df5a9ce5c}{output}->\hyperlink{classCharBuffer_a7dfd3feaaf80f318ba44efe15b1ec44b}{GetString}();
+374 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classNumericValueNode_a078bf8f0496d2afcb7e3a050110a0c0d_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classNumericValueNode_a078bf8f0496d2afcb7e3a050110a0c0d_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Numeric\+Value\+Node@{Numeric\+Value\+Node}!Get\+Precedence@{Get\+Precedence}}
+\index{Get\+Precedence@{Get\+Precedence}!Numeric\+Value\+Node@{Numeric\+Value\+Node}}
+\subsubsection[{\texorpdfstring{Get\+Precedence()}{GetPrecedence()}}]{\setlength{\rightskip}{0pt plus 5cm}int Numeric\+Value\+Node\+::\+Get\+Precedence (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{classNumericValueNode_a711b5772df36814fcb92fc10a0e4924a}{}\label{classNumericValueNode_a711b5772df36814fcb92fc10a0e4924a}
+
+
+Implements \hyperlink{classExpressionNode_a161b9ea0b79bbfc101d6f687c8481ddd}{Expression\+Node}.
+
+
+
+Definition at line 352 of file values.\+cpp.
+
+
+
+References Number\+::\+Get\+Default\+Precedence(), Number\+::\+Get\+Precedence(), Syntax\+Node\+::left\+Bottom, and Expression\+Node\+::result.
+
+
+\begin{DoxyCode}
+353 \{
+354     \textcolor{keywordflow}{return} !\hyperlink{classSyntaxNode_ae0488f07ad7cc43143e44e89ec27bc40}{leftBottom} ?
+355            \hyperlink{classExpressionNode_a1f590649f5a5cb30eb7ee912f7bc1262}{result}->\hyperlink{structNumber_a283da553cc9b328c3805611f2d96523d}{GetPrecedence}() :
+356            \hyperlink{classExpressionNode_a1f590649f5a5cb30eb7ee912f7bc1262}{result}->\hyperlink{structNumber_a63541fd80102c9fc36f8f913446700df}{GetDefaultPrecedence}();
+357 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classNumericValueNode_a711b5772df36814fcb92fc10a0e4924a_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{Numeric\+Value\+Node@{Numeric\+Value\+Node}!Get\+Reduction\+Type@{Get\+Reduction\+Type}}
+\index{Get\+Reduction\+Type@{Get\+Reduction\+Type}!Numeric\+Value\+Node@{Numeric\+Value\+Node}}
+\subsubsection[{\texorpdfstring{Get\+Reduction\+Type()}{GetReductionType()}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Reduction\+Type} Numeric\+Value\+Node\+::\+Get\+Reduction\+Type (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{classNumericValueNode_ad75510c6a6e06f4004248d072cd5c3cb}{}\label{classNumericValueNode_ad75510c6a6e06f4004248d072cd5c3cb}
+
+
+Reimplemented from \hyperlink{classSyntaxNode_a5384fc779eee947b5e09bf2adb6cc606}{Syntax\+Node}.
+
+
+
+Reimplemented in \hyperlink{classComplexiNode_a3c22cac05a059da3b361a1b9ca7638ba}{Complexi\+Node}, \hyperlink{classPiNode_a508dc055cbe7e287ff4e7640d60d67d4}{Pi\+Node}, and \hyperlink{classEulersNumberNode_a60821ba3ae914a0e008581b1f591e237}{Eulers\+Number\+Node}.
+
+
+
+Definition at line 347 of file values.\+cpp.
+
+
+
+References valuereduc.
+
+
+
+Referenced by Optimizer\+::\+Reduce\+Value\+Nodes().
+
+
+\begin{DoxyCode}
+348 \{
+349     \textcolor{keywordflow}{return} \hyperlink{nodes_8h_ab321a69ad5704b704b8dd9e1b3984a29ab28eba4ada38a77030f8d532ee98a360}{valuereduc};
+350 \}
+\end{DoxyCode}
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classNumericValueNode_ad75510c6a6e06f4004248d072cd5c3cb_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Numeric\+Value\+Node@{Numeric\+Value\+Node}!Get\+Text@{Get\+Text}}
+\index{Get\+Text@{Get\+Text}!Numeric\+Value\+Node@{Numeric\+Value\+Node}}
+\subsubsection[{\texorpdfstring{Get\+Text()}{GetText()}}]{\setlength{\rightskip}{0pt plus 5cm}char $\ast$ Numeric\+Value\+Node\+::\+Get\+Text (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{classNumericValueNode_a57b1e79016279279f2567937c7e32e12}{}\label{classNumericValueNode_a57b1e79016279279f2567937c7e32e12}
+
+
+Implements \hyperlink{classExpressionNode_a0bbf243108a14eaf963a8161ffd8eb92}{Expression\+Node}.
+
+
+
+Definition at line 364 of file values.\+cpp.
+
+
+
+References Get\+Node\+Text().
+
+
+\begin{DoxyCode}
+365 \{
+366     \textcolor{keywordflow}{return} \hyperlink{classNumericValueNode_a078bf8f0496d2afcb7e3a050110a0c0d}{GetNodeText}();
+367 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classNumericValueNode_a57b1e79016279279f2567937c7e32e12_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{Numeric\+Value\+Node@{Numeric\+Value\+Node}!Replace@{Replace}}
+\index{Replace@{Replace}!Numeric\+Value\+Node@{Numeric\+Value\+Node}}
+\subsubsection[{\texorpdfstring{Replace(\+Syntax\+Node $\ast$n, Syntax\+Node $\ast$x)}{Replace(SyntaxNode *n, SyntaxNode *x)}}]{\setlength{\rightskip}{0pt plus 5cm}void Numeric\+Value\+Node\+::\+Replace (
+\begin{DoxyParamCaption}
+\item[{{\bf Syntax\+Node} $\ast$}]{n, }
+\item[{{\bf Syntax\+Node} $\ast$}]{x}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{classNumericValueNode_a5df4820b27e2e69367cb88d973717f1c}{}\label{classNumericValueNode_a5df4820b27e2e69367cb88d973717f1c}
+
+
+Implements \hyperlink{classSyntaxNode_a2797ff5eb05f3a36ae1be41b70105e05}{Syntax\+Node}.
+
+
+
+Definition at line 387 of file values.\+cpp.
+
+
+\begin{DoxyCode}
+388 \{ \}
+\end{DoxyCode}
+\index{Numeric\+Value\+Node@{Numeric\+Value\+Node}!Replace\+With@{Replace\+With}}
+\index{Replace\+With@{Replace\+With}!Numeric\+Value\+Node@{Numeric\+Value\+Node}}
+\subsubsection[{\texorpdfstring{Replace\+With(\+Number $\ast$value)}{ReplaceWith(Number *value)}}]{\setlength{\rightskip}{0pt plus 5cm}void Numeric\+Value\+Node\+::\+Replace\+With (
+\begin{DoxyParamCaption}
+\item[{{\bf Number} $\ast$}]{value}
+\end{DoxyParamCaption}
+)}\hypertarget{classNumericValueNode_ab46507560d70b5e4396f1f5fba5368ec}{}\label{classNumericValueNode_ab46507560d70b5e4396f1f5fba5368ec}
+
+
+Definition at line 390 of file values.\+cpp.
+
+
+
+References Expression\+Node\+::result.
+
+
+
+Referenced by Optimizer\+::\+Reduce\+Unary\+Nodes().
+
+
+\begin{DoxyCode}
+391 \{
+392     \textcolor{keyword}{delete} \hyperlink{classExpressionNode_a1f590649f5a5cb30eb7ee912f7bc1262}{result};
+393     \hyperlink{classExpressionNode_a1f590649f5a5cb30eb7ee912f7bc1262}{result} = value;
+394 \}
+\end{DoxyCode}
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classNumericValueNode_ab46507560d70b5e4396f1f5fba5368ec_icgraph}
+\end{center}
+\end{figure}
+
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+app/main/\hyperlink{values_8h}{values.\+h}\item 
+app/main/\hyperlink{values_8cpp}{values.\+cpp}\end{DoxyCompactItemize}

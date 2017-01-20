@@ -1,0 +1,10 @@
+<map id="AnsiConoleEngine::ShowLast" name="AnsiConoleEngine::ShowLast">
+<area shape="rect" id="node2" href="$alloccpy_8c.html#a5bed05c70cb17e541fee570b5dc32e1a" title="Allocate memory and copy a string into the array. " alt="" coords="275,5,381,32"/>
+<area shape="rect" id="node3" href="$classCharBuffer.html#a045b38735f7b3007c1b98d3d7b7feafe" title="CharBuffer::Append" alt="" coords="259,56,397,83"/>
+<area shape="rect" id="node4" href="$classCharBuffer.html#abe39d3fd7d8b9c8ec343af2cae7adc96" title="CharBuffer::Empty" alt="" coords="263,107,393,133"/>
+<area shape="rect" id="node6" href="$classCharBuffer.html#ad1907009b5ad136692b989fa96bf2f7e" title="Ensure a memory block of speficied size is allocated. " alt="" coords="248,157,408,184"/>
+<area shape="rect" id="node8" href="$classCharBuffer.html#a7dfd3feaaf80f318ba44efe15b1ec44b" title="CharBuffer::GetString" alt="" coords="254,208,402,235"/>
+<area shape="rect" id="node9" href="$clib_8h.html#a67ec56eb98b49515d35005a5b3bf9a32" title="Get the length of a null terminated string. " alt="" coords="298,259,358,285"/>
+<area shape="rect" id="node5" href="$classCharBuffer.html#ae742439a2d5d5a0ad64411dcbf4604c8" title="CharBuffer::EnsureMinimumSize" alt="" coords="456,107,669,133"/>
+<area shape="rect" id="node7" href="$memcpy_8c.html#a09b7e057c69b9ddd4b481fc746997a7d" title="Copy a block of memory, handling overlap. " alt="" coords="521,157,604,184"/>
+</map>

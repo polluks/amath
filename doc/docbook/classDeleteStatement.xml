@@ -1,0 +1,126 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="classDeleteStatement">
+<title>DeleteStatement class Reference</title>
+<para>
+    <programlisting>#include <link linkend="statements_8h">&lt;statements.h&gt;</link></programlisting>
+</para>
+<para>Inheritance diagram for DeleteStatement</para>
+<para>
+    <figure>
+        <title>Inheritance graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="classDeleteStatement__inherit__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+<para>Collaboration diagram for DeleteStatement</para>
+<para>
+    <figure>
+        <title>Collaboration graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="classDeleteStatement__coll__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+        <section>
+            <title>Private Attributes</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>Symbol type</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>char * name</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>char * argument</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="classDeleteStatement_1a335cfbb9db4b3bad5f0a082f247efcaa">DeleteStatement</link> (
+<link linkend="lex_8h_1a7feef761cd73fac6e25b8bb80d2c4e54">Symbol</link> symbol)<para><emphasis>Constructor used to delete either all variable or functions.</emphasis></para>
+</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="classDeleteStatement_1a9f89688d9c3193cdb7a314f981126ee2">DeleteStatement</link> (
+const char * name)<para><emphasis>Constructor used to delete a Variable.</emphasis></para>
+</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="classDeleteStatement_1ae742b66f6a74b0420e8ee54c8bc4a980">DeleteStatement</link> (
+const char * name, const char * argument)<para><emphasis>Constructor used to delete a function.</emphasis></para>
+</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="classDeleteStatement_1aacd65756af692a14e0beaa4b64dc814a">~DeleteStatement</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>char * <link linkend="classDeleteStatement_1a709e8696c9ca4be32679e6a72b82de86">Execute</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+    <simplesect>
+
+<para>Delete variable or function. </para>
+    </simplesect>
+        <section>
+            <title>Member Data Documentation</title>
+        </section>
+            <section xml:id="classDeleteStatement_1a335cfbb9db4b3bad5f0a082f247efcaa">
+                <title>DeleteStatement::DeleteStatement (Symbol symbol)</title> <emphasis>Constructor used to delete either all variable or functions.</emphasis>
+                
+            </section>
+            <section xml:id="classDeleteStatement_1a9f89688d9c3193cdb7a314f981126ee2">
+                <title>DeleteStatement::DeleteStatement (const char *name)</title> <emphasis>Constructor used to delete a Variable.</emphasis>
+                
+            </section>
+            <section xml:id="classDeleteStatement_1ae742b66f6a74b0420e8ee54c8bc4a980">
+                <title>DeleteStatement::DeleteStatement (const char *name, const char *argument)</title> <emphasis>Constructor used to delete a function.</emphasis>
+                
+            </section>
+            <section xml:id="classDeleteStatement_1aacd65756af692a14e0beaa4b64dc814a">
+                <title>DeleteStatement::~DeleteStatement ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="classDeleteStatement_1a709e8696c9ca4be32679e6a72b82de86">
+                <title>char * DeleteStatement::Execute ()</title> <emphasis></emphasis>
+                
+            </section>
+</section>

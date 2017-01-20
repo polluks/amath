@@ -1,0 +1,4 @@
+<map id="CharBuffer::EnsureGrowth" name="CharBuffer::EnsureGrowth">
+<area shape="rect" id="node2" href="$classCharBuffer.html#ad1907009b5ad136692b989fa96bf2f7e" title="Ensure a memory block of speficied size is allocated. " alt="" coords="229,5,389,32"/>
+<area shape="rect" id="node3" href="$memcpy_8c.html#a09b7e057c69b9ddd4b481fc746997a7d" title="Copy a block of memory, handling overlap. " alt="" coords="437,5,520,32"/>
+</map>

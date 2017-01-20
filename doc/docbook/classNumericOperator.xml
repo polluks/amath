@@ -1,0 +1,136 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="classNumericOperator">
+<title>NumericOperator class Reference</title>
+<para>
+    <programlisting>#include <link linkend="operators_8h">&lt;operators.h&gt;</link></programlisting>
+</para>
+<para>Inheritance diagram for NumericOperator</para>
+<para>
+    <figure>
+        <title>Inheritance graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="classNumericOperator__inherit__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+<para>Collaboration diagram for NumericOperator</para>
+<para>
+    <figure>
+        <title>Collaboration graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="classNumericOperator__coll__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+        <section>
+            <title>Protected Attributes</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>ExpressionNode * left</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>ExpressionNode * right</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="classNumericOperator_1a49cd2230b867cdfca64715aaf6e37561">NumericOperator</link> (
+<link linkend="classExpressionNode">ExpressionNode</link> * left, <link linkend="classExpressionNode">ExpressionNode</link> * right)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="classNumericOperator_1a230eb1128573672e1c5651bbf67ef16a">~NumericOperator</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="classSyntaxNode">SyntaxNode</link> * <link linkend="classNumericOperator_1a008152aaef6931b7dd70d8fa4be9f7f6">GetNext</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>char * <link linkend="classNumericOperator_1aaeef2885eb34d240cef0f55593354805">GetText</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="classNumericOperator_1ab40d02625fde750d08168ca2ef46c432">Attach</link> (
+<link linkend="classSyntaxNode">SyntaxNode</link> * node)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="classNumericOperator_1aacbe002fae709804679443e7fe8f2d36">Detach</link> (
+<link linkend="classSyntaxNode">SyntaxNode</link> * node)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="classNumericOperator_1ad8f69aec49e9a900ca592dbf972df619">Replace</link> (
+<link linkend="classSyntaxNode">SyntaxNode</link> * n, <link linkend="classSyntaxNode">SyntaxNode</link> * x)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title>Member Data Documentation</title>
+        </section>
+            <section xml:id="classNumericOperator_1a49cd2230b867cdfca64715aaf6e37561">
+                <title>NumericOperator::NumericOperator (ExpressionNode *left, ExpressionNode *right)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="classNumericOperator_1a230eb1128573672e1c5651bbf67ef16a">
+                <title>NumericOperator::~NumericOperator ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="classNumericOperator_1a008152aaef6931b7dd70d8fa4be9f7f6">
+                <title>SyntaxNode * NumericOperator::GetNext ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="classNumericOperator_1aaeef2885eb34d240cef0f55593354805">
+                <title>char * NumericOperator::GetText ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="classNumericOperator_1ab40d02625fde750d08168ca2ef46c432">
+                <title>void NumericOperator::Attach (SyntaxNode *node)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="classNumericOperator_1aacbe002fae709804679443e7fe8f2d36">
+                <title>void NumericOperator::Detach (SyntaxNode *node)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="classNumericOperator_1ad8f69aec49e9a900ca592dbf972df619">
+                <title>void NumericOperator::Replace (SyntaxNode *n, SyntaxNode *x)</title> <emphasis></emphasis>
+                
+            </section>
+</section>

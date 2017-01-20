@@ -1,0 +1,227 @@
+\hypertarget{atan2_8c}{}\section{lib/real/atan2.c File Reference}
+\label{atan2_8c}\index{lib/real/atan2.\+c@{lib/real/atan2.\+c}}
+{\ttfamily \#include \char`\"{}prim.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}math.\+h\char`\"{}}\\*
+Include dependency graph for atan2.\+c\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=190pt]{atan2_8c__incl}
+\end{center}
+\end{figure}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+double \hyperlink{atan2_8c_a349377202ca14f79eb335b1a421fe4d8}{atan2} (double y, double x)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+static const double \hyperlink{atan2_8c_a4f41fc56ffc7d06df51b6fbccd8c0846}{tiny} = 1.\+0e-\/300
+\item 
+static const double \hyperlink{atan2_8c_a554f7b66b1ba49443447eb746978c268}{zero} = 0.\+0
+\item 
+static const double \hyperlink{atan2_8c_a1417df9542e56520aafedb53e1112a59}{pi\+\_\+o\+\_\+4} = 7.\+8539816339744827900\+E-\/01
+\item 
+static const double \hyperlink{atan2_8c_a5e2886167c3870717e15666048afd36a}{pi\+\_\+o\+\_\+2} = 1.\+5707963267948965580\+E+00
+\item 
+static const double \hyperlink{atan2_8c_a43016d873124d39034edb8cd164794db}{pi} = 3.\+1415926535897931160\+E+00
+\item 
+static const double \hyperlink{atan2_8c_ac8cbe1b78ca704e98ce9f3905455f870}{pi\+\_\+lo} = 1.\+2246467991473531772\+E-\/16
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\index{atan2.\+c@{atan2.\+c}!atan2@{atan2}}
+\index{atan2@{atan2}!atan2.\+c@{atan2.\+c}}
+\subsubsection[{\texorpdfstring{atan2(double y, double x)}{atan2(double y, double x)}}]{\setlength{\rightskip}{0pt plus 5cm}double atan2 (
+\begin{DoxyParamCaption}
+\item[{double}]{y, }
+\item[{double}]{x}
+\end{DoxyParamCaption}
+)}\hypertarget{atan2_8c_a349377202ca14f79eb335b1a421fe4d8}{}\label{atan2_8c_a349377202ca14f79eb335b1a421fe4d8}
+
+
+Definition at line 86 of file atan2.\+c.
+
+
+
+References atan(), pi, pi\+\_\+lo, pi\+\_\+o\+\_\+2, pi\+\_\+o\+\_\+4, tiny, and zero.
+
+
+
+Referenced by clog(), and cpow().
+
+
+\begin{DoxyCode}
+87 \{
+88     \textcolor{keywordtype}{double} z;
+89     \hyperlink{real_2prim_8h_ae91287c8a5f73a8a22a100f50dc4de77}{sword} k,m,hx,hy,ix,iy;
+90     \hyperlink{real_2prim_8h_a6e60fe0e0f9f8801507e15fe2d893751}{uword} lx,ly;
+91 
+92     \hyperlink{real_2prim_8h_a6dadc713499e14ba3088a55409a18983}{EXTRACT\_WORDS}(hx,lx,x);
+93     ix = hx&0x7fffffff;
+94     \hyperlink{real_2prim_8h_a6dadc713499e14ba3088a55409a18983}{EXTRACT\_WORDS}(hy,ly,y);
+95     iy = hy&0x7fffffff;
+96     \textcolor{keywordflow}{if}(((ix|((lx|-lx)>>31))>0x7ff00000)||
+97             ((iy|((ly|-ly)>>31))>0x7ff00000))   \textcolor{comment}{/* x or y is NaN */}
+98         \textcolor{keywordflow}{return} x+y;
+99     \textcolor{keywordflow}{if}(((hx-0x3ff00000)|lx)==0) \textcolor{keywordflow}{return} \hyperlink{math_8h_a1e2f8f6d64eaa95131bc63fee34970ea}{atan}(y);   \textcolor{comment}{/* x=1.0 */}
+100     m = ((hy>>31)&1)|((hx>>30)&2);  \textcolor{comment}{/* 2*sign(x)+sign(y) */}
+101 
+102     \textcolor{comment}{/* when y = 0 */}
+103     \textcolor{keywordflow}{if}((iy|ly)==0) \{
+104         \textcolor{keywordflow}{switch}(m) \{
+105         \textcolor{keywordflow}{case} 0:
+106         \textcolor{keywordflow}{case} 1:
+107             \textcolor{keywordflow}{return} y;   \textcolor{comment}{/* atan(+-0,+anything)=+-0 */}
+108         \textcolor{keywordflow}{case} 2:
+109             \textcolor{keywordflow}{return}  \hyperlink{atan2_8c_a43016d873124d39034edb8cd164794db}{pi}+\hyperlink{atan2_8c_a4f41fc56ffc7d06df51b6fbccd8c0846}{tiny};\textcolor{comment}{/* atan(+0,-anything) = pi */}
+110         \textcolor{keywordflow}{case} 3:
+111             \textcolor{keywordflow}{return} -\hyperlink{atan2_8c_a43016d873124d39034edb8cd164794db}{pi}-\hyperlink{atan2_8c_a4f41fc56ffc7d06df51b6fbccd8c0846}{tiny};\textcolor{comment}{/* atan(-0,-anything) =-pi */}
+112         \}
+113     \}
+114     \textcolor{comment}{/* when x = 0 */}
+115     \textcolor{keywordflow}{if}((ix|lx)==0) \textcolor{keywordflow}{return} (hy<0)?  -\hyperlink{atan2_8c_a5e2886167c3870717e15666048afd36a}{pi\_o\_2}-\hyperlink{atan2_8c_a4f41fc56ffc7d06df51b6fbccd8c0846}{tiny}: \hyperlink{atan2_8c_a5e2886167c3870717e15666048afd36a}{pi\_o\_2}+\hyperlink{atan2_8c_a4f41fc56ffc7d06df51b6fbccd8c0846}{tiny};
+116 
+117     \textcolor{comment}{/* when x is INF */}
+118     \textcolor{keywordflow}{if}(ix==0x7ff00000) \{
+119         \textcolor{keywordflow}{if}(iy==0x7ff00000) \{
+120             \textcolor{keywordflow}{switch}(m) \{
+121             \textcolor{keywordflow}{case} 0:
+122                 \textcolor{keywordflow}{return}  \hyperlink{atan2_8c_a1417df9542e56520aafedb53e1112a59}{pi\_o\_4}+\hyperlink{atan2_8c_a4f41fc56ffc7d06df51b6fbccd8c0846}{tiny};\textcolor{comment}{/* atan(+INF,+INF) */}
+123             \textcolor{keywordflow}{case} 1:
+124                 \textcolor{keywordflow}{return} -\hyperlink{atan2_8c_a1417df9542e56520aafedb53e1112a59}{pi\_o\_4}-\hyperlink{atan2_8c_a4f41fc56ffc7d06df51b6fbccd8c0846}{tiny};\textcolor{comment}{/* atan(-INF,+INF) */}
+125             \textcolor{keywordflow}{case} 2:
+126                 \textcolor{keywordflow}{return}  3.0*\hyperlink{atan2_8c_a1417df9542e56520aafedb53e1112a59}{pi\_o\_4}+\hyperlink{atan2_8c_a4f41fc56ffc7d06df51b6fbccd8c0846}{tiny};\textcolor{comment}{/*atan(+INF,-INF)*/}
+127             \textcolor{keywordflow}{case} 3:
+128                 \textcolor{keywordflow}{return} -3.0*\hyperlink{atan2_8c_a1417df9542e56520aafedb53e1112a59}{pi\_o\_4}-\hyperlink{atan2_8c_a4f41fc56ffc7d06df51b6fbccd8c0846}{tiny};\textcolor{comment}{/*atan(-INF,-INF)*/}
+129             \}
+130         \} \textcolor{keywordflow}{else} \{
+131             \textcolor{keywordflow}{switch}(m) \{
+132             \textcolor{keywordflow}{case} 0:
+133                 \textcolor{keywordflow}{return}  \hyperlink{atan2_8c_a554f7b66b1ba49443447eb746978c268}{zero}  ; \textcolor{comment}{/* atan(+...,+INF) */}
+134             \textcolor{keywordflow}{case} 1:
+135                 \textcolor{keywordflow}{return} -\hyperlink{atan2_8c_a554f7b66b1ba49443447eb746978c268}{zero}  ; \textcolor{comment}{/* atan(-...,+INF) */}
+136             \textcolor{keywordflow}{case} 2:
+137                 \textcolor{keywordflow}{return}  \hyperlink{atan2_8c_a43016d873124d39034edb8cd164794db}{pi}+\hyperlink{atan2_8c_a4f41fc56ffc7d06df51b6fbccd8c0846}{tiny}  ;    \textcolor{comment}{/* atan(+...,-INF) */}
+138             \textcolor{keywordflow}{case} 3:
+139                 \textcolor{keywordflow}{return} -\hyperlink{atan2_8c_a43016d873124d39034edb8cd164794db}{pi}-\hyperlink{atan2_8c_a4f41fc56ffc7d06df51b6fbccd8c0846}{tiny}  ;    \textcolor{comment}{/* atan(-...,-INF) */}
+140             \}
+141         \}
+142     \}
+143     \textcolor{comment}{/* when y is INF */}
+144     \textcolor{keywordflow}{if}(iy==0x7ff00000) \textcolor{keywordflow}{return} (hy<0)? -\hyperlink{atan2_8c_a5e2886167c3870717e15666048afd36a}{pi\_o\_2}-tiny: \hyperlink{atan2_8c_a5e2886167c3870717e15666048afd36a}{pi\_o\_2}+\hyperlink{atan2_8c_a4f41fc56ffc7d06df51b6fbccd8c0846}{tiny};
+145 
+146     \textcolor{comment}{/* compute y/x */}
+147     k = (iy-ix)>>20;
+148     \textcolor{keywordflow}{if}(k > 60) z=\hyperlink{atan2_8c_a5e2886167c3870717e15666048afd36a}{pi\_o\_2}+0.5*\hyperlink{atan2_8c_ac8cbe1b78ca704e98ce9f3905455f870}{pi\_lo};   \textcolor{comment}{/* |y/x| >  2**60 */}
+149     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(hx<0&&k<-60) z=0.0;     \textcolor{comment}{/* |y|/x < -2**60 */}
+150     \textcolor{keywordflow}{else} z=\hyperlink{math_8h_a1e2f8f6d64eaa95131bc63fee34970ea}{atan}(\hyperlink{math_8h_a8fb5c0b9b43a108724b355136d29d2f9}{fabs}(y/x));     \textcolor{comment}{/* safe to do y/x */}
+151     \textcolor{keywordflow}{switch} (m) \{
+152     \textcolor{keywordflow}{case} 0:
+153         \textcolor{keywordflow}{return}       z  ;   \textcolor{comment}{/* atan(+,+) */}
+154     \textcolor{keywordflow}{case} 1: \{
+155         \hyperlink{real_2prim_8h_a6e60fe0e0f9f8801507e15fe2d893751}{uword} zh;
+156         \hyperlink{real_2prim_8h_ae62ee08d06ab4cc06d61dc1246b73195}{GET\_HIGH\_WORD}(zh,z);
+157         \hyperlink{real_2prim_8h_a6ca54776127e20149f84c290bf52f89e}{SET\_HIGH\_WORD}(z, zh ^ 0x80000000);
+158     \}
+159     \textcolor{keywordflow}{return}       z  ;   \textcolor{comment}{/* atan(-,+) */}
+160     \textcolor{keywordflow}{case} 2:
+161         \textcolor{keywordflow}{return}  \hyperlink{atan2_8c_a43016d873124d39034edb8cd164794db}{pi}-(z-\hyperlink{atan2_8c_ac8cbe1b78ca704e98ce9f3905455f870}{pi\_lo});\textcolor{comment}{/* atan(+,-) */}
+162     \textcolor{keywordflow}{default}: \textcolor{comment}{/* case 3 */}
+163         \textcolor{keywordflow}{return}  (z-\hyperlink{atan2_8c_ac8cbe1b78ca704e98ce9f3905455f870}{pi\_lo})-\hyperlink{atan2_8c_a43016d873124d39034edb8cd164794db}{pi};\textcolor{comment}{/* atan(-,-) */}
+164     \}
+165 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=192pt]{atan2_8c_a349377202ca14f79eb335b1a421fe4d8_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{atan2_8c_a349377202ca14f79eb335b1a421fe4d8_icgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Variable Documentation}
+\index{atan2.\+c@{atan2.\+c}!pi@{pi}}
+\index{pi@{pi}!atan2.\+c@{atan2.\+c}}
+\subsubsection[{\texorpdfstring{pi}{pi}}]{\setlength{\rightskip}{0pt plus 5cm}const double pi = 3.\+1415926535897931160\+E+00\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{atan2_8c_a43016d873124d39034edb8cd164794db}{}\label{atan2_8c_a43016d873124d39034edb8cd164794db}
+
+
+Definition at line 83 of file atan2.\+c.
+
+
+
+Referenced by atan2().
+
+\index{atan2.\+c@{atan2.\+c}!pi\+\_\+lo@{pi\+\_\+lo}}
+\index{pi\+\_\+lo@{pi\+\_\+lo}!atan2.\+c@{atan2.\+c}}
+\subsubsection[{\texorpdfstring{pi\+\_\+lo}{pi_lo}}]{\setlength{\rightskip}{0pt plus 5cm}const double pi\+\_\+lo = 1.\+2246467991473531772\+E-\/16\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{atan2_8c_ac8cbe1b78ca704e98ce9f3905455f870}{}\label{atan2_8c_ac8cbe1b78ca704e98ce9f3905455f870}
+
+
+Definition at line 84 of file atan2.\+c.
+
+
+
+Referenced by atan2().
+
+\index{atan2.\+c@{atan2.\+c}!pi\+\_\+o\+\_\+2@{pi\+\_\+o\+\_\+2}}
+\index{pi\+\_\+o\+\_\+2@{pi\+\_\+o\+\_\+2}!atan2.\+c@{atan2.\+c}}
+\subsubsection[{\texorpdfstring{pi\+\_\+o\+\_\+2}{pi_o_2}}]{\setlength{\rightskip}{0pt plus 5cm}const double pi\+\_\+o\+\_\+2 = 1.\+5707963267948965580\+E+00\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{atan2_8c_a5e2886167c3870717e15666048afd36a}{}\label{atan2_8c_a5e2886167c3870717e15666048afd36a}
+
+
+Definition at line 82 of file atan2.\+c.
+
+
+
+Referenced by atan2().
+
+\index{atan2.\+c@{atan2.\+c}!pi\+\_\+o\+\_\+4@{pi\+\_\+o\+\_\+4}}
+\index{pi\+\_\+o\+\_\+4@{pi\+\_\+o\+\_\+4}!atan2.\+c@{atan2.\+c}}
+\subsubsection[{\texorpdfstring{pi\+\_\+o\+\_\+4}{pi_o_4}}]{\setlength{\rightskip}{0pt plus 5cm}const double pi\+\_\+o\+\_\+4 = 7.\+8539816339744827900\+E-\/01\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{atan2_8c_a1417df9542e56520aafedb53e1112a59}{}\label{atan2_8c_a1417df9542e56520aafedb53e1112a59}
+
+
+Definition at line 81 of file atan2.\+c.
+
+
+
+Referenced by atan2().
+
+\index{atan2.\+c@{atan2.\+c}!tiny@{tiny}}
+\index{tiny@{tiny}!atan2.\+c@{atan2.\+c}}
+\subsubsection[{\texorpdfstring{tiny}{tiny}}]{\setlength{\rightskip}{0pt plus 5cm}const double tiny = 1.\+0e-\/300\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{atan2_8c_a4f41fc56ffc7d06df51b6fbccd8c0846}{}\label{atan2_8c_a4f41fc56ffc7d06df51b6fbccd8c0846}
+
+
+Definition at line 79 of file atan2.\+c.
+
+
+
+Referenced by atan2().
+
+\index{atan2.\+c@{atan2.\+c}!zero@{zero}}
+\index{zero@{zero}!atan2.\+c@{atan2.\+c}}
+\subsubsection[{\texorpdfstring{zero}{zero}}]{\setlength{\rightskip}{0pt plus 5cm}const double zero = 0.\+0\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{atan2_8c_a554f7b66b1ba49443447eb746978c268}{}\label{atan2_8c_a554f7b66b1ba49443447eb746978c268}
+
+
+Definition at line 80 of file atan2.\+c.
+
+
+
+Referenced by atan2().
+

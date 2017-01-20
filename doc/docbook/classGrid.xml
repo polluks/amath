@@ -1,0 +1,273 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="classGrid">
+<title>Grid class Reference</title>
+<para>
+    <programlisting>#include <link linkend="fgrid_8h">&lt;fgrid.h&gt;</link></programlisting>
+</para>
+<para>Inheritance diagram for Grid</para>
+<para>
+    <figure>
+        <title>Inheritance graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="classGrid__inherit__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+<para>Collaboration diagram for Grid</para>
+<para>
+    <figure>
+        <title>Collaboration graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="classGrid__coll__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+        <section>
+            <title>Private Attributes</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>UserFunction * function</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>RealNumber * parameter</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>double minX</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>double maxX</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>double minY</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>double maxY</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int pad</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int screenMinX</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int screenMaxX</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int screenMinY</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int screenMaxY</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int originX</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int originY</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>double zoom</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>double scaleX</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>double scaleY</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="classGrid_1af3a182cffb3b2f18ab0de9fb0184c3ca">Grid</link> (
+<link linkend="classUserFunction">UserFunction</link> * function)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="classGrid_1a3661d0a7f998caaaf8627d7a67072116">~Grid</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="classGrid_1ace057fbd3a401428399996eec3cb1577">SetFunctionBounderies</link> (
+double minX, double maxX)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="classGrid_1ac5386f4f62d3aae6a518fa11d25c7e59">SetScreenBounderues</link> (
+int minX, int maxX, int minY, int maxY)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="classGrid_1a430009c581ae9350ec310f63c1b89140">GetScreenCoordinates</link> (
+double value, int * x, int * y)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="classGrid_1a4a708195cc7b75e134be0c25adac662e">GetScreenCoordinates</link> (
+double xval, int * x, double yval, int * y)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>double <link linkend="classGrid_1a9fa683c5f40922b5da39c647c4f4622d">GetHorizontalResolution</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="classGrid_1aa399e261008779d3d8c442959b1bafaa">GetXAxis</link> (
+int * xstart, int * xend, int * ystart, int * yend)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="classGrid_1a2d97a1b941c705d7e803f90d59024de7">GetYAxis</link> (
+int * xstart, int * xend, int * ystart, int * yend)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>double <link linkend="classGrid_1a9e403482f403a28e3a152b435526829b">FunctionValue</link> (
+double parameter)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title>Member Data Documentation</title>
+        </section>
+            <section xml:id="classGrid_1af3a182cffb3b2f18ab0de9fb0184c3ca">
+                <title>Grid::Grid (UserFunction *function)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="classGrid_1a3661d0a7f998caaaf8627d7a67072116">
+                <title>Grid::~Grid ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="classGrid_1ace057fbd3a401428399996eec3cb1577">
+                <title>void Grid::SetFunctionBounderies (double minX, double maxX)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="classGrid_1ac5386f4f62d3aae6a518fa11d25c7e59">
+                <title>void Grid::SetScreenBounderues (int minX, int maxX, int minY, int maxY)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="classGrid_1a430009c581ae9350ec310f63c1b89140">
+                <title>void Grid::GetScreenCoordinates (double value, int *x, int *y)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="classGrid_1a4a708195cc7b75e134be0c25adac662e">
+                <title>void Grid::GetScreenCoordinates (double xval, int *x, double yval, int *y)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="classGrid_1a9fa683c5f40922b5da39c647c4f4622d">
+                <title>double Grid::GetHorizontalResolution ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="classGrid_1aa399e261008779d3d8c442959b1bafaa">
+                <title>void Grid::GetXAxis (int *xstart, int *xend, int *ystart, int *yend)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="classGrid_1a2d97a1b941c705d7e803f90d59024de7">
+                <title>void Grid::GetYAxis (int *xstart, int *xend, int *ystart, int *yend)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="classGrid_1a9e403482f403a28e3a152b435526829b">
+                <title>double Grid::FunctionValue (double parameter)</title> <emphasis></emphasis>
+                
+            </section>
+</section>

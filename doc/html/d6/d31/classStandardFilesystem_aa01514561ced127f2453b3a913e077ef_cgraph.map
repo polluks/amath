@@ -1,8 +1,0 @@
-<map id="StandardFilesystem::LoadTextFile" name="StandardFilesystem::LoadTextFile">
-<area shape="rect" id="node2" href="$dc/d84/classCharBuffer.html#a1ba545a85907bbc9ab26cdc99b031440" title="CharBuffer::Append" alt="" coords="203,5,341,32"/>
-<area shape="rect" id="node3" href="$dc/d84/classCharBuffer.html#a4345e9a5114f5c0292e8f242f26e3a7b" title="Initialize without allocating memory. " alt="" coords="194,56,350,83"/>
-<area shape="rect" id="node4" href="$dc/d84/classCharBuffer.html#abe39d3fd7d8b9c8ec343af2cae7adc96" title="CharBuffer::Empty" alt="" coords="207,107,337,133"/>
-<area shape="rect" id="node6" href="$dc/d84/classCharBuffer.html#a91ce4f4083b9a29c48f75e2af4071f28" title="CharBuffer::EnsureSize" alt="" coords="192,157,352,184"/>
-<area shape="rect" id="node5" href="$dc/d84/classCharBuffer.html#ae742439a2d5d5a0ad64411dcbf4604c8" title="CharBuffer::EnsureMinimumSize" alt="" coords="400,107,613,133"/>
-<area shape="rect" id="node7" href="$d4/d16/memcpy_8c.html#a09b7e057c69b9ddd4b481fc746997a7d" title="Copy a block of memory, handling overlap. " alt="" coords="465,157,548,184"/>
-</map>

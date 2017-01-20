@@ -1,9 +1,0 @@
-<map id="UserFunction::SetExpression" name="UserFunction::SetExpression">
-<area shape="rect" id="node2" href="$de/df8/classUserFunction.html#a5f22a558f8418f2ef6df952d88c7029b" title="UserFunction::Initialize\lTexts" alt="" coords="247,99,403,141"/>
-<area shape="rect" id="node3" href="$dc/d84/classCharBuffer.html#a045b38735f7b3007c1b98d3d7b7feafe" title="CharBuffer::Append" alt="" coords="469,5,606,32"/>
-<area shape="rect" id="node4" href="$dc/d84/classCharBuffer.html#abe39d3fd7d8b9c8ec343af2cae7adc96" title="CharBuffer::Empty" alt="" coords="472,56,603,83"/>
-<area shape="rect" id="node6" href="$d6/d1c/classVariable.html#accf221d35cec8a9707e84891b715fb6c" title="Variable::GetName" alt="" coords="471,107,604,133"/>
-<area shape="rect" id="node7" href="$dc/d84/classCharBuffer.html#a7dfd3feaaf80f318ba44efe15b1ec44b" title="CharBuffer::GetString" alt="" coords="463,157,611,184"/>
-<area shape="rect" id="node8" href="$dd/d06/classExpressionNode.html#a0bbf243108a14eaf963a8161ffd8eb92" title="ExpressionNode::GetText" alt="" coords="451,208,624,235"/>
-<area shape="rect" id="node5" href="$dc/d84/classCharBuffer.html#ae742439a2d5d5a0ad64411dcbf4604c8" title="CharBuffer::EnsureMinimumSize" alt="" coords="672,56,885,83"/>
-</map>

@@ -1,0 +1,247 @@
+\hypertarget{atan_8c}{}\section{lib/real/atan.c File Reference}
+\label{atan_8c}\index{lib/real/atan.\+c@{lib/real/atan.\+c}}
+{\ttfamily \#include \char`\"{}prim.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}math.\+h\char`\"{}}\\*
+Include dependency graph for atan.\+c\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=190pt]{atan_8c__incl}
+\end{center}
+\end{figure}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+double \hyperlink{atan_8c_a1e2f8f6d64eaa95131bc63fee34970ea}{atan} (double x)
+\begin{DoxyCompactList}\small\item\em Inverse trigonometric tangent function. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+static const double \hyperlink{atan_8c_a3ad59cecebe81954b05adb6655a3522d}{atanhi} \mbox{[}$\,$\mbox{]}
+\item 
+static const double \hyperlink{atan_8c_a8e27d24e02eed00dd09eecee7230b8a7}{atanlo} \mbox{[}$\,$\mbox{]}
+\item 
+static const double \hyperlink{atan_8c_a728d3c586fb7556699ef98d4e277da73}{aT} \mbox{[}$\,$\mbox{]}
+\item 
+static const double \hyperlink{atan_8c_ada85e349d35971b32c8ea4238881ff8b}{one} = 1.\+0
+\item 
+static const double \hyperlink{atan_8c_acbd466133274923cc0785707fbdeea9a}{huge} = 1.\+0e300
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\index{atan.\+c@{atan.\+c}!atan@{atan}}
+\index{atan@{atan}!atan.\+c@{atan.\+c}}
+\subsubsection[{\texorpdfstring{atan(double x)}{atan(double x)}}]{\setlength{\rightskip}{0pt plus 5cm}double atan (
+\begin{DoxyParamCaption}
+\item[{double}]{x}
+\end{DoxyParamCaption}
+)}\hypertarget{atan_8c_a1e2f8f6d64eaa95131bc63fee34970ea}{}\label{atan_8c_a1e2f8f6d64eaa95131bc63fee34970ea}
+
+
+Inverse trigonometric tangent function. 
+
+\begin{DoxyVersion}{Version}
+1.\+3 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+95/01/18
+\end{DoxyDate}
+
+\begin{DoxyPre}
+Method
+  1. Reduce x to positive by atan(x) = -atan(-x).
+  2. According to the integer k=4t+0.25 chopped, t=x, the argument
+     is further reduced to one of the following intervals and the
+     arctangent of t is evaluated by the corresponding formula:\end{DoxyPre}
+
+
+
+\begin{DoxyPre}     [0,7/16]      atan(x) = t-t^3*(a1+t^2*(a2+...(a10+t^2*a11)...)
+     [7/16,11/16]  atan(x) = atan(1/2) + atan( (t-0.5)/(1+t/2) )
+     [11/16.19/16] atan(x) = atan( 1 ) + atan( (t-1)/(1+t) )
+     [19/16,39/16] atan(x) = atan(3/2) + atan( (t-1.5)/(1+1.5t) )
+     [39/16,INF]   atan(x) = atan(INF) + atan( -1/t )\end{DoxyPre}
+
+
+
+\begin{DoxyPre}Constants:
+The hexadecimal values are the intended ones for the following
+constants. The decimal values may be used, provided that the
+compiler will convert from decimal to binary accurately enough
+to produce the hexadecimal values shown.
+\end{DoxyPre}
+ \begin{DoxyCopyright}{Copyright}
+Copyright (C) 1993 by Sun Microsystems, Inc. All rights reserved.  Developed at Sun\+Soft, a Sun Microsystems, Inc. business. Permission to use, copy, modify, and distribute this software is freely granted, provided that this notice is preserved. 
+\end{DoxyCopyright}
+
+
+Definition at line 109 of file atan.\+c.
+
+
+
+References aT, atanhi, atanlo, huge, and one.
+
+
+
+Referenced by Real\+Number\+::\+Arc\+Cotangent(), Real\+Number\+::\+Arc\+Tangent(), and atan2().
+
+
+\begin{DoxyCode}
+110 \{
+111     \textcolor{keywordtype}{double} w,s1,s2,z;
+112     \hyperlink{real_2prim_8h_ae91287c8a5f73a8a22a100f50dc4de77}{sword} ix,hx,id;
+113 
+114     \hyperlink{real_2prim_8h_ae62ee08d06ab4cc06d61dc1246b73195}{GET\_HIGH\_WORD}(hx,x);
+115     ix = hx&0x7fffffff;
+116     \textcolor{keywordflow}{if}(ix>=0x44100000) \{    \textcolor{comment}{/* if |x| >= 2^66 */}
+117         \hyperlink{real_2prim_8h_a6e60fe0e0f9f8801507e15fe2d893751}{uword} low;
+118 
+119         \hyperlink{real_2prim_8h_adee023704c856ea8f310e8e3fd765a22}{GET\_LOW\_WORD}(low,x);
+120         \textcolor{keywordflow}{if}(ix>0x7ff00000||
+121                 (ix==0x7ff00000&&(low!=0)))
+122             \textcolor{keywordflow}{return} x+x;     \textcolor{comment}{/* NaN */}
+123         \textcolor{keywordflow}{if}(hx>0) \textcolor{keywordflow}{return}  \hyperlink{atan_8c_a3ad59cecebe81954b05adb6655a3522d}{atanhi}[3]+\hyperlink{atan_8c_a8e27d24e02eed00dd09eecee7230b8a7}{atanlo}[3];
+124         \textcolor{keywordflow}{else}     \textcolor{keywordflow}{return} -\hyperlink{atan_8c_a3ad59cecebe81954b05adb6655a3522d}{atanhi}[3]-atanlo[3];
+125     \}
+126     \textcolor{keywordflow}{if} (ix < 0x3fdc0000) \{  \textcolor{comment}{/* |x| < 0.4375 */}
+127         \textcolor{keywordflow}{if} (ix < 0x3e200000) \{  \textcolor{comment}{/* |x| < 2^-29 */}
+128             \textcolor{keywordflow}{if}(\hyperlink{atan_8c_acbd466133274923cc0785707fbdeea9a}{huge}+x>\hyperlink{atan_8c_ada85e349d35971b32c8ea4238881ff8b}{one}) \textcolor{keywordflow}{return} x; \textcolor{comment}{/* raise inexact */}
+129         \}
+130         \textcolor{keywordtype}{id} = -1;
+131     \} \textcolor{keywordflow}{else} \{
+132         x = \hyperlink{math_8h_a8fb5c0b9b43a108724b355136d29d2f9}{fabs}(x);
+133         \textcolor{keywordflow}{if} (ix < 0x3ff30000) \{      \textcolor{comment}{/* |x| < 1.1875 */}
+134             \textcolor{keywordflow}{if} (ix < 0x3fe60000) \{  \textcolor{comment}{/* 7/16 <=|x|<11/16 */}
+135                 \textcolor{keywordtype}{id} = 0;
+136                 x = (2.0*x-\hyperlink{atan_8c_ada85e349d35971b32c8ea4238881ff8b}{one})/(2.0+x);
+137             \} \textcolor{keywordflow}{else} \{            \textcolor{comment}{/* 11/16<=|x|< 19/16 */}
+138                 \textcolor{keywordtype}{id} = 1;
+139                 x  = (x-\hyperlink{atan_8c_ada85e349d35971b32c8ea4238881ff8b}{one})/(x+\hyperlink{atan_8c_ada85e349d35971b32c8ea4238881ff8b}{one});
+140             \}
+141         \} \textcolor{keywordflow}{else} \{
+142             \textcolor{keywordflow}{if} (ix < 0x40038000) \{  \textcolor{comment}{/* |x| < 2.4375 */}
+143                 \textcolor{keywordtype}{id} = 2;
+144                 x  = (x-1.5)/(\hyperlink{atan_8c_ada85e349d35971b32c8ea4238881ff8b}{one}+1.5*x);
+145             \} \textcolor{keywordflow}{else} \{            \textcolor{comment}{/* 2.4375 <= |x| < 2^66 */}
+146                 \textcolor{keywordtype}{id} = 3;
+147                 x  = -1.0/x;
+148             \}
+149         \}
+150     \}
+151     \textcolor{comment}{/* end of argument reduction */}
+152     z = x*x;
+153     w = z*z;
+154     \textcolor{comment}{/* break sum from i=0 to 10 aT[i]z**(i+1) into odd and even poly */}
+155     s1 = z*(\hyperlink{atan_8c_a728d3c586fb7556699ef98d4e277da73}{aT}[0]+w*(\hyperlink{atan_8c_a728d3c586fb7556699ef98d4e277da73}{aT}[2]+w*(\hyperlink{atan_8c_a728d3c586fb7556699ef98d4e277da73}{aT}[4]+w*(\hyperlink{atan_8c_a728d3c586fb7556699ef98d4e277da73}{aT}[6]+w*(\hyperlink{atan_8c_a728d3c586fb7556699ef98d4e277da73}{aT}[8]+w*\hyperlink{atan_8c_a728d3c586fb7556699ef98d4e277da73}{aT}[10])))));
+156     s2 = w*(\hyperlink{atan_8c_a728d3c586fb7556699ef98d4e277da73}{aT}[1]+w*(\hyperlink{atan_8c_a728d3c586fb7556699ef98d4e277da73}{aT}[3]+w*(\hyperlink{atan_8c_a728d3c586fb7556699ef98d4e277da73}{aT}[5]+w*(\hyperlink{atan_8c_a728d3c586fb7556699ef98d4e277da73}{aT}[7]+w*\hyperlink{atan_8c_a728d3c586fb7556699ef98d4e277da73}{aT}[9]))));
+157     \textcolor{keywordflow}{if} (\textcolor{keywordtype}{id}<0) \textcolor{keywordflow}{return} x - x*(s1+s2);
+158     \textcolor{keywordflow}{else} \{
+159         z = \hyperlink{atan_8c_a3ad59cecebe81954b05adb6655a3522d}{atanhi}[id] - ((x*(s1+s2) - \hyperlink{atan_8c_a8e27d24e02eed00dd09eecee7230b8a7}{atanlo}[\textcolor{keywordtype}{id}]) - x);
+160         \textcolor{keywordflow}{return} (hx<0)? -z:z;
+161     \}
+162 \}
+\end{DoxyCode}
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{atan_8c_a1e2f8f6d64eaa95131bc63fee34970ea_icgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Variable Documentation}
+\index{atan.\+c@{atan.\+c}!aT@{aT}}
+\index{aT@{aT}!atan.\+c@{atan.\+c}}
+\subsubsection[{\texorpdfstring{aT}{aT}}]{\setlength{\rightskip}{0pt plus 5cm}const double aT\mbox{[}$\,$\mbox{]}\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{atan_8c_a728d3c586fb7556699ef98d4e277da73}{}\label{atan_8c_a728d3c586fb7556699ef98d4e277da73}
+{\bfseries Initial value\+:}
+\begin{DoxyCode}
+= \{
+    3.33333333333329318027e-01, 
+    -1.99999999998764832476e-01, 
+    1.42857142725034663711e-01, 
+    -1.11111104054623557880e-01, 
+    9.09088713343650656196e-02, 
+    -7.69187620504482999495e-02, 
+    6.66107313738753120669e-02, 
+    -5.83357013379057348645e-02, 
+    4.97687799461593236017e-02, 
+    -3.65315727442169155270e-02, 
+    1.62858201153657823623e-02, 
+\}
+\end{DoxyCode}
+
+
+Definition at line 61 of file atan.\+c.
+
+
+
+Referenced by atan().
+
+\index{atan.\+c@{atan.\+c}!atanhi@{atanhi}}
+\index{atanhi@{atanhi}!atan.\+c@{atan.\+c}}
+\subsubsection[{\texorpdfstring{atanhi}{atanhi}}]{\setlength{\rightskip}{0pt plus 5cm}const double atanhi\mbox{[}$\,$\mbox{]}\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{atan_8c_a3ad59cecebe81954b05adb6655a3522d}{}\label{atan_8c_a3ad59cecebe81954b05adb6655a3522d}
+{\bfseries Initial value\+:}
+\begin{DoxyCode}
+= \{
+    4.63647609000806093515e-01, 
+    7.85398163397448278999e-01, 
+    9.82793723247329054082e-01, 
+    1.57079632679489655800e+00, 
+\}
+\end{DoxyCode}
+
+
+Definition at line 47 of file atan.\+c.
+
+
+
+Referenced by atan().
+
+\index{atan.\+c@{atan.\+c}!atanlo@{atanlo}}
+\index{atanlo@{atanlo}!atan.\+c@{atan.\+c}}
+\subsubsection[{\texorpdfstring{atanlo}{atanlo}}]{\setlength{\rightskip}{0pt plus 5cm}const double atanlo\mbox{[}$\,$\mbox{]}\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{atan_8c_a8e27d24e02eed00dd09eecee7230b8a7}{}\label{atan_8c_a8e27d24e02eed00dd09eecee7230b8a7}
+{\bfseries Initial value\+:}
+\begin{DoxyCode}
+= \{
+    2.26987774529616870924e-17, 
+    3.06161699786838301793e-17, 
+    1.39033110312309984516e-17, 
+    6.12323399573676603587e-17, 
+\}
+\end{DoxyCode}
+
+
+Definition at line 54 of file atan.\+c.
+
+
+
+Referenced by atan().
+
+\index{atan.\+c@{atan.\+c}!huge@{huge}}
+\index{huge@{huge}!atan.\+c@{atan.\+c}}
+\subsubsection[{\texorpdfstring{huge}{huge}}]{\setlength{\rightskip}{0pt plus 5cm}const double huge = 1.\+0e300\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{atan_8c_acbd466133274923cc0785707fbdeea9a}{}\label{atan_8c_acbd466133274923cc0785707fbdeea9a}
+
+
+Definition at line 77 of file atan.\+c.
+
+
+
+Referenced by atan().
+
+\index{atan.\+c@{atan.\+c}!one@{one}}
+\index{one@{one}!atan.\+c@{atan.\+c}}
+\subsubsection[{\texorpdfstring{one}{one}}]{\setlength{\rightskip}{0pt plus 5cm}const double one = 1.\+0\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{atan_8c_ada85e349d35971b32c8ea4238881ff8b}{}\label{atan_8c_ada85e349d35971b32c8ea4238881ff8b}
+
+
+Definition at line 76 of file atan.\+c.
+
+
+
+Referenced by atan().
+

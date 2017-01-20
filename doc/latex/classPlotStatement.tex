@@ -1,0 +1,315 @@
+\hypertarget{classPlotStatement}{}\section{Plot\+Statement Class Reference}
+\label{classPlotStatement}\index{Plot\+Statement@{Plot\+Statement}}
+
+
+{\ttfamily \#include $<$statements.\+h$>$}
+
+
+
+Inheritance diagram for Plot\+Statement\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=165pt]{classPlotStatement__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Plot\+Statement\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=210pt]{classPlotStatement__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classPlotStatement_a47efbe7353578971d93bc9843ffbe2e1}{Plot\+Statement} (const char $\ast$\hyperlink{classPlotStatement_ab057af7c22b9fd7ec06e530174dda200}{name}, const char $\ast$\hyperlink{classPlotStatement_aa0356a6cdd1362b3efb6eb732249dcf2}{parameter}, const char $\ast$\hyperlink{classPlotStatement_af5c41edc8fcd55bbf986e02fbf176885}{file})
+\item 
+\hyperlink{classPlotStatement_ab627e3becfbdd9d11f13b544c7dfa6c3}{Plot\+Statement} (const char $\ast$\hyperlink{classPlotStatement_ab057af7c22b9fd7ec06e530174dda200}{name}, const char $\ast$\hyperlink{classPlotStatement_aa0356a6cdd1362b3efb6eb732249dcf2}{parameter})
+\item 
+\hyperlink{classPlotStatement_aa2d08e5d7d33fe68e0a2512fc4457295}{$\sim$\+Plot\+Statement} ()
+\item 
+char $\ast$ \hyperlink{classPlotStatement_a653ff64c2c918b3209be426f7c243459}{Execute} ()
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+char $\ast$ \hyperlink{classPlotStatement_ab057af7c22b9fd7ec06e530174dda200}{name}
+\item 
+char $\ast$ \hyperlink{classPlotStatement_aa0356a6cdd1362b3efb6eb732249dcf2}{parameter}
+\item 
+char $\ast$ \hyperlink{classPlotStatement_af5c41edc8fcd55bbf986e02fbf176885}{file}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 302 of file statements.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Plot\+Statement@{Plot\+Statement}!Plot\+Statement@{Plot\+Statement}}
+\index{Plot\+Statement@{Plot\+Statement}!Plot\+Statement@{Plot\+Statement}}
+\subsubsection[{\texorpdfstring{Plot\+Statement(const char $\ast$name, const char $\ast$parameter, const char $\ast$file)}{PlotStatement(const char *name, const char *parameter, const char *file)}}]{\setlength{\rightskip}{0pt plus 5cm}Plot\+Statement\+::\+Plot\+Statement (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{name, }
+\item[{const char $\ast$}]{parameter, }
+\item[{const char $\ast$}]{file}
+\end{DoxyParamCaption}
+)}\hypertarget{classPlotStatement_a47efbe7353578971d93bc9843ffbe2e1}{}\label{classPlotStatement_a47efbe7353578971d93bc9843ffbe2e1}
+
+
+Definition at line 756 of file statements.\+cpp.
+
+
+
+References Alloc\+And\+Copy(), file, name, parameter, and Statement\+Node\+::\+Statement\+Node().
+
+
+\begin{DoxyCode}
+756                                                                                       :
+757     \hyperlink{classStatementNode_a586026d6009a39d087792d621de86360}{StatementNode}()
+758 \{
+759     \hyperlink{clib_8h_a5bed05c70cb17e541fee570b5dc32e1a}{AllocAndCopy}(&this->\hyperlink{classPlotStatement_ab057af7c22b9fd7ec06e530174dda200}{name}, \hyperlink{classPlotStatement_ab057af7c22b9fd7ec06e530174dda200}{name});
+760     \hyperlink{clib_8h_a5bed05c70cb17e541fee570b5dc32e1a}{AllocAndCopy}(&this->\hyperlink{classPlotStatement_aa0356a6cdd1362b3efb6eb732249dcf2}{parameter}, \hyperlink{classPlotStatement_aa0356a6cdd1362b3efb6eb732249dcf2}{parameter});
+761     \hyperlink{clib_8h_a5bed05c70cb17e541fee570b5dc32e1a}{AllocAndCopy}(&this->\hyperlink{classPlotStatement_af5c41edc8fcd55bbf986e02fbf176885}{file}, \hyperlink{classPlotStatement_af5c41edc8fcd55bbf986e02fbf176885}{file});
+762 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classPlotStatement_a47efbe7353578971d93bc9843ffbe2e1_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{Plot\+Statement@{Plot\+Statement}!Plot\+Statement@{Plot\+Statement}}
+\index{Plot\+Statement@{Plot\+Statement}!Plot\+Statement@{Plot\+Statement}}
+\subsubsection[{\texorpdfstring{Plot\+Statement(const char $\ast$name, const char $\ast$parameter)}{PlotStatement(const char *name, const char *parameter)}}]{\setlength{\rightskip}{0pt plus 5cm}Plot\+Statement\+::\+Plot\+Statement (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{name, }
+\item[{const char $\ast$}]{parameter}
+\end{DoxyParamCaption}
+)}\hypertarget{classPlotStatement_ab627e3becfbdd9d11f13b544c7dfa6c3}{}\label{classPlotStatement_ab627e3becfbdd9d11f13b544c7dfa6c3}
+
+
+Definition at line 764 of file statements.\+cpp.
+
+
+
+References Alloc\+And\+Copy(), file, name, parameter, and Statement\+Node\+::\+Statement\+Node().
+
+
+
+Referenced by Parser\+::\+Parse\+Draw\+Statement().
+
+
+\begin{DoxyCode}
+764                                                                     :
+765     \hyperlink{classStatementNode_a586026d6009a39d087792d621de86360}{StatementNode}()
+766 \{
+767     \hyperlink{clib_8h_a5bed05c70cb17e541fee570b5dc32e1a}{AllocAndCopy}(&this->\hyperlink{classPlotStatement_ab057af7c22b9fd7ec06e530174dda200}{name}, \hyperlink{classPlotStatement_ab057af7c22b9fd7ec06e530174dda200}{name});
+768     \hyperlink{clib_8h_a5bed05c70cb17e541fee570b5dc32e1a}{AllocAndCopy}(&this->\hyperlink{classPlotStatement_aa0356a6cdd1362b3efb6eb732249dcf2}{parameter}, \hyperlink{classPlotStatement_aa0356a6cdd1362b3efb6eb732249dcf2}{parameter});
+769     \hyperlink{classPlotStatement_af5c41edc8fcd55bbf986e02fbf176885}{file} = \hyperlink{platform_8h_a46ff2bfbf0d44b8466a2251d5bd5e6f8}{NOMEM};
+770 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classPlotStatement_ab627e3becfbdd9d11f13b544c7dfa6c3_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classPlotStatement_ab627e3becfbdd9d11f13b544c7dfa6c3_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Plot\+Statement@{Plot\+Statement}!````~Plot\+Statement@{$\sim$\+Plot\+Statement}}
+\index{````~Plot\+Statement@{$\sim$\+Plot\+Statement}!Plot\+Statement@{Plot\+Statement}}
+\subsubsection[{\texorpdfstring{$\sim$\+Plot\+Statement()}{~PlotStatement()}}]{\setlength{\rightskip}{0pt plus 5cm}Plot\+Statement\+::$\sim$\+Plot\+Statement (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classPlotStatement_aa2d08e5d7d33fe68e0a2512fc4457295}{}\label{classPlotStatement_aa2d08e5d7d33fe68e0a2512fc4457295}
+
+
+Definition at line 772 of file statements.\+cpp.
+
+
+
+References file, name, and parameter.
+
+
+\begin{DoxyCode}
+773 \{
+774     \textcolor{keyword}{delete} [] \hyperlink{classPlotStatement_ab057af7c22b9fd7ec06e530174dda200}{name};
+775     \textcolor{keyword}{delete} [] \hyperlink{classPlotStatement_aa0356a6cdd1362b3efb6eb732249dcf2}{parameter};
+776 
+777     \textcolor{keywordflow}{if} (\hyperlink{classPlotStatement_af5c41edc8fcd55bbf986e02fbf176885}{file} != \hyperlink{platform_8h_a46ff2bfbf0d44b8466a2251d5bd5e6f8}{NOMEM}) \{
+778         \textcolor{keyword}{delete} [] \hyperlink{classPlotStatement_af5c41edc8fcd55bbf986e02fbf176885}{file};
+779     \}
+780 \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\index{Plot\+Statement@{Plot\+Statement}!Execute@{Execute}}
+\index{Execute@{Execute}!Plot\+Statement@{Plot\+Statement}}
+\subsubsection[{\texorpdfstring{Execute()}{Execute()}}]{\setlength{\rightskip}{0pt plus 5cm}char $\ast$ Plot\+Statement\+::\+Execute (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{classPlotStatement_a653ff64c2c918b3209be426f7c243459}{}\label{classPlotStatement_a653ff64c2c918b3209be426f7c243459}
+
+
+Implements \hyperlink{classStatementNode_a721589622c930c010927b9a9c55b173e}{Statement\+Node}.
+
+
+
+Definition at line 782 of file statements.\+cpp.
+
+
+
+References Char\+Buffer\+::\+Append(), Decimal\+System\+::\+Decimal\+System(), Char\+Buffer\+::\+Empty(), Char\+Buffer\+::\+Ensure\+Growth(), Program\+::\+Functions, Function\+List\+::\+Get\+Function\+Def(), Grid\+::\+Get\+Horizontal\+Resolution(), Grid\+::\+Get\+Screen\+Coordinates(), Char\+Buffer\+::\+Get\+String(), Numeral\+System\+::\+Get\+Text(), Grid\+::\+Grid(), name, Syntax\+Node\+::output, parameter, Real\+Number\+::\+Real\+Number(), Grid\+::\+Set\+Function\+Bounderies(), Real\+Number\+::\+Set\+Real\+Value(), and Grid\+::\+Set\+Screen\+Bounderues().
+
+
+\begin{DoxyCode}
+783 \{
+784     \hyperlink{classUserFunction}{UserFunction} *\textcolor{keyword}{function} = \hyperlink{classProgram}{Program}->\hyperlink{classProgram_ac643877adc06800a021263b2234cd236}{Functions}->
+      \hyperlink{classFunctionList_acf0716fd18c32a6d52a947052060a2a1}{GetFunctionDef}(\hyperlink{classPlotStatement_ab057af7c22b9fd7ec06e530174dda200}{name}, \hyperlink{classPlotStatement_aa0356a6cdd1362b3efb6eb732249dcf2}{parameter});
+785 
+786     \textcolor{keywordflow}{if} (\textcolor{keyword}{function} == \hyperlink{platform_8h_a46ff2bfbf0d44b8466a2251d5bd5e6f8}{NOMEM}) \{
+787         \textcolor{keywordflow}{return} (\textcolor{keywordtype}{char}*)(\textcolor{stringliteral}{"Function does not exists."} \hyperlink{platform_8h_a806511f4930171733227c99101dc0606}{NEWLINE});
+788     \}
+789 
+790     \hyperlink{classSyntaxNode_a1180628cbe3fce43930cee0df5a9ce5c}{output}->\hyperlink{classCharBuffer_abe39d3fd7d8b9c8ec343af2cae7adc96}{Empty}();
+791 
+792     \hyperlink{classGrid}{Grid} *grid = \textcolor{keyword}{new} \hyperlink{classGrid}{Grid}(\textcolor{keyword}{function});
+793     \textcolor{keyword}{static} \textcolor{keyword}{const} \textcolor{keywordtype}{int} width = 400;
+794     \textcolor{keyword}{static} \textcolor{keyword}{const} \textcolor{keywordtype}{int} height = 300;
+795 
+796     grid->\hyperlink{classGrid_ac5386f4f62d3aae6a518fa11d25c7e59}{SetScreenBounderues}(0, width, 20, height);
+797     \textcolor{keywordtype}{bool} first = \textcolor{keyword}{true};
+798 
+799     \textcolor{keyword}{static} \textcolor{keyword}{const} \textcolor{keywordtype}{double} min = -5.0;
+800     \textcolor{keyword}{static} \textcolor{keyword}{const} \textcolor{keywordtype}{double} max = +5.0;
+801     grid->\hyperlink{classGrid_ace057fbd3a401428399996eec3cb1577}{SetFunctionBounderies}(min, max);
+802 
+803     \textcolor{keywordtype}{double} x = min;
+804     \textcolor{keywordtype}{double} step = grid->\hyperlink{classGrid_a9fa683c5f40922b5da39c647c4f4622d}{GetHorizontalResolution}();
+805 
+806     \textcolor{keywordtype}{int} screenX;
+807     \textcolor{keywordtype}{int} screenY;
+808 
+809     \hyperlink{structRealNumber}{RealNumber} *n = \textcolor{keyword}{new} \hyperlink{structRealNumber}{RealNumber}();
+810     \hyperlink{classNumeralSystem}{NumeralSystem} *ns = \textcolor{keyword}{new} \hyperlink{classDecimalSystem}{DecimalSystem}(5);
+811 
+812     \textcolor{keywordflow}{while} (x < max) \{
+813         grid->\hyperlink{classGrid_a430009c581ae9350ec310f63c1b89140}{GetScreenCoordinates}(x, &screenX, &screenY);
+814 
+815         \hyperlink{classSyntaxNode_a1180628cbe3fce43930cee0df5a9ce5c}{output}->\hyperlink{classCharBuffer_a73c71d361110b37819a1d681a1504b0e}{EnsureGrowth}(32);
+816 
+817         \textcolor{keywordflow}{if} (screenX != -1 && screenY != -1) \{
+818             \textcolor{keywordflow}{if} (first) \{
+819                 \hyperlink{classSyntaxNode_a1180628cbe3fce43930cee0df5a9ce5c}{output}->\hyperlink{classCharBuffer_a045b38735f7b3007c1b98d3d7b7feafe}{Append}(\textcolor{charliteral}{'('});
+820                 n->\hyperlink{structRealNumber_a47b13da91334faba56ece7292f3a8566}{SetRealValue}(screenX);
+821                 \hyperlink{classSyntaxNode_a1180628cbe3fce43930cee0df5a9ce5c}{output}->\hyperlink{classCharBuffer_a045b38735f7b3007c1b98d3d7b7feafe}{Append}(ns->\hyperlink{classNumeralSystem_a74dc91c4dbab4a88a123b2a32753f485}{GetText}(n));
+822                 \hyperlink{classSyntaxNode_a1180628cbe3fce43930cee0df5a9ce5c}{output}->\hyperlink{classCharBuffer_a045b38735f7b3007c1b98d3d7b7feafe}{Append}(\textcolor{charliteral}{','});
+823                 n->\hyperlink{structRealNumber_a47b13da91334faba56ece7292f3a8566}{SetRealValue}(height - screenY);
+824                 \hyperlink{classSyntaxNode_a1180628cbe3fce43930cee0df5a9ce5c}{output}->\hyperlink{classCharBuffer_a045b38735f7b3007c1b98d3d7b7feafe}{Append}(ns->\hyperlink{classNumeralSystem_a74dc91c4dbab4a88a123b2a32753f485}{GetText}(n));
+825                 \hyperlink{classSyntaxNode_a1180628cbe3fce43930cee0df5a9ce5c}{output}->\hyperlink{classCharBuffer_a045b38735f7b3007c1b98d3d7b7feafe}{Append}(\textcolor{charliteral}{')'});
+826                 \hyperlink{classSyntaxNode_a1180628cbe3fce43930cee0df5a9ce5c}{output}->\hyperlink{classCharBuffer_a045b38735f7b3007c1b98d3d7b7feafe}{Append}(\hyperlink{platform_8h_a806511f4930171733227c99101dc0606}{NEWLINE});
+827                 first = \textcolor{keyword}{false};
+828             \} \textcolor{keywordflow}{else} \{
+829                 \hyperlink{classSyntaxNode_a1180628cbe3fce43930cee0df5a9ce5c}{output}->\hyperlink{classCharBuffer_a045b38735f7b3007c1b98d3d7b7feafe}{Append}(\textcolor{charliteral}{'('});
+830                 n->\hyperlink{structRealNumber_a47b13da91334faba56ece7292f3a8566}{SetRealValue}(screenX);
+831                 \hyperlink{classSyntaxNode_a1180628cbe3fce43930cee0df5a9ce5c}{output}->\hyperlink{classCharBuffer_a045b38735f7b3007c1b98d3d7b7feafe}{Append}(ns->\hyperlink{classNumeralSystem_a74dc91c4dbab4a88a123b2a32753f485}{GetText}(n));
+832                 \hyperlink{classSyntaxNode_a1180628cbe3fce43930cee0df5a9ce5c}{output}->\hyperlink{classCharBuffer_a045b38735f7b3007c1b98d3d7b7feafe}{Append}(\textcolor{charliteral}{','});
+833                 n->\hyperlink{structRealNumber_a47b13da91334faba56ece7292f3a8566}{SetRealValue}(height - screenY);
+834                 \hyperlink{classSyntaxNode_a1180628cbe3fce43930cee0df5a9ce5c}{output}->\hyperlink{classCharBuffer_a045b38735f7b3007c1b98d3d7b7feafe}{Append}(ns->\hyperlink{classNumeralSystem_a74dc91c4dbab4a88a123b2a32753f485}{GetText}(n));
+835                 \hyperlink{classSyntaxNode_a1180628cbe3fce43930cee0df5a9ce5c}{output}->\hyperlink{classCharBuffer_a045b38735f7b3007c1b98d3d7b7feafe}{Append}(\textcolor{charliteral}{')'});
+836                 \hyperlink{classSyntaxNode_a1180628cbe3fce43930cee0df5a9ce5c}{output}->\hyperlink{classCharBuffer_a045b38735f7b3007c1b98d3d7b7feafe}{Append}(\hyperlink{platform_8h_a806511f4930171733227c99101dc0606}{NEWLINE});
+837             \}
+838         \}
+839 
+840         x = x + step;
+841     \}
+842 
+843     \textcolor{keyword}{delete} n;
+844     \textcolor{keyword}{delete} ns;
+845 
+846     \textcolor{keywordflow}{return} \hyperlink{classSyntaxNode_a1180628cbe3fce43930cee0df5a9ce5c}{output}->\hyperlink{classCharBuffer_a7dfd3feaaf80f318ba44efe15b1ec44b}{GetString}();
+847 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classPlotStatement_a653ff64c2c918b3209be426f7c243459_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Member Data Documentation}
+\index{Plot\+Statement@{Plot\+Statement}!file@{file}}
+\index{file@{file}!Plot\+Statement@{Plot\+Statement}}
+\subsubsection[{\texorpdfstring{file}{file}}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ Plot\+Statement\+::file\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classPlotStatement_af5c41edc8fcd55bbf986e02fbf176885}{}\label{classPlotStatement_af5c41edc8fcd55bbf986e02fbf176885}
+
+
+Definition at line 312 of file statements.\+h.
+
+
+
+Referenced by Plot\+Statement(), and $\sim$\+Plot\+Statement().
+
+\index{Plot\+Statement@{Plot\+Statement}!name@{name}}
+\index{name@{name}!Plot\+Statement@{Plot\+Statement}}
+\subsubsection[{\texorpdfstring{name}{name}}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ Plot\+Statement\+::name\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classPlotStatement_ab057af7c22b9fd7ec06e530174dda200}{}\label{classPlotStatement_ab057af7c22b9fd7ec06e530174dda200}
+
+
+Definition at line 310 of file statements.\+h.
+
+
+
+Referenced by Execute(), Plot\+Statement(), and $\sim$\+Plot\+Statement().
+
+\index{Plot\+Statement@{Plot\+Statement}!parameter@{parameter}}
+\index{parameter@{parameter}!Plot\+Statement@{Plot\+Statement}}
+\subsubsection[{\texorpdfstring{parameter}{parameter}}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ Plot\+Statement\+::parameter\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classPlotStatement_aa0356a6cdd1362b3efb6eb732249dcf2}{}\label{classPlotStatement_aa0356a6cdd1362b3efb6eb732249dcf2}
+
+
+Definition at line 311 of file statements.\+h.
+
+
+
+Referenced by Execute(), Plot\+Statement(), and $\sim$\+Plot\+Statement().
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+app/main/\hyperlink{statements_8h}{statements.\+h}\item 
+app/main/\hyperlink{statements_8cpp}{statements.\+cpp}\end{DoxyCompactItemize}

@@ -1,7 +1,0 @@
-<map id="SyntaxNode::SetFirstNode" name="SyntaxNode::SetFirstNode">
-<area shape="rect" id="node2" href="$d1/dc4/classOptimizer.html#a2b71012237663dc9459a908fba6fbecc" title="Optimizer::TagStartNode" alt="" coords="232,31,399,57"/>
-<area shape="rect" id="node3" href="$d1/dc4/classOptimizer.html#a5764ae0825fa43921f74d8b972e53b1e" title="Optimizer::Optimize" alt="" coords="447,31,585,57"/>
-<area shape="rect" id="node4" href="$d6/d18/classEvaluator.html#a40b30ece9d43c658877ee7f52aaec0a8" title="Evaluator::Evaluate" alt="" coords="633,31,769,57"/>
-<area shape="rect" id="node5" href="$d3/d7b/classStandardProgram.html#a71dce9fdccf23ac49ba2362dcae744d3" title="StandardProgram::Run" alt="" coords="817,5,972,32"/>
-<area shape="rect" id="node6" href="$d5/d48/classStandardConsole.html#a9380023bba612b816b134589130bb254" title="StandardConsole::Run" alt="" coords="817,56,972,83"/>
-</map>

@@ -1,0 +1,10 @@
+<map id="Grid::GetScreenCoordinates" name="Grid::GetScreenCoordinates">
+<area shape="rect" id="node2" href="$classGrid.html#a9e403482f403a28e3a152b435526829b" title="Grid::FunctionValue" alt="" coords="240,132,377,159"/>
+<area shape="rect" id="node3" href="$classVariable.html#ad8c997ea0edab8bf72ada85963800211" title="Variable::AssignValue" alt="" coords="447,5,598,32"/>
+<area shape="rect" id="node5" href="$classExpressionNode.html#a64975d4dc37742228bd522f6204537f7" title="ExpressionNode::Evaluate" alt="" coords="434,56,611,83"/>
+<area shape="rect" id="node6" href="$classUserFunction.html#a41abe1afc9d481786b78ce7d7ffbde80" title="UserFunction::GetExpression" alt="" coords="425,107,620,133"/>
+<area shape="rect" id="node7" href="$structNumber.html#a83da654d465f1344162ce8b8f8c564b9" title="Number::GetRealValue" alt="" coords="444,157,601,184"/>
+<area shape="rect" id="node8" href="$classUserFunction.html#a4580afdaa5124951a523de07f3c454a6" title="UserFunction::GetVariable" alt="" coords="435,208,611,235"/>
+<area shape="rect" id="node9" href="$structRealNumber.html#a47b13da91334faba56ece7292f3a8566" title="RealNumber::SetRealValue" alt="" coords="431,259,614,285"/>
+<area shape="rect" id="node4" href="$structNumber.html#af59101b8a549616be51212fa1c17785e" title="Number::Clone" alt="" coords="668,5,779,32"/>
+</map>

@@ -1,0 +1,357 @@
+\hypertarget{structtBigInt}{}\section{t\+Big\+Int Struct Reference}
+\label{structtBigInt}\index{t\+Big\+Int@{t\+Big\+Int}}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{structtBigInt}{t\+Big\+Int} \& \hyperlink{structtBigInt_a6527277620819a6ff4f9386ad2ad0a41}{operator=} (const \hyperlink{structtBigInt}{t\+Big\+Int} \&rhs)
+\item 
+\hyperlink{dstandard_8h_aee96db7e18784e05ed6b0bcaeec3f7f6}{t\+U32} \hyperlink{structtBigInt_aee567e4c77187577f77fc1643dc427ba}{Get\+Length} () const 
+\item 
+\hyperlink{dstandard_8h_aee96db7e18784e05ed6b0bcaeec3f7f6}{t\+U32} \hyperlink{structtBigInt_a22350ff8e7010047b7ac5be70e8906bd}{Get\+Block} (\hyperlink{dstandard_8h_aee96db7e18784e05ed6b0bcaeec3f7f6}{t\+U32} idx) const 
+\item 
+void \hyperlink{structtBigInt_ae3c29c64e80671de21feffc84d2c18c7}{Set\+Zero} ()
+\item 
+\hyperlink{dstandard_8h_ad203aed3ab57b120eb54c2043f60dc49}{tB} \hyperlink{structtBigInt_a4e0c59f15fcb292ea4ec5d448fa10b58}{Is\+Zero} () const 
+\item 
+void \hyperlink{structtBigInt_ab25f77e908d231d8836355cf4586f983}{Set\+U64} (\hyperlink{dstandard_8h_a6625ae5505b2f796350b82c7f52fcf43}{t\+U64} val)
+\item 
+void \hyperlink{structtBigInt_a1aec50a9a3a9129b283c43eecc6df8c3}{Set\+U32} (\hyperlink{dstandard_8h_aee96db7e18784e05ed6b0bcaeec3f7f6}{t\+U32} val)
+\item 
+\hyperlink{dstandard_8h_aee96db7e18784e05ed6b0bcaeec3f7f6}{t\+U32} \hyperlink{structtBigInt_ac12a9ba9bd8e710b3853a13a7b789151}{Get\+U32} () const 
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{dstandard_8h_aee96db7e18784e05ed6b0bcaeec3f7f6}{t\+U32} \hyperlink{structtBigInt_a86287c0800ba611962655553025b4920}{m\+\_\+length}
+\item 
+\hyperlink{dstandard_8h_aee96db7e18784e05ed6b0bcaeec3f7f6}{t\+U32} \hyperlink{structtBigInt_a5e3b7b252d975532d51ae7ced6699351}{m\+\_\+blocks} \mbox{[}\hyperlink{dragon4_8cpp_af3325cd84c7aeec94a132d7a160b4505}{c\+\_\+\+Big\+Int\+\_\+\+Max\+Blocks}\mbox{]}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 70 of file dragon4.\+cpp.
+
+
+
+\subsection{Member Function Documentation}
+\index{t\+Big\+Int@{t\+Big\+Int}!Get\+Block@{Get\+Block}}
+\index{Get\+Block@{Get\+Block}!t\+Big\+Int@{t\+Big\+Int}}
+\subsubsection[{\texorpdfstring{Get\+Block(t\+U32 idx) const }{GetBlock(tU32 idx) const }}]{\setlength{\rightskip}{0pt plus 5cm}{\bf t\+U32} t\+Big\+Int\+::\+Get\+Block (
+\begin{DoxyParamCaption}
+\item[{{\bf t\+U32}}]{idx}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{structtBigInt_a22350ff8e7010047b7ac5be70e8906bd}{}\label{structtBigInt_a22350ff8e7010047b7ac5be70e8906bd}
+
+
+Definition at line 91 of file dragon4.\+cpp.
+
+
+
+References m\+\_\+blocks.
+
+
+
+Referenced by Dragon4().
+
+
+\begin{DoxyCode}
+91                                   \{
+92         \textcolor{keywordflow}{return} \hyperlink{structtBigInt_a5e3b7b252d975532d51ae7ced6699351}{m\_blocks}[idx];
+93     \}
+\end{DoxyCode}
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{structtBigInt_a22350ff8e7010047b7ac5be70e8906bd_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{t\+Big\+Int@{t\+Big\+Int}!Get\+Length@{Get\+Length}}
+\index{Get\+Length@{Get\+Length}!t\+Big\+Int@{t\+Big\+Int}}
+\subsubsection[{\texorpdfstring{Get\+Length() const }{GetLength() const }}]{\setlength{\rightskip}{0pt plus 5cm}{\bf t\+U32} t\+Big\+Int\+::\+Get\+Length (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{structtBigInt_aee567e4c77187577f77fc1643dc427ba}{}\label{structtBigInt_aee567e4c77187577f77fc1643dc427ba}
+
+
+Definition at line 88 of file dragon4.\+cpp.
+
+
+
+References m\+\_\+length.
+
+
+
+Referenced by Dragon4().
+
+
+\begin{DoxyCode}
+88                                   \{
+89         \textcolor{keywordflow}{return} \hyperlink{structtBigInt_a86287c0800ba611962655553025b4920}{m\_length};
+90     \}
+\end{DoxyCode}
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{structtBigInt_aee567e4c77187577f77fc1643dc427ba_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{t\+Big\+Int@{t\+Big\+Int}!Get\+U32@{Get\+U32}}
+\index{Get\+U32@{Get\+U32}!t\+Big\+Int@{t\+Big\+Int}}
+\subsubsection[{\texorpdfstring{Get\+U32() const }{GetU32() const }}]{\setlength{\rightskip}{0pt plus 5cm}{\bf t\+U32} t\+Big\+Int\+::\+Get\+U32 (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{structtBigInt_ac12a9ba9bd8e710b3853a13a7b789151}{}\label{structtBigInt_ac12a9ba9bd8e710b3853a13a7b789151}
+
+
+Definition at line 136 of file dragon4.\+cpp.
+
+
+
+References m\+\_\+blocks, and m\+\_\+length.
+
+
+\begin{DoxyCode}
+136                         \{
+137         \textcolor{keywordflow}{return} (\hyperlink{structtBigInt_a86287c0800ba611962655553025b4920}{m\_length} == 0) ? 0 : \hyperlink{structtBigInt_a5e3b7b252d975532d51ae7ced6699351}{m\_blocks}[0];
+138     \}
+\end{DoxyCode}
+\index{t\+Big\+Int@{t\+Big\+Int}!Is\+Zero@{Is\+Zero}}
+\index{Is\+Zero@{Is\+Zero}!t\+Big\+Int@{t\+Big\+Int}}
+\subsubsection[{\texorpdfstring{Is\+Zero() const }{IsZero() const }}]{\setlength{\rightskip}{0pt plus 5cm}{\bf tB} t\+Big\+Int\+::\+Is\+Zero (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{structtBigInt_a4e0c59f15fcb292ea4ec5d448fa10b58}{}\label{structtBigInt_a4e0c59f15fcb292ea4ec5d448fa10b58}
+
+
+Definition at line 99 of file dragon4.\+cpp.
+
+
+
+References m\+\_\+length.
+
+
+
+Referenced by Dragon4().
+
+
+\begin{DoxyCode}
+99                             \{
+100         \textcolor{keywordflow}{return} \hyperlink{structtBigInt_a86287c0800ba611962655553025b4920}{m\_length} == 0;
+101     \}
+\end{DoxyCode}
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{structtBigInt_a4e0c59f15fcb292ea4ec5d448fa10b58_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{t\+Big\+Int@{t\+Big\+Int}!operator=@{operator=}}
+\index{operator=@{operator=}!t\+Big\+Int@{t\+Big\+Int}}
+\subsubsection[{\texorpdfstring{operator=(const t\+Big\+Int \&rhs)}{operator=(const tBigInt &rhs)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf t\+Big\+Int}\& t\+Big\+Int\+::operator= (
+\begin{DoxyParamCaption}
+\item[{const {\bf t\+Big\+Int} \&}]{rhs}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{structtBigInt_a6527277620819a6ff4f9386ad2ad0a41}{}\label{structtBigInt_a6527277620819a6ff4f9386ad2ad0a41}
+
+
+Definition at line 73 of file dragon4.\+cpp.
+
+
+
+References m\+\_\+blocks, and m\+\_\+length.
+
+
+
+Referenced by Big\+Int\+\_\+\+Multiply\+Pow10(), Big\+Int\+\_\+\+Pow10(), and Dragon4().
+
+
+\begin{DoxyCode}
+74     \{
+75         \hyperlink{dstandard_8h_aee96db7e18784e05ed6b0bcaeec3f7f6}{tU32} length = rhs.\hyperlink{structtBigInt_a86287c0800ba611962655553025b4920}{m\_length};
+76         \hyperlink{dstandard_8h_aee96db7e18784e05ed6b0bcaeec3f7f6}{tU32} * pLhsCur = \hyperlink{structtBigInt_a5e3b7b252d975532d51ae7ced6699351}{m\_blocks};
+77         \textcolor{keywordflow}{for} (\textcolor{keyword}{const} \hyperlink{dstandard_8h_aee96db7e18784e05ed6b0bcaeec3f7f6}{tU32} *pRhsCur = rhs.\hyperlink{structtBigInt_a5e3b7b252d975532d51ae7ced6699351}{m\_blocks}, *pRhsEnd = pRhsCur + length;
+78                 pRhsCur != pRhsEnd;
+79                 ++pLhsCur, ++pRhsCur)
+80         \{
+81             *pLhsCur = *pRhsCur;
+82         \}
+83         \hyperlink{structtBigInt_a86287c0800ba611962655553025b4920}{m\_length} = length;
+84         \textcolor{keywordflow}{return} *\textcolor{keyword}{this};
+85     \}
+\end{DoxyCode}
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{structtBigInt_a6527277620819a6ff4f9386ad2ad0a41_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{t\+Big\+Int@{t\+Big\+Int}!Set\+U32@{Set\+U32}}
+\index{Set\+U32@{Set\+U32}!t\+Big\+Int@{t\+Big\+Int}}
+\subsubsection[{\texorpdfstring{Set\+U32(t\+U32 val)}{SetU32(tU32 val)}}]{\setlength{\rightskip}{0pt plus 5cm}void t\+Big\+Int\+::\+Set\+U32 (
+\begin{DoxyParamCaption}
+\item[{{\bf t\+U32}}]{val}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{structtBigInt_a1aec50a9a3a9129b283c43eecc6df8c3}{}\label{structtBigInt_a1aec50a9a3a9129b283c43eecc6df8c3}
+
+
+Definition at line 123 of file dragon4.\+cpp.
+
+
+
+References m\+\_\+blocks, and m\+\_\+length.
+
+
+
+Referenced by Big\+Int\+\_\+\+Pow10(), and Dragon4().
+
+
+\begin{DoxyCode}
+124     \{
+125         \textcolor{keywordflow}{if} (val != 0)
+126         \{
+127             \hyperlink{structtBigInt_a5e3b7b252d975532d51ae7ced6699351}{m\_blocks}[0] = val;
+128             \hyperlink{structtBigInt_a86287c0800ba611962655553025b4920}{m\_length}    = (val != 0);
+129         \}
+130         \textcolor{keywordflow}{else}
+131         \{
+132             \hyperlink{structtBigInt_a86287c0800ba611962655553025b4920}{m\_length} = 0;
+133         \}
+134     \}
+\end{DoxyCode}
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{structtBigInt_a1aec50a9a3a9129b283c43eecc6df8c3_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{t\+Big\+Int@{t\+Big\+Int}!Set\+U64@{Set\+U64}}
+\index{Set\+U64@{Set\+U64}!t\+Big\+Int@{t\+Big\+Int}}
+\subsubsection[{\texorpdfstring{Set\+U64(t\+U64 val)}{SetU64(tU64 val)}}]{\setlength{\rightskip}{0pt plus 5cm}void t\+Big\+Int\+::\+Set\+U64 (
+\begin{DoxyParamCaption}
+\item[{{\bf t\+U64}}]{val}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{structtBigInt_ab25f77e908d231d8836355cf4586f983}{}\label{structtBigInt_ab25f77e908d231d8836355cf4586f983}
+
+
+Definition at line 104 of file dragon4.\+cpp.
+
+
+
+References m\+\_\+blocks, and m\+\_\+length.
+
+
+
+Referenced by Dragon4().
+
+
+\begin{DoxyCode}
+105     \{
+106         \textcolor{keywordflow}{if} (val > 0xFFFFFFFF)
+107         \{
+108             \hyperlink{structtBigInt_a5e3b7b252d975532d51ae7ced6699351}{m\_blocks}[0] = val & 0xFFFFFFFF;
+109             \hyperlink{structtBigInt_a5e3b7b252d975532d51ae7ced6699351}{m\_blocks}[1] = (val >> 32) & 0xFFFFFFFF;
+110             \hyperlink{structtBigInt_a86287c0800ba611962655553025b4920}{m\_length}    = 2;
+111         \}
+112         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (val != 0)
+113         \{
+114             \hyperlink{structtBigInt_a5e3b7b252d975532d51ae7ced6699351}{m\_blocks}[0] = val & 0xFFFFFFFF;
+115             \hyperlink{structtBigInt_a86287c0800ba611962655553025b4920}{m\_length}    = 1;
+116         \}
+117         \textcolor{keywordflow}{else}
+118         \{
+119             \hyperlink{structtBigInt_a86287c0800ba611962655553025b4920}{m\_length} = 0;
+120         \}
+121     \}
+\end{DoxyCode}
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{structtBigInt_ab25f77e908d231d8836355cf4586f983_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{t\+Big\+Int@{t\+Big\+Int}!Set\+Zero@{Set\+Zero}}
+\index{Set\+Zero@{Set\+Zero}!t\+Big\+Int@{t\+Big\+Int}}
+\subsubsection[{\texorpdfstring{Set\+Zero()}{SetZero()}}]{\setlength{\rightskip}{0pt plus 5cm}void t\+Big\+Int\+::\+Set\+Zero (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{structtBigInt_ae3c29c64e80671de21feffc84d2c18c7}{}\label{structtBigInt_ae3c29c64e80671de21feffc84d2c18c7}
+
+
+Definition at line 96 of file dragon4.\+cpp.
+
+
+
+References m\+\_\+length.
+
+
+\begin{DoxyCode}
+96                             \{
+97         \hyperlink{structtBigInt_a86287c0800ba611962655553025b4920}{m\_length} = 0;
+98     \}
+\end{DoxyCode}
+
+
+\subsection{Member Data Documentation}
+\index{t\+Big\+Int@{t\+Big\+Int}!m\+\_\+blocks@{m\+\_\+blocks}}
+\index{m\+\_\+blocks@{m\+\_\+blocks}!t\+Big\+Int@{t\+Big\+Int}}
+\subsubsection[{\texorpdfstring{m\+\_\+blocks}{m_blocks}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf t\+U32} t\+Big\+Int\+::m\+\_\+blocks\mbox{[}{\bf c\+\_\+\+Big\+Int\+\_\+\+Max\+Blocks}\mbox{]}}\hypertarget{structtBigInt_a5e3b7b252d975532d51ae7ced6699351}{}\label{structtBigInt_a5e3b7b252d975532d51ae7ced6699351}
+
+
+Definition at line 142 of file dragon4.\+cpp.
+
+
+
+Referenced by Big\+Int\+\_\+\+Add(), Big\+Int\+\_\+\+Compare(), Big\+Int\+\_\+\+Divide\+With\+Remainder\+\_\+\+Max\+Quotient9(), Big\+Int\+\_\+\+Multiply(), Big\+Int\+\_\+\+Multiply10(), Big\+Int\+\_\+\+Multiply2(), Big\+Int\+\_\+\+Pow2(), Big\+Int\+\_\+\+Shift\+Left(), Get\+Block(), Get\+U32(), operator=(), Set\+U32(), and Set\+U64().
+
+\index{t\+Big\+Int@{t\+Big\+Int}!m\+\_\+length@{m\+\_\+length}}
+\index{m\+\_\+length@{m\+\_\+length}!t\+Big\+Int@{t\+Big\+Int}}
+\subsubsection[{\texorpdfstring{m\+\_\+length}{m_length}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf t\+U32} t\+Big\+Int\+::m\+\_\+length}\hypertarget{structtBigInt_a86287c0800ba611962655553025b4920}{}\label{structtBigInt_a86287c0800ba611962655553025b4920}
+
+
+Definition at line 141 of file dragon4.\+cpp.
+
+
+
+Referenced by Big\+Int\+\_\+\+Add(), Big\+Int\+\_\+\+Compare(), Big\+Int\+\_\+\+Divide\+With\+Remainder\+\_\+\+Max\+Quotient9(), Big\+Int\+\_\+\+Multiply(), Big\+Int\+\_\+\+Multiply10(), Big\+Int\+\_\+\+Multiply2(), Big\+Int\+\_\+\+Pow2(), Big\+Int\+\_\+\+Shift\+Left(), Get\+Length(), Get\+U32(), Is\+Zero(), operator=(), Set\+U32(), Set\+U64(), and Set\+Zero().
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+lib/dconv/\hyperlink{dragon4_8cpp}{dragon4.\+cpp}\end{DoxyCompactItemize}

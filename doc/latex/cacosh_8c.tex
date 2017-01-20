@@ -1,0 +1,86 @@
+\hypertarget{cacosh_8c}{}\section{lib/cplex/cacosh.c File Reference}
+\label{cacosh_8c}\index{lib/cplex/cacosh.\+c@{lib/cplex/cacosh.\+c}}
+{\ttfamily \#include \char`\"{}prim.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}math.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}complex.\+h\char`\"{}}\\*
+Include dependency graph for cacosh.\+c\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=221pt]{cacosh_8c__incl}
+\end{center}
+\end{figure}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{unioncomplex}{complex} \hyperlink{cacosh_8c_a451ef5c81d4091e547e52a9a03af260d}{cacosh} (\hyperlink{unioncomplex}{complex} z)
+\begin{DoxyCompactList}\small\item\em Inverse hyperbolic cosine of complex number. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\index{cacosh.\+c@{cacosh.\+c}!cacosh@{cacosh}}
+\index{cacosh@{cacosh}!cacosh.\+c@{cacosh.\+c}}
+\subsubsection[{\texorpdfstring{cacosh(complex z)}{cacosh(complex z)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf complex} cacosh (
+\begin{DoxyParamCaption}
+\item[{{\bf complex}}]{z}
+\end{DoxyParamCaption}
+)}\hypertarget{cacosh_8c_a451ef5c81d4091e547e52a9a03af260d}{}\label{cacosh_8c_a451ef5c81d4091e547e52a9a03af260d}
+
+
+Inverse hyperbolic cosine of complex number. 
+
+\begin{DoxyVersion}{Version}
+1.\+1 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+15/03/03
+\end{DoxyDate}
+Inverse hyperbolic cosine expressed using complex logarithms\+: 
+\begin{DoxyPre}
+acosh(z) = log(z + sqrt(z*z - 1))
+\end{DoxyPre}
+ More info is available at Wikipedia\+: ~\newline
+ \href{http://en.wikipedia.org/wiki/Inverse_hyperbolic_function#Logarithmic_representation}{\tt http\+://en.\+wikipedia.\+org/wiki/\+Inverse\+\_\+hyperbolic\+\_\+function\#\+Logarithmic\+\_\+representation} 
+
+Definition at line 43 of file cacosh.\+c.
+
+
+
+References cadd(), clog(), cmul(), cpack(), csqrt(), and csub().
+
+
+
+Referenced by Complex\+Number\+::\+Hyp\+Arc\+Cosine().
+
+
+\begin{DoxyCode}
+44 \{
+45     \hyperlink{unioncomplex}{complex} \hyperlink{ktan_8c_a7cf126dbeb6f30c606e3b42fea65cfef}{one} = \hyperlink{complex_8h_a980e6e049f7902b05fc9eb5614b07a5c}{cpack}(1.0, 0.0);
+46     \hyperlink{unioncomplex}{complex} a = \hyperlink{complex_8h_a46bb0dd64d87c3aeb85417d1dadf6ddd}{csub}(\hyperlink{complex_8h_a340ad83d03bcc727538d25dcf6dd26e9}{cmul}(z, z) , one);
+47     \hyperlink{unioncomplex}{complex} b = \hyperlink{complex_8h_a02d8fd1ce9c4fa4e25b1fa676ca96d4e}{cadd}(z, \hyperlink{complex_8h_afe5b814a44414f20d0f98fe974737edd}{csqrt}(a));
+48     \hyperlink{unioncomplex}{complex} w = \hyperlink{complex_8h_a888b8eb5ccc46411e68f6d7b99035888}{clog}(b);
+49     \textcolor{keywordflow}{return} w;
+50 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{cacosh_8c_a451ef5c81d4091e547e52a9a03af260d_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=324pt]{cacosh_8c_a451ef5c81d4091e547e52a9a03af260d_icgraph}
+\end{center}
+\end{figure}
+
+

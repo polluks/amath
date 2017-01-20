@@ -1,0 +1,65 @@
+\hypertarget{frexp_8c}{}\section{lib/real/frexp.c File Reference}
+\label{frexp_8c}\index{lib/real/frexp.\+c@{lib/real/frexp.\+c}}
+{\ttfamily \#include \char`\"{}fdlibm.\+h\char`\"{}}\\*
+Include dependency graph for frexp.\+c\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=158pt]{frexp_8c__incl}
+\end{center}
+\end{figure}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+double \hyperlink{frexp_8c_a1b55f9cd0150c3ae0ec36c9a60857632}{frexp} (double x, int $\ast$eptr)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+static double \hyperlink{frexp_8c_adfe597c52ba519af420f9bef9bb9559e}{two54} = 1.\+80143985094819840000e+16
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\index{frexp.\+c@{frexp.\+c}!frexp@{frexp}}
+\index{frexp@{frexp}!frexp.\+c@{frexp.\+c}}
+\subsubsection[{\texorpdfstring{frexp(double x, int $\ast$eptr)}{frexp(double x, int *eptr)}}]{\setlength{\rightskip}{0pt plus 5cm}double frexp (
+\begin{DoxyParamCaption}
+\item[{double}]{x, }
+\item[{int $\ast$}]{eptr}
+\end{DoxyParamCaption}
+)}\hypertarget{frexp_8c_a1b55f9cd0150c3ae0ec36c9a60857632}{}\label{frexp_8c_a1b55f9cd0150c3ae0ec36c9a60857632}
+
+
+Definition at line 67 of file frexp.\+c.
+
+
+\begin{DoxyCode}
+70 \{
+71     \textcolor{keywordtype}{int}  hx, ix, lx;
+72     hx = \_\_HI(x);
+73     ix = 0x7fffffff&hx;
+74     lx = \_\_LO(x);
+75     *eptr = 0;
+76     \textcolor{keywordflow}{if}(ix>=0x7ff00000||((ix|lx)==0)) \textcolor{keywordflow}{return} x;  \textcolor{comment}{/* 0,inf,nan */}
+77     \textcolor{keywordflow}{if} (ix<0x00100000) \{        \textcolor{comment}{/* subnormal */}
+78         x *= \hyperlink{frexp_8c_adfe597c52ba519af420f9bef9bb9559e}{two54};
+79         hx = \_\_HI(x);
+80         ix = hx&0x7fffffff;
+81         *eptr = -54;
+82     \}
+83     *eptr += (ix>>20)-1022;
+84     hx = (hx&0x800fffff)|0x3fe00000;
+85     \_\_HI(x) = hx;
+86     \textcolor{keywordflow}{return} x;
+87 \}\end{DoxyCode}
+
+
+\subsection{Variable Documentation}
+\index{frexp.\+c@{frexp.\+c}!two54@{two54}}
+\index{two54@{two54}!frexp.\+c@{frexp.\+c}}
+\subsubsection[{\texorpdfstring{two54}{two54}}]{\setlength{\rightskip}{0pt plus 5cm}double two54 = 1.\+80143985094819840000e+16\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{frexp_8c_adfe597c52ba519af420f9bef9bb9559e}{}\label{frexp_8c_adfe597c52ba519af420f9bef9bb9559e}
+
+
+Definition at line 62 of file frexp.\+c.
+

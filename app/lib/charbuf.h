@@ -37,7 +37,7 @@
 
 /**
  * @brief   Encapsulate an character array which can be used as a string.
- * @details Eases the task of allocating a releasing memory.
+ * @details The CharBuffer class eases the task of allocating a releasing memory.
  *
  */
 class CharBuffer {
@@ -54,6 +54,10 @@ public:
     void EnsureGrowth(unsigned int size);
 
     void Empty();
+
+    /**
+    * @brief Compare content of CharBuffer with string)
+    */
     bool Is(const char *string);
 
     void Copy(CharBuffer *buf);

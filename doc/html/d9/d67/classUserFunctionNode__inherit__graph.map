@@ -1,5 +1,0 @@
-<map id="UserFunctionNode" name="UserFunctionNode">
-<area shape="rect" id="node2" href="$d7/d06/classFunctionNode.html" title="Represents a mathematical function in a syntax tree. " alt="" coords="19,155,122,181"/>
-<area shape="rect" id="node3" href="$dd/d06/classExpressionNode.html" title="Base class for all nodes related to mathematical expressions. " alt="" coords="11,80,130,107"/>
-<area shape="rect" id="node4" href="$d8/d5d/classSyntaxNode.html" title="Base class for all nodes in a syntax tree. " alt="" coords="23,5,118,32"/>
-</map>

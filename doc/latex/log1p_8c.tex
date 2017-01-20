@@ -1,0 +1,276 @@
+\hypertarget{log1p_8c}{}\section{lib/real/log1p.c File Reference}
+\label{log1p_8c}\index{lib/real/log1p.\+c@{lib/real/log1p.\+c}}
+{\ttfamily \#include \char`\"{}prim.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}math.\+h\char`\"{}}\\*
+Include dependency graph for log1p.\+c\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=190pt]{log1p_8c__incl}
+\end{center}
+\end{figure}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+double \hyperlink{log1p_8c_ac2aac20ab1347498e6e4f209148fea84}{log1p} (double x)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+static const double \hyperlink{log1p_8c_a681dec71eb3b6048386c010ec2444fa4}{ln2\+\_\+hi} = 6.\+93147180369123816490e-\/01
+\item 
+static const double \hyperlink{log1p_8c_aad361cc103aeef29c711917f539eb9bd}{ln2\+\_\+lo} = 1.\+90821492927058770002e-\/10
+\item 
+static const double \hyperlink{log1p_8c_a38da01c416294eaf7ebdae8ba3afe2e0}{two54} = 1.\+80143985094819840000e+16
+\item 
+static const double \hyperlink{log1p_8c_adf93ac779b293272e7b95f2233c4fe81}{Lp1} = 6.\+666666666666735130e-\/01
+\item 
+static const double \hyperlink{log1p_8c_a9dc9cb73351580a36dd1d75c1bf6445e}{Lp2} = 3.\+999999999940941908e-\/01
+\item 
+static const double \hyperlink{log1p_8c_ae6d94c4dd0ba029f46b16fa9754cba4b}{Lp3} = 2.\+857142874366239149e-\/01
+\item 
+static const double \hyperlink{log1p_8c_ad0eb14292e1de3e1834deac664c5f1d9}{Lp4} = 2.\+222219843214978396e-\/01
+\item 
+static const double \hyperlink{log1p_8c_ae79f6305ae4721b94610245fb05d6bbe}{Lp5} = 1.\+818357216161805012e-\/01
+\item 
+static const double \hyperlink{log1p_8c_aa92ed61f17dd34d1d454b5f85cfaab95}{Lp6} = 1.\+531383769920937332e-\/01
+\item 
+static const double \hyperlink{log1p_8c_abc8df4f5562a7e640d0e377c0d7824b1}{Lp7} = 1.\+479819860511658591e-\/01
+\item 
+static double \hyperlink{log1p_8c_a548c77babcdf18ce7b6b96e73fb912cd}{zero} = 0.\+0
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\index{log1p.\+c@{log1p.\+c}!log1p@{log1p}}
+\index{log1p@{log1p}!log1p.\+c@{log1p.\+c}}
+\subsubsection[{\texorpdfstring{log1p(double x)}{log1p(double x)}}]{\setlength{\rightskip}{0pt plus 5cm}double log1p (
+\begin{DoxyParamCaption}
+\item[{double}]{x}
+\end{DoxyParamCaption}
+)}\hypertarget{log1p_8c_ac2aac20ab1347498e6e4f209148fea84}{}\label{log1p_8c_ac2aac20ab1347498e6e4f209148fea84}
+
+
+Definition at line 125 of file log1p.\+c.
+
+
+
+References ln2\+\_\+hi, ln2\+\_\+lo, Lp1, Lp2, Lp3, Lp4, Lp5, Lp6, Lp7, two54, and zero.
+
+
+
+Referenced by acosh(), asinh(), and atanh().
+
+
+\begin{DoxyCode}
+126 \{
+127     \textcolor{keywordtype}{double} hfsq,f,c,s,z,R,u;
+128     \hyperlink{real_2prim_8h_ae91287c8a5f73a8a22a100f50dc4de77}{sword} k,hx,hu,ax;
+129 
+130     f = 0.0;
+131     c = 0.0;
+132     hu = 0;
+133 
+134     \hyperlink{real_2prim_8h_ae62ee08d06ab4cc06d61dc1246b73195}{GET\_HIGH\_WORD}(hx,x); \textcolor{comment}{/* high word of x */}
+135     ax = hx&0x7fffffff;
+136 
+137     k = 1;
+138     \textcolor{keywordflow}{if} (hx < 0x3FDA827A) \{          \textcolor{comment}{/* x < 0.41422  */}
+139         \textcolor{keywordflow}{if}(ax>=0x3ff00000) \{        \textcolor{comment}{/* x <= -1.0 */}
+140             \textcolor{keywordflow}{if}(x==-1.0) \textcolor{keywordflow}{return} -\hyperlink{log1p_8c_a38da01c416294eaf7ebdae8ba3afe2e0}{two54}/\hyperlink{log1p_8c_a548c77babcdf18ce7b6b96e73fb912cd}{zero}; \textcolor{comment}{/* log1p(-1)=+inf */}
+141             \textcolor{keywordflow}{else} \textcolor{keywordflow}{return} (x-x)/(x-x);    \textcolor{comment}{/* log1p(x<-1)=NaN */}
+142         \}
+143         \textcolor{keywordflow}{if}(ax<0x3e200000) \{         \textcolor{comment}{/* |x| < 2**-29 */}
+144             \textcolor{keywordflow}{if}(\hyperlink{log1p_8c_a38da01c416294eaf7ebdae8ba3afe2e0}{two54}+x>\hyperlink{log1p_8c_a548c77babcdf18ce7b6b96e73fb912cd}{zero}            \textcolor{comment}{/* raise inexact */}
+145                     &&ax<0x3c900000)        \textcolor{comment}{/* |x| < 2**-54 */}
+146                 \textcolor{keywordflow}{return} x;
+147             \textcolor{keywordflow}{else}
+148                 \textcolor{keywordflow}{return} x - x*x*0.5;
+149         \}
+150         \textcolor{keywordflow}{if}(hx>0||hx<=((\textcolor{keywordtype}{int})0xbfd2bec3)) \{
+151             k=0;
+152             f=x;
+153             hu=1;
+154         \}   \textcolor{comment}{/* -0.2929<x<0.41422 */}
+155     \}
+156     \textcolor{keywordflow}{if} (hx >= 0x7ff00000) \textcolor{keywordflow}{return} x+x;
+157     \textcolor{keywordflow}{if}(k!=0) \{
+158         \textcolor{keywordflow}{if}(hx<0x43400000) \{
+159             u  = 1.0+x;
+160             \hyperlink{real_2prim_8h_ae62ee08d06ab4cc06d61dc1246b73195}{GET\_HIGH\_WORD}(hu,u); \textcolor{comment}{/* high word of u */}
+161             k  = (hu>>20)-1023;
+162             c  = (k>0)? 1.0-(u-x):x-(u-1.0);\textcolor{comment}{/* correction term */}
+163             c /= u;
+164         \} \textcolor{keywordflow}{else} \{
+165             u  = x;
+166             \hyperlink{real_2prim_8h_ae62ee08d06ab4cc06d61dc1246b73195}{GET\_HIGH\_WORD}(hu,u); \textcolor{comment}{/* high word of u */}
+167             k  = (hu>>20)-1023;
+168             c  = 0;
+169         \}
+170         hu &= 0x000fffff;
+171         \textcolor{keywordflow}{if}(hu<0x6a09e) \{
+172             \hyperlink{real_2prim_8h_a6ca54776127e20149f84c290bf52f89e}{SET\_HIGH\_WORD}(u, hu|0x3ff00000);   \textcolor{comment}{/* normalize u */}
+173         \} \textcolor{keywordflow}{else} \{
+174             k += 1;
+175             \hyperlink{real_2prim_8h_a6ca54776127e20149f84c290bf52f89e}{SET\_HIGH\_WORD}(u, hu|0x3fe00000);   \textcolor{comment}{/* normalize u/2 */}
+176             hu = (0x00100000-hu)>>2;
+177         \}
+178         f = u-1.0;
+179     \}
+180     hfsq=0.5*f*f;
+181     \textcolor{keywordflow}{if}(hu==0) \{ \textcolor{comment}{/* |f| < 2**-20 */}
+182         \textcolor{keywordflow}{if}(f==\hyperlink{log1p_8c_a548c77babcdf18ce7b6b96e73fb912cd}{zero}) \{
+183             \textcolor{keywordflow}{if}(k==0) \textcolor{keywordflow}{return} \hyperlink{log1p_8c_a548c77babcdf18ce7b6b96e73fb912cd}{zero};
+184             \textcolor{keywordflow}{else} \{
+185                 c += k*\hyperlink{log1p_8c_aad361cc103aeef29c711917f539eb9bd}{ln2\_lo};
+186                 \textcolor{keywordflow}{return} k*\hyperlink{log1p_8c_a681dec71eb3b6048386c010ec2444fa4}{ln2\_hi}+c;
+187             \}
+188         \}
+189         R = hfsq*(1.0-0.66666666666666666*f);
+190         \textcolor{keywordflow}{if}(k==0) \textcolor{keywordflow}{return} f-R;
+191         \textcolor{keywordflow}{else}
+192             \textcolor{keywordflow}{return} k*\hyperlink{log1p_8c_a681dec71eb3b6048386c010ec2444fa4}{ln2\_hi}-((R-(k*\hyperlink{log1p_8c_aad361cc103aeef29c711917f539eb9bd}{ln2\_lo}+c))-f);
+193     \}
+194     s = f/(2.0+f);
+195     z = s*s;
+196     R = z*(\hyperlink{log1p_8c_adf93ac779b293272e7b95f2233c4fe81}{Lp1}+z*(\hyperlink{log1p_8c_a9dc9cb73351580a36dd1d75c1bf6445e}{Lp2}+z*(\hyperlink{log1p_8c_ae6d94c4dd0ba029f46b16fa9754cba4b}{Lp3}+z*(\hyperlink{log1p_8c_ad0eb14292e1de3e1834deac664c5f1d9}{Lp4}+z*(\hyperlink{log1p_8c_ae79f6305ae4721b94610245fb05d6bbe}{Lp5}+z*(\hyperlink{log1p_8c_aa92ed61f17dd34d1d454b5f85cfaab95}{Lp6}+z*\hyperlink{log1p_8c_abc8df4f5562a7e640d0e377c0d7824b1}{Lp7}))))));
+197     \textcolor{keywordflow}{if}(k==0) \textcolor{keywordflow}{return} f-(hfsq-s*(hfsq+R));
+198     \textcolor{keywordflow}{else}
+199         \textcolor{keywordflow}{return} k*\hyperlink{log1p_8c_a681dec71eb3b6048386c010ec2444fa4}{ln2\_hi}-((hfsq-(s*(hfsq+R)+(k*\hyperlink{log1p_8c_aad361cc103aeef29c711917f539eb9bd}{ln2\_lo}+c)))-f);
+200 \}
+\end{DoxyCode}
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{log1p_8c_ac2aac20ab1347498e6e4f209148fea84_icgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Variable Documentation}
+\index{log1p.\+c@{log1p.\+c}!ln2\+\_\+hi@{ln2\+\_\+hi}}
+\index{ln2\+\_\+hi@{ln2\+\_\+hi}!log1p.\+c@{log1p.\+c}}
+\subsubsection[{\texorpdfstring{ln2\+\_\+hi}{ln2_hi}}]{\setlength{\rightskip}{0pt plus 5cm}const double ln2\+\_\+hi = 6.\+93147180369123816490e-\/01\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{log1p_8c_a681dec71eb3b6048386c010ec2444fa4}{}\label{log1p_8c_a681dec71eb3b6048386c010ec2444fa4}
+
+
+Definition at line 112 of file log1p.\+c.
+
+
+
+Referenced by log1p().
+
+\index{log1p.\+c@{log1p.\+c}!ln2\+\_\+lo@{ln2\+\_\+lo}}
+\index{ln2\+\_\+lo@{ln2\+\_\+lo}!log1p.\+c@{log1p.\+c}}
+\subsubsection[{\texorpdfstring{ln2\+\_\+lo}{ln2_lo}}]{\setlength{\rightskip}{0pt plus 5cm}const double ln2\+\_\+lo = 1.\+90821492927058770002e-\/10\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{log1p_8c_aad361cc103aeef29c711917f539eb9bd}{}\label{log1p_8c_aad361cc103aeef29c711917f539eb9bd}
+
+
+Definition at line 113 of file log1p.\+c.
+
+
+
+Referenced by log1p().
+
+\index{log1p.\+c@{log1p.\+c}!Lp1@{Lp1}}
+\index{Lp1@{Lp1}!log1p.\+c@{log1p.\+c}}
+\subsubsection[{\texorpdfstring{Lp1}{Lp1}}]{\setlength{\rightskip}{0pt plus 5cm}const double Lp1 = 6.\+666666666666735130e-\/01\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{log1p_8c_adf93ac779b293272e7b95f2233c4fe81}{}\label{log1p_8c_adf93ac779b293272e7b95f2233c4fe81}
+
+
+Definition at line 115 of file log1p.\+c.
+
+
+
+Referenced by log1p().
+
+\index{log1p.\+c@{log1p.\+c}!Lp2@{Lp2}}
+\index{Lp2@{Lp2}!log1p.\+c@{log1p.\+c}}
+\subsubsection[{\texorpdfstring{Lp2}{Lp2}}]{\setlength{\rightskip}{0pt plus 5cm}const double Lp2 = 3.\+999999999940941908e-\/01\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{log1p_8c_a9dc9cb73351580a36dd1d75c1bf6445e}{}\label{log1p_8c_a9dc9cb73351580a36dd1d75c1bf6445e}
+
+
+Definition at line 116 of file log1p.\+c.
+
+
+
+Referenced by log1p().
+
+\index{log1p.\+c@{log1p.\+c}!Lp3@{Lp3}}
+\index{Lp3@{Lp3}!log1p.\+c@{log1p.\+c}}
+\subsubsection[{\texorpdfstring{Lp3}{Lp3}}]{\setlength{\rightskip}{0pt plus 5cm}const double Lp3 = 2.\+857142874366239149e-\/01\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{log1p_8c_ae6d94c4dd0ba029f46b16fa9754cba4b}{}\label{log1p_8c_ae6d94c4dd0ba029f46b16fa9754cba4b}
+
+
+Definition at line 117 of file log1p.\+c.
+
+
+
+Referenced by log1p().
+
+\index{log1p.\+c@{log1p.\+c}!Lp4@{Lp4}}
+\index{Lp4@{Lp4}!log1p.\+c@{log1p.\+c}}
+\subsubsection[{\texorpdfstring{Lp4}{Lp4}}]{\setlength{\rightskip}{0pt plus 5cm}const double Lp4 = 2.\+222219843214978396e-\/01\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{log1p_8c_ad0eb14292e1de3e1834deac664c5f1d9}{}\label{log1p_8c_ad0eb14292e1de3e1834deac664c5f1d9}
+
+
+Definition at line 118 of file log1p.\+c.
+
+
+
+Referenced by log1p().
+
+\index{log1p.\+c@{log1p.\+c}!Lp5@{Lp5}}
+\index{Lp5@{Lp5}!log1p.\+c@{log1p.\+c}}
+\subsubsection[{\texorpdfstring{Lp5}{Lp5}}]{\setlength{\rightskip}{0pt plus 5cm}const double Lp5 = 1.\+818357216161805012e-\/01\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{log1p_8c_ae79f6305ae4721b94610245fb05d6bbe}{}\label{log1p_8c_ae79f6305ae4721b94610245fb05d6bbe}
+
+
+Definition at line 119 of file log1p.\+c.
+
+
+
+Referenced by log1p().
+
+\index{log1p.\+c@{log1p.\+c}!Lp6@{Lp6}}
+\index{Lp6@{Lp6}!log1p.\+c@{log1p.\+c}}
+\subsubsection[{\texorpdfstring{Lp6}{Lp6}}]{\setlength{\rightskip}{0pt plus 5cm}const double Lp6 = 1.\+531383769920937332e-\/01\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{log1p_8c_aa92ed61f17dd34d1d454b5f85cfaab95}{}\label{log1p_8c_aa92ed61f17dd34d1d454b5f85cfaab95}
+
+
+Definition at line 120 of file log1p.\+c.
+
+
+
+Referenced by log1p().
+
+\index{log1p.\+c@{log1p.\+c}!Lp7@{Lp7}}
+\index{Lp7@{Lp7}!log1p.\+c@{log1p.\+c}}
+\subsubsection[{\texorpdfstring{Lp7}{Lp7}}]{\setlength{\rightskip}{0pt plus 5cm}const double Lp7 = 1.\+479819860511658591e-\/01\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{log1p_8c_abc8df4f5562a7e640d0e377c0d7824b1}{}\label{log1p_8c_abc8df4f5562a7e640d0e377c0d7824b1}
+
+
+Definition at line 121 of file log1p.\+c.
+
+
+
+Referenced by log1p().
+
+\index{log1p.\+c@{log1p.\+c}!two54@{two54}}
+\index{two54@{two54}!log1p.\+c@{log1p.\+c}}
+\subsubsection[{\texorpdfstring{two54}{two54}}]{\setlength{\rightskip}{0pt plus 5cm}const double two54 = 1.\+80143985094819840000e+16\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{log1p_8c_a38da01c416294eaf7ebdae8ba3afe2e0}{}\label{log1p_8c_a38da01c416294eaf7ebdae8ba3afe2e0}
+
+
+Definition at line 114 of file log1p.\+c.
+
+
+
+Referenced by log1p().
+
+\index{log1p.\+c@{log1p.\+c}!zero@{zero}}
+\index{zero@{zero}!log1p.\+c@{log1p.\+c}}
+\subsubsection[{\texorpdfstring{zero}{zero}}]{\setlength{\rightskip}{0pt plus 5cm}double zero = 0.\+0\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{log1p_8c_a548c77babcdf18ce7b6b96e73fb912cd}{}\label{log1p_8c_a548c77babcdf18ce7b6b96e73fb912cd}
+
+
+Definition at line 123 of file log1p.\+c.
+
+
+
+Referenced by log1p().
+

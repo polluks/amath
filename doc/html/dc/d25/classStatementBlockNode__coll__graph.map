@@ -1,5 +1,0 @@
-<map id="StatementBlockNode" name="StatementBlockNode">
-<area shape="rect" id="node2" href="$d8/d5d/classSyntaxNode.html" title="Base class for all nodes in a syntax tree. " alt="" coords="13,96,107,123"/>
-<area shape="rect" id="node4" href="$d1/d8a/structStatementBlockElement.html" title="Used to create a linked list of statements. " alt="" coords="76,187,239,213"/>
-<area shape="rect" id="node3" href="$dc/d84/classCharBuffer.html" title="Encapsulate an character array which can be used as a string. " alt="" coords="17,5,103,32"/>
-</map>

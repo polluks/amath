@@ -1,5 +1,0 @@
-<map id="LogNode" name="LogNode">
-<area shape="rect" id="node2" href="$d7/d06/classFunctionNode.html" title="Represents a mathematical function in a syntax tree. " alt="" coords="13,155,116,181"/>
-<area shape="rect" id="node3" href="$dd/d06/classExpressionNode.html" title="Base class for all nodes related to mathematical expressions. " alt="" coords="5,80,124,107"/>
-<area shape="rect" id="node4" href="$d8/d5d/classSyntaxNode.html" title="Base class for all nodes in a syntax tree. " alt="" coords="17,5,112,32"/>
-</map>

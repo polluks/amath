@@ -1,0 +1,632 @@
+\hypertarget{classProgram}{}\section{Program Class Reference}
+\label{classProgram}\index{Program@{Program}}
+
+
+Master control class.  
+
+
+
+
+{\ttfamily \#include $<$program.\+h$>$}
+
+
+
+Inheritance diagram for Program\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classProgram__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Program\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classProgram__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classProgram_aaefaa0df08f3484476fc4d61e97acbdc}{Program} ()
+\item 
+virtual \hyperlink{classProgram_a986aef1c50e1d338a3315a47ba6df549}{$\sim$\+Program} ()
+\item 
+virtual void \hyperlink{classProgram_a6c8e48e064937d9c71168ed3a15ccf13}{Initialize} (int argc, char $\ast$$\ast$argv)=0
+\item 
+virtual void \hyperlink{classProgram_a466c115e35933f7fb3a3775bc8f20ac4}{Run} ()=0
+\item 
+virtual void \hyperlink{classProgram_adf53af02e6c4719ec0f019f0d305f80e}{Exit} ()=0
+\item 
+void \hyperlink{classProgram_aef8e1c957776e550081cb2c47a11d64b}{New\+Positional\+Input} (short unsigned int base, short unsigned int digits)
+\item 
+void \hyperlink{classProgram_a38a8a4a116b01a1bce417488ee235ee7}{New\+Positional\+Output} (short unsigned int base, short unsigned int digits)
+\item 
+void \hyperlink{classProgram_ad54464237ceca1f54a46c2223cfbcda0}{Set\+Last\+Result} (\hyperlink{structNumber}{Number} $\ast$number)
+\item 
+void \hyperlink{classProgram_a517c5f08c0c0dd7f79de6fbf0e62aac6}{Set\+Prompt} (const char $\ast$text)
+\item 
+struct \hyperlink{structNumber}{Number} $\ast$ \hyperlink{classProgram_a17fa68f9eb4bb5d0cd72b26dc6a381f5}{Get\+Last\+Result} ()
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classLanguage}{Language} $\ast$ \hyperlink{classProgram_a7c82b4c429bbee984b8bb287b9e137f7}{Language}
+\item 
+class \hyperlink{classConsoleBase}{Console\+Base} $\ast$ \hyperlink{classProgram_a7edba60e839230f20ce29716567bc892}{Console}
+\item 
+class \hyperlink{classPreferencesBase}{Preferences\+Base} $\ast$ \hyperlink{classProgram_ad6baa89972cb4938db341c77c1510793}{Preferences}
+\item 
+class \hyperlink{classFilesystemBase}{Filesystem\+Base} $\ast$ \hyperlink{classProgram_a54fb0dc3ee40a356fe91cea64e569b26}{Filesystem}
+\item 
+class \hyperlink{classNumeralSystem}{Numeral\+System} $\ast$ \hyperlink{classProgram_a6327f15962926e4f74f15e8ff56e04e5}{Input}
+\item 
+class \hyperlink{classNumeralSystem}{Numeral\+System} $\ast$ \hyperlink{classProgram_ac6e84e81a8bbdf99de5beea93713d8ee}{Output}
+\item 
+class \hyperlink{classVariableList}{Variable\+List} $\ast$ \hyperlink{classProgram_a1d4f53befb0270e64c91c24d14061188}{Variables}
+\item 
+class \hyperlink{classFunctionList}{Function\+List} $\ast$ \hyperlink{classProgram_ac643877adc06800a021263b2234cd236}{Functions}
+\item 
+class \hyperlink{classGraphList}{Graph\+List} $\ast$ \hyperlink{classProgram_a9c59323b8c560d2d418a6e6ebcde2e9d}{Graphs}
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structNumber}{Number} $\ast$ \hyperlink{classProgram_a2e25341cb34cfdd6446deeadd0629528}{ins}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Master control class. 
+
+This control class handles all processes and data in the entire program. It usually only exist as a single instance. 
+
+Definition at line 56 of file program.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Program@{Program}!Program@{Program}}
+\index{Program@{Program}!Program@{Program}}
+\subsubsection[{\texorpdfstring{Program()}{Program()}}]{\setlength{\rightskip}{0pt plus 5cm}Program\+::\+Program (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classProgram_aaefaa0df08f3484476fc4d61e97acbdc}{}\label{classProgram_aaefaa0df08f3484476fc4d61e97acbdc}
+
+
+Definition at line 35 of file program.\+cpp.
+
+
+
+References Create\+Filesystem(), Create\+Language(), Create\+Preferences(), Decimal\+System\+::\+Decimal\+System(), Filesystem, Function\+List\+::\+Function\+List(), Functions, Preferences\+Base\+::\+Get\+Digits(), Language\+::\+Get\+Fraction\+Point(), Graph\+List\+::\+Graph\+List(), Graphs, Input, ins, Output, Preferences, Real\+Number\+::\+Real\+Number(), Variable\+List\+::\+Variable\+List(), and Variables.
+
+
+
+Referenced by Standard\+Program\+::\+Standard\+Program().
+
+
+\begin{DoxyCode}
+36 \{
+37     \hyperlink{classProgram_a1d4f53befb0270e64c91c24d14061188}{Variables} = \textcolor{keyword}{new} \hyperlink{classVariableList}{VariableList}();
+38     \hyperlink{classProgram_ac643877adc06800a021263b2234cd236}{Functions} = \textcolor{keyword}{new} \hyperlink{classFunctionList}{FunctionList}();
+39     \hyperlink{classProgram_a9c59323b8c560d2d418a6e6ebcde2e9d}{Graphs} = \textcolor{keyword}{new} \hyperlink{classGraphList}{GraphList}();
+40     \hyperlink{classProgram_a2e25341cb34cfdd6446deeadd0629528}{ins} = \textcolor{keyword}{new} \hyperlink{structRealNumber}{RealNumber}();
+41     \hyperlink{classLanguage}{Language} = \hyperlink{io_8h_a28bdfc208e3840f49d1af4a4196013e1}{CreateLanguage}();
+42     \hyperlink{classProgram_a54fb0dc3ee40a356fe91cea64e569b26}{Filesystem} = \hyperlink{io_8h_aaf891622b11e0bb888ebf08612884aa8}{CreateFilesystem}();
+43     \hyperlink{classProgram_ad6baa89972cb4938db341c77c1510793}{Preferences} = \hyperlink{io_8h_ae6bd8b440ad1736316165c2f8aac43bf}{CreatePreferences}();
+44     \hyperlink{classProgram_a6327f15962926e4f74f15e8ff56e04e5}{Input} = \textcolor{keyword}{new} \hyperlink{classDecimalSystem}{DecimalSystem}(\hyperlink{classProgram_ad6baa89972cb4938db341c77c1510793}{Preferences}->
+      \hyperlink{classPreferencesBase_a8d693cb289d1f5282f13c0cfb698b8cc}{GetDigits}(), \hyperlink{classLanguage}{Language}->\hyperlink{classLanguage_a4c214f08d47e84d53f37bcb5b1fe1b65}{GetFractionPoint}());
+45     \hyperlink{classProgram_ac6e84e81a8bbdf99de5beea93713d8ee}{Output} = \textcolor{keyword}{new} \hyperlink{classDecimalSystem}{DecimalSystem}(\hyperlink{classProgram_ad6baa89972cb4938db341c77c1510793}{Preferences}->
+      \hyperlink{classPreferencesBase_a8d693cb289d1f5282f13c0cfb698b8cc}{GetDigits}(), \hyperlink{classLanguage}{Language}->\hyperlink{classLanguage_a4c214f08d47e84d53f37bcb5b1fe1b65}{GetFractionPoint}());
+46 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classProgram_aaefaa0df08f3484476fc4d61e97acbdc_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classProgram_aaefaa0df08f3484476fc4d61e97acbdc_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Program@{Program}!````~Program@{$\sim$\+Program}}
+\index{````~Program@{$\sim$\+Program}!Program@{Program}}
+\subsubsection[{\texorpdfstring{$\sim$\+Program()}{~Program()}}]{\setlength{\rightskip}{0pt plus 5cm}Program\+::$\sim$\+Program (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{classProgram_a986aef1c50e1d338a3315a47ba6df549}{}\label{classProgram_a986aef1c50e1d338a3315a47ba6df549}
+
+
+Definition at line 48 of file program.\+cpp.
+
+
+
+References Filesystem, Functions, Graphs, Input, ins, Preferences\+Base\+::\+Keep(), Output, Preferences, and Variables.
+
+
+\begin{DoxyCode}
+49 \{
+50     \textcolor{keyword}{delete} \hyperlink{classProgram_a1d4f53befb0270e64c91c24d14061188}{Variables};
+51     \textcolor{keyword}{delete} \hyperlink{classProgram_ac643877adc06800a021263b2234cd236}{Functions};
+52     \textcolor{keyword}{delete} \hyperlink{classProgram_a9c59323b8c560d2d418a6e6ebcde2e9d}{Graphs};
+53     \textcolor{keyword}{delete} \hyperlink{classProgram_a54fb0dc3ee40a356fe91cea64e569b26}{Filesystem};
+54     \textcolor{keyword}{delete} \hyperlink{classProgram_ac6e84e81a8bbdf99de5beea93713d8ee}{Output};
+55     \textcolor{keyword}{delete} \hyperlink{classProgram_a6327f15962926e4f74f15e8ff56e04e5}{Input};
+56     \textcolor{keyword}{delete} \hyperlink{classProgram_a7c82b4c429bbee984b8bb287b9e137f7}{Language};
+57     \textcolor{keyword}{delete} \hyperlink{classProgram_a2e25341cb34cfdd6446deeadd0629528}{ins};
+58 
+59     \hyperlink{classProgram_ad6baa89972cb4938db341c77c1510793}{Preferences}->\hyperlink{classPreferencesBase_a83f5750e2780a0bf03cb7a394230637a}{Keep}();
+60     \textcolor{keyword}{delete} \hyperlink{classProgram_ad6baa89972cb4938db341c77c1510793}{Preferences};
+61 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=338pt]{classProgram_a986aef1c50e1d338a3315a47ba6df549_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Member Function Documentation}
+\index{Program@{Program}!Exit@{Exit}}
+\index{Exit@{Exit}!Program@{Program}}
+\subsubsection[{\texorpdfstring{Exit()=0}{Exit()=0}}]{\setlength{\rightskip}{0pt plus 5cm}virtual void Program\+::\+Exit (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\hypertarget{classProgram_adf53af02e6c4719ec0f019f0d305f80e}{}\label{classProgram_adf53af02e6c4719ec0f019f0d305f80e}
+
+
+Implemented in \hyperlink{classTestProgram_ae1cfa129414df137fb05dc811e9f6b56}{Test\+Program}, \hyperlink{classAmigaProgram_ad662b535d612f6ed9df4f59ad60fe6a0}{Amiga\+Program}, and \hyperlink{classStandardProgram_a1354fa2291bf56d90b7d46d841a02b8c}{Standard\+Program}.
+
+
+
+Referenced by Exit\+Statement\+::\+Execute().
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=314pt]{classProgram_adf53af02e6c4719ec0f019f0d305f80e_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Program@{Program}!Get\+Last\+Result@{Get\+Last\+Result}}
+\index{Get\+Last\+Result@{Get\+Last\+Result}!Program@{Program}}
+\subsubsection[{\texorpdfstring{Get\+Last\+Result()}{GetLastResult()}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Number} $\ast$ Program\+::\+Get\+Last\+Result (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classProgram_a17fa68f9eb4bb5d0cd72b26dc6a381f5}{}\label{classProgram_a17fa68f9eb4bb5d0cd72b26dc6a381f5}
+
+
+Definition at line 97 of file program.\+cpp.
+
+
+
+References ins.
+
+
+
+Referenced by Ins\+Variable\+Node\+::\+Evaluate().
+
+
+\begin{DoxyCode}
+98 \{
+99     \textcolor{keywordflow}{return} \hyperlink{classProgram_a2e25341cb34cfdd6446deeadd0629528}{ins};
+100 \}
+\end{DoxyCode}
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classProgram_a17fa68f9eb4bb5d0cd72b26dc6a381f5_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Program@{Program}!Initialize@{Initialize}}
+\index{Initialize@{Initialize}!Program@{Program}}
+\subsubsection[{\texorpdfstring{Initialize(int argc, char $\ast$$\ast$argv)=0}{Initialize(int argc, char **argv)=0}}]{\setlength{\rightskip}{0pt plus 5cm}virtual void Program\+::\+Initialize (
+\begin{DoxyParamCaption}
+\item[{int}]{argc, }
+\item[{char $\ast$$\ast$}]{argv}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\hypertarget{classProgram_a6c8e48e064937d9c71168ed3a15ccf13}{}\label{classProgram_a6c8e48e064937d9c71168ed3a15ccf13}
+
+
+Implemented in \hyperlink{classTestProgram_aaa86d196977b0c510c381100b3c4597d}{Test\+Program}, \hyperlink{classAmigaProgram_ac98b0caed0ea8fcb4e8a8a922f9b93de}{Amiga\+Program}, and \hyperlink{classStandardProgram_a9e887904df28471bc3801384e5a1f151}{Standard\+Program}.
+
+
+
+Referenced by main().
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=249pt]{classProgram_a6c8e48e064937d9c71168ed3a15ccf13_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Program@{Program}!New\+Positional\+Input@{New\+Positional\+Input}}
+\index{New\+Positional\+Input@{New\+Positional\+Input}!Program@{Program}}
+\subsubsection[{\texorpdfstring{New\+Positional\+Input(short unsigned int base, short unsigned int digits)}{NewPositionalInput(short unsigned int base, short unsigned int digits)}}]{\setlength{\rightskip}{0pt plus 5cm}void Program\+::\+New\+Positional\+Input (
+\begin{DoxyParamCaption}
+\item[{short unsigned int}]{base, }
+\item[{short unsigned int}]{digits}
+\end{DoxyParamCaption}
+)}\hypertarget{classProgram_aef8e1c957776e550081cb2c47a11d64b}{}\label{classProgram_aef8e1c957776e550081cb2c47a11d64b}
+
+
+Definition at line 63 of file program.\+cpp.
+
+
+
+References Decimal\+System\+::\+Decimal\+System(), Language\+::\+Get\+Fraction\+Point(), Input, and Positional\+Numeral\+System\+::\+Positional\+Numeral\+System().
+
+
+
+Referenced by Input\+Statement\+::\+Execute().
+
+
+\begin{DoxyCode}
+64 \{
+65     \textcolor{keyword}{delete} \hyperlink{classProgram_a6327f15962926e4f74f15e8ff56e04e5}{Input};
+66 
+67     \textcolor{keywordtype}{char} fractionpoint = \hyperlink{classLanguage}{Language}->\hyperlink{classLanguage_a4c214f08d47e84d53f37bcb5b1fe1b65}{GetFractionPoint}();
+68 
+69     \textcolor{keywordflow}{if} (base == 10) \{
+70         \hyperlink{classProgram_a6327f15962926e4f74f15e8ff56e04e5}{Input} = \textcolor{keyword}{new} \hyperlink{classDecimalSystem}{DecimalSystem}(digits, fractionpoint);
+71     \} \textcolor{keywordflow}{else} \{
+72         \hyperlink{classProgram_a6327f15962926e4f74f15e8ff56e04e5}{Input} = \textcolor{keyword}{new} \hyperlink{classPositionalNumeralSystem}{PositionalNumeralSystem}(base, digits, fractionpoint);
+73     \}
+74 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classProgram_aef8e1c957776e550081cb2c47a11d64b_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classProgram_aef8e1c957776e550081cb2c47a11d64b_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Program@{Program}!New\+Positional\+Output@{New\+Positional\+Output}}
+\index{New\+Positional\+Output@{New\+Positional\+Output}!Program@{Program}}
+\subsubsection[{\texorpdfstring{New\+Positional\+Output(short unsigned int base, short unsigned int digits)}{NewPositionalOutput(short unsigned int base, short unsigned int digits)}}]{\setlength{\rightskip}{0pt plus 5cm}void Program\+::\+New\+Positional\+Output (
+\begin{DoxyParamCaption}
+\item[{short unsigned int}]{base, }
+\item[{short unsigned int}]{digits}
+\end{DoxyParamCaption}
+)}\hypertarget{classProgram_a38a8a4a116b01a1bce417488ee235ee7}{}\label{classProgram_a38a8a4a116b01a1bce417488ee235ee7}
+
+
+Definition at line 76 of file program.\+cpp.
+
+
+
+References Decimal\+System\+::\+Decimal\+System(), Language\+::\+Get\+Fraction\+Point(), Output, and Positional\+Numeral\+System\+::\+Positional\+Numeral\+System().
+
+
+
+Referenced by Output\+Statement\+::\+Execute().
+
+
+\begin{DoxyCode}
+77 \{
+78     \textcolor{keyword}{delete} \hyperlink{classProgram_ac6e84e81a8bbdf99de5beea93713d8ee}{Output};
+79 
+80     \textcolor{keywordtype}{char} fractionpoint = \hyperlink{classLanguage}{Language}->\hyperlink{classLanguage_a4c214f08d47e84d53f37bcb5b1fe1b65}{GetFractionPoint}();
+81 
+82     \textcolor{keywordflow}{if} (base == 10) \{
+83         \hyperlink{classProgram_ac6e84e81a8bbdf99de5beea93713d8ee}{Output} = \textcolor{keyword}{new} \hyperlink{classDecimalSystem}{DecimalSystem}(digits, fractionpoint);
+84     \} \textcolor{keywordflow}{else} \{
+85         \hyperlink{classProgram_ac6e84e81a8bbdf99de5beea93713d8ee}{Output} = \textcolor{keyword}{new} \hyperlink{classPositionalNumeralSystem}{PositionalNumeralSystem}(base, digits, fractionpoint);
+86     \}
+87 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classProgram_a38a8a4a116b01a1bce417488ee235ee7_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classProgram_a38a8a4a116b01a1bce417488ee235ee7_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Program@{Program}!Run@{Run}}
+\index{Run@{Run}!Program@{Program}}
+\subsubsection[{\texorpdfstring{Run()=0}{Run()=0}}]{\setlength{\rightskip}{0pt plus 5cm}virtual void Program\+::\+Run (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\hypertarget{classProgram_a466c115e35933f7fb3a3775bc8f20ac4}{}\label{classProgram_a466c115e35933f7fb3a3775bc8f20ac4}
+
+
+Implemented in \hyperlink{classTestProgram_a4d6e3f03e1297ccfa7d3b32fc358aa8d}{Test\+Program}, \hyperlink{classAmigaProgram_a1bfed5f5b69a85aa3ef1a39ea02dc457}{Amiga\+Program}, and \hyperlink{classStandardProgram_a71dce9fdccf23ac49ba2362dcae744d3}{Standard\+Program}.
+
+
+
+Referenced by main().
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=231pt]{classProgram_a466c115e35933f7fb3a3775bc8f20ac4_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Program@{Program}!Set\+Last\+Result@{Set\+Last\+Result}}
+\index{Set\+Last\+Result@{Set\+Last\+Result}!Program@{Program}}
+\subsubsection[{\texorpdfstring{Set\+Last\+Result(\+Number $\ast$number)}{SetLastResult(Number *number)}}]{\setlength{\rightskip}{0pt plus 5cm}void Program\+::\+Set\+Last\+Result (
+\begin{DoxyParamCaption}
+\item[{{\bf Number} $\ast$}]{number}
+\end{DoxyParamCaption}
+)}\hypertarget{classProgram_ad54464237ceca1f54a46c2223cfbcda0}{}\label{classProgram_ad54464237ceca1f54a46c2223cfbcda0}
+
+
+Definition at line 102 of file program.\+cpp.
+
+
+
+References Number\+::\+Clone(), and ins.
+
+
+
+Referenced by Eval\+Statement\+::\+Execute().
+
+
+\begin{DoxyCode}
+103 \{
+104     \textcolor{keyword}{delete} \hyperlink{classProgram_a2e25341cb34cfdd6446deeadd0629528}{ins};
+105     \hyperlink{classProgram_a2e25341cb34cfdd6446deeadd0629528}{ins} = number->\hyperlink{structNumber_af59101b8a549616be51212fa1c17785e}{Clone}();
+106 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=321pt]{classProgram_ad54464237ceca1f54a46c2223cfbcda0_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classProgram_ad54464237ceca1f54a46c2223cfbcda0_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Program@{Program}!Set\+Prompt@{Set\+Prompt}}
+\index{Set\+Prompt@{Set\+Prompt}!Program@{Program}}
+\subsubsection[{\texorpdfstring{Set\+Prompt(const char $\ast$text)}{SetPrompt(const char *text)}}]{\setlength{\rightskip}{0pt plus 5cm}void Program\+::\+Set\+Prompt (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{text}
+\end{DoxyParamCaption}
+)}\hypertarget{classProgram_a517c5f08c0c0dd7f79de6fbf0e62aac6}{}\label{classProgram_a517c5f08c0c0dd7f79de6fbf0e62aac6}
+
+
+Definition at line 89 of file program.\+cpp.
+
+
+
+References Console, Preferences, Preferences\+Base\+::\+Set\+Prompt(), and Console\+Base\+::\+Set\+Prompt().
+
+
+
+Referenced by Prompt\+Statement\+::\+Execute().
+
+
+\begin{DoxyCode}
+90 \{
+91     \textcolor{keywordflow}{if} (\hyperlink{classProgram_a7edba60e839230f20ce29716567bc892}{Console} != \hyperlink{platform_8h_a46ff2bfbf0d44b8466a2251d5bd5e6f8}{NOMEM}) \{
+92         \hyperlink{classProgram_a7edba60e839230f20ce29716567bc892}{Console}->\hyperlink{classConsoleBase_a9d0c878a925b9f17d67c5c7ba1c1cec3}{SetPrompt}(text);
+93     \}
+94     \hyperlink{classProgram_ad6baa89972cb4938db341c77c1510793}{Preferences}->\hyperlink{classPreferencesBase_a84ef7562c15ce4921ea8821e6301d302}{SetPrompt}(text);
+95 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classProgram_a517c5f08c0c0dd7f79de6fbf0e62aac6_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classProgram_a517c5f08c0c0dd7f79de6fbf0e62aac6_icgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Member Data Documentation}
+\index{Program@{Program}!Console@{Console}}
+\index{Console@{Console}!Program@{Program}}
+\subsubsection[{\texorpdfstring{Console}{Console}}]{\setlength{\rightskip}{0pt plus 5cm}class {\bf Console\+Base}$\ast$ Program\+::\+Console}\hypertarget{classProgram_a7edba60e839230f20ce29716567bc892}{}\label{classProgram_a7edba60e839230f20ce29716567bc892}
+
+
+Definition at line 69 of file program.\+h.
+
+
+
+Referenced by Clear\+Statement\+::\+Execute(), Prefs\+Statement\+::\+Execute(), Standard\+Program\+::\+Exit(), Standard\+Program\+::\+Initialize(), Standard\+Program\+::\+Run(), Set\+Prompt(), Standard\+Program\+::\+Standard\+Program(), and Standard\+Program\+::$\sim$\+Standard\+Program().
+
+\index{Program@{Program}!Filesystem@{Filesystem}}
+\index{Filesystem@{Filesystem}!Program@{Program}}
+\subsubsection[{\texorpdfstring{Filesystem}{Filesystem}}]{\setlength{\rightskip}{0pt plus 5cm}class {\bf Filesystem\+Base}$\ast$ Program\+::\+Filesystem}\hypertarget{classProgram_a54fb0dc3ee40a356fe91cea64e569b26}{}\label{classProgram_a54fb0dc3ee40a356fe91cea64e569b26}
+
+
+Definition at line 71 of file program.\+h.
+
+
+
+Referenced by Show\+Statement\+::\+Execute(), List\+Statement\+::\+Execute(), Load\+Statement\+::\+Execute(), Save\+Statement\+::\+Execute(), Execute\+Statement\+::\+Execute(), Program(), and $\sim$\+Program().
+
+\index{Program@{Program}!Functions@{Functions}}
+\index{Functions@{Functions}!Program@{Program}}
+\subsubsection[{\texorpdfstring{Functions}{Functions}}]{\setlength{\rightskip}{0pt plus 5cm}class {\bf Function\+List}$\ast$ Program\+::\+Functions}\hypertarget{classProgram_ac643877adc06800a021263b2234cd236}{}\label{classProgram_ac643877adc06800a021263b2234cd236}
+
+
+Definition at line 75 of file program.\+h.
+
+
+
+Referenced by List\+Functions\+Statement\+::\+Execute(), Delete\+Statement\+::\+Execute(), Save\+Statement\+::\+Execute(), Plot\+Statement\+::\+Execute(), Draw\+Statement\+::\+Execute(), Parser\+::\+Parse\+Function\+Def(), Parser\+::\+Parse\+Ident(), Program(), and $\sim$\+Program().
+
+\index{Program@{Program}!Graphs@{Graphs}}
+\index{Graphs@{Graphs}!Program@{Program}}
+\subsubsection[{\texorpdfstring{Graphs}{Graphs}}]{\setlength{\rightskip}{0pt plus 5cm}class {\bf Graph\+List}$\ast$ Program\+::\+Graphs}\hypertarget{classProgram_a9c59323b8c560d2d418a6e6ebcde2e9d}{}\label{classProgram_a9c59323b8c560d2d418a6e6ebcde2e9d}
+
+
+Definition at line 76 of file program.\+h.
+
+
+
+Referenced by Draw\+Statement\+::\+Execute(), Program(), and $\sim$\+Program().
+
+\index{Program@{Program}!Input@{Input}}
+\index{Input@{Input}!Program@{Program}}
+\subsubsection[{\texorpdfstring{Input}{Input}}]{\setlength{\rightskip}{0pt plus 5cm}class {\bf Numeral\+System}$\ast$ Program\+::\+Input}\hypertarget{classProgram_a6327f15962926e4f74f15e8ff56e04e5}{}\label{classProgram_a6327f15962926e4f74f15e8ff56e04e5}
+
+
+Definition at line 72 of file program.\+h.
+
+
+
+Referenced by Prefs\+Statement\+::\+Execute(), Input\+Statement\+::\+Execute(), Digits\+Statement\+::\+Execute(), Lexer\+::\+Get\+Digit\+Value(), Numeric\+Value\+Node\+::\+Get\+Node\+Text(), New\+Positional\+Input(), Parser\+::\+Parse\+Number(), Program(), and $\sim$\+Program().
+
+\index{Program@{Program}!ins@{ins}}
+\index{ins@{ins}!Program@{Program}}
+\subsubsection[{\texorpdfstring{ins}{ins}}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf Number}$\ast$ Program\+::ins\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classProgram_a2e25341cb34cfdd6446deeadd0629528}{}\label{classProgram_a2e25341cb34cfdd6446deeadd0629528}
+
+
+Definition at line 79 of file program.\+h.
+
+
+
+Referenced by Get\+Last\+Result(), Program(), Set\+Last\+Result(), and $\sim$\+Program().
+
+\index{Program@{Program}!Language@{Language}}
+\index{Language@{Language}!Program@{Program}}
+\subsubsection[{\texorpdfstring{Language}{Language}}]{\setlength{\rightskip}{0pt plus 5cm}class {\bf Language}$\ast$ Program\+::\+Language}\hypertarget{classProgram_a7c82b4c429bbee984b8bb287b9e137f7}{}\label{classProgram_a7c82b4c429bbee984b8bb287b9e137f7}
+
+
+Definition at line 68 of file program.\+h.
+
+\index{Program@{Program}!Output@{Output}}
+\index{Output@{Output}!Program@{Program}}
+\subsubsection[{\texorpdfstring{Output}{Output}}]{\setlength{\rightskip}{0pt plus 5cm}class {\bf Numeral\+System}$\ast$ Program\+::\+Output}\hypertarget{classProgram_ac6e84e81a8bbdf99de5beea93713d8ee}{}\label{classProgram_ac6e84e81a8bbdf99de5beea93713d8ee}
+
+
+Definition at line 73 of file program.\+h.
+
+
+
+Referenced by Prefs\+Statement\+::\+Execute(), Eval\+Statement\+::\+Execute(), Output\+Statement\+::\+Execute(), Digits\+Statement\+::\+Execute(), Variable\+List\+::\+List\+Content(), New\+Positional\+Output(), Program(), and $\sim$\+Program().
+
+\index{Program@{Program}!Preferences@{Preferences}}
+\index{Preferences@{Preferences}!Program@{Program}}
+\subsubsection[{\texorpdfstring{Preferences}{Preferences}}]{\setlength{\rightskip}{0pt plus 5cm}class {\bf Preferences\+Base}$\ast$ Program\+::\+Preferences}\hypertarget{classProgram_ad6baa89972cb4938db341c77c1510793}{}\label{classProgram_ad6baa89972cb4938db341c77c1510793}
+
+
+Definition at line 70 of file program.\+h.
+
+
+
+Referenced by Prefs\+Statement\+::\+Execute(), Digits\+Statement\+::\+Execute(), Standard\+Program\+::\+Initialize(), Program(), Standard\+Program\+::\+Run(), Set\+Prompt(), and $\sim$\+Program().
+
+\index{Program@{Program}!Variables@{Variables}}
+\index{Variables@{Variables}!Program@{Program}}
+\subsubsection[{\texorpdfstring{Variables}{Variables}}]{\setlength{\rightskip}{0pt plus 5cm}class {\bf Variable\+List}$\ast$ Program\+::\+Variables}\hypertarget{classProgram_a1d4f53befb0270e64c91c24d14061188}{}\label{classProgram_a1d4f53befb0270e64c91c24d14061188}
+
+
+Definition at line 74 of file program.\+h.
+
+
+
+Referenced by List\+Variables\+Statement\+::\+Execute(), Delete\+Statement\+::\+Execute(), Save\+Statement\+::\+Execute(), Parser\+::\+Parse\+Function\+Def(), Parser\+::\+Parse\+Ident(), Program(), and $\sim$\+Program().
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+app/system/\hyperlink{program_8h}{program.\+h}\item 
+app/system/\hyperlink{program_8cpp}{program.\+cpp}\end{DoxyCompactItemize}

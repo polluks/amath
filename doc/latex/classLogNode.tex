@@ -1,0 +1,197 @@
+\hypertarget{classLogNode}{}\section{Log\+Node Class Reference}
+\label{classLogNode}\index{Log\+Node@{Log\+Node}}
+
+
+{\ttfamily \#include $<$functions.\+h$>$}
+
+
+
+Inheritance diagram for Log\+Node\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=169pt]{classLogNode__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Log\+Node\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=272pt]{classLogNode__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classLogNode_a6bf6a9d421767f3cf02f0fa2d4dc11a9}{Log\+Node} (\hyperlink{classExpressionNode}{Expression\+Node} $\ast$\hyperlink{classFunctionNode_ad7577b179a1937aaf8a0058bb5b546dc}{expression})
+\item 
+\hyperlink{structNumber}{Number} $\ast$ \hyperlink{classLogNode_aa8bf2ac5af5a3b9e2f56c80a496beca8}{Evaluate} ()
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{classFunctionNode}{Function\+Node} $\ast$ \hyperlink{classLogNode_a06ab1d2b9676804d54efed4dca5d3b25}{Create} (\hyperlink{classExpressionNode}{Expression\+Node} $\ast$\hyperlink{classFunctionNode_ad7577b179a1937aaf8a0058bb5b546dc}{expression})
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+char $\ast$ \hyperlink{classLogNode_a069ab53e0b931eba9e7b6530a3287e40}{Get\+Node\+Text} ()
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 298 of file functions.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Log\+Node@{Log\+Node}!Log\+Node@{Log\+Node}}
+\index{Log\+Node@{Log\+Node}!Log\+Node@{Log\+Node}}
+\subsubsection[{\texorpdfstring{Log\+Node(\+Expression\+Node $\ast$expression)}{LogNode(ExpressionNode *expression)}}]{\setlength{\rightskip}{0pt plus 5cm}Log\+Node\+::\+Log\+Node (
+\begin{DoxyParamCaption}
+\item[{{\bf Expression\+Node} $\ast$}]{expression}
+\end{DoxyParamCaption}
+)}\hypertarget{classLogNode_a6bf6a9d421767f3cf02f0fa2d4dc11a9}{}\label{classLogNode_a6bf6a9d421767f3cf02f0fa2d4dc11a9}
+
+
+Definition at line 721 of file functions.\+cpp.
+
+
+
+References Function\+Node\+::\+Function\+Node().
+
+
+
+Referenced by Create().
+
+
+\begin{DoxyCode}
+721                                            :
+722     \hyperlink{classFunctionNode_a41cb7db0162ffbec0902bd8ff7ea435f}{FunctionNode}(expression) \{ \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classLogNode_a6bf6a9d421767f3cf02f0fa2d4dc11a9_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=308pt]{classLogNode_a6bf6a9d421767f3cf02f0fa2d4dc11a9_icgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Member Function Documentation}
+\index{Log\+Node@{Log\+Node}!Create@{Create}}
+\index{Create@{Create}!Log\+Node@{Log\+Node}}
+\subsubsection[{\texorpdfstring{Create(\+Expression\+Node $\ast$expression)}{Create(ExpressionNode *expression)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Function\+Node} $\ast$ Log\+Node\+::\+Create (
+\begin{DoxyParamCaption}
+\item[{{\bf Expression\+Node} $\ast$}]{expression}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{classLogNode_a06ab1d2b9676804d54efed4dca5d3b25}{}\label{classLogNode_a06ab1d2b9676804d54efed4dca5d3b25}
+
+
+Definition at line 724 of file functions.\+cpp.
+
+
+
+References Log\+Node().
+
+
+\begin{DoxyCode}
+725 \{
+726     \textcolor{keywordflow}{return} \textcolor{keyword}{new} \hyperlink{classLogNode_a6bf6a9d421767f3cf02f0fa2d4dc11a9}{LogNode}(expression);
+727 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classLogNode_a06ab1d2b9676804d54efed4dca5d3b25_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{Log\+Node@{Log\+Node}!Evaluate@{Evaluate}}
+\index{Evaluate@{Evaluate}!Log\+Node@{Log\+Node}}
+\subsubsection[{\texorpdfstring{Evaluate()}{Evaluate()}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Number} $\ast$ Log\+Node\+::\+Evaluate (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{classLogNode_aa8bf2ac5af5a3b9e2f56c80a496beca8}{}\label{classLogNode_aa8bf2ac5af5a3b9e2f56c80a496beca8}
+
+
+Implements \hyperlink{classExpressionNode_a64975d4dc37742228bd522f6204537f7}{Expression\+Node}.
+
+
+
+Definition at line 729 of file functions.\+cpp.
+
+
+
+References Expression\+Node\+::\+Evaluate(), Function\+Node\+::expression, Number\+::\+Log10(), and Expression\+Node\+::result.
+
+
+\begin{DoxyCode}
+730 \{
+731     \hyperlink{classExpressionNode_a1f590649f5a5cb30eb7ee912f7bc1262}{result} = \hyperlink{classFunctionNode_ad7577b179a1937aaf8a0058bb5b546dc}{expression}->\hyperlink{classExpressionNode_a64975d4dc37742228bd522f6204537f7}{Evaluate}()->\hyperlink{structNumber_a53f6451df2a81d0ab48887e41f9c98f9}{Log10}();
+732     \textcolor{keywordflow}{return} \hyperlink{classExpressionNode_a1f590649f5a5cb30eb7ee912f7bc1262}{result};
+733 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=349pt]{classLogNode_aa8bf2ac5af5a3b9e2f56c80a496beca8_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{Log\+Node@{Log\+Node}!Get\+Node\+Text@{Get\+Node\+Text}}
+\index{Get\+Node\+Text@{Get\+Node\+Text}!Log\+Node@{Log\+Node}}
+\subsubsection[{\texorpdfstring{Get\+Node\+Text()}{GetNodeText()}}]{\setlength{\rightskip}{0pt plus 5cm}char $\ast$ Log\+Node\+::\+Get\+Node\+Text (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}\hypertarget{classLogNode_a069ab53e0b931eba9e7b6530a3287e40}{}\label{classLogNode_a069ab53e0b931eba9e7b6530a3287e40}
+
+
+Implements \hyperlink{classExpressionNode_a42a5e9562b0f645a19dcc83f698069b5}{Expression\+Node}.
+
+
+
+Definition at line 735 of file functions.\+cpp.
+
+
+\begin{DoxyCode}
+736 \{
+737     \textcolor{keywordflow}{return} (\textcolor{keywordtype}{char}*)\textcolor{stringliteral}{"lg"};
+738 \}
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+app/main/\hyperlink{functions_8h}{functions.\+h}\item 
+app/main/\hyperlink{functions_8cpp}{functions.\+cpp}\end{DoxyCompactItemize}

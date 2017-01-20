@@ -1,0 +1,534 @@
+\hypertarget{dragon4_8h}{}\section{lib/dconv/dragon4.h File Reference}
+\label{dragon4_8h}\index{lib/dconv/dragon4.\+h@{lib/dconv/dragon4.\+h}}
+
+
+Convert floating point format to a decimal number in string format.  
+
+
+{\ttfamily \#include \char`\"{}dstandard.\+h\char`\"{}}\\*
+Include dependency graph for dragon4.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=181pt]{dragon4_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=312pt]{dragon4_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{dragon4_8h_ae285d109bd9f429145b2656fb0b3220d}{t\+Cutoff\+Mode} \{ \hyperlink{dragon4_8h_ae285d109bd9f429145b2656fb0b3220da076774f759c6005f59bf2b5535abf570}{Cutoff\+Mode\+\_\+\+Unique}, 
+\hyperlink{dragon4_8h_ae285d109bd9f429145b2656fb0b3220dad8310b28d0e03277f3ca31dbf052f112}{Cutoff\+Mode\+\_\+\+Total\+Length}, 
+\hyperlink{dragon4_8h_ae285d109bd9f429145b2656fb0b3220da5ca840f5638b86f243a799c44c16898e}{Cutoff\+Mode\+\_\+\+Fraction\+Length}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{dstandard_8h_aee96db7e18784e05ed6b0bcaeec3f7f6}{t\+U32} \hyperlink{dragon4_8h_a001c1140205cd87fc22f3a9a8de7547e}{Dragon4} (\hyperlink{dstandard_8h_a6625ae5505b2f796350b82c7f52fcf43}{t\+U64} mantissa, \hyperlink{dstandard_8h_ae3b25aefaa14d98873818cceec369577}{t\+S32} exponent, \hyperlink{dstandard_8h_aee96db7e18784e05ed6b0bcaeec3f7f6}{t\+U32} mantissa\+High\+Bit\+Idx, \hyperlink{dstandard_8h_ad203aed3ab57b120eb54c2043f60dc49}{tB} has\+Unequal\+Margins, enum \hyperlink{dragon4_8h_ae285d109bd9f429145b2656fb0b3220d}{t\+Cutoff\+Mode} cutoff\+Mode, \hyperlink{dstandard_8h_aee96db7e18784e05ed6b0bcaeec3f7f6}{t\+U32} cutoff\+Number, \hyperlink{dstandard_8h_a0dd9590397b73cba91a188b94be20ee1}{t\+C8} $\ast$p\+Out\+Buffer, \hyperlink{dstandard_8h_aee96db7e18784e05ed6b0bcaeec3f7f6}{t\+U32} buffer\+Size, \hyperlink{dstandard_8h_ae3b25aefaa14d98873818cceec369577}{t\+S32} $\ast$p\+Out\+Exponent)
+\begin{DoxyCompactList}\small\item\em Dragon4 main. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Convert floating point format to a decimal number in string format. 
+
+This is an implementation the Dragon4 algorithm to convert a binary number in floating point format to a decimal number in string format. The function returns the number of digits written to the output buffer and the output is not N\+UL terminated.
+
+Downloaded from\+:~\newline
+ \href{http://www.ryanjuckett.com/}{\tt http\+://www.\+ryanjuckett.\+com/} 
+
+\subsection{Enumeration Type Documentation}
+\index{dragon4.\+h@{dragon4.\+h}!t\+Cutoff\+Mode@{t\+Cutoff\+Mode}}
+\index{t\+Cutoff\+Mode@{t\+Cutoff\+Mode}!dragon4.\+h@{dragon4.\+h}}
+\subsubsection[{\texorpdfstring{t\+Cutoff\+Mode}{tCutoffMode}}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf t\+Cutoff\+Mode}}\hypertarget{dragon4_8h_ae285d109bd9f429145b2656fb0b3220d}{}\label{dragon4_8h_ae285d109bd9f429145b2656fb0b3220d}
+\begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{Cutoff\+Mode\+\_\+\+Unique@{Cutoff\+Mode\+\_\+\+Unique}!dragon4.\+h@{dragon4.\+h}}\index{dragon4.\+h@{dragon4.\+h}!Cutoff\+Mode\+\_\+\+Unique@{Cutoff\+Mode\+\_\+\+Unique}}\item[{\em 
+Cutoff\+Mode\+\_\+\+Unique\hypertarget{dragon4_8h_ae285d109bd9f429145b2656fb0b3220da076774f759c6005f59bf2b5535abf570}{}\label{dragon4_8h_ae285d109bd9f429145b2656fb0b3220da076774f759c6005f59bf2b5535abf570}
+}]\index{Cutoff\+Mode\+\_\+\+Total\+Length@{Cutoff\+Mode\+\_\+\+Total\+Length}!dragon4.\+h@{dragon4.\+h}}\index{dragon4.\+h@{dragon4.\+h}!Cutoff\+Mode\+\_\+\+Total\+Length@{Cutoff\+Mode\+\_\+\+Total\+Length}}\item[{\em 
+Cutoff\+Mode\+\_\+\+Total\+Length\hypertarget{dragon4_8h_ae285d109bd9f429145b2656fb0b3220dad8310b28d0e03277f3ca31dbf052f112}{}\label{dragon4_8h_ae285d109bd9f429145b2656fb0b3220dad8310b28d0e03277f3ca31dbf052f112}
+}]\index{Cutoff\+Mode\+\_\+\+Fraction\+Length@{Cutoff\+Mode\+\_\+\+Fraction\+Length}!dragon4.\+h@{dragon4.\+h}}\index{dragon4.\+h@{dragon4.\+h}!Cutoff\+Mode\+\_\+\+Fraction\+Length@{Cutoff\+Mode\+\_\+\+Fraction\+Length}}\item[{\em 
+Cutoff\+Mode\+\_\+\+Fraction\+Length\hypertarget{dragon4_8h_ae285d109bd9f429145b2656fb0b3220da5ca840f5638b86f243a799c44c16898e}{}\label{dragon4_8h_ae285d109bd9f429145b2656fb0b3220da5ca840f5638b86f243a799c44c16898e}
+}]\end{description}
+\end{Desc}
+
+
+Definition at line 75 of file dragon4.\+h.
+
+
+\begin{DoxyCode}
+76 \{
+77     \hyperlink{dragon4_8h_ae285d109bd9f429145b2656fb0b3220da076774f759c6005f59bf2b5535abf570}{CutoffMode\_Unique},          \textcolor{comment}{// as many digits as necessary to print a uniquely
+       identifiable number}
+78     \hyperlink{dragon4_8h_ae285d109bd9f429145b2656fb0b3220dad8310b28d0e03277f3ca31dbf052f112}{CutoffMode\_TotalLength},     \textcolor{comment}{// up to cutoffNumber significant digits}
+79     \hyperlink{dragon4_8h_ae285d109bd9f429145b2656fb0b3220da5ca840f5638b86f243a799c44c16898e}{CutoffMode\_FractionLength},  \textcolor{comment}{// up to cutoffNumber significant digits past the
+       decimal point}
+80 \};
+\end{DoxyCode}
+
+
+\subsection{Function Documentation}
+\index{dragon4.\+h@{dragon4.\+h}!Dragon4@{Dragon4}}
+\index{Dragon4@{Dragon4}!dragon4.\+h@{dragon4.\+h}}
+\subsubsection[{\texorpdfstring{Dragon4(t\+U64 mantissa, t\+S32 exponent, t\+U32 mantissa\+High\+Bit\+Idx, t\+B has\+Unequal\+Margins, enum t\+Cutoff\+Mode cutoff\+Mode, t\+U32 cutoff\+Number, t\+C8 $\ast$p\+Out\+Buffer, t\+U32 buffer\+Size, t\+S32 $\ast$p\+Out\+Exponent)}{Dragon4(tU64 mantissa, tS32 exponent, tU32 mantissaHighBitIdx, tB hasUnequalMargins, enum tCutoffMode cutoffMode, tU32 cutoffNumber, tC8 *pOutBuffer, tU32 bufferSize, tS32 *pOutExponent)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf t\+U32} Dragon4 (
+\begin{DoxyParamCaption}
+\item[{{\bf t\+U64}}]{mantissa, }
+\item[{{\bf t\+S32}}]{exponent, }
+\item[{{\bf t\+U32}}]{mantissa\+High\+Bit\+Idx, }
+\item[{{\bf tB}}]{has\+Unequal\+Margins, }
+\item[{enum {\bf t\+Cutoff\+Mode}}]{cutoff\+Mode, }
+\item[{{\bf t\+U32}}]{cutoff\+Number, }
+\item[{{\bf t\+C8} $\ast$}]{p\+Out\+Buffer, }
+\item[{{\bf t\+U32}}]{buffer\+Size, }
+\item[{{\bf t\+S32} $\ast$}]{p\+Out\+Exponent}
+\end{DoxyParamCaption}
+)}\hypertarget{dragon4_8h_a001c1140205cd87fc22f3a9a8de7547e}{}\label{dragon4_8h_a001c1140205cd87fc22f3a9a8de7547e}
+
+
+Dragon4 main. 
+
+Downloaded from\+:~\newline
+ \href{http://www.ryanjuckett.com/}{\tt http\+://www.\+ryanjuckett.\+com/}
+
+This is an implementation the Dragon4 algorithm to convert a binary number in floating point format to a decimal number in string format. The function returns the number of digits written to the output buffer and the output is not N\+UL terminated.
+
+The floating point input value is (mantissa $\ast$ 2$^\wedge$exponent).
+
+See the following papers for more information on the algorithm\+:~\newline
+ \char`\"{}\+How to Print Floating-\/\+Point Numbers Accurately\char`\"{}~\newline
+ Steele and White~\newline
+ \href{http://kurtstephens.com/files/p372-steele.pdf}{\tt http\+://kurtstephens.\+com/files/p372-\/steele.\+pdf}~\newline
+ \char`\"{}\+Printing Floating-\/\+Point Numbers Quickly and Accurately\char`\"{}~\newline
+ Burger and Dybvig~\newline
+ \href{http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.72.4656&rep=rep1&type=pdf}{\tt http\+://citeseerx.\+ist.\+psu.\+edu/viewdoc/download?doi=10.\+1.\+1.\+72.\+4656\&rep=rep1\&type=pdf}~\newline
+ 
+
+Definition at line 770 of file dragon4.\+cpp.
+
+
+
+References Big\+Int\+\_\+\+Add(), Big\+Int\+\_\+\+Compare(), Big\+Int\+\_\+\+Divide\+With\+Remainder\+\_\+\+Max\+Quotient9(), Big\+Int\+\_\+\+Multiply(), Big\+Int\+\_\+\+Multiply10(), Big\+Int\+\_\+\+Multiply2(), Big\+Int\+\_\+\+Multiply\+Pow10(), Big\+Int\+\_\+\+Pow10(), Big\+Int\+\_\+\+Pow2(), Big\+Int\+\_\+\+Shift\+Left(), Cutoff\+Mode\+\_\+\+Fraction\+Length, Cutoff\+Mode\+\_\+\+Total\+Length, Cutoff\+Mode\+\_\+\+Unique, t\+Big\+Int\+::\+Get\+Block(), t\+Big\+Int\+::\+Get\+Length(), t\+Big\+Int\+::\+Is\+Zero(), Log\+Base2(), t\+Big\+Int\+::operator=(), t\+Big\+Int\+::\+Set\+U32(), and t\+Big\+Int\+::\+Set\+U64().
+
+
+
+Referenced by Format\+Positional(), and Format\+Scientific().
+
+
+\begin{DoxyCode}
+781 \{
+782     \hyperlink{dstandard_8h_a0dd9590397b73cba91a188b94be20ee1}{tC8} * pCurDigit = pOutBuffer;
+783 
+784     \hyperlink{dstandard_8h_a89136b38084a3e1d69a63af0db6fec17}{RJ\_ASSERT}( bufferSize > 0 );
+785 
+786     \textcolor{comment}{// if the mantissa is zero, the value is zero regardless of the exponent}
+787     \textcolor{keywordflow}{if} (mantissa == 0)
+788     \{
+789         *pCurDigit = \textcolor{charliteral}{'0'};
+790         *pOutExponent = 0;
+791         \textcolor{keywordflow}{return} 1;
+792     \}
+793 
+794     \textcolor{comment}{// compute the initial state in integral form such that}
+795     \textcolor{comment}{//  value     = scaledValue / scale}
+796     \textcolor{comment}{//  marginLow = scaledMarginLow / scale}
+797     \hyperlink{structtBigInt}{tBigInt} scale;              \textcolor{comment}{// positive scale applied to value and margin such that they can be}
+798     \textcolor{comment}{//  represented as whole numbers}
+799     \hyperlink{structtBigInt}{tBigInt} scaledValue;        \textcolor{comment}{// scale * mantissa}
+800     \hyperlink{structtBigInt}{tBigInt} scaledMarginLow;    \textcolor{comment}{// scale * 0.5 * (distance between this floating-point number and
+       its}
+801     \textcolor{comment}{//  immediate lower value)}
+802 
+803     \textcolor{comment}{// For normalized IEEE floating point values, each time the exponent is incremented the margin also}
+804     \textcolor{comment}{// doubles. That creates a subset of transition numbers where the high margin is twice the size of}
+805     \textcolor{comment}{// the low margin.}
+806     \hyperlink{structtBigInt}{tBigInt} * pScaledMarginHigh;
+807     \hyperlink{structtBigInt}{tBigInt} optionalMarginHigh;
+808 
+809     \textcolor{keywordflow}{if} ( hasUnequalMargins )
+810     \{
+811         \textcolor{comment}{// if we have no fractional component}
+812         \textcolor{keywordflow}{if} (exponent > 0)
+813         \{
+814             \textcolor{comment}{// 1) Expand the input value by multiplying out the mantissa and exponent. This represents}
+815             \textcolor{comment}{//    the input value in its whole number representation.}
+816             \textcolor{comment}{// 2) Apply an additional scale of 2 such that later comparisons against the margin values}
+817             \textcolor{comment}{//    are simplified.}
+818             \textcolor{comment}{// 3) Set the margin value to the lowest mantissa bit's scale.}
+819 
+820             \textcolor{comment}{// scaledValue      = 2 * 2 * mantissa*2^exponent}
+821             scaledValue.\hyperlink{structtBigInt_ab25f77e908d231d8836355cf4586f983}{SetU64}( 4 * mantissa );
+822             \hyperlink{dragon4_8cpp_ad7065d256b1e7c2b3dffe0918776f720}{BigInt\_ShiftLeft}( &scaledValue, exponent );
+823 
+824             \textcolor{comment}{// scale            = 2 * 2 * 1}
+825             scale.\hyperlink{structtBigInt_a1aec50a9a3a9129b283c43eecc6df8c3}{SetU32}( 4 );
+826 
+827             \textcolor{comment}{// scaledMarginLow  = 2 * 2^(exponent-1)}
+828             \hyperlink{dragon4_8cpp_aec271fe4eb1817a10d3bb20baa5e7695}{BigInt\_Pow2}( &scaledMarginLow, exponent );
+829 
+830             \textcolor{comment}{// scaledMarginHigh = 2 * 2 * 2^(exponent-1)}
+831             \hyperlink{dragon4_8cpp_aec271fe4eb1817a10d3bb20baa5e7695}{BigInt\_Pow2}( &optionalMarginHigh, exponent + 1 );
+832         \}
+833         \textcolor{comment}{// else we have a fractional exponent}
+834         \textcolor{keywordflow}{else}
+835         \{
+836             \textcolor{comment}{// In order to track the mantissa data as an integer, we store it as is with a large scale}
+837 
+838             \textcolor{comment}{// scaledValue      = 2 * 2 * mantissa}
+839             scaledValue.\hyperlink{structtBigInt_ab25f77e908d231d8836355cf4586f983}{SetU64}( 4 * mantissa );
+840 
+841             \textcolor{comment}{// scale            = 2 * 2 * 2^(-exponent)}
+842             \hyperlink{dragon4_8cpp_aec271fe4eb1817a10d3bb20baa5e7695}{BigInt\_Pow2}(&scale, -exponent + 2 );
+843 
+844             \textcolor{comment}{// scaledMarginLow  = 2 * 2^(-1)}
+845             scaledMarginLow.\hyperlink{structtBigInt_a1aec50a9a3a9129b283c43eecc6df8c3}{SetU32}( 1 );
+846 
+847             \textcolor{comment}{// scaledMarginHigh = 2 * 2 * 2^(-1)}
+848             optionalMarginHigh.\hyperlink{structtBigInt_a1aec50a9a3a9129b283c43eecc6df8c3}{SetU32}( 2 );
+849         \}
+850 
+851         \textcolor{comment}{// the high and low margins are different}
+852         pScaledMarginHigh = &optionalMarginHigh;
+853     \}
+854     \textcolor{keywordflow}{else}
+855     \{
+856         \textcolor{comment}{// if we have no fractional component}
+857         \textcolor{keywordflow}{if} (exponent > 0)
+858         \{
+859             \textcolor{comment}{// 1) Expand the input value by multiplying out the mantissa and exponent. This represents}
+860             \textcolor{comment}{//    the input value in its whole number representation.}
+861             \textcolor{comment}{// 2) Apply an additional scale of 2 such that later comparisons against the margin values}
+862             \textcolor{comment}{//    are simplified.}
+863             \textcolor{comment}{// 3) Set the margin value to the lowest mantissa bit's scale.}
+864 
+865             \textcolor{comment}{// scaledValue     = 2 * mantissa*2^exponent}
+866             scaledValue.\hyperlink{structtBigInt_ab25f77e908d231d8836355cf4586f983}{SetU64}( 2 * mantissa );
+867             \hyperlink{dragon4_8cpp_ad7065d256b1e7c2b3dffe0918776f720}{BigInt\_ShiftLeft}( &scaledValue, exponent );
+868 
+869             \textcolor{comment}{// scale           = 2 * 1}
+870             scale.\hyperlink{structtBigInt_a1aec50a9a3a9129b283c43eecc6df8c3}{SetU32}( 2 );
+871 
+872             \textcolor{comment}{// scaledMarginLow = 2 * 2^(exponent-1)}
+873             \hyperlink{dragon4_8cpp_aec271fe4eb1817a10d3bb20baa5e7695}{BigInt\_Pow2}( &scaledMarginLow, exponent );
+874         \}
+875         \textcolor{comment}{// else we have a fractional exponent}
+876         \textcolor{keywordflow}{else}
+877         \{
+878             \textcolor{comment}{// In order to track the mantissa data as an integer, we store it as is with a large scale}
+879 
+880             \textcolor{comment}{// scaledValue     = 2 * mantissa}
+881             scaledValue.\hyperlink{structtBigInt_ab25f77e908d231d8836355cf4586f983}{SetU64}( 2 * mantissa );
+882 
+883             \textcolor{comment}{// scale           = 2 * 2^(-exponent)}
+884             \hyperlink{dragon4_8cpp_aec271fe4eb1817a10d3bb20baa5e7695}{BigInt\_Pow2}(&scale, -exponent + 1 );
+885 
+886             \textcolor{comment}{// scaledMarginLow = 2 * 2^(-1)}
+887             scaledMarginLow.\hyperlink{structtBigInt_a1aec50a9a3a9129b283c43eecc6df8c3}{SetU32}( 1 );
+888         \}
+889 
+890         \textcolor{comment}{// the high and low margins are equal}
+891         pScaledMarginHigh = &scaledMarginLow;
+892     \}
+893 
+894     \textcolor{comment}{// Compute an estimate for digitExponent that will be correct or undershoot by one.}
+895     \textcolor{comment}{// This optimization is based on the paper "Printing Floating-Point Numbers Quickly and Accurately"}
+896     \textcolor{comment}{// by Burger and Dybvig
+       http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.72.4656&rep=rep1&type=pdf}
+897     \textcolor{comment}{// We perform an additional subtraction of 0.69 to increase the frequency of a failed estimate}
+898     \textcolor{comment}{// because that lets us take a faster branch in the code. 0.69 is chosen because 0.69 + log10(2) is}
+899     \textcolor{comment}{// less than one by a reasonable epsilon that will account for any floating point error.}
+900     \textcolor{comment}{//}
+901     \textcolor{comment}{// We want to set digitExponent to floor(log10(v)) + 1}
+902     \textcolor{comment}{//  v = mantissa*2^exponent}
+903     \textcolor{comment}{//  log2(v) = log2(mantissa) + exponent;}
+904     \textcolor{comment}{//  log10(v) = log2(v) * log10(2)}
+905     \textcolor{comment}{//  floor(log2(v)) = mantissaHighBitIdx + exponent;}
+906     \textcolor{comment}{//  log10(v) - log10(2) < (mantissaHighBitIdx + exponent) * log10(2) <= log10(v)}
+907     \textcolor{comment}{//  log10(v) < (mantissaHighBitIdx + exponent) * log10(2) + log10(2) <= log10(v) + log10(2)}
+908     \textcolor{comment}{//  floor( log10(v) ) < ceil( (mantissaHighBitIdx + exponent) * log10(2) ) <= floor( log10(v) ) + 1}
+909     \textcolor{keyword}{const} \hyperlink{dstandard_8h_a401388ecc207be71d44743e3b4cc4b4d}{tF64} log10\_2 = 0.30102999566398119521373889472449;
+910     \hyperlink{dstandard_8h_ae3b25aefaa14d98873818cceec369577}{tS32} digitExponent = (\hyperlink{dstandard_8h_ae3b25aefaa14d98873818cceec369577}{tS32})(\hyperlink{math_8h_a1ea6d7b591132268abc2e843ababd084}{ceil}(\hyperlink{dstandard_8h_a401388ecc207be71d44743e3b4cc4b4d}{tF64}((\hyperlink{dstandard_8h_ae3b25aefaa14d98873818cceec369577}{tS32})mantissaHighBitIdx + exponent) * 
+      log10\_2 - 0.69));
+911 
+912     \textcolor{comment}{// if the digit exponent is smaller than the smallest desired digit for fractional cutoff,}
+913     \textcolor{comment}{// pull the digit back into legal range at which point we will round to the appropriate value.}
+914     \textcolor{comment}{// Note that while our value for digitExponent is still an estimate, this is safe because it}
+915     \textcolor{comment}{// only increases the number. This will either correct digitExponent to an accurate value or it}
+916     \textcolor{comment}{// will clamp it above the accurate value.}
+917     \textcolor{keywordflow}{if} (cutoffMode == \hyperlink{dragon4_8h_ae285d109bd9f429145b2656fb0b3220da5ca840f5638b86f243a799c44c16898e}{CutoffMode\_FractionLength} && digitExponent <= -(
+      \hyperlink{dstandard_8h_ae3b25aefaa14d98873818cceec369577}{tS32})cutoffNumber)
+918     \{
+919         digitExponent = -(\hyperlink{dstandard_8h_ae3b25aefaa14d98873818cceec369577}{tS32})cutoffNumber + 1;
+920     \}
+921 
+922     \textcolor{comment}{// Divide value by 10^digitExponent.}
+923     \textcolor{keywordflow}{if} (digitExponent > 0)
+924     \{
+925         \textcolor{comment}{// The exponent is positive creating a division so we multiply up the scale.}
+926         \hyperlink{structtBigInt}{tBigInt} temp;
+927         \hyperlink{dragon4_8cpp_a4956a6f2bde27b9ce21f660f4f210183}{BigInt\_MultiplyPow10}( &temp, scale, digitExponent );
+928         scale = temp;
+929     \}
+930     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (digitExponent < 0)
+931     \{
+932         \textcolor{comment}{// The exponent is negative creating a multiplication so we multiply up the scaledValue,}
+933         \textcolor{comment}{// scaledMarginLow and scaledMarginHigh.}
+934         \hyperlink{structtBigInt}{tBigInt} pow10;
+935         \hyperlink{dragon4_8cpp_a29b0dfce8001ff786da11c98281097c4}{BigInt\_Pow10}( &pow10, -digitExponent);
+936 
+937         \hyperlink{structtBigInt}{tBigInt} temp;
+938         \hyperlink{dragon4_8cpp_a706f0dc60cee9f4e28a81787aec73470}{BigInt\_Multiply}( &temp, scaledValue, pow10);
+939         scaledValue = temp;
+940 
+941         \hyperlink{dragon4_8cpp_a706f0dc60cee9f4e28a81787aec73470}{BigInt\_Multiply}( &temp, scaledMarginLow, pow10);
+942         scaledMarginLow = temp;
+943 
+944         \textcolor{keywordflow}{if} (pScaledMarginHigh != &scaledMarginLow)
+945             \hyperlink{dragon4_8cpp_a1772b026d1a5802fd0214db6346f0cbc}{BigInt\_Multiply2}( pScaledMarginHigh, scaledMarginLow );
+946     \}
+947 
+948     \textcolor{comment}{// If (value + marginHigh) >= 1, our estimate for digitExponent was too low}
+949     \hyperlink{structtBigInt}{tBigInt} scaledValueHigh;
+950     \hyperlink{dragon4_8cpp_a83565e877dc63daa2fbf89e2835ccc94}{BigInt\_Add}( &scaledValueHigh, scaledValue, *pScaledMarginHigh );
+951     \textcolor{keywordflow}{if}( \hyperlink{dragon4_8cpp_a1c02bba02f26528317e59d6599379d6f}{BigInt\_Compare}(scaledValueHigh,scale) >= 0 )
+952     \{
+953         \textcolor{comment}{// The exponent estimate was incorrect.}
+954         \textcolor{comment}{// Increment the exponent and don't perform the premultiply needed}
+955         \textcolor{comment}{// for the first loop iteration.}
+956         digitExponent = digitExponent + 1;
+957     \}
+958     \textcolor{keywordflow}{else}
+959     \{
+960         \textcolor{comment}{// The exponent estimate was correct.}
+961         \textcolor{comment}{// Multiply larger by the output base to prepare for the first loop iteration.}
+962         \hyperlink{dragon4_8cpp_a48c80464b1664cb339c7348ef2a2771b}{BigInt\_Multiply10}( &scaledValue );
+963         \hyperlink{dragon4_8cpp_a48c80464b1664cb339c7348ef2a2771b}{BigInt\_Multiply10}( &scaledMarginLow );
+964         \textcolor{keywordflow}{if} (pScaledMarginHigh != &scaledMarginLow)
+965             \hyperlink{dragon4_8cpp_a1772b026d1a5802fd0214db6346f0cbc}{BigInt\_Multiply2}( pScaledMarginHigh, scaledMarginLow );
+966     \}
+967 
+968     \textcolor{comment}{// Compute the cutoff exponent (the exponent of the final digit to print).}
+969     \textcolor{comment}{// Default to the maximum size of the output buffer.}
+970     \hyperlink{dstandard_8h_ae3b25aefaa14d98873818cceec369577}{tS32} cutoffExponent = digitExponent - bufferSize;
+971     \textcolor{keywordflow}{switch}(cutoffMode)
+972     \{
+973         \textcolor{comment}{// print digits until we pass the accuracy margin limits or buffer size}
+974     \textcolor{keywordflow}{case} \hyperlink{dragon4_8h_ae285d109bd9f429145b2656fb0b3220da076774f759c6005f59bf2b5535abf570}{CutoffMode\_Unique}:
+975         \textcolor{keywordflow}{break};
+976 
+977         \textcolor{comment}{// print cutoffNumber of digits or until we reach the buffer size}
+978     \textcolor{keywordflow}{case} \hyperlink{dragon4_8h_ae285d109bd9f429145b2656fb0b3220dad8310b28d0e03277f3ca31dbf052f112}{CutoffMode\_TotalLength}:
+979     \{
+980         \hyperlink{dstandard_8h_ae3b25aefaa14d98873818cceec369577}{tS32} desiredCutoffExponent = digitExponent - (\hyperlink{dstandard_8h_ae3b25aefaa14d98873818cceec369577}{tS32})cutoffNumber;
+981         \textcolor{keywordflow}{if} (desiredCutoffExponent > cutoffExponent)
+982             cutoffExponent = desiredCutoffExponent;
+983     \}
+984     \textcolor{keywordflow}{break};
+985 
+986     \textcolor{comment}{// print cutoffNumber digits past the decimal point or until we reach the buffer size}
+987     \textcolor{keywordflow}{case} \hyperlink{dragon4_8h_ae285d109bd9f429145b2656fb0b3220da5ca840f5638b86f243a799c44c16898e}{CutoffMode\_FractionLength}:
+988     \{
+989         \hyperlink{dstandard_8h_ae3b25aefaa14d98873818cceec369577}{tS32} desiredCutoffExponent = -(\hyperlink{dstandard_8h_ae3b25aefaa14d98873818cceec369577}{tS32})cutoffNumber;
+990         \textcolor{keywordflow}{if} (desiredCutoffExponent > cutoffExponent)
+991             cutoffExponent = desiredCutoffExponent;
+992     \}
+993     \textcolor{keywordflow}{break};
+994     \}
+995 
+996     \textcolor{comment}{// Output the exponent of the first digit we will print}
+997     *pOutExponent = digitExponent-1;
+998 
+999     \textcolor{comment}{// In preparation for calling BigInt\_DivideWithRemainder\_MaxQuotient9(),}
+1000     \textcolor{comment}{// we need to scale up our values such that the highest block of the denominator}
+1001     \textcolor{comment}{// is greater than or equal to 8. We also need to guarantee that the numerator}
+1002     \textcolor{comment}{// can never have a length greater than the denominator after each loop iteration.}
+1003     \textcolor{comment}{// This requires the highest block of the denominator to be less than or equal to}
+1004     \textcolor{comment}{// 429496729 which is the highest number that can be multiplied by 10 without}
+1005     \textcolor{comment}{// overflowing to a new block.}
+1006     \hyperlink{dstandard_8h_a89136b38084a3e1d69a63af0db6fec17}{RJ\_ASSERT}( scale.\hyperlink{structtBigInt_aee567e4c77187577f77fc1643dc427ba}{GetLength}() > 0 );
+1007     \hyperlink{dstandard_8h_aee96db7e18784e05ed6b0bcaeec3f7f6}{tU32} hiBlock = scale.\hyperlink{structtBigInt_a22350ff8e7010047b7ac5be70e8906bd}{GetBlock}( scale.\hyperlink{structtBigInt_aee567e4c77187577f77fc1643dc427ba}{GetLength}() - 1 );
+1008     \textcolor{keywordflow}{if} (hiBlock < 8 || hiBlock > 429496729)
+1009     \{
+1010         \textcolor{comment}{// Perform a bit shift on all values to get the highest block of the denominator into}
+1011         \textcolor{comment}{// the range [8,429496729]. We are more likely to make accurate quotient estimations}
+1012         \textcolor{comment}{// in BigInt\_DivideWithRemainder\_MaxQuotient9() with higher denominator values so}
+1013         \textcolor{comment}{// we shift the denominator to place the highest bit at index 27 of the highest block.}
+1014         \textcolor{comment}{// This is safe because (2^28 - 1) = 268435455 which is less than 429496729. This means}
+1015         \textcolor{comment}{// that all values with a highest bit at index 27 are within range.}
+1016         \hyperlink{dstandard_8h_aee96db7e18784e05ed6b0bcaeec3f7f6}{tU32} hiBlockLog2 = \hyperlink{dmath_8cpp_a835ee0ad31a196742a7a5fd3c21a738b}{LogBase2}(hiBlock);
+1017         \hyperlink{dstandard_8h_a89136b38084a3e1d69a63af0db6fec17}{RJ\_ASSERT}(hiBlockLog2 < 3 || hiBlockLog2 > 27);
+1018         \hyperlink{dstandard_8h_aee96db7e18784e05ed6b0bcaeec3f7f6}{tU32} shift = (32 + 27 - hiBlockLog2) % 32;
+1019 
+1020         \hyperlink{dragon4_8cpp_ad7065d256b1e7c2b3dffe0918776f720}{BigInt\_ShiftLeft}( &scale, shift );
+1021         \hyperlink{dragon4_8cpp_ad7065d256b1e7c2b3dffe0918776f720}{BigInt\_ShiftLeft}( &scaledValue, shift);
+1022         \hyperlink{dragon4_8cpp_ad7065d256b1e7c2b3dffe0918776f720}{BigInt\_ShiftLeft}( &scaledMarginLow, shift);
+1023         \textcolor{keywordflow}{if} (pScaledMarginHigh != &scaledMarginLow)
+1024             \hyperlink{dragon4_8cpp_a1772b026d1a5802fd0214db6346f0cbc}{BigInt\_Multiply2}( pScaledMarginHigh, scaledMarginLow );
+1025     \}
+1026 
+1027     \textcolor{comment}{// These values are used to inspect why the print loop terminated so we can properly}
+1028     \textcolor{comment}{// round the final digit.}
+1029     \hyperlink{dstandard_8h_ad203aed3ab57b120eb54c2043f60dc49}{tB}      low;            \textcolor{comment}{// did the value get within marginLow distance from zero}
+1030     \hyperlink{dstandard_8h_ad203aed3ab57b120eb54c2043f60dc49}{tB}      high;           \textcolor{comment}{// did the value get within marginHigh distance from one}
+1031     \hyperlink{dstandard_8h_aee96db7e18784e05ed6b0bcaeec3f7f6}{tU32}    outputDigit;    \textcolor{comment}{// current digit being output}
+1032 
+1033     \textcolor{keywordflow}{if} (cutoffMode == \hyperlink{dragon4_8h_ae285d109bd9f429145b2656fb0b3220da076774f759c6005f59bf2b5535abf570}{CutoffMode\_Unique})
+1034     \{
+1035         \textcolor{comment}{// For the unique cutoff mode, we will try to print until we have reached a level of}
+1036         \textcolor{comment}{// precision that uniquely distinguishes this value from its neighbors. If we run}
+1037         \textcolor{comment}{// out of space in the output buffer, we terminate early.}
+1038         \textcolor{keywordflow}{for} (;;)
+1039         \{
+1040             digitExponent = digitExponent-1;
+1041 
+1042             \textcolor{comment}{// divide out the scale to extract the digit}
+1043             outputDigit = \hyperlink{dragon4_8cpp_a09244488f43f59ceaf0909ef9b405626}{BigInt\_DivideWithRemainder\_MaxQuotient9}(&
+      scaledValue, scale);
+1044             \hyperlink{dstandard_8h_a89136b38084a3e1d69a63af0db6fec17}{RJ\_ASSERT}( outputDigit < 10 );
+1045 
+1046             \textcolor{comment}{// update the high end of the value}
+1047             \hyperlink{dragon4_8cpp_a83565e877dc63daa2fbf89e2835ccc94}{BigInt\_Add}( &scaledValueHigh, scaledValue, *pScaledMarginHigh );
+1048 
+1049             \textcolor{comment}{// stop looping if we are far enough away from our neighboring values}
+1050             \textcolor{comment}{// or if we have reached the cutoff digit}
+1051             low = \hyperlink{dragon4_8cpp_a1c02bba02f26528317e59d6599379d6f}{BigInt\_Compare}(scaledValue, scaledMarginLow) < 0;
+1052             high = \hyperlink{dragon4_8cpp_a1c02bba02f26528317e59d6599379d6f}{BigInt\_Compare}(scaledValueHigh, scale) > 0;
+1053             \textcolor{keywordflow}{if} (low | high | (digitExponent == cutoffExponent))
+1054                 \textcolor{keywordflow}{break};
+1055 
+1056             \textcolor{comment}{// store the output digit}
+1057             *pCurDigit = (\hyperlink{dstandard_8h_a0dd9590397b73cba91a188b94be20ee1}{tC8})(\textcolor{charliteral}{'0'} + outputDigit);
+1058             ++pCurDigit;
+1059 
+1060             \textcolor{comment}{// multiply larger by the output base}
+1061             \hyperlink{dragon4_8cpp_a48c80464b1664cb339c7348ef2a2771b}{BigInt\_Multiply10}( &scaledValue );
+1062             \hyperlink{dragon4_8cpp_a48c80464b1664cb339c7348ef2a2771b}{BigInt\_Multiply10}( &scaledMarginLow );
+1063             \textcolor{keywordflow}{if} (pScaledMarginHigh != &scaledMarginLow)
+1064                 \hyperlink{dragon4_8cpp_a1772b026d1a5802fd0214db6346f0cbc}{BigInt\_Multiply2}( pScaledMarginHigh, scaledMarginLow );
+1065         \}
+1066     \}
+1067     \textcolor{keywordflow}{else}
+1068     \{
+1069         \textcolor{comment}{// For length based cutoff modes, we will try to print until we}
+1070         \textcolor{comment}{// have exhausted all precision (i.e. all remaining digits are zeros) or}
+1071         \textcolor{comment}{// until we reach the desired cutoff digit.}
+1072         low = \textcolor{keyword}{false};
+1073         high = \textcolor{keyword}{false};
+1074 
+1075         \textcolor{keywordflow}{for} (;;)
+1076         \{
+1077             digitExponent = digitExponent-1;
+1078 
+1079             \textcolor{comment}{// divide out the scale to extract the digit}
+1080             outputDigit = \hyperlink{dragon4_8cpp_a09244488f43f59ceaf0909ef9b405626}{BigInt\_DivideWithRemainder\_MaxQuotient9}(&
+      scaledValue, scale);
+1081             \hyperlink{dstandard_8h_a89136b38084a3e1d69a63af0db6fec17}{RJ\_ASSERT}( outputDigit < 10 );
+1082 
+1083             \textcolor{keywordflow}{if} ( scaledValue.\hyperlink{structtBigInt_a4e0c59f15fcb292ea4ec5d448fa10b58}{IsZero}() | (digitExponent == cutoffExponent) )
+1084                 \textcolor{keywordflow}{break};
+1085 
+1086             \textcolor{comment}{// store the output digit}
+1087             *pCurDigit = (\hyperlink{dstandard_8h_a0dd9590397b73cba91a188b94be20ee1}{tC8})(\textcolor{charliteral}{'0'} + outputDigit);
+1088             ++pCurDigit;
+1089 
+1090             \textcolor{comment}{// multiply larger by the output base}
+1091             \hyperlink{dragon4_8cpp_a48c80464b1664cb339c7348ef2a2771b}{BigInt\_Multiply10}(&scaledValue);
+1092         \}
+1093     \}
+1094 
+1095     \textcolor{comment}{// round off the final digit}
+1096     \textcolor{comment}{// default to rounding down if value got too close to 0}
+1097     \hyperlink{dstandard_8h_ad203aed3ab57b120eb54c2043f60dc49}{tB} roundDown = low;
+1098 
+1099     \textcolor{comment}{// if it is legal to round up and down}
+1100     \textcolor{keywordflow}{if} (low == high)
+1101     \{
+1102         \textcolor{comment}{// round to the closest digit by comparing value with 0.5. To do this we need to convert}
+1103         \textcolor{comment}{// the inequality to large integer values.}
+1104         \textcolor{comment}{//  compare( value, 0.5 )}
+1105         \textcolor{comment}{//  compare( scale * value, scale * 0.5 )}
+1106         \textcolor{comment}{//  compare( 2 * scale * value, scale )}
+1107         \hyperlink{dragon4_8cpp_a1772b026d1a5802fd0214db6346f0cbc}{BigInt\_Multiply2}(&scaledValue);
+1108         \hyperlink{dstandard_8h_ae3b25aefaa14d98873818cceec369577}{tS32} compare = \hyperlink{dragon4_8cpp_a1c02bba02f26528317e59d6599379d6f}{BigInt\_Compare}(scaledValue, scale);
+1109         roundDown = compare < 0;
+1110 
+1111         \textcolor{comment}{// if we are directly in the middle, round towards the even digit (i.e. IEEE rouding rules)}
+1112         \textcolor{keywordflow}{if} (compare == 0)
+1113             roundDown = (outputDigit & 1) == 0;
+1114     \}
+1115 
+1116     \textcolor{comment}{// print the rounded digit}
+1117     \textcolor{keywordflow}{if} (roundDown)
+1118     \{
+1119         *pCurDigit = (\hyperlink{dstandard_8h_a0dd9590397b73cba91a188b94be20ee1}{tC8})(\textcolor{charliteral}{'0'} + outputDigit);
+1120         ++pCurDigit;
+1121     \}
+1122     \textcolor{keywordflow}{else}
+1123     \{
+1124         \textcolor{comment}{// handle rounding up}
+1125         \textcolor{keywordflow}{if} (outputDigit == 9)
+1126         \{
+1127             \textcolor{comment}{// find the first non-nine prior digit}
+1128             \textcolor{keywordflow}{for} (;;)
+1129             \{
+1130                 \textcolor{comment}{// if we are at the first digit}
+1131                 \textcolor{keywordflow}{if} (pCurDigit == pOutBuffer)
+1132                 \{
+1133                     \textcolor{comment}{// output 1 at the next highest exponent}
+1134                     *pCurDigit = \textcolor{charliteral}{'1'};
+1135                     ++pCurDigit;
+1136                     *pOutExponent += 1;
+1137                     \textcolor{keywordflow}{break};
+1138                 \}
+1139 
+1140                 --pCurDigit;
+1141                 \textcolor{keywordflow}{if} (*pCurDigit != \textcolor{charliteral}{'9'})
+1142                 \{
+1143                     \textcolor{comment}{// increment the digit}
+1144                     *pCurDigit += 1;
+1145                     ++pCurDigit;
+1146                     \textcolor{keywordflow}{break};
+1147                 \}
+1148             \}
+1149         \}
+1150         \textcolor{keywordflow}{else}
+1151         \{
+1152             \textcolor{comment}{// values in the range [0,8] can perform a simple round up}
+1153             *pCurDigit = (\hyperlink{dstandard_8h_a0dd9590397b73cba91a188b94be20ee1}{tC8})(\textcolor{charliteral}{'0'} + outputDigit + 1);
+1154             ++pCurDigit;
+1155         \}
+1156     \}
+1157 
+1158     \textcolor{comment}{// return the number of digits output}
+1159     \hyperlink{dstandard_8h_a89136b38084a3e1d69a63af0db6fec17}{RJ\_ASSERT}(pCurDigit - pOutBuffer <= (\hyperlink{dstandard_8h_a0a9a87afb721643d2bb6fe22a900303c}{tPtrDiff})bufferSize);
+1160     \textcolor{keywordflow}{return} pCurDigit - pOutBuffer;
+1161 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{dragon4_8h_a001c1140205cd87fc22f3a9a8de7547e_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dragon4_8h_a001c1140205cd87fc22f3a9a8de7547e_icgraph}
+\end{center}
+\end{figure}
+
+

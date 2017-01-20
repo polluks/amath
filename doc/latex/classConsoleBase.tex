@@ -1,0 +1,429 @@
+\hypertarget{classConsoleBase}{}\section{Console\+Base Class Reference}
+\label{classConsoleBase}\index{Console\+Base@{Console\+Base}}
+
+
+Abstract base class encapsulating console logic.  
+
+
+
+
+{\ttfamily \#include $<$console.\+h$>$}
+
+
+
+Inheritance diagram for Console\+Base\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=172pt]{classConsoleBase__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Console\+Base\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=155pt]{classConsoleBase__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classConsoleBase_a69210c6548727255c817e70cdd167f84}{Console\+Base} (const char $\ast$\hyperlink{classConsoleBase_ac0b5764a1c339ac271d0c44943e4370c}{prompt})
+\item 
+virtual \hyperlink{classConsoleBase_af249e9199923edc425c201c079d3c04a}{$\sim$\+Console\+Base} ()
+\item 
+const char $\ast$ \hyperlink{classConsoleBase_a787ac1707ea23d457c452ade014bec1f}{Get\+Name} ()
+\item 
+virtual void \hyperlink{classConsoleBase_a2f5aa6f61f903a098c315640e64815c6}{Clear} ()
+\item 
+virtual void \hyperlink{classConsoleBase_a2d23be5ddae9da94a486e05581ed1e35}{Exit} ()=0
+\item 
+virtual void \hyperlink{classConsoleBase_a9d0c878a925b9f17d67c5c7ba1c1cec3}{Set\+Prompt} (const char $\ast$string)
+\item 
+virtual void \hyperlink{classConsoleBase_a839801eeb5c25cd0a2cb13523e387bed}{Write\+String} (const char $\ast$string)=0
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classConsoleBase_a1a390339da026c37c036f87f3a084e87}{Start\+Message} ()
+\item 
+void \hyperlink{classConsoleBase_a79c5aa072ff3db35944a9825dcbfd9a7}{Prompt} ()
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+char $\ast$ \hyperlink{classConsoleBase_ac0b5764a1c339ac271d0c44943e4370c}{prompt}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Abstract base class encapsulating console logic. 
+
+Definition at line 42 of file console.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Console\+Base@{Console\+Base}!Console\+Base@{Console\+Base}}
+\index{Console\+Base@{Console\+Base}!Console\+Base@{Console\+Base}}
+\subsubsection[{\texorpdfstring{Console\+Base(const char $\ast$prompt)}{ConsoleBase(const char *prompt)}}]{\setlength{\rightskip}{0pt plus 5cm}Console\+Base\+::\+Console\+Base (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{prompt}
+\end{DoxyParamCaption}
+)}\hypertarget{classConsoleBase_a69210c6548727255c817e70cdd167f84}{}\label{classConsoleBase_a69210c6548727255c817e70cdd167f84}
+
+
+Definition at line 32 of file console.\+cpp.
+
+
+
+References Alloc\+And\+Copy(), and prompt.
+
+
+
+Referenced by Standard\+Console\+::\+Standard\+Console().
+
+
+\begin{DoxyCode}
+33 \{
+34     \hyperlink{clib_8h_a5bed05c70cb17e541fee570b5dc32e1a}{AllocAndCopy}(&this->\hyperlink{classConsoleBase_ac0b5764a1c339ac271d0c44943e4370c}{prompt}, \hyperlink{classConsoleBase_ac0b5764a1c339ac271d0c44943e4370c}{prompt});
+35 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=335pt]{classConsoleBase_a69210c6548727255c817e70cdd167f84_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classConsoleBase_a69210c6548727255c817e70cdd167f84_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Console\+Base@{Console\+Base}!````~Console\+Base@{$\sim$\+Console\+Base}}
+\index{````~Console\+Base@{$\sim$\+Console\+Base}!Console\+Base@{Console\+Base}}
+\subsubsection[{\texorpdfstring{$\sim$\+Console\+Base()}{~ConsoleBase()}}]{\setlength{\rightskip}{0pt plus 5cm}Console\+Base\+::$\sim$\+Console\+Base (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{classConsoleBase_af249e9199923edc425c201c079d3c04a}{}\label{classConsoleBase_af249e9199923edc425c201c079d3c04a}
+
+
+Definition at line 37 of file console.\+cpp.
+
+
+
+References prompt.
+
+
+\begin{DoxyCode}
+38 \{
+39     \textcolor{keyword}{delete} \hyperlink{classConsoleBase_ac0b5764a1c339ac271d0c44943e4370c}{prompt};
+40 \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\index{Console\+Base@{Console\+Base}!Clear@{Clear}}
+\index{Clear@{Clear}!Console\+Base@{Console\+Base}}
+\subsubsection[{\texorpdfstring{Clear()}{Clear()}}]{\setlength{\rightskip}{0pt plus 5cm}void Console\+Base\+::\+Clear (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{classConsoleBase_a2f5aa6f61f903a098c315640e64815c6}{}\label{classConsoleBase_a2f5aa6f61f903a098c315640e64815c6}
+
+
+Definition at line 47 of file console.\+cpp.
+
+
+
+References Write\+String().
+
+
+
+Referenced by Clear\+Statement\+::\+Execute().
+
+
+\begin{DoxyCode}
+48 \{
+49     \hyperlink{classConsoleBase_a839801eeb5c25cd0a2cb13523e387bed}{WriteString}(\hyperlink{platform_8h_aaf5312106eb58227ce4b64ea46e96f0b}{CLEARWINDOW});
+50     \hyperlink{classConsoleBase_a839801eeb5c25cd0a2cb13523e387bed}{WriteString}(\hyperlink{platform_8h_abf175904907a69e0ce17289cdc282b59}{NORMALTEXT});
+51 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classConsoleBase_a2f5aa6f61f903a098c315640e64815c6_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=347pt]{classConsoleBase_a2f5aa6f61f903a098c315640e64815c6_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Console\+Base@{Console\+Base}!Exit@{Exit}}
+\index{Exit@{Exit}!Console\+Base@{Console\+Base}}
+\subsubsection[{\texorpdfstring{Exit()=0}{Exit()=0}}]{\setlength{\rightskip}{0pt plus 5cm}virtual void Console\+Base\+::\+Exit (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\hypertarget{classConsoleBase_a2d23be5ddae9da94a486e05581ed1e35}{}\label{classConsoleBase_a2d23be5ddae9da94a486e05581ed1e35}
+
+
+Implemented in \hyperlink{classStandardConsole_a5cd03a0758b89c116b90fee058d612c3}{Standard\+Console}.
+
+
+
+Referenced by Standard\+Program\+::\+Exit().
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=330pt]{classConsoleBase_a2d23be5ddae9da94a486e05581ed1e35_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Console\+Base@{Console\+Base}!Get\+Name@{Get\+Name}}
+\index{Get\+Name@{Get\+Name}!Console\+Base@{Console\+Base}}
+\subsubsection[{\texorpdfstring{Get\+Name()}{GetName()}}]{\setlength{\rightskip}{0pt plus 5cm}const char $\ast$ Console\+Base\+::\+Get\+Name (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{classConsoleBase_a787ac1707ea23d457c452ade014bec1f}{}\label{classConsoleBase_a787ac1707ea23d457c452ade014bec1f}
+
+
+Implements \hyperlink{classThreadBase_a1d02a7e6cd287e1d72b9cac00e8061d4}{Thread\+Base}.
+
+
+
+Definition at line 42 of file console.\+cpp.
+
+
+\begin{DoxyCode}
+43 \{
+44     \textcolor{keywordflow}{return} \hyperlink{io_8h_a555e2a159918ee08dbbb71645bf2348c}{CPROCNAME};
+45 \}
+\end{DoxyCode}
+\index{Console\+Base@{Console\+Base}!Prompt@{Prompt}}
+\index{Prompt@{Prompt}!Console\+Base@{Console\+Base}}
+\subsubsection[{\texorpdfstring{Prompt()}{Prompt()}}]{\setlength{\rightskip}{0pt plus 5cm}void Console\+Base\+::\+Prompt (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{classConsoleBase_a79c5aa072ff3db35944a9825dcbfd9a7}{}\label{classConsoleBase_a79c5aa072ff3db35944a9825dcbfd9a7}
+
+
+Definition at line 59 of file console.\+cpp.
+
+
+
+References prompt, and Write\+String().
+
+
+
+Referenced by Standard\+Console\+::\+Run().
+
+
+\begin{DoxyCode}
+60 \{
+61     \hyperlink{classConsoleBase_a839801eeb5c25cd0a2cb13523e387bed}{WriteString}(\hyperlink{platform_8h_abf175904907a69e0ce17289cdc282b59}{NORMALTEXT});
+62     \hyperlink{classConsoleBase_a839801eeb5c25cd0a2cb13523e387bed}{WriteString}(\hyperlink{classConsoleBase_ac0b5764a1c339ac271d0c44943e4370c}{prompt});
+63     \hyperlink{classConsoleBase_a839801eeb5c25cd0a2cb13523e387bed}{WriteString}(\hyperlink{platform_8h_abf175904907a69e0ce17289cdc282b59}{NORMALTEXT});
+64 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classConsoleBase_a79c5aa072ff3db35944a9825dcbfd9a7_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=345pt]{classConsoleBase_a79c5aa072ff3db35944a9825dcbfd9a7_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Console\+Base@{Console\+Base}!Set\+Prompt@{Set\+Prompt}}
+\index{Set\+Prompt@{Set\+Prompt}!Console\+Base@{Console\+Base}}
+\subsubsection[{\texorpdfstring{Set\+Prompt(const char $\ast$string)}{SetPrompt(const char *string)}}]{\setlength{\rightskip}{0pt plus 5cm}void Console\+Base\+::\+Set\+Prompt (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{string}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{classConsoleBase_a9d0c878a925b9f17d67c5c7ba1c1cec3}{}\label{classConsoleBase_a9d0c878a925b9f17d67c5c7ba1c1cec3}
+
+
+Reimplemented in \hyperlink{classStandardConsole_aa8e28b5271f982514c12bc6c66f310f9}{Standard\+Console}.
+
+
+
+Definition at line 66 of file console.\+cpp.
+
+
+
+References Alloc\+And\+Copy(), and prompt.
+
+
+
+Referenced by Prefs\+Statement\+::\+Execute(), Standard\+Console\+::\+Set\+Prompt(), and Program\+::\+Set\+Prompt().
+
+
+\begin{DoxyCode}
+67 \{
+68     \textcolor{keyword}{delete} \hyperlink{classConsoleBase_ac0b5764a1c339ac271d0c44943e4370c}{prompt};
+69     \hyperlink{clib_8h_a5bed05c70cb17e541fee570b5dc32e1a}{AllocAndCopy}(&\hyperlink{classConsoleBase_ac0b5764a1c339ac271d0c44943e4370c}{prompt}, \textcolor{keywordtype}{string});
+70 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=323pt]{classConsoleBase_a9d0c878a925b9f17d67c5c7ba1c1cec3_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classConsoleBase_a9d0c878a925b9f17d67c5c7ba1c1cec3_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Console\+Base@{Console\+Base}!Start\+Message@{Start\+Message}}
+\index{Start\+Message@{Start\+Message}!Console\+Base@{Console\+Base}}
+\subsubsection[{\texorpdfstring{Start\+Message()}{StartMessage()}}]{\setlength{\rightskip}{0pt plus 5cm}void Console\+Base\+::\+Start\+Message (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{classConsoleBase_a1a390339da026c37c036f87f3a084e87}{}\label{classConsoleBase_a1a390339da026c37c036f87f3a084e87}
+
+
+Definition at line 53 of file console.\+cpp.
+
+
+
+References Write\+String().
+
+
+
+Referenced by Standard\+Console\+::\+Run().
+
+
+\begin{DoxyCode}
+54 \{
+55     \hyperlink{classConsoleBase_a839801eeb5c25cd0a2cb13523e387bed}{WriteString}(\hyperlink{text_8h_a75dc5f4a647f8769382c1ea2b11efd7b}{INTROMSG});
+56     \hyperlink{classConsoleBase_a839801eeb5c25cd0a2cb13523e387bed}{WriteString}(\hyperlink{platform_8h_abf175904907a69e0ce17289cdc282b59}{NORMALTEXT});
+57 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classConsoleBase_a1a390339da026c37c036f87f3a084e87_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classConsoleBase_a1a390339da026c37c036f87f3a084e87_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Console\+Base@{Console\+Base}!Write\+String@{Write\+String}}
+\index{Write\+String@{Write\+String}!Console\+Base@{Console\+Base}}
+\subsubsection[{\texorpdfstring{Write\+String(const char $\ast$string)=0}{WriteString(const char *string)=0}}]{\setlength{\rightskip}{0pt plus 5cm}virtual void Console\+Base\+::\+Write\+String (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{string}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\hypertarget{classConsoleBase_a839801eeb5c25cd0a2cb13523e387bed}{}\label{classConsoleBase_a839801eeb5c25cd0a2cb13523e387bed}
+
+
+Implemented in \hyperlink{classStandardConsole_a4357667b7d80d110aca730ccb1cdca13}{Standard\+Console}.
+
+
+
+Referenced by Clear(), Prompt(), and Start\+Message().
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classConsoleBase_a839801eeb5c25cd0a2cb13523e387bed_icgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Member Data Documentation}
+\index{Console\+Base@{Console\+Base}!prompt@{prompt}}
+\index{prompt@{prompt}!Console\+Base@{Console\+Base}}
+\subsubsection[{\texorpdfstring{prompt}{prompt}}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ Console\+Base\+::prompt\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classConsoleBase_ac0b5764a1c339ac271d0c44943e4370c}{}\label{classConsoleBase_ac0b5764a1c339ac271d0c44943e4370c}
+
+
+Definition at line 57 of file console.\+h.
+
+
+
+Referenced by Console\+Base(), Prompt(), Set\+Prompt(), and $\sim$\+Console\+Base().
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+app/system/\hyperlink{console_8h}{console.\+h}\item 
+app/system/\hyperlink{console_8cpp}{console.\+cpp}\end{DoxyCompactItemize}

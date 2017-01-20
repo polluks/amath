@@ -7,7 +7,7 @@
         <title>Directory Dependency diagram</title>
         <mediaobject>
             <imageobject>
-                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="../../dir_97aefd0d527b934f1d99a682da8fe6a9_dep.png"></imagedata>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="dir_97aefd0d527b934f1d99a682da8fe6a9_dep.png"></imagedata>
             </imageobject>
         </mediaobject>
     </figure>
@@ -48,62 +48,62 @@
             <para>
                 <itemizedlist>
                     <listitem>
-                        <para>file <link linkend="d9/de5/clib_8h">clib.h</link></para>
+                        <para>file <link linkend="clib_8h">clib.h</link></para>
                     </listitem>
                 </itemizedlist>
             </para>
             <para>
                 <itemizedlist>
                     <listitem>
-                        <para>file <link linkend="d7/d3b/complex_8h">complex.h</link></para>
+                        <para>file <link linkend="complex_8h">complex.h</link></para>
                     </listitem>
                 </itemizedlist>
             </para>
             <para>
                 <itemizedlist>
                     <listitem>
-                        <para>file <link linkend="d0/d42/doc_8h">doc.h</link></para>
+                        <para>file <link linkend="doc_8h">doc.h</link></para>
                     </listitem>
                 </itemizedlist>
             </para>
             <para>
                 <itemizedlist>
                     <listitem>
-                        <para>file <link linkend="df/d29/dprint_8h">dprint.h</link></para>
+                        <para>file <link linkend="dprint_8h">dprint.h</link></para>
                     </listitem>
                 </itemizedlist>
             </para>
             <para>
                 <itemizedlist>
                     <listitem>
-                        <para>file <link linkend="dc/dac/dstandard_8h">dstandard.h</link></para>
+                        <para>file <link linkend="dstandard_8h">dstandard.h</link></para>
                     </listitem>
                 </itemizedlist>
             </para>
             <para>
                 <itemizedlist>
                     <listitem>
-                        <para>file <link linkend="df/db1/math_8h">math.h</link></para>
+                        <para>file <link linkend="math_8h">math.h</link></para>
                     </listitem>
                 </itemizedlist>
             </para>
             <para>
                 <itemizedlist>
                     <listitem>
-                        <para>file <link linkend="d9/d9a/mem_8h">mem.h</link></para>
+                        <para>file <link linkend="mem_8h">mem.h</link></para>
                     </listitem>
                 </itemizedlist>
             </para>
             <para>
                 <itemizedlist>
                     <listitem>
-                        <para>file <link linkend="de/d03/platform_8h">platform.h</link></para>
+                        <para>file <link linkend="platform_8h">platform.h</link></para>
                     </listitem>
                 </itemizedlist>
             </para>
         </simplesect>
     <simplesect>
         <title>Detailed Description</title>
-    <para>Directory location is /home/carsten/amath2/lib/</para>
+    <para>Directory location is /home/carsten/amath/lib/</para>
     </simplesect>
 </section>

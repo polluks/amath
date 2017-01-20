@@ -1,0 +1,117 @@
+\hypertarget{nodes_8h}{}\section{app/main/nodes.h File Reference}
+\label{nodes_8h}\index{app/main/nodes.\+h@{app/main/nodes.\+h}}
+
+
+Top nodes in syntax trees.  
+
+
+{\ttfamily \#include \char`\"{}clib.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}lib/numb.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}lib/charbuf.\+h\char`\"{}}\\*
+Include dependency graph for nodes.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=299pt]{nodes_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{nodes_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classSyntaxNode}{Syntax\+Node}
+\begin{DoxyCompactList}\small\item\em Base class for all nodes in a syntax tree. \end{DoxyCompactList}\item 
+class \hyperlink{classExpressionNode}{Expression\+Node}
+\begin{DoxyCompactList}\small\item\em Base class for all nodes related to mathematical expressions. \end{DoxyCompactList}\item 
+class \hyperlink{classStatementNode}{Statement\+Node}
+\begin{DoxyCompactList}\small\item\em Base class for all statements in a syntax tree. \end{DoxyCompactList}\item 
+class \hyperlink{classErrorNode}{Error\+Node}
+\begin{DoxyCompactList}\small\item\em Represents an error message encapsulated in a syntax tree. \end{DoxyCompactList}\item 
+class \hyperlink{classStatementBlockNode}{Statement\+Block\+Node}
+\begin{DoxyCompactList}\small\item\em A sequence of statements in a syntax tree. \end{DoxyCompactList}\item 
+struct \hyperlink{structStatementBlockElement}{Statement\+Block\+Element}
+\begin{DoxyCompactList}\small\item\em Used to create a linked list of statements. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{nodes_8h_acac9cbaeea226ed297804c012dc12b16}{Node\+Type} \{ \hyperlink{nodes_8h_acac9cbaeea226ed297804c012dc12b16a0bdeb2d4e763063449aa298ccde52466}{othernodetype}, 
+\hyperlink{nodes_8h_acac9cbaeea226ed297804c012dc12b16a338f0b1773c656a2647feb9e2bf6be09}{statement}, 
+\hyperlink{nodes_8h_acac9cbaeea226ed297804c012dc12b16ac810bbb61792a076f46cad2c89d87e1d}{expression}
+ \}
+\item 
+enum \hyperlink{nodes_8h_ab321a69ad5704b704b8dd9e1b3984a29}{Reduction\+Type} \{ \\*
+\hyperlink{nodes_8h_ab321a69ad5704b704b8dd9e1b3984a29aea5f0caa41174fec24bdbc41967fadb2}{nonereduc}, 
+\hyperlink{nodes_8h_ab321a69ad5704b704b8dd9e1b3984a29aba5ebaece27f25a5bb9dcdc5eb89846e}{unaryreduc}, 
+\hyperlink{nodes_8h_ab321a69ad5704b704b8dd9e1b3984a29ab28eba4ada38a77030f8d532ee98a360}{valuereduc}, 
+\hyperlink{nodes_8h_ab321a69ad5704b704b8dd9e1b3984a29ac930999b75ae22f50a2fa8d774a80936}{compladdreduc}, 
+\\*
+\hyperlink{nodes_8h_ab321a69ad5704b704b8dd9e1b3984a29a86d9dc6f6ce2a9c71c6ce8b4d98567e7}{complsubreduc}
+ \}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Top nodes in syntax trees. 
+
+
+
+\subsection{Enumeration Type Documentation}
+\index{nodes.\+h@{nodes.\+h}!Node\+Type@{Node\+Type}}
+\index{Node\+Type@{Node\+Type}!nodes.\+h@{nodes.\+h}}
+\subsubsection[{\texorpdfstring{Node\+Type}{NodeType}}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf Node\+Type}}\hypertarget{nodes_8h_acac9cbaeea226ed297804c012dc12b16}{}\label{nodes_8h_acac9cbaeea226ed297804c012dc12b16}
+\begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{othernodetype@{othernodetype}!nodes.\+h@{nodes.\+h}}\index{nodes.\+h@{nodes.\+h}!othernodetype@{othernodetype}}\item[{\em 
+othernodetype\hypertarget{nodes_8h_acac9cbaeea226ed297804c012dc12b16a0bdeb2d4e763063449aa298ccde52466}{}\label{nodes_8h_acac9cbaeea226ed297804c012dc12b16a0bdeb2d4e763063449aa298ccde52466}
+}]\index{statement@{statement}!nodes.\+h@{nodes.\+h}}\index{nodes.\+h@{nodes.\+h}!statement@{statement}}\item[{\em 
+statement\hypertarget{nodes_8h_acac9cbaeea226ed297804c012dc12b16a338f0b1773c656a2647feb9e2bf6be09}{}\label{nodes_8h_acac9cbaeea226ed297804c012dc12b16a338f0b1773c656a2647feb9e2bf6be09}
+}]\index{expression@{expression}!nodes.\+h@{nodes.\+h}}\index{nodes.\+h@{nodes.\+h}!expression@{expression}}\item[{\em 
+expression\hypertarget{nodes_8h_acac9cbaeea226ed297804c012dc12b16ac810bbb61792a076f46cad2c89d87e1d}{}\label{nodes_8h_acac9cbaeea226ed297804c012dc12b16ac810bbb61792a076f46cad2c89d87e1d}
+}]\end{description}
+\end{Desc}
+
+
+Definition at line 40 of file nodes.\+h.
+
+
+\begin{DoxyCode}
+40              \{
+41     \hyperlink{nodes_8h_acac9cbaeea226ed297804c012dc12b16a0bdeb2d4e763063449aa298ccde52466}{othernodetype}, \hyperlink{nodes_8h_acac9cbaeea226ed297804c012dc12b16a338f0b1773c656a2647feb9e2bf6be09}{statement}, \hyperlink{nodes_8h_acac9cbaeea226ed297804c012dc12b16ac810bbb61792a076f46cad2c89d87e1d}{expression}
+42 \} \hyperlink{nodes_8h_acac9cbaeea226ed297804c012dc12b16}{NodeType};
+\end{DoxyCode}
+\index{nodes.\+h@{nodes.\+h}!Reduction\+Type@{Reduction\+Type}}
+\index{Reduction\+Type@{Reduction\+Type}!nodes.\+h@{nodes.\+h}}
+\subsubsection[{\texorpdfstring{Reduction\+Type}{ReductionType}}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf Reduction\+Type}}\hypertarget{nodes_8h_ab321a69ad5704b704b8dd9e1b3984a29}{}\label{nodes_8h_ab321a69ad5704b704b8dd9e1b3984a29}
+\begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{nonereduc@{nonereduc}!nodes.\+h@{nodes.\+h}}\index{nodes.\+h@{nodes.\+h}!nonereduc@{nonereduc}}\item[{\em 
+nonereduc\hypertarget{nodes_8h_ab321a69ad5704b704b8dd9e1b3984a29aea5f0caa41174fec24bdbc41967fadb2}{}\label{nodes_8h_ab321a69ad5704b704b8dd9e1b3984a29aea5f0caa41174fec24bdbc41967fadb2}
+}]\index{unaryreduc@{unaryreduc}!nodes.\+h@{nodes.\+h}}\index{nodes.\+h@{nodes.\+h}!unaryreduc@{unaryreduc}}\item[{\em 
+unaryreduc\hypertarget{nodes_8h_ab321a69ad5704b704b8dd9e1b3984a29aba5ebaece27f25a5bb9dcdc5eb89846e}{}\label{nodes_8h_ab321a69ad5704b704b8dd9e1b3984a29aba5ebaece27f25a5bb9dcdc5eb89846e}
+}]\index{valuereduc@{valuereduc}!nodes.\+h@{nodes.\+h}}\index{nodes.\+h@{nodes.\+h}!valuereduc@{valuereduc}}\item[{\em 
+valuereduc\hypertarget{nodes_8h_ab321a69ad5704b704b8dd9e1b3984a29ab28eba4ada38a77030f8d532ee98a360}{}\label{nodes_8h_ab321a69ad5704b704b8dd9e1b3984a29ab28eba4ada38a77030f8d532ee98a360}
+}]\index{compladdreduc@{compladdreduc}!nodes.\+h@{nodes.\+h}}\index{nodes.\+h@{nodes.\+h}!compladdreduc@{compladdreduc}}\item[{\em 
+compladdreduc\hypertarget{nodes_8h_ab321a69ad5704b704b8dd9e1b3984a29ac930999b75ae22f50a2fa8d774a80936}{}\label{nodes_8h_ab321a69ad5704b704b8dd9e1b3984a29ac930999b75ae22f50a2fa8d774a80936}
+}]\index{complsubreduc@{complsubreduc}!nodes.\+h@{nodes.\+h}}\index{nodes.\+h@{nodes.\+h}!complsubreduc@{complsubreduc}}\item[{\em 
+complsubreduc\hypertarget{nodes_8h_ab321a69ad5704b704b8dd9e1b3984a29a86d9dc6f6ce2a9c71c6ce8b4d98567e7}{}\label{nodes_8h_ab321a69ad5704b704b8dd9e1b3984a29a86d9dc6f6ce2a9c71c6ce8b4d98567e7}
+}]\end{description}
+\end{Desc}
+
+
+Definition at line 44 of file nodes.\+h.
+
+
+\begin{DoxyCode}
+44              \{
+45     \hyperlink{nodes_8h_ab321a69ad5704b704b8dd9e1b3984a29aea5f0caa41174fec24bdbc41967fadb2}{nonereduc}, \hyperlink{nodes_8h_ab321a69ad5704b704b8dd9e1b3984a29aba5ebaece27f25a5bb9dcdc5eb89846e}{unaryreduc}, \hyperlink{nodes_8h_ab321a69ad5704b704b8dd9e1b3984a29ab28eba4ada38a77030f8d532ee98a360}{valuereduc}, 
+      \hyperlink{nodes_8h_ab321a69ad5704b704b8dd9e1b3984a29ac930999b75ae22f50a2fa8d774a80936}{compladdreduc}, \hyperlink{nodes_8h_ab321a69ad5704b704b8dd9e1b3984a29a86d9dc6f6ce2a9c71c6ce8b4d98567e7}{complsubreduc}
+46 \} \hyperlink{nodes_8h_ab321a69ad5704b704b8dd9e1b3984a29}{ReductionType};
+\end{DoxyCode}

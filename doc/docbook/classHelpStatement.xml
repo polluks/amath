@@ -1,0 +1,116 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="classHelpStatement">
+<title>HelpStatement class Reference</title>
+<para>
+    <programlisting>#include <link linkend="statements_8h">&lt;statements.h&gt;</link></programlisting>
+</para>
+<para>Inheritance diagram for HelpStatement</para>
+<para>
+    <figure>
+        <title>Inheritance graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="classHelpStatement__inherit__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+<para>Collaboration diagram for HelpStatement</para>
+<para>
+    <figure>
+        <title>Collaboration graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="classHelpStatement__coll__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+        <section>
+            <title>Private Attributes</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>Symbol argument</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>char * ident</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="classHelpStatement_1aed16b9cc1ef9e4d7bf4909d66e4012c0">HelpStatement</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="classHelpStatement_1a09929d994355a84bebd655be6d463bfb">HelpStatement</link> (
+<link linkend="lex_8h_1a7feef761cd73fac6e25b8bb80d2c4e54">Symbol</link> argument)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="classHelpStatement_1a638be9d0c5c09a437c75f07ba8229cbe">HelpStatement</link> (
+const char * ident)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="classHelpStatement_1adbab00ec8eacb88cbb252740849d82f1">~HelpStatement</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>char * <link linkend="classHelpStatement_1a733d3471c3bcfdd2d07d4766bbdbf6db">Execute</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+    <simplesect>
+
+<para>Logic related to the help statement. </para>
+    </simplesect>
+        <section>
+            <title>Member Data Documentation</title>
+        </section>
+            <section xml:id="classHelpStatement_1aed16b9cc1ef9e4d7bf4909d66e4012c0">
+                <title>HelpStatement::HelpStatement ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="classHelpStatement_1a09929d994355a84bebd655be6d463bfb">
+                <title>HelpStatement::HelpStatement (Symbol argument)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="classHelpStatement_1a638be9d0c5c09a437c75f07ba8229cbe">
+                <title>HelpStatement::HelpStatement (const char *ident)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="classHelpStatement_1adbab00ec8eacb88cbb252740849d82f1">
+                <title>HelpStatement::~HelpStatement ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="classHelpStatement_1a733d3471c3bcfdd2d07d4766bbdbf6db">
+                <title>char * HelpStatement::Execute ()</title> <emphasis></emphasis>
+                
+            </section>
+</section>

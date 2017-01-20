@@ -1,0 +1,86 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="classArcCotangentNode">
+<title>ArcCotangentNode class Reference</title>
+<para>
+    <programlisting>#include <link linkend="functions_8h">&lt;functions.h&gt;</link></programlisting>
+</para>
+<para>Inheritance diagram for ArcCotangentNode</para>
+<para>
+    <figure>
+        <title>Inheritance graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="classArcCotangentNode__inherit__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+<para>Collaboration diagram for ArcCotangentNode</para>
+<para>
+    <figure>
+        <title>Collaboration graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="classArcCotangentNode__coll__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="classArcCotangentNode_1aa67c2c4d48741e686b660c010c49bd41">ArcCotangentNode</link> (
+<link linkend="classExpressionNode">ExpressionNode</link> * expression)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="structNumber">Number</link> * <link linkend="classArcCotangentNode_1ace4c556eff07fb8352f8f341fa20702a">Evaluate</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>static <link linkend="classFunctionNode">FunctionNode</link> * <link linkend="classArcCotangentNode_1a696c949ce9855f55d8e593622ebc0400">Create</link> (
+<link linkend="classExpressionNode">ExpressionNode</link> * expression)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>char * <link linkend="classArcCotangentNode_1aab2b4d2d357a47e4174e3daa82773ab1">GetNodeText</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+            <section xml:id="classArcCotangentNode_1aa67c2c4d48741e686b660c010c49bd41">
+                <title>ArcCotangentNode::ArcCotangentNode (ExpressionNode *expression)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="classArcCotangentNode_1ace4c556eff07fb8352f8f341fa20702a">
+                <title>Number * ArcCotangentNode::Evaluate ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="classArcCotangentNode_1a696c949ce9855f55d8e593622ebc0400">
+                <title>FunctionNode * ArcCotangentNode::Create (ExpressionNode *expression)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="classArcCotangentNode_1aab2b4d2d357a47e4174e3daa82773ab1">
+                <title>char * ArcCotangentNode::GetNodeText ()</title> <emphasis></emphasis>
+                
+            </section>
+</section>

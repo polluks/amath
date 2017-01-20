@@ -7,7 +7,7 @@
         <title>Directory Dependency diagram</title>
         <mediaobject>
             <imageobject>
-                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="../../dir_9dc6c7acf21934bbaaf79b41db58c4e7_dep.png"></imagedata>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="dir_9dc6c7acf21934bbaaf79b41db58c4e7_dep.png"></imagedata>
             </imageobject>
         </mediaobject>
     </figure>
@@ -17,97 +17,97 @@
             <para>
                 <itemizedlist>
                     <listitem>
-                        <para>file <link linkend="df/d97/aengine_8cpp">aengine.cpp</link></para>
+                        <para>file <link linkend="aengine_8cpp">aengine.cpp</link></para>
                     </listitem>
                 </itemizedlist>
             </para>
             <para>
                 <itemizedlist>
                     <listitem>
-                        <para>file <link linkend="dc/d99/aengine_8h">aengine.h</link></para>
+                        <para>file <link linkend="aengine_8h">aengine.h</link></para>
                     </listitem>
                 </itemizedlist>
             </para>
             <para>
                 <itemizedlist>
                     <listitem>
-                        <para>file <link linkend="da/d37/charbuf_8cpp">charbuf.cpp</link></para>
+                        <para>file <link linkend="charbuf_8cpp">charbuf.cpp</link></para>
                     </listitem>
                 </itemizedlist>
             </para>
             <para>
                 <itemizedlist>
                     <listitem>
-                        <para>file <link linkend="d0/d1e/charbuf_8h">charbuf.h</link></para>
+                        <para>file <link linkend="charbuf_8h">charbuf.h</link></para>
                     </listitem>
                 </itemizedlist>
             </para>
             <para>
                 <itemizedlist>
                     <listitem>
-                        <para>file <link linkend="d8/d35/cplex_8cpp">cplex.cpp</link></para>
+                        <para>file <link linkend="cplex_8cpp">cplex.cpp</link></para>
                     </listitem>
                 </itemizedlist>
             </para>
             <para>
                 <itemizedlist>
                     <listitem>
-                        <para>file <link linkend="d7/d69/cplex_8h">cplex.h</link></para>
+                        <para>file <link linkend="cplex_8h">cplex.h</link></para>
                     </listitem>
                 </itemizedlist>
             </para>
             <para>
                 <itemizedlist>
                     <listitem>
-                        <para>file <link linkend="db/d22/fgrid_8cpp">fgrid.cpp</link></para>
+                        <para>file <link linkend="fgrid_8cpp">fgrid.cpp</link></para>
                     </listitem>
                 </itemizedlist>
             </para>
             <para>
                 <itemizedlist>
                     <listitem>
-                        <para>file <link linkend="d2/dbd/fgrid_8h">fgrid.h</link></para>
+                        <para>file <link linkend="fgrid_8h">fgrid.h</link></para>
                     </listitem>
                 </itemizedlist>
             </para>
             <para>
                 <itemizedlist>
                     <listitem>
-                        <para>file <link linkend="da/dfb/ntext_8cpp">ntext.cpp</link></para>
+                        <para>file <link linkend="ntext_8cpp">ntext.cpp</link></para>
                     </listitem>
                 </itemizedlist>
             </para>
             <para>
                 <itemizedlist>
                     <listitem>
-                        <para>file <link linkend="d3/df4/ntext_8h">ntext.h</link></para>
+                        <para>file <link linkend="ntext_8h">ntext.h</link></para>
                     </listitem>
                 </itemizedlist>
             </para>
             <para>
                 <itemizedlist>
                     <listitem>
-                        <para>file <link linkend="dd/d30/numb_8h">numb.h</link></para>
+                        <para>file <link linkend="numb_8h">numb.h</link></para>
                     </listitem>
                 </itemizedlist>
             </para>
             <para>
                 <itemizedlist>
                     <listitem>
-                        <para>file <link linkend="de/d5c/real_8cpp">real.cpp</link></para>
+                        <para>file <link linkend="real_8cpp">real.cpp</link></para>
                     </listitem>
                 </itemizedlist>
             </para>
             <para>
                 <itemizedlist>
                     <listitem>
-                        <para>file <link linkend="d5/d1e/real_8h">real.h</link></para>
+                        <para>file <link linkend="real_8h">real.h</link></para>
                     </listitem>
                 </itemizedlist>
             </para>
         </simplesect>
     <simplesect>
         <title>Detailed Description</title>
-    <para>Directory location is /home/carsten/amath2/app/lib/</para>
+    <para>Directory location is /home/carsten/amath/app/lib/</para>
     </simplesect>
 </section>

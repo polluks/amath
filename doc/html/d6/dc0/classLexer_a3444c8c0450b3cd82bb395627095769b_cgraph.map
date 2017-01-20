@@ -1,6 +1,0 @@
-<map id="Lexer::GetQuotedIdent" name="Lexer::GetQuotedIdent">
-<area shape="rect" id="node2" href="$d0/d41/classLanguage.html#a392214aa8de840d1cf7b738945ce1799" title="Language::CharIsCntrl" alt="" coords="208,5,361,32"/>
-<area shape="rect" id="node3" href="$d4/d16/memcpy_8c.html#a09b7e057c69b9ddd4b481fc746997a7d" title="Copy a block of memory, handling overlap. " alt="" coords="243,56,326,83"/>
-<area shape="rect" id="node4" href="$df/dcd/structToken.html#a5c78001ebd223017c11e5327667d458a" title="Token::Token" alt="" coords="233,107,336,133"/>
-<area shape="rect" id="node5" href="$dd/d2a/alloccpy_8c.html#a5bed05c70cb17e541fee570b5dc32e1a" title="Allocate memory and copy a string into the array. " alt="" coords="409,107,515,133"/>
-</map>

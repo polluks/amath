@@ -1,0 +1,318 @@
+\hypertarget{expm1_8c}{}\section{lib/real/expm1.c File Reference}
+\label{expm1_8c}\index{lib/real/expm1.\+c@{lib/real/expm1.\+c}}
+{\ttfamily \#include \char`\"{}prim.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}math.\+h\char`\"{}}\\*
+Include dependency graph for expm1.\+c\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=190pt]{expm1_8c__incl}
+\end{center}
+\end{figure}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+double \hyperlink{expm1_8c_ae4963ac40f96d4b1fe8af1b1e90a20bb}{expm1} (double x)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+static const double \hyperlink{expm1_8c_ada85e349d35971b32c8ea4238881ff8b}{one} = 1.\+0
+\item 
+static const double \hyperlink{expm1_8c_acbd466133274923cc0785707fbdeea9a}{huge} = 1.\+0e+300
+\item 
+static const double \hyperlink{expm1_8c_a4f41fc56ffc7d06df51b6fbccd8c0846}{tiny} = 1.\+0e-\/300
+\item 
+static const double \hyperlink{expm1_8c_acbb7fb31d7634234372850576e110c91}{o\+\_\+threshold} = 7.\+09782712893383973096e+02
+\item 
+static const double \hyperlink{expm1_8c_a681dec71eb3b6048386c010ec2444fa4}{ln2\+\_\+hi} = 6.\+93147180369123816490e-\/01
+\item 
+static const double \hyperlink{expm1_8c_aad361cc103aeef29c711917f539eb9bd}{ln2\+\_\+lo} = 1.\+90821492927058770002e-\/10
+\item 
+static const double \hyperlink{expm1_8c_a4cf65ab9c76c64c084e1abd8fe5da216}{invln2} = 1.\+44269504088896338700e+00
+\item 
+static const double \hyperlink{expm1_8c_a337c7d6482c8cb25098d7923f887b172}{Q1} = -\/3.\+33333333333331316428e-\/02
+\item 
+static const double \hyperlink{expm1_8c_a58f4d8c535a1a29924ab9895ac5e3027}{Q2} = 1.\+58730158725481460165e-\/03
+\item 
+static const double \hyperlink{expm1_8c_a1053f84ccfcc301b069f5dfdf0c05af3}{Q3} = -\/7.\+93650757867487942473e-\/05
+\item 
+static const double \hyperlink{expm1_8c_a3214bc1c813c902cb818fa053ac89e7e}{Q4} = 4.\+00821782732936239552e-\/06
+\item 
+static const double \hyperlink{expm1_8c_a439cf17c0f4c97fda729c7d078fa5d67}{Q5} = -\/2.\+01099218183624371326e-\/07
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\index{expm1.\+c@{expm1.\+c}!expm1@{expm1}}
+\index{expm1@{expm1}!expm1.\+c@{expm1.\+c}}
+\subsubsection[{\texorpdfstring{expm1(double x)}{expm1(double x)}}]{\setlength{\rightskip}{0pt plus 5cm}double expm1 (
+\begin{DoxyParamCaption}
+\item[{double}]{x}
+\end{DoxyParamCaption}
+)}\hypertarget{expm1_8c_ae4963ac40f96d4b1fe8af1b1e90a20bb}{}\label{expm1_8c_ae4963ac40f96d4b1fe8af1b1e90a20bb}
+
+
+Definition at line 156 of file expm1.\+c.
+
+
+
+References huge, invln2, ln2\+\_\+hi, ln2\+\_\+lo, o\+\_\+threshold, one, Q1, Q2, Q3, Q4, Q5, and tiny.
+
+
+
+Referenced by cosh(), sinh(), and tanh().
+
+
+\begin{DoxyCode}
+157 \{
+158     \textcolor{keywordtype}{double} y,hi,lo,c,t,e,hxs,hfx,r1;
+159     \hyperlink{real_2prim_8h_ae91287c8a5f73a8a22a100f50dc4de77}{sword} k,xsb;
+160     \hyperlink{real_2prim_8h_a6e60fe0e0f9f8801507e15fe2d893751}{uword} hx;
+161 
+162     c = 0.0;
+163 
+164     \hyperlink{real_2prim_8h_ae62ee08d06ab4cc06d61dc1246b73195}{GET\_HIGH\_WORD}(hx,x); \textcolor{comment}{/* high word of x */}
+165     xsb = hx&0x80000000;        \textcolor{comment}{/* sign bit of x */}
+166     \textcolor{keywordflow}{if}(xsb==0) y=x;
+167     \textcolor{keywordflow}{else} y= -x; \textcolor{comment}{/* y = |x| */}
+168     hx &= 0x7fffffff;       \textcolor{comment}{/* high word of |x| */}
+169 
+170     \textcolor{comment}{/* filter out huge and non-finite argument */}
+171     \textcolor{keywordflow}{if}(hx >= 0x4043687A) \{          \textcolor{comment}{/* if |x|>=56*ln2 */}
+172         \textcolor{keywordflow}{if}(hx >= 0x40862E42) \{      \textcolor{comment}{/* if |x|>=709.78... */}
+173             \textcolor{keywordflow}{if}(hx>=0x7ff00000) \{
+174                 \hyperlink{real_2prim_8h_a6e60fe0e0f9f8801507e15fe2d893751}{uword} low;
+175                 \hyperlink{real_2prim_8h_adee023704c856ea8f310e8e3fd765a22}{GET\_LOW\_WORD}(low,x);
+176                 \textcolor{keywordflow}{if}(((hx&0xfffff)|low)!=0)
+177                     \textcolor{keywordflow}{return} x+x;      \textcolor{comment}{/* NaN */}
+178                 \textcolor{keywordflow}{else} \textcolor{keywordflow}{return} (xsb==0)? x:-1.0;\textcolor{comment}{/* exp(+-inf)=\{inf,-1\} */}
+179             \}
+180             \textcolor{keywordflow}{if}(x > \hyperlink{expm1_8c_acbb7fb31d7634234372850576e110c91}{o\_threshold}) \textcolor{keywordflow}{return} \hyperlink{expm1_8c_acbd466133274923cc0785707fbdeea9a}{huge}*\hyperlink{expm1_8c_acbd466133274923cc0785707fbdeea9a}{huge}; \textcolor{comment}{/* overflow */}
+181         \}
+182         \textcolor{keywordflow}{if}(xsb!=0) \{ \textcolor{comment}{/* x < -56*ln2, return -1.0 with inexact */}
+183             \textcolor{keywordflow}{if}(x+\hyperlink{expm1_8c_a4f41fc56ffc7d06df51b6fbccd8c0846}{tiny}<0.0)      \textcolor{comment}{/* raise inexact */}
+184                 \textcolor{keywordflow}{return} \hyperlink{expm1_8c_a4f41fc56ffc7d06df51b6fbccd8c0846}{tiny}-\hyperlink{expm1_8c_ada85e349d35971b32c8ea4238881ff8b}{one}; \textcolor{comment}{/* return -1 */}
+185         \}
+186     \}
+187 
+188     \textcolor{comment}{/* argument reduction */}
+189     \textcolor{keywordflow}{if}(hx > 0x3fd62e42) \{       \textcolor{comment}{/* if  |x| > 0.5 ln2 */}
+190         \textcolor{keywordflow}{if}(hx < 0x3FF0A2B2) \{   \textcolor{comment}{/* and |x| < 1.5 ln2 */}
+191             \textcolor{keywordflow}{if}(xsb==0)
+192             \{
+193                 hi = x - \hyperlink{expm1_8c_a681dec71eb3b6048386c010ec2444fa4}{ln2\_hi};
+194                 lo =  \hyperlink{expm1_8c_aad361cc103aeef29c711917f539eb9bd}{ln2\_lo};
+195                 k =  1;
+196             \}
+197             \textcolor{keywordflow}{else}
+198             \{
+199                 hi = x + \hyperlink{expm1_8c_a681dec71eb3b6048386c010ec2444fa4}{ln2\_hi};
+200                 lo = -\hyperlink{expm1_8c_aad361cc103aeef29c711917f539eb9bd}{ln2\_lo};
+201                 k = -1;
+202             \}
+203         \} \textcolor{keywordflow}{else} \{
+204             k  = (\hyperlink{real_2prim_8h_ae91287c8a5f73a8a22a100f50dc4de77}{sword})(\hyperlink{expm1_8c_a4cf65ab9c76c64c084e1abd8fe5da216}{invln2}*x+((xsb==0)?0.5:-0.5));
+205             t  = k;
+206             hi = x - t*\hyperlink{expm1_8c_a681dec71eb3b6048386c010ec2444fa4}{ln2\_hi};    \textcolor{comment}{/* t*ln2\_hi is exact here */}
+207             lo = t*\hyperlink{expm1_8c_aad361cc103aeef29c711917f539eb9bd}{ln2\_lo};
+208         \}
+209         x  = hi - lo;
+210         c  = (hi-x)-lo;
+211     \}
+212     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(hx < 0x3c900000) \{      \textcolor{comment}{/* when |x|<2**-54, return x */}
+213         t = \hyperlink{expm1_8c_acbd466133274923cc0785707fbdeea9a}{huge}+x; \textcolor{comment}{/* return x with inexact flags when x!=0 */}
+214         \textcolor{keywordflow}{return} x - (t-(\hyperlink{expm1_8c_acbd466133274923cc0785707fbdeea9a}{huge}+x));
+215     \}
+216     \textcolor{keywordflow}{else} k = 0;
+217 
+218     \textcolor{comment}{/* x is now in primary range */}
+219     hfx = 0.5*x;
+220     hxs = x*hfx;
+221     r1 = \hyperlink{expm1_8c_ada85e349d35971b32c8ea4238881ff8b}{one}+hxs*(\hyperlink{expm1_8c_a337c7d6482c8cb25098d7923f887b172}{Q1}+hxs*(\hyperlink{expm1_8c_a58f4d8c535a1a29924ab9895ac5e3027}{Q2}+hxs*(\hyperlink{expm1_8c_a1053f84ccfcc301b069f5dfdf0c05af3}{Q3}+hxs*(\hyperlink{expm1_8c_a3214bc1c813c902cb818fa053ac89e7e}{Q4}+hxs*\hyperlink{expm1_8c_a439cf17c0f4c97fda729c7d078fa5d67}{Q5}))));
+222     t  = 3.0-r1*hfx;
+223     e  = hxs*((r1-t)/(6.0 - x*t));
+224     \textcolor{keywordflow}{if}(k==0) \textcolor{keywordflow}{return} x - (x*e-hxs);      \textcolor{comment}{/* c is 0 */}
+225     \textcolor{keywordflow}{else} \{
+226         e  = (x*(e-c)-c);
+227         e -= hxs;
+228         \textcolor{keywordflow}{if}(k== -1) \textcolor{keywordflow}{return} 0.5*(x-e)-0.5;
+229         \textcolor{keywordflow}{if}(k==1) \{
+230             \textcolor{keywordflow}{if}(x < -0.25) \textcolor{keywordflow}{return} -2.0*(e-(x+0.5));
+231             \textcolor{keywordflow}{else}          \textcolor{keywordflow}{return}  \hyperlink{expm1_8c_ada85e349d35971b32c8ea4238881ff8b}{one}+2.0*(x-e);
+232         \}
+233         \textcolor{keywordflow}{if} (k <= -2 || k>56) \{   \textcolor{comment}{/* suffice to return exp(x)-1 */}
+234             \hyperlink{real_2prim_8h_a6e60fe0e0f9f8801507e15fe2d893751}{uword} hy;
+235 
+236             y = \hyperlink{expm1_8c_ada85e349d35971b32c8ea4238881ff8b}{one}-(e-x);
+237             \hyperlink{real_2prim_8h_ae62ee08d06ab4cc06d61dc1246b73195}{GET\_HIGH\_WORD}(hy,y);
+238             \hyperlink{real_2prim_8h_a6ca54776127e20149f84c290bf52f89e}{SET\_HIGH\_WORD}(y, hy + (k<<20));    \textcolor{comment}{/* add k to y's exponent */}
+239             \textcolor{keywordflow}{return} y-\hyperlink{expm1_8c_ada85e349d35971b32c8ea4238881ff8b}{one};
+240         \}
+241         t = \hyperlink{expm1_8c_ada85e349d35971b32c8ea4238881ff8b}{one};
+242         \textcolor{keywordflow}{if}(k<20) \{
+243             \hyperlink{real_2prim_8h_a6e60fe0e0f9f8801507e15fe2d893751}{uword} hy;
+244 
+245             \hyperlink{real_2prim_8h_a6ca54776127e20149f84c290bf52f89e}{SET\_HIGH\_WORD}(t, 0x3ff00000 - (0x200000>>k));  \textcolor{comment}{/* t=1-2^-k */}
+246             y = t-(e-x);
+247             \hyperlink{real_2prim_8h_ae62ee08d06ab4cc06d61dc1246b73195}{GET\_HIGH\_WORD}(hy, y);
+248             \hyperlink{real_2prim_8h_a6ca54776127e20149f84c290bf52f89e}{SET\_HIGH\_WORD}(y, hy + (k<<20));    \textcolor{comment}{/* add k to y's exponent */}
+249         \} \textcolor{keywordflow}{else} \{
+250             \hyperlink{real_2prim_8h_a6e60fe0e0f9f8801507e15fe2d893751}{uword} hy;
+251 
+252             \hyperlink{real_2prim_8h_a6ca54776127e20149f84c290bf52f89e}{SET\_HIGH\_WORD}(t, (0x3ff-k)<<20);   \textcolor{comment}{/* 2^-k */}
+253             y = x-(e+t);
+254             y += \hyperlink{expm1_8c_ada85e349d35971b32c8ea4238881ff8b}{one};
+255             \hyperlink{real_2prim_8h_ae62ee08d06ab4cc06d61dc1246b73195}{GET\_HIGH\_WORD}(hy, y);
+256             \hyperlink{real_2prim_8h_a6ca54776127e20149f84c290bf52f89e}{SET\_HIGH\_WORD}(y, hy + (k<<20));    \textcolor{comment}{/* add k to y's exponent */}
+257         \}
+258     \}
+259     \textcolor{keywordflow}{return} y;
+260 \}
+\end{DoxyCode}
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{expm1_8c_ae4963ac40f96d4b1fe8af1b1e90a20bb_icgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Variable Documentation}
+\index{expm1.\+c@{expm1.\+c}!huge@{huge}}
+\index{huge@{huge}!expm1.\+c@{expm1.\+c}}
+\subsubsection[{\texorpdfstring{huge}{huge}}]{\setlength{\rightskip}{0pt plus 5cm}const double huge = 1.\+0e+300\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{expm1_8c_acbd466133274923cc0785707fbdeea9a}{}\label{expm1_8c_acbd466133274923cc0785707fbdeea9a}
+
+
+Definition at line 143 of file expm1.\+c.
+
+
+
+Referenced by expm1().
+
+\index{expm1.\+c@{expm1.\+c}!invln2@{invln2}}
+\index{invln2@{invln2}!expm1.\+c@{expm1.\+c}}
+\subsubsection[{\texorpdfstring{invln2}{invln2}}]{\setlength{\rightskip}{0pt plus 5cm}const double invln2 = 1.\+44269504088896338700e+00\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{expm1_8c_a4cf65ab9c76c64c084e1abd8fe5da216}{}\label{expm1_8c_a4cf65ab9c76c64c084e1abd8fe5da216}
+
+
+Definition at line 148 of file expm1.\+c.
+
+
+
+Referenced by expm1().
+
+\index{expm1.\+c@{expm1.\+c}!ln2\+\_\+hi@{ln2\+\_\+hi}}
+\index{ln2\+\_\+hi@{ln2\+\_\+hi}!expm1.\+c@{expm1.\+c}}
+\subsubsection[{\texorpdfstring{ln2\+\_\+hi}{ln2_hi}}]{\setlength{\rightskip}{0pt plus 5cm}const double ln2\+\_\+hi = 6.\+93147180369123816490e-\/01\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{expm1_8c_a681dec71eb3b6048386c010ec2444fa4}{}\label{expm1_8c_a681dec71eb3b6048386c010ec2444fa4}
+
+
+Definition at line 146 of file expm1.\+c.
+
+
+
+Referenced by expm1().
+
+\index{expm1.\+c@{expm1.\+c}!ln2\+\_\+lo@{ln2\+\_\+lo}}
+\index{ln2\+\_\+lo@{ln2\+\_\+lo}!expm1.\+c@{expm1.\+c}}
+\subsubsection[{\texorpdfstring{ln2\+\_\+lo}{ln2_lo}}]{\setlength{\rightskip}{0pt plus 5cm}const double ln2\+\_\+lo = 1.\+90821492927058770002e-\/10\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{expm1_8c_aad361cc103aeef29c711917f539eb9bd}{}\label{expm1_8c_aad361cc103aeef29c711917f539eb9bd}
+
+
+Definition at line 147 of file expm1.\+c.
+
+
+
+Referenced by expm1().
+
+\index{expm1.\+c@{expm1.\+c}!o\+\_\+threshold@{o\+\_\+threshold}}
+\index{o\+\_\+threshold@{o\+\_\+threshold}!expm1.\+c@{expm1.\+c}}
+\subsubsection[{\texorpdfstring{o\+\_\+threshold}{o_threshold}}]{\setlength{\rightskip}{0pt plus 5cm}const double o\+\_\+threshold = 7.\+09782712893383973096e+02\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{expm1_8c_acbb7fb31d7634234372850576e110c91}{}\label{expm1_8c_acbb7fb31d7634234372850576e110c91}
+
+
+Definition at line 145 of file expm1.\+c.
+
+
+
+Referenced by expm1().
+
+\index{expm1.\+c@{expm1.\+c}!one@{one}}
+\index{one@{one}!expm1.\+c@{expm1.\+c}}
+\subsubsection[{\texorpdfstring{one}{one}}]{\setlength{\rightskip}{0pt plus 5cm}const double one = 1.\+0\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{expm1_8c_ada85e349d35971b32c8ea4238881ff8b}{}\label{expm1_8c_ada85e349d35971b32c8ea4238881ff8b}
+
+
+Definition at line 142 of file expm1.\+c.
+
+
+
+Referenced by expm1().
+
+\index{expm1.\+c@{expm1.\+c}!Q1@{Q1}}
+\index{Q1@{Q1}!expm1.\+c@{expm1.\+c}}
+\subsubsection[{\texorpdfstring{Q1}{Q1}}]{\setlength{\rightskip}{0pt plus 5cm}const double Q1 = -\/3.\+33333333333331316428e-\/02\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{expm1_8c_a337c7d6482c8cb25098d7923f887b172}{}\label{expm1_8c_a337c7d6482c8cb25098d7923f887b172}
+
+
+Definition at line 150 of file expm1.\+c.
+
+
+
+Referenced by expm1().
+
+\index{expm1.\+c@{expm1.\+c}!Q2@{Q2}}
+\index{Q2@{Q2}!expm1.\+c@{expm1.\+c}}
+\subsubsection[{\texorpdfstring{Q2}{Q2}}]{\setlength{\rightskip}{0pt plus 5cm}const double Q2 = 1.\+58730158725481460165e-\/03\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{expm1_8c_a58f4d8c535a1a29924ab9895ac5e3027}{}\label{expm1_8c_a58f4d8c535a1a29924ab9895ac5e3027}
+
+
+Definition at line 151 of file expm1.\+c.
+
+
+
+Referenced by expm1().
+
+\index{expm1.\+c@{expm1.\+c}!Q3@{Q3}}
+\index{Q3@{Q3}!expm1.\+c@{expm1.\+c}}
+\subsubsection[{\texorpdfstring{Q3}{Q3}}]{\setlength{\rightskip}{0pt plus 5cm}const double Q3 = -\/7.\+93650757867487942473e-\/05\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{expm1_8c_a1053f84ccfcc301b069f5dfdf0c05af3}{}\label{expm1_8c_a1053f84ccfcc301b069f5dfdf0c05af3}
+
+
+Definition at line 152 of file expm1.\+c.
+
+
+
+Referenced by expm1().
+
+\index{expm1.\+c@{expm1.\+c}!Q4@{Q4}}
+\index{Q4@{Q4}!expm1.\+c@{expm1.\+c}}
+\subsubsection[{\texorpdfstring{Q4}{Q4}}]{\setlength{\rightskip}{0pt plus 5cm}const double Q4 = 4.\+00821782732936239552e-\/06\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{expm1_8c_a3214bc1c813c902cb818fa053ac89e7e}{}\label{expm1_8c_a3214bc1c813c902cb818fa053ac89e7e}
+
+
+Definition at line 153 of file expm1.\+c.
+
+
+
+Referenced by expm1().
+
+\index{expm1.\+c@{expm1.\+c}!Q5@{Q5}}
+\index{Q5@{Q5}!expm1.\+c@{expm1.\+c}}
+\subsubsection[{\texorpdfstring{Q5}{Q5}}]{\setlength{\rightskip}{0pt plus 5cm}const double Q5 = -\/2.\+01099218183624371326e-\/07\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{expm1_8c_a439cf17c0f4c97fda729c7d078fa5d67}{}\label{expm1_8c_a439cf17c0f4c97fda729c7d078fa5d67}
+
+
+Definition at line 154 of file expm1.\+c.
+
+
+
+Referenced by expm1().
+
+\index{expm1.\+c@{expm1.\+c}!tiny@{tiny}}
+\index{tiny@{tiny}!expm1.\+c@{expm1.\+c}}
+\subsubsection[{\texorpdfstring{tiny}{tiny}}]{\setlength{\rightskip}{0pt plus 5cm}const double tiny = 1.\+0e-\/300\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{expm1_8c_a4f41fc56ffc7d06df51b6fbccd8c0846}{}\label{expm1_8c_a4f41fc56ffc7d06df51b6fbccd8c0846}
+
+
+Definition at line 144 of file expm1.\+c.
+
+
+
+Referenced by expm1().
+

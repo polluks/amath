@@ -1,0 +1,51 @@
+\hypertarget{round_8c}{}\section{lib/real/round.c File Reference}
+\label{round_8c}\index{lib/real/round.\+c@{lib/real/round.\+c}}
+{\ttfamily \#include \char`\"{}prim.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}math.\+h\char`\"{}}\\*
+Include dependency graph for round.\+c\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=190pt]{round_8c__incl}
+\end{center}
+\end{figure}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+double \hyperlink{round_8c_a7df19cf730447c00150569250a4b5e1d}{round} (double x)
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\index{round.\+c@{round.\+c}!round@{round}}
+\index{round@{round}!round.\+c@{round.\+c}}
+\subsubsection[{\texorpdfstring{round(double x)}{round(double x)}}]{\setlength{\rightskip}{0pt plus 5cm}double round (
+\begin{DoxyParamCaption}
+\item[{double}]{x}
+\end{DoxyParamCaption}
+)}\hypertarget{round_8c_a7df19cf730447c00150569250a4b5e1d}{}\label{round_8c_a7df19cf730447c00150569250a4b5e1d}
+
+
+Definition at line 30 of file round.\+c.
+
+
+
+Referenced by cround(), Decimal\+System\+::\+Get\+Real\+Text(), Positional\+Numeral\+System\+::\+Get\+Text(), and Real\+Number\+::\+Round().
+
+
+\begin{DoxyCode}
+31 \{
+32     \textcolor{keywordflow}{return} x > 0.0 ? \hyperlink{math_8h_a6de60a3e907dcf0bfe3ea8d64f1e8873}{floor}(x + 0.5) : \hyperlink{math_8h_a1ea6d7b591132268abc2e843ababd084}{ceil}(x - 0.5);
+33 \}
+\end{DoxyCode}
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{round_8c_a7df19cf730447c00150569250a4b5e1d_icgraph}
+\end{center}
+\end{figure}
+
+

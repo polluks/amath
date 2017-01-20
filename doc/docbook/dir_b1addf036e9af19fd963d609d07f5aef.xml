@@ -7,7 +7,7 @@
         <title>Directory Dependency diagram</title>
         <mediaobject>
             <imageobject>
-                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="../../dir_b1addf036e9af19fd963d609d07f5aef_dep.png"></imagedata>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="dir_b1addf036e9af19fd963d609d07f5aef_dep.png"></imagedata>
             </imageobject>
         </mediaobject>
     </figure>
@@ -17,181 +17,181 @@
             <para>
                 <itemizedlist>
                     <listitem>
-                        <para>file <link linkend="d5/d6e/evaluator_8cpp">evaluator.cpp</link></para>
+                        <para>file <link linkend="evaluator_8cpp">evaluator.cpp</link></para>
                     </listitem>
                 </itemizedlist>
             </para>
             <para>
                 <itemizedlist>
                     <listitem>
-                        <para>file <link linkend="d9/df2/evaluator_8h">evaluator.h</link></para>
+                        <para>file <link linkend="evaluator_8h">evaluator.h</link></para>
                     </listitem>
                 </itemizedlist>
             </para>
             <para>
                 <itemizedlist>
                     <listitem>
-                        <para>file <link linkend="d2/d80/functiondefs_8h">functiondefs.h</link></para>
+                        <para>file <link linkend="functiondefs_8h">functiondefs.h</link></para>
                     </listitem>
                 </itemizedlist>
             </para>
             <para>
                 <itemizedlist>
                     <listitem>
-                        <para>file <link linkend="d3/d36/functions_8cpp">functions.cpp</link></para>
+                        <para>file <link linkend="functions_8cpp">functions.cpp</link></para>
                     </listitem>
                 </itemizedlist>
             </para>
             <para>
                 <itemizedlist>
                     <listitem>
-                        <para>file <link linkend="d8/d5c/functions_8h">functions.h</link></para>
+                        <para>file <link linkend="functions_8h">functions.h</link></para>
                     </listitem>
                 </itemizedlist>
             </para>
             <para>
                 <itemizedlist>
                     <listitem>
-                        <para>file <link linkend="d8/d96/graphlist_8cpp">graphlist.cpp</link></para>
+                        <para>file <link linkend="graphlist_8cpp">graphlist.cpp</link></para>
                     </listitem>
                 </itemizedlist>
             </para>
             <para>
                 <itemizedlist>
                     <listitem>
-                        <para>file <link linkend="da/d3a/graphlist_8h">graphlist.h</link></para>
+                        <para>file <link linkend="graphlist_8h">graphlist.h</link></para>
                     </listitem>
                 </itemizedlist>
             </para>
             <para>
                 <itemizedlist>
                     <listitem>
-                        <para>file <link linkend="d4/d79/lexer_8cpp">lexer.cpp</link></para>
+                        <para>file <link linkend="lexer_8cpp">lexer.cpp</link></para>
                     </listitem>
                 </itemizedlist>
             </para>
             <para>
                 <itemizedlist>
                     <listitem>
-                        <para>file <link linkend="d5/df3/lexer_8h">lexer.h</link></para>
+                        <para>file <link linkend="lexer_8h">lexer.h</link></para>
                     </listitem>
                 </itemizedlist>
             </para>
             <para>
                 <itemizedlist>
                     <listitem>
-                        <para>file <link linkend="d9/d34/nodes_8cpp">nodes.cpp</link></para>
+                        <para>file <link linkend="nodes_8cpp">nodes.cpp</link></para>
                     </listitem>
                 </itemizedlist>
             </para>
             <para>
                 <itemizedlist>
                     <listitem>
-                        <para>file <link linkend="d1/d7f/nodes_8h">nodes.h</link></para>
+                        <para>file <link linkend="nodes_8h">nodes.h</link></para>
                     </listitem>
                 </itemizedlist>
             </para>
             <para>
                 <itemizedlist>
                     <listitem>
-                        <para>file <link linkend="d3/d56/operators_8cpp">operators.cpp</link></para>
+                        <para>file <link linkend="operators_8cpp">operators.cpp</link></para>
                     </listitem>
                 </itemizedlist>
             </para>
             <para>
                 <itemizedlist>
                     <listitem>
-                        <para>file <link linkend="d7/d79/operators_8h">operators.h</link></para>
+                        <para>file <link linkend="operators_8h">operators.h</link></para>
                     </listitem>
                 </itemizedlist>
             </para>
             <para>
                 <itemizedlist>
                     <listitem>
-                        <para>file <link linkend="df/d42/optimizer_8cpp">optimizer.cpp</link></para>
+                        <para>file <link linkend="optimizer_8cpp">optimizer.cpp</link></para>
                     </listitem>
                 </itemizedlist>
             </para>
             <para>
                 <itemizedlist>
                     <listitem>
-                        <para>file <link linkend="de/d77/optimizer_8h">optimizer.h</link></para>
+                        <para>file <link linkend="optimizer_8h">optimizer.h</link></para>
                     </listitem>
                 </itemizedlist>
             </para>
             <para>
                 <itemizedlist>
                     <listitem>
-                        <para>file <link linkend="dc/ddd/parser_8cpp">parser.cpp</link></para>
+                        <para>file <link linkend="parser_8cpp">parser.cpp</link></para>
                     </listitem>
                 </itemizedlist>
             </para>
             <para>
                 <itemizedlist>
                     <listitem>
-                        <para>file <link linkend="d5/d36/parser_8h">parser.h</link></para>
+                        <para>file <link linkend="parser_8h">parser.h</link></para>
                     </listitem>
                 </itemizedlist>
             </para>
             <para>
                 <itemizedlist>
                     <listitem>
-                        <para>file <link linkend="db/ddf/statements_8cpp">statements.cpp</link></para>
+                        <para>file <link linkend="statements_8cpp">statements.cpp</link></para>
                     </listitem>
                 </itemizedlist>
             </para>
             <para>
                 <itemizedlist>
                     <listitem>
-                        <para>file <link linkend="dd/d6a/statements_8h">statements.h</link></para>
+                        <para>file <link linkend="statements_8h">statements.h</link></para>
                     </listitem>
                 </itemizedlist>
             </para>
             <para>
                 <itemizedlist>
                     <listitem>
-                        <para>file <link linkend="de/dba/token_8cpp">token.cpp</link></para>
+                        <para>file <link linkend="token_8cpp">token.cpp</link></para>
                     </listitem>
                 </itemizedlist>
             </para>
             <para>
                 <itemizedlist>
                     <listitem>
-                        <para>file <link linkend="d1/d07/token_8h">token.h</link></para>
+                        <para>file <link linkend="token_8h">token.h</link></para>
                     </listitem>
                 </itemizedlist>
             </para>
             <para>
                 <itemizedlist>
                     <listitem>
-                        <para>file <link linkend="de/dc0/values_8cpp">values.cpp</link></para>
+                        <para>file <link linkend="values_8cpp">values.cpp</link></para>
                     </listitem>
                 </itemizedlist>
             </para>
             <para>
                 <itemizedlist>
                     <listitem>
-                        <para>file <link linkend="d2/d9a/values_8h">values.h</link></para>
+                        <para>file <link linkend="values_8h">values.h</link></para>
                     </listitem>
                 </itemizedlist>
             </para>
             <para>
                 <itemizedlist>
                     <listitem>
-                        <para>file <link linkend="d4/dc9/viewer_8cpp">viewer.cpp</link></para>
+                        <para>file <link linkend="viewer_8cpp">viewer.cpp</link></para>
                     </listitem>
                 </itemizedlist>
             </para>
             <para>
                 <itemizedlist>
                     <listitem>
-                        <para>file <link linkend="dc/dba/viewer_8h">viewer.h</link></para>
+                        <para>file <link linkend="viewer_8h">viewer.h</link></para>
                     </listitem>
                 </itemizedlist>
             </para>
         </simplesect>
     <simplesect>
         <title>Detailed Description</title>
-    <para>Directory location is /home/carsten/amath2/app/main/</para>
+    <para>Directory location is /home/carsten/amath/app/main/</para>
     </simplesect>
 </section>

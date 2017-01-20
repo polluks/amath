@@ -1,6 +1,0 @@
-<map id="StandardConsole::StandardConsole" name="StandardConsole::StandardConsole">
-<area shape="rect" id="node2" href="$df/d87/classAnsiConoleEngine.html#aac394a191db46deb09a08522bdf72218" title="AnsiConoleEngine::AnsiConole\lEngine" alt="" coords="236,57,440,98"/>
-<area shape="rect" id="node5" href="$d2/dbb/classConsoleBase.html#a69210c6548727255c817e70cdd167f84" title="ConsoleBase::ConsoleBase" alt="" coords="245,5,431,32"/>
-<area shape="rect" id="node3" href="$dd/d2a/alloccpy_8c.html#a5bed05c70cb17e541fee570b5dc32e1a" title="Allocate memory and copy a string into the array. " alt="" coords="513,9,619,36"/>
-<area shape="rect" id="node4" href="$dc/d84/classCharBuffer.html#a4345e9a5114f5c0292e8f242f26e3a7b" title="Initialize without allocating memory. " alt="" coords="488,64,644,91"/>
-</map>

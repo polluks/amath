@@ -1,0 +1,197 @@
+\hypertarget{classCosecantNode}{}\section{Cosecant\+Node Class Reference}
+\label{classCosecantNode}\index{Cosecant\+Node@{Cosecant\+Node}}
+
+
+{\ttfamily \#include $<$functions.\+h$>$}
+
+
+
+Inheritance diagram for Cosecant\+Node\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=169pt]{classCosecantNode__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Cosecant\+Node\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=272pt]{classCosecantNode__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCosecantNode_a4e92c76b2ee0b9001f935bdf8b572992}{Cosecant\+Node} (\hyperlink{classExpressionNode}{Expression\+Node} $\ast$\hyperlink{classFunctionNode_ad7577b179a1937aaf8a0058bb5b546dc}{expression})
+\item 
+\hyperlink{structNumber}{Number} $\ast$ \hyperlink{classCosecantNode_a56ecfcf72005dc95477c95df291609e9}{Evaluate} ()
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{classFunctionNode}{Function\+Node} $\ast$ \hyperlink{classCosecantNode_a8c69199ee5f01bfbb9c5e536626c71a3}{Create} (\hyperlink{classExpressionNode}{Expression\+Node} $\ast$\hyperlink{classFunctionNode_ad7577b179a1937aaf8a0058bb5b546dc}{expression})
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+char $\ast$ \hyperlink{classCosecantNode_aedd716ab2e6e2a562718168ea3e4a367}{Get\+Node\+Text} ()
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 372 of file functions.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Cosecant\+Node@{Cosecant\+Node}!Cosecant\+Node@{Cosecant\+Node}}
+\index{Cosecant\+Node@{Cosecant\+Node}!Cosecant\+Node@{Cosecant\+Node}}
+\subsubsection[{\texorpdfstring{Cosecant\+Node(\+Expression\+Node $\ast$expression)}{CosecantNode(ExpressionNode *expression)}}]{\setlength{\rightskip}{0pt plus 5cm}Cosecant\+Node\+::\+Cosecant\+Node (
+\begin{DoxyParamCaption}
+\item[{{\bf Expression\+Node} $\ast$}]{expression}
+\end{DoxyParamCaption}
+)}\hypertarget{classCosecantNode_a4e92c76b2ee0b9001f935bdf8b572992}{}\label{classCosecantNode_a4e92c76b2ee0b9001f935bdf8b572992}
+
+
+Definition at line 801 of file functions.\+cpp.
+
+
+
+References Function\+Node\+::\+Function\+Node().
+
+
+
+Referenced by Create().
+
+
+\begin{DoxyCode}
+801                                                      :
+802     \hyperlink{classFunctionNode_a41cb7db0162ffbec0902bd8ff7ea435f}{FunctionNode}(expression) \{ \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classCosecantNode_a4e92c76b2ee0b9001f935bdf8b572992_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classCosecantNode_a4e92c76b2ee0b9001f935bdf8b572992_icgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Member Function Documentation}
+\index{Cosecant\+Node@{Cosecant\+Node}!Create@{Create}}
+\index{Create@{Create}!Cosecant\+Node@{Cosecant\+Node}}
+\subsubsection[{\texorpdfstring{Create(\+Expression\+Node $\ast$expression)}{Create(ExpressionNode *expression)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Function\+Node} $\ast$ Cosecant\+Node\+::\+Create (
+\begin{DoxyParamCaption}
+\item[{{\bf Expression\+Node} $\ast$}]{expression}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{classCosecantNode_a8c69199ee5f01bfbb9c5e536626c71a3}{}\label{classCosecantNode_a8c69199ee5f01bfbb9c5e536626c71a3}
+
+
+Definition at line 804 of file functions.\+cpp.
+
+
+
+References Cosecant\+Node().
+
+
+\begin{DoxyCode}
+805 \{
+806     \textcolor{keywordflow}{return} \textcolor{keyword}{new} \hyperlink{classCosecantNode_a4e92c76b2ee0b9001f935bdf8b572992}{CosecantNode}(expression);
+807 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classCosecantNode_a8c69199ee5f01bfbb9c5e536626c71a3_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{Cosecant\+Node@{Cosecant\+Node}!Evaluate@{Evaluate}}
+\index{Evaluate@{Evaluate}!Cosecant\+Node@{Cosecant\+Node}}
+\subsubsection[{\texorpdfstring{Evaluate()}{Evaluate()}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Number} $\ast$ Cosecant\+Node\+::\+Evaluate (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{classCosecantNode_a56ecfcf72005dc95477c95df291609e9}{}\label{classCosecantNode_a56ecfcf72005dc95477c95df291609e9}
+
+
+Implements \hyperlink{classExpressionNode_a64975d4dc37742228bd522f6204537f7}{Expression\+Node}.
+
+
+
+Definition at line 809 of file functions.\+cpp.
+
+
+
+References Number\+::\+Cosecant(), Expression\+Node\+::\+Evaluate(), Function\+Node\+::expression, and Expression\+Node\+::result.
+
+
+\begin{DoxyCode}
+810 \{
+811     \hyperlink{classExpressionNode_a1f590649f5a5cb30eb7ee912f7bc1262}{result} = \hyperlink{classFunctionNode_ad7577b179a1937aaf8a0058bb5b546dc}{expression}->\hyperlink{classExpressionNode_a64975d4dc37742228bd522f6204537f7}{Evaluate}()->\hyperlink{structNumber_a267a79888fd185d689e2877b449128d8}{Cosecant}();
+812     \textcolor{keywordflow}{return} \hyperlink{classExpressionNode_a1f590649f5a5cb30eb7ee912f7bc1262}{result};
+813 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classCosecantNode_a56ecfcf72005dc95477c95df291609e9_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{Cosecant\+Node@{Cosecant\+Node}!Get\+Node\+Text@{Get\+Node\+Text}}
+\index{Get\+Node\+Text@{Get\+Node\+Text}!Cosecant\+Node@{Cosecant\+Node}}
+\subsubsection[{\texorpdfstring{Get\+Node\+Text()}{GetNodeText()}}]{\setlength{\rightskip}{0pt plus 5cm}char $\ast$ Cosecant\+Node\+::\+Get\+Node\+Text (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}\hypertarget{classCosecantNode_aedd716ab2e6e2a562718168ea3e4a367}{}\label{classCosecantNode_aedd716ab2e6e2a562718168ea3e4a367}
+
+
+Implements \hyperlink{classExpressionNode_a42a5e9562b0f645a19dcc83f698069b5}{Expression\+Node}.
+
+
+
+Definition at line 815 of file functions.\+cpp.
+
+
+\begin{DoxyCode}
+816 \{
+817     \textcolor{keywordflow}{return} (\textcolor{keywordtype}{char}*)\textcolor{stringliteral}{"csc"};
+818 \}
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+app/main/\hyperlink{functions_8h}{functions.\+h}\item 
+app/main/\hyperlink{functions_8cpp}{functions.\+cpp}\end{DoxyCompactItemize}

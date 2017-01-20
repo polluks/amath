@@ -1,0 +1,27 @@
+<map id="StatementNode" name="StatementNode">
+<area shape="rect" id="node3" href="$classClearStatement.html" title="Clear the console window. " alt="" coords="333,5,446,32"/>
+<area shape="rect" id="node4" href="$classDeleteStatement.html" title="Delete variable or function. " alt="" coords="329,56,449,83"/>
+<area shape="rect" id="node5" href="$classDigitsStatement.html" title="Set number of significant digits to show. " alt="" coords="331,107,447,133"/>
+<area shape="rect" id="node6" href="$classDrawStatement.html" title="DrawStatement" alt="" coords="333,157,446,184"/>
+<area shape="rect" id="node7" href="$classEmptyStatement.html" title="An empty statement. " alt="" coords="329,208,449,235"/>
+<area shape="rect" id="node8" href="$classEvalStatement.html" title="Evaluate arithmetic expression. " alt="" coords="335,259,443,285"/>
+<area shape="rect" id="node9" href="$classExecuteStatement.html" title="ExecuteStatement" alt="" coords="324,309,455,336"/>
+<area shape="rect" id="node10" href="$classExitStatement.html" title="Exit program. " alt="" coords="337,360,442,387"/>
+<area shape="rect" id="node11" href="$classFunctionDefinitionNode.html" title="A syntax node able to define a user defined function. " alt="" coords="310,411,469,437"/>
+<area shape="rect" id="node12" href="$classHelpStatement.html" title="Logic related to the help statement. " alt="" coords="335,461,444,488"/>
+<area shape="rect" id="node13" href="$classInputStatement.html" title="Change numeral input system. " alt="" coords="334,512,445,539"/>
+<area shape="rect" id="node14" href="$classListFunctionsStatement.html" title="A syntax node able to list all user defined functions. " alt="" coords="309,563,469,589"/>
+<area shape="rect" id="node15" href="$classListStatement.html" title="ListStatement" alt="" coords="338,613,441,640"/>
+<area shape="rect" id="node16" href="$classListVariablesStatement.html" title="Statement to list all user defined variables. " alt="" coords="311,664,468,691"/>
+<area shape="rect" id="node17" href="$classLoadStatement.html" title="LoadStatement" alt="" coords="334,715,445,741"/>
+<area shape="rect" id="node18" href="$classMemoryStatement.html" title="Show memory usage. " alt="" coords="325,765,454,792"/>
+<area shape="rect" id="node19" href="$classOutputStatement.html" title="Change numeral output system. " alt="" coords="329,816,450,843"/>
+<area shape="rect" id="node20" href="$classPlotStatement.html" title="PlotStatement" alt="" coords="337,867,442,893"/>
+<area shape="rect" id="node21" href="$classPrefsStatement.html" title="Load or save preferences. " alt="" coords="333,917,446,944"/>
+<area shape="rect" id="node22" href="$classPromptStatement.html" title="Set prompt string. " alt="" coords="327,968,451,995"/>
+<area shape="rect" id="node23" href="$classSaveStatement.html" title="SaveStatement" alt="" coords="333,1019,445,1045"/>
+<area shape="rect" id="node24" href="$classShowStatement.html" title="ShowStatement" alt="" coords="332,1069,447,1096"/>
+<area shape="rect" id="node25" href="$classSilentStatement.html" title="Mutes the output of another statement. " alt="" coords="332,1120,447,1147"/>
+<area shape="rect" id="node26" href="$classVersionStatement.html" title="Show version string. " alt="" coords="326,1171,453,1197"/>
+<area shape="rect" id="node2" href="$classSyntaxNode.html" title="Base class for all nodes in a syntax tree. " alt="" coords="5,588,100,615"/>
+</map>

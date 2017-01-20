@@ -1,0 +1,189 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="classNumeralSystem">
+<title>NumeralSystem class Reference</title>
+<para>
+    <programlisting>#include <link linkend="ntext_8h">&lt;ntext.h&gt;</link></programlisting>
+</para>
+<para>Inheritance diagram for NumeralSystem</para>
+<para>
+    <figure>
+        <title>Inheritance graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="classNumeralSystem__inherit__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+<para>Collaboration diagram for NumeralSystem</para>
+<para>
+    <figure>
+        <title>Collaboration graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="classNumeralSystem__coll__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+        <section>
+            <title>Protected Attributes</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>CharBuffer * buf</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="classNumeralSystem_1a1bca07a7784148e5505e77cf6ab97123">NumeralSystem</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>virtual <link linkend="classNumeralSystem_1a29ad089499c1d6d2fa8f921e37285b6f">~NumeralSystem</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>virtual const char * <link linkend="classNumeralSystem_1a1bfe3fd463e687451a81f7a22cd4264b">GetName</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>virtual const char * <link linkend="classNumeralSystem_1a04d486781ac3a432fc4d8e0b1915e137">GetPrefix</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>virtual unsigned int <link linkend="classNumeralSystem_1ace143acf659454d7fa8ae119236b7700">GetDigits</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>virtual void <link linkend="classNumeralSystem_1acd05f991ab35e808f46eacef6d7a4fb8">SetDigits</link> (
+unsigned int digits)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>virtual const char <link linkend="classNumeralSystem_1a7212f107938ae55e780208518a16fa2f">GetFractionPoint</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>virtual void <link linkend="classNumeralSystem_1a5af49530e36feadbd24ef90206c5eceb">SetFractionPoint</link> (
+const char fractionpoint)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>virtual const char * <link linkend="classNumeralSystem_1a74dc91c4dbab4a88a123b2a32753f485">GetText</link> (
+<link linkend="structNumber">Number</link> * number)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>virtual <link linkend="structNumber">Number</link> * <link linkend="classNumeralSystem_1af3643941efdda71a873e2a31276f2d49">Parse</link> (
+const char * text, unsigned int * length, char ** end)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>virtual <link linkend="structNumber">Number</link> * <link linkend="classNumeralSystem_1a1f8d8a04e99540260d4fc4f16c63ddc3">Parse</link> (
+const char * text)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+    <simplesect>
+
+<para>Base class for all numeral systems. </para>
+    </simplesect>
+        <simplesect>
+            <title>Detailed Description</title>
+
+<para>More info on numeral systems is available at Wikipedia: <link xlink:href="http://en.wikipedia.org/wiki/Numeral_system">http://en.wikipedia.org/wiki/Numeral_system</link> </para>
+                <para>Definition at line 48 of file ntext.h</para>
+                <para>The Documentation for this struct was generated from the following file: </para>
+                <para><itemizedlist><listitem><para>ntext.h</para></listitem></itemizedlist></para>
+        </simplesect>
+        <section>
+            <title>Member Data Documentation</title>
+        </section>
+            <section xml:id="classNumeralSystem_1a1bca07a7784148e5505e77cf6ab97123">
+                <title>NumeralSystem::NumeralSystem ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="classNumeralSystem_1a29ad089499c1d6d2fa8f921e37285b6f">
+                <title>NumeralSystem::~NumeralSystem ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="classNumeralSystem_1a1bfe3fd463e687451a81f7a22cd4264b">
+                <title>virtual const char* NumeralSystem::GetName ()=0</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="classNumeralSystem_1a04d486781ac3a432fc4d8e0b1915e137">
+                <title>virtual const char* NumeralSystem::GetPrefix ()=0</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="classNumeralSystem_1ace143acf659454d7fa8ae119236b7700">
+                <title>virtual unsigned int NumeralSystem::GetDigits ()=0</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="classNumeralSystem_1acd05f991ab35e808f46eacef6d7a4fb8">
+                <title>virtual void NumeralSystem::SetDigits (unsigned int digits)=0</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="classNumeralSystem_1a7212f107938ae55e780208518a16fa2f">
+                <title>virtual const char NumeralSystem::GetFractionPoint ()=0</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="classNumeralSystem_1a5af49530e36feadbd24ef90206c5eceb">
+                <title>virtual void NumeralSystem::SetFractionPoint (const char fractionpoint)=0</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="classNumeralSystem_1a74dc91c4dbab4a88a123b2a32753f485">
+                <title>virtual const char* NumeralSystem::GetText (Number *number)=0</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="classNumeralSystem_1af3643941efdda71a873e2a31276f2d49">
+                <title>virtual Number* NumeralSystem::Parse (const char *text, unsigned int *length, char **end)=0</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="classNumeralSystem_1a1f8d8a04e99540260d4fc4f16c63ddc3">
+                <title>Number * NumeralSystem::Parse (const char *text)</title> <emphasis></emphasis>
+                
+            </section>
+</section>

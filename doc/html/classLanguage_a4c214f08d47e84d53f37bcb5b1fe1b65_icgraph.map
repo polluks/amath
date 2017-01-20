@@ -1,0 +1,10 @@
+<map id="Language::GetFractionPoint" name="Language::GetFractionPoint">
+<area shape="rect" id="node2" href="$classProgram.html#aef8e1c957776e550081cb2c47a11d64b" title="Program::NewPositionalInput" alt="" coords="243,5,435,32"/>
+<area shape="rect" id="node4" href="$classProgram.html#a38a8a4a116b01a1bce417488ee235ee7" title="Program::NewPositionalOutput" alt="" coords="237,56,440,83"/>
+<area shape="rect" id="node6" href="$classProgram.html#aaefaa0df08f3484476fc4d61e97acbdc" title="Program::Program" alt="" coords="275,111,403,137"/>
+<area shape="rect" id="node3" href="$classInputStatement.html#ac4a9288ba2fe5002ae78d65c270222a5" title="InputStatement::Execute" alt="" coords="496,5,663,32"/>
+<area shape="rect" id="node5" href="$classOutputStatement.html#a870c0d2b4bffb94e542d1e5890ec3c20" title="OutputStatement::Execute" alt="" coords="491,56,668,83"/>
+<area shape="rect" id="node7" href="$classStandardProgram.html#a8f86a2eaf4593fd52dc4d13c40815f05" title="StandardProgram::Standard\lProgram" alt="" coords="488,107,671,149"/>
+<area shape="rect" id="node8" href="$io_8cpp.html#ab181236fa77671f15d24155b5655ef78" title="CreateProgram" alt="" coords="719,115,829,141"/>
+<area shape="rect" id="node9" href="$main_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title="main" alt="" coords="877,115,928,141"/>
+</map>

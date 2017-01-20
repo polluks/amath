@@ -1,0 +1,705 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="structComplexNumber">
+<title>ComplexNumber struct Reference</title>
+<para>
+    <programlisting>#include <link linkend="cplex_8h">&lt;cplex.h&gt;</link></programlisting>
+</para>
+<para>Inheritance diagram for ComplexNumber</para>
+<para>
+    <figure>
+        <title>Inheritance graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="structComplexNumber__inherit__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+<para>Collaboration diagram for ComplexNumber</para>
+<para>
+    <figure>
+        <title>Collaboration graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="structComplexNumber__coll__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+        <section>
+            <title>Private Attributes</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>complex z</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="structComplexNumber_1a610e9db9ff0ddb0140e30d235ab64e44">ComplexNumber</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="structComplexNumber_1a0d89581ead93385331befcef51698693">ComplexNumber</link> (
+<link linkend="unioncomplex">complex</link> z)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="structComplexNumber_1af0a78be5e675c845b8dc2bf8e5e8f32b">ComplexNumber</link> (
+double real, double imag)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="structComplexNumber_1abc3b759a61e4964ccd712622ce00e0d1">~ComplexNumber</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="structNumber">Number</link> * <link linkend="structComplexNumber_1acae8fd1b1c3cd871b9975053b9bcc4d1">Clone</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="structComplexNumber_1a5d9fb1157a99a97244b306821b1d30c1">GetIntegerValue</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>double <link linkend="structComplexNumber_1ae9f6a3f46c067286dec298358dee3cd7">GetRealValue</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>double <link linkend="structComplexNumber_1a4b26887c940f046a442815ac154cda66">GetImagValue</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="unioncomplex">complex</link> <link linkend="structComplexNumber_1a711b2ce78037a97680c46a5e1e9a4bb8">GetComplexValue</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="platform_8h_1a1062901a7428fdd9c7f180f5e01ea056">bool</link> <link linkend="structComplexNumber_1a5343b272e85da4ea67a5b8aaa53fdac0">PureComplexValue</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="structComplexNumber_1a14e7e0bfb5fe65d667c9ff50634cfdf6">GetPrecedence</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="structComplexNumber_1a703a1afdc3223e5cdacff225903e62ef">GetDefaultPrecedence</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="structNumber">Number</link> * <link linkend="structComplexNumber_1a52bb791f848e90072a65841c7402b2c4">Unary</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="structNumber">Number</link> * <link linkend="structComplexNumber_1ad6b9fb6fe480c3a626f4e105024d2375">Add</link> (
+<link linkend="structNumber">Number</link> * other)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="structNumber">Number</link> * <link linkend="structComplexNumber_1a8f196f990620e30495f69338a1e40316">Sub</link> (
+<link linkend="structNumber">Number</link> * other)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="structNumber">Number</link> * <link linkend="structComplexNumber_1a8b876b0e7e776fa2f0fa2bc034cc224b">Mul</link> (
+<link linkend="structNumber">Number</link> * other)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="structNumber">Number</link> * <link linkend="structComplexNumber_1a78f07b5e0e9d481629e3814b6037522b">Div</link> (
+<link linkend="structNumber">Number</link> * other)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="structNumber">Number</link> * <link linkend="structComplexNumber_1a0ab40e1cbe5c25629fe62643ed8b9352">Raise</link> (
+<link linkend="structNumber">Number</link> * exponent)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="structNumber">Number</link> * <link linkend="structComplexNumber_1a0dc0f3ef7885f9d6b5a30e6ce983ceeb">Signum</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="structNumber">Number</link> * <link linkend="structComplexNumber_1aab24afa1330c3777b0e29c6d85114bf1">Trunc</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="structNumber">Number</link> * <link linkend="structComplexNumber_1a5026a3ed13a525843d02acbd0d94a4aa">Round</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="structNumber">Number</link> * <link linkend="structComplexNumber_1abf02b60fa622fae2724b7a6768acf2d6">Floor</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="structNumber">Number</link> * <link linkend="structComplexNumber_1a4788f638a16773706510bdc2edd0ea49">Ceiling</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="structNumber">Number</link> * <link linkend="structComplexNumber_1a7fb865f9bca992bb78dc057f3d8cfd82">Absolute</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="structNumber">Number</link> * <link linkend="structComplexNumber_1a9c2d08c5faba8c3db38186264f2361a9">SquareRoot</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="structNumber">Number</link> * <link linkend="structComplexNumber_1a1589eac796ec230625298d196fe84c25">CubeRoot</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="structNumber">Number</link> * <link linkend="structComplexNumber_1ac85979812dffce5a38ccf3cab090b320">Reciprocal</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="structNumber">Number</link> * <link linkend="structComplexNumber_1af2b337a76672ec647dbe707d3287d6df">Log</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="structNumber">Number</link> * <link linkend="structComplexNumber_1ae8ff446ea20c3b1e4dfa979eaed9ea86">Log2</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="structNumber">Number</link> * <link linkend="structComplexNumber_1a77a7c95712136b6beeded79210a18c00">Log10</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="structNumber">Number</link> * <link linkend="structComplexNumber_1a5125e77b2c28147688cf65f596c9ccb7">Sine</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="structNumber">Number</link> * <link linkend="structComplexNumber_1a9c52151f9a5111bf5163f43e5e697f9e">Cosine</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="structNumber">Number</link> * <link linkend="structComplexNumber_1a6b7cb0a68c9d44e3367c9a42748af045">Tangent</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="structNumber">Number</link> * <link linkend="structComplexNumber_1a9740a470743b92208243140c3f7a8b35">Cosecant</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="structNumber">Number</link> * <link linkend="structComplexNumber_1a214e1ed3096e8ed3aa0a3c446fe2ef8a">Secant</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="structNumber">Number</link> * <link linkend="structComplexNumber_1a922c244a14dbee2e17bd5dc6dbec7625">Cotangent</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="structNumber">Number</link> * <link linkend="structComplexNumber_1ab52b2cfd9cd0ba862346408c580e385c">ArcSine</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="structNumber">Number</link> * <link linkend="structComplexNumber_1a5f9bdc56dba5fc8cdf8afb8cd232e7e4">ArcCosine</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="structNumber">Number</link> * <link linkend="structComplexNumber_1a69dc018433e7409d5b6b6d87568ae232">ArcTangent</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="structNumber">Number</link> * <link linkend="structComplexNumber_1a904a9af5470b037c1931d7d090410c94">ArcCosecant</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="structNumber">Number</link> * <link linkend="structComplexNumber_1a66cb3904e4b3127f0e3714ba23a0c981">ArcSecant</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="structNumber">Number</link> * <link linkend="structComplexNumber_1a412a4480826c808d9358ccc84f24a75f">ArcCotangent</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="structNumber">Number</link> * <link linkend="structComplexNumber_1a800a3cce573a4952ffdc61591ef781cc">HypSine</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="structNumber">Number</link> * <link linkend="structComplexNumber_1a3de3278838400b94d6da3aabc264e467">HypCosine</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="structNumber">Number</link> * <link linkend="structComplexNumber_1a313bade9f3fdc7171f907c9fbafa06a0">HypTangent</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="structNumber">Number</link> * <link linkend="structComplexNumber_1ab4ee0dc45e8e43e1fa647bef6c65542c">HypCosecant</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="structNumber">Number</link> * <link linkend="structComplexNumber_1af3c80a4c100e00445f5e4c52be29c031">HypSecant</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="structNumber">Number</link> * <link linkend="structComplexNumber_1aecf508c5b54725938ffe98f97088d4db">HypCotangent</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="structNumber">Number</link> * <link linkend="structComplexNumber_1a0081fb3057a6ab825ac0b3dbea62406b">HypArcSine</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="structNumber">Number</link> * <link linkend="structComplexNumber_1a9d1b26167fb3e3c84e18b724bcfbb48a">HypArcCosine</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="structNumber">Number</link> * <link linkend="structComplexNumber_1a9c1090310f2f9e656467625e0137c8dc">HypArcTangent</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="structNumber">Number</link> * <link linkend="structComplexNumber_1af53cdbbf59f07f40118cf05a51cf3d0a">HypArcCosecant</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="structNumber">Number</link> * <link linkend="structComplexNumber_1af0d9ceb661b6bf3052d3806c84ab6faf">HypArcSecant</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="structNumber">Number</link> * <link linkend="structComplexNumber_1acf624375cf09c48f5209ec3605ca01f6">HypArcCotangent</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+    <simplesect>
+
+<para>Represent a complex number with 2 componts of 15 siginificant digits. </para>
+    </simplesect>
+        <simplesect>
+            <title>Detailed Description</title>
+
+<para>Calculations are done using 64 bit IEEE 754 arithmetics. </para>
+                <para>Definition at line 46 of file cplex.h</para>
+                <para>The Documentation for this struct was generated from the following file: </para>
+                <para><itemizedlist><listitem><para>cplex.h</para></listitem></itemizedlist></para>
+        </simplesect>
+        <section>
+            <title>Member Data Documentation</title>
+        </section>
+            <section xml:id="structComplexNumber_1a610e9db9ff0ddb0140e30d235ab64e44">
+                <title>ComplexNumber::ComplexNumber ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="structComplexNumber_1a0d89581ead93385331befcef51698693">
+                <title>ComplexNumber::ComplexNumber (complex z)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="structComplexNumber_1af0a78be5e675c845b8dc2bf8e5e8f32b">
+                <title>ComplexNumber::ComplexNumber (double real, double imag)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="structComplexNumber_1abc3b759a61e4964ccd712622ce00e0d1">
+                <title>ComplexNumber::~ComplexNumber ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="structComplexNumber_1acae8fd1b1c3cd871b9975053b9bcc4d1">
+                <title>Number * ComplexNumber::Clone ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="structComplexNumber_1a5d9fb1157a99a97244b306821b1d30c1">
+                <title>int ComplexNumber::GetIntegerValue ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="structComplexNumber_1ae9f6a3f46c067286dec298358dee3cd7">
+                <title>double ComplexNumber::GetRealValue ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="structComplexNumber_1a4b26887c940f046a442815ac154cda66">
+                <title>double ComplexNumber::GetImagValue ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="structComplexNumber_1a711b2ce78037a97680c46a5e1e9a4bb8">
+                <title>complex ComplexNumber::GetComplexValue ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="structComplexNumber_1a5343b272e85da4ea67a5b8aaa53fdac0">
+                <title>bool ComplexNumber::PureComplexValue ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="structComplexNumber_1a14e7e0bfb5fe65d667c9ff50634cfdf6">
+                <title>int ComplexNumber::GetPrecedence ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="structComplexNumber_1a703a1afdc3223e5cdacff225903e62ef">
+                <title>int ComplexNumber::GetDefaultPrecedence ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="structComplexNumber_1a52bb791f848e90072a65841c7402b2c4">
+                <title>Number * ComplexNumber::Unary ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="structComplexNumber_1ad6b9fb6fe480c3a626f4e105024d2375">
+                <title>Number * ComplexNumber::Add (Number *other)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="structComplexNumber_1a8f196f990620e30495f69338a1e40316">
+                <title>Number * ComplexNumber::Sub (Number *other)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="structComplexNumber_1a8b876b0e7e776fa2f0fa2bc034cc224b">
+                <title>Number * ComplexNumber::Mul (Number *other)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="structComplexNumber_1a78f07b5e0e9d481629e3814b6037522b">
+                <title>Number * ComplexNumber::Div (Number *other)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="structComplexNumber_1a0ab40e1cbe5c25629fe62643ed8b9352">
+                <title>Number * ComplexNumber::Raise (Number *exponent)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="structComplexNumber_1a0dc0f3ef7885f9d6b5a30e6ce983ceeb">
+                <title>Number * ComplexNumber::Signum ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="structComplexNumber_1aab24afa1330c3777b0e29c6d85114bf1">
+                <title>Number * ComplexNumber::Trunc ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="structComplexNumber_1a5026a3ed13a525843d02acbd0d94a4aa">
+                <title>Number * ComplexNumber::Round ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="structComplexNumber_1abf02b60fa622fae2724b7a6768acf2d6">
+                <title>Number * ComplexNumber::Floor ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="structComplexNumber_1a4788f638a16773706510bdc2edd0ea49">
+                <title>Number * ComplexNumber::Ceiling ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="structComplexNumber_1a7fb865f9bca992bb78dc057f3d8cfd82">
+                <title>Number * ComplexNumber::Absolute ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="structComplexNumber_1a9c2d08c5faba8c3db38186264f2361a9">
+                <title>Number * ComplexNumber::SquareRoot ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="structComplexNumber_1a1589eac796ec230625298d196fe84c25">
+                <title>Number * ComplexNumber::CubeRoot ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="structComplexNumber_1ac85979812dffce5a38ccf3cab090b320">
+                <title>Number * ComplexNumber::Reciprocal ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="structComplexNumber_1af2b337a76672ec647dbe707d3287d6df">
+                <title>Number * ComplexNumber::Log ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="structComplexNumber_1ae8ff446ea20c3b1e4dfa979eaed9ea86">
+                <title>Number * ComplexNumber::Log2 ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="structComplexNumber_1a77a7c95712136b6beeded79210a18c00">
+                <title>Number * ComplexNumber::Log10 ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="structComplexNumber_1a5125e77b2c28147688cf65f596c9ccb7">
+                <title>Number * ComplexNumber::Sine ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="structComplexNumber_1a9c52151f9a5111bf5163f43e5e697f9e">
+                <title>Number * ComplexNumber::Cosine ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="structComplexNumber_1a6b7cb0a68c9d44e3367c9a42748af045">
+                <title>Number * ComplexNumber::Tangent ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="structComplexNumber_1a9740a470743b92208243140c3f7a8b35">
+                <title>Number * ComplexNumber::Cosecant ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="structComplexNumber_1a214e1ed3096e8ed3aa0a3c446fe2ef8a">
+                <title>Number * ComplexNumber::Secant ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="structComplexNumber_1a922c244a14dbee2e17bd5dc6dbec7625">
+                <title>Number * ComplexNumber::Cotangent ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="structComplexNumber_1ab52b2cfd9cd0ba862346408c580e385c">
+                <title>Number * ComplexNumber::ArcSine ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="structComplexNumber_1a5f9bdc56dba5fc8cdf8afb8cd232e7e4">
+                <title>Number * ComplexNumber::ArcCosine ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="structComplexNumber_1a69dc018433e7409d5b6b6d87568ae232">
+                <title>Number * ComplexNumber::ArcTangent ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="structComplexNumber_1a904a9af5470b037c1931d7d090410c94">
+                <title>Number * ComplexNumber::ArcCosecant ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="structComplexNumber_1a66cb3904e4b3127f0e3714ba23a0c981">
+                <title>Number * ComplexNumber::ArcSecant ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="structComplexNumber_1a412a4480826c808d9358ccc84f24a75f">
+                <title>Number * ComplexNumber::ArcCotangent ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="structComplexNumber_1a800a3cce573a4952ffdc61591ef781cc">
+                <title>Number * ComplexNumber::HypSine ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="structComplexNumber_1a3de3278838400b94d6da3aabc264e467">
+                <title>Number * ComplexNumber::HypCosine ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="structComplexNumber_1a313bade9f3fdc7171f907c9fbafa06a0">
+                <title>Number * ComplexNumber::HypTangent ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="structComplexNumber_1ab4ee0dc45e8e43e1fa647bef6c65542c">
+                <title>Number * ComplexNumber::HypCosecant ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="structComplexNumber_1af3c80a4c100e00445f5e4c52be29c031">
+                <title>Number * ComplexNumber::HypSecant ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="structComplexNumber_1aecf508c5b54725938ffe98f97088d4db">
+                <title>Number * ComplexNumber::HypCotangent ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="structComplexNumber_1a0081fb3057a6ab825ac0b3dbea62406b">
+                <title>Number * ComplexNumber::HypArcSine ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="structComplexNumber_1a9d1b26167fb3e3c84e18b724bcfbb48a">
+                <title>Number * ComplexNumber::HypArcCosine ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="structComplexNumber_1a9c1090310f2f9e656467625e0137c8dc">
+                <title>Number * ComplexNumber::HypArcTangent ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="structComplexNumber_1af53cdbbf59f07f40118cf05a51cf3d0a">
+                <title>Number * ComplexNumber::HypArcCosecant ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="structComplexNumber_1af0d9ceb661b6bf3052d3806c84ab6faf">
+                <title>Number * ComplexNumber::HypArcSecant ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="structComplexNumber_1acf624375cf09c48f5209ec3605ca01f6">
+                <title>Number * ComplexNumber::HypArcCotangent ()</title> <emphasis></emphasis>
+                
+            </section>
+</section>

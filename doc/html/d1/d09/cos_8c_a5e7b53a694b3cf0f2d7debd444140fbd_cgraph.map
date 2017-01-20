@@ -1,7 +1,0 @@
-<map id="cos" name="cos">
-<area shape="rect" id="node2" href="$d1/d11/kcos_8c.html#a5468a5a3c3d5d5e34e73fac9d6bc0122" title="Kernel cos function. " alt="" coords="96,5,195,32"/>
-<area shape="rect" id="node3" href="$d2/d7b/ksin_8c.html#adcc3cb89edf47f34f1e8058e198be293" title="Kernel sin function. " alt="" coords="98,56,193,83"/>
-<area shape="rect" id="node4" href="$d0/d27/remp2_8c.html#a320ce87737d621d713124124e2c02cdc" title="rempio2" alt="" coords="111,107,179,133"/>
-<area shape="rect" id="node5" href="$de/db9/kremp2_8c.html#a8a5e87d33974881295c4ed0d09732f71" title="Kernel reduction function. " alt="" coords="243,107,373,133"/>
-<area shape="rect" id="node6" href="$dc/d1b/scalbn_8c.html#a0353978ec1ae247f2d95f2dc75856ed6" title="scalbn" alt="" coords="421,107,481,133"/>
-</map>

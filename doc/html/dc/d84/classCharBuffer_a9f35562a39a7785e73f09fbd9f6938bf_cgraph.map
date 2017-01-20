@@ -1,5 +1,0 @@
-<map id="CharBuffer::Copy" name="CharBuffer::Copy">
-<area shape="rect" id="node2" href="$dc/d84/classCharBuffer.html#ad1907009b5ad136692b989fa96bf2f7e" title="Ensure a memory block of speficied size is allocated. " alt="" coords="177,5,337,32"/>
-<area shape="rect" id="node4" href="$dc/d84/classCharBuffer.html#a7dfd3feaaf80f318ba44efe15b1ec44b" title="CharBuffer::GetString" alt="" coords="183,56,331,83"/>
-<area shape="rect" id="node3" href="$d4/d16/memcpy_8c.html#a09b7e057c69b9ddd4b481fc746997a7d" title="Copy a block of memory, handling overlap. " alt="" coords="385,5,468,32"/>
-</map>

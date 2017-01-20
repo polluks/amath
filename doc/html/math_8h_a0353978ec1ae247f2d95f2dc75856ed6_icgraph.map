@@ -1,0 +1,50 @@
+<map id="scalbn" name="scalbn">
+<area shape="rect" id="node2" href="$kremp2_8c.html#a8a5e87d33974881295c4ed0d09732f71" title="Kernel reduction function. " alt="" coords="113,805,244,832"/>
+<area shape="rect" id="node44" href="$pow_8c.html#aa56c9494c95edf68386375e97d64159b" title="Expontation function. " alt="" coords="408,1099,455,1125"/>
+<area shape="rect" id="node3" href="$remp2_8c.html#a320ce87737d621d713124124e2c02cdc" title="rempio2" alt="" coords="292,588,360,615"/>
+<area shape="rect" id="node4" href="$cos_8c.html#a5e7b53a694b3cf0f2d7debd444140fbd" title="Trigonometric cosine function. " alt="" coords="410,537,453,564"/>
+<area shape="rect" id="node38" href="$sin_8c.html#aad4af25633b071b0e2cdb8ebd87eca77" title="Trigonometric sine function. " alt="" coords="412,613,451,640"/>
+<area shape="rect" id="node41" href="$tan_8c.html#aa48fdfd5eea5f4f9c33496402b9e4039" title="Trigonometric tangent function. " alt="" coords="411,56,451,83"/>
+<area shape="rect" id="node5" href="$structRealNumber.html#a29ab57ef9d5844b480574f06b83131d1" title="Trigonometric cosine function. " alt="" coords="529,208,673,235"/>
+<area shape="rect" id="node6" href="$structRealNumber.html#a9e350ff4550f86bc25b6526eb14a823a" title="Trigonometric secant function. " alt="" coords="529,107,673,133"/>
+<area shape="rect" id="node7" href="$ccos_8c.html#a68da54d02ea0d55bb90dcb06f56d10f5" title="Cosine of complex number. " alt="" coords="576,765,627,792"/>
+<area shape="rect" id="node9" href="$ccosh_8c.html#aa90df67e0430d042887fa77812458f47" title="Hyperbolic cosine of a complex number. " alt="" coords="573,816,630,843"/>
+<area shape="rect" id="node11" href="$ccot_8c.html#af55c6dec4ec4d7992aea8418480c221c" title="Cotangent of a complex number. " alt="" coords="578,867,625,893"/>
+<area shape="rect" id="node13" href="$ccoth_8c.html#abcc180facc4c06148ed64b7bd028e643" title="Hyperbolic cotangent of a complex number. " alt="" coords="574,259,629,285"/>
+<area shape="rect" id="node15" href="$ccsc_8c.html#a1a06d41ae4e946bed755fe51ffb6ed24" title="Cosecant of a complex number. " alt="" coords="576,309,627,336"/>
+<area shape="rect" id="node17" href="$ccsch_8c.html#a57a12e1badffcb670631844ad876ceba" title="Hyperbolic secant of a complex number. " alt="" coords="573,360,630,387"/>
+<area shape="rect" id="node19" href="$cexp_8c.html#abf3bfbb727779504c9ddb7023d14fed0" title="Returns e to the power of a complex number. " alt="" coords="576,411,627,437"/>
+<area shape="rect" id="node22" href="$cpow_8c.html#a2c8af642928f3ec79a10a52983981ffa" title="Complex number raised to a power. " alt="" coords="575,968,628,995"/>
+<area shape="rect" id="node25" href="$csec_8c.html#a1bbe43785d2b3cc364e50153f203c50d" title="Secant of a complex number. " alt="" coords="576,461,627,488"/>
+<area shape="rect" id="node27" href="$csech_8c.html#aa639638fbf6b2c819fd8fb3c093ca012" title="Hyperbolic secant of a complex number. " alt="" coords="573,512,630,539"/>
+<area shape="rect" id="node29" href="$csin_8c.html#ae17495bc828b9bea6f64da3c21fe0fc7" title="Sine of a complex number. " alt="" coords="578,563,625,589"/>
+<area shape="rect" id="node31" href="$csinh_8c.html#a5a9923cad15c34351bb15bd46d5d6331" title="Hyperbolic sine of a complex number. " alt="" coords="575,613,628,640"/>
+<area shape="rect" id="node33" href="$ctan_8c.html#a2bd0de3a2299ec26164641bc8f6e117f" title="Tangent of a complex number. " alt="" coords="578,664,625,691"/>
+<area shape="rect" id="node35" href="$ctanh_8c.html#ad8db0bdd6fef8ff43876c845dc1cfb47" title="Hyperbolic tangent of a complex number. " alt="" coords="574,715,629,741"/>
+<area shape="rect" id="node37" href="$prim_8c.html#a995788d5249547ee333b353ddf959f8b" title="Calculate cosh and cos. " alt="" coords="576,157,627,184"/>
+<area shape="rect" id="node8" href="$structComplexNumber.html#a9c52151f9a5111bf5163f43e5e697f9e" title="ComplexNumber::Cosine" alt="" coords="769,765,939,792"/>
+<area shape="rect" id="node10" href="$structComplexNumber.html#a3de3278838400b94d6da3aabc264e467" title="ComplexNumber::HypCosine" alt="" coords="757,816,951,843"/>
+<area shape="rect" id="node12" href="$structComplexNumber.html#a922c244a14dbee2e17bd5dc6dbec7625" title="ComplexNumber::Cotangent" alt="" coords="760,867,948,893"/>
+<area shape="rect" id="node14" href="$structComplexNumber.html#aecf508c5b54725938ffe98f97088d4db" title="ComplexNumber::HypCotangent" alt="" coords="748,259,960,285"/>
+<area shape="rect" id="node16" href="$structComplexNumber.html#a9740a470743b92208243140c3f7a8b35" title="ComplexNumber::Cosecant" alt="" coords="762,309,946,336"/>
+<area shape="rect" id="node18" href="$structComplexNumber.html#ab4ee0dc45e8e43e1fa647bef6c65542c" title="ComplexNumber::HypCosecant" alt="" coords="750,360,958,387"/>
+<area shape="rect" id="node20" href="$ccbrt_8c.html#a9411d07785a32ac077d24d6c8a5c5554" title="Cube root of complex number. " alt="" coords="829,411,879,437"/>
+<area shape="rect" id="node21" href="$structComplexNumber.html#a1589eac796ec230625298d196fe84c25" title="ComplexNumber::CubeRoot" alt="" coords="1008,411,1195,437"/>
+<area shape="rect" id="node23" href="$structComplexNumber.html#a0ab40e1cbe5c25629fe62643ed8b9352" title="ComplexNumber::Raise" alt="" coords="773,993,935,1020"/>
+<area shape="rect" id="node24" href="$structRealNumber.html#aaf9c066a4b9e9d845edefd40f614a517" title="Expontation function. " alt="" coords="1033,1031,1170,1057"/>
+<area shape="rect" id="node26" href="$structComplexNumber.html#a214e1ed3096e8ed3aa0a3c446fe2ef8a" title="ComplexNumber::Secant" alt="" coords="769,461,939,488"/>
+<area shape="rect" id="node28" href="$structComplexNumber.html#af3c80a4c100e00445f5e4c52be29c031" title="ComplexNumber::HypSecant" alt="" coords="757,512,951,539"/>
+<area shape="rect" id="node30" href="$structComplexNumber.html#a5125e77b2c28147688cf65f596c9ccb7" title="ComplexNumber::Sine" alt="" coords="777,563,931,589"/>
+<area shape="rect" id="node32" href="$structComplexNumber.html#a800a3cce573a4952ffdc61591ef781cc" title="ComplexNumber::HypSine" alt="" coords="765,613,943,640"/>
+<area shape="rect" id="node34" href="$structComplexNumber.html#a6b7cb0a68c9d44e3367c9a42748af045" title="ComplexNumber::Tangent" alt="" coords="767,664,941,691"/>
+<area shape="rect" id="node36" href="$structComplexNumber.html#a313bade9f3fdc7171f907c9fbafa06a0" title="ComplexNumber::HypTangent" alt="" coords="755,715,953,741"/>
+<area shape="rect" id="node39" href="$structRealNumber.html#a7efbe5a6d43471c317d10c976e1120a5" title="Trigonometric sine function. " alt="" coords="537,917,666,944"/>
+<area shape="rect" id="node40" href="$structRealNumber.html#af9b0b74fbe21e7c360d9ca13f2853c3c" title="Trigonometric cosecant function. " alt="" coords="522,1019,681,1045"/>
+<area shape="rect" id="node42" href="$structRealNumber.html#a49a5b0cd18ee9763f89f2bc61f7d43ba" title="Trigonometric tangent function. " alt="" coords="526,56,677,83"/>
+<area shape="rect" id="node43" href="$structRealNumber.html#a326c66036f26f4562277692d179e19a3" title="Trigonometric cotangent function. " alt="" coords="520,5,683,32"/>
+<area shape="rect" id="node45" href="$classPositionalNumeralSystem.html#a2f6ecf8dd5ebff779bd2cba4e356febe" title="PositionalNumeralSystem\l::GetText" alt="" coords="515,1121,688,1162"/>
+<area shape="rect" id="node47" href="$classPositionalNumeralSystem.html#a6fd2861b5cd8da952191218121df7f56" title="PositionalNumeralSystem\l::Parse" alt="" coords="515,1186,688,1227"/>
+<area shape="rect" id="node48" href="$classDecimalSystem.html#a7b3744c834e092220ab3c2b7ed8eee47" title="DecimalSystem::GetRealText" alt="" coords="503,1252,700,1279"/>
+<area shape="rect" id="node46" href="$classPositionalNumeralSystem.html#ac4acbb807861e8ff702d9624fb5db87d" title="PositionalNumeralSystem\l::GetText" alt="" coords="767,1121,941,1162"/>
+<area shape="rect" id="node49" href="$classDecimalSystem.html#ab43f764ed35fe831a16a356bbdc72441" title="DecimalSystem::GetText" alt="" coords="769,1252,939,1279"/>
+</map>

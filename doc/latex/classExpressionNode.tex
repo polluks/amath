@@ -1,0 +1,438 @@
+\hypertarget{classExpressionNode}{}\section{Expression\+Node Class Reference}
+\label{classExpressionNode}\index{Expression\+Node@{Expression\+Node}}
+
+
+Base class for all nodes related to mathematical expressions.  
+
+
+
+
+{\ttfamily \#include $<$nodes.\+h$>$}
+
+
+
+Inheritance diagram for Expression\+Node\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{classExpressionNode__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Expression\+Node\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=272pt]{classExpressionNode__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classExpressionNode_adc8888de5329d356224c8a93f3ce2b75}{Expression\+Node} ()
+\item 
+\hyperlink{classExpressionNode_a5d67579dd6c9777a18455a1360f29841}{Expression\+Node} (\hyperlink{structNumber}{Number} $\ast$value)
+\item 
+virtual \hyperlink{classExpressionNode_aa834d6d0e96a958d22609dad612b54b0}{$\sim$\+Expression\+Node} ()
+\item 
+\hyperlink{nodes_8h_acac9cbaeea226ed297804c012dc12b16}{Node\+Type} \hyperlink{classExpressionNode_aaa0ecd3971c182bbc605623b83afc519}{Get\+Node\+Type} ()
+\item 
+virtual \hyperlink{platform_8h_a1062901a7428fdd9c7f180f5e01ea056}{bool} \hyperlink{classExpressionNode_adc58a4c102b7fa18e9c3a0be361b0663}{Is\+Silent} ()
+\item 
+virtual char $\ast$ \hyperlink{classExpressionNode_a0bbf243108a14eaf963a8161ffd8eb92}{Get\+Text} ()=0
+\item 
+virtual \hyperlink{structNumber}{Number} $\ast$ \hyperlink{classExpressionNode_a64975d4dc37742228bd522f6204537f7}{Evaluate} ()=0
+\item 
+virtual int \hyperlink{classExpressionNode_a161b9ea0b79bbfc101d6f687c8481ddd}{Get\+Precedence} ()=0
+\item 
+char $\ast$ \hyperlink{classExpressionNode_abb495de256b8c9a1c7bb61910fab25ab}{Get\+Text\+Code} ()
+\item 
+char $\ast$ \hyperlink{classExpressionNode_a923ac9b73f5568dd6bc65620d549c4ce}{Execute} ()
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual char $\ast$ \hyperlink{classExpressionNode_a42a5e9562b0f645a19dcc83f698069b5}{Get\+Node\+Text} ()=0
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{structNumber}{Number} $\ast$ \hyperlink{classExpressionNode_a1f590649f5a5cb30eb7ee912f7bc1262}{result}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Base class for all nodes related to mathematical expressions. 
+
+Nodes of this type is used to build trees representing an mathematical expressions. Each node in the tree consist of a number, an operator or any other element in an expression. 
+
+Definition at line 88 of file nodes.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Expression\+Node@{Expression\+Node}!Expression\+Node@{Expression\+Node}}
+\index{Expression\+Node@{Expression\+Node}!Expression\+Node@{Expression\+Node}}
+\subsubsection[{\texorpdfstring{Expression\+Node()}{ExpressionNode()}}]{\setlength{\rightskip}{0pt plus 5cm}Expression\+Node\+::\+Expression\+Node (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classExpressionNode_adc8888de5329d356224c8a93f3ce2b75}{}\label{classExpressionNode_adc8888de5329d356224c8a93f3ce2b75}
+
+
+Definition at line 116 of file nodes.\+cpp.
+
+
+
+References result, and Syntax\+Node\+::\+Syntax\+Node().
+
+
+
+Referenced by Absolute\+Node\+::\+Absolute\+Node(), Function\+Node\+::\+Function\+Node(), Numeric\+Operator\+::\+Numeric\+Operator(), Unary\+Node\+::\+Unary\+Node(), and Variable\+Node\+::\+Variable\+Node().
+
+
+\begin{DoxyCode}
+116                                :
+117     \hyperlink{classSyntaxNode_ac94372d402f38a118b4e8cd20ba7e520}{SyntaxNode}() \{
+118     \hyperlink{classExpressionNode_a1f590649f5a5cb30eb7ee912f7bc1262}{result} = \hyperlink{platform_8h_a46ff2bfbf0d44b8466a2251d5bd5e6f8}{NOMEM};
+119 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classExpressionNode_adc8888de5329d356224c8a93f3ce2b75_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{classExpressionNode_adc8888de5329d356224c8a93f3ce2b75_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Expression\+Node@{Expression\+Node}!Expression\+Node@{Expression\+Node}}
+\index{Expression\+Node@{Expression\+Node}!Expression\+Node@{Expression\+Node}}
+\subsubsection[{\texorpdfstring{Expression\+Node(\+Number $\ast$value)}{ExpressionNode(Number *value)}}]{\setlength{\rightskip}{0pt plus 5cm}Expression\+Node\+::\+Expression\+Node (
+\begin{DoxyParamCaption}
+\item[{{\bf Number} $\ast$}]{value}
+\end{DoxyParamCaption}
+)}\hypertarget{classExpressionNode_a5d67579dd6c9777a18455a1360f29841}{}\label{classExpressionNode_a5d67579dd6c9777a18455a1360f29841}
+
+
+Definition at line 121 of file nodes.\+cpp.
+
+
+
+References result, and Syntax\+Node\+::\+Syntax\+Node().
+
+
+
+Referenced by Numeric\+Value\+Node\+::\+Numeric\+Value\+Node().
+
+
+\begin{DoxyCode}
+121                                             :
+122     \hyperlink{classSyntaxNode_ac94372d402f38a118b4e8cd20ba7e520}{SyntaxNode}() \{
+123     \hyperlink{classExpressionNode_a1f590649f5a5cb30eb7ee912f7bc1262}{result} = value;
+124 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classExpressionNode_a5d67579dd6c9777a18455a1360f29841_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classExpressionNode_a5d67579dd6c9777a18455a1360f29841_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Expression\+Node@{Expression\+Node}!````~Expression\+Node@{$\sim$\+Expression\+Node}}
+\index{````~Expression\+Node@{$\sim$\+Expression\+Node}!Expression\+Node@{Expression\+Node}}
+\subsubsection[{\texorpdfstring{$\sim$\+Expression\+Node()}{~ExpressionNode()}}]{\setlength{\rightskip}{0pt plus 5cm}Expression\+Node\+::$\sim$\+Expression\+Node (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{classExpressionNode_aa834d6d0e96a958d22609dad612b54b0}{}\label{classExpressionNode_aa834d6d0e96a958d22609dad612b54b0}
+
+
+Definition at line 126 of file nodes.\+cpp.
+
+
+
+References result.
+
+
+\begin{DoxyCode}
+127 \{
+128     \textcolor{keywordflow}{if} (\hyperlink{classExpressionNode_a1f590649f5a5cb30eb7ee912f7bc1262}{result} != \hyperlink{platform_8h_a46ff2bfbf0d44b8466a2251d5bd5e6f8}{NOMEM}) \{
+129         \textcolor{keyword}{delete} \hyperlink{classExpressionNode_a1f590649f5a5cb30eb7ee912f7bc1262}{result};
+130     \}
+131 \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\index{Expression\+Node@{Expression\+Node}!Evaluate@{Evaluate}}
+\index{Evaluate@{Evaluate}!Expression\+Node@{Expression\+Node}}
+\subsubsection[{\texorpdfstring{Evaluate()=0}{Evaluate()=0}}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf Number}$\ast$ Expression\+Node\+::\+Evaluate (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\hypertarget{classExpressionNode_a64975d4dc37742228bd522f6204537f7}{}\label{classExpressionNode_a64975d4dc37742228bd522f6204537f7}
+
+
+Implemented in \hyperlink{classHyperbolicArcSecantNode_a1432e0c3a61b8418994289e11cb7f1a0}{Hyperbolic\+Arc\+Secant\+Node}, \hyperlink{classHyperbolicArcCosecantNode_acefcd296ae5574bc5f57b3b234f23dba}{Hyperbolic\+Arc\+Cosecant\+Node}, \hyperlink{classHyperbolicArcCotangentNode_a517890860c5161dae48ef8e26b952144}{Hyperbolic\+Arc\+Cotangent\+Node}, \hyperlink{classHyperbolicArctangentNode_abd0bcfeba3e6c349955f1b149e813177}{Hyperbolic\+Arctangent\+Node}, \hyperlink{classHyperbolicArcsineNode_a51381b2347b180568af5c26b283156c2}{Hyperbolic\+Arcsine\+Node}, \hyperlink{classHyperbolicArccosineNode_af904405c7245b54f300d47c71ded279e}{Hyperbolic\+Arccosine\+Node}, \hyperlink{classHyperbolicCosecantNode_a974a45cab3da5b79271db954e8d4825a}{Hyperbolic\+Cosecant\+Node}, \hyperlink{classHyperbolicSecantNode_a1ffab630945e5272ba6da8f91f6b22ce}{Hyperbolic\+Secant\+Node}, \hyperlink{classHyperbolicCotangentNode_a399d6bc7f6cb8b8b07b5a55f54c47aef}{Hyperbolic\+Cotangent\+Node}, \hyperlink{classHyperbolicTangentNode_a7ea56cdbc709f28de4ff10486a79c2b5}{Hyperbolic\+Tangent\+Node}, \hyperlink{classHyperbolicCosineNode_a22a3609a695c926aa3dd0b641282bb1f}{Hyperbolic\+Cosine\+Node}, \hyperlink{classHyperbolicSineNode_a8f11c6b2d8d793856f17e3a249f20b69}{Hyperbolic\+Sine\+Node}, \hyperlink{classArcSecantNode_a4440babc181bf1763a0dca583ad5adbb}{Arc\+Secant\+Node}, \hyperlink{classArcCosecantNode_a4cb42e104cb77fd303bb57c73d8286b0}{Arc\+Cosecant\+Node}, \hyperlink{classArcCotangentNode_ace4c556eff07fb8352f8f341fa20702a}{Arc\+Cotangent\+Node}, \hyperlink{classArcTangentNode_a61ce03a435f72dde99caba3547a0a2a8}{Arc\+Tangent\+Node}, \hyperlink{classArcCosineNode_a67a999999c34f043bd65778669d5d819}{Arc\+Cosine\+Node}, \hyperlink{classArcSineNode_a30a268b7f74bba579745399ccf3ac009}{Arc\+Sine\+Node}, \hyperlink{classSecantNode_a114c4b9606adcf184123e7d4a6a95056}{Secant\+Node}, \hyperlink{classCosecantNode_a56ecfcf72005dc95477c95df291609e9}{Cosecant\+Node}, \hyperlink{classCotangentNode_a54c895e0369c2b738f12c0534d7d5aa4}{Cotangent\+Node}, \hyperlink{classTangentNode_a1ec2c48b6f174080a3f121773cf86237}{Tangent\+Node}, \hyperlink{classCosineNode_a1dc01c6b70db9882e18d9bf773219447}{Cosine\+Node}, \hyperlink{classSineNode_a9b1ee27ee5d63e44ce09602b91f633cc}{Sine\+Node}, \hyperlink{classBinaryLogNode_a0ac91748d2e82ac41b3a86eca6cf51df}{Binary\+Log\+Node}, \hyperlink{classLnRootNode_a549db364d3661c94bb9edb587d191439}{Ln\+Root\+Node}, \hyperlink{classLogNode_aa8bf2ac5af5a3b9e2f56c80a496beca8}{Log\+Node}, \hyperlink{classCubeRootNode_ac1f62e660cecd6bc3cfca1a2dd9e2dcc}{Cube\+Root\+Node}, \hyperlink{classSquareRootNode_a2c520265ea3c5174f5b52bba3c4e9050}{Square\+Root\+Node}, \hyperlink{classCeilingNode_ac5a24bd7b0ef5d280dc9da0723983541}{Ceiling\+Node}, \hyperlink{classFloorNode_a9c08ed22595cf33924eeb51160b30432}{Floor\+Node}, \hyperlink{classTruncNode_a6d999ff093e9e92e3aa288b04ba99fb2}{Trunc\+Node}, \hyperlink{classRoundNode_a128e5cfa1f3829cacb373f6740c7f193}{Round\+Node}, \hyperlink{classSignumNode_a4d36a858fda9c051ecddf975bc94a62e}{Signum\+Node}, \hyperlink{classAbsoluteFunctionNode_addd9710c60598aca391822e25d67ab33}{Absolute\+Function\+Node}, \hyperlink{classUserFunctionNode_a2efcbf95707c44463017973693c891db}{User\+Function\+Node}, \hyperlink{classAssignmentNode_ae6b454a04ec82aa97fa8e09c3752deb6}{Assignment\+Node}, \hyperlink{classNumericValueNode_abdd2e6fd1723488a24a645fec481a971}{Numeric\+Value\+Node}, \hyperlink{classPowerNode_aa4cabda6c36a848f86b9af2baca6dcc6}{Power\+Node}, \hyperlink{classInsVariableNode_aad01cefd8321d0a6ddaf0d4ef5e62ddf}{Ins\+Variable\+Node}, \hyperlink{classDivisionNode_aacd5e91fefdd7b6147c4ad02e951130e}{Division\+Node}, \hyperlink{classMultiplicationNode_a6f8b2f1b4a4779fd99acc6cef50545cc}{Multiplication\+Node}, \hyperlink{classSubtractionNode_a6ab885bb5ab826b5d0c70a63e753f5e3}{Subtraction\+Node}, \hyperlink{classVariableNode_a7ebbe9072eb78b5790befed3a42b2dc2}{Variable\+Node}, \hyperlink{classAdditionNode_a670d80d50ea6f8d1e38855de7130a503}{Addition\+Node}, \hyperlink{classAbsoluteNode_a35e012fdac8bff4c5252021254f07cbe}{Absolute\+Node}, and \hyperlink{classUnaryNode_af78161ffb449b18c406c46defe6fa9b3}{Unary\+Node}.
+
+
+
+Referenced by Unary\+Node\+::\+Evaluate(), Absolute\+Node\+::\+Evaluate(), Addition\+Node\+::\+Evaluate(), Subtraction\+Node\+::\+Evaluate(), Multiplication\+Node\+::\+Evaluate(), Division\+Node\+::\+Evaluate(), Power\+Node\+::\+Evaluate(), Assignment\+Node\+::\+Evaluate(), User\+Function\+Node\+::\+Evaluate(), Absolute\+Function\+Node\+::\+Evaluate(), Signum\+Node\+::\+Evaluate(), Round\+Node\+::\+Evaluate(), Trunc\+Node\+::\+Evaluate(), Floor\+Node\+::\+Evaluate(), Ceiling\+Node\+::\+Evaluate(), Square\+Root\+Node\+::\+Evaluate(), Cube\+Root\+Node\+::\+Evaluate(), Log\+Node\+::\+Evaluate(), Ln\+Root\+Node\+::\+Evaluate(), Binary\+Log\+Node\+::\+Evaluate(), Sine\+Node\+::\+Evaluate(), Cosine\+Node\+::\+Evaluate(), Tangent\+Node\+::\+Evaluate(), Cotangent\+Node\+::\+Evaluate(), Cosecant\+Node\+::\+Evaluate(), Secant\+Node\+::\+Evaluate(), Arc\+Sine\+Node\+::\+Evaluate(), Arc\+Cosine\+Node\+::\+Evaluate(), Arc\+Tangent\+Node\+::\+Evaluate(), Arc\+Cotangent\+Node\+::\+Evaluate(), Arc\+Cosecant\+Node\+::\+Evaluate(), Arc\+Secant\+Node\+::\+Evaluate(), Hyperbolic\+Sine\+Node\+::\+Evaluate(), Hyperbolic\+Cosine\+Node\+::\+Evaluate(), Hyperbolic\+Tangent\+Node\+::\+Evaluate(), Hyperbolic\+Cotangent\+Node\+::\+Evaluate(), Hyperbolic\+Secant\+Node\+::\+Evaluate(), Hyperbolic\+Cosecant\+Node\+::\+Evaluate(), Hyperbolic\+Arccosine\+Node\+::\+Evaluate(), Hyperbolic\+Arcsine\+Node\+::\+Evaluate(), Hyperbolic\+Arctangent\+Node\+::\+Evaluate(), Hyperbolic\+Arc\+Cotangent\+Node\+::\+Evaluate(), Hyperbolic\+Arc\+Cosecant\+Node\+::\+Evaluate(), Hyperbolic\+Arc\+Secant\+Node\+::\+Evaluate(), Eval\+Statement\+::\+Execute(), and Grid\+::\+Function\+Value().
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{classExpressionNode_a64975d4dc37742228bd522f6204537f7_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Expression\+Node@{Expression\+Node}!Execute@{Execute}}
+\index{Execute@{Execute}!Expression\+Node@{Expression\+Node}}
+\subsubsection[{\texorpdfstring{Execute()}{Execute()}}]{\setlength{\rightskip}{0pt plus 5cm}char $\ast$ Expression\+Node\+::\+Execute (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{classExpressionNode_a923ac9b73f5568dd6bc65620d549c4ce}{}\label{classExpressionNode_a923ac9b73f5568dd6bc65620d549c4ce}
+
+
+Implements \hyperlink{classSyntaxNode_ad8418608fa224536b48a590c87f0a509}{Syntax\+Node}.
+
+
+
+Definition at line 148 of file nodes.\+cpp.
+
+
+\begin{DoxyCode}
+149 \{
+150     \textcolor{keywordflow}{return} \hyperlink{platform_8h_a46ff2bfbf0d44b8466a2251d5bd5e6f8}{NOMEM};
+151 \}
+\end{DoxyCode}
+\index{Expression\+Node@{Expression\+Node}!Get\+Node\+Text@{Get\+Node\+Text}}
+\index{Get\+Node\+Text@{Get\+Node\+Text}!Expression\+Node@{Expression\+Node}}
+\subsubsection[{\texorpdfstring{Get\+Node\+Text()=0}{GetNodeText()=0}}]{\setlength{\rightskip}{0pt plus 5cm}virtual char$\ast$ Expression\+Node\+::\+Get\+Node\+Text (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}\hypertarget{classExpressionNode_a42a5e9562b0f645a19dcc83f698069b5}{}\label{classExpressionNode_a42a5e9562b0f645a19dcc83f698069b5}
+
+
+Implemented in \hyperlink{classHyperbolicArcSecantNode_a4585803d2a87bc7de7f5260187139865}{Hyperbolic\+Arc\+Secant\+Node}, \hyperlink{classHyperbolicArcCosecantNode_adfeb956f89ecdab30e57a4e80b2ca5aa}{Hyperbolic\+Arc\+Cosecant\+Node}, \hyperlink{classHyperbolicArcCotangentNode_a6247a90dadcc0e1b301f2e0033865cf2}{Hyperbolic\+Arc\+Cotangent\+Node}, \hyperlink{classHyperbolicArctangentNode_ab0f196a5e39dc14a3659e4e65bf1da87}{Hyperbolic\+Arctangent\+Node}, \hyperlink{classHyperbolicArcsineNode_acf539ab01fb398c7433e22e4ebf9be14}{Hyperbolic\+Arcsine\+Node}, \hyperlink{classHyperbolicArccosineNode_ac2811646745c654182280a06489c752c}{Hyperbolic\+Arccosine\+Node}, \hyperlink{classHyperbolicCosecantNode_a5c7914b05121193ac4adfdbf01166f43}{Hyperbolic\+Cosecant\+Node}, \hyperlink{classHyperbolicSecantNode_a10e7b484494dfb038f60516388179eb9}{Hyperbolic\+Secant\+Node}, \hyperlink{classHyperbolicCotangentNode_a488a6f668cd2870e3715d478457267f9}{Hyperbolic\+Cotangent\+Node}, \hyperlink{classHyperbolicTangentNode_a7013c62abbe2d3248411624bcd32673f}{Hyperbolic\+Tangent\+Node}, \hyperlink{classHyperbolicCosineNode_ab646fad3a064c9d43aa0edeb36aef4d6}{Hyperbolic\+Cosine\+Node}, \hyperlink{classHyperbolicSineNode_a953eb8445e274935e1e7f646ca444fd8}{Hyperbolic\+Sine\+Node}, \hyperlink{classArcSecantNode_a75e25b2005cd24caf6b374a662df9975}{Arc\+Secant\+Node}, \hyperlink{classArcCosecantNode_ad0cc72410c2754f5befec12cac5e7f01}{Arc\+Cosecant\+Node}, \hyperlink{classArcCotangentNode_aab2b4d2d357a47e4174e3daa82773ab1}{Arc\+Cotangent\+Node}, \hyperlink{classArcTangentNode_afd1b56cd9bf1c3a3da5191bf9604881d}{Arc\+Tangent\+Node}, \hyperlink{classArcCosineNode_a9f519aed56ef36e4bf6c1ffbe269a015}{Arc\+Cosine\+Node}, \hyperlink{classArcSineNode_a01aee433d9946e37f74bbde5f83dadff}{Arc\+Sine\+Node}, \hyperlink{classSecantNode_a7d33d09f02a8b56d10c73366be1c792d}{Secant\+Node}, \hyperlink{classCosecantNode_aedd716ab2e6e2a562718168ea3e4a367}{Cosecant\+Node}, \hyperlink{classCotangentNode_acd6fcd18119427e516389403d3a3c1f7}{Cotangent\+Node}, \hyperlink{classTangentNode_a2e5cdc4ca56b858386120cd5e8d89e56}{Tangent\+Node}, \hyperlink{classCosineNode_ab57a246c5e637c03af11977c635bc89c}{Cosine\+Node}, \hyperlink{classSineNode_aceeb647bdd020764589ec00039157ae0}{Sine\+Node}, \hyperlink{classBinaryLogNode_ad530e3055e387682633eb4a055c4260f}{Binary\+Log\+Node}, \hyperlink{classLnRootNode_a6a222d2d605103fe7a6c5d25512d62ce}{Ln\+Root\+Node}, \hyperlink{classLogNode_a069ab53e0b931eba9e7b6530a3287e40}{Log\+Node}, \hyperlink{classCubeRootNode_a9f7fdffeb143c7101e20fba4dc6a7465}{Cube\+Root\+Node}, \hyperlink{classSquareRootNode_aacdecb56100335c99c1469aaae14e871}{Square\+Root\+Node}, \hyperlink{classCeilingNode_a42887bd7fd45fdd658a60e6cc1114129}{Ceiling\+Node}, \hyperlink{classFloorNode_ab585bdc9a3d3d53bae91b935be21d972}{Floor\+Node}, \hyperlink{classTruncNode_ad19cef55faa2ef0e83d6288d4de5230e}{Trunc\+Node}, \hyperlink{classRoundNode_a8045a1a8d7e229a2aface954950f52da}{Round\+Node}, \hyperlink{classSignumNode_a77140b990e0c3e0f75d074d4405a4e4f}{Signum\+Node}, \hyperlink{classComplexiNode_a18998a544112f664e35b7158fa60491c}{Complexi\+Node}, \hyperlink{classAbsoluteFunctionNode_a4cfc007fc3a4280fc294e04668aae566}{Absolute\+Function\+Node}, \hyperlink{classPiNode_ada7408d6c6c1ccc945666d680b7fa299}{Pi\+Node}, \hyperlink{classEulersNumberNode_a42f765eacbb25a3a7b8d0391ab727e6d}{Eulers\+Number\+Node}, \hyperlink{classUserFunctionNode_a89ead37ddfb2fcd44ba3dd7cc2157838}{User\+Function\+Node}, \hyperlink{classNumericValueNode_a078bf8f0496d2afcb7e3a050110a0c0d}{Numeric\+Value\+Node}, \hyperlink{classAssignmentNode_aabd296f88450781851cb521be3b647d4}{Assignment\+Node}, \hyperlink{classPowerNode_a81fd0536a41e8a936c1f42430524d8d0}{Power\+Node}, \hyperlink{classInsVariableNode_a38651b169dbcb8ff1b40546facb88017}{Ins\+Variable\+Node}, \hyperlink{classDivisionNode_a491761e800400517048d882d6338274f}{Division\+Node}, \hyperlink{classMultiplicationNode_a27cfb5744a3f963fa59e9b79d6c14499}{Multiplication\+Node}, \hyperlink{classVariableNode_ab76eda982f1625774b982fd148462102}{Variable\+Node}, \hyperlink{classSubtractionNode_a93deba99c167e46fcb71b129902168de}{Subtraction\+Node}, \hyperlink{classAdditionNode_acae67b14a0db5b1e972968fa9d00f906}{Addition\+Node}, \hyperlink{classAbsoluteNode_ae5e2148cb9fedaee9137d3c124399c76}{Absolute\+Node}, and \hyperlink{classUnaryNode_ac3a91d51907bdc5a1cc781d8b0d0c0c2}{Unary\+Node}.
+
+
+
+Referenced by Function\+Node\+::\+Get\+Text(), Numeric\+Operator\+::\+Get\+Text(), and Get\+Text\+Code().
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classExpressionNode_a42a5e9562b0f645a19dcc83f698069b5_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Expression\+Node@{Expression\+Node}!Get\+Node\+Type@{Get\+Node\+Type}}
+\index{Get\+Node\+Type@{Get\+Node\+Type}!Expression\+Node@{Expression\+Node}}
+\subsubsection[{\texorpdfstring{Get\+Node\+Type()}{GetNodeType()}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Node\+Type} Expression\+Node\+::\+Get\+Node\+Type (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{classExpressionNode_aaa0ecd3971c182bbc605623b83afc519}{}\label{classExpressionNode_aaa0ecd3971c182bbc605623b83afc519}
+
+
+Implements \hyperlink{classSyntaxNode_aef71a18975535d050393f0541b3cdc6a}{Syntax\+Node}.
+
+
+
+Definition at line 133 of file nodes.\+cpp.
+
+
+
+References expression.
+
+
+\begin{DoxyCode}
+134 \{
+135     \textcolor{keywordflow}{return} \hyperlink{nodes_8h_acac9cbaeea226ed297804c012dc12b16ac810bbb61792a076f46cad2c89d87e1d}{expression};
+136 \}
+\end{DoxyCode}
+\index{Expression\+Node@{Expression\+Node}!Get\+Precedence@{Get\+Precedence}}
+\index{Get\+Precedence@{Get\+Precedence}!Expression\+Node@{Expression\+Node}}
+\subsubsection[{\texorpdfstring{Get\+Precedence()=0}{GetPrecedence()=0}}]{\setlength{\rightskip}{0pt plus 5cm}virtual int Expression\+Node\+::\+Get\+Precedence (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\hypertarget{classExpressionNode_a161b9ea0b79bbfc101d6f687c8481ddd}{}\label{classExpressionNode_a161b9ea0b79bbfc101d6f687c8481ddd}
+
+
+Implemented in \hyperlink{classAssignmentNode_a8101830017b851c84364ca3ca6f0f204}{Assignment\+Node}, \hyperlink{classNumericValueNode_a711b5772df36814fcb92fc10a0e4924a}{Numeric\+Value\+Node}, \hyperlink{classPowerNode_a9d7fae7daf43e82dc2ce159c8127e3c9}{Power\+Node}, \hyperlink{classDivisionNode_a53b70bccd31289a360cf046b90481941}{Division\+Node}, \hyperlink{classMultiplicationNode_ac4b9d0e5f279a0a2d2b51a2872c298df}{Multiplication\+Node}, \hyperlink{classSubtractionNode_aab0c25ea71d027f844bc332fa0045b6c}{Subtraction\+Node}, \hyperlink{classVariableNode_ad86b7e8ec992434c80ebc1804f483517}{Variable\+Node}, \hyperlink{classAdditionNode_a2e3b68052c4160597a34966b5654ab4b}{Addition\+Node}, \hyperlink{classAbsoluteNode_a6fb0f08b41c558e8746b24fa79552545}{Absolute\+Node}, \hyperlink{classFunctionNode_a410288c74db880d2d3bffadc393d9ede}{Function\+Node}, and \hyperlink{classUnaryNode_a6717d15d53d59718c772dab8f8393f13}{Unary\+Node}.
+
+
+
+Referenced by Optimizer\+::\+Balance\+Tree(), Unary\+Node\+::\+Get\+Text(), and Numeric\+Operator\+::\+Get\+Text().
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classExpressionNode_a161b9ea0b79bbfc101d6f687c8481ddd_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Expression\+Node@{Expression\+Node}!Get\+Text@{Get\+Text}}
+\index{Get\+Text@{Get\+Text}!Expression\+Node@{Expression\+Node}}
+\subsubsection[{\texorpdfstring{Get\+Text()=0}{GetText()=0}}]{\setlength{\rightskip}{0pt plus 5cm}virtual char$\ast$ Expression\+Node\+::\+Get\+Text (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\hypertarget{classExpressionNode_a0bbf243108a14eaf963a8161ffd8eb92}{}\label{classExpressionNode_a0bbf243108a14eaf963a8161ffd8eb92}
+
+
+Implemented in \hyperlink{classNumericValueNode_a57b1e79016279279f2567937c7e32e12}{Numeric\+Value\+Node}, \hyperlink{classInsVariableNode_a5b116b7004cd061536a4ed3dc2a06abb}{Ins\+Variable\+Node}, \hyperlink{classVariableNode_ae1ebd067d7cb5f996fe629d06db5ec77}{Variable\+Node}, \hyperlink{classNumericOperator_aaeef2885eb34d240cef0f55593354805}{Numeric\+Operator}, \hyperlink{classAbsoluteNode_ada1094b5e5ed6033f193ac151058c364}{Absolute\+Node}, \hyperlink{classFunctionNode_a86b42caf0a4019d8f594dc994bb094e7}{Function\+Node}, and \hyperlink{classUnaryNode_ad753fe89681dca1cf2d9ee840aedf86b}{Unary\+Node}.
+
+
+
+Referenced by Eval\+Statement\+::\+Execute(), Unary\+Node\+::\+Get\+Text(), Function\+Node\+::\+Get\+Text(), Absolute\+Node\+::\+Get\+Text(), Numeric\+Operator\+::\+Get\+Text(), User\+Function\+::\+Initialize\+Texts(), and Function\+List\+::\+List\+Content().
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classExpressionNode_a0bbf243108a14eaf963a8161ffd8eb92_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Expression\+Node@{Expression\+Node}!Get\+Text\+Code@{Get\+Text\+Code}}
+\index{Get\+Text\+Code@{Get\+Text\+Code}!Expression\+Node@{Expression\+Node}}
+\subsubsection[{\texorpdfstring{Get\+Text\+Code()}{GetTextCode()}}]{\setlength{\rightskip}{0pt plus 5cm}char $\ast$ Expression\+Node\+::\+Get\+Text\+Code (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{classExpressionNode_abb495de256b8c9a1c7bb61910fab25ab}{}\label{classExpressionNode_abb495de256b8c9a1c7bb61910fab25ab}
+
+
+Implements \hyperlink{classSyntaxNode_a27f7dd6d00f5c94533477d6d5c2e831c}{Syntax\+Node}.
+
+
+
+Definition at line 143 of file nodes.\+cpp.
+
+
+
+References Get\+Node\+Text().
+
+
+\begin{DoxyCode}
+144 \{
+145     \textcolor{keywordflow}{return} \hyperlink{classExpressionNode_a42a5e9562b0f645a19dcc83f698069b5}{GetNodeText}();
+146 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classExpressionNode_abb495de256b8c9a1c7bb61910fab25ab_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{Expression\+Node@{Expression\+Node}!Is\+Silent@{Is\+Silent}}
+\index{Is\+Silent@{Is\+Silent}!Expression\+Node@{Expression\+Node}}
+\subsubsection[{\texorpdfstring{Is\+Silent()}{IsSilent()}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} Expression\+Node\+::\+Is\+Silent (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{classExpressionNode_adc58a4c102b7fa18e9c3a0be361b0663}{}\label{classExpressionNode_adc58a4c102b7fa18e9c3a0be361b0663}
+
+
+Reimplemented in \hyperlink{classAssignmentNode_ad8468049bcb780828405ccddc06fc79a}{Assignment\+Node}.
+
+
+
+Definition at line 138 of file nodes.\+cpp.
+
+
+
+Referenced by Parser\+::\+Parse\+Evaluation().
+
+
+\begin{DoxyCode}
+139 \{
+140     \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+141 \}
+\end{DoxyCode}
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classExpressionNode_adc58a4c102b7fa18e9c3a0be361b0663_icgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Member Data Documentation}
+\index{Expression\+Node@{Expression\+Node}!result@{result}}
+\index{result@{result}!Expression\+Node@{Expression\+Node}}
+\subsubsection[{\texorpdfstring{result}{result}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Number}$\ast$ Expression\+Node\+::result\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{classExpressionNode_a1f590649f5a5cb30eb7ee912f7bc1262}{}\label{classExpressionNode_a1f590649f5a5cb30eb7ee912f7bc1262}
+
+
+Definition at line 104 of file nodes.\+h.
+
+
+
+Referenced by Unary\+Node\+::\+Evaluate(), Absolute\+Node\+::\+Evaluate(), Addition\+Node\+::\+Evaluate(), Variable\+Node\+::\+Evaluate(), Subtraction\+Node\+::\+Evaluate(), Multiplication\+Node\+::\+Evaluate(), Division\+Node\+::\+Evaluate(), Power\+Node\+::\+Evaluate(), Numeric\+Value\+Node\+::\+Evaluate(), Absolute\+Function\+Node\+::\+Evaluate(), Signum\+Node\+::\+Evaluate(), Round\+Node\+::\+Evaluate(), Trunc\+Node\+::\+Evaluate(), Floor\+Node\+::\+Evaluate(), Ceiling\+Node\+::\+Evaluate(), Square\+Root\+Node\+::\+Evaluate(), Cube\+Root\+Node\+::\+Evaluate(), Log\+Node\+::\+Evaluate(), Ln\+Root\+Node\+::\+Evaluate(), Binary\+Log\+Node\+::\+Evaluate(), Sine\+Node\+::\+Evaluate(), Cosine\+Node\+::\+Evaluate(), Tangent\+Node\+::\+Evaluate(), Cotangent\+Node\+::\+Evaluate(), Cosecant\+Node\+::\+Evaluate(), Secant\+Node\+::\+Evaluate(), Arc\+Sine\+Node\+::\+Evaluate(), Arc\+Cosine\+Node\+::\+Evaluate(), Arc\+Tangent\+Node\+::\+Evaluate(), Arc\+Cotangent\+Node\+::\+Evaluate(), Arc\+Cosecant\+Node\+::\+Evaluate(), Arc\+Secant\+Node\+::\+Evaluate(), Hyperbolic\+Sine\+Node\+::\+Evaluate(), Hyperbolic\+Cosine\+Node\+::\+Evaluate(), Hyperbolic\+Tangent\+Node\+::\+Evaluate(), Hyperbolic\+Cotangent\+Node\+::\+Evaluate(), Hyperbolic\+Secant\+Node\+::\+Evaluate(), Hyperbolic\+Cosecant\+Node\+::\+Evaluate(), Hyperbolic\+Arccosine\+Node\+::\+Evaluate(), Hyperbolic\+Arcsine\+Node\+::\+Evaluate(), Hyperbolic\+Arctangent\+Node\+::\+Evaluate(), Hyperbolic\+Arc\+Cotangent\+Node\+::\+Evaluate(), Hyperbolic\+Arc\+Cosecant\+Node\+::\+Evaluate(), Hyperbolic\+Arc\+Secant\+Node\+::\+Evaluate(), Expression\+Node(), Numeric\+Value\+Node\+::\+Get\+Node\+Text(), Numeric\+Value\+Node\+::\+Get\+Precedence(), Numeric\+Value\+Node\+::\+Replace\+With(), and $\sim$\+Expression\+Node().
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+app/main/\hyperlink{nodes_8h}{nodes.\+h}\item 
+app/main/\hyperlink{nodes_8cpp}{nodes.\+cpp}\end{DoxyCompactItemize}

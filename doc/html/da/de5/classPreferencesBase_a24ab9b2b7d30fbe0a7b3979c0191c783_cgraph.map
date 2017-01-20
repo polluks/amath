@@ -1,5 +1,0 @@
-<map id="PreferencesBase::PreferencesBase" name="PreferencesBase::PreferencesBase">
-<area shape="rect" id="node2" href="$dc/d84/classCharBuffer.html#a4345e9a5114f5c0292e8f242f26e3a7b" title="Initialize without allocating memory. " alt="" coords="305,5,461,32"/>
-<area shape="rect" id="node3" href="$da/de5/classPreferencesBase.html#a0b782da503c15f8f79d6ee99cb684fff" title="PreferencesBase::SetDefaults" alt="" coords="284,56,483,83"/>
-<area shape="rect" id="node4" href="$dd/d2a/alloccpy_8c.html#a5bed05c70cb17e541fee570b5dc32e1a" title="Allocate memory and copy a string into the array. " alt="" coords="531,56,636,83"/>
-</map>

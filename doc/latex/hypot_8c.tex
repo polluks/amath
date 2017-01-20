@@ -1,0 +1,151 @@
+\hypertarget{hypot_8c}{}\section{lib/real/hypot.c File Reference}
+\label{hypot_8c}\index{lib/real/hypot.\+c@{lib/real/hypot.\+c}}
+{\ttfamily \#include \char`\"{}prim.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}math.\+h\char`\"{}}\\*
+Include dependency graph for hypot.\+c\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=190pt]{hypot_8c__incl}
+\end{center}
+\end{figure}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+double \hyperlink{hypot_8c_a6d6a905f61d535f8454190433b8c0ea5}{hypot} (double x, double y)
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\index{hypot.\+c@{hypot.\+c}!hypot@{hypot}}
+\index{hypot@{hypot}!hypot.\+c@{hypot.\+c}}
+\subsubsection[{\texorpdfstring{hypot(double x, double y)}{hypot(double x, double y)}}]{\setlength{\rightskip}{0pt plus 5cm}double hypot (
+\begin{DoxyParamCaption}
+\item[{double}]{x, }
+\item[{double}]{y}
+\end{DoxyParamCaption}
+)}\hypertarget{hypot_8c_a6d6a905f61d535f8454190433b8c0ea5}{}\label{hypot_8c_a6d6a905f61d535f8454190433b8c0ea5}
+
+
+Definition at line 79 of file hypot.\+c.
+
+
+
+References sqrt().
+
+
+
+Referenced by cabs().
+
+
+\begin{DoxyCode}
+80 \{
+81     \textcolor{keywordtype}{double} a=x,b=y,t1,t2,y1,y2,w;
+82     \hyperlink{real_2prim_8h_a6e60fe0e0f9f8801507e15fe2d893751}{uword} j,k,ha,hb,hx,hy;
+83 
+84     \hyperlink{real_2prim_8h_ae62ee08d06ab4cc06d61dc1246b73195}{GET\_HIGH\_WORD}(hx,x);
+85     \hyperlink{real_2prim_8h_ae62ee08d06ab4cc06d61dc1246b73195}{GET\_HIGH\_WORD}(hy,y);
+86     ha = hx&0x7fffffff; \textcolor{comment}{/* high word of  x */}
+87     hb = hy&0x7fffffff; \textcolor{comment}{/* high word of  y */}
+88     \textcolor{keywordflow}{if}(hb > ha) \{
+89         a=y;
+90         b=x;
+91         j=ha;
+92         ha=hb;
+93         hb=j;
+94     \}
+95     \textcolor{keywordflow}{else} \{
+96         a=x;
+97         b=y;
+98     \}
+99     \hyperlink{real_2prim_8h_a6ca54776127e20149f84c290bf52f89e}{SET\_HIGH\_WORD}(a,ha); \textcolor{comment}{/* a <- |a| */}
+100     \hyperlink{real_2prim_8h_a6ca54776127e20149f84c290bf52f89e}{SET\_HIGH\_WORD}(b,hb); \textcolor{comment}{/* b <- |b| */}
+101     \textcolor{keywordflow}{if}((ha-hb)>0x3c00000) \{
+102         \textcolor{keywordflow}{return} a+b;   \textcolor{comment}{/* x/y > 2**60 */}
+103     \}
+104     k=0;
+105     \textcolor{keywordflow}{if}(ha > 0x5f300000) \{   \textcolor{comment}{/* a>2**500 */}
+106         \textcolor{keywordflow}{if}(ha >= 0x7ff00000) \{  \textcolor{comment}{/* Inf or NaN */}
+107             \hyperlink{real_2prim_8h_a6e60fe0e0f9f8801507e15fe2d893751}{uword} la, lb;
+108             w = a+b;            \textcolor{comment}{/* for sNaN */}
+109             \hyperlink{real_2prim_8h_adee023704c856ea8f310e8e3fd765a22}{GET\_LOW\_WORD}(la,a);
+110             \hyperlink{real_2prim_8h_adee023704c856ea8f310e8e3fd765a22}{GET\_LOW\_WORD}(lb,b);
+111             \textcolor{keywordflow}{if}(((ha&0xfffff)|la)==0) w = a;
+112             \textcolor{keywordflow}{if}(((hb^0x7ff00000)|lb)==0) w = b;
+113             \textcolor{keywordflow}{return} w;
+114         \}
+115         \textcolor{comment}{/* scale a and b by 2**-600 */}
+116         ha -= 0x25800000;
+117         hb -= 0x25800000;
+118         k += 600;
+119         \hyperlink{real_2prim_8h_a6ca54776127e20149f84c290bf52f89e}{SET\_HIGH\_WORD}(a,ha);
+120         \hyperlink{real_2prim_8h_a6ca54776127e20149f84c290bf52f89e}{SET\_HIGH\_WORD}(b,hb);
+121     \}
+122     \textcolor{keywordflow}{if}(hb < 0x20b00000) \{   \textcolor{comment}{/* b < 2**-500 */}
+123         \textcolor{keywordflow}{if}(hb <= 0x000fffff) \{  \textcolor{comment}{/* subnormal b or 0 */}
+124             \hyperlink{real_2prim_8h_a6e60fe0e0f9f8801507e15fe2d893751}{uword} lb;
+125             \hyperlink{real_2prim_8h_adee023704c856ea8f310e8e3fd765a22}{GET\_LOW\_WORD}(lb,b);
+126             \textcolor{keywordflow}{if}((hb|lb)==0) \textcolor{keywordflow}{return} a;
+127             t1=0;
+128             \hyperlink{real_2prim_8h_a6ca54776127e20149f84c290bf52f89e}{SET\_HIGH\_WORD}(t1, 0x7fd00000); \textcolor{comment}{/* t1=2^1022 */}
+129             b *= t1;
+130             a *= t1;
+131             k -= 1022;
+132         \} \textcolor{keywordflow}{else} \{        \textcolor{comment}{/* scale a and b by 2^600 */}
+133             ha += 0x25800000;   \textcolor{comment}{/* a *= 2^600 */}
+134             hb += 0x25800000;   \textcolor{comment}{/* b *= 2^600 */}
+135             k -= 600;
+136 
+137             \hyperlink{real_2prim_8h_a6ca54776127e20149f84c290bf52f89e}{SET\_HIGH\_WORD}(a,ha);
+138             \hyperlink{real_2prim_8h_a6ca54776127e20149f84c290bf52f89e}{SET\_HIGH\_WORD}(b,hb);
+139         \}
+140     \}
+141     \textcolor{comment}{/* medium size a and b */}
+142     w = a-b;
+143     \textcolor{keywordflow}{if} (w>b) \{
+144         t1 = 0;
+145         \hyperlink{real_2prim_8h_a6ca54776127e20149f84c290bf52f89e}{SET\_HIGH\_WORD}(t1, ha);
+146         t2 = a-t1;
+147         w  = \hyperlink{math_8h_ab87521a75ef827a85807f89a6c10629a}{sqrt}(t1*t1-(b*(-b)-t2*(a+t1)));
+148     \} \textcolor{keywordflow}{else} \{
+149         a  = a+a;
+150         y1 = 0;
+151         \hyperlink{real_2prim_8h_a6ca54776127e20149f84c290bf52f89e}{SET\_HIGH\_WORD}(y1, hb);
+152         y2 = b - y1;
+153         t1 = 0;
+154         \hyperlink{real_2prim_8h_a6ca54776127e20149f84c290bf52f89e}{SET\_HIGH\_WORD}(t1, ha+0x00100000);
+155         t2 = a - t1;
+156         w  = \hyperlink{math_8h_ab87521a75ef827a85807f89a6c10629a}{sqrt}(t1*y1-(w*(-w)-(t1*y2+t2*b)));
+157     \}
+158     \textcolor{keywordflow}{if}(k!=0) \{
+159         \hyperlink{real_2prim_8h_a6e60fe0e0f9f8801507e15fe2d893751}{uword} ht1;
+160 
+161         t1 = 1.0;
+162         \hyperlink{real_2prim_8h_ae62ee08d06ab4cc06d61dc1246b73195}{GET\_HIGH\_WORD}(ht1, t1);
+163         \hyperlink{real_2prim_8h_a6ca54776127e20149f84c290bf52f89e}{SET\_HIGH\_WORD}(t1, ht1 + (k<<20));
+164         \textcolor{keywordflow}{return} t1*w;
+165     \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{return} w;
+166 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=190pt]{hypot_8c_a6d6a905f61d535f8454190433b8c0ea5_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{hypot_8c_a6d6a905f61d535f8454190433b8c0ea5_icgraph}
+\end{center}
+\end{figure}
+
+

@@ -1,0 +1,83 @@
+\hypertarget{cexp_8c}{}\section{lib/cplex/cexp.c File Reference}
+\label{cexp_8c}\index{lib/cplex/cexp.\+c@{lib/cplex/cexp.\+c}}
+{\ttfamily \#include \char`\"{}prim.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}math.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}complex.\+h\char`\"{}}\\*
+Include dependency graph for cexp.\+c\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=221pt]{cexp_8c__incl}
+\end{center}
+\end{figure}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{unioncomplex}{complex} \hyperlink{cexp_8c_abf3bfbb727779504c9ddb7023d14fed0}{cexp} (\hyperlink{unioncomplex}{complex} z)
+\begin{DoxyCompactList}\small\item\em Returns e to the power of a complex number. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\index{cexp.\+c@{cexp.\+c}!cexp@{cexp}}
+\index{cexp@{cexp}!cexp.\+c@{cexp.\+c}}
+\subsubsection[{\texorpdfstring{cexp(complex z)}{cexp(complex z)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf complex} cexp (
+\begin{DoxyParamCaption}
+\item[{{\bf complex}}]{z}
+\end{DoxyParamCaption}
+)}\hypertarget{cexp_8c_abf3bfbb727779504c9ddb7023d14fed0}{}\label{cexp_8c_abf3bfbb727779504c9ddb7023d14fed0}
+
+
+Returns e to the power of a complex number. 
+
+\begin{DoxyVersion}{Version}
+1.\+1 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+2007/08/20 
+\end{DoxyDate}
+
+
+Definition at line 46 of file cexp.\+c.
+
+
+
+References cimag(), cos(), cpack(), creal(), exp(), and sin().
+
+
+
+Referenced by ccbrt().
+
+
+\begin{DoxyCode}
+47 \{
+48     \hyperlink{unioncomplex}{complex} w;
+49     \textcolor{keywordtype}{double} r, x, y;
+50     x = \hyperlink{complex_8h_a4a236b24c0197821e3489a35a72079ab}{creal}(z);
+51     y = \hyperlink{complex_8h_aa1fe0b9371befabef6c41ba73470774a}{cimag}(z);
+52     r = \hyperlink{math_8h_ae09128febbbe6372cde4fa0c65608a42}{exp}(x);
+53     w = \hyperlink{complex_8h_a980e6e049f7902b05fc9eb5614b07a5c}{cpack}(r * \hyperlink{math_8h_a5e7b53a694b3cf0f2d7debd444140fbd}{cos}(y), r * \hyperlink{math_8h_aad4af25633b071b0e2cdb8ebd87eca77}{sin}(y));
+54     \textcolor{keywordflow}{return} w;
+55 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{cexp_8c_abf3bfbb727779504c9ddb7023d14fed0_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{cexp_8c_abf3bfbb727779504c9ddb7023d14fed0_icgraph}
+\end{center}
+\end{figure}
+
+
