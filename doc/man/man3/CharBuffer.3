@@ -1,4 +1,4 @@
-.TH "CharBuffer" 3 "Thu Jan 19 2017" "Version 1.6.0" "amath" \" -*- nroff -*-
+.TH "CharBuffer" 3 "Fri Jan 20 2017" "Version 1.6.0" "amath" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -54,6 +54,7 @@ CharBuffer \- Encapsulate an character array which can be used as a string\&.
 .ti -1c
 .RI "\fBbool\fP \fBIs\fP (const char *string)"
 .br
+.RI "\fICompare content of \fBCharBuffer\fP with string) \fP"
 .ti -1c
 .RI "void \fBCopy\fP (\fBCharBuffer\fP *\fBbuf\fP)"
 .br
@@ -110,7 +111,7 @@ CharBuffer \- Encapsulate an character array which can be used as a string\&.
 .PP 
 Encapsulate an character array which can be used as a string\&. 
 
-Eases the task of allocating a releasing memory\&. 
+The \fBCharBuffer\fP class eases the task of allocating a releasing memory\&. 
 .PP
 Definition at line 43 of file charbuf\&.h\&.
 .SH "Constructor & Destructor Documentation"
@@ -444,6 +445,8 @@ Referenced by Copy(), AnsiConoleEngine::CopyLine(), ErrorNode::ErrorNode(), Vers
 .SS "\fBbool\fP CharBuffer::Is (const char * string)"
 
 .PP
+Compare content of \fBCharBuffer\fP with string) 
+.PP
 Definition at line 163 of file charbuf\&.cpp\&.
 .PP
 References GetString(), and StrIsEqual()\&.
@@ -508,31 +511,31 @@ References buf, ptr, StrIsEqual(), and StrLen()\&.
 .SS "friend class \fBAnsiConoleEngine\fP\fC [friend]\fP"
 
 .PP
-Definition at line 70 of file charbuf\&.h\&.
+Definition at line 74 of file charbuf\&.h\&.
 .SH "Member Data Documentation"
 .PP 
 .SS "char* CharBuffer::buf\fC [private]\fP"
 
 .PP
-Definition at line 72 of file charbuf\&.h\&.
+Definition at line 76 of file charbuf\&.h\&.
 .PP
 Referenced by CharBuffer(), ClearAndAlloc(), ClearAndCopy(), ClearBuffer(), Copy(), Empty(), EnsureGrowth(), EnsureMinimumSize(), EnsureSize(), GetString(), AnsiConoleEngine::ProcessChar(), RemoveTrailing(), AnsiConoleEngine::ShowLast(), AnsiConoleEngine::ShowNext(), and AnsiConoleEngine::StartInput()\&.
 .SS "unsigned int CharBuffer::cursize\fC [private]\fP"
 
 .PP
-Definition at line 74 of file charbuf\&.h\&.
+Definition at line 78 of file charbuf\&.h\&.
 .PP
 Referenced by CharBuffer(), ClearAndAlloc(), ClearAndCopy(), ClearBuffer(), Copy(), and EnsureSize()\&.
 .SS "const unsigned int CharBuffer::minimumSize = 64\fC [static]\fP, \fC [private]\fP"
 
 .PP
-Definition at line 75 of file charbuf\&.h\&.
+Definition at line 79 of file charbuf\&.h\&.
 .PP
 Referenced by CharBuffer(), ClearAndAlloc(), EnsureMinimumSize(), and EnsureSize()\&.
 .SS "char* CharBuffer::ptr\fC [private]\fP"
 
 .PP
-Definition at line 73 of file charbuf\&.h\&.
+Definition at line 77 of file charbuf\&.h\&.
 .PP
 Referenced by Append(), CharBuffer(), ClearAndAlloc(), ClearAndCopy(), ClearBuffer(), Copy(), DeleteLastChar(), Empty(), EnsureGrowth(), EnsureMinimumSize(), EnsureSize(), GetString(), AnsiConoleEngine::ProcessChar(), and RemoveTrailing()\&.
 

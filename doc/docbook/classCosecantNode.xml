@@ -1,0 +1,86 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="classCosecantNode">
+<title>CosecantNode class Reference</title>
+<para>
+    <programlisting>#include <link linkend="functions_8h">&lt;functions.h&gt;</link></programlisting>
+</para>
+<para>Inheritance diagram for CosecantNode</para>
+<para>
+    <figure>
+        <title>Inheritance graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="classCosecantNode__inherit__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+<para>Collaboration diagram for CosecantNode</para>
+<para>
+    <figure>
+        <title>Collaboration graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="classCosecantNode__coll__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="classCosecantNode_1a4e92c76b2ee0b9001f935bdf8b572992">CosecantNode</link> (
+<link linkend="classExpressionNode">ExpressionNode</link> * expression)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="structNumber">Number</link> * <link linkend="classCosecantNode_1a56ecfcf72005dc95477c95df291609e9">Evaluate</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>static <link linkend="classFunctionNode">FunctionNode</link> * <link linkend="classCosecantNode_1a8c69199ee5f01bfbb9c5e536626c71a3">Create</link> (
+<link linkend="classExpressionNode">ExpressionNode</link> * expression)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>char * <link linkend="classCosecantNode_1aedd716ab2e6e2a562718168ea3e4a367">GetNodeText</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+            <section xml:id="classCosecantNode_1a4e92c76b2ee0b9001f935bdf8b572992">
+                <title>CosecantNode::CosecantNode (ExpressionNode *expression)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="classCosecantNode_1a56ecfcf72005dc95477c95df291609e9">
+                <title>Number * CosecantNode::Evaluate ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="classCosecantNode_1a8c69199ee5f01bfbb9c5e536626c71a3">
+                <title>FunctionNode * CosecantNode::Create (ExpressionNode *expression)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="classCosecantNode_1aedd716ab2e6e2a562718168ea3e4a367">
+                <title>char * CosecantNode::GetNodeText ()</title> <emphasis></emphasis>
+                
+            </section>
+</section>

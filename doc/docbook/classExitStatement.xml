@@ -1,0 +1,72 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="classExitStatement">
+<title>ExitStatement class Reference</title>
+<para>
+    <programlisting>#include <link linkend="statements_8h">&lt;statements.h&gt;</link></programlisting>
+</para>
+<para>Inheritance diagram for ExitStatement</para>
+<para>
+    <figure>
+        <title>Inheritance graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="classExitStatement__inherit__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+<para>Collaboration diagram for ExitStatement</para>
+<para>
+    <figure>
+        <title>Collaboration graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="classExitStatement__coll__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="classExitStatement_1aa023a4db5bc1cef8841913c74861c8e3">ExitStatement</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="classExitStatement_1a6a45a26f4eb7c2cd78c2feaaed5695a9">~ExitStatement</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>char * <link linkend="classExitStatement_1a0c7aef922938d7f7f02b8ca402a3bd38">Execute</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+    <simplesect>
+
+<para>Exit program. </para>
+    </simplesect>
+            <section xml:id="classExitStatement_1aa023a4db5bc1cef8841913c74861c8e3">
+                <title>ExitStatement::ExitStatement ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="classExitStatement_1a6a45a26f4eb7c2cd78c2feaaed5695a9">
+                <title>ExitStatement::~ExitStatement ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="classExitStatement_1a0c7aef922938d7f7f02b8ca402a3bd38">
+                <title>char * ExitStatement::Execute ()</title> <emphasis></emphasis>
+                
+            </section>
+</section>

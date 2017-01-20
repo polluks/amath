@@ -1,0 +1,5 @@
+<map id="Language" name="Language">
+<area shape="rect" id="node2" href="$classAmigaLanguage.html" title="AmigaLanguage" alt="" coords="5,80,120,107"/>
+<area shape="rect" id="node3" href="$classPosixLanguage.html" title="PosixLanguage" alt="" coords="145,80,255,107"/>
+<area shape="rect" id="node4" href="$classStandardLanguage.html" title="StandardLanguage" alt="" coords="280,80,411,107"/>
+</map>

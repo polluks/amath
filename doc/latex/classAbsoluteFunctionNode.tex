@@ -1,0 +1,197 @@
+\hypertarget{classAbsoluteFunctionNode}{}\section{Absolute\+Function\+Node Class Reference}
+\label{classAbsoluteFunctionNode}\index{Absolute\+Function\+Node@{Absolute\+Function\+Node}}
+
+
+{\ttfamily \#include $<$functions.\+h$>$}
+
+
+
+Inheritance diagram for Absolute\+Function\+Node\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=196pt]{classAbsoluteFunctionNode__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Absolute\+Function\+Node\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=272pt]{classAbsoluteFunctionNode__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classAbsoluteFunctionNode_adcc843140de3a7435546a293b9b5b882}{Absolute\+Function\+Node} (\hyperlink{classExpressionNode}{Expression\+Node} $\ast$\hyperlink{classFunctionNode_ad7577b179a1937aaf8a0058bb5b546dc}{expression})
+\item 
+\hyperlink{structNumber}{Number} $\ast$ \hyperlink{classAbsoluteFunctionNode_addd9710c60598aca391822e25d67ab33}{Evaluate} ()
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{classFunctionNode}{Function\+Node} $\ast$ \hyperlink{classAbsoluteFunctionNode_a9da4bc82d15f41aaf9adde83974af83d}{Create} (\hyperlink{classExpressionNode}{Expression\+Node} $\ast$\hyperlink{classFunctionNode_ad7577b179a1937aaf8a0058bb5b546dc}{expression})
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+char $\ast$ \hyperlink{classAbsoluteFunctionNode_a4cfc007fc3a4280fc294e04668aae566}{Get\+Node\+Text} ()
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 178 of file functions.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Absolute\+Function\+Node@{Absolute\+Function\+Node}!Absolute\+Function\+Node@{Absolute\+Function\+Node}}
+\index{Absolute\+Function\+Node@{Absolute\+Function\+Node}!Absolute\+Function\+Node@{Absolute\+Function\+Node}}
+\subsubsection[{\texorpdfstring{Absolute\+Function\+Node(\+Expression\+Node $\ast$expression)}{AbsoluteFunctionNode(ExpressionNode *expression)}}]{\setlength{\rightskip}{0pt plus 5cm}Absolute\+Function\+Node\+::\+Absolute\+Function\+Node (
+\begin{DoxyParamCaption}
+\item[{{\bf Expression\+Node} $\ast$}]{expression}
+\end{DoxyParamCaption}
+)}\hypertarget{classAbsoluteFunctionNode_adcc843140de3a7435546a293b9b5b882}{}\label{classAbsoluteFunctionNode_adcc843140de3a7435546a293b9b5b882}
+
+
+Definition at line 491 of file functions.\+cpp.
+
+
+
+References Function\+Node\+::\+Function\+Node().
+
+
+
+Referenced by Create().
+
+
+\begin{DoxyCode}
+491                                                                      :
+492     \hyperlink{classFunctionNode_a41cb7db0162ffbec0902bd8ff7ea435f}{FunctionNode}(expression) \{ \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classAbsoluteFunctionNode_adcc843140de3a7435546a293b9b5b882_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classAbsoluteFunctionNode_adcc843140de3a7435546a293b9b5b882_icgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Member Function Documentation}
+\index{Absolute\+Function\+Node@{Absolute\+Function\+Node}!Create@{Create}}
+\index{Create@{Create}!Absolute\+Function\+Node@{Absolute\+Function\+Node}}
+\subsubsection[{\texorpdfstring{Create(\+Expression\+Node $\ast$expression)}{Create(ExpressionNode *expression)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Function\+Node} $\ast$ Absolute\+Function\+Node\+::\+Create (
+\begin{DoxyParamCaption}
+\item[{{\bf Expression\+Node} $\ast$}]{expression}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{classAbsoluteFunctionNode_a9da4bc82d15f41aaf9adde83974af83d}{}\label{classAbsoluteFunctionNode_a9da4bc82d15f41aaf9adde83974af83d}
+
+
+Definition at line 494 of file functions.\+cpp.
+
+
+
+References Absolute\+Function\+Node().
+
+
+\begin{DoxyCode}
+495 \{
+496     \textcolor{keywordflow}{return} \textcolor{keyword}{new} \hyperlink{classAbsoluteFunctionNode_adcc843140de3a7435546a293b9b5b882}{AbsoluteFunctionNode}(expression);
+497 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classAbsoluteFunctionNode_a9da4bc82d15f41aaf9adde83974af83d_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{Absolute\+Function\+Node@{Absolute\+Function\+Node}!Evaluate@{Evaluate}}
+\index{Evaluate@{Evaluate}!Absolute\+Function\+Node@{Absolute\+Function\+Node}}
+\subsubsection[{\texorpdfstring{Evaluate()}{Evaluate()}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Number} $\ast$ Absolute\+Function\+Node\+::\+Evaluate (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{classAbsoluteFunctionNode_addd9710c60598aca391822e25d67ab33}{}\label{classAbsoluteFunctionNode_addd9710c60598aca391822e25d67ab33}
+
+
+Implements \hyperlink{classExpressionNode_a64975d4dc37742228bd522f6204537f7}{Expression\+Node}.
+
+
+
+Definition at line 499 of file functions.\+cpp.
+
+
+
+References Number\+::\+Absolute(), Expression\+Node\+::\+Evaluate(), Function\+Node\+::expression, and Expression\+Node\+::result.
+
+
+\begin{DoxyCode}
+500 \{
+501     \hyperlink{classExpressionNode_a1f590649f5a5cb30eb7ee912f7bc1262}{result} = \hyperlink{classFunctionNode_ad7577b179a1937aaf8a0058bb5b546dc}{expression}->\hyperlink{classExpressionNode_a64975d4dc37742228bd522f6204537f7}{Evaluate}()->\hyperlink{structNumber_acdbe13cd9862bb73225a893fb14de2a5}{Absolute}();
+502     \textcolor{keywordflow}{return} \hyperlink{classExpressionNode_a1f590649f5a5cb30eb7ee912f7bc1262}{result};
+503 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classAbsoluteFunctionNode_addd9710c60598aca391822e25d67ab33_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{Absolute\+Function\+Node@{Absolute\+Function\+Node}!Get\+Node\+Text@{Get\+Node\+Text}}
+\index{Get\+Node\+Text@{Get\+Node\+Text}!Absolute\+Function\+Node@{Absolute\+Function\+Node}}
+\subsubsection[{\texorpdfstring{Get\+Node\+Text()}{GetNodeText()}}]{\setlength{\rightskip}{0pt plus 5cm}char $\ast$ Absolute\+Function\+Node\+::\+Get\+Node\+Text (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}\hypertarget{classAbsoluteFunctionNode_a4cfc007fc3a4280fc294e04668aae566}{}\label{classAbsoluteFunctionNode_a4cfc007fc3a4280fc294e04668aae566}
+
+
+Implements \hyperlink{classExpressionNode_a42a5e9562b0f645a19dcc83f698069b5}{Expression\+Node}.
+
+
+
+Definition at line 505 of file functions.\+cpp.
+
+
+\begin{DoxyCode}
+506 \{
+507     \textcolor{keywordflow}{return} (\textcolor{keywordtype}{char}*)\textcolor{stringliteral}{"abs"};
+508 \}
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+app/main/\hyperlink{functions_8h}{functions.\+h}\item 
+app/main/\hyperlink{functions_8cpp}{functions.\+cpp}\end{DoxyCompactItemize}

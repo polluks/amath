@@ -1,0 +1,741 @@
+\hypertarget{pow_8c}{}\section{lib/real/pow.c File Reference}
+\label{pow_8c}\index{lib/real/pow.\+c@{lib/real/pow.\+c}}
+{\ttfamily \#include \char`\"{}prim.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}math.\+h\char`\"{}}\\*
+Include dependency graph for pow.\+c\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=190pt]{pow_8c__incl}
+\end{center}
+\end{figure}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+double \hyperlink{pow_8c_aa56c9494c95edf68386375e97d64159b}{pow} (double x, double y)
+\begin{DoxyCompactList}\small\item\em Expontation function. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+static const double \hyperlink{pow_8c_a9ec7bdbb3a01ff705aaeb8819fdf9cfa}{bp} \mbox{[}$\,$\mbox{]} = \{1.\+0, 1.\+5,\}
+\item 
+static const double \hyperlink{pow_8c_a4d2b7a191a77a5d01399f9fd1778f0b5}{dp\+\_\+h} \mbox{[}$\,$\mbox{]} = \{ 0.\+0, 5.\+84962487220764160156e-\/01,\}
+\item 
+static const double \hyperlink{pow_8c_ad69e225436b9621c5b4638a33cdb5b06}{dp\+\_\+l} \mbox{[}$\,$\mbox{]} = \{ 0.\+0, 1.\+35003920212974897128e-\/08,\}
+\item 
+static const double \hyperlink{pow_8c_a554f7b66b1ba49443447eb746978c268}{zero} = 0.\+0
+\item 
+static const double \hyperlink{pow_8c_ada85e349d35971b32c8ea4238881ff8b}{one} = 1.\+0
+\item 
+static const double \hyperlink{pow_8c_a45c15ebfa63fa10683ebce401df0b836}{two} = 2.\+0
+\item 
+static const double \hyperlink{pow_8c_a8b3d2ebfb37d2c044b3e1f133b1537cd}{two53} = 9007199254740992.\+0
+\item 
+static const double \hyperlink{pow_8c_acbd466133274923cc0785707fbdeea9a}{huge} = 1.\+0e300
+\item 
+static const double \hyperlink{pow_8c_a4f41fc56ffc7d06df51b6fbccd8c0846}{tiny} = 1.\+0e-\/300
+\item 
+static const double \hyperlink{pow_8c_a906e2b4ba15be0d69c6c15fbb79c9d17}{L1} = 5.\+99999999999994648725e-\/01
+\item 
+static const double \hyperlink{pow_8c_a11e7daa2934ee96d1430c2ac6df68f2a}{L2} = 4.\+28571428578550184252e-\/01
+\item 
+static const double \hyperlink{pow_8c_a352b4d77596258cf647e71a74dfbcfb6}{L3} = 3.\+33333329818377432918e-\/01
+\item 
+static const double \hyperlink{pow_8c_a5e8b11c10141df1888afa0d09e6ebafa}{L4} = 2.\+72728123808534006489e-\/01
+\item 
+static const double \hyperlink{pow_8c_ab38b66779c8f7671692724fc59abe942}{L5} = 2.\+30660745775561754067e-\/01
+\item 
+static const double \hyperlink{pow_8c_ab144a2b09d7235c795d751025442704f}{L6} = 2.\+06975017800338417784e-\/01
+\item 
+static const double \hyperlink{pow_8c_a5c2e2e6dd711ceae83536551926d6dd3}{P1} = 1.\+66666666666666019037e-\/01
+\item 
+static const double \hyperlink{pow_8c_acddba71b086f9e3c2b621baef51e45ac}{P2} = -\/2.\+77777777770155933842e-\/03
+\item 
+static const double \hyperlink{pow_8c_ab48f05f97efef9ea9f554c91a980520a}{P3} = 6.\+61375632143793436117e-\/05
+\item 
+static const double \hyperlink{pow_8c_af783f4afa9878be962b9904dc22e8bab}{P4} = -\/1.\+65339022054652515390e-\/06
+\item 
+static const double \hyperlink{pow_8c_afdc64323c3afde906f161bdf28e5e319}{P5} = 4.\+13813679705723846039e-\/08
+\item 
+static const double \hyperlink{pow_8c_af9a959de40ccd0243fecd6ade9703874}{lg2} = 6.\+93147180559945286227e-\/01
+\item 
+static const double \hyperlink{pow_8c_a0e921017a3ec6bd51a2c3b0760003359}{lg2\+\_\+h} = 6.\+93147182464599609375e-\/01
+\item 
+static const double \hyperlink{pow_8c_abada47ce3b9b4ec143fa868e4b4cce6f}{lg2\+\_\+l} = -\/1.\+90465429995776804525e-\/09
+\item 
+static const double \hyperlink{pow_8c_a39e5a6fb924096b69307b75766789bed}{ovt} = 8.\+0085662595372944372e-\/0017
+\item 
+static const double \hyperlink{pow_8c_a3d95d7052117de6cb188a562c9e80e1f}{cp} = 9.\+61796693925975554329e-\/01
+\item 
+static const double \hyperlink{pow_8c_a10067ed5ff37a14725c27ac8d7666470}{cp\+\_\+h} = 9.\+61796700954437255859e-\/01
+\item 
+static const double \hyperlink{pow_8c_ab67ffef1e57cfd503a90ca8d988b07fe}{cp\+\_\+l} = -\/7.\+02846165095275826516e-\/09
+\item 
+static const double \hyperlink{pow_8c_a41ff67db971b4959670ff5b75dcc166b}{ivln2} = 1.\+44269504088896338700e+00
+\item 
+static const double \hyperlink{pow_8c_a6880e0fe9bc35dca451a1d14b9152415}{ivln2\+\_\+h} = 1.\+44269502162933349609e+00
+\item 
+static const double \hyperlink{pow_8c_acae36ab3d417386d94f854d6d2d1ee31}{ivln2\+\_\+l} = 1.\+92596299112661746887e-\/08
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\index{pow.\+c@{pow.\+c}!pow@{pow}}
+\index{pow@{pow}!pow.\+c@{pow.\+c}}
+\subsubsection[{\texorpdfstring{pow(double x, double y)}{pow(double x, double y)}}]{\setlength{\rightskip}{0pt plus 5cm}double pow (
+\begin{DoxyParamCaption}
+\item[{double}]{x, }
+\item[{double}]{y}
+\end{DoxyParamCaption}
+)}\hypertarget{pow_8c_aa56c9494c95edf68386375e97d64159b}{}\label{pow_8c_aa56c9494c95edf68386375e97d64159b}
+
+
+Expontation function. 
+
+\begin{DoxyVersion}{Version}
+1.\+3 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+95/01/18
+\end{DoxyDate}
+
+\begin{DoxyPre}
+Method:  Let x =  2   * (1+f)
+ 1. Compute and return log2(x) in two pieces:
+    log2(x) = w1 + w2,
+    where w1 has 53-24 = 29 bit trailing zeros.
+ 2. Perform y*log2(x) = n+y' by simulating muti-precision
+    arithmetic, where |y'|<=0.5.
+ 3. Return x**y = 2**n*exp(y'*log2)\end{DoxyPre}
+
+
+
+\begin{DoxyPre}Special cases:
+ 1.  (anything) ** 0  is 1
+ 2.  (anything) ** 1  is itself
+ 3.  (anything) ** NAN is NAN
+ 4.  NAN ** (anything except 0) is NAN
+ 5.  +-(|x| > 1) **  +INF is +INF
+ 6.  +-(|x| > 1) **  -INF is +0
+ 7.  +-(|x| < 1) **  +INF is +0
+ 8.  +-(|x| < 1) **  -INF is +INF
+ 9.  +-1         ** +-INF is NAN
+ 10. +0 ** (+anything except 0, NAN)               is +0
+ 11. -0 ** (+anything except 0, NAN, odd integer)  is +0
+ 12. +0 ** (-anything except 0, NAN)               is +INF
+ 13. -0 ** (-anything except 0, NAN, odd integer)  is +INF
+ 14. -0 ** (odd integer) = -( +0 ** (odd integer) )
+ 15. +INF ** (+anything except 0,NAN) is +INF
+ 16. +INF ** (-anything except 0,NAN) is +0
+ 17. -INF ** (anything)  = -0 ** (-anything)
+ 18. (-anything) ** (integer) is (-1)**(integer)*(+anything**integer)
+ 19. (-anything except 0 and inf) ** (non-integer) is NAN\end{DoxyPre}
+
+
+
+\begin{DoxyPre}Accuracy:
+ pow(x,y) returns x**y nearly rounded. In particular
+        pow(integer,integer)
+ always returns the correct integer provided it is
+ representable.\end{DoxyPre}
+
+
+
+\begin{DoxyPre}Constants :
+The hexadecimal values are the intended ones for the following
+constants. The decimal values may be used, provided that the
+compiler will convert from decimal to binary accurately enough
+to produce the hexadecimal values shown.
+\end{DoxyPre}
+ \begin{DoxyCopyright}{Copyright}
+Copyright (C) 1993 by Sun Microsystems, Inc. All rights reserved.  Developed at Sun\+Soft, a Sun Microsystems, Inc. business. Permission to use, copy, modify, and distribute this software is freely granted, provided that this notice is preserved. 
+\end{DoxyCopyright}
+
+
+Definition at line 139 of file pow.\+c.
+
+
+
+References bp, cp, cp\+\_\+h, cp\+\_\+l, dp\+\_\+h, dp\+\_\+l, huge, ivln2, ivln2\+\_\+h, ivln2\+\_\+l, L1, L2, L3, L4, L5, L6, lg2, lg2\+\_\+h, lg2\+\_\+l, one, ovt, P1, P2, P3, P4, P5, scalbn(), sqrt(), tiny, two, two53, and zero.
+
+
+
+Referenced by cpow(), Decimal\+System\+::\+Get\+Real\+Text(), Positional\+Numeral\+System\+::\+Get\+Text(), Positional\+Numeral\+System\+::\+Parse(), and Real\+Number\+::\+Raise().
+
+
+\begin{DoxyCode}
+140 \{
+141     \textcolor{keywordtype}{double} z,ax,z\_h,z\_l,p\_h,p\_l;
+142     \textcolor{keywordtype}{double} y1,t1,t2,r,s,t,u,v,w;
+143     \hyperlink{real_2prim_8h_ae91287c8a5f73a8a22a100f50dc4de77}{sword} i0,i1,i,j,k,yisint,n;
+144     \hyperlink{real_2prim_8h_ae91287c8a5f73a8a22a100f50dc4de77}{sword} hx,hy,ix,iy;
+145     \hyperlink{real_2prim_8h_a6e60fe0e0f9f8801507e15fe2d893751}{uword} lx,ly;
+146 
+147     i0 = ((*(\textcolor{keywordtype}{int}*)&\hyperlink{pow_8c_ada85e349d35971b32c8ea4238881ff8b}{one})>>29)^1;
+148     i1=1-i0;
+149     \hyperlink{real_2prim_8h_a6dadc713499e14ba3088a55409a18983}{EXTRACT\_WORDS}(hx,lx,x);
+150     \hyperlink{real_2prim_8h_a6dadc713499e14ba3088a55409a18983}{EXTRACT\_WORDS}(hy,ly,y);
+151     ix = hx&0x7fffffff;
+152     iy = hy&0x7fffffff;
+153 
+154     \textcolor{comment}{/* y==zero: x**0 = 1 */}
+155     \textcolor{keywordflow}{if}((iy|ly)==0) \textcolor{keywordflow}{return} \hyperlink{pow_8c_ada85e349d35971b32c8ea4238881ff8b}{one};
+156 
+157     \textcolor{comment}{/* +-NaN return x+y */}
+158     \textcolor{keywordflow}{if}(ix > 0x7ff00000 || ((ix==0x7ff00000)&&(lx!=0)) ||
+159             iy > 0x7ff00000 || ((iy==0x7ff00000)&&(ly!=0)))
+160         \textcolor{keywordflow}{return} x+y;
+161 
+162     \textcolor{comment}{/* determine if y is an odd int when x < 0}
+163 \textcolor{comment}{     * yisint = 0   ... y is not an integer}
+164 \textcolor{comment}{     * yisint = 1   ... y is an odd int}
+165 \textcolor{comment}{     * yisint = 2   ... y is an even int}
+166 \textcolor{comment}{     */}
+167     yisint  = 0;
+168     \textcolor{keywordflow}{if}(hx<0) \{
+169         \textcolor{keywordflow}{if}(iy>=0x43400000) yisint = 2; \textcolor{comment}{/* even integer y */}
+170         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(iy>=0x3ff00000) \{
+171             k = (iy>>20)-0x3ff;    \textcolor{comment}{/* exponent */}
+172             \textcolor{keywordflow}{if}(k>20) \{
+173                 j = ly>>(52-k);
+174                 \textcolor{keywordflow}{if}((\hyperlink{real_2prim_8h_a6e60fe0e0f9f8801507e15fe2d893751}{uword})(j<<(52-k))==ly) yisint = 2-(j&1);
+175             \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(ly==0) \{
+176                 j = iy>>(20-k);
+177                 \textcolor{keywordflow}{if}((j<<(20-k))==iy) yisint = 2-(j&1);
+178             \}
+179         \}
+180     \}
+181 
+182     \textcolor{comment}{/* special value of y */}
+183     \textcolor{keywordflow}{if}(ly==0) \{
+184         \textcolor{keywordflow}{if} (iy==0x7ff00000) \{   \textcolor{comment}{/* y is +-inf */}
+185             \textcolor{keywordflow}{if}(((ix-0x3ff00000)|lx)==0)
+186                 \textcolor{keywordflow}{return}  y - y;  \textcolor{comment}{/* inf**+-1 is NaN */}
+187             \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (ix >= 0x3ff00000)\textcolor{comment}{/* (|x|>1)**+-inf = inf,0 */}
+188                 \textcolor{keywordflow}{return} (hy>=0)? y: \hyperlink{pow_8c_a554f7b66b1ba49443447eb746978c268}{zero};
+189             \textcolor{keywordflow}{else}            \textcolor{comment}{/* (|x|<1)**-,+inf = inf,0 */}
+190                 \textcolor{keywordflow}{return} (hy<0)?-y: \hyperlink{pow_8c_a554f7b66b1ba49443447eb746978c268}{zero};
+191         \}
+192         \textcolor{keywordflow}{if}(iy==0x3ff00000) \{    \textcolor{comment}{/* y is  +-1 */}
+193             \textcolor{keywordflow}{if}(hy<0) \textcolor{keywordflow}{return} \hyperlink{pow_8c_ada85e349d35971b32c8ea4238881ff8b}{one}/x;
+194             \textcolor{keywordflow}{else} \textcolor{keywordflow}{return} x;
+195         \}
+196         \textcolor{keywordflow}{if}(hy==0x40000000) \textcolor{keywordflow}{return} x*x; \textcolor{comment}{/* y is  2 */}
+197         \textcolor{keywordflow}{if}(hy==0x3fe00000) \{    \textcolor{comment}{/* y is  0.5 */}
+198             \textcolor{keywordflow}{if}(hx>=0)   \textcolor{comment}{/* x >= +0 */}
+199                 \textcolor{keywordflow}{return} \hyperlink{math_8h_ab87521a75ef827a85807f89a6c10629a}{sqrt}(x);
+200         \}
+201     \}
+202 
+203     ax   = \hyperlink{math_8h_a8fb5c0b9b43a108724b355136d29d2f9}{fabs}(x);
+204     \textcolor{comment}{/* special value of x */}
+205     \textcolor{keywordflow}{if}(lx==0) \{
+206         \textcolor{keywordflow}{if}(ix==0x7ff00000||ix==0||ix==0x3ff00000) \{
+207             z = ax;         \textcolor{comment}{/*x is +-0,+-inf,+-1*/}
+208             \textcolor{keywordflow}{if}(hy<0) z = \hyperlink{pow_8c_ada85e349d35971b32c8ea4238881ff8b}{one}/z;  \textcolor{comment}{/* z = (1/|x|) */}
+209             \textcolor{keywordflow}{if}(hx<0) \{
+210                 \textcolor{keywordflow}{if}(((ix-0x3ff00000)|yisint)==0) \{
+211                     z = (z-z)/(z-z); \textcolor{comment}{/* (-1)**non-int is NaN */}
+212                 \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(yisint==1)
+213                     z = -z;     \textcolor{comment}{/* (x<0)**odd = -(|x|**odd) */}
+214             \}
+215             \textcolor{keywordflow}{return} z;
+216         \}
+217     \}
+218 
+219     n = (hx>>31)+1;
+220 
+221     \textcolor{comment}{/* (x<0)**(non-int) is NaN */}
+222     \textcolor{keywordflow}{if}((n|yisint)==0) \textcolor{keywordflow}{return} (x-x)/(x-x);
+223 
+224     s = \hyperlink{pow_8c_ada85e349d35971b32c8ea4238881ff8b}{one}; \textcolor{comment}{/* s (sign of result -ve**odd) = -1 else = 1 */}
+225     \textcolor{keywordflow}{if}((n|(yisint-1))==0) s = -\hyperlink{pow_8c_ada85e349d35971b32c8ea4238881ff8b}{one};\textcolor{comment}{/* (-ve)**(odd int) */}
+226 
+227     \textcolor{comment}{/* |y| is huge */}
+228     \textcolor{keywordflow}{if}(iy>0x41e00000) \{ \textcolor{comment}{/* if |y| > 2**31 */}
+229         \textcolor{keywordflow}{if}(iy>0x43f00000) \{ \textcolor{comment}{/* if |y| > 2**64, must o/uflow */}
+230             \textcolor{keywordflow}{if}(ix<=0x3fefffff) \textcolor{keywordflow}{return} (hy<0)? \hyperlink{pow_8c_acbd466133274923cc0785707fbdeea9a}{huge}*\hyperlink{pow_8c_acbd466133274923cc0785707fbdeea9a}{huge}:\hyperlink{pow_8c_a4f41fc56ffc7d06df51b6fbccd8c0846}{tiny}*\hyperlink{pow_8c_a4f41fc56ffc7d06df51b6fbccd8c0846}{tiny};
+231             \textcolor{keywordflow}{if}(ix>=0x3ff00000) \textcolor{keywordflow}{return} (hy>0)? \hyperlink{pow_8c_acbd466133274923cc0785707fbdeea9a}{huge}*\hyperlink{pow_8c_acbd466133274923cc0785707fbdeea9a}{huge}:tiny*\hyperlink{pow_8c_a4f41fc56ffc7d06df51b6fbccd8c0846}{tiny};
+232         \}
+233         \textcolor{comment}{/* over/underflow if x is not close to one */}
+234         \textcolor{keywordflow}{if}(ix<0x3fefffff) \textcolor{keywordflow}{return} (hy<0)? s*\hyperlink{pow_8c_acbd466133274923cc0785707fbdeea9a}{huge}*\hyperlink{pow_8c_acbd466133274923cc0785707fbdeea9a}{huge}:s*tiny*\hyperlink{pow_8c_a4f41fc56ffc7d06df51b6fbccd8c0846}{tiny};
+235         \textcolor{keywordflow}{if}(ix>0x3ff00000) \textcolor{keywordflow}{return} (hy>0)? s*\hyperlink{pow_8c_acbd466133274923cc0785707fbdeea9a}{huge}*\hyperlink{pow_8c_acbd466133274923cc0785707fbdeea9a}{huge}:s*tiny*\hyperlink{pow_8c_a4f41fc56ffc7d06df51b6fbccd8c0846}{tiny};
+236         \textcolor{comment}{/* now |1-x| is tiny <= 2**-20, suffice to compute}
+237 \textcolor{comment}{           log(x) by x-x^2/2+x^3/3-x^4/4 */}
+238         t = ax-\hyperlink{pow_8c_ada85e349d35971b32c8ea4238881ff8b}{one};      \textcolor{comment}{/* t has 20 trailing zeros */}
+239         w = (t*t)*(0.5-t*(0.3333333333333333333333-t*0.25));
+240         u = \hyperlink{pow_8c_a6880e0fe9bc35dca451a1d14b9152415}{ivln2\_h}*t;   \textcolor{comment}{/* ivln2\_h has 21 sig. bits */}
+241         v = t*\hyperlink{pow_8c_acae36ab3d417386d94f854d6d2d1ee31}{ivln2\_l}-w*\hyperlink{pow_8c_a41ff67db971b4959670ff5b75dcc166b}{ivln2};
+242         t1 = u+v;
+243         \hyperlink{real_2prim_8h_af4776e0b45c17da39fce08bc7b211a03}{SET\_LOW\_WORD}(t1,0);
+244         t2 = v-(t1-u);
+245     \} \textcolor{keywordflow}{else} \{
+246         \textcolor{keywordtype}{double} ss,s2,s\_h,s\_l,t\_h,t\_l;
+247         n = 0;
+248         \textcolor{comment}{/* take care subnormal number */}
+249         \textcolor{keywordflow}{if}(ix<0x00100000)
+250         \{
+251             ax *= \hyperlink{pow_8c_a8b3d2ebfb37d2c044b3e1f133b1537cd}{two53};
+252             n -= 53;
+253             \hyperlink{real_2prim_8h_ae62ee08d06ab4cc06d61dc1246b73195}{GET\_HIGH\_WORD}(ix,ax);
+254         \}
+255         n  += ((ix)>>20)-0x3ff;
+256         j  = ix&0x000fffff;
+257         \textcolor{comment}{/* determine interval */}
+258         ix = j|0x3ff00000;      \textcolor{comment}{/* normalize ix */}
+259         \textcolor{keywordflow}{if}(j<=0x3988E) k=0;     \textcolor{comment}{/* |x|<sqrt(3/2) */}
+260         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(j<0xBB67A) k=1; \textcolor{comment}{/* |x|<sqrt(3)   */}
+261         \textcolor{keywordflow}{else} \{
+262             k=0;
+263             n+=1;
+264             ix -= 0x00100000;
+265         \}
+266         \hyperlink{real_2prim_8h_a6ca54776127e20149f84c290bf52f89e}{SET\_HIGH\_WORD}(ax,ix);
+267 
+268         \textcolor{comment}{/* compute ss = s\_h+s\_l = (x-1)/(x+1) or (x-1.5)/(x+1.5) */}
+269         u = ax-\hyperlink{pow_8c_a9ec7bdbb3a01ff705aaeb8819fdf9cfa}{bp}[k];     \textcolor{comment}{/* bp[0]=1.0, bp[1]=1.5 */}
+270         v = one/(ax+bp[k]);
+271         ss = u*v;
+272         s\_h = ss;
+273         \hyperlink{real_2prim_8h_af4776e0b45c17da39fce08bc7b211a03}{SET\_LOW\_WORD}(s\_h,0);
+274         \textcolor{comment}{/* t\_h=ax+bp[k] High */}
+275         t\_h = \hyperlink{pow_8c_a554f7b66b1ba49443447eb746978c268}{zero};
+276         \hyperlink{real_2prim_8h_a6ca54776127e20149f84c290bf52f89e}{SET\_HIGH\_WORD}(t\_h,((ix>>1)|0x20000000)+0x00080000+(k<<18));
+277         t\_l = ax - (t\_h-bp[k]);
+278         s\_l = v*((u-s\_h*t\_h)-s\_h*t\_l);
+279         \textcolor{comment}{/* compute log(ax) */}
+280         s2 = ss*ss;
+281         r = s2*s2*(\hyperlink{pow_8c_a906e2b4ba15be0d69c6c15fbb79c9d17}{L1}+s2*(\hyperlink{pow_8c_a11e7daa2934ee96d1430c2ac6df68f2a}{L2}+s2*(\hyperlink{pow_8c_a352b4d77596258cf647e71a74dfbcfb6}{L3}+s2*(\hyperlink{pow_8c_a5e8b11c10141df1888afa0d09e6ebafa}{L4}+s2*(\hyperlink{pow_8c_ab38b66779c8f7671692724fc59abe942}{L5}+s2*\hyperlink{pow_8c_ab144a2b09d7235c795d751025442704f}{L6})))));
+282         r += s\_l*(s\_h+ss);
+283         s2  = s\_h*s\_h;
+284         t\_h = 3.0+s2+r;
+285         \hyperlink{real_2prim_8h_af4776e0b45c17da39fce08bc7b211a03}{SET\_LOW\_WORD}(t\_h,0);
+286         t\_l = r-((t\_h-3.0)-s2);
+287         \textcolor{comment}{/* u+v = ss*(1+...) */}
+288         u = s\_h*t\_h;
+289         v = s\_l*t\_h+t\_l*ss;
+290         \textcolor{comment}{/* 2/(3log2)*(ss+...) */}
+291         p\_h = u+v;
+292         \hyperlink{real_2prim_8h_af4776e0b45c17da39fce08bc7b211a03}{SET\_LOW\_WORD}(p\_h,0);
+293         p\_l = v-(p\_h-u);
+294         z\_h = \hyperlink{pow_8c_a10067ed5ff37a14725c27ac8d7666470}{cp\_h}*p\_h;     \textcolor{comment}{/* cp\_h+cp\_l = 2/(3*log2) */}
+295         z\_l = \hyperlink{pow_8c_ab67ffef1e57cfd503a90ca8d988b07fe}{cp\_l}*p\_h+p\_l*\hyperlink{pow_8c_a3d95d7052117de6cb188a562c9e80e1f}{cp}+\hyperlink{pow_8c_ad69e225436b9621c5b4638a33cdb5b06}{dp\_l}[k];
+296         \textcolor{comment}{/* log2(ax) = (ss+..)*2/(3*log2) = n + dp\_h + z\_h + z\_l */}
+297         t = (double)n;
+298         t1 = (((z\_h+z\_l)+\hyperlink{pow_8c_a4d2b7a191a77a5d01399f9fd1778f0b5}{dp\_h}[k])+t);
+299         \hyperlink{real_2prim_8h_af4776e0b45c17da39fce08bc7b211a03}{SET\_LOW\_WORD}(t1,0);
+300         t2 = z\_l-(((t1-t)-\hyperlink{pow_8c_a4d2b7a191a77a5d01399f9fd1778f0b5}{dp\_h}[k])-z\_h);
+301     \}
+302 
+303     \textcolor{comment}{/* split up y into y1+y2 and compute (y1+y2)*(t1+t2) */}
+304     y1  = y;
+305     \hyperlink{real_2prim_8h_af4776e0b45c17da39fce08bc7b211a03}{SET\_LOW\_WORD}(y1,0);
+306     p\_l = (y-y1)*t1+y*t2;
+307     p\_h = y1*t1;
+308     z = p\_l+p\_h;
+309     \hyperlink{real_2prim_8h_a6dadc713499e14ba3088a55409a18983}{EXTRACT\_WORDS}(j,i,z);
+310     \textcolor{keywordflow}{if} (j>=0x40900000) \{                \textcolor{comment}{/* z >= 1024 */}
+311         \textcolor{keywordflow}{if}(((j-0x40900000)|i)!=0)           \textcolor{comment}{/* if z > 1024 */}
+312             \textcolor{keywordflow}{return} s*\hyperlink{pow_8c_acbd466133274923cc0785707fbdeea9a}{huge}*\hyperlink{pow_8c_acbd466133274923cc0785707fbdeea9a}{huge};         \textcolor{comment}{/* overflow */}
+313         \textcolor{keywordflow}{else} \{
+314             \textcolor{keywordflow}{if}(p\_l+\hyperlink{pow_8c_a39e5a6fb924096b69307b75766789bed}{ovt}>z-p\_h) \textcolor{keywordflow}{return} s*huge*\hyperlink{pow_8c_acbd466133274923cc0785707fbdeea9a}{huge};    \textcolor{comment}{/* overflow */}
+315         \}
+316     \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}((j&0x7fffffff)>=0x4090cc00 ) \{    \textcolor{comment}{/* z <= -1075 */}
+317         \textcolor{keywordflow}{if}(((j-0xc090cc00)|i)!=0)       \textcolor{comment}{/* z < -1075 */}
+318             \textcolor{keywordflow}{return} s*tiny*\hyperlink{pow_8c_a4f41fc56ffc7d06df51b6fbccd8c0846}{tiny};     \textcolor{comment}{/* underflow */}
+319         \textcolor{keywordflow}{else} \{
+320             \textcolor{keywordflow}{if}(p\_l<=z-p\_h) \textcolor{keywordflow}{return} s*tiny*\hyperlink{pow_8c_a4f41fc56ffc7d06df51b6fbccd8c0846}{tiny};  \textcolor{comment}{/* underflow */}
+321         \}
+322     \}
+323     \textcolor{comment}{/*}
+324 \textcolor{comment}{     * compute 2**(p\_h+p\_l)}
+325 \textcolor{comment}{     */}
+326     i = j&0x7fffffff;
+327     k = (i>>20)-0x3ff;
+328     n = 0;
+329     \textcolor{keywordflow}{if}(i>0x3fe00000) \{      \textcolor{comment}{/* if |z| > 0.5, set n = [z+0.5] */}
+330         n = j+(0x00100000>>(k+1));
+331         k = ((n&0x7fffffff)>>20)-0x3ff; \textcolor{comment}{/* new k for n */}
+332         t = \hyperlink{pow_8c_a554f7b66b1ba49443447eb746978c268}{zero};
+333         \hyperlink{real_2prim_8h_a6ca54776127e20149f84c290bf52f89e}{SET\_HIGH\_WORD}(t,(n&~(0x000fffff>>k)));
+334         n = ((n&0x000fffff)|0x00100000)>>(20-k);
+335         \textcolor{keywordflow}{if}(j<0) n = -n;
+336         p\_h -= t;
+337     \}
+338     t = p\_l+p\_h;
+339     \hyperlink{real_2prim_8h_af4776e0b45c17da39fce08bc7b211a03}{SET\_LOW\_WORD}(t,0);
+340     u = t*\hyperlink{pow_8c_a0e921017a3ec6bd51a2c3b0760003359}{lg2\_h};
+341     v = (p\_l-(t-p\_h))*\hyperlink{pow_8c_af9a959de40ccd0243fecd6ade9703874}{lg2}+t*\hyperlink{pow_8c_abada47ce3b9b4ec143fa868e4b4cce6f}{lg2\_l};
+342     z = u+v;
+343     w = v-(z-u);
+344     t  = z*z;
+345     t1  = z - t*(\hyperlink{pow_8c_a5c2e2e6dd711ceae83536551926d6dd3}{P1}+t*(\hyperlink{pow_8c_acddba71b086f9e3c2b621baef51e45ac}{P2}+t*(\hyperlink{pow_8c_ab48f05f97efef9ea9f554c91a980520a}{P3}+t*(\hyperlink{pow_8c_af783f4afa9878be962b9904dc22e8bab}{P4}+t*\hyperlink{pow_8c_afdc64323c3afde906f161bdf28e5e319}{P5}))));
+346     r  = (z*t1)/(t1-\hyperlink{pow_8c_a45c15ebfa63fa10683ebce401df0b836}{two})-(w+z*w);
+347     z  = one-(r-z);
+348     \hyperlink{real_2prim_8h_ae62ee08d06ab4cc06d61dc1246b73195}{GET\_HIGH\_WORD}(j,z);
+349     j += (n<<20);
+350     \textcolor{keywordflow}{if}((j>>20)<=0) z = \hyperlink{math_8h_a0353978ec1ae247f2d95f2dc75856ed6}{scalbn}(z,n);   \textcolor{comment}{/* subnormal output */}
+351     \textcolor{keywordflow}{else}
+352     \{
+353         \hyperlink{real_2prim_8h_a6e60fe0e0f9f8801507e15fe2d893751}{uword} hz;
+354         \hyperlink{real_2prim_8h_ae62ee08d06ab4cc06d61dc1246b73195}{GET\_HIGH\_WORD}(hz,z);
+355         \hyperlink{real_2prim_8h_a6ca54776127e20149f84c290bf52f89e}{SET\_HIGH\_WORD}(z,hz + (n<<20));
+356     \}
+357     \textcolor{keywordflow}{return} s*z;
+358 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=196pt]{pow_8c_aa56c9494c95edf68386375e97d64159b_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{pow_8c_aa56c9494c95edf68386375e97d64159b_icgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Variable Documentation}
+\index{pow.\+c@{pow.\+c}!bp@{bp}}
+\index{bp@{bp}!pow.\+c@{pow.\+c}}
+\subsubsection[{\texorpdfstring{bp}{bp}}]{\setlength{\rightskip}{0pt plus 5cm}const double bp\mbox{[}$\,$\mbox{]} = \{1.\+0, 1.\+5,\}\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{pow_8c_a9ec7bdbb3a01ff705aaeb8819fdf9cfa}{}\label{pow_8c_a9ec7bdbb3a01ff705aaeb8819fdf9cfa}
+
+
+Definition at line 54 of file pow.\+c.
+
+
+
+Referenced by pow().
+
+\index{pow.\+c@{pow.\+c}!cp@{cp}}
+\index{cp@{cp}!pow.\+c@{pow.\+c}}
+\subsubsection[{\texorpdfstring{cp}{cp}}]{\setlength{\rightskip}{0pt plus 5cm}const double cp = 9.\+61796693925975554329e-\/01\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{pow_8c_a3d95d7052117de6cb188a562c9e80e1f}{}\label{pow_8c_a3d95d7052117de6cb188a562c9e80e1f}
+
+
+Definition at line 79 of file pow.\+c.
+
+
+
+Referenced by pow().
+
+\index{pow.\+c@{pow.\+c}!cp\+\_\+h@{cp\+\_\+h}}
+\index{cp\+\_\+h@{cp\+\_\+h}!pow.\+c@{pow.\+c}}
+\subsubsection[{\texorpdfstring{cp\+\_\+h}{cp_h}}]{\setlength{\rightskip}{0pt plus 5cm}const double cp\+\_\+h = 9.\+61796700954437255859e-\/01\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{pow_8c_a10067ed5ff37a14725c27ac8d7666470}{}\label{pow_8c_a10067ed5ff37a14725c27ac8d7666470}
+
+
+Definition at line 80 of file pow.\+c.
+
+
+
+Referenced by pow().
+
+\index{pow.\+c@{pow.\+c}!cp\+\_\+l@{cp\+\_\+l}}
+\index{cp\+\_\+l@{cp\+\_\+l}!pow.\+c@{pow.\+c}}
+\subsubsection[{\texorpdfstring{cp\+\_\+l}{cp_l}}]{\setlength{\rightskip}{0pt plus 5cm}const double cp\+\_\+l = -\/7.\+02846165095275826516e-\/09\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{pow_8c_ab67ffef1e57cfd503a90ca8d988b07fe}{}\label{pow_8c_ab67ffef1e57cfd503a90ca8d988b07fe}
+
+
+Definition at line 81 of file pow.\+c.
+
+
+
+Referenced by pow().
+
+\index{pow.\+c@{pow.\+c}!dp\+\_\+h@{dp\+\_\+h}}
+\index{dp\+\_\+h@{dp\+\_\+h}!pow.\+c@{pow.\+c}}
+\subsubsection[{\texorpdfstring{dp\+\_\+h}{dp_h}}]{\setlength{\rightskip}{0pt plus 5cm}const double dp\+\_\+h\mbox{[}$\,$\mbox{]} = \{ 0.\+0, 5.\+84962487220764160156e-\/01,\}\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{pow_8c_a4d2b7a191a77a5d01399f9fd1778f0b5}{}\label{pow_8c_a4d2b7a191a77a5d01399f9fd1778f0b5}
+
+
+Definition at line 55 of file pow.\+c.
+
+
+
+Referenced by pow().
+
+\index{pow.\+c@{pow.\+c}!dp\+\_\+l@{dp\+\_\+l}}
+\index{dp\+\_\+l@{dp\+\_\+l}!pow.\+c@{pow.\+c}}
+\subsubsection[{\texorpdfstring{dp\+\_\+l}{dp_l}}]{\setlength{\rightskip}{0pt plus 5cm}const double dp\+\_\+l\mbox{[}$\,$\mbox{]} = \{ 0.\+0, 1.\+35003920212974897128e-\/08,\}\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{pow_8c_ad69e225436b9621c5b4638a33cdb5b06}{}\label{pow_8c_ad69e225436b9621c5b4638a33cdb5b06}
+
+
+Definition at line 56 of file pow.\+c.
+
+
+
+Referenced by pow().
+
+\index{pow.\+c@{pow.\+c}!huge@{huge}}
+\index{huge@{huge}!pow.\+c@{pow.\+c}}
+\subsubsection[{\texorpdfstring{huge}{huge}}]{\setlength{\rightskip}{0pt plus 5cm}const double huge = 1.\+0e300\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{pow_8c_acbd466133274923cc0785707fbdeea9a}{}\label{pow_8c_acbd466133274923cc0785707fbdeea9a}
+
+
+Definition at line 61 of file pow.\+c.
+
+
+
+Referenced by pow().
+
+\index{pow.\+c@{pow.\+c}!ivln2@{ivln2}}
+\index{ivln2@{ivln2}!pow.\+c@{pow.\+c}}
+\subsubsection[{\texorpdfstring{ivln2}{ivln2}}]{\setlength{\rightskip}{0pt plus 5cm}const double ivln2 = 1.\+44269504088896338700e+00\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{pow_8c_a41ff67db971b4959670ff5b75dcc166b}{}\label{pow_8c_a41ff67db971b4959670ff5b75dcc166b}
+
+
+Definition at line 82 of file pow.\+c.
+
+
+
+Referenced by pow().
+
+\index{pow.\+c@{pow.\+c}!ivln2\+\_\+h@{ivln2\+\_\+h}}
+\index{ivln2\+\_\+h@{ivln2\+\_\+h}!pow.\+c@{pow.\+c}}
+\subsubsection[{\texorpdfstring{ivln2\+\_\+h}{ivln2_h}}]{\setlength{\rightskip}{0pt plus 5cm}const double ivln2\+\_\+h = 1.\+44269502162933349609e+00\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{pow_8c_a6880e0fe9bc35dca451a1d14b9152415}{}\label{pow_8c_a6880e0fe9bc35dca451a1d14b9152415}
+
+
+Definition at line 83 of file pow.\+c.
+
+
+
+Referenced by pow().
+
+\index{pow.\+c@{pow.\+c}!ivln2\+\_\+l@{ivln2\+\_\+l}}
+\index{ivln2\+\_\+l@{ivln2\+\_\+l}!pow.\+c@{pow.\+c}}
+\subsubsection[{\texorpdfstring{ivln2\+\_\+l}{ivln2_l}}]{\setlength{\rightskip}{0pt plus 5cm}const double ivln2\+\_\+l = 1.\+92596299112661746887e-\/08\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{pow_8c_acae36ab3d417386d94f854d6d2d1ee31}{}\label{pow_8c_acae36ab3d417386d94f854d6d2d1ee31}
+
+
+Definition at line 84 of file pow.\+c.
+
+
+
+Referenced by pow().
+
+\index{pow.\+c@{pow.\+c}!L1@{L1}}
+\index{L1@{L1}!pow.\+c@{pow.\+c}}
+\subsubsection[{\texorpdfstring{L1}{L1}}]{\setlength{\rightskip}{0pt plus 5cm}const double L1 = 5.\+99999999999994648725e-\/01\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{pow_8c_a906e2b4ba15be0d69c6c15fbb79c9d17}{}\label{pow_8c_a906e2b4ba15be0d69c6c15fbb79c9d17}
+
+
+Definition at line 64 of file pow.\+c.
+
+
+
+Referenced by pow().
+
+\index{pow.\+c@{pow.\+c}!L2@{L2}}
+\index{L2@{L2}!pow.\+c@{pow.\+c}}
+\subsubsection[{\texorpdfstring{L2}{L2}}]{\setlength{\rightskip}{0pt plus 5cm}const double L2 = 4.\+28571428578550184252e-\/01\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{pow_8c_a11e7daa2934ee96d1430c2ac6df68f2a}{}\label{pow_8c_a11e7daa2934ee96d1430c2ac6df68f2a}
+
+
+Definition at line 65 of file pow.\+c.
+
+
+
+Referenced by pow().
+
+\index{pow.\+c@{pow.\+c}!L3@{L3}}
+\index{L3@{L3}!pow.\+c@{pow.\+c}}
+\subsubsection[{\texorpdfstring{L3}{L3}}]{\setlength{\rightskip}{0pt plus 5cm}const double L3 = 3.\+33333329818377432918e-\/01\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{pow_8c_a352b4d77596258cf647e71a74dfbcfb6}{}\label{pow_8c_a352b4d77596258cf647e71a74dfbcfb6}
+
+
+Definition at line 66 of file pow.\+c.
+
+
+
+Referenced by pow().
+
+\index{pow.\+c@{pow.\+c}!L4@{L4}}
+\index{L4@{L4}!pow.\+c@{pow.\+c}}
+\subsubsection[{\texorpdfstring{L4}{L4}}]{\setlength{\rightskip}{0pt plus 5cm}const double L4 = 2.\+72728123808534006489e-\/01\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{pow_8c_a5e8b11c10141df1888afa0d09e6ebafa}{}\label{pow_8c_a5e8b11c10141df1888afa0d09e6ebafa}
+
+
+Definition at line 67 of file pow.\+c.
+
+
+
+Referenced by pow().
+
+\index{pow.\+c@{pow.\+c}!L5@{L5}}
+\index{L5@{L5}!pow.\+c@{pow.\+c}}
+\subsubsection[{\texorpdfstring{L5}{L5}}]{\setlength{\rightskip}{0pt plus 5cm}const double L5 = 2.\+30660745775561754067e-\/01\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{pow_8c_ab38b66779c8f7671692724fc59abe942}{}\label{pow_8c_ab38b66779c8f7671692724fc59abe942}
+
+
+Definition at line 68 of file pow.\+c.
+
+
+
+Referenced by pow().
+
+\index{pow.\+c@{pow.\+c}!L6@{L6}}
+\index{L6@{L6}!pow.\+c@{pow.\+c}}
+\subsubsection[{\texorpdfstring{L6}{L6}}]{\setlength{\rightskip}{0pt plus 5cm}const double L6 = 2.\+06975017800338417784e-\/01\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{pow_8c_ab144a2b09d7235c795d751025442704f}{}\label{pow_8c_ab144a2b09d7235c795d751025442704f}
+
+
+Definition at line 69 of file pow.\+c.
+
+
+
+Referenced by pow().
+
+\index{pow.\+c@{pow.\+c}!lg2@{lg2}}
+\index{lg2@{lg2}!pow.\+c@{pow.\+c}}
+\subsubsection[{\texorpdfstring{lg2}{lg2}}]{\setlength{\rightskip}{0pt plus 5cm}const double lg2 = 6.\+93147180559945286227e-\/01\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{pow_8c_af9a959de40ccd0243fecd6ade9703874}{}\label{pow_8c_af9a959de40ccd0243fecd6ade9703874}
+
+
+Definition at line 75 of file pow.\+c.
+
+
+
+Referenced by pow().
+
+\index{pow.\+c@{pow.\+c}!lg2\+\_\+h@{lg2\+\_\+h}}
+\index{lg2\+\_\+h@{lg2\+\_\+h}!pow.\+c@{pow.\+c}}
+\subsubsection[{\texorpdfstring{lg2\+\_\+h}{lg2_h}}]{\setlength{\rightskip}{0pt plus 5cm}const double lg2\+\_\+h = 6.\+93147182464599609375e-\/01\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{pow_8c_a0e921017a3ec6bd51a2c3b0760003359}{}\label{pow_8c_a0e921017a3ec6bd51a2c3b0760003359}
+
+
+Definition at line 76 of file pow.\+c.
+
+
+
+Referenced by pow().
+
+\index{pow.\+c@{pow.\+c}!lg2\+\_\+l@{lg2\+\_\+l}}
+\index{lg2\+\_\+l@{lg2\+\_\+l}!pow.\+c@{pow.\+c}}
+\subsubsection[{\texorpdfstring{lg2\+\_\+l}{lg2_l}}]{\setlength{\rightskip}{0pt plus 5cm}const double lg2\+\_\+l = -\/1.\+90465429995776804525e-\/09\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{pow_8c_abada47ce3b9b4ec143fa868e4b4cce6f}{}\label{pow_8c_abada47ce3b9b4ec143fa868e4b4cce6f}
+
+
+Definition at line 77 of file pow.\+c.
+
+
+
+Referenced by pow().
+
+\index{pow.\+c@{pow.\+c}!one@{one}}
+\index{one@{one}!pow.\+c@{pow.\+c}}
+\subsubsection[{\texorpdfstring{one}{one}}]{\setlength{\rightskip}{0pt plus 5cm}const double one = 1.\+0\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{pow_8c_ada85e349d35971b32c8ea4238881ff8b}{}\label{pow_8c_ada85e349d35971b32c8ea4238881ff8b}
+
+
+Definition at line 58 of file pow.\+c.
+
+
+
+Referenced by pow().
+
+\index{pow.\+c@{pow.\+c}!ovt@{ovt}}
+\index{ovt@{ovt}!pow.\+c@{pow.\+c}}
+\subsubsection[{\texorpdfstring{ovt}{ovt}}]{\setlength{\rightskip}{0pt plus 5cm}const double ovt = 8.\+0085662595372944372e-\/0017\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{pow_8c_a39e5a6fb924096b69307b75766789bed}{}\label{pow_8c_a39e5a6fb924096b69307b75766789bed}
+
+
+Definition at line 78 of file pow.\+c.
+
+
+
+Referenced by pow().
+
+\index{pow.\+c@{pow.\+c}!P1@{P1}}
+\index{P1@{P1}!pow.\+c@{pow.\+c}}
+\subsubsection[{\texorpdfstring{P1}{P1}}]{\setlength{\rightskip}{0pt plus 5cm}const double P1 = 1.\+66666666666666019037e-\/01\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{pow_8c_a5c2e2e6dd711ceae83536551926d6dd3}{}\label{pow_8c_a5c2e2e6dd711ceae83536551926d6dd3}
+
+
+Definition at line 70 of file pow.\+c.
+
+
+
+Referenced by pow().
+
+\index{pow.\+c@{pow.\+c}!P2@{P2}}
+\index{P2@{P2}!pow.\+c@{pow.\+c}}
+\subsubsection[{\texorpdfstring{P2}{P2}}]{\setlength{\rightskip}{0pt plus 5cm}const double P2 = -\/2.\+77777777770155933842e-\/03\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{pow_8c_acddba71b086f9e3c2b621baef51e45ac}{}\label{pow_8c_acddba71b086f9e3c2b621baef51e45ac}
+
+
+Definition at line 71 of file pow.\+c.
+
+
+
+Referenced by pow().
+
+\index{pow.\+c@{pow.\+c}!P3@{P3}}
+\index{P3@{P3}!pow.\+c@{pow.\+c}}
+\subsubsection[{\texorpdfstring{P3}{P3}}]{\setlength{\rightskip}{0pt plus 5cm}const double P3 = 6.\+61375632143793436117e-\/05\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{pow_8c_ab48f05f97efef9ea9f554c91a980520a}{}\label{pow_8c_ab48f05f97efef9ea9f554c91a980520a}
+
+
+Definition at line 72 of file pow.\+c.
+
+
+
+Referenced by pow().
+
+\index{pow.\+c@{pow.\+c}!P4@{P4}}
+\index{P4@{P4}!pow.\+c@{pow.\+c}}
+\subsubsection[{\texorpdfstring{P4}{P4}}]{\setlength{\rightskip}{0pt plus 5cm}const double P4 = -\/1.\+65339022054652515390e-\/06\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{pow_8c_af783f4afa9878be962b9904dc22e8bab}{}\label{pow_8c_af783f4afa9878be962b9904dc22e8bab}
+
+
+Definition at line 73 of file pow.\+c.
+
+
+
+Referenced by pow().
+
+\index{pow.\+c@{pow.\+c}!P5@{P5}}
+\index{P5@{P5}!pow.\+c@{pow.\+c}}
+\subsubsection[{\texorpdfstring{P5}{P5}}]{\setlength{\rightskip}{0pt plus 5cm}const double P5 = 4.\+13813679705723846039e-\/08\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{pow_8c_afdc64323c3afde906f161bdf28e5e319}{}\label{pow_8c_afdc64323c3afde906f161bdf28e5e319}
+
+
+Definition at line 74 of file pow.\+c.
+
+
+
+Referenced by pow().
+
+\index{pow.\+c@{pow.\+c}!tiny@{tiny}}
+\index{tiny@{tiny}!pow.\+c@{pow.\+c}}
+\subsubsection[{\texorpdfstring{tiny}{tiny}}]{\setlength{\rightskip}{0pt plus 5cm}const double tiny = 1.\+0e-\/300\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{pow_8c_a4f41fc56ffc7d06df51b6fbccd8c0846}{}\label{pow_8c_a4f41fc56ffc7d06df51b6fbccd8c0846}
+
+
+Definition at line 62 of file pow.\+c.
+
+
+
+Referenced by pow().
+
+\index{pow.\+c@{pow.\+c}!two@{two}}
+\index{two@{two}!pow.\+c@{pow.\+c}}
+\subsubsection[{\texorpdfstring{two}{two}}]{\setlength{\rightskip}{0pt plus 5cm}const double two = 2.\+0\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{pow_8c_a45c15ebfa63fa10683ebce401df0b836}{}\label{pow_8c_a45c15ebfa63fa10683ebce401df0b836}
+
+
+Definition at line 59 of file pow.\+c.
+
+
+
+Referenced by pow().
+
+\index{pow.\+c@{pow.\+c}!two53@{two53}}
+\index{two53@{two53}!pow.\+c@{pow.\+c}}
+\subsubsection[{\texorpdfstring{two53}{two53}}]{\setlength{\rightskip}{0pt plus 5cm}const double two53 = 9007199254740992.\+0\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{pow_8c_a8b3d2ebfb37d2c044b3e1f133b1537cd}{}\label{pow_8c_a8b3d2ebfb37d2c044b3e1f133b1537cd}
+
+
+Definition at line 60 of file pow.\+c.
+
+
+
+Referenced by pow().
+
+\index{pow.\+c@{pow.\+c}!zero@{zero}}
+\index{zero@{zero}!pow.\+c@{pow.\+c}}
+\subsubsection[{\texorpdfstring{zero}{zero}}]{\setlength{\rightskip}{0pt plus 5cm}const double zero = 0.\+0\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{pow_8c_a554f7b66b1ba49443447eb746978c268}{}\label{pow_8c_a554f7b66b1ba49443447eb746978c268}
+
+
+Definition at line 57 of file pow.\+c.
+
+
+
+Referenced by pow().
+

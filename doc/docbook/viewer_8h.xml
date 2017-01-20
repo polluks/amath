@@ -1,0 +1,34 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="viewer_8h">
+    <title>viewer.h File Reference</title>
+    <programlisting>#include &quot;lib/charbuf.h&quot;</programlisting>
+    <programlisting>#include &quot;main/nodes.h&quot;</programlisting>
+<para>Include dependency diagram for viewer.h</para>
+<para>
+    <figure>
+        <title>Dependency diagram</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="viewer_8h__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+<para>Included by dependency diagram for viewer.h</para>
+<para>
+    <figure>
+        <title>Dependency diagram</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="viewer_8h__dep__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+    <simplesect>
+        <title>Detailed Description</title>
+
+<para>Debug class to view a syntax tree. </para>
+    <para>Definition in file /home/carsten/amath/app/main/viewer.h</para>
+    </simplesect>
+</section>

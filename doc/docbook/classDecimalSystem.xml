@@ -1,0 +1,107 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="classDecimalSystem">
+<title>DecimalSystem class Reference</title>
+<para>
+    <programlisting>#include <link linkend="ntext_8h">&lt;ntext.h&gt;</link></programlisting>
+</para>
+<para>Inheritance diagram for DecimalSystem</para>
+<para>
+    <figure>
+        <title>Inheritance graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="classDecimalSystem__inherit__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+<para>Collaboration diagram for DecimalSystem</para>
+<para>
+    <figure>
+        <title>Collaboration graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="classDecimalSystem__coll__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="classDecimalSystem_1a96bf562ac5934445ce10dd6d973a9db3">DecimalSystem</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="classDecimalSystem_1a726d1a38079ae571c54adfbd0724a0a3">DecimalSystem</link> (
+unsigned int digits)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="classDecimalSystem_1a0622c834a7a4a0dc452ab4cab8d84902">DecimalSystem</link> (
+unsigned int digits, const char fractionpoint)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="classDecimalSystem_1a1a3c3296ae4cd214cd94359982e46dee">~DecimalSystem</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>virtual const char * <link linkend="classDecimalSystem_1ab43f764ed35fe831a16a356bbdc72441">GetText</link> (
+<link linkend="structNumber">Number</link> * number)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>const char * <link linkend="classDecimalSystem_1a7b3744c834e092220ab3c2b7ed8eee47">GetRealText</link> (
+double value)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+            <section xml:id="classDecimalSystem_1a96bf562ac5934445ce10dd6d973a9db3">
+                <title>DecimalSystem::DecimalSystem ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="classDecimalSystem_1a726d1a38079ae571c54adfbd0724a0a3">
+                <title>DecimalSystem::DecimalSystem (unsigned int digits)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="classDecimalSystem_1a0622c834a7a4a0dc452ab4cab8d84902">
+                <title>DecimalSystem::DecimalSystem (unsigned int digits, const char fractionpoint)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="classDecimalSystem_1a1a3c3296ae4cd214cd94359982e46dee">
+                <title>DecimalSystem::~DecimalSystem ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="classDecimalSystem_1ab43f764ed35fe831a16a356bbdc72441">
+                <title>const char * DecimalSystem::GetText (Number *number)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="classDecimalSystem_1a7b3744c834e092220ab3c2b7ed8eee47">
+                <title>const char * DecimalSystem::GetRealText (double value)</title> <emphasis></emphasis>
+                
+            </section>
+</section>

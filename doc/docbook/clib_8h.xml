@@ -1,0 +1,98 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="clib_8h">
+    <title>clib.h File Reference</title>
+    <programlisting>#include &quot;platform.h&quot;</programlisting>
+<para>Include dependency diagram for clib.h</para>
+<para>
+    <figure>
+        <title>Dependency diagram</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="clib_8h__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+<para>Included by dependency diagram for clib.h</para>
+<para>
+    <figure>
+        <title>Dependency diagram</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="clib_8h__dep__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+        <section>
+            <title> Classes </title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="structtexttag">texttag</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title>Functions</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="clib_8h_1a67ec56eb98b49515d35005a5b3bf9a32">StrLen</link> (
+const char * string)<para><emphasis>Get the length of a null terminated string.</emphasis></para>
+</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="platform_8h_1a1062901a7428fdd9c7f180f5e01ea056">bool</link> <link linkend="clib_8h_1a2a1f39d11cbbaac992d42e67557dac4b">StrIsEqual</link> (
+const char * s1, const char * s2)<para><emphasis>Compare two null terminated strings to each other.</emphasis></para>
+</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="clib_8h_1ad2d145e8bf756b862f006a6ea79578d5">MemSet</link> (
+void * destination, int c0, unsigned int length)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="clib_8h_1a09b7e057c69b9ddd4b481fc746997a7d">MemCopy</link> (
+void * destination, const void * source, unsigned int length)<para><emphasis>Copy a block of memory, handling overlap.</emphasis></para>
+</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>unsigned int <link linkend="clib_8h_1a5bed05c70cb17e541fee570b5dc32e1a">AllocAndCopy</link> (
+char ** destination, const char * source)<para><emphasis>Allocate memory and copy a string into the array.</emphasis></para>
+</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="clib_8h_1a13fd37f0e8fef81a052aab4cd5588fb6">Untag</link> (
+char * destination, const char * source, <link linkend="structtexttag">texttag</link> tags, unsigned int tagcount)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+    <simplesect>
+        <title>Detailed Description</title>
+
+<para>C functions for manipulating strings and memory. </para>
+    <para>Definition in file /home/carsten/amath/lib/clib.h</para>
+    </simplesect>
+</section>

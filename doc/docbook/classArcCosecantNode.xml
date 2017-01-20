@@ -1,0 +1,86 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="classArcCosecantNode">
+<title>ArcCosecantNode class Reference</title>
+<para>
+    <programlisting>#include <link linkend="functions_8h">&lt;functions.h&gt;</link></programlisting>
+</para>
+<para>Inheritance diagram for ArcCosecantNode</para>
+<para>
+    <figure>
+        <title>Inheritance graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="classArcCosecantNode__inherit__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+<para>Collaboration diagram for ArcCosecantNode</para>
+<para>
+    <figure>
+        <title>Collaboration graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="classArcCosecantNode__coll__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="classArcCosecantNode_1a0a06f57986491b3a1a4f952688bc4036">ArcCosecantNode</link> (
+<link linkend="classExpressionNode">ExpressionNode</link> * expression)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="structNumber">Number</link> * <link linkend="classArcCosecantNode_1a4cb42e104cb77fd303bb57c73d8286b0">Evaluate</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>static <link linkend="classFunctionNode">FunctionNode</link> * <link linkend="classArcCosecantNode_1a03cc6abd00b92a4a8d7e801fc0d063bb">Create</link> (
+<link linkend="classExpressionNode">ExpressionNode</link> * expression)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>char * <link linkend="classArcCosecantNode_1ad0cc72410c2754f5befec12cac5e7f01">GetNodeText</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+            <section xml:id="classArcCosecantNode_1a0a06f57986491b3a1a4f952688bc4036">
+                <title>ArcCosecantNode::ArcCosecantNode (ExpressionNode *expression)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="classArcCosecantNode_1a4cb42e104cb77fd303bb57c73d8286b0">
+                <title>Number * ArcCosecantNode::Evaluate ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="classArcCosecantNode_1a03cc6abd00b92a4a8d7e801fc0d063bb">
+                <title>FunctionNode * ArcCosecantNode::Create (ExpressionNode *expression)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="classArcCosecantNode_1ad0cc72410c2754f5befec12cac5e7f01">
+                <title>char * ArcCosecantNode::GetNodeText ()</title> <emphasis></emphasis>
+                
+            </section>
+</section>

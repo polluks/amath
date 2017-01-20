@@ -1,0 +1,33 @@
+<map id="Parser::GetToken" name="Parser::GetToken">
+<area shape="rect" id="node2" href="$classParser.html#a811765334b0cd3f01152c35c9f5bcaec" title="Parser::Expect" alt="" coords="198,638,307,665"/>
+<area shape="rect" id="node3" href="$classParser.html#ac1a69267c9414b54a4b592c9ad084780" title="Parser::ParseAtomic" alt="" coords="403,435,546,462"/>
+<area shape="rect" id="node4" href="$classParser.html#a446237993f806a92dd3e78ba8019f4f5" title="Parser::ParseUnary" alt="" coords="656,309,793,335"/>
+<area shape="rect" id="node5" href="$classParser.html#ad6ccc6e873d1fb3dcfa142655a5b0732" title="Parser::ParsePower" alt="" coords="897,283,1035,310"/>
+<area shape="rect" id="node6" href="$classParser.html#a70c674c7b40f7a0ab1df0523c4c8c530" title="Parser::ParseFactor" alt="" coords="1134,283,1273,310"/>
+<area shape="rect" id="node7" href="$classParser.html#a47ba11ddd167c1b0b5cf1d2fd1cf1ccd" title="Parser::ParseAddSubstract" alt="" coords="1353,359,1535,386"/>
+<area shape="rect" id="node9" href="$classParser.html#a370277018ad3e0e157a8ff5849892f7d" title="Parser::ParseStatement" alt="" coords="2297,714,2460,741"/>
+<area shape="rect" id="node10" href="$classParser.html#aeef41071b484e09942290ab55953dc4f" title="Parser::TryParseStatement" alt="" coords="2508,714,2689,741"/>
+<area shape="rect" id="node11" href="$classParser.html#a1861d1d9cc6165970cf07e07cacd11df" title="Parses the input into a syntax tree. " alt="" coords="2737,359,2840,386"/>
+<area shape="rect" id="node21" href="$classParser.html#a84af27a6f4e42888eba6ac36ccd0815c" title="Parser::ParseIdent" alt="" coords="1839,511,1969,538"/>
+<area shape="rect" id="node23" href="$classParser.html#a41008319e22949c5a6045e3859335000" title="Parser::ParseDeleteStatement" alt="" coords="375,815,575,842"/>
+<area shape="rect" id="node26" href="$classParser.html#a14aa2850063f998f76530e027c3ef399" title="Parser::ParseDigistStatement" alt="" coords="1105,866,1301,893"/>
+<area shape="rect" id="node27" href="$classParser.html#a1e00b1a9ee0541508953564442312526" title="Parser::ParseHelpStatement" alt="" coords="1349,917,1539,943"/>
+<area shape="rect" id="node28" href="$classParser.html#aa0642d13c500401b168035f9fcdbe1f4" title="Parser::ParseListStatement" alt="" coords="1587,967,1769,994"/>
+<area shape="rect" id="node29" href="$classParser.html#a769d580b14d3d097ed255ad869cc1653" title="Parser::ParseNumber" alt="" coords="179,461,327,487"/>
+<area shape="rect" id="node30" href="$classParser.html#ae2a3cdedfb708c19c7552fd402a224c6" title="Parser::ParseNumeralStatement" alt="" coords="2039,1018,2249,1045"/>
+<area shape="rect" id="node31" href="$classParser.html#ab655f0d3ad73a8ec8a299d2e2e3248ea" title="Parser::ParsePrefsStatement" alt="" coords="378,55,571,82"/>
+<area shape="rect" id="node32" href="$classParser.html#a3ff34c9305bf6b5f10aacf27e5d20c28" title="Parser::ParsePromptStatement" alt="" coords="623,106,827,133"/>
+<area shape="rect" id="node20" href="$classParser.html#aca8329fb5ee4812398144fd1d647fe39" title="Parser::ParseDefault" alt="" coords="2072,613,2216,639"/>
+<area shape="rect" id="node22" href="$classParser.html#a0e8b1f794af2b9923bc3fcb7498004f9" title="Parser::ParseFunctionDef" alt="" coords="1817,663,1991,690"/>
+<area shape="rect" id="node24" href="$classParser.html#a38a55851f31c226c193090403dfbaff8" title="Parser::ParseDrawStatement" alt="" coords="628,714,821,741"/>
+<area shape="rect" id="node25" href="$classParser.html#a3c671b953bee260ed4eb3f5c30ededc2" title="Parser::ParseFileStatement" alt="" coords="875,765,1057,791"/>
+<area shape="rect" id="node8" href="$classParser.html#ae46b0a87abe76f40ae117c5bdcb2f29d" title="Parser::ParseExpression" alt="" coords="1595,410,1761,437"/>
+<area shape="rect" id="node19" href="$classParser.html#a19c5b6055d066d21ad39a32287e833c2" title="Parser::ParseEvaluation" alt="" coords="1823,461,1985,487"/>
+<area shape="rect" id="node12" href="$classEvaluator.html#a40b30ece9d43c658877ee7f52aaec0a8" title="Evaluator::Evaluate" alt="" coords="2913,283,3049,310"/>
+<area shape="rect" id="node15" href="$classLoadStatement.html#ae3cbd157ad8de73551ff430fa3c089d9" title="LoadStatement::Execute" alt="" coords="2898,334,3065,361"/>
+<area shape="rect" id="node16" href="$classExecuteStatement.html#a8a3bbafeb8739749eab6eaf8a4b9969c" title="ExecuteStatement::Execute" alt="" coords="2888,385,3075,411"/>
+<area shape="rect" id="node17" href="$classPreferencesBase.html#a90dcd05552f94429b05df661eb72b5e2" title="PreferencesBase::SetPrefs" alt="" coords="2891,435,3072,462"/>
+<area shape="rect" id="node13" href="$classStandardProgram.html#a71dce9fdccf23ac49ba2362dcae744d3" title="StandardProgram::Run" alt="" coords="3123,309,3277,335"/>
+<area shape="rect" id="node14" href="$classStandardConsole.html#a9380023bba612b816b134589130bb254" title="StandardConsole::Run" alt="" coords="3123,258,3277,285"/>
+<area shape="rect" id="node18" href="$classStandardPreferences.html#a883449eac37fb47c01fa2ae23a02bdc4" title="StandardPreferences\l::Load" alt="" coords="3128,428,3272,469"/>
+</map>

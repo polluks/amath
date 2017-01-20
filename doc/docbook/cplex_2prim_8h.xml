@@ -1,0 +1,70 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="cplex_2prim_8h">
+    <title>prim.h File Reference</title>
+    <programlisting>#include &quot;math.h&quot;</programlisting>
+    <programlisting>#include &quot;complex.h&quot;</programlisting>
+<para>Include dependency diagram for prim.h</para>
+<para>
+    <figure>
+        <title>Dependency diagram</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="cplex_2prim_8h__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+<para>Included by dependency diagram for prim.h</para>
+<para>
+    <figure>
+        <title>Dependency diagram</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="cplex_2prim_8h__dep__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+        <section>
+            <title>Macros</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="cplex_2prim_8h_1a5f3d17bf39f78da3422ca52e475d7724">HUGE</link> 1.7976931348623157e+308</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title>Functions</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="cplex_2prim_8h_1aee34c227a34560e41c3b665a00f1a4f9">cchsh</link> (
+double x, double * c, double * s)<para><emphasis>Calculate cosh and sinh.</emphasis></para>
+</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>double <link linkend="cplex_2prim_8h_1afa74837e1152dd02e2a00a93f2b79400">redupi</link> (
+double x)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>double <link linkend="cplex_2prim_8h_1a8b3196efbc63db057237d269951ad0a0">ctans</link> (
+<link linkend="unioncomplex">complex</link> z)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+    <simplesect>
+        <title>Detailed Description</title>
+    <para>Definition in file /home/carsten/amath/lib/cplex/prim.h</para>
+    </simplesect>
+</section>

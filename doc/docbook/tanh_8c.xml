@@ -1,0 +1,68 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="tanh_8c">
+    <title>tanh.c File Reference</title>
+    <programlisting>#include &quot;prim.h&quot;</programlisting>
+    <programlisting>#include &quot;math.h&quot;</programlisting>
+<para>Include dependency diagram for tanh.c</para>
+<para>
+    <figure>
+        <title>Dependency diagram</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="tanh_8c__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+<para>Included by dependency diagram for tanh.c</para>
+<para>
+    <figure>
+        <title>Dependency diagram</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="tanh_8c__dep__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+        <section>
+            <title>Variables</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>static const double <link linkend="tanh_8c_1ada85e349d35971b32c8ea4238881ff8b">one</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>static const double <link linkend="tanh_8c_1a45c15ebfa63fa10683ebce401df0b836">two</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>static const double <link linkend="tanh_8c_1a4f41fc56ffc7d06df51b6fbccd8c0846">tiny</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title>Functions</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>double <link linkend="tanh_8c_1af85bcf153d7ae805733927f12329dac1">tanh</link> (
+double x)<para><emphasis>Hyperbolic tangent function.</emphasis></para>
+</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+    <simplesect>
+        <title>Detailed Description</title>
+    <para>Definition in file /home/carsten/amath/lib/real/tanh.c</para>
+    </simplesect>
+</section>

@@ -1,0 +1,6 @@
+<map id="CharBuffer::ClearAndAlloc" name="CharBuffer::ClearAndAlloc">
+<area shape="rect" id="node2" href="$classErrorNode.html#a351cbedab751832da6a67b12ac0abcab" title="ErrorNode::Execute" alt="" coords="258,5,395,32"/>
+<area shape="rect" id="node3" href="$classAnsiConoleEngine.html#a8ad01a2ddd3ee5182deb4a74f3d2a0c1" title="AnsiConoleEngine::StartInput" alt="" coords="229,56,424,83"/>
+<area shape="rect" id="node4" href="$classStandardConsole.html#a387d8a0bf9d6ec722868026f58393942" title="StandardConsole::ReadLine" alt="" coords="472,56,657,83"/>
+<area shape="rect" id="node5" href="$classStandardConsole.html#a9380023bba612b816b134589130bb254" title="StandardConsole::Run" alt="" coords="705,56,860,83"/>
+</map>

@@ -1,0 +1,143 @@
+\hypertarget{classFilesystemBase}{}\section{Filesystem\+Base Class Reference}
+\label{classFilesystemBase}\index{Filesystem\+Base@{Filesystem\+Base}}
+
+
+Abstract base class encapsulating file system calls.  
+
+
+
+
+{\ttfamily \#include $<$filesystem.\+h$>$}
+
+
+
+Inheritance diagram for Filesystem\+Base\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=184pt]{classFilesystemBase__inherit__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \hyperlink{classFilesystemBase_ad82ff955f62368b9e631f2a39a6f47d1}{$\sim$\+Filesystem\+Base} ()
+\item 
+virtual \hyperlink{classCharBuffer}{Char\+Buffer} $\ast$ \hyperlink{classFilesystemBase_a2f48a44b0b99b3c23e7c1a7587b5fc9c}{List\+Directory} (const char $\ast$path)=0
+\item 
+virtual \hyperlink{classCharBuffer}{Char\+Buffer} $\ast$ \hyperlink{classFilesystemBase_adc4a9e1dc189bcd221e3b994bc854d46}{Load\+Text\+File} (const char $\ast$name)=0
+\item 
+virtual \hyperlink{platform_8h_a1062901a7428fdd9c7f180f5e01ea056}{bool} \hyperlink{classFilesystemBase_a66b54f8151cd8903ac757207b062ef48}{Save\+Text\+File} (const char $\ast$name, const char $\ast$text)=0
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Abstract base class encapsulating file system calls. 
+
+Definition at line 42 of file filesystem.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Filesystem\+Base@{Filesystem\+Base}!````~Filesystem\+Base@{$\sim$\+Filesystem\+Base}}
+\index{````~Filesystem\+Base@{$\sim$\+Filesystem\+Base}!Filesystem\+Base@{Filesystem\+Base}}
+\subsubsection[{\texorpdfstring{$\sim$\+Filesystem\+Base()}{~FilesystemBase()}}]{\setlength{\rightskip}{0pt plus 5cm}virtual Filesystem\+Base\+::$\sim$\+Filesystem\+Base (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}\hypertarget{classFilesystemBase_ad82ff955f62368b9e631f2a39a6f47d1}{}\label{classFilesystemBase_ad82ff955f62368b9e631f2a39a6f47d1}
+
+
+Definition at line 44 of file filesystem.\+h.
+
+
+\begin{DoxyCode}
+44 \{ \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\index{Filesystem\+Base@{Filesystem\+Base}!List\+Directory@{List\+Directory}}
+\index{List\+Directory@{List\+Directory}!Filesystem\+Base@{Filesystem\+Base}}
+\subsubsection[{\texorpdfstring{List\+Directory(const char $\ast$path)=0}{ListDirectory(const char *path)=0}}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf Char\+Buffer}$\ast$ Filesystem\+Base\+::\+List\+Directory (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{path}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\hypertarget{classFilesystemBase_a2f48a44b0b99b3c23e7c1a7587b5fc9c}{}\label{classFilesystemBase_a2f48a44b0b99b3c23e7c1a7587b5fc9c}
+
+
+Implemented in \hyperlink{classStandardFilesystem_a535ef937063f59dcb61560d44ed18e81}{Standard\+Filesystem}.
+
+
+
+Referenced by List\+Statement\+::\+Execute().
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classFilesystemBase_a2f48a44b0b99b3c23e7c1a7587b5fc9c_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Filesystem\+Base@{Filesystem\+Base}!Load\+Text\+File@{Load\+Text\+File}}
+\index{Load\+Text\+File@{Load\+Text\+File}!Filesystem\+Base@{Filesystem\+Base}}
+\subsubsection[{\texorpdfstring{Load\+Text\+File(const char $\ast$name)=0}{LoadTextFile(const char *name)=0}}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf Char\+Buffer}$\ast$ Filesystem\+Base\+::\+Load\+Text\+File (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{name}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\hypertarget{classFilesystemBase_adc4a9e1dc189bcd221e3b994bc854d46}{}\label{classFilesystemBase_adc4a9e1dc189bcd221e3b994bc854d46}
+
+
+Implemented in \hyperlink{classStandardFilesystem_aa01514561ced127f2453b3a913e077ef}{Standard\+Filesystem}.
+
+
+
+Referenced by Show\+Statement\+::\+Execute(), Load\+Statement\+::\+Execute(), Execute\+Statement\+::\+Execute(), and Standard\+Language\+::\+Load\+Catalog().
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classFilesystemBase_adc4a9e1dc189bcd221e3b994bc854d46_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Filesystem\+Base@{Filesystem\+Base}!Save\+Text\+File@{Save\+Text\+File}}
+\index{Save\+Text\+File@{Save\+Text\+File}!Filesystem\+Base@{Filesystem\+Base}}
+\subsubsection[{\texorpdfstring{Save\+Text\+File(const char $\ast$name, const char $\ast$text)=0}{SaveTextFile(const char *name, const char *text)=0}}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf bool} Filesystem\+Base\+::\+Save\+Text\+File (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{name, }
+\item[{const char $\ast$}]{text}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\hypertarget{classFilesystemBase_a66b54f8151cd8903ac757207b062ef48}{}\label{classFilesystemBase_a66b54f8151cd8903ac757207b062ef48}
+
+
+Implemented in \hyperlink{classStandardFilesystem_ad2e93d1364a5b9491e14b54cb7fe924f}{Standard\+Filesystem}.
+
+
+
+Referenced by Save\+Statement\+::\+Execute().
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classFilesystemBase_a66b54f8151cd8903ac757207b062ef48_icgraph}
+\end{center}
+\end{figure}
+
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+app/system/\hyperlink{filesystem_8h}{filesystem.\+h}\end{DoxyCompactItemize}

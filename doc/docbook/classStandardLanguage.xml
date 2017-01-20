@@ -1,0 +1,316 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="classStandardLanguage">
+<title>StandardLanguage class Reference</title>
+<para>
+    <programlisting>#include <link linkend="language__stdc_8h">&lt;language_stdc.h&gt;</link></programlisting>
+</para>
+<para>Inheritance diagram for StandardLanguage</para>
+<para>
+    <figure>
+        <title>Inheritance graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="classStandardLanguage__inherit__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+<para>Collaboration diagram for StandardLanguage</para>
+<para>
+    <figure>
+        <title>Collaboration graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="classStandardLanguage__coll__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+        <section>
+            <title>Private Attributes</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>char * textbase</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>char * helpbase</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>char * identbase</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>char * kwordbase</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>char * ptr</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>textdef * textcatalog</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>helptextdef * helpcatalog</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>identhelpdef * identcatalog</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="classStandardLanguage_1a0d604e2af2f2bf4dc4abbe7b18c05cea">StandardLanguage</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="classStandardLanguage_1a21a7e329043a38b838b73feee36ebcfa">~StandardLanguage</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>char <link linkend="classStandardLanguage_1a291d9c45352a324482f63738f8cbfe9f">GetFractionPoint</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="platform_8h_1a1062901a7428fdd9c7f180f5e01ea056">bool</link> <link linkend="classStandardLanguage_1a1de5d6a7b40037afc079e1d5a3ce65e7">CharIsAlNum</link> (
+unsigned long character)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="platform_8h_1a1062901a7428fdd9c7f180f5e01ea056">bool</link> <link linkend="classStandardLanguage_1a615e7e7fe6fd04084f0a59ecaed2f7d6">CharIsAlpha</link> (
+unsigned long character)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="platform_8h_1a1062901a7428fdd9c7f180f5e01ea056">bool</link> <link linkend="classStandardLanguage_1aa884e2cd9f3778bb85bf4b7c67a1d62d">CharIsDigit</link> (
+unsigned long character)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="platform_8h_1a1062901a7428fdd9c7f180f5e01ea056">bool</link> <link linkend="classStandardLanguage_1a3dbeae5f049069a2646ebf137c6cb4a5">CharIsPunct</link> (
+unsigned long character)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="platform_8h_1a1062901a7428fdd9c7f180f5e01ea056">bool</link> <link linkend="classStandardLanguage_1afcc504da29308380fd0ada0f46ad940d">CharIsSpace</link> (
+unsigned long character)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="platform_8h_1a1062901a7428fdd9c7f180f5e01ea056">bool</link> <link linkend="classStandardLanguage_1a6e79e25699739742aa2abd43bf3fd469">CharIsCntrl</link> (
+unsigned long character)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="platform_8h_1a1062901a7428fdd9c7f180f5e01ea056">bool</link> <link linkend="classStandardLanguage_1ac3062fe9cb6298205f0deee955ebf36e">StrIsEqualLoc</link> (
+const char * s1, const char * s2)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>char * <link linkend="classStandardLanguage_1a0472d7747cfb0985f20b483756327fdc">Translate</link> (
+<link linkend="structtextdef">textdef</link> * def)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>char * <link linkend="classStandardLanguage_1a5a7011f9307a053509a28706f02f835f">Translate</link> (
+<link linkend="structhelptextdef">helptextdef</link> * def)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>char * <link linkend="classStandardLanguage_1a623162a4830eaec08bc266cd3fa6068e">Translate</link> (
+<link linkend="structidenthelpdef">identhelpdef</link> * def)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="classStandardLanguage_1afd0037d341b94b08497842470007e59b">LoadCatalogs</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="classStandardLanguage_1a4fe22e49f3ce358690242d0b1058ccfa">LoadCatalog</link> (
+char ** dest, const char * file)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="classStandardLanguage_1ab1945e2e3503ce12eac28c0d08234cfb">GetNextPair</link> (
+const char ** key, const char ** value)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="classStandardLanguage_1a8a4a4a2879f1e907c17f36dfafdebd66">GetNextLine</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="classStandardLanguage_1af0078bbe8a06f6e4fb35ddfda1170e19">SkipComments</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title>Member Data Documentation</title>
+        </section>
+            <section xml:id="classStandardLanguage_1a0d604e2af2f2bf4dc4abbe7b18c05cea">
+                <title>StandardLanguage::StandardLanguage ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="classStandardLanguage_1a21a7e329043a38b838b73feee36ebcfa">
+                <title>StandardLanguage::~StandardLanguage ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="classStandardLanguage_1a291d9c45352a324482f63738f8cbfe9f">
+                <title>char StandardLanguage::GetFractionPoint ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="classStandardLanguage_1a1de5d6a7b40037afc079e1d5a3ce65e7">
+                <title>bool StandardLanguage::CharIsAlNum (unsigned long character)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="classStandardLanguage_1a615e7e7fe6fd04084f0a59ecaed2f7d6">
+                <title>bool StandardLanguage::CharIsAlpha (unsigned long character)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="classStandardLanguage_1aa884e2cd9f3778bb85bf4b7c67a1d62d">
+                <title>bool StandardLanguage::CharIsDigit (unsigned long character)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="classStandardLanguage_1a3dbeae5f049069a2646ebf137c6cb4a5">
+                <title>bool StandardLanguage::CharIsPunct (unsigned long character)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="classStandardLanguage_1afcc504da29308380fd0ada0f46ad940d">
+                <title>bool StandardLanguage::CharIsSpace (unsigned long character)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="classStandardLanguage_1a6e79e25699739742aa2abd43bf3fd469">
+                <title>bool StandardLanguage::CharIsCntrl (unsigned long character)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="classStandardLanguage_1ac3062fe9cb6298205f0deee955ebf36e">
+                <title>bool StandardLanguage::StrIsEqualLoc (const char *s1, const char *s2)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="classStandardLanguage_1a0472d7747cfb0985f20b483756327fdc">
+                <title>char * StandardLanguage::Translate (textdef *def)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="classStandardLanguage_1a5a7011f9307a053509a28706f02f835f">
+                <title>char * StandardLanguage::Translate (helptextdef *def)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="classStandardLanguage_1a623162a4830eaec08bc266cd3fa6068e">
+                <title>char * StandardLanguage::Translate (identhelpdef *def)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="classStandardLanguage_1afd0037d341b94b08497842470007e59b">
+                <title>void StandardLanguage::LoadCatalogs ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="classStandardLanguage_1a4fe22e49f3ce358690242d0b1058ccfa">
+                <title>void StandardLanguage::LoadCatalog (char **dest, const char *file)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="classStandardLanguage_1ab1945e2e3503ce12eac28c0d08234cfb">
+                <title>void StandardLanguage::GetNextPair (const char **key, const char **value)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="classStandardLanguage_1a8a4a4a2879f1e907c17f36dfafdebd66">
+                <title>void StandardLanguage::GetNextLine ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="classStandardLanguage_1af0078bbe8a06f6e4fb35ddfda1170e19">
+                <title>void StandardLanguage::SkipComments ()</title> <emphasis></emphasis>
+                
+            </section>
+</section>

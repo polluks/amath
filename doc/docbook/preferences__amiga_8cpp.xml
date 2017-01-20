@@ -1,0 +1,34 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="preferences__amiga_8cpp">
+    <title>preferences_amiga.cpp File Reference</title>
+    <programlisting>#include &quot;clib.h&quot;</programlisting>
+    <programlisting>#include &quot;lib/charbuf.h&quot;</programlisting>
+    <programlisting>#include &quot;system/preferences.h&quot;</programlisting>
+    <programlisting>#include &quot;system/preferences_amiga.h&quot;</programlisting>
+<para>Include dependency diagram for preferences_amiga.cpp</para>
+<para>
+    <figure>
+        <title>Dependency diagram</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="preferences__amiga_8cpp__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+<para>Included by dependency diagram for preferences_amiga.cpp</para>
+<para>
+    <figure>
+        <title>Dependency diagram</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="preferences__amiga_8cpp__dep__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+    <simplesect>
+        <title>Detailed Description</title>
+    <para>Definition in file /home/carsten/amath/app/system/preferences_amiga.cpp</para>
+    </simplesect>
+</section>

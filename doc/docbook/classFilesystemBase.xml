@@ -1,0 +1,84 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="classFilesystemBase">
+<title>FilesystemBase class Reference</title>
+<para>
+    <programlisting>#include <link linkend="filesystem_8h">&lt;filesystem.h&gt;</link></programlisting>
+</para>
+<para>Inheritance diagram for FilesystemBase</para>
+<para>
+    <figure>
+        <title>Inheritance graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="classFilesystemBase__inherit__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+<para>Collaboration diagram for FilesystemBase</para>
+<para>
+    <figure>
+        <title>Collaboration graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="classFilesystemBase__coll__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>virtual <link linkend="classFilesystemBase_1ad82ff955f62368b9e631f2a39a6f47d1">~FilesystemBase</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>virtual <link linkend="classCharBuffer">CharBuffer</link> * <link linkend="classFilesystemBase_1a2f48a44b0b99b3c23e7c1a7587b5fc9c">ListDirectory</link> (
+const char * path)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>virtual <link linkend="classCharBuffer">CharBuffer</link> * <link linkend="classFilesystemBase_1adc4a9e1dc189bcd221e3b994bc854d46">LoadTextFile</link> (
+const char * name)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>virtual <link linkend="platform_8h_1a1062901a7428fdd9c7f180f5e01ea056">bool</link> <link linkend="classFilesystemBase_1a66b54f8151cd8903ac757207b062ef48">SaveTextFile</link> (
+const char * name, const char * text)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+    <simplesect>
+
+<para>Abstract base class encapsulating file system calls. </para>
+    </simplesect>
+            <section xml:id="classFilesystemBase_1ad82ff955f62368b9e631f2a39a6f47d1">
+                <title>virtual FilesystemBase::~FilesystemBase ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="classFilesystemBase_1a2f48a44b0b99b3c23e7c1a7587b5fc9c">
+                <title>virtual CharBuffer* FilesystemBase::ListDirectory (const char *path)=0</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="classFilesystemBase_1adc4a9e1dc189bcd221e3b994bc854d46">
+                <title>virtual CharBuffer* FilesystemBase::LoadTextFile (const char *name)=0</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="classFilesystemBase_1a66b54f8151cd8903ac757207b062ef48">
+                <title>virtual bool FilesystemBase::SaveTextFile (const char *name, const char *text)=0</title> <emphasis></emphasis>
+                
+            </section>
+</section>

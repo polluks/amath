@@ -1,0 +1,85 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="classGraphList">
+<title>GraphList class Reference</title>
+<para>
+    <programlisting>#include <link linkend="graphlist_8h">&lt;graphlist.h&gt;</link></programlisting>
+</para>
+<para>Inheritance diagram for GraphList</para>
+<para>
+    <figure>
+        <title>Inheritance graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="classGraphList__inherit__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+<para>Collaboration diagram for GraphList</para>
+<para>
+    <figure>
+        <title>Collaboration graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="classGraphList__coll__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+        <section>
+            <title>Private Attributes</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>GraphWindow * first</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="classGraphList_1a7a5c8bcb31e753f7b32cbd7da34db063">GraphList</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="classGraphList_1a0cf2f539fc2594ae27f35d94deebc232">~GraphList</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="classGraphWindow">GraphWindow</link> * <link linkend="classGraphList_1a184e5ad986cd07281a96dc107ebfcd5d">CreateNewWindow</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+    <simplesect>
+
+<para>A list of open graph windows. </para>
+    </simplesect>
+        <section>
+            <title>Member Data Documentation</title>
+        </section>
+            <section xml:id="classGraphList_1a7a5c8bcb31e753f7b32cbd7da34db063">
+                <title>GraphList::GraphList ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="classGraphList_1a0cf2f539fc2594ae27f35d94deebc232">
+                <title>GraphList::~GraphList ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="classGraphList_1a184e5ad986cd07281a96dc107ebfcd5d">
+                <title>GraphWindow * GraphList::CreateNewWindow ()</title> <emphasis></emphasis>
+                
+            </section>
+</section>

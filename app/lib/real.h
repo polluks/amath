@@ -29,7 +29,7 @@
 
 /**
  * @file  real.h
- * @brief Classbase handling of complex numbers.
+ * @brief Classbased handling of complex numbers.
  *
  */
 

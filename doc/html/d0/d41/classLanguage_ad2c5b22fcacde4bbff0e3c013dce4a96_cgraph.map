@@ -1,7 +1,0 @@
-<map id="Language::GetHelpText" name="Language::GetHelpText">
-<area shape="rect" id="node2" href="$d0/d41/classLanguage.html#aa51c505262ca738bf4675fc87f96dbf6" title="Language::Translate" alt="" coords="217,5,357,32"/>
-<area shape="rect" id="node3" href="$d0/d41/classLanguage.html#a69c5b3269ec8570a2f8f28e8e632cf44" title="Language::UntagText" alt="" coords="213,56,360,83"/>
-<area shape="rect" id="node4" href="$d9/de5/clib_8h.html#a67ec56eb98b49515d35005a5b3bf9a32" title="Get the length of a null terminated string. " alt="" coords="419,5,479,32"/>
-<area shape="rect" id="node5" href="$d3/db7/untag_8c.html#a13fd37f0e8fef81a052aab4cd5588fb6" title="Untag" alt="" coords="421,56,478,83"/>
-<area shape="rect" id="node6" href="$d4/d16/memcpy_8c.html#a09b7e057c69b9ddd4b481fc746997a7d" title="Copy a block of memory, handling overlap. " alt="" coords="408,107,491,133"/>
-</map>

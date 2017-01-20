@@ -1,9 +1,0 @@
-<map id="creci" name="creci">
-<area shape="rect" id="node2" href="$d6/d51/cacsch_8c.html#a1a3241a96a0225c9ef3113f5e5c48acf" title="Inverse hyperbolic cosecant of complex number. " alt="" coords="167,5,231,32"/>
-<area shape="rect" id="node4" href="$d5/dc8/casec_8c.html#ae509596503bb6ea1142d470882e074a7" title="Inverse secant expressed using complex logarithms: " alt="" coords="171,56,228,83"/>
-<area shape="rect" id="node6" href="$d9/dd5/casech_8c.html#ad47f8259620b339981f876087f195cb4" title="Inverse hyperbolic secant of complex numbers. " alt="" coords="167,107,231,133"/>
-<area shape="rect" id="node8" href="$db/d8e/structComplexNumber.html#ac85979812dffce5a38ccf3cab090b320" title="ComplexNumber::Reciprocal" alt="" coords="104,157,295,184"/>
-<area shape="rect" id="node3" href="$db/d8e/structComplexNumber.html#af53cdbbf59f07f40118cf05a51cf3d0a" title="ComplexNumber::HypArcCosecant" alt="" coords="343,5,571,32"/>
-<area shape="rect" id="node5" href="$db/d8e/structComplexNumber.html#a66cb3904e4b3127f0e3714ba23a0c981" title="ComplexNumber::ArcSecant" alt="" coords="362,56,551,83"/>
-<area shape="rect" id="node7" href="$db/d8e/structComplexNumber.html#af0d9ceb661b6bf3052d3806c84ab6faf" title="ComplexNumber::HypArcSecant" alt="" coords="350,107,563,133"/>
-</map>

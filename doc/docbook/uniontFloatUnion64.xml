@@ -1,0 +1,85 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="uniontFloatUnion64">
+<title>tFloatUnion64 union Reference</title>
+<para>Inheritance diagram for tFloatUnion64</para>
+<para>
+    <figure>
+        <title>Inheritance graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="uniontFloatUnion64__inherit__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+<para>Collaboration diagram for tFloatUnion64</para>
+<para>
+    <figure>
+        <title>Collaboration graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="uniontFloatUnion64__coll__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+        <section>
+            <title>Public Attributes</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>tF64 m_floatingPoint</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>tU64 m_integer</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="dstandard_8h_1ad203aed3ab57b120eb54c2043f60dc49">tB</link> <link linkend="uniontFloatUnion64_1acef6b9abed06d568b90ed31592e13242">IsNegative</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="dstandard_8h_1aee96db7e18784e05ed6b0bcaeec3f7f6">tU32</link> <link linkend="uniontFloatUnion64_1a9a52499d5e9a41152da0368522121dd9">GetExponent</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="dstandard_8h_1a6625ae5505b2f796350b82c7f52fcf43">tU64</link> <link linkend="uniontFloatUnion64_1ac19d91a8d0950d68fb2610925e2fe43e">GetMantissa</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title>Member Data Documentation</title>
+        </section>
+            <section xml:id="uniontFloatUnion64_1acef6b9abed06d568b90ed31592e13242">
+                <title>tB tFloatUnion64::IsNegative () const </title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="uniontFloatUnion64_1a9a52499d5e9a41152da0368522121dd9">
+                <title>tU32 tFloatUnion64::GetExponent () const </title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="uniontFloatUnion64_1ac19d91a8d0950d68fb2610925e2fe43e">
+                <title>tU64 tFloatUnion64::GetMantissa () const </title> <emphasis></emphasis>
+                
+            </section>
+</section>

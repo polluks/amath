@@ -1,6 +1,0 @@
-<map id="StandardConsole" name="StandardConsole">
-<area shape="rect" id="node2" href="$d2/dbb/classConsoleBase.html" title="Abstract base class encapsulating console logic. " alt="" coords="5,109,105,136"/>
-<area shape="rect" id="node3" href="$da/d67/classThreadBase.html" title="Abstract base class encapsulating runable component. " alt="" coords="9,5,101,32"/>
-<area shape="rect" id="node4" href="$df/d87/classAnsiConoleEngine.html" title="ANSI console controller. " alt="" coords="129,109,259,136"/>
-<area shape="rect" id="node5" href="$dc/d84/classCharBuffer.html" title="Encapsulate an character array which can be used as a string. " alt="" coords="151,5,237,32"/>
-</map>

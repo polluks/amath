@@ -1,5 +1,5 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" href="$d9/df3/classNumeralSystem.html" title="Base class for all numeral systems. " alt="" coords="5,5,121,32"/>
-<area shape="rect" id="node2" href="$d6/ddc/classPositionalNumeralSystem.html" title="Base class for all numeral systems with a positional notation. " alt="" coords="169,5,343,32"/>
-<area shape="rect" id="node3" href="$df/d40/classDecimalSystem.html" title="DecimalSystem" alt="" coords="391,5,505,32"/>
+<area shape="rect" id="node1" href="$classNumeralSystem.html" title="Base class for all numeral systems. " alt="" coords="5,5,121,32"/>
+<area shape="rect" id="node2" href="$classPositionalNumeralSystem.html" title="Base class for all numeral systems with a positional notation. " alt="" coords="169,5,343,32"/>
+<area shape="rect" id="node3" href="$classDecimalSystem.html" title="DecimalSystem" alt="" coords="391,5,505,32"/>
 </map>

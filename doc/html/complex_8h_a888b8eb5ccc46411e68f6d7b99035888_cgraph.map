@@ -1,0 +1,10 @@
+<map id="clog" name="clog">
+<area shape="rect" id="node2" href="$atan2_8c.html#a349377202ca14f79eb335b1a421fe4d8" title="atan2" alt="" coords="101,5,156,32"/>
+<area shape="rect" id="node4" href="$prim_8c.html#af6e02ba9d2566b52e3b0faf2d4ed973a" title="Absolute value of complex number. " alt="" coords="103,107,154,133"/>
+<area shape="rect" id="node7" href="$prim_8c.html#a4a236b24c0197821e3489a35a72079ab" title="Real part of complex number. " alt="" coords="209,56,259,83"/>
+<area shape="rect" id="node8" href="$prim_8c.html#aa1fe0b9371befabef6c41ba73470774a" title="Imaginary part of complex number. " alt="" coords="205,157,263,184"/>
+<area shape="rect" id="node9" href="$prim_8c.html#a980e6e049f7902b05fc9eb5614b07a5c" title="Pack two real numbers into a complex number. " alt="" coords="100,208,157,235"/>
+<area shape="rect" id="node3" href="$atan_8c.html#a1e2f8f6d64eaa95131bc63fee34970ea" title="Inverse trigonometric tangent function. " alt="" coords="211,5,257,32"/>
+<area shape="rect" id="node5" href="$hypot_8c.html#a6d6a905f61d535f8454190433b8c0ea5" title="hypot" alt="" coords="207,107,261,133"/>
+<area shape="rect" id="node6" href="$sqrt_8c.html#ab87521a75ef827a85807f89a6c10629a" title="Square root function. " alt="" coords="311,107,355,133"/>
+</map>

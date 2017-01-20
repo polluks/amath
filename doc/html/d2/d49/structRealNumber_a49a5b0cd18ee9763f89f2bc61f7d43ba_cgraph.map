@@ -1,9 +1,0 @@
-<map id="RealNumber::Tangent" name="RealNumber::Tangent">
-<area shape="rect" id="node2" href="$d2/d49/structRealNumber.html#a65924261adb775498f3b1b0f41f89091" title="RealNumber::RealNumber" alt="" coords="204,5,380,32"/>
-<area shape="rect" id="node4" href="$d8/da3/tan_8c.html#aa48fdfd5eea5f4f9c33496402b9e4039" title="Trigonometric tangent function. " alt="" coords="272,56,312,83"/>
-<area shape="rect" id="node3" href="$da/de2/structNumber.html#afd3c2f9b4b288e339f741a6e4ae54593" title="Number::Number" alt="" coords="428,5,551,32"/>
-<area shape="rect" id="node5" href="$de/d4a/ktan_8c.html#a5f1c9e105e0dbca8a88407dd899043c6" title="Kernel tan function. " alt="" coords="441,56,537,83"/>
-<area shape="rect" id="node6" href="$d0/d27/remp2_8c.html#a320ce87737d621d713124124e2c02cdc" title="rempio2" alt="" coords="455,107,523,133"/>
-<area shape="rect" id="node7" href="$de/db9/kremp2_8c.html#a8a5e87d33974881295c4ed0d09732f71" title="Kernel reduction function. " alt="" coords="599,107,729,133"/>
-<area shape="rect" id="node8" href="$dc/d1b/scalbn_8c.html#a0353978ec1ae247f2d95f2dc75856ed6" title="scalbn" alt="" coords="777,107,837,133"/>
-</map>

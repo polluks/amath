@@ -7,7 +7,7 @@
         <title>Directory Dependency diagram</title>
         <mediaobject>
             <imageobject>
-                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="../../dir_0caad613a4fcc4e6b27a12a309bd50c0_dep.png"></imagedata>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="dir_0caad613a4fcc4e6b27a12a309bd50c0_dep.png"></imagedata>
             </imageobject>
         </mediaobject>
     </figure>
@@ -17,55 +17,55 @@
             <para>
                 <itemizedlist>
                     <listitem>
-                        <para>file <link linkend="dd/d2a/alloccpy_8c">alloccpy.c</link></para>
+                        <para>file <link linkend="alloccpy_8c">alloccpy.c</link></para>
                     </listitem>
                 </itemizedlist>
             </para>
             <para>
                 <itemizedlist>
                     <listitem>
-                        <para>file <link linkend="d3/d8f/mem_8c">mem.c</link></para>
+                        <para>file <link linkend="mem_8c">mem.c</link></para>
                     </listitem>
                 </itemizedlist>
             </para>
             <para>
                 <itemizedlist>
                     <listitem>
-                        <para>file <link linkend="d4/d16/memcpy_8c">memcpy.c</link></para>
+                        <para>file <link linkend="memcpy_8c">memcpy.c</link></para>
                     </listitem>
                 </itemizedlist>
             </para>
             <para>
                 <itemizedlist>
                     <listitem>
-                        <para>file <link linkend="d3/db7/memset_8c">memset.c</link></para>
+                        <para>file <link linkend="memset_8c">memset.c</link></para>
                     </listitem>
                 </itemizedlist>
             </para>
             <para>
                 <itemizedlist>
                     <listitem>
-                        <para>file <link linkend="d7/d4b/strcmp_8c">strcmp.c</link></para>
+                        <para>file <link linkend="strcmp_8c">strcmp.c</link></para>
                     </listitem>
                 </itemizedlist>
             </para>
             <para>
                 <itemizedlist>
                     <listitem>
-                        <para>file <link linkend="d3/d67/strlen_8c">strlen.c</link></para>
+                        <para>file <link linkend="strlen_8c">strlen.c</link></para>
                     </listitem>
                 </itemizedlist>
             </para>
             <para>
                 <itemizedlist>
                     <listitem>
-                        <para>file <link linkend="d3/db7/untag_8c">untag.c</link></para>
+                        <para>file <link linkend="untag_8c">untag.c</link></para>
                     </listitem>
                 </itemizedlist>
             </para>
         </simplesect>
     <simplesect>
         <title>Detailed Description</title>
-    <para>Directory location is /home/carsten/amath2/lib/clib/</para>
+    <para>Directory location is /home/carsten/amath/lib/clib/</para>
     </simplesect>
 </section>

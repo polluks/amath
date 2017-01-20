@@ -1,8 +1,0 @@
-<map id="SyntaxNode::Detach" name="SyntaxNode::Detach">
-<area shape="rect" id="node2" href="$d1/dc4/classOptimizer.html#ad84621adb872b88ab7fdb3672064cfdb" title="Optimizer::BalanceTree" alt="" coords="220,29,379,56"/>
-<area shape="rect" id="node7" href="$d1/dc4/classOptimizer.html#aef8d80bb6301ee01a7ed271148438733" title="Optimizer::ReduceUnaryNodes" alt="" coords="197,104,401,131"/>
-<area shape="rect" id="node3" href="$d1/dc4/classOptimizer.html#a5764ae0825fa43921f74d8b972e53b1e" title="Optimizer::Optimize" alt="" coords="449,67,588,93"/>
-<area shape="rect" id="node4" href="$d6/d18/classEvaluator.html#a40b30ece9d43c658877ee7f52aaec0a8" title="Evaluator::Evaluate" alt="" coords="636,67,772,93"/>
-<area shape="rect" id="node5" href="$d3/d7b/classStandardProgram.html#a71dce9fdccf23ac49ba2362dcae744d3" title="StandardProgram::Run" alt="" coords="820,41,975,68"/>
-<area shape="rect" id="node6" href="$d5/d48/classStandardConsole.html#a9380023bba612b816b134589130bb254" title="StandardConsole::Run" alt="" coords="820,92,975,119"/>
-</map>

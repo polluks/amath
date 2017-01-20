@@ -1,0 +1,51 @@
+<map id="Parser::ParseStatement" name="Parser::ParseStatement">
+<area shape="rect" id="node2" href="$classClearStatement.html#a5c3069808cd784d6f98916bae6b1b94c" title="ClearStatement::ClearStatement" alt="" coords="232,259,444,286"/>
+<area shape="rect" id="node3" href="$classEvalStatement.html#aca4069dd093c588724a5516598ec413f" title="EvalStatement::EvalStatement" alt="" coords="779,259,981,286"/>
+<area shape="rect" id="node5" href="$classExitStatement.html#aa023a4db5bc1cef8841913c74861c8e3" title="ExitStatement::ExitStatement" alt="" coords="240,376,436,403"/>
+<area shape="rect" id="node6" href="$classParser.html#a415a103e66558b4d366d9a1420561fe3" title="Parser::GetToken" alt="" coords="1301,1599,1427,1626"/>
+<area shape="rect" id="node9" href="$classListFunctionsStatement.html#a45535c4ae1a1d56a617d82b51d775e32" title="ListFunctionsStatement\l::ListFunctionsStatement" alt="" coords="254,310,422,352"/>
+<area shape="rect" id="node10" href="$classListVariablesStatement.html#a99567f05d8c7b39f9d64246584024b83" title="ListVariablesStatement\l::ListVariablesStatement" alt="" coords="255,428,421,469"/>
+<area shape="rect" id="node11" href="$classMemoryStatement.html#a7aa2d5e60c07a928e6bcbbee00d29ec6" title="MemoryStatement::MemoryStatement" alt="" coords="216,595,460,622"/>
+<area shape="rect" id="node12" href="$classParser.html#aca8329fb5ee4812398144fd1d647fe39" title="Parser::ParseDefault" alt="" coords="266,696,410,723"/>
+<area shape="rect" id="node16" href="$classParser.html#ae46b0a87abe76f40ae117c5bdcb2f29d" title="Parser::ParseExpression" alt="" coords="797,696,963,723"/>
+<area shape="rect" id="node18" href="$classParser.html#adb5c3a188b36f7ecb198ae30f06338b3" title="Parser::PutToken" alt="" coords="1302,2131,1426,2158"/>
+<area shape="rect" id="node19" href="$classParser.html#a0e8b1f794af2b9923bc3fcb7498004f9" title="Parser::ParseFunctionDef" alt="" coords="527,544,700,571"/>
+<area shape="rect" id="node30" href="$classParser.html#a41008319e22949c5a6045e3859335000" title="Parser::ParseDeleteStatement" alt="" coords="513,950,713,976"/>
+<area shape="rect" id="node32" href="$classParser.html#a14aa2850063f998f76530e027c3ef399" title="Parser::ParseDigistStatement" alt="" coords="515,1878,711,1904"/>
+<area shape="rect" id="node37" href="$classParser.html#a38a55851f31c226c193090403dfbaff8" title="Parser::ParseDrawStatement" alt="" coords="517,798,710,824"/>
+<area shape="rect" id="node40" href="$classParser.html#a3c671b953bee260ed4eb3f5c30ededc2" title="Parser::ParseFileStatement" alt="" coords="522,1244,705,1271"/>
+<area shape="rect" id="node45" href="$classParser.html#a1e00b1a9ee0541508953564442312526" title="Parser::ParseHelpStatement" alt="" coords="519,2283,708,2310"/>
+<area shape="rect" id="node46" href="$classParser.html#aa0642d13c500401b168035f9fcdbe1f4" title="Parser::ParseListStatement" alt="" coords="522,1472,705,1499"/>
+<area shape="rect" id="node47" href="$classParser.html#ae2a3cdedfb708c19c7552fd402a224c6" title="Parser::ParseNumeralStatement" alt="" coords="508,1700,719,1727"/>
+<area shape="rect" id="node48" href="$classParser.html#ab655f0d3ad73a8ec8a299d2e2e3248ea" title="Parser::ParsePrefsStatement" alt="" coords="1051,2334,1244,2360"/>
+<area shape="rect" id="node49" href="$classParser.html#a3ff34c9305bf6b5f10aacf27e5d20c28" title="Parser::ParsePromptStatement" alt="" coords="511,2119,715,2146"/>
+<area shape="rect" id="node50" href="$classVersionStatement.html#a3df915fa8eccedc266750224ff297716" title="VersionStatement::Version\lStatement" alt="" coords="249,2486,427,2528"/>
+<area shape="rect" id="node4" href="$classStatementNode.html#a586026d6009a39d087792d621de86360" title="StatementNode::StatementNode" alt="" coords="1041,200,1253,227"/>
+<area shape="rect" id="node7" href="$classLexer.html#afbb12eaae7cff3bd2960f444cfe98f69" title="Lexer::GetFirstToken" alt="" coords="1477,1574,1623,1600"/>
+<area shape="rect" id="node8" href="$structToken.html#ac7eb963d5eff544dd48ffc23aa274356" title="Token::GetNextToken" alt="" coords="1475,1624,1625,1651"/>
+<area shape="rect" id="node13" href="$classParser.html#a811765334b0cd3f01152c35c9f5bcaec" title="Parser::Expect" alt="" coords="825,848,935,875"/>
+<area shape="rect" id="node15" href="$classParser.html#a19c5b6055d066d21ad39a32287e833c2" title="Parser::ParseEvaluation" alt="" coords="532,696,695,723"/>
+<area shape="rect" id="node14" href="$structToken.html#a5f93ea94940a6eeb060507e1da594599" title="Token::GetPos" alt="" coords="1092,1102,1203,1128"/>
+<area shape="rect" id="node17" href="$classParser.html#a47ba11ddd167c1b0b5cf1d2fd1cf1ccd" title="Parser::ParseAddSubstract" alt="" coords="1057,874,1238,900"/>
+<area shape="rect" id="node20" href="$classUserFunction.html#a9273684dd9351e945a10799ac6eb7038" title="UserFunction::CreateVariable" alt="" coords="783,142,977,168"/>
+<area shape="rect" id="node21" href="$classErrorNode.html#a1c3d4afac02da7fcc0cec125a7ac03ba" title="ErrorNode::ErrorNode" alt="" coords="806,1422,954,1448"/>
+<area shape="rect" id="node22" href="$classFunctionDefinitionNode.html#a1ecb6319492be964ad5089739cf65d63" title="FunctionDefinitionNode\l::FunctionDefinitionNode" alt="" coords="797,193,963,234"/>
+<area shape="rect" id="node23" href="$classFunctionList.html#acf0716fd18c32a6d52a947052060a2a1" title="FunctionList::GetFunctionDef" alt="" coords="783,310,977,336"/>
+<area shape="rect" id="node24" href="$classLexer.html#a3032cbeb851294bccd61b722d9a86265" title="Lexer::GetInput" alt="" coords="824,1574,936,1600"/>
+<area shape="rect" id="node25" href="$structToken.html#a15f1043de07ce8e452fbf115b85def71" title="Token::GetText" alt="" coords="823,1624,937,1651"/>
+<area shape="rect" id="node26" href="$classVariableList.html#a4e8c2b729d346ff56cf01c5349931c62" title="VariableList::InsertTemporary\lVariable" alt="" coords="783,361,977,402"/>
+<area shape="rect" id="node27" href="$classFunctionList.html#a7c5872fe4a522983041ac12c2cb37ea3" title="FunctionList::IsSystemFunction" alt="" coords="777,427,983,454"/>
+<area shape="rect" id="node28" href="$classVariableList.html#a489608dbcd6989a9ffd4092234a8052c" title="VariableList::RemoveTemporary\lVariable" alt="" coords="775,478,985,520"/>
+<area shape="rect" id="node29" href="$classUserFunction.html#ab033663735b65ce885eefd63e6208c24" title="UserFunction::SetExpression" alt="" coords="783,544,977,571"/>
+<area shape="rect" id="node31" href="$classDeleteStatement.html#a335cfbb9db4b3bad5f0a082f247efcaa" title="Constructor used to delete either all variable or functions. " alt="" coords="767,950,993,976"/>
+<area shape="rect" id="node33" href="$classDecimalSystem.html#a726d1a38079ae571c54adfbd0724a0a3" title="DecimalSystem::DecimalSystem" alt="" coords="772,1827,988,1854"/>
+<area shape="rect" id="node34" href="$classDigitsStatement.html#a37883ab7d81a7ee7332d81cb2f84abf1" title="Constructor used to show number of active digits. " alt="" coords="771,2080,989,2107"/>
+<area shape="rect" id="node35" href="$structNumber.html#aa2c4b207ac557a8bdbc1cf5696d37160" title="Number::GetIntegerValue" alt="" coords="795,1878,965,1904"/>
+<area shape="rect" id="node36" href="$classNumeralSystem.html#a1f8d8a04e99540260d4fc4f16c63ddc3" title="NumeralSystem::Parse" alt="" coords="801,1928,959,1955"/>
+<area shape="rect" id="node38" href="$classDrawStatement.html#a370abbf650f311ecbcc9ff5faf9a451c" title="DrawStatement::DrawStatement" alt="" coords="774,798,986,824"/>
+<area shape="rect" id="node39" href="$classPlotStatement.html#ab627e3becfbdd9d11f13b544c7dfa6c3" title="PlotStatement::PlotStatement" alt="" coords="782,747,978,774"/>
+<area shape="rect" id="node41" href="$classExecuteStatement.html#a69c86b1a4517ba286491742238a234b3" title="ExecuteStatement::Execute\lStatement" alt="" coords="787,1153,973,1194"/>
+<area shape="rect" id="node42" href="$classLoadStatement.html#a4828300bc260971c2070947a70e710c1" title="LoadStatement::LoadStatement" alt="" coords="777,1219,983,1246"/>
+<area shape="rect" id="node43" href="$classSaveStatement.html#aa4912801d91c2e86737de79aff57471a" title="SaveStatement::SaveStatement" alt="" coords="775,1270,985,1296"/>
+<area shape="rect" id="node44" href="$classShowStatement.html#aab6fd0439344f35d8af36009d994bcb4" title="ShowStatement::ShowStatement" alt="" coords="772,1320,988,1347"/>
+</map>

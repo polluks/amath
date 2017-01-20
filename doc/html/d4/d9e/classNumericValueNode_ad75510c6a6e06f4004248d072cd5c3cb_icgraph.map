@@ -1,7 +1,0 @@
-<map id="NumericValueNode::GetReductionType" name="NumericValueNode::GetReductionType">
-<area shape="rect" id="node2" href="$d1/dc4/classOptimizer.html#a5b45089aff3c6568f3531faa9e701f21" title="Optimizer::ReduceValueNodes" alt="" coords="305,31,508,57"/>
-<area shape="rect" id="node3" href="$d1/dc4/classOptimizer.html#a5764ae0825fa43921f74d8b972e53b1e" title="Optimizer::Optimize" alt="" coords="556,31,695,57"/>
-<area shape="rect" id="node4" href="$d6/d18/classEvaluator.html#a40b30ece9d43c658877ee7f52aaec0a8" title="Evaluator::Evaluate" alt="" coords="743,31,879,57"/>
-<area shape="rect" id="node5" href="$d3/d7b/classStandardProgram.html#a71dce9fdccf23ac49ba2362dcae744d3" title="StandardProgram::Run" alt="" coords="927,5,1081,32"/>
-<area shape="rect" id="node6" href="$d5/d48/classStandardConsole.html#a9380023bba612b816b134589130bb254" title="StandardConsole::Run" alt="" coords="927,56,1081,83"/>
-</map>

@@ -1,0 +1,80 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="classEmptyStatement">
+<title>EmptyStatement class Reference</title>
+<para>
+    <programlisting>#include <link linkend="statements_8h">&lt;statements.h&gt;</link></programlisting>
+</para>
+<para>Inheritance diagram for EmptyStatement</para>
+<para>
+    <figure>
+        <title>Inheritance graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="classEmptyStatement__inherit__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+<para>Collaboration diagram for EmptyStatement</para>
+<para>
+    <figure>
+        <title>Collaboration graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="classEmptyStatement__coll__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="classEmptyStatement_1a9e2080de25e56a7f44f9f64836c2236e">EmptyStatement</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="classEmptyStatement_1ac60b5a87485352b3e8f29117aeffcee0">~EmptyStatement</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>char * <link linkend="classEmptyStatement_1a5d873e1f5f9b48abe4201319f5e687b0">Execute</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+    <simplesect>
+
+<para>An empty statement. </para>
+    </simplesect>
+        <simplesect>
+            <title>Detailed Description</title>
+
+<para>Statement node which encapsulate an empty statment. This happens fx. if the user only enters a line feed. </para>
+                <para>Definition at line 72 of file statements.h</para>
+                <para>The Documentation for this struct was generated from the following file: </para>
+                <para><itemizedlist><listitem><para>statements.h</para></listitem></itemizedlist></para>
+        </simplesect>
+            <section xml:id="classEmptyStatement_1a9e2080de25e56a7f44f9f64836c2236e">
+                <title>EmptyStatement::EmptyStatement ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="classEmptyStatement_1ac60b5a87485352b3e8f29117aeffcee0">
+                <title>EmptyStatement::~EmptyStatement ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="classEmptyStatement_1a5d873e1f5f9b48abe4201319f5e687b0">
+                <title>char * EmptyStatement::Execute ()</title> <emphasis></emphasis>
+                
+            </section>
+</section>

@@ -1,0 +1,98 @@
+\hypertarget{ccot_8c}{}\section{lib/cplex/ccot.c File Reference}
+\label{ccot_8c}\index{lib/cplex/ccot.\+c@{lib/cplex/ccot.\+c}}
+{\ttfamily \#include \char`\"{}prim.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}math.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}complex.\+h\char`\"{}}\\*
+Include dependency graph for ccot.\+c\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=221pt]{ccot_8c__incl}
+\end{center}
+\end{figure}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{unioncomplex}{complex} \hyperlink{ccot_8c_af55c6dec4ec4d7992aea8418480c221c}{ccot} (\hyperlink{unioncomplex}{complex} z)
+\begin{DoxyCompactList}\small\item\em Cotangent of a complex number. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\index{ccot.\+c@{ccot.\+c}!ccot@{ccot}}
+\index{ccot@{ccot}!ccot.\+c@{ccot.\+c}}
+\subsubsection[{\texorpdfstring{ccot(complex z)}{ccot(complex z)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf complex} ccot (
+\begin{DoxyParamCaption}
+\item[{{\bf complex}}]{z}
+\end{DoxyParamCaption}
+)}\hypertarget{ccot_8c_af55c6dec4ec4d7992aea8418480c221c}{}\label{ccot_8c_af55c6dec4ec4d7992aea8418480c221c}
+
+
+Cotangent of a complex number. 
+
+Calculated as in Open Office\+: 
+\begin{DoxyPre}
+a+bi
+                sin(2.0 * a)
+real  = ------------------------------
+         cosh(2.0 * b) - cos(2.0 * a)\end{DoxyPre}
+
+
+
+\begin{DoxyPre}               -sinh(2.0 * b)
+imag  = ------------------------------
+         cosh(2.0 * b) - cos(2.0 * a)
+\end{DoxyPre}
+ \href{https://wiki.openoffice.org/wiki/Documentation/How_Tos/Calc:_IMCOT_function}{\tt https\+://wiki.\+openoffice.\+org/wiki/\+Documentation/\+How\+\_\+\+Tos/\+Calc\+:\+\_\+\+I\+M\+C\+O\+T\+\_\+function} 
+
+Definition at line 47 of file ccot.\+c.
+
+
+
+References cimag(), cos(), cosh(), cpack(), creal(), sin(), and sinh().
+
+
+
+Referenced by Complex\+Number\+::\+Cotangent().
+
+
+\begin{DoxyCode}
+48 \{
+49     \hyperlink{unioncomplex}{complex} w;
+50     \textcolor{keywordtype}{double} a, b;
+51     \textcolor{keywordtype}{double} d;
+52 
+53     a = \hyperlink{complex_8h_a4a236b24c0197821e3489a35a72079ab}{creal}(z);
+54     b = \hyperlink{complex_8h_aa1fe0b9371befabef6c41ba73470774a}{cimag}(z);
+55     d = \hyperlink{math_8h_a3795d3c1f1d30819be56da4e4d67f64b}{cosh}(2.0 * b) - \hyperlink{math_8h_a5e7b53a694b3cf0f2d7debd444140fbd}{cos}(2.0 * a);
+56 
+57     \textcolor{keywordflow}{if} (d == 0.0) \{
+58         w = \hyperlink{complex_8h_a980e6e049f7902b05fc9eb5614b07a5c}{cpack}(\hyperlink{cplex_2prim_8h_a5f3d17bf39f78da3422ca52e475d7724}{HUGE}, \hyperlink{cplex_2prim_8h_a5f3d17bf39f78da3422ca52e475d7724}{HUGE}); \textcolor{comment}{// TODO: INF, INF}
+59     \} \textcolor{keywordflow}{else} \{
+60         w = \hyperlink{complex_8h_a980e6e049f7902b05fc9eb5614b07a5c}{cpack}((\hyperlink{math_8h_aad4af25633b071b0e2cdb8ebd87eca77}{sin}(2.0 * a) / d), (-\hyperlink{math_8h_a862012e970c977c482507064e2793b45}{sinh}(2.0 * b) / d));
+61     \}
+62 
+63     \textcolor{keywordflow}{return} w;
+64 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{ccot_8c_af55c6dec4ec4d7992aea8418480c221c_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=292pt]{ccot_8c_af55c6dec4ec4d7992aea8418480c221c_icgraph}
+\end{center}
+\end{figure}
+
+

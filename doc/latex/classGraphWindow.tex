@@ -1,0 +1,206 @@
+\hypertarget{classGraphWindow}{}\section{Graph\+Window Class Reference}
+\label{classGraphWindow}\index{Graph\+Window@{Graph\+Window}}
+
+
+{\ttfamily \#include $<$graph.\+h$>$}
+
+
+
+Collaboration diagram for Graph\+Window\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classGraphWindow__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classGraphWindow_ab8ca84cf6fe5a68e7fb87b7f47636d7d}{Graph\+Window} ()
+\item 
+virtual \hyperlink{classGraphWindow_acca1dc8c3eefe6608ae2de3cee2e22ee}{$\sim$\+Graph\+Window} ()
+\item 
+virtual void \hyperlink{classGraphWindow_a63309cbe3e1989d9eac566372dc888e8}{Open\+Graph\+Window} (\hyperlink{classUserFunction}{User\+Function} $\ast$function)=0
+\item 
+virtual void \hyperlink{classGraphWindow_a8d4db6854a2eb91d5e04fdc91918b56b}{Close\+Graph\+Window} ()=0
+\item 
+virtual void \hyperlink{classGraphWindow_a476a4a268feb290df84b6dc4eeac8af2}{Draw\+Graph} (\hyperlink{classUserFunction}{User\+Function} $\ast$function)=0
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \hyperlink{classGraphWindow_a2640caf2a36c116253f490a980f5cb1f}{Draw\+Axis} ()=0
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classGraphWindow}{Graph\+Window} $\ast$ \hyperlink{classGraphWindow_af84f61254f44fd2ef6b45ab703e45feb}{next}
+\item 
+\hyperlink{classGrid}{Grid} $\ast$ \hyperlink{classGraphWindow_a53b8af9da3f6900be2e8abd569240be6}{grid}
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classGraphWindow_ad6eab2c356c59d79b49d284c72c06671}{Graph\+List}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 42 of file graph.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Graph\+Window@{Graph\+Window}!Graph\+Window@{Graph\+Window}}
+\index{Graph\+Window@{Graph\+Window}!Graph\+Window@{Graph\+Window}}
+\subsubsection[{\texorpdfstring{Graph\+Window()}{GraphWindow()}}]{\setlength{\rightskip}{0pt plus 5cm}Graph\+Window\+::\+Graph\+Window (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classGraphWindow_ab8ca84cf6fe5a68e7fb87b7f47636d7d}{}\label{classGraphWindow_ab8ca84cf6fe5a68e7fb87b7f47636d7d}
+
+
+Definition at line 30 of file graph.\+cpp.
+
+
+
+References grid, and next.
+
+
+\begin{DoxyCode}
+31 \{
+32     \hyperlink{classGraphWindow_a53b8af9da3f6900be2e8abd569240be6}{grid} = \hyperlink{platform_8h_a46ff2bfbf0d44b8466a2251d5bd5e6f8}{NOMEM};
+33     \hyperlink{classGraphWindow_af84f61254f44fd2ef6b45ab703e45feb}{next} = \hyperlink{platform_8h_a46ff2bfbf0d44b8466a2251d5bd5e6f8}{NOMEM};
+34 \}
+\end{DoxyCode}
+\index{Graph\+Window@{Graph\+Window}!````~Graph\+Window@{$\sim$\+Graph\+Window}}
+\index{````~Graph\+Window@{$\sim$\+Graph\+Window}!Graph\+Window@{Graph\+Window}}
+\subsubsection[{\texorpdfstring{$\sim$\+Graph\+Window()}{~GraphWindow()}}]{\setlength{\rightskip}{0pt plus 5cm}Graph\+Window\+::$\sim$\+Graph\+Window (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{classGraphWindow_acca1dc8c3eefe6608ae2de3cee2e22ee}{}\label{classGraphWindow_acca1dc8c3eefe6608ae2de3cee2e22ee}
+
+
+Definition at line 36 of file graph.\+cpp.
+
+
+
+References grid, and next.
+
+
+\begin{DoxyCode}
+37 \{
+38     \textcolor{keywordflow}{if} (\hyperlink{classGraphWindow_a53b8af9da3f6900be2e8abd569240be6}{grid} != \hyperlink{platform_8h_a46ff2bfbf0d44b8466a2251d5bd5e6f8}{NOMEM}) \{
+39         \textcolor{keyword}{delete} \hyperlink{classGraphWindow_a53b8af9da3f6900be2e8abd569240be6}{grid};
+40     \}
+41 
+42     \textcolor{keywordflow}{if} (\hyperlink{classGraphWindow_af84f61254f44fd2ef6b45ab703e45feb}{next} != \hyperlink{platform_8h_a46ff2bfbf0d44b8466a2251d5bd5e6f8}{NOMEM}) \{
+43         \textcolor{keyword}{delete} \hyperlink{classGraphWindow_af84f61254f44fd2ef6b45ab703e45feb}{next};
+44     \}
+45 \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\index{Graph\+Window@{Graph\+Window}!Close\+Graph\+Window@{Close\+Graph\+Window}}
+\index{Close\+Graph\+Window@{Close\+Graph\+Window}!Graph\+Window@{Graph\+Window}}
+\subsubsection[{\texorpdfstring{Close\+Graph\+Window()=0}{CloseGraphWindow()=0}}]{\setlength{\rightskip}{0pt plus 5cm}virtual void Graph\+Window\+::\+Close\+Graph\+Window (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\hypertarget{classGraphWindow_a8d4db6854a2eb91d5e04fdc91918b56b}{}\label{classGraphWindow_a8d4db6854a2eb91d5e04fdc91918b56b}
+\index{Graph\+Window@{Graph\+Window}!Draw\+Axis@{Draw\+Axis}}
+\index{Draw\+Axis@{Draw\+Axis}!Graph\+Window@{Graph\+Window}}
+\subsubsection[{\texorpdfstring{Draw\+Axis()=0}{DrawAxis()=0}}]{\setlength{\rightskip}{0pt plus 5cm}virtual void Graph\+Window\+::\+Draw\+Axis (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}\hypertarget{classGraphWindow_a2640caf2a36c116253f490a980f5cb1f}{}\label{classGraphWindow_a2640caf2a36c116253f490a980f5cb1f}
+\index{Graph\+Window@{Graph\+Window}!Draw\+Graph@{Draw\+Graph}}
+\index{Draw\+Graph@{Draw\+Graph}!Graph\+Window@{Graph\+Window}}
+\subsubsection[{\texorpdfstring{Draw\+Graph(\+User\+Function $\ast$function)=0}{DrawGraph(UserFunction *function)=0}}]{\setlength{\rightskip}{0pt plus 5cm}virtual void Graph\+Window\+::\+Draw\+Graph (
+\begin{DoxyParamCaption}
+\item[{{\bf User\+Function} $\ast$}]{function}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\hypertarget{classGraphWindow_a476a4a268feb290df84b6dc4eeac8af2}{}\label{classGraphWindow_a476a4a268feb290df84b6dc4eeac8af2}
+
+
+Referenced by Draw\+Statement\+::\+Execute().
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classGraphWindow_a476a4a268feb290df84b6dc4eeac8af2_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Graph\+Window@{Graph\+Window}!Open\+Graph\+Window@{Open\+Graph\+Window}}
+\index{Open\+Graph\+Window@{Open\+Graph\+Window}!Graph\+Window@{Graph\+Window}}
+\subsubsection[{\texorpdfstring{Open\+Graph\+Window(\+User\+Function $\ast$function)=0}{OpenGraphWindow(UserFunction *function)=0}}]{\setlength{\rightskip}{0pt plus 5cm}virtual void Graph\+Window\+::\+Open\+Graph\+Window (
+\begin{DoxyParamCaption}
+\item[{{\bf User\+Function} $\ast$}]{function}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\hypertarget{classGraphWindow_a63309cbe3e1989d9eac566372dc888e8}{}\label{classGraphWindow_a63309cbe3e1989d9eac566372dc888e8}
+
+
+Referenced by Draw\+Statement\+::\+Execute().
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classGraphWindow_a63309cbe3e1989d9eac566372dc888e8_icgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Friends And Related Function Documentation}
+\index{Graph\+Window@{Graph\+Window}!Graph\+List@{Graph\+List}}
+\index{Graph\+List@{Graph\+List}!Graph\+Window@{Graph\+Window}}
+\subsubsection[{\texorpdfstring{Graph\+List}{GraphList}}]{\setlength{\rightskip}{0pt plus 5cm}friend class {\bf Graph\+List}\hspace{0.3cm}{\ttfamily [friend]}}\hypertarget{classGraphWindow_ad6eab2c356c59d79b49d284c72c06671}{}\label{classGraphWindow_ad6eab2c356c59d79b49d284c72c06671}
+
+
+Definition at line 55 of file graph.\+h.
+
+
+
+\subsection{Member Data Documentation}
+\index{Graph\+Window@{Graph\+Window}!grid@{grid}}
+\index{grid@{grid}!Graph\+Window@{Graph\+Window}}
+\subsubsection[{\texorpdfstring{grid}{grid}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Grid}$\ast$ Graph\+Window\+::grid\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{classGraphWindow_a53b8af9da3f6900be2e8abd569240be6}{}\label{classGraphWindow_a53b8af9da3f6900be2e8abd569240be6}
+
+
+Definition at line 53 of file graph.\+h.
+
+
+
+Referenced by Graph\+Window(), and $\sim$\+Graph\+Window().
+
+\index{Graph\+Window@{Graph\+Window}!next@{next}}
+\index{next@{next}!Graph\+Window@{Graph\+Window}}
+\subsubsection[{\texorpdfstring{next}{next}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Graph\+Window}$\ast$ Graph\+Window\+::next\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{classGraphWindow_af84f61254f44fd2ef6b45ab703e45feb}{}\label{classGraphWindow_af84f61254f44fd2ef6b45ab703e45feb}
+
+
+Definition at line 52 of file graph.\+h.
+
+
+
+Referenced by Graph\+List\+::\+Create\+New\+Window(), Graph\+Window(), and $\sim$\+Graph\+Window().
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+app/system/\hyperlink{graph_8h}{graph.\+h}\item 
+app/system/\hyperlink{graph_8cpp}{graph.\+cpp}\end{DoxyCompactItemize}

@@ -1,0 +1,86 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="classHyperbolicArctangentNode">
+<title>HyperbolicArctangentNode class Reference</title>
+<para>
+    <programlisting>#include <link linkend="functions_8h">&lt;functions.h&gt;</link></programlisting>
+</para>
+<para>Inheritance diagram for HyperbolicArctangentNode</para>
+<para>
+    <figure>
+        <title>Inheritance graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="classHyperbolicArctangentNode__inherit__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+<para>Collaboration diagram for HyperbolicArctangentNode</para>
+<para>
+    <figure>
+        <title>Collaboration graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="classHyperbolicArctangentNode__coll__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="classHyperbolicArctangentNode_1a4e4d9e88d6c095754631e325318e517a">HyperbolicArctangentNode</link> (
+<link linkend="classExpressionNode">ExpressionNode</link> * expression)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="structNumber">Number</link> * <link linkend="classHyperbolicArctangentNode_1abd0bcfeba3e6c349955f1b149e813177">Evaluate</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>static <link linkend="classFunctionNode">FunctionNode</link> * <link linkend="classHyperbolicArctangentNode_1ac18a119c5ad51586132840b788cfff21">Create</link> (
+<link linkend="classExpressionNode">ExpressionNode</link> * expression)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>char * <link linkend="classHyperbolicArctangentNode_1ab0f196a5e39dc14a3659e4e65bf1da87">GetNodeText</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+            <section xml:id="classHyperbolicArctangentNode_1a4e4d9e88d6c095754631e325318e517a">
+                <title>HyperbolicArctangentNode::HyperbolicArctangentNode (ExpressionNode *expression)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="classHyperbolicArctangentNode_1abd0bcfeba3e6c349955f1b149e813177">
+                <title>Number * HyperbolicArctangentNode::Evaluate ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="classHyperbolicArctangentNode_1ac18a119c5ad51586132840b788cfff21">
+                <title>FunctionNode * HyperbolicArctangentNode::Create (ExpressionNode *expression)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="classHyperbolicArctangentNode_1ab0f196a5e39dc14a3659e4e65bf1da87">
+                <title>char * HyperbolicArctangentNode::GetNodeText ()</title> <emphasis></emphasis>
+                
+            </section>
+</section>

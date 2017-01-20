@@ -1,0 +1,211 @@
+\hypertarget{classSubtractionNode}{}\section{Subtraction\+Node Class Reference}
+\label{classSubtractionNode}\index{Subtraction\+Node@{Subtraction\+Node}}
+
+
+{\ttfamily \#include $<$operators.\+h$>$}
+
+
+
+Inheritance diagram for Subtraction\+Node\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=171pt]{classSubtractionNode__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Subtraction\+Node\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=272pt]{classSubtractionNode__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classSubtractionNode_a1c08339ecfc99430eec6db0b7687c716}{Subtraction\+Node} (\hyperlink{classExpressionNode}{Expression\+Node} $\ast$\hyperlink{classNumericOperator_a55da3c4075408deff978711030fa8258}{left}, \hyperlink{classExpressionNode}{Expression\+Node} $\ast$\hyperlink{classNumericOperator_aa2c5b5bea59bbb068bc6013bc5cac483}{right})
+\item 
+\hyperlink{nodes_8h_ab321a69ad5704b704b8dd9e1b3984a29}{Reduction\+Type} \hyperlink{classSubtractionNode_a4116ea8e86864be1a1ae9420d2b93ac4}{Get\+Reduction\+Type} ()
+\item 
+int \hyperlink{classSubtractionNode_aab0c25ea71d027f844bc332fa0045b6c}{Get\+Precedence} ()
+\item 
+\hyperlink{structNumber}{Number} $\ast$ \hyperlink{classSubtractionNode_a6ab885bb5ab826b5d0c70a63e753f5e3}{Evaluate} ()
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+char $\ast$ \hyperlink{classSubtractionNode_a93deba99c167e46fcb71b129902168de}{Get\+Node\+Text} ()
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 107 of file operators.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Subtraction\+Node@{Subtraction\+Node}!Subtraction\+Node@{Subtraction\+Node}}
+\index{Subtraction\+Node@{Subtraction\+Node}!Subtraction\+Node@{Subtraction\+Node}}
+\subsubsection[{\texorpdfstring{Subtraction\+Node(\+Expression\+Node $\ast$left, Expression\+Node $\ast$right)}{SubtractionNode(ExpressionNode *left, ExpressionNode *right)}}]{\setlength{\rightskip}{0pt plus 5cm}Subtraction\+Node\+::\+Subtraction\+Node (
+\begin{DoxyParamCaption}
+\item[{{\bf Expression\+Node} $\ast$}]{left, }
+\item[{{\bf Expression\+Node} $\ast$}]{right}
+\end{DoxyParamCaption}
+)}\hypertarget{classSubtractionNode_a1c08339ecfc99430eec6db0b7687c716}{}\label{classSubtractionNode_a1c08339ecfc99430eec6db0b7687c716}
+
+
+Definition at line 329 of file operators.\+cpp.
+
+
+
+References Numeric\+Operator\+::\+Numeric\+Operator().
+
+
+
+Referenced by Parser\+::\+Parse\+Add\+Substract().
+
+
+\begin{DoxyCode}
+329                                                                             :
+330     \hyperlink{classNumericOperator_a49cd2230b867cdfca64715aaf6e37561}{NumericOperator}(left, right) \{ \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classSubtractionNode_a1c08339ecfc99430eec6db0b7687c716_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classSubtractionNode_a1c08339ecfc99430eec6db0b7687c716_icgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Member Function Documentation}
+\index{Subtraction\+Node@{Subtraction\+Node}!Evaluate@{Evaluate}}
+\index{Evaluate@{Evaluate}!Subtraction\+Node@{Subtraction\+Node}}
+\subsubsection[{\texorpdfstring{Evaluate()}{Evaluate()}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Number} $\ast$ Subtraction\+Node\+::\+Evaluate (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{classSubtractionNode_a6ab885bb5ab826b5d0c70a63e753f5e3}{}\label{classSubtractionNode_a6ab885bb5ab826b5d0c70a63e753f5e3}
+
+
+Implements \hyperlink{classExpressionNode_a64975d4dc37742228bd522f6204537f7}{Expression\+Node}.
+
+
+
+Definition at line 342 of file operators.\+cpp.
+
+
+
+References Expression\+Node\+::\+Evaluate(), Numeric\+Operator\+::left, Expression\+Node\+::result, Numeric\+Operator\+::right, and Number\+::\+Sub().
+
+
+\begin{DoxyCode}
+343 \{
+344     \hyperlink{classExpressionNode_a1f590649f5a5cb30eb7ee912f7bc1262}{result} = \hyperlink{classNumericOperator_a55da3c4075408deff978711030fa8258}{left}->\hyperlink{classExpressionNode_a64975d4dc37742228bd522f6204537f7}{Evaluate}()->\hyperlink{structNumber_ae64075f6f73ded559499d3156bde0bdb}{Sub}(\hyperlink{classNumericOperator_aa2c5b5bea59bbb068bc6013bc5cac483}{right}->\hyperlink{classExpressionNode_a64975d4dc37742228bd522f6204537f7}{Evaluate}());
+345     \textcolor{keywordflow}{return} \hyperlink{classExpressionNode_a1f590649f5a5cb30eb7ee912f7bc1262}{result};
+346 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classSubtractionNode_a6ab885bb5ab826b5d0c70a63e753f5e3_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{Subtraction\+Node@{Subtraction\+Node}!Get\+Node\+Text@{Get\+Node\+Text}}
+\index{Get\+Node\+Text@{Get\+Node\+Text}!Subtraction\+Node@{Subtraction\+Node}}
+\subsubsection[{\texorpdfstring{Get\+Node\+Text()}{GetNodeText()}}]{\setlength{\rightskip}{0pt plus 5cm}char $\ast$ Subtraction\+Node\+::\+Get\+Node\+Text (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}\hypertarget{classSubtractionNode_a93deba99c167e46fcb71b129902168de}{}\label{classSubtractionNode_a93deba99c167e46fcb71b129902168de}
+
+
+Implements \hyperlink{classExpressionNode_a42a5e9562b0f645a19dcc83f698069b5}{Expression\+Node}.
+
+
+
+Definition at line 348 of file operators.\+cpp.
+
+
+\begin{DoxyCode}
+349 \{
+350     \textcolor{keywordflow}{return} (\textcolor{keywordtype}{char}*)\textcolor{stringliteral}{"-"};
+351 \}
+\end{DoxyCode}
+\index{Subtraction\+Node@{Subtraction\+Node}!Get\+Precedence@{Get\+Precedence}}
+\index{Get\+Precedence@{Get\+Precedence}!Subtraction\+Node@{Subtraction\+Node}}
+\subsubsection[{\texorpdfstring{Get\+Precedence()}{GetPrecedence()}}]{\setlength{\rightskip}{0pt plus 5cm}int Subtraction\+Node\+::\+Get\+Precedence (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{classSubtractionNode_aab0c25ea71d027f844bc332fa0045b6c}{}\label{classSubtractionNode_aab0c25ea71d027f844bc332fa0045b6c}
+
+
+Implements \hyperlink{classExpressionNode_a161b9ea0b79bbfc101d6f687c8481ddd}{Expression\+Node}.
+
+
+
+Definition at line 337 of file operators.\+cpp.
+
+
+\begin{DoxyCode}
+338 \{
+339     \textcolor{keywordflow}{return} 2;
+340 \}
+\end{DoxyCode}
+\index{Subtraction\+Node@{Subtraction\+Node}!Get\+Reduction\+Type@{Get\+Reduction\+Type}}
+\index{Get\+Reduction\+Type@{Get\+Reduction\+Type}!Subtraction\+Node@{Subtraction\+Node}}
+\subsubsection[{\texorpdfstring{Get\+Reduction\+Type()}{GetReductionType()}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Reduction\+Type} Subtraction\+Node\+::\+Get\+Reduction\+Type (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{classSubtractionNode_a4116ea8e86864be1a1ae9420d2b93ac4}{}\label{classSubtractionNode_a4116ea8e86864be1a1ae9420d2b93ac4}
+
+
+Reimplemented from \hyperlink{classSyntaxNode_a5384fc779eee947b5e09bf2adb6cc606}{Syntax\+Node}.
+
+
+
+Definition at line 332 of file operators.\+cpp.
+
+
+
+References complsubreduc.
+
+
+\begin{DoxyCode}
+333 \{
+334     \textcolor{keywordflow}{return} \hyperlink{nodes_8h_ab321a69ad5704b704b8dd9e1b3984a29a86d9dc6f6ce2a9c71c6ce8b4d98567e7}{complsubreduc};
+335 \}
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+app/main/\hyperlink{operators_8h}{operators.\+h}\item 
+app/main/\hyperlink{operators_8cpp}{operators.\+cpp}\end{DoxyCompactItemize}

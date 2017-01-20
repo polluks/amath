@@ -1,0 +1,424 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="classParser">
+<title>Parser class Reference</title>
+<para>
+    <programlisting>#include <link linkend="parser_8h">&lt;parser.h&gt;</link></programlisting>
+</para>
+<para>Inheritance diagram for Parser</para>
+<para>
+    <figure>
+        <title>Inheritance graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="classParser__inherit__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+<para>Collaboration diagram for Parser</para>
+<para>
+    <figure>
+        <title>Collaboration graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="classParser__coll__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+        <section>
+            <title>Private Attributes</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>Lexer * lexer</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>Token * token</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int syntaxError</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>ErrorNode * errorNode</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="classParser_1a40600baa2c3d4262fd8b770a4615aed0">Parser</link> (
+const char * input)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="classParser_1a3e658b5917a93a3ef648050d060e3a93">~Parser</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="classSyntaxNode">SyntaxNode</link> * <link linkend="classParser_1a1861d1d9cc6165970cf07e07cacd11df">Parse</link> (
+)<para><emphasis>Parses the input into a syntax tree.</emphasis></para>
+</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="classSyntaxNode">SyntaxNode</link> * <link linkend="classParser_1aca8329fb5ee4812398144fd1d647fe39">ParseDefault</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="classSyntaxNode">SyntaxNode</link> * <link linkend="classParser_1aeef41071b484e09942290ab55953dc4f">TryParseStatement</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="classSyntaxNode">SyntaxNode</link> * <link linkend="classParser_1a370277018ad3e0e157a8ff5849892f7d">ParseStatement</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="classSyntaxNode">SyntaxNode</link> * <link linkend="classParser_1a19c5b6055d066d21ad39a32287e833c2">ParseEvaluation</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="classExpressionNode">ExpressionNode</link> * <link linkend="classParser_1ae46b0a87abe76f40ae117c5bdcb2f29d">ParseExpression</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="classExpressionNode">ExpressionNode</link> * <link linkend="classParser_1a47ba11ddd167c1b0b5cf1d2fd1cf1ccd">ParseAddSubstract</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="classExpressionNode">ExpressionNode</link> * <link linkend="classParser_1a70c674c7b40f7a0ab1df0523c4c8c530">ParseFactor</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="classExpressionNode">ExpressionNode</link> * <link linkend="classParser_1ad6ccc6e873d1fb3dcfa142655a5b0732">ParsePower</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="classExpressionNode">ExpressionNode</link> * <link linkend="classParser_1a446237993f806a92dd3e78ba8019f4f5">ParseUnary</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="classExpressionNode">ExpressionNode</link> * <link linkend="classParser_1ac1a69267c9414b54a4b592c9ad084780">ParseAtomic</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="classExpressionNode">ExpressionNode</link> * <link linkend="classParser_1a84af27a6f4e42888eba6ac36ccd0815c">ParseIdent</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="classExpressionNode">ExpressionNode</link> * <link linkend="classParser_1a769d580b14d3d097ed255ad869cc1653">ParseNumber</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="classSyntaxNode">SyntaxNode</link> * <link linkend="classParser_1a0e8b1f794af2b9923bc3fcb7498004f9">ParseFunctionDef</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="classSyntaxNode">SyntaxNode</link> * <link linkend="classParser_1a1e00b1a9ee0541508953564442312526">ParseHelpStatement</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="classSyntaxNode">SyntaxNode</link> * <link linkend="classParser_1a41008319e22949c5a6045e3859335000">ParseDeleteStatement</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="classSyntaxNode">SyntaxNode</link> * <link linkend="classParser_1aa0642d13c500401b168035f9fcdbe1f4">ParseListStatement</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="classSyntaxNode">SyntaxNode</link> * <link linkend="classParser_1a3c671b953bee260ed4eb3f5c30ededc2">ParseFileStatement</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="classSyntaxNode">SyntaxNode</link> * <link linkend="classParser_1ae2a3cdedfb708c19c7552fd402a224c6">ParseNumeralStatement</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="classSyntaxNode">SyntaxNode</link> * <link linkend="classParser_1a14aa2850063f998f76530e027c3ef399">ParseDigistStatement</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="classSyntaxNode">SyntaxNode</link> * <link linkend="classParser_1a38a55851f31c226c193090403dfbaff8">ParseDrawStatement</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="classSyntaxNode">SyntaxNode</link> * <link linkend="classParser_1a3ff34c9305bf6b5f10aacf27e5d20c28">ParsePromptStatement</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="classSyntaxNode">SyntaxNode</link> * <link linkend="classParser_1ab655f0d3ad73a8ec8a299d2e2e3248ea">ParsePrefsStatement</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="classParser_1a415a103e66558b4d366d9a1420561fe3">GetToken</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="classParser_1adb5c3a188b36f7ecb198ae30f06338b3">PutToken</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="platform_8h_1a1062901a7428fdd9c7f180f5e01ea056">bool</link> <link linkend="classParser_1a811765334b0cd3f01152c35c9f5bcaec">Expect</link> (
+<link linkend="lex_8h_1a7feef761cd73fac6e25b8bb80d2c4e54">Symbol</link> symbol)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+    <simplesect>
+
+<para>Encapsulates a recursive descent parser. </para>
+    </simplesect>
+        <simplesect>
+            <title>Detailed Description</title>
+
+<para>More info on recursive descent parsers is available at Wikipedia: <link xlink:href="http://en.wikipedia.org/wiki/Recursive_descent_parser">http://en.wikipedia.org/wiki/Recursive_descent_parser</link> </para>
+                <para>Definition at line 49 of file parser.h</para>
+                <para>The Documentation for this struct was generated from the following file: </para>
+                <para><itemizedlist><listitem><para>parser.h</para></listitem></itemizedlist></para>
+        </simplesect>
+        <section>
+            <title>Member Data Documentation</title>
+        </section>
+            <section xml:id="classParser_1a40600baa2c3d4262fd8b770a4615aed0">
+                <title>Parser::Parser (const char *input)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="classParser_1a3e658b5917a93a3ef648050d060e3a93">
+                <title>Parser::~Parser ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="classParser_1a1861d1d9cc6165970cf07e07cacd11df">
+                <title>SyntaxNode * Parser::Parse ()</title> <emphasis>Parses the input into a syntax tree.</emphasis>
+                
+<para><formalpara><title>Returns: </title>
+
+<para>SyntaxNode* representing a pointer to the top node of the tree. Notice: The caller is responsible for releasing memory. </para>
+</formalpara>
+</para>
+
+            </section>
+            <section xml:id="classParser_1aca8329fb5ee4812398144fd1d647fe39">
+                <title>SyntaxNode * Parser::ParseDefault ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="classParser_1aeef41071b484e09942290ab55953dc4f">
+                <title>SyntaxNode * Parser::TryParseStatement ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="classParser_1a370277018ad3e0e157a8ff5849892f7d">
+                <title>SyntaxNode * Parser::ParseStatement ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="classParser_1a19c5b6055d066d21ad39a32287e833c2">
+                <title>SyntaxNode * Parser::ParseEvaluation ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="classParser_1ae46b0a87abe76f40ae117c5bdcb2f29d">
+                <title>ExpressionNode * Parser::ParseExpression ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="classParser_1a47ba11ddd167c1b0b5cf1d2fd1cf1ccd">
+                <title>ExpressionNode * Parser::ParseAddSubstract ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="classParser_1a70c674c7b40f7a0ab1df0523c4c8c530">
+                <title>ExpressionNode * Parser::ParseFactor ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="classParser_1ad6ccc6e873d1fb3dcfa142655a5b0732">
+                <title>ExpressionNode * Parser::ParsePower ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="classParser_1a446237993f806a92dd3e78ba8019f4f5">
+                <title>ExpressionNode * Parser::ParseUnary ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="classParser_1ac1a69267c9414b54a4b592c9ad084780">
+                <title>ExpressionNode * Parser::ParseAtomic ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="classParser_1a84af27a6f4e42888eba6ac36ccd0815c">
+                <title>ExpressionNode * Parser::ParseIdent ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="classParser_1a769d580b14d3d097ed255ad869cc1653">
+                <title>ExpressionNode * Parser::ParseNumber ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="classParser_1a0e8b1f794af2b9923bc3fcb7498004f9">
+                <title>SyntaxNode * Parser::ParseFunctionDef ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="classParser_1a1e00b1a9ee0541508953564442312526">
+                <title>SyntaxNode * Parser::ParseHelpStatement ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="classParser_1a41008319e22949c5a6045e3859335000">
+                <title>SyntaxNode * Parser::ParseDeleteStatement ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="classParser_1aa0642d13c500401b168035f9fcdbe1f4">
+                <title>SyntaxNode * Parser::ParseListStatement ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="classParser_1a3c671b953bee260ed4eb3f5c30ededc2">
+                <title>SyntaxNode * Parser::ParseFileStatement ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="classParser_1ae2a3cdedfb708c19c7552fd402a224c6">
+                <title>SyntaxNode * Parser::ParseNumeralStatement ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="classParser_1a14aa2850063f998f76530e027c3ef399">
+                <title>SyntaxNode * Parser::ParseDigistStatement ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="classParser_1a38a55851f31c226c193090403dfbaff8">
+                <title>SyntaxNode * Parser::ParseDrawStatement ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="classParser_1a3ff34c9305bf6b5f10aacf27e5d20c28">
+                <title>SyntaxNode * Parser::ParsePromptStatement ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="classParser_1ab655f0d3ad73a8ec8a299d2e2e3248ea">
+                <title>SyntaxNode * Parser::ParsePrefsStatement ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="classParser_1a415a103e66558b4d366d9a1420561fe3">
+                <title>void Parser::GetToken ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="classParser_1adb5c3a188b36f7ecb198ae30f06338b3">
+                <title>void Parser::PutToken ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="classParser_1a811765334b0cd3f01152c35c9f5bcaec">
+                <title>bool Parser::Expect (Symbol symbol)</title> <emphasis></emphasis>
+                
+            </section>
+</section>

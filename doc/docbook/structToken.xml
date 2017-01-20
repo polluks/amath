@@ -1,0 +1,176 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="structToken">
+<title>Token struct Reference</title>
+<para>
+    <programlisting>#include <link linkend="token_8h">&lt;token.h&gt;</link></programlisting>
+</para>
+<para>Inheritance diagram for Token</para>
+<para>
+    <figure>
+        <title>Inheritance graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="structToken__inherit__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+<para>Collaboration diagram for Token</para>
+<para>
+    <figure>
+        <title>Collaboration graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="structToken__coll__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+        <section>
+            <title>Public Attributes</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>Symbol symbol</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title>Private Attributes</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int pos</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>char * text</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>Token * last</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>Token * next</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="structToken_1a6331b847b4dc8cebe0e0a79c4de63204">Token</link> (
+<link linkend="structToken">Token</link> * last, <link linkend="lex_8h_1a7feef761cd73fac6e25b8bb80d2c4e54">Symbol</link> symbol, int pos)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="structToken_1a5c78001ebd223017c11e5327667d458a">Token</link> (
+<link linkend="structToken">Token</link> * last, <link linkend="lex_8h_1a7feef761cd73fac6e25b8bb80d2c4e54">Symbol</link> symbol, const char * text, int pos)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="structToken_1a3d7d59eaac1535df1433357d5d372f84">~Token</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="structToken_1a5f93ea94940a6eeb060507e1da594599">GetPos</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>char * <link linkend="structToken_1a15f1043de07ce8e452fbf115b85def71">GetText</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="structToken">Token</link> * <link linkend="structToken_1af5213b25192a01f526143461ab47e6af">GetLastToken</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="structToken">Token</link> * <link linkend="structToken_1ac7eb963d5eff544dd48ffc23aa274356">GetNextToken</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+    <simplesect>
+
+<para>Tokens are created by the Lexical Analyzer and provides an intermediate state for input consumed by the parser. </para>
+    </simplesect>
+        <section>
+            <title>Member Data Documentation</title>
+        </section>
+        <section>
+            <title>Member Data Documentation</title>
+        </section>
+            <section xml:id="structToken_1a6331b847b4dc8cebe0e0a79c4de63204">
+                <title>Token::Token (Token *last, Symbol symbol, int pos)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="structToken_1a5c78001ebd223017c11e5327667d458a">
+                <title>Token::Token (Token *last, Symbol symbol, const char *text, int pos)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="structToken_1a3d7d59eaac1535df1433357d5d372f84">
+                <title>Token::~Token ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="structToken_1a5f93ea94940a6eeb060507e1da594599">
+                <title>int Token::GetPos ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="structToken_1a15f1043de07ce8e452fbf115b85def71">
+                <title>char * Token::GetText ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="structToken_1af5213b25192a01f526143461ab47e6af">
+                <title>Token * Token::GetLastToken ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="structToken_1ac7eb963d5eff544dd48ffc23aa274356">
+                <title>Token * Token::GetNextToken ()</title> <emphasis></emphasis>
+                
+            </section>
+</section>

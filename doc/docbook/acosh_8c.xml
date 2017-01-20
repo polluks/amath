@@ -1,0 +1,61 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="acosh_8c">
+    <title>acosh.c File Reference</title>
+    <programlisting>#include &quot;prim.h&quot;</programlisting>
+    <programlisting>#include &quot;math.h&quot;</programlisting>
+<para>Include dependency diagram for acosh.c</para>
+<para>
+    <figure>
+        <title>Dependency diagram</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="acosh_8c__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+<para>Included by dependency diagram for acosh.c</para>
+<para>
+    <figure>
+        <title>Dependency diagram</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="acosh_8c__dep__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+        <section>
+            <title>Variables</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>static const double <link linkend="acosh_8c_1ada85e349d35971b32c8ea4238881ff8b">one</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>static const double <link linkend="acosh_8c_1a703f4fc93e5a57058ce6ba2ba196918d">ln2</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title>Functions</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>double <link linkend="acosh_8c_1ac862445bcb46911b1782c284829d5e46">acosh</link> (
+double x)<para><emphasis>Inverse hyperbolic cosine function.</emphasis></para>
+</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+    <simplesect>
+        <title>Detailed Description</title>
+    <para>Definition in file /home/carsten/amath/lib/real/acosh.c</para>
+    </simplesect>
+</section>

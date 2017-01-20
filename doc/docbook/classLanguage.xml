@@ -1,0 +1,327 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="classLanguage">
+<title>Language class Reference</title>
+<para>
+    <programlisting>#include <link linkend="language_8h">&lt;language.h&gt;</link></programlisting>
+</para>
+<para>Inheritance diagram for Language</para>
+<para>
+    <figure>
+        <title>Inheritance graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="classLanguage__inherit__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+<para>Collaboration diagram for Language</para>
+<para>
+    <figure>
+        <title>Collaboration graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="classLanguage__coll__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+        <section>
+            <title>Protected Attributes</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>keyworddef * keywordsloc</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>unsigned int keywordcount</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>unsigned int textcount</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>unsigned int identcount</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>unsigned int helpcount</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>unsigned int aliascount</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title>Private Attributes</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>char * lastText</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="classLanguage_1a09448361f9188bceaaeebc5576cd6896">Language</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>virtual <link linkend="classLanguage_1a1e78a8e5c6383032a157eef5b08ca942">~Language</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>char * <link linkend="classLanguage_1aaed350eac1a57388b010e73826e3ab83">GetText</link> (
+int id)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>char * <link linkend="classLanguage_1a0044feceac32f8ce943b88165ade965e">GetHelpText</link> (
+char * ident)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>char * <link linkend="classLanguage_1ad2c5b22fcacde4bbff0e3c013dce4a96">GetHelpText</link> (
+<link linkend="lex_8h_1a7feef761cd73fac6e25b8bb80d2c4e54">Symbol</link> symbol)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="lex_8h_1a7feef761cd73fac6e25b8bb80d2c4e54">Symbol</link> <link linkend="classLanguage_1a8a9aa7fef5a0c2c3626249705292e71a">FindKeyword</link> (
+const char * ident)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>virtual char <link linkend="classLanguage_1a4c214f08d47e84d53f37bcb5b1fe1b65">GetFractionPoint</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>virtual <link linkend="platform_8h_1a1062901a7428fdd9c7f180f5e01ea056">bool</link> <link linkend="classLanguage_1aae4b207df20ebca6181cf336b4d7bccb">CharIsAlNum</link> (
+unsigned long character)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>virtual <link linkend="platform_8h_1a1062901a7428fdd9c7f180f5e01ea056">bool</link> <link linkend="classLanguage_1a179619af0ab0e5159b9fd4158dcac3a9">CharIsAlpha</link> (
+unsigned long character)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>virtual <link linkend="platform_8h_1a1062901a7428fdd9c7f180f5e01ea056">bool</link> <link linkend="classLanguage_1a9f165e7098006b44eadd61e0c95f925b">CharIsDigit</link> (
+unsigned long character)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>virtual <link linkend="platform_8h_1a1062901a7428fdd9c7f180f5e01ea056">bool</link> <link linkend="classLanguage_1a7f94a1b716febb63aec10f9f10bed945">CharIsPunct</link> (
+unsigned long character)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>virtual <link linkend="platform_8h_1a1062901a7428fdd9c7f180f5e01ea056">bool</link> <link linkend="classLanguage_1a1470832710ca9c4e4695bb442759c0a7">CharIsSpace</link> (
+unsigned long character)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>virtual <link linkend="platform_8h_1a1062901a7428fdd9c7f180f5e01ea056">bool</link> <link linkend="classLanguage_1a392214aa8de840d1cf7b738945ce1799">CharIsCntrl</link> (
+unsigned long character)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>virtual <link linkend="platform_8h_1a1062901a7428fdd9c7f180f5e01ea056">bool</link> <link linkend="classLanguage_1a68d70b8d5232b4fa0b03268531dca0a3">StrIsEqualLoc</link> (
+const char * s1, const char * s2)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>virtual char * <link linkend="classLanguage_1ae4515a9a4191e57c5ccab61e99687818">Translate</link> (
+<link linkend="structtextdef">textdef</link> * def)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>virtual char * <link linkend="classLanguage_1aa51c505262ca738bf4675fc87f96dbf6">Translate</link> (
+<link linkend="structhelptextdef">helptextdef</link> * def)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>virtual char * <link linkend="classLanguage_1a232a8b51c7866013363b9916fe89299c">Translate</link> (
+<link linkend="structidenthelpdef">identhelpdef</link> * def)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>char * <link linkend="classLanguage_1a14a991ea42d5d0482911d459ee68e8be">FindAlias</link> (
+const char * ident)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>char * <link linkend="classLanguage_1a69c5b3269ec8570a2f8f28e8e632cf44">UntagText</link> (
+const char * text)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title>Member Data Documentation</title>
+        </section>
+        <section>
+            <title>Member Data Documentation</title>
+        </section>
+            <section xml:id="classLanguage_1a09448361f9188bceaaeebc5576cd6896">
+                <title>Language::Language ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="classLanguage_1a1e78a8e5c6383032a157eef5b08ca942">
+                <title>Language::~Language ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="classLanguage_1aaed350eac1a57388b010e73826e3ab83">
+                <title>char * Language::GetText (int id)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="classLanguage_1a0044feceac32f8ce943b88165ade965e">
+                <title>char * Language::GetHelpText (char *ident)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="classLanguage_1ad2c5b22fcacde4bbff0e3c013dce4a96">
+                <title>char * Language::GetHelpText (Symbol symbol)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="classLanguage_1a8a9aa7fef5a0c2c3626249705292e71a">
+                <title>Symbol Language::FindKeyword (const char *ident)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="classLanguage_1a4c214f08d47e84d53f37bcb5b1fe1b65">
+                <title>virtual char Language::GetFractionPoint ()=0</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="classLanguage_1aae4b207df20ebca6181cf336b4d7bccb">
+                <title>virtual bool Language::CharIsAlNum (unsigned long character)=0</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="classLanguage_1a179619af0ab0e5159b9fd4158dcac3a9">
+                <title>virtual bool Language::CharIsAlpha (unsigned long character)=0</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="classLanguage_1a9f165e7098006b44eadd61e0c95f925b">
+                <title>virtual bool Language::CharIsDigit (unsigned long character)=0</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="classLanguage_1a7f94a1b716febb63aec10f9f10bed945">
+                <title>virtual bool Language::CharIsPunct (unsigned long character)=0</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="classLanguage_1a1470832710ca9c4e4695bb442759c0a7">
+                <title>virtual bool Language::CharIsSpace (unsigned long character)=0</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="classLanguage_1a392214aa8de840d1cf7b738945ce1799">
+                <title>virtual bool Language::CharIsCntrl (unsigned long character)=0</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="classLanguage_1a68d70b8d5232b4fa0b03268531dca0a3">
+                <title>virtual bool Language::StrIsEqualLoc (const char *s1, const char *s2)=0</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="classLanguage_1ae4515a9a4191e57c5ccab61e99687818">
+                <title>virtual char* Language::Translate (textdef *def)=0</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="classLanguage_1aa51c505262ca738bf4675fc87f96dbf6">
+                <title>virtual char* Language::Translate (helptextdef *def)=0</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="classLanguage_1a232a8b51c7866013363b9916fe89299c">
+                <title>virtual char* Language::Translate (identhelpdef *def)=0</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="classLanguage_1a14a991ea42d5d0482911d459ee68e8be">
+                <title>char * Language::FindAlias (const char *ident)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="classLanguage_1a69c5b3269ec8570a2f8f28e8e632cf44">
+                <title>char * Language::UntagText (const char *text)</title> <emphasis></emphasis>
+                
+            </section>
+</section>

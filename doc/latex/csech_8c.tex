@@ -1,0 +1,95 @@
+\hypertarget{csech_8c}{}\section{lib/cplex/csech.c File Reference}
+\label{csech_8c}\index{lib/cplex/csech.\+c@{lib/cplex/csech.\+c}}
+{\ttfamily \#include \char`\"{}prim.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}math.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}complex.\+h\char`\"{}}\\*
+Include dependency graph for csech.\+c\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=221pt]{csech_8c__incl}
+\end{center}
+\end{figure}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{unioncomplex}{complex} \hyperlink{csech_8c_aa639638fbf6b2c819fd8fb3c093ca012}{csech} (\hyperlink{unioncomplex}{complex} z)
+\begin{DoxyCompactList}\small\item\em Hyperbolic secant of a complex number. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\index{csech.\+c@{csech.\+c}!csech@{csech}}
+\index{csech@{csech}!csech.\+c@{csech.\+c}}
+\subsubsection[{\texorpdfstring{csech(complex z)}{csech(complex z)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf complex} csech (
+\begin{DoxyParamCaption}
+\item[{{\bf complex}}]{z}
+\end{DoxyParamCaption}
+)}\hypertarget{csech_8c_aa639638fbf6b2c819fd8fb3c093ca012}{}\label{csech_8c_aa639638fbf6b2c819fd8fb3c093ca012}
+
+
+Hyperbolic secant of a complex number. 
+
+Calculated as in Open Office\+:~\newline
+ \href{https://wiki.openoffice.org/wiki/Documentation/How_Tos/Calc:_IMSECH_function}{\tt https\+://wiki.\+openoffice.\+org/wiki/\+Documentation/\+How\+\_\+\+Tos/\+Calc\+:\+\_\+\+I\+M\+S\+E\+C\+H\+\_\+function} 
+\begin{DoxyPre}
+a+bi
+            2.0 * cosh(a) * cos(b)
+real  = ------------------------------
+         cosh(2.0 * a) + cos(2.0 * b)\end{DoxyPre}
+
+
+
+\begin{DoxyPre}        -2.0 * sinh(2.0 * a) * sin(b)
+imag  = ------------------------------
+         cosh(2.0 * a) + cos(2.0 * b)
+\end{DoxyPre}
+ 
+
+Definition at line 47 of file csech.\+c.
+
+
+
+References cimag(), cos(), cosh(), cpack(), creal(), sin(), and sinh().
+
+
+
+Referenced by Complex\+Number\+::\+Hyp\+Secant().
+
+
+\begin{DoxyCode}
+48 \{
+49     \hyperlink{unioncomplex}{complex} w;
+50     \textcolor{keywordtype}{double} a, b;
+51     \textcolor{keywordtype}{double} d;
+52 
+53     a = \hyperlink{complex_8h_a4a236b24c0197821e3489a35a72079ab}{creal}(z);
+54     b = \hyperlink{complex_8h_aa1fe0b9371befabef6c41ba73470774a}{cimag}(z);
+55     d = \hyperlink{math_8h_a3795d3c1f1d30819be56da4e4d67f64b}{cosh}(2.0 * a) + \hyperlink{math_8h_a5e7b53a694b3cf0f2d7debd444140fbd}{cos}(2.0 * b);
+56     w = \hyperlink{complex_8h_a980e6e049f7902b05fc9eb5614b07a5c}{cpack}((2.0 * \hyperlink{math_8h_a3795d3c1f1d30819be56da4e4d67f64b}{cosh}(a) * \hyperlink{math_8h_a5e7b53a694b3cf0f2d7debd444140fbd}{cos}(b) / d), (-2.0 * \hyperlink{math_8h_a862012e970c977c482507064e2793b45}{sinh}(a) * 
+      \hyperlink{math_8h_aad4af25633b071b0e2cdb8ebd87eca77}{sin}(b) / d));
+57 
+58     \textcolor{keywordflow}{return} w;
+59 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{csech_8c_aa639638fbf6b2c819fd8fb3c093ca012_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=304pt]{csech_8c_aa639638fbf6b2c819fd8fb3c093ca012_icgraph}
+\end{center}
+\end{figure}
+
+

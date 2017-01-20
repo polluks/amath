@@ -1,0 +1,30 @@
+<map id="Optimizer::Optimize" name="Optimizer::Optimize">
+<area shape="rect" id="node2" href="$classOptimizer.html#ad84621adb872b88ab7fdb3672064cfdb" title="Optimizer::BalanceTree" alt="" coords="215,307,373,333"/>
+<area shape="rect" id="node11" href="$classOptimizer.html#aef8d80bb6301ee01a7ed271148438733" title="Optimizer::ReduceUnaryNodes" alt="" coords="192,611,396,637"/>
+<area shape="rect" id="node17" href="$classOptimizer.html#a5b45089aff3c6568f3531faa9e701f21" title="Optimizer::ReduceValueNodes" alt="" coords="193,864,395,891"/>
+<area shape="rect" id="node26" href="$classOptimizer.html#a5227e42d69dcbf08fde579642a98c78c" title="Optimizer::TagChildren" alt="" coords="492,29,648,56"/>
+<area shape="rect" id="node28" href="$classOptimizer.html#a2b71012237663dc9459a908fba6fbecc" title="Optimizer::TagStartNode" alt="" coords="487,1192,653,1219"/>
+<area shape="rect" id="node3" href="$classSyntaxNode.html#af25fd5963125bb2d6b9a1864b9ff79c8" title="SyntaxNode::Attach" alt="" coords="500,80,640,107"/>
+<area shape="rect" id="node4" href="$classSyntaxNode.html#ae57f629a5c5fa0994f036c105396da69" title="SyntaxNode::Detach" alt="" coords="498,357,642,384"/>
+<area shape="rect" id="node5" href="$classSyntaxNode.html#af1fa46ba30aa4f2affa2d4e96a4be010" title="SyntaxNode::GetNext" alt="" coords="780,535,931,561"/>
+<area shape="rect" id="node6" href="$classSyntaxNode.html#aef71a18975535d050393f0541b3cdc6a" title="SyntaxNode::GetNodeType" alt="" coords="479,408,661,435"/>
+<area shape="rect" id="node7" href="$classSyntaxNode.html#a4a85fd710ad44edbc5b3ac625c10cd08" title="SyntaxNode::GetParent" alt="" coords="489,509,651,536"/>
+<area shape="rect" id="node8" href="$classExpressionNode.html#a161b9ea0b79bbfc101d6f687c8481ddd" title="ExpressionNode::GetPrecedence" alt="" coords="462,181,678,208"/>
+<area shape="rect" id="node9" href="$classOptimizer.html#a4a80c3e845604f1ea53a6bfc187b2bba" title="Optimizer::GetTreeDepth" alt="" coords="486,256,654,283"/>
+<area shape="rect" id="node10" href="$classSyntaxNode.html#ac51307368fb255aa760b99e137178c89" title="SyntaxNode::ResetIterator" alt="" coords="766,357,945,384"/>
+<area shape="rect" id="node12" href="$classSyntaxNode.html#a5384fc779eee947b5e09bf2adb6cc606" title="SyntaxNode::GetReductionType" alt="" coords="465,712,675,739"/>
+<area shape="rect" id="node13" href="$classSyntaxNode.html#a2797ff5eb05f3a36ae1be41b70105e05" title="SyntaxNode::Replace" alt="" coords="495,763,645,789"/>
+<area shape="rect" id="node14" href="$classNumericValueNode.html#abdd2e6fd1723488a24a645fec481a971" title="NumericValueNode::Evaluate" alt="" coords="473,813,667,840"/>
+<area shape="rect" id="node15" href="$structNumber.html#a4283e401f772614fc566db78087cf860" title="Number::Unary" alt="" coords="515,611,625,637"/>
+<area shape="rect" id="node16" href="$classNumericValueNode.html#ab46507560d70b5e4396f1f5fba5368ec" title="NumericValueNode::ReplaceWith" alt="" coords="461,560,679,587"/>
+<area shape="rect" id="node18" href="$classNumericValueNode.html#ad75510c6a6e06f4004248d072cd5c3cb" title="NumericValueNode::GetReductionType" alt="" coords="444,915,696,941"/>
+<area shape="rect" id="node19" href="$structNumber.html#a037b461c2c9189c00b11f395a325735d" title="Number::PureComplexValue" alt="" coords="476,965,664,992"/>
+<area shape="rect" id="node20" href="$structNumber.html#af38172a47d725f10b8586846cb06e8a4" title="Number::Add" alt="" coords="521,1016,619,1043"/>
+<area shape="rect" id="node21" href="$structNumber.html#ae64075f6f73ded559499d3156bde0bdb" title="Number::Sub" alt="" coords="521,1067,619,1093"/>
+<area shape="rect" id="node22" href="$classNumericValueNode.html#a5ad87623d57e875b72d8f166c578231f" title="NumericValueNode::Numeric\lValueNode" alt="" coords="474,1243,666,1285"/>
+<area shape="rect" id="node23" href="$classExpressionNode.html#a5d67579dd6c9777a18455a1360f29841" title="ExpressionNode::ExpressionNode" alt="" coords="744,1251,967,1277"/>
+<area shape="rect" id="node24" href="$classSyntaxNode.html#ac94372d402f38a118b4e8cd20ba7e520" title="SyntaxNode::SyntaxNode" alt="" coords="1015,1251,1189,1277"/>
+<area shape="rect" id="node25" href="$classCharBuffer.html#a4345e9a5114f5c0292e8f242f26e3a7b" title="Initialize without allocating memory. " alt="" coords="1237,1251,1393,1277"/>
+<area shape="rect" id="node27" href="$classSyntaxNode.html#a7902bb2c389a784c11c2b649a84824e9" title="SyntaxNode::SetParent" alt="" coords="775,29,935,56"/>
+<area shape="rect" id="node29" href="$classSyntaxNode.html#a24e2d5b5e94a67ce55cea52cd48212e6" title="SyntaxNode::SetFirstNode" alt="" coords="766,1192,945,1219"/>
+</map>

@@ -1,0 +1,362 @@
+\hypertarget{classDecimalSystem}{}\section{Decimal\+System Class Reference}
+\label{classDecimalSystem}\index{Decimal\+System@{Decimal\+System}}
+
+
+{\ttfamily \#include $<$ntext.\+h$>$}
+
+
+
+Inheritance diagram for Decimal\+System\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=210pt]{classDecimalSystem__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Decimal\+System\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=210pt]{classDecimalSystem__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classDecimalSystem_a96bf562ac5934445ce10dd6d973a9db3}{Decimal\+System} ()
+\item 
+\hyperlink{classDecimalSystem_a726d1a38079ae571c54adfbd0724a0a3}{Decimal\+System} (unsigned int \hyperlink{classPositionalNumeralSystem_a0a9e8e3f5d46e3c12dd3fc994ed2c1e6}{digits})
+\item 
+\hyperlink{classDecimalSystem_a0622c834a7a4a0dc452ab4cab8d84902}{Decimal\+System} (unsigned int \hyperlink{classPositionalNumeralSystem_a0a9e8e3f5d46e3c12dd3fc994ed2c1e6}{digits}, const char \hyperlink{classPositionalNumeralSystem_ad986e454b020c21e70f2efbc3682e44f}{fractionpoint})
+\item 
+\hyperlink{classDecimalSystem_a1a3c3296ae4cd214cd94359982e46dee}{$\sim$\+Decimal\+System} ()
+\item 
+virtual const char $\ast$ \hyperlink{classDecimalSystem_ab43f764ed35fe831a16a356bbdc72441}{Get\+Text} (\hyperlink{structNumber}{Number} $\ast$number)
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+const char $\ast$ \hyperlink{classDecimalSystem_a7b3744c834e092220ab3c2b7ed8eee47}{Get\+Real\+Text} (double value)
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 98 of file ntext.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Decimal\+System@{Decimal\+System}!Decimal\+System@{Decimal\+System}}
+\index{Decimal\+System@{Decimal\+System}!Decimal\+System@{Decimal\+System}}
+\subsubsection[{\texorpdfstring{Decimal\+System()}{DecimalSystem()}}]{\setlength{\rightskip}{0pt plus 5cm}Decimal\+System\+::\+Decimal\+System (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classDecimalSystem_a96bf562ac5934445ce10dd6d973a9db3}{}\label{classDecimalSystem_a96bf562ac5934445ce10dd6d973a9db3}
+
+
+Definition at line 355 of file ntext.\+cpp.
+
+
+
+References Positional\+Numeral\+System\+::\+Positional\+Numeral\+System().
+
+
+\begin{DoxyCode}
+355                              :
+356     \hyperlink{classPositionalNumeralSystem_a923f36569ecc830f17bcf56dd2811754}{PositionalNumeralSystem}(10, 5, \textcolor{charliteral}{'\(\backslash\)0'})
+357 \{ \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classDecimalSystem_a96bf562ac5934445ce10dd6d973a9db3_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{Decimal\+System@{Decimal\+System}!Decimal\+System@{Decimal\+System}}
+\index{Decimal\+System@{Decimal\+System}!Decimal\+System@{Decimal\+System}}
+\subsubsection[{\texorpdfstring{Decimal\+System(unsigned int digits)}{DecimalSystem(unsigned int digits)}}]{\setlength{\rightskip}{0pt plus 5cm}Decimal\+System\+::\+Decimal\+System (
+\begin{DoxyParamCaption}
+\item[{unsigned int}]{digits}
+\end{DoxyParamCaption}
+)}\hypertarget{classDecimalSystem_a726d1a38079ae571c54adfbd0724a0a3}{}\label{classDecimalSystem_a726d1a38079ae571c54adfbd0724a0a3}
+
+
+Definition at line 359 of file ntext.\+cpp.
+
+
+
+References Positional\+Numeral\+System\+::\+Positional\+Numeral\+System().
+
+
+
+Referenced by Memory\+Statement\+::\+Execute(), Digits\+Statement\+::\+Execute(), Plot\+Statement\+::\+Execute(), Preferences\+Base\+::\+Get\+Description(), Positional\+Numeral\+System\+::\+Get\+Name(), Parser\+::\+Parse\+Digist\+Statement(), and Parser\+::\+Parse\+Numeral\+Statement().
+
+
+\begin{DoxyCode}
+359                                                 :
+360     \hyperlink{classPositionalNumeralSystem_a923f36569ecc830f17bcf56dd2811754}{PositionalNumeralSystem}(10, \hyperlink{classPositionalNumeralSystem_a0a9e8e3f5d46e3c12dd3fc994ed2c1e6}{digits}, \textcolor{charliteral}{'.'})
+361 \{ \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classDecimalSystem_a726d1a38079ae571c54adfbd0724a0a3_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classDecimalSystem_a726d1a38079ae571c54adfbd0724a0a3_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Decimal\+System@{Decimal\+System}!Decimal\+System@{Decimal\+System}}
+\index{Decimal\+System@{Decimal\+System}!Decimal\+System@{Decimal\+System}}
+\subsubsection[{\texorpdfstring{Decimal\+System(unsigned int digits, const char fractionpoint)}{DecimalSystem(unsigned int digits, const char fractionpoint)}}]{\setlength{\rightskip}{0pt plus 5cm}Decimal\+System\+::\+Decimal\+System (
+\begin{DoxyParamCaption}
+\item[{unsigned int}]{digits, }
+\item[{const char}]{fractionpoint}
+\end{DoxyParamCaption}
+)}\hypertarget{classDecimalSystem_a0622c834a7a4a0dc452ab4cab8d84902}{}\label{classDecimalSystem_a0622c834a7a4a0dc452ab4cab8d84902}
+
+
+Definition at line 363 of file ntext.\+cpp.
+
+
+
+References Positional\+Numeral\+System\+::\+Positional\+Numeral\+System().
+
+
+
+Referenced by Program\+::\+New\+Positional\+Input(), Program\+::\+New\+Positional\+Output(), and Program\+::\+Program().
+
+
+\begin{DoxyCode}
+365                               :
+366     \hyperlink{classPositionalNumeralSystem_a923f36569ecc830f17bcf56dd2811754}{PositionalNumeralSystem}(10, \hyperlink{classPositionalNumeralSystem_a0a9e8e3f5d46e3c12dd3fc994ed2c1e6}{digits}, 
+      \hyperlink{classPositionalNumeralSystem_ad986e454b020c21e70f2efbc3682e44f}{fractionpoint})
+367 \{ \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classDecimalSystem_a0622c834a7a4a0dc452ab4cab8d84902_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classDecimalSystem_a0622c834a7a4a0dc452ab4cab8d84902_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Decimal\+System@{Decimal\+System}!````~Decimal\+System@{$\sim$\+Decimal\+System}}
+\index{````~Decimal\+System@{$\sim$\+Decimal\+System}!Decimal\+System@{Decimal\+System}}
+\subsubsection[{\texorpdfstring{$\sim$\+Decimal\+System()}{~DecimalSystem()}}]{\setlength{\rightskip}{0pt plus 5cm}Decimal\+System\+::$\sim$\+Decimal\+System (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classDecimalSystem_a1a3c3296ae4cd214cd94359982e46dee}{}\label{classDecimalSystem_a1a3c3296ae4cd214cd94359982e46dee}
+
+
+Definition at line 369 of file ntext.\+cpp.
+
+
+\begin{DoxyCode}
+370 \{ \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\index{Decimal\+System@{Decimal\+System}!Get\+Real\+Text@{Get\+Real\+Text}}
+\index{Get\+Real\+Text@{Get\+Real\+Text}!Decimal\+System@{Decimal\+System}}
+\subsubsection[{\texorpdfstring{Get\+Real\+Text(double value)}{GetRealText(double value)}}]{\setlength{\rightskip}{0pt plus 5cm}const char $\ast$ Decimal\+System\+::\+Get\+Real\+Text (
+\begin{DoxyParamCaption}
+\item[{double}]{value}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classDecimalSystem_a7b3744c834e092220ab3c2b7ed8eee47}{}\label{classDecimalSystem_a7b3744c834e092220ab3c2b7ed8eee47}
+
+
+Definition at line 405 of file ntext.\+cpp.
+
+
+
+References Char\+Buffer\+::\+Append(), Numeral\+System\+::buf, Positional\+Numeral\+System\+::digits, Char\+Buffer\+::\+Ensure\+Growth(), Positional\+Numeral\+System\+::fractionpoint, Char\+Buffer\+::\+Get\+String(), log10(), pow(), Print\+Float64(), Print\+Float\+Format\+\_\+\+Positional, Print\+Float\+Format\+\_\+\+Scientific, Char\+Buffer\+::\+Remove\+Trailing(), round(), and trunc().
+
+
+
+Referenced by Get\+Text().
+
+
+\begin{DoxyCode}
+406 \{
+407     \textcolor{keywordtype}{double} exponent = \hyperlink{math_8h_a6572e82a4891917a9ba7fb2a964f8182}{log10}(\hyperlink{math_8h_a8fb5c0b9b43a108724b355136d29d2f9}{fabs}(value));
+408     \textcolor{keywordtype}{int} formatdigits = \hyperlink{classPositionalNumeralSystem_a0a9e8e3f5d46e3c12dd3fc994ed2c1e6}{digits} - (int)\hyperlink{math_8h_a82a151adfde56b28fa8a50355c4f2ff6}{trunc}(exponent) - 1;
+409 
+410     \textcolor{keywordtype}{double} rounddigits = \hyperlink{classPositionalNumeralSystem_a0a9e8e3f5d46e3c12dd3fc994ed2c1e6}{digits} - 1;
+411     \textcolor{keywordflow}{if} (exponent < 0.0) \{
+412         rounddigits++;
+413         formatdigits++;
+414     \}
+415 
+416     \textcolor{comment}{// Remove output of inaccuracy}
+417     \textcolor{keywordflow}{if} (formatdigits > (\textcolor{keywordtype}{int})\hyperlink{classPositionalNumeralSystem_a0a9e8e3f5d46e3c12dd3fc994ed2c1e6}{digits}) \{
+418         formatdigits = \hyperlink{classPositionalNumeralSystem_a0a9e8e3f5d46e3c12dd3fc994ed2c1e6}{digits};
+419     \}
+420 
+421     \textcolor{keywordtype}{double} roundfactor = \hyperlink{math_8h_aa56c9494c95edf68386375e97d64159b}{pow}(10.0, rounddigits);
+422     \textcolor{keywordtype}{double} roundedvalue = \hyperlink{math_8h_a7df19cf730447c00150569250a4b5e1d}{round}(value * roundfactor) / roundfactor;
+423 
+424     \textcolor{keywordflow}{if} (roundedvalue == 0.0) \{
+425         \textcolor{keywordflow}{return} \textcolor{stringliteral}{"0"};
+426     \}
+427 
+428     \textcolor{keywordtype}{double} ulimit = \hyperlink{math_8h_aa56c9494c95edf68386375e97d64159b}{pow}(10.0, (\textcolor{keywordtype}{double})\hyperlink{classPositionalNumeralSystem_a0a9e8e3f5d46e3c12dd3fc994ed2c1e6}{digits});
+429     \textcolor{keywordtype}{double} llimit = \hyperlink{math_8h_aa56c9494c95edf68386375e97d64159b}{pow}(10.0, -(\textcolor{keywordtype}{double})\hyperlink{classPositionalNumeralSystem_a0a9e8e3f5d46e3c12dd3fc994ed2c1e6}{digits});
+430 
+431     \textcolor{keywordflow}{if} (\hyperlink{math_8h_a8fb5c0b9b43a108724b355136d29d2f9}{fabs}(roundedvalue) > ulimit) \{
+432         \textcolor{keywordflow}{return} \textcolor{stringliteral}{"INF"};
+433     \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (\hyperlink{math_8h_a8fb5c0b9b43a108724b355136d29d2f9}{fabs}(roundedvalue) < llimit) \{
+434         \textcolor{keywordflow}{return} \textcolor{stringliteral}{"-INF"};
+435     \}
+436 
+437     \textcolor{keywordtype}{double} expborder = \hyperlink{math_8h_a6572e82a4891917a9ba7fb2a964f8182}{log10}(\hyperlink{math_8h_a8fb5c0b9b43a108724b355136d29d2f9}{fabs}(roundedvalue));
+438     \hyperlink{dprint_8h_ad1a8e21d8398e3c6f757fffea595fbe2}{tPrintFloatFormat} format = (expborder > 6.0 || expborder < -5.0) ?
+439                                \hyperlink{dprint_8h_ad1a8e21d8398e3c6f757fffea595fbe2a3503f685e7267ba72c4a17aa390d7706}{PrintFloatFormat\_Scientific} :
+440                                \hyperlink{dprint_8h_ad1a8e21d8398e3c6f757fffea595fbe2a8973a8ad28c6a11b3c60e559e60f741c}{PrintFloatFormat\_Positional};
+441 
+442     \textcolor{keyword}{static} \textcolor{keyword}{const} \textcolor{keywordtype}{int} size = 32;
+443     \textcolor{keywordtype}{char} *out = \textcolor{keyword}{new} \textcolor{keywordtype}{char}[size];
+444     \hyperlink{dprint_8h_abd2c48bc16cbab3eb5ec361153f21cbe}{PrintFloat64}(out, size, roundedvalue, format, formatdigits, 
+      \hyperlink{classPositionalNumeralSystem_ad986e454b020c21e70f2efbc3682e44f}{fractionpoint});
+445     \hyperlink{classNumeralSystem_a03e7be944bf3fa5e4c34d80f135cd017}{buf}->\hyperlink{classCharBuffer_a73c71d361110b37819a1d681a1504b0e}{EnsureGrowth}(size);
+446     \hyperlink{classNumeralSystem_a03e7be944bf3fa5e4c34d80f135cd017}{buf}->\hyperlink{classCharBuffer_a045b38735f7b3007c1b98d3d7b7feafe}{Append}(out);
+447     \textcolor{keywordflow}{while} (\hyperlink{classNumeralSystem_a03e7be944bf3fa5e4c34d80f135cd017}{buf}->\hyperlink{classCharBuffer_a1071772d1059263f4f880965fcc349ab}{RemoveTrailing}(\textcolor{charliteral}{'0'}))
+448         ;
+449     \hyperlink{classNumeralSystem_a03e7be944bf3fa5e4c34d80f135cd017}{buf}->\hyperlink{classCharBuffer_a1071772d1059263f4f880965fcc349ab}{RemoveTrailing}(\hyperlink{classPositionalNumeralSystem_ad986e454b020c21e70f2efbc3682e44f}{fractionpoint});
+450     \textcolor{keyword}{delete}[] out;
+451 
+452     \textcolor{keywordflow}{return} \hyperlink{classNumeralSystem_a03e7be944bf3fa5e4c34d80f135cd017}{buf}->\hyperlink{classCharBuffer_a7dfd3feaaf80f318ba44efe15b1ec44b}{GetString}();
+453 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classDecimalSystem_a7b3744c834e092220ab3c2b7ed8eee47_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classDecimalSystem_a7b3744c834e092220ab3c2b7ed8eee47_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Decimal\+System@{Decimal\+System}!Get\+Text@{Get\+Text}}
+\index{Get\+Text@{Get\+Text}!Decimal\+System@{Decimal\+System}}
+\subsubsection[{\texorpdfstring{Get\+Text(\+Number $\ast$number)}{GetText(Number *number)}}]{\setlength{\rightskip}{0pt plus 5cm}const char $\ast$ Decimal\+System\+::\+Get\+Text (
+\begin{DoxyParamCaption}
+\item[{{\bf Number} $\ast$}]{number}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{classDecimalSystem_ab43f764ed35fe831a16a356bbdc72441}{}\label{classDecimalSystem_ab43f764ed35fe831a16a356bbdc72441}
+
+
+Reimplemented from \hyperlink{classPositionalNumeralSystem_ac4acbb807861e8ff702d9624fb5db87d}{Positional\+Numeral\+System}.
+
+
+
+Definition at line 372 of file ntext.\+cpp.
+
+
+
+References Char\+Buffer\+::\+Append(), Numeral\+System\+::buf, cimag(), creal(), Char\+Buffer\+::\+Empty(), Complex\+Number\+::\+Get\+Complex\+Value(), Get\+Real\+Text(), Number\+::\+Get\+Real\+Value(), Char\+Buffer\+::\+Get\+String(), nsysreal, and Number\+::system.
+
+
+\begin{DoxyCode}
+373 \{
+374     \hyperlink{classNumeralSystem_a03e7be944bf3fa5e4c34d80f135cd017}{buf}->\hyperlink{classCharBuffer_abe39d3fd7d8b9c8ec343af2cae7adc96}{Empty}();
+375 
+376     \textcolor{keywordflow}{if} (number->\hyperlink{structNumber_a2ceda5601c42288626e76b06878e7476}{system} == \hyperlink{numb_8h_a1475a201d2346881ce88dfbacf628c7dae72cf8673109b15268d1c0837e8bff86}{nsysreal}) \{
+377         \textcolor{keywordflow}{return} \hyperlink{classDecimalSystem_a7b3744c834e092220ab3c2b7ed8eee47}{GetRealText}(number->\hyperlink{structNumber_a83da654d465f1344162ce8b8f8c564b9}{GetRealValue}());
+378     \}
+379 
+380     \hyperlink{unioncomplex}{complex} w = ((\hyperlink{structComplexNumber}{ComplexNumber}*)number)->GetComplexValue();
+381     \textcolor{keywordtype}{double} a = \hyperlink{complex_8h_a4a236b24c0197821e3489a35a72079ab}{creal}(w);
+382     \textcolor{keywordtype}{double} b = \hyperlink{complex_8h_aa1fe0b9371befabef6c41ba73470774a}{cimag}(w);
+383 
+384     \textcolor{keywordflow}{if} (a == 0.0 && b == 0.0) \{
+385         \hyperlink{classNumeralSystem_a03e7be944bf3fa5e4c34d80f135cd017}{buf}->\hyperlink{classCharBuffer_a045b38735f7b3007c1b98d3d7b7feafe}{Append}(\textcolor{charliteral}{'0'});
+386         \textcolor{keywordflow}{return} \hyperlink{classNumeralSystem_a03e7be944bf3fa5e4c34d80f135cd017}{buf}->\hyperlink{classCharBuffer_a7dfd3feaaf80f318ba44efe15b1ec44b}{GetString}();
+387     \}
+388 
+389     \textcolor{keywordflow}{if} (a != 0.0) \{
+390         \hyperlink{classDecimalSystem_a7b3744c834e092220ab3c2b7ed8eee47}{GetRealText}(a);
+391     \}
+392 
+393     \textcolor{keywordflow}{if} (a != 0.0 && b > 0.0) \{
+394         \hyperlink{classNumeralSystem_a03e7be944bf3fa5e4c34d80f135cd017}{buf}->\hyperlink{classCharBuffer_a045b38735f7b3007c1b98d3d7b7feafe}{Append}(\textcolor{charliteral}{'+'});
+395     \}
+396 
+397     \textcolor{keywordflow}{if} (b != 0.0) \{
+398         \hyperlink{classDecimalSystem_a7b3744c834e092220ab3c2b7ed8eee47}{GetRealText}(b);
+399         \hyperlink{classNumeralSystem_a03e7be944bf3fa5e4c34d80f135cd017}{buf}->\hyperlink{classCharBuffer_a045b38735f7b3007c1b98d3d7b7feafe}{Append}(\textcolor{charliteral}{'i'});
+400     \}
+401 
+402     \textcolor{keywordflow}{return} \hyperlink{classNumeralSystem_a03e7be944bf3fa5e4c34d80f135cd017}{buf}->\hyperlink{classCharBuffer_a7dfd3feaaf80f318ba44efe15b1ec44b}{GetString}();
+403 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classDecimalSystem_ab43f764ed35fe831a16a356bbdc72441_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+app/lib/\hyperlink{ntext_8h}{ntext.\+h}\item 
+app/lib/\hyperlink{ntext_8cpp}{ntext.\+cpp}\end{DoxyCompactItemize}

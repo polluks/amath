@@ -7,7 +7,7 @@
         <title>Directory Dependency diagram</title>
         <mediaobject>
             <imageobject>
-                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="../../dir_4ec2b00269cd6561062fa08581763587_dep.png"></imagedata>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="dir_4ec2b00269cd6561062fa08581763587_dep.png"></imagedata>
             </imageobject>
         </mediaobject>
     </figure>
@@ -27,342 +27,342 @@
             <para>
                 <itemizedlist>
                     <listitem>
-                        <para>file <link linkend="d9/dda/console_8cpp">console.cpp</link></para>
+                        <para>file <link linkend="console_8cpp">console.cpp</link></para>
                     </listitem>
                 </itemizedlist>
             </para>
             <para>
                 <itemizedlist>
                     <listitem>
-                        <para>file <link linkend="d0/de3/console_8h">console.h</link></para>
+                        <para>file <link linkend="console_8h">console.h</link></para>
                     </listitem>
                 </itemizedlist>
             </para>
             <para>
                 <itemizedlist>
                     <listitem>
-                        <para>file <link linkend="d6/d99/console__amiga_8cpp">console_amiga.cpp</link></para>
+                        <para>file <link linkend="console__amiga_8cpp">console_amiga.cpp</link></para>
                     </listitem>
                 </itemizedlist>
             </para>
             <para>
                 <itemizedlist>
                     <listitem>
-                        <para>file <link linkend="d6/da7/console__amiga_8h">console_amiga.h</link></para>
+                        <para>file <link linkend="console__amiga_8h">console_amiga.h</link></para>
                     </listitem>
                 </itemizedlist>
             </para>
             <para>
                 <itemizedlist>
                     <listitem>
-                        <para>file <link linkend="db/d5e/console__stdc_8cpp">console_stdc.cpp</link></para>
+                        <para>file <link linkend="console__stdc_8cpp">console_stdc.cpp</link></para>
                     </listitem>
                 </itemizedlist>
             </para>
             <para>
                 <itemizedlist>
                     <listitem>
-                        <para>file <link linkend="d8/d06/console__stdc_8h">console_stdc.h</link></para>
+                        <para>file <link linkend="console__stdc_8h">console_stdc.h</link></para>
                     </listitem>
                 </itemizedlist>
             </para>
             <para>
                 <itemizedlist>
                     <listitem>
-                        <para>file <link linkend="dd/dd8/filesystem_8h">filesystem.h</link></para>
+                        <para>file <link linkend="filesystem_8h">filesystem.h</link></para>
                     </listitem>
                 </itemizedlist>
             </para>
             <para>
                 <itemizedlist>
                     <listitem>
-                        <para>file <link linkend="d3/da7/filesystem__amiga_8cpp">filesystem_amiga.cpp</link></para>
+                        <para>file <link linkend="filesystem__amiga_8cpp">filesystem_amiga.cpp</link></para>
                     </listitem>
                 </itemizedlist>
             </para>
             <para>
                 <itemizedlist>
                     <listitem>
-                        <para>file <link linkend="d1/d72/filesystem__amiga_8h">filesystem_amiga.h</link></para>
+                        <para>file <link linkend="filesystem__amiga_8h">filesystem_amiga.h</link></para>
                     </listitem>
                 </itemizedlist>
             </para>
             <para>
                 <itemizedlist>
                     <listitem>
-                        <para>file <link linkend="d8/d8c/filesystem__stdc_8cpp">filesystem_stdc.cpp</link></para>
+                        <para>file <link linkend="filesystem__stdc_8cpp">filesystem_stdc.cpp</link></para>
                     </listitem>
                 </itemizedlist>
             </para>
             <para>
                 <itemizedlist>
                     <listitem>
-                        <para>file <link linkend="dd/d58/filesystem__stdc_8h">filesystem_stdc.h</link></para>
+                        <para>file <link linkend="filesystem__stdc_8h">filesystem_stdc.h</link></para>
                     </listitem>
                 </itemizedlist>
             </para>
             <para>
                 <itemizedlist>
                     <listitem>
-                        <para>file <link linkend="d7/d75/graph_8cpp">graph.cpp</link></para>
+                        <para>file <link linkend="graph_8cpp">graph.cpp</link></para>
                     </listitem>
                 </itemizedlist>
             </para>
             <para>
                 <itemizedlist>
                     <listitem>
-                        <para>file <link linkend="d6/df3/graph_8h">graph.h</link></para>
+                        <para>file <link linkend="graph_8h">graph.h</link></para>
                     </listitem>
                 </itemizedlist>
             </para>
             <para>
                 <itemizedlist>
                     <listitem>
-                        <para>file <link linkend="d3/d58/graph__amiga_8cpp">graph_amiga.cpp</link></para>
+                        <para>file <link linkend="graph__amiga_8cpp">graph_amiga.cpp</link></para>
                     </listitem>
                 </itemizedlist>
             </para>
             <para>
                 <itemizedlist>
                     <listitem>
-                        <para>file <link linkend="d0/db5/graph__amiga_8h">graph_amiga.h</link></para>
+                        <para>file <link linkend="graph__amiga_8h">graph_amiga.h</link></para>
                     </listitem>
                 </itemizedlist>
             </para>
             <para>
                 <itemizedlist>
                     <listitem>
-                        <para>file <link linkend="d4/dd1/graph__gtk_8cpp">graph_gtk.cpp</link></para>
+                        <para>file <link linkend="graph__gtk_8cpp">graph_gtk.cpp</link></para>
                     </listitem>
                 </itemizedlist>
             </para>
             <para>
                 <itemizedlist>
                     <listitem>
-                        <para>file <link linkend="df/d51/graph__gtk_8h">graph_gtk.h</link></para>
+                        <para>file <link linkend="graph__gtk_8h">graph_gtk.h</link></para>
                     </listitem>
                 </itemizedlist>
             </para>
             <para>
                 <itemizedlist>
                     <listitem>
-                        <para>file <link linkend="d2/d48/language_8cpp">language.cpp</link></para>
+                        <para>file <link linkend="language_8cpp">language.cpp</link></para>
                     </listitem>
                 </itemizedlist>
             </para>
             <para>
                 <itemizedlist>
                     <listitem>
-                        <para>file <link linkend="d8/dce/language_8h">language.h</link></para>
+                        <para>file <link linkend="language_8h">language.h</link></para>
                     </listitem>
                 </itemizedlist>
             </para>
             <para>
                 <itemizedlist>
                     <listitem>
-                        <para>file <link linkend="db/d9b/language__amiga_8cpp">language_amiga.cpp</link></para>
+                        <para>file <link linkend="language__amiga_8cpp">language_amiga.cpp</link></para>
                     </listitem>
                 </itemizedlist>
             </para>
             <para>
                 <itemizedlist>
                     <listitem>
-                        <para>file <link linkend="df/da0/language__amiga_8h">language_amiga.h</link></para>
+                        <para>file <link linkend="language__amiga_8h">language_amiga.h</link></para>
                     </listitem>
                 </itemizedlist>
             </para>
             <para>
                 <itemizedlist>
                     <listitem>
-                        <para>file <link linkend="dc/d11/language__posix_8cpp">language_posix.cpp</link></para>
+                        <para>file <link linkend="language__posix_8cpp">language_posix.cpp</link></para>
                     </listitem>
                 </itemizedlist>
             </para>
             <para>
                 <itemizedlist>
                     <listitem>
-                        <para>file <link linkend="da/dcd/language__posix_8h">language_posix.h</link></para>
+                        <para>file <link linkend="language__posix_8h">language_posix.h</link></para>
                     </listitem>
                 </itemizedlist>
             </para>
             <para>
                 <itemizedlist>
                     <listitem>
-                        <para>file <link linkend="d5/dae/language__stdc_8cpp">language_stdc.cpp</link></para>
+                        <para>file <link linkend="language__stdc_8cpp">language_stdc.cpp</link></para>
                     </listitem>
                 </itemizedlist>
             </para>
             <para>
                 <itemizedlist>
                     <listitem>
-                        <para>file <link linkend="d3/db3/language__stdc_8h">language_stdc.h</link></para>
+                        <para>file <link linkend="language__stdc_8h">language_stdc.h</link></para>
                     </listitem>
                 </itemizedlist>
             </para>
             <para>
                 <itemizedlist>
                     <listitem>
-                        <para>file <link linkend="d3/d49/preferences_8cpp">preferences.cpp</link></para>
+                        <para>file <link linkend="preferences_8cpp">preferences.cpp</link></para>
                     </listitem>
                 </itemizedlist>
             </para>
             <para>
                 <itemizedlist>
                     <listitem>
-                        <para>file <link linkend="dd/d7d/preferences_8h">preferences.h</link></para>
+                        <para>file <link linkend="preferences_8h">preferences.h</link></para>
                     </listitem>
                 </itemizedlist>
             </para>
             <para>
                 <itemizedlist>
                     <listitem>
-                        <para>file <link linkend="de/d40/preferences__amiga_8cpp">preferences_amiga.cpp</link></para>
+                        <para>file <link linkend="preferences__amiga_8cpp">preferences_amiga.cpp</link></para>
                     </listitem>
                 </itemizedlist>
             </para>
             <para>
                 <itemizedlist>
                     <listitem>
-                        <para>file <link linkend="de/d8c/preferences__amiga_8h">preferences_amiga.h</link></para>
+                        <para>file <link linkend="preferences__amiga_8h">preferences_amiga.h</link></para>
                     </listitem>
                 </itemizedlist>
             </para>
             <para>
                 <itemizedlist>
                     <listitem>
-                        <para>file <link linkend="df/dbb/preferences__stdc_8cpp">preferences_stdc.cpp</link></para>
+                        <para>file <link linkend="preferences__stdc_8cpp">preferences_stdc.cpp</link></para>
                     </listitem>
                 </itemizedlist>
             </para>
             <para>
                 <itemizedlist>
                     <listitem>
-                        <para>file <link linkend="d3/dff/preferences__stdc_8h">preferences_stdc.h</link></para>
+                        <para>file <link linkend="preferences__stdc_8h">preferences_stdc.h</link></para>
                     </listitem>
                 </itemizedlist>
             </para>
             <para>
                 <itemizedlist>
                     <listitem>
-                        <para>file <link linkend="d3/d83/proc__amiga_8cpp">proc_amiga.cpp</link></para>
+                        <para>file <link linkend="proc__amiga_8cpp">proc_amiga.cpp</link></para>
                     </listitem>
                 </itemizedlist>
             </para>
             <para>
                 <itemizedlist>
                     <listitem>
-                        <para>file <link linkend="dc/d06/proc__amiga_8h">proc_amiga.h</link></para>
+                        <para>file <link linkend="proc__amiga_8h">proc_amiga.h</link></para>
                     </listitem>
                 </itemizedlist>
             </para>
             <para>
                 <itemizedlist>
                     <listitem>
-                        <para>file <link linkend="d1/d14/program_8cpp">program.cpp</link></para>
+                        <para>file <link linkend="program_8cpp">program.cpp</link></para>
                     </listitem>
                 </itemizedlist>
             </para>
             <para>
                 <itemizedlist>
                     <listitem>
-                        <para>file <link linkend="d1/dea/program_8h">program.h</link></para>
+                        <para>file <link linkend="program_8h">program.h</link></para>
                     </listitem>
                 </itemizedlist>
             </para>
             <para>
                 <itemizedlist>
                     <listitem>
-                        <para>file <link linkend="d6/d94/program__amiga_8cpp">program_amiga.cpp</link></para>
+                        <para>file <link linkend="program__amiga_8cpp">program_amiga.cpp</link></para>
                     </listitem>
                 </itemizedlist>
             </para>
             <para>
                 <itemizedlist>
                     <listitem>
-                        <para>file <link linkend="d2/d6a/program__amiga_8h">program_amiga.h</link></para>
+                        <para>file <link linkend="program__amiga_8h">program_amiga.h</link></para>
                     </listitem>
                 </itemizedlist>
             </para>
             <para>
                 <itemizedlist>
                     <listitem>
-                        <para>file <link linkend="d8/d29/program__stdc_8cpp">program_stdc.cpp</link></para>
+                        <para>file <link linkend="program__stdc_8cpp">program_stdc.cpp</link></para>
                     </listitem>
                 </itemizedlist>
             </para>
             <para>
                 <itemizedlist>
                     <listitem>
-                        <para>file <link linkend="da/d1c/program__stdc_8h">program_stdc.h</link></para>
+                        <para>file <link linkend="program__stdc_8h">program_stdc.h</link></para>
                     </listitem>
                 </itemizedlist>
             </para>
             <para>
                 <itemizedlist>
                     <listitem>
-                        <para>file <link linkend="df/d30/program__test_8cpp">program_test.cpp</link></para>
+                        <para>file <link linkend="program__test_8cpp">program_test.cpp</link></para>
                     </listitem>
                 </itemizedlist>
             </para>
             <para>
                 <itemizedlist>
                     <listitem>
-                        <para>file <link linkend="d1/d95/program__test_8h">program_test.h</link></para>
+                        <para>file <link linkend="program__test_8h">program_test.h</link></para>
                     </listitem>
                 </itemizedlist>
             </para>
             <para>
                 <itemizedlist>
                     <listitem>
-                        <para>file <link linkend="db/da4/task_8h">task.h</link></para>
+                        <para>file <link linkend="task_8h">task.h</link></para>
                     </listitem>
                 </itemizedlist>
             </para>
             <para>
                 <itemizedlist>
                     <listitem>
-                        <para>file <link linkend="db/d64/task__amiga_8cpp">task_amiga.cpp</link></para>
+                        <para>file <link linkend="task__amiga_8cpp">task_amiga.cpp</link></para>
                     </listitem>
                 </itemizedlist>
             </para>
             <para>
                 <itemizedlist>
                     <listitem>
-                        <para>file <link linkend="d9/dff/task__amiga_8h">task_amiga.h</link></para>
+                        <para>file <link linkend="task__amiga_8h">task_amiga.h</link></para>
                     </listitem>
                 </itemizedlist>
             </para>
             <para>
                 <itemizedlist>
                     <listitem>
-                        <para>file <link linkend="df/d31/task__stdc_8cpp">task_stdc.cpp</link></para>
+                        <para>file <link linkend="task__stdc_8cpp">task_stdc.cpp</link></para>
                     </listitem>
                 </itemizedlist>
             </para>
             <para>
                 <itemizedlist>
                     <listitem>
-                        <para>file <link linkend="d3/d76/task__stdc_8h">task_stdc.h</link></para>
+                        <para>file <link linkend="task__stdc_8h">task_stdc.h</link></para>
                     </listitem>
                 </itemizedlist>
             </para>
             <para>
                 <itemizedlist>
                     <listitem>
-                        <para>file <link linkend="dc/d83/window__amiga_8cpp">window_amiga.cpp</link></para>
+                        <para>file <link linkend="window__amiga_8cpp">window_amiga.cpp</link></para>
                     </listitem>
                 </itemizedlist>
             </para>
             <para>
                 <itemizedlist>
                     <listitem>
-                        <para>file <link linkend="d3/d9e/window__amiga_8h">window_amiga.h</link></para>
+                        <para>file <link linkend="window__amiga_8h">window_amiga.h</link></para>
                     </listitem>
                 </itemizedlist>
             </para>
         </simplesect>
     <simplesect>
         <title>Detailed Description</title>
-    <para>Directory location is /home/carsten/amath2/app/system/</para>
+    <para>Directory location is /home/carsten/amath/app/system/</para>
     </simplesect>
 </section>

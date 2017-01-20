@@ -1,0 +1,280 @@
+\hypertarget{sqrt_8c}{}\section{lib/real/sqrt.c File Reference}
+\label{sqrt_8c}\index{lib/real/sqrt.\+c@{lib/real/sqrt.\+c}}
+{\ttfamily \#include \char`\"{}prim.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}math.\+h\char`\"{}}\\*
+Include dependency graph for sqrt.\+c\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=190pt]{sqrt_8c__incl}
+\end{center}
+\end{figure}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+double \hyperlink{sqrt_8c_ab87521a75ef827a85807f89a6c10629a}{sqrt} (double x)
+\begin{DoxyCompactList}\small\item\em Square root function. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+static const double \hyperlink{sqrt_8c_ada85e349d35971b32c8ea4238881ff8b}{one} = 1.\+0
+\item 
+static const double \hyperlink{sqrt_8c_a4f41fc56ffc7d06df51b6fbccd8c0846}{tiny} = 1.\+0e-\/300
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\index{sqrt.\+c@{sqrt.\+c}!sqrt@{sqrt}}
+\index{sqrt@{sqrt}!sqrt.\+c@{sqrt.\+c}}
+\subsubsection[{\texorpdfstring{sqrt(double x)}{sqrt(double x)}}]{\setlength{\rightskip}{0pt plus 5cm}double sqrt (
+\begin{DoxyParamCaption}
+\item[{double}]{x}
+\end{DoxyParamCaption}
+)}\hypertarget{sqrt_8c_ab87521a75ef827a85807f89a6c10629a}{}\label{sqrt_8c_ab87521a75ef827a85807f89a6c10629a}
+
+
+Square root function. 
+
+\begin{DoxyVersion}{Version}
+1.\+3 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+95/01/18
+\end{DoxyDate}
+
+\begin{DoxyPre}
+Return correctly rounded sqrt.
+          ------------------------------------------
+      |  Use the hardware sqrt if you have one |
+          ------------------------------------------
+Method:
+  Bit by bit method using integer arithmetic. (Slow, but portable)
+  1. Normalization
+ Scale x to y in [1,4) with even powers of 2:
+ find an integer k such that  1 <= (y=x*2^(2k)) < 4, then
+    sqrt(x) = 2^k * sqrt(y)
+  2. Bit by bit computation
+ Let q  = sqrt(y) truncated to i bit after binary point (q = 1),
+      i                          0
+                                    i+1         2
+     s  = 2*q , and y  =  2   * ( y - q  ).     (1)
+      i      i            i                 i\end{DoxyPre}
+
+
+
+\begin{DoxyPre} To compute q    from q , one checks whether
+        i+1       i\end{DoxyPre}
+
+
+
+\begin{DoxyPre}              -(i+1) 2
+        (q + 2      ) <= y.         (2)
+                  i
+                              -(i+1)
+ If (2) is false, then q   = q ; otherwise q   = q  + 2      .
+               i+1   i             i+1   i\end{DoxyPre}
+
+
+
+\begin{DoxyPre} With some algebric manipulation, it is not difficult to see
+ that (2) is equivalent to
+                            -(i+1)
+        s  +  2       <= y          (3)
+         i                i\end{DoxyPre}
+
+
+
+\begin{DoxyPre} The advantage of (3) is that s  and y  can be computed by
+                  i      i
+ the following recurrence formula:
+     if (3) is false\end{DoxyPre}
+
+
+
+\begin{DoxyPre}     s     =  s  ,  y    = y   ;            (4)
+      i+1      i         i+1    i\end{DoxyPre}
+
+
+
+\begin{DoxyPre}     otherwise,
+                        -i                     -(i+1)
+     s    =  s  + 2  ,  y    = y  -  s  - 2         (5)
+          i+1      i          i+1    i     i\end{DoxyPre}
+
+
+
+\begin{DoxyPre} One may easily use induction to prove (4) and (5).
+ Note. Since the left hand side of (3) contain only i+2 bits,
+       it does not necessary to do a full (53-bit) comparison
+       in (3).
+  3. Final rounding
+ After generating the 53 bits result, we compute one more bit.
+ Together with the remainder, we can decide whether the
+ result is exact, bigger than 1/2ulp, or less than 1/2ulp
+ (it will never equal to 1/2ulp).
+ The rounding mode can be detected by checking whether
+ huge + tiny is equal to huge, and whether huge - tiny is
+ equal to huge for some floating point number "huge" and "tiny".\end{DoxyPre}
+
+
+
+\begin{DoxyPre}Special cases:
+ sqrt(+-0) = +-0    ... exact
+ sqrt(inf) = inf
+ sqrt(-ve) = NaN        ... with invalid signal
+ sqrt(NaN) = NaN        ... with invalid signal for signaling NaN
+\end{DoxyPre}
+ Other methods \+: see the squareroot.
+
+\begin{DoxyCopyright}{Copyright}
+Copyright (C) 1993 by Sun Microsystems, Inc. All rights reserved.  Developed at Sun\+Soft, a Sun Microsystems, Inc. business. Permission to use, copy, modify, and distribute this software is freely granted, provided that this notice is preserved. 
+\end{DoxyCopyright}
+
+
+Definition at line 127 of file sqrt.\+c.
+
+
+
+References one, and tiny.
+
+
+
+Referenced by acos(), acosh(), asin(), asinh(), csqrt(), hypot(), pow(), and Real\+Number\+::\+Square\+Root().
+
+
+\begin{DoxyCode}
+128 \{
+129     \textcolor{keywordtype}{double} z;
+130     \hyperlink{real_2prim_8h_ae91287c8a5f73a8a22a100f50dc4de77}{sword}  sign = (int)0x80000000;
+131     \hyperlink{real_2prim_8h_a6e60fe0e0f9f8801507e15fe2d893751}{uword} r,t1,s1,ix1,q1;
+132     \hyperlink{real_2prim_8h_ae91287c8a5f73a8a22a100f50dc4de77}{sword} ix0,s0,q,m,t,i;
+133 
+134     \hyperlink{real_2prim_8h_a6dadc713499e14ba3088a55409a18983}{EXTRACT\_WORDS}(ix0,ix1,x);
+135 
+136     \textcolor{comment}{/* take care of Inf and NaN */}
+137     \textcolor{keywordflow}{if}((ix0&0x7ff00000)==0x7ff00000) \{
+138         \textcolor{keywordflow}{return} x*x+x;       \textcolor{comment}{/* sqrt(NaN)=NaN, sqrt(+inf)=+inf}
+139 \textcolor{comment}{                       sqrt(-inf)=sNaN */}
+140     \}
+141     \textcolor{comment}{/* take care of zero */}
+142     \textcolor{keywordflow}{if}(ix0<=0) \{
+143         \textcolor{keywordflow}{if}(((ix0&(~sign))|ix1)==0) \textcolor{keywordflow}{return} x;\textcolor{comment}{/* sqrt(+-0) = +-0 */}
+144         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(ix0<0)
+145             \textcolor{keywordflow}{return} (x-x)/(x-x);     \textcolor{comment}{/* sqrt(-ve) = sNaN */}
+146     \}
+147     \textcolor{comment}{/* normalize x */}
+148     m = (ix0>>20);
+149     \textcolor{keywordflow}{if}(m==0) \{              \textcolor{comment}{/* subnormal x */}
+150         \textcolor{keywordflow}{while}(ix0==0) \{
+151             m -= 21;
+152             ix0 |= (ix1>>11);
+153             ix1 <<= 21;
+154         \}
+155         \textcolor{keywordflow}{for}(i=0; (ix0&0x00100000)==0; i++) ix0<<=1;
+156         m -= i-1;
+157         ix0 |= (ix1>>(32-i));
+158         ix1 <<= i;
+159     \}
+160     m -= 1023;  \textcolor{comment}{/* unbias exponent */}
+161     ix0 = (ix0&0x000fffff)|0x00100000;
+162     \textcolor{keywordflow}{if}(m&1) \{   \textcolor{comment}{/* odd m, double x to make it even */}
+163         ix0 += ix0 + ((ix1&sign)>>31);
+164         ix1 += ix1;
+165     \}
+166     m >>= 1;    \textcolor{comment}{/* m = [m/2] */}
+167 
+168     \textcolor{comment}{/* generate sqrt(x) bit by bit */}
+169     ix0 += ix0 + ((ix1&sign)>>31);
+170     ix1 += ix1;
+171     q = q1 = s0 = s1 = 0;   \textcolor{comment}{/* [q,q1] = sqrt(x) */}
+172     r = 0x00200000;     \textcolor{comment}{/* r = moving bit from right to left */}
+173 
+174     \textcolor{keywordflow}{while}(r!=0) \{
+175         t = s0+r;
+176         \textcolor{keywordflow}{if}(t<=ix0) \{
+177             s0   = t+r;
+178             ix0 -= t;
+179             q   += r;
+180         \}
+181         ix0 += ix0 + ((ix1&sign)>>31);
+182         ix1 += ix1;
+183         r>>=1;
+184     \}
+185 
+186     r = sign;
+187     \textcolor{keywordflow}{while}(r!=0) \{
+188         t1 = s1+r;
+189         t  = s0;
+190         \textcolor{keywordflow}{if}((t<ix0)||((t==ix0)&&(t1<=ix1))) \{
+191             s1  = t1+r;
+192             \textcolor{keywordflow}{if}(((t1&sign)==(\hyperlink{real_2prim_8h_a6e60fe0e0f9f8801507e15fe2d893751}{uword})sign)&&(s1&sign)==0) s0 += 1;
+193             ix0 -= t;
+194             \textcolor{keywordflow}{if} (ix1 < t1) ix0 -= 1;
+195             ix1 -= t1;
+196             q1  += r;
+197         \}
+198         ix0 += ix0 + ((ix1&sign)>>31);
+199         ix1 += ix1;
+200         r>>=1;
+201     \}
+202 
+203     \textcolor{comment}{/* use floating add to find out rounding direction */}
+204     \textcolor{keywordflow}{if}((ix0|ix1)!=0) \{
+205         z = \hyperlink{sqrt_8c_ada85e349d35971b32c8ea4238881ff8b}{one}-\hyperlink{sqrt_8c_a4f41fc56ffc7d06df51b6fbccd8c0846}{tiny}; \textcolor{comment}{/* trigger inexact flag */}
+206         \textcolor{keywordflow}{if} (z>=\hyperlink{sqrt_8c_ada85e349d35971b32c8ea4238881ff8b}{one}) \{
+207             z = \hyperlink{sqrt_8c_ada85e349d35971b32c8ea4238881ff8b}{one}+\hyperlink{sqrt_8c_a4f41fc56ffc7d06df51b6fbccd8c0846}{tiny};
+208             \textcolor{keywordflow}{if} (q1==(\hyperlink{real_2prim_8h_a6e60fe0e0f9f8801507e15fe2d893751}{uword})0xffffffff) \{
+209                 q1=0;
+210                 q += 1;
+211             \}
+212             \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (z>\hyperlink{sqrt_8c_ada85e349d35971b32c8ea4238881ff8b}{one}) \{
+213                 \textcolor{keywordflow}{if} (q1==(\hyperlink{real_2prim_8h_a6e60fe0e0f9f8801507e15fe2d893751}{uword})0xfffffffe) q+=1;
+214                 q1+=2;
+215             \} \textcolor{keywordflow}{else}
+216                 q1 += (q1&1);
+217         \}
+218     \}
+219     ix0 = (q>>1)+0x3fe00000;
+220     ix1 =  q1>>1;
+221     \textcolor{keywordflow}{if} ((q&1)==1) ix1 |= sign;
+222     ix0 += (m <<20);
+223     \hyperlink{real_2prim_8h_a7f681b987a25d4692229be4e0be0cdf1}{INSERT\_WORDS}(z,ix0,ix1);
+224     \textcolor{keywordflow}{return} z;
+225 \}
+\end{DoxyCode}
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{sqrt_8c_ab87521a75ef827a85807f89a6c10629a_icgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Variable Documentation}
+\index{sqrt.\+c@{sqrt.\+c}!one@{one}}
+\index{one@{one}!sqrt.\+c@{sqrt.\+c}}
+\subsubsection[{\texorpdfstring{one}{one}}]{\setlength{\rightskip}{0pt plus 5cm}const double one = 1.\+0\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{sqrt_8c_ada85e349d35971b32c8ea4238881ff8b}{}\label{sqrt_8c_ada85e349d35971b32c8ea4238881ff8b}
+
+
+Definition at line 47 of file sqrt.\+c.
+
+
+
+Referenced by sqrt().
+
+\index{sqrt.\+c@{sqrt.\+c}!tiny@{tiny}}
+\index{tiny@{tiny}!sqrt.\+c@{sqrt.\+c}}
+\subsubsection[{\texorpdfstring{tiny}{tiny}}]{\setlength{\rightskip}{0pt plus 5cm}const double tiny = 1.\+0e-\/300\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{sqrt_8c_a4f41fc56ffc7d06df51b6fbccd8c0846}{}\label{sqrt_8c_a4f41fc56ffc7d06df51b6fbccd8c0846}
+
+
+Definition at line 47 of file sqrt.\+c.
+
+
+
+Referenced by sqrt().
+

@@ -1,0 +1,86 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="classHyperbolicArcsineNode">
+<title>HyperbolicArcsineNode class Reference</title>
+<para>
+    <programlisting>#include <link linkend="functions_8h">&lt;functions.h&gt;</link></programlisting>
+</para>
+<para>Inheritance diagram for HyperbolicArcsineNode</para>
+<para>
+    <figure>
+        <title>Inheritance graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="classHyperbolicArcsineNode__inherit__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+<para>Collaboration diagram for HyperbolicArcsineNode</para>
+<para>
+    <figure>
+        <title>Collaboration graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="classHyperbolicArcsineNode__coll__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="classHyperbolicArcsineNode_1abc5efe8b4f86817a3bf4a20a87c91c84">HyperbolicArcsineNode</link> (
+<link linkend="classExpressionNode">ExpressionNode</link> * expression)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="structNumber">Number</link> * <link linkend="classHyperbolicArcsineNode_1a51381b2347b180568af5c26b283156c2">Evaluate</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>static <link linkend="classFunctionNode">FunctionNode</link> * <link linkend="classHyperbolicArcsineNode_1a1694894ddaa623e53260fd2dfd029415">Create</link> (
+<link linkend="classExpressionNode">ExpressionNode</link> * expression)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>char * <link linkend="classHyperbolicArcsineNode_1acf539ab01fb398c7433e22e4ebf9be14">GetNodeText</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+            <section xml:id="classHyperbolicArcsineNode_1abc5efe8b4f86817a3bf4a20a87c91c84">
+                <title>HyperbolicArcsineNode::HyperbolicArcsineNode (ExpressionNode *expression)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="classHyperbolicArcsineNode_1a51381b2347b180568af5c26b283156c2">
+                <title>Number * HyperbolicArcsineNode::Evaluate ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="classHyperbolicArcsineNode_1a1694894ddaa623e53260fd2dfd029415">
+                <title>FunctionNode * HyperbolicArcsineNode::Create (ExpressionNode *expression)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="classHyperbolicArcsineNode_1acf539ab01fb398c7433e22e4ebf9be14">
+                <title>char * HyperbolicArcsineNode::GetNodeText ()</title> <emphasis></emphasis>
+                
+            </section>
+</section>

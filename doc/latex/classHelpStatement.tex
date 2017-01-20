@@ -1,0 +1,304 @@
+\hypertarget{classHelpStatement}{}\section{Help\+Statement Class Reference}
+\label{classHelpStatement}\index{Help\+Statement@{Help\+Statement}}
+
+
+Logic related to the help statement.  
+
+
+
+
+{\ttfamily \#include $<$statements.\+h$>$}
+
+
+
+Inheritance diagram for Help\+Statement\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=165pt]{classHelpStatement__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Help\+Statement\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=210pt]{classHelpStatement__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classHelpStatement_aed16b9cc1ef9e4d7bf4909d66e4012c0}{Help\+Statement} ()
+\item 
+\hyperlink{classHelpStatement_a09929d994355a84bebd655be6d463bfb}{Help\+Statement} (\hyperlink{lex_8h_a7feef761cd73fac6e25b8bb80d2c4e54}{Symbol} \hyperlink{classHelpStatement_abef33224fd4d73c2501217dba61dd395}{argument})
+\item 
+\hyperlink{classHelpStatement_a638be9d0c5c09a437c75f07ba8229cbe}{Help\+Statement} (const char $\ast$\hyperlink{classHelpStatement_a464f49dcbd47d1050df5b822aaffc839}{ident})
+\item 
+\hyperlink{classHelpStatement_adbab00ec8eacb88cbb252740849d82f1}{$\sim$\+Help\+Statement} ()
+\item 
+char $\ast$ \hyperlink{classHelpStatement_a733d3471c3bcfdd2d07d4766bbdbf6db}{Execute} ()
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{lex_8h_a7feef761cd73fac6e25b8bb80d2c4e54}{Symbol} \hyperlink{classHelpStatement_abef33224fd4d73c2501217dba61dd395}{argument}
+\item 
+char $\ast$ \hyperlink{classHelpStatement_a464f49dcbd47d1050df5b822aaffc839}{ident}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+Logic related to the help statement. 
+
+Definition at line 174 of file statements.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Help\+Statement@{Help\+Statement}!Help\+Statement@{Help\+Statement}}
+\index{Help\+Statement@{Help\+Statement}!Help\+Statement@{Help\+Statement}}
+\subsubsection[{\texorpdfstring{Help\+Statement()}{HelpStatement()}}]{\setlength{\rightskip}{0pt plus 5cm}Help\+Statement\+::\+Help\+Statement (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classHelpStatement_aed16b9cc1ef9e4d7bf4909d66e4012c0}{}\label{classHelpStatement_aed16b9cc1ef9e4d7bf4909d66e4012c0}
+
+
+Definition at line 319 of file statements.\+cpp.
+
+
+
+References argument, ident, and Statement\+Node\+::\+Statement\+Node().
+
+
+
+Referenced by Parser\+::\+Parse\+Help\+Statement().
+
+
+\begin{DoxyCode}
+319                              :
+320     \hyperlink{classStatementNode_a586026d6009a39d087792d621de86360}{StatementNode}() \{
+321     \hyperlink{classHelpStatement_abef33224fd4d73c2501217dba61dd395}{argument} = (\hyperlink{lex_8h_a7feef761cd73fac6e25b8bb80d2c4e54}{Symbol})0;
+322     \hyperlink{classHelpStatement_a464f49dcbd47d1050df5b822aaffc839}{ident} = \hyperlink{platform_8h_a46ff2bfbf0d44b8466a2251d5bd5e6f8}{NOMEM};
+323 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classHelpStatement_aed16b9cc1ef9e4d7bf4909d66e4012c0_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classHelpStatement_aed16b9cc1ef9e4d7bf4909d66e4012c0_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Help\+Statement@{Help\+Statement}!Help\+Statement@{Help\+Statement}}
+\index{Help\+Statement@{Help\+Statement}!Help\+Statement@{Help\+Statement}}
+\subsubsection[{\texorpdfstring{Help\+Statement(\+Symbol argument)}{HelpStatement(Symbol argument)}}]{\setlength{\rightskip}{0pt plus 5cm}Help\+Statement\+::\+Help\+Statement (
+\begin{DoxyParamCaption}
+\item[{{\bf Symbol}}]{argument}
+\end{DoxyParamCaption}
+)}\hypertarget{classHelpStatement_a09929d994355a84bebd655be6d463bfb}{}\label{classHelpStatement_a09929d994355a84bebd655be6d463bfb}
+
+
+Definition at line 325 of file statements.\+cpp.
+
+
+
+References argument, ident, and Statement\+Node\+::\+Statement\+Node().
+
+
+
+Referenced by Parser\+::\+Parse\+Help\+Statement().
+
+
+\begin{DoxyCode}
+325                                             :
+326     \hyperlink{classStatementNode_a586026d6009a39d087792d621de86360}{StatementNode}(), \hyperlink{classHelpStatement_abef33224fd4d73c2501217dba61dd395}{argument}(\hyperlink{classHelpStatement_abef33224fd4d73c2501217dba61dd395}{argument}) \{
+327     \hyperlink{classHelpStatement_a464f49dcbd47d1050df5b822aaffc839}{ident} = \hyperlink{platform_8h_a46ff2bfbf0d44b8466a2251d5bd5e6f8}{NOMEM};
+328 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classHelpStatement_a09929d994355a84bebd655be6d463bfb_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classHelpStatement_a09929d994355a84bebd655be6d463bfb_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Help\+Statement@{Help\+Statement}!Help\+Statement@{Help\+Statement}}
+\index{Help\+Statement@{Help\+Statement}!Help\+Statement@{Help\+Statement}}
+\subsubsection[{\texorpdfstring{Help\+Statement(const char $\ast$ident)}{HelpStatement(const char *ident)}}]{\setlength{\rightskip}{0pt plus 5cm}Help\+Statement\+::\+Help\+Statement (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{ident}
+\end{DoxyParamCaption}
+)}\hypertarget{classHelpStatement_a638be9d0c5c09a437c75f07ba8229cbe}{}\label{classHelpStatement_a638be9d0c5c09a437c75f07ba8229cbe}
+
+
+Definition at line 330 of file statements.\+cpp.
+
+
+
+References Alloc\+And\+Copy(), argument, ident, and symident.
+
+
+
+Referenced by Parser\+::\+Parse\+Help\+Statement().
+
+
+\begin{DoxyCode}
+331 \{
+332     \hyperlink{classHelpStatement_abef33224fd4d73c2501217dba61dd395}{argument} = \hyperlink{lex_8h_a7feef761cd73fac6e25b8bb80d2c4e54ade7694e5efc9616383548e57122faea5}{symident};
+333     \hyperlink{clib_8h_a5bed05c70cb17e541fee570b5dc32e1a}{AllocAndCopy}(&this->\hyperlink{classHelpStatement_a464f49dcbd47d1050df5b822aaffc839}{ident}, \hyperlink{classHelpStatement_a464f49dcbd47d1050df5b822aaffc839}{ident});
+334 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=348pt]{classHelpStatement_a638be9d0c5c09a437c75f07ba8229cbe_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classHelpStatement_a638be9d0c5c09a437c75f07ba8229cbe_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Help\+Statement@{Help\+Statement}!````~Help\+Statement@{$\sim$\+Help\+Statement}}
+\index{````~Help\+Statement@{$\sim$\+Help\+Statement}!Help\+Statement@{Help\+Statement}}
+\subsubsection[{\texorpdfstring{$\sim$\+Help\+Statement()}{~HelpStatement()}}]{\setlength{\rightskip}{0pt plus 5cm}Help\+Statement\+::$\sim$\+Help\+Statement (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classHelpStatement_adbab00ec8eacb88cbb252740849d82f1}{}\label{classHelpStatement_adbab00ec8eacb88cbb252740849d82f1}
+
+
+Definition at line 336 of file statements.\+cpp.
+
+
+
+References ident.
+
+
+\begin{DoxyCode}
+337 \{
+338     \textcolor{keywordflow}{if} (\hyperlink{classHelpStatement_a464f49dcbd47d1050df5b822aaffc839}{ident} != \hyperlink{platform_8h_a46ff2bfbf0d44b8466a2251d5bd5e6f8}{NOMEM}) \{
+339         \textcolor{keyword}{delete} [] \hyperlink{classHelpStatement_a464f49dcbd47d1050df5b822aaffc839}{ident};
+340     \}
+341 \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\index{Help\+Statement@{Help\+Statement}!Execute@{Execute}}
+\index{Execute@{Execute}!Help\+Statement@{Help\+Statement}}
+\subsubsection[{\texorpdfstring{Execute()}{Execute()}}]{\setlength{\rightskip}{0pt plus 5cm}char $\ast$ Help\+Statement\+::\+Execute (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{classHelpStatement_a733d3471c3bcfdd2d07d4766bbdbf6db}{}\label{classHelpStatement_a733d3471c3bcfdd2d07d4766bbdbf6db}
+
+
+Implements \hyperlink{classStatementNode_a721589622c930c010927b9a9c55b173e}{Statement\+Node}.
+
+
+
+Definition at line 343 of file statements.\+cpp.
+
+
+
+References argument, Char\+Buffer\+::\+Clear\+And\+Copy(), Language\+::\+Get\+Help\+Text(), Char\+Buffer\+::\+Get\+String(), ident, Syntax\+Node\+::output, and symident.
+
+
+\begin{DoxyCode}
+344 \{
+345     \textcolor{keywordtype}{char} *text = \hyperlink{classHelpStatement_abef33224fd4d73c2501217dba61dd395}{argument} != \hyperlink{lex_8h_a7feef761cd73fac6e25b8bb80d2c4e54ade7694e5efc9616383548e57122faea5}{symident} ?
+346                  \hyperlink{classProgram}{Program}->\hyperlink{classProgram_a7c82b4c429bbee984b8bb287b9e137f7}{Language}->\hyperlink{classLanguage_a0044feceac32f8ce943b88165ade965e}{GetHelpText}(
+      \hyperlink{classHelpStatement_abef33224fd4d73c2501217dba61dd395}{argument}) :
+347                  \hyperlink{classProgram}{Program}->\hyperlink{classProgram_a7c82b4c429bbee984b8bb287b9e137f7}{Language}->\hyperlink{classLanguage_a0044feceac32f8ce943b88165ade965e}{GetHelpText}(\hyperlink{classHelpStatement_a464f49dcbd47d1050df5b822aaffc839}{ident});
+348 
+349     \hyperlink{classSyntaxNode_a1180628cbe3fce43930cee0df5a9ce5c}{output}->\hyperlink{classCharBuffer_ac52ed7b91190240eb7db4cf43d1e2abb}{ClearAndCopy}(text);
+350     \textcolor{keywordflow}{return} \hyperlink{classSyntaxNode_a1180628cbe3fce43930cee0df5a9ce5c}{output}->\hyperlink{classCharBuffer_a7dfd3feaaf80f318ba44efe15b1ec44b}{GetString}();
+351 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classHelpStatement_a733d3471c3bcfdd2d07d4766bbdbf6db_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Member Data Documentation}
+\index{Help\+Statement@{Help\+Statement}!argument@{argument}}
+\index{argument@{argument}!Help\+Statement@{Help\+Statement}}
+\subsubsection[{\texorpdfstring{argument}{argument}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Symbol} Help\+Statement\+::argument\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classHelpStatement_abef33224fd4d73c2501217dba61dd395}{}\label{classHelpStatement_abef33224fd4d73c2501217dba61dd395}
+
+
+Definition at line 183 of file statements.\+h.
+
+
+
+Referenced by Execute(), and Help\+Statement().
+
+\index{Help\+Statement@{Help\+Statement}!ident@{ident}}
+\index{ident@{ident}!Help\+Statement@{Help\+Statement}}
+\subsubsection[{\texorpdfstring{ident}{ident}}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ Help\+Statement\+::ident\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classHelpStatement_a464f49dcbd47d1050df5b822aaffc839}{}\label{classHelpStatement_a464f49dcbd47d1050df5b822aaffc839}
+
+
+Definition at line 184 of file statements.\+h.
+
+
+
+Referenced by Execute(), Help\+Statement(), and $\sim$\+Help\+Statement().
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+app/main/\hyperlink{statements_8h}{statements.\+h}\item 
+app/main/\hyperlink{statements_8cpp}{statements.\+cpp}\end{DoxyCompactItemize}

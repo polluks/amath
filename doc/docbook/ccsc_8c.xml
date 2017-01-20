@@ -1,0 +1,45 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="ccsc_8c">
+    <title>ccsc.c File Reference</title>
+    <programlisting>#include &quot;prim.h&quot;</programlisting>
+    <programlisting>#include &quot;math.h&quot;</programlisting>
+    <programlisting>#include &quot;complex.h&quot;</programlisting>
+<para>Include dependency diagram for ccsc.c</para>
+<para>
+    <figure>
+        <title>Dependency diagram</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="ccsc_8c__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+<para>Included by dependency diagram for ccsc.c</para>
+<para>
+    <figure>
+        <title>Dependency diagram</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="ccsc_8c__dep__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+        <section>
+            <title>Functions</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="unioncomplex">complex</link> <link linkend="ccsc_8c_1a1a06d41ae4e946bed755fe51ffb6ed24">ccsc</link> (
+<link linkend="unioncomplex">complex</link> z)<para><emphasis>Cosecant of a complex number.</emphasis></para>
+</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+    <simplesect>
+        <title>Detailed Description</title>
+    <para>Definition in file /home/carsten/amath/lib/cplex/ccsc.c</para>
+    </simplesect>
+</section>

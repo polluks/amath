@@ -1,0 +1,241 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="classUserFunction">
+<title>UserFunction class Reference</title>
+<para>
+    <programlisting>#include <link linkend="functions_8h">&lt;functions.h&gt;</link></programlisting>
+</para>
+<para>Inheritance diagram for UserFunction</para>
+<para>
+    <figure>
+        <title>Inheritance graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="classUserFunction__inherit__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+<para>Collaboration diagram for UserFunction</para>
+<para>
+    <figure>
+        <title>Collaboration graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="classUserFunction__coll__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+        <section>
+            <title>Public Attributes</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>UserFunction * Next</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title>Private Attributes</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>char * name</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>Variable * variable</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>ExpressionNode * expression</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>bool chainDelete</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>CharBuffer * defname</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>CharBuffer * defition</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="classUserFunction_1a2a97a3aea348cdf553fe73add0f6926e">UserFunction</link> (
+const char * name, const char * variable, <link linkend="classExpressionNode">ExpressionNode</link> * expression)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="classUserFunction_1a9e07b00bd2ff918fd11767cb627ad7df">UserFunction</link> (
+const char * name)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="classUserFunction_1a5651163e734130aa94abd857481e582b">~UserFunction</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>char * <link linkend="classUserFunction_1a59c59ebf5b45c5bb4aaa200a1218549d">GetName</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>char * <link linkend="classUserFunction_1ae75c29d08b4cb351b8d7e19a5e4045d0">GetDefitionName</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>char * <link linkend="classUserFunction_1ae729fe8b29728831f6a7872931b4d2e7">GetDefitionText</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="classVariable">Variable</link> * <link linkend="classUserFunction_1a4580afdaa5124951a523de07f3c454a6">GetVariable</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="classVariable">Variable</link> * <link linkend="classUserFunction_1a9273684dd9351e945a10799ac6eb7038">CreateVariable</link> (
+const char * name)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="classExpressionNode">ExpressionNode</link> * <link linkend="classUserFunction_1a41abe1afc9d481786b78ce7d7ffbde80">GetExpression</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="classUserFunction_1ab033663735b65ce885eefd63e6208c24">SetExpression</link> (
+<link linkend="classExpressionNode">ExpressionNode</link> * expression)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="classUserFunction_1a5f22a558f8418f2ef6df952d88c7029b">InitializeTexts</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+    <simplesect>
+
+<para>A user defined function. </para>
+    </simplesect>
+        <section>
+            <title>Member Data Documentation</title>
+        </section>
+        <section>
+            <title>Member Data Documentation</title>
+        </section>
+            <section xml:id="classUserFunction_1a2a97a3aea348cdf553fe73add0f6926e">
+                <title>UserFunction::UserFunction (const char *name, const char *variable, ExpressionNode *expression)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="classUserFunction_1a9e07b00bd2ff918fd11767cb627ad7df">
+                <title>UserFunction::UserFunction (const char *name)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="classUserFunction_1a5651163e734130aa94abd857481e582b">
+                <title>UserFunction::~UserFunction ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="classUserFunction_1a59c59ebf5b45c5bb4aaa200a1218549d">
+                <title>char * UserFunction::GetName ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="classUserFunction_1ae75c29d08b4cb351b8d7e19a5e4045d0">
+                <title>char * UserFunction::GetDefitionName ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="classUserFunction_1ae729fe8b29728831f6a7872931b4d2e7">
+                <title>char * UserFunction::GetDefitionText ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="classUserFunction_1a4580afdaa5124951a523de07f3c454a6">
+                <title>Variable * UserFunction::GetVariable ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="classUserFunction_1a9273684dd9351e945a10799ac6eb7038">
+                <title>Variable * UserFunction::CreateVariable (const char *name)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="classUserFunction_1a41abe1afc9d481786b78ce7d7ffbde80">
+                <title>ExpressionNode * UserFunction::GetExpression ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="classUserFunction_1ab033663735b65ce885eefd63e6208c24">
+                <title>void UserFunction::SetExpression (ExpressionNode *expression)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="classUserFunction_1a5f22a558f8418f2ef6df952d88c7029b">
+                <title>void UserFunction::InitializeTexts ()</title> <emphasis></emphasis>
+                
+            </section>
+</section>

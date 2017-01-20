@@ -7,7 +7,7 @@
         <title>Directory Dependency diagram</title>
         <mediaobject>
             <imageobject>
-                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="../../dir_dfcd1a39095e1e738a584e97c8462c3c_dep.png"></imagedata>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="dir_dfcd1a39095e1e738a584e97c8462c3c_dep.png"></imagedata>
             </imageobject>
         </mediaobject>
     </figure>
@@ -17,41 +17,41 @@
             <para>
                 <itemizedlist>
                     <listitem>
-                        <para>file <link linkend="d4/d29/dmath_8cpp">dmath.cpp</link></para>
+                        <para>file <link linkend="dmath_8cpp">dmath.cpp</link></para>
                     </listitem>
                 </itemizedlist>
             </para>
             <para>
                 <itemizedlist>
                     <listitem>
-                        <para>file <link linkend="da/dfb/dmath_8h">dmath.h</link></para>
+                        <para>file <link linkend="dmath_8h">dmath.h</link></para>
                     </listitem>
                 </itemizedlist>
             </para>
             <para>
                 <itemizedlist>
                     <listitem>
-                        <para>file <link linkend="dd/dd5/dprint_8cpp">dprint.cpp</link></para>
+                        <para>file <link linkend="dprint_8cpp">dprint.cpp</link></para>
                     </listitem>
                 </itemizedlist>
             </para>
             <para>
                 <itemizedlist>
                     <listitem>
-                        <para>file <link linkend="df/d89/dragon4_8cpp">dragon4.cpp</link></para>
+                        <para>file <link linkend="dragon4_8cpp">dragon4.cpp</link></para>
                     </listitem>
                 </itemizedlist>
             </para>
             <para>
                 <itemizedlist>
                     <listitem>
-                        <para>file <link linkend="df/d2d/dragon4_8h">dragon4.h</link></para>
+                        <para>file <link linkend="dragon4_8h">dragon4.h</link></para>
                     </listitem>
                 </itemizedlist>
             </para>
         </simplesect>
     <simplesect>
         <title>Detailed Description</title>
-    <para>Directory location is /home/carsten/amath2/lib/dconv/</para>
+    <para>Directory location is /home/carsten/amath/lib/dconv/</para>
     </simplesect>
 </section>

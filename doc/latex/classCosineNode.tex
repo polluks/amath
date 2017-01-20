@@ -1,0 +1,197 @@
+\hypertarget{classCosineNode}{}\section{Cosine\+Node Class Reference}
+\label{classCosineNode}\index{Cosine\+Node@{Cosine\+Node}}
+
+
+{\ttfamily \#include $<$functions.\+h$>$}
+
+
+
+Inheritance diagram for Cosine\+Node\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=169pt]{classCosineNode__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Cosine\+Node\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=272pt]{classCosineNode__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCosineNode_aba5e5df8a1d7ddba943df048efd1bf87}{Cosine\+Node} (\hyperlink{classExpressionNode}{Expression\+Node} $\ast$\hyperlink{classFunctionNode_ad7577b179a1937aaf8a0058bb5b546dc}{expression})
+\item 
+\hyperlink{structNumber}{Number} $\ast$ \hyperlink{classCosineNode_a1dc01c6b70db9882e18d9bf773219447}{Evaluate} ()
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{classFunctionNode}{Function\+Node} $\ast$ \hyperlink{classCosineNode_ada8e23d238785cb727d3d11d88072bc2}{Create} (\hyperlink{classExpressionNode}{Expression\+Node} $\ast$\hyperlink{classFunctionNode_ad7577b179a1937aaf8a0058bb5b546dc}{expression})
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+char $\ast$ \hyperlink{classCosineNode_ab57a246c5e637c03af11977c635bc89c}{Get\+Node\+Text} ()
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 342 of file functions.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Cosine\+Node@{Cosine\+Node}!Cosine\+Node@{Cosine\+Node}}
+\index{Cosine\+Node@{Cosine\+Node}!Cosine\+Node@{Cosine\+Node}}
+\subsubsection[{\texorpdfstring{Cosine\+Node(\+Expression\+Node $\ast$expression)}{CosineNode(ExpressionNode *expression)}}]{\setlength{\rightskip}{0pt plus 5cm}Cosine\+Node\+::\+Cosine\+Node (
+\begin{DoxyParamCaption}
+\item[{{\bf Expression\+Node} $\ast$}]{expression}
+\end{DoxyParamCaption}
+)}\hypertarget{classCosineNode_aba5e5df8a1d7ddba943df048efd1bf87}{}\label{classCosineNode_aba5e5df8a1d7ddba943df048efd1bf87}
+
+
+Definition at line 763 of file functions.\+cpp.
+
+
+
+References Function\+Node\+::\+Function\+Node().
+
+
+
+Referenced by Create().
+
+
+\begin{DoxyCode}
+763                                                  :
+764     \hyperlink{classFunctionNode_a41cb7db0162ffbec0902bd8ff7ea435f}{FunctionNode}(expression) \{ \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classCosineNode_aba5e5df8a1d7ddba943df048efd1bf87_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classCosineNode_aba5e5df8a1d7ddba943df048efd1bf87_icgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Member Function Documentation}
+\index{Cosine\+Node@{Cosine\+Node}!Create@{Create}}
+\index{Create@{Create}!Cosine\+Node@{Cosine\+Node}}
+\subsubsection[{\texorpdfstring{Create(\+Expression\+Node $\ast$expression)}{Create(ExpressionNode *expression)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Function\+Node} $\ast$ Cosine\+Node\+::\+Create (
+\begin{DoxyParamCaption}
+\item[{{\bf Expression\+Node} $\ast$}]{expression}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{classCosineNode_ada8e23d238785cb727d3d11d88072bc2}{}\label{classCosineNode_ada8e23d238785cb727d3d11d88072bc2}
+
+
+Definition at line 766 of file functions.\+cpp.
+
+
+
+References Cosine\+Node().
+
+
+\begin{DoxyCode}
+767 \{
+768     \textcolor{keywordflow}{return} \textcolor{keyword}{new} \hyperlink{classCosineNode_aba5e5df8a1d7ddba943df048efd1bf87}{CosineNode}(expression);
+769 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classCosineNode_ada8e23d238785cb727d3d11d88072bc2_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{Cosine\+Node@{Cosine\+Node}!Evaluate@{Evaluate}}
+\index{Evaluate@{Evaluate}!Cosine\+Node@{Cosine\+Node}}
+\subsubsection[{\texorpdfstring{Evaluate()}{Evaluate()}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Number} $\ast$ Cosine\+Node\+::\+Evaluate (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{classCosineNode_a1dc01c6b70db9882e18d9bf773219447}{}\label{classCosineNode_a1dc01c6b70db9882e18d9bf773219447}
+
+
+Implements \hyperlink{classExpressionNode_a64975d4dc37742228bd522f6204537f7}{Expression\+Node}.
+
+
+
+Definition at line 771 of file functions.\+cpp.
+
+
+
+References Number\+::\+Cosine(), Expression\+Node\+::\+Evaluate(), Function\+Node\+::expression, and Expression\+Node\+::result.
+
+
+\begin{DoxyCode}
+772 \{
+773     \hyperlink{classExpressionNode_a1f590649f5a5cb30eb7ee912f7bc1262}{result} = \hyperlink{classFunctionNode_ad7577b179a1937aaf8a0058bb5b546dc}{expression}->\hyperlink{classExpressionNode_a64975d4dc37742228bd522f6204537f7}{Evaluate}()->\hyperlink{structNumber_a39425d97b36e17af4a26f8494a4b6ac4}{Cosine}();
+774     \textcolor{keywordflow}{return} \hyperlink{classExpressionNode_a1f590649f5a5cb30eb7ee912f7bc1262}{result};
+775 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classCosineNode_a1dc01c6b70db9882e18d9bf773219447_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{Cosine\+Node@{Cosine\+Node}!Get\+Node\+Text@{Get\+Node\+Text}}
+\index{Get\+Node\+Text@{Get\+Node\+Text}!Cosine\+Node@{Cosine\+Node}}
+\subsubsection[{\texorpdfstring{Get\+Node\+Text()}{GetNodeText()}}]{\setlength{\rightskip}{0pt plus 5cm}char $\ast$ Cosine\+Node\+::\+Get\+Node\+Text (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}\hypertarget{classCosineNode_ab57a246c5e637c03af11977c635bc89c}{}\label{classCosineNode_ab57a246c5e637c03af11977c635bc89c}
+
+
+Implements \hyperlink{classExpressionNode_a42a5e9562b0f645a19dcc83f698069b5}{Expression\+Node}.
+
+
+
+Definition at line 777 of file functions.\+cpp.
+
+
+\begin{DoxyCode}
+778 \{
+779     \textcolor{keywordflow}{return} (\textcolor{keywordtype}{char}*)\textcolor{stringliteral}{"cos"};
+780 \}
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+app/main/\hyperlink{functions_8h}{functions.\+h}\item 
+app/main/\hyperlink{functions_8cpp}{functions.\+cpp}\end{DoxyCompactItemize}

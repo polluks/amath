@@ -1,0 +1,3162 @@
+\hypertarget{complex_8h}{}\section{lib/complex.h File Reference}
+\label{complex_8h}\index{lib/complex.\+h@{lib/complex.\+h}}
+
+
+Functions in math library for handling complex numbers.  
+
+
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{complex_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+union \hyperlink{unioncomplex}{complex}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+double \hyperlink{complex_8h_aaab921fc8e26fcfee85a89e662e41a74}{csgn} (\hyperlink{unioncomplex}{complex} z)
+\begin{DoxyCompactList}\small\item\em Complex signum. \end{DoxyCompactList}\item 
+double \hyperlink{complex_8h_af6e02ba9d2566b52e3b0faf2d4ed973a}{cabs} (\hyperlink{unioncomplex}{complex} z)
+\begin{DoxyCompactList}\small\item\em Absolute value of complex number. \end{DoxyCompactList}\item 
+double \hyperlink{complex_8h_a4a236b24c0197821e3489a35a72079ab}{creal} (\hyperlink{unioncomplex}{complex} z)
+\begin{DoxyCompactList}\small\item\em Real part of complex number. \end{DoxyCompactList}\item 
+double \hyperlink{complex_8h_aa1fe0b9371befabef6c41ba73470774a}{cimag} (\hyperlink{unioncomplex}{complex} z)
+\begin{DoxyCompactList}\small\item\em Imaginary part of complex number. \end{DoxyCompactList}\item 
+double \hyperlink{complex_8h_af9071f4836d077dd3290ed8508de99d5}{carg} (\hyperlink{unioncomplex}{complex} z)
+\item 
+\hyperlink{unioncomplex}{complex} \hyperlink{complex_8h_abf3bfbb727779504c9ddb7023d14fed0}{cexp} (\hyperlink{unioncomplex}{complex} z)
+\begin{DoxyCompactList}\small\item\em Returns e to the power of a complex number. \end{DoxyCompactList}\item 
+\hyperlink{unioncomplex}{complex} \hyperlink{complex_8h_a888b8eb5ccc46411e68f6d7b99035888}{clog} (\hyperlink{unioncomplex}{complex} z)
+\begin{DoxyCompactList}\small\item\em Natural logarithm of a complex number. \end{DoxyCompactList}\item 
+\hyperlink{unioncomplex}{complex} \hyperlink{complex_8h_a8d08797ad03191874e9943144da189be}{conj} (\hyperlink{unioncomplex}{complex} z)
+\item 
+\hyperlink{unioncomplex}{complex} \hyperlink{complex_8h_a06164910835523939fc8bf762872e37b}{cproj} (\hyperlink{unioncomplex}{complex} z)
+\item 
+\hyperlink{unioncomplex}{complex} \hyperlink{complex_8h_afe5b814a44414f20d0f98fe974737edd}{csqrt} (\hyperlink{unioncomplex}{complex} z)
+\begin{DoxyCompactList}\small\item\em Square root of complex number. \end{DoxyCompactList}\item 
+\hyperlink{unioncomplex}{complex} \hyperlink{complex_8h_a8d165b5dcf96f12ff8de000474dd020e}{cpow} (\hyperlink{unioncomplex}{complex} x, \hyperlink{unioncomplex}{complex} z)
+\begin{DoxyCompactList}\small\item\em Complex number raised to a power. \end{DoxyCompactList}\item 
+\hyperlink{unioncomplex}{complex} \hyperlink{complex_8h_a980e6e049f7902b05fc9eb5614b07a5c}{cpack} (double x, double y)
+\begin{DoxyCompactList}\small\item\em Pack two real numbers into a complex number. \end{DoxyCompactList}\item 
+\hyperlink{unioncomplex}{complex} \hyperlink{complex_8h_a02d8fd1ce9c4fa4e25b1fa676ca96d4e}{cadd} (\hyperlink{unioncomplex}{complex} a, \hyperlink{unioncomplex}{complex} z)
+\begin{DoxyCompactList}\small\item\em Addition of two complex numbers. \end{DoxyCompactList}\item 
+\hyperlink{unioncomplex}{complex} \hyperlink{complex_8h_a46bb0dd64d87c3aeb85417d1dadf6ddd}{csub} (\hyperlink{unioncomplex}{complex} a, \hyperlink{unioncomplex}{complex} z)
+\begin{DoxyCompactList}\small\item\em Subtraction of two complex numbers. \end{DoxyCompactList}\item 
+\hyperlink{unioncomplex}{complex} \hyperlink{complex_8h_a340ad83d03bcc727538d25dcf6dd26e9}{cmul} (\hyperlink{unioncomplex}{complex} a, \hyperlink{unioncomplex}{complex} z)
+\begin{DoxyCompactList}\small\item\em Multiplication of two complex numbers. \end{DoxyCompactList}\item 
+\hyperlink{unioncomplex}{complex} \hyperlink{complex_8h_ace985b5f12a681b496bd3ae5f8a966b4}{cdiv} (\hyperlink{unioncomplex}{complex} a, \hyperlink{unioncomplex}{complex} z)
+\begin{DoxyCompactList}\small\item\em Division of two complex numbers. \end{DoxyCompactList}\item 
+\hyperlink{unioncomplex}{complex} \hyperlink{complex_8h_a48443015efbd58ce5da6d64d9858f168}{cceil} (\hyperlink{unioncomplex}{complex} z)
+\begin{DoxyCompactList}\small\item\em Ceiling value of complex number. \end{DoxyCompactList}\item 
+\hyperlink{unioncomplex}{complex} \hyperlink{complex_8h_a12886361ac7d752a46ec5cf3bdd0687e}{cfloor} (\hyperlink{unioncomplex}{complex} z)
+\begin{DoxyCompactList}\small\item\em Floor value of complex number. \end{DoxyCompactList}\item 
+\hyperlink{unioncomplex}{complex} \hyperlink{complex_8h_aa760bac9acf6c215294e10188f3c9eb2}{ctrunc} (\hyperlink{unioncomplex}{complex} z)
+\begin{DoxyCompactList}\small\item\em Truncated value of complex number. \end{DoxyCompactList}\item 
+\hyperlink{unioncomplex}{complex} \hyperlink{complex_8h_a83b50ec7fc882d884c8b740026ab3ef5}{cround} (\hyperlink{unioncomplex}{complex} z)
+\begin{DoxyCompactList}\small\item\em Division of two complex numbers. \end{DoxyCompactList}\item 
+\hyperlink{unioncomplex}{complex} \hyperlink{complex_8h_a78cdeb0bf6f229c2be3065fc697dac68}{creci} (\hyperlink{unioncomplex}{complex} z)
+\begin{DoxyCompactList}\small\item\em Reciprocal value of complex number. \end{DoxyCompactList}\item 
+\hyperlink{unioncomplex}{complex} \hyperlink{complex_8h_a9411d07785a32ac077d24d6c8a5c5554}{ccbrt} (\hyperlink{unioncomplex}{complex} z)
+\begin{DoxyCompactList}\small\item\em Cube root of complex number. \end{DoxyCompactList}\item 
+\hyperlink{unioncomplex}{complex} \hyperlink{complex_8h_a3951e04bc6370fb9fd7b0ff2c2558d7b}{clogb} (\hyperlink{unioncomplex}{complex} z)
+\begin{DoxyCompactList}\small\item\em Base 2 logarithmic value of complex number. \end{DoxyCompactList}\item 
+\hyperlink{unioncomplex}{complex} \hyperlink{complex_8h_a5e20d88f7f7f17d510ddf62f269c8343}{clog10} (\hyperlink{unioncomplex}{complex} z)
+\begin{DoxyCompactList}\small\item\em Base 10 logarithmic value of complex number. \end{DoxyCompactList}\item 
+\hyperlink{unioncomplex}{complex} \hyperlink{complex_8h_a68da54d02ea0d55bb90dcb06f56d10f5}{ccos} (\hyperlink{unioncomplex}{complex} z)
+\begin{DoxyCompactList}\small\item\em Cosine of complex number. \end{DoxyCompactList}\item 
+\hyperlink{unioncomplex}{complex} \hyperlink{complex_8h_ae17495bc828b9bea6f64da3c21fe0fc7}{csin} (\hyperlink{unioncomplex}{complex} z)
+\begin{DoxyCompactList}\small\item\em Sine of a complex number. \end{DoxyCompactList}\item 
+\hyperlink{unioncomplex}{complex} \hyperlink{complex_8h_a2bd0de3a2299ec26164641bc8f6e117f}{ctan} (\hyperlink{unioncomplex}{complex} z)
+\begin{DoxyCompactList}\small\item\em Tangent of a complex number. \end{DoxyCompactList}\item 
+\hyperlink{unioncomplex}{complex} \hyperlink{complex_8h_a1bbe43785d2b3cc364e50153f203c50d}{csec} (\hyperlink{unioncomplex}{complex} z)
+\begin{DoxyCompactList}\small\item\em Secant of a complex number. \end{DoxyCompactList}\item 
+\hyperlink{unioncomplex}{complex} \hyperlink{complex_8h_a1a06d41ae4e946bed755fe51ffb6ed24}{ccsc} (\hyperlink{unioncomplex}{complex} z)
+\begin{DoxyCompactList}\small\item\em Cosecant of a complex number. \end{DoxyCompactList}\item 
+\hyperlink{unioncomplex}{complex} \hyperlink{complex_8h_af55c6dec4ec4d7992aea8418480c221c}{ccot} (\hyperlink{unioncomplex}{complex} z)
+\begin{DoxyCompactList}\small\item\em Cotangent of a complex number. \end{DoxyCompactList}\item 
+\hyperlink{unioncomplex}{complex} \hyperlink{complex_8h_ac182d6022bdabf7f2b6eccb6a0ea497b}{cacos} (\hyperlink{unioncomplex}{complex} z)
+\begin{DoxyCompactList}\small\item\em Inverse cosine of complex number. \end{DoxyCompactList}\item 
+\hyperlink{unioncomplex}{complex} \hyperlink{complex_8h_a411c00ad70bc1b91a5de261b64d0f131}{casin} (\hyperlink{unioncomplex}{complex} z)
+\begin{DoxyCompactList}\small\item\em Inverse sine of complex number. \end{DoxyCompactList}\item 
+\hyperlink{unioncomplex}{complex} \hyperlink{complex_8h_aa4ec5b4617afd43de3b6c7a11e850f04}{catan} (\hyperlink{unioncomplex}{complex} z)
+\begin{DoxyCompactList}\small\item\em Inverse tangent of complex number. \end{DoxyCompactList}\item 
+\hyperlink{unioncomplex}{complex} \hyperlink{complex_8h_ae509596503bb6ea1142d470882e074a7}{casec} (\hyperlink{unioncomplex}{complex} z)
+\begin{DoxyCompactList}\small\item\em Inverse secant expressed using complex logarithms\+: \end{DoxyCompactList}\item 
+\hyperlink{unioncomplex}{complex} \hyperlink{complex_8h_aa8a49b2418f7bbcf0a8f72a15fbb4984}{cacsc} (\hyperlink{unioncomplex}{complex} z)
+\begin{DoxyCompactList}\small\item\em Inverse cosecant of complex number. \end{DoxyCompactList}\item 
+\hyperlink{unioncomplex}{complex} \hyperlink{complex_8h_a9fe610b52824ffaa0764c77e462c9815}{cacot} (\hyperlink{unioncomplex}{complex} z)
+\begin{DoxyCompactList}\small\item\em Inverse cotangent of complex number. \end{DoxyCompactList}\item 
+\hyperlink{unioncomplex}{complex} \hyperlink{complex_8h_aa90df67e0430d042887fa77812458f47}{ccosh} (\hyperlink{unioncomplex}{complex} z)
+\begin{DoxyCompactList}\small\item\em Hyperbolic cosine of a complex number. \end{DoxyCompactList}\item 
+\hyperlink{unioncomplex}{complex} \hyperlink{complex_8h_a5a9923cad15c34351bb15bd46d5d6331}{csinh} (\hyperlink{unioncomplex}{complex} z)
+\begin{DoxyCompactList}\small\item\em Hyperbolic sine of a complex number. \end{DoxyCompactList}\item 
+\hyperlink{unioncomplex}{complex} \hyperlink{complex_8h_ad8db0bdd6fef8ff43876c845dc1cfb47}{ctanh} (\hyperlink{unioncomplex}{complex} z)
+\begin{DoxyCompactList}\small\item\em Hyperbolic tangent of a complex number. \end{DoxyCompactList}\item 
+\hyperlink{unioncomplex}{complex} \hyperlink{complex_8h_aa639638fbf6b2c819fd8fb3c093ca012}{csech} (\hyperlink{unioncomplex}{complex} z)
+\begin{DoxyCompactList}\small\item\em Hyperbolic secant of a complex number. \end{DoxyCompactList}\item 
+\hyperlink{unioncomplex}{complex} \hyperlink{complex_8h_a57a12e1badffcb670631844ad876ceba}{ccsch} (\hyperlink{unioncomplex}{complex} z)
+\begin{DoxyCompactList}\small\item\em Hyperbolic secant of a complex number. \end{DoxyCompactList}\item 
+\hyperlink{unioncomplex}{complex} \hyperlink{complex_8h_abcc180facc4c06148ed64b7bd028e643}{ccoth} (\hyperlink{unioncomplex}{complex} z)
+\begin{DoxyCompactList}\small\item\em Hyperbolic cotangent of a complex number. \end{DoxyCompactList}\item 
+\hyperlink{unioncomplex}{complex} \hyperlink{complex_8h_a451ef5c81d4091e547e52a9a03af260d}{cacosh} (\hyperlink{unioncomplex}{complex} z)
+\begin{DoxyCompactList}\small\item\em Inverse hyperbolic cosine of complex number. \end{DoxyCompactList}\item 
+\hyperlink{unioncomplex}{complex} \hyperlink{complex_8h_a333c9aa02a58163693f67e1d47aa9887}{casinh} (\hyperlink{unioncomplex}{complex} z)
+\begin{DoxyCompactList}\small\item\em Inverse hyperbolic sine of complex number. \end{DoxyCompactList}\item 
+\hyperlink{unioncomplex}{complex} \hyperlink{complex_8h_a0808614b4e465dc4b4827382a9f77447}{catanh} (\hyperlink{unioncomplex}{complex} z)
+\begin{DoxyCompactList}\small\item\em Inverse hyperbolic tangent of complex number. \end{DoxyCompactList}\item 
+\hyperlink{unioncomplex}{complex} \hyperlink{complex_8h_ad47f8259620b339981f876087f195cb4}{casech} (\hyperlink{unioncomplex}{complex} z)
+\begin{DoxyCompactList}\small\item\em Inverse hyperbolic secant of complex numbers. \end{DoxyCompactList}\item 
+\hyperlink{unioncomplex}{complex} \hyperlink{complex_8h_a1a3241a96a0225c9ef3113f5e5c48acf}{cacsch} (\hyperlink{unioncomplex}{complex} z)
+\begin{DoxyCompactList}\small\item\em Inverse hyperbolic cosecant of complex number. \end{DoxyCompactList}\item 
+\hyperlink{unioncomplex}{complex} \hyperlink{complex_8h_ab9d5fbd365098aa6a35e8599e13d7adb}{cacoth} (\hyperlink{unioncomplex}{complex} z)
+\begin{DoxyCompactList}\small\item\em Inverse hyperbolic cotangent of complex number. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Functions in math library for handling complex numbers. 
+
+
+
+\subsection{Function Documentation}
+\index{complex.\+h@{complex.\+h}!cabs@{cabs}}
+\index{cabs@{cabs}!complex.\+h@{complex.\+h}}
+\subsubsection[{\texorpdfstring{cabs(complex z)}{cabs(complex z)}}]{\setlength{\rightskip}{0pt plus 5cm}double cabs (
+\begin{DoxyParamCaption}
+\item[{{\bf complex}}]{z}
+\end{DoxyParamCaption}
+)}\hypertarget{complex_8h_af6e02ba9d2566b52e3b0faf2d4ed973a}{}\label{complex_8h_af6e02ba9d2566b52e3b0faf2d4ed973a}
+
+
+Absolute value of complex number. 
+
+
+
+Definition at line 56 of file prim.\+c.
+
+
+
+References cimag(), creal(), and hypot().
+
+
+
+Referenced by Complex\+Number\+::\+Absolute(), clog(), cpow(), and csqrt().
+
+
+\begin{DoxyCode}
+57 \{
+58     \textcolor{keywordflow}{return} \hyperlink{math_8h_a6d6a905f61d535f8454190433b8c0ea5}{hypot}(\hyperlink{prim_8c_a4a236b24c0197821e3489a35a72079ab}{creal}(z), \hyperlink{prim_8c_aa1fe0b9371befabef6c41ba73470774a}{cimag}(z));
+59 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=266pt]{complex_8h_af6e02ba9d2566b52e3b0faf2d4ed973a_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{complex_8h_af6e02ba9d2566b52e3b0faf2d4ed973a_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{complex.\+h@{complex.\+h}!cacos@{cacos}}
+\index{cacos@{cacos}!complex.\+h@{complex.\+h}}
+\subsubsection[{\texorpdfstring{cacos(complex z)}{cacos(complex z)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf complex} cacos (
+\begin{DoxyParamCaption}
+\item[{{\bf complex}}]{z}
+\end{DoxyParamCaption}
+)}\hypertarget{complex_8h_ac182d6022bdabf7f2b6eccb6a0ea497b}{}\label{complex_8h_ac182d6022bdabf7f2b6eccb6a0ea497b}
+
+
+Inverse cosine of complex number. 
+
+\begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+14/09/15
+\end{DoxyDate}
+Inverse cosine expressed using complex logarithms\+: 
+\begin{DoxyPre}
+arccos z = -i * log(z + i * sqrt(1 - z * z))
+\end{DoxyPre}
+ More info is available at Wikipedia\+: ~\newline
+ \href{http://en.wikipedia.org/wiki/Inverse_trigonometric_functions#Logarithmic_forms}{\tt http\+://en.\+wikipedia.\+org/wiki/\+Inverse\+\_\+trigonometric\+\_\+functions\#\+Logarithmic\+\_\+forms} 
+
+Definition at line 43 of file cacos.\+c.
+
+
+
+References cadd(), clog(), cmul(), cpack(), csqrt(), and csub().
+
+
+
+Referenced by Complex\+Number\+::\+Arc\+Cosine().
+
+
+\begin{DoxyCode}
+44 \{
+45     \hyperlink{unioncomplex}{complex} a = \hyperlink{complex_8h_a980e6e049f7902b05fc9eb5614b07a5c}{cpack}(1.0, 0.0);
+46     \hyperlink{unioncomplex}{complex} i = \hyperlink{complex_8h_a980e6e049f7902b05fc9eb5614b07a5c}{cpack}(0.0, 1.0);
+47     \hyperlink{unioncomplex}{complex} j = \hyperlink{complex_8h_a980e6e049f7902b05fc9eb5614b07a5c}{cpack}(0.0, -1.0);
+48     \hyperlink{unioncomplex}{complex} p = \hyperlink{complex_8h_a46bb0dd64d87c3aeb85417d1dadf6ddd}{csub}(a, \hyperlink{complex_8h_a340ad83d03bcc727538d25dcf6dd26e9}{cmul}(z, z));
+49     \hyperlink{unioncomplex}{complex} q = \hyperlink{complex_8h_a888b8eb5ccc46411e68f6d7b99035888}{clog}(\hyperlink{complex_8h_a02d8fd1ce9c4fa4e25b1fa676ca96d4e}{cadd}(z, \hyperlink{complex_8h_a340ad83d03bcc727538d25dcf6dd26e9}{cmul}(i, \hyperlink{complex_8h_afe5b814a44414f20d0f98fe974737edd}{csqrt}(p))));
+50     \hyperlink{unioncomplex}{complex} w = \hyperlink{complex_8h_a340ad83d03bcc727538d25dcf6dd26e9}{cmul}(j, q);
+51     \textcolor{keywordflow}{return} w;
+52 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{complex_8h_ac182d6022bdabf7f2b6eccb6a0ea497b_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=301pt]{complex_8h_ac182d6022bdabf7f2b6eccb6a0ea497b_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{complex.\+h@{complex.\+h}!cacosh@{cacosh}}
+\index{cacosh@{cacosh}!complex.\+h@{complex.\+h}}
+\subsubsection[{\texorpdfstring{cacosh(complex z)}{cacosh(complex z)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf complex} cacosh (
+\begin{DoxyParamCaption}
+\item[{{\bf complex}}]{z}
+\end{DoxyParamCaption}
+)}\hypertarget{complex_8h_a451ef5c81d4091e547e52a9a03af260d}{}\label{complex_8h_a451ef5c81d4091e547e52a9a03af260d}
+
+
+Inverse hyperbolic cosine of complex number. 
+
+\begin{DoxyVersion}{Version}
+1.\+1 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+15/03/03
+\end{DoxyDate}
+Inverse hyperbolic cosine expressed using complex logarithms\+: 
+\begin{DoxyPre}
+acosh(z) = log(z + sqrt(z*z - 1))
+\end{DoxyPre}
+ More info is available at Wikipedia\+: ~\newline
+ \href{http://en.wikipedia.org/wiki/Inverse_hyperbolic_function#Logarithmic_representation}{\tt http\+://en.\+wikipedia.\+org/wiki/\+Inverse\+\_\+hyperbolic\+\_\+function\#\+Logarithmic\+\_\+representation} 
+
+Definition at line 43 of file cacosh.\+c.
+
+
+
+References cadd(), clog(), cmul(), cpack(), csqrt(), and csub().
+
+
+
+Referenced by Complex\+Number\+::\+Hyp\+Arc\+Cosine().
+
+
+\begin{DoxyCode}
+44 \{
+45     \hyperlink{unioncomplex}{complex} \hyperlink{ktan_8c_a7cf126dbeb6f30c606e3b42fea65cfef}{one} = \hyperlink{complex_8h_a980e6e049f7902b05fc9eb5614b07a5c}{cpack}(1.0, 0.0);
+46     \hyperlink{unioncomplex}{complex} a = \hyperlink{complex_8h_a46bb0dd64d87c3aeb85417d1dadf6ddd}{csub}(\hyperlink{complex_8h_a340ad83d03bcc727538d25dcf6dd26e9}{cmul}(z, z) , one);
+47     \hyperlink{unioncomplex}{complex} b = \hyperlink{complex_8h_a02d8fd1ce9c4fa4e25b1fa676ca96d4e}{cadd}(z, \hyperlink{complex_8h_afe5b814a44414f20d0f98fe974737edd}{csqrt}(a));
+48     \hyperlink{unioncomplex}{complex} w = \hyperlink{complex_8h_a888b8eb5ccc46411e68f6d7b99035888}{clog}(b);
+49     \textcolor{keywordflow}{return} w;
+50 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{complex_8h_a451ef5c81d4091e547e52a9a03af260d_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=324pt]{complex_8h_a451ef5c81d4091e547e52a9a03af260d_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{complex.\+h@{complex.\+h}!cacot@{cacot}}
+\index{cacot@{cacot}!complex.\+h@{complex.\+h}}
+\subsubsection[{\texorpdfstring{cacot(complex z)}{cacot(complex z)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf complex} cacot (
+\begin{DoxyParamCaption}
+\item[{{\bf complex}}]{z}
+\end{DoxyParamCaption}
+)}\hypertarget{complex_8h_a9fe610b52824ffaa0764c77e462c9815}{}\label{complex_8h_a9fe610b52824ffaa0764c77e462c9815}
+
+
+Inverse cotangent of complex number. 
+
+\begin{DoxyVersion}{Version}
+1.\+1 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+14/10/01
+\end{DoxyDate}
+Inverse cotangent expressed using complex logarithms\+: 
+\begin{DoxyPre}
+arccot z = i/2 * (log(1 - i/z) - log(1 + i/z))
+\end{DoxyPre}
+ More info is available at Wikipedia\+: ~\newline
+ \href{http://en.wikipedia.org/wiki/Inverse_trigonometric_functions#Logarithmic_forms}{\tt http\+://en.\+wikipedia.\+org/wiki/\+Inverse\+\_\+trigonometric\+\_\+functions\#\+Logarithmic\+\_\+forms} 
+
+Definition at line 43 of file cacot.\+c.
+
+
+
+References cadd(), cdiv(), clog(), cmul(), cpack(), and csub().
+
+
+
+Referenced by Complex\+Number\+::\+Arc\+Cotangent().
+
+
+\begin{DoxyCode}
+44 \{
+45     \hyperlink{unioncomplex}{complex} \hyperlink{ktan_8c_a7cf126dbeb6f30c606e3b42fea65cfef}{one} = \hyperlink{complex_8h_a980e6e049f7902b05fc9eb5614b07a5c}{cpack}(1.0, 0.0);
+46     \hyperlink{unioncomplex}{complex} \hyperlink{erf_8c_a34ba47deba43414c15442161fafb4fab}{two} = \hyperlink{complex_8h_a980e6e049f7902b05fc9eb5614b07a5c}{cpack}(2.0, 0.0);
+47     \hyperlink{unioncomplex}{complex} i = \hyperlink{complex_8h_a980e6e049f7902b05fc9eb5614b07a5c}{cpack}(0.0, 1.0);
+48     \hyperlink{unioncomplex}{complex} iz = \hyperlink{complex_8h_ace985b5f12a681b496bd3ae5f8a966b4}{cdiv}(i, z);
+49     \hyperlink{unioncomplex}{complex} p = \hyperlink{complex_8h_a888b8eb5ccc46411e68f6d7b99035888}{clog}(\hyperlink{complex_8h_a46bb0dd64d87c3aeb85417d1dadf6ddd}{csub}(one, iz));
+50     \hyperlink{unioncomplex}{complex} q = \hyperlink{complex_8h_a888b8eb5ccc46411e68f6d7b99035888}{clog}(\hyperlink{complex_8h_a02d8fd1ce9c4fa4e25b1fa676ca96d4e}{cadd}(one, iz));
+51     \hyperlink{unioncomplex}{complex} w = \hyperlink{complex_8h_a340ad83d03bcc727538d25dcf6dd26e9}{cmul}(\hyperlink{complex_8h_ace985b5f12a681b496bd3ae5f8a966b4}{cdiv}(i, two), \hyperlink{complex_8h_a46bb0dd64d87c3aeb85417d1dadf6ddd}{csub}(p, q));
+52     \textcolor{keywordflow}{return} w;
+53 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{complex_8h_a9fe610b52824ffaa0764c77e462c9815_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=313pt]{complex_8h_a9fe610b52824ffaa0764c77e462c9815_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{complex.\+h@{complex.\+h}!cacoth@{cacoth}}
+\index{cacoth@{cacoth}!complex.\+h@{complex.\+h}}
+\subsubsection[{\texorpdfstring{cacoth(complex z)}{cacoth(complex z)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf complex} cacoth (
+\begin{DoxyParamCaption}
+\item[{{\bf complex}}]{z}
+\end{DoxyParamCaption}
+)}\hypertarget{complex_8h_ab9d5fbd365098aa6a35e8599e13d7adb}{}\label{complex_8h_ab9d5fbd365098aa6a35e8599e13d7adb}
+
+
+Inverse hyperbolic cotangent of complex number. 
+
+\begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+14/09/15
+\end{DoxyDate}
+Inverse hyperbolic cotangent expressed using complex logarithms\+: 
+\begin{DoxyPre}
+acoth(z) = 1/2 * ((log(z + 1) - log(z - 1))
+\end{DoxyPre}
+ More info is available at Wikipedia\+: ~\newline
+ \href{http://en.wikipedia.org/wiki/Inverse_hyperbolic_function#Logarithmic_representation}{\tt http\+://en.\+wikipedia.\+org/wiki/\+Inverse\+\_\+hyperbolic\+\_\+function\#\+Logarithmic\+\_\+representation} 
+
+Definition at line 43 of file cacoth.\+c.
+
+
+
+References cadd(), clog(), cmul(), cpack(), and csub().
+
+
+
+Referenced by Complex\+Number\+::\+Hyp\+Arc\+Cotangent().
+
+
+\begin{DoxyCode}
+44 \{
+45     \hyperlink{unioncomplex}{complex} \hyperlink{cosh_8c_a701d1f7de8380226dbc8825672ae4ef0}{half} = \hyperlink{complex_8h_a980e6e049f7902b05fc9eb5614b07a5c}{cpack}(0.5, 0.0);
+46     \hyperlink{unioncomplex}{complex} \hyperlink{ktan_8c_a7cf126dbeb6f30c606e3b42fea65cfef}{one} = \hyperlink{complex_8h_a980e6e049f7902b05fc9eb5614b07a5c}{cpack}(1.0, 0.0);
+47     \hyperlink{unioncomplex}{complex} a = \hyperlink{complex_8h_a888b8eb5ccc46411e68f6d7b99035888}{clog}(\hyperlink{complex_8h_a02d8fd1ce9c4fa4e25b1fa676ca96d4e}{cadd}(z, one));
+48     \hyperlink{unioncomplex}{complex} b = \hyperlink{complex_8h_a888b8eb5ccc46411e68f6d7b99035888}{clog}(\hyperlink{complex_8h_a46bb0dd64d87c3aeb85417d1dadf6ddd}{csub}(z, one));
+49     \hyperlink{unioncomplex}{complex} c = \hyperlink{complex_8h_a46bb0dd64d87c3aeb85417d1dadf6ddd}{csub}(a, b);
+50     \hyperlink{unioncomplex}{complex} w = \hyperlink{complex_8h_a340ad83d03bcc727538d25dcf6dd26e9}{cmul}(half, c);
+51     \textcolor{keywordflow}{return} w;
+52 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{complex_8h_ab9d5fbd365098aa6a35e8599e13d7adb_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=336pt]{complex_8h_ab9d5fbd365098aa6a35e8599e13d7adb_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{complex.\+h@{complex.\+h}!cacsc@{cacsc}}
+\index{cacsc@{cacsc}!complex.\+h@{complex.\+h}}
+\subsubsection[{\texorpdfstring{cacsc(complex z)}{cacsc(complex z)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf complex} cacsc (
+\begin{DoxyParamCaption}
+\item[{{\bf complex}}]{z}
+\end{DoxyParamCaption}
+)}\hypertarget{complex_8h_aa8a49b2418f7bbcf0a8f72a15fbb4984}{}\label{complex_8h_aa8a49b2418f7bbcf0a8f72a15fbb4984}
+
+
+Inverse cosecant of complex number. 
+
+\begin{DoxyVersion}{Version}
+1.\+1 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+14/10/01
+\end{DoxyDate}
+Inverse cosecant expressed using complex logarithms\+: 
+\begin{DoxyPre}
+arccsc z = -i * log(sqr(1 - 1/(z*z)) + i/z)
+\end{DoxyPre}
+ More info is available at Wikipedia\+: ~\newline
+ \href{http://en.wikipedia.org/wiki/Inverse_trigonometric_functions#Logarithmic_forms}{\tt http\+://en.\+wikipedia.\+org/wiki/\+Inverse\+\_\+trigonometric\+\_\+functions\#\+Logarithmic\+\_\+forms} 
+
+Definition at line 43 of file cacsc.\+c.
+
+
+
+References cadd(), cdiv(), clog(), cmul(), cpack(), csqrt(), and csub().
+
+
+
+Referenced by Complex\+Number\+::\+Arc\+Cosecant().
+
+
+\begin{DoxyCode}
+44 \{
+45     \hyperlink{unioncomplex}{complex} \hyperlink{ktan_8c_a7cf126dbeb6f30c606e3b42fea65cfef}{one} = \hyperlink{complex_8h_a980e6e049f7902b05fc9eb5614b07a5c}{cpack}(1.0, 0.0);
+46     \hyperlink{unioncomplex}{complex} i = \hyperlink{complex_8h_a980e6e049f7902b05fc9eb5614b07a5c}{cpack}(0.0, 1.0);
+47     \hyperlink{unioncomplex}{complex} j = \hyperlink{complex_8h_a980e6e049f7902b05fc9eb5614b07a5c}{cpack}(0.0, -1.0);
+48     \hyperlink{unioncomplex}{complex} iz = \hyperlink{complex_8h_ace985b5f12a681b496bd3ae5f8a966b4}{cdiv}(i, z);
+49     \hyperlink{unioncomplex}{complex} z2 = \hyperlink{complex_8h_a340ad83d03bcc727538d25dcf6dd26e9}{cmul}(z, z);
+50     \hyperlink{unioncomplex}{complex} p = \hyperlink{complex_8h_ace985b5f12a681b496bd3ae5f8a966b4}{cdiv}(one, z2);
+51     \hyperlink{unioncomplex}{complex} q = \hyperlink{complex_8h_afe5b814a44414f20d0f98fe974737edd}{csqrt}(\hyperlink{complex_8h_a46bb0dd64d87c3aeb85417d1dadf6ddd}{csub}(one, p));
+52     \hyperlink{unioncomplex}{complex} w = \hyperlink{complex_8h_a340ad83d03bcc727538d25dcf6dd26e9}{cmul}(j, \hyperlink{complex_8h_a888b8eb5ccc46411e68f6d7b99035888}{clog}(\hyperlink{complex_8h_a02d8fd1ce9c4fa4e25b1fa676ca96d4e}{cadd}(q, iz)));
+53     \textcolor{keywordflow}{return} w;
+54 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{complex_8h_aa8a49b2418f7bbcf0a8f72a15fbb4984_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=312pt]{complex_8h_aa8a49b2418f7bbcf0a8f72a15fbb4984_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{complex.\+h@{complex.\+h}!cacsch@{cacsch}}
+\index{cacsch@{cacsch}!complex.\+h@{complex.\+h}}
+\subsubsection[{\texorpdfstring{cacsch(complex z)}{cacsch(complex z)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf complex} cacsch (
+\begin{DoxyParamCaption}
+\item[{{\bf complex}}]{z}
+\end{DoxyParamCaption}
+)}\hypertarget{complex_8h_a1a3241a96a0225c9ef3113f5e5c48acf}{}\label{complex_8h_a1a3241a96a0225c9ef3113f5e5c48acf}
+
+
+Inverse hyperbolic cosecant of complex number. 
+
+\begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+14/09/15
+\end{DoxyDate}
+Inverse hyperbolic cosecant expressed using complex logarithms\+: 
+\begin{DoxyPre}
+acsch(z) = log(sqrt(1 + 1 / (z * z)) + 1/z)
+\end{DoxyPre}
+ More info is available at Wikipedia\+: ~\newline
+ \href{http://en.wikipedia.org/wiki/Inverse_hyperbolic_function#Logarithmic_representation}{\tt http\+://en.\+wikipedia.\+org/wiki/\+Inverse\+\_\+hyperbolic\+\_\+function\#\+Logarithmic\+\_\+representation} 
+
+Definition at line 43 of file cacsch.\+c.
+
+
+
+References cadd(), clog(), cmul(), cpack(), creci(), and csqrt().
+
+
+
+Referenced by Complex\+Number\+::\+Hyp\+Arc\+Cosecant().
+
+
+\begin{DoxyCode}
+44 \{
+45     \hyperlink{unioncomplex}{complex} \hyperlink{ktan_8c_a7cf126dbeb6f30c606e3b42fea65cfef}{one} = \hyperlink{complex_8h_a980e6e049f7902b05fc9eb5614b07a5c}{cpack}(1.0, 0.0);
+46     \hyperlink{unioncomplex}{complex} a = \hyperlink{complex_8h_a78cdeb0bf6f229c2be3065fc697dac68}{creci}(\hyperlink{complex_8h_a340ad83d03bcc727538d25dcf6dd26e9}{cmul}(z, z));
+47     \hyperlink{unioncomplex}{complex} b = \hyperlink{complex_8h_afe5b814a44414f20d0f98fe974737edd}{csqrt}(\hyperlink{complex_8h_a02d8fd1ce9c4fa4e25b1fa676ca96d4e}{cadd}(one, a));
+48     \hyperlink{unioncomplex}{complex} c = \hyperlink{complex_8h_a02d8fd1ce9c4fa4e25b1fa676ca96d4e}{cadd}(b, \hyperlink{complex_8h_a78cdeb0bf6f229c2be3065fc697dac68}{creci}(z));
+49     \hyperlink{unioncomplex}{complex} w = \hyperlink{complex_8h_a888b8eb5ccc46411e68f6d7b99035888}{clog}(c);
+50     \textcolor{keywordflow}{return} w;
+51 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{complex_8h_a1a3241a96a0225c9ef3113f5e5c48acf_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=335pt]{complex_8h_a1a3241a96a0225c9ef3113f5e5c48acf_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{complex.\+h@{complex.\+h}!cadd@{cadd}}
+\index{cadd@{cadd}!complex.\+h@{complex.\+h}}
+\subsubsection[{\texorpdfstring{cadd(complex a, complex z)}{cadd(complex a, complex z)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf complex} cadd (
+\begin{DoxyParamCaption}
+\item[{{\bf complex}}]{a, }
+\item[{{\bf complex}}]{z}
+\end{DoxyParamCaption}
+)}\hypertarget{complex_8h_a02d8fd1ce9c4fa4e25b1fa676ca96d4e}{}\label{complex_8h_a02d8fd1ce9c4fa4e25b1fa676ca96d4e}
+
+
+Addition of two complex numbers. 
+
+
+
+Definition at line 128 of file prim.\+c.
+
+
+
+References cimag(), cpack(), and creal().
+
+
+
+Referenced by Complex\+Number\+::\+Add(), cacos(), cacosh(), cacot(), cacoth(), cacsc(), cacsch(), casec(), casech(), casin(), casinh(), catan(), and catanh().
+
+
+\begin{DoxyCode}
+129 \{
+130     \hyperlink{unioncomplex}{complex} w;
+131     w = \hyperlink{prim_8c_a980e6e049f7902b05fc9eb5614b07a5c}{cpack}(\hyperlink{prim_8c_a4a236b24c0197821e3489a35a72079ab}{creal}(y) + \hyperlink{prim_8c_a4a236b24c0197821e3489a35a72079ab}{creal}(z), \hyperlink{prim_8c_aa1fe0b9371befabef6c41ba73470774a}{cimag}(y) + \hyperlink{prim_8c_aa1fe0b9371befabef6c41ba73470774a}{cimag}(z));
+132     \textcolor{keywordflow}{return} w;
+133 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=197pt]{complex_8h_a02d8fd1ce9c4fa4e25b1fa676ca96d4e_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{complex_8h_a02d8fd1ce9c4fa4e25b1fa676ca96d4e_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{complex.\+h@{complex.\+h}!carg@{carg}}
+\index{carg@{carg}!complex.\+h@{complex.\+h}}
+\subsubsection[{\texorpdfstring{carg(complex z)}{carg(complex z)}}]{\setlength{\rightskip}{0pt plus 5cm}double carg (
+\begin{DoxyParamCaption}
+\item[{{\bf complex}}]{z}
+\end{DoxyParamCaption}
+)}\hypertarget{complex_8h_af9071f4836d077dd3290ed8508de99d5}{}\label{complex_8h_af9071f4836d077dd3290ed8508de99d5}
+\index{complex.\+h@{complex.\+h}!casec@{casec}}
+\index{casec@{casec}!complex.\+h@{complex.\+h}}
+\subsubsection[{\texorpdfstring{casec(complex z)}{casec(complex z)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf complex} casec (
+\begin{DoxyParamCaption}
+\item[{{\bf complex}}]{z}
+\end{DoxyParamCaption}
+)}\hypertarget{complex_8h_ae509596503bb6ea1142d470882e074a7}{}\label{complex_8h_ae509596503bb6ea1142d470882e074a7}
+
+
+Inverse secant expressed using complex logarithms\+: 
+
+\begin{DoxyVersion}{Version}
+1.\+1 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+14/10/01
+\end{DoxyDate}
+Inverse secant expressed using complex logarithms\+: 
+\begin{DoxyPre}
+arcsec z = -i * log(i * sqr(1 - 1/(z*z)) + 1/z)
+\end{DoxyPre}
+ More info is available at Wikipedia\+: ~\newline
+ \href{http://en.wikipedia.org/wiki/Inverse_trigonometric_functions#Logarithmic_forms}{\tt http\+://en.\+wikipedia.\+org/wiki/\+Inverse\+\_\+trigonometric\+\_\+functions\#\+Logarithmic\+\_\+forms} 
+
+Definition at line 43 of file casec.\+c.
+
+
+
+References cadd(), cdiv(), clog(), cmul(), cpack(), creci(), csqrt(), and csub().
+
+
+
+Referenced by Complex\+Number\+::\+Arc\+Secant().
+
+
+\begin{DoxyCode}
+44 \{
+45     \hyperlink{unioncomplex}{complex} \hyperlink{ktan_8c_a7cf126dbeb6f30c606e3b42fea65cfef}{one} = \hyperlink{complex_8h_a980e6e049f7902b05fc9eb5614b07a5c}{cpack}(1.0, 0.0);
+46     \hyperlink{unioncomplex}{complex} i = \hyperlink{complex_8h_a980e6e049f7902b05fc9eb5614b07a5c}{cpack}(0.0, 1.0);
+47     \hyperlink{unioncomplex}{complex} j = \hyperlink{complex_8h_a980e6e049f7902b05fc9eb5614b07a5c}{cpack}(0.0, -1.0);
+48     \hyperlink{unioncomplex}{complex} rz = \hyperlink{complex_8h_a78cdeb0bf6f229c2be3065fc697dac68}{creci}(z);
+49     \hyperlink{unioncomplex}{complex} z2 = \hyperlink{complex_8h_a340ad83d03bcc727538d25dcf6dd26e9}{cmul}(z, z);
+50     \hyperlink{unioncomplex}{complex} p = \hyperlink{complex_8h_ace985b5f12a681b496bd3ae5f8a966b4}{cdiv}(one, z2);
+51     \hyperlink{unioncomplex}{complex} q = \hyperlink{complex_8h_afe5b814a44414f20d0f98fe974737edd}{csqrt}(\hyperlink{complex_8h_a46bb0dd64d87c3aeb85417d1dadf6ddd}{csub}(one, p));
+52     \hyperlink{unioncomplex}{complex} w = \hyperlink{complex_8h_a340ad83d03bcc727538d25dcf6dd26e9}{cmul}(j, \hyperlink{complex_8h_a888b8eb5ccc46411e68f6d7b99035888}{clog}(\hyperlink{complex_8h_a02d8fd1ce9c4fa4e25b1fa676ca96d4e}{cadd}(\hyperlink{complex_8h_a340ad83d03bcc727538d25dcf6dd26e9}{cmul}(i, q), rz)));
+53     \textcolor{keywordflow}{return} w;
+54 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{complex_8h_ae509596503bb6ea1142d470882e074a7_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=301pt]{complex_8h_ae509596503bb6ea1142d470882e074a7_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{complex.\+h@{complex.\+h}!casech@{casech}}
+\index{casech@{casech}!complex.\+h@{complex.\+h}}
+\subsubsection[{\texorpdfstring{casech(complex z)}{casech(complex z)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf complex} casech (
+\begin{DoxyParamCaption}
+\item[{{\bf complex}}]{z}
+\end{DoxyParamCaption}
+)}\hypertarget{complex_8h_ad47f8259620b339981f876087f195cb4}{}\label{complex_8h_ad47f8259620b339981f876087f195cb4}
+
+
+Inverse hyperbolic secant of complex numbers. 
+
+\begin{DoxyVersion}{Version}
+1.\+1 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+15/03/03
+\end{DoxyDate}
+Inverse hyperbolic secant expressed using complex logarithms\+: 
+\begin{DoxyPre}
+asech(z) = log(sqrt(1 / (z * z) - 1) + 1/z)\end{DoxyPre}
+
+
+
+\begin{DoxyPre}\end{DoxyPre}
+ More info is available at Wikipedia\+: ~\newline
+ \href{http://en.wikipedia.org/wiki/Inverse_hyperbolic_function#Logarithmic_representation}{\tt http\+://en.\+wikipedia.\+org/wiki/\+Inverse\+\_\+hyperbolic\+\_\+function\#\+Logarithmic\+\_\+representation} 
+
+Definition at line 44 of file casech.\+c.
+
+
+
+References cadd(), clog(), cmul(), cpack(), creci(), csqrt(), and csub().
+
+
+
+Referenced by Complex\+Number\+::\+Hyp\+Arc\+Secant().
+
+
+\begin{DoxyCode}
+45 \{
+46     \hyperlink{unioncomplex}{complex} \hyperlink{ktan_8c_a7cf126dbeb6f30c606e3b42fea65cfef}{one} = \hyperlink{complex_8h_a980e6e049f7902b05fc9eb5614b07a5c}{cpack}(1.0, 0.0);
+47     \hyperlink{unioncomplex}{complex} a = \hyperlink{complex_8h_a78cdeb0bf6f229c2be3065fc697dac68}{creci}(\hyperlink{complex_8h_a340ad83d03bcc727538d25dcf6dd26e9}{cmul}(z, z));
+48     \hyperlink{unioncomplex}{complex} b = \hyperlink{complex_8h_afe5b814a44414f20d0f98fe974737edd}{csqrt}(\hyperlink{complex_8h_a46bb0dd64d87c3aeb85417d1dadf6ddd}{csub}(a, one));
+49     \hyperlink{unioncomplex}{complex} c = \hyperlink{complex_8h_a02d8fd1ce9c4fa4e25b1fa676ca96d4e}{cadd}(b, \hyperlink{complex_8h_a78cdeb0bf6f229c2be3065fc697dac68}{creci}(z));
+50     \hyperlink{unioncomplex}{complex} w = \hyperlink{complex_8h_a888b8eb5ccc46411e68f6d7b99035888}{clog}(c);
+51     \textcolor{keywordflow}{return} w;
+52 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{complex_8h_ad47f8259620b339981f876087f195cb4_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=324pt]{complex_8h_ad47f8259620b339981f876087f195cb4_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{complex.\+h@{complex.\+h}!casin@{casin}}
+\index{casin@{casin}!complex.\+h@{complex.\+h}}
+\subsubsection[{\texorpdfstring{casin(complex z)}{casin(complex z)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf complex} casin (
+\begin{DoxyParamCaption}
+\item[{{\bf complex}}]{z}
+\end{DoxyParamCaption}
+)}\hypertarget{complex_8h_a411c00ad70bc1b91a5de261b64d0f131}{}\label{complex_8h_a411c00ad70bc1b91a5de261b64d0f131}
+
+
+Inverse sine of complex number. 
+
+\begin{DoxyVersion}{Version}
+1.\+1 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+14/10/01
+\end{DoxyDate}
+Inverse sine expressed using complex logarithms\+: 
+\begin{DoxyPre}
+arcsin z = -i * log(iz + sqrt(1 - z*z))
+\end{DoxyPre}
+ More info is available at Wikipedia\+: ~\newline
+ \href{http://en.wikipedia.org/wiki/Inverse_trigonometric_functions#Logarithmic_forms}{\tt http\+://en.\+wikipedia.\+org/wiki/\+Inverse\+\_\+trigonometric\+\_\+functions\#\+Logarithmic\+\_\+forms} 
+
+Definition at line 43 of file casin.\+c.
+
+
+
+References cadd(), clog(), cmul(), cpack(), csqrt(), and csub().
+
+
+
+Referenced by Complex\+Number\+::\+Arc\+Sine().
+
+
+\begin{DoxyCode}
+44 \{
+45     \hyperlink{unioncomplex}{complex} \hyperlink{ktan_8c_a7cf126dbeb6f30c606e3b42fea65cfef}{one} = \hyperlink{complex_8h_a980e6e049f7902b05fc9eb5614b07a5c}{cpack}(1.0, 0.0);
+46     \hyperlink{unioncomplex}{complex} i = \hyperlink{complex_8h_a980e6e049f7902b05fc9eb5614b07a5c}{cpack}(0.0, 1.0);
+47     \hyperlink{unioncomplex}{complex} j = \hyperlink{complex_8h_a980e6e049f7902b05fc9eb5614b07a5c}{cpack}(0.0, -1.0);
+48     \hyperlink{unioncomplex}{complex} iz = \hyperlink{complex_8h_a340ad83d03bcc727538d25dcf6dd26e9}{cmul}(i, z);
+49     \hyperlink{unioncomplex}{complex} z2 = \hyperlink{complex_8h_a340ad83d03bcc727538d25dcf6dd26e9}{cmul}(z, z);
+50     \hyperlink{unioncomplex}{complex} p = \hyperlink{complex_8h_afe5b814a44414f20d0f98fe974737edd}{csqrt}(\hyperlink{complex_8h_a46bb0dd64d87c3aeb85417d1dadf6ddd}{csub}(one, z2));
+51     \hyperlink{unioncomplex}{complex} q = \hyperlink{complex_8h_a888b8eb5ccc46411e68f6d7b99035888}{clog}(\hyperlink{complex_8h_a02d8fd1ce9c4fa4e25b1fa676ca96d4e}{cadd}(iz, p));
+52     \hyperlink{unioncomplex}{complex} w = \hyperlink{complex_8h_a340ad83d03bcc727538d25dcf6dd26e9}{cmul}(j, q);
+53     \textcolor{keywordflow}{return} w;
+54 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{complex_8h_a411c00ad70bc1b91a5de261b64d0f131_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=287pt]{complex_8h_a411c00ad70bc1b91a5de261b64d0f131_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{complex.\+h@{complex.\+h}!casinh@{casinh}}
+\index{casinh@{casinh}!complex.\+h@{complex.\+h}}
+\subsubsection[{\texorpdfstring{casinh(complex z)}{casinh(complex z)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf complex} casinh (
+\begin{DoxyParamCaption}
+\item[{{\bf complex}}]{z}
+\end{DoxyParamCaption}
+)}\hypertarget{complex_8h_a333c9aa02a58163693f67e1d47aa9887}{}\label{complex_8h_a333c9aa02a58163693f67e1d47aa9887}
+
+
+Inverse hyperbolic sine of complex number. 
+
+\begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+14/09/15
+\end{DoxyDate}
+Inverse hyperbolic sine expressed using complex logarithms\+: 
+\begin{DoxyPre}
+asinh(z) = log(z + sqrt(z*z + 1))\end{DoxyPre}
+
+
+
+\begin{DoxyPre}With branch cuts: -i INF to -i and i to i INF\end{DoxyPre}
+
+
+
+\begin{DoxyPre}Domain: -INF to INF
+Range:  -INF to INF
+\end{DoxyPre}
+ More info is available at Wikipedia\+: ~\newline
+ \href{http://en.wikipedia.org/wiki/Inverse_hyperbolic_function#Logarithmic_representation}{\tt http\+://en.\+wikipedia.\+org/wiki/\+Inverse\+\_\+hyperbolic\+\_\+function\#\+Logarithmic\+\_\+representation} 
+
+Definition at line 48 of file casinh.\+c.
+
+
+
+References cadd(), clog(), cmul(), cpack(), and csqrt().
+
+
+
+Referenced by Complex\+Number\+::\+Hyp\+Arc\+Sine().
+
+
+\begin{DoxyCode}
+49 \{
+50     \hyperlink{unioncomplex}{complex} \hyperlink{ktan_8c_a7cf126dbeb6f30c606e3b42fea65cfef}{one} = \hyperlink{complex_8h_a980e6e049f7902b05fc9eb5614b07a5c}{cpack}(1.0, 0.0);
+51     \hyperlink{unioncomplex}{complex} a = \hyperlink{complex_8h_a02d8fd1ce9c4fa4e25b1fa676ca96d4e}{cadd}(\hyperlink{complex_8h_a340ad83d03bcc727538d25dcf6dd26e9}{cmul}(z, z), one);
+52     \hyperlink{unioncomplex}{complex} b = \hyperlink{complex_8h_a02d8fd1ce9c4fa4e25b1fa676ca96d4e}{cadd}(z, \hyperlink{complex_8h_afe5b814a44414f20d0f98fe974737edd}{csqrt}(a));
+53     \hyperlink{unioncomplex}{complex} w = \hyperlink{complex_8h_a888b8eb5ccc46411e68f6d7b99035888}{clog}(b);
+54     \textcolor{keywordflow}{return} w;
+55 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{complex_8h_a333c9aa02a58163693f67e1d47aa9887_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=310pt]{complex_8h_a333c9aa02a58163693f67e1d47aa9887_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{complex.\+h@{complex.\+h}!catan@{catan}}
+\index{catan@{catan}!complex.\+h@{complex.\+h}}
+\subsubsection[{\texorpdfstring{catan(complex z)}{catan(complex z)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf complex} catan (
+\begin{DoxyParamCaption}
+\item[{{\bf complex}}]{z}
+\end{DoxyParamCaption}
+)}\hypertarget{complex_8h_aa4ec5b4617afd43de3b6c7a11e850f04}{}\label{complex_8h_aa4ec5b4617afd43de3b6c7a11e850f04}
+
+
+Inverse tangent of complex number. 
+
+\begin{DoxyVersion}{Version}
+1.\+1 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+14/10/01
+\end{DoxyDate}
+Inverse tangent expressed using complex logarithms\+: 
+\begin{DoxyPre}
+atan(z) = i/2 * (log(1 - i * z) - log(1 + i * z))
+\end{DoxyPre}
+ More info is available at Wikipedia\+: ~\newline
+ \href{http://en.wikipedia.org/wiki/Inverse_trigonometric_functions#Logarithmic_forms}{\tt http\+://en.\+wikipedia.\+org/wiki/\+Inverse\+\_\+trigonometric\+\_\+functions\#\+Logarithmic\+\_\+forms} 
+
+Definition at line 43 of file catan.\+c.
+
+
+
+References cadd(), cdiv(), clog(), cmul(), cpack(), and csub().
+
+
+
+Referenced by Complex\+Number\+::\+Arc\+Tangent().
+
+
+\begin{DoxyCode}
+44 \{
+45     \hyperlink{unioncomplex}{complex} \hyperlink{ktan_8c_a7cf126dbeb6f30c606e3b42fea65cfef}{one} = \hyperlink{complex_8h_a980e6e049f7902b05fc9eb5614b07a5c}{cpack}(1.0, 0.0);
+46     \hyperlink{unioncomplex}{complex} \hyperlink{erf_8c_a34ba47deba43414c15442161fafb4fab}{two} = \hyperlink{complex_8h_a980e6e049f7902b05fc9eb5614b07a5c}{cpack}(2.0, 0.0);
+47     \hyperlink{unioncomplex}{complex} i = \hyperlink{complex_8h_a980e6e049f7902b05fc9eb5614b07a5c}{cpack}(0.0, 1.0);
+48     \hyperlink{unioncomplex}{complex} iz = \hyperlink{complex_8h_a340ad83d03bcc727538d25dcf6dd26e9}{cmul}(i, z);
+49     \hyperlink{unioncomplex}{complex} p = \hyperlink{complex_8h_a888b8eb5ccc46411e68f6d7b99035888}{clog}(\hyperlink{complex_8h_a46bb0dd64d87c3aeb85417d1dadf6ddd}{csub}(one, iz));
+50     \hyperlink{unioncomplex}{complex} q = \hyperlink{complex_8h_a888b8eb5ccc46411e68f6d7b99035888}{clog}(\hyperlink{complex_8h_a02d8fd1ce9c4fa4e25b1fa676ca96d4e}{cadd}(one, iz));
+51     \hyperlink{unioncomplex}{complex} w = \hyperlink{complex_8h_a340ad83d03bcc727538d25dcf6dd26e9}{cmul}(\hyperlink{complex_8h_ace985b5f12a681b496bd3ae5f8a966b4}{cdiv}(i, two), \hyperlink{complex_8h_a46bb0dd64d87c3aeb85417d1dadf6ddd}{csub}(p, q));
+52     \textcolor{keywordflow}{return} w;
+53 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{complex_8h_aa4ec5b4617afd43de3b6c7a11e850f04_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=303pt]{complex_8h_aa4ec5b4617afd43de3b6c7a11e850f04_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{complex.\+h@{complex.\+h}!catanh@{catanh}}
+\index{catanh@{catanh}!complex.\+h@{complex.\+h}}
+\subsubsection[{\texorpdfstring{catanh(complex z)}{catanh(complex z)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf complex} catanh (
+\begin{DoxyParamCaption}
+\item[{{\bf complex}}]{z}
+\end{DoxyParamCaption}
+)}\hypertarget{complex_8h_a0808614b4e465dc4b4827382a9f77447}{}\label{complex_8h_a0808614b4e465dc4b4827382a9f77447}
+
+
+Inverse hyperbolic tangent of complex number. 
+
+\begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+14/09/15
+\end{DoxyDate}
+Inverse hyperbolic tangent expressed using complex logarithms\+: 
+\begin{DoxyPre}
+atanh(z) = 1/2 * ((log(1 + z) - log(1 - z))
+\end{DoxyPre}
+ More info is available at Wikipedia\+: ~\newline
+ \href{http://en.wikipedia.org/wiki/Inverse_hyperbolic_function#Logarithmic_representation}{\tt http\+://en.\+wikipedia.\+org/wiki/\+Inverse\+\_\+hyperbolic\+\_\+function\#\+Logarithmic\+\_\+representation} 
+
+Definition at line 43 of file catanh.\+c.
+
+
+
+References cadd(), clog(), cmul(), cpack(), and csub().
+
+
+
+Referenced by Complex\+Number\+::\+Hyp\+Arc\+Tangent().
+
+
+\begin{DoxyCode}
+44 \{
+45     \hyperlink{unioncomplex}{complex} \hyperlink{cosh_8c_a701d1f7de8380226dbc8825672ae4ef0}{half} = \hyperlink{complex_8h_a980e6e049f7902b05fc9eb5614b07a5c}{cpack}(0.5, 0.0);
+46     \hyperlink{unioncomplex}{complex} \hyperlink{ktan_8c_a7cf126dbeb6f30c606e3b42fea65cfef}{one} = \hyperlink{complex_8h_a980e6e049f7902b05fc9eb5614b07a5c}{cpack}(1.0, 0.0);
+47     \hyperlink{unioncomplex}{complex} a = \hyperlink{complex_8h_a888b8eb5ccc46411e68f6d7b99035888}{clog}(\hyperlink{complex_8h_a02d8fd1ce9c4fa4e25b1fa676ca96d4e}{cadd}(one, z));
+48     \hyperlink{unioncomplex}{complex} b = \hyperlink{complex_8h_a888b8eb5ccc46411e68f6d7b99035888}{clog}(\hyperlink{complex_8h_a46bb0dd64d87c3aeb85417d1dadf6ddd}{csub}(one, z));
+49     \hyperlink{unioncomplex}{complex} c = \hyperlink{complex_8h_a46bb0dd64d87c3aeb85417d1dadf6ddd}{csub}(a, b);
+50     \hyperlink{unioncomplex}{complex} w = \hyperlink{complex_8h_a340ad83d03bcc727538d25dcf6dd26e9}{cmul}(half, c);
+51     \textcolor{keywordflow}{return} w;
+52 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{complex_8h_a0808614b4e465dc4b4827382a9f77447_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=326pt]{complex_8h_a0808614b4e465dc4b4827382a9f77447_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{complex.\+h@{complex.\+h}!ccbrt@{ccbrt}}
+\index{ccbrt@{ccbrt}!complex.\+h@{complex.\+h}}
+\subsubsection[{\texorpdfstring{ccbrt(complex z)}{ccbrt(complex z)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf complex} ccbrt (
+\begin{DoxyParamCaption}
+\item[{{\bf complex}}]{z}
+\end{DoxyParamCaption}
+)}\hypertarget{complex_8h_a9411d07785a32ac077d24d6c8a5c5554}{}\label{complex_8h_a9411d07785a32ac077d24d6c8a5c5554}
+
+
+Cube root of complex number. 
+
+
+\begin{DoxyPre}
+cbrt z = exp(1/3 * log(z))
+\end{DoxyPre}
+ More info is available at Wikipedia\+: ~\newline
+ \href{http://en.wikipedia.org/wiki/Cube_root}{\tt http\+://en.\+wikipedia.\+org/wiki/\+Cube\+\_\+root} 
+
+Definition at line 40 of file ccbrt.\+c.
+
+
+
+References cexp(), clog(), cmul(), and cpack().
+
+
+
+Referenced by Complex\+Number\+::\+Cube\+Root().
+
+
+\begin{DoxyCode}
+41 \{
+42     \hyperlink{unioncomplex}{complex} onethird = \hyperlink{complex_8h_a980e6e049f7902b05fc9eb5614b07a5c}{cpack}(1.0 / 3.0, 0.0);
+43     \hyperlink{unioncomplex}{complex} a = \hyperlink{complex_8h_a340ad83d03bcc727538d25dcf6dd26e9}{cmul}(onethird, \hyperlink{complex_8h_a888b8eb5ccc46411e68f6d7b99035888}{clog}(z));
+44     \hyperlink{unioncomplex}{complex} w = \hyperlink{complex_8h_abf3bfbb727779504c9ddb7023d14fed0}{cexp}(a);
+45     \textcolor{keywordflow}{return} w;
+46 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{complex_8h_a9411d07785a32ac077d24d6c8a5c5554_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=294pt]{complex_8h_a9411d07785a32ac077d24d6c8a5c5554_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{complex.\+h@{complex.\+h}!cceil@{cceil}}
+\index{cceil@{cceil}!complex.\+h@{complex.\+h}}
+\subsubsection[{\texorpdfstring{cceil(complex z)}{cceil(complex z)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf complex} cceil (
+\begin{DoxyParamCaption}
+\item[{{\bf complex}}]{z}
+\end{DoxyParamCaption}
+)}\hypertarget{complex_8h_a48443015efbd58ce5da6d64d9858f168}{}\label{complex_8h_a48443015efbd58ce5da6d64d9858f168}
+
+
+Ceiling value of complex number. 
+
+
+
+Definition at line 106 of file prim.\+c.
+
+
+
+References cimag(), cpack(), and creal().
+
+
+
+Referenced by Complex\+Number\+::\+Ceiling().
+
+
+\begin{DoxyCode}
+107 \{
+108     \hyperlink{unioncomplex}{complex} w;
+109     w = \hyperlink{prim_8c_a980e6e049f7902b05fc9eb5614b07a5c}{cpack}(\hyperlink{math_8h_a1ea6d7b591132268abc2e843ababd084}{ceil}(\hyperlink{prim_8c_a4a236b24c0197821e3489a35a72079ab}{creal}(z)), \hyperlink{math_8h_a1ea6d7b591132268abc2e843ababd084}{ceil}(\hyperlink{prim_8c_aa1fe0b9371befabef6c41ba73470774a}{cimag}(z)));
+110     \textcolor{keywordflow}{return} w;
+111 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=196pt]{complex_8h_a48443015efbd58ce5da6d64d9858f168_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=279pt]{complex_8h_a48443015efbd58ce5da6d64d9858f168_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{complex.\+h@{complex.\+h}!ccos@{ccos}}
+\index{ccos@{ccos}!complex.\+h@{complex.\+h}}
+\subsubsection[{\texorpdfstring{ccos(complex z)}{ccos(complex z)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf complex} ccos (
+\begin{DoxyParamCaption}
+\item[{{\bf complex}}]{z}
+\end{DoxyParamCaption}
+)}\hypertarget{complex_8h_a68da54d02ea0d55bb90dcb06f56d10f5}{}\label{complex_8h_a68da54d02ea0d55bb90dcb06f56d10f5}
+
+
+Cosine of complex number. 
+
+\begin{DoxyVersion}{Version}
+1.\+1 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+2007/08/20
+\end{DoxyDate}
+
+\begin{DoxyPre}
+a+bi
+real =  cos(a) * cosh(b)
+imag = -sin(a) * sinh(b)
+\end{DoxyPre}
+ 
+
+Definition at line 51 of file ccos.\+c.
+
+
+
+References cchsh(), cimag(), cos(), cpack(), creal(), and sin().
+
+
+
+Referenced by Complex\+Number\+::\+Cosine().
+
+
+\begin{DoxyCode}
+52 \{
+53     \hyperlink{unioncomplex}{complex} w;
+54     \textcolor{keywordtype}{double} a, b;
+55     \textcolor{keywordtype}{double} ch, sh;
+56 
+57     a = \hyperlink{complex_8h_a4a236b24c0197821e3489a35a72079ab}{creal}(z);
+58     b = \hyperlink{complex_8h_aa1fe0b9371befabef6c41ba73470774a}{cimag}(z);
+59     \hyperlink{cplex_2prim_8h_aee34c227a34560e41c3b665a00f1a4f9}{cchsh}(b, &ch, &sh);
+60     w = \hyperlink{complex_8h_a980e6e049f7902b05fc9eb5614b07a5c}{cpack}((\hyperlink{math_8h_a5e7b53a694b3cf0f2d7debd444140fbd}{cos}(a) * ch), (-\hyperlink{math_8h_aad4af25633b071b0e2cdb8ebd87eca77}{sin}(a) * sh));
+61 
+62     \textcolor{keywordflow}{return} w;
+63 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{complex_8h_a68da54d02ea0d55bb90dcb06f56d10f5_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=281pt]{complex_8h_a68da54d02ea0d55bb90dcb06f56d10f5_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{complex.\+h@{complex.\+h}!ccosh@{ccosh}}
+\index{ccosh@{ccosh}!complex.\+h@{complex.\+h}}
+\subsubsection[{\texorpdfstring{ccosh(complex z)}{ccosh(complex z)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf complex} ccosh (
+\begin{DoxyParamCaption}
+\item[{{\bf complex}}]{z}
+\end{DoxyParamCaption}
+)}\hypertarget{complex_8h_aa90df67e0430d042887fa77812458f47}{}\label{complex_8h_aa90df67e0430d042887fa77812458f47}
+
+
+Hyperbolic cosine of a complex number. 
+
+\begin{DoxyVersion}{Version}
+1.\+1 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+2007/08/20
+\end{DoxyDate}
+
+\begin{DoxyPre}
+a+bi
+real = cosh(a) * cos(b)
+imag = sinh(a) * sin(b)
+\end{DoxyPre}
+ 
+
+Definition at line 51 of file ccosh.\+c.
+
+
+
+References cchsh(), cimag(), cos(), cpack(), creal(), and sin().
+
+
+
+Referenced by Complex\+Number\+::\+Hyp\+Cosine().
+
+
+\begin{DoxyCode}
+52 \{
+53     \hyperlink{unioncomplex}{complex} w;
+54     \textcolor{keywordtype}{double} a, b;
+55     \textcolor{keywordtype}{double} ch, sh;
+56 
+57     a = \hyperlink{complex_8h_a4a236b24c0197821e3489a35a72079ab}{creal}(z);
+58     b = \hyperlink{complex_8h_aa1fe0b9371befabef6c41ba73470774a}{cimag}(z);
+59     \hyperlink{cplex_2prim_8h_aee34c227a34560e41c3b665a00f1a4f9}{cchsh}(a, &ch, &sh);
+60     w = \hyperlink{complex_8h_a980e6e049f7902b05fc9eb5614b07a5c}{cpack}(\hyperlink{math_8h_a5e7b53a694b3cf0f2d7debd444140fbd}{cos}(b) * ch, \hyperlink{math_8h_aad4af25633b071b0e2cdb8ebd87eca77}{sin}(b) * sh);
+61 
+62     \textcolor{keywordflow}{return} w;
+63 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{complex_8h_aa90df67e0430d042887fa77812458f47_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=304pt]{complex_8h_aa90df67e0430d042887fa77812458f47_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{complex.\+h@{complex.\+h}!ccot@{ccot}}
+\index{ccot@{ccot}!complex.\+h@{complex.\+h}}
+\subsubsection[{\texorpdfstring{ccot(complex z)}{ccot(complex z)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf complex} ccot (
+\begin{DoxyParamCaption}
+\item[{{\bf complex}}]{z}
+\end{DoxyParamCaption}
+)}\hypertarget{complex_8h_af55c6dec4ec4d7992aea8418480c221c}{}\label{complex_8h_af55c6dec4ec4d7992aea8418480c221c}
+
+
+Cotangent of a complex number. 
+
+Calculated as in Open Office\+: 
+\begin{DoxyPre}
+a+bi
+                sin(2.0 * a)
+real  = ------------------------------
+         cosh(2.0 * b) - cos(2.0 * a)\end{DoxyPre}
+
+
+
+\begin{DoxyPre}               -sinh(2.0 * b)
+imag  = ------------------------------
+         cosh(2.0 * b) - cos(2.0 * a)
+\end{DoxyPre}
+ \href{https://wiki.openoffice.org/wiki/Documentation/How_Tos/Calc:_IMCOT_function}{\tt https\+://wiki.\+openoffice.\+org/wiki/\+Documentation/\+How\+\_\+\+Tos/\+Calc\+:\+\_\+\+I\+M\+C\+O\+T\+\_\+function} 
+
+Definition at line 47 of file ccot.\+c.
+
+
+
+References cimag(), cos(), cosh(), cpack(), creal(), sin(), and sinh().
+
+
+
+Referenced by Complex\+Number\+::\+Cotangent().
+
+
+\begin{DoxyCode}
+48 \{
+49     \hyperlink{unioncomplex}{complex} w;
+50     \textcolor{keywordtype}{double} a, b;
+51     \textcolor{keywordtype}{double} d;
+52 
+53     a = \hyperlink{complex_8h_a4a236b24c0197821e3489a35a72079ab}{creal}(z);
+54     b = \hyperlink{complex_8h_aa1fe0b9371befabef6c41ba73470774a}{cimag}(z);
+55     d = \hyperlink{math_8h_a3795d3c1f1d30819be56da4e4d67f64b}{cosh}(2.0 * b) - \hyperlink{math_8h_a5e7b53a694b3cf0f2d7debd444140fbd}{cos}(2.0 * a);
+56 
+57     \textcolor{keywordflow}{if} (d == 0.0) \{
+58         w = \hyperlink{complex_8h_a980e6e049f7902b05fc9eb5614b07a5c}{cpack}(\hyperlink{cplex_2prim_8h_a5f3d17bf39f78da3422ca52e475d7724}{HUGE}, \hyperlink{cplex_2prim_8h_a5f3d17bf39f78da3422ca52e475d7724}{HUGE}); \textcolor{comment}{// TODO: INF, INF}
+59     \} \textcolor{keywordflow}{else} \{
+60         w = \hyperlink{complex_8h_a980e6e049f7902b05fc9eb5614b07a5c}{cpack}((\hyperlink{math_8h_aad4af25633b071b0e2cdb8ebd87eca77}{sin}(2.0 * a) / d), (-\hyperlink{math_8h_a862012e970c977c482507064e2793b45}{sinh}(2.0 * b) / d));
+61     \}
+62 
+63     \textcolor{keywordflow}{return} w;
+64 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{complex_8h_af55c6dec4ec4d7992aea8418480c221c_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=292pt]{complex_8h_af55c6dec4ec4d7992aea8418480c221c_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{complex.\+h@{complex.\+h}!ccoth@{ccoth}}
+\index{ccoth@{ccoth}!complex.\+h@{complex.\+h}}
+\subsubsection[{\texorpdfstring{ccoth(complex z)}{ccoth(complex z)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf complex} ccoth (
+\begin{DoxyParamCaption}
+\item[{{\bf complex}}]{z}
+\end{DoxyParamCaption}
+)}\hypertarget{complex_8h_abcc180facc4c06148ed64b7bd028e643}{}\label{complex_8h_abcc180facc4c06148ed64b7bd028e643}
+
+
+Hyperbolic cotangent of a complex number. 
+
+
+\begin{DoxyPre}
+acoth(z) = 0.5 * (log(1 + 1/z) - log(1 - 1/z))
+\end{DoxyPre}
+ or 
+\begin{DoxyPre}
+a+bi
+               sinh(2.0 * a)
+real  = ------------------------------
+         cosh(2.0 * a) - cos(2.0 * b)
+\begin{DoxyVerb}  -sin(2.0 * b)
+\end{DoxyVerb}
+
+imag  = ------------------------------
+         cosh(2.0 * a) - cos(2.0 * b)
+\end{DoxyPre}
+ 
+
+Definition at line 49 of file ccoth.\+c.
+
+
+
+References cimag(), cos(), cosh(), cpack(), creal(), sin(), and sinh().
+
+
+
+Referenced by Complex\+Number\+::\+Hyp\+Cotangent().
+
+
+\begin{DoxyCode}
+50 \{
+51     \hyperlink{unioncomplex}{complex} w;
+52     \textcolor{keywordtype}{double} a, b;
+53     \textcolor{keywordtype}{double} d;
+54 
+55     a = \hyperlink{complex_8h_a4a236b24c0197821e3489a35a72079ab}{creal}(z);
+56     b = \hyperlink{complex_8h_aa1fe0b9371befabef6c41ba73470774a}{cimag}(z);
+57     d = \hyperlink{math_8h_a3795d3c1f1d30819be56da4e4d67f64b}{cosh}(2.0 * a) - \hyperlink{math_8h_a5e7b53a694b3cf0f2d7debd444140fbd}{cos}(2.0 * b);
+58     w = \hyperlink{complex_8h_a980e6e049f7902b05fc9eb5614b07a5c}{cpack}(\hyperlink{math_8h_a862012e970c977c482507064e2793b45}{sinh}(2.0 * a) / d, -\hyperlink{math_8h_aad4af25633b071b0e2cdb8ebd87eca77}{sin}(2.0 * b) / d);
+59 
+60     \textcolor{keywordflow}{return} w;
+61 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{complex_8h_abcc180facc4c06148ed64b7bd028e643_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=316pt]{complex_8h_abcc180facc4c06148ed64b7bd028e643_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{complex.\+h@{complex.\+h}!ccsc@{ccsc}}
+\index{ccsc@{ccsc}!complex.\+h@{complex.\+h}}
+\subsubsection[{\texorpdfstring{ccsc(complex z)}{ccsc(complex z)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf complex} ccsc (
+\begin{DoxyParamCaption}
+\item[{{\bf complex}}]{z}
+\end{DoxyParamCaption}
+)}\hypertarget{complex_8h_a1a06d41ae4e946bed755fe51ffb6ed24}{}\label{complex_8h_a1a06d41ae4e946bed755fe51ffb6ed24}
+
+
+Cosecant of a complex number. 
+
+Calculated as in Open Office\+: 
+\begin{DoxyPre}
+a+bi
+            2.0 * sin(a) * cosh(b)
+real  = ------------------------------
+         cosh(2.0 * b) - cos(2.0 * a)\end{DoxyPre}
+
+
+
+\begin{DoxyPre}           -2.0 * cos(a) * sinh(b)
+imag  = ------------------------------
+         cosh(2.0 * b) - cos(2.0 * a)
+\end{DoxyPre}
+ \href{https://wiki.openoffice.org/wiki/Documentation/How_Tos/Calc:_IMCSC_function}{\tt https\+://wiki.\+openoffice.\+org/wiki/\+Documentation/\+How\+\_\+\+Tos/\+Calc\+:\+\_\+\+I\+M\+C\+S\+C\+\_\+function} 
+
+Definition at line 47 of file ccsc.\+c.
+
+
+
+References cimag(), cos(), cosh(), cpack(), creal(), sin(), and sinh().
+
+
+
+Referenced by Complex\+Number\+::\+Cosecant().
+
+
+\begin{DoxyCode}
+48 \{
+49     \hyperlink{unioncomplex}{complex} w;
+50     \textcolor{keywordtype}{double} a, b;
+51     \textcolor{keywordtype}{double} d;
+52 
+53     a = \hyperlink{complex_8h_a4a236b24c0197821e3489a35a72079ab}{creal}(z);
+54     b = \hyperlink{complex_8h_aa1fe0b9371befabef6c41ba73470774a}{cimag}(z);
+55     d = \hyperlink{math_8h_a3795d3c1f1d30819be56da4e4d67f64b}{cosh}(2.0 * b) - \hyperlink{math_8h_a5e7b53a694b3cf0f2d7debd444140fbd}{cos}(2.0 * a);
+56 
+57     \textcolor{keywordflow}{if} (d == 0.0) \{
+58         w = \hyperlink{complex_8h_a980e6e049f7902b05fc9eb5614b07a5c}{cpack}(\hyperlink{cplex_2prim_8h_a5f3d17bf39f78da3422ca52e475d7724}{HUGE}, \hyperlink{cplex_2prim_8h_a5f3d17bf39f78da3422ca52e475d7724}{HUGE}); \textcolor{comment}{// TODO: INF, INF}
+59     \} \textcolor{keywordflow}{else} \{
+60         w = \hyperlink{complex_8h_a980e6e049f7902b05fc9eb5614b07a5c}{cpack}((2.0 * \hyperlink{math_8h_aad4af25633b071b0e2cdb8ebd87eca77}{sin}(a) * \hyperlink{math_8h_a3795d3c1f1d30819be56da4e4d67f64b}{cosh}(b) / d), (-2.0 * \hyperlink{math_8h_a5e7b53a694b3cf0f2d7debd444140fbd}{cos}(a) * 
+      \hyperlink{math_8h_a862012e970c977c482507064e2793b45}{sinh}(b) / d));
+61     \}
+62 
+63     \textcolor{keywordflow}{return} w;
+64 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{complex_8h_a1a06d41ae4e946bed755fe51ffb6ed24_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=292pt]{complex_8h_a1a06d41ae4e946bed755fe51ffb6ed24_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{complex.\+h@{complex.\+h}!ccsch@{ccsch}}
+\index{ccsch@{ccsch}!complex.\+h@{complex.\+h}}
+\subsubsection[{\texorpdfstring{ccsch(complex z)}{ccsch(complex z)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf complex} ccsch (
+\begin{DoxyParamCaption}
+\item[{{\bf complex}}]{z}
+\end{DoxyParamCaption}
+)}\hypertarget{complex_8h_a57a12e1badffcb670631844ad876ceba}{}\label{complex_8h_a57a12e1badffcb670631844ad876ceba}
+
+
+Hyperbolic secant of a complex number. 
+
+Calculated as in Open Office\+: 
+\begin{DoxyPre}
+a+bi
+            2.0 * sinh(a) * cos(b)
+real  = ------------------------------
+         cosh(2.0 * a) - cos(2.0 * b)\end{DoxyPre}
+
+
+
+\begin{DoxyPre}        -2.0 * cosh(2.0 * a) * sin(b)
+imag  = ------------------------------
+         cosh(2.0 * a) - cos(2.0 * b)
+\end{DoxyPre}
+ \href{https://wiki.openoffice.org/wiki/Documentation/How_Tos/Calc:_IMCSCH_function}{\tt https\+://wiki.\+openoffice.\+org/wiki/\+Documentation/\+How\+\_\+\+Tos/\+Calc\+:\+\_\+\+I\+M\+C\+S\+C\+H\+\_\+function} 
+
+Definition at line 47 of file ccsch.\+c.
+
+
+
+References cimag(), cos(), cosh(), cpack(), creal(), sin(), and sinh().
+
+
+
+Referenced by Complex\+Number\+::\+Hyp\+Cosecant().
+
+
+\begin{DoxyCode}
+48 \{
+49     \hyperlink{unioncomplex}{complex} w;
+50     \textcolor{keywordtype}{double} a, b;
+51     \textcolor{keywordtype}{double} d;
+52 
+53     a = \hyperlink{complex_8h_a4a236b24c0197821e3489a35a72079ab}{creal}(z);
+54     b = \hyperlink{complex_8h_aa1fe0b9371befabef6c41ba73470774a}{cimag}(z);
+55     d = \hyperlink{math_8h_a3795d3c1f1d30819be56da4e4d67f64b}{cosh}(2.0 * a) - \hyperlink{math_8h_a5e7b53a694b3cf0f2d7debd444140fbd}{cos}(2.0 * b);
+56     w = \hyperlink{complex_8h_a980e6e049f7902b05fc9eb5614b07a5c}{cpack}((2.0 * \hyperlink{math_8h_a862012e970c977c482507064e2793b45}{sinh}(a) * \hyperlink{math_8h_a5e7b53a694b3cf0f2d7debd444140fbd}{cos}(b) / d), (-2.0 * \hyperlink{math_8h_a3795d3c1f1d30819be56da4e4d67f64b}{cosh}(a) * 
+      \hyperlink{math_8h_aad4af25633b071b0e2cdb8ebd87eca77}{sin}(b) / d));
+57 
+58     \textcolor{keywordflow}{return} w;
+59 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{complex_8h_a57a12e1badffcb670631844ad876ceba_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=315pt]{complex_8h_a57a12e1badffcb670631844ad876ceba_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{complex.\+h@{complex.\+h}!cdiv@{cdiv}}
+\index{cdiv@{cdiv}!complex.\+h@{complex.\+h}}
+\subsubsection[{\texorpdfstring{cdiv(complex a, complex z)}{cdiv(complex a, complex z)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf complex} cdiv (
+\begin{DoxyParamCaption}
+\item[{{\bf complex}}]{a, }
+\item[{{\bf complex}}]{z}
+\end{DoxyParamCaption}
+)}\hypertarget{complex_8h_ace985b5f12a681b496bd3ae5f8a966b4}{}\label{complex_8h_ace985b5f12a681b496bd3ae5f8a966b4}
+
+
+Division of two complex numbers. 
+
+
+
+Definition at line 170 of file prim.\+c.
+
+
+
+References cimag(), cpack(), and creal().
+
+
+
+Referenced by cacot(), cacsc(), casec(), catan(), clog10(), clogb(), and Complex\+Number\+::\+Div().
+
+
+\begin{DoxyCode}
+171 \{
+172     \hyperlink{unioncomplex}{complex} w;
+173     \textcolor{keywordtype}{double} a, b, c, d;
+174     \textcolor{keywordtype}{double} q, v, x;
+175 
+176     a = \hyperlink{prim_8c_a4a236b24c0197821e3489a35a72079ab}{creal}(y);
+177     b = \hyperlink{prim_8c_aa1fe0b9371befabef6c41ba73470774a}{cimag}(y);
+178     c = \hyperlink{prim_8c_a4a236b24c0197821e3489a35a72079ab}{creal}(z);
+179     d = \hyperlink{prim_8c_aa1fe0b9371befabef6c41ba73470774a}{cimag}(z);
+180 
+181     q = c * c + d * d;
+182     v = a * c + b * d;
+183     x = b * c - a * d;
+184 
+185     w = \hyperlink{prim_8c_a980e6e049f7902b05fc9eb5614b07a5c}{cpack}(v / q, x / q);
+186     \textcolor{keywordflow}{return} w;
+187 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=194pt]{complex_8h_ace985b5f12a681b496bd3ae5f8a966b4_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{complex_8h_ace985b5f12a681b496bd3ae5f8a966b4_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{complex.\+h@{complex.\+h}!cexp@{cexp}}
+\index{cexp@{cexp}!complex.\+h@{complex.\+h}}
+\subsubsection[{\texorpdfstring{cexp(complex z)}{cexp(complex z)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf complex} cexp (
+\begin{DoxyParamCaption}
+\item[{{\bf complex}}]{z}
+\end{DoxyParamCaption}
+)}\hypertarget{complex_8h_abf3bfbb727779504c9ddb7023d14fed0}{}\label{complex_8h_abf3bfbb727779504c9ddb7023d14fed0}
+
+
+Returns e to the power of a complex number. 
+
+\begin{DoxyVersion}{Version}
+1.\+1 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+2007/08/20 
+\end{DoxyDate}
+
+
+Definition at line 46 of file cexp.\+c.
+
+
+
+References cimag(), cos(), cpack(), creal(), exp(), and sin().
+
+
+
+Referenced by ccbrt().
+
+
+\begin{DoxyCode}
+47 \{
+48     \hyperlink{unioncomplex}{complex} w;
+49     \textcolor{keywordtype}{double} r, x, y;
+50     x = \hyperlink{complex_8h_a4a236b24c0197821e3489a35a72079ab}{creal}(z);
+51     y = \hyperlink{complex_8h_aa1fe0b9371befabef6c41ba73470774a}{cimag}(z);
+52     r = \hyperlink{math_8h_ae09128febbbe6372cde4fa0c65608a42}{exp}(x);
+53     w = \hyperlink{complex_8h_a980e6e049f7902b05fc9eb5614b07a5c}{cpack}(r * \hyperlink{math_8h_a5e7b53a694b3cf0f2d7debd444140fbd}{cos}(y), r * \hyperlink{math_8h_aad4af25633b071b0e2cdb8ebd87eca77}{sin}(y));
+54     \textcolor{keywordflow}{return} w;
+55 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{complex_8h_abf3bfbb727779504c9ddb7023d14fed0_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{complex_8h_abf3bfbb727779504c9ddb7023d14fed0_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{complex.\+h@{complex.\+h}!cfloor@{cfloor}}
+\index{cfloor@{cfloor}!complex.\+h@{complex.\+h}}
+\subsubsection[{\texorpdfstring{cfloor(complex z)}{cfloor(complex z)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf complex} cfloor (
+\begin{DoxyParamCaption}
+\item[{{\bf complex}}]{z}
+\end{DoxyParamCaption}
+)}\hypertarget{complex_8h_a12886361ac7d752a46ec5cf3bdd0687e}{}\label{complex_8h_a12886361ac7d752a46ec5cf3bdd0687e}
+
+
+Floor value of complex number. 
+
+
+
+Definition at line 95 of file prim.\+c.
+
+
+
+References cimag(), cpack(), and creal().
+
+
+
+Referenced by Complex\+Number\+::\+Floor().
+
+
+\begin{DoxyCode}
+96 \{
+97     \hyperlink{unioncomplex}{complex} w;
+98     w = \hyperlink{prim_8c_a980e6e049f7902b05fc9eb5614b07a5c}{cpack}(\hyperlink{math_8h_a6de60a3e907dcf0bfe3ea8d64f1e8873}{floor}(\hyperlink{prim_8c_a4a236b24c0197821e3489a35a72079ab}{creal}(z)), \hyperlink{math_8h_a6de60a3e907dcf0bfe3ea8d64f1e8873}{floor}(\hyperlink{prim_8c_aa1fe0b9371befabef6c41ba73470774a}{cimag}(z)));
+99     \textcolor{keywordflow}{return} w;
+100 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=200pt]{complex_8h_a12886361ac7d752a46ec5cf3bdd0687e_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=275pt]{complex_8h_a12886361ac7d752a46ec5cf3bdd0687e_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{complex.\+h@{complex.\+h}!cimag@{cimag}}
+\index{cimag@{cimag}!complex.\+h@{complex.\+h}}
+\subsubsection[{\texorpdfstring{cimag(complex z)}{cimag(complex z)}}]{\setlength{\rightskip}{0pt plus 5cm}double cimag (
+\begin{DoxyParamCaption}
+\item[{{\bf complex}}]{z}
+\end{DoxyParamCaption}
+)}\hypertarget{complex_8h_aa1fe0b9371befabef6c41ba73470774a}{}\label{complex_8h_aa1fe0b9371befabef6c41ba73470774a}
+
+
+Imaginary part of complex number. 
+
+
+
+Definition at line 47 of file prim.\+c.
+
+
+
+Referenced by cabs(), cadd(), cceil(), ccos(), ccosh(), ccot(), ccoth(), ccsc(), ccsch(), cdiv(), cexp(), cfloor(), clog(), cmul(), cpow(), creci(), cround(), csec(), csech(), csgn(), csin(), csinh(), csqrt(), csub(), ctan(), ctanh(), ctrunc(), Complex\+Number\+::\+Get\+Default\+Precedence(), Complex\+Number\+::\+Get\+Imag\+Value(), Complex\+Number\+::\+Get\+Precedence(), Positional\+Numeral\+System\+::\+Get\+Text(), Decimal\+System\+::\+Get\+Text(), and Complex\+Number\+::\+Unary().
+
+
+\begin{DoxyCode}
+48 \{
+49     \textcolor{keywordflow}{return} (\hyperlink{prim_8c_af2ec11abad1ad66e6fab43ca0ec74740}{IMAG\_PART}(z));
+50 \}
+\end{DoxyCode}
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{complex_8h_aa1fe0b9371befabef6c41ba73470774a_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{complex.\+h@{complex.\+h}!clog@{clog}}
+\index{clog@{clog}!complex.\+h@{complex.\+h}}
+\subsubsection[{\texorpdfstring{clog(complex z)}{clog(complex z)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf complex} clog (
+\begin{DoxyParamCaption}
+\item[{{\bf complex}}]{z}
+\end{DoxyParamCaption}
+)}\hypertarget{complex_8h_a888b8eb5ccc46411e68f6d7b99035888}{}\label{complex_8h_a888b8eb5ccc46411e68f6d7b99035888}
+
+
+Natural logarithm of a complex number. 
+
+\begin{DoxyVersion}{Version}
+1.\+1 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+2007/08/20 
+\end{DoxyDate}
+
+
+Definition at line 46 of file clog.\+c.
+
+
+
+References atan2(), cabs(), cimag(), cpack(), and creal().
+
+
+
+Referenced by cacos(), cacosh(), cacot(), cacoth(), cacsc(), cacsch(), casec(), casech(), casin(), casinh(), catan(), catanh(), ccbrt(), clog10(), clogb(), and Complex\+Number\+::\+Log().
+
+
+\begin{DoxyCode}
+47 \{
+48     \hyperlink{unioncomplex}{complex} w;
+49     \textcolor{keywordtype}{double} p, q;
+50     p = \hyperlink{math_8h_adb302c9aafbaa5e180d9f60ee954bb82}{log}(\hyperlink{complex_8h_af6e02ba9d2566b52e3b0faf2d4ed973a}{cabs}(z));
+51     q = \hyperlink{math_8h_a349377202ca14f79eb335b1a421fe4d8}{atan2}(\hyperlink{complex_8h_aa1fe0b9371befabef6c41ba73470774a}{cimag}(z), \hyperlink{complex_8h_a4a236b24c0197821e3489a35a72079ab}{creal}(z));
+52     w = \hyperlink{complex_8h_a980e6e049f7902b05fc9eb5614b07a5c}{cpack}(p, q);
+53     \textcolor{keywordflow}{return} w;
+54 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=342pt]{complex_8h_a888b8eb5ccc46411e68f6d7b99035888_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{complex_8h_a888b8eb5ccc46411e68f6d7b99035888_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{complex.\+h@{complex.\+h}!clog10@{clog10}}
+\index{clog10@{clog10}!complex.\+h@{complex.\+h}}
+\subsubsection[{\texorpdfstring{clog10(complex z)}{clog10(complex z)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf complex} clog10 (
+\begin{DoxyParamCaption}
+\item[{{\bf complex}}]{z}
+\end{DoxyParamCaption}
+)}\hypertarget{complex_8h_a5e20d88f7f7f17d510ddf62f269c8343}{}\label{complex_8h_a5e20d88f7f7f17d510ddf62f269c8343}
+
+
+Base 10 logarithmic value of complex number. 
+
+
+\begin{DoxyPre}
+log z = log(z) / log(10)
+\end{DoxyPre}
+ More info is available at Wikipedia\+: ~\newline
+ \href{http://en.wikipedia.org/wiki/Complex_logarithm}{\tt http\+://en.\+wikipedia.\+org/wiki/\+Complex\+\_\+logarithm} 
+
+Definition at line 39 of file clog10.\+c.
+
+
+
+References cdiv(), clog(), and cpack().
+
+
+
+Referenced by Complex\+Number\+::\+Log10().
+
+
+\begin{DoxyCode}
+40 \{
+41     \hyperlink{unioncomplex}{complex} teen = \hyperlink{complex_8h_a980e6e049f7902b05fc9eb5614b07a5c}{cpack}(10.0, 0.0);
+42     \hyperlink{unioncomplex}{complex} w = \hyperlink{complex_8h_ace985b5f12a681b496bd3ae5f8a966b4}{cdiv}(\hyperlink{complex_8h_a888b8eb5ccc46411e68f6d7b99035888}{clog}(z), \hyperlink{complex_8h_a888b8eb5ccc46411e68f6d7b99035888}{clog}(teen));
+43     \textcolor{keywordflow}{return} w;
+44 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{complex_8h_a5e20d88f7f7f17d510ddf62f269c8343_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=283pt]{complex_8h_a5e20d88f7f7f17d510ddf62f269c8343_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{complex.\+h@{complex.\+h}!clogb@{clogb}}
+\index{clogb@{clogb}!complex.\+h@{complex.\+h}}
+\subsubsection[{\texorpdfstring{clogb(complex z)}{clogb(complex z)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf complex} clogb (
+\begin{DoxyParamCaption}
+\item[{{\bf complex}}]{z}
+\end{DoxyParamCaption}
+)}\hypertarget{complex_8h_a3951e04bc6370fb9fd7b0ff2c2558d7b}{}\label{complex_8h_a3951e04bc6370fb9fd7b0ff2c2558d7b}
+
+
+Base 2 logarithmic value of complex number. 
+
+
+\begin{DoxyPre}
+lb z = log(z) / log(2)
+\end{DoxyPre}
+ More info is available at Wikipedia\+: ~\newline
+ \href{http://en.wikipedia.org/wiki/Complex_logarithm}{\tt http\+://en.\+wikipedia.\+org/wiki/\+Complex\+\_\+logarithm} 
+
+Definition at line 39 of file clogb.\+c.
+
+
+
+References cdiv(), clog(), and cpack().
+
+
+
+Referenced by Complex\+Number\+::\+Log2().
+
+
+\begin{DoxyCode}
+40 \{
+41     \hyperlink{unioncomplex}{complex} \hyperlink{erf_8c_a34ba47deba43414c15442161fafb4fab}{two} = \hyperlink{complex_8h_a980e6e049f7902b05fc9eb5614b07a5c}{cpack}(2.0, 0.0);
+42     \hyperlink{unioncomplex}{complex} w = \hyperlink{complex_8h_ace985b5f12a681b496bd3ae5f8a966b4}{cdiv}(\hyperlink{complex_8h_a888b8eb5ccc46411e68f6d7b99035888}{clog}(z), \hyperlink{complex_8h_a888b8eb5ccc46411e68f6d7b99035888}{clog}(two));
+43     \textcolor{keywordflow}{return} w;
+44 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{complex_8h_a3951e04bc6370fb9fd7b0ff2c2558d7b_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=273pt]{complex_8h_a3951e04bc6370fb9fd7b0ff2c2558d7b_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{complex.\+h@{complex.\+h}!cmul@{cmul}}
+\index{cmul@{cmul}!complex.\+h@{complex.\+h}}
+\subsubsection[{\texorpdfstring{cmul(complex a, complex z)}{cmul(complex a, complex z)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf complex} cmul (
+\begin{DoxyParamCaption}
+\item[{{\bf complex}}]{a, }
+\item[{{\bf complex}}]{z}
+\end{DoxyParamCaption}
+)}\hypertarget{complex_8h_a340ad83d03bcc727538d25dcf6dd26e9}{}\label{complex_8h_a340ad83d03bcc727538d25dcf6dd26e9}
+
+
+Multiplication of two complex numbers. 
+
+
+
+Definition at line 150 of file prim.\+c.
+
+
+
+References cimag(), cpack(), and creal().
+
+
+
+Referenced by cacos(), cacosh(), cacot(), cacoth(), cacsc(), cacsch(), casec(), casech(), casin(), casinh(), catan(), catanh(), ccbrt(), and Complex\+Number\+::\+Mul().
+
+
+\begin{DoxyCode}
+151 \{
+152     \hyperlink{unioncomplex}{complex} w;
+153     \textcolor{keywordtype}{double} a, b, c, d;
+154 
+155     \textcolor{comment}{// (a+bi)(c+di)}
+156     a = \hyperlink{prim_8c_a4a236b24c0197821e3489a35a72079ab}{creal}(y);
+157     b = \hyperlink{prim_8c_aa1fe0b9371befabef6c41ba73470774a}{cimag}(y);
+158     c = \hyperlink{prim_8c_a4a236b24c0197821e3489a35a72079ab}{creal}(z);
+159     d = \hyperlink{prim_8c_aa1fe0b9371befabef6c41ba73470774a}{cimag}(z);
+160 
+161     \textcolor{comment}{// (ac -bd) + (ad + bc)i}
+162     w = \hyperlink{prim_8c_a980e6e049f7902b05fc9eb5614b07a5c}{cpack}(a * c - b * d, a * d + b * c);
+163     \textcolor{keywordflow}{return} w;
+164 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=197pt]{complex_8h_a340ad83d03bcc727538d25dcf6dd26e9_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{complex_8h_a340ad83d03bcc727538d25dcf6dd26e9_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{complex.\+h@{complex.\+h}!conj@{conj}}
+\index{conj@{conj}!complex.\+h@{complex.\+h}}
+\subsubsection[{\texorpdfstring{conj(complex z)}{conj(complex z)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf complex} conj (
+\begin{DoxyParamCaption}
+\item[{{\bf complex}}]{z}
+\end{DoxyParamCaption}
+)}\hypertarget{complex_8h_a8d08797ad03191874e9943144da189be}{}\label{complex_8h_a8d08797ad03191874e9943144da189be}
+
+
+Definition at line 61 of file prim.\+c.
+
+
+
+References cpack().
+
+
+
+Referenced by creci().
+
+
+\begin{DoxyCode}
+62 \{
+63     \hyperlink{prim_8c_af2ec11abad1ad66e6fab43ca0ec74740}{IMAG\_PART}(z) = -\hyperlink{prim_8c_af2ec11abad1ad66e6fab43ca0ec74740}{IMAG\_PART}(z);
+64     \textcolor{keywordflow}{return} \hyperlink{prim_8c_a980e6e049f7902b05fc9eb5614b07a5c}{cpack}(\hyperlink{prim_8c_abe71472a1db694c210cd45a928ede69d}{REAL\_PART}(z), \hyperlink{prim_8c_af2ec11abad1ad66e6fab43ca0ec74740}{IMAG\_PART}(z));
+65 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=194pt]{complex_8h_a8d08797ad03191874e9943144da189be_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{complex_8h_a8d08797ad03191874e9943144da189be_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{complex.\+h@{complex.\+h}!cpack@{cpack}}
+\index{cpack@{cpack}!complex.\+h@{complex.\+h}}
+\subsubsection[{\texorpdfstring{cpack(double x, double y)}{cpack(double x, double y)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf complex} cpack (
+\begin{DoxyParamCaption}
+\item[{double}]{x, }
+\item[{double}]{y}
+\end{DoxyParamCaption}
+)}\hypertarget{complex_8h_a980e6e049f7902b05fc9eb5614b07a5c}{}\label{complex_8h_a980e6e049f7902b05fc9eb5614b07a5c}
+
+
+Pack two real numbers into a complex number. 
+
+
+
+Definition at line 71 of file prim.\+c.
+
+
+
+Referenced by Complex\+Number\+::\+Add(), cacos(), cacosh(), cacot(), cacoth(), cacsc(), cacsch(), cadd(), casec(), casech(), casin(), casinh(), catan(), catanh(), ccbrt(), cceil(), ccos(), ccosh(), ccot(), ccoth(), ccsc(), ccsch(), cdiv(), cexp(), cfloor(), clog(), clog10(), clogb(), cmul(), Complex\+Number\+::\+Complex\+Number(), conj(), cpow(), creci(), cround(), csec(), csech(), csin(), csinh(), csqrt(), csub(), ctan(), ctanh(), ctrunc(), Complex\+Number\+::\+Div(), Complex\+Number\+::\+Mul(), Complex\+Number\+::\+Raise(), Complex\+Number\+::\+Sub(), and Complex\+Number\+::\+Unary().
+
+
+\begin{DoxyCode}
+72 \{
+73     \hyperlink{unioncomplex}{complex} z;
+74 
+75     \hyperlink{prim_8c_abe71472a1db694c210cd45a928ede69d}{REAL\_PART}(z) = x;
+76     \hyperlink{prim_8c_af2ec11abad1ad66e6fab43ca0ec74740}{IMAG\_PART}(z) = y;
+77     \textcolor{keywordflow}{return} (z);
+78 \}
+\end{DoxyCode}
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{complex_8h_a980e6e049f7902b05fc9eb5614b07a5c_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{complex.\+h@{complex.\+h}!cpow@{cpow}}
+\index{cpow@{cpow}!complex.\+h@{complex.\+h}}
+\subsubsection[{\texorpdfstring{cpow(complex x, complex z)}{cpow(complex x, complex z)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf complex} cpow (
+\begin{DoxyParamCaption}
+\item[{{\bf complex}}]{a, }
+\item[{{\bf complex}}]{z}
+\end{DoxyParamCaption}
+)}\hypertarget{complex_8h_a8d165b5dcf96f12ff8de000474dd020e}{}\label{complex_8h_a8d165b5dcf96f12ff8de000474dd020e}
+
+
+Complex number raised to a power. 
+
+\begin{DoxyVersion}{Version}
+1.\+1 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+2007/08/20 
+\end{DoxyDate}
+
+
+Definition at line 46 of file cpow.\+c.
+
+
+
+References atan2(), cabs(), cimag(), cos(), cpack(), creal(), exp(), pow(), and sin().
+
+
+
+Referenced by Complex\+Number\+::\+Raise().
+
+
+\begin{DoxyCode}
+47 \{
+48     \hyperlink{unioncomplex}{complex} w;
+49     \textcolor{keywordtype}{double} x, y, r, theta, absa, arga;
+50 
+51     x = \hyperlink{complex_8h_a4a236b24c0197821e3489a35a72079ab}{creal}(z);
+52     y = \hyperlink{complex_8h_aa1fe0b9371befabef6c41ba73470774a}{cimag}(z);
+53     absa = \hyperlink{complex_8h_af6e02ba9d2566b52e3b0faf2d4ed973a}{cabs}(a);
+54     \textcolor{keywordflow}{if} (absa == 0.0) \{
+55         \textcolor{keywordflow}{return} \hyperlink{complex_8h_a980e6e049f7902b05fc9eb5614b07a5c}{cpack}(0.0, + 0.0);
+56     \}
+57     arga = \hyperlink{math_8h_a349377202ca14f79eb335b1a421fe4d8}{atan2}(\hyperlink{complex_8h_aa1fe0b9371befabef6c41ba73470774a}{cimag}(a), \hyperlink{complex_8h_a4a236b24c0197821e3489a35a72079ab}{creal}(a));
+58 
+59     r = \hyperlink{math_8h_aa56c9494c95edf68386375e97d64159b}{pow}(absa, x);
+60     theta = x * arga;
+61     \textcolor{keywordflow}{if} (y != 0.0) \{
+62         r = r * \hyperlink{math_8h_ae09128febbbe6372cde4fa0c65608a42}{exp}(-y * arga);
+63         theta = theta + y * \hyperlink{math_8h_adb302c9aafbaa5e180d9f60ee954bb82}{log}(absa);
+64     \}
+65 
+66     w = \hyperlink{complex_8h_a980e6e049f7902b05fc9eb5614b07a5c}{cpack}(r * \hyperlink{math_8h_a5e7b53a694b3cf0f2d7debd444140fbd}{cos}(theta), r * \hyperlink{math_8h_aad4af25633b071b0e2cdb8ebd87eca77}{sin}(theta));
+67     \textcolor{keywordflow}{return} w;
+68 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{complex_8h_a8d165b5dcf96f12ff8de000474dd020e_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{complex_8h_a8d165b5dcf96f12ff8de000474dd020e_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{complex.\+h@{complex.\+h}!cproj@{cproj}}
+\index{cproj@{cproj}!complex.\+h@{complex.\+h}}
+\subsubsection[{\texorpdfstring{cproj(complex z)}{cproj(complex z)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf complex} cproj (
+\begin{DoxyParamCaption}
+\item[{{\bf complex}}]{z}
+\end{DoxyParamCaption}
+)}\hypertarget{complex_8h_a06164910835523939fc8bf762872e37b}{}\label{complex_8h_a06164910835523939fc8bf762872e37b}
+\index{complex.\+h@{complex.\+h}!creal@{creal}}
+\index{creal@{creal}!complex.\+h@{complex.\+h}}
+\subsubsection[{\texorpdfstring{creal(complex z)}{creal(complex z)}}]{\setlength{\rightskip}{0pt plus 5cm}double creal (
+\begin{DoxyParamCaption}
+\item[{{\bf complex}}]{z}
+\end{DoxyParamCaption}
+)}\hypertarget{complex_8h_a4a236b24c0197821e3489a35a72079ab}{}\label{complex_8h_a4a236b24c0197821e3489a35a72079ab}
+
+
+Real part of complex number. 
+
+
+
+Definition at line 38 of file prim.\+c.
+
+
+
+Referenced by cabs(), cadd(), cceil(), ccos(), ccosh(), ccot(), ccoth(), ccsc(), ccsch(), cdiv(), cexp(), cfloor(), clog(), cmul(), cpow(), creci(), cround(), csec(), csech(), csgn(), csin(), csinh(), csqrt(), csub(), ctan(), ctanh(), ctrunc(), Complex\+Number\+::\+Get\+Default\+Precedence(), Complex\+Number\+::\+Get\+Integer\+Value(), Complex\+Number\+::\+Get\+Precedence(), Complex\+Number\+::\+Get\+Real\+Value(), Positional\+Numeral\+System\+::\+Get\+Text(), Decimal\+System\+::\+Get\+Text(), Complex\+Number\+::\+Pure\+Complex\+Value(), and Complex\+Number\+::\+Unary().
+
+
+\begin{DoxyCode}
+39 \{
+40     \textcolor{keywordflow}{return} (\hyperlink{prim_8c_abe71472a1db694c210cd45a928ede69d}{REAL\_PART}(z));
+41 \}
+\end{DoxyCode}
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{complex_8h_a4a236b24c0197821e3489a35a72079ab_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{complex.\+h@{complex.\+h}!creci@{creci}}
+\index{creci@{creci}!complex.\+h@{complex.\+h}}
+\subsubsection[{\texorpdfstring{creci(complex z)}{creci(complex z)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf complex} creci (
+\begin{DoxyParamCaption}
+\item[{{\bf complex}}]{z}
+\end{DoxyParamCaption}
+)}\hypertarget{complex_8h_a78cdeb0bf6f229c2be3065fc697dac68}{}\label{complex_8h_a78cdeb0bf6f229c2be3065fc697dac68}
+
+
+Reciprocal value of complex number. 
+
+
+
+Definition at line 193 of file prim.\+c.
+
+
+
+References cimag(), conj(), cpack(), and creal().
+
+
+
+Referenced by cacsch(), casec(), casech(), and Complex\+Number\+::\+Reciprocal().
+
+
+\begin{DoxyCode}
+194 \{
+195     \hyperlink{unioncomplex}{complex} w;
+196     \textcolor{keywordtype}{double} q, a, b;
+197 
+198     a = \hyperlink{prim_8c_a4a236b24c0197821e3489a35a72079ab}{creal}(z);
+199     b = \hyperlink{prim_8c_aa1fe0b9371befabef6c41ba73470774a}{cimag}(\hyperlink{prim_8c_a8d08797ad03191874e9943144da189be}{conj}(z));
+200     q = a * a + b * b;
+201     w = \hyperlink{prim_8c_a980e6e049f7902b05fc9eb5614b07a5c}{cpack}(a / q, b / q);
+202 
+203     \textcolor{keywordflow}{return} w;
+204 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=276pt]{complex_8h_a78cdeb0bf6f229c2be3065fc697dac68_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{complex_8h_a78cdeb0bf6f229c2be3065fc697dac68_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{complex.\+h@{complex.\+h}!cround@{cround}}
+\index{cround@{cround}!complex.\+h@{complex.\+h}}
+\subsubsection[{\texorpdfstring{cround(complex z)}{cround(complex z)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf complex} cround (
+\begin{DoxyParamCaption}
+\item[{{\bf complex}}]{z}
+\end{DoxyParamCaption}
+)}\hypertarget{complex_8h_a83b50ec7fc882d884c8b740026ab3ef5}{}\label{complex_8h_a83b50ec7fc882d884c8b740026ab3ef5}
+
+
+Division of two complex numbers. 
+
+
+
+Definition at line 117 of file prim.\+c.
+
+
+
+References cimag(), cpack(), creal(), and round().
+
+
+
+Referenced by Complex\+Number\+::\+Round().
+
+
+\begin{DoxyCode}
+118 \{
+119     \hyperlink{unioncomplex}{complex} w;
+120     w = \hyperlink{prim_8c_a980e6e049f7902b05fc9eb5614b07a5c}{cpack}(\hyperlink{math_8h_a7df19cf730447c00150569250a4b5e1d}{round}(\hyperlink{prim_8c_a4a236b24c0197821e3489a35a72079ab}{creal}(z)), \hyperlink{math_8h_a7df19cf730447c00150569250a4b5e1d}{round}(\hyperlink{prim_8c_aa1fe0b9371befabef6c41ba73470774a}{cimag}(z)));
+121     \textcolor{keywordflow}{return} w;
+122 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=205pt]{complex_8h_a83b50ec7fc882d884c8b740026ab3ef5_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=287pt]{complex_8h_a83b50ec7fc882d884c8b740026ab3ef5_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{complex.\+h@{complex.\+h}!csec@{csec}}
+\index{csec@{csec}!complex.\+h@{complex.\+h}}
+\subsubsection[{\texorpdfstring{csec(complex z)}{csec(complex z)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf complex} csec (
+\begin{DoxyParamCaption}
+\item[{{\bf complex}}]{z}
+\end{DoxyParamCaption}
+)}\hypertarget{complex_8h_a1bbe43785d2b3cc364e50153f203c50d}{}\label{complex_8h_a1bbe43785d2b3cc364e50153f203c50d}
+
+
+Secant of a complex number. 
+
+Calculated as in Open Office\+:~\newline
+ \href{https://wiki.openoffice.org/wiki/Documentation/How_Tos/Calc:_IMSEC_function}{\tt https\+://wiki.\+openoffice.\+org/wiki/\+Documentation/\+How\+\_\+\+Tos/\+Calc\+:\+\_\+\+I\+M\+S\+E\+C\+\_\+function} 
+\begin{DoxyPre}
+a+bi
+            2.0 * cos(a) * cosh(b)
+real  = ------------------------------
+         cosh(2.0 * b) + cos(2.0 * a)\end{DoxyPre}
+
+
+
+\begin{DoxyPre}            2.0 * sin(a) * sinh(b)
+imag  = ------------------------------
+         cosh(2.0 * b) + cos(2.0 * a)
+\end{DoxyPre}
+ 
+
+Definition at line 47 of file csec.\+c.
+
+
+
+References cimag(), cos(), cosh(), cpack(), creal(), sin(), and sinh().
+
+
+
+Referenced by Complex\+Number\+::\+Secant().
+
+
+\begin{DoxyCode}
+48 \{
+49     \hyperlink{unioncomplex}{complex} w;
+50     \textcolor{keywordtype}{double} a, b;
+51     \textcolor{keywordtype}{double} d;
+52 
+53     a = \hyperlink{complex_8h_a4a236b24c0197821e3489a35a72079ab}{creal}(z);
+54     b = \hyperlink{complex_8h_aa1fe0b9371befabef6c41ba73470774a}{cimag}(z);
+55     d = \hyperlink{math_8h_a3795d3c1f1d30819be56da4e4d67f64b}{cosh}(2.0 * b) + \hyperlink{math_8h_a5e7b53a694b3cf0f2d7debd444140fbd}{cos}(2.0 * a);
+56 
+57     \textcolor{keywordflow}{if} (d == 0.0) \{
+58         w = \hyperlink{complex_8h_a980e6e049f7902b05fc9eb5614b07a5c}{cpack}(\hyperlink{cplex_2prim_8h_a5f3d17bf39f78da3422ca52e475d7724}{HUGE}, \hyperlink{cplex_2prim_8h_a5f3d17bf39f78da3422ca52e475d7724}{HUGE}); \textcolor{comment}{// TODO: INF, INF}
+59     \} \textcolor{keywordflow}{else} \{
+60         w = \hyperlink{complex_8h_a980e6e049f7902b05fc9eb5614b07a5c}{cpack}((2.0 * \hyperlink{math_8h_a5e7b53a694b3cf0f2d7debd444140fbd}{cos}(a) * \hyperlink{math_8h_a3795d3c1f1d30819be56da4e4d67f64b}{cosh}(b) / d), (2.0 * \hyperlink{math_8h_aad4af25633b071b0e2cdb8ebd87eca77}{sin}(a) * 
+      \hyperlink{math_8h_a862012e970c977c482507064e2793b45}{sinh}(b) / d));
+61     \}
+62 
+63     \textcolor{keywordflow}{return} w;
+64 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{complex_8h_a1bbe43785d2b3cc364e50153f203c50d_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=281pt]{complex_8h_a1bbe43785d2b3cc364e50153f203c50d_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{complex.\+h@{complex.\+h}!csech@{csech}}
+\index{csech@{csech}!complex.\+h@{complex.\+h}}
+\subsubsection[{\texorpdfstring{csech(complex z)}{csech(complex z)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf complex} csech (
+\begin{DoxyParamCaption}
+\item[{{\bf complex}}]{z}
+\end{DoxyParamCaption}
+)}\hypertarget{complex_8h_aa639638fbf6b2c819fd8fb3c093ca012}{}\label{complex_8h_aa639638fbf6b2c819fd8fb3c093ca012}
+
+
+Hyperbolic secant of a complex number. 
+
+Calculated as in Open Office\+:~\newline
+ \href{https://wiki.openoffice.org/wiki/Documentation/How_Tos/Calc:_IMSECH_function}{\tt https\+://wiki.\+openoffice.\+org/wiki/\+Documentation/\+How\+\_\+\+Tos/\+Calc\+:\+\_\+\+I\+M\+S\+E\+C\+H\+\_\+function} 
+\begin{DoxyPre}
+a+bi
+            2.0 * cosh(a) * cos(b)
+real  = ------------------------------
+         cosh(2.0 * a) + cos(2.0 * b)\end{DoxyPre}
+
+
+
+\begin{DoxyPre}        -2.0 * sinh(2.0 * a) * sin(b)
+imag  = ------------------------------
+         cosh(2.0 * a) + cos(2.0 * b)
+\end{DoxyPre}
+ 
+
+Definition at line 47 of file csech.\+c.
+
+
+
+References cimag(), cos(), cosh(), cpack(), creal(), sin(), and sinh().
+
+
+
+Referenced by Complex\+Number\+::\+Hyp\+Secant().
+
+
+\begin{DoxyCode}
+48 \{
+49     \hyperlink{unioncomplex}{complex} w;
+50     \textcolor{keywordtype}{double} a, b;
+51     \textcolor{keywordtype}{double} d;
+52 
+53     a = \hyperlink{complex_8h_a4a236b24c0197821e3489a35a72079ab}{creal}(z);
+54     b = \hyperlink{complex_8h_aa1fe0b9371befabef6c41ba73470774a}{cimag}(z);
+55     d = \hyperlink{math_8h_a3795d3c1f1d30819be56da4e4d67f64b}{cosh}(2.0 * a) + \hyperlink{math_8h_a5e7b53a694b3cf0f2d7debd444140fbd}{cos}(2.0 * b);
+56     w = \hyperlink{complex_8h_a980e6e049f7902b05fc9eb5614b07a5c}{cpack}((2.0 * \hyperlink{math_8h_a3795d3c1f1d30819be56da4e4d67f64b}{cosh}(a) * \hyperlink{math_8h_a5e7b53a694b3cf0f2d7debd444140fbd}{cos}(b) / d), (-2.0 * \hyperlink{math_8h_a862012e970c977c482507064e2793b45}{sinh}(a) * 
+      \hyperlink{math_8h_aad4af25633b071b0e2cdb8ebd87eca77}{sin}(b) / d));
+57 
+58     \textcolor{keywordflow}{return} w;
+59 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{complex_8h_aa639638fbf6b2c819fd8fb3c093ca012_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=304pt]{complex_8h_aa639638fbf6b2c819fd8fb3c093ca012_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{complex.\+h@{complex.\+h}!csgn@{csgn}}
+\index{csgn@{csgn}!complex.\+h@{complex.\+h}}
+\subsubsection[{\texorpdfstring{csgn(complex z)}{csgn(complex z)}}]{\setlength{\rightskip}{0pt plus 5cm}double csgn (
+\begin{DoxyParamCaption}
+\item[{{\bf complex}}]{z}
+\end{DoxyParamCaption}
+)}\hypertarget{complex_8h_aaab921fc8e26fcfee85a89e662e41a74}{}\label{complex_8h_aaab921fc8e26fcfee85a89e662e41a74}
+
+
+Complex signum. 
+
+Mostly as specified in I\+E\+EE Std 1003.\+1, 2013 Edition \href{http://pubs.opengroup.org/onlinepubs/9699919799/basedefs/complex.h.html}{\tt http\+://pubs.\+opengroup.\+org/onlinepubs/9699919799/basedefs/complex.\+h.\+html}
+
+More info is available at Wikipedia\+: ~\newline
+ \href{http://en.wikipedia.org/wiki/Sign_function#Complex_signum}{\tt http\+://en.\+wikipedia.\+org/wiki/\+Sign\+\_\+function\#\+Complex\+\_\+signum} 
+
+Definition at line 36 of file csgn.\+c.
+
+
+
+References cimag(), and creal().
+
+
+
+Referenced by Complex\+Number\+::\+Signum().
+
+
+\begin{DoxyCode}
+37 \{
+38     \textcolor{keywordtype}{double} a = \hyperlink{complex_8h_a4a236b24c0197821e3489a35a72079ab}{creal}(z);
+39 
+40     \textcolor{keywordflow}{if} (a > 0.0) \{
+41         \textcolor{keywordflow}{return} 1.0;
+42     \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (a < 0.0) \{
+43         \textcolor{keywordflow}{return} -1.0;
+44     \} \textcolor{keywordflow}{else} \{
+45         \textcolor{keywordtype}{double} b = \hyperlink{complex_8h_aa1fe0b9371befabef6c41ba73470774a}{cimag}(z);
+46         \textcolor{keywordflow}{return} b > 0.0 ? 1.0 : b < 0.0 ? -1.0 : 0.0;
+47     \}
+48 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=197pt]{complex_8h_aaab921fc8e26fcfee85a89e662e41a74_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=283pt]{complex_8h_aaab921fc8e26fcfee85a89e662e41a74_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{complex.\+h@{complex.\+h}!csin@{csin}}
+\index{csin@{csin}!complex.\+h@{complex.\+h}}
+\subsubsection[{\texorpdfstring{csin(complex z)}{csin(complex z)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf complex} csin (
+\begin{DoxyParamCaption}
+\item[{{\bf complex}}]{z}
+\end{DoxyParamCaption}
+)}\hypertarget{complex_8h_ae17495bc828b9bea6f64da3c21fe0fc7}{}\label{complex_8h_ae17495bc828b9bea6f64da3c21fe0fc7}
+
+
+Sine of a complex number. 
+
+\begin{DoxyVersion}{Version}
+1.\+1 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+2007/08/20
+\end{DoxyDate}
+Calculated according to description at wikipedia\+:~\newline
+ \href{http://en.wikipedia.org/wiki/Sine#Sine_with_a_complex_argument}{\tt http\+://en.\+wikipedia.\+org/wiki/\+Sine\#\+Sine\+\_\+with\+\_\+a\+\_\+complex\+\_\+argument} 
+\begin{DoxyPre}
+a+bi
+real = sin(a) * cosh(b)
+imag = cos(a) * sinh(b)
+\end{DoxyPre}
+ 
+
+Definition at line 53 of file csin.\+c.
+
+
+
+References cchsh(), cimag(), cos(), cpack(), creal(), and sin().
+
+
+
+Referenced by Complex\+Number\+::\+Sine().
+
+
+\begin{DoxyCode}
+54 \{
+55     \hyperlink{unioncomplex}{complex} w;
+56     \textcolor{keywordtype}{double} a, b;
+57     \textcolor{keywordtype}{double} ch, sh;
+58 
+59     a = \hyperlink{complex_8h_a4a236b24c0197821e3489a35a72079ab}{creal}(z);
+60     b = \hyperlink{complex_8h_aa1fe0b9371befabef6c41ba73470774a}{cimag}(z);
+61     \hyperlink{cplex_2prim_8h_aee34c227a34560e41c3b665a00f1a4f9}{cchsh}(b, &ch, &sh);
+62     w = \hyperlink{complex_8h_a980e6e049f7902b05fc9eb5614b07a5c}{cpack}((\hyperlink{math_8h_aad4af25633b071b0e2cdb8ebd87eca77}{sin}(a) * ch), (\hyperlink{math_8h_a5e7b53a694b3cf0f2d7debd444140fbd}{cos}(a) * sh));
+63 
+64     \textcolor{keywordflow}{return} w;
+65 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{complex_8h_ae17495bc828b9bea6f64da3c21fe0fc7_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=267pt]{complex_8h_ae17495bc828b9bea6f64da3c21fe0fc7_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{complex.\+h@{complex.\+h}!csinh@{csinh}}
+\index{csinh@{csinh}!complex.\+h@{complex.\+h}}
+\subsubsection[{\texorpdfstring{csinh(complex z)}{csinh(complex z)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf complex} csinh (
+\begin{DoxyParamCaption}
+\item[{{\bf complex}}]{z}
+\end{DoxyParamCaption}
+)}\hypertarget{complex_8h_a5a9923cad15c34351bb15bd46d5d6331}{}\label{complex_8h_a5a9923cad15c34351bb15bd46d5d6331}
+
+
+Hyperbolic sine of a complex number. 
+
+\begin{DoxyVersion}{Version}
+1.\+1 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+2007/08/20
+\end{DoxyDate}
+Calculated as in Open Office\+:~\newline
+ \href{https://wiki.openoffice.org/wiki/Documentation/How_Tos/Calc:_IMSINH_function}{\tt https\+://wiki.\+openoffice.\+org/wiki/\+Documentation/\+How\+\_\+\+Tos/\+Calc\+:\+\_\+\+I\+M\+S\+I\+N\+H\+\_\+function} 
+\begin{DoxyPre}
+a+bi
+real = sinh(a) * cos(b)
+imag = cosh(a) * sin(b)
+\end{DoxyPre}
+ 
+
+Definition at line 53 of file csinh.\+c.
+
+
+
+References cchsh(), cimag(), cos(), cpack(), creal(), and sin().
+
+
+
+Referenced by Complex\+Number\+::\+Hyp\+Sine().
+
+
+\begin{DoxyCode}
+54 \{
+55     \hyperlink{unioncomplex}{complex} w;
+56     \textcolor{keywordtype}{double} a, b;
+57     \textcolor{keywordtype}{double} ch, sh;
+58 
+59     a = \hyperlink{complex_8h_a4a236b24c0197821e3489a35a72079ab}{creal}(z);
+60     b = \hyperlink{complex_8h_aa1fe0b9371befabef6c41ba73470774a}{cimag}(z);
+61     \hyperlink{cplex_2prim_8h_aee34c227a34560e41c3b665a00f1a4f9}{cchsh}(a, &ch, &sh);
+62     w = \hyperlink{complex_8h_a980e6e049f7902b05fc9eb5614b07a5c}{cpack}(\hyperlink{math_8h_a5e7b53a694b3cf0f2d7debd444140fbd}{cos}(b) * sh, \hyperlink{math_8h_aad4af25633b071b0e2cdb8ebd87eca77}{sin}(b) * ch);
+63 
+64     \textcolor{keywordflow}{return} w;
+65 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{complex_8h_a5a9923cad15c34351bb15bd46d5d6331_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=290pt]{complex_8h_a5a9923cad15c34351bb15bd46d5d6331_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{complex.\+h@{complex.\+h}!csqrt@{csqrt}}
+\index{csqrt@{csqrt}!complex.\+h@{complex.\+h}}
+\subsubsection[{\texorpdfstring{csqrt(complex z)}{csqrt(complex z)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf complex} csqrt (
+\begin{DoxyParamCaption}
+\item[{{\bf complex}}]{z}
+\end{DoxyParamCaption}
+)}\hypertarget{complex_8h_afe5b814a44414f20d0f98fe974737edd}{}\label{complex_8h_afe5b814a44414f20d0f98fe974737edd}
+
+
+Square root of complex number. 
+
+\begin{DoxyVersion}{Version}
+1.\+1 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+2007/08/20 
+\end{DoxyDate}
+
+
+Definition at line 46 of file csqrt.\+c.
+
+
+
+References cabs(), cimag(), cpack(), creal(), and sqrt().
+
+
+
+Referenced by cacos(), cacosh(), cacsc(), cacsch(), casec(), casech(), casin(), casinh(), and Complex\+Number\+::\+Square\+Root().
+
+
+\begin{DoxyCode}
+47 \{
+48     \hyperlink{unioncomplex}{complex} w;
+49     \textcolor{keywordtype}{double} x, y, r, t, scale;
+50 
+51     x = \hyperlink{complex_8h_a4a236b24c0197821e3489a35a72079ab}{creal} (z);
+52     y = \hyperlink{complex_8h_aa1fe0b9371befabef6c41ba73470774a}{cimag} (z);
+53 
+54     \textcolor{keywordflow}{if} (y == 0.0) \{
+55         \textcolor{keywordflow}{if} (x == 0.0) \{
+56             w = \hyperlink{complex_8h_a980e6e049f7902b05fc9eb5614b07a5c}{cpack}(0.0, y);
+57         \} \textcolor{keywordflow}{else} \{
+58             r = \hyperlink{math_8h_a8fb5c0b9b43a108724b355136d29d2f9}{fabs}(x);
+59             r = \hyperlink{math_8h_ab87521a75ef827a85807f89a6c10629a}{sqrt}(r);
+60             \textcolor{keywordflow}{if} (x < 0.0) \{
+61                 w = \hyperlink{complex_8h_a980e6e049f7902b05fc9eb5614b07a5c}{cpack}(0.0, r);
+62             \} \textcolor{keywordflow}{else} \{
+63                 w = \hyperlink{complex_8h_a980e6e049f7902b05fc9eb5614b07a5c}{cpack}(r, y);
+64             \}
+65         \}
+66         \textcolor{keywordflow}{return} w;
+67     \}
+68     \textcolor{keywordflow}{if} (x == 0.0) \{
+69         r = \hyperlink{math_8h_a8fb5c0b9b43a108724b355136d29d2f9}{fabs}(y);
+70         r = \hyperlink{math_8h_ab87521a75ef827a85807f89a6c10629a}{sqrt}(0.5 * r);
+71         \textcolor{keywordflow}{if} (y > 0)
+72             w =  \hyperlink{complex_8h_a980e6e049f7902b05fc9eb5614b07a5c}{cpack}(r, r);
+73         \textcolor{keywordflow}{else}
+74             w = \hyperlink{complex_8h_a980e6e049f7902b05fc9eb5614b07a5c}{cpack}(r, -r);
+75         \textcolor{keywordflow}{return} w;
+76     \}
+77     \textcolor{comment}{/* Rescale to avoid internal overflow or underflow.  */}
+78     \textcolor{keywordflow}{if} ((\hyperlink{math_8h_a8fb5c0b9b43a108724b355136d29d2f9}{fabs}(x) > 4.0) || (\hyperlink{math_8h_a8fb5c0b9b43a108724b355136d29d2f9}{fabs}(y) > 4.0)) \{
+79         x *= 0.25;
+80         y *= 0.25;
+81         scale = 2.0;
+82     \} \textcolor{keywordflow}{else} \{
+83 \textcolor{preprocessor}{#if 1}
+84         x *= 1.8014398509481984e16;  \textcolor{comment}{/* 2^54 */}
+85         y *= 1.8014398509481984e16;
+86         scale = 7.450580596923828125e-9; \textcolor{comment}{/* 2^-27 */}
+87 \textcolor{preprocessor}{#else}
+88         x *= 4.0;
+89         y *= 4.0;
+90         scale = 0.5;
+91 \textcolor{preprocessor}{#endif}
+92     \}
+93     w = \hyperlink{complex_8h_a980e6e049f7902b05fc9eb5614b07a5c}{cpack}(x, y);
+94     r = \hyperlink{complex_8h_af6e02ba9d2566b52e3b0faf2d4ed973a}{cabs}(w);
+95     \textcolor{keywordflow}{if} (x > 0) \{
+96         t = \hyperlink{math_8h_ab87521a75ef827a85807f89a6c10629a}{sqrt}(0.5 * r + 0.5 * x);
+97         r = scale * \hyperlink{math_8h_a8fb5c0b9b43a108724b355136d29d2f9}{fabs}((0.5 * y) / t );
+98         t *= scale;
+99     \} \textcolor{keywordflow}{else} \{
+100         r = \hyperlink{math_8h_ab87521a75ef827a85807f89a6c10629a}{sqrt}(0.5 * r - 0.5 * x);
+101         t = scale * \hyperlink{math_8h_a8fb5c0b9b43a108724b355136d29d2f9}{fabs}((0.5 * y) / r);
+102         r *= scale;
+103     \}
+104     \textcolor{keywordflow}{if} (y < 0)
+105         w = \hyperlink{complex_8h_a980e6e049f7902b05fc9eb5614b07a5c}{cpack}(t, -r);
+106     \textcolor{keywordflow}{else}
+107         w = \hyperlink{complex_8h_a980e6e049f7902b05fc9eb5614b07a5c}{cpack}(t, r);
+108     \textcolor{keywordflow}{return} w;
+109 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=345pt]{complex_8h_afe5b814a44414f20d0f98fe974737edd_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{complex_8h_afe5b814a44414f20d0f98fe974737edd_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{complex.\+h@{complex.\+h}!csub@{csub}}
+\index{csub@{csub}!complex.\+h@{complex.\+h}}
+\subsubsection[{\texorpdfstring{csub(complex a, complex z)}{csub(complex a, complex z)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf complex} csub (
+\begin{DoxyParamCaption}
+\item[{{\bf complex}}]{a, }
+\item[{{\bf complex}}]{z}
+\end{DoxyParamCaption}
+)}\hypertarget{complex_8h_a46bb0dd64d87c3aeb85417d1dadf6ddd}{}\label{complex_8h_a46bb0dd64d87c3aeb85417d1dadf6ddd}
+
+
+Subtraction of two complex numbers. 
+
+
+
+Definition at line 139 of file prim.\+c.
+
+
+
+References cimag(), cpack(), and creal().
+
+
+
+Referenced by cacos(), cacosh(), cacot(), cacoth(), cacsc(), casec(), casech(), casin(), catan(), catanh(), and Complex\+Number\+::\+Sub().
+
+
+\begin{DoxyCode}
+140 \{
+141     \hyperlink{unioncomplex}{complex} w;
+142     w = \hyperlink{prim_8c_a980e6e049f7902b05fc9eb5614b07a5c}{cpack}(\hyperlink{prim_8c_a4a236b24c0197821e3489a35a72079ab}{creal}(y) - \hyperlink{prim_8c_a4a236b24c0197821e3489a35a72079ab}{creal}(z), \hyperlink{prim_8c_aa1fe0b9371befabef6c41ba73470774a}{cimag}(y) - \hyperlink{prim_8c_aa1fe0b9371befabef6c41ba73470774a}{cimag}(z));
+143     \textcolor{keywordflow}{return} w;
+144 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=197pt]{complex_8h_a46bb0dd64d87c3aeb85417d1dadf6ddd_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{complex_8h_a46bb0dd64d87c3aeb85417d1dadf6ddd_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{complex.\+h@{complex.\+h}!ctan@{ctan}}
+\index{ctan@{ctan}!complex.\+h@{complex.\+h}}
+\subsubsection[{\texorpdfstring{ctan(complex z)}{ctan(complex z)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf complex} ctan (
+\begin{DoxyParamCaption}
+\item[{{\bf complex}}]{z}
+\end{DoxyParamCaption}
+)}\hypertarget{complex_8h_a2bd0de3a2299ec26164641bc8f6e117f}{}\label{complex_8h_a2bd0de3a2299ec26164641bc8f6e117f}
+
+
+Tangent of a complex number. 
+
+\begin{DoxyVersion}{Version}
+1.\+1 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+2007/08/20
+\end{DoxyDate}
+Calculated as in Open Office\+:~\newline
+ \href{https://wiki.openoffice.org/wiki/Documentation/How_Tos/Calc:_IMTAN_function}{\tt https\+://wiki.\+openoffice.\+org/wiki/\+Documentation/\+How\+\_\+\+Tos/\+Calc\+:\+\_\+\+I\+M\+T\+A\+N\+\_\+function} 
+\begin{DoxyPre}
+a+bi
+               sin(2.0 * a)
+real  = ------------------------------
+         cos(2.0 * a) + cosh(2.0 * b)
+\begin{DoxyVerb}  sinh(2.0 * b)
+\end{DoxyVerb}
+
+imag  = ------------------------------
+         cos(2.0 * a) + cosh(2.0 * b)
+\end{DoxyPre}
+ 
+
+Definition at line 58 of file ctan.\+c.
+
+
+
+References cimag(), cos(), cosh(), cpack(), creal(), sin(), and sinh().
+
+
+
+Referenced by Complex\+Number\+::\+Tangent().
+
+
+\begin{DoxyCode}
+59 \{
+60     \hyperlink{unioncomplex}{complex} w;
+61     \textcolor{keywordtype}{double} a, b;
+62     \textcolor{keywordtype}{double} d;
+63 
+64     a = \hyperlink{complex_8h_a4a236b24c0197821e3489a35a72079ab}{creal}(z);
+65     b = \hyperlink{complex_8h_aa1fe0b9371befabef6c41ba73470774a}{cimag}(z);
+66     d = \hyperlink{math_8h_a5e7b53a694b3cf0f2d7debd444140fbd}{cos}(2.0 * a) + \hyperlink{math_8h_a3795d3c1f1d30819be56da4e4d67f64b}{cosh}(2.0 * b);
+67 
+68     \textcolor{keywordflow}{if} (d == 0.0) \{
+69         w = \hyperlink{complex_8h_a980e6e049f7902b05fc9eb5614b07a5c}{cpack}(\hyperlink{cplex_2prim_8h_a5f3d17bf39f78da3422ca52e475d7724}{HUGE}, \hyperlink{cplex_2prim_8h_a5f3d17bf39f78da3422ca52e475d7724}{HUGE}); \textcolor{comment}{// TODO: INF, INF}
+70     \} \textcolor{keywordflow}{else} \{
+71         w = \hyperlink{complex_8h_a980e6e049f7902b05fc9eb5614b07a5c}{cpack}((\hyperlink{math_8h_aad4af25633b071b0e2cdb8ebd87eca77}{sin}(2.0 * a) / d), (\hyperlink{math_8h_a862012e970c977c482507064e2793b45}{sinh}(2.0 * b) / d));
+72     \}
+73 
+74     \textcolor{keywordflow}{return} w;
+75 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{complex_8h_a2bd0de3a2299ec26164641bc8f6e117f_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=282pt]{complex_8h_a2bd0de3a2299ec26164641bc8f6e117f_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{complex.\+h@{complex.\+h}!ctanh@{ctanh}}
+\index{ctanh@{ctanh}!complex.\+h@{complex.\+h}}
+\subsubsection[{\texorpdfstring{ctanh(complex z)}{ctanh(complex z)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf complex} ctanh (
+\begin{DoxyParamCaption}
+\item[{{\bf complex}}]{z}
+\end{DoxyParamCaption}
+)}\hypertarget{complex_8h_ad8db0bdd6fef8ff43876c845dc1cfb47}{}\label{complex_8h_ad8db0bdd6fef8ff43876c845dc1cfb47}
+
+
+Hyperbolic tangent of a complex number. 
+
+\begin{DoxyVersion}{Version}
+1.\+1 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+2007/08/20
+\end{DoxyDate}
+
+\begin{DoxyPre}
+a+bi
+               sinh(2.0 * a)
+real  = ------------------------------
+         cosh(2.0 * a) + cos(2.0 * b)
+\begin{DoxyVerb}  sin(2.0 * b)
+\end{DoxyVerb}
+
+imag  = ------------------------------
+         cosh(2.0 * a) + cos(2.0 * b)
+\end{DoxyPre}
+ 
+
+Definition at line 56 of file ctanh.\+c.
+
+
+
+References cimag(), cos(), cosh(), cpack(), creal(), sin(), and sinh().
+
+
+
+Referenced by Complex\+Number\+::\+Hyp\+Tangent().
+
+
+\begin{DoxyCode}
+57 \{
+58     \hyperlink{unioncomplex}{complex} w;
+59     \textcolor{keywordtype}{double} a, b;
+60     \textcolor{keywordtype}{double} d;
+61 
+62     a = \hyperlink{complex_8h_a4a236b24c0197821e3489a35a72079ab}{creal}(z);
+63     b = \hyperlink{complex_8h_aa1fe0b9371befabef6c41ba73470774a}{cimag}(z);
+64     d = \hyperlink{math_8h_a3795d3c1f1d30819be56da4e4d67f64b}{cosh}(2.0 * a) + \hyperlink{math_8h_a5e7b53a694b3cf0f2d7debd444140fbd}{cos}(2.0 * b);
+65     w = \hyperlink{complex_8h_a980e6e049f7902b05fc9eb5614b07a5c}{cpack}((\hyperlink{math_8h_a862012e970c977c482507064e2793b45}{sinh}(2.0 * a) / d), (\hyperlink{math_8h_aad4af25633b071b0e2cdb8ebd87eca77}{sin}(2.0 * b) / d));
+66 
+67     \textcolor{keywordflow}{return} w;
+68 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{complex_8h_ad8db0bdd6fef8ff43876c845dc1cfb47_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=306pt]{complex_8h_ad8db0bdd6fef8ff43876c845dc1cfb47_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{complex.\+h@{complex.\+h}!ctrunc@{ctrunc}}
+\index{ctrunc@{ctrunc}!complex.\+h@{complex.\+h}}
+\subsubsection[{\texorpdfstring{ctrunc(complex z)}{ctrunc(complex z)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf complex} ctrunc (
+\begin{DoxyParamCaption}
+\item[{{\bf complex}}]{z}
+\end{DoxyParamCaption}
+)}\hypertarget{complex_8h_aa760bac9acf6c215294e10188f3c9eb2}{}\label{complex_8h_aa760bac9acf6c215294e10188f3c9eb2}
+
+
+Truncated value of complex number. 
+
+
+
+Definition at line 84 of file prim.\+c.
+
+
+
+References cimag(), cpack(), creal(), and trunc().
+
+
+
+Referenced by Complex\+Number\+::\+Trunc().
+
+
+\begin{DoxyCode}
+85 \{
+86     \hyperlink{unioncomplex}{complex} w;
+87     w = \hyperlink{prim_8c_a980e6e049f7902b05fc9eb5614b07a5c}{cpack}(\hyperlink{math_8h_a82a151adfde56b28fa8a50355c4f2ff6}{trunc}(\hyperlink{prim_8c_a4a236b24c0197821e3489a35a72079ab}{creal}(z)), \hyperlink{math_8h_a82a151adfde56b28fa8a50355c4f2ff6}{trunc}(\hyperlink{prim_8c_aa1fe0b9371befabef6c41ba73470774a}{cimag}(z)));
+88     \textcolor{keywordflow}{return} w;
+89 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=203pt]{complex_8h_aa760bac9acf6c215294e10188f3c9eb2_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=281pt]{complex_8h_aa760bac9acf6c215294e10188f3c9eb2_icgraph}
+\end{center}
+\end{figure}
+
+

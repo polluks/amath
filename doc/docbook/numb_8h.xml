@@ -1,0 +1,59 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="numb_8h">
+    <title>numb.h File Reference</title>
+<para>Include dependency diagram for numb.h</para>
+<para>
+    <figure>
+        <title>Dependency diagram</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="numb_8h__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+<para>Included by dependency diagram for numb.h</para>
+<para>
+    <figure>
+        <title>Dependency diagram</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="numb_8h__dep__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+        <section>
+            <title> Classes </title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="structNumber">Number</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title>Enumerations</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para><literallayout>enum <link linkend="numb_8h_1a1475a201d2346881ce88dfbacf628c7d">NumberSystem</link> {
+<link linkend="numb_8h_1a1475a201d2346881ce88dfbacf628c7da8440500ca69cddba52e6eaefd7597355">nsysnatural</link>,
+<link linkend="numb_8h_1a1475a201d2346881ce88dfbacf628c7daae233e042918e457ad5d01803d24ab8a">nsysintegers</link>,
+<link linkend="numb_8h_1a1475a201d2346881ce88dfbacf628c7da59208a48514332284db3ef0393a90a2a">nsysrational</link>,
+<link linkend="numb_8h_1a1475a201d2346881ce88dfbacf628c7dae72cf8673109b15268d1c0837e8bff86">nsysreal</link>,
+<link linkend="numb_8h_1a1475a201d2346881ce88dfbacf628c7da3b38c947375a3db3a4bc184a11c8ee42">nsyscomplex</link>
+}</literallayout>
+</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+    <simplesect>
+        <title>Detailed Description</title>
+
+<para>Classbase handling of numbers. </para>
+    <para>Definition in file /home/carsten/amath/app/lib/numb.h</para>
+    </simplesect>
+</section>

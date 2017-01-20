@@ -1,0 +1,12 @@
+<map id="SyntaxNode::GetNext" name="SyntaxNode::GetNext">
+<area shape="rect" id="node2" href="$classOptimizer.html#ad84621adb872b88ab7fdb3672064cfdb" title="Optimizer::BalanceTree" alt="" coords="443,37,601,63"/>
+<area shape="rect" id="node7" href="$classOptimizer.html#a4a80c3e845604f1ea53a6bfc187b2bba" title="Optimizer::GetTreeDepth" alt="" coords="204,61,372,87"/>
+<area shape="rect" id="node8" href="$classOptimizer.html#aef8d80bb6301ee01a7ed271148438733" title="Optimizer::ReduceUnaryNodes" alt="" coords="420,111,624,138"/>
+<area shape="rect" id="node9" href="$classOptimizer.html#a5b45089aff3c6568f3531faa9e701f21" title="Optimizer::ReduceValueNodes" alt="" coords="421,186,623,213"/>
+<area shape="rect" id="node10" href="$classOptimizer.html#a5227e42d69dcbf08fde579642a98c78c" title="Optimizer::TagChildren" alt="" coords="210,237,366,263"/>
+<area shape="rect" id="node11" href="$classOptimizer.html#a2b71012237663dc9459a908fba6fbecc" title="Optimizer::TagStartNode" alt="" coords="205,311,371,338"/>
+<area shape="rect" id="node3" href="$classOptimizer.html#a5764ae0825fa43921f74d8b972e53b1e" title="Optimizer::Optimize" alt="" coords="672,186,811,213"/>
+<area shape="rect" id="node4" href="$classEvaluator.html#a40b30ece9d43c658877ee7f52aaec0a8" title="Evaluator::Evaluate" alt="" coords="859,186,995,213"/>
+<area shape="rect" id="node5" href="$classStandardProgram.html#a71dce9fdccf23ac49ba2362dcae744d3" title="StandardProgram::Run" alt="" coords="1043,161,1197,187"/>
+<area shape="rect" id="node6" href="$classStandardConsole.html#a9380023bba612b816b134589130bb254" title="StandardConsole::Run" alt="" coords="1043,211,1197,238"/>
+</map>

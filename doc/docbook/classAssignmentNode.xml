@@ -1,0 +1,115 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="classAssignmentNode">
+<title>AssignmentNode class Reference</title>
+<para>
+    <programlisting>#include <link linkend="operators_8h">&lt;operators.h&gt;</link></programlisting>
+</para>
+<para>Inheritance diagram for AssignmentNode</para>
+<para>
+    <figure>
+        <title>Inheritance graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="classAssignmentNode__inherit__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+<para>Collaboration diagram for AssignmentNode</para>
+<para>
+    <figure>
+        <title>Collaboration graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="classAssignmentNode__coll__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+        <section>
+            <title>Private Attributes</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>VariableNode * variable</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>ExpressionNode * expression</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="classAssignmentNode_1a8b2b07073d9900677a8ffe93f7d4171d">AssignmentNode</link> (
+<link linkend="classVariableNode">VariableNode</link> * variable, <link linkend="classExpressionNode">ExpressionNode</link> * expression)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="classAssignmentNode_1a8101830017b851c84364ca3ca6f0f204">GetPrecedence</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="platform_8h_1a1062901a7428fdd9c7f180f5e01ea056">bool</link> <link linkend="classAssignmentNode_1ad8468049bcb780828405ccddc06fc79a">IsSilent</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="structNumber">Number</link> * <link linkend="classAssignmentNode_1ae6b454a04ec82aa97fa8e09c3752deb6">Evaluate</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>char * <link linkend="classAssignmentNode_1aabd296f88450781851cb521be3b647d4">GetNodeText</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title>Member Data Documentation</title>
+        </section>
+            <section xml:id="classAssignmentNode_1a8b2b07073d9900677a8ffe93f7d4171d">
+                <title>AssignmentNode::AssignmentNode (VariableNode *variable, ExpressionNode *expression)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="classAssignmentNode_1a8101830017b851c84364ca3ca6f0f204">
+                <title>int AssignmentNode::GetPrecedence ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="classAssignmentNode_1ad8468049bcb780828405ccddc06fc79a">
+                <title>bool AssignmentNode::IsSilent ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="classAssignmentNode_1ae6b454a04ec82aa97fa8e09c3752deb6">
+                <title>Number * AssignmentNode::Evaluate ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="classAssignmentNode_1aabd296f88450781851cb521be3b647d4">
+                <title>char * AssignmentNode::GetNodeText ()</title> <emphasis></emphasis>
+                
+            </section>
+</section>

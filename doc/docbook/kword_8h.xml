@@ -1,0 +1,55 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="kword_8h">
+    <title>kword.h File Reference</title>
+    <programlisting>#include &quot;clib.h&quot;</programlisting>
+    <programlisting>#include &quot;localize/lex.h&quot;</programlisting>
+<para>Include dependency diagram for kword.h</para>
+<para>
+    <figure>
+        <title>Dependency diagram</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="kword_8h__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+<para>Included by dependency diagram for kword.h</para>
+<para>
+    <figure>
+        <title>Dependency diagram</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="kword_8h__dep__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+        <section>
+            <title> Classes </title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="structkeyworddef">keyworddef</link></para>
+<para><emphasis>Character representation of keyword tied with its symbol.</emphasis></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title>Variables</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>static const <link linkend="structkeyworddef">keyworddef</link> <link linkend="kword_8h_1ae24629a120e041e6b687315832fca587">keywords</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+    <simplesect>
+        <title>Detailed Description</title>
+
+<para>Keywords used by lexer. </para>
+    <para>Definition in file /home/carsten/amath/app/localize/kword.h</para>
+    </simplesect>
+</section>

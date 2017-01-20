@@ -1,0 +1,10 @@
+<map id="trunc" name="trunc">
+<area shape="rect" id="node2" href="$prim_8c.html#aa760bac9acf6c215294e10188f3c9eb2" title="Truncated value of complex number. " alt="" coords="173,5,232,32"/>
+<area shape="rect" id="node4" href="$classDecimalSystem.html#a7b3744c834e092220ab3c2b7ed8eee47" title="DecimalSystem::GetRealText" alt="" coords="104,56,301,83"/>
+<area shape="rect" id="node6" href="$classPositionalNumeralSystem.html#a2f6ecf8dd5ebff779bd2cba4e356febe" title="PositionalNumeralSystem\l::GetText" alt="" coords="349,133,523,174"/>
+<area shape="rect" id="node8" href="$classPositionalNumeralSystem.html#ac2edd0c7d5b47dc04908038f3eb03556" title="PositionalNumeralSystem\l::IntegerToBuffer" alt="" coords="116,158,289,199"/>
+<area shape="rect" id="node9" href="$structRealNumber.html#aba1f2eea0099d4c1347cd97b2897c0d8" title="Mathematical trunc function. " alt="" coords="135,224,271,251"/>
+<area shape="rect" id="node3" href="$structComplexNumber.html#aab24afa1330c3777b0e29c6d85114bf1" title="ComplexNumber::Trunc" alt="" coords="355,5,517,32"/>
+<area shape="rect" id="node5" href="$classDecimalSystem.html#ab43f764ed35fe831a16a356bbdc72441" title="DecimalSystem::GetText" alt="" coords="351,56,521,83"/>
+<area shape="rect" id="node7" href="$classPositionalNumeralSystem.html#ac4acbb807861e8ff702d9624fb5db87d" title="PositionalNumeralSystem\l::GetText" alt="" coords="571,133,744,174"/>
+</map>

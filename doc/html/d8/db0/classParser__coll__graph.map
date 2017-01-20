@@ -1,7 +1,0 @@
-<map id="Parser" name="Parser">
-<area shape="rect" id="node2" href="$d7/dc9/classErrorNode.html" title="Represents an error message encapsulated in a syntax tree. " alt="" coords="12,201,93,228"/>
-<area shape="rect" id="node3" href="$d8/d5d/classSyntaxNode.html" title="Base class for all nodes in a syntax tree. " alt="" coords="5,96,100,123"/>
-<area shape="rect" id="node4" href="$dc/d84/classCharBuffer.html" title="Encapsulate an character array which can be used as a string. " alt="" coords="10,5,95,32"/>
-<area shape="rect" id="node5" href="$df/dcd/structToken.html" title="Tokens are created by the Lexical Analyzer and provides an intermediate state for input consumed by t..." alt="" coords="195,96,254,123"/>
-<area shape="rect" id="node6" href="$d6/dc0/classLexer.html" title="Encapsulates an lexical analyzer. Provides token for the parser. " alt="" coords="204,201,259,228"/>
-</map>

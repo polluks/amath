@@ -1,0 +1,6 @@
+<map id="ConsoleBase::SetPrompt" name="ConsoleBase::SetPrompt">
+<area shape="rect" id="node2" href="$classPrefsStatement.html#ac53922eb842ba389957300fef95cd98f" title="PrefsStatement::Execute" alt="" coords="235,5,405,32"/>
+<area shape="rect" id="node3" href="$classStandardConsole.html#aa8e28b5271f982514c12bc6c66f310f9" title="StandardConsole::SetPrompt" alt="" coords="224,56,416,83"/>
+<area shape="rect" id="node4" href="$classProgram.html#a517c5f08c0c0dd7f79de6fbf0e62aac6" title="Program::SetPrompt" alt="" coords="249,107,391,133"/>
+<area shape="rect" id="node5" href="$classPromptStatement.html#ad315c8cc58132641e9b8a62902566318" title="PromptStatement::Execute" alt="" coords="464,107,644,133"/>
+</map>

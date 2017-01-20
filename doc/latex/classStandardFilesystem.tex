@@ -1,0 +1,292 @@
+\hypertarget{classStandardFilesystem}{}\section{Standard\+Filesystem Class Reference}
+\label{classStandardFilesystem}\index{Standard\+Filesystem@{Standard\+Filesystem}}
+
+
+{\ttfamily \#include $<$filesystem\+\_\+stdc.\+h$>$}
+
+
+
+Inheritance diagram for Standard\+Filesystem\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=184pt]{classStandardFilesystem__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Standard\+Filesystem\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=184pt]{classStandardFilesystem__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCharBuffer}{Char\+Buffer} $\ast$ \hyperlink{classStandardFilesystem_a535ef937063f59dcb61560d44ed18e81}{List\+Directory} (const char $\ast$path)
+\item 
+\hyperlink{classCharBuffer}{Char\+Buffer} $\ast$ \hyperlink{classStandardFilesystem_aa01514561ced127f2453b3a913e077ef}{Load\+Text\+File} (const char $\ast$name)
+\item 
+\hyperlink{platform_8h_a1062901a7428fdd9c7f180f5e01ea056}{bool} \hyperlink{classStandardFilesystem_ad2e93d1364a5b9491e14b54cb7fe924f}{Save\+Text\+File} (const char $\ast$name, const char $\ast$text)
+\end{DoxyCompactItemize}
+\subsection*{Static Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static const int \hyperlink{classStandardFilesystem_aa04dcecabc636b2154a0e55847f689f4}{blocksize} = 512
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 42 of file filesystem\+\_\+stdc.\+h.
+
+
+
+\subsection{Member Function Documentation}
+\index{Standard\+Filesystem@{Standard\+Filesystem}!List\+Directory@{List\+Directory}}
+\index{List\+Directory@{List\+Directory}!Standard\+Filesystem@{Standard\+Filesystem}}
+\subsubsection[{\texorpdfstring{List\+Directory(const char $\ast$path)}{ListDirectory(const char *path)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Char\+Buffer} $\ast$ Standard\+Filesystem\+::\+List\+Directory (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{path}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{classStandardFilesystem_a535ef937063f59dcb61560d44ed18e81}{}\label{classStandardFilesystem_a535ef937063f59dcb61560d44ed18e81}
+
+
+Implements \hyperlink{classFilesystemBase_a2f48a44b0b99b3c23e7c1a7587b5fc9c}{Filesystem\+Base}.
+
+
+
+Definition at line 39 of file filesystem\+\_\+stdc.\+cpp.
+
+
+
+References Char\+Buffer\+::\+Append(), Char\+Buffer\+::\+Char\+Buffer(), Char\+Buffer\+::\+Empty(), Char\+Buffer\+::\+Ensure\+Growth(), Char\+Buffer\+::\+Ensure\+Size(), Char\+Buffer\+::\+Get\+String(), Str\+Is\+Equal(), and Str\+Len().
+
+
+\begin{DoxyCode}
+40 \{
+41 \textcolor{preprocessor}{#ifdef UNIX}
+42     \hyperlink{classCharBuffer}{CharBuffer} *pathbuf = \textcolor{keyword}{new} \hyperlink{classCharBuffer}{CharBuffer}();
+43     pathbuf->\hyperlink{classCharBuffer_abe39d3fd7d8b9c8ec343af2cae7adc96}{Empty}();
+44     \textcolor{keywordflow}{if} (path == \hyperlink{platform_8h_a46ff2bfbf0d44b8466a2251d5bd5e6f8}{NOMEM}) \{
+45         pathbuf->\hyperlink{classCharBuffer_a045b38735f7b3007c1b98d3d7b7feafe}{Append}(\textcolor{stringliteral}{"."});
+46     \} \textcolor{keywordflow}{else} \{
+47         pathbuf->\hyperlink{classCharBuffer_ad1907009b5ad136692b989fa96bf2f7e}{EnsureSize}(\hyperlink{clib_8h_a67ec56eb98b49515d35005a5b3bf9a32}{StrLen}(path) + 1);
+48         pathbuf->\hyperlink{classCharBuffer_a045b38735f7b3007c1b98d3d7b7feafe}{Append}(path);
+49     \}
+50 
+51     DIR *dir;
+52     \textcolor{keywordflow}{if} ((dir = opendir(pathbuf->\hyperlink{classCharBuffer_a7dfd3feaaf80f318ba44efe15b1ec44b}{GetString}())) == NULL) \{
+53         \hyperlink{classCharBuffer}{CharBuffer} *res = \textcolor{keyword}{new} \hyperlink{classCharBuffer}{CharBuffer}();
+54         \textcolor{keyword}{const} \textcolor{keywordtype}{char} *msg = \hyperlink{text_8h_af217b701d2c7369bd72aa21239e94642}{MSGNODIR};
+55         res->\hyperlink{classCharBuffer_ad1907009b5ad136692b989fa96bf2f7e}{EnsureSize}(\hyperlink{clib_8h_a67ec56eb98b49515d35005a5b3bf9a32}{StrLen}(msg) + \hyperlink{clib_8h_a67ec56eb98b49515d35005a5b3bf9a32}{StrLen}(pathbuf->
+      \hyperlink{classCharBuffer_a7dfd3feaaf80f318ba44efe15b1ec44b}{GetString}()) + \hyperlink{clib_8h_a67ec56eb98b49515d35005a5b3bf9a32}{StrLen}(\hyperlink{platform_8h_a806511f4930171733227c99101dc0606}{NEWLINE}) + 1);
+56         res->\hyperlink{classCharBuffer_abe39d3fd7d8b9c8ec343af2cae7adc96}{Empty}();
+57         res->\hyperlink{classCharBuffer_a045b38735f7b3007c1b98d3d7b7feafe}{Append}(msg);
+58         res->\hyperlink{classCharBuffer_a045b38735f7b3007c1b98d3d7b7feafe}{Append}(pathbuf->\hyperlink{classCharBuffer_a7dfd3feaaf80f318ba44efe15b1ec44b}{GetString}());
+59         res->\hyperlink{classCharBuffer_a045b38735f7b3007c1b98d3d7b7feafe}{Append}(\hyperlink{platform_8h_a806511f4930171733227c99101dc0606}{NEWLINE});
+60 
+61         \textcolor{keyword}{delete} pathbuf;
+62         \textcolor{keywordflow}{return} res;
+63     \}
+64 
+65     \hyperlink{classCharBuffer}{CharBuffer} *lines = \textcolor{keyword}{new} \hyperlink{classCharBuffer}{CharBuffer}();
+66     lines->\hyperlink{classCharBuffer_abe39d3fd7d8b9c8ec343af2cae7adc96}{Empty}();
+67 
+68     \textcolor{keywordtype}{bool} first = \textcolor{keyword}{true};
+69     \textcolor{keyword}{struct }dirent *entry;
+70     \textcolor{keywordflow}{while} ((entry = readdir(dir)) != NULL) \{
+71         \textcolor{keywordflow}{if} (\hyperlink{clib_8h_a2a1f39d11cbbaac992d42e67557dac4b}{StrIsEqual}(entry->d\_name, \textcolor{stringliteral}{"."}) || \hyperlink{clib_8h_a2a1f39d11cbbaac992d42e67557dac4b}{StrIsEqual}(entry->d\_name, \textcolor{stringliteral}{".."})) \{
+72             \textcolor{keywordflow}{continue};
+73         \}
+74 
+75         \textcolor{keywordflow}{if} (first) \{
+76             \textcolor{keyword}{const} \textcolor{keywordtype}{char} *header = \hyperlink{text_8h_aaf96ef8c937099c5f6df26c032b79379}{TXTLISTDIRHEADER};
+77             lines->\hyperlink{classCharBuffer_ad1907009b5ad136692b989fa96bf2f7e}{EnsureSize}(\hyperlink{clib_8h_a67ec56eb98b49515d35005a5b3bf9a32}{StrLen}(header) + 1);
+78             lines->\hyperlink{classCharBuffer_abe39d3fd7d8b9c8ec343af2cae7adc96}{Empty}();
+79             lines->\hyperlink{classCharBuffer_a045b38735f7b3007c1b98d3d7b7feafe}{Append}(header);
+80             first = \textcolor{keyword}{false};
+81         \}
+82 
+83         \textcolor{keyword}{const} \textcolor{keywordtype}{char} *type;
+84 
+85         \textcolor{keywordflow}{switch} (entry->d\_type) \{
+86         \textcolor{keywordflow}{case} DT\_REG:
+87             type = \hyperlink{text_8h_a72b97bf38f1d24b0935ff83d9ac20b65}{TXTLISTDIRTFILE};
+88             \textcolor{keywordflow}{break};
+89         \textcolor{keywordflow}{case} DT\_DIR:
+90             type = \hyperlink{text_8h_aeb8a881be29eed0f59f7164f255d0f1b}{TXTLISTDIRTDIR};
+91             \textcolor{keywordflow}{break};
+92         \textcolor{keywordflow}{default}:
+93             type = \hyperlink{text_8h_a93f9fea30130c8c7277e7ddcc6c1c7fa}{TXTLISTDIRTUNKNOWN};
+94         \}
+95 
+96         \textcolor{keyword}{const} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{short} colsize = 12;
+97         \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} a = \hyperlink{clib_8h_a67ec56eb98b49515d35005a5b3bf9a32}{StrLen}(type) > colsize ? colsize : \hyperlink{clib_8h_a67ec56eb98b49515d35005a5b3bf9a32}{StrLen}(type);
+98         \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} b = colsize - a;
+99 
+100         lines->\hyperlink{classCharBuffer_a73c71d361110b37819a1d681a1504b0e}{EnsureGrowth}(colsize + \hyperlink{clib_8h_a67ec56eb98b49515d35005a5b3bf9a32}{StrLen}(entry->d\_name) + 
+      \hyperlink{clib_8h_a67ec56eb98b49515d35005a5b3bf9a32}{StrLen}(\hyperlink{platform_8h_a806511f4930171733227c99101dc0606}{NEWLINE}) + 1);
+101         lines->\hyperlink{classCharBuffer_a045b38735f7b3007c1b98d3d7b7feafe}{Append}(type);
+102         lines->\hyperlink{classCharBuffer_a045b38735f7b3007c1b98d3d7b7feafe}{Append}(\textcolor{charliteral}{' '}, b);
+103         lines->\hyperlink{classCharBuffer_a045b38735f7b3007c1b98d3d7b7feafe}{Append}(entry->d\_name);
+104         lines->\hyperlink{classCharBuffer_a045b38735f7b3007c1b98d3d7b7feafe}{Append}(\hyperlink{platform_8h_a806511f4930171733227c99101dc0606}{NEWLINE});
+105     \}
+106 
+107     closedir(dir);
+108     \textcolor{keyword}{delete} pathbuf;
+109     \textcolor{keywordflow}{return} lines;
+110 \textcolor{preprocessor}{#else}
+111     \hyperlink{classCharBuffer}{CharBuffer} *lines = \textcolor{keyword}{new} \hyperlink{classCharBuffer}{CharBuffer}();
+112     lines->\hyperlink{classCharBuffer_abe39d3fd7d8b9c8ec343af2cae7adc96}{Empty}();
+113     \textcolor{keywordflow}{return} lines;
+114 \textcolor{preprocessor}{#endif}
+115 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classStandardFilesystem_a535ef937063f59dcb61560d44ed18e81_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{Standard\+Filesystem@{Standard\+Filesystem}!Load\+Text\+File@{Load\+Text\+File}}
+\index{Load\+Text\+File@{Load\+Text\+File}!Standard\+Filesystem@{Standard\+Filesystem}}
+\subsubsection[{\texorpdfstring{Load\+Text\+File(const char $\ast$name)}{LoadTextFile(const char *name)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Char\+Buffer} $\ast$ Standard\+Filesystem\+::\+Load\+Text\+File (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{name}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{classStandardFilesystem_aa01514561ced127f2453b3a913e077ef}{}\label{classStandardFilesystem_aa01514561ced127f2453b3a913e077ef}
+
+
+Implements \hyperlink{classFilesystemBase_adc4a9e1dc189bcd221e3b994bc854d46}{Filesystem\+Base}.
+
+
+
+Definition at line 117 of file filesystem\+\_\+stdc.\+cpp.
+
+
+
+References Char\+Buffer\+::\+Append(), blocksize, Char\+Buffer\+::\+Char\+Buffer(), Char\+Buffer\+::\+Empty(), and Char\+Buffer\+::\+Ensure\+Size().
+
+
+\begin{DoxyCode}
+118 \{
+119     FILE *file;
+120 
+121 \textcolor{preprocessor}{#if !defined(\_WIN32)}
+122     file = fopen(name, \textcolor{stringliteral}{"r"});
+123 \textcolor{preprocessor}{#else}
+124     fopen\_s(&file, name, \textcolor{stringliteral}{"r"});
+125 \textcolor{preprocessor}{#endif}
+126 
+127     \textcolor{keywordflow}{if} (!file) \{
+128         \textcolor{keywordflow}{return} \hyperlink{platform_8h_a46ff2bfbf0d44b8466a2251d5bd5e6f8}{NOMEM};
+129     \}
+130 
+131     \hyperlink{classCharBuffer}{CharBuffer} *text = \textcolor{keyword}{new} \hyperlink{classCharBuffer}{CharBuffer}();
+132     text->\hyperlink{classCharBuffer_abe39d3fd7d8b9c8ec343af2cae7adc96}{Empty}();
+133 
+134     \textcolor{keywordtype}{int} blocks = 0;
+135     \textcolor{keywordtype}{bool} eof = \textcolor{keyword}{false};
+136 
+137     \textcolor{keywordflow}{while} (!eof) \{
+138         blocks++;
+139         text->\hyperlink{classCharBuffer_ad1907009b5ad136692b989fa96bf2f7e}{EnsureSize}(\hyperlink{classStandardFilesystem_aa04dcecabc636b2154a0e55847f689f4}{blocksize}, blocks);
+140         \textcolor{keywordtype}{int} count = 0;
+141 
+142         \textcolor{keywordflow}{do}
+143         \{
+144             \textcolor{keywordtype}{int} c = fgetc(file);
+145             eof = c == EOF;
+146 
+147             \textcolor{keywordflow}{if} (!eof) \{
+148                 text->\hyperlink{classCharBuffer_a045b38735f7b3007c1b98d3d7b7feafe}{Append}((\textcolor{keywordtype}{char})c);
+149                 count++;
+150             \}
+151         \}  \textcolor{keywordflow}{while} (!eof && count < \hyperlink{classStandardFilesystem_aa04dcecabc636b2154a0e55847f689f4}{blocksize});
+152     \}
+153 
+154     fclose(file);
+155     \textcolor{keywordflow}{return} text;
+156 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classStandardFilesystem_aa01514561ced127f2453b3a913e077ef_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{Standard\+Filesystem@{Standard\+Filesystem}!Save\+Text\+File@{Save\+Text\+File}}
+\index{Save\+Text\+File@{Save\+Text\+File}!Standard\+Filesystem@{Standard\+Filesystem}}
+\subsubsection[{\texorpdfstring{Save\+Text\+File(const char $\ast$name, const char $\ast$text)}{SaveTextFile(const char *name, const char *text)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} Standard\+Filesystem\+::\+Save\+Text\+File (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{name, }
+\item[{const char $\ast$}]{text}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{classStandardFilesystem_ad2e93d1364a5b9491e14b54cb7fe924f}{}\label{classStandardFilesystem_ad2e93d1364a5b9491e14b54cb7fe924f}
+
+
+Implements \hyperlink{classFilesystemBase_a66b54f8151cd8903ac757207b062ef48}{Filesystem\+Base}.
+
+
+
+Definition at line 158 of file filesystem\+\_\+stdc.\+cpp.
+
+
+\begin{DoxyCode}
+159 \{
+160     FILE *file;
+161 
+162 \textcolor{preprocessor}{#if !defined(\_WIN32)}
+163     file = fopen(name, \textcolor{stringliteral}{"w"});
+164 \textcolor{preprocessor}{#else}
+165     fopen\_s(&file, name, \textcolor{stringliteral}{"w"});
+166 \textcolor{preprocessor}{#endif}
+167 
+168     \textcolor{keywordflow}{if} (!file) \{
+169         \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+170     \}
+171 
+172     \textcolor{keywordtype}{char} *i = (\textcolor{keywordtype}{char}*)text;
+173     \textcolor{keywordtype}{int} r = EOF + 11;
+174     \textcolor{keywordflow}{while} (r != EOF && *i) \{
+175         r = fputc(*i++, file);
+176     \}
+177 
+178     fclose(file);
+179     \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+180 \}
+\end{DoxyCode}
+
+
+\subsection{Member Data Documentation}
+\index{Standard\+Filesystem@{Standard\+Filesystem}!blocksize@{blocksize}}
+\index{blocksize@{blocksize}!Standard\+Filesystem@{Standard\+Filesystem}}
+\subsubsection[{\texorpdfstring{blocksize}{blocksize}}]{\setlength{\rightskip}{0pt plus 5cm}const int Standard\+Filesystem\+::blocksize = 512\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}\hypertarget{classStandardFilesystem_aa04dcecabc636b2154a0e55847f689f4}{}\label{classStandardFilesystem_aa04dcecabc636b2154a0e55847f689f4}
+
+
+Definition at line 49 of file filesystem\+\_\+stdc.\+h.
+
+
+
+Referenced by Load\+Text\+File().
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+app/system/\hyperlink{filesystem__stdc_8h}{filesystem\+\_\+stdc.\+h}\item 
+app/system/\hyperlink{filesystem__stdc_8cpp}{filesystem\+\_\+stdc.\+cpp}\end{DoxyCompactItemize}

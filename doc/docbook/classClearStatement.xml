@@ -1,0 +1,72 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="classClearStatement">
+<title>ClearStatement class Reference</title>
+<para>
+    <programlisting>#include <link linkend="statements_8h">&lt;statements.h&gt;</link></programlisting>
+</para>
+<para>Inheritance diagram for ClearStatement</para>
+<para>
+    <figure>
+        <title>Inheritance graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="classClearStatement__inherit__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+<para>Collaboration diagram for ClearStatement</para>
+<para>
+    <figure>
+        <title>Collaboration graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="classClearStatement__coll__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="classClearStatement_1a5c3069808cd784d6f98916bae6b1b94c">ClearStatement</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="classClearStatement_1a30976bfeaef80491e7c75f40f17e7b05">~ClearStatement</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>char * <link linkend="classClearStatement_1ad01255515180fd5271c491386df560a8">Execute</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+    <simplesect>
+
+<para>Clear the console window. </para>
+    </simplesect>
+            <section xml:id="classClearStatement_1a5c3069808cd784d6f98916bae6b1b94c">
+                <title>ClearStatement::ClearStatement ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="classClearStatement_1a30976bfeaef80491e7c75f40f17e7b05">
+                <title>ClearStatement::~ClearStatement ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="classClearStatement_1ad01255515180fd5271c491386df560a8">
+                <title>char * ClearStatement::Execute ()</title> <emphasis></emphasis>
+                
+            </section>
+</section>

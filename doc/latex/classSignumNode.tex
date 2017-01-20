@@ -1,0 +1,206 @@
+\hypertarget{classSignumNode}{}\section{Signum\+Node Class Reference}
+\label{classSignumNode}\index{Signum\+Node@{Signum\+Node}}
+
+
+A signum function in a syntax tree.  
+
+
+
+
+{\ttfamily \#include $<$functions.\+h$>$}
+
+
+
+Inheritance diagram for Signum\+Node\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=169pt]{classSignumNode__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Signum\+Node\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=272pt]{classSignumNode__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classSignumNode_ab32cce0dffab55958f04a0e1c90c70e5}{Signum\+Node} (\hyperlink{classExpressionNode}{Expression\+Node} $\ast$\hyperlink{classFunctionNode_ad7577b179a1937aaf8a0058bb5b546dc}{expression})
+\item 
+\hyperlink{structNumber}{Number} $\ast$ \hyperlink{classSignumNode_a4d36a858fda9c051ecddf975bc94a62e}{Evaluate} ()
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{classFunctionNode}{Function\+Node} $\ast$ \hyperlink{classSignumNode_a7cd36999a3e5fc9ed7466632388044f1}{Create} (\hyperlink{classExpressionNode}{Expression\+Node} $\ast$\hyperlink{classFunctionNode_ad7577b179a1937aaf8a0058bb5b546dc}{expression})
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+char $\ast$ \hyperlink{classSignumNode_a77140b990e0c3e0f75d074d4405a4e4f}{Get\+Node\+Text} ()
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+A signum function in a syntax tree. 
+
+Extracts the sign of a real number. See \hyperlink{structNumber}{Number} for implementation.
+
+More info on the signum function is available at Wikipedia\+: \href{http://en.wikipedia.org/wiki/Sign_function}{\tt http\+://en.\+wikipedia.\+org/wiki/\+Sign\+\_\+function} 
+
+Definition at line 197 of file functions.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Signum\+Node@{Signum\+Node}!Signum\+Node@{Signum\+Node}}
+\index{Signum\+Node@{Signum\+Node}!Signum\+Node@{Signum\+Node}}
+\subsubsection[{\texorpdfstring{Signum\+Node(\+Expression\+Node $\ast$expression)}{SignumNode(ExpressionNode *expression)}}]{\setlength{\rightskip}{0pt plus 5cm}Signum\+Node\+::\+Signum\+Node (
+\begin{DoxyParamCaption}
+\item[{{\bf Expression\+Node} $\ast$}]{expression}
+\end{DoxyParamCaption}
+)}\hypertarget{classSignumNode_ab32cce0dffab55958f04a0e1c90c70e5}{}\label{classSignumNode_ab32cce0dffab55958f04a0e1c90c70e5}
+
+
+Definition at line 514 of file functions.\+cpp.
+
+
+
+References Function\+Node\+::\+Function\+Node().
+
+
+
+Referenced by Create().
+
+
+\begin{DoxyCode}
+514                                                  :
+515     \hyperlink{classFunctionNode_a41cb7db0162ffbec0902bd8ff7ea435f}{FunctionNode}(expression) \{ \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classSignumNode_ab32cce0dffab55958f04a0e1c90c70e5_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classSignumNode_ab32cce0dffab55958f04a0e1c90c70e5_icgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Member Function Documentation}
+\index{Signum\+Node@{Signum\+Node}!Create@{Create}}
+\index{Create@{Create}!Signum\+Node@{Signum\+Node}}
+\subsubsection[{\texorpdfstring{Create(\+Expression\+Node $\ast$expression)}{Create(ExpressionNode *expression)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Function\+Node} $\ast$ Signum\+Node\+::\+Create (
+\begin{DoxyParamCaption}
+\item[{{\bf Expression\+Node} $\ast$}]{expression}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{classSignumNode_a7cd36999a3e5fc9ed7466632388044f1}{}\label{classSignumNode_a7cd36999a3e5fc9ed7466632388044f1}
+
+
+Definition at line 517 of file functions.\+cpp.
+
+
+
+References Signum\+Node().
+
+
+\begin{DoxyCode}
+518 \{
+519     \textcolor{keywordflow}{return} \textcolor{keyword}{new} \hyperlink{classSignumNode_ab32cce0dffab55958f04a0e1c90c70e5}{SignumNode}(expression);
+520 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classSignumNode_a7cd36999a3e5fc9ed7466632388044f1_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{Signum\+Node@{Signum\+Node}!Evaluate@{Evaluate}}
+\index{Evaluate@{Evaluate}!Signum\+Node@{Signum\+Node}}
+\subsubsection[{\texorpdfstring{Evaluate()}{Evaluate()}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Number} $\ast$ Signum\+Node\+::\+Evaluate (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{classSignumNode_a4d36a858fda9c051ecddf975bc94a62e}{}\label{classSignumNode_a4d36a858fda9c051ecddf975bc94a62e}
+
+
+Implements \hyperlink{classExpressionNode_a64975d4dc37742228bd522f6204537f7}{Expression\+Node}.
+
+
+
+Definition at line 522 of file functions.\+cpp.
+
+
+
+References Expression\+Node\+::\+Evaluate(), Function\+Node\+::expression, Expression\+Node\+::result, and Number\+::\+Signum().
+
+
+\begin{DoxyCode}
+523 \{
+524     \hyperlink{classExpressionNode_a1f590649f5a5cb30eb7ee912f7bc1262}{result} = \hyperlink{classFunctionNode_ad7577b179a1937aaf8a0058bb5b546dc}{expression}->\hyperlink{classExpressionNode_a64975d4dc37742228bd522f6204537f7}{Evaluate}()->\hyperlink{structNumber_ab855ebca1f99be092914ae41aff52204}{Signum}();
+525     \textcolor{keywordflow}{return} \hyperlink{classExpressionNode_a1f590649f5a5cb30eb7ee912f7bc1262}{result};
+526 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classSignumNode_a4d36a858fda9c051ecddf975bc94a62e_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{Signum\+Node@{Signum\+Node}!Get\+Node\+Text@{Get\+Node\+Text}}
+\index{Get\+Node\+Text@{Get\+Node\+Text}!Signum\+Node@{Signum\+Node}}
+\subsubsection[{\texorpdfstring{Get\+Node\+Text()}{GetNodeText()}}]{\setlength{\rightskip}{0pt plus 5cm}char $\ast$ Signum\+Node\+::\+Get\+Node\+Text (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}\hypertarget{classSignumNode_a77140b990e0c3e0f75d074d4405a4e4f}{}\label{classSignumNode_a77140b990e0c3e0f75d074d4405a4e4f}
+
+
+Implements \hyperlink{classExpressionNode_a42a5e9562b0f645a19dcc83f698069b5}{Expression\+Node}.
+
+
+
+Definition at line 528 of file functions.\+cpp.
+
+
+\begin{DoxyCode}
+529 \{
+530     \textcolor{keywordflow}{return} (\textcolor{keywordtype}{char}*)\textcolor{stringliteral}{"sgn"};
+531 \}
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+app/main/\hyperlink{functions_8h}{functions.\+h}\item 
+app/main/\hyperlink{functions_8cpp}{functions.\+cpp}\end{DoxyCompactItemize}

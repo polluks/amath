@@ -1,0 +1,144 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="classStatementNode">
+<title>StatementNode class Reference</title>
+<para>
+    <programlisting>#include <link linkend="nodes_8h">&lt;nodes.h&gt;</link></programlisting>
+</para>
+<para>Inheritance diagram for StatementNode</para>
+<para>
+    <figure>
+        <title>Inheritance graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="classStatementNode__inherit__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+<para>Collaboration diagram for StatementNode</para>
+<para>
+    <figure>
+        <title>Collaboration graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="classStatementNode__coll__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="classStatementNode_1a586026d6009a39d087792d621de86360">StatementNode</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>virtual <link linkend="classStatementNode_1a56eb628750a4bf9506eb24380876ae08">~StatementNode</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="nodes_8h_1acac9cbaeea226ed297804c012dc12b16">NodeType</link> <link linkend="classStatementNode_1acde95037b93e7154cae2ce176b155bb3">GetNodeType</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>virtual <link linkend="classSyntaxNode">SyntaxNode</link> * <link linkend="classStatementNode_1a40b21f16cdb3b0e480b552007368f176">GetNext</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>virtual char * <link linkend="classStatementNode_1a51c8ea87d60a7a28a4a823bfa7851942">GetTextCode</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>virtual char * <link linkend="classStatementNode_1a721589622c930c010927b9a9c55b173e">Execute</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="classStatementNode_1a9467acb7f6c6c6c0027637475e94fba2">Attach</link> (
+<link linkend="classSyntaxNode">SyntaxNode</link> * node)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="classStatementNode_1a68b34bad1cf1a5d9281cd055760e9fec">Detach</link> (
+<link linkend="classSyntaxNode">SyntaxNode</link> * node)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="classStatementNode_1a713efe48098d7f07c6014ca7ba337553">Replace</link> (
+<link linkend="classSyntaxNode">SyntaxNode</link> * n, <link linkend="classSyntaxNode">SyntaxNode</link> * x)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+    <simplesect>
+
+<para>Base class for all statements in a syntax tree. </para>
+    </simplesect>
+            <section xml:id="classStatementNode_1a586026d6009a39d087792d621de86360">
+                <title>StatementNode::StatementNode ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="classStatementNode_1a56eb628750a4bf9506eb24380876ae08">
+                <title>virtual StatementNode::~StatementNode ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="classStatementNode_1acde95037b93e7154cae2ce176b155bb3">
+                <title>NodeType StatementNode::GetNodeType ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="classStatementNode_1a40b21f16cdb3b0e480b552007368f176">
+                <title>SyntaxNode * StatementNode::GetNext ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="classStatementNode_1a51c8ea87d60a7a28a4a823bfa7851942">
+                <title>char * StatementNode::GetTextCode ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="classStatementNode_1a721589622c930c010927b9a9c55b173e">
+                <title>virtual char* StatementNode::Execute ()=0</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="classStatementNode_1a9467acb7f6c6c6c0027637475e94fba2">
+                <title>void StatementNode::Attach (SyntaxNode *node)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="classStatementNode_1a68b34bad1cf1a5d9281cd055760e9fec">
+                <title>void StatementNode::Detach (SyntaxNode *node)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="classStatementNode_1a713efe48098d7f07c6014ca7ba337553">
+                <title>void StatementNode::Replace (SyntaxNode *n, SyntaxNode *x)</title> <emphasis></emphasis>
+                
+            </section>
+</section>

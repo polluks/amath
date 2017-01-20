@@ -1,0 +1,93 @@
+\hypertarget{csinh_8c}{}\section{lib/cplex/csinh.c File Reference}
+\label{csinh_8c}\index{lib/cplex/csinh.\+c@{lib/cplex/csinh.\+c}}
+{\ttfamily \#include \char`\"{}prim.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}math.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}complex.\+h\char`\"{}}\\*
+Include dependency graph for csinh.\+c\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=221pt]{csinh_8c__incl}
+\end{center}
+\end{figure}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{unioncomplex}{complex} \hyperlink{csinh_8c_a5a9923cad15c34351bb15bd46d5d6331}{csinh} (\hyperlink{unioncomplex}{complex} z)
+\begin{DoxyCompactList}\small\item\em Hyperbolic sine of a complex number. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\index{csinh.\+c@{csinh.\+c}!csinh@{csinh}}
+\index{csinh@{csinh}!csinh.\+c@{csinh.\+c}}
+\subsubsection[{\texorpdfstring{csinh(complex z)}{csinh(complex z)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf complex} csinh (
+\begin{DoxyParamCaption}
+\item[{{\bf complex}}]{z}
+\end{DoxyParamCaption}
+)}\hypertarget{csinh_8c_a5a9923cad15c34351bb15bd46d5d6331}{}\label{csinh_8c_a5a9923cad15c34351bb15bd46d5d6331}
+
+
+Hyperbolic sine of a complex number. 
+
+\begin{DoxyVersion}{Version}
+1.\+1 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+2007/08/20
+\end{DoxyDate}
+Calculated as in Open Office\+:~\newline
+ \href{https://wiki.openoffice.org/wiki/Documentation/How_Tos/Calc:_IMSINH_function}{\tt https\+://wiki.\+openoffice.\+org/wiki/\+Documentation/\+How\+\_\+\+Tos/\+Calc\+:\+\_\+\+I\+M\+S\+I\+N\+H\+\_\+function} 
+\begin{DoxyPre}
+a+bi
+real = sinh(a) * cos(b)
+imag = cosh(a) * sin(b)
+\end{DoxyPre}
+ 
+
+Definition at line 53 of file csinh.\+c.
+
+
+
+References cchsh(), cimag(), cos(), cpack(), creal(), and sin().
+
+
+
+Referenced by Complex\+Number\+::\+Hyp\+Sine().
+
+
+\begin{DoxyCode}
+54 \{
+55     \hyperlink{unioncomplex}{complex} w;
+56     \textcolor{keywordtype}{double} a, b;
+57     \textcolor{keywordtype}{double} ch, sh;
+58 
+59     a = \hyperlink{complex_8h_a4a236b24c0197821e3489a35a72079ab}{creal}(z);
+60     b = \hyperlink{complex_8h_aa1fe0b9371befabef6c41ba73470774a}{cimag}(z);
+61     \hyperlink{cplex_2prim_8h_aee34c227a34560e41c3b665a00f1a4f9}{cchsh}(a, &ch, &sh);
+62     w = \hyperlink{complex_8h_a980e6e049f7902b05fc9eb5614b07a5c}{cpack}(\hyperlink{math_8h_a5e7b53a694b3cf0f2d7debd444140fbd}{cos}(b) * sh, \hyperlink{math_8h_aad4af25633b071b0e2cdb8ebd87eca77}{sin}(b) * ch);
+63 
+64     \textcolor{keywordflow}{return} w;
+65 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{csinh_8c_a5a9923cad15c34351bb15bd46d5d6331_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=290pt]{csinh_8c_a5a9923cad15c34351bb15bd46d5d6331_icgraph}
+\end{center}
+\end{figure}
+
+

@@ -1,8 +1,0 @@
-<map id="NumericValueNode::GetText" name="NumericValueNode::GetText">
-<area shape="rect" id="node2" href="$d4/d9e/classNumericValueNode.html#a078bf8f0496d2afcb7e3a050110a0c0d" title="NumericValueNode::GetNodeText" alt="" coords="244,81,465,108"/>
-<area shape="rect" id="node3" href="$dc/d84/classCharBuffer.html#ac52ed7b91190240eb7db4cf43d1e2abb" title="Release memory, allocate and copy source. " alt="" coords="513,31,692,57"/>
-<area shape="rect" id="node6" href="$dc/d84/classCharBuffer.html#a7dfd3feaaf80f318ba44efe15b1ec44b" title="CharBuffer::GetString" alt="" coords="529,81,677,108"/>
-<area shape="rect" id="node7" href="$d9/df3/classNumeralSystem.html#a74dc91c4dbab4a88a123b2a32753f485" title="NumeralSystem::GetText" alt="" coords="517,132,688,159"/>
-<area shape="rect" id="node4" href="$dd/d2a/alloccpy_8c.html#a5bed05c70cb17e541fee570b5dc32e1a" title="Allocate memory and copy a string into the array. " alt="" coords="767,5,872,32"/>
-<area shape="rect" id="node5" href="$dc/d84/classCharBuffer.html#a0bcdd5708db4b04c887224e83a05086f" title="Release memory in buffer. " alt="" coords="740,56,899,83"/>
-</map>

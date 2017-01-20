@@ -1,0 +1,95 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="classSubtractionNode">
+<title>SubtractionNode class Reference</title>
+<para>
+    <programlisting>#include <link linkend="operators_8h">&lt;operators.h&gt;</link></programlisting>
+</para>
+<para>Inheritance diagram for SubtractionNode</para>
+<para>
+    <figure>
+        <title>Inheritance graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="classSubtractionNode__inherit__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+<para>Collaboration diagram for SubtractionNode</para>
+<para>
+    <figure>
+        <title>Collaboration graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="classSubtractionNode__coll__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="classSubtractionNode_1a1c08339ecfc99430eec6db0b7687c716">SubtractionNode</link> (
+<link linkend="classExpressionNode">ExpressionNode</link> * left, <link linkend="classExpressionNode">ExpressionNode</link> * right)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="nodes_8h_1ab321a69ad5704b704b8dd9e1b3984a29">ReductionType</link> <link linkend="classSubtractionNode_1a4116ea8e86864be1a1ae9420d2b93ac4">GetReductionType</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="classSubtractionNode_1aab0c25ea71d027f844bc332fa0045b6c">GetPrecedence</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="structNumber">Number</link> * <link linkend="classSubtractionNode_1a6ab885bb5ab826b5d0c70a63e753f5e3">Evaluate</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>char * <link linkend="classSubtractionNode_1a93deba99c167e46fcb71b129902168de">GetNodeText</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+            <section xml:id="classSubtractionNode_1a1c08339ecfc99430eec6db0b7687c716">
+                <title>SubtractionNode::SubtractionNode (ExpressionNode *left, ExpressionNode *right)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="classSubtractionNode_1a4116ea8e86864be1a1ae9420d2b93ac4">
+                <title>ReductionType SubtractionNode::GetReductionType ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="classSubtractionNode_1aab0c25ea71d027f844bc332fa0045b6c">
+                <title>int SubtractionNode::GetPrecedence ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="classSubtractionNode_1a6ab885bb5ab826b5d0c70a63e753f5e3">
+                <title>Number * SubtractionNode::Evaluate ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="classSubtractionNode_1a93deba99c167e46fcb71b129902168de">
+                <title>char * SubtractionNode::GetNodeText ()</title> <emphasis></emphasis>
+                
+            </section>
+</section>

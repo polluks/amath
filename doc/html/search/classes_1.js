@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['binarylognode',['BinaryLogNode',['../d2/d2a/classBinaryLogNode.html',1,'']]]
+  ['binarylognode',['BinaryLogNode',['../classBinaryLogNode.html',1,'']]]
 ];

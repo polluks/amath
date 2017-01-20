@@ -1,0 +1,197 @@
+\hypertarget{classHyperbolicTangentNode}{}\section{Hyperbolic\+Tangent\+Node Class Reference}
+\label{classHyperbolicTangentNode}\index{Hyperbolic\+Tangent\+Node@{Hyperbolic\+Tangent\+Node}}
+
+
+{\ttfamily \#include $<$functions.\+h$>$}
+
+
+
+Inheritance diagram for Hyperbolic\+Tangent\+Node\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=202pt]{classHyperbolicTangentNode__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Hyperbolic\+Tangent\+Node\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=275pt]{classHyperbolicTangentNode__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classHyperbolicTangentNode_a18d198b26efeb8d15efae4fda943212b}{Hyperbolic\+Tangent\+Node} (\hyperlink{classExpressionNode}{Expression\+Node} $\ast$\hyperlink{classFunctionNode_ad7577b179a1937aaf8a0058bb5b546dc}{expression})
+\item 
+\hyperlink{structNumber}{Number} $\ast$ \hyperlink{classHyperbolicTangentNode_a7ea56cdbc709f28de4ff10486a79c2b5}{Evaluate} ()
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{classFunctionNode}{Function\+Node} $\ast$ \hyperlink{classHyperbolicTangentNode_a8e207d88423bd62a7a865c1a7b01c870}{Create} (\hyperlink{classExpressionNode}{Expression\+Node} $\ast$\hyperlink{classFunctionNode_ad7577b179a1937aaf8a0058bb5b546dc}{expression})
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+char $\ast$ \hyperlink{classHyperbolicTangentNode_a7013c62abbe2d3248411624bcd32673f}{Get\+Node\+Text} ()
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 480 of file functions.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Hyperbolic\+Tangent\+Node@{Hyperbolic\+Tangent\+Node}!Hyperbolic\+Tangent\+Node@{Hyperbolic\+Tangent\+Node}}
+\index{Hyperbolic\+Tangent\+Node@{Hyperbolic\+Tangent\+Node}!Hyperbolic\+Tangent\+Node@{Hyperbolic\+Tangent\+Node}}
+\subsubsection[{\texorpdfstring{Hyperbolic\+Tangent\+Node(\+Expression\+Node $\ast$expression)}{HyperbolicTangentNode(ExpressionNode *expression)}}]{\setlength{\rightskip}{0pt plus 5cm}Hyperbolic\+Tangent\+Node\+::\+Hyperbolic\+Tangent\+Node (
+\begin{DoxyParamCaption}
+\item[{{\bf Expression\+Node} $\ast$}]{expression}
+\end{DoxyParamCaption}
+)}\hypertarget{classHyperbolicTangentNode_a18d198b26efeb8d15efae4fda943212b}{}\label{classHyperbolicTangentNode_a18d198b26efeb8d15efae4fda943212b}
+
+
+Definition at line 1019 of file functions.\+cpp.
+
+
+
+References Function\+Node\+::\+Function\+Node().
+
+
+
+Referenced by Create().
+
+
+\begin{DoxyCode}
+1019                                                                        :
+1020     \hyperlink{classFunctionNode_a41cb7db0162ffbec0902bd8ff7ea435f}{FunctionNode}(expression) \{ \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classHyperbolicTangentNode_a18d198b26efeb8d15efae4fda943212b_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classHyperbolicTangentNode_a18d198b26efeb8d15efae4fda943212b_icgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Member Function Documentation}
+\index{Hyperbolic\+Tangent\+Node@{Hyperbolic\+Tangent\+Node}!Create@{Create}}
+\index{Create@{Create}!Hyperbolic\+Tangent\+Node@{Hyperbolic\+Tangent\+Node}}
+\subsubsection[{\texorpdfstring{Create(\+Expression\+Node $\ast$expression)}{Create(ExpressionNode *expression)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Function\+Node} $\ast$ Hyperbolic\+Tangent\+Node\+::\+Create (
+\begin{DoxyParamCaption}
+\item[{{\bf Expression\+Node} $\ast$}]{expression}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{classHyperbolicTangentNode_a8e207d88423bd62a7a865c1a7b01c870}{}\label{classHyperbolicTangentNode_a8e207d88423bd62a7a865c1a7b01c870}
+
+
+Definition at line 1022 of file functions.\+cpp.
+
+
+
+References Hyperbolic\+Tangent\+Node().
+
+
+\begin{DoxyCode}
+1023 \{
+1024     \textcolor{keywordflow}{return} \textcolor{keyword}{new} \hyperlink{classHyperbolicTangentNode_a18d198b26efeb8d15efae4fda943212b}{HyperbolicTangentNode}(expression);
+1025 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classHyperbolicTangentNode_a8e207d88423bd62a7a865c1a7b01c870_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{Hyperbolic\+Tangent\+Node@{Hyperbolic\+Tangent\+Node}!Evaluate@{Evaluate}}
+\index{Evaluate@{Evaluate}!Hyperbolic\+Tangent\+Node@{Hyperbolic\+Tangent\+Node}}
+\subsubsection[{\texorpdfstring{Evaluate()}{Evaluate()}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Number} $\ast$ Hyperbolic\+Tangent\+Node\+::\+Evaluate (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{classHyperbolicTangentNode_a7ea56cdbc709f28de4ff10486a79c2b5}{}\label{classHyperbolicTangentNode_a7ea56cdbc709f28de4ff10486a79c2b5}
+
+
+Implements \hyperlink{classExpressionNode_a64975d4dc37742228bd522f6204537f7}{Expression\+Node}.
+
+
+
+Definition at line 1027 of file functions.\+cpp.
+
+
+
+References Expression\+Node\+::\+Evaluate(), Function\+Node\+::expression, Number\+::\+Hyp\+Tangent(), and Expression\+Node\+::result.
+
+
+\begin{DoxyCode}
+1028 \{
+1029     \hyperlink{classExpressionNode_a1f590649f5a5cb30eb7ee912f7bc1262}{result} = \hyperlink{classFunctionNode_ad7577b179a1937aaf8a0058bb5b546dc}{expression}->\hyperlink{classExpressionNode_a64975d4dc37742228bd522f6204537f7}{Evaluate}()->\hyperlink{structNumber_a0e121d7ed52086bf35a166355101051a}{HypTangent}();
+1030     \textcolor{keywordflow}{return} \hyperlink{classExpressionNode_a1f590649f5a5cb30eb7ee912f7bc1262}{result};
+1031 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classHyperbolicTangentNode_a7ea56cdbc709f28de4ff10486a79c2b5_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{Hyperbolic\+Tangent\+Node@{Hyperbolic\+Tangent\+Node}!Get\+Node\+Text@{Get\+Node\+Text}}
+\index{Get\+Node\+Text@{Get\+Node\+Text}!Hyperbolic\+Tangent\+Node@{Hyperbolic\+Tangent\+Node}}
+\subsubsection[{\texorpdfstring{Get\+Node\+Text()}{GetNodeText()}}]{\setlength{\rightskip}{0pt plus 5cm}char $\ast$ Hyperbolic\+Tangent\+Node\+::\+Get\+Node\+Text (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}\hypertarget{classHyperbolicTangentNode_a7013c62abbe2d3248411624bcd32673f}{}\label{classHyperbolicTangentNode_a7013c62abbe2d3248411624bcd32673f}
+
+
+Implements \hyperlink{classExpressionNode_a42a5e9562b0f645a19dcc83f698069b5}{Expression\+Node}.
+
+
+
+Definition at line 1033 of file functions.\+cpp.
+
+
+\begin{DoxyCode}
+1034 \{
+1035     \textcolor{keywordflow}{return} (\textcolor{keywordtype}{char}*)\textcolor{stringliteral}{"tanh"};
+1036 \}
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+app/main/\hyperlink{functions_8h}{functions.\+h}\item 
+app/main/\hyperlink{functions_8cpp}{functions.\+cpp}\end{DoxyCompactItemize}

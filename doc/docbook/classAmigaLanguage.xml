@@ -1,0 +1,232 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="classAmigaLanguage">
+<title>AmigaLanguage class Reference</title>
+<para>
+    <programlisting>#include <link linkend="language__amiga_8h">&lt;language_amiga.h&gt;</link></programlisting>
+</para>
+<para>Inheritance diagram for AmigaLanguage</para>
+<para>
+    <figure>
+        <title>Inheritance graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="classAmigaLanguage__inherit__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+<para>Collaboration diagram for AmigaLanguage</para>
+<para>
+    <figure>
+        <title>Collaboration graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="classAmigaLanguage__coll__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+        <section>
+            <title>Private Attributes</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct Locale * locale</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct Catalog * helpcatalog</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct Catalog * identcatalog</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct Catalog * textcatalog</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct Catalog * keywordcatalog</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="classAmigaLanguage_1a5c5ba90b1a15f4b2ab7e4c0bdd7ca10d">AmigaLanguage</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="classAmigaLanguage_1a76e791f9eed9a9703c0a7fb7db68b09c">~AmigaLanguage</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>char <link linkend="classAmigaLanguage_1a8a3e470096d156b2c6e42283b5110b02">GetFractionPoint</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="platform_8h_1a1062901a7428fdd9c7f180f5e01ea056">bool</link> <link linkend="classAmigaLanguage_1ae54fcf4c689939e1e0285781d47cf3b0">CharIsAlNum</link> (
+unsigned long character)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="platform_8h_1a1062901a7428fdd9c7f180f5e01ea056">bool</link> <link linkend="classAmigaLanguage_1a3e786ae72c994e3d78eb19a5d8e896fc">CharIsAlpha</link> (
+unsigned long character)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="platform_8h_1a1062901a7428fdd9c7f180f5e01ea056">bool</link> <link linkend="classAmigaLanguage_1afe6f40c3f96590d22a3fc6865058cc5c">CharIsDigit</link> (
+unsigned long character)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="platform_8h_1a1062901a7428fdd9c7f180f5e01ea056">bool</link> <link linkend="classAmigaLanguage_1a915f8711f21b74ef2f9ad70f88cfdffb">CharIsPunct</link> (
+unsigned long character)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="platform_8h_1a1062901a7428fdd9c7f180f5e01ea056">bool</link> <link linkend="classAmigaLanguage_1a41efaa7468f213abcaadda4dc4b73c9d">CharIsSpace</link> (
+unsigned long character)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="platform_8h_1a1062901a7428fdd9c7f180f5e01ea056">bool</link> <link linkend="classAmigaLanguage_1a2ae24f616652a4fc8af365d0ee50ae76">CharIsCntrl</link> (
+unsigned long character)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="platform_8h_1a1062901a7428fdd9c7f180f5e01ea056">bool</link> <link linkend="classAmigaLanguage_1a19a04fb8a564dd9fbeaf6f5b822d38e6">StrIsEqualLoc</link> (
+const char * s1, const char * s2)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>char * <link linkend="classAmigaLanguage_1accf773d855875f669a9be99ef807ea0e">Translate</link> (
+<link linkend="structtextdef">textdef</link> * def)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>char * <link linkend="classAmigaLanguage_1a7ee105ba4936bb1782f5a367e920c2a7">Translate</link> (
+<link linkend="structhelptextdef">helptextdef</link> * def)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>char * <link linkend="classAmigaLanguage_1ab77fb07aebba5056bd84d6d8e0bf5a5b">Translate</link> (
+<link linkend="structidenthelpdef">identhelpdef</link> * def)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title>Member Data Documentation</title>
+        </section>
+            <section xml:id="classAmigaLanguage_1a5c5ba90b1a15f4b2ab7e4c0bdd7ca10d">
+                <title>AmigaLanguage::AmigaLanguage ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="classAmigaLanguage_1a76e791f9eed9a9703c0a7fb7db68b09c">
+                <title>AmigaLanguage::~AmigaLanguage ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="classAmigaLanguage_1a8a3e470096d156b2c6e42283b5110b02">
+                <title>char AmigaLanguage::GetFractionPoint ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="classAmigaLanguage_1ae54fcf4c689939e1e0285781d47cf3b0">
+                <title>bool AmigaLanguage::CharIsAlNum (unsigned long character)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="classAmigaLanguage_1a3e786ae72c994e3d78eb19a5d8e896fc">
+                <title>bool AmigaLanguage::CharIsAlpha (unsigned long character)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="classAmigaLanguage_1afe6f40c3f96590d22a3fc6865058cc5c">
+                <title>bool AmigaLanguage::CharIsDigit (unsigned long character)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="classAmigaLanguage_1a915f8711f21b74ef2f9ad70f88cfdffb">
+                <title>bool AmigaLanguage::CharIsPunct (unsigned long character)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="classAmigaLanguage_1a41efaa7468f213abcaadda4dc4b73c9d">
+                <title>bool AmigaLanguage::CharIsSpace (unsigned long character)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="classAmigaLanguage_1a2ae24f616652a4fc8af365d0ee50ae76">
+                <title>bool AmigaLanguage::CharIsCntrl (unsigned long character)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="classAmigaLanguage_1a19a04fb8a564dd9fbeaf6f5b822d38e6">
+                <title>bool AmigaLanguage::StrIsEqualLoc (const char *s1, const char *s2)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="classAmigaLanguage_1accf773d855875f669a9be99ef807ea0e">
+                <title>char* AmigaLanguage::Translate (textdef *def)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="classAmigaLanguage_1a7ee105ba4936bb1782f5a367e920c2a7">
+                <title>char* AmigaLanguage::Translate (helptextdef *def)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="classAmigaLanguage_1ab77fb07aebba5056bd84d6d8e0bf5a5b">
+                <title>char* AmigaLanguage::Translate (identhelpdef *def)</title> <emphasis></emphasis>
+                
+            </section>
+</section>

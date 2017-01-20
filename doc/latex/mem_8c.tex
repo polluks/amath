@@ -1,0 +1,422 @@
+\hypertarget{mem_8c}{}\section{lib/clib/mem.c File Reference}
+\label{mem_8c}\index{lib/clib/mem.\+c@{lib/clib/mem.\+c}}
+{\ttfamily \#include \char`\"{}mem.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}clib.\+h\char`\"{}}\\*
+{\ttfamily \#include $<$stdlib.\+h$>$}\\*
+Include dependency graph for mem.\+c\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=237pt]{mem_8c__incl}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structMemoryBlock}{Memory\+Block}
+\item 
+struct \hyperlink{structMemoryList}{Memory\+List}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{mem_8c_a10e2f4ab980f721b99607b350e2b78a6}{A\+L\+L\+O\+C\+\_\+\+M\+EM}(x)~calloc(1\+L,x)
+\item 
+\#define \hyperlink{mem_8c_ab9a68304873c8c763a501b384e9fe9b6}{F\+R\+E\+E\+\_\+\+M\+EM}(x)~free(x)
+\item 
+\#define \hyperlink{mem_8c_ac50c155efcb03f50543b3ae9cca8f09e}{Debug}(x,  y,  z,  w)
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{mem_8c_addd1a224479313960a376ac194ea467a}{alloc\+\_\+error} (char $\ast$, size\+\_\+t)
+\item 
+void \hyperlink{mem_8c_a96cb78338e02e8381392c81761887323}{dealloc\+\_\+error} (char $\ast$, void $\ast$)
+\item 
+void $\ast$ \hyperlink{mem_8c_a9bce7ee26e868552b3784e98e8a75f0b}{Alloc\+Mem\+Safe} (size\+\_\+t size)
+\item 
+void \hyperlink{mem_8c_ab4b822e060386ea562cdf7cdb94d57ea}{Free\+Mem\+Safe} (void $\ast$block)
+\item 
+void \hyperlink{mem_8c_adcb19646ed930d44f25ddc9f7767a182}{Free\+All\+Safe} ()
+\item 
+void \hyperlink{mem_8c_ad57dfcaf475445feb7cf1274d489707d}{Mem\+Usage} (long $\ast$blocks, long $\ast$size, long $\ast$peak)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structMemoryList}{Memory\+List} $\ast$ \hyperlink{mem_8c_a0c8f6ac3ab8d4ceae90436f3bfc06616}{list} = N\+U\+LL
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\index{mem.\+c@{mem.\+c}!A\+L\+L\+O\+C\+\_\+\+M\+EM@{A\+L\+L\+O\+C\+\_\+\+M\+EM}}
+\index{A\+L\+L\+O\+C\+\_\+\+M\+EM@{A\+L\+L\+O\+C\+\_\+\+M\+EM}!mem.\+c@{mem.\+c}}
+\subsubsection[{\texorpdfstring{A\+L\+L\+O\+C\+\_\+\+M\+EM}{ALLOC_MEM}}]{\setlength{\rightskip}{0pt plus 5cm}\#define A\+L\+L\+O\+C\+\_\+\+M\+EM(
+\begin{DoxyParamCaption}
+\item[{}]{x}
+\end{DoxyParamCaption}
+)~calloc(1\+L,x)}\hypertarget{mem_8c_a10e2f4ab980f721b99607b350e2b78a6}{}\label{mem_8c_a10e2f4ab980f721b99607b350e2b78a6}
+
+
+Definition at line 41 of file mem.\+c.
+
+\index{mem.\+c@{mem.\+c}!Debug@{Debug}}
+\index{Debug@{Debug}!mem.\+c@{mem.\+c}}
+\subsubsection[{\texorpdfstring{Debug}{Debug}}]{\setlength{\rightskip}{0pt plus 5cm}\#define Debug(
+\begin{DoxyParamCaption}
+\item[{}]{x, }
+\item[{}]{y, }
+\item[{}]{z, }
+\item[{}]{w}
+\end{DoxyParamCaption}
+)}\hypertarget{mem_8c_ac50c155efcb03f50543b3ae9cca8f09e}{}\label{mem_8c_ac50c155efcb03f50543b3ae9cca8f09e}
+
+
+Definition at line 43 of file mem.\+c.
+
+\index{mem.\+c@{mem.\+c}!F\+R\+E\+E\+\_\+\+M\+EM@{F\+R\+E\+E\+\_\+\+M\+EM}}
+\index{F\+R\+E\+E\+\_\+\+M\+EM@{F\+R\+E\+E\+\_\+\+M\+EM}!mem.\+c@{mem.\+c}}
+\subsubsection[{\texorpdfstring{F\+R\+E\+E\+\_\+\+M\+EM}{FREE_MEM}}]{\setlength{\rightskip}{0pt plus 5cm}\#define F\+R\+E\+E\+\_\+\+M\+EM(
+\begin{DoxyParamCaption}
+\item[{}]{x}
+\end{DoxyParamCaption}
+)~free(x)}\hypertarget{mem_8c_ab9a68304873c8c763a501b384e9fe9b6}{}\label{mem_8c_ab9a68304873c8c763a501b384e9fe9b6}
+
+
+Definition at line 42 of file mem.\+c.
+
+
+
+\subsection{Function Documentation}
+\index{mem.\+c@{mem.\+c}!alloc\+\_\+error@{alloc\+\_\+error}}
+\index{alloc\+\_\+error@{alloc\+\_\+error}!mem.\+c@{mem.\+c}}
+\subsubsection[{\texorpdfstring{alloc\+\_\+error(char $\ast$, size\+\_\+t)}{alloc_error(char *, size_t)}}]{\setlength{\rightskip}{0pt plus 5cm}void alloc\+\_\+error (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{descr, }
+\item[{size\+\_\+t}]{size}
+\end{DoxyParamCaption}
+)}\hypertarget{mem_8c_addd1a224479313960a376ac194ea467a}{}\label{mem_8c_addd1a224479313960a376ac194ea467a}
+
+
+Definition at line 199 of file mem.\+c.
+
+
+
+Referenced by Alloc\+Mem\+Safe().
+
+
+\begin{DoxyCode}
+200 \{
+201     \hyperlink{mem_8c_ac50c155efcb03f50543b3ae9cca8f09e}{Debug}(NULL, \textcolor{stringliteral}{"Mememory allocation error (%s) with size (%d)\(\backslash\)n"}, descr, size);
+202 \}
+\end{DoxyCode}
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=258pt]{mem_8c_addd1a224479313960a376ac194ea467a_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{mem.\+c@{mem.\+c}!Alloc\+Mem\+Safe@{Alloc\+Mem\+Safe}}
+\index{Alloc\+Mem\+Safe@{Alloc\+Mem\+Safe}!mem.\+c@{mem.\+c}}
+\subsubsection[{\texorpdfstring{Alloc\+Mem\+Safe(size\+\_\+t size)}{AllocMemSafe(size_t size)}}]{\setlength{\rightskip}{0pt plus 5cm}void$\ast$ Alloc\+Mem\+Safe (
+\begin{DoxyParamCaption}
+\item[{size\+\_\+t}]{size}
+\end{DoxyParamCaption}
+)}\hypertarget{mem_8c_a9bce7ee26e868552b3784e98e8a75f0b}{}\label{mem_8c_a9bce7ee26e868552b3784e98e8a75f0b}
+
+
+Definition at line 67 of file mem.\+c.
+
+
+
+References Memory\+Block\+::address, alloc\+\_\+error(), Memory\+List\+::count, Memory\+List\+::first, Memory\+List\+::last, list, Memory\+Block\+::next, Memory\+List\+::peak, and Memory\+List\+::size.
+
+
+\begin{DoxyCode}
+68 \{
+69     \textcolor{keyword}{struct }\hyperlink{structMemoryBlock}{MemoryBlock} *newblock;
+70     \textcolor{keywordtype}{size\_t} allocsize;
+71 
+72     \textcolor{keywordflow}{if} (\hyperlink{mem_8c_a0c8f6ac3ab8d4ceae90436f3bfc06616}{list} == NULL) \{
+73         \hyperlink{mem_8c_a0c8f6ac3ab8d4ceae90436f3bfc06616}{list} = (\textcolor{keyword}{struct }\hyperlink{structMemoryList}{MemoryList}*)\hyperlink{mem_8c_a10e2f4ab980f721b99607b350e2b78a6}{ALLOC\_MEM}(\textcolor{keyword}{sizeof}(\textcolor{keyword}{struct} 
+      \hyperlink{structMemoryList}{MemoryList}));
+74         \textcolor{keywordflow}{if} (!\hyperlink{mem_8c_a0c8f6ac3ab8d4ceae90436f3bfc06616}{list}) \{
+75             \hyperlink{mem_8c_addd1a224479313960a376ac194ea467a}{alloc\_error}(\textcolor{stringliteral}{"list"}, \textcolor{keyword}{sizeof}(\textcolor{keyword}{struct} \hyperlink{structMemoryList}{MemoryList}));
+76             \textcolor{keywordflow}{return} 0;
+77         \}
+78 
+79         \hyperlink{mem_8c_a0c8f6ac3ab8d4ceae90436f3bfc06616}{list}->\hyperlink{structMemoryList_a0d47ad7371bb5f38e09ca5f35d85cecb}{first} = NULL;
+80         \hyperlink{mem_8c_a0c8f6ac3ab8d4ceae90436f3bfc06616}{list}->\hyperlink{structMemoryList_afea5b720cf2a7c326cb53a604b90c354}{last} = NULL;
+81         \hyperlink{mem_8c_a0c8f6ac3ab8d4ceae90436f3bfc06616}{list}->\hyperlink{structMemoryList_af2065db30ea83a216adb77fbdb59e1e4}{peak} = 0;
+82         \hyperlink{mem_8c_a0c8f6ac3ab8d4ceae90436f3bfc06616}{list}->\hyperlink{structMemoryList_ac481474722f97086e8316d62502c4881}{size} = 0;
+83         \hyperlink{mem_8c_a0c8f6ac3ab8d4ceae90436f3bfc06616}{list}->\hyperlink{structMemoryList_a6b5a62d10829b019db9b45eaf1928151}{count} = 0;
+84     \}
+85 
+86     \textcolor{comment}{// Align to bytes of 4}
+87     allocsize = (\hyperlink{structMemoryList_ac481474722f97086e8316d62502c4881}{size} + 3) & ~0x03;
+88 
+89     newblock = (\textcolor{keyword}{struct }\hyperlink{structMemoryBlock}{MemoryBlock}*)\hyperlink{mem_8c_a10e2f4ab980f721b99607b350e2b78a6}{ALLOC\_MEM}(\textcolor{keyword}{sizeof}(\textcolor{keyword}{struct} 
+      \hyperlink{structMemoryBlock}{MemoryBlock}));
+90     \textcolor{keywordflow}{if} (!newblock) \{
+91         \hyperlink{mem_8c_addd1a224479313960a376ac194ea467a}{alloc\_error}(\textcolor{stringliteral}{"block"}, \textcolor{keyword}{sizeof}(\textcolor{keyword}{struct} \hyperlink{structMemoryBlock}{MemoryBlock}));
+92         \textcolor{keywordflow}{return} 0;
+93     \}
+94 
+95     newblock->\hyperlink{structMemoryBlock_a3725613ab053a5e2a814061362fe215a}{address} = (\textcolor{keyword}{struct }\hyperlink{structMemoryBlock}{MemoryBlock}*)\hyperlink{mem_8c_a10e2f4ab980f721b99607b350e2b78a6}{ALLOC\_MEM}(allocsize);
+96     \textcolor{keywordflow}{if} (!newblock->\hyperlink{structMemoryBlock_a3725613ab053a5e2a814061362fe215a}{address}) \{
+97         \hyperlink{mem_8c_ab9a68304873c8c763a501b384e9fe9b6}{FREE\_MEM}(newblock);
+98         \hyperlink{mem_8c_addd1a224479313960a376ac194ea467a}{alloc\_error}(\textcolor{stringliteral}{"memory"}, allocsize);
+99         \textcolor{keywordflow}{return} 0;
+100     \}
+101 
+102     newblock->\hyperlink{structMemoryBlock_a1d0be8990a795dfe51c99d3ea0ac774e}{size} = allocsize;
+103     newblock->\hyperlink{structMemoryBlock_aead31940b4b95725f6f580e2db3cfb87}{next} = NULL;
+104 
+105     \textcolor{keywordflow}{if}(\hyperlink{mem_8c_a0c8f6ac3ab8d4ceae90436f3bfc06616}{list}->\hyperlink{structMemoryList_a0d47ad7371bb5f38e09ca5f35d85cecb}{first} == NULL) \{
+106         \hyperlink{mem_8c_a0c8f6ac3ab8d4ceae90436f3bfc06616}{list}->\hyperlink{structMemoryList_a0d47ad7371bb5f38e09ca5f35d85cecb}{first} = newblock;
+107         \hyperlink{mem_8c_a0c8f6ac3ab8d4ceae90436f3bfc06616}{list}->\hyperlink{structMemoryList_afea5b720cf2a7c326cb53a604b90c354}{last} = newblock;
+108     \} \textcolor{keywordflow}{else} \{
+109         \hyperlink{mem_8c_a0c8f6ac3ab8d4ceae90436f3bfc06616}{list}->\hyperlink{structMemoryList_afea5b720cf2a7c326cb53a604b90c354}{last}->\hyperlink{structMemoryBlock_aead31940b4b95725f6f580e2db3cfb87}{next} = newblock;
+110         \hyperlink{mem_8c_a0c8f6ac3ab8d4ceae90436f3bfc06616}{list}->\hyperlink{structMemoryList_afea5b720cf2a7c326cb53a604b90c354}{last} = newblock;
+111     \}
+112 
+113     \hyperlink{mem_8c_a0c8f6ac3ab8d4ceae90436f3bfc06616}{list}->\hyperlink{structMemoryList_ac481474722f97086e8316d62502c4881}{size} += allocsize;
+114     \hyperlink{mem_8c_a0c8f6ac3ab8d4ceae90436f3bfc06616}{list}->\hyperlink{structMemoryList_a6b5a62d10829b019db9b45eaf1928151}{count}++;
+115 
+116     \textcolor{keywordflow}{if} (\hyperlink{mem_8c_a0c8f6ac3ab8d4ceae90436f3bfc06616}{list}->\hyperlink{structMemoryList_ac481474722f97086e8316d62502c4881}{size} > \hyperlink{mem_8c_a0c8f6ac3ab8d4ceae90436f3bfc06616}{list}->\hyperlink{structMemoryList_af2065db30ea83a216adb77fbdb59e1e4}{peak}) \{
+117         \hyperlink{mem_8c_a0c8f6ac3ab8d4ceae90436f3bfc06616}{list}->\hyperlink{structMemoryList_af2065db30ea83a216adb77fbdb59e1e4}{peak} = \hyperlink{mem_8c_a0c8f6ac3ab8d4ceae90436f3bfc06616}{list}->\hyperlink{structMemoryList_ac481474722f97086e8316d62502c4881}{size};
+118     \}
+119 
+120     \textcolor{comment}{// DEBUG code}
+121     \textcolor{comment}{// Debug(NULL, "Mememory allocated at address (%x)\(\backslash\)n", newblock->address);}
+122 
+123     \textcolor{keywordflow}{return} newblock->\hyperlink{structMemoryBlock_a3725613ab053a5e2a814061362fe215a}{address};
+124 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=258pt]{mem_8c_a9bce7ee26e868552b3784e98e8a75f0b_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{mem.\+c@{mem.\+c}!dealloc\+\_\+error@{dealloc\+\_\+error}}
+\index{dealloc\+\_\+error@{dealloc\+\_\+error}!mem.\+c@{mem.\+c}}
+\subsubsection[{\texorpdfstring{dealloc\+\_\+error(char $\ast$, void $\ast$)}{dealloc_error(char *, void *)}}]{\setlength{\rightskip}{0pt plus 5cm}void dealloc\+\_\+error (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{descr, }
+\item[{void $\ast$}]{p}
+\end{DoxyParamCaption}
+)}\hypertarget{mem_8c_a96cb78338e02e8381392c81761887323}{}\label{mem_8c_a96cb78338e02e8381392c81761887323}
+
+
+Definition at line 204 of file mem.\+c.
+
+
+
+Referenced by Free\+Mem\+Safe().
+
+
+\begin{DoxyCode}
+205 \{
+206     \hyperlink{mem_8c_ac50c155efcb03f50543b3ae9cca8f09e}{Debug}(NULL, \textcolor{stringliteral}{"Mememory deallocation error (%s) address (%x)\(\backslash\)n"}, descr, p);
+207 \}
+\end{DoxyCode}
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=266pt]{mem_8c_a96cb78338e02e8381392c81761887323_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{mem.\+c@{mem.\+c}!Free\+All\+Safe@{Free\+All\+Safe}}
+\index{Free\+All\+Safe@{Free\+All\+Safe}!mem.\+c@{mem.\+c}}
+\subsubsection[{\texorpdfstring{Free\+All\+Safe()}{FreeAllSafe()}}]{\setlength{\rightskip}{0pt plus 5cm}void Free\+All\+Safe (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{mem_8c_adcb19646ed930d44f25ddc9f7767a182}{}\label{mem_8c_adcb19646ed930d44f25ddc9f7767a182}
+
+
+Definition at line 172 of file mem.\+c.
+
+
+
+References Memory\+Block\+::address, Memory\+List\+::first, list, and Memory\+Block\+::next.
+
+
+
+Referenced by Cleanup().
+
+
+\begin{DoxyCode}
+173 \{
+174     \textcolor{keyword}{struct }\hyperlink{structMemoryBlock}{MemoryBlock} *current, *\hyperlink{structMemoryBlock_aead31940b4b95725f6f580e2db3cfb87}{next};
+175 
+176     \textcolor{keywordflow}{if} (\hyperlink{mem_8c_a0c8f6ac3ab8d4ceae90436f3bfc06616}{list} == NULL) \{
+177         \textcolor{keywordflow}{return};
+178     \}
+179 
+180     current = \hyperlink{mem_8c_a0c8f6ac3ab8d4ceae90436f3bfc06616}{list}->\hyperlink{structMemoryList_a0d47ad7371bb5f38e09ca5f35d85cecb}{first};
+181     \textcolor{keywordflow}{while} (current != NULL) \{
+182         next = current->\hyperlink{structMemoryBlock_aead31940b4b95725f6f580e2db3cfb87}{next};
+183         \hyperlink{mem_8c_ab9a68304873c8c763a501b384e9fe9b6}{FREE\_MEM}(current->\hyperlink{structMemoryBlock_a3725613ab053a5e2a814061362fe215a}{address});
+184         \hyperlink{mem_8c_ab9a68304873c8c763a501b384e9fe9b6}{FREE\_MEM}(current);
+185         current = \hyperlink{structMemoryBlock_aead31940b4b95725f6f580e2db3cfb87}{next};
+186     \}
+187 
+188     \hyperlink{mem_8c_ab9a68304873c8c763a501b384e9fe9b6}{FREE\_MEM}(\hyperlink{mem_8c_a0c8f6ac3ab8d4ceae90436f3bfc06616}{list});
+189     \hyperlink{mem_8c_a0c8f6ac3ab8d4ceae90436f3bfc06616}{list} = NULL;
+190 \}
+\end{DoxyCode}
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=311pt]{mem_8c_adcb19646ed930d44f25ddc9f7767a182_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{mem.\+c@{mem.\+c}!Free\+Mem\+Safe@{Free\+Mem\+Safe}}
+\index{Free\+Mem\+Safe@{Free\+Mem\+Safe}!mem.\+c@{mem.\+c}}
+\subsubsection[{\texorpdfstring{Free\+Mem\+Safe(void $\ast$block)}{FreeMemSafe(void *block)}}]{\setlength{\rightskip}{0pt plus 5cm}void Free\+Mem\+Safe (
+\begin{DoxyParamCaption}
+\item[{void $\ast$}]{block}
+\end{DoxyParamCaption}
+)}\hypertarget{mem_8c_ab4b822e060386ea562cdf7cdb94d57ea}{}\label{mem_8c_ab4b822e060386ea562cdf7cdb94d57ea}
+
+
+Definition at line 126 of file mem.\+c.
+
+
+
+References Memory\+Block\+::address, Memory\+List\+::count, dealloc\+\_\+error(), Memory\+List\+::first, Memory\+List\+::last, list, and Memory\+Block\+::next.
+
+
+\begin{DoxyCode}
+127 \{
+128     \textcolor{keyword}{struct }\hyperlink{structMemoryBlock}{MemoryBlock} *current, *last;
+129 
+130     \textcolor{keywordflow}{if} (\hyperlink{mem_8c_a0c8f6ac3ab8d4ceae90436f3bfc06616}{list} == NULL || block == NULL) \{
+131         \hyperlink{mem_8c_a96cb78338e02e8381392c81761887323}{dealloc\_error}(\textcolor{stringliteral}{"list"}, 0);
+132         \textcolor{keywordflow}{return};
+133     \}
+134 
+135     \textcolor{keywordflow}{if} (block == NULL) \{
+136         \hyperlink{mem_8c_a96cb78338e02e8381392c81761887323}{dealloc\_error}(\textcolor{stringliteral}{"memory"}, 0);
+137         \textcolor{keywordflow}{return};
+138     \}
+139 
+140     last = NULL;
+141     current = \hyperlink{mem_8c_a0c8f6ac3ab8d4ceae90436f3bfc06616}{list}->\hyperlink{structMemoryList_a0d47ad7371bb5f38e09ca5f35d85cecb}{first};
+142     \textcolor{keywordflow}{while} (current != NULL && current->\hyperlink{structMemoryBlock_a3725613ab053a5e2a814061362fe215a}{address} != block) \{
+143         last = current;
+144         current = current->\hyperlink{structMemoryBlock_aead31940b4b95725f6f580e2db3cfb87}{next};
+145     \}
+146 
+147     \textcolor{keywordflow}{if} (current == NULL) \{
+148         \hyperlink{mem_8c_a96cb78338e02e8381392c81761887323}{dealloc\_error}(\textcolor{stringliteral}{"address not found"}, block);
+149         \textcolor{keywordflow}{return};
+150     \}
+151 
+152     \hyperlink{mem_8c_a0c8f6ac3ab8d4ceae90436f3bfc06616}{list}->\hyperlink{structMemoryList_ac481474722f97086e8316d62502c4881}{size} -= current->\hyperlink{structMemoryBlock_a1d0be8990a795dfe51c99d3ea0ac774e}{size};
+153     \hyperlink{mem_8c_a0c8f6ac3ab8d4ceae90436f3bfc06616}{list}->\hyperlink{structMemoryList_a6b5a62d10829b019db9b45eaf1928151}{count}--;
+154 
+155     \textcolor{keywordflow}{if} (\hyperlink{mem_8c_a0c8f6ac3ab8d4ceae90436f3bfc06616}{list}->\hyperlink{structMemoryList_a0d47ad7371bb5f38e09ca5f35d85cecb}{first} == current) \{
+156         \hyperlink{mem_8c_a0c8f6ac3ab8d4ceae90436f3bfc06616}{list}->\hyperlink{structMemoryList_a0d47ad7371bb5f38e09ca5f35d85cecb}{first} = NULL;
+157         \hyperlink{mem_8c_a0c8f6ac3ab8d4ceae90436f3bfc06616}{list}->\hyperlink{structMemoryList_afea5b720cf2a7c326cb53a604b90c354}{last} = NULL;
+158     \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (\hyperlink{mem_8c_a0c8f6ac3ab8d4ceae90436f3bfc06616}{list}->\hyperlink{structMemoryList_afea5b720cf2a7c326cb53a604b90c354}{last} == current) \{
+159         last->\hyperlink{structMemoryBlock_aead31940b4b95725f6f580e2db3cfb87}{next} = current->\hyperlink{structMemoryBlock_aead31940b4b95725f6f580e2db3cfb87}{next};
+160         \hyperlink{mem_8c_a0c8f6ac3ab8d4ceae90436f3bfc06616}{list}->\hyperlink{structMemoryList_afea5b720cf2a7c326cb53a604b90c354}{last} = last;
+161     \} \textcolor{keywordflow}{else} \{
+162         last->\hyperlink{structMemoryBlock_aead31940b4b95725f6f580e2db3cfb87}{next} = current->\hyperlink{structMemoryBlock_aead31940b4b95725f6f580e2db3cfb87}{next};
+163     \}
+164 
+165     \hyperlink{mem_8c_ab9a68304873c8c763a501b384e9fe9b6}{FREE\_MEM}(current->\hyperlink{structMemoryBlock_a3725613ab053a5e2a814061362fe215a}{address});
+166     \hyperlink{mem_8c_ab9a68304873c8c763a501b384e9fe9b6}{FREE\_MEM}(current);
+167 
+168     \textcolor{comment}{// DEBUG code}
+169     \textcolor{comment}{// Debug(NULL, "Mememory deallocated at address (%x)\(\backslash\)n", block);}
+170 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=266pt]{mem_8c_ab4b822e060386ea562cdf7cdb94d57ea_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{mem.\+c@{mem.\+c}!Mem\+Usage@{Mem\+Usage}}
+\index{Mem\+Usage@{Mem\+Usage}!mem.\+c@{mem.\+c}}
+\subsubsection[{\texorpdfstring{Mem\+Usage(long $\ast$blocks, long $\ast$size, long $\ast$peak)}{MemUsage(long *blocks, long *size, long *peak)}}]{\setlength{\rightskip}{0pt plus 5cm}void Mem\+Usage (
+\begin{DoxyParamCaption}
+\item[{long $\ast$}]{blocks, }
+\item[{long $\ast$}]{size, }
+\item[{long $\ast$}]{peak}
+\end{DoxyParamCaption}
+)}\hypertarget{mem_8c_ad57dfcaf475445feb7cf1274d489707d}{}\label{mem_8c_ad57dfcaf475445feb7cf1274d489707d}
+
+
+Definition at line 192 of file mem.\+c.
+
+
+
+References Memory\+List\+::count, list, Memory\+List\+::peak, and Memory\+List\+::size.
+
+
+
+Referenced by Memory\+Statement\+::\+Execute().
+
+
+\begin{DoxyCode}
+193 \{
+194     *blocks = \hyperlink{mem_8c_a0c8f6ac3ab8d4ceae90436f3bfc06616}{list}->\hyperlink{structMemoryList_a6b5a62d10829b019db9b45eaf1928151}{count};
+195     *\hyperlink{structMemoryBlock_a1d0be8990a795dfe51c99d3ea0ac774e}{size} = \hyperlink{mem_8c_a0c8f6ac3ab8d4ceae90436f3bfc06616}{list}->\hyperlink{structMemoryList_ac481474722f97086e8316d62502c4881}{size};
+196     *peak = \hyperlink{mem_8c_a0c8f6ac3ab8d4ceae90436f3bfc06616}{list}->\hyperlink{structMemoryList_af2065db30ea83a216adb77fbdb59e1e4}{peak};;
+197 \}
+\end{DoxyCode}
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=322pt]{mem_8c_ad57dfcaf475445feb7cf1274d489707d_icgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Variable Documentation}
+\index{mem.\+c@{mem.\+c}!list@{list}}
+\index{list@{list}!mem.\+c@{mem.\+c}}
+\subsubsection[{\texorpdfstring{list}{list}}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf Memory\+List}$\ast$ list = N\+U\+LL}\hypertarget{mem_8c_a0c8f6ac3ab8d4ceae90436f3bfc06616}{}\label{mem_8c_a0c8f6ac3ab8d4ceae90436f3bfc06616}
+
+
+Definition at line 62 of file mem.\+c.
+
+
+
+Referenced by Alloc\+Mem\+Safe(), Free\+All\+Safe(), Free\+Mem\+Safe(), and Mem\+Usage().
+

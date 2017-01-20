@@ -1,0 +1,83 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="classMultiplicationNode">
+<title>MultiplicationNode class Reference</title>
+<para>
+    <programlisting>#include <link linkend="operators_8h">&lt;operators.h&gt;</link></programlisting>
+</para>
+<para>Inheritance diagram for MultiplicationNode</para>
+<para>
+    <figure>
+        <title>Inheritance graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="classMultiplicationNode__inherit__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+<para>Collaboration diagram for MultiplicationNode</para>
+<para>
+    <figure>
+        <title>Collaboration graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="classMultiplicationNode__coll__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="classMultiplicationNode_1a3f96a30f283caa7991dd67be334e71af">MultiplicationNode</link> (
+<link linkend="classExpressionNode">ExpressionNode</link> * left, <link linkend="classExpressionNode">ExpressionNode</link> * right)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="classMultiplicationNode_1ac4b9d0e5f279a0a2d2b51a2872c298df">GetPrecedence</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="structNumber">Number</link> * <link linkend="classMultiplicationNode_1a6f8b2f1b4a4779fd99acc6cef50545cc">Evaluate</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>char * <link linkend="classMultiplicationNode_1a27cfb5744a3f963fa59e9b79d6c14499">GetNodeText</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+            <section xml:id="classMultiplicationNode_1a3f96a30f283caa7991dd67be334e71af">
+                <title>MultiplicationNode::MultiplicationNode (ExpressionNode *left, ExpressionNode *right)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="classMultiplicationNode_1ac4b9d0e5f279a0a2d2b51a2872c298df">
+                <title>int MultiplicationNode::GetPrecedence ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="classMultiplicationNode_1a6f8b2f1b4a4779fd99acc6cef50545cc">
+                <title>Number * MultiplicationNode::Evaluate ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="classMultiplicationNode_1a27cfb5744a3f963fa59e9b79d6c14499">
+                <title>char * MultiplicationNode::GetNodeText ()</title> <emphasis></emphasis>
+                
+            </section>
+</section>

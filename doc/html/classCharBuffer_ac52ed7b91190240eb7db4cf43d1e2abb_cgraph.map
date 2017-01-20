@@ -1,0 +1,4 @@
+<map id="CharBuffer::ClearAndCopy" name="CharBuffer::ClearAndCopy">
+<area shape="rect" id="node2" href="$alloccpy_8c.html#a5bed05c70cb17e541fee570b5dc32e1a" title="Allocate memory and copy a string into the array. " alt="" coords="259,5,364,32"/>
+<area shape="rect" id="node3" href="$classCharBuffer.html#a0bcdd5708db4b04c887224e83a05086f" title="Release memory in buffer. " alt="" coords="232,56,391,83"/>
+</map>

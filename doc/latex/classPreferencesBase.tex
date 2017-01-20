@@ -1,0 +1,586 @@
+\hypertarget{classPreferencesBase}{}\section{Preferences\+Base Class Reference}
+\label{classPreferencesBase}\index{Preferences\+Base@{Preferences\+Base}}
+
+
+{\ttfamily \#include $<$preferences.\+h$>$}
+
+
+
+Inheritance diagram for Preferences\+Base\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=304pt]{classPreferencesBase__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Preferences\+Base\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=172pt]{classPreferencesBase__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classPreferencesBase_a24ab9b2b7d30fbe0a7b3979c0191c783}{Preferences\+Base} ()
+\item 
+virtual \hyperlink{classPreferencesBase_a7fc312a6820adcd1befcd386ca7f97ad}{$\sim$\+Preferences\+Base} ()
+\item 
+char $\ast$ \hyperlink{classPreferencesBase_a9452038c67c6592334b6f3908c86833a}{Get\+Description} ()
+\item 
+char $\ast$ \hyperlink{classPreferencesBase_af6a5391be98aa10d191eed80d683723d}{Get\+Prompt} ()
+\item 
+void \hyperlink{classPreferencesBase_a84ef7562c15ce4921ea8821e6301d302}{Set\+Prompt} (const char $\ast$\hyperlink{classPreferencesBase_a88a6af58103e0498c366d61a628312e0}{prompt})
+\item 
+int \hyperlink{classPreferencesBase_a8d693cb289d1f5282f13c0cfb698b8cc}{Get\+Digits} ()
+\item 
+void \hyperlink{classPreferencesBase_ac4bf26900de7e3aeb3af73f280781e4c}{Set\+Digits} (int \hyperlink{classPreferencesBase_add3d3cf98f920e03e425f11dabb6f984}{digits})
+\item 
+void \hyperlink{classPreferencesBase_a0b782da503c15f8f79d6ee99cb684fff}{Set\+Defaults} ()
+\item 
+virtual \hyperlink{platform_8h_a1062901a7428fdd9c7f180f5e01ea056}{bool} \hyperlink{classPreferencesBase_ab4e17e21f4377c44fa0ba16a0868a206}{Load} ()=0
+\item 
+virtual \hyperlink{platform_8h_a1062901a7428fdd9c7f180f5e01ea056}{bool} \hyperlink{classPreferencesBase_a83f5750e2780a0bf03cb7a394230637a}{Keep} ()=0
+\item 
+virtual \hyperlink{platform_8h_a1062901a7428fdd9c7f180f5e01ea056}{bool} \hyperlink{classPreferencesBase_af0c96d85f242caead85d92d2c68fb30b}{Save} ()=0
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classPreferencesBase_a90dcd05552f94429b05df661eb72b5e2}{Set\+Prefs} (char $\ast$prefs)
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCharBuffer}{Char\+Buffer} $\ast$ \hyperlink{classPreferencesBase_a56ccdce81b9347c99eacb1839cee0a49}{buf}
+\item 
+char $\ast$ \hyperlink{classPreferencesBase_a88a6af58103e0498c366d61a628312e0}{prompt}
+\item 
+int \hyperlink{classPreferencesBase_add3d3cf98f920e03e425f11dabb6f984}{digits}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 32 of file preferences.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Preferences\+Base@{Preferences\+Base}!Preferences\+Base@{Preferences\+Base}}
+\index{Preferences\+Base@{Preferences\+Base}!Preferences\+Base@{Preferences\+Base}}
+\subsubsection[{\texorpdfstring{Preferences\+Base()}{PreferencesBase()}}]{\setlength{\rightskip}{0pt plus 5cm}Preferences\+Base\+::\+Preferences\+Base (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classPreferencesBase_a24ab9b2b7d30fbe0a7b3979c0191c783}{}\label{classPreferencesBase_a24ab9b2b7d30fbe0a7b3979c0191c783}
+
+
+Definition at line 37 of file preferences.\+cpp.
+
+
+
+References buf, Char\+Buffer\+::\+Char\+Buffer(), and Set\+Defaults().
+
+
+\begin{DoxyCode}
+38 \{
+39     \hyperlink{classPreferencesBase_a56ccdce81b9347c99eacb1839cee0a49}{buf} = \textcolor{keyword}{new} \hyperlink{classCharBuffer}{CharBuffer}();
+40     \hyperlink{classPreferencesBase_a0b782da503c15f8f79d6ee99cb684fff}{SetDefaults}();
+41 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classPreferencesBase_a24ab9b2b7d30fbe0a7b3979c0191c783_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{Preferences\+Base@{Preferences\+Base}!````~Preferences\+Base@{$\sim$\+Preferences\+Base}}
+\index{````~Preferences\+Base@{$\sim$\+Preferences\+Base}!Preferences\+Base@{Preferences\+Base}}
+\subsubsection[{\texorpdfstring{$\sim$\+Preferences\+Base()}{~PreferencesBase()}}]{\setlength{\rightskip}{0pt plus 5cm}Preferences\+Base\+::$\sim$\+Preferences\+Base (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{classPreferencesBase_a7fc312a6820adcd1befcd386ca7f97ad}{}\label{classPreferencesBase_a7fc312a6820adcd1befcd386ca7f97ad}
+
+
+Definition at line 43 of file preferences.\+cpp.
+
+
+
+References buf, and prompt.
+
+
+\begin{DoxyCode}
+44 \{
+45     \textcolor{keyword}{delete} \hyperlink{classPreferencesBase_a56ccdce81b9347c99eacb1839cee0a49}{buf};
+46     \textcolor{keyword}{delete} \hyperlink{classPreferencesBase_a88a6af58103e0498c366d61a628312e0}{prompt};
+47 \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\index{Preferences\+Base@{Preferences\+Base}!Get\+Description@{Get\+Description}}
+\index{Get\+Description@{Get\+Description}!Preferences\+Base@{Preferences\+Base}}
+\subsubsection[{\texorpdfstring{Get\+Description()}{GetDescription()}}]{\setlength{\rightskip}{0pt plus 5cm}char $\ast$ Preferences\+Base\+::\+Get\+Description (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classPreferencesBase_a9452038c67c6592334b6f3908c86833a}{}\label{classPreferencesBase_a9452038c67c6592334b6f3908c86833a}
+
+
+Definition at line 55 of file preferences.\+cpp.
+
+
+
+References Char\+Buffer\+::\+Append(), buf, Decimal\+System\+::\+Decimal\+System(), Char\+Buffer\+::\+Empty(), Char\+Buffer\+::\+Ensure\+Size(), Lexer\+::\+Find\+Keyword(), Get\+Digits(), Char\+Buffer\+::\+Get\+String(), Numeral\+System\+::\+Get\+Text(), prompt, Real\+Number\+::\+Real\+Number(), Str\+Len(), symdelimiter, symdigits, and symprompt.
+
+
+
+Referenced by Prefs\+Statement\+::\+Execute(), and Standard\+Preferences\+::\+Save\+Prefs().
+
+
+\begin{DoxyCode}
+56 \{
+57     \textcolor{keyword}{static} \textcolor{keywordtype}{char} *promptkw = \hyperlink{classLexer_affd4bac61db830383302be71198a372a}{Lexer::FindKeyword}(\hyperlink{lex_8h_a7feef761cd73fac6e25b8bb80d2c4e54a715a6897180c3bb57cce5033fe538a94}{symprompt});
+58     \textcolor{keyword}{static} \textcolor{keywordtype}{char} *digitkw  = \hyperlink{classLexer_affd4bac61db830383302be71198a372a}{Lexer::FindKeyword}(\hyperlink{lex_8h_a7feef761cd73fac6e25b8bb80d2c4e54a320ad810223a8993b0e647d7ee62f99b}{symdigits});
+59     \textcolor{keyword}{static} \textcolor{keywordtype}{char} delimiter = *(\hyperlink{classLexer_affd4bac61db830383302be71198a372a}{Lexer::FindKeyword}(\hyperlink{lex_8h_a7feef761cd73fac6e25b8bb80d2c4e54ac8e5e4f0940e69be4fca18ed8cbb236f}{symdelimiter}));
+60     \textcolor{keyword}{static} \textcolor{keywordtype}{char} promptq   = \textcolor{charliteral}{'"'};
+61 
+62     \hyperlink{structNumber}{Number} *d = \textcolor{keyword}{new} \hyperlink{structRealNumber}{RealNumber}(\hyperlink{classPreferencesBase_a8d693cb289d1f5282f13c0cfb698b8cc}{GetDigits}());
+63     \hyperlink{classNumeralSystem}{NumeralSystem} *ns = \textcolor{keyword}{new} \hyperlink{classDecimalSystem}{DecimalSystem}(2);
+64     \textcolor{keyword}{const} \textcolor{keywordtype}{char} *dtext = ns->\hyperlink{classNumeralSystem_a74dc91c4dbab4a88a123b2a32753f485}{GetText}(d);
+65     \textcolor{keyword}{delete} d;
+66 
+67     \hyperlink{classPreferencesBase_a56ccdce81b9347c99eacb1839cee0a49}{buf}->\hyperlink{classCharBuffer_abe39d3fd7d8b9c8ec343af2cae7adc96}{Empty}();
+68     \hyperlink{classPreferencesBase_a56ccdce81b9347c99eacb1839cee0a49}{buf}->\hyperlink{classCharBuffer_ad1907009b5ad136692b989fa96bf2f7e}{EnsureSize}(
+69         \hyperlink{clib_8h_a67ec56eb98b49515d35005a5b3bf9a32}{StrLen}(promptkw) + \textcolor{keyword}{sizeof}(\hyperlink{platform_8h_a5ff6e798033f03e74730e99f01936f84}{SPACE}) + \textcolor{keyword}{sizeof}(promptq) +
+70         \hyperlink{clib_8h_a67ec56eb98b49515d35005a5b3bf9a32}{StrLen}(\hyperlink{classPreferencesBase_a88a6af58103e0498c366d61a628312e0}{prompt}) + \textcolor{keyword}{sizeof}(promptq) + \textcolor{keyword}{sizeof}(delimiter) +
+71         \hyperlink{clib_8h_a67ec56eb98b49515d35005a5b3bf9a32}{StrLen}(digitkw) + \textcolor{keyword}{sizeof}(\hyperlink{platform_8h_a5ff6e798033f03e74730e99f01936f84}{SPACE}) + \hyperlink{clib_8h_a67ec56eb98b49515d35005a5b3bf9a32}{StrLen}(dtext) + \textcolor{keyword}{sizeof}(delimiter) + \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{char})
+      );
+72 
+73     \hyperlink{classPreferencesBase_a56ccdce81b9347c99eacb1839cee0a49}{buf}->\hyperlink{classCharBuffer_a045b38735f7b3007c1b98d3d7b7feafe}{Append}(promptkw);
+74     \hyperlink{classPreferencesBase_a56ccdce81b9347c99eacb1839cee0a49}{buf}->\hyperlink{classCharBuffer_a045b38735f7b3007c1b98d3d7b7feafe}{Append}(\hyperlink{platform_8h_a5ff6e798033f03e74730e99f01936f84}{SPACE});
+75     \hyperlink{classPreferencesBase_a56ccdce81b9347c99eacb1839cee0a49}{buf}->\hyperlink{classCharBuffer_a045b38735f7b3007c1b98d3d7b7feafe}{Append}(promptq);
+76     \hyperlink{classPreferencesBase_a56ccdce81b9347c99eacb1839cee0a49}{buf}->\hyperlink{classCharBuffer_a045b38735f7b3007c1b98d3d7b7feafe}{Append}(\hyperlink{classPreferencesBase_a88a6af58103e0498c366d61a628312e0}{prompt});
+77     \hyperlink{classPreferencesBase_a56ccdce81b9347c99eacb1839cee0a49}{buf}->\hyperlink{classCharBuffer_a045b38735f7b3007c1b98d3d7b7feafe}{Append}(promptq);
+78     \hyperlink{classPreferencesBase_a56ccdce81b9347c99eacb1839cee0a49}{buf}->\hyperlink{classCharBuffer_a045b38735f7b3007c1b98d3d7b7feafe}{Append}(delimiter);
+79     \hyperlink{classPreferencesBase_a56ccdce81b9347c99eacb1839cee0a49}{buf}->\hyperlink{classCharBuffer_a045b38735f7b3007c1b98d3d7b7feafe}{Append}(digitkw);
+80     \hyperlink{classPreferencesBase_a56ccdce81b9347c99eacb1839cee0a49}{buf}->\hyperlink{classCharBuffer_a045b38735f7b3007c1b98d3d7b7feafe}{Append}(\hyperlink{platform_8h_a5ff6e798033f03e74730e99f01936f84}{SPACE});
+81     \hyperlink{classPreferencesBase_a56ccdce81b9347c99eacb1839cee0a49}{buf}->\hyperlink{classCharBuffer_a045b38735f7b3007c1b98d3d7b7feafe}{Append}(dtext);
+82     \hyperlink{classPreferencesBase_a56ccdce81b9347c99eacb1839cee0a49}{buf}->\hyperlink{classCharBuffer_a045b38735f7b3007c1b98d3d7b7feafe}{Append}(delimiter);
+83 
+84     \textcolor{keyword}{delete} ns;
+85     \textcolor{keywordflow}{return} \hyperlink{classPreferencesBase_a56ccdce81b9347c99eacb1839cee0a49}{buf}->\hyperlink{classCharBuffer_a7dfd3feaaf80f318ba44efe15b1ec44b}{GetString}();
+86 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classPreferencesBase_a9452038c67c6592334b6f3908c86833a_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classPreferencesBase_a9452038c67c6592334b6f3908c86833a_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Preferences\+Base@{Preferences\+Base}!Get\+Digits@{Get\+Digits}}
+\index{Get\+Digits@{Get\+Digits}!Preferences\+Base@{Preferences\+Base}}
+\subsubsection[{\texorpdfstring{Get\+Digits()}{GetDigits()}}]{\setlength{\rightskip}{0pt plus 5cm}int Preferences\+Base\+::\+Get\+Digits (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classPreferencesBase_a8d693cb289d1f5282f13c0cfb698b8cc}{}\label{classPreferencesBase_a8d693cb289d1f5282f13c0cfb698b8cc}
+
+
+Definition at line 112 of file preferences.\+cpp.
+
+
+
+References digits.
+
+
+
+Referenced by Prefs\+Statement\+::\+Execute(), Get\+Description(), and Program\+::\+Program().
+
+
+\begin{DoxyCode}
+113 \{
+114     \textcolor{keywordflow}{return} \hyperlink{classPreferencesBase_add3d3cf98f920e03e425f11dabb6f984}{digits};
+115 \}
+\end{DoxyCode}
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classPreferencesBase_a8d693cb289d1f5282f13c0cfb698b8cc_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Preferences\+Base@{Preferences\+Base}!Get\+Prompt@{Get\+Prompt}}
+\index{Get\+Prompt@{Get\+Prompt}!Preferences\+Base@{Preferences\+Base}}
+\subsubsection[{\texorpdfstring{Get\+Prompt()}{GetPrompt()}}]{\setlength{\rightskip}{0pt plus 5cm}char $\ast$ Preferences\+Base\+::\+Get\+Prompt (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classPreferencesBase_af6a5391be98aa10d191eed80d683723d}{}\label{classPreferencesBase_af6a5391be98aa10d191eed80d683723d}
+
+
+Definition at line 101 of file preferences.\+cpp.
+
+
+
+References prompt.
+
+
+
+Referenced by Prefs\+Statement\+::\+Execute(), and Standard\+Program\+::\+Initialize().
+
+
+\begin{DoxyCode}
+102 \{
+103     \textcolor{keywordflow}{return} \hyperlink{classPreferencesBase_a88a6af58103e0498c366d61a628312e0}{prompt};
+104 \}
+\end{DoxyCode}
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classPreferencesBase_af6a5391be98aa10d191eed80d683723d_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Preferences\+Base@{Preferences\+Base}!Keep@{Keep}}
+\index{Keep@{Keep}!Preferences\+Base@{Preferences\+Base}}
+\subsubsection[{\texorpdfstring{Keep()=0}{Keep()=0}}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf bool} Preferences\+Base\+::\+Keep (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\hypertarget{classPreferencesBase_a83f5750e2780a0bf03cb7a394230637a}{}\label{classPreferencesBase_a83f5750e2780a0bf03cb7a394230637a}
+
+
+Implemented in \hyperlink{classStandardPreferences_a98a76348fca4d6519fb851b5d8382437}{Standard\+Preferences}, and \hyperlink{classAmigaPreferences_a1501b1d109e18004f12d9cf7747bfbdb}{Amiga\+Preferences}.
+
+
+
+Referenced by Prefs\+Statement\+::\+Execute(), and Program\+::$\sim$\+Program().
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classPreferencesBase_a83f5750e2780a0bf03cb7a394230637a_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Preferences\+Base@{Preferences\+Base}!Load@{Load}}
+\index{Load@{Load}!Preferences\+Base@{Preferences\+Base}}
+\subsubsection[{\texorpdfstring{Load()=0}{Load()=0}}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf bool} Preferences\+Base\+::\+Load (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\hypertarget{classPreferencesBase_ab4e17e21f4377c44fa0ba16a0868a206}{}\label{classPreferencesBase_ab4e17e21f4377c44fa0ba16a0868a206}
+
+
+Implemented in \hyperlink{classStandardPreferences_a883449eac37fb47c01fa2ae23a02bdc4}{Standard\+Preferences}, and \hyperlink{classAmigaPreferences_ad0afe7aca1e01de83e31d07c0b21dde1}{Amiga\+Preferences}.
+
+
+
+Referenced by Prefs\+Statement\+::\+Execute(), and Standard\+Program\+::\+Run().
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classPreferencesBase_ab4e17e21f4377c44fa0ba16a0868a206_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Preferences\+Base@{Preferences\+Base}!Save@{Save}}
+\index{Save@{Save}!Preferences\+Base@{Preferences\+Base}}
+\subsubsection[{\texorpdfstring{Save()=0}{Save()=0}}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf bool} Preferences\+Base\+::\+Save (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\hypertarget{classPreferencesBase_af0c96d85f242caead85d92d2c68fb30b}{}\label{classPreferencesBase_af0c96d85f242caead85d92d2c68fb30b}
+
+
+Implemented in \hyperlink{classStandardPreferences_aa6a0a0f9746d2fba5d00cc896937b950}{Standard\+Preferences}, and \hyperlink{classAmigaPreferences_a4bfa0037af64c4c7a16b31c85b20444a}{Amiga\+Preferences}.
+
+
+
+Referenced by Prefs\+Statement\+::\+Execute().
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classPreferencesBase_af0c96d85f242caead85d92d2c68fb30b_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Preferences\+Base@{Preferences\+Base}!Set\+Defaults@{Set\+Defaults}}
+\index{Set\+Defaults@{Set\+Defaults}!Preferences\+Base@{Preferences\+Base}}
+\subsubsection[{\texorpdfstring{Set\+Defaults()}{SetDefaults()}}]{\setlength{\rightskip}{0pt plus 5cm}void Preferences\+Base\+::\+Set\+Defaults (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classPreferencesBase_a0b782da503c15f8f79d6ee99cb684fff}{}\label{classPreferencesBase_a0b782da503c15f8f79d6ee99cb684fff}
+
+
+Definition at line 49 of file preferences.\+cpp.
+
+
+
+References Alloc\+And\+Copy(), digits, and prompt.
+
+
+
+Referenced by Preferences\+Base().
+
+
+\begin{DoxyCode}
+50 \{
+51     \hyperlink{clib_8h_a5bed05c70cb17e541fee570b5dc32e1a}{AllocAndCopy}(&this->\hyperlink{classPreferencesBase_a88a6af58103e0498c366d61a628312e0}{prompt}, \textcolor{stringliteral}{"> "});
+52     \hyperlink{classPreferencesBase_add3d3cf98f920e03e425f11dabb6f984}{digits} = 9;
+53 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=344pt]{classPreferencesBase_a0b782da503c15f8f79d6ee99cb684fff_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classPreferencesBase_a0b782da503c15f8f79d6ee99cb684fff_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Preferences\+Base@{Preferences\+Base}!Set\+Digits@{Set\+Digits}}
+\index{Set\+Digits@{Set\+Digits}!Preferences\+Base@{Preferences\+Base}}
+\subsubsection[{\texorpdfstring{Set\+Digits(int digits)}{SetDigits(int digits)}}]{\setlength{\rightskip}{0pt plus 5cm}void Preferences\+Base\+::\+Set\+Digits (
+\begin{DoxyParamCaption}
+\item[{int}]{digits}
+\end{DoxyParamCaption}
+)}\hypertarget{classPreferencesBase_ac4bf26900de7e3aeb3af73f280781e4c}{}\label{classPreferencesBase_ac4bf26900de7e3aeb3af73f280781e4c}
+
+
+Definition at line 117 of file preferences.\+cpp.
+
+
+
+References digits.
+
+
+
+Referenced by Digits\+Statement\+::\+Execute().
+
+
+\begin{DoxyCode}
+118 \{
+119     this->\hyperlink{classPreferencesBase_add3d3cf98f920e03e425f11dabb6f984}{digits} = \hyperlink{classPreferencesBase_add3d3cf98f920e03e425f11dabb6f984}{digits};
+120 \}
+\end{DoxyCode}
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classPreferencesBase_ac4bf26900de7e3aeb3af73f280781e4c_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Preferences\+Base@{Preferences\+Base}!Set\+Prefs@{Set\+Prefs}}
+\index{Set\+Prefs@{Set\+Prefs}!Preferences\+Base@{Preferences\+Base}}
+\subsubsection[{\texorpdfstring{Set\+Prefs(char $\ast$prefs)}{SetPrefs(char *prefs)}}]{\setlength{\rightskip}{0pt plus 5cm}void Preferences\+Base\+::\+Set\+Prefs (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{prefs}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{classPreferencesBase_a90dcd05552f94429b05df661eb72b5e2}{}\label{classPreferencesBase_a90dcd05552f94429b05df661eb72b5e2}
+
+
+Definition at line 88 of file preferences.\+cpp.
+
+
+
+References Syntax\+Node\+::\+Execute(), Parser\+::\+Parse(), and Parser\+::\+Parser().
+
+
+
+Referenced by Standard\+Preferences\+::\+Load().
+
+
+\begin{DoxyCode}
+89 \{
+90     \textcolor{keywordflow}{if} (prefs == \hyperlink{platform_8h_a46ff2bfbf0d44b8466a2251d5bd5e6f8}{NOMEM}) \{
+91         \textcolor{keywordflow}{return};
+92     \}
+93 
+94     \hyperlink{classParser}{Parser} *parser = \textcolor{keyword}{new} \hyperlink{classParser}{Parser}(prefs);
+95     \hyperlink{classSyntaxNode}{SyntaxNode} *node = parser->\hyperlink{classParser_a1861d1d9cc6165970cf07e07cacd11df}{Parse}();
+96     \textcolor{keyword}{delete} parser;
+97     node->\hyperlink{classSyntaxNode_ad8418608fa224536b48a590c87f0a509}{Execute}();
+98     \textcolor{keyword}{delete} node;
+99 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classPreferencesBase_a90dcd05552f94429b05df661eb72b5e2_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classPreferencesBase_a90dcd05552f94429b05df661eb72b5e2_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Preferences\+Base@{Preferences\+Base}!Set\+Prompt@{Set\+Prompt}}
+\index{Set\+Prompt@{Set\+Prompt}!Preferences\+Base@{Preferences\+Base}}
+\subsubsection[{\texorpdfstring{Set\+Prompt(const char $\ast$prompt)}{SetPrompt(const char *prompt)}}]{\setlength{\rightskip}{0pt plus 5cm}void Preferences\+Base\+::\+Set\+Prompt (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{prompt}
+\end{DoxyParamCaption}
+)}\hypertarget{classPreferencesBase_a84ef7562c15ce4921ea8821e6301d302}{}\label{classPreferencesBase_a84ef7562c15ce4921ea8821e6301d302}
+
+
+Definition at line 106 of file preferences.\+cpp.
+
+
+
+References Alloc\+And\+Copy(), and prompt.
+
+
+
+Referenced by Program\+::\+Set\+Prompt().
+
+
+\begin{DoxyCode}
+107 \{
+108     \textcolor{keyword}{delete} this->\hyperlink{classPreferencesBase_a88a6af58103e0498c366d61a628312e0}{prompt};
+109     \hyperlink{clib_8h_a5bed05c70cb17e541fee570b5dc32e1a}{AllocAndCopy}(&this->\hyperlink{classPreferencesBase_a88a6af58103e0498c366d61a628312e0}{prompt}, \hyperlink{classPreferencesBase_a88a6af58103e0498c366d61a628312e0}{prompt});
+110 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=339pt]{classPreferencesBase_a84ef7562c15ce4921ea8821e6301d302_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classPreferencesBase_a84ef7562c15ce4921ea8821e6301d302_icgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Member Data Documentation}
+\index{Preferences\+Base@{Preferences\+Base}!buf@{buf}}
+\index{buf@{buf}!Preferences\+Base@{Preferences\+Base}}
+\subsubsection[{\texorpdfstring{buf}{buf}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Char\+Buffer}$\ast$ Preferences\+Base\+::buf\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classPreferencesBase_a56ccdce81b9347c99eacb1839cee0a49}{}\label{classPreferencesBase_a56ccdce81b9347c99eacb1839cee0a49}
+
+
+Definition at line 50 of file preferences.\+h.
+
+
+
+Referenced by Get\+Description(), Preferences\+Base(), and $\sim$\+Preferences\+Base().
+
+\index{Preferences\+Base@{Preferences\+Base}!digits@{digits}}
+\index{digits@{digits}!Preferences\+Base@{Preferences\+Base}}
+\subsubsection[{\texorpdfstring{digits}{digits}}]{\setlength{\rightskip}{0pt plus 5cm}int Preferences\+Base\+::digits\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classPreferencesBase_add3d3cf98f920e03e425f11dabb6f984}{}\label{classPreferencesBase_add3d3cf98f920e03e425f11dabb6f984}
+
+
+Definition at line 52 of file preferences.\+h.
+
+
+
+Referenced by Get\+Digits(), Set\+Defaults(), and Set\+Digits().
+
+\index{Preferences\+Base@{Preferences\+Base}!prompt@{prompt}}
+\index{prompt@{prompt}!Preferences\+Base@{Preferences\+Base}}
+\subsubsection[{\texorpdfstring{prompt}{prompt}}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ Preferences\+Base\+::prompt\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classPreferencesBase_a88a6af58103e0498c366d61a628312e0}{}\label{classPreferencesBase_a88a6af58103e0498c366d61a628312e0}
+
+
+Definition at line 51 of file preferences.\+h.
+
+
+
+Referenced by Get\+Description(), Get\+Prompt(), Set\+Defaults(), Set\+Prompt(), and $\sim$\+Preferences\+Base().
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+app/system/\hyperlink{preferences_8h}{preferences.\+h}\item 
+app/system/\hyperlink{preferences_8cpp}{preferences.\+cpp}\end{DoxyCompactItemize}

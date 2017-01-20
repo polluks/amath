@@ -1,0 +1,846 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="structRealNumber">
+<title>RealNumber struct Reference</title>
+<para>
+    <programlisting>#include <link linkend="real_8h">&lt;real.h&gt;</link></programlisting>
+</para>
+<para>Inheritance diagram for RealNumber</para>
+<para>
+    <figure>
+        <title>Inheritance graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="structRealNumber__inherit__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+<para>Collaboration diagram for RealNumber</para>
+<para>
+    <figure>
+        <title>Collaboration graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="structRealNumber__coll__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title>Private Attributes</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>double x</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="structRealNumber_1aa61264f519c95ec9b63ab94c352bcc67">RealNumber</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="structRealNumber_1a65924261adb775498f3b1b0f41f89091">RealNumber</link> (
+double x)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="structRealNumber_1ab4c47ea1155b9ee8b4a2794e7836f892">RealNumber</link> (
+signed int i)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="structRealNumber_1a93eaa240f780acbe5e8e0eedb52483cc">RealNumber</link> (
+unsigned int i)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="structRealNumber_1a970623f00512c4ea09b5b5762ccc9bf5">~RealNumber</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="structRealNumber_1a250356e32a8c743cc2bc0baa73980ab4">IsNaN</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="structRealNumber_1a52cb76fb0b8f7a91a44172473a509656">IsFinite</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="structNumber">Number</link> * <link linkend="structRealNumber_1a8b089754dcdf9aab37ca9451ae918a9f">Clone</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="structRealNumber_1ad70a0d7f6886d62194d2f0829384b902">GetIntegerValue</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>double <link linkend="structRealNumber_1aeb08b00ac6cc793835c14e7bbbc65484">GetRealValue</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="structRealNumber_1a47b13da91334faba56ece7292f3a8566">SetRealValue</link> (
+double value)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="platform_8h_1a1062901a7428fdd9c7f180f5e01ea056">bool</link> <link linkend="structRealNumber_1ae80613d0522ada8c2f1d27115e5821be">PureComplexValue</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="structRealNumber_1ae809f7a1a8d6bf48bbbc808a7ae0474a">GetPrecedence</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="structRealNumber_1aa737c13eb4e7e0cbb1113488d21d91cf">GetDefaultPrecedence</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="structNumber">Number</link> * <link linkend="structRealNumber_1a0370c55b92e3ec36270a894918ae53ca">Unary</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="structNumber">Number</link> * <link linkend="structRealNumber_1aca23ac8d11fe2c35ea05bfc10ee14ebe">Add</link> (
+<link linkend="structNumber">Number</link> * other)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="structNumber">Number</link> * <link linkend="structRealNumber_1a16eae9fed4e18d72e80d72b3b3f2ef89">Sub</link> (
+<link linkend="structNumber">Number</link> * other)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="structNumber">Number</link> * <link linkend="structRealNumber_1af5491d836bb591e1291f4f9eee809902">Mul</link> (
+<link linkend="structNumber">Number</link> * other)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="structNumber">Number</link> * <link linkend="structRealNumber_1a3c9c011cae6212d4b233f4933cd81bd6">Div</link> (
+<link linkend="structNumber">Number</link> * other)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="structNumber">Number</link> * <link linkend="structRealNumber_1aaf9c066a4b9e9d845edefd40f614a517">Raise</link> (
+<link linkend="structNumber">Number</link> * exponent)<para><emphasis>Expontation function.</emphasis></para>
+</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="structNumber">Number</link> * <link linkend="structRealNumber_1a9c3f6b9bff23ed16f4fce328cd184bcd">Signum</link> (
+)<para><emphasis>Mathematical sign function.</emphasis></para>
+</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="structNumber">Number</link> * <link linkend="structRealNumber_1aba1f2eea0099d4c1347cd97b2897c0d8">Trunc</link> (
+)<para><emphasis>Mathematical trunc function.</emphasis></para>
+</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="structNumber">Number</link> * <link linkend="structRealNumber_1ac8668b36e44ba33ba8fb986347d48bc0">Round</link> (
+)<para><emphasis>Mathematical round function.</emphasis></para>
+</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="structNumber">Number</link> * <link linkend="structRealNumber_1a2b6019c5638bac355924e4b26d60e82a">Floor</link> (
+)<para><emphasis>Mathematical floor function.</emphasis></para>
+</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="structNumber">Number</link> * <link linkend="structRealNumber_1ad3d56323d395a89928c66c0ed4d087f8">Ceiling</link> (
+)<para><emphasis>Mathematical ceiling function.</emphasis></para>
+</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="structNumber">Number</link> * <link linkend="structRealNumber_1aad63b9d308870c33e3a6eaefb7ceeb8f">Absolute</link> (
+)<para><emphasis>Absolute value of number.</emphasis></para>
+</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="structNumber">Number</link> * <link linkend="structRealNumber_1a721d2c6fb9b5f4a5a41de242909ef4da">SquareRoot</link> (
+)<para><emphasis>Square root function.</emphasis></para>
+</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="structNumber">Number</link> * <link linkend="structRealNumber_1af20c2032f5c22719a6a8358963feda9a">CubeRoot</link> (
+)<para><emphasis>Cube root function.</emphasis></para>
+</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="structNumber">Number</link> * <link linkend="structRealNumber_1a0254d3b6e1e580f5e95950488c19632d">Reciprocal</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="structNumber">Number</link> * <link linkend="structRealNumber_1aaec064f13111dac3cc8e7a33969873a1">Log</link> (
+)<para><emphasis>Natural logarithm function (base e).</emphasis></para>
+</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="structNumber">Number</link> * <link linkend="structRealNumber_1a8f0a5ce6092079e47d572b61a05f44f4">Log2</link> (
+)<para><emphasis>Binary logarithm function (base 2).</emphasis></para>
+</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="structNumber">Number</link> * <link linkend="structRealNumber_1a75fa4835db911de6541e96895a02a59e">Log10</link> (
+)<para><emphasis>Base 10 logarithm function.</emphasis></para>
+</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="structNumber">Number</link> * <link linkend="structRealNumber_1a7efbe5a6d43471c317d10c976e1120a5">Sine</link> (
+)<para><emphasis>Trigonometric sine function.</emphasis></para>
+</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="structNumber">Number</link> * <link linkend="structRealNumber_1a29ab57ef9d5844b480574f06b83131d1">Cosine</link> (
+)<para><emphasis>Trigonometric cosine function.</emphasis></para>
+</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="structNumber">Number</link> * <link linkend="structRealNumber_1a49a5b0cd18ee9763f89f2bc61f7d43ba">Tangent</link> (
+)<para><emphasis>Trigonometric tangent function.</emphasis></para>
+</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="structNumber">Number</link> * <link linkend="structRealNumber_1af9b0b74fbe21e7c360d9ca13f2853c3c">Cosecant</link> (
+)<para><emphasis>Trigonometric cosecant function.</emphasis></para>
+</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="structNumber">Number</link> * <link linkend="structRealNumber_1a9e350ff4550f86bc25b6526eb14a823a">Secant</link> (
+)<para><emphasis>Trigonometric secant function.</emphasis></para>
+</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="structNumber">Number</link> * <link linkend="structRealNumber_1a326c66036f26f4562277692d179e19a3">Cotangent</link> (
+)<para><emphasis>Trigonometric cotangent function.</emphasis></para>
+</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="structNumber">Number</link> * <link linkend="structRealNumber_1aff1b5b8d942f4e160dc0720e67c3765a">ArcSine</link> (
+)<para><emphasis>Inverse trigonometric sine function.</emphasis></para>
+</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="structNumber">Number</link> * <link linkend="structRealNumber_1a6e03b5a208301e30e0e26099ae5787e6">ArcCosine</link> (
+)<para><emphasis>Inverse trigonometric cosine function.</emphasis></para>
+</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="structNumber">Number</link> * <link linkend="structRealNumber_1a3e1c71bcd7ec27804247d5efa538b877">ArcTangent</link> (
+)<para><emphasis>Inverse trigonometric tangent function.</emphasis></para>
+</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="structNumber">Number</link> * <link linkend="structRealNumber_1a852bde63b26d1281396faf8ac0ec9942">ArcCosecant</link> (
+)<para><emphasis>Inverse trigonometric cosecant function.</emphasis></para>
+</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="structNumber">Number</link> * <link linkend="structRealNumber_1a9720848058718946a9215b66a69ea05c">ArcSecant</link> (
+)<para><emphasis>Inverse trigonometric secant function.</emphasis></para>
+</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="structNumber">Number</link> * <link linkend="structRealNumber_1af805be2ef7c041b677160859da753893">ArcCotangent</link> (
+)<para><emphasis>Inverse trigonometric cotangent function.</emphasis></para>
+</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="structNumber">Number</link> * <link linkend="structRealNumber_1a977265341f5496a6a44a0231bf8e2db5">HypSine</link> (
+)<para><emphasis>Hyperbolic sine function.</emphasis></para>
+</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="structNumber">Number</link> * <link linkend="structRealNumber_1a722aa63e33b413ff59de90ed91c3f91d">HypCosine</link> (
+)<para><emphasis>Hyperbolic cosine function.</emphasis></para>
+</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="structNumber">Number</link> * <link linkend="structRealNumber_1a867a59eb450583c6adf7d35206f18001">HypTangent</link> (
+)<para><emphasis>Hyperbolic tangent function.</emphasis></para>
+</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="structNumber">Number</link> * <link linkend="structRealNumber_1a540b460d8e9c611b37ce00b2e32fc7f1">HypCosecant</link> (
+)<para><emphasis>Hyperbolic cosecant function.</emphasis></para>
+</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="structNumber">Number</link> * <link linkend="structRealNumber_1a9daeb349df78593a4747f417300cf68b">HypSecant</link> (
+)<para><emphasis>Hyperbolic secant function.</emphasis></para>
+</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="structNumber">Number</link> * <link linkend="structRealNumber_1a82ad5a573ac31bd03829ed0e39bde26d">HypCotangent</link> (
+)<para><emphasis>Hyperbolic cotangent function.</emphasis></para>
+</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="structNumber">Number</link> * <link linkend="structRealNumber_1a304a0afc690e5378aef03aa3d76425a2">HypArcSine</link> (
+)<para><emphasis>Inverse hyperbolic sine function.</emphasis></para>
+</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="structNumber">Number</link> * <link linkend="structRealNumber_1a180b1d26d19c53070014c9540ca058a9">HypArcCosine</link> (
+)<para><emphasis>Inverse hyperbolic cosine function.</emphasis></para>
+</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="structNumber">Number</link> * <link linkend="structRealNumber_1a62836390c7edc73ecea5c7455dd04afe">HypArcTangent</link> (
+)<para><emphasis>Inverse hyperbolic tangent function.</emphasis></para>
+</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="structNumber">Number</link> * <link linkend="structRealNumber_1a9012f76e46de683e6c826bcdf719ca2f">HypArcCosecant</link> (
+)<para><emphasis>Inverse hyperbolic cosecant function.</emphasis></para>
+</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="structNumber">Number</link> * <link linkend="structRealNumber_1a2c63d0e9efa401cb5ff4a459f339dfb5">HypArcSecant</link> (
+)<para><emphasis>Inverse hyperbolic secant function.</emphasis></para>
+</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="structNumber">Number</link> * <link linkend="structRealNumber_1ab83d64a095c365070fe40273b0bb173c">HypArcCotangent</link> (
+)<para><emphasis>Inverse hyperbolic cotangent function.</emphasis></para>
+</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+    <simplesect>
+
+<para>Represent a real number with 15 siginificant digits. </para>
+    </simplesect>
+        <simplesect>
+            <title>Detailed Description</title>
+
+<para>Calculations are done using 64 bit IEEE 754 arithmetics. </para>
+                <para>Definition at line 44 of file real.h</para>
+                <para>The Documentation for this struct was generated from the following file: </para>
+                <para><itemizedlist><listitem><para>real.h</para></listitem></itemizedlist></para>
+        </simplesect>
+        <section>
+            <title>Member Data Documentation</title>
+        </section>
+            <section xml:id="structRealNumber_1aa61264f519c95ec9b63ab94c352bcc67">
+                <title>RealNumber::RealNumber ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="structRealNumber_1a65924261adb775498f3b1b0f41f89091">
+                <title>RealNumber::RealNumber (double x)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="structRealNumber_1ab4c47ea1155b9ee8b4a2794e7836f892">
+                <title>RealNumber::RealNumber (signed int i)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="structRealNumber_1a93eaa240f780acbe5e8e0eedb52483cc">
+                <title>RealNumber::RealNumber (unsigned int i)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="structRealNumber_1a970623f00512c4ea09b5b5762ccc9bf5">
+                <title>RealNumber::~RealNumber ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="structRealNumber_1a250356e32a8c743cc2bc0baa73980ab4">
+                <title>int RealNumber::IsNaN ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="structRealNumber_1a52cb76fb0b8f7a91a44172473a509656">
+                <title>int RealNumber::IsFinite ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="structRealNumber_1a8b089754dcdf9aab37ca9451ae918a9f">
+                <title>Number * RealNumber::Clone ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="structRealNumber_1ad70a0d7f6886d62194d2f0829384b902">
+                <title>int RealNumber::GetIntegerValue ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="structRealNumber_1aeb08b00ac6cc793835c14e7bbbc65484">
+                <title>double RealNumber::GetRealValue ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="structRealNumber_1a47b13da91334faba56ece7292f3a8566">
+                <title>void RealNumber::SetRealValue (double value)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="structRealNumber_1ae80613d0522ada8c2f1d27115e5821be">
+                <title>bool RealNumber::PureComplexValue ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="structRealNumber_1ae809f7a1a8d6bf48bbbc808a7ae0474a">
+                <title>int RealNumber::GetPrecedence ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="structRealNumber_1aa737c13eb4e7e0cbb1113488d21d91cf">
+                <title>int RealNumber::GetDefaultPrecedence ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="structRealNumber_1a0370c55b92e3ec36270a894918ae53ca">
+                <title>Number * RealNumber::Unary ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="structRealNumber_1aca23ac8d11fe2c35ea05bfc10ee14ebe">
+                <title>Number * RealNumber::Add (Number *other)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="structRealNumber_1a16eae9fed4e18d72e80d72b3b3f2ef89">
+                <title>Number * RealNumber::Sub (Number *other)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="structRealNumber_1af5491d836bb591e1291f4f9eee809902">
+                <title>Number * RealNumber::Mul (Number *other)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="structRealNumber_1a3c9c011cae6212d4b233f4933cd81bd6">
+                <title>Number * RealNumber::Div (Number *other)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="structRealNumber_1aaf9c066a4b9e9d845edefd40f614a517">
+                <title>Number * RealNumber::Raise (Number *exponent)</title> <emphasis>Expontation function.</emphasis>
+                
+<para>See implementation in <link linkend="pow_8c_1aa56c9494c95edf68386375e97d64159b">pow(double, double)</link> </para>
+
+            </section>
+            <section xml:id="structRealNumber_1a9c3f6b9bff23ed16f4fce328cd184bcd">
+                <title>Number * RealNumber::Signum ()</title> <emphasis>Mathematical sign function.</emphasis>
+                
+<para>See implementation in <link linkend="math_8h_1ae1b5a554c1d4d97654c06032a92f800a">sgn(double)</link> </para>
+
+            </section>
+            <section xml:id="structRealNumber_1aba1f2eea0099d4c1347cd97b2897c0d8">
+                <title>Number * RealNumber::Trunc ()</title> <emphasis>Mathematical trunc function.</emphasis>
+                
+<para>See implementation in <link linkend="trunc_8c_1a82a151adfde56b28fa8a50355c4f2ff6">trunc(double)</link> </para>
+
+            </section>
+            <section xml:id="structRealNumber_1ac8668b36e44ba33ba8fb986347d48bc0">
+                <title>Number * RealNumber::Round ()</title> <emphasis>Mathematical round function.</emphasis>
+                
+<para>See implementation in <link linkend="round_8c_1a7df19cf730447c00150569250a4b5e1d">round(double)</link> </para>
+
+            </section>
+            <section xml:id="structRealNumber_1a2b6019c5638bac355924e4b26d60e82a">
+                <title>Number * RealNumber::Floor ()</title> <emphasis>Mathematical floor function.</emphasis>
+                
+<para>See implementation in <link linkend="floor_8c_1a6de60a3e907dcf0bfe3ea8d64f1e8873">floor(double)</link> </para>
+
+            </section>
+            <section xml:id="structRealNumber_1ad3d56323d395a89928c66c0ed4d087f8">
+                <title>Number * RealNumber::Ceiling ()</title> <emphasis>Mathematical ceiling function.</emphasis>
+                
+<para>See implementation in <link linkend="ceil_8c_1a1ea6d7b591132268abc2e843ababd084">ceil(double)</link> </para>
+
+            </section>
+            <section xml:id="structRealNumber_1aad63b9d308870c33e3a6eaefb7ceeb8f">
+                <title>Number * RealNumber::Absolute ()</title> <emphasis>Absolute value of number.</emphasis>
+                
+<para>See implementation in <link linkend="fabs_8c_1a8fb5c0b9b43a108724b355136d29d2f9">fabs(double)</link> </para>
+
+            </section>
+            <section xml:id="structRealNumber_1a721d2c6fb9b5f4a5a41de242909ef4da">
+                <title>Number * RealNumber::SquareRoot ()</title> <emphasis>Square root function.</emphasis>
+                
+<para>See implementation of square root in <link linkend="sqrt_8c_1ab87521a75ef827a85807f89a6c10629a">sqrt(double)</link> </para>
+
+            </section>
+            <section xml:id="structRealNumber_1af20c2032f5c22719a6a8358963feda9a">
+                <title>Number * RealNumber::CubeRoot ()</title> <emphasis>Cube root function.</emphasis>
+                
+<para>See implementation of cube root in <link linkend="cbrt_8c_1a8af00e2203928978e0242b4afd1d899f">cbrt(double)</link> </para>
+
+            </section>
+            <section xml:id="structRealNumber_1a0254d3b6e1e580f5e95950488c19632d">
+                <title>Number * RealNumber::Reciprocal ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="structRealNumber_1aaec064f13111dac3cc8e7a33969873a1">
+                <title>Number * RealNumber::Log ()</title> <emphasis>Natural logarithm function (base e).</emphasis>
+                
+<para>See implementation of natural logarithm in <link linkend="log_8c_1adb302c9aafbaa5e180d9f60ee954bb82">log(double)</link> </para>
+
+            </section>
+            <section xml:id="structRealNumber_1a8f0a5ce6092079e47d572b61a05f44f4">
+                <title>Number * RealNumber::Log2 ()</title> <emphasis>Binary logarithm function (base 2).</emphasis>
+                
+<para>See implementation of natural logarithm in <link linkend="log_8c_1adb302c9aafbaa5e180d9f60ee954bb82">log(double)</link> </para>
+
+            </section>
+            <section xml:id="structRealNumber_1a75fa4835db911de6541e96895a02a59e">
+                <title>Number * RealNumber::Log10 ()</title> <emphasis>Base 10 logarithm function.</emphasis>
+                
+<para>See implementation of base 10 logarithm in <link linkend="log10_8c_1a6572e82a4891917a9ba7fb2a964f8182">log10(double)</link> </para>
+
+            </section>
+            <section xml:id="structRealNumber_1a7efbe5a6d43471c317d10c976e1120a5">
+                <title>Number * RealNumber::Sine ()</title> <emphasis>Trigonometric sine function.</emphasis>
+                
+<para>See implementation of sine function in <link linkend="sin_8c_1aad4af25633b071b0e2cdb8ebd87eca77">sin(double)</link> </para>
+
+            </section>
+            <section xml:id="structRealNumber_1a29ab57ef9d5844b480574f06b83131d1">
+                <title>Number * RealNumber::Cosine ()</title> <emphasis>Trigonometric cosine function.</emphasis>
+                
+<para>See implementation of cosine function in <link linkend="cos_8c_1a5e7b53a694b3cf0f2d7debd444140fbd">cos(double)</link> </para>
+
+            </section>
+            <section xml:id="structRealNumber_1a49a5b0cd18ee9763f89f2bc61f7d43ba">
+                <title>Number * RealNumber::Tangent ()</title> <emphasis>Trigonometric tangent function.</emphasis>
+                
+<para>See implementation of tangent function in <link linkend="tan_8c_1aa48fdfd5eea5f4f9c33496402b9e4039">tan(double)</link> </para>
+
+            </section>
+            <section xml:id="structRealNumber_1af9b0b74fbe21e7c360d9ca13f2853c3c">
+                <title>Number * RealNumber::Cosecant ()</title> <emphasis>Trigonometric cosecant function.</emphasis>
+                
+<para>See implementation of sine function in <link linkend="sin_8c_1aad4af25633b071b0e2cdb8ebd87eca77">sin(double)</link> </para>
+
+            </section>
+            <section xml:id="structRealNumber_1a9e350ff4550f86bc25b6526eb14a823a">
+                <title>Number * RealNumber::Secant ()</title> <emphasis>Trigonometric secant function.</emphasis>
+                
+<para>See implementation of cosine function in <link linkend="cos_8c_1a5e7b53a694b3cf0f2d7debd444140fbd">cos(double)</link> </para>
+
+            </section>
+            <section xml:id="structRealNumber_1a326c66036f26f4562277692d179e19a3">
+                <title>Number * RealNumber::Cotangent ()</title> <emphasis>Trigonometric cotangent function.</emphasis>
+                
+<para>See implementation of tangent function in <link linkend="tan_8c_1aa48fdfd5eea5f4f9c33496402b9e4039">tan(double)</link> </para>
+
+            </section>
+            <section xml:id="structRealNumber_1aff1b5b8d942f4e160dc0720e67c3765a">
+                <title>Number * RealNumber::ArcSine ()</title> <emphasis>Inverse trigonometric sine function.</emphasis>
+                
+<para>See implementation of inverse trigonometric sine in <link linkend="asin_8c_1aa9528d92a3ae44ad6484da0774604454">asin(double)</link> </para>
+
+            </section>
+            <section xml:id="structRealNumber_1a6e03b5a208301e30e0e26099ae5787e6">
+                <title>Number * RealNumber::ArcCosine ()</title> <emphasis>Inverse trigonometric cosine function.</emphasis>
+                
+<para>See implementation of inverse trigonometric cosine in <link linkend="acos_8c_1ae93afe22ff34c79ee97ea3eaf77557db">acos(double)</link> </para>
+
+            </section>
+            <section xml:id="structRealNumber_1a3e1c71bcd7ec27804247d5efa538b877">
+                <title>Number * RealNumber::ArcTangent ()</title> <emphasis>Inverse trigonometric tangent function.</emphasis>
+                
+<para>See implementation of inverse trigonometric tangent in <link linkend="atan_8c_1a1e2f8f6d64eaa95131bc63fee34970ea">atan(double)</link> </para>
+
+            </section>
+            <section xml:id="structRealNumber_1a852bde63b26d1281396faf8ac0ec9942">
+                <title>Number * RealNumber::ArcCosecant ()</title> <emphasis>Inverse trigonometric cosecant function.</emphasis>
+                
+<para>See implementation of inverse trigonometric sine in <link linkend="asin_8c_1aa9528d92a3ae44ad6484da0774604454">asin(double)</link> </para>
+
+            </section>
+            <section xml:id="structRealNumber_1a9720848058718946a9215b66a69ea05c">
+                <title>Number * RealNumber::ArcSecant ()</title> <emphasis>Inverse trigonometric secant function.</emphasis>
+                
+<para>See implementation of inverse trigonometric cosine in <link linkend="acos_8c_1ae93afe22ff34c79ee97ea3eaf77557db">acos(double)</link> </para>
+
+            </section>
+            <section xml:id="structRealNumber_1af805be2ef7c041b677160859da753893">
+                <title>Number * RealNumber::ArcCotangent ()</title> <emphasis>Inverse trigonometric cotangent function.</emphasis>
+                
+<para>See implementation of inverse trigonometric tangent in <link linkend="atan_8c_1a1e2f8f6d64eaa95131bc63fee34970ea">atan(double)</link> </para>
+
+            </section>
+            <section xml:id="structRealNumber_1a977265341f5496a6a44a0231bf8e2db5">
+                <title>Number * RealNumber::HypSine ()</title> <emphasis>Hyperbolic sine function.</emphasis>
+                
+<para>See implementation of hyperbolic sine function in <link linkend="sinh_8c_1a862012e970c977c482507064e2793b45">sinh(double)</link> </para>
+
+            </section>
+            <section xml:id="structRealNumber_1a722aa63e33b413ff59de90ed91c3f91d">
+                <title>Number * RealNumber::HypCosine ()</title> <emphasis>Hyperbolic cosine function.</emphasis>
+                
+<para>See implementation of hyperbolic cosine function in <link linkend="cosh_8c_1a3795d3c1f1d30819be56da4e4d67f64b">cosh(double)</link> </para>
+
+            </section>
+            <section xml:id="structRealNumber_1a867a59eb450583c6adf7d35206f18001">
+                <title>Number * RealNumber::HypTangent ()</title> <emphasis>Hyperbolic tangent function.</emphasis>
+                
+<para>See implementation of hyperbolic tangent function in <link linkend="tanh_8c_1af85bcf153d7ae805733927f12329dac1">tanh(double)</link> </para>
+
+            </section>
+            <section xml:id="structRealNumber_1a540b460d8e9c611b37ce00b2e32fc7f1">
+                <title>Number * RealNumber::HypCosecant ()</title> <emphasis>Hyperbolic cosecant function.</emphasis>
+                
+<para>See implementation of hyperbolic sine function in <link linkend="sinh_8c_1a862012e970c977c482507064e2793b45">sinh(double)</link> </para>
+
+            </section>
+            <section xml:id="structRealNumber_1a9daeb349df78593a4747f417300cf68b">
+                <title>Number * RealNumber::HypSecant ()</title> <emphasis>Hyperbolic secant function.</emphasis>
+                
+<para>See implementation of hyperbolic cosine function in <link linkend="cosh_8c_1a3795d3c1f1d30819be56da4e4d67f64b">cosh(double)</link> </para>
+
+            </section>
+            <section xml:id="structRealNumber_1a82ad5a573ac31bd03829ed0e39bde26d">
+                <title>Number * RealNumber::HypCotangent ()</title> <emphasis>Hyperbolic cotangent function.</emphasis>
+                
+<para>See implementation of hyperbolic tangent function in <link linkend="tanh_8c_1af85bcf153d7ae805733927f12329dac1">tanh(double)</link> </para>
+
+            </section>
+            <section xml:id="structRealNumber_1a304a0afc690e5378aef03aa3d76425a2">
+                <title>Number * RealNumber::HypArcSine ()</title> <emphasis>Inverse hyperbolic sine function.</emphasis>
+                
+<para>See implementation of inverse hyperbolic sine in <link linkend="asinh_8c_1a907297107e93ea9c8a0c8409a8e65079">asinh(double)</link> </para>
+
+            </section>
+            <section xml:id="structRealNumber_1a180b1d26d19c53070014c9540ca058a9">
+                <title>Number * RealNumber::HypArcCosine ()</title> <emphasis>Inverse hyperbolic cosine function.</emphasis>
+                
+<para>See implementation of inverse hyperbolic cosine in <link linkend="acosh_8c_1ac862445bcb46911b1782c284829d5e46">acosh(double)</link> </para>
+
+            </section>
+            <section xml:id="structRealNumber_1a62836390c7edc73ecea5c7455dd04afe">
+                <title>Number * RealNumber::HypArcTangent ()</title> <emphasis>Inverse hyperbolic tangent function.</emphasis>
+                
+<para>See implementation hyperbolic tangent in <link linkend="atanh_8c_1ac07fd7b77fa341563abccf9efcc1a711">atanh(double)</link> </para>
+
+            </section>
+            <section xml:id="structRealNumber_1a9012f76e46de683e6c826bcdf719ca2f">
+                <title>Number * RealNumber::HypArcCosecant ()</title> <emphasis>Inverse hyperbolic cosecant function.</emphasis>
+                
+<para>See implementation of inverse hyperbolic sine in <link linkend="asinh_8c_1a907297107e93ea9c8a0c8409a8e65079">asinh(double)</link> </para>
+
+            </section>
+            <section xml:id="structRealNumber_1a2c63d0e9efa401cb5ff4a459f339dfb5">
+                <title>Number * RealNumber::HypArcSecant ()</title> <emphasis>Inverse hyperbolic secant function.</emphasis>
+                
+<para>See implementation of inverse hyperbolic cosine in <link linkend="acosh_8c_1ac862445bcb46911b1782c284829d5e46">acosh(double)</link> </para>
+
+            </section>
+            <section xml:id="structRealNumber_1ab83d64a095c365070fe40273b0bb173c">
+                <title>Number * RealNumber::HypArcCotangent ()</title> <emphasis>Inverse hyperbolic cotangent function.</emphasis>
+                
+<para>See implementation hyperbolic tangent in <link linkend="atanh_8c_1ac07fd7b77fa341563abccf9efcc1a711">atanh(double)</link> </para>
+
+            </section>
+</section>

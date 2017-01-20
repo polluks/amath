@@ -1,0 +1,905 @@
+\hypertarget{prim_8c}{}\section{lib/cplex/prim.c File Reference}
+\label{prim_8c}\index{lib/cplex/prim.\+c@{lib/cplex/prim.\+c}}
+{\ttfamily \#include \char`\"{}math.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}prim.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}complex.\+h\char`\"{}}\\*
+Include dependency graph for prim.\+c\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=221pt]{prim_8c__incl}
+\end{center}
+\end{figure}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{prim_8c_abe71472a1db694c210cd45a928ede69d}{R\+E\+A\+L\+\_\+\+P\+A\+RT}(z)~((z).parts\mbox{[}0\mbox{]})
+\item 
+\#define \hyperlink{prim_8c_af2ec11abad1ad66e6fab43ca0ec74740}{I\+M\+A\+G\+\_\+\+P\+A\+RT}(z)~((z).parts\mbox{[}1\mbox{]})
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+double \hyperlink{prim_8c_a4a236b24c0197821e3489a35a72079ab}{creal} (\hyperlink{unioncomplex}{complex} z)
+\begin{DoxyCompactList}\small\item\em Real part of complex number. \end{DoxyCompactList}\item 
+double \hyperlink{prim_8c_aa1fe0b9371befabef6c41ba73470774a}{cimag} (\hyperlink{unioncomplex}{complex} z)
+\begin{DoxyCompactList}\small\item\em Imaginary part of complex number. \end{DoxyCompactList}\item 
+double \hyperlink{prim_8c_af6e02ba9d2566b52e3b0faf2d4ed973a}{cabs} (\hyperlink{unioncomplex}{complex} z)
+\begin{DoxyCompactList}\small\item\em Absolute value of complex number. \end{DoxyCompactList}\item 
+\hyperlink{unioncomplex}{complex} \hyperlink{prim_8c_a8d08797ad03191874e9943144da189be}{conj} (\hyperlink{unioncomplex}{complex} z)
+\item 
+\hyperlink{unioncomplex}{complex} \hyperlink{prim_8c_a980e6e049f7902b05fc9eb5614b07a5c}{cpack} (double x, double y)
+\begin{DoxyCompactList}\small\item\em Pack two real numbers into a complex number. \end{DoxyCompactList}\item 
+\hyperlink{unioncomplex}{complex} \hyperlink{prim_8c_aa760bac9acf6c215294e10188f3c9eb2}{ctrunc} (\hyperlink{unioncomplex}{complex} z)
+\begin{DoxyCompactList}\small\item\em Truncated value of complex number. \end{DoxyCompactList}\item 
+\hyperlink{unioncomplex}{complex} \hyperlink{prim_8c_a12886361ac7d752a46ec5cf3bdd0687e}{cfloor} (\hyperlink{unioncomplex}{complex} z)
+\begin{DoxyCompactList}\small\item\em Floor value of complex number. \end{DoxyCompactList}\item 
+\hyperlink{unioncomplex}{complex} \hyperlink{prim_8c_a48443015efbd58ce5da6d64d9858f168}{cceil} (\hyperlink{unioncomplex}{complex} z)
+\begin{DoxyCompactList}\small\item\em Ceiling value of complex number. \end{DoxyCompactList}\item 
+\hyperlink{unioncomplex}{complex} \hyperlink{prim_8c_a83b50ec7fc882d884c8b740026ab3ef5}{cround} (\hyperlink{unioncomplex}{complex} z)
+\begin{DoxyCompactList}\small\item\em Division of two complex numbers. \end{DoxyCompactList}\item 
+\hyperlink{unioncomplex}{complex} \hyperlink{prim_8c_aa334a54c40e3eeb301f2a510a7675070}{cadd} (\hyperlink{unioncomplex}{complex} y, \hyperlink{unioncomplex}{complex} z)
+\begin{DoxyCompactList}\small\item\em Addition of two complex numbers. \end{DoxyCompactList}\item 
+\hyperlink{unioncomplex}{complex} \hyperlink{prim_8c_a9bebe3fb8e9e03dbe04a2ecedbe4a114}{csub} (\hyperlink{unioncomplex}{complex} y, \hyperlink{unioncomplex}{complex} z)
+\begin{DoxyCompactList}\small\item\em Subtraction of two complex numbers. \end{DoxyCompactList}\item 
+\hyperlink{unioncomplex}{complex} \hyperlink{prim_8c_a71e6e973f5b98b4c9140c0d374d9223d}{cmul} (\hyperlink{unioncomplex}{complex} y, \hyperlink{unioncomplex}{complex} z)
+\begin{DoxyCompactList}\small\item\em Multiplication of two complex numbers. \end{DoxyCompactList}\item 
+\hyperlink{unioncomplex}{complex} \hyperlink{prim_8c_afeb504d8fe89e8fc7dea6e6592af70f6}{cdiv} (\hyperlink{unioncomplex}{complex} y, \hyperlink{unioncomplex}{complex} z)
+\begin{DoxyCompactList}\small\item\em Division of two complex numbers. \end{DoxyCompactList}\item 
+\hyperlink{unioncomplex}{complex} \hyperlink{prim_8c_a78cdeb0bf6f229c2be3065fc697dac68}{creci} (\hyperlink{unioncomplex}{complex} z)
+\begin{DoxyCompactList}\small\item\em Reciprocal value of complex number. \end{DoxyCompactList}\item 
+void \hyperlink{prim_8c_aee34c227a34560e41c3b665a00f1a4f9}{cchsh} (double x, double $\ast$c, double $\ast$s)
+\begin{DoxyCompactList}\small\item\em Calculate cosh and sinh. \end{DoxyCompactList}\item 
+void \hyperlink{prim_8c_a995788d5249547ee333b353ddf959f8b}{cchc} (double x, double $\ast$ch, double $\ast$c)
+\begin{DoxyCompactList}\small\item\em Calculate cosh and cos. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\index{prim.\+c@{prim.\+c}!I\+M\+A\+G\+\_\+\+P\+A\+RT@{I\+M\+A\+G\+\_\+\+P\+A\+RT}}
+\index{I\+M\+A\+G\+\_\+\+P\+A\+RT@{I\+M\+A\+G\+\_\+\+P\+A\+RT}!prim.\+c@{prim.\+c}}
+\subsubsection[{\texorpdfstring{I\+M\+A\+G\+\_\+\+P\+A\+RT}{IMAG_PART}}]{\setlength{\rightskip}{0pt plus 5cm}\#define I\+M\+A\+G\+\_\+\+P\+A\+RT(
+\begin{DoxyParamCaption}
+\item[{}]{z}
+\end{DoxyParamCaption}
+)~((z).parts\mbox{[}1\mbox{]})}\hypertarget{prim_8c_af2ec11abad1ad66e6fab43ca0ec74740}{}\label{prim_8c_af2ec11abad1ad66e6fab43ca0ec74740}
+
+
+Definition at line 32 of file prim.\+c.
+
+\index{prim.\+c@{prim.\+c}!R\+E\+A\+L\+\_\+\+P\+A\+RT@{R\+E\+A\+L\+\_\+\+P\+A\+RT}}
+\index{R\+E\+A\+L\+\_\+\+P\+A\+RT@{R\+E\+A\+L\+\_\+\+P\+A\+RT}!prim.\+c@{prim.\+c}}
+\subsubsection[{\texorpdfstring{R\+E\+A\+L\+\_\+\+P\+A\+RT}{REAL_PART}}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\+E\+A\+L\+\_\+\+P\+A\+RT(
+\begin{DoxyParamCaption}
+\item[{}]{z}
+\end{DoxyParamCaption}
+)~((z).parts\mbox{[}0\mbox{]})}\hypertarget{prim_8c_abe71472a1db694c210cd45a928ede69d}{}\label{prim_8c_abe71472a1db694c210cd45a928ede69d}
+
+
+Definition at line 31 of file prim.\+c.
+
+
+
+\subsection{Function Documentation}
+\index{prim.\+c@{prim.\+c}!cabs@{cabs}}
+\index{cabs@{cabs}!prim.\+c@{prim.\+c}}
+\subsubsection[{\texorpdfstring{cabs(complex z)}{cabs(complex z)}}]{\setlength{\rightskip}{0pt plus 5cm}double cabs (
+\begin{DoxyParamCaption}
+\item[{{\bf complex}}]{z}
+\end{DoxyParamCaption}
+)}\hypertarget{prim_8c_af6e02ba9d2566b52e3b0faf2d4ed973a}{}\label{prim_8c_af6e02ba9d2566b52e3b0faf2d4ed973a}
+
+
+Absolute value of complex number. 
+
+
+
+Definition at line 56 of file prim.\+c.
+
+
+
+References cimag(), creal(), and hypot().
+
+
+
+Referenced by Complex\+Number\+::\+Absolute(), clog(), cpow(), and csqrt().
+
+
+\begin{DoxyCode}
+57 \{
+58     \textcolor{keywordflow}{return} \hyperlink{math_8h_a6d6a905f61d535f8454190433b8c0ea5}{hypot}(\hyperlink{prim_8c_a4a236b24c0197821e3489a35a72079ab}{creal}(z), \hyperlink{prim_8c_aa1fe0b9371befabef6c41ba73470774a}{cimag}(z));
+59 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=266pt]{prim_8c_af6e02ba9d2566b52e3b0faf2d4ed973a_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{prim_8c_af6e02ba9d2566b52e3b0faf2d4ed973a_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{prim.\+c@{prim.\+c}!cadd@{cadd}}
+\index{cadd@{cadd}!prim.\+c@{prim.\+c}}
+\subsubsection[{\texorpdfstring{cadd(complex y, complex z)}{cadd(complex y, complex z)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf complex} cadd (
+\begin{DoxyParamCaption}
+\item[{{\bf complex}}]{y, }
+\item[{{\bf complex}}]{z}
+\end{DoxyParamCaption}
+)}\hypertarget{prim_8c_aa334a54c40e3eeb301f2a510a7675070}{}\label{prim_8c_aa334a54c40e3eeb301f2a510a7675070}
+
+
+Addition of two complex numbers. 
+
+
+
+Definition at line 128 of file prim.\+c.
+
+
+
+References cimag(), cpack(), and creal().
+
+
+
+Referenced by Complex\+Number\+::\+Add(), cacos(), cacosh(), cacot(), cacoth(), cacsc(), cacsch(), casec(), casech(), casin(), casinh(), catan(), and catanh().
+
+
+\begin{DoxyCode}
+129 \{
+130     \hyperlink{unioncomplex}{complex} w;
+131     w = \hyperlink{prim_8c_a980e6e049f7902b05fc9eb5614b07a5c}{cpack}(\hyperlink{prim_8c_a4a236b24c0197821e3489a35a72079ab}{creal}(y) + \hyperlink{prim_8c_a4a236b24c0197821e3489a35a72079ab}{creal}(z), \hyperlink{prim_8c_aa1fe0b9371befabef6c41ba73470774a}{cimag}(y) + \hyperlink{prim_8c_aa1fe0b9371befabef6c41ba73470774a}{cimag}(z));
+132     \textcolor{keywordflow}{return} w;
+133 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=197pt]{prim_8c_aa334a54c40e3eeb301f2a510a7675070_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{prim_8c_aa334a54c40e3eeb301f2a510a7675070_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{prim.\+c@{prim.\+c}!cceil@{cceil}}
+\index{cceil@{cceil}!prim.\+c@{prim.\+c}}
+\subsubsection[{\texorpdfstring{cceil(complex z)}{cceil(complex z)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf complex} cceil (
+\begin{DoxyParamCaption}
+\item[{{\bf complex}}]{z}
+\end{DoxyParamCaption}
+)}\hypertarget{prim_8c_a48443015efbd58ce5da6d64d9858f168}{}\label{prim_8c_a48443015efbd58ce5da6d64d9858f168}
+
+
+Ceiling value of complex number. 
+
+
+
+Definition at line 106 of file prim.\+c.
+
+
+
+References cimag(), cpack(), and creal().
+
+
+
+Referenced by Complex\+Number\+::\+Ceiling().
+
+
+\begin{DoxyCode}
+107 \{
+108     \hyperlink{unioncomplex}{complex} w;
+109     w = \hyperlink{prim_8c_a980e6e049f7902b05fc9eb5614b07a5c}{cpack}(\hyperlink{math_8h_a1ea6d7b591132268abc2e843ababd084}{ceil}(\hyperlink{prim_8c_a4a236b24c0197821e3489a35a72079ab}{creal}(z)), \hyperlink{math_8h_a1ea6d7b591132268abc2e843ababd084}{ceil}(\hyperlink{prim_8c_aa1fe0b9371befabef6c41ba73470774a}{cimag}(z)));
+110     \textcolor{keywordflow}{return} w;
+111 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=196pt]{prim_8c_a48443015efbd58ce5da6d64d9858f168_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=279pt]{prim_8c_a48443015efbd58ce5da6d64d9858f168_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{prim.\+c@{prim.\+c}!cchc@{cchc}}
+\index{cchc@{cchc}!prim.\+c@{prim.\+c}}
+\subsubsection[{\texorpdfstring{cchc(double x, double $\ast$ch, double $\ast$c)}{cchc(double x, double *ch, double *c)}}]{\setlength{\rightskip}{0pt plus 5cm}void cchc (
+\begin{DoxyParamCaption}
+\item[{double}]{x, }
+\item[{double $\ast$}]{ch, }
+\item[{double $\ast$}]{c}
+\end{DoxyParamCaption}
+)}\hypertarget{prim_8c_a995788d5249547ee333b353ddf959f8b}{}\label{prim_8c_a995788d5249547ee333b353ddf959f8b}
+
+
+Calculate cosh and cos. 
+
+
+
+Definition at line 230 of file prim.\+c.
+
+
+
+References cos(), and cosh().
+
+
+\begin{DoxyCode}
+231 \{
+232     *ch = \hyperlink{math_8h_a3795d3c1f1d30819be56da4e4d67f64b}{cosh}(2.0 * x);
+233     *c = \hyperlink{math_8h_a5e7b53a694b3cf0f2d7debd444140fbd}{cos}(2.0 * x);
+234 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{prim_8c_a995788d5249547ee333b353ddf959f8b_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{prim.\+c@{prim.\+c}!cchsh@{cchsh}}
+\index{cchsh@{cchsh}!prim.\+c@{prim.\+c}}
+\subsubsection[{\texorpdfstring{cchsh(double x, double $\ast$c, double $\ast$s)}{cchsh(double x, double *c, double *s)}}]{\setlength{\rightskip}{0pt plus 5cm}void cchsh (
+\begin{DoxyParamCaption}
+\item[{double}]{x, }
+\item[{double $\ast$}]{c, }
+\item[{double $\ast$}]{s}
+\end{DoxyParamCaption}
+)}\hypertarget{prim_8c_aee34c227a34560e41c3b665a00f1a4f9}{}\label{prim_8c_aee34c227a34560e41c3b665a00f1a4f9}
+
+
+Calculate cosh and sinh. 
+
+
+
+Definition at line 210 of file prim.\+c.
+
+
+
+References cosh(), exp(), and sinh().
+
+
+
+Referenced by ccos(), ccosh(), csin(), and csinh().
+
+
+\begin{DoxyCode}
+211 \{
+212     \textcolor{keywordtype}{double} e, ei;
+213 
+214     \textcolor{keywordflow}{if} (\hyperlink{math_8h_a8fb5c0b9b43a108724b355136d29d2f9}{fabs}(x) <= 0.5) \{
+215         *c = \hyperlink{math_8h_a3795d3c1f1d30819be56da4e4d67f64b}{cosh}(x);
+216         *s = \hyperlink{math_8h_a862012e970c977c482507064e2793b45}{sinh}(x);
+217     \} \textcolor{keywordflow}{else} \{
+218         e = \hyperlink{math_8h_ae09128febbbe6372cde4fa0c65608a42}{exp}(x);
+219         ei = 0.5 / e;
+220         e = 0.5 * e;
+221         *s = e - ei;
+222         *c = e + ei;
+223     \}
+224 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=279pt]{prim_8c_aee34c227a34560e41c3b665a00f1a4f9_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{prim_8c_aee34c227a34560e41c3b665a00f1a4f9_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{prim.\+c@{prim.\+c}!cdiv@{cdiv}}
+\index{cdiv@{cdiv}!prim.\+c@{prim.\+c}}
+\subsubsection[{\texorpdfstring{cdiv(complex y, complex z)}{cdiv(complex y, complex z)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf complex} cdiv (
+\begin{DoxyParamCaption}
+\item[{{\bf complex}}]{y, }
+\item[{{\bf complex}}]{z}
+\end{DoxyParamCaption}
+)}\hypertarget{prim_8c_afeb504d8fe89e8fc7dea6e6592af70f6}{}\label{prim_8c_afeb504d8fe89e8fc7dea6e6592af70f6}
+
+
+Division of two complex numbers. 
+
+
+
+Definition at line 170 of file prim.\+c.
+
+
+
+References cimag(), cpack(), and creal().
+
+
+
+Referenced by cacot(), cacsc(), casec(), catan(), clog10(), clogb(), and Complex\+Number\+::\+Div().
+
+
+\begin{DoxyCode}
+171 \{
+172     \hyperlink{unioncomplex}{complex} w;
+173     \textcolor{keywordtype}{double} a, b, c, d;
+174     \textcolor{keywordtype}{double} q, v, x;
+175 
+176     a = \hyperlink{prim_8c_a4a236b24c0197821e3489a35a72079ab}{creal}(y);
+177     b = \hyperlink{prim_8c_aa1fe0b9371befabef6c41ba73470774a}{cimag}(y);
+178     c = \hyperlink{prim_8c_a4a236b24c0197821e3489a35a72079ab}{creal}(z);
+179     d = \hyperlink{prim_8c_aa1fe0b9371befabef6c41ba73470774a}{cimag}(z);
+180 
+181     q = c * c + d * d;
+182     v = a * c + b * d;
+183     x = b * c - a * d;
+184 
+185     w = \hyperlink{prim_8c_a980e6e049f7902b05fc9eb5614b07a5c}{cpack}(v / q, x / q);
+186     \textcolor{keywordflow}{return} w;
+187 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=194pt]{prim_8c_afeb504d8fe89e8fc7dea6e6592af70f6_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{prim_8c_afeb504d8fe89e8fc7dea6e6592af70f6_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{prim.\+c@{prim.\+c}!cfloor@{cfloor}}
+\index{cfloor@{cfloor}!prim.\+c@{prim.\+c}}
+\subsubsection[{\texorpdfstring{cfloor(complex z)}{cfloor(complex z)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf complex} cfloor (
+\begin{DoxyParamCaption}
+\item[{{\bf complex}}]{z}
+\end{DoxyParamCaption}
+)}\hypertarget{prim_8c_a12886361ac7d752a46ec5cf3bdd0687e}{}\label{prim_8c_a12886361ac7d752a46ec5cf3bdd0687e}
+
+
+Floor value of complex number. 
+
+
+
+Definition at line 95 of file prim.\+c.
+
+
+
+References cimag(), cpack(), and creal().
+
+
+
+Referenced by Complex\+Number\+::\+Floor().
+
+
+\begin{DoxyCode}
+96 \{
+97     \hyperlink{unioncomplex}{complex} w;
+98     w = \hyperlink{prim_8c_a980e6e049f7902b05fc9eb5614b07a5c}{cpack}(\hyperlink{math_8h_a6de60a3e907dcf0bfe3ea8d64f1e8873}{floor}(\hyperlink{prim_8c_a4a236b24c0197821e3489a35a72079ab}{creal}(z)), \hyperlink{math_8h_a6de60a3e907dcf0bfe3ea8d64f1e8873}{floor}(\hyperlink{prim_8c_aa1fe0b9371befabef6c41ba73470774a}{cimag}(z)));
+99     \textcolor{keywordflow}{return} w;
+100 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=200pt]{prim_8c_a12886361ac7d752a46ec5cf3bdd0687e_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=275pt]{prim_8c_a12886361ac7d752a46ec5cf3bdd0687e_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{prim.\+c@{prim.\+c}!cimag@{cimag}}
+\index{cimag@{cimag}!prim.\+c@{prim.\+c}}
+\subsubsection[{\texorpdfstring{cimag(complex z)}{cimag(complex z)}}]{\setlength{\rightskip}{0pt plus 5cm}double cimag (
+\begin{DoxyParamCaption}
+\item[{{\bf complex}}]{z}
+\end{DoxyParamCaption}
+)}\hypertarget{prim_8c_aa1fe0b9371befabef6c41ba73470774a}{}\label{prim_8c_aa1fe0b9371befabef6c41ba73470774a}
+
+
+Imaginary part of complex number. 
+
+
+
+Definition at line 47 of file prim.\+c.
+
+
+
+Referenced by cabs(), cadd(), cceil(), ccos(), ccosh(), ccot(), ccoth(), ccsc(), ccsch(), cdiv(), cexp(), cfloor(), clog(), cmul(), cpow(), creci(), cround(), csec(), csech(), csgn(), csin(), csinh(), csqrt(), csub(), ctan(), ctanh(), ctrunc(), Complex\+Number\+::\+Get\+Default\+Precedence(), Complex\+Number\+::\+Get\+Imag\+Value(), Complex\+Number\+::\+Get\+Precedence(), Positional\+Numeral\+System\+::\+Get\+Text(), Decimal\+System\+::\+Get\+Text(), and Complex\+Number\+::\+Unary().
+
+
+\begin{DoxyCode}
+48 \{
+49     \textcolor{keywordflow}{return} (\hyperlink{prim_8c_af2ec11abad1ad66e6fab43ca0ec74740}{IMAG\_PART}(z));
+50 \}
+\end{DoxyCode}
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{prim_8c_aa1fe0b9371befabef6c41ba73470774a_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{prim.\+c@{prim.\+c}!cmul@{cmul}}
+\index{cmul@{cmul}!prim.\+c@{prim.\+c}}
+\subsubsection[{\texorpdfstring{cmul(complex y, complex z)}{cmul(complex y, complex z)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf complex} cmul (
+\begin{DoxyParamCaption}
+\item[{{\bf complex}}]{y, }
+\item[{{\bf complex}}]{z}
+\end{DoxyParamCaption}
+)}\hypertarget{prim_8c_a71e6e973f5b98b4c9140c0d374d9223d}{}\label{prim_8c_a71e6e973f5b98b4c9140c0d374d9223d}
+
+
+Multiplication of two complex numbers. 
+
+
+
+Definition at line 150 of file prim.\+c.
+
+
+
+References cimag(), cpack(), and creal().
+
+
+
+Referenced by cacos(), cacosh(), cacot(), cacoth(), cacsc(), cacsch(), casec(), casech(), casin(), casinh(), catan(), catanh(), ccbrt(), and Complex\+Number\+::\+Mul().
+
+
+\begin{DoxyCode}
+151 \{
+152     \hyperlink{unioncomplex}{complex} w;
+153     \textcolor{keywordtype}{double} a, b, c, d;
+154 
+155     \textcolor{comment}{// (a+bi)(c+di)}
+156     a = \hyperlink{prim_8c_a4a236b24c0197821e3489a35a72079ab}{creal}(y);
+157     b = \hyperlink{prim_8c_aa1fe0b9371befabef6c41ba73470774a}{cimag}(y);
+158     c = \hyperlink{prim_8c_a4a236b24c0197821e3489a35a72079ab}{creal}(z);
+159     d = \hyperlink{prim_8c_aa1fe0b9371befabef6c41ba73470774a}{cimag}(z);
+160 
+161     \textcolor{comment}{// (ac -bd) + (ad + bc)i}
+162     w = \hyperlink{prim_8c_a980e6e049f7902b05fc9eb5614b07a5c}{cpack}(a * c - b * d, a * d + b * c);
+163     \textcolor{keywordflow}{return} w;
+164 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=197pt]{prim_8c_a71e6e973f5b98b4c9140c0d374d9223d_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{prim_8c_a71e6e973f5b98b4c9140c0d374d9223d_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{prim.\+c@{prim.\+c}!conj@{conj}}
+\index{conj@{conj}!prim.\+c@{prim.\+c}}
+\subsubsection[{\texorpdfstring{conj(complex z)}{conj(complex z)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf complex} conj (
+\begin{DoxyParamCaption}
+\item[{{\bf complex}}]{z}
+\end{DoxyParamCaption}
+)}\hypertarget{prim_8c_a8d08797ad03191874e9943144da189be}{}\label{prim_8c_a8d08797ad03191874e9943144da189be}
+
+
+Definition at line 61 of file prim.\+c.
+
+
+
+References cpack().
+
+
+
+Referenced by creci().
+
+
+\begin{DoxyCode}
+62 \{
+63     \hyperlink{prim_8c_af2ec11abad1ad66e6fab43ca0ec74740}{IMAG\_PART}(z) = -\hyperlink{prim_8c_af2ec11abad1ad66e6fab43ca0ec74740}{IMAG\_PART}(z);
+64     \textcolor{keywordflow}{return} \hyperlink{prim_8c_a980e6e049f7902b05fc9eb5614b07a5c}{cpack}(\hyperlink{prim_8c_abe71472a1db694c210cd45a928ede69d}{REAL\_PART}(z), \hyperlink{prim_8c_af2ec11abad1ad66e6fab43ca0ec74740}{IMAG\_PART}(z));
+65 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=194pt]{prim_8c_a8d08797ad03191874e9943144da189be_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{prim_8c_a8d08797ad03191874e9943144da189be_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{prim.\+c@{prim.\+c}!cpack@{cpack}}
+\index{cpack@{cpack}!prim.\+c@{prim.\+c}}
+\subsubsection[{\texorpdfstring{cpack(double x, double y)}{cpack(double x, double y)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf complex} cpack (
+\begin{DoxyParamCaption}
+\item[{double}]{x, }
+\item[{double}]{y}
+\end{DoxyParamCaption}
+)}\hypertarget{prim_8c_a980e6e049f7902b05fc9eb5614b07a5c}{}\label{prim_8c_a980e6e049f7902b05fc9eb5614b07a5c}
+
+
+Pack two real numbers into a complex number. 
+
+
+
+Definition at line 71 of file prim.\+c.
+
+
+
+Referenced by Complex\+Number\+::\+Add(), cacos(), cacosh(), cacot(), cacoth(), cacsc(), cacsch(), cadd(), casec(), casech(), casin(), casinh(), catan(), catanh(), ccbrt(), cceil(), ccos(), ccosh(), ccot(), ccoth(), ccsc(), ccsch(), cdiv(), cexp(), cfloor(), clog(), clog10(), clogb(), cmul(), Complex\+Number\+::\+Complex\+Number(), conj(), cpow(), creci(), cround(), csec(), csech(), csin(), csinh(), csqrt(), csub(), ctan(), ctanh(), ctrunc(), Complex\+Number\+::\+Div(), Complex\+Number\+::\+Mul(), Complex\+Number\+::\+Raise(), Complex\+Number\+::\+Sub(), and Complex\+Number\+::\+Unary().
+
+
+\begin{DoxyCode}
+72 \{
+73     \hyperlink{unioncomplex}{complex} z;
+74 
+75     \hyperlink{prim_8c_abe71472a1db694c210cd45a928ede69d}{REAL\_PART}(z) = x;
+76     \hyperlink{prim_8c_af2ec11abad1ad66e6fab43ca0ec74740}{IMAG\_PART}(z) = y;
+77     \textcolor{keywordflow}{return} (z);
+78 \}
+\end{DoxyCode}
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{prim_8c_a980e6e049f7902b05fc9eb5614b07a5c_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{prim.\+c@{prim.\+c}!creal@{creal}}
+\index{creal@{creal}!prim.\+c@{prim.\+c}}
+\subsubsection[{\texorpdfstring{creal(complex z)}{creal(complex z)}}]{\setlength{\rightskip}{0pt plus 5cm}double creal (
+\begin{DoxyParamCaption}
+\item[{{\bf complex}}]{z}
+\end{DoxyParamCaption}
+)}\hypertarget{prim_8c_a4a236b24c0197821e3489a35a72079ab}{}\label{prim_8c_a4a236b24c0197821e3489a35a72079ab}
+
+
+Real part of complex number. 
+
+
+
+Definition at line 38 of file prim.\+c.
+
+
+
+Referenced by cabs(), cadd(), cceil(), ccos(), ccosh(), ccot(), ccoth(), ccsc(), ccsch(), cdiv(), cexp(), cfloor(), clog(), cmul(), cpow(), creci(), cround(), csec(), csech(), csgn(), csin(), csinh(), csqrt(), csub(), ctan(), ctanh(), ctrunc(), Complex\+Number\+::\+Get\+Default\+Precedence(), Complex\+Number\+::\+Get\+Integer\+Value(), Complex\+Number\+::\+Get\+Precedence(), Complex\+Number\+::\+Get\+Real\+Value(), Positional\+Numeral\+System\+::\+Get\+Text(), Decimal\+System\+::\+Get\+Text(), Complex\+Number\+::\+Pure\+Complex\+Value(), and Complex\+Number\+::\+Unary().
+
+
+\begin{DoxyCode}
+39 \{
+40     \textcolor{keywordflow}{return} (\hyperlink{prim_8c_abe71472a1db694c210cd45a928ede69d}{REAL\_PART}(z));
+41 \}
+\end{DoxyCode}
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{prim_8c_a4a236b24c0197821e3489a35a72079ab_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{prim.\+c@{prim.\+c}!creci@{creci}}
+\index{creci@{creci}!prim.\+c@{prim.\+c}}
+\subsubsection[{\texorpdfstring{creci(complex z)}{creci(complex z)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf complex} creci (
+\begin{DoxyParamCaption}
+\item[{{\bf complex}}]{z}
+\end{DoxyParamCaption}
+)}\hypertarget{prim_8c_a78cdeb0bf6f229c2be3065fc697dac68}{}\label{prim_8c_a78cdeb0bf6f229c2be3065fc697dac68}
+
+
+Reciprocal value of complex number. 
+
+
+
+Definition at line 193 of file prim.\+c.
+
+
+
+References cimag(), conj(), cpack(), and creal().
+
+
+
+Referenced by cacsch(), casec(), casech(), and Complex\+Number\+::\+Reciprocal().
+
+
+\begin{DoxyCode}
+194 \{
+195     \hyperlink{unioncomplex}{complex} w;
+196     \textcolor{keywordtype}{double} q, a, b;
+197 
+198     a = \hyperlink{prim_8c_a4a236b24c0197821e3489a35a72079ab}{creal}(z);
+199     b = \hyperlink{prim_8c_aa1fe0b9371befabef6c41ba73470774a}{cimag}(\hyperlink{prim_8c_a8d08797ad03191874e9943144da189be}{conj}(z));
+200     q = a * a + b * b;
+201     w = \hyperlink{prim_8c_a980e6e049f7902b05fc9eb5614b07a5c}{cpack}(a / q, b / q);
+202 
+203     \textcolor{keywordflow}{return} w;
+204 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=276pt]{prim_8c_a78cdeb0bf6f229c2be3065fc697dac68_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{prim_8c_a78cdeb0bf6f229c2be3065fc697dac68_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{prim.\+c@{prim.\+c}!cround@{cround}}
+\index{cround@{cround}!prim.\+c@{prim.\+c}}
+\subsubsection[{\texorpdfstring{cround(complex z)}{cround(complex z)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf complex} cround (
+\begin{DoxyParamCaption}
+\item[{{\bf complex}}]{z}
+\end{DoxyParamCaption}
+)}\hypertarget{prim_8c_a83b50ec7fc882d884c8b740026ab3ef5}{}\label{prim_8c_a83b50ec7fc882d884c8b740026ab3ef5}
+
+
+Division of two complex numbers. 
+
+
+
+Definition at line 117 of file prim.\+c.
+
+
+
+References cimag(), cpack(), creal(), and round().
+
+
+
+Referenced by Complex\+Number\+::\+Round().
+
+
+\begin{DoxyCode}
+118 \{
+119     \hyperlink{unioncomplex}{complex} w;
+120     w = \hyperlink{prim_8c_a980e6e049f7902b05fc9eb5614b07a5c}{cpack}(\hyperlink{math_8h_a7df19cf730447c00150569250a4b5e1d}{round}(\hyperlink{prim_8c_a4a236b24c0197821e3489a35a72079ab}{creal}(z)), \hyperlink{math_8h_a7df19cf730447c00150569250a4b5e1d}{round}(\hyperlink{prim_8c_aa1fe0b9371befabef6c41ba73470774a}{cimag}(z)));
+121     \textcolor{keywordflow}{return} w;
+122 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=205pt]{prim_8c_a83b50ec7fc882d884c8b740026ab3ef5_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=287pt]{prim_8c_a83b50ec7fc882d884c8b740026ab3ef5_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{prim.\+c@{prim.\+c}!csub@{csub}}
+\index{csub@{csub}!prim.\+c@{prim.\+c}}
+\subsubsection[{\texorpdfstring{csub(complex y, complex z)}{csub(complex y, complex z)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf complex} csub (
+\begin{DoxyParamCaption}
+\item[{{\bf complex}}]{y, }
+\item[{{\bf complex}}]{z}
+\end{DoxyParamCaption}
+)}\hypertarget{prim_8c_a9bebe3fb8e9e03dbe04a2ecedbe4a114}{}\label{prim_8c_a9bebe3fb8e9e03dbe04a2ecedbe4a114}
+
+
+Subtraction of two complex numbers. 
+
+
+
+Definition at line 139 of file prim.\+c.
+
+
+
+References cimag(), cpack(), and creal().
+
+
+
+Referenced by cacos(), cacosh(), cacot(), cacoth(), cacsc(), casec(), casech(), casin(), catan(), catanh(), and Complex\+Number\+::\+Sub().
+
+
+\begin{DoxyCode}
+140 \{
+141     \hyperlink{unioncomplex}{complex} w;
+142     w = \hyperlink{prim_8c_a980e6e049f7902b05fc9eb5614b07a5c}{cpack}(\hyperlink{prim_8c_a4a236b24c0197821e3489a35a72079ab}{creal}(y) - \hyperlink{prim_8c_a4a236b24c0197821e3489a35a72079ab}{creal}(z), \hyperlink{prim_8c_aa1fe0b9371befabef6c41ba73470774a}{cimag}(y) - \hyperlink{prim_8c_aa1fe0b9371befabef6c41ba73470774a}{cimag}(z));
+143     \textcolor{keywordflow}{return} w;
+144 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=197pt]{prim_8c_a9bebe3fb8e9e03dbe04a2ecedbe4a114_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{prim_8c_a9bebe3fb8e9e03dbe04a2ecedbe4a114_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{prim.\+c@{prim.\+c}!ctrunc@{ctrunc}}
+\index{ctrunc@{ctrunc}!prim.\+c@{prim.\+c}}
+\subsubsection[{\texorpdfstring{ctrunc(complex z)}{ctrunc(complex z)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf complex} ctrunc (
+\begin{DoxyParamCaption}
+\item[{{\bf complex}}]{z}
+\end{DoxyParamCaption}
+)}\hypertarget{prim_8c_aa760bac9acf6c215294e10188f3c9eb2}{}\label{prim_8c_aa760bac9acf6c215294e10188f3c9eb2}
+
+
+Truncated value of complex number. 
+
+
+
+Definition at line 84 of file prim.\+c.
+
+
+
+References cimag(), cpack(), creal(), and trunc().
+
+
+
+Referenced by Complex\+Number\+::\+Trunc().
+
+
+\begin{DoxyCode}
+85 \{
+86     \hyperlink{unioncomplex}{complex} w;
+87     w = \hyperlink{prim_8c_a980e6e049f7902b05fc9eb5614b07a5c}{cpack}(\hyperlink{math_8h_a82a151adfde56b28fa8a50355c4f2ff6}{trunc}(\hyperlink{prim_8c_a4a236b24c0197821e3489a35a72079ab}{creal}(z)), \hyperlink{math_8h_a82a151adfde56b28fa8a50355c4f2ff6}{trunc}(\hyperlink{prim_8c_aa1fe0b9371befabef6c41ba73470774a}{cimag}(z)));
+88     \textcolor{keywordflow}{return} w;
+89 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=203pt]{prim_8c_aa760bac9acf6c215294e10188f3c9eb2_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=281pt]{prim_8c_aa760bac9acf6c215294e10188f3c9eb2_icgraph}
+\end{center}
+\end{figure}
+
+

@@ -1,0 +1,40 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="language__amiga_8cpp">
+    <title>language_amiga.cpp File Reference</title>
+    <programlisting>#include &quot;clib.h&quot;</programlisting>
+    <programlisting>#include &quot;localize/lex.h&quot;</programlisting>
+    <programlisting>#include &quot;localize/help.h&quot;</programlisting>
+    <programlisting>#include &quot;localize/text.h&quot;</programlisting>
+    <programlisting>#include &quot;localize/ident.h&quot;</programlisting>
+    <programlisting>#include &quot;localize/kword.h&quot;</programlisting>
+    <programlisting>#include &quot;localize/tags.h&quot;</programlisting>
+    <programlisting>#include &quot;system/program.h&quot;</programlisting>
+    <programlisting>#include &quot;system/base/io.h&quot;</programlisting>
+    <programlisting>#include &quot;system/language_amiga.h&quot;</programlisting>
+<para>Include dependency diagram for language_amiga.cpp</para>
+<para>
+    <figure>
+        <title>Dependency diagram</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="language__amiga_8cpp__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+<para>Included by dependency diagram for language_amiga.cpp</para>
+<para>
+    <figure>
+        <title>Dependency diagram</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="language__amiga_8cpp__dep__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+    <simplesect>
+        <title>Detailed Description</title>
+    <para>Definition in file /home/carsten/amath/app/system/language_amiga.cpp</para>
+    </simplesect>
+</section>
