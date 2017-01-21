@@ -83,8 +83,13 @@ void* AllocMemSafe(size_t size)
         list->count = 0;
     }
 
+#if defined(__x86_64__) || defined(__aarch64__)
+    // Align to bytes of 8
+    allocsize = (size + 7) & ~0x07;
+#else
     // Align to bytes of 4
     allocsize = (size + 3) & ~0x03;
+#endif
 
     newblock = (struct MemoryBlock*)ALLOC_MEM(sizeof(struct MemoryBlock));
     if (!newblock) {
