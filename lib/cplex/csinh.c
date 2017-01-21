@@ -29,7 +29,7 @@
  * POSSIBILITY OF SUCH DAMAGE.
  *
  * The origin source code can be obtained from:
- * ftp.netbsd.org/pub/NetBSD/NetBSD-release-5/src/lib/libm/complex/csinh.c
+ * http://cvsweb.netbsd.org/bsdweb.cgi/src/lib/libm/complex/csinh.c?rev=1.1
  *
  */
 
