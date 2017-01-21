@@ -52,7 +52,7 @@
  * sizeof(word) MUST BE A POWER OF TWO
  * SO THAT wmask BELOW IS ALL ONES
  */
-#if defined(__x86_64__) || defined(__aarch64__)
+#if defined(__x86_64__) || defined(__aarch64__) || defined(_M_AMD64) || defined(_M_ARM64)
 typedef uint64_t word;
 #else
 typedef uint32_t word;

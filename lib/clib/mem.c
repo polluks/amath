@@ -83,7 +83,7 @@ void* AllocMemSafe(size_t size)
         list->count = 0;
     }
 
-#if defined(__x86_64__) || defined(__aarch64__)
+#if defined(__x86_64__) || defined(__aarch64__) || defined(_M_AMD64) || defined(_M_ARM64)
     // Align to bytes of 8
     allocsize = (size + 7) & ~0x07;
 #else
