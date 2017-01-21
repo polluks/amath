@@ -1,7 +1,10 @@
 Makefile
 *.kdev4
 *.o
+*.obj
 *.a
 amath
 amath-test
 catalog/flexcat
+*.vcxproj.user
+.vs
