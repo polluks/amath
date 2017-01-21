@@ -1,8 +1,0 @@
-<map id="app/system/filesystem_stdc.h" name="app/system/filesystem_stdc.h">
-<area shape="rect" id="node2" href="$clib_8h.html" title="C functions for manipulating strings and memory. " alt="" coords="28,95,81,121"/>
-<area shape="rect" id="node6" href="$charbuf_8h.html" title="String and character array logic. " alt="" coords="149,169,243,196"/>
-<area shape="rect" id="node8" href="$filesystem_8h.html" title="Generic file system calls. " alt="" coords="157,95,297,121"/>
-<area shape="rect" id="node3" href="$platform_8h.html" title="platform.h" alt="" coords="15,169,95,196"/>
-<area shape="rect" id="node5" href="$mem_8h.html" title="mem.h" alt="" coords="43,244,106,271"/>
-<area shape="rect" id="node7" href="$aengine_8h.html" title="ANSI Conole Engine. " alt="" coords="149,244,243,271"/>
-</map>

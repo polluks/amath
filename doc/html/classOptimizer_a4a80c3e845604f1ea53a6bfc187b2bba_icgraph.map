@@ -1,7 +1,0 @@
-<map id="Optimizer::GetTreeDepth" name="Optimizer::GetTreeDepth">
-<area shape="rect" id="node2" href="$classOptimizer.html#ad84621adb872b88ab7fdb3672064cfdb" title="Optimizer::BalanceTree" alt="" coords="221,31,380,57"/>
-<area shape="rect" id="node3" href="$classOptimizer.html#a5764ae0825fa43921f74d8b972e53b1e" title="Optimizer::Optimize" alt="" coords="428,31,567,57"/>
-<area shape="rect" id="node4" href="$classEvaluator.html#a40b30ece9d43c658877ee7f52aaec0a8" title="Evaluator::Evaluate" alt="" coords="615,31,751,57"/>
-<area shape="rect" id="node5" href="$classStandardProgram.html#a71dce9fdccf23ac49ba2362dcae744d3" title="StandardProgram::Run" alt="" coords="799,5,953,32"/>
-<area shape="rect" id="node6" href="$classStandardConsole.html#a9380023bba612b816b134589130bb254" title="StandardConsole::Run" alt="" coords="799,56,953,83"/>
-</map>

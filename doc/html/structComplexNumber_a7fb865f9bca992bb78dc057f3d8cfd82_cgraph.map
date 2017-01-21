@@ -1,9 +1,0 @@
-<map id="ComplexNumber::Absolute" name="ComplexNumber::Absolute">
-<area shape="rect" id="node2" href="$prim_8c.html#af6e02ba9d2566b52e3b0faf2d4ed973a" title="Absolute value of complex number. " alt="" coords="295,69,345,96"/>
-<area shape="rect" id="node7" href="$structRealNumber.html#a65924261adb775498f3b1b0f41f89091" title="RealNumber::RealNumber" alt="" coords="232,132,408,159"/>
-<area shape="rect" id="node3" href="$prim_8c.html#aa1fe0b9371befabef6c41ba73470774a" title="Imaginary part of complex number. " alt="" coords="489,5,546,32"/>
-<area shape="rect" id="node4" href="$prim_8c.html#a4a236b24c0197821e3489a35a72079ab" title="Real part of complex number. " alt="" coords="492,56,543,83"/>
-<area shape="rect" id="node5" href="$hypot_8c.html#a6d6a905f61d535f8454190433b8c0ea5" title="hypot" alt="" coords="490,107,545,133"/>
-<area shape="rect" id="node6" href="$sqrt_8c.html#ab87521a75ef827a85807f89a6c10629a" title="Square root function. " alt="" coords="627,107,671,133"/>
-<area shape="rect" id="node8" href="$structNumber.html#afd3c2f9b4b288e339f741a6e4ae54593" title="Number::Number" alt="" coords="456,157,579,184"/>
-</map>

@@ -1,8 +1,0 @@
-<map id="app/main/evaluator.h" name="app/main/evaluator.h">
-<area shape="rect" id="node2" href="$evaluator_8cpp.html" title="app/main/evaluator.cpp" alt="" coords="5,87,163,114"/>
-<area shape="rect" id="node3" href="$console__amiga_8cpp.html" title="app/system/console\l_amiga.cpp" alt="" coords="187,80,325,121"/>
-<area shape="rect" id="node4" href="$console__stdc_8cpp.html" title="app/system/console\l_stdc.cpp" alt="" coords="349,80,488,121"/>
-<area shape="rect" id="node5" href="$program__amiga_8cpp.html" title="app/system/program\l_amiga.cpp" alt="" coords="512,80,653,121"/>
-<area shape="rect" id="node6" href="$program__stdc_8cpp.html" title="app/system/program\l_stdc.cpp" alt="" coords="677,80,819,121"/>
-<area shape="rect" id="node7" href="$window__amiga_8cpp.html" title="app/system/window_amiga.cpp" alt="" coords="843,87,1048,114"/>
-</map>

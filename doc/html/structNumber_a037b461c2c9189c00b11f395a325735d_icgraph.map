@@ -1,7 +1,0 @@
-<map id="Number::PureComplexValue" name="Number::PureComplexValue">
-<area shape="rect" id="node2" href="$classOptimizer.html#a5b45089aff3c6568f3531faa9e701f21" title="Optimizer::ReduceValueNodes" alt="" coords="241,31,444,57"/>
-<area shape="rect" id="node3" href="$classOptimizer.html#a5764ae0825fa43921f74d8b972e53b1e" title="Optimizer::Optimize" alt="" coords="492,31,631,57"/>
-<area shape="rect" id="node4" href="$classEvaluator.html#a40b30ece9d43c658877ee7f52aaec0a8" title="Evaluator::Evaluate" alt="" coords="679,31,815,57"/>
-<area shape="rect" id="node5" href="$classStandardProgram.html#a71dce9fdccf23ac49ba2362dcae744d3" title="StandardProgram::Run" alt="" coords="863,5,1017,32"/>
-<area shape="rect" id="node6" href="$classStandardConsole.html#a9380023bba612b816b134589130bb254" title="StandardConsole::Run" alt="" coords="863,56,1017,83"/>
-</map>

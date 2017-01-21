@@ -1,7 +1,0 @@
-<map id="CubeRootNode::Create" name="CubeRootNode::Create">
-<area shape="rect" id="node2" href="$classCubeRootNode.html#a07dade3cd376ecd6cff809222234cedb" title="CubeRootNode::CubeRootNode" alt="" coords="212,5,423,32"/>
-<area shape="rect" id="node3" href="$classFunctionNode.html#a41cb7db0162ffbec0902bd8ff7ea435f" title="FunctionNode::FunctionNode" alt="" coords="471,5,663,32"/>
-<area shape="rect" id="node4" href="$classExpressionNode.html#adc8888de5329d356224c8a93f3ce2b75" title="ExpressionNode::ExpressionNode" alt="" coords="711,5,933,32"/>
-<area shape="rect" id="node5" href="$classSyntaxNode.html#ac94372d402f38a118b4e8cd20ba7e520" title="SyntaxNode::SyntaxNode" alt="" coords="981,5,1156,32"/>
-<area shape="rect" id="node6" href="$classCharBuffer.html#a4345e9a5114f5c0292e8f242f26e3a7b" title="Initialize without allocating memory. " alt="" coords="1204,5,1360,32"/>
-</map>

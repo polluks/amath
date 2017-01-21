@@ -1,6 +1,0 @@
-<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" href="$classProgram.html" title="Master control class. " alt="" coords="5,56,76,83"/>
-<area shape="rect" id="node2" href="$classAmigaProgram.html" title="AmigaProgram" alt="" coords="131,5,239,32"/>
-<area shape="rect" id="node3" href="$classStandardProgram.html" title="StandardProgram" alt="" coords="124,56,247,83"/>
-<area shape="rect" id="node4" href="$classTestProgram.html" title="Test control class. " alt="" coords="137,107,234,133"/>
-</map>

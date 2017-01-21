@@ -1,7 +1,0 @@
-<map id="app/lib/aengine.cpp" name="app/lib/aengine.cpp">
-<area shape="rect" id="node2" href="$clib_8h.html" title="C functions for manipulating strings and memory. " alt="" coords="19,80,72,107"/>
-<area shape="rect" id="node6" href="$charbuf_8h.html" title="String and character array logic. " alt="" coords="96,80,189,107"/>
-<area shape="rect" id="node7" href="$aengine_8h.html" title="ANSI Conole Engine. " alt="" coords="145,155,239,181"/>
-<area shape="rect" id="node3" href="$platform_8h.html" title="platform.h" alt="" coords="5,155,85,181"/>
-<area shape="rect" id="node5" href="$mem_8h.html" title="mem.h" alt="" coords="49,229,111,256"/>
-</map>

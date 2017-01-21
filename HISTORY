@@ -2,6 +2,13 @@
 ---                           amath change history                          ---
 -------------------------------------------------------------------------------
 
+v1.6.1 January 21 2017
+- Fixed language bug in Windows
+- Fixed potential memory bugs
+- Clang compiler support
+- Update copyright texts
+- New doxygen documentation
+
 v1.6.0 April 7 2016
 - Complete internal restructure of source code.
 - Fixed several minor bugs in calculation.

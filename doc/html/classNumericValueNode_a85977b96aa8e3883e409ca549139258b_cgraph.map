@@ -1,7 +1,0 @@
-<map id="NumericValueNode::NumericValueNode" name="NumericValueNode::NumericValueNode">
-<area shape="rect" id="node2" href="$classExpressionNode.html#a5d67579dd6c9777a18455a1360f29841" title="ExpressionNode::ExpressionNode" alt="" coords="245,5,468,32"/>
-<area shape="rect" id="node5" href="$structRealNumber.html#aa61264f519c95ec9b63ab94c352bcc67" title="RealNumber::RealNumber" alt="" coords="269,56,445,83"/>
-<area shape="rect" id="node3" href="$classSyntaxNode.html#ac94372d402f38a118b4e8cd20ba7e520" title="SyntaxNode::SyntaxNode" alt="" coords="516,5,691,32"/>
-<area shape="rect" id="node4" href="$classCharBuffer.html#a4345e9a5114f5c0292e8f242f26e3a7b" title="Initialize without allocating memory. " alt="" coords="739,5,895,32"/>
-<area shape="rect" id="node6" href="$structNumber.html#afd3c2f9b4b288e339f741a6e4ae54593" title="Number::Number" alt="" coords="542,56,665,83"/>
-</map>

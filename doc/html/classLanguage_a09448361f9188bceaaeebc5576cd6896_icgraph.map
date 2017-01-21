@@ -1,9 +1,0 @@
-<map id="Language::Language" name="Language::Language">
-<area shape="rect" id="node2" href="$classPosixLanguage.html#adec9134e7ac6b7519f9c0de05432a670" title="PosixLanguage::PosixLanguage" alt="" coords="196,5,404,32"/>
-<area shape="rect" id="node8" href="$classStandardLanguage.html#a0d604e2af2f2bf4dc4abbe7b18c05cea" title="StandardLanguage::Standard\lLanguage" alt="" coords="205,57,395,98"/>
-<area shape="rect" id="node3" href="$io_8cpp.html#a28bdfc208e3840f49d1af4a4196013e1" title="CreateLanguage" alt="" coords="452,35,569,61"/>
-<area shape="rect" id="node4" href="$classProgram.html#aaefaa0df08f3484476fc4d61e97acbdc" title="Program::Program" alt="" coords="617,35,745,61"/>
-<area shape="rect" id="node5" href="$classStandardProgram.html#a8f86a2eaf4593fd52dc4d13c40815f05" title="StandardProgram::Standard\lProgram" alt="" coords="793,27,976,69"/>
-<area shape="rect" id="node6" href="$io_8cpp.html#ab181236fa77671f15d24155b5655ef78" title="CreateProgram" alt="" coords="1024,35,1135,61"/>
-<area shape="rect" id="node7" href="$main_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title="main" alt="" coords="1183,35,1233,61"/>
-</map>
