@@ -30,8 +30,16 @@
  * SUCH DAMAGE.
  */
 
-//TODO
-//https://svnweb.freebsd.org/base/release/9.0.0/lib/libc/string/memset.c?revision=229286
+/**
+ * @file  memset.h
+ * @brief Fill block of memory with a constant value.
+ *
+ * Code originate from FreeBSD base, revision 229286.
+ *
+ * Browse at:
+ * https://svnweb.freebsd.org/base/head/lib/libc/string/memset.c?revision=229286
+ *
+ */
 
 #include "clib.h"
 
@@ -39,6 +47,9 @@
 #pragma GCC diagnostic ignored "-Wcast-align"
 #endif
 
+/**
+ * @brief Fill block of memory with a constant value.
+ */
 void MemSet(void *dst0, int c0, unsigned int length)
 {
     unsigned char *dst = (unsigned char*) dst0;

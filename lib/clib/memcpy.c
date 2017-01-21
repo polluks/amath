@@ -30,6 +30,17 @@
  * SUCH DAMAGE.
  */
 
+/**
+ * @file  memcpy.h
+ * @brief Copy a block of memory, handling overlap.
+ *
+ * Code originate from FreeBSD base, revision 229286.
+ *
+ * Browse at:
+ * https://svnweb.freebsd.org/base/head/lib/libc/string/bcopy.c?revision=229286
+ *
+ */
+
 #include "clib.h"
 
 #if __GNUC__ > 2
@@ -52,10 +63,6 @@ typedef int word; // "word" used for optimal copy speed
 
 /**
  * @brief Copy a block of memory, handling overlap.
- *
- * Original file can be found at:
- * https://svnweb.freebsd.org/base/release/9.0.0/lib/libc/string/bcopy.c?revision=229286
- *
  */
 void MemCopy(void *destination, const void *source, unsigned int length)
 {
