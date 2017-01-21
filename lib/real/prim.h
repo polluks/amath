@@ -80,7 +80,7 @@ int __kernel_rem_pio2(double *x, double *y, int e0, int nx, int prec, const int 
 #define __IEEE_BIG_ENDIAN
 #endif
 
-#if defined(ARMCPU) || defined(__arm__) || defined(_M_ARM)
+#if defined(ARMCPU) || defined(__aarch64__) || defined(__arm__) || defined(_M_ARM)
 #define __IEEE_LITTLE_ENDIAN
 #endif
 
