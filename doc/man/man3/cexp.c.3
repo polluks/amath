@@ -1,0 +1,62 @@
+.TH "lib/cplex/cexp.c" 3 "Sat Jan 21 2017" "Version 1.6.1" "amath" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+lib/cplex/cexp.c \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'prim\&.h'\fP
+.br
+\fC#include 'math\&.h'\fP
+.br
+\fC#include 'complex\&.h'\fP
+.br
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBcomplex\fP \fBcexp\fP (\fBcomplex\fP z)"
+.br
+.RI "\fIReturns e to the power of a complex number\&. \fP"
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "\fBcomplex\fP cexp (\fBcomplex\fP z)"
+
+.PP
+Returns e to the power of a complex number\&. 
+.PP
+\fBVersion:\fP
+.RS 4
+1\&.1 
+.RE
+.PP
+\fBDate:\fP
+.RS 4
+2007/08/20 
+.RE
+.PP
+
+.PP
+Definition at line 46 of file cexp\&.c\&.
+.PP
+References cimag(), cos(), cpack(), creal(), exp(), and sin()\&.
+.PP
+Referenced by ccbrt()\&.
+.PP
+.nf
+47 {
+48     complex w;
+49     double r, x, y;
+50     x = creal(z);
+51     y = cimag(z);
+52     r = exp(x);
+53     w = cpack(r * cos(y), r * sin(y));
+54     return w;
+55 }
+.fi
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for amath from the source code\&.

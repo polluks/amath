@@ -1,0 +1,82 @@
+<map id="SyntaxNode" name="SyntaxNode">
+<area shape="rect" id="node2" href="$classErrorNode.html" title="Represents an error message encapsulated in a syntax tree. " alt="" coords="181,2083,262,2109"/>
+<area shape="rect" id="node3" href="$classExpressionNode.html" title="Base class for all nodes related to mathematical expressions. " alt="" coords="162,2133,281,2160"/>
+<area shape="rect" id="node56" href="$classStatementBlockNode.html" title="A sequence of statements in a syntax tree. " alt="" coords="148,2184,295,2211"/>
+<area shape="rect" id="node57" href="$classStatementNode.html" title="Base class for all statements in a syntax tree. " alt="" coords="165,2843,278,2869"/>
+<area shape="rect" id="node4" href="$classAbsoluteNode.html" title="AbsoluteNode" alt="" coords="371,892,475,919"/>
+<area shape="rect" id="node5" href="$classFunctionNode.html" title="Represents a mathematical function in a syntax tree. " alt="" coords="371,943,474,969"/>
+<area shape="rect" id="node42" href="$classNumericOperator.html" title="NumericOperator" alt="" coords="362,1981,483,2008"/>
+<area shape="rect" id="node49" href="$classNumericValueNode.html" title="Use of a numeric value in a syntax tree. " alt="" coords="355,2133,490,2160"/>
+<area shape="rect" id="node53" href="$classUnaryNode.html" title="UnaryNode" alt="" coords="379,2184,467,2211"/>
+<area shape="rect" id="node54" href="$classVariableNode.html" title="Use of a variable in a syntax tree. " alt="" coords="373,2235,473,2261"/>
+<area shape="rect" id="node6" href="$classAbsoluteFunctionNode.html" title="AbsoluteFunctionNode" alt="" coords="571,5,725,32"/>
+<area shape="rect" id="node7" href="$classArcCosecantNode.html" title="ArcCosecantNode" alt="" coords="583,56,713,83"/>
+<area shape="rect" id="node8" href="$classArcCosineNode.html" title="ArcCosineNode" alt="" coords="591,107,705,133"/>
+<area shape="rect" id="node9" href="$classArcCotangentNode.html" title="ArcCotangentNode" alt="" coords="581,157,715,184"/>
+<area shape="rect" id="node10" href="$classArcSecantNode.html" title="ArcSecantNode" alt="" coords="591,208,705,235"/>
+<area shape="rect" id="node11" href="$classArcSineNode.html" title="ArcSineNode" alt="" coords="599,259,697,285"/>
+<area shape="rect" id="node12" href="$classArcTangentNode.html" title="ArcTangentNode" alt="" coords="588,309,708,336"/>
+<area shape="rect" id="node13" href="$classBinaryLogNode.html" title="BinaryLogNode" alt="" coords="593,360,703,387"/>
+<area shape="rect" id="node14" href="$classCeilingNode.html" title="CeilingNode" alt="" coords="601,411,695,437"/>
+<area shape="rect" id="node15" href="$classCosecantNode.html" title="CosecantNode" alt="" coords="593,461,703,488"/>
+<area shape="rect" id="node16" href="$classCosineNode.html" title="CosineNode" alt="" coords="601,512,695,539"/>
+<area shape="rect" id="node17" href="$classCotangentNode.html" title="CotangentNode" alt="" coords="591,563,705,589"/>
+<area shape="rect" id="node18" href="$classCubeRootNode.html" title="CubeRootNode" alt="" coords="592,613,704,640"/>
+<area shape="rect" id="node19" href="$classFloorNode.html" title="FloorNode" alt="" coords="607,664,689,691"/>
+<area shape="rect" id="node20" href="$classHyperbolicArcCosecantNode.html" title="HyperbolicArcCosecantNode" alt="" coords="553,715,743,741"/>
+<area shape="rect" id="node21" href="$classHyperbolicArccosineNode.html" title="HyperbolicArccosineNode" alt="" coords="561,765,735,792"/>
+<area shape="rect" id="node22" href="$classHyperbolicArcCotangentNode.html" title="HyperbolicArcCotangentNode" alt="" coords="551,816,745,843"/>
+<area shape="rect" id="node23" href="$classHyperbolicArcSecantNode.html" title="HyperbolicArcSecantNode" alt="" coords="560,867,736,893"/>
+<area shape="rect" id="node24" href="$classHyperbolicArcsineNode.html" title="HyperbolicArcsineNode" alt="" coords="569,917,727,944"/>
+<area shape="rect" id="node25" href="$classHyperbolicArctangentNode.html" title="HyperbolicArctangentNode" alt="" coords="559,968,737,995"/>
+<area shape="rect" id="node26" href="$classHyperbolicCosecantNode.html" title="HyperbolicCosecantNode" alt="" coords="563,1019,733,1045"/>
+<area shape="rect" id="node27" href="$classHyperbolicCosineNode.html" title="HyperbolicCosineNode" alt="" coords="570,1069,726,1096"/>
+<area shape="rect" id="node28" href="$classHyperbolicCotangentNode.html" title="HyperbolicCotangentNode" alt="" coords="561,1120,735,1147"/>
+<area shape="rect" id="node29" href="$classHyperbolicSecantNode.html" title="HyperbolicSecantNode" alt="" coords="570,1171,726,1197"/>
+<area shape="rect" id="node30" href="$classHyperbolicSineNode.html" title="HyperbolicSineNode" alt="" coords="577,1221,719,1248"/>
+<area shape="rect" id="node31" href="$classHyperbolicTangentNode.html" title="HyperbolicTangentNode" alt="" coords="567,1272,729,1299"/>
+<area shape="rect" id="node32" href="$classLnRootNode.html" title="LnRootNode" alt="" coords="601,1323,695,1349"/>
+<area shape="rect" id="node33" href="$classLogNode.html" title="LogNode" alt="" coords="611,1373,685,1400"/>
+<area shape="rect" id="node34" href="$classRoundNode.html" title="A rounding function in a syntax tree. " alt="" coords="603,1424,693,1451"/>
+<area shape="rect" id="node35" href="$classSecantNode.html" title="SecantNode" alt="" coords="601,1475,695,1501"/>
+<area shape="rect" id="node36" href="$classSignumNode.html" title="A signum function in a syntax tree. " alt="" coords="599,1525,697,1552"/>
+<area shape="rect" id="node37" href="$classSineNode.html" title="SineNode" alt="" coords="609,1576,687,1603"/>
+<area shape="rect" id="node38" href="$classSquareRootNode.html" title="SquareRootNode" alt="" coords="587,1627,709,1653"/>
+<area shape="rect" id="node39" href="$classTangentNode.html" title="TangentNode" alt="" coords="598,1677,698,1704"/>
+<area shape="rect" id="node40" href="$classTruncNode.html" title="A truncation function in a syntax tree. " alt="" coords="605,1728,691,1755"/>
+<area shape="rect" id="node41" href="$classUserFunctionNode.html" title="An expression node able to compute a function value. " alt="" coords="583,1779,713,1805"/>
+<area shape="rect" id="node43" href="$classAdditionNode.html" title="AdditionNode" alt="" coords="598,1829,698,1856"/>
+<area shape="rect" id="node44" href="$classAssignmentNode.html" title="AssignmentNode" alt="" coords="587,1880,709,1907"/>
+<area shape="rect" id="node45" href="$classDivisionNode.html" title="DivisionNode" alt="" coords="598,1931,698,1957"/>
+<area shape="rect" id="node46" href="$classMultiplicationNode.html" title="MultiplicationNode" alt="" coords="583,1981,713,2008"/>
+<area shape="rect" id="node47" href="$classPowerNode.html" title="PowerNode" alt="" coords="603,2032,693,2059"/>
+<area shape="rect" id="node48" href="$classSubtractionNode.html" title="SubtractionNode" alt="" coords="589,2083,707,2109"/>
+<area shape="rect" id="node50" href="$classComplexiNode.html" title="Use of the square root of &#45;2 in a syntax tree. " alt="" coords="594,2133,702,2160"/>
+<area shape="rect" id="node51" href="$classEulersNumberNode.html" title="Use of Eulers number in a syntax tree. " alt="" coords="580,2184,716,2211"/>
+<area shape="rect" id="node52" href="$classPiNode.html" title="Use of PI in a syntax tree. " alt="" coords="615,2235,681,2261"/>
+<area shape="rect" id="node55" href="$classInsVariableNode.html" title="Use of last result in a syntax tree. " alt="" coords="589,2285,707,2312"/>
+<area shape="rect" id="node58" href="$classClearStatement.html" title="Clear the console window. " alt="" coords="366,2285,479,2312"/>
+<area shape="rect" id="node59" href="$classDeleteStatement.html" title="Delete variable or function. " alt="" coords="363,2336,483,2363"/>
+<area shape="rect" id="node60" href="$classDigitsStatement.html" title="Set number of significant digits to show. " alt="" coords="365,2387,481,2413"/>
+<area shape="rect" id="node61" href="$classDrawStatement.html" title="DrawStatement" alt="" coords="366,2437,479,2464"/>
+<area shape="rect" id="node62" href="$classEmptyStatement.html" title="An empty statement. " alt="" coords="363,2488,483,2515"/>
+<area shape="rect" id="node63" href="$classEvalStatement.html" title="Evaluate arithmetic expression. " alt="" coords="369,2539,477,2565"/>
+<area shape="rect" id="node64" href="$classExecuteStatement.html" title="ExecuteStatement" alt="" coords="357,2589,488,2616"/>
+<area shape="rect" id="node65" href="$classExitStatement.html" title="Exit program. " alt="" coords="370,2640,475,2667"/>
+<area shape="rect" id="node66" href="$classFunctionDefinitionNode.html" title="A syntax node able to define a user defined function. " alt="" coords="343,2691,502,2717"/>
+<area shape="rect" id="node67" href="$classHelpStatement.html" title="Logic related to the help statement. " alt="" coords="368,2741,477,2768"/>
+<area shape="rect" id="node68" href="$classInputStatement.html" title="Change numeral input system. " alt="" coords="367,2792,478,2819"/>
+<area shape="rect" id="node69" href="$classListFunctionsStatement.html" title="A syntax node able to list all user defined functions. " alt="" coords="343,2843,503,2869"/>
+<area shape="rect" id="node70" href="$classListStatement.html" title="ListStatement" alt="" coords="371,2893,474,2920"/>
+<area shape="rect" id="node71" href="$classListVariablesStatement.html" title="Statement to list all user defined variables. " alt="" coords="344,2944,501,2971"/>
+<area shape="rect" id="node72" href="$classLoadStatement.html" title="LoadStatement" alt="" coords="367,2995,478,3021"/>
+<area shape="rect" id="node73" href="$classMemoryStatement.html" title="Show memory usage. " alt="" coords="358,3045,487,3072"/>
+<area shape="rect" id="node74" href="$classOutputStatement.html" title="Change numeral output system. " alt="" coords="362,3096,483,3123"/>
+<area shape="rect" id="node75" href="$classPlotStatement.html" title="PlotStatement" alt="" coords="370,3147,475,3173"/>
+<area shape="rect" id="node76" href="$classPrefsStatement.html" title="Load or save preferences. " alt="" coords="366,3197,479,3224"/>
+<area shape="rect" id="node77" href="$classPromptStatement.html" title="Set prompt string. " alt="" coords="361,3248,485,3275"/>
+<area shape="rect" id="node78" href="$classSaveStatement.html" title="SaveStatement" alt="" coords="367,3299,479,3325"/>
+<area shape="rect" id="node79" href="$classShowStatement.html" title="ShowStatement" alt="" coords="365,3349,480,3376"/>
+<area shape="rect" id="node80" href="$classSilentStatement.html" title="Mutes the output of another statement. " alt="" coords="365,3400,480,3427"/>
+<area shape="rect" id="node81" href="$classVersionStatement.html" title="Show version string. " alt="" coords="359,3451,486,3477"/>
+</map>

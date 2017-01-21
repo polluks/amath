@@ -1,0 +1,19 @@
+<map id="ComplexNumber::HypArcCosecant" name="ComplexNumber::HypArcCosecant">
+<area shape="rect" id="node2" href="$cacsch_8c.html#a1a3241a96a0225c9ef3113f5e5c48acf" title="Inverse hyperbolic cosecant of complex number. " alt="" coords="363,300,427,327"/>
+<area shape="rect" id="node17" href="$structComplexNumber.html#a0d89581ead93385331befcef51698693" title="ComplexNumber::ComplexNumber" alt="" coords="281,427,508,454"/>
+<area shape="rect" id="node3" href="$prim_8c.html#aa334a54c40e3eeb301f2a510a7675070" title="Addition of two complex numbers. " alt="" coords="729,250,779,276"/>
+<area shape="rect" id="node5" href="$prim_8c.html#a980e6e049f7902b05fc9eb5614b07a5c" title="Pack two real numbers into a complex number. " alt="" coords="829,148,887,175"/>
+<area shape="rect" id="node7" href="$clog_8c.html#a888b8eb5ccc46411e68f6d7b99035888" title="Natural logarithm of a complex number. " alt="" coords="594,452,641,479"/>
+<area shape="rect" id="node13" href="$prim_8c.html#a71e6e973f5b98b4c9140c0d374d9223d" title="Multiplication of two complex numbers. " alt="" coords="729,300,779,327"/>
+<area shape="rect" id="node14" href="$prim_8c.html#a78cdeb0bf6f229c2be3065fc697dac68" title="Reciprocal value of complex number. " alt="" coords="592,98,643,124"/>
+<area shape="rect" id="node16" href="$csqrt_8c.html#afe5b814a44414f20d0f98fe974737edd" title="Square root of complex number. " alt="" coords="592,402,643,428"/>
+<area shape="rect" id="node4" href="$prim_8c.html#aa1fe0b9371befabef6c41ba73470774a" title="Imaginary part of complex number. " alt="" coords="829,452,887,479"/>
+<area shape="rect" id="node6" href="$prim_8c.html#a4a236b24c0197821e3489a35a72079ab" title="Real part of complex number. " alt="" coords="833,351,883,378"/>
+<area shape="rect" id="node8" href="$atan2_8c.html#a349377202ca14f79eb335b1a421fe4d8" title="atan2" alt="" coords="727,706,781,732"/>
+<area shape="rect" id="node10" href="$prim_8c.html#af6e02ba9d2566b52e3b0faf2d4ed973a" title="Absolute value of complex number. " alt="" coords="729,554,779,580"/>
+<area shape="rect" id="node9" href="$atan_8c.html#a1e2f8f6d64eaa95131bc63fee34970ea" title="Inverse trigonometric tangent function. " alt="" coords="835,706,881,732"/>
+<area shape="rect" id="node11" href="$hypot_8c.html#a6d6a905f61d535f8454190433b8c0ea5" title="hypot" alt="" coords="831,554,885,580"/>
+<area shape="rect" id="node12" href="$sqrt_8c.html#ab87521a75ef827a85807f89a6c10629a" title="Square root function. " alt="" coords="935,579,979,606"/>
+<area shape="rect" id="node15" href="$prim_8c.html#a8d08797ad03191874e9943144da189be" title="conj" alt="" coords="731,47,777,74"/>
+<area shape="rect" id="node18" href="$structNumber.html#afd3c2f9b4b288e339f741a6e4ae54593" title="Number::Number" alt="" coords="556,503,679,530"/>
+</map>

@@ -1,0 +1,51 @@
+.TH "lib/cplex/csgn.c" 3 "Sat Jan 21 2017" "Version 1.6.1" "amath" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+lib/cplex/csgn.c \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'prim\&.h'\fP
+.br
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "double \fBcsgn\fP (\fBcomplex\fP z)"
+.br
+.RI "\fIComplex signum\&. \fP"
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "double csgn (\fBcomplex\fP z)"
+
+.PP
+Complex signum\&. More info is available at Wikipedia: 
+.br
+ http://en.wikipedia.org/wiki/Sign_function#Complex_signum 
+.PP
+Definition at line 36 of file csgn\&.c\&.
+.PP
+References cimag(), and creal()\&.
+.PP
+Referenced by ComplexNumber::Signum()\&.
+.PP
+.nf
+37 {
+38     double a = creal(z);
+39 
+40     if (a > 0\&.0) {
+41         return 1\&.0;
+42     } else if (a < 0\&.0) {
+43         return -1\&.0;
+44     } else {
+45         double b = cimag(z);
+46         return b > 0\&.0 ? 1\&.0 : b < 0\&.0 ? -1\&.0 : 0\&.0;
+47     }
+48 }
+.fi
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for amath from the source code\&.

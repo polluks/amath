@@ -1,0 +1,76 @@
+.TH "lib/cplex/csinh.c" 3 "Sat Jan 21 2017" "Version 1.6.1" "amath" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+lib/cplex/csinh.c \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'prim\&.h'\fP
+.br
+\fC#include 'math\&.h'\fP
+.br
+\fC#include 'complex\&.h'\fP
+.br
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBcomplex\fP \fBcsinh\fP (\fBcomplex\fP z)"
+.br
+.RI "\fIHyperbolic sine of a complex number\&. \fP"
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "\fBcomplex\fP csinh (\fBcomplex\fP z)"
+
+.PP
+Hyperbolic sine of a complex number\&. 
+.PP
+\fBVersion:\fP
+.RS 4
+1\&.1 
+.RE
+.PP
+\fBDate:\fP
+.RS 4
+2007/08/20
+.RE
+.PP
+Calculated as in Open Office:
+.br
+ https://wiki.openoffice.org/wiki/Documentation/How_Tos/Calc:_IMSINH_function 
+.PP
+.nf
+
+a+bi
+real = sinh(a) * cos(b)
+imag = cosh(a) * sin(b)
+.fi
+.PP
+ 
+.PP
+Definition at line 53 of file csinh\&.c\&.
+.PP
+References cchsh(), cimag(), cos(), cpack(), creal(), and sin()\&.
+.PP
+Referenced by ComplexNumber::HypSine()\&.
+.PP
+.nf
+54 {
+55     complex w;
+56     double a, b;
+57     double ch, sh;
+58 
+59     a = creal(z);
+60     b = cimag(z);
+61     cchsh(a, &ch, &sh);
+62     w = cpack(cos(b) * sh, sin(b) * ch);
+63 
+64     return w;
+65 }
+.fi
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for amath from the source code\&.

@@ -1,0 +1,288 @@
+.TH "app/localize/text.h" 3 "Sat Jan 21 2017" "Version 1.6.1" "amath" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+app/localize/text.h \- Static texts in amath\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'clib\&.h'\fP
+.br
+
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "struct \fBtextdef\fP"
+.br
+.in -1c
+.SS "Macros"
+
+.in +1c
+.ti -1c
+.RI "#define \fBINTROMSG\fP   \fBProgram\fP\->\fBLanguage\fP\->GetText(0)"
+.br
+.ti -1c
+.RI "#define \fBTXTLISTDIRHEADER\fP   \fBProgram\fP\->\fBLanguage\fP\->GetText(1)"
+.br
+.ti -1c
+.RI "#define \fBTXTLISTDIRTFILE\fP   \fBProgram\fP\->\fBLanguage\fP\->GetText(2)"
+.br
+.ti -1c
+.RI "#define \fBTXTLISTDIRTDIR\fP   \fBProgram\fP\->\fBLanguage\fP\->GetText(3)"
+.br
+.ti -1c
+.RI "#define \fBTXTLISTDIRTUNKNOWN\fP   \fBProgram\fP\->\fBLanguage\fP\->GetText(4)"
+.br
+.ti -1c
+.RI "#define \fBTXTMEMBLOCKS\fP   \fBProgram\fP\->\fBLanguage\fP\->GetText(5)"
+.br
+.ti -1c
+.RI "#define \fBTXTMEMSIZE\fP   \fBProgram\fP\->\fBLanguage\fP\->GetText(6)"
+.br
+.ti -1c
+.RI "#define \fBTXTMEMMAXSIZE\fP   \fBProgram\fP\->\fBLanguage\fP\->GetText(7)"
+.br
+.ti -1c
+.RI "#define \fBHELPNOHELP\fP   \fBProgram\fP\->\fBLanguage\fP\->GetText(8)"
+.br
+.ti -1c
+.RI "#define \fBHELPSYNTAX\fP   \fBProgram\fP\->\fBLanguage\fP\->GetText(9)"
+.br
+.ti -1c
+.RI "#define \fBHELPUERROR\fP   \fBProgram\fP\->\fBLanguage\fP\->GetText(10)"
+.br
+.ti -1c
+.RI "#define \fBHELPVARNDEF\fP   \fBProgram\fP\->\fBLanguage\fP\->GetText(11)"
+.br
+.ti -1c
+.RI "#define \fBHELPFUNNDEF\fP   \fBProgram\fP\->\fBLanguage\fP\->GetText(12)"
+.br
+.ti -1c
+.RI "#define \fBHELPFUNRDEF\fP   \fBProgram\fP\->\fBLanguage\fP\->GetText(13)"
+.br
+.ti -1c
+.RI "#define \fBHELPPNUMERA\fP   \fBProgram\fP\->\fBLanguage\fP\->GetText(14)"
+.br
+.ti -1c
+.RI "#define \fBHELPPDIGITS\fP   \fBProgram\fP\->\fBLanguage\fP\->GetText(15)"
+.br
+.ti -1c
+.RI "#define \fBHELPINPUSHOW\fP   \fBProgram\fP\->\fBLanguage\fP\->GetText(16)"
+.br
+.ti -1c
+.RI "#define \fBHELPOUTPSHOW\fP   \fBProgram\fP\->\fBLanguage\fP\->GetText(17)"
+.br
+.ti -1c
+.RI "#define \fBHELPINPUSETT\fP   \fBProgram\fP\->\fBLanguage\fP\->GetText(18)"
+.br
+.ti -1c
+.RI "#define \fBHELPOUTPSETT\fP   \fBProgram\fP\->\fBLanguage\fP\->GetText(19)"
+.br
+.ti -1c
+.RI "#define \fBHELPDIGISETT\fP   \fBProgram\fP\->\fBLanguage\fP\->GetText(20)"
+.br
+.ti -1c
+.RI "#define \fBHELPDIGISHOW\fP   \fBProgram\fP\->\fBLanguage\fP\->GetText(21)"
+.br
+.ti -1c
+.RI "#define \fBHELPVARSNDEF\fP   \fBProgram\fP\->\fBLanguage\fP\->GetText(22)"
+.br
+.ti -1c
+.RI "#define \fBHELPFUNCNDEF\fP   \fBProgram\fP\->\fBLanguage\fP\->GetText(23)"
+.br
+.ti -1c
+.RI "#define \fBHELPLOADSUCC\fP   \fBProgram\fP\->\fBLanguage\fP\->GetText(24)"
+.br
+.ti -1c
+.RI "#define \fBHELPSAVESUCC\fP   \fBProgram\fP\->\fBLanguage\fP\->GetText(25)"
+.br
+.ti -1c
+.RI "#define \fBHELPSAVEFAIL\fP   \fBProgram\fP\->\fBLanguage\fP\->GetText(26)"
+.br
+.ti -1c
+.RI "#define \fBHELPSAVENOTH\fP   \fBProgram\fP\->\fBLanguage\fP\->GetText(27)"
+.br
+.ti -1c
+.RI "#define \fBHELPPREFLOAD\fP   \fBProgram\fP\->\fBLanguage\fP\->GetText(28)"
+.br
+.ti -1c
+.RI "#define \fBHELPPREFNOLO\fP   \fBProgram\fP\->\fBLanguage\fP\->GetText(29)"
+.br
+.ti -1c
+.RI "#define \fBHELPPREFSAVE\fP   \fBProgram\fP\->\fBLanguage\fP\->GetText(30)"
+.br
+.ti -1c
+.RI "#define \fBHELPPREFNOSA\fP   \fBProgram\fP\->\fBLanguage\fP\->GetText(31)"
+.br
+.ti -1c
+.RI "#define \fBMSGNODIR\fP   \fBProgram\fP\->\fBLanguage\fP\->GetText(32)"
+.br
+.ti -1c
+.RI "#define \fBMSGNOFILE\fP   \fBProgram\fP\->\fBLanguage\fP\->GetText(33)"
+.br
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "static const \fBtextdef\fP \fBtextdefs\fP []"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Static texts in amath\&. 
+
+
+.PP
+Definition in file \fBtext\&.h\fP\&.
+.SH "Macro Definition Documentation"
+.PP 
+.SS "#define HELPDIGISETT   \fBProgram\fP\->\fBLanguage\fP\->GetText(20)"
+
+.PP
+Definition at line 61 of file text\&.h\&.
+.SS "#define HELPDIGISHOW   \fBProgram\fP\->\fBLanguage\fP\->GetText(21)"
+
+.PP
+Definition at line 62 of file text\&.h\&.
+.SS "#define HELPFUNCNDEF   \fBProgram\fP\->\fBLanguage\fP\->GetText(23)"
+
+.PP
+Definition at line 64 of file text\&.h\&.
+.SS "#define HELPFUNNDEF   \fBProgram\fP\->\fBLanguage\fP\->GetText(12)"
+
+.PP
+Definition at line 53 of file text\&.h\&.
+.SS "#define HELPFUNRDEF   \fBProgram\fP\->\fBLanguage\fP\->GetText(13)"
+
+.PP
+Definition at line 54 of file text\&.h\&.
+.SS "#define HELPINPUSETT   \fBProgram\fP\->\fBLanguage\fP\->GetText(18)"
+
+.PP
+Definition at line 59 of file text\&.h\&.
+.SS "#define HELPINPUSHOW   \fBProgram\fP\->\fBLanguage\fP\->GetText(16)"
+
+.PP
+Definition at line 57 of file text\&.h\&.
+.SS "#define HELPLOADSUCC   \fBProgram\fP\->\fBLanguage\fP\->GetText(24)"
+
+.PP
+Definition at line 65 of file text\&.h\&.
+.SS "#define HELPNOHELP   \fBProgram\fP\->\fBLanguage\fP\->GetText(8)"
+
+.PP
+Definition at line 49 of file text\&.h\&.
+.SS "#define HELPOUTPSETT   \fBProgram\fP\->\fBLanguage\fP\->GetText(19)"
+
+.PP
+Definition at line 60 of file text\&.h\&.
+.SS "#define HELPOUTPSHOW   \fBProgram\fP\->\fBLanguage\fP\->GetText(17)"
+
+.PP
+Definition at line 58 of file text\&.h\&.
+.SS "#define HELPPDIGITS   \fBProgram\fP\->\fBLanguage\fP\->GetText(15)"
+
+.PP
+Definition at line 56 of file text\&.h\&.
+.SS "#define HELPPNUMERA   \fBProgram\fP\->\fBLanguage\fP\->GetText(14)"
+
+.PP
+Definition at line 55 of file text\&.h\&.
+.SS "#define HELPPREFLOAD   \fBProgram\fP\->\fBLanguage\fP\->GetText(28)"
+
+.PP
+Definition at line 69 of file text\&.h\&.
+.SS "#define HELPPREFNOLO   \fBProgram\fP\->\fBLanguage\fP\->GetText(29)"
+
+.PP
+Definition at line 70 of file text\&.h\&.
+.SS "#define HELPPREFNOSA   \fBProgram\fP\->\fBLanguage\fP\->GetText(31)"
+
+.PP
+Definition at line 72 of file text\&.h\&.
+.SS "#define HELPPREFSAVE   \fBProgram\fP\->\fBLanguage\fP\->GetText(30)"
+
+.PP
+Definition at line 71 of file text\&.h\&.
+.SS "#define HELPSAVEFAIL   \fBProgram\fP\->\fBLanguage\fP\->GetText(26)"
+
+.PP
+Definition at line 67 of file text\&.h\&.
+.SS "#define HELPSAVENOTH   \fBProgram\fP\->\fBLanguage\fP\->GetText(27)"
+
+.PP
+Definition at line 68 of file text\&.h\&.
+.SS "#define HELPSAVESUCC   \fBProgram\fP\->\fBLanguage\fP\->GetText(25)"
+
+.PP
+Definition at line 66 of file text\&.h\&.
+.SS "#define HELPSYNTAX   \fBProgram\fP\->\fBLanguage\fP\->GetText(9)"
+
+.PP
+Definition at line 50 of file text\&.h\&.
+.SS "#define HELPUERROR   \fBProgram\fP\->\fBLanguage\fP\->GetText(10)"
+
+.PP
+Definition at line 51 of file text\&.h\&.
+.SS "#define HELPVARNDEF   \fBProgram\fP\->\fBLanguage\fP\->GetText(11)"
+
+.PP
+Definition at line 52 of file text\&.h\&.
+.SS "#define HELPVARSNDEF   \fBProgram\fP\->\fBLanguage\fP\->GetText(22)"
+
+.PP
+Definition at line 63 of file text\&.h\&.
+.SS "#define INTROMSG   \fBProgram\fP\->\fBLanguage\fP\->GetText(0)"
+
+.PP
+Definition at line 41 of file text\&.h\&.
+.SS "#define MSGNODIR   \fBProgram\fP\->\fBLanguage\fP\->GetText(32)"
+
+.PP
+Definition at line 73 of file text\&.h\&.
+.SS "#define MSGNOFILE   \fBProgram\fP\->\fBLanguage\fP\->GetText(33)"
+
+.PP
+Definition at line 74 of file text\&.h\&.
+.SS "#define TXTLISTDIRHEADER   \fBProgram\fP\->\fBLanguage\fP\->GetText(1)"
+
+.PP
+Definition at line 42 of file text\&.h\&.
+.SS "#define TXTLISTDIRTDIR   \fBProgram\fP\->\fBLanguage\fP\->GetText(3)"
+
+.PP
+Definition at line 44 of file text\&.h\&.
+.SS "#define TXTLISTDIRTFILE   \fBProgram\fP\->\fBLanguage\fP\->GetText(2)"
+
+.PP
+Definition at line 43 of file text\&.h\&.
+.SS "#define TXTLISTDIRTUNKNOWN   \fBProgram\fP\->\fBLanguage\fP\->GetText(4)"
+
+.PP
+Definition at line 45 of file text\&.h\&.
+.SS "#define TXTMEMBLOCKS   \fBProgram\fP\->\fBLanguage\fP\->GetText(5)"
+
+.PP
+Definition at line 46 of file text\&.h\&.
+.SS "#define TXTMEMMAXSIZE   \fBProgram\fP\->\fBLanguage\fP\->GetText(7)"
+
+.PP
+Definition at line 48 of file text\&.h\&.
+.SS "#define TXTMEMSIZE   \fBProgram\fP\->\fBLanguage\fP\->GetText(6)"
+
+.PP
+Definition at line 47 of file text\&.h\&.
+.SH "Variable Documentation"
+.PP 
+.SS "const \fBtextdef\fP textdefs[]\fC [static]\fP"
+
+.PP
+Definition at line 81 of file text\&.h\&.
+.PP
+Referenced by Language::GetText(), and Language::Language()\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for amath from the source code\&.

@@ -1,0 +1,101 @@
+.TH "HyperbolicSecantNode" 3 "Sat Jan 21 2017" "Version 1.6.1" "amath" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+HyperbolicSecantNode \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <functions\&.h>\fP
+.PP
+Inherits \fBFunctionNode\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBHyperbolicSecantNode\fP (\fBExpressionNode\fP *\fBexpression\fP)"
+.br
+.ti -1c
+.RI "\fBNumber\fP * \fBEvaluate\fP ()"
+.br
+.in -1c
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static \fBFunctionNode\fP * \fBCreate\fP (\fBExpressionNode\fP *\fBexpression\fP)"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "char * \fBGetNodeText\fP ()"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Detailed Description"
+.PP 
+Definition at line 500 of file functions\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "HyperbolicSecantNode::HyperbolicSecantNode (\fBExpressionNode\fP * expression)"
+
+.PP
+Definition at line 1057 of file functions\&.cpp\&.
+.PP
+References FunctionNode::FunctionNode()\&.
+.PP
+Referenced by Create()\&.
+.PP
+.nf
+1057                                                                      :
+1058     FunctionNode(expression) { }
+.fi
+.SH "Member Function Documentation"
+.PP 
+.SS "\fBFunctionNode\fP * HyperbolicSecantNode::Create (\fBExpressionNode\fP * expression)\fC [static]\fP"
+
+.PP
+Definition at line 1060 of file functions\&.cpp\&.
+.PP
+References HyperbolicSecantNode()\&.
+.PP
+.nf
+1061 {
+1062     return new HyperbolicSecantNode(expression);
+1063 }
+.fi
+.SS "\fBNumber\fP * HyperbolicSecantNode::Evaluate ()\fC [virtual]\fP"
+
+.PP
+Implements \fBExpressionNode\fP\&.
+.PP
+Definition at line 1065 of file functions\&.cpp\&.
+.PP
+References ExpressionNode::Evaluate(), FunctionNode::expression, Number::HypSecant(), and ExpressionNode::result\&.
+.PP
+.nf
+1066 {
+1067     result = expression->Evaluate()->HypSecant();
+1068     return result;
+1069 }
+.fi
+.SS "char * HyperbolicSecantNode::GetNodeText ()\fC [protected]\fP, \fC [virtual]\fP"
+
+.PP
+Implements \fBExpressionNode\fP\&.
+.PP
+Definition at line 1071 of file functions\&.cpp\&.
+.PP
+.nf
+1072 {
+1073     return (char*)"sech";
+1074 }
+.fi
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for amath from the source code\&.

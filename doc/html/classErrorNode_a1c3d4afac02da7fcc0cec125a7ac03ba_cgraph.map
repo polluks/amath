@@ -1,0 +1,11 @@
+<map id="ErrorNode::ErrorNode" name="ErrorNode::ErrorNode">
+<area shape="rect" id="node2" href="$alloccpy_8c.html#a5bed05c70cb17e541fee570b5dc32e1a" title="Allocate memory and copy a string into the array. " alt="" coords="237,5,342,32"/>
+<area shape="rect" id="node3" href="$classCharBuffer.html#a045b38735f7b3007c1b98d3d7b7feafe" title="CharBuffer::Append" alt="" coords="221,56,358,83"/>
+<area shape="rect" id="node4" href="$classCharBuffer.html#a4345e9a5114f5c0292e8f242f26e3a7b" title="Initialize without allocating memory. " alt="" coords="425,259,581,285"/>
+<area shape="rect" id="node5" href="$classCharBuffer.html#ad1907009b5ad136692b989fa96bf2f7e" title="Ensure a memory block of speficied size is allocated. " alt="" coords="209,107,369,133"/>
+<area shape="rect" id="node7" href="$classCharBuffer.html#a7dfd3feaaf80f318ba44efe15b1ec44b" title="CharBuffer::GetString" alt="" coords="215,208,363,235"/>
+<area shape="rect" id="node8" href="$classErrorNode.html#a2e51822b04905fc867d13546af61abb8" title="ErrorNode::StrCopyVisible" alt="" coords="201,259,377,285"/>
+<area shape="rect" id="node9" href="$clib_8h.html#a67ec56eb98b49515d35005a5b3bf9a32" title="Get the length of a null terminated string. " alt="" coords="259,309,319,336"/>
+<area shape="rect" id="node10" href="$classSyntaxNode.html#ac94372d402f38a118b4e8cd20ba7e520" title="SyntaxNode::SyntaxNode" alt="" coords="202,360,377,387"/>
+<area shape="rect" id="node6" href="$memcpy_8c.html#a09b7e057c69b9ddd4b481fc746997a7d" title="Copy a block of memory, handling overlap. " alt="" coords="462,107,545,133"/>
+</map>

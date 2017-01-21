@@ -1,0 +1,7 @@
+<map id="ErrorNode::ErrorNode" name="ErrorNode::ErrorNode">
+<area shape="rect" id="node2" href="$alloccpy_8c.html#a5bed05c70cb17e541fee570b5dc32e1a" title="Allocate memory and copy a string into the array. " alt="" coords="237,5,342,32"/>
+<area shape="rect" id="node3" href="$classErrorNode.html#a2e51822b04905fc867d13546af61abb8" title="ErrorNode::StrCopyVisible" alt="" coords="201,56,377,83"/>
+<area shape="rect" id="node4" href="$clib_8h.html#a67ec56eb98b49515d35005a5b3bf9a32" title="Get the length of a null terminated string. " alt="" coords="259,107,319,133"/>
+<area shape="rect" id="node5" href="$classSyntaxNode.html#ac94372d402f38a118b4e8cd20ba7e520" title="SyntaxNode::SyntaxNode" alt="" coords="202,157,377,184"/>
+<area shape="rect" id="node6" href="$classCharBuffer.html#a4345e9a5114f5c0292e8f242f26e3a7b" title="Initialize without allocating memory. " alt="" coords="425,157,581,184"/>
+</map>

@@ -1,0 +1,4 @@
+<map id="StandardConsole" name="StandardConsole">
+<area shape="rect" id="node2" href="$classConsoleBase.html" title="Abstract base class encapsulating console logic. " alt="" coords="17,80,117,107"/>
+<area shape="rect" id="node3" href="$classThreadBase.html" title="Abstract base class encapsulating runable component. " alt="" coords="21,5,113,32"/>
+</map>

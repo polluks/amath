@@ -1,0 +1,12 @@
+<map id="clog10" name="clog10">
+<area shape="rect" id="node2" href="$prim_8c.html#afeb504d8fe89e8fc7dea6e6592af70f6" title="Division of two complex numbers. " alt="" coords="113,20,160,47"/>
+<area shape="rect" id="node5" href="$prim_8c.html#a980e6e049f7902b05fc9eb5614b07a5c" title="Pack two real numbers into a complex number. " alt="" coords="208,71,265,97"/>
+<area shape="rect" id="node6" href="$clog_8c.html#a888b8eb5ccc46411e68f6d7b99035888" title="Natural logarithm of a complex number. " alt="" coords="113,147,160,173"/>
+<area shape="rect" id="node3" href="$prim_8c.html#a4a236b24c0197821e3489a35a72079ab" title="Real part of complex number. " alt="" coords="317,121,367,148"/>
+<area shape="rect" id="node4" href="$prim_8c.html#aa1fe0b9371befabef6c41ba73470774a" title="Imaginary part of complex number. " alt="" coords="313,172,371,199"/>
+<area shape="rect" id="node7" href="$atan2_8c.html#a349377202ca14f79eb335b1a421fe4d8" title="atan2" alt="" coords="209,273,264,300"/>
+<area shape="rect" id="node9" href="$prim_8c.html#af6e02ba9d2566b52e3b0faf2d4ed973a" title="Absolute value of complex number. " alt="" coords="211,172,262,199"/>
+<area shape="rect" id="node8" href="$atan_8c.html#a1e2f8f6d64eaa95131bc63fee34970ea" title="Inverse trigonometric tangent function. " alt="" coords="319,273,365,300"/>
+<area shape="rect" id="node10" href="$hypot_8c.html#a6d6a905f61d535f8454190433b8c0ea5" title="hypot" alt="" coords="315,223,369,249"/>
+<area shape="rect" id="node11" href="$sqrt_8c.html#ab87521a75ef827a85807f89a6c10629a" title="Square root function. " alt="" coords="419,223,463,249"/>
+</map>

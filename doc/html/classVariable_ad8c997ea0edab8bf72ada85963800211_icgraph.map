@@ -1,0 +1,9 @@
+<map id="Variable::AssignValue" name="Variable::AssignValue">
+<area shape="rect" id="node2" href="$classVariableNode.html#a8134cc1627925a0327e6c62eef810cdc" title="VariableNode::AssignValue" alt="" coords="209,5,390,32"/>
+<area shape="rect" id="node4" href="$classUserFunctionNode.html#a2efcbf95707c44463017973693c891db" title="UserFunctionNode::Evaluate" alt="" coords="204,56,395,83"/>
+<area shape="rect" id="node5" href="$classGrid.html#a9e403482f403a28e3a152b435526829b" title="Grid::FunctionValue" alt="" coords="231,107,368,133"/>
+<area shape="rect" id="node3" href="$classAssignmentNode.html#ae6b454a04ec82aa97fa8e09c3752deb6" title="AssignmentNode::Evaluate" alt="" coords="447,5,628,32"/>
+<area shape="rect" id="node6" href="$classGrid.html#a430009c581ae9350ec310f63c1b89140" title="Grid::GetScreenCoordinates" alt="" coords="444,81,631,108"/>
+<area shape="rect" id="node8" href="$classGrid.html#ace057fbd3a401428399996eec3cb1577" title="Grid::SetFunctionBounderies" alt="" coords="443,132,632,159"/>
+<area shape="rect" id="node7" href="$classPlotStatement.html#a653ff64c2c918b3209be426f7c243459" title="PlotStatement::Execute" alt="" coords="680,107,841,133"/>
+</map>

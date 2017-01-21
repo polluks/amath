@@ -1,0 +1,75 @@
+.TH "ThreadBase" 3 "Sat Jan 21 2017" "Version 1.6.1" "amath" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+ThreadBase \- Abstract base class encapsulating runable component\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <thread\&.h>\fP
+.PP
+Inherited by \fBConsoleBase\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBThreadBase\fP ()"
+.br
+.ti -1c
+.RI "virtual \fB~ThreadBase\fP ()"
+.br
+.ti -1c
+.RI "virtual void \fBRun\fP ()=0"
+.br
+.ti -1c
+.RI "virtual const char * \fBGetName\fP ()=0"
+.br
+.ti -1c
+.RI "virtual int \fBGetStackSize\fP ()=0"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Abstract base class encapsulating runable component\&. 
+.PP
+Definition at line 40 of file thread\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "ThreadBase::ThreadBase ()\fC [inline]\fP"
+
+.PP
+Definition at line 42 of file thread\&.h\&.
+.PP
+.nf
+42 { }
+.fi
+.SS "virtual ThreadBase::~ThreadBase ()\fC [inline]\fP, \fC [virtual]\fP"
+
+.PP
+Definition at line 43 of file thread\&.h\&.
+.PP
+.nf
+43 { }
+.fi
+.SH "Member Function Documentation"
+.PP 
+.SS "virtual const char* ThreadBase::GetName ()\fC [pure virtual]\fP"
+
+.PP
+Implemented in \fBConsoleBase\fP\&.
+.SS "virtual int ThreadBase::GetStackSize ()\fC [pure virtual]\fP"
+
+.PP
+Implemented in \fBStandardConsole\fP\&.
+.SS "virtual void ThreadBase::Run ()\fC [pure virtual]\fP"
+
+.PP
+Implemented in \fBStandardConsole\fP\&.
+.PP
+Referenced by StandardProgram::Run(), and StandardTask::Start()\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for amath from the source code\&.

@@ -1,0 +1,101 @@
+.TH "SineNode" 3 "Sat Jan 21 2017" "Version 1.6.1" "amath" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SineNode \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <functions\&.h>\fP
+.PP
+Inherits \fBFunctionNode\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBSineNode\fP (\fBExpressionNode\fP *\fBexpression\fP)"
+.br
+.ti -1c
+.RI "\fBNumber\fP * \fBEvaluate\fP ()"
+.br
+.in -1c
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static \fBFunctionNode\fP * \fBCreate\fP (\fBExpressionNode\fP *\fBexpression\fP)"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "char * \fBGetNodeText\fP ()"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Detailed Description"
+.PP 
+Definition at line 332 of file functions\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "SineNode::SineNode (\fBExpressionNode\fP * expression)"
+
+.PP
+Definition at line 744 of file functions\&.cpp\&.
+.PP
+References FunctionNode::FunctionNode()\&.
+.PP
+Referenced by Create()\&.
+.PP
+.nf
+744                                              :
+745     FunctionNode(expression) { }
+.fi
+.SH "Member Function Documentation"
+.PP 
+.SS "\fBFunctionNode\fP * SineNode::Create (\fBExpressionNode\fP * expression)\fC [static]\fP"
+
+.PP
+Definition at line 747 of file functions\&.cpp\&.
+.PP
+References SineNode()\&.
+.PP
+.nf
+748 {
+749     return new SineNode(expression);
+750 }
+.fi
+.SS "\fBNumber\fP * SineNode::Evaluate ()\fC [virtual]\fP"
+
+.PP
+Implements \fBExpressionNode\fP\&.
+.PP
+Definition at line 752 of file functions\&.cpp\&.
+.PP
+References ExpressionNode::Evaluate(), FunctionNode::expression, ExpressionNode::result, and Number::Sine()\&.
+.PP
+.nf
+753 {
+754     result = expression->Evaluate()->Sine();
+755     return result;
+756 }
+.fi
+.SS "char * SineNode::GetNodeText ()\fC [protected]\fP, \fC [virtual]\fP"
+
+.PP
+Implements \fBExpressionNode\fP\&.
+.PP
+Definition at line 758 of file functions\&.cpp\&.
+.PP
+.nf
+759 {
+760     return (char*)"sin";
+761 }
+.fi
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for amath from the source code\&.

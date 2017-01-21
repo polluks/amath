@@ -1,0 +1,52 @@
+<map id="app/localize/lex.h" name="app/localize/lex.h">
+<area shape="rect" id="node2" href="$lexer_8cpp.html" title="app/main/lexer.cpp" alt="" coords="2835,625,2967,651"/>
+<area shape="rect" id="node3" href="$token_8h.html" title="Application logic tied to Token. " alt="" coords="491,80,613,107"/>
+<area shape="rect" id="node24" href="$language__amiga_8cpp.html" title="app/system/language\l_amiga.cpp" alt="" coords="3227,707,3373,748"/>
+<area shape="rect" id="node25" href="$language__posix_8cpp.html" title="app/system/language\l_posix.cpp" alt="" coords="3816,707,3963,748"/>
+<area shape="rect" id="node26" href="$language__stdc_8cpp.html" title="app/system/language\l_stdc.cpp" alt="" coords="3563,707,3709,748"/>
+<area shape="rect" id="node37" href="$language_8cpp.html" title="app/system/language.cpp" alt="" coords="3572,625,3743,651"/>
+<area shape="rect" id="node46" href="$kword_8h.html" title="Keywords used by lexer. " alt="" coords="3461,379,3603,405"/>
+<area shape="rect" id="node47" href="$language_8h.html" title="app/system/language.h" alt="" coords="3084,453,3241,480"/>
+<area shape="rect" id="node48" href="$language__stdc_8h.html" title="app/system/language\l_stdc.h" alt="" coords="2923,528,3069,569"/>
+<area shape="rect" id="node49" href="$language__amiga_8h.html" title="app/system/language\l_amiga.h" alt="" coords="3144,528,3291,569"/>
+<area shape="rect" id="node50" href="$language__posix_8h.html" title="app/system/language\l_posix.h" alt="" coords="3416,528,3563,569"/>
+<area shape="rect" id="node51" href="$help_8h.html" title="Help texts for statement. " alt="" coords="3280,379,3411,405"/>
+<area shape="rect" id="node4" href="$evaluator_8h.html" title="TODO: Comment. " alt="" coords="267,625,410,651"/>
+<area shape="rect" id="node11" href="$statements_8h.html" title="General statement nodes. " alt="" coords="389,155,544,181"/>
+<area shape="rect" id="node44" href="$lexer_8h.html" title="Application logic tied to Lexer. " alt="" coords="202,453,321,480"/>
+<area shape="rect" id="node45" href="$token_8cpp.html" title="app/main/token.cpp" alt="" coords="568,155,704,181"/>
+<area shape="rect" id="node5" href="$evaluator_8cpp.html" title="app/main/evaluator.cpp" alt="" coords="120,714,277,741"/>
+<area shape="rect" id="node6" href="$console__amiga_8cpp.html" title="app/system/console\l_amiga.cpp" alt="" coords="301,707,440,748"/>
+<area shape="rect" id="node7" href="$console__stdc_8cpp.html" title="app/system/console\l_stdc.cpp" alt="" coords="464,707,603,748"/>
+<area shape="rect" id="node8" href="$program__amiga_8cpp.html" title="app/system/program\l_amiga.cpp" alt="" coords="883,707,1024,748"/>
+<area shape="rect" id="node9" href="$program__stdc_8cpp.html" title="app/system/program\l_stdc.cpp" alt="" coords="2041,707,2183,748"/>
+<area shape="rect" id="node10" href="$window__amiga_8cpp.html" title="app/system/window_amiga.cpp" alt="" coords="1048,714,1253,741"/>
+<area shape="rect" id="node12" href="$functions_8h.html" title="Application logic tied to functions. " alt="" coords="803,229,946,256"/>
+<area shape="rect" id="node29" href="$parser_8cpp.html" title="app/main/parser.cpp" alt="" coords="434,625,574,651"/>
+<area shape="rect" id="node30" href="$statements_8cpp.html" title="app/main/statements.cpp" alt="" coords="650,625,819,651"/>
+<area shape="rect" id="node41" href="$parser_8h.html" title="Application logic tied to Parser. " alt="" coords="295,535,422,562"/>
+<area shape="rect" id="node13" href="$fgrid_8cpp.html" title="app/lib/fgrid.cpp" alt="" coords="820,379,935,405"/>
+<area shape="rect" id="node14" href="$fgrid_8h.html" title="Function grid used with graphs. " alt="" coords="938,304,1038,331"/>
+<area shape="rect" id="node15" href="$graph_8h.html" title="Logic related to graph of functions. " alt="" coords="1113,379,1250,405"/>
+<area shape="rect" id="node17" href="$program_8h.html" title="Program flow and global states. " alt="" coords="1869,535,2021,562"/>
+<area shape="rect" id="node18" href="$functions_8cpp.html" title="app/main/functions.cpp" alt="" coords="844,625,1001,651"/>
+<area shape="rect" id="node27" href="$program_8cpp.html" title="app/system/program.cpp" alt="" coords="1278,714,1445,741"/>
+<area shape="rect" id="node38" href="$graph__amiga_8h.html" title="app/system/graph_amiga.h" alt="" coords="871,453,1049,480"/>
+<area shape="rect" id="node39" href="$graph__amiga_8cpp.html" title="app/system/graph_amiga.cpp" alt="" coords="769,535,962,562"/>
+<area shape="rect" id="node43" href="$functiondefs_8h.html" title="Function defitions for math logic. " alt="" coords="650,304,811,331"/>
+<area shape="rect" id="node16" href="$graphlist_8h.html" title="Memory maintainance for function of graphs. " alt="" coords="1351,453,1489,480"/>
+<area shape="rect" id="node40" href="$graph_8cpp.html" title="app/system/graph.cpp" alt="" coords="1074,453,1225,480"/>
+<area shape="rect" id="node20" href="$graphlist_8cpp.html" title="app/main/graphlist.cpp" alt="" coords="1469,714,1622,741"/>
+<area shape="rect" id="node19" href="$io_8h.html" title="System dependent I/O. " alt="" coords="1623,625,1769,651"/>
+<area shape="rect" id="node21" href="$main_8cpp.html" title="app/main.cpp" alt="" coords="1646,714,1746,741"/>
+<area shape="rect" id="node22" href="$io_8cpp.html" title="app/system/base/io.cpp" alt="" coords="2641,714,2802,741"/>
+<area shape="rect" id="node28" href="$nodes_8cpp.html" title="app/main/nodes.cpp" alt="" coords="1793,625,1932,651"/>
+<area shape="rect" id="node31" href="$values_8cpp.html" title="app/main/values.cpp" alt="" coords="1957,625,2099,651"/>
+<area shape="rect" id="node32" href="$program__stdc_8h.html" title="app/system/program\l_stdc.h" alt="" coords="2123,617,2264,659"/>
+<area shape="rect" id="node33" href="$program__amiga_8h.html" title="app/system/program\l_amiga.h" alt="" coords="1407,617,1548,659"/>
+<area shape="rect" id="node34" href="$program__test_8h.html" title="Tests for arithmetic logic. " alt="" coords="2467,617,2608,659"/>
+<area shape="rect" id="node35" href="$filesystem__amiga_8cpp.html" title="app/system/filesystem\l_amiga.cpp" alt="" coords="2288,617,2443,659"/>
+<area shape="rect" id="node36" href="$filesystem__stdc_8cpp.html" title="app/system/filesystem\l_stdc.cpp" alt="" coords="1228,617,1383,659"/>
+<area shape="rect" id="node23" href="$console_8cpp.html" title="app/system/console.cpp" alt="" coords="1770,714,1934,741"/>
+<area shape="rect" id="node42" href="$preferences_8cpp.html" title="app/system/preferences.cpp" alt="" coords="5,625,192,651"/>
+</map>

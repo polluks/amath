@@ -1,0 +1,71 @@
+.TH "lib/cplex/ccsch.c" 3 "Sat Jan 21 2017" "Version 1.6.1" "amath" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+lib/cplex/ccsch.c \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'prim\&.h'\fP
+.br
+\fC#include 'math\&.h'\fP
+.br
+\fC#include 'complex\&.h'\fP
+.br
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBcomplex\fP \fBccsch\fP (\fBcomplex\fP z)"
+.br
+.RI "\fIHyperbolic secant of a complex number\&. \fP"
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "\fBcomplex\fP ccsch (\fBcomplex\fP z)"
+
+.PP
+Hyperbolic secant of a complex number\&. Calculated as in Open Office: 
+.PP
+.nf
+
+a+bi
+            2\&.0 * sinh(a) * cos(b)
+real  = ------------------------------
+         cosh(2\&.0 * a) - cos(2\&.0 * b)
+.fi
+.PP
+.PP
+.PP
+.nf
+        -2\&.0 * cosh(2\&.0 * a) * sin(b)
+imag  = ------------------------------
+         cosh(2\&.0 * a) - cos(2\&.0 * b)
+.fi
+.PP
+ https://wiki.openoffice.org/wiki/Documentation/How_Tos/Calc:_IMCSCH_function 
+.PP
+Definition at line 47 of file ccsch\&.c\&.
+.PP
+References cimag(), cos(), cosh(), cpack(), creal(), sin(), and sinh()\&.
+.PP
+Referenced by ComplexNumber::HypCosecant()\&.
+.PP
+.nf
+48 {
+49     complex w;
+50     double a, b;
+51     double d;
+52 
+53     a = creal(z);
+54     b = cimag(z);
+55     d = cosh(2\&.0 * a) - cos(2\&.0 * b);
+56     w = cpack((2\&.0 * sinh(a) * cos(b) / d), (-2\&.0 * cosh(a) * sin(b) / d));
+57 
+58     return w;
+59 }
+.fi
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for amath from the source code\&.

@@ -1,0 +1,100 @@
+.TH "InsVariableNode" 3 "Sat Jan 21 2017" "Version 1.6.1" "amath" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+InsVariableNode \- Use of last result in a syntax tree\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <values\&.h>\fP
+.PP
+Inherits \fBVariableNode\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBInsVariableNode\fP ()"
+.br
+.ti -1c
+.RI "char * \fBGetText\fP ()"
+.br
+.ti -1c
+.RI "\fBNumber\fP * \fBEvaluate\fP ()"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "char * \fBGetNodeText\fP ()"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Detailed Description"
+.PP 
+Use of last result in a syntax tree\&. 
+.PP
+Definition at line 128 of file values\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "InsVariableNode::InsVariableNode ()"
+
+.PP
+Definition at line 318 of file values\&.cpp\&.
+.PP
+References VariableNode::VariableNode()\&.
+.PP
+Referenced by Parser::ParseAtomic()\&.
+.PP
+.nf
+318                                  :
+319     VariableNode(NOMEM)
+320 { }
+.fi
+.SH "Member Function Documentation"
+.PP 
+.SS "\fBNumber\fP * InsVariableNode::Evaluate ()\fC [virtual]\fP"
+
+.PP
+Reimplemented from \fBVariableNode\fP\&.
+.PP
+Definition at line 322 of file values\&.cpp\&.
+.PP
+References Program::GetLastResult()\&.
+.PP
+.nf
+323 {
+324     return Program->GetLastResult();
+325 }
+.fi
+.SS "char * InsVariableNode::GetNodeText ()\fC [protected]\fP, \fC [virtual]\fP"
+
+.PP
+Reimplemented from \fBVariableNode\fP\&.
+.PP
+Definition at line 332 of file values\&.cpp\&.
+.PP
+.nf
+333 {
+334     return (char*)"ins";
+335 }
+.fi
+.SS "char * InsVariableNode::GetText ()\fC [virtual]\fP"
+
+.PP
+Reimplemented from \fBVariableNode\fP\&.
+.PP
+Definition at line 327 of file values\&.cpp\&.
+.PP
+.nf
+328 {
+329     return (char*)"ins";
+330 }
+.fi
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for amath from the source code\&.

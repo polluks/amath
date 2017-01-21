@@ -1,0 +1,84 @@
+.TH "EulersNumberNode" 3 "Sat Jan 21 2017" "Version 1.6.1" "amath" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+EulersNumberNode \- Use of Eulers number in a syntax tree\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <values\&.h>\fP
+.PP
+Inherits \fBNumericValueNode\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBEulersNumberNode\fP ()"
+.br
+.ti -1c
+.RI "\fBReductionType\fP \fBGetReductionType\fP ()"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "char * \fBGetNodeText\fP ()"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Detailed Description"
+.PP 
+Use of Eulers number in a syntax tree\&. 
+.PP
+Definition at line 165 of file values\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "EulersNumberNode::EulersNumberNode ()"
+
+.PP
+Definition at line 400 of file values\&.cpp\&.
+.PP
+References NumericValueNode::NumericValueNode(), and RealNumber::RealNumber()\&.
+.PP
+Referenced by Parser::ParseAtomic()\&.
+.PP
+.nf
+400                                    :
+401     NumericValueNode(new RealNumber(EULERS)) { }
+.fi
+.SH "Member Function Documentation"
+.PP 
+.SS "char * EulersNumberNode::GetNodeText ()\fC [protected]\fP, \fC [virtual]\fP"
+
+.PP
+Reimplemented from \fBNumericValueNode\fP\&.
+.PP
+Definition at line 408 of file values\&.cpp\&.
+.PP
+.nf
+409 {
+410     return (char*)"e";
+411 }
+.fi
+.SS "\fBReductionType\fP EulersNumberNode::GetReductionType ()\fC [virtual]\fP"
+
+.PP
+Reimplemented from \fBNumericValueNode\fP\&.
+.PP
+Definition at line 403 of file values\&.cpp\&.
+.PP
+References nonereduc\&.
+.PP
+.nf
+404 {
+405     return nonereduc;
+406 }
+.fi
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for amath from the source code\&.

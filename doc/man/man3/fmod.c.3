@@ -1,0 +1,188 @@
+.TH "lib/real/fmod.c" 3 "Sat Jan 21 2017" "Version 1.6.1" "amath" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+lib/real/fmod.c \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'prim\&.h'\fP
+.br
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "double \fBfmod\fP (double x, double y)"
+.br
+.RI "\fIReturn x mod y in exact arithmetic\&. \fP"
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "static const double \fBone\fP = 1\&.0"
+.br
+.ti -1c
+.RI "static const double \fBZero\fP [] = {0\&.0, \-0\&.0,}"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "double fmod (double x, double y)"
+
+.PP
+Return x mod y in exact arithmetic\&. 
+.PP
+\fBVersion:\fP
+.RS 4
+1\&.3 
+.RE
+.PP
+\fBDate:\fP
+.RS 4
+95/01/18
+.RE
+.PP
+Method: shift and subtract 
+.PP
+Definition at line 58 of file fmod\&.c\&.
+.PP
+References one, and Zero\&.
+.PP
+.nf
+59 {
+60     sword n,hx,hy,hz,ix,iy,sx,i;
+61     uword lx,ly,lz;
+62 
+63     EXTRACT_WORDS(hx,lx,x);
+64     EXTRACT_WORDS(hy,ly,y);
+65     sx = hx&0x80000000;     /* sign of x */
+66     hx ^=sx;        /* |x| */
+67     hy &= 0x7fffffff;   /* |y| */
+68 
+69     /* purge off exception values */
+70     if((hy|ly)==0||(hx>=0x7ff00000)||   /* y=0,or x not finite */
+71             ((hy|((ly|-ly)>>31))>0x7ff00000))   /* or y is NaN */
+72         return (x*y)/(x*y);
+73     if(hx<=hy) {
+74         if((hx<hy)||(lx<ly)) return x;  /* |x|<|y| return x */
+75         if(lx==ly)
+76             return Zero[(uword)sx>>31]; /* |x|=|y| return x*0*/
+77     }
+78 
+79     /* determine ix = ilogb(x) */
+80     if(hx<0x00100000) { /* subnormal x */
+81         if(hx==0) {
+82             for (ix = -1043, i=lx; i>0; i<<=1) ix -=1;
+83         } else {
+84             for (ix = -1022,i=(hx<<11); i>0; i<<=1) ix -=1;
+85         }
+86     } else ix = (hx>>20)-1023;
+87 
+88     /* determine iy = ilogb(y) */
+89     if(hy<0x00100000) { /* subnormal y */
+90         if(hy==0) {
+91             for (iy = -1043, i=ly; i>0; i<<=1) iy -=1;
+92         } else {
+93             for (iy = -1022,i=(hy<<11); i>0; i<<=1) iy -=1;
+94         }
+95     } else iy = (hy>>20)-1023;
+96 
+97     /* set up {hx,lx}, {hy,ly} and align y to x */
+98     if(ix >= -1022)
+99         hx = 0x00100000|(0x000fffff&hx);
+100     else {      /* subnormal x, shift x to normal */
+101         n = -1022-ix;
+102         if(n<=31) {
+103             hx = (hx<<n)|(lx>>(32-n));
+104             lx <<= n;
+105         } else {
+106             hx = lx<<(n-32);
+107             lx = 0;
+108         }
+109     }
+110     if(iy >= -1022)
+111         hy = 0x00100000|(0x000fffff&hy);
+112     else {      /* subnormal y, shift y to normal */
+113         n = -1022-iy;
+114         if(n<=31) {
+115             hy = (hy<<n)|(ly>>(32-n));
+116             ly <<= n;
+117         } else {
+118             hy = ly<<(n-32);
+119             ly = 0;
+120         }
+121     }
+122 
+123     /* fix point fmod */
+124     n = ix - iy;
+125     while(n--) {
+126         hz=hx-hy;
+127         lz=lx-ly;
+128         if(lx<ly) hz -= 1;
+129         if(hz<0) {
+130             hx = hx+hx+(lx>>31);
+131             lx = lx+lx;
+132         }
+133         else {
+134             if((hz|lz)==0)      /* return sign(x)*0 */
+135                 return Zero[(uword)sx>>31];
+136             hx = hz+hz+(lz>>31);
+137             lx = lz+lz;
+138         }
+139     }
+140     hz=hx-hy;
+141     lz=lx-ly;
+142     if(lx<ly) hz -= 1;
+143     if(hz>=0) {
+144         hx=hz;
+145         lx=lz;
+146     }
+147 
+148     /* convert back to floating value and restore the sign */
+149     if((hx|lx)==0)          /* return sign(x)*0 */
+150         return Zero[(unsigned)sx>>31];
+151     while(hx<0x00100000) {      /* normalize x */
+152         hx = hx+hx+(lx>>31);
+153         lx = lx+lx;
+154         iy -= 1;
+155     }
+156     if(iy>= -1022) {    /* normalize output */
+157         hx = ((hx-0x00100000)|((iy+1023)<<20));
+158         INSERT_WORDS(x,hx|sx,lx);
+159     } else {        /* subnormal output */
+160         n = -1022 - iy;
+161         if(n<=20) {
+162             lx = (lx>>n)|((uword)hx<<(32-n));
+163             hx >>= n;
+164         } else if (n<=31) {
+165             lx = (hx<<(32-n))|(lx>>n);
+166             hx = sx;
+167         } else {
+168             lx = hx>>(n-32);
+169             hx = sx;
+170         }
+171         INSERT_WORDS(x,hx|sx,lx);
+172         x *= one;       /* create necessary signal */
+173     }
+174     return x;       /* exact output */
+175 }
+.fi
+.SH "Variable Documentation"
+.PP 
+.SS "const double one = 1\&.0\fC [static]\fP"
+
+.PP
+Definition at line 50 of file fmod\&.c\&.
+.PP
+Referenced by fmod()\&.
+.SS "const double Zero[] = {0\&.0, \-0\&.0,}\fC [static]\fP"
+
+.PP
+Definition at line 50 of file fmod\&.c\&.
+.PP
+Referenced by fmod()\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for amath from the source code\&.

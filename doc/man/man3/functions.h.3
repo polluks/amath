@@ -1,0 +1,162 @@
+.TH "app/main/functions.h" 3 "Sat Jan 21 2017" "Version 1.6.1" "amath" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+app/main/functions.h \- Application logic tied to functions\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'main/nodes\&.h'\fP
+.br
+\fC#include 'main/values\&.h'\fP
+.br
+\fC#include 'main/statements\&.h'\fP
+.br
+
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "class \fBFunctionNode\fP"
+.br
+.RI "\fIRepresents a mathematical function in a syntax tree\&. \fP"
+.ti -1c
+.RI "class \fBFunctionList\fP"
+.br
+.RI "\fIA list of user defined functions\&. \fP"
+.ti -1c
+.RI "class \fBUserFunction\fP"
+.br
+.RI "\fIA user defined function\&. \fP"
+.ti -1c
+.RI "class \fBListFunctionsStatement\fP"
+.br
+.RI "\fIA syntax node able to list all user defined functions\&. \fP"
+.ti -1c
+.RI "class \fBFunctionDefinitionNode\fP"
+.br
+.RI "\fIA syntax node able to define a user defined function\&. \fP"
+.ti -1c
+.RI "class \fBUserFunctionNode\fP"
+.br
+.RI "\fIAn expression node able to compute a function value\&. \fP"
+.ti -1c
+.RI "class \fBAbsoluteFunctionNode\fP"
+.br
+.ti -1c
+.RI "class \fBSignumNode\fP"
+.br
+.RI "\fIA signum function in a syntax tree\&. \fP"
+.ti -1c
+.RI "class \fBRoundNode\fP"
+.br
+.RI "\fIA rounding function in a syntax tree\&. \fP"
+.ti -1c
+.RI "class \fBTruncNode\fP"
+.br
+.RI "\fIA truncation function in a syntax tree\&. \fP"
+.ti -1c
+.RI "class \fBFloorNode\fP"
+.br
+.ti -1c
+.RI "class \fBCeilingNode\fP"
+.br
+.ti -1c
+.RI "class \fBSquareRootNode\fP"
+.br
+.ti -1c
+.RI "class \fBCubeRootNode\fP"
+.br
+.ti -1c
+.RI "class \fBLogNode\fP"
+.br
+.ti -1c
+.RI "class \fBLnRootNode\fP"
+.br
+.ti -1c
+.RI "class \fBBinaryLogNode\fP"
+.br
+.ti -1c
+.RI "class \fBSineNode\fP"
+.br
+.ti -1c
+.RI "class \fBCosineNode\fP"
+.br
+.ti -1c
+.RI "class \fBTangentNode\fP"
+.br
+.ti -1c
+.RI "class \fBCotangentNode\fP"
+.br
+.ti -1c
+.RI "class \fBCosecantNode\fP"
+.br
+.ti -1c
+.RI "class \fBSecantNode\fP"
+.br
+.ti -1c
+.RI "class \fBArcSineNode\fP"
+.br
+.ti -1c
+.RI "class \fBArcCosineNode\fP"
+.br
+.ti -1c
+.RI "class \fBArcTangentNode\fP"
+.br
+.ti -1c
+.RI "class \fBArcCotangentNode\fP"
+.br
+.ti -1c
+.RI "class \fBArcCosecantNode\fP"
+.br
+.ti -1c
+.RI "class \fBArcSecantNode\fP"
+.br
+.ti -1c
+.RI "class \fBHyperbolicSineNode\fP"
+.br
+.ti -1c
+.RI "class \fBHyperbolicCosineNode\fP"
+.br
+.ti -1c
+.RI "class \fBHyperbolicTangentNode\fP"
+.br
+.ti -1c
+.RI "class \fBHyperbolicCotangentNode\fP"
+.br
+.ti -1c
+.RI "class \fBHyperbolicSecantNode\fP"
+.br
+.ti -1c
+.RI "class \fBHyperbolicCosecantNode\fP"
+.br
+.ti -1c
+.RI "class \fBHyperbolicArccosineNode\fP"
+.br
+.ti -1c
+.RI "class \fBHyperbolicArcsineNode\fP"
+.br
+.ti -1c
+.RI "class \fBHyperbolicArctangentNode\fP"
+.br
+.ti -1c
+.RI "class \fBHyperbolicArcCotangentNode\fP"
+.br
+.ti -1c
+.RI "class \fBHyperbolicArcCosecantNode\fP"
+.br
+.ti -1c
+.RI "class \fBHyperbolicArcSecantNode\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Application logic tied to functions\&. 
+
+
+.PP
+Definition in file \fBfunctions\&.h\fP\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for amath from the source code\&.

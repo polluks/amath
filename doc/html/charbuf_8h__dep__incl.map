@@ -1,0 +1,63 @@
+<map id="app/lib/charbuf.h" name="app/lib/charbuf.h">
+<area shape="rect" id="node2" href="$aengine_8cpp.html" title="app/lib/aengine.cpp" alt="" coords="5,80,140,107"/>
+<area shape="rect" id="node3" href="$charbuf_8cpp.html" title="app/lib/charbuf.cpp" alt="" coords="164,80,296,107"/>
+<area shape="rect" id="node4" href="$ntext_8cpp.html" title="app/lib/ntext.cpp" alt="" coords="1900,386,2019,413"/>
+<area shape="rect" id="node5" href="$ntext_8h.html" title="Text to numbers handling. " alt="" coords="2055,304,2159,331"/>
+<area shape="rect" id="node17" href="$program__amiga_8cpp.html" title="app/system/program\l_amiga.cpp" alt="" coords="1459,736,1601,777"/>
+<area shape="rect" id="node18" href="$program__stdc_8cpp.html" title="app/system/program\l_stdc.cpp" alt="" coords="1161,736,1302,777"/>
+<area shape="rect" id="node21" href="$nodes_8cpp.html" title="app/main/nodes.cpp" alt="" coords="1593,654,1731,681"/>
+<area shape="rect" id="node23" href="$statements_8cpp.html" title="app/main/statements.cpp" alt="" coords="3065,654,3235,681"/>
+<area shape="rect" id="node24" href="$values_8cpp.html" title="app/main/values.cpp" alt="" coords="3943,654,4085,681"/>
+<area shape="rect" id="node25" href="$program__stdc_8h.html" title="app/system/program\l_stdc.h" alt="" coords="793,647,934,688"/>
+<area shape="rect" id="node27" href="$program__test_8h.html" title="Tests for arithmetic logic. " alt="" coords="246,647,387,688"/>
+<area shape="rect" id="node28" href="$filesystem__amiga_8cpp.html" title="app/system/filesystem\l_amiga.cpp" alt="" coords="513,647,667,688"/>
+<area shape="rect" id="node29" href="$filesystem__stdc_8cpp.html" title="app/system/filesystem\l_stdc.cpp" alt="" coords="1161,647,1315,688"/>
+<area shape="rect" id="node31" href="$preferences_8cpp.html" title="app/system/preferences.cpp" alt="" coords="2145,386,2331,413"/>
+<area shape="rect" id="node32" href="$viewer_8h.html" title="Debug class to view a syntax tree. " alt="" coords="1850,155,1978,181"/>
+<area shape="rect" id="node34" href="$viewer_8cpp.html" title="app/main/viewer.cpp" alt="" coords="1800,229,1943,256"/>
+<area shape="rect" id="node35" href="$evaluator_8h.html" title="TODO: Comment. " alt="" coords="1653,304,1796,331"/>
+<area shape="rect" id="node38" href="$nodes_8h.html" title="Top nodes in syntax trees. " alt="" coords="2425,80,2550,107"/>
+<area shape="rect" id="node53" href="$operators_8cpp.html" title="app/main/operators.cpp" alt="" coords="3897,304,4056,331"/>
+<area shape="rect" id="node55" href="$filesystem_8h.html" title="Generic file system calls. " alt="" coords="1049,475,1214,502"/>
+<area shape="rect" id="node56" href="$filesystem__stdc_8h.html" title="app/system/filesystem\l_stdc.h" alt="" coords="931,557,1086,599"/>
+<area shape="rect" id="node58" href="$preferences_8h.html" title="app/system/preferences.h" alt="" coords="821,304,994,331"/>
+<area shape="rect" id="node60" href="$preferences__stdc_8cpp.html" title="app/system/preferences\l_stdc.cpp" alt="" coords="473,468,635,509"/>
+<area shape="rect" id="node62" href="$preferences__amiga_8cpp.html" title="app/system/preferences\l_amiga.cpp" alt="" coords="811,468,974,509"/>
+<area shape="rect" id="node6" href="$program_8h.html" title="Program flow and global states. " alt="" coords="2171,565,2323,591"/>
+<area shape="rect" id="node16" href="$program_8cpp.html" title="app/system/program.cpp" alt="" coords="3189,743,3356,770"/>
+<area shape="rect" id="node7" href="$functions_8cpp.html" title="app/main/functions.cpp" alt="" coords="3609,654,3766,681"/>
+<area shape="rect" id="node8" href="$io_8h.html" title="System dependent I/O. " alt="" coords="2123,654,2270,681"/>
+<area shape="rect" id="node10" href="$main_8cpp.html" title="app/main.cpp" alt="" coords="2711,743,2811,770"/>
+<area shape="rect" id="node11" href="$io_8cpp.html" title="app/system/base/io.cpp" alt="" coords="509,743,671,770"/>
+<area shape="rect" id="node13" href="$language__amiga_8cpp.html" title="app/system/language\l_amiga.cpp" alt="" coords="2009,736,2155,777"/>
+<area shape="rect" id="node14" href="$language__posix_8cpp.html" title="app/system/language\l_posix.cpp" alt="" coords="2369,736,2515,777"/>
+<area shape="rect" id="node15" href="$language__stdc_8cpp.html" title="app/system/language\l_stdc.cpp" alt="" coords="2539,736,2686,777"/>
+<area shape="rect" id="node20" href="$lexer_8cpp.html" title="app/main/lexer.cpp" alt="" coords="2345,654,2477,681"/>
+<area shape="rect" id="node22" href="$parser_8cpp.html" title="app/main/parser.cpp" alt="" coords="2849,654,2989,681"/>
+<area shape="rect" id="node26" href="$program__amiga_8h.html" title="app/system/program\l_amiga.h" alt="" coords="1806,647,1947,688"/>
+<area shape="rect" id="node30" href="$language_8cpp.html" title="app/system/language.cpp" alt="" coords="2502,654,2673,681"/>
+<area shape="rect" id="node9" href="$graphlist_8cpp.html" title="app/main/graphlist.cpp" alt="" coords="2893,743,3047,770"/>
+<area shape="rect" id="node12" href="$console_8cpp.html" title="app/system/console.cpp" alt="" coords="2180,743,2344,770"/>
+<area shape="rect" id="node19" href="$window__amiga_8cpp.html" title="app/system/window_amiga.cpp" alt="" coords="1779,743,1985,770"/>
+<area shape="rect" id="node33" href="$evaluator_8cpp.html" title="app/main/evaluator.cpp" alt="" coords="2355,386,2513,413"/>
+<area shape="rect" id="node36" href="$console__amiga_8cpp.html" title="app/system/console\l_amiga.cpp" alt="" coords="1422,379,1561,420"/>
+<area shape="rect" id="node37" href="$console__stdc_8cpp.html" title="app/system/console\l_stdc.cpp" alt="" coords="1737,379,1875,420"/>
+<area shape="rect" id="node39" href="$functions_8h.html" title="Application logic tied to functions. " alt="" coords="2973,229,3116,256"/>
+<area shape="rect" id="node47" href="$parser_8h.html" title="Application logic tied to Parser. " alt="" coords="2387,304,2513,331"/>
+<area shape="rect" id="node48" href="$functiondefs_8h.html" title="Function defitions for math logic. " alt="" coords="3609,304,3771,331"/>
+<area shape="rect" id="node49" href="$optimizer_8h.html" title="app/main/optimizer.h" alt="" coords="2416,155,2559,181"/>
+<area shape="rect" id="node50" href="$optimizer_8cpp.html" title="app/main/optimizer.cpp" alt="" coords="2639,229,2797,256"/>
+<area shape="rect" id="node51" href="$values_8h.html" title="Application logic tied to numbers and values. " alt="" coords="2891,155,3019,181"/>
+<area shape="rect" id="node52" href="$operators_8h.html" title="Application logic tied to arithmetic operators. " alt="" coords="3627,229,3771,256"/>
+<area shape="rect" id="node54" href="$statements_8h.html" title="General statement nodes. " alt="" coords="2583,155,2738,181"/>
+<area shape="rect" id="node40" href="$fgrid_8cpp.html" title="app/lib/fgrid.cpp" alt="" coords="3318,386,3433,413"/>
+<area shape="rect" id="node41" href="$fgrid_8h.html" title="Function grid used with graphs. " alt="" coords="3059,304,3159,331"/>
+<area shape="rect" id="node42" href="$graph_8h.html" title="Logic related to graph of functions. " alt="" coords="2952,386,3089,413"/>
+<area shape="rect" id="node44" href="$graph__amiga_8h.html" title="app/system/graph_amiga.h" alt="" coords="2651,475,2830,502"/>
+<area shape="rect" id="node45" href="$graph__amiga_8cpp.html" title="app/system/graph_amiga.cpp" alt="" coords="3289,565,3483,591"/>
+<area shape="rect" id="node43" href="$graphlist_8h.html" title="Memory maintainance for function of graphs. " alt="" coords="2854,475,2993,502"/>
+<area shape="rect" id="node46" href="$graph_8cpp.html" title="app/system/graph.cpp" alt="" coords="3017,475,3168,502"/>
+<area shape="rect" id="node57" href="$filesystem__amiga_8h.html" title="app/system/filesystem\l_amiga.h" alt="" coords="570,557,725,599"/>
+<area shape="rect" id="node59" href="$preferences__stdc_8h.html" title="app/system/preferences\l_stdc.h" alt="" coords="583,379,746,420"/>
+<area shape="rect" id="node61" href="$preferences__amiga_8h.html" title="app/system/preferences\l_amiga.h" alt="" coords="931,379,1094,420"/>
+</map>

@@ -1,0 +1,37 @@
+.TH "lib/real/round.c" 3 "Sat Jan 21 2017" "Version 1.6.1" "amath" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+lib/real/round.c \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'prim\&.h'\fP
+.br
+\fC#include 'math\&.h'\fP
+.br
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "double \fBround\fP (double x)"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "double round (double x)"
+
+.PP
+Definition at line 30 of file round\&.c\&.
+.PP
+Referenced by cround(), DecimalSystem::GetRealText(), PositionalNumeralSystem::GetText(), and RealNumber::Round()\&.
+.PP
+.nf
+31 {
+32     return x > 0\&.0 ? floor(x + 0\&.5) : ceil(x - 0\&.5);
+33 }
+.fi
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for amath from the source code\&.

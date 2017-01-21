@@ -1,0 +1,101 @@
+.TH "HyperbolicCotangentNode" 3 "Sat Jan 21 2017" "Version 1.6.1" "amath" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+HyperbolicCotangentNode \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <functions\&.h>\fP
+.PP
+Inherits \fBFunctionNode\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBHyperbolicCotangentNode\fP (\fBExpressionNode\fP *\fBexpression\fP)"
+.br
+.ti -1c
+.RI "\fBNumber\fP * \fBEvaluate\fP ()"
+.br
+.in -1c
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static \fBFunctionNode\fP * \fBCreate\fP (\fBExpressionNode\fP *\fBexpression\fP)"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "char * \fBGetNodeText\fP ()"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Detailed Description"
+.PP 
+Definition at line 490 of file functions\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "HyperbolicCotangentNode::HyperbolicCotangentNode (\fBExpressionNode\fP * expression)"
+
+.PP
+Definition at line 1038 of file functions\&.cpp\&.
+.PP
+References FunctionNode::FunctionNode()\&.
+.PP
+Referenced by Create()\&.
+.PP
+.nf
+1038                                                                            :
+1039     FunctionNode(expression) { }
+.fi
+.SH "Member Function Documentation"
+.PP 
+.SS "\fBFunctionNode\fP * HyperbolicCotangentNode::Create (\fBExpressionNode\fP * expression)\fC [static]\fP"
+
+.PP
+Definition at line 1041 of file functions\&.cpp\&.
+.PP
+References HyperbolicCotangentNode()\&.
+.PP
+.nf
+1042 {
+1043     return new HyperbolicCotangentNode(expression);
+1044 }
+.fi
+.SS "\fBNumber\fP * HyperbolicCotangentNode::Evaluate ()\fC [virtual]\fP"
+
+.PP
+Implements \fBExpressionNode\fP\&.
+.PP
+Definition at line 1046 of file functions\&.cpp\&.
+.PP
+References ExpressionNode::Evaluate(), FunctionNode::expression, Number::HypCotangent(), and ExpressionNode::result\&.
+.PP
+.nf
+1047 {
+1048     result = expression->Evaluate()->HypCotangent();
+1049     return result;
+1050 }
+.fi
+.SS "char * HyperbolicCotangentNode::GetNodeText ()\fC [protected]\fP, \fC [virtual]\fP"
+
+.PP
+Implements \fBExpressionNode\fP\&.
+.PP
+Definition at line 1052 of file functions\&.cpp\&.
+.PP
+.nf
+1053 {
+1054     return (char*)"coth";
+1055 }
+.fi
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for amath from the source code\&.

@@ -1,0 +1,101 @@
+.TH "CotangentNode" 3 "Sat Jan 21 2017" "Version 1.6.1" "amath" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+CotangentNode \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <functions\&.h>\fP
+.PP
+Inherits \fBFunctionNode\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBCotangentNode\fP (\fBExpressionNode\fP *\fBexpression\fP)"
+.br
+.ti -1c
+.RI "\fBNumber\fP * \fBEvaluate\fP ()"
+.br
+.in -1c
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static \fBFunctionNode\fP * \fBCreate\fP (\fBExpressionNode\fP *\fBexpression\fP)"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "char * \fBGetNodeText\fP ()"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Detailed Description"
+.PP 
+Definition at line 362 of file functions\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "CotangentNode::CotangentNode (\fBExpressionNode\fP * expression)"
+
+.PP
+Definition at line 839 of file functions\&.cpp\&.
+.PP
+References FunctionNode::FunctionNode()\&.
+.PP
+Referenced by Create()\&.
+.PP
+.nf
+839                                                        :
+840     FunctionNode(expression) { }
+.fi
+.SH "Member Function Documentation"
+.PP 
+.SS "\fBFunctionNode\fP * CotangentNode::Create (\fBExpressionNode\fP * expression)\fC [static]\fP"
+
+.PP
+Definition at line 842 of file functions\&.cpp\&.
+.PP
+References CotangentNode()\&.
+.PP
+.nf
+843 {
+844     return new CotangentNode(expression);
+845 }
+.fi
+.SS "\fBNumber\fP * CotangentNode::Evaluate ()\fC [virtual]\fP"
+
+.PP
+Implements \fBExpressionNode\fP\&.
+.PP
+Definition at line 847 of file functions\&.cpp\&.
+.PP
+References Number::Cotangent(), ExpressionNode::Evaluate(), FunctionNode::expression, and ExpressionNode::result\&.
+.PP
+.nf
+848 {
+849     result = expression->Evaluate()->Cotangent();
+850     return result;
+851 }
+.fi
+.SS "char * CotangentNode::GetNodeText ()\fC [protected]\fP, \fC [virtual]\fP"
+
+.PP
+Implements \fBExpressionNode\fP\&.
+.PP
+Definition at line 853 of file functions\&.cpp\&.
+.PP
+.nf
+854 {
+855     return (char*)"cot";
+856 }
+.fi
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for amath from the source code\&.

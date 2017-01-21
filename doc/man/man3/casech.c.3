@@ -1,0 +1,75 @@
+.TH "lib/cplex/casech.c" 3 "Sat Jan 21 2017" "Version 1.6.1" "amath" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+lib/cplex/casech.c \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'prim\&.h'\fP
+.br
+\fC#include 'math\&.h'\fP
+.br
+\fC#include 'complex\&.h'\fP
+.br
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBcomplex\fP \fBcasech\fP (\fBcomplex\fP z)"
+.br
+.RI "\fIInverse hyperbolic secant of complex numbers\&. \fP"
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "\fBcomplex\fP casech (\fBcomplex\fP z)"
+
+.PP
+Inverse hyperbolic secant of complex numbers\&. 
+.PP
+\fBVersion:\fP
+.RS 4
+1\&.1 
+.RE
+.PP
+\fBDate:\fP
+.RS 4
+15/03/03
+.RE
+.PP
+Inverse hyperbolic secant expressed using complex logarithms: 
+.PP
+.nf
+
+asech(z) = log(sqrt(1 / (z * z) - 1) + 1/z)
+.fi
+.PP
+.PP
+.PP
+.nf
+.fi
+.PP
+ More info is available at Wikipedia: 
+.br
+ http://en.wikipedia.org/wiki/Inverse_hyperbolic_function#Logarithmic_representation 
+.PP
+Definition at line 44 of file casech\&.c\&.
+.PP
+References cadd(), clog(), cmul(), cpack(), creci(), csqrt(), and csub()\&.
+.PP
+Referenced by ComplexNumber::HypArcSecant()\&.
+.PP
+.nf
+45 {
+46     complex one = cpack(1\&.0, 0\&.0);
+47     complex a = creci(cmul(z, z));
+48     complex b = csqrt(csub(a, one));
+49     complex c = cadd(b, creci(z));
+50     complex w = clog(c);
+51     return w;
+52 }
+.fi
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for amath from the source code\&.

@@ -1,0 +1,232 @@
+.TH "NumericOperator" 3 "Sat Jan 21 2017" "Version 1.6.1" "amath" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+NumericOperator \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <operators\&.h>\fP
+.PP
+Inherits \fBExpressionNode\fP\&.
+.PP
+Inherited by \fBAdditionNode\fP, \fBAssignmentNode\fP, \fBDivisionNode\fP, \fBMultiplicationNode\fP, \fBPowerNode\fP, and \fBSubtractionNode\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBNumericOperator\fP (\fBExpressionNode\fP *\fBleft\fP, \fBExpressionNode\fP *\fBright\fP)"
+.br
+.ti -1c
+.RI "\fB~NumericOperator\fP ()"
+.br
+.ti -1c
+.RI "\fBSyntaxNode\fP * \fBGetNext\fP ()"
+.br
+.ti -1c
+.RI "char * \fBGetText\fP ()"
+.br
+.ti -1c
+.RI "void \fBAttach\fP (\fBSyntaxNode\fP *node)"
+.br
+.ti -1c
+.RI "void \fBDetach\fP (\fBSyntaxNode\fP *node)"
+.br
+.ti -1c
+.RI "void \fBReplace\fP (\fBSyntaxNode\fP *n, \fBSyntaxNode\fP *x)"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBExpressionNode\fP * \fBleft\fP"
+.br
+.ti -1c
+.RI "\fBExpressionNode\fP * \fBright\fP"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Detailed Description"
+.PP 
+Definition at line 80 of file operators\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "NumericOperator::NumericOperator (\fBExpressionNode\fP * left, \fBExpressionNode\fP * right)"
+
+.PP
+Definition at line 202 of file operators\&.cpp\&.
+.PP
+References ExpressionNode::ExpressionNode(), left, and right\&.
+.PP
+Referenced by AdditionNode::AdditionNode(), AssignmentNode::AssignmentNode(), DivisionNode::DivisionNode(), MultiplicationNode::MultiplicationNode(), PowerNode::PowerNode(), and SubtractionNode::SubtractionNode()\&.
+.PP
+.nf
+202                                                                             :
+203     ExpressionNode(), left(left), right(right) { }
+.fi
+.SS "NumericOperator::~NumericOperator ()"
+
+.PP
+Definition at line 205 of file operators\&.cpp\&.
+.PP
+References left, and right\&.
+.PP
+.nf
+206 {
+207     if (left != NOMEM) {
+208         delete left;
+209     }
+210 
+211     if (right != NOMEM) {
+212         delete right;
+213     }
+214 }
+.fi
+.SH "Member Function Documentation"
+.PP 
+.SS "void NumericOperator::Attach (\fBSyntaxNode\fP * node)\fC [virtual]\fP"
+
+.PP
+Implements \fBSyntaxNode\fP\&.
+.PP
+Definition at line 259 of file operators\&.cpp\&.
+.PP
+References left, right, and SyntaxNode::SetParent()\&.
+.PP
+.nf
+260 {
+261     if(left == NOMEM) {
+262         left = (ExpressionNode*)node;
+263         node->SetParent(this);
+264     } else if (right == NOMEM) {
+265         right = (ExpressionNode*)node;
+266         node->SetParent(this);
+267     }
+268 }
+.fi
+.SS "void NumericOperator::Detach (\fBSyntaxNode\fP * node)\fC [virtual]\fP"
+
+.PP
+Implements \fBSyntaxNode\fP\&.
+.PP
+Definition at line 270 of file operators\&.cpp\&.
+.PP
+References left, and right\&.
+.PP
+.nf
+271 {
+272     if (left == node) {
+273         left = NOMEM;
+274     } else if (right == node) {
+275         right = NOMEM;
+276     }
+277 }
+.fi
+.SS "\fBSyntaxNode\fP * NumericOperator::GetNext ()\fC [virtual]\fP"
+
+.PP
+Implements \fBSyntaxNode\fP\&.
+.PP
+Definition at line 246 of file operators\&.cpp\&.
+.PP
+References SyntaxNode::iterator, left, and right\&.
+.PP
+.nf
+247 {
+248     if (iterator == NOMEM) {
+249         iterator = left;
+250         return left;
+251     } else if (iterator == left) {
+252         iterator = right;
+253         return right;
+254     } else {
+255         return NOMEM;
+256     }
+257 }
+.fi
+.SS "char * NumericOperator::GetText ()\fC [virtual]\fP"
+
+.PP
+Implements \fBExpressionNode\fP\&.
+.PP
+Definition at line 216 of file operators\&.cpp\&.
+.PP
+References CharBuffer::Append(), CharBuffer::Empty(), CharBuffer::EnsureSize(), ExpressionNode::GetNodeText(), ExpressionNode::GetPrecedence(), CharBuffer::GetString(), ExpressionNode::GetText(), left, SyntaxNode::output, right, and StrLen()\&.
+.PP
+.nf
+217 {
+218     const char *leftText = left->GetText();
+219     const char *nodeText = GetNodeText();
+220     const char *rightText = right->GetText();
+221 
+222     output->Empty();
+223     output->EnsureSize(StrLen(leftText) + 2 + StrLen(nodeText) + StrLen(rightText) + 2 + 1);
+224 
+225     if (left->GetPrecedence() != 0 && left->GetPrecedence() < GetPrecedence()) {
+226         output->Append("(");
+227         output->Append(leftText);
+228         output->Append(")");
+229     } else {
+230         output->Append(leftText);
+231     }
+232 
+233     output->Append(nodeText);
+234 
+235     if (right->GetPrecedence() != 0 && GetPrecedence() > right->GetPrecedence()) {
+236         output->Append("(");
+237         output->Append(rightText);
+238         output->Append(")");
+239     } else {
+240         output->Append(rightText);
+241     }
+242 
+243     return output->GetString();
+244 }
+.fi
+.SS "void NumericOperator::Replace (\fBSyntaxNode\fP * n, \fBSyntaxNode\fP * x)\fC [virtual]\fP"
+
+.PP
+Implements \fBSyntaxNode\fP\&.
+.PP
+Definition at line 279 of file operators\&.cpp\&.
+.PP
+References SyntaxNode::iterator, left, and right\&.
+.PP
+.nf
+280 {
+281     if (left == n) {
+282         if(iterator == left) {
+283             iterator = (ExpressionNode*)x;
+284         }
+285         delete left;
+286         left = (ExpressionNode*)x;
+287 
+288     } else if (right == n) {
+289         if(iterator == right) {
+290             iterator = (ExpressionNode*)x;
+291         }
+292         delete right;
+293         right = (ExpressionNode*)x;
+294     }
+295 }
+.fi
+.SH "Member Data Documentation"
+.PP 
+.SS "\fBExpressionNode\fP* NumericOperator::left\fC [protected]\fP"
+
+.PP
+Definition at line 92 of file operators\&.h\&.
+.PP
+Referenced by Attach(), Detach(), AdditionNode::Evaluate(), SubtractionNode::Evaluate(), MultiplicationNode::Evaluate(), DivisionNode::Evaluate(), PowerNode::Evaluate(), GetNext(), GetText(), NumericOperator(), Replace(), and ~NumericOperator()\&.
+.SS "\fBExpressionNode\fP* NumericOperator::right\fC [protected]\fP"
+
+.PP
+Definition at line 93 of file operators\&.h\&.
+.PP
+Referenced by Attach(), Detach(), AdditionNode::Evaluate(), SubtractionNode::Evaluate(), MultiplicationNode::Evaluate(), DivisionNode::Evaluate(), PowerNode::Evaluate(), GetNext(), GetText(), NumericOperator(), Replace(), and ~NumericOperator()\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for amath from the source code\&.
