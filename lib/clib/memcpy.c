@@ -52,7 +52,11 @@
  * sizeof(word) MUST BE A POWER OF TWO
  * SO THAT wmask BELOW IS ALL ONES
  */
-typedef int word; // "word" used for optimal copy speed
+#if defined(__x86_64__) || defined(__aarch64__)
+typedef uint64_t word;
+#else
+typedef uint32_t word;
+#endif
 
 /**
  *
