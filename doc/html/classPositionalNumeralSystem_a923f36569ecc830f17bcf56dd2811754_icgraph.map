@@ -1,7 +1,0 @@
-<map id="PositionalNumeralSystem::PositionalNumeralSystem" name="PositionalNumeralSystem::PositionalNumeralSystem">
-<area shape="rect" id="node2" href="$classDecimalSystem.html#a96bf562ac5934445ce10dd6d973a9db3" title="DecimalSystem::DecimalSystem" alt="" coords="235,5,451,32"/>
-<area shape="rect" id="node3" href="$classProgram.html#aef8e1c957776e550081cb2c47a11d64b" title="Program::NewPositionalInput" alt="" coords="247,56,439,83"/>
-<area shape="rect" id="node5" href="$classProgram.html#a38a8a4a116b01a1bce417488ee235ee7" title="Program::NewPositionalOutput" alt="" coords="241,107,444,133"/>
-<area shape="rect" id="node4" href="$classInputStatement.html#ac4a9288ba2fe5002ae78d65c270222a5" title="InputStatement::Execute" alt="" coords="504,56,671,83"/>
-<area shape="rect" id="node6" href="$classOutputStatement.html#a870c0d2b4bffb94e542d1e5890ec3c20" title="OutputStatement::Execute" alt="" coords="499,107,676,133"/>
-</map>

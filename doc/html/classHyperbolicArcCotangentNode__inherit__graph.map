@@ -1,5 +1,0 @@
-<map id="HyperbolicArcCotangentNode" name="HyperbolicArcCotangentNode">
-<area shape="rect" id="node2" href="$classFunctionNode.html" title="Represents a mathematical function in a syntax tree. " alt="" coords="51,155,154,181"/>
-<area shape="rect" id="node3" href="$classExpressionNode.html" title="Base class for all nodes related to mathematical expressions. " alt="" coords="43,80,162,107"/>
-<area shape="rect" id="node4" href="$classSyntaxNode.html" title="Base class for all nodes in a syntax tree. " alt="" coords="55,5,150,32"/>
-</map>

@@ -1,6 +1,0 @@
-<map id="ListStatement::ListStatement" name="ListStatement::ListStatement">
-<area shape="rect" id="node2" href="$alloccpy_8c.html#a5bed05c70cb17e541fee570b5dc32e1a" title="Allocate memory and copy a string into the array. " alt="" coords="299,5,404,32"/>
-<area shape="rect" id="node3" href="$classStatementNode.html#a586026d6009a39d087792d621de86360" title="StatementNode::StatementNode" alt="" coords="245,56,457,83"/>
-<area shape="rect" id="node4" href="$classSyntaxNode.html#ac94372d402f38a118b4e8cd20ba7e520" title="SyntaxNode::SyntaxNode" alt="" coords="505,56,680,83"/>
-<area shape="rect" id="node5" href="$classCharBuffer.html#a4345e9a5114f5c0292e8f242f26e3a7b" title="Initialize without allocating memory. " alt="" coords="728,56,884,83"/>
-</map>

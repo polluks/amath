@@ -1,8 +1,0 @@
-<map id="Number::Sub" name="Number::Sub">
-<area shape="rect" id="node2" href="$classSubtractionNode.html#a6ab885bb5ab826b5d0c70a63e753f5e3" title="SubtractionNode::Evaluate" alt="" coords="164,5,343,32"/>
-<area shape="rect" id="node3" href="$classOptimizer.html#a5b45089aff3c6568f3531faa9e701f21" title="Optimizer::ReduceValueNodes" alt="" coords="152,80,355,107"/>
-<area shape="rect" id="node4" href="$classOptimizer.html#a5764ae0825fa43921f74d8b972e53b1e" title="Optimizer::Optimize" alt="" coords="403,80,541,107"/>
-<area shape="rect" id="node5" href="$classEvaluator.html#a40b30ece9d43c658877ee7f52aaec0a8" title="Evaluator::Evaluate" alt="" coords="589,80,725,107"/>
-<area shape="rect" id="node6" href="$classStandardProgram.html#a71dce9fdccf23ac49ba2362dcae744d3" title="StandardProgram::Run" alt="" coords="773,55,928,81"/>
-<area shape="rect" id="node7" href="$classStandardConsole.html#a9380023bba612b816b134589130bb254" title="StandardConsole::Run" alt="" coords="773,105,928,132"/>
-</map>

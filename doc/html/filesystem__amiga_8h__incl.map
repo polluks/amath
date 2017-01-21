@@ -1,8 +1,0 @@
-<map id="app/system/filesystem_amiga.h" name="app/system/filesystem_amiga.h">
-<area shape="rect" id="node2" href="$clib_8h.html" title="C functions for manipulating strings and memory. " alt="" coords="39,95,92,121"/>
-<area shape="rect" id="node6" href="$filesystem_8h.html" title="Generic file system calls. " alt="" coords="117,95,257,121"/>
-<area shape="rect" id="node3" href="$platform_8h.html" title="platform.h" alt="" coords="25,169,105,196"/>
-<area shape="rect" id="node5" href="$mem_8h.html" title="mem.h" alt="" coords="43,244,106,271"/>
-<area shape="rect" id="node7" href="$charbuf_8h.html" title="String and character array logic. " alt="" coords="140,169,233,196"/>
-<area shape="rect" id="node8" href="$aengine_8h.html" title="ANSI Conole Engine. " alt="" coords="139,244,234,271"/>
-</map>

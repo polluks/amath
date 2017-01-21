@@ -1,5 +1,0 @@
-<map id="NumeralSystem::GetDigits" name="NumeralSystem::GetDigits">
-<area shape="rect" id="node2" href="$classInputStatement.html#ac4a9288ba2fe5002ae78d65c270222a5" title="InputStatement::Execute" alt="" coords="237,5,404,32"/>
-<area shape="rect" id="node3" href="$classOutputStatement.html#a870c0d2b4bffb94e542d1e5890ec3c20" title="OutputStatement::Execute" alt="" coords="232,56,409,83"/>
-<area shape="rect" id="node4" href="$classDigitsStatement.html#a5a16b621b4759cdc0bf980b01858350b" title="DigitsStatement::Execute" alt="" coords="235,107,407,133"/>
-</map>

@@ -1,7 +1,0 @@
-<map id="Lexer::FindKeyword" name="Lexer::FindKeyword">
-<area shape="rect" id="node2" href="$classPreferencesBase.html#a9452038c67c6592334b6f3908c86833a" title="PreferencesBase::GetDescription" alt="" coords="192,35,409,61"/>
-<area shape="rect" id="node3" href="$classPrefsStatement.html#ac53922eb842ba389957300fef95cd98f" title="PrefsStatement::Execute" alt="" coords="457,5,627,32"/>
-<area shape="rect" id="node4" href="$classStandardPreferences.html#af4d99d40f18776348f76fc0b9f5cdda4" title="StandardPreferences\l::SavePrefs" alt="" coords="470,57,614,98"/>
-<area shape="rect" id="node5" href="$classStandardPreferences.html#a98a76348fca4d6519fb851b5d8382437" title="StandardPreferences\l::Keep" alt="" coords="675,23,819,65"/>
-<area shape="rect" id="node6" href="$classStandardPreferences.html#aa6a0a0f9746d2fba5d00cc896937b950" title="StandardPreferences\l::Save" alt="" coords="675,89,819,130"/>
-</map>

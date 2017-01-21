@@ -1,5 +1,0 @@
-<map id="Parser::GetToken" name="Parser::GetToken">
-<area shape="rect" id="node2" href="$classLexer.html#afbb12eaae7cff3bd2960f444cfe98f69" title="Lexer::GetFirstToken" alt="" coords="181,5,327,32"/>
-<area shape="rect" id="node3" href="$structToken.html#ac7eb963d5eff544dd48ffc23aa274356" title="Token::GetNextToken" alt="" coords="179,56,329,83"/>
-<area shape="rect" id="node4" href="$structToken.html#a6331b847b4dc8cebe0e0a79c4de63204" title="Token::Token" alt="" coords="377,56,480,83"/>
-</map>

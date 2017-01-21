@@ -1,9 +1,0 @@
-<map id="app/main/optimizer.h" name="app/main/optimizer.h">
-<area shape="rect" id="node2" href="$nodes_8h.html" title="Top nodes in syntax trees. " alt="" coords="87,80,187,107"/>
-<area shape="rect" id="node3" href="$clib_8h.html" title="C functions for manipulating strings and memory. " alt="" coords="19,155,72,181"/>
-<area shape="rect" id="node7" href="$numb_8h.html" title="Classbase handling of numbers. " alt="" coords="96,155,179,181"/>
-<area shape="rect" id="node8" href="$charbuf_8h.html" title="String and character array logic. " alt="" coords="203,155,296,181"/>
-<area shape="rect" id="node4" href="$platform_8h.html" title="platform.h" alt="" coords="5,229,85,256"/>
-<area shape="rect" id="node6" href="$mem_8h.html" title="mem.h" alt="" coords="49,304,111,331"/>
-<area shape="rect" id="node9" href="$aengine_8h.html" title="ANSI Conole Engine. " alt="" coords="202,229,297,256"/>
-</map>
