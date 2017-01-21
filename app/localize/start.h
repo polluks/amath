@@ -79,6 +79,9 @@
 #if defined(__arm__) || defined(_M_ARM)
 # define TXTCPU "ARM"
 #endif
+#if defined(__aarch64__)
+# define TXTCPU "arm64"
+#endif
 #ifndef TXTCPU
 #error what cpu is this ?!
 //#define TXTCPU EMPTYSTRING
