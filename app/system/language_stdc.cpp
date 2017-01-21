@@ -128,6 +128,8 @@ bool StandardLanguage::StrIsEqualLoc(const char* s1, const char* s2)
 
 void StandardLanguage::LoadCatalogs()
 {
+    /* Just use english for now
+
     const char* key;
     const char* value;
 
@@ -173,6 +175,7 @@ void StandardLanguage::LoadCatalogs()
             keywordsloc[j].symbol = keywords[j].symbol;
         }
     }
+    */
 }
 
 void StandardLanguage::LoadCatalog(char **dest, const char *file)
