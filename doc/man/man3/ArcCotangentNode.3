@@ -1,0 +1,101 @@
+.TH "ArcCotangentNode" 3 "Sat Jan 21 2017" "Version 1.6.1" "amath" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+ArcCotangentNode \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <functions\&.h>\fP
+.PP
+Inherits \fBFunctionNode\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBArcCotangentNode\fP (\fBExpressionNode\fP *\fBexpression\fP)"
+.br
+.ti -1c
+.RI "\fBNumber\fP * \fBEvaluate\fP ()"
+.br
+.in -1c
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static \fBFunctionNode\fP * \fBCreate\fP (\fBExpressionNode\fP *\fBexpression\fP)"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "char * \fBGetNodeText\fP ()"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Detailed Description"
+.PP 
+Definition at line 426 of file functions\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "ArcCotangentNode::ArcCotangentNode (\fBExpressionNode\fP * expression)"
+
+.PP
+Definition at line 957 of file functions\&.cpp\&.
+.PP
+References FunctionNode::FunctionNode()\&.
+.PP
+Referenced by Create()\&.
+.PP
+.nf
+957                                                              :
+958     FunctionNode(expression) { }
+.fi
+.SH "Member Function Documentation"
+.PP 
+.SS "\fBFunctionNode\fP * ArcCotangentNode::Create (\fBExpressionNode\fP * expression)\fC [static]\fP"
+
+.PP
+Definition at line 961 of file functions\&.cpp\&.
+.PP
+References ArcCotangentNode()\&.
+.PP
+.nf
+962 {
+963     return new ArcCotangentNode(expression);
+964 }
+.fi
+.SS "\fBNumber\fP * ArcCotangentNode::Evaluate ()\fC [virtual]\fP"
+
+.PP
+Implements \fBExpressionNode\fP\&.
+.PP
+Definition at line 966 of file functions\&.cpp\&.
+.PP
+References Number::ArcCotangent(), ExpressionNode::Evaluate(), FunctionNode::expression, and ExpressionNode::result\&.
+.PP
+.nf
+967 {
+968     result = expression->Evaluate()->ArcCotangent();
+969     return result;
+970 }
+.fi
+.SS "char * ArcCotangentNode::GetNodeText ()\fC [protected]\fP, \fC [virtual]\fP"
+
+.PP
+Implements \fBExpressionNode\fP\&.
+.PP
+Definition at line 972 of file functions\&.cpp\&.
+.PP
+.nf
+973 {
+974     return (char*)"acot";
+975 }
+.fi
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for amath from the source code\&.

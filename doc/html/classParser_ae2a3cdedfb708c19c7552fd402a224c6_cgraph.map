@@ -1,0 +1,28 @@
+<map id="Parser::ParseNumeralStatement" name="Parser::ParseNumeralStatement">
+<area shape="rect" id="node2" href="$classDecimalSystem.html#a726d1a38079ae571c54adfbd0724a0a3" title="DecimalSystem::DecimalSystem" alt="" coords="270,93,486,119"/>
+<area shape="rect" id="node4" href="$classErrorNode.html#a1c3d4afac02da7fcc0cec125a7ac03ba" title="ErrorNode::ErrorNode" alt="" coords="304,223,452,250"/>
+<area shape="rect" id="node14" href="$classLexer.html#a3032cbeb851294bccd61b722d9a86265" title="Lexer::GetInput" alt="" coords="322,274,434,301"/>
+<area shape="rect" id="node15" href="$structNumber.html#aa2c4b207ac557a8bdbc1cf5696d37160" title="Number::GetIntegerValue" alt="" coords="293,325,463,351"/>
+<area shape="rect" id="node16" href="$structToken.html#a5f93ea94940a6eeb060507e1da594599" title="Token::GetPos" alt="" coords="323,375,433,402"/>
+<area shape="rect" id="node17" href="$structToken.html#a15f1043de07ce8e452fbf115b85def71" title="Token::GetText" alt="" coords="321,426,435,453"/>
+<area shape="rect" id="node18" href="$classParser.html#a415a103e66558b4d366d9a1420561fe3" title="Parser::GetToken" alt="" coords="315,477,441,503"/>
+<area shape="rect" id="node22" href="$classInputStatement.html#a93f36b9493387b157b38c44f54952eef" title="Constructor used to show number of active digits. " alt="" coords="274,527,482,554"/>
+<area shape="rect" id="node23" href="$classOutputStatement.html#ad5e8759afc35877c8c26c24823f14243" title="Constructor used to show number of active digits. " alt="" coords="264,578,492,605"/>
+<area shape="rect" id="node24" href="$classNumeralSystem.html#a1f8d8a04e99540260d4fc4f16c63ddc3" title="NumeralSystem::Parse" alt="" coords="299,629,457,655"/>
+<area shape="rect" id="node26" href="$classParser.html#adb5c3a188b36f7ecb198ae30f06338b3" title="Parser::PutToken" alt="" coords="316,679,440,706"/>
+<area shape="rect" id="node3" href="$classPositionalNumeralSystem.html#a923f36569ecc830f17bcf56dd2811754" title="PositionalNumeralSystem\l::PositionalNumeralSystem" alt="" coords="540,5,721,47"/>
+<area shape="rect" id="node5" href="$alloccpy_8c.html#a5bed05c70cb17e541fee570b5dc32e1a" title="Allocate memory and copy a string into the array. " alt="" coords="578,325,683,351"/>
+<area shape="rect" id="node6" href="$classCharBuffer.html#a045b38735f7b3007c1b98d3d7b7feafe" title="CharBuffer::Append" alt="" coords="562,375,699,402"/>
+<area shape="rect" id="node7" href="$classCharBuffer.html#a4345e9a5114f5c0292e8f242f26e3a7b" title="Initialize without allocating memory. " alt="" coords="769,350,925,377"/>
+<area shape="rect" id="node8" href="$classCharBuffer.html#ad1907009b5ad136692b989fa96bf2f7e" title="Ensure a memory block of speficied size is allocated. " alt="" coords="551,71,711,98"/>
+<area shape="rect" id="node10" href="$classCharBuffer.html#a7dfd3feaaf80f318ba44efe15b1ec44b" title="CharBuffer::GetString" alt="" coords="557,122,705,149"/>
+<area shape="rect" id="node11" href="$classErrorNode.html#a2e51822b04905fc867d13546af61abb8" title="ErrorNode::StrCopyVisible" alt="" coords="543,173,719,199"/>
+<area shape="rect" id="node12" href="$clib_8h.html#a67ec56eb98b49515d35005a5b3bf9a32" title="Get the length of a null terminated string. " alt="" coords="601,223,661,250"/>
+<area shape="rect" id="node13" href="$classSyntaxNode.html#ac94372d402f38a118b4e8cd20ba7e520" title="SyntaxNode::SyntaxNode" alt="" coords="543,274,718,301"/>
+<area shape="rect" id="node9" href="$memcpy_8c.html#a09b7e057c69b9ddd4b481fc746997a7d" title="Copy a block of memory, handling overlap. " alt="" coords="806,71,889,98"/>
+<area shape="rect" id="node19" href="$classLexer.html#afbb12eaae7cff3bd2960f444cfe98f69" title="Lexer::GetFirstToken" alt="" coords="558,527,703,554"/>
+<area shape="rect" id="node20" href="$structToken.html#ac7eb963d5eff544dd48ffc23aa274356" title="Token::GetNextToken" alt="" coords="555,477,706,503"/>
+<area shape="rect" id="node21" href="$structToken.html#a6331b847b4dc8cebe0e0a79c4de63204" title="Token::Token" alt="" coords="796,477,899,503"/>
+<area shape="rect" id="node25" href="$classNumeralSystem.html#af3643941efdda71a873e2a31276f2d49" title="NumeralSystem::Parse" alt="" coords="551,629,710,655"/>
+<area shape="rect" id="node27" href="$structToken.html#af5213b25192a01f526143461ab47e6af" title="Token::GetLastToken" alt="" coords="557,679,705,706"/>
+</map>

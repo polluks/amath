@@ -1,0 +1,118 @@
+.TH "DrawStatement" 3 "Sat Jan 21 2017" "Version 1.6.1" "amath" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+DrawStatement \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <statements\&.h>\fP
+.PP
+Inherits \fBStatementNode\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBDrawStatement\fP (const char *\fBname\fP, const char *\fBparameter\fP)"
+.br
+.ti -1c
+.RI "\fB~DrawStatement\fP ()"
+.br
+.ti -1c
+.RI "char * \fBExecute\fP ()"
+.br
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "char * \fBname\fP"
+.br
+.ti -1c
+.RI "char * \fBparameter\fP"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Detailed Description"
+.PP 
+Definition at line 315 of file statements\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "DrawStatement::DrawStatement (const char * name, const char * parameter)"
+
+.PP
+Definition at line 853 of file statements\&.cpp\&.
+.PP
+References AllocAndCopy(), name, and parameter\&.
+.PP
+Referenced by Parser::ParseDrawStatement()\&.
+.PP
+.nf
+854 {
+855     AllocAndCopy(&this->name, name);
+856     AllocAndCopy(&this->parameter, parameter);
+857 }
+.fi
+.SS "DrawStatement::~DrawStatement ()"
+
+.PP
+Definition at line 859 of file statements\&.cpp\&.
+.PP
+References name, and parameter\&.
+.PP
+.nf
+860 {
+861     delete [] name;
+862     delete [] parameter;
+863 }
+.fi
+.SH "Member Function Documentation"
+.PP 
+.SS "char * DrawStatement::Execute ()\fC [virtual]\fP"
+
+.PP
+Implements \fBStatementNode\fP\&.
+.PP
+Definition at line 865 of file statements\&.cpp\&.
+.PP
+References GraphList::CreateNewWindow(), GraphWindow::DrawGraph(), Program::Functions, FunctionList::GetFunctionDef(), Program::Graphs, name, GraphWindow::OpenGraphWindow(), and parameter\&.
+.PP
+.nf
+866 {
+867     UserFunction *function = Program->Functions->GetFunctionDef(name, parameter);
+868 
+869     if (function == NOMEM) {
+870         return (char*)("Function does not exists\&." NEWLINE);
+871     }
+872 
+873     GraphWindow *graph = Program->Graphs->CreateNewWindow();
+874 
+875     if (graph == NOMEM) {
+876         return (char*)"Graphs are not supported in this version\&.";
+877     }
+878 
+879     graph->OpenGraphWindow(function);
+880     graph->DrawGraph(function);
+881 
+882     return (char*)EMPTYSTRING;
+883 }
+.fi
+.SH "Member Data Documentation"
+.PP 
+.SS "char* DrawStatement::name\fC [private]\fP"
+
+.PP
+Definition at line 322 of file statements\&.h\&.
+.PP
+Referenced by DrawStatement(), Execute(), and ~DrawStatement()\&.
+.SS "char* DrawStatement::parameter\fC [private]\fP"
+
+.PP
+Definition at line 323 of file statements\&.h\&.
+.PP
+Referenced by DrawStatement(), Execute(), and ~DrawStatement()\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for amath from the source code\&.

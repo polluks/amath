@@ -1,0 +1,336 @@
+.TH "Optimizer" 3 "Sat Jan 21 2017" "Version 1.6.1" "amath" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Optimizer \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <optimizer\&.h>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBOptimizer\fP (\fBSyntaxNode\fP *\fBroot\fP)"
+.br
+.ti -1c
+.RI "\fB~Optimizer\fP ()"
+.br
+.ti -1c
+.RI "void \fBOptimize\fP ()"
+.br
+.ti -1c
+.RI "\fBSyntaxNode\fP * \fBGetRoot\fP ()"
+.br
+.ti -1c
+.RI "int \fBGetTreeDepth\fP (\fBSyntaxNode\fP *node, int depth)"
+.br
+.in -1c
+.SS "Private Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBTagChildren\fP (\fBSyntaxNode\fP *node)"
+.br
+.ti -1c
+.RI "void \fBBalanceTree\fP (\fBSyntaxNode\fP *node)"
+.br
+.ti -1c
+.RI "void \fBReduceUnaryNodes\fP (\fBSyntaxNode\fP *node)"
+.br
+.ti -1c
+.RI "void \fBReduceValueNodes\fP (\fBSyntaxNode\fP *node)"
+.br
+.ti -1c
+.RI "void \fBTagStartNode\fP (\fBSyntaxNode\fP *node)"
+.br
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBSyntaxNode\fP * \fBroot\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 42 of file optimizer\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "Optimizer::Optimizer (\fBSyntaxNode\fP * root)"
+
+.PP
+Definition at line 31 of file optimizer\&.cpp\&.
+.PP
+References root\&.
+.PP
+Referenced by Evaluator::Evaluate()\&.
+.PP
+.nf
+32 {
+33     this->root = root;
+34 }
+.fi
+.SS "Optimizer::~Optimizer ()"
+
+.PP
+Definition at line 36 of file optimizer\&.cpp\&.
+.PP
+.nf
+37 { }
+.fi
+.SH "Member Function Documentation"
+.PP 
+.SS "void Optimizer::BalanceTree (\fBSyntaxNode\fP * node)\fC [private]\fP"
+
+.PP
+Definition at line 63 of file optimizer\&.cpp\&.
+.PP
+References SyntaxNode::Attach(), BalanceTree(), SyntaxNode::Detach(), expression, SyntaxNode::GetNext(), SyntaxNode::GetNodeType(), SyntaxNode::GetParent(), ExpressionNode::GetPrecedence(), GetTreeDepth(), and SyntaxNode::ResetIterator()\&.
+.PP
+Referenced by BalanceTree(), and Optimize()\&.
+.PP
+.nf
+64 {
+65     if (node == NOMEM) {
+66         return;
+67     } else {
+68         node->ResetIterator();
+69     }
+70 
+71     SyntaxNode* current = node->GetNext();
+72 
+73     while (current != NOMEM) {
+74         if (current->GetNodeType() == expression) {
+75             ExpressionNode *troot = (ExpressionNode*)current;
+76             troot->ResetIterator();
+77             ExpressionNode *pivot = (ExpressionNode*)troot->GetNext();
+78             if (pivot != NOMEM && troot->GetPrecedence() == pivot->GetPrecedence()) {
+79                 int rdepth = GetTreeDepth(troot, 1);
+80                 int pdepth = GetTreeDepth(pivot, 0);
+81                 if (rdepth - pdepth > 1 || rdepth - pdepth < -1) {
+82                     pivot->ResetIterator();
+83                     pivot->GetNext();
+84                     ExpressionNode *child = (ExpressionNode*)pivot->GetNext();
+85                     if (child != NOMEM) {
+86                         SyntaxNode* parent = troot->GetParent();
+87                         parent->Detach(troot);
+88                         troot->Detach(pivot);
+89                         pivot->Detach(child);
+90                         troot->Attach(child);
+91                         pivot->Attach(troot);
+92                         parent->Attach(pivot);
+93                         current = pivot;
+94                         current->ResetIterator();
+95                     }
+96                 }
+97             }
+98 
+99         }
+100 
+101         current = node->GetNext();
+102         BalanceTree(current);
+103     }
+104 }
+.fi
+.SS "\fBSyntaxNode\fP * Optimizer::GetRoot ()"
+
+.PP
+Definition at line 39 of file optimizer\&.cpp\&.
+.PP
+References root\&.
+.PP
+Referenced by Evaluator::Evaluate()\&.
+.PP
+.nf
+40 {
+41     return root;
+42 }
+.fi
+.SS "int Optimizer::GetTreeDepth (\fBSyntaxNode\fP * node, int depth)"
+
+.PP
+Definition at line 106 of file optimizer\&.cpp\&.
+.PP
+References SyntaxNode::GetNext(), GetTreeDepth(), and SyntaxNode::ResetIterator()\&.
+.PP
+Referenced by BalanceTree(), and GetTreeDepth()\&.
+.PP
+.nf
+107 {
+108     int max = depth;
+109     SyntaxNode* current;
+110     node->ResetIterator();
+111 
+112     while ((current = node->GetNext()) != NOMEM) {
+113         int a = GetTreeDepth(current, depth + 1);
+114         if (a > max) {
+115             max = a;
+116         }
+117     }
+118 
+119     return max;
+120 }
+.fi
+.SS "void Optimizer::Optimize ()"
+
+.PP
+Definition at line 44 of file optimizer\&.cpp\&.
+.PP
+References BalanceTree(), ReduceUnaryNodes(), ReduceValueNodes(), root, TagChildren(), and TagStartNode()\&.
+.PP
+Referenced by Evaluator::Evaluate()\&.
+.PP
+.nf
+45 {
+46     TagChildren(root);
+47     ReduceUnaryNodes(root);
+48     BalanceTree(root);
+49     ReduceValueNodes(root);
+50     TagStartNode(root);
+51 }
+.fi
+.SS "void Optimizer::ReduceUnaryNodes (\fBSyntaxNode\fP * node)\fC [private]\fP"
+
+.PP
+Definition at line 122 of file optimizer\&.cpp\&.
+.PP
+References SyntaxNode::Detach(), NumericValueNode::Evaluate(), SyntaxNode::GetNext(), SyntaxNode::GetParent(), SyntaxNode::GetReductionType(), ReduceUnaryNodes(), SyntaxNode::Replace(), NumericValueNode::ReplaceWith(), SyntaxNode::ResetIterator(), Number::Unary(), unaryreduc, and valuereduc\&.
+.PP
+Referenced by Optimize(), and ReduceUnaryNodes()\&.
+.PP
+.nf
+123 {
+124     SyntaxNode* current;
+125     node->ResetIterator();
+126 
+127     while ((current = node->GetNext()) != NOMEM) {
+128         ReduceUnaryNodes(current);
+129 
+130         if (current->GetReductionType() == unaryreduc) {
+131             ExpressionNode *expression = (ExpressionNode*)current;
+132             expression->ResetIterator();
+133             ExpressionNode *next = (ExpressionNode*)expression->GetNext();
+134 
+135             if (next->GetReductionType() == unaryreduc) {
+136                 next->ResetIterator();
+137                 SyntaxNode *temp = next->GetNext();
+138                 next->Detach(temp);
+139                 SyntaxNode *parent = expression->GetParent();
+140                 parent->Replace(expression, temp);
+141                 current = parent;
+142                 current->ResetIterator();
+143             } else if (next->GetReductionType() == valuereduc) {
+144                 NumericValueNode *valueNode = (NumericValueNode*)next;
+145                 Number *number = valueNode->Evaluate();
+146                 Number *modified = number->Unary();
+147                 valueNode->ReplaceWith(modified);
+148 
+149                 current->Detach(valueNode);
+150                 SyntaxNode *parent = current->GetParent();
+151                 parent->Replace(current, valueNode);
+152                 current = parent;
+153                 current->ResetIterator();
+154             }
+155         }
+156     }
+157 }
+.fi
+.SS "void Optimizer::ReduceValueNodes (\fBSyntaxNode\fP * node)\fC [private]\fP"
+
+.PP
+Definition at line 159 of file optimizer\&.cpp\&.
+.PP
+References Number::Add(), compladdreduc, complsubreduc, NumericValueNode::Evaluate(), expression, SyntaxNode::GetNext(), SyntaxNode::GetNodeType(), SyntaxNode::GetParent(), SyntaxNode::GetReductionType(), NumericValueNode::GetReductionType(), NumericValueNode::NumericValueNode(), Number::PureComplexValue(), ReduceValueNodes(), SyntaxNode::Replace(), SyntaxNode::ResetIterator(), Number::Sub(), and valuereduc\&.
+.PP
+Referenced by Optimize(), and ReduceValueNodes()\&.
+.PP
+.nf
+160 {
+161     SyntaxNode* current;
+162     node->ResetIterator();
+163 
+164     while ((current = node->GetNext()) != NOMEM) {
+165         if (current->GetNodeType() == expression) {
+166             ExpressionNode *expression = (ExpressionNode*)current;
+167             ReductionType reduction = expression->GetReductionType();
+168             if (reduction == compladdreduc || reduction == complsubreduc) {
+169                 expression->ResetIterator();
+170                 NumericValueNode *first = (NumericValueNode*)expression->GetNext();
+171                 NumericValueNode *second = (NumericValueNode*)expression->GetNext();
+172                 if (
+173                     first->GetReductionType() == valuereduc && second->GetReductionType() == valuereduc &&
+174                     ((first->Evaluate()->PureComplexValue() && !second->Evaluate()->PureComplexValue()) ||
+175                      (!first->Evaluate()->PureComplexValue() && second->Evaluate()->PureComplexValue()))
+176                 ) {
+177                     Number *number =
+178                         reduction == compladdreduc ?
+179                         first->Evaluate()->Add(second->Evaluate()):
+180                         first->Evaluate()->Sub(second->Evaluate());
+181                     NumericValueNode *reducedNode = new NumericValueNode(number);
+182                     SyntaxNode *parent = current->GetParent();
+183                     parent->Replace(current, reducedNode);
+184                     current = parent;
+185                     current->ResetIterator();
+186                 }
+187             }
+188 
+189         }
+190 
+191         ReduceValueNodes(current);
+192     }
+193 }
+.fi
+.SS "void Optimizer::TagChildren (\fBSyntaxNode\fP * node)\fC [private]\fP"
+
+.PP
+Definition at line 53 of file optimizer\&.cpp\&.
+.PP
+References SyntaxNode::GetNext(), SyntaxNode::ResetIterator(), SyntaxNode::SetParent(), and TagChildren()\&.
+.PP
+Referenced by Optimize(), and TagChildren()\&.
+.PP
+.nf
+54 {
+55     SyntaxNode* current;
+56     node->ResetIterator();
+57     while ((current = node->GetNext()) != NOMEM) {
+58         current->SetParent(node);
+59         TagChildren(current);
+60     }
+61 }
+.fi
+.SS "void Optimizer::TagStartNode (\fBSyntaxNode\fP * node)\fC [private]\fP"
+
+.PP
+Definition at line 195 of file optimizer\&.cpp\&.
+.PP
+References SyntaxNode::GetNext(), SyntaxNode::ResetIterator(), SyntaxNode::SetFirstNode(), and TagStartNode()\&.
+.PP
+Referenced by Optimize(), and TagStartNode()\&.
+.PP
+.nf
+196 {
+197     node->ResetIterator();
+198     SyntaxNode* next = node->GetNext();
+199 
+200     if (next != NOMEM) {
+201         TagStartNode(next);
+202     } else {
+203         node->SetFirstNode();
+204     }
+205 }
+.fi
+.SH "Member Data Documentation"
+.PP 
+.SS "\fBSyntaxNode\fP* Optimizer::root\fC [private]\fP"
+
+.PP
+Definition at line 52 of file optimizer\&.h\&.
+.PP
+Referenced by GetRoot(), Optimize(), and Optimizer()\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for amath from the source code\&.

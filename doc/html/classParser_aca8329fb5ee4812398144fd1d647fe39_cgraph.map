@@ -1,0 +1,84 @@
+<map id="Parser::ParseDefault" name="Parser::ParseDefault">
+<area shape="rect" id="node2" href="$classParser.html#a811765334b0cd3f01152c35c9f5bcaec" title="Parser::Expect" alt="" coords="2241,1164,2350,1190"/>
+<area shape="rect" id="node8" href="$classParser.html#a19c5b6055d066d21ad39a32287e833c2" title="Parser::ParseEvaluation" alt="" coords="203,1236,365,1262"/>
+<area shape="rect" id="node71" href="$classParser.html#a0e8b1f794af2b9923bc3fcb7498004f9" title="Parser::ParseFunctionDef" alt="" coords="197,514,371,541"/>
+<area shape="rect" id="node3" href="$structToken.html#a5f93ea94940a6eeb060507e1da594599" title="Token::GetPos" alt="" coords="2527,1046,2638,1073"/>
+<area shape="rect" id="node4" href="$classParser.html#a415a103e66558b4d366d9a1420561fe3" title="Parser::GetToken" alt="" coords="2520,1585,2645,1612"/>
+<area shape="rect" id="node5" href="$classLexer.html#afbb12eaae7cff3bd2960f444cfe98f69" title="Lexer::GetFirstToken" alt="" coords="2789,1585,2934,1612"/>
+<area shape="rect" id="node6" href="$structToken.html#ac7eb963d5eff544dd48ffc23aa274356" title="Token::GetNextToken" alt="" coords="2786,1325,2937,1352"/>
+<area shape="rect" id="node7" href="$structToken.html#a6331b847b4dc8cebe0e0a79c4de63204" title="Token::Token" alt="" coords="3076,1325,3179,1352"/>
+<area shape="rect" id="node9" href="$classParser.html#ae46b0a87abe76f40ae117c5bdcb2f29d" title="Parser::ParseExpression" alt="" coords="443,1185,610,1212"/>
+<area shape="rect" id="node67" href="$classEvalStatement.html#aca4069dd093c588724a5516598ec413f" title="EvalStatement::EvalStatement" alt="" coords="683,2253,885,2280"/>
+<area shape="rect" id="node69" href="$classExpressionNode.html#adc58a4c102b7fa18e9c3a0be361b0663" title="ExpressionNode::IsSilent" alt="" coords="441,1286,612,1313"/>
+<area shape="rect" id="node70" href="$classSilentStatement.html#aba2d6f5ec935ec1ecf28bed3e1d01959" title="SilentStatement::SilentStatement" alt="" coords="419,1337,635,1364"/>
+<area shape="rect" id="node10" href="$classParser.html#a47ba11ddd167c1b0b5cf1d2fd1cf1ccd" title="Parser::ParseAddSubstract" alt="" coords="693,2160,875,2186"/>
+<area shape="rect" id="node11" href="$classAdditionNode.html#ad887731026da63e83069e3c5a282b02d" title="AdditionNode::AdditionNode" alt="" coords="1460,2396,1647,2422"/>
+<area shape="rect" id="node16" href="$classParser.html#a70c674c7b40f7a0ab1df0523c4c8c530" title="Parser::ParseFactor" alt="" coords="967,2101,1106,2128"/>
+<area shape="rect" id="node55" href="$classParser.html#adb5c3a188b36f7ecb198ae30f06338b3" title="Parser::PutToken" alt="" coords="2233,1965,2357,1992"/>
+<area shape="rect" id="node66" href="$classSubtractionNode.html#a1c08339ecfc99430eec6db0b7687c716" title="SubtractionNode::SubtractionNode" alt="" coords="1188,2345,1412,2372"/>
+<area shape="rect" id="node12" href="$classNumericOperator.html#a49cd2230b867cdfca64715aaf6e37561" title="NumericOperator::Numeric\lOperator" alt="" coords="2493,2186,2672,2227"/>
+<area shape="rect" id="node13" href="$classExpressionNode.html#adc8888de5329d356224c8a93f3ce2b75" title="ExpressionNode::ExpressionNode" alt="" coords="3016,1581,3239,1608"/>
+<area shape="rect" id="node14" href="$classSyntaxNode.html#ac94372d402f38a118b4e8cd20ba7e520" title="SyntaxNode::SyntaxNode" alt="" coords="3287,1122,3461,1149"/>
+<area shape="rect" id="node15" href="$classCharBuffer.html#a4345e9a5114f5c0292e8f242f26e3a7b" title="Initialize without allocating memory. " alt="" coords="3509,438,3665,465"/>
+<area shape="rect" id="node17" href="$classParser.html#ad6ccc6e873d1fb3dcfa142655a5b0732" title="Parser::ParsePower" alt="" coords="1231,1974,1369,2001"/>
+<area shape="rect" id="node64" href="$classMultiplicationNode.html#a3f96a30f283caa7991dd67be334e71af" title="MultiplicationNode\l::MultiplicationNode" alt="" coords="1485,2127,1622,2168"/>
+<area shape="rect" id="node65" href="$classDivisionNode.html#a39951420a0f89eb5622ec55f99626c19" title="DivisionNode::DivisionNode" alt="" coords="1207,2244,1393,2270"/>
+<area shape="rect" id="node18" href="$classParser.html#a446237993f806a92dd3e78ba8019f4f5" title="Parser::ParseUnary" alt="" coords="1485,1889,1622,1916"/>
+<area shape="rect" id="node63" href="$classPowerNode.html#a55fac2d0658e6381d166c3c112a67351" title="PowerNode::PowerNode" alt="" coords="1695,2092,1861,2118"/>
+<area shape="rect" id="node19" href="$classUnaryNode.html#a6d08d4e122b413b28e5163900800ff66" title="UnaryNode::UnaryNode" alt="" coords="1697,1889,1859,1916"/>
+<area shape="rect" id="node20" href="$classParser.html#ac1a69267c9414b54a4b592c9ad084780" title="Parser::ParseAtomic" alt="" coords="1707,1378,1849,1405"/>
+<area shape="rect" id="node21" href="$classAbsoluteNode.html#af1206a7293f334c1d544cafe95af3ba5" title="AbsoluteNode::AbsoluteNode" alt="" coords="1923,1788,2118,1814"/>
+<area shape="rect" id="node22" href="$classComplexiNode.html#a79e05af8f2290980a8887769e925b228" title="ComplexiNode::ComplexiNode" alt="" coords="1919,1429,2122,1456"/>
+<area shape="rect" id="node28" href="$classEulersNumberNode.html#a5f2feea3aa3eca36d808303f1b10fc65" title="EulersNumberNode::Eulers\lNumberNode" alt="" coords="1930,1312,2111,1354"/>
+<area shape="rect" id="node30" href="$classInsVariableNode.html#a76772ab88bcb3dd4d8f5b299ed4bf8ee" title="InsVariableNode::InsVariableNode" alt="" coords="1909,1160,2132,1186"/>
+<area shape="rect" id="node32" href="$classNumericValueNode.html#a85977b96aa8e3883e409ca549139258b" title="NumericValueNode::Numeric\lValueNode" alt="" coords="2199,946,2391,987"/>
+<area shape="rect" id="node34" href="$classParser.html#a84af27a6f4e42888eba6ac36ccd0815c" title="Parser::ParseIdent" alt="" coords="1955,953,2086,980"/>
+<area shape="rect" id="node58" href="$classParser.html#a769d580b14d3d097ed255ad869cc1653" title="Parser::ParseNumber" alt="" coords="1947,1480,2095,1506"/>
+<area shape="rect" id="node62" href="$classPiNode.html#a75ae61c6fa1883bca5b253123013c047" title="PiNode::PiNode" alt="" coords="1963,1378,2079,1405"/>
+<area shape="rect" id="node23" href="$structComplexNumber.html#af0a78be5e675c845b8dc2bf8e5e8f32b" title="ComplexNumber::ComplexNumber" alt="" coords="2182,1382,2409,1409"/>
+<area shape="rect" id="node26" href="$classNumericValueNode.html#a5ad87623d57e875b72d8f166c578231f" title="NumericValueNode::Numeric\lValueNode" alt="" coords="2199,1316,2391,1358"/>
+<area shape="rect" id="node24" href="$prim_8c.html#a980e6e049f7902b05fc9eb5614b07a5c" title="Pack two real numbers into a complex number. " alt="" coords="2554,1426,2611,1453"/>
+<area shape="rect" id="node25" href="$structNumber.html#afd3c2f9b4b288e339f741a6e4ae54593" title="Number::Number" alt="" coords="2800,1224,2923,1250"/>
+<area shape="rect" id="node27" href="$classExpressionNode.html#a5d67579dd6c9777a18455a1360f29841" title="ExpressionNode::ExpressionNode" alt="" coords="2471,1148,2694,1174"/>
+<area shape="rect" id="node29" href="$structRealNumber.html#a65924261adb775498f3b1b0f41f89091" title="RealNumber::RealNumber" alt="" coords="2207,1265,2383,1292"/>
+<area shape="rect" id="node31" href="$classVariableNode.html#a0d3189fa49fab4ac738f114b6a696fd7" title="VariableNode::VariableNode" alt="" coords="2202,1012,2389,1038"/>
+<area shape="rect" id="node33" href="$structRealNumber.html#aa61264f519c95ec9b63ab94c352bcc67" title="RealNumber::RealNumber" alt="" coords="2495,1097,2671,1124"/>
+<area shape="rect" id="node35" href="$classFunctionList.html#ae8dc9d2913429faefdfed463ae3272c1" title="FunctionList::GetFunctionCall" alt="" coords="2198,742,2393,769"/>
+<area shape="rect" id="node41" href="$structToken.html#a15f1043de07ce8e452fbf115b85def71" title="Token::GetText" alt="" coords="2239,894,2352,921"/>
+<area shape="rect" id="node42" href="$classErrorNode.html#a1c3d4afac02da7fcc0cec125a7ac03ba" title="ErrorNode::ErrorNode" alt="" coords="2221,349,2369,376"/>
+<area shape="rect" id="node50" href="$classLexer.html#a3032cbeb851294bccd61b722d9a86265" title="Lexer::GetInput" alt="" coords="2239,590,2351,617"/>
+<area shape="rect" id="node51" href="$classVariableList.html#ac78b3d52283bec7cbd8e7e2d217e1608" title="VariableList::CreateVariable" alt="" coords="2203,641,2387,668"/>
+<area shape="rect" id="node54" href="$classAssignmentNode.html#a8b2b07073d9900677a8ffe93f7d4171d" title="AssignmentNode::AssignmentNode" alt="" coords="2180,1113,2411,1140"/>
+<area shape="rect" id="node57" href="$classVariableList.html#a2002862abdb75e088e2dd6bf1e140be6" title="VariableList::GetVariable" alt="" coords="2212,692,2379,718"/>
+<area shape="rect" id="node36" href="$classUserFunction.html#a59c59ebf5b45c5bb4aaa200a1218549d" title="UserFunction::GetName" alt="" coords="2501,742,2665,769"/>
+<area shape="rect" id="node37" href="$classFunctionList.html#aabcebb1bdf56aee163f96483dcdc603c" title="FunctionList::GetSystemFunction" alt="" coords="2474,793,2691,820"/>
+<area shape="rect" id="node38" href="$strcmp_8c.html#a2a1f39d11cbbaac992d42e67557dac4b" title="Compare two null terminated strings to each other. " alt="" coords="2820,844,2903,870"/>
+<area shape="rect" id="node39" href="$classUserFunctionNode.html#af7a261eca3785022389cd02d36fa33d5" title="UserFunctionNode::UserFunctionNode" alt="" coords="2459,996,2707,1022"/>
+<area shape="rect" id="node40" href="$classFunctionNode.html#a41cb7db0162ffbec0902bd8ff7ea435f" title="FunctionNode::FunctionNode" alt="" coords="2765,1173,2957,1200"/>
+<area shape="rect" id="node43" href="$alloccpy_8c.html#a5bed05c70cb17e541fee570b5dc32e1a" title="Allocate memory and copy a string into the array. " alt="" coords="2809,489,2914,516"/>
+<area shape="rect" id="node44" href="$classCharBuffer.html#a045b38735f7b3007c1b98d3d7b7feafe" title="CharBuffer::Append" alt="" coords="2514,134,2651,161"/>
+<area shape="rect" id="node45" href="$classCharBuffer.html#ad1907009b5ad136692b989fa96bf2f7e" title="Ensure a memory block of speficied size is allocated. " alt="" coords="2503,286,2663,313"/>
+<area shape="rect" id="node47" href="$classCharBuffer.html#a7dfd3feaaf80f318ba44efe15b1ec44b" title="CharBuffer::GetString" alt="" coords="2509,185,2657,212"/>
+<area shape="rect" id="node48" href="$classErrorNode.html#a2e51822b04905fc867d13546af61abb8" title="ErrorNode::StrCopyVisible" alt="" coords="2495,388,2671,414"/>
+<area shape="rect" id="node49" href="$clib_8h.html#a67ec56eb98b49515d35005a5b3bf9a32" title="Get the length of a null terminated string. " alt="" coords="2553,438,2613,465"/>
+<area shape="rect" id="node46" href="$memcpy_8c.html#a09b7e057c69b9ddd4b481fc746997a7d" title="Copy a block of memory, handling overlap. " alt="" coords="2820,286,2903,313"/>
+<area shape="rect" id="node52" href="$classVariable.html#a230014211eb4309bcec965df5799a7eb" title="Variable::Variable" alt="" coords="2521,590,2645,617"/>
+<area shape="rect" id="node53" href="$classVariable.html#accf221d35cec8a9707e84891b715fb6c" title="Variable::GetName" alt="" coords="2516,692,2649,718"/>
+<area shape="rect" id="node56" href="$structToken.html#af5213b25192a01f526143461ab47e6af" title="Token::GetLastToken" alt="" coords="2509,1965,2657,1992"/>
+<area shape="rect" id="node59" href="$classNumeralSystem.html#a1f8d8a04e99540260d4fc4f16c63ddc3" title="NumeralSystem::Parse" alt="" coords="2216,1433,2375,1460"/>
+<area shape="rect" id="node61" href="$structNumber.html#a83da654d465f1344162ce8b8f8c564b9" title="Number::GetRealValue" alt="" coords="2217,1484,2374,1510"/>
+<area shape="rect" id="node60" href="$classNumeralSystem.html#af3643941efdda71a873e2a31276f2d49" title="NumeralSystem::Parse" alt="" coords="2503,1477,2662,1504"/>
+<area shape="rect" id="node68" href="$classStatementNode.html#a586026d6009a39d087792d621de86360" title="StatementNode::StatementNode" alt="" coords="2477,1325,2689,1352"/>
+<area shape="rect" id="node72" href="$classFunctionList.html#a7c5872fe4a522983041ac12c2cb37ea3" title="FunctionList::IsSystemFunction" alt="" coords="933,540,1140,566"/>
+<area shape="rect" id="node73" href="$classFunctionList.html#acf0716fd18c32a6d52a947052060a2a1" title="FunctionList::GetFunctionDef" alt="" coords="2199,489,2392,516"/>
+<area shape="rect" id="node75" href="$classUserFunction.html#a9273684dd9351e945a10799ac6eb7038" title="UserFunction::CreateVariable" alt="" coords="1923,388,2118,414"/>
+<area shape="rect" id="node80" href="$classVariableList.html#a4e8c2b729d346ff56cf01c5349931c62" title="VariableList::InsertTemporary\lVariable" alt="" coords="430,206,623,247"/>
+<area shape="rect" id="node81" href="$classUserFunction.html#ab033663735b65ce885eefd63e6208c24" title="UserFunction::SetExpression" alt="" coords="687,228,881,254"/>
+<area shape="rect" id="node82" href="$classVariableList.html#a489608dbcd6989a9ffd4092234a8052c" title="VariableList::RemoveTemporary\lVariable" alt="" coords="422,271,631,312"/>
+<area shape="rect" id="node83" href="$classFunctionDefinitionNode.html#a1ecb6319492be964ad5089739cf65d63" title="FunctionDefinitionNode\l::FunctionDefinitionNode" alt="" coords="2212,64,2379,106"/>
+<area shape="rect" id="node74" href="$classUserFunction.html#a9e07b00bd2ff918fd11767cb627ad7df" title="UserFunction::UserFunction" alt="" coords="2489,489,2676,516"/>
+<area shape="rect" id="node76" href="$classUserFunction.html#a5f22a558f8418f2ef6df952d88c7029b" title="UserFunction::Initialize\lTexts" alt="" coords="2217,178,2373,219"/>
+<area shape="rect" id="node77" href="$classCharBuffer.html#abe39d3fd7d8b9c8ec343af2cae7adc96" title="CharBuffer::Empty" alt="" coords="2517,33,2648,60"/>
+<area shape="rect" id="node79" href="$classExpressionNode.html#a0bbf243108a14eaf963a8161ffd8eb92" title="ExpressionNode::GetText" alt="" coords="2496,84,2669,110"/>
+<area shape="rect" id="node78" href="$classCharBuffer.html#ae742439a2d5d5a0ad64411dcbf4604c8" title="CharBuffer::EnsureMinimumSize" alt="" coords="2755,8,2968,34"/>
+</map>

@@ -1,0 +1,8 @@
+<map id="ComplexNumber::Add" name="ComplexNumber::Add">
+<area shape="rect" id="node2" href="$prim_8c.html#aa334a54c40e3eeb301f2a510a7675070" title="Addition of two complex numbers. " alt="" coords="292,56,343,83"/>
+<area shape="rect" id="node4" href="$prim_8c.html#a980e6e049f7902b05fc9eb5614b07a5c" title="Pack two real numbers into a complex number. " alt="" coords="511,107,569,133"/>
+<area shape="rect" id="node6" href="$structComplexNumber.html#a0d89581ead93385331befcef51698693" title="ComplexNumber::ComplexNumber" alt="" coords="204,157,431,184"/>
+<area shape="rect" id="node3" href="$prim_8c.html#aa1fe0b9371befabef6c41ba73470774a" title="Imaginary part of complex number. " alt="" coords="511,5,569,32"/>
+<area shape="rect" id="node5" href="$prim_8c.html#a4a236b24c0197821e3489a35a72079ab" title="Real part of complex number. " alt="" coords="515,56,565,83"/>
+<area shape="rect" id="node7" href="$structNumber.html#afd3c2f9b4b288e339f741a6e4ae54593" title="Number::Number" alt="" coords="479,157,601,184"/>
+</map>

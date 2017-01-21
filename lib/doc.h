@@ -80,7 +80,7 @@
 
   \subsection download Download
   Prebuild packages are available from:<BR>
-  Windows: http://innolan.net/amath-1.6.1-win32.exe<BR>
+  Windows: https://gitlab.com/rnger/amath/blob/master/amath-1.6.1-win32.exe<BR>
   (SHA256 58dc5906723b7f66e0bfe1c15d90dc28913ef5b9ea63e227a59a9e42ccdaefb5)<BR>
   <BR>
   FreeBSD: https://www.freshports.org/math/amath/<BR>

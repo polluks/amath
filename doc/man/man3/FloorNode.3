@@ -1,0 +1,101 @@
+.TH "FloorNode" 3 "Sat Jan 21 2017" "Version 1.6.1" "amath" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+FloorNode \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <functions\&.h>\fP
+.PP
+Inherits \fBFunctionNode\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBFloorNode\fP (\fBExpressionNode\fP *\fBexpression\fP)"
+.br
+.ti -1c
+.RI "\fBNumber\fP * \fBEvaluate\fP ()"
+.br
+.in -1c
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static \fBFunctionNode\fP * \fBCreate\fP (\fBExpressionNode\fP *\fBexpression\fP)"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "char * \fBGetNodeText\fP ()"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Detailed Description"
+.PP 
+Definition at line 250 of file functions\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "FloorNode::FloorNode (\fBExpressionNode\fP * expression)"
+
+.PP
+Definition at line 583 of file functions\&.cpp\&.
+.PP
+References FunctionNode::FunctionNode()\&.
+.PP
+Referenced by Create()\&.
+.PP
+.nf
+583                                                :
+584     FunctionNode(expression) { }
+.fi
+.SH "Member Function Documentation"
+.PP 
+.SS "\fBFunctionNode\fP * FloorNode::Create (\fBExpressionNode\fP * expression)\fC [static]\fP"
+
+.PP
+Definition at line 586 of file functions\&.cpp\&.
+.PP
+References FloorNode()\&.
+.PP
+.nf
+587 {
+588     return new FloorNode(expression);
+589 }
+.fi
+.SS "\fBNumber\fP * FloorNode::Evaluate ()\fC [virtual]\fP"
+
+.PP
+Implements \fBExpressionNode\fP\&.
+.PP
+Definition at line 591 of file functions\&.cpp\&.
+.PP
+References ExpressionNode::Evaluate(), FunctionNode::expression, Number::Floor(), and ExpressionNode::result\&.
+.PP
+.nf
+592 {
+593     result = expression->Evaluate()->Floor();
+594     return result;
+595 }
+.fi
+.SS "char * FloorNode::GetNodeText ()\fC [protected]\fP, \fC [virtual]\fP"
+
+.PP
+Implements \fBExpressionNode\fP\&.
+.PP
+Definition at line 597 of file functions\&.cpp\&.
+.PP
+.nf
+598 {
+599     return (char*)"floor";
+600 }
+.fi
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for amath from the source code\&.

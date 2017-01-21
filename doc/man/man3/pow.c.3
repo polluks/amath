@@ -1,0 +1,610 @@
+.TH "lib/real/pow.c" 3 "Sat Jan 21 2017" "Version 1.6.1" "amath" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+lib/real/pow.c \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'prim\&.h'\fP
+.br
+\fC#include 'math\&.h'\fP
+.br
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "double \fBpow\fP (double x, double y)"
+.br
+.RI "\fIExpontation function\&. \fP"
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "static const double \fBbp\fP [] = {1\&.0, 1\&.5,}"
+.br
+.ti -1c
+.RI "static const double \fBdp_h\fP [] = { 0\&.0, 5\&.84962487220764160156e\-01,}"
+.br
+.ti -1c
+.RI "static const double \fBdp_l\fP [] = { 0\&.0, 1\&.35003920212974897128e\-08,}"
+.br
+.ti -1c
+.RI "static const double \fBzero\fP = 0\&.0"
+.br
+.ti -1c
+.RI "static const double \fBone\fP = 1\&.0"
+.br
+.ti -1c
+.RI "static const double \fBtwo\fP = 2\&.0"
+.br
+.ti -1c
+.RI "static const double \fBtwo53\fP = 9007199254740992\&.0"
+.br
+.ti -1c
+.RI "static const double \fBhuge\fP = 1\&.0e300"
+.br
+.ti -1c
+.RI "static const double \fBtiny\fP = 1\&.0e\-300"
+.br
+.ti -1c
+.RI "static const double \fBL1\fP = 5\&.99999999999994648725e\-01"
+.br
+.ti -1c
+.RI "static const double \fBL2\fP = 4\&.28571428578550184252e\-01"
+.br
+.ti -1c
+.RI "static const double \fBL3\fP = 3\&.33333329818377432918e\-01"
+.br
+.ti -1c
+.RI "static const double \fBL4\fP = 2\&.72728123808534006489e\-01"
+.br
+.ti -1c
+.RI "static const double \fBL5\fP = 2\&.30660745775561754067e\-01"
+.br
+.ti -1c
+.RI "static const double \fBL6\fP = 2\&.06975017800338417784e\-01"
+.br
+.ti -1c
+.RI "static const double \fBP1\fP = 1\&.66666666666666019037e\-01"
+.br
+.ti -1c
+.RI "static const double \fBP2\fP = \-2\&.77777777770155933842e\-03"
+.br
+.ti -1c
+.RI "static const double \fBP3\fP = 6\&.61375632143793436117e\-05"
+.br
+.ti -1c
+.RI "static const double \fBP4\fP = \-1\&.65339022054652515390e\-06"
+.br
+.ti -1c
+.RI "static const double \fBP5\fP = 4\&.13813679705723846039e\-08"
+.br
+.ti -1c
+.RI "static const double \fBlg2\fP = 6\&.93147180559945286227e\-01"
+.br
+.ti -1c
+.RI "static const double \fBlg2_h\fP = 6\&.93147182464599609375e\-01"
+.br
+.ti -1c
+.RI "static const double \fBlg2_l\fP = \-1\&.90465429995776804525e\-09"
+.br
+.ti -1c
+.RI "static const double \fBovt\fP = 8\&.0085662595372944372e\-0017"
+.br
+.ti -1c
+.RI "static const double \fBcp\fP = 9\&.61796693925975554329e\-01"
+.br
+.ti -1c
+.RI "static const double \fBcp_h\fP = 9\&.61796700954437255859e\-01"
+.br
+.ti -1c
+.RI "static const double \fBcp_l\fP = \-7\&.02846165095275826516e\-09"
+.br
+.ti -1c
+.RI "static const double \fBivln2\fP = 1\&.44269504088896338700e+00"
+.br
+.ti -1c
+.RI "static const double \fBivln2_h\fP = 1\&.44269502162933349609e+00"
+.br
+.ti -1c
+.RI "static const double \fBivln2_l\fP = 1\&.92596299112661746887e\-08"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "double pow (double x, double y)"
+
+.PP
+Expontation function\&. 
+.PP
+\fBVersion:\fP
+.RS 4
+1\&.3 
+.RE
+.PP
+\fBDate:\fP
+.RS 4
+95/01/18
+.RE
+.PP
+.PP
+.nf
+
+Method:  Let x =  2   * (1+f)
+ 1\&. Compute and return log2(x) in two pieces:
+    log2(x) = w1 + w2,
+    where w1 has 53-24 = 29 bit trailing zeros\&.
+ 2\&. Perform y*log2(x) = n+y' by simulating muti-precision
+    arithmetic, where |y'|<=0\&.5\&.
+ 3\&. Return x**y = 2**n*exp(y'*log2)
+.fi
+.PP
+.PP
+.PP
+.nf
+Special cases:
+ 1\&.  (anything) ** 0  is 1
+ 2\&.  (anything) ** 1  is itself
+ 3\&.  (anything) ** NAN is NAN
+ 4\&.  NAN ** (anything except 0) is NAN
+ 5\&.  +-(|x| > 1) **  +INF is +INF
+ 6\&.  +-(|x| > 1) **  -INF is +0
+ 7\&.  +-(|x| < 1) **  +INF is +0
+ 8\&.  +-(|x| < 1) **  -INF is +INF
+ 9\&.  +-1         ** +-INF is NAN
+ 10\&. +0 ** (+anything except 0, NAN)               is +0
+ 11\&. -0 ** (+anything except 0, NAN, odd integer)  is +0
+ 12\&. +0 ** (-anything except 0, NAN)               is +INF
+ 13\&. -0 ** (-anything except 0, NAN, odd integer)  is +INF
+ 14\&. -0 ** (odd integer) = -( +0 ** (odd integer) )
+ 15\&. +INF ** (+anything except 0,NAN) is +INF
+ 16\&. +INF ** (-anything except 0,NAN) is +0
+ 17\&. -INF ** (anything)  = -0 ** (-anything)
+ 18\&. (-anything) ** (integer) is (-1)**(integer)*(+anything**integer)
+ 19\&. (-anything except 0 and inf) ** (non-integer) is NAN
+.fi
+.PP
+.PP
+.PP
+.nf
+Accuracy:
+ pow(x,y) returns x**y nearly rounded\&. In particular
+        pow(integer,integer)
+ always returns the correct integer provided it is
+ representable\&.
+.fi
+.PP
+.PP
+.PP
+.nf
+Constants :
+The hexadecimal values are the intended ones for the following
+constants\&. The decimal values may be used, provided that the
+compiler will convert from decimal to binary accurately enough
+to produce the hexadecimal values shown\&.
+.fi
+.PP
+ 
+.PP
+\fBCopyright:\fP
+.RS 4
+Copyright (C) 1993 by Sun Microsystems, Inc\&. All rights reserved\&.  Developed at SunSoft, a Sun Microsystems, Inc\&. business\&. Permission to use, copy, modify, and distribute this software is freely granted, provided that this notice is preserved\&. 
+.RE
+.PP
+
+.PP
+Definition at line 139 of file pow\&.c\&.
+.PP
+References bp, cp, cp_h, cp_l, dp_h, dp_l, huge, ivln2, ivln2_h, ivln2_l, L1, L2, L3, L4, L5, L6, lg2, lg2_h, lg2_l, one, ovt, P1, P2, P3, P4, P5, scalbn(), sqrt(), tiny, two, two53, and zero\&.
+.PP
+Referenced by cpow(), DecimalSystem::GetRealText(), PositionalNumeralSystem::GetText(), PositionalNumeralSystem::Parse(), and RealNumber::Raise()\&.
+.PP
+.nf
+140 {
+141     double z,ax,z_h,z_l,p_h,p_l;
+142     double y1,t1,t2,r,s,t,u,v,w;
+143     sword i0,i1,i,j,k,yisint,n;
+144     sword hx,hy,ix,iy;
+145     uword lx,ly;
+146 
+147     i0 = ((*(int*)&one)>>29)^1;
+148     i1=1-i0;
+149     EXTRACT_WORDS(hx,lx,x);
+150     EXTRACT_WORDS(hy,ly,y);
+151     ix = hx&0x7fffffff;
+152     iy = hy&0x7fffffff;
+153 
+154     /* y==zero: x**0 = 1 */
+155     if((iy|ly)==0) return one;
+156 
+157     /* +-NaN return x+y */
+158     if(ix > 0x7ff00000 || ((ix==0x7ff00000)&&(lx!=0)) ||
+159             iy > 0x7ff00000 || ((iy==0x7ff00000)&&(ly!=0)))
+160         return x+y;
+161 
+162     /* determine if y is an odd int when x < 0
+163      * yisint = 0   \&.\&.\&. y is not an integer
+164      * yisint = 1   \&.\&.\&. y is an odd int
+165      * yisint = 2   \&.\&.\&. y is an even int
+166      */
+167     yisint  = 0;
+168     if(hx<0) {
+169         if(iy>=0x43400000) yisint = 2; /* even integer y */
+170         else if(iy>=0x3ff00000) {
+171             k = (iy>>20)-0x3ff;    /* exponent */
+172             if(k>20) {
+173                 j = ly>>(52-k);
+174                 if((uword)(j<<(52-k))==ly) yisint = 2-(j&1);
+175             } else if(ly==0) {
+176                 j = iy>>(20-k);
+177                 if((j<<(20-k))==iy) yisint = 2-(j&1);
+178             }
+179         }
+180     }
+181 
+182     /* special value of y */
+183     if(ly==0) {
+184         if (iy==0x7ff00000) {   /* y is +-inf */
+185             if(((ix-0x3ff00000)|lx)==0)
+186                 return  y - y;  /* inf**+-1 is NaN */
+187             else if (ix >= 0x3ff00000)/* (|x|>1)**+-inf = inf,0 */
+188                 return (hy>=0)? y: zero;
+189             else            /* (|x|<1)**-,+inf = inf,0 */
+190                 return (hy<0)?-y: zero;
+191         }
+192         if(iy==0x3ff00000) {    /* y is  +-1 */
+193             if(hy<0) return one/x;
+194             else return x;
+195         }
+196         if(hy==0x40000000) return x*x; /* y is  2 */
+197         if(hy==0x3fe00000) {    /* y is  0\&.5 */
+198             if(hx>=0)   /* x >= +0 */
+199                 return sqrt(x);
+200         }
+201     }
+202 
+203     ax   = fabs(x);
+204     /* special value of x */
+205     if(lx==0) {
+206         if(ix==0x7ff00000||ix==0||ix==0x3ff00000) {
+207             z = ax;         /*x is +-0,+-inf,+-1*/
+208             if(hy<0) z = one/z; /* z = (1/|x|) */
+209             if(hx<0) {
+210                 if(((ix-0x3ff00000)|yisint)==0) {
+211                     z = (z-z)/(z-z); /* (-1)**non-int is NaN */
+212                 } else if(yisint==1)
+213                     z = -z;     /* (x<0)**odd = -(|x|**odd) */
+214             }
+215             return z;
+216         }
+217     }
+218 
+219     n = (hx>>31)+1;
+220 
+221     /* (x<0)**(non-int) is NaN */
+222     if((n|yisint)==0) return (x-x)/(x-x);
+223 
+224     s = one; /* s (sign of result -ve**odd) = -1 else = 1 */
+225     if((n|(yisint-1))==0) s = -one;/* (-ve)**(odd int) */
+226 
+227     /* |y| is huge */
+228     if(iy>0x41e00000) { /* if |y| > 2**31 */
+229         if(iy>0x43f00000) { /* if |y| > 2**64, must o/uflow */
+230             if(ix<=0x3fefffff) return (hy<0)? huge*huge:tiny*tiny;
+231             if(ix>=0x3ff00000) return (hy>0)? huge*huge:tiny*tiny;
+232         }
+233         /* over/underflow if x is not close to one */
+234         if(ix<0x3fefffff) return (hy<0)? s*huge*huge:s*tiny*tiny;
+235         if(ix>0x3ff00000) return (hy>0)? s*huge*huge:s*tiny*tiny;
+236         /* now |1-x| is tiny <= 2**-20, suffice to compute
+237            log(x) by x-x^2/2+x^3/3-x^4/4 */
+238         t = ax-one;     /* t has 20 trailing zeros */
+239         w = (t*t)*(0\&.5-t*(0\&.3333333333333333333333-t*0\&.25));
+240         u = ivln2_h*t;  /* ivln2_h has 21 sig\&. bits */
+241         v = t*ivln2_l-w*ivln2;
+242         t1 = u+v;
+243         SET_LOW_WORD(t1,0);
+244         t2 = v-(t1-u);
+245     } else {
+246         double ss,s2,s_h,s_l,t_h,t_l;
+247         n = 0;
+248         /* take care subnormal number */
+249         if(ix<0x00100000)
+250         {
+251             ax *= two53;
+252             n -= 53;
+253             GET_HIGH_WORD(ix,ax);
+254         }
+255         n  += ((ix)>>20)-0x3ff;
+256         j  = ix&0x000fffff;
+257         /* determine interval */
+258         ix = j|0x3ff00000;      /* normalize ix */
+259         if(j<=0x3988E) k=0;     /* |x|<sqrt(3/2) */
+260         else if(j<0xBB67A) k=1; /* |x|<sqrt(3)   */
+261         else {
+262             k=0;
+263             n+=1;
+264             ix -= 0x00100000;
+265         }
+266         SET_HIGH_WORD(ax,ix);
+267 
+268         /* compute ss = s_h+s_l = (x-1)/(x+1) or (x-1\&.5)/(x+1\&.5) */
+269         u = ax-bp[k];       /* bp[0]=1\&.0, bp[1]=1\&.5 */
+270         v = one/(ax+bp[k]);
+271         ss = u*v;
+272         s_h = ss;
+273         SET_LOW_WORD(s_h,0);
+274         /* t_h=ax+bp[k] High */
+275         t_h = zero;
+276         SET_HIGH_WORD(t_h,((ix>>1)|0x20000000)+0x00080000+(k<<18));
+277         t_l = ax - (t_h-bp[k]);
+278         s_l = v*((u-s_h*t_h)-s_h*t_l);
+279         /* compute log(ax) */
+280         s2 = ss*ss;
+281         r = s2*s2*(L1+s2*(L2+s2*(L3+s2*(L4+s2*(L5+s2*L6)))));
+282         r += s_l*(s_h+ss);
+283         s2  = s_h*s_h;
+284         t_h = 3\&.0+s2+r;
+285         SET_LOW_WORD(t_h,0);
+286         t_l = r-((t_h-3\&.0)-s2);
+287         /* u+v = ss*(1+\&.\&.\&.) */
+288         u = s_h*t_h;
+289         v = s_l*t_h+t_l*ss;
+290         /* 2/(3log2)*(ss+\&.\&.\&.) */
+291         p_h = u+v;
+292         SET_LOW_WORD(p_h,0);
+293         p_l = v-(p_h-u);
+294         z_h = cp_h*p_h;     /* cp_h+cp_l = 2/(3*log2) */
+295         z_l = cp_l*p_h+p_l*cp+dp_l[k];
+296         /* log2(ax) = (ss+\&.\&.)*2/(3*log2) = n + dp_h + z_h + z_l */
+297         t = (double)n;
+298         t1 = (((z_h+z_l)+dp_h[k])+t);
+299         SET_LOW_WORD(t1,0);
+300         t2 = z_l-(((t1-t)-dp_h[k])-z_h);
+301     }
+302 
+303     /* split up y into y1+y2 and compute (y1+y2)*(t1+t2) */
+304     y1  = y;
+305     SET_LOW_WORD(y1,0);
+306     p_l = (y-y1)*t1+y*t2;
+307     p_h = y1*t1;
+308     z = p_l+p_h;
+309     EXTRACT_WORDS(j,i,z);
+310     if (j>=0x40900000) {                /* z >= 1024 */
+311         if(((j-0x40900000)|i)!=0)           /* if z > 1024 */
+312             return s*huge*huge;         /* overflow */
+313         else {
+314             if(p_l+ovt>z-p_h) return s*huge*huge;   /* overflow */
+315         }
+316     } else if((j&0x7fffffff)>=0x4090cc00 ) {    /* z <= -1075 */
+317         if(((j-0xc090cc00)|i)!=0)       /* z < -1075 */
+318             return s*tiny*tiny;     /* underflow */
+319         else {
+320             if(p_l<=z-p_h) return s*tiny*tiny;  /* underflow */
+321         }
+322     }
+323     /*
+324      * compute 2**(p_h+p_l)
+325      */
+326     i = j&0x7fffffff;
+327     k = (i>>20)-0x3ff;
+328     n = 0;
+329     if(i>0x3fe00000) {      /* if |z| > 0\&.5, set n = [z+0\&.5] */
+330         n = j+(0x00100000>>(k+1));
+331         k = ((n&0x7fffffff)>>20)-0x3ff; /* new k for n */
+332         t = zero;
+333         SET_HIGH_WORD(t,(n&~(0x000fffff>>k)));
+334         n = ((n&0x000fffff)|0x00100000)>>(20-k);
+335         if(j<0) n = -n;
+336         p_h -= t;
+337     }
+338     t = p_l+p_h;
+339     SET_LOW_WORD(t,0);
+340     u = t*lg2_h;
+341     v = (p_l-(t-p_h))*lg2+t*lg2_l;
+342     z = u+v;
+343     w = v-(z-u);
+344     t  = z*z;
+345     t1  = z - t*(P1+t*(P2+t*(P3+t*(P4+t*P5))));
+346     r  = (z*t1)/(t1-two)-(w+z*w);
+347     z  = one-(r-z);
+348     GET_HIGH_WORD(j,z);
+349     j += (n<<20);
+350     if((j>>20)<=0) z = scalbn(z,n); /* subnormal output */
+351     else
+352     {
+353         uword hz;
+354         GET_HIGH_WORD(hz,z);
+355         SET_HIGH_WORD(z,hz + (n<<20));
+356     }
+357     return s*z;
+358 }
+.fi
+.SH "Variable Documentation"
+.PP 
+.SS "const double bp[] = {1\&.0, 1\&.5,}\fC [static]\fP"
+
+.PP
+Definition at line 54 of file pow\&.c\&.
+.PP
+Referenced by pow()\&.
+.SS "const double cp = 9\&.61796693925975554329e\-01\fC [static]\fP"
+
+.PP
+Definition at line 79 of file pow\&.c\&.
+.PP
+Referenced by pow()\&.
+.SS "const double cp_h = 9\&.61796700954437255859e\-01\fC [static]\fP"
+
+.PP
+Definition at line 80 of file pow\&.c\&.
+.PP
+Referenced by pow()\&.
+.SS "const double cp_l = \-7\&.02846165095275826516e\-09\fC [static]\fP"
+
+.PP
+Definition at line 81 of file pow\&.c\&.
+.PP
+Referenced by pow()\&.
+.SS "const double dp_h[] = { 0\&.0, 5\&.84962487220764160156e\-01,}\fC [static]\fP"
+
+.PP
+Definition at line 55 of file pow\&.c\&.
+.PP
+Referenced by pow()\&.
+.SS "const double dp_l[] = { 0\&.0, 1\&.35003920212974897128e\-08,}\fC [static]\fP"
+
+.PP
+Definition at line 56 of file pow\&.c\&.
+.PP
+Referenced by pow()\&.
+.SS "const double huge = 1\&.0e300\fC [static]\fP"
+
+.PP
+Definition at line 61 of file pow\&.c\&.
+.PP
+Referenced by pow()\&.
+.SS "const double ivln2 = 1\&.44269504088896338700e+00\fC [static]\fP"
+
+.PP
+Definition at line 82 of file pow\&.c\&.
+.PP
+Referenced by pow()\&.
+.SS "const double ivln2_h = 1\&.44269502162933349609e+00\fC [static]\fP"
+
+.PP
+Definition at line 83 of file pow\&.c\&.
+.PP
+Referenced by pow()\&.
+.SS "const double ivln2_l = 1\&.92596299112661746887e\-08\fC [static]\fP"
+
+.PP
+Definition at line 84 of file pow\&.c\&.
+.PP
+Referenced by pow()\&.
+.SS "const double L1 = 5\&.99999999999994648725e\-01\fC [static]\fP"
+
+.PP
+Definition at line 64 of file pow\&.c\&.
+.PP
+Referenced by pow()\&.
+.SS "const double L2 = 4\&.28571428578550184252e\-01\fC [static]\fP"
+
+.PP
+Definition at line 65 of file pow\&.c\&.
+.PP
+Referenced by pow()\&.
+.SS "const double L3 = 3\&.33333329818377432918e\-01\fC [static]\fP"
+
+.PP
+Definition at line 66 of file pow\&.c\&.
+.PP
+Referenced by pow()\&.
+.SS "const double L4 = 2\&.72728123808534006489e\-01\fC [static]\fP"
+
+.PP
+Definition at line 67 of file pow\&.c\&.
+.PP
+Referenced by pow()\&.
+.SS "const double L5 = 2\&.30660745775561754067e\-01\fC [static]\fP"
+
+.PP
+Definition at line 68 of file pow\&.c\&.
+.PP
+Referenced by pow()\&.
+.SS "const double L6 = 2\&.06975017800338417784e\-01\fC [static]\fP"
+
+.PP
+Definition at line 69 of file pow\&.c\&.
+.PP
+Referenced by pow()\&.
+.SS "const double lg2 = 6\&.93147180559945286227e\-01\fC [static]\fP"
+
+.PP
+Definition at line 75 of file pow\&.c\&.
+.PP
+Referenced by pow()\&.
+.SS "const double lg2_h = 6\&.93147182464599609375e\-01\fC [static]\fP"
+
+.PP
+Definition at line 76 of file pow\&.c\&.
+.PP
+Referenced by pow()\&.
+.SS "const double lg2_l = \-1\&.90465429995776804525e\-09\fC [static]\fP"
+
+.PP
+Definition at line 77 of file pow\&.c\&.
+.PP
+Referenced by pow()\&.
+.SS "const double one = 1\&.0\fC [static]\fP"
+
+.PP
+Definition at line 58 of file pow\&.c\&.
+.PP
+Referenced by pow()\&.
+.SS "const double ovt = 8\&.0085662595372944372e\-0017\fC [static]\fP"
+
+.PP
+Definition at line 78 of file pow\&.c\&.
+.PP
+Referenced by pow()\&.
+.SS "const double P1 = 1\&.66666666666666019037e\-01\fC [static]\fP"
+
+.PP
+Definition at line 70 of file pow\&.c\&.
+.PP
+Referenced by pow()\&.
+.SS "const double P2 = \-2\&.77777777770155933842e\-03\fC [static]\fP"
+
+.PP
+Definition at line 71 of file pow\&.c\&.
+.PP
+Referenced by pow()\&.
+.SS "const double P3 = 6\&.61375632143793436117e\-05\fC [static]\fP"
+
+.PP
+Definition at line 72 of file pow\&.c\&.
+.PP
+Referenced by pow()\&.
+.SS "const double P4 = \-1\&.65339022054652515390e\-06\fC [static]\fP"
+
+.PP
+Definition at line 73 of file pow\&.c\&.
+.PP
+Referenced by pow()\&.
+.SS "const double P5 = 4\&.13813679705723846039e\-08\fC [static]\fP"
+
+.PP
+Definition at line 74 of file pow\&.c\&.
+.PP
+Referenced by pow()\&.
+.SS "const double tiny = 1\&.0e\-300\fC [static]\fP"
+
+.PP
+Definition at line 62 of file pow\&.c\&.
+.PP
+Referenced by pow()\&.
+.SS "const double two = 2\&.0\fC [static]\fP"
+
+.PP
+Definition at line 59 of file pow\&.c\&.
+.PP
+Referenced by pow()\&.
+.SS "const double two53 = 9007199254740992\&.0\fC [static]\fP"
+
+.PP
+Definition at line 60 of file pow\&.c\&.
+.PP
+Referenced by pow()\&.
+.SS "const double zero = 0\&.0\fC [static]\fP"
+
+.PP
+Definition at line 57 of file pow\&.c\&.
+.PP
+Referenced by pow()\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for amath from the source code\&.

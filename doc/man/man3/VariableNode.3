@@ -1,0 +1,214 @@
+.TH "VariableNode" 3 "Sat Jan 21 2017" "Version 1.6.1" "amath" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+VariableNode \- Use of a variable in a syntax tree\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <values\&.h>\fP
+.PP
+Inherits \fBExpressionNode\fP\&.
+.PP
+Inherited by \fBInsVariableNode\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBVariableNode\fP (\fBVariable\fP *\fBvariable\fP)"
+.br
+.ti -1c
+.RI "char * \fBGetText\fP ()"
+.br
+.ti -1c
+.RI "\fBNumber\fP * \fBEvaluate\fP ()"
+.br
+.ti -1c
+.RI "void \fBAssignValue\fP (\fBNumber\fP *value)"
+.br
+.ti -1c
+.RI "int \fBGetPrecedence\fP ()"
+.br
+.ti -1c
+.RI "\fBSyntaxNode\fP * \fBGetNext\fP ()"
+.br
+.ti -1c
+.RI "void \fBAttach\fP (\fBSyntaxNode\fP *node)"
+.br
+.ti -1c
+.RI "void \fBDetach\fP (\fBSyntaxNode\fP *node)"
+.br
+.ti -1c
+.RI "void \fBReplace\fP (\fBSyntaxNode\fP *n, \fBSyntaxNode\fP *x)"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "char * \fBGetNodeText\fP ()"
+.br
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBVariable\fP * \fBvariable\fP"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Detailed Description"
+.PP 
+Use of a variable in a syntax tree\&. 
+.PP
+Definition at line 104 of file values\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "VariableNode::VariableNode (\fBVariable\fP * variable)"
+
+.PP
+Definition at line 271 of file values\&.cpp\&.
+.PP
+References ExpressionNode::ExpressionNode(), and variable\&.
+.PP
+Referenced by InsVariableNode::InsVariableNode(), and Parser::ParseIdent()\&.
+.PP
+.nf
+271                                             :
+272     ExpressionNode(), variable(variable) { }
+.fi
+.SH "Member Function Documentation"
+.PP 
+.SS "void VariableNode::AssignValue (\fBNumber\fP * value)"
+
+.PP
+Definition at line 285 of file values\&.cpp\&.
+.PP
+References Variable::AssignValue(), and variable\&.
+.PP
+Referenced by AssignmentNode::Evaluate()\&.
+.PP
+.nf
+286 {
+287     variable->AssignValue(value);
+288 }
+.fi
+.SS "void VariableNode::Attach (\fBSyntaxNode\fP * node)\fC [virtual]\fP"
+
+.PP
+Implements \fBSyntaxNode\fP\&.
+.PP
+Definition at line 305 of file values\&.cpp\&.
+.PP
+.nf
+306 { }
+.fi
+.SS "void VariableNode::Detach (\fBSyntaxNode\fP * node)\fC [virtual]\fP"
+
+.PP
+Implements \fBSyntaxNode\fP\&.
+.PP
+Definition at line 308 of file values\&.cpp\&.
+.PP
+.nf
+309 { }
+.fi
+.SS "\fBNumber\fP * VariableNode::Evaluate ()\fC [virtual]\fP"
+
+.PP
+Implements \fBExpressionNode\fP\&.
+.PP
+Reimplemented in \fBInsVariableNode\fP\&.
+.PP
+Definition at line 279 of file values\&.cpp\&.
+.PP
+References Variable::GetValue(), ExpressionNode::result, and variable\&.
+.PP
+Referenced by AssignmentNode::Evaluate()\&.
+.PP
+.nf
+280 {
+281     result = variable->GetValue();
+282     return result;
+283 }
+.fi
+.SS "\fBSyntaxNode\fP * VariableNode::GetNext ()\fC [virtual]\fP"
+
+.PP
+Implements \fBSyntaxNode\fP\&.
+.PP
+Definition at line 300 of file values\&.cpp\&.
+.PP
+.nf
+301 {
+302     return NOMEM;
+303 }
+.fi
+.SS "char * VariableNode::GetNodeText ()\fC [protected]\fP, \fC [virtual]\fP"
+
+.PP
+Implements \fBExpressionNode\fP\&.
+.PP
+Reimplemented in \fBInsVariableNode\fP\&.
+.PP
+Definition at line 295 of file values\&.cpp\&.
+.PP
+References Variable::GetName(), and variable\&.
+.PP
+.nf
+296 {
+297     return variable->GetName();
+298 }
+.fi
+.SS "int VariableNode::GetPrecedence ()\fC [virtual]\fP"
+
+.PP
+Implements \fBExpressionNode\fP\&.
+.PP
+Definition at line 274 of file values\&.cpp\&.
+.PP
+.nf
+275 {
+276     return 0;
+277 }
+.fi
+.SS "char * VariableNode::GetText ()\fC [virtual]\fP"
+
+.PP
+Implements \fBExpressionNode\fP\&.
+.PP
+Reimplemented in \fBInsVariableNode\fP\&.
+.PP
+Definition at line 290 of file values\&.cpp\&.
+.PP
+References Variable::GetName(), and variable\&.
+.PP
+.nf
+291 {
+292     return variable->GetName();
+293 }
+.fi
+.SS "void VariableNode::Replace (\fBSyntaxNode\fP * n, \fBSyntaxNode\fP * x)\fC [virtual]\fP"
+
+.PP
+Implements \fBSyntaxNode\fP\&.
+.PP
+Definition at line 311 of file values\&.cpp\&.
+.PP
+.nf
+312 { }
+.fi
+.SH "Member Data Documentation"
+.PP 
+.SS "\fBVariable\fP* VariableNode::variable\fC [private]\fP"
+
+.PP
+Definition at line 120 of file values\&.h\&.
+.PP
+Referenced by AssignValue(), Evaluate(), GetNodeText(), GetText(), and VariableNode()\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for amath from the source code\&.

@@ -1,0 +1,175 @@
+.TH "lib/real/atan2.c" 3 "Sat Jan 21 2017" "Version 1.6.1" "amath" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+lib/real/atan2.c \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'prim\&.h'\fP
+.br
+\fC#include 'math\&.h'\fP
+.br
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "double \fBatan2\fP (double y, double x)"
+.br
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "static const double \fBtiny\fP = 1\&.0e\-300"
+.br
+.ti -1c
+.RI "static const double \fBzero\fP = 0\&.0"
+.br
+.ti -1c
+.RI "static const double \fBpi_o_4\fP = 7\&.8539816339744827900E\-01"
+.br
+.ti -1c
+.RI "static const double \fBpi_o_2\fP = 1\&.5707963267948965580E+00"
+.br
+.ti -1c
+.RI "static const double \fBpi\fP = 3\&.1415926535897931160E+00"
+.br
+.ti -1c
+.RI "static const double \fBpi_lo\fP = 1\&.2246467991473531772E\-16"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "double atan2 (double y, double x)"
+
+.PP
+Definition at line 86 of file atan2\&.c\&.
+.PP
+References atan(), pi, pi_lo, pi_o_2, pi_o_4, tiny, and zero\&.
+.PP
+Referenced by clog(), and cpow()\&.
+.PP
+.nf
+87 {
+88     double z;
+89     sword k,m,hx,hy,ix,iy;
+90     uword lx,ly;
+91 
+92     EXTRACT_WORDS(hx,lx,x);
+93     ix = hx&0x7fffffff;
+94     EXTRACT_WORDS(hy,ly,y);
+95     iy = hy&0x7fffffff;
+96     if(((ix|((lx|-lx)>>31))>0x7ff00000)||
+97             ((iy|((ly|-ly)>>31))>0x7ff00000))   /* x or y is NaN */
+98         return x+y;
+99     if(((hx-0x3ff00000)|lx)==0) return atan(y);   /* x=1\&.0 */
+100     m = ((hy>>31)&1)|((hx>>30)&2);  /* 2*sign(x)+sign(y) */
+101 
+102     /* when y = 0 */
+103     if((iy|ly)==0) {
+104         switch(m) {
+105         case 0:
+106         case 1:
+107             return y;   /* atan(+-0,+anything)=+-0 */
+108         case 2:
+109             return  pi+tiny;/* atan(+0,-anything) = pi */
+110         case 3:
+111             return -pi-tiny;/* atan(-0,-anything) =-pi */
+112         }
+113     }
+114     /* when x = 0 */
+115     if((ix|lx)==0) return (hy<0)?  -pi_o_2-tiny: pi_o_2+tiny;
+116 
+117     /* when x is INF */
+118     if(ix==0x7ff00000) {
+119         if(iy==0x7ff00000) {
+120             switch(m) {
+121             case 0:
+122                 return  pi_o_4+tiny;/* atan(+INF,+INF) */
+123             case 1:
+124                 return -pi_o_4-tiny;/* atan(-INF,+INF) */
+125             case 2:
+126                 return  3\&.0*pi_o_4+tiny;/*atan(+INF,-INF)*/
+127             case 3:
+128                 return -3\&.0*pi_o_4-tiny;/*atan(-INF,-INF)*/
+129             }
+130         } else {
+131             switch(m) {
+132             case 0:
+133                 return  zero  ; /* atan(+\&.\&.\&.,+INF) */
+134             case 1:
+135                 return -zero  ; /* atan(-\&.\&.\&.,+INF) */
+136             case 2:
+137                 return  pi+tiny  ;  /* atan(+\&.\&.\&.,-INF) */
+138             case 3:
+139                 return -pi-tiny  ;  /* atan(-\&.\&.\&.,-INF) */
+140             }
+141         }
+142     }
+143     /* when y is INF */
+144     if(iy==0x7ff00000) return (hy<0)? -pi_o_2-tiny: pi_o_2+tiny;
+145 
+146     /* compute y/x */
+147     k = (iy-ix)>>20;
+148     if(k > 60) z=pi_o_2+0\&.5*pi_lo;   /* |y/x| >  2**60 */
+149     else if(hx<0&&k<-60) z=0\&.0;  /* |y|/x < -2**60 */
+150     else z=atan(fabs(y/x));     /* safe to do y/x */
+151     switch (m) {
+152     case 0:
+153         return       z  ;   /* atan(+,+) */
+154     case 1: {
+155         uword zh;
+156         GET_HIGH_WORD(zh,z);
+157         SET_HIGH_WORD(z, zh ^ 0x80000000);
+158     }
+159     return       z  ;   /* atan(-,+) */
+160     case 2:
+161         return  pi-(z-pi_lo);/* atan(+,-) */
+162     default: /* case 3 */
+163         return  (z-pi_lo)-pi;/* atan(-,-) */
+164     }
+165 }
+.fi
+.SH "Variable Documentation"
+.PP 
+.SS "const double pi = 3\&.1415926535897931160E+00\fC [static]\fP"
+
+.PP
+Definition at line 83 of file atan2\&.c\&.
+.PP
+Referenced by atan2()\&.
+.SS "const double pi_lo = 1\&.2246467991473531772E\-16\fC [static]\fP"
+
+.PP
+Definition at line 84 of file atan2\&.c\&.
+.PP
+Referenced by atan2()\&.
+.SS "const double pi_o_2 = 1\&.5707963267948965580E+00\fC [static]\fP"
+
+.PP
+Definition at line 82 of file atan2\&.c\&.
+.PP
+Referenced by atan2()\&.
+.SS "const double pi_o_4 = 7\&.8539816339744827900E\-01\fC [static]\fP"
+
+.PP
+Definition at line 81 of file atan2\&.c\&.
+.PP
+Referenced by atan2()\&.
+.SS "const double tiny = 1\&.0e\-300\fC [static]\fP"
+
+.PP
+Definition at line 79 of file atan2\&.c\&.
+.PP
+Referenced by atan2()\&.
+.SS "const double zero = 0\&.0\fC [static]\fP"
+
+.PP
+Definition at line 80 of file atan2\&.c\&.
+.PP
+Referenced by atan2()\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for amath from the source code\&.

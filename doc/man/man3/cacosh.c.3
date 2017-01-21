@@ -1,0 +1,69 @@
+.TH "lib/cplex/cacosh.c" 3 "Sat Jan 21 2017" "Version 1.6.1" "amath" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+lib/cplex/cacosh.c \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'prim\&.h'\fP
+.br
+\fC#include 'math\&.h'\fP
+.br
+\fC#include 'complex\&.h'\fP
+.br
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBcomplex\fP \fBcacosh\fP (\fBcomplex\fP z)"
+.br
+.RI "\fIInverse hyperbolic cosine of complex number\&. \fP"
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "\fBcomplex\fP cacosh (\fBcomplex\fP z)"
+
+.PP
+Inverse hyperbolic cosine of complex number\&. 
+.PP
+\fBVersion:\fP
+.RS 4
+1\&.1 
+.RE
+.PP
+\fBDate:\fP
+.RS 4
+15/03/03
+.RE
+.PP
+Inverse hyperbolic cosine expressed using complex logarithms: 
+.PP
+.nf
+
+acosh(z) = log(z + sqrt(z*z - 1))
+.fi
+.PP
+ More info is available at Wikipedia: 
+.br
+ http://en.wikipedia.org/wiki/Inverse_hyperbolic_function#Logarithmic_representation 
+.PP
+Definition at line 43 of file cacosh\&.c\&.
+.PP
+References cadd(), clog(), cmul(), cpack(), csqrt(), and csub()\&.
+.PP
+Referenced by ComplexNumber::HypArcCosine()\&.
+.PP
+.nf
+44 {
+45     complex one = cpack(1\&.0, 0\&.0);
+46     complex a = csub(cmul(z, z) , one);
+47     complex b = cadd(z, csqrt(a));
+48     complex w = clog(b);
+49     return w;
+50 }
+.fi
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for amath from the source code\&.

@@ -1,0 +1,76 @@
+.TH "lib/cplex/csin.c" 3 "Sat Jan 21 2017" "Version 1.6.1" "amath" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+lib/cplex/csin.c \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'prim\&.h'\fP
+.br
+\fC#include 'math\&.h'\fP
+.br
+\fC#include 'complex\&.h'\fP
+.br
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBcomplex\fP \fBcsin\fP (\fBcomplex\fP z)"
+.br
+.RI "\fISine of a complex number\&. \fP"
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "\fBcomplex\fP csin (\fBcomplex\fP z)"
+
+.PP
+Sine of a complex number\&. 
+.PP
+\fBVersion:\fP
+.RS 4
+1\&.1 
+.RE
+.PP
+\fBDate:\fP
+.RS 4
+2007/08/20
+.RE
+.PP
+Calculated according to description at wikipedia:
+.br
+ http://en.wikipedia.org/wiki/Sine#Sine_with_a_complex_argument 
+.PP
+.nf
+
+a+bi
+real = sin(a) * cosh(b)
+imag = cos(a) * sinh(b)
+.fi
+.PP
+ 
+.PP
+Definition at line 53 of file csin\&.c\&.
+.PP
+References cchsh(), cimag(), cos(), cpack(), creal(), and sin()\&.
+.PP
+Referenced by ComplexNumber::Sine()\&.
+.PP
+.nf
+54 {
+55     complex w;
+56     double a, b;
+57     double ch, sh;
+58 
+59     a = creal(z);
+60     b = cimag(z);
+61     cchsh(b, &ch, &sh);
+62     w = cpack((sin(a) * ch), (cos(a) * sh));
+63 
+64     return w;
+65 }
+.fi
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for amath from the source code\&.

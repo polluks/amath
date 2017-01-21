@@ -1,0 +1,70 @@
+.TH "lib/cplex/cacsch.c" 3 "Sat Jan 21 2017" "Version 1.6.1" "amath" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+lib/cplex/cacsch.c \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'prim\&.h'\fP
+.br
+\fC#include 'math\&.h'\fP
+.br
+\fC#include 'complex\&.h'\fP
+.br
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBcomplex\fP \fBcacsch\fP (\fBcomplex\fP z)"
+.br
+.RI "\fIInverse hyperbolic cosecant of complex number\&. \fP"
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "\fBcomplex\fP cacsch (\fBcomplex\fP z)"
+
+.PP
+Inverse hyperbolic cosecant of complex number\&. 
+.PP
+\fBVersion:\fP
+.RS 4
+1\&.0 
+.RE
+.PP
+\fBDate:\fP
+.RS 4
+14/09/15
+.RE
+.PP
+Inverse hyperbolic cosecant expressed using complex logarithms: 
+.PP
+.nf
+
+acsch(z) = log(sqrt(1 + 1 / (z * z)) + 1/z)
+.fi
+.PP
+ More info is available at Wikipedia: 
+.br
+ http://en.wikipedia.org/wiki/Inverse_hyperbolic_function#Logarithmic_representation 
+.PP
+Definition at line 43 of file cacsch\&.c\&.
+.PP
+References cadd(), clog(), cmul(), cpack(), creci(), and csqrt()\&.
+.PP
+Referenced by ComplexNumber::HypArcCosecant()\&.
+.PP
+.nf
+44 {
+45     complex one = cpack(1\&.0, 0\&.0);
+46     complex a = creci(cmul(z, z));
+47     complex b = csqrt(cadd(one, a));
+48     complex c = cadd(b, creci(z));
+49     complex w = clog(c);
+50     return w;
+51 }
+.fi
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for amath from the source code\&.

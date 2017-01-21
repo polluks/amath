@@ -1,0 +1,71 @@
+<map id="RealNumber::RealNumber" name="RealNumber::RealNumber">
+<area shape="rect" id="node2" href="$structComplexNumber.html#a7fb865f9bca992bb78dc057f3d8cfd82" title="ComplexNumber::Absolute" alt="" coords="243,5,422,32"/>
+<area shape="rect" id="node3" href="$structRealNumber.html#aad63b9d308870c33e3a6eaefb7ceeb8f" title="Absolute value of number. " alt="" coords="255,56,410,83"/>
+<area shape="rect" id="node4" href="$structRealNumber.html#aca23ac8d11fe2c35ea05bfc10ee14ebe" title="RealNumber::Add" alt="" coords="269,107,396,133"/>
+<area shape="rect" id="node5" href="$structRealNumber.html#a852bde63b26d1281396faf8ac0ec9942" title="Inverse trigonometric cosecant function. " alt="" coords="243,157,422,184"/>
+<area shape="rect" id="node6" href="$structRealNumber.html#a6e03b5a208301e30e0e26099ae5787e6" title="Inverse trigonometric cosine function. " alt="" coords="251,208,415,235"/>
+<area shape="rect" id="node7" href="$structRealNumber.html#af805be2ef7c041b677160859da753893" title="Inverse trigonometric cotangent function. " alt="" coords="241,259,424,285"/>
+<area shape="rect" id="node8" href="$structRealNumber.html#a9720848058718946a9215b66a69ea05c" title="Inverse trigonometric secant function. " alt="" coords="251,309,415,336"/>
+<area shape="rect" id="node9" href="$structRealNumber.html#aff1b5b8d942f4e160dc0720e67c3765a" title="Inverse trigonometric sine function. " alt="" coords="258,360,407,387"/>
+<area shape="rect" id="node10" href="$structRealNumber.html#a3e1c71bcd7ec27804247d5efa538b877" title="Inverse trigonometric tangent function. " alt="" coords="247,411,418,437"/>
+<area shape="rect" id="node11" href="$structRealNumber.html#ad3d56323d395a89928c66c0ed4d087f8" title="Mathematical ceiling function. " alt="" coords="261,461,404,488"/>
+<area shape="rect" id="node12" href="$structRealNumber.html#a8b089754dcdf9aab37ca9451ae918a9f" title="RealNumber::Clone" alt="" coords="264,512,401,539"/>
+<area shape="rect" id="node13" href="$structRealNumber.html#af9b0b74fbe21e7c360d9ca13f2853c3c" title="Trigonometric cosecant function. " alt="" coords="253,563,412,589"/>
+<area shape="rect" id="node14" href="$structRealNumber.html#a29ab57ef9d5844b480574f06b83131d1" title="Trigonometric cosine function. " alt="" coords="261,613,405,640"/>
+<area shape="rect" id="node15" href="$structRealNumber.html#a326c66036f26f4562277692d179e19a3" title="Trigonometric cotangent function. " alt="" coords="251,664,414,691"/>
+<area shape="rect" id="node16" href="$structRealNumber.html#af20c2032f5c22719a6a8358963feda9a" title="Cube root function. " alt="" coords="251,715,414,741"/>
+<area shape="rect" id="node17" href="$structRealNumber.html#a3c9c011cae6212d4b233f4933cd81bd6" title="RealNumber::Div" alt="" coords="494,791,617,817"/>
+<area shape="rect" id="node18" href="$classEulersNumberNode.html#a5f2feea3aa3eca36d808303f1b10fc65" title="EulersNumberNode::Eulers\lNumberNode" alt="" coords="242,1745,423,1786"/>
+<area shape="rect" id="node39" href="$structRealNumber.html#a2b6019c5638bac355924e4b26d60e82a" title="Mathematical floor function. " alt="" coords="267,867,399,893"/>
+<area shape="rect" id="node40" href="$classPositionalNumeralSystem.html#ab52249b8607a9e67d4676aad39a6e15d" title="PositionalNumeralSystem\l::GetName" alt="" coords="246,918,419,959"/>
+<area shape="rect" id="node41" href="$structRealNumber.html#a9012f76e46de683e6c826bcdf719ca2f" title="Inverse hyperbolic cosecant function. " alt="" coords="231,984,434,1011"/>
+<area shape="rect" id="node42" href="$structRealNumber.html#a180b1d26d19c53070014c9540ca058a9" title="Inverse hyperbolic cosine function. " alt="" coords="239,1035,427,1061"/>
+<area shape="rect" id="node43" href="$structRealNumber.html#ab83d64a095c365070fe40273b0bb173c" title="Inverse hyperbolic cotangent function. " alt="" coords="229,1085,436,1112"/>
+<area shape="rect" id="node44" href="$structRealNumber.html#a2c63d0e9efa401cb5ff4a459f339dfb5" title="Inverse hyperbolic secant function. " alt="" coords="239,1136,427,1163"/>
+<area shape="rect" id="node45" href="$structRealNumber.html#a304a0afc690e5378aef03aa3d76425a2" title="Inverse hyperbolic sine function. " alt="" coords="246,1187,419,1213"/>
+<area shape="rect" id="node46" href="$structRealNumber.html#a62836390c7edc73ecea5c7455dd04afe" title="Inverse hyperbolic tangent function. " alt="" coords="235,1237,430,1264"/>
+<area shape="rect" id="node47" href="$structRealNumber.html#a540b460d8e9c611b37ce00b2e32fc7f1" title="Hyperbolic cosecant function. " alt="" coords="241,1288,424,1315"/>
+<area shape="rect" id="node48" href="$structRealNumber.html#a722aa63e33b413ff59de90ed91c3f91d" title="Hyperbolic cosine function. " alt="" coords="249,1339,417,1365"/>
+<area shape="rect" id="node49" href="$structRealNumber.html#a82ad5a573ac31bd03829ed0e39bde26d" title="Hyperbolic cotangent function. " alt="" coords="239,1389,426,1416"/>
+<area shape="rect" id="node50" href="$structRealNumber.html#a9daeb349df78593a4747f417300cf68b" title="Hyperbolic secant function. " alt="" coords="249,1440,417,1467"/>
+<area shape="rect" id="node51" href="$structRealNumber.html#a977265341f5496a6a44a0231bf8e2db5" title="Hyperbolic sine function. " alt="" coords="256,1491,409,1517"/>
+<area shape="rect" id="node52" href="$structRealNumber.html#a867a59eb450583c6adf7d35206f18001" title="Hyperbolic tangent function. " alt="" coords="245,1541,420,1568"/>
+<area shape="rect" id="node53" href="$structRealNumber.html#aaec064f13111dac3cc8e7a33969873a1" title="Natural logarithm function (base e). " alt="" coords="271,1592,395,1619"/>
+<area shape="rect" id="node54" href="$structRealNumber.html#a75fa4835db911de6541e96895a02a59e" title="Base 10 logarithm function. " alt="" coords="263,1643,402,1669"/>
+<area shape="rect" id="node55" href="$structRealNumber.html#a8f0a5ce6092079e47d572b61a05f44f4" title="Binary logarithm function (base 2). " alt="" coords="267,1693,398,1720"/>
+<area shape="rect" id="node56" href="$structRealNumber.html#af5491d836bb591e1291f4f9eee809902" title="RealNumber::Mul" alt="" coords="271,765,395,792"/>
+<area shape="rect" id="node57" href="$classPositionalNumeralSystem.html#a6fd2861b5cd8da952191218121df7f56" title="PositionalNumeralSystem\l::Parse" alt="" coords="246,1810,419,1851"/>
+<area shape="rect" id="node58" href="$classPiNode.html#a75ae61c6fa1883bca5b253123013c047" title="PiNode::PiNode" alt="" coords="275,1876,391,1903"/>
+<area shape="rect" id="node59" href="$structRealNumber.html#aaf9c066a4b9e9d845edefd40f614a517" title="Expontation function. " alt="" coords="264,1927,401,1953"/>
+<area shape="rect" id="node60" href="$structRealNumber.html#a0254d3b6e1e580f5e95950488c19632d" title="RealNumber::Reciprocal" alt="" coords="250,1977,415,2004"/>
+<area shape="rect" id="node61" href="$structRealNumber.html#ac8668b36e44ba33ba8fb986347d48bc0" title="Mathematical round function. " alt="" coords="262,2028,403,2055"/>
+<area shape="rect" id="node62" href="$structRealNumber.html#a9e350ff4550f86bc25b6526eb14a823a" title="Trigonometric secant function. " alt="" coords="261,2079,405,2105"/>
+<area shape="rect" id="node63" href="$structComplexNumber.html#a0dc0f3ef7885f9d6b5a30e6ce983ceeb" title="ComplexNumber::Signum" alt="" coords="247,2129,419,2156"/>
+<area shape="rect" id="node64" href="$structRealNumber.html#a9c3f6b9bff23ed16f4fce328cd184bcd" title="Mathematical sign function. " alt="" coords="259,2180,406,2207"/>
+<area shape="rect" id="node65" href="$structRealNumber.html#a7efbe5a6d43471c317d10c976e1120a5" title="Trigonometric sine function. " alt="" coords="268,2231,397,2257"/>
+<area shape="rect" id="node66" href="$structRealNumber.html#a721d2c6fb9b5f4a5a41de242909ef4da" title="Square root function. " alt="" coords="247,2281,419,2308"/>
+<area shape="rect" id="node67" href="$structRealNumber.html#a16eae9fed4e18d72e80d72b3b3f2ef89" title="RealNumber::Sub" alt="" coords="269,2332,396,2359"/>
+<area shape="rect" id="node68" href="$structRealNumber.html#a49a5b0cd18ee9763f89f2bc61f7d43ba" title="Trigonometric tangent function. " alt="" coords="257,2383,408,2409"/>
+<area shape="rect" id="node69" href="$structRealNumber.html#aba1f2eea0099d4c1347cd97b2897c0d8" title="Mathematical trunc function. " alt="" coords="265,2433,401,2460"/>
+<area shape="rect" id="node70" href="$structRealNumber.html#a0370c55b92e3ec36270a894918ae53ca" title="RealNumber::Unary" alt="" coords="263,2484,402,2511"/>
+<area shape="rect" id="node19" href="$classParser.html#ac1a69267c9414b54a4b592c9ad084780" title="Parser::ParseAtomic" alt="" coords="484,1813,627,1840"/>
+<area shape="rect" id="node20" href="$classParser.html#a446237993f806a92dd3e78ba8019f4f5" title="Parser::ParseUnary" alt="" coords="675,1813,812,1840"/>
+<area shape="rect" id="node21" href="$classParser.html#ad6ccc6e873d1fb3dcfa142655a5b0732" title="Parser::ParsePower" alt="" coords="860,1813,999,1840"/>
+<area shape="rect" id="node22" href="$classParser.html#a70c674c7b40f7a0ab1df0523c4c8c530" title="Parser::ParseFactor" alt="" coords="1047,1813,1185,1840"/>
+<area shape="rect" id="node23" href="$classParser.html#a47ba11ddd167c1b0b5cf1d2fd1cf1ccd" title="Parser::ParseAddSubstract" alt="" coords="1233,1813,1415,1840"/>
+<area shape="rect" id="node24" href="$classParser.html#ae46b0a87abe76f40ae117c5bdcb2f29d" title="Parser::ParseExpression" alt="" coords="1463,1813,1629,1840"/>
+<area shape="rect" id="node25" href="$classParser.html#a19c5b6055d066d21ad39a32287e833c2" title="Parser::ParseEvaluation" alt="" coords="1683,1763,1845,1789"/>
+<area shape="rect" id="node27" href="$classParser.html#a370277018ad3e0e157a8ff5849892f7d" title="Parser::ParseStatement" alt="" coords="2091,1763,2253,1789"/>
+<area shape="rect" id="node37" href="$classParser.html#a0e8b1f794af2b9923bc3fcb7498004f9" title="Parser::ParseFunctionDef" alt="" coords="1677,1712,1851,1739"/>
+<area shape="rect" id="node38" href="$classParser.html#a84af27a6f4e42888eba6ac36ccd0815c" title="Parser::ParseIdent" alt="" coords="1699,1864,1829,1891"/>
+<area shape="rect" id="node26" href="$classParser.html#aca8329fb5ee4812398144fd1d647fe39" title="Parser::ParseDefault" alt="" coords="1899,1763,2043,1789"/>
+<area shape="rect" id="node28" href="$classParser.html#aeef41071b484e09942290ab55953dc4f" title="Parser::TryParseStatement" alt="" coords="2301,1763,2483,1789"/>
+<area shape="rect" id="node29" href="$classParser.html#a1861d1d9cc6165970cf07e07cacd11df" title="Parses the input into a syntax tree. " alt="" coords="2531,1763,2633,1789"/>
+<area shape="rect" id="node30" href="$classEvaluator.html#a40b30ece9d43c658877ee7f52aaec0a8" title="Evaluator::Evaluate" alt="" coords="2707,1687,2843,1713"/>
+<area shape="rect" id="node33" href="$classLoadStatement.html#ae3cbd157ad8de73551ff430fa3c089d9" title="LoadStatement::Execute" alt="" coords="2691,1737,2858,1764"/>
+<area shape="rect" id="node34" href="$classExecuteStatement.html#a8a3bbafeb8739749eab6eaf8a4b9969c" title="ExecuteStatement::Execute" alt="" coords="2681,1788,2868,1815"/>
+<area shape="rect" id="node35" href="$classPreferencesBase.html#a90dcd05552f94429b05df661eb72b5e2" title="PreferencesBase::SetPrefs" alt="" coords="2684,1839,2865,1865"/>
+<area shape="rect" id="node31" href="$classStandardProgram.html#a71dce9fdccf23ac49ba2362dcae744d3" title="StandardProgram::Run" alt="" coords="2916,1712,3071,1739"/>
+<area shape="rect" id="node32" href="$classStandardConsole.html#a9380023bba612b816b134589130bb254" title="StandardConsole::Run" alt="" coords="2916,1661,3071,1688"/>
+<area shape="rect" id="node36" href="$classStandardPreferences.html#a883449eac37fb47c01fa2ae23a02bdc4" title="StandardPreferences\l::Load" alt="" coords="2921,1831,3065,1873"/>
+</map>

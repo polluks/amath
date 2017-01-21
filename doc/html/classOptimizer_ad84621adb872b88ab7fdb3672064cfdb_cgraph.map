@@ -1,0 +1,10 @@
+<map id="Optimizer::BalanceTree" name="Optimizer::BalanceTree">
+<area shape="rect" id="node2" href="$classSyntaxNode.html#af25fd5963125bb2d6b9a1864b9ff79c8" title="SyntaxNode::Attach" alt="" coords="250,5,390,32"/>
+<area shape="rect" id="node3" href="$classSyntaxNode.html#ae57f629a5c5fa0994f036c105396da69" title="SyntaxNode::Detach" alt="" coords="248,56,392,83"/>
+<area shape="rect" id="node4" href="$classSyntaxNode.html#af1fa46ba30aa4f2affa2d4e96a4be010" title="SyntaxNode::GetNext" alt="" coords="490,308,641,335"/>
+<area shape="rect" id="node5" href="$classSyntaxNode.html#aef71a18975535d050393f0541b3cdc6a" title="SyntaxNode::GetNodeType" alt="" coords="229,157,411,184"/>
+<area shape="rect" id="node6" href="$classSyntaxNode.html#a4a85fd710ad44edbc5b3ac625c10cd08" title="SyntaxNode::GetParent" alt="" coords="239,208,401,235"/>
+<area shape="rect" id="node7" href="$classExpressionNode.html#a161b9ea0b79bbfc101d6f687c8481ddd" title="ExpressionNode::GetPrecedence" alt="" coords="212,259,428,285"/>
+<area shape="rect" id="node8" href="$classOptimizer.html#a4a80c3e845604f1ea53a6bfc187b2bba" title="Optimizer::GetTreeDepth" alt="" coords="236,333,404,360"/>
+<area shape="rect" id="node9" href="$classSyntaxNode.html#ac51307368fb255aa760b99e137178c89" title="SyntaxNode::ResetIterator" alt="" coords="476,371,655,397"/>
+</map>

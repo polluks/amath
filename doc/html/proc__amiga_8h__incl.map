@@ -1,0 +1,7 @@
+<map id="app/system/proc_amiga.h" name="app/system/proc_amiga.h">
+<area shape="rect" id="node2" href="$clib_8h.html" title="C functions for manipulating strings and memory. " alt="" coords="19,80,72,107"/>
+<area shape="rect" id="node6" href="$task_8h.html" title="Generic task/process logic. " alt="" coords="97,80,202,107"/>
+<area shape="rect" id="node7" href="$thread_8h.html" title="Generic thread logic. " alt="" coords="137,155,285,181"/>
+<area shape="rect" id="node3" href="$platform_8h.html" title="platform.h" alt="" coords="5,155,85,181"/>
+<area shape="rect" id="node5" href="$mem_8h.html" title="mem.h" alt="" coords="49,229,111,256"/>
+</map>

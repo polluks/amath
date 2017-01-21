@@ -1,0 +1,29 @@
+<map id="app/lib/ntext.h" name="app/lib/ntext.h">
+<area shape="rect" id="node2" href="$ntext_8cpp.html" title="app/lib/ntext.cpp" alt="" coords="1149,80,1268,107"/>
+<area shape="rect" id="node3" href="$program_8h.html" title="Program flow and global states. " alt="" coords="1293,80,1445,107"/>
+<area shape="rect" id="node13" href="$program_8cpp.html" title="app/system/program.cpp" alt="" coords="2537,251,2704,278"/>
+<area shape="rect" id="node28" href="$preferences_8cpp.html" title="app/system/preferences.cpp" alt="" coords="2709,80,2895,107"/>
+<area shape="rect" id="node4" href="$functions_8cpp.html" title="app/main/functions.cpp" alt="" coords="2375,162,2533,189"/>
+<area shape="rect" id="node5" href="$io_8h.html" title="System dependent I/O. " alt="" coords="655,162,802,189"/>
+<area shape="rect" id="node7" href="$main_8cpp.html" title="app/main.cpp" alt="" coords="1975,251,2075,278"/>
+<area shape="rect" id="node8" href="$io_8cpp.html" title="app/system/base/io.cpp" alt="" coords="5,251,167,278"/>
+<area shape="rect" id="node10" href="$language__amiga_8cpp.html" title="app/system/language\l_amiga.cpp" alt="" coords="1118,244,1265,285"/>
+<area shape="rect" id="node11" href="$language__posix_8cpp.html" title="app/system/language\l_posix.cpp" alt="" coords="1289,244,1435,285"/>
+<area shape="rect" id="node12" href="$language__stdc_8cpp.html" title="app/system/language\l_stdc.cpp" alt="" coords="1459,244,1606,285"/>
+<area shape="rect" id="node17" href="$lexer_8cpp.html" title="app/main/lexer.cpp" alt="" coords="979,162,1111,189"/>
+<area shape="rect" id="node18" href="$nodes_8cpp.html" title="app/main/nodes.cpp" alt="" coords="1135,162,1274,189"/>
+<area shape="rect" id="node19" href="$parser_8cpp.html" title="app/main/parser.cpp" alt="" coords="1299,162,1439,189"/>
+<area shape="rect" id="node20" href="$statements_8cpp.html" title="app/main/statements.cpp" alt="" coords="1463,162,1632,189"/>
+<area shape="rect" id="node21" href="$values_8cpp.html" title="app/main/values.cpp" alt="" coords="1656,162,1799,189"/>
+<area shape="rect" id="node22" href="$program__stdc_8h.html" title="app/system/program\l_stdc.h" alt="" coords="226,155,367,196"/>
+<area shape="rect" id="node23" href="$program__amiga_8h.html" title="app/system/program\l_amiga.h" alt="" coords="391,155,533,196"/>
+<area shape="rect" id="node24" href="$program__test_8h.html" title="Tests for arithmetic logic. " alt="" coords="10,155,151,196"/>
+<area shape="rect" id="node25" href="$filesystem__amiga_8cpp.html" title="app/system/filesystem\l_amiga.cpp" alt="" coords="1823,155,1978,196"/>
+<area shape="rect" id="node26" href="$filesystem__stdc_8cpp.html" title="app/system/filesystem\l_stdc.cpp" alt="" coords="2002,155,2157,196"/>
+<area shape="rect" id="node27" href="$language_8cpp.html" title="app/system/language.cpp" alt="" coords="2181,162,2351,189"/>
+<area shape="rect" id="node6" href="$graphlist_8cpp.html" title="app/main/graphlist.cpp" alt="" coords="752,251,905,278"/>
+<area shape="rect" id="node9" href="$console_8cpp.html" title="app/system/console.cpp" alt="" coords="929,251,1093,278"/>
+<area shape="rect" id="node14" href="$program__amiga_8cpp.html" title="app/system/program\l_amiga.cpp" alt="" coords="357,244,498,285"/>
+<area shape="rect" id="node15" href="$program__stdc_8cpp.html" title="app/system/program\l_stdc.cpp" alt="" coords="191,244,333,285"/>
+<area shape="rect" id="node16" href="$window__amiga_8cpp.html" title="app/system/window_amiga.cpp" alt="" coords="522,251,727,278"/>
+</map>

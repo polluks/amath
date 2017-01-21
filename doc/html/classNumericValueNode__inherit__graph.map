@@ -1,0 +1,7 @@
+<map id="NumericValueNode" name="NumericValueNode">
+<area shape="rect" id="node4" href="$classComplexiNode.html" title="Use of the square root of &#45;2 in a syntax tree. " alt="" coords="5,229,113,256"/>
+<area shape="rect" id="node5" href="$classEulersNumberNode.html" title="Use of Eulers number in a syntax tree. " alt="" coords="138,229,274,256"/>
+<area shape="rect" id="node6" href="$classPiNode.html" title="Use of PI in a syntax tree. " alt="" coords="297,229,363,256"/>
+<area shape="rect" id="node2" href="$classExpressionNode.html" title="Base class for all nodes related to mathematical expressions. " alt="" coords="147,80,265,107"/>
+<area shape="rect" id="node3" href="$classSyntaxNode.html" title="Base class for all nodes in a syntax tree. " alt="" coords="159,5,253,32"/>
+</map>

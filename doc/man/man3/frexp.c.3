@@ -1,0 +1,61 @@
+.TH "lib/real/frexp.c" 3 "Sat Jan 21 2017" "Version 1.6.1" "amath" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+lib/real/frexp.c \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'fdlibm\&.h'\fP
+.br
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "double \fBfrexp\fP (double x, int *eptr)"
+.br
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "static double \fBtwo54\fP = 1\&.80143985094819840000e+16"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "double frexp (double x, int * eptr)"
+
+.PP
+Definition at line 67 of file frexp\&.c\&.
+.PP
+.nf
+70 {
+71     int  hx, ix, lx;
+72     hx = __HI(x);
+73     ix = 0x7fffffff&hx;
+74     lx = __LO(x);
+75     *eptr = 0;
+76     if(ix>=0x7ff00000||((ix|lx)==0)) return x;  /* 0,inf,nan */
+77     if (ix<0x00100000) {        /* subnormal */
+78         x *= two54;
+79         hx = __HI(x);
+80         ix = hx&0x7fffffff;
+81         *eptr = -54;
+82     }
+83     *eptr += (ix>>20)-1022;
+84     hx = (hx&0x800fffff)|0x3fe00000;
+85     __HI(x) = hx;
+86     return x;
+87 }
+.fi
+.SH "Variable Documentation"
+.PP 
+.SS "double two54 = 1\&.80143985094819840000e+16\fC [static]\fP"
+
+.PP
+Definition at line 62 of file frexp\&.c\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for amath from the source code\&.

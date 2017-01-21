@@ -1,0 +1,79 @@
+.TH "AmigaProgram" 3 "Sat Jan 21 2017" "Version 1.6.1" "amath" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+AmigaProgram \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <program_amiga\&.h>\fP
+.PP
+Inherits \fBProgram\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBAmigaProgram\fP ()"
+.br
+.ti -1c
+.RI "virtual \fB~AmigaProgram\fP ()"
+.br
+.ti -1c
+.RI "virtual void \fBInitialize\fP (int argc, char **argv)"
+.br
+.ti -1c
+.RI "virtual void \fBRun\fP ()"
+.br
+.ti -1c
+.RI "virtual void \fBExit\fP ()"
+.br
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "RDArgs * \fBrdargs\fP"
+.br
+.ti -1c
+.RI "\fBamathargs\fP \fBargs\fP"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Detailed Description"
+.PP 
+Definition at line 36 of file program_amiga\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "AmigaProgram::AmigaProgram ()"
+
+.SS "virtual AmigaProgram::~AmigaProgram ()\fC [virtual]\fP"
+
+.SH "Member Function Documentation"
+.PP 
+.SS "virtual void AmigaProgram::Exit ()\fC [virtual]\fP"
+
+.PP
+Implements \fBProgram\fP\&.
+.SS "virtual void AmigaProgram::Initialize (int argc, char ** argv)\fC [virtual]\fP"
+
+.PP
+Implements \fBProgram\fP\&.
+.SS "virtual void AmigaProgram::Run ()\fC [virtual]\fP"
+
+.PP
+Implements \fBProgram\fP\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "\fBamathargs\fP AmigaProgram::args\fC [private]\fP"
+
+.PP
+Definition at line 46 of file program_amiga\&.h\&.
+.SS "RDArgs* AmigaProgram::rdargs\fC [private]\fP"
+
+.PP
+Definition at line 45 of file program_amiga\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for amath from the source code\&.

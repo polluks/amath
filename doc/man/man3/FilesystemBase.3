@@ -1,0 +1,68 @@
+.TH "FilesystemBase" 3 "Sat Jan 21 2017" "Version 1.6.1" "amath" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+FilesystemBase \- Abstract base class encapsulating file system calls\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <filesystem\&.h>\fP
+.PP
+Inherited by \fBStandardFilesystem\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "virtual \fB~FilesystemBase\fP ()"
+.br
+.ti -1c
+.RI "virtual \fBCharBuffer\fP * \fBListDirectory\fP (const char *path)=0"
+.br
+.ti -1c
+.RI "virtual \fBCharBuffer\fP * \fBLoadTextFile\fP (const char *name)=0"
+.br
+.ti -1c
+.RI "virtual \fBbool\fP \fBSaveTextFile\fP (const char *name, const char *text)=0"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Abstract base class encapsulating file system calls\&. 
+.PP
+Definition at line 42 of file filesystem\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "virtual FilesystemBase::~FilesystemBase ()\fC [inline]\fP, \fC [virtual]\fP"
+
+.PP
+Definition at line 44 of file filesystem\&.h\&.
+.PP
+.nf
+44 { }
+.fi
+.SH "Member Function Documentation"
+.PP 
+.SS "virtual \fBCharBuffer\fP* FilesystemBase::ListDirectory (const char * path)\fC [pure virtual]\fP"
+
+.PP
+Implemented in \fBStandardFilesystem\fP\&.
+.PP
+Referenced by ListStatement::Execute()\&.
+.SS "virtual \fBCharBuffer\fP* FilesystemBase::LoadTextFile (const char * name)\fC [pure virtual]\fP"
+
+.PP
+Implemented in \fBStandardFilesystem\fP\&.
+.PP
+Referenced by ShowStatement::Execute(), LoadStatement::Execute(), ExecuteStatement::Execute(), and StandardLanguage::LoadCatalog()\&.
+.SS "virtual \fBbool\fP FilesystemBase::SaveTextFile (const char * name, const char * text)\fC [pure virtual]\fP"
+
+.PP
+Implemented in \fBStandardFilesystem\fP\&.
+.PP
+Referenced by SaveStatement::Execute()\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for amath from the source code\&.

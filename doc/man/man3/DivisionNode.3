@@ -1,0 +1,97 @@
+.TH "DivisionNode" 3 "Sat Jan 21 2017" "Version 1.6.1" "amath" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+DivisionNode \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <operators\&.h>\fP
+.PP
+Inherits \fBNumericOperator\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBDivisionNode\fP (\fBExpressionNode\fP *\fBleft\fP, \fBExpressionNode\fP *\fBright\fP)"
+.br
+.ti -1c
+.RI "int \fBGetPrecedence\fP ()"
+.br
+.ti -1c
+.RI "\fBNumber\fP * \fBEvaluate\fP ()"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "char * \fBGetNodeText\fP ()"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Detailed Description"
+.PP 
+Definition at line 128 of file operators\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "DivisionNode::DivisionNode (\fBExpressionNode\fP * left, \fBExpressionNode\fP * right)"
+
+.PP
+Definition at line 380 of file operators\&.cpp\&.
+.PP
+References NumericOperator::NumericOperator()\&.
+.PP
+Referenced by Parser::ParseFactor()\&.
+.PP
+.nf
+380                                                                       :
+381     NumericOperator(left, right) { }
+.fi
+.SH "Member Function Documentation"
+.PP 
+.SS "\fBNumber\fP * DivisionNode::Evaluate ()\fC [virtual]\fP"
+
+.PP
+Implements \fBExpressionNode\fP\&.
+.PP
+Definition at line 388 of file operators\&.cpp\&.
+.PP
+References Number::Div(), ExpressionNode::Evaluate(), NumericOperator::left, ExpressionNode::result, and NumericOperator::right\&.
+.PP
+.nf
+389 {
+390     result = left->Evaluate()->Div(right->Evaluate());
+391     return result;
+392 }
+.fi
+.SS "char * DivisionNode::GetNodeText ()\fC [protected]\fP, \fC [virtual]\fP"
+
+.PP
+Implements \fBExpressionNode\fP\&.
+.PP
+Definition at line 394 of file operators\&.cpp\&.
+.PP
+.nf
+395 {
+396     return (char*)"/";
+397 }
+.fi
+.SS "int DivisionNode::GetPrecedence ()\fC [virtual]\fP"
+
+.PP
+Implements \fBExpressionNode\fP\&.
+.PP
+Definition at line 383 of file operators\&.cpp\&.
+.PP
+.nf
+384 {
+385     return 3;
+386 }
+.fi
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for amath from the source code\&.

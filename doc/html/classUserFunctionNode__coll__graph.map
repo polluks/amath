@@ -1,0 +1,9 @@
+<map id="UserFunctionNode" name="UserFunctionNode">
+<area shape="rect" id="node2" href="$classFunctionNode.html" title="Represents a mathematical function in a syntax tree. " alt="" coords="187,291,289,317"/>
+<area shape="rect" id="node3" href="$classExpressionNode.html" title="Base class for all nodes related to mathematical expressions. " alt="" coords="175,201,293,228"/>
+<area shape="rect" id="node7" href="$classUserFunction.html" title="A user defined function. " alt="" coords="5,291,105,317"/>
+<area shape="rect" id="node4" href="$classSyntaxNode.html" title="Base class for all nodes in a syntax tree. " alt="" coords="168,96,263,123"/>
+<area shape="rect" id="node5" href="$classCharBuffer.html" title="Encapsulate an character array which can be used as a string. " alt="" coords="11,5,97,32"/>
+<area shape="rect" id="node6" href="$structNumber.html" title="Number" alt="" coords="51,96,119,123"/>
+<area shape="rect" id="node8" href="$classVariable.html" title="A user defined variable. " alt="" coords="23,201,93,228"/>
+</map>

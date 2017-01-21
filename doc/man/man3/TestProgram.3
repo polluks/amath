@@ -1,0 +1,133 @@
+.TH "TestProgram" 3 "Sat Jan 21 2017" "Version 1.6.1" "amath" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+TestProgram \- Test control class\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <program_test\&.h>\fP
+.PP
+Inherits \fBProgram\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBTestProgram\fP ()"
+.br
+.ti -1c
+.RI "virtual \fB~TestProgram\fP ()"
+.br
+.ti -1c
+.RI "virtual void \fBInitialize\fP (int argc, char **argv)"
+.br
+.ti -1c
+.RI "virtual void \fBRun\fP ()"
+.br
+.ti -1c
+.RI "virtual void \fBExit\fP ()"
+.br
+.in -1c
+.SS "Private Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBRunTests\fP ()"
+.br
+.ti -1c
+.RI "void \fBRunTestset1\fP ()"
+.br
+.ti -1c
+.RI "void \fBRunTestset2\fP ()"
+.br
+.ti -1c
+.RI "void \fBRunTestset3\fP ()"
+.br
+.ti -1c
+.RI "void \fBRunTestset4\fP ()"
+.br
+.ti -1c
+.RI "void \fBRunTestset5\fP ()"
+.br
+.ti -1c
+.RI "void \fBTestExpression\fP (const char *\fBexpression\fP, const char *result)"
+.br
+.ti -1c
+.RI "void \fBTestStatement\fP (const char *\fBstatement\fP, const char *result)"
+.br
+.ti -1c
+.RI "void \fBPerformTest\fP (const char *input, const char *result, \fBbool\fP show)"
+.br
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "int \fBpass\fP"
+.br
+.ti -1c
+.RI "int \fBfail\fP"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Detailed Description"
+.PP 
+Test control class\&. 
+
+This control class handle the execution of tests\&. 
+.PP
+Definition at line 42 of file program_test\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "TestProgram::TestProgram ()"
+
+.SS "virtual TestProgram::~TestProgram ()\fC [virtual]\fP"
+
+.SH "Member Function Documentation"
+.PP 
+.SS "virtual void TestProgram::Exit ()\fC [virtual]\fP"
+
+.PP
+Implements \fBProgram\fP\&.
+.SS "virtual void TestProgram::Initialize (int argc, char ** argv)\fC [virtual]\fP"
+
+.PP
+Implements \fBProgram\fP\&.
+.SS "void TestProgram::PerformTest (const char * input, const char * result, \fBbool\fP show)\fC [private]\fP"
+
+.SS "virtual void TestProgram::Run ()\fC [virtual]\fP"
+
+.PP
+Implements \fBProgram\fP\&.
+.SS "void TestProgram::RunTests ()\fC [private]\fP"
+
+.SS "void TestProgram::RunTestset1 ()\fC [private]\fP"
+
+.SS "void TestProgram::RunTestset2 ()\fC [private]\fP"
+
+.SS "void TestProgram::RunTestset3 ()\fC [private]\fP"
+
+.SS "void TestProgram::RunTestset4 ()\fC [private]\fP"
+
+.SS "void TestProgram::RunTestset5 ()\fC [private]\fP"
+
+.SS "void TestProgram::TestExpression (const char * expression, const char * result)\fC [private]\fP"
+
+.SS "void TestProgram::TestStatement (const char * statement, const char * result)\fC [private]\fP"
+
+.SH "Member Data Documentation"
+.PP 
+.SS "int TestProgram::fail\fC [private]\fP"
+
+.PP
+Definition at line 52 of file program_test\&.h\&.
+.SS "int TestProgram::pass\fC [private]\fP"
+
+.PP
+Definition at line 51 of file program_test\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for amath from the source code\&.

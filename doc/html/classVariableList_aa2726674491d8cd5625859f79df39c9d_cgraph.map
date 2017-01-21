@@ -1,0 +1,15 @@
+<map id="VariableList::ListDefinitions" name="VariableList::ListDefinitions">
+<area shape="rect" id="node2" href="$classVariableList.html#a2898791757231a476a994741a0f8ab94" title="VariableList::ListContent" alt="" coords="235,208,400,235"/>
+<area shape="rect" id="node3" href="$classCharBuffer.html#a045b38735f7b3007c1b98d3d7b7feafe" title="CharBuffer::Append" alt="" coords="475,5,613,32"/>
+<area shape="rect" id="node4" href="$classCharBuffer.html#abe39d3fd7d8b9c8ec343af2cae7adc96" title="CharBuffer::Empty" alt="" coords="479,56,609,83"/>
+<area shape="rect" id="node6" href="$classCharBuffer.html#ad1907009b5ad136692b989fa96bf2f7e" title="Ensure a memory block of speficied size is allocated. " alt="" coords="464,107,624,133"/>
+<area shape="rect" id="node8" href="$classVariableList.html#a4b3bb4c1886ef7e0b15bfa5ecf4c52f4" title="VariableList::GetFirstVariable" alt="" coords="448,157,640,184"/>
+<area shape="rect" id="node9" href="$classVariable.html#accf221d35cec8a9707e84891b715fb6c" title="Variable::GetName" alt="" coords="477,208,611,235"/>
+<area shape="rect" id="node10" href="$classCharBuffer.html#a7dfd3feaaf80f318ba44efe15b1ec44b" title="CharBuffer::GetString" alt="" coords="470,259,618,285"/>
+<area shape="rect" id="node11" href="$classNumeralSystem.html#a74dc91c4dbab4a88a123b2a32753f485" title="NumeralSystem::GetText" alt="" coords="459,309,629,336"/>
+<area shape="rect" id="node12" href="$classVariable.html#adb77b2681374245b5d606a1d149d0d91" title="Variable::GetValue" alt="" coords="479,360,609,387"/>
+<area shape="rect" id="node14" href="$clib_8h.html#a67ec56eb98b49515d35005a5b3bf9a32" title="Get the length of a null terminated string. " alt="" coords="514,411,574,437"/>
+<area shape="rect" id="node5" href="$classCharBuffer.html#ae742439a2d5d5a0ad64411dcbf4604c8" title="CharBuffer::EnsureMinimumSize" alt="" coords="688,56,901,83"/>
+<area shape="rect" id="node7" href="$memcpy_8c.html#a09b7e057c69b9ddd4b481fc746997a7d" title="Copy a block of memory, handling overlap. " alt="" coords="753,107,836,133"/>
+<area shape="rect" id="node13" href="$structNumber.html#af59101b8a549616be51212fa1c17785e" title="Number::Clone" alt="" coords="739,360,850,387"/>
+</map>

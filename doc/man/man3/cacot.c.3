@@ -1,0 +1,72 @@
+.TH "lib/cplex/cacot.c" 3 "Sat Jan 21 2017" "Version 1.6.1" "amath" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+lib/cplex/cacot.c \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'prim\&.h'\fP
+.br
+\fC#include 'math\&.h'\fP
+.br
+\fC#include 'complex\&.h'\fP
+.br
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBcomplex\fP \fBcacot\fP (\fBcomplex\fP z)"
+.br
+.RI "\fIInverse cotangent of complex number\&. \fP"
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "\fBcomplex\fP cacot (\fBcomplex\fP z)"
+
+.PP
+Inverse cotangent of complex number\&. 
+.PP
+\fBVersion:\fP
+.RS 4
+1\&.1 
+.RE
+.PP
+\fBDate:\fP
+.RS 4
+14/10/01
+.RE
+.PP
+Inverse cotangent expressed using complex logarithms: 
+.PP
+.nf
+
+arccot z = i/2 * (log(1 - i/z) - log(1 + i/z))
+.fi
+.PP
+ More info is available at Wikipedia: 
+.br
+ http://en.wikipedia.org/wiki/Inverse_trigonometric_functions#Logarithmic_forms 
+.PP
+Definition at line 43 of file cacot\&.c\&.
+.PP
+References cadd(), cdiv(), clog(), cmul(), cpack(), and csub()\&.
+.PP
+Referenced by ComplexNumber::ArcCotangent()\&.
+.PP
+.nf
+44 {
+45     complex one = cpack(1\&.0, 0\&.0);
+46     complex two = cpack(2\&.0, 0\&.0);
+47     complex i = cpack(0\&.0, 1\&.0);
+48     complex iz = cdiv(i, z);
+49     complex p = clog(csub(one, iz));
+50     complex q = clog(cadd(one, iz));
+51     complex w = cmul(cdiv(i, two), csub(p, q));
+52     return w;
+53 }
+.fi
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for amath from the source code\&.

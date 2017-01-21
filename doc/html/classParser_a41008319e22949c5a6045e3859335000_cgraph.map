@@ -1,0 +1,12 @@
+<map id="Parser::ParseDeleteStatement" name="Parser::ParseDeleteStatement">
+<area shape="rect" id="node2" href="$classDeleteStatement.html#a335cfbb9db4b3bad5f0a082f247efcaa" title="Constructor used to delete either all variable or functions. " alt="" coords="253,5,480,32"/>
+<area shape="rect" id="node3" href="$classParser.html#a811765334b0cd3f01152c35c9f5bcaec" title="Parser::Expect" alt="" coords="312,107,421,133"/>
+<area shape="rect" id="node4" href="$structToken.html#a5f93ea94940a6eeb060507e1da594599" title="Token::GetPos" alt="" coords="547,69,657,96"/>
+<area shape="rect" id="node5" href="$classParser.html#a415a103e66558b4d366d9a1420561fe3" title="Parser::GetToken" alt="" coords="539,145,665,172"/>
+<area shape="rect" id="node9" href="$structToken.html#a15f1043de07ce8e452fbf115b85def71" title="Token::GetText" alt="" coords="310,208,423,235"/>
+<area shape="rect" id="node10" href="$classParser.html#adb5c3a188b36f7ecb198ae30f06338b3" title="Parser::PutToken" alt="" coords="305,259,429,285"/>
+<area shape="rect" id="node6" href="$classLexer.html#afbb12eaae7cff3bd2960f444cfe98f69" title="Lexer::GetFirstToken" alt="" coords="727,120,872,147"/>
+<area shape="rect" id="node7" href="$structToken.html#ac7eb963d5eff544dd48ffc23aa274356" title="Token::GetNextToken" alt="" coords="724,171,875,197"/>
+<area shape="rect" id="node8" href="$structToken.html#a6331b847b4dc8cebe0e0a79c4de63204" title="Token::Token" alt="" coords="923,171,1025,197"/>
+<area shape="rect" id="node11" href="$structToken.html#af5213b25192a01f526143461ab47e6af" title="Token::GetLastToken" alt="" coords="528,259,676,285"/>
+</map>

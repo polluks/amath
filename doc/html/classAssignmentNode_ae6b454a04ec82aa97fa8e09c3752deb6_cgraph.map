@@ -1,0 +1,8 @@
+<map id="AssignmentNode::Evaluate" name="AssignmentNode::Evaluate">
+<area shape="rect" id="node2" href="$classVariableNode.html#a8134cc1627925a0327e6c62eef810cdc" title="VariableNode::AssignValue" alt="" coords="235,5,416,32"/>
+<area shape="rect" id="node5" href="$classExpressionNode.html#a64975d4dc37742228bd522f6204537f7" title="ExpressionNode::Evaluate" alt="" coords="237,56,414,83"/>
+<area shape="rect" id="node6" href="$classVariableNode.html#a7ebbe9072eb78b5790befed3a42b2dc2" title="VariableNode::Evaluate" alt="" coords="246,107,405,133"/>
+<area shape="rect" id="node3" href="$classVariable.html#ad8c997ea0edab8bf72ada85963800211" title="Variable::AssignValue" alt="" coords="464,19,615,45"/>
+<area shape="rect" id="node4" href="$structNumber.html#af59101b8a549616be51212fa1c17785e" title="Number::Clone" alt="" coords="663,51,773,77"/>
+<area shape="rect" id="node7" href="$classVariable.html#adb77b2681374245b5d606a1d149d0d91" title="Variable::GetValue" alt="" coords="474,81,605,108"/>
+</map>

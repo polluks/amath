@@ -1,0 +1,90 @@
+.TH "lib/cplex/ctan.c" 3 "Sat Jan 21 2017" "Version 1.6.1" "amath" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+lib/cplex/ctan.c \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'prim\&.h'\fP
+.br
+\fC#include 'math\&.h'\fP
+.br
+\fC#include 'complex\&.h'\fP
+.br
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBcomplex\fP \fBctan\fP (\fBcomplex\fP z)"
+.br
+.RI "\fITangent of a complex number\&. \fP"
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "\fBcomplex\fP ctan (\fBcomplex\fP z)"
+
+.PP
+Tangent of a complex number\&. 
+.PP
+\fBVersion:\fP
+.RS 4
+1\&.1 
+.RE
+.PP
+\fBDate:\fP
+.RS 4
+2007/08/20
+.RE
+.PP
+Calculated as in Open Office:
+.br
+ https://wiki.openoffice.org/wiki/Documentation/How_Tos/Calc:_IMTAN_function 
+.PP
+.nf
+
+a+bi
+               sin(2\&.0 * a)
+real  = ------------------------------
+         cos(2\&.0 * a) + cosh(2\&.0 * b)
+.PP
+.nf
+  sinh(2.0 * b)
+.fi
+.PP
+
+imag  = ------------------------------
+         cos(2\&.0 * a) + cosh(2\&.0 * b)
+.fi
+.PP
+ 
+.PP
+Definition at line 58 of file ctan\&.c\&.
+.PP
+References cimag(), cos(), cosh(), cpack(), creal(), sin(), and sinh()\&.
+.PP
+Referenced by ComplexNumber::Tangent()\&.
+.PP
+.nf
+59 {
+60     complex w;
+61     double a, b;
+62     double d;
+63 
+64     a = creal(z);
+65     b = cimag(z);
+66     d = cos(2\&.0 * a) + cosh(2\&.0 * b);
+67 
+68     if (d == 0\&.0) {
+69         w = cpack(HUGE, HUGE); // TODO: INF, INF
+70     } else {
+71         w = cpack((sin(2\&.0 * a) / d), (sinh(2\&.0 * b) / d));
+72     }
+73 
+74     return w;
+75 }
+.fi
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for amath from the source code\&.

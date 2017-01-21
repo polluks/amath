@@ -1,0 +1,258 @@
+.TH "StandardConsole" 3 "Sat Jan 21 2017" "Version 1.6.1" "amath" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+StandardConsole \- Encapsulates the IO of a console using Standard C and termios\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <console_stdc\&.h>\fP
+.PP
+Inherits \fBConsoleBase\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBStandardConsole\fP (const char *\fBprompt\fP)"
+.br
+.ti -1c
+.RI "virtual \fB~StandardConsole\fP ()"
+.br
+.ti -1c
+.RI "virtual int \fBGetStackSize\fP ()"
+.br
+.ti -1c
+.RI "virtual void \fBRun\fP ()"
+.br
+.ti -1c
+.RI "virtual void \fBExit\fP ()"
+.br
+.ti -1c
+.RI "virtual void \fBSetPrompt\fP (const char *string)"
+.br
+.ti -1c
+.RI "virtual void \fBWriteString\fP (const char *string)"
+.br
+.in -1c
+.SS "Private Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBReadLine\fP ()"
+.br
+.ti -1c
+.RI "void \fBWrite\fP (const char *string, unsigned int length)"
+.br
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBAnsiConoleEngine\fP * \fBproc\fP"
+.br
+.ti -1c
+.RI "const char * \fBline\fP"
+.br
+.ti -1c
+.RI "\fBbool\fP \fBexit\fP"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Detailed Description"
+.PP 
+Encapsulates the IO of a console using Standard C and termios\&. 
+.PP
+Definition at line 44 of file console_stdc\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "StandardConsole::StandardConsole (const char * prompt)"
+
+.PP
+Definition at line 33 of file console_stdc\&.cpp\&.
+.PP
+References AnsiConoleEngine::AnsiConoleEngine(), ConsoleBase::ConsoleBase(), and proc\&.
+.PP
+Referenced by StandardProgram::Initialize()\&.
+.PP
+.nf
+33                                                    :
+34     ConsoleBase(prompt)
+35 {
+36     proc = new AnsiConoleEngine(prompt);
+37 }
+.fi
+.SS "StandardConsole::~StandardConsole ()\fC [virtual]\fP"
+
+.PP
+Definition at line 39 of file console_stdc\&.cpp\&.
+.PP
+References proc\&.
+.PP
+.nf
+40 {
+41     delete proc;
+42 }
+.fi
+.SH "Member Function Documentation"
+.PP 
+.SS "void StandardConsole::Exit ()\fC [virtual]\fP"
+
+.PP
+Implements \fBConsoleBase\fP\&.
+.PP
+Definition at line 65 of file console_stdc\&.cpp\&.
+.PP
+References exit\&.
+.PP
+.nf
+66 {
+67     exit = true;
+68 }
+.fi
+.SS "int StandardConsole::GetStackSize ()\fC [virtual]\fP"
+
+.PP
+Implements \fBThreadBase\fP\&.
+.PP
+Definition at line 44 of file console_stdc\&.cpp\&.
+.PP
+.nf
+45 {
+46     return 100000;
+47 }
+.fi
+.SS "void StandardConsole::ReadLine ()\fC [private]\fP"
+
+.PP
+Definition at line 70 of file console_stdc\&.cpp\&.
+.PP
+References AnsiConoleEngine::GetLine(), AnsiConoleEngine::InputDone(), line, proc, AnsiConoleEngine::ProcessChar(), AnsiConoleEngine::StartInput(), and WriteString()\&.
+.PP
+Referenced by Run()\&.
+.PP
+.nf
+71 {
+72 #ifdef UNIX
+73     termios new_tio, old_tio;
+74     tcgetattr(STDIN_FILENO, &old_tio);
+75     new_tio = old_tio;
+76     new_tio\&.c_lflag &=(~ICANON & ~ECHO);
+77     tcsetattr(STDIN_FILENO, TCSANOW, &new_tio);
+78 #endif
+79 
+80     proc->StartInput();
+81 
+82     while (!proc->InputDone()) {
+83         unsigned char c = getchar();
+84         //printf("%d ",c);
+85         const char *out = proc->ProcessChar((char)c);
+86         WriteString(out);
+87     }
+88 
+89     line = proc->GetLine();
+90 
+91 #ifdef UNIX
+92     tcsetattr(STDIN_FILENO, TCSANOW, &old_tio);
+93 #endif
+94 }
+.fi
+.SS "void StandardConsole::Run ()\fC [virtual]\fP"
+
+.PP
+Implements \fBThreadBase\fP\&.
+.PP
+Definition at line 49 of file console_stdc\&.cpp\&.
+.PP
+References Evaluator::Evaluate(), Evaluator::Evaluator(), exit, Evaluator::GetResult(), line, ConsoleBase::Prompt(), ReadLine(), ConsoleBase::StartMessage(), StrLen(), and Write()\&.
+.PP
+.nf
+50 {
+51     exit = false;
+52     StartMessage();
+53 
+54     while(!exit) {
+55         Prompt();
+56         ReadLine();
+57         Evaluator *evaluator = new Evaluator(line);
+58         evaluator->Evaluate();
+59         const char *res = evaluator->GetResult();
+60         Write(res, StrLen(res));
+61         delete evaluator;
+62     }
+63 }
+.fi
+.SS "void StandardConsole::SetPrompt (const char * string)\fC [virtual]\fP"
+
+.PP
+Reimplemented from \fBConsoleBase\fP\&.
+.PP
+Definition at line 112 of file console_stdc\&.cpp\&.
+.PP
+References proc, ConsoleBase::SetPrompt(), and AnsiConoleEngine::SetPrompt()\&.
+.PP
+.nf
+113 {
+114     ConsoleBase::SetPrompt(string);
+115     proc->SetPrompt(string);
+116 }
+.fi
+.SS "void StandardConsole::Write (const char * string, unsigned int length)\fC [private]\fP"
+
+.PP
+Definition at line 101 of file console_stdc\&.cpp\&.
+.PP
+Referenced by Run(), and WriteString()\&.
+.PP
+.nf
+102 {
+103     unsigned int i = 0;
+104     while(i < length && string[i] != 0) {
+105         fputc(string[i], stdout);
+106         i++;
+107     }
+108 
+109     fflush(stdout);
+110 }
+.fi
+.SS "void StandardConsole::WriteString (const char * string)\fC [virtual]\fP"
+
+.PP
+Implements \fBConsoleBase\fP\&.
+.PP
+Definition at line 96 of file console_stdc\&.cpp\&.
+.PP
+References StrLen(), and Write()\&.
+.PP
+Referenced by ReadLine()\&.
+.PP
+.nf
+97 {
+98     Write(string, StrLen(string));
+99 }
+.fi
+.SH "Member Data Documentation"
+.PP 
+.SS "\fBbool\fP StandardConsole::exit\fC [private]\fP"
+
+.PP
+Definition at line 59 of file console_stdc\&.h\&.
+.PP
+Referenced by Exit(), and Run()\&.
+.SS "const char* StandardConsole::line\fC [private]\fP"
+
+.PP
+Definition at line 58 of file console_stdc\&.h\&.
+.PP
+Referenced by ReadLine(), and Run()\&.
+.SS "\fBAnsiConoleEngine\fP* StandardConsole::proc\fC [private]\fP"
+
+.PP
+Definition at line 57 of file console_stdc\&.h\&.
+.PP
+Referenced by ReadLine(), SetPrompt(), StandardConsole(), and ~StandardConsole()\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for amath from the source code\&.

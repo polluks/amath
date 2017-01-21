@@ -1,0 +1,19 @@
+<map id="Parser::ParseNumber" name="Parser::ParseNumber">
+<area shape="rect" id="node2" href="$structComplexNumber.html#af0a78be5e675c845b8dc2bf8e5e8f32b" title="ComplexNumber::ComplexNumber" alt="" coords="201,31,428,57"/>
+<area shape="rect" id="node5" href="$structNumber.html#a83da654d465f1344162ce8b8f8c564b9" title="Number::GetRealValue" alt="" coords="236,81,393,108"/>
+<area shape="rect" id="node6" href="$structToken.html#a15f1043de07ce8e452fbf115b85def71" title="Token::GetText" alt="" coords="258,132,371,159"/>
+<area shape="rect" id="node7" href="$classParser.html#a415a103e66558b4d366d9a1420561fe3" title="Parser::GetToken" alt="" coords="252,183,377,209"/>
+<area shape="rect" id="node11" href="$classNumericValueNode.html#a5ad87623d57e875b72d8f166c578231f" title="NumericValueNode::Numeric\lValueNode" alt="" coords="219,234,411,275"/>
+<area shape="rect" id="node15" href="$classNumeralSystem.html#a1f8d8a04e99540260d4fc4f16c63ddc3" title="NumeralSystem::Parse" alt="" coords="235,300,394,327"/>
+<area shape="rect" id="node17" href="$classParser.html#adb5c3a188b36f7ecb198ae30f06338b3" title="Parser::PutToken" alt="" coords="253,351,377,377"/>
+<area shape="rect" id="node3" href="$prim_8c.html#a980e6e049f7902b05fc9eb5614b07a5c" title="Pack two real numbers into a complex number. " alt="" coords="559,5,616,32"/>
+<area shape="rect" id="node4" href="$structNumber.html#afd3c2f9b4b288e339f741a6e4ae54593" title="Number::Number" alt="" coords="526,56,649,83"/>
+<area shape="rect" id="node8" href="$classLexer.html#afbb12eaae7cff3bd2960f444cfe98f69" title="Lexer::GetFirstToken" alt="" coords="515,136,660,163"/>
+<area shape="rect" id="node9" href="$structToken.html#ac7eb963d5eff544dd48ffc23aa274356" title="Token::GetNextToken" alt="" coords="512,187,663,213"/>
+<area shape="rect" id="node10" href="$structToken.html#a6331b847b4dc8cebe0e0a79c4de63204" title="Token::Token" alt="" coords="783,187,885,213"/>
+<area shape="rect" id="node12" href="$classExpressionNode.html#a5d67579dd6c9777a18455a1360f29841" title="ExpressionNode::ExpressionNode" alt="" coords="476,241,699,268"/>
+<area shape="rect" id="node13" href="$classSyntaxNode.html#ac94372d402f38a118b4e8cd20ba7e520" title="SyntaxNode::SyntaxNode" alt="" coords="747,241,921,268"/>
+<area shape="rect" id="node14" href="$classCharBuffer.html#a4345e9a5114f5c0292e8f242f26e3a7b" title="Initialize without allocating memory. " alt="" coords="969,241,1125,268"/>
+<area shape="rect" id="node16" href="$classNumeralSystem.html#af3643941efdda71a873e2a31276f2d49" title="NumeralSystem::Parse" alt="" coords="508,300,667,327"/>
+<area shape="rect" id="node18" href="$structToken.html#af5213b25192a01f526143461ab47e6af" title="Token::GetLastToken" alt="" coords="513,351,661,377"/>
+</map>

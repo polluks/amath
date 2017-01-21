@@ -1,0 +1,8 @@
+<map id="app/system/console_stdc.h" name="app/system/console_stdc.h">
+<area shape="rect" id="node2" href="$clib_8h.html" title="C functions for manipulating strings and memory. " alt="" coords="19,95,72,121"/>
+<area shape="rect" id="node6" href="$aengine_8h.html" title="ANSI Conole Engine. " alt="" coords="97,95,191,121"/>
+<area shape="rect" id="node7" href="$console_8h.html" title="Generic console system calls. " alt="" coords="216,95,341,121"/>
+<area shape="rect" id="node3" href="$platform_8h.html" title="platform.h" alt="" coords="5,169,85,196"/>
+<area shape="rect" id="node5" href="$mem_8h.html" title="mem.h" alt="" coords="49,244,111,271"/>
+<area shape="rect" id="node8" href="$thread_8h.html" title="Generic thread logic. " alt="" coords="205,169,353,196"/>
+</map>

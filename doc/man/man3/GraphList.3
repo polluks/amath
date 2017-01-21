@@ -1,0 +1,110 @@
+.TH "GraphList" 3 "Sat Jan 21 2017" "Version 1.6.1" "amath" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+GraphList \- A list of open graph windows\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <graphlist\&.h>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBGraphList\fP ()"
+.br
+.ti -1c
+.RI "\fB~GraphList\fP ()"
+.br
+.ti -1c
+.RI "\fBGraphWindow\fP * \fBCreateNewWindow\fP ()"
+.br
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBGraphWindow\fP * \fBfirst\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+A list of open graph windows\&. 
+.PP
+Definition at line 42 of file graphlist\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "GraphList::GraphList ()"
+
+.PP
+Definition at line 32 of file graphlist\&.cpp\&.
+.PP
+References first\&.
+.PP
+Referenced by Program::Program()\&.
+.PP
+.nf
+33 {
+34     first = NOMEM;
+35 }
+.fi
+.SS "GraphList::~GraphList ()"
+
+.PP
+Definition at line 37 of file graphlist\&.cpp\&.
+.PP
+References first\&.
+.PP
+.nf
+38 {
+39     if (first != NOMEM) {
+40         delete first;
+41     }
+42 }
+.fi
+.SH "Member Function Documentation"
+.PP 
+.SS "\fBGraphWindow\fP * GraphList::CreateNewWindow ()"
+
+.PP
+Definition at line 44 of file graphlist\&.cpp\&.
+.PP
+References CreateGraphWindow(), first, and GraphWindow::next\&.
+.PP
+Referenced by DrawStatement::Execute()\&.
+.PP
+.nf
+45 {
+46     if (first == NOMEM) {
+47         first = CreateGraphWindow();
+48         return first;
+49     }
+50 
+51     GraphWindow *current = first;
+52     GraphWindow *last = NOMEM;
+53 
+54     do {
+55         last = current;
+56         current = current->next;
+57     } while (current != NOMEM);
+58 
+59     current = CreateGraphWindow();
+60     last->next = current;
+61 
+62     return current;
+63 }
+.fi
+.SH "Member Data Documentation"
+.PP 
+.SS "\fBGraphWindow\fP* GraphList::first\fC [private]\fP"
+
+.PP
+Definition at line 50 of file graphlist\&.h\&.
+.PP
+Referenced by CreateNewWindow(), GraphList(), and ~GraphList()\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for amath from the source code\&.
