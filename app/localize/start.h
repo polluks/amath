@@ -73,13 +73,13 @@
 #ifdef __powerpc__
 # define TXTCPU "PowerPC"
 #endif
-#if defined(__x86_64__)
+#if defined(__x86_64__) || defined(_M_AMD64)
 # define TXTCPU "amd64"
 #endif
 #if defined(__arm__) || defined(_M_ARM)
 # define TXTCPU "ARM"
 #endif
-#if defined(__aarch64__)
+#if defined(__aarch64__) || defined(_M_ARM64)
 # define TXTCPU "arm64"
 #endif
 #ifndef TXTCPU
