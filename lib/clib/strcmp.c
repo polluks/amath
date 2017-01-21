@@ -34,8 +34,10 @@
  * @file  strcmp.h
  * @brief Compare two null terminated strings to each other.
  *
- * Original file can be found at:
- * https://svnweb.freebsd.org/base/release/9.0.0/lib/libc/string/strcmp.c?revision=229286
+ * Code originate from FreeBSD base, revision 229286.
+ *
+ * Browse at:
+ * https://svnweb.freebsd.org/base/head/lib/libc/string/strcmp.c?revision=229286
  *
  */
 
@@ -43,7 +45,6 @@
 
 /**
  * @brief Compare two null terminated strings to each other.
- *
  */
 bool StrIsEqual(const char *s1, const char *s2)
 {
