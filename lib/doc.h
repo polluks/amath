@@ -79,9 +79,17 @@
   https://gitlab.com/rnger/amath
 
   \subsection download Download
-  Prebuild packages are available from:<BR>
-  Windows: https://gitlab.com/rnger/amath/raw/master/bin/amath-1.6.1-Win32.exe<BR>
-  (SHA256 58dc5906723b7f66e0bfe1c15d90dc28913ef5b9ea63e227a59a9e42ccdaefb5)<BR>
+  Prebuild packages are available from gitlab.com<BR>
+  Windows with ANSI support:<BR><BR>
+  https://gitlab.com/rnger/amath/raw/master/bin/amath-1.6.1-ansi-x86.exe (32 bit)<BR>
+  (SHA256 522683db243d3259e91a21a1ada1e50c771a88cc53676984003f0c1b606e9b3e)<BR><BR>
+  https://gitlab.com/rnger/amath/raw/master/bin/amath-1.6.1-ansi-x64.exe (64 bit)<BR>
+  (SHA256 11bcfd0d42af7eef747a57ebe166cd1d2894fec9dd1d5697baca4be06d50d416)<BR><BR>
+  Windows without ANSI support:<BR><BR>
+  https://gitlab.com/rnger/amath/raw/master/bin/amath-1.6.1-x86.exe (32 bit)<BR>
+  (SHA256 8b7fbceb7385a352018da4b5fcf7746f09d79a376bf24fa6d5855c84753ea54c)<BR><BR>
+  https://gitlab.com/rnger/amath/raw/master/bin/amath-1.6.1-x64.exe (64 bit)<BR>
+  (SHA256 4d06a98eb46aa6622f79c06f2c330706c53496d2a6279d170c4ecfbb4caace8d)<BR><BR>
   <BR>
   FreeBSD: https://www.freshports.org/math/amath/<BR>
   

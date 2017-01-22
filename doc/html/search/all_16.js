@@ -4,7 +4,7 @@ var searchData=
   ['window_5famiga_2ecpp',['window_amiga.cpp',['../window__amiga_8cpp.html',1,'']]],
   ['window_5famiga_2eh',['window_amiga.h',['../window__amiga_8h.html',1,'']]],
   ['wmask',['wmask',['../platform_8h.html#ab5deaef115ff5ca6ef1457d923d8331a',1,'platform.h']]],
-  ['word',['word',['../unionieee__float__shape__type.html#acc20fbdec65fd390a9eea66249564ffb',1,'ieee_float_shape_type::word()'],['../memcpy_8c.html#aafc9a69535613ac225df2d6195518116',1,'word():&#160;memcpy.c']]],
+  ['word',['word',['../unionieee__float__shape__type.html#acc20fbdec65fd390a9eea66249564ffb',1,'ieee_float_shape_type::word()'],['../memcpy_8c.html#a19036394f9c80a08fc846c96f668711c',1,'word():&#160;memcpy.c']]],
   ['write',['Write',['../classStandardConsole.html#a43844eb181d640c0e4860ef21c2e8fa7',1,'StandardConsole']]],
   ['write2',['WRITE2',['../kstandard_8c.html#ab22b8e9deca5d44fd863b5d516cb7e7b',1,'kstandard.c']]],
   ['writestring',['WriteString',['../classConsoleBase.html#a839801eeb5c25cd0a2cb13523e387bed',1,'ConsoleBase::WriteString()'],['../classStandardConsole.html#a4357667b7d80d110aca730ccb1cdca13',1,'StandardConsole::WriteString()']]],
