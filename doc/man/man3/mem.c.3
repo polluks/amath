@@ -1,4 +1,4 @@
-.TH "lib/clib/mem.c" 3 "Sat Jan 21 2017" "Version 1.6.1" "amath" \" -*- nroff -*-
+.TH "lib/clib/mem.c" 3 "Sun Jan 22 2017" "Version 1.6.1" "amath" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -84,14 +84,14 @@ Definition at line 42 of file mem\&.c\&.
 .SS "void alloc_error (char * descr, size_t size)"
 
 .PP
-Definition at line 199 of file mem\&.c\&.
+Definition at line 204 of file mem\&.c\&.
 .PP
 Referenced by AllocMemSafe()\&.
 .PP
 .nf
-200 {
-201     Debug(NULL, "Mememory allocation error (%s) with size (%d)\n", descr, size);
-202 }
+205 {
+206     Debug(NULL, "Mememory allocation error (%s) with size (%d)\n", descr, size);
+207 }
 .fi
 .SS "void* AllocMemSafe (size_t size)"
 
@@ -119,155 +119,160 @@ References MemoryBlock::address, alloc_error(), MemoryList::count, MemoryList::f
 83         list->count = 0;
 84     }
 85 
-86     // Align to bytes of 4
-87     allocsize = (size + 3) & ~0x03;
-88 
-89     newblock = (struct MemoryBlock*)ALLOC_MEM(sizeof(struct MemoryBlock));
-90     if (!newblock) {
-91         alloc_error("block", sizeof(struct MemoryBlock));
-92         return 0;
-93     }
-94 
-95     newblock->address = (struct MemoryBlock*)ALLOC_MEM(allocsize);
-96     if (!newblock->address) {
-97         FREE_MEM(newblock);
-98         alloc_error("memory", allocsize);
-99         return 0;
-100     }
-101 
-102     newblock->size = allocsize;
-103     newblock->next = NULL;
-104 
-105     if(list->first == NULL) {
-106         list->first = newblock;
-107         list->last = newblock;
-108     } else {
-109         list->last->next = newblock;
-110         list->last = newblock;
-111     }
-112 
-113     list->size += allocsize;
-114     list->count++;
-115 
-116     if (list->size > list->peak) {
-117         list->peak = list->size;
-118     }
-119 
-120     // DEBUG code
-121     // Debug(NULL, "Mememory allocated at address (%x)\n", newblock->address);
-122 
-123     return newblock->address;
-124 }
+86 #if defined(__x86_64__) || defined(__aarch64__) || defined(_M_AMD64) || defined(_M_ARM64)
+87     // Align to bytes of 8
+88     allocsize = (size + 7) & ~0x07;
+89 #else
+90     // Align to bytes of 4
+91     allocsize = (size + 3) & ~0x03;
+92 #endif
+93 
+94     newblock = (struct MemoryBlock*)ALLOC_MEM(sizeof(struct MemoryBlock));
+95     if (!newblock) {
+96         alloc_error("block", sizeof(struct MemoryBlock));
+97         return 0;
+98     }
+99 
+100     newblock->address = (struct MemoryBlock*)ALLOC_MEM(allocsize);
+101     if (!newblock->address) {
+102         FREE_MEM(newblock);
+103         alloc_error("memory", allocsize);
+104         return 0;
+105     }
+106 
+107     newblock->size = allocsize;
+108     newblock->next = NULL;
+109 
+110     if(list->first == NULL) {
+111         list->first = newblock;
+112         list->last = newblock;
+113     } else {
+114         list->last->next = newblock;
+115         list->last = newblock;
+116     }
+117 
+118     list->size += allocsize;
+119     list->count++;
+120 
+121     if (list->size > list->peak) {
+122         list->peak = list->size;
+123     }
+124 
+125     // DEBUG code
+126     // Debug(NULL, "Mememory allocated at address (%x)\n", newblock->address);
+127 
+128     return newblock->address;
+129 }
 .fi
 .SS "void dealloc_error (char * descr, void * p)"
 
 .PP
-Definition at line 204 of file mem\&.c\&.
+Definition at line 209 of file mem\&.c\&.
 .PP
 Referenced by FreeMemSafe()\&.
 .PP
 .nf
-205 {
-206     Debug(NULL, "Mememory deallocation error (%s) address (%x)\n", descr, p);
-207 }
+210 {
+211     Debug(NULL, "Mememory deallocation error (%s) address (%x)\n", descr, p);
+212 }
 .fi
 .SS "void FreeAllSafe ()"
 
 .PP
-Definition at line 172 of file mem\&.c\&.
+Definition at line 177 of file mem\&.c\&.
 .PP
 References MemoryBlock::address, MemoryList::first, list, and MemoryBlock::next\&.
 .PP
 Referenced by Cleanup()\&.
 .PP
 .nf
-173 {
-174     struct MemoryBlock *current, *next;
-175 
-176     if (list == NULL) {
-177         return;
-178     }
-179 
-180     current = list->first;
-181     while (current != NULL) {
-182         next = current->next;
-183         FREE_MEM(current->address);
-184         FREE_MEM(current);
-185         current = next;
-186     }
-187 
-188     FREE_MEM(list);
-189     list = NULL;
-190 }
+178 {
+179     struct MemoryBlock *current, *next;
+180 
+181     if (list == NULL) {
+182         return;
+183     }
+184 
+185     current = list->first;
+186     while (current != NULL) {
+187         next = current->next;
+188         FREE_MEM(current->address);
+189         FREE_MEM(current);
+190         current = next;
+191     }
+192 
+193     FREE_MEM(list);
+194     list = NULL;
+195 }
 .fi
 .SS "void FreeMemSafe (void * block)"
 
 .PP
-Definition at line 126 of file mem\&.c\&.
+Definition at line 131 of file mem\&.c\&.
 .PP
 References MemoryBlock::address, MemoryList::count, dealloc_error(), MemoryList::first, MemoryList::last, list, and MemoryBlock::next\&.
 .PP
 .nf
-127 {
-128     struct MemoryBlock *current, *last;
-129 
-130     if (list == NULL || block == NULL) {
-131         dealloc_error("list", 0);
-132         return;
-133     }
+132 {
+133     struct MemoryBlock *current, *last;
 134 
-135     if (block == NULL) {
-136         dealloc_error("memory", 0);
+135     if (list == NULL || block == NULL) {
+136         dealloc_error("list", 0);
 137         return;
 138     }
 139 
-140     last = NULL;
-141     current = list->first;
-142     while (current != NULL && current->address != block) {
-143         last = current;
-144         current = current->next;
-145     }
-146 
-147     if (current == NULL) {
-148         dealloc_error("address not found", block);
-149         return;
+140     if (block == NULL) {
+141         dealloc_error("memory", 0);
+142         return;
+143     }
+144 
+145     last = NULL;
+146     current = list->first;
+147     while (current != NULL && current->address != block) {
+148         last = current;
+149         current = current->next;
 150     }
 151 
-152     list->size -= current->size;
-153     list->count--;
-154 
-155     if (list->first == current) {
-156         list->first = NULL;
-157         list->last = NULL;
-158     } else if (list->last == current) {
-159         last->next = current->next;
-160         list->last = last;
-161     } else {
-162         last->next = current->next;
-163     }
-164 
-165     FREE_MEM(current->address);
-166     FREE_MEM(current);
-167 
-168     // DEBUG code
-169     // Debug(NULL, "Mememory deallocated at address (%x)\n", block);
-170 }
+152     if (current == NULL) {
+153         dealloc_error("address not found", block);
+154         return;
+155     }
+156 
+157     list->size -= current->size;
+158     list->count--;
+159 
+160     if (list->first == current) {
+161         list->first = NULL;
+162         list->last = NULL;
+163     } else if (list->last == current) {
+164         last->next = current->next;
+165         list->last = last;
+166     } else {
+167         last->next = current->next;
+168     }
+169 
+170     FREE_MEM(current->address);
+171     FREE_MEM(current);
+172 
+173     // DEBUG code
+174     // Debug(NULL, "Mememory deallocated at address (%x)\n", block);
+175 }
 .fi
 .SS "void MemUsage (long * blocks, long * size, long * peak)"
 
 .PP
-Definition at line 192 of file mem\&.c\&.
+Definition at line 197 of file mem\&.c\&.
 .PP
 References MemoryList::count, list, MemoryList::peak, and MemoryList::size\&.
 .PP
 Referenced by MemoryStatement::Execute()\&.
 .PP
 .nf
-193 {
-194     *blocks = list->count;
-195     *size = list->size;
-196     *peak = list->peak;;
-197 }
+198 {
+199     *blocks = list->count;
+200     *size = list->size;
+201     *peak = list->peak;;
+202 }
 .fi
 .SH "Variable Documentation"
 .PP 

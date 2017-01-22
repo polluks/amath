@@ -1,4 +1,4 @@
-.TH "lib/clib.h" 3 "Sat Jan 21 2017" "Version 1.6.1" "amath" \" -*- nroff -*-
+.TH "lib/clib.h" 3 "Sun Jan 22 2017" "Version 1.6.1" "amath" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -31,6 +31,7 @@ lib/clib.h \- C functions for manipulating strings and memory\&.
 .ti -1c
 .RI "void \fBMemSet\fP (void *destination, int c0, unsigned int length)"
 .br
+.RI "\fIFill block of memory with a constant value\&. \fP"
 .ti -1c
 .RI "void \fBMemCopy\fP (void *destination, const void *source, unsigned int length)"
 .br
@@ -90,155 +91,157 @@ Referenced by AnsiConoleEngine::AnsiConoleEngine(), CharBuffer::ClearAndCopy(), 
 .SS "void MemCopy (void * destination, const void * source, unsigned int length)"
 
 .PP
-Copy a block of memory, handling overlap\&. Original file can be found at: https://svnweb.freebsd.org/base/release/9.0.0/lib/libc/string/bcopy.c?revision=229286 
+Copy a block of memory, handling overlap\&. 
 .PP
-Definition at line 60 of file memcpy\&.c\&.
+Definition at line 71 of file memcpy\&.c\&.
 .PP
 Referenced by CharBuffer::EnsureSize(), FormatPositional(), FormatScientific(), Lexer::GetDigitValue(), Lexer::GetLitteral(), Lexer::GetQuotedIdent(), PrintInfNan(), and Language::UntagText()\&.
 .PP
 .nf
-61 {
-62     char *dst = (char*) destination;
-63     const char *src = (const char*) source;
-64     unsigned int t;
-65 
-66     if (length == 0 || dst == src) // nothing to do
-67         return;
-68 
-69     if ((unsigned long)dst < (unsigned long)src) {
-70         // Copy forward
-71         t = (unsigned long)src; // only need low bits
-72         if ((t | (unsigned long)dst) & wmask) {
-73 
-74             // Try to align operands\&.  This cannot be done unless the low bits match\&.
-75             if ((t ^ (unsigned long)dst) & wmask || length < wsize)
-76                 t = length;
-77             else
-78                 t = wsize - (t & wmask);
-79             length -= t;
-80 
-81             TLOOP1(*dst++ = *src++);
-82         }
-83 
-84         // Copy whole words, then mop up any trailing bytes\&.
-85         t = length / wsize;
-86         TLOOP(*(word *)dst = *(word *)src; src += wsize; dst += wsize);
-87 
-88         t = length & wmask;
-89         TLOOP(*dst++ = *src++);
-90 
-91     } else {
-92         // Copy backwards\&.  Otherwise essentially the same\&.
-93         // Alignment works as before, except that it takes
-94         // (t&wmask) bytes to align, not wsize-(t&wmask)\&.
-95         src += length;
-96         dst += length;
-97         t = (unsigned long)src;
-98         if ((t | (unsigned long)dst) & wmask) {
-99 
-100             if ((t ^ (unsigned long)dst) & wmask || length <= wsize)
-101                 t = length;
-102             else
-103                 t &= wmask;
-104             length -= t;
-105 
-106             TLOOP1(*--dst = *--src);
-107         }
-108 
-109         t = length / wsize;
-110         TLOOP(src -= wsize; dst -= wsize; *(word *)dst = *(word *)src);
-111 
-112         t = length & wmask;
-113         TLOOP(*--dst = *--src);
-114     }
-115 }
+72 {
+73     char *dst = (char*) destination;
+74     const char *src = (const char*) source;
+75     unsigned int t;
+76 
+77     if (length == 0 || dst == src) // nothing to do
+78         return;
+79 
+80     if ((unsigned long)dst < (unsigned long)src) {
+81         // Copy forward
+82         t = (unsigned long)src; // only need low bits
+83         if ((t | (unsigned long)dst) & wmask) {
+84 
+85             // Try to align operands\&.  This cannot be done unless the low bits match\&.
+86             if ((t ^ (unsigned long)dst) & wmask || length < wsize)
+87                 t = length;
+88             else
+89                 t = wsize - (t & wmask);
+90             length -= t;
+91 
+92             TLOOP1(*dst++ = *src++);
+93         }
+94 
+95         // Copy whole words, then mop up any trailing bytes\&.
+96         t = length / wsize;
+97         TLOOP(*(word *)dst = *(word *)src; src += wsize; dst += wsize);
+98 
+99         t = length & wmask;
+100         TLOOP(*dst++ = *src++);
+101 
+102     } else {
+103         // Copy backwards\&.  Otherwise essentially the same\&.
+104         // Alignment works as before, except that it takes
+105         // (t&wmask) bytes to align, not wsize-(t&wmask)\&.
+106         src += length;
+107         dst += length;
+108         t = (unsigned long)src;
+109         if ((t | (unsigned long)dst) & wmask) {
+110 
+111             if ((t ^ (unsigned long)dst) & wmask || length <= wsize)
+112                 t = length;
+113             else
+114                 t &= wmask;
+115             length -= t;
+116 
+117             TLOOP1(*--dst = *--src);
+118         }
+119 
+120         t = length / wsize;
+121         TLOOP(src -= wsize; dst -= wsize; *(word *)dst = *(word *)src);
+122 
+123         t = length & wmask;
+124         TLOOP(*--dst = *--src);
+125     }
+126 }
 .fi
 .SS "void MemSet (void * destination, int c0, unsigned int length)"
 
 .PP
-Definition at line 42 of file memset\&.c\&.
+Fill block of memory with a constant value\&. 
+.PP
+Definition at line 53 of file memset\&.c\&.
 .PP
 .nf
-43 {
-44     unsigned char *dst = (unsigned char*) dst0;
-45     unsigned int  t;
-46     unsigned int  c;
-47 
-48     /*
-49      * If not enough words, just fill bytes\&.  A length >= 2 words
-50      * guarantees that at least one of them is `complete' after
-51      * any necessary alignment\&.  For instance:
-52      *
-53      *  |-----------|-----------|-----------|
-54      *  |00|01|02|03|04|05|06|07|08|09|0A|00|
-55      *            ^---------------------^
-56      *       dst         dst+length-1
-57      *
-58      * but we use a minimum of 3 here since the overhead of the code
-59      * to do word writes is substantial\&.
-60      */
-61     if (length < 3 * wsize) {
-62         while (length != 0) {
-63             *dst++ = c0;
-64             --length;
-65         }
-66     }
-67 
-68     if ((c = (unsigned char)c0) != 0) { /* Fill the word\&. */
-69         c = (c << 8) | c;   /* u_int is 16 bits\&. */
-70 #if UINT_MAX > 0xffff
-71         c = (c << 16) | c;  /* u_int is 32 bits\&. */
-72 #endif
-73 #if UINT_MAX > 0xffffffff
-74         c = (c << 32) | c;  /* u_int is 64 bits\&. */
-75 #endif
-76     }
-77 
-78     /* Align destination by filling in bytes\&. */
-79     if ((t = (long)dst & wmask) != 0) {
-80         t = wsize - t;
-81         length -= t;
-82         do {
-83             *dst++ = c0;
-84         } while (--t != 0);
-85     }
-86 
-87     /* Fill words\&.  Length was >= 2*words so we know t >= 1 here\&. */
-88     t = length / wsize;
-89     do {
-90         *(unsigned int*)dst = c;
-91         dst += wsize;
-92     } while (--t != 0);
-93 
-94     /* Mop up trailing bytes, if any\&. */
-95     t = length & wmask;
-96     if (t != 0)
-97         do {
-98             *dst++ = c0;
-99         } while (--t != 0);
-100 }
+54 {
+55     unsigned char *dst = (unsigned char*) dst0;
+56     unsigned int  t;
+57     unsigned int  c;
+58 
+59     /*
+60      * If not enough words, just fill bytes\&.  A length >= 2 words
+61      * guarantees that at least one of them is `complete' after
+62      * any necessary alignment\&.  For instance:
+63      *
+64      *  |-----------|-----------|-----------|
+65      *  |00|01|02|03|04|05|06|07|08|09|0A|00|
+66      *            ^---------------------^
+67      *       dst         dst+length-1
+68      *
+69      * but we use a minimum of 3 here since the overhead of the code
+70      * to do word writes is substantial\&.
+71      */
+72     if (length < 3 * wsize) {
+73         while (length != 0) {
+74             *dst++ = c0;
+75             --length;
+76         }
+77     }
+78 
+79     if ((c = (unsigned char)c0) != 0) { /* Fill the word\&. */
+80         c = (c << 8) | c;   /* u_int is 16 bits\&. */
+81 #if UINT_MAX > 0xffff
+82         c = (c << 16) | c;  /* u_int is 32 bits\&. */
+83 #endif
+84 #if UINT_MAX > 0xffffffff
+85         c = (c << 32) | c;  /* u_int is 64 bits\&. */
+86 #endif
+87     }
+88 
+89     /* Align destination by filling in bytes\&. */
+90     if ((t = (long)dst & wmask) != 0) {
+91         t = wsize - t;
+92         length -= t;
+93         do {
+94             *dst++ = c0;
+95         } while (--t != 0);
+96     }
+97 
+98     /* Fill words\&.  Length was >= 2*words so we know t >= 1 here\&. */
+99     t = length / wsize;
+100     do {
+101         *(unsigned int*)dst = c;
+102         dst += wsize;
+103     } while (--t != 0);
+104 
+105     /* Mop up trailing bytes, if any\&. */
+106     t = length & wmask;
+107     if (t != 0)
+108         do {
+109             *dst++ = c0;
+110         } while (--t != 0);
+111 }
 .fi
 .SS "\fBbool\fP StrIsEqual (const char * s1, const char * s2)"
 
 .PP
 Compare two null terminated strings to each other\&. 
 .PP
-Definition at line 48 of file strcmp\&.c\&.
+Definition at line 49 of file strcmp\&.c\&.
 .PP
 Referenced by VariableList::CreateVariable(), FunctionList::Delete(), Language::FindAlias(), FunctionList::GetFunctionCall(), FunctionList::GetFunctionDef(), Language::GetHelpText(), FunctionList::GetSystemFunction(), VariableList::GetVariable(), CharBuffer::Is(), StandardFilesystem::ListDirectory(), CharBuffer::RemoveTrailing(), StandardLanguage::StrIsEqualLoc(), and PosixLanguage::StrIsEqualLoc()\&.
 .PP
 .nf
-49 {
-50     int r;
-51 
-52     while (*s1 == *s2++)
-53         if (*s1++ == '\0')
-54             return true;
-55 
-56     r = (*(const unsigned char *)s1 - *(const unsigned char *)(s2 - 1));
-57 
-58     return r == 0;
-59 }
+50 {
+51     int r;
+52 
+53     while (*s1 == *s2++)
+54         if (*s1++ == '\0')
+55             return true;
+56 
+57     r = (*(const unsigned char *)s1 - *(const unsigned char *)(s2 - 1));
+58 
+59     return r == 0;
+60 }
 .fi
 .SS "int StrLen (const char * string)"
 
