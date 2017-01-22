@@ -327,8 +327,8 @@ void TestProgram::RunTestset5()
     TestStatement("g(y)=y^2+y*1.5+2", "");
     TestStatement("h(x)=|x^3-2*x^2-16*x+6|", "");
     TestStatement("a=2;b=3;c=a+b;", "");
-    TestStatement("vars", "a = 2\nb = 3\nc = 5");
-    TestStatement("funcs", "f(x)=x*2+1\ng(y)=y^2+y*1.5+2\nh(x)=|x^3-2*x^2-16*x+6|");
+    TestStatement("vars", "a = 2" NEWLINE "b = 3" NEWLINE "c = 5");
+    TestStatement("funcs", "f(x)=x*2+1" NEWLINE "g(y)=y^2+y*1.5+2" NEWLINE "h(x)=|x^3-2*x^2-16*x+6|");
     TestStatement("f(2.2)", "f(2.2) = 5.4");
     TestStatement("h(8.3)", "h(8.3) = 307.207");
     TestStatement("c+1.1", "c+1.1 = 6.1");
@@ -336,7 +336,7 @@ void TestProgram::RunTestset5()
     TestStatement("eval d=d+1", "d=(d+1) = 2.1");
     TestStatement("eval d=d+1", "d=(d+1) = 3.1");
     TestStatement("eval d=d*2", "d=(d*2) = 6.2");
-    TestStatement("vars", "a = 2\nb = 3\nc = 5\nd = 6.2");
+    TestStatement("vars", "a = 2" NEWLINE "b = 3" NEWLINE "c = 5" NEWLINE "d = 6.2");
 }
 
 #endif
