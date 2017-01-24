@@ -56,7 +56,7 @@ void StandardProgram::Initialize(int argc, char **argv)
 {
     if(argc < 2) {
         // STDC version only has a console
-        Console = new StandardConsole(Preferences->GetPrompt());
+        Console = new StandardConsole(Preferences->GetPrompt(), Language);
         return;
     }
 
@@ -76,7 +76,7 @@ void StandardProgram::Initialize(int argc, char **argv)
     line->DeleteLastChar();
 
     if (line->Is("shell")) {
-        Console = new StandardConsole(Preferences->GetPrompt());
+        Console = new StandardConsole(Preferences->GetPrompt(), Language);
     }
 }
 

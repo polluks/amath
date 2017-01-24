@@ -26,14 +26,15 @@
 
 #include "clib.h"
 #include <stdio.h>
+#include "lib/charval.h"
 #include "main/nodes.h"
 #include "main/evaluator.h"
 #include "system/console_stdc.h"
 
-StandardConsole::StandardConsole(const char *prompt) :
+StandardConsole::StandardConsole(const char *prompt, CharValidator *validator) :
     ConsoleBase(prompt)
 {
-    proc = new AnsiConoleEngine(prompt);
+    proc = new AnsiConoleEngine(prompt, validator);
 }
 
 StandardConsole::~StandardConsole()

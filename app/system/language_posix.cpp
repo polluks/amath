@@ -117,4 +117,9 @@ char* PosixLanguage::Translate(textdef* def)
     return (char*)def->text;
 }
 
+bool PosixLanguage::Validate(char c)
+{
+    return (c >= 32 && c <= 126);
+}
+
 #endif

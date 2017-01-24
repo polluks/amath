@@ -135,6 +135,15 @@ bool AmigaLanguage::StrIsEqualLoc(const char* s1, const char* s2)
     return (StrnCmp(locale, (char*)s1, (char*)s2, -1, SC_COLLATE1) == 0);
 }
 
+bool AmigaLanguage::Validate(char c)
+{
+    return CharIsAlNum(c) ||
+           CharIsPunct(c) ||
+           CharIsSpace(c) ||
+           CharIsQuote(c) ||
+           CharIsOperator(c);
+}
+
 /* for numeric values */
 //STRPTR  loc_DecimalPoint;        /* character before the decimals */
 //STRPTR  loc_GroupSeparator;      /* separates groups of digits    */

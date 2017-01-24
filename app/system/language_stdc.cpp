@@ -58,7 +58,6 @@ StandardLanguage::~StandardLanguage()
     if (kwordbase != NOMEM) {
         delete kwordbase;
     }
-
 }
 
 char* StandardLanguage::Translate(textdef* def)
@@ -125,6 +124,10 @@ bool StandardLanguage::StrIsEqualLoc(const char* s1, const char* s2)
     return StrIsEqual(s1, s2);
 }
 
+bool StandardLanguage::Validate(char c)
+{
+    return (c >= 32 && c <= 126);
+}
 
 void StandardLanguage::LoadCatalogs()
 {

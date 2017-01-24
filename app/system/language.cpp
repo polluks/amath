@@ -160,3 +160,20 @@ char* Language::UntagText(const char* text)
 
     return lastText;
 }
+
+bool Language::CharIsQuote(unsigned long character)
+{
+    return (character == '"');
+}
+
+bool Language::CharIsOperator(unsigned long character)
+{
+    static const unsigned int count = sizeof(operators) / sizeof(operatordef);
+    for (unsigned int i = 0; i < count; i++) {
+        if (operators[i].chr == (char)character) {
+            return true;
+        }
+    }
+
+    return false;
+}

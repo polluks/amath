@@ -24,40 +24,13 @@
  *
  */
 
-#ifndef _STANDARD_CONSOLE
-#define _STANDARD_CONSOLE
+#ifndef _CHAR_VALIDATOR_H
+#define _CHAR_VALIDATOR_H
 
-/**
- * @file  cconsole.h
- * @brief Standard C and termios based console.
- *
- */
-
-#include "clib.h"
-#include "lib/charval.h"
-#include "lib/aengine.h"
-#include "system/console.h"
-
-/**
- * @brief Encapsulates the IO of a console using Standard C and termios.
- *
- */
-class StandardConsole : public ConsoleBase {
+class CharValidator {
 public:
-    StandardConsole(const char *prompt, CharValidator *validator);
-    virtual ~StandardConsole();
-    virtual int GetStackSize();
-    virtual void Run();
-    virtual void Exit();
-    virtual void SetPrompt(const char *string);
-    virtual void WriteString(const char *string);
-
-private:
-    void ReadLine();
-    void Write(const char *string, unsigned int length);
-    AnsiConoleEngine *proc;
-    const char *line;
-    bool exit;
+    virtual ~CharValidator() {}
+    virtual bool Validate(char c) = 0;
 };
 
-#endif
+#endif /* _CHAR_VALIDATOR_H */

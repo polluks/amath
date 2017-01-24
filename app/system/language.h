@@ -27,13 +27,14 @@
 #ifndef _LANGUAGE_BASE_H
 #define _LANGUAGE_BASE_H
 
+#include "lib/charval.h"
 #include "localize/lex.h"
 #include "localize/help.h"
 #include "localize/text.h"
 #include "localize/ident.h"
 #include "localize/kword.h"
 
-class Language {
+class Language : public CharValidator {
 public:
     Language();
     virtual ~Language();
@@ -48,7 +49,10 @@ public:
     virtual bool CharIsPunct(unsigned long character) = 0;
     virtual bool CharIsSpace(unsigned long character) = 0;
     virtual bool CharIsCntrl(unsigned long character) = 0;
+    virtual bool CharIsQuote(unsigned long character);
+    virtual bool CharIsOperator(unsigned long character) ;
     virtual bool StrIsEqualLoc(const char *s1, const char *s2) = 0;
+    virtual bool Validate(char c) = 0;
 
 protected:
     virtual char* Translate(textdef *def) = 0;

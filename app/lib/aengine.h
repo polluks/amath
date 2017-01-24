@@ -34,6 +34,7 @@
  */
 
 class CharBuffer;
+class CharValidator;
 
 /**
  * @brief   ANSI console controller.
@@ -43,7 +44,7 @@ class CharBuffer;
  */
 class AnsiConoleEngine {
 public:
-    AnsiConoleEngine(const char *prompt);
+    AnsiConoleEngine(const char *prompt, CharValidator *validator);
     ~AnsiConoleEngine();
 
     void StartInput();
@@ -63,6 +64,7 @@ private:
     static const int lineSize = 1024;
     char **lines;
     CharBuffer *linebuf;
+    CharValidator *validator;
     unsigned int len;
     char *cursor;
     char *endpos;
