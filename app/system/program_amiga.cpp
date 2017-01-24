@@ -64,7 +64,7 @@ AmigaProgram::~AmigaProgram()
 void AmigaProgram::Initialize(int argc, char **argv)
 {
     if(argc < 2) {
-        Console = new AmigaWindow(Preferences->GetPrompt());
+        Console = new AmigaWindow(Preferences->GetPrompt(), Language);
         return;
     }
 

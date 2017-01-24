@@ -26,10 +26,12 @@
 
 #include "clib.h"
 #include "lib/charbuf.h"
+#include "lib/charval.h"
 #include "lib/aengine.h"
 
-AnsiConoleEngine::AnsiConoleEngine(const char *prompt)
+AnsiConoleEngine::AnsiConoleEngine(const char *prompt, CharValidator *validator)
 {
+    this->validator = validator;
     AllocAndCopy(&this->prompt, prompt);
     linebuf = new CharBuffer();
     out = new CharBuffer();
@@ -190,7 +192,7 @@ const char* AnsiConoleEngine::ProcessChar(const unsigned char character)
         cursor--;
         endpos--;
         linebuf->ptr = endpos;
-    } else if (ch >= 32 && ch <= 126) {
+    } else if (validator->Validate(ch)) {
         // Insert in middle of line
         if (cursor != endpos) {
             char *i = endpos;

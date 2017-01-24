@@ -33,10 +33,10 @@
 
 #ifdef AMIGA
 
-AmigaWindow::AmigaWindow(const char *prompt) :
+AmigaWindow::AmigaWindow(const char *prompt, CharValidator *validator) :
     ConsoleBase(prompt)
 {
-    proc = new AnsiConoleEngine(prompt);
+    proc = new AnsiConoleEngine(prompt, validator);
     window = NULL;
     //menu = NULL;
     writereq.st = NULL;

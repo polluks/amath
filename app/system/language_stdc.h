@@ -44,6 +44,7 @@ public:
     bool CharIsSpace(unsigned long character);
     bool CharIsCntrl(unsigned long character);
     bool StrIsEqualLoc(const char *s1, const char *s2);
+    bool Validate(char c);
 
 protected:
     char* Translate(textdef *def);

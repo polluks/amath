@@ -77,7 +77,7 @@ typedef union
  */
 class AmigaWindow : public ConsoleBase {
 public:
-    AmigaWindow(const char *prompt);
+    AmigaWindow(const char *prompt, CharValidator *validator);
     ~AmigaWindow();
 
     int GetStackSize();
