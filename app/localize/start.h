@@ -34,33 +34,6 @@
  */
 /******************************************************************************/
 #include "clib.h"
-#ifdef mc68000
-# define TXTCPU "68000+"
-#endif
-#ifdef mc68020
-# ifdef TXTCPU
-# undef TXTCPU
-# endif
-# define TXTCPU "68020"
-#endif
-#ifdef mc68030
-# ifdef TXTCPU
-# undef TXTCPU
-# endif
-# define TXTCPU "68030"
-#endif
-#ifdef mc68040
-# ifdef TXTCPU
-# undef TXTCPU
-# endif
-# define TXTCPU "68040"
-#endif
-#ifdef mc68060
-# ifdef TXTCPU
-# undef TXTCPU
-# endif
-# define TXTCPU "68060"
-#endif
 /******************************************************************************/
 #if defined(INTELCPU)  || defined(i386)    || defined(i486)  ||  \
     defined(intel)     || defined(x86)     || defined(i86pc) ||  \
@@ -68,38 +41,82 @@
 # ifdef TXTCPU
 # undef TXTCPU
 # endif
-# define TXTCPU "i386"
-#endif
-#ifdef __powerpc__
-# define TXTCPU "PowerPC"
+# define TXTCPU        "i386"
 #endif
 #if defined(__x86_64__) || defined(_M_AMD64)
-# define TXTCPU "amd64"
+# define TXTCPU        "amd64"
 #endif
+/******************************************************************************/
+#ifdef __powerpc__
+# define TXTCPU        "PowerPC"
+#endif
+/******************************************************************************/
 #if defined(__arm__) || defined(_M_ARM)
-# define TXTCPU "ARM"
+# define TXTCPU        "arm"
 #endif
 #if defined(__aarch64__) || defined(_M_ARM64)
-# define TXTCPU "arm64"
+# define TXTCPU        "arm64"
 #endif
+/******************************************************************************/
+#ifdef mc68000
+# define TXTCPU        "68000+"
+#endif
+/******************************************************************************/
+#ifdef mc68020
+# ifdef TXTCPU
+# undef TXTCPU
+# endif
+# define TXTCPU        "68020"
+#endif
+/******************************************************************************/
+#ifdef mc68030
+# ifdef TXTCPU
+# undef TXTCPU
+# endif
+# define TXTCPU        "68030"
+#endif
+/******************************************************************************/
+#ifdef mc68040
+# ifdef TXTCPU
+# undef TXTCPU
+# endif
+# define TXTCPU        "68040"
+#endif
+/******************************************************************************/
+#ifdef mc68060
+# ifdef TXTCPU
+# undef TXTCPU
+# endif
+# define TXTCPU        "68060"
+#endif
+/******************************************************************************/
 #ifndef TXTCPU
 #error what cpu is this ?!
 //#define TXTCPU EMPTYSTRING
 #endif
 /******************************************************************************/
-#ifdef WITHTEST
-# define TXTTEST SPACE "TEST"
-#else
-# define TXTTEST EMPTYSTRING
-#endif
-/******************************************************************************/
 #if defined(TXTCPU) && defined(__HAVE_68881__)
-# define TXTFPU SPACE "FPU"
+# define TXTFPU SPACE  "FPU"
 #else
 # define TXTFPU EMPTYSTRING
 #endif
 /******************************************************************************/
-#define TXTARCH        TXTCPU TXTFPU TXTTEST
+#if defined(WITHTEST) && !defined(ANSICONSOLE)
+# define TXTOPTS       "TEST"
+#endif
+#if !defined(WITHTEST) && defined(ANSICONSOLE)
+# define TXTOPTS       "ANSI"
+#endif
+#if defined(WITHTEST) && defined(ANSICONSOLE)
+# define TXTOPTS       "ANSI, TEST"
+#endif
+#ifdef TXTOPTS
+# define TXTOPTMSG     SPACE "(OPT: " TXTOPTS ")"
+#else
+# define TXTOPTMSG     EMPTYSTRING
+#endif
+/******************************************************************************/
+#define TXTARCH        TXTCPU TXTFPU
 #define RELDATESTAMP   "(21-01-2017)"
 #define TXTDOSVERSION  "\0$VER: amath 1.61" SPACE RELDATESTAMP SPACE TXTARCH
 #define TXTTITLE       "amath version 1.6.1"
@@ -107,7 +124,7 @@
 #define TXTSTARTMSG    TXTTITLE SPACE TXTCOPYRIGHT
 /******************************************************************************/
 #define TXTVERSMSG     TXTTITLE SPACE RELDATESTAMP SPACE TXTARCH
-#define TXTCOMPMSG     "Compiled with " COMP_NAME SPACE COMP_VERS
+#define TXTCOMPMSG     "Compiled with " COMP_NAME SPACE COMP_VERS TXTOPTMSG
 /******************************************************************************/
 #define TXTEXTCOPYRIGHT \
     "This software contains copyrighted material by:" NEWLINE \
