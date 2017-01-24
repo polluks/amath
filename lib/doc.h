@@ -79,17 +79,17 @@
   https://gitlab.com/rnger/amath
 
   \subsection download Download
-  Prebuild packages are available from gitlab.com<BR>
-  Windows with ANSI support:<BR><BR>
-  https://gitlab.com/rnger/amath/raw/master/bin/amath-1.6.21-ansi-x86.exe (32 bit)<BR>
-  (SHA256 522683db243d3259e91a21a1ada1e50c771a88cc53676984003f0c1b606e9b3e)<BR><BR>
+  Prebuild packages are available from gitlab.com <BR>
+  <BR><B>Windows with ANSI support</B><BR>
+  https://gitlab.com/rnger/amath/raw/master/bin/amath-1.6.2-ansi-x86.exe (32 bit)<BR>
+  (SHA256 d308424862eef418d97e3b60c00b191f711349c6f856e12b4917b114ac2f6578)<BR>
   https://gitlab.com/rnger/amath/raw/master/bin/amath-1.6.2-ansi-x64.exe (64 bit)<BR>
-  (SHA256 11bcfd0d42af7eef747a57ebe166cd1d2894fec9dd1d5697baca4be06d50d416)<BR><BR>
-  Windows without ANSI support:<BR><BR>
+  (SHA256 170c5246f0bd0cec3e1d4f64c7c685d75cdbd5a5da7acf0ea4641c21e2a7d5ea)<BR>
+  <BR><B>Windows without ANSI support</B><BR>
   https://gitlab.com/rnger/amath/raw/master/bin/amath-1.6.2-x86.exe (32 bit)<BR>
-  (SHA256 8b7fbceb7385a352018da4b5fcf7746f09d79a376bf24fa6d5855c84753ea54c)<BR><BR>
+  (SHA256 1ee22651fb09dc841b71062b8a6e9f6da285d807d3216e935a15eca9df5fd614)<BR>
   https://gitlab.com/rnger/amath/raw/master/bin/amath-1.6.2-x64.exe (64 bit)<BR>
-  (SHA256 4d06a98eb46aa6622f79c06f2c330706c53496d2a6279d170c4ecfbb4caace8d)<BR><BR>
+  (SHA256 d3ba707f37ab27e90847d54839d65b0308124ac6ab61e1aac1deda44d87a7fad)<BR>
   <BR>
   FreeBSD: https://www.freshports.org/math/amath/<BR>
   
@@ -296,7 +296,7 @@
   \subsection version162 v1.6.2 January 24 2017
   - Fixed bug in memory allocation
   - Fixed bug in native keybord input
-  - Include build options in executables
+  - Included build options in executables
 
   \subsection version161 v1.6.1 January 21 2017
   - Fixed language bug in Windows

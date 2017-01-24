@@ -3,7 +3,7 @@
 <area shape="rect" id="node4" href="$io_8cpp.html#ab181236fa77671f15d24155b5655ef78" title="CreateProgram" alt="" coords="112,231,223,257"/>
 <area shape="rect" id="node24" href="$classProgram.html#a6c8e48e064937d9c71168ed3a15ccf13" title="Program::Initialize" alt="" coords="104,281,231,308"/>
 <area shape="rect" id="node25" href="$classProgram.html#a466c115e35933f7fb3a3775bc8f20ac4" title="Program::Run" alt="" coords="116,332,219,359"/>
-<area shape="rect" id="node3" href="$mem_8c.html#adcb19646ed930d44f25ddc9f7767a182" title="FreeAllSafe" alt="" coords="325,175,415,201"/>
+<area shape="rect" id="node3" href="$mem_8c.html#adcb19646ed930d44f25ddc9f7767a182" title="Deallocate all memory in the global memory list. " alt="" coords="325,175,415,201"/>
 <area shape="rect" id="node5" href="$classStandardProgram.html#a8f86a2eaf4593fd52dc4d13c40815f05" title="StandardProgram::Standard\lProgram" alt="" coords="279,226,461,267"/>
 <area shape="rect" id="node6" href="$classProgram.html#aaefaa0df08f3484476fc4d61e97acbdc" title="Program::Program" alt="" coords="509,233,637,260"/>
 <area shape="rect" id="node7" href="$classVariableList.html#ab1d9c24d3b93598ee87bc47c9b964ec0" title="VariableList::VariableList" alt="" coords="710,5,877,32"/>

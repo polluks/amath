@@ -32,7 +32,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">amath
-   &#160;<span id="projectnumber">1.6.1</span>
+   &#160;<span id="projectnumber">1.6.2</span>
    </div>
    <div id="projectbrief">Simple command line calculator</div>
   </td>
@@ -123,7 +123,8 @@ Inheritance diagram for AmigaLanguage:</div>
 <div class="dyncontent">
 <div class="center"><img src="classAmigaLanguage__inherit__graph.png" border="0" usemap="#AmigaLanguage_inherit__map" alt="Inheritance graph"/></div>
 <map name="AmigaLanguage_inherit__map" id="AmigaLanguage_inherit__map">
-<area shape="rect" id="node2" href="classLanguage.html" title="Language" alt="" coords="23,5,102,32"/>
+<area shape="rect" id="node2" href="classLanguage.html" title="Language" alt="" coords="23,80,102,107"/>
+<area shape="rect" id="node3" href="classCharValidator.html" title="CharValidator" alt="" coords="12,5,113,32"/>
 </map>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <div class="dynheader">
@@ -131,8 +132,9 @@ Collaboration diagram for AmigaLanguage:</div>
 <div class="dyncontent">
 <div class="center"><img src="classAmigaLanguage__coll__graph.png" border="0" usemap="#AmigaLanguage_coll__map" alt="Collaboration graph"/></div>
 <map name="AmigaLanguage_coll__map" id="AmigaLanguage_coll__map">
-<area shape="rect" id="node2" href="classLanguage.html" title="Language" alt="" coords="23,95,102,121"/>
-<area shape="rect" id="node3" href="structkeyworddef.html" title="Character representation of keyword tied with its symbol. " alt="" coords="18,5,107,32"/>
+<area shape="rect" id="node2" href="classLanguage.html" title="Language" alt="" coords="77,95,155,121"/>
+<area shape="rect" id="node3" href="classCharValidator.html" title="CharValidator" alt="" coords="5,5,107,32"/>
+<area shape="rect" id="node4" href="structkeyworddef.html" title="Character representation of keyword tied with its symbol. " alt="" coords="131,5,221,32"/>
 </map>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
@@ -158,6 +160,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a2ae24f616652a4fc8af365d0ee50ae76"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a19a04fb8a564dd9fbeaf6f5b822d38e6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="platform_8h.html#a1062901a7428fdd9c7f180f5e01ea056">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAmigaLanguage.html#a19a04fb8a564dd9fbeaf6f5b822d38e6">StrIsEqualLoc</a> (const char *s1, const char *s2)</td></tr>
 <tr class="separator:a19a04fb8a564dd9fbeaf6f5b822d38e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9811b283134970ebdced4593de357a68"><td class="memItemLeft" align="right" valign="top"><a class="el" href="platform_8h.html#a1062901a7428fdd9c7f180f5e01ea056">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAmigaLanguage.html#a9811b283134970ebdced4593de357a68">Validate</a> (char c)</td></tr>
+<tr class="separator:a9811b283134970ebdced4593de357a68"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classLanguage"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classLanguage')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classLanguage.html">Language</a></td></tr>
 <tr class="memitem:a09448361f9188bceaaeebc5576cd6896 inherit pub_methods_classLanguage"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLanguage.html#a09448361f9188bceaaeebc5576cd6896">Language</a> ()</td></tr>
 <tr class="separator:a09448361f9188bceaaeebc5576cd6896 inherit pub_methods_classLanguage"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -171,6 +175,13 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:ad2c5b22fcacde4bbff0e3c013dce4a96 inherit pub_methods_classLanguage"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8a9aa7fef5a0c2c3626249705292e71a inherit pub_methods_classLanguage"><td class="memItemLeft" align="right" valign="top"><a class="el" href="lex_8h.html#a7feef761cd73fac6e25b8bb80d2c4e54">Symbol</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLanguage.html#a8a9aa7fef5a0c2c3626249705292e71a">FindKeyword</a> (const char *ident)</td></tr>
 <tr class="separator:a8a9aa7fef5a0c2c3626249705292e71a inherit pub_methods_classLanguage"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a036f62da16f77aa3ed38edd2c4202d0f inherit pub_methods_classLanguage"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="platform_8h.html#a1062901a7428fdd9c7f180f5e01ea056">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLanguage.html#a036f62da16f77aa3ed38edd2c4202d0f">CharIsQuote</a> (unsigned long character)</td></tr>
+<tr class="separator:a036f62da16f77aa3ed38edd2c4202d0f inherit pub_methods_classLanguage"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4a28e135813ff9f31938a1864d7cf87a inherit pub_methods_classLanguage"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="platform_8h.html#a1062901a7428fdd9c7f180f5e01ea056">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLanguage.html#a4a28e135813ff9f31938a1864d7cf87a">CharIsOperator</a> (unsigned long character)</td></tr>
+<tr class="separator:a4a28e135813ff9f31938a1864d7cf87a inherit pub_methods_classLanguage"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_methods_classCharValidator"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classCharValidator')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classCharValidator.html">CharValidator</a></td></tr>
+<tr class="memitem:a4a73fcccfc3ee204169a520468773366 inherit pub_methods_classCharValidator"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCharValidator.html#a4a73fcccfc3ee204169a520468773366">~CharValidator</a> ()</td></tr>
+<tr class="separator:a4a73fcccfc3ee204169a520468773366 inherit pub_methods_classCharValidator"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
@@ -540,6 +551,32 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="a9811b283134970ebdced4593de357a68"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="platform_8h.html#a1062901a7428fdd9c7f180f5e01ea056">bool</a> AmigaLanguage::Validate </td>
+          <td>(</td>
+          <td class="paramtype">char&#160;</td>
+          <td class="paramname"><em>c</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Implements <a class="el" href="classLanguage.html#aeecd96f23d63ac53038c9dfe7812280b">Language</a>.</p>
+
+</div>
+</div>
 <h2 class="groupheader">Member Data Documentation</h2>
 <a class="anchor" id="ac0669a78cab7ed334b4b1a0fea654f99"></a>
 <div class="memitem">
@@ -559,7 +596,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="language__amiga_8h_source.html#l00056">56</a> of file <a class="el" href="language__amiga_8h_source.html">language_amiga.h</a>.</p>
+<p>Definition at line <a class="el" href="language__amiga_8h_source.html#l00057">57</a> of file <a class="el" href="language__amiga_8h_source.html">language_amiga.h</a>.</p>
 
 </div>
 </div>
@@ -581,7 +618,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="language__amiga_8h_source.html#l00057">57</a> of file <a class="el" href="language__amiga_8h_source.html">language_amiga.h</a>.</p>
+<p>Definition at line <a class="el" href="language__amiga_8h_source.html#l00058">58</a> of file <a class="el" href="language__amiga_8h_source.html">language_amiga.h</a>.</p>
 
 </div>
 </div>
@@ -603,7 +640,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="language__amiga_8h_source.html#l00059">59</a> of file <a class="el" href="language__amiga_8h_source.html">language_amiga.h</a>.</p>
+<p>Definition at line <a class="el" href="language__amiga_8h_source.html#l00060">60</a> of file <a class="el" href="language__amiga_8h_source.html">language_amiga.h</a>.</p>
 
 </div>
 </div>
@@ -625,7 +662,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="language__amiga_8h_source.html#l00055">55</a> of file <a class="el" href="language__amiga_8h_source.html">language_amiga.h</a>.</p>
+<p>Definition at line <a class="el" href="language__amiga_8h_source.html#l00056">56</a> of file <a class="el" href="language__amiga_8h_source.html">language_amiga.h</a>.</p>
 
 </div>
 </div>
@@ -647,7 +684,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="language__amiga_8h_source.html#l00058">58</a> of file <a class="el" href="language__amiga_8h_source.html">language_amiga.h</a>.</p>
+<p>Definition at line <a class="el" href="language__amiga_8h_source.html#l00059">59</a> of file <a class="el" href="language__amiga_8h_source.html">language_amiga.h</a>.</p>
 
 </div>
 </div>

@@ -1,4 +1,4 @@
-.TH "StandardConsole" 3 "Sun Jan 22 2017" "Version 1.6.1" "amath" \" -*- nroff -*-
+.TH "StandardConsole" 3 "Tue Jan 24 2017" "Version 1.6.2" "amath" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -15,7 +15,7 @@ Inherits \fBConsoleBase\fP\&.
 
 .in +1c
 .ti -1c
-.RI "\fBStandardConsole\fP (const char *\fBprompt\fP)"
+.RI "\fBStandardConsole\fP (const char *\fBprompt\fP, \fBCharValidator\fP *validator)"
 .br
 .ti -1c
 .RI "virtual \fB~StandardConsole\fP ()"
@@ -64,36 +64,36 @@ Inherits \fBConsoleBase\fP\&.
 .PP 
 Encapsulates the IO of a console using Standard C and termios\&. 
 .PP
-Definition at line 44 of file console_stdc\&.h\&.
+Definition at line 45 of file console_stdc\&.h\&.
 .SH "Constructor & Destructor Documentation"
 .PP 
-.SS "StandardConsole::StandardConsole (const char * prompt)"
+.SS "StandardConsole::StandardConsole (const char * prompt, \fBCharValidator\fP * validator)"
 
 .PP
-Definition at line 33 of file console_stdc\&.cpp\&.
+Definition at line 34 of file console_stdc\&.cpp\&.
 .PP
 References AnsiConoleEngine::AnsiConoleEngine(), ConsoleBase::ConsoleBase(), and proc\&.
 .PP
 Referenced by StandardProgram::Initialize()\&.
 .PP
 .nf
-33                                                    :
-34     ConsoleBase(prompt)
-35 {
-36     proc = new AnsiConoleEngine(prompt);
-37 }
+34                                                                              :
+35     ConsoleBase(prompt)
+36 {
+37     proc = new AnsiConoleEngine(prompt, validator);
+38 }
 .fi
 .SS "StandardConsole::~StandardConsole ()\fC [virtual]\fP"
 
 .PP
-Definition at line 39 of file console_stdc\&.cpp\&.
+Definition at line 40 of file console_stdc\&.cpp\&.
 .PP
 References proc\&.
 .PP
 .nf
-40 {
-41     delete proc;
-42 }
+41 {
+42     delete proc;
+43 }
 .fi
 .SH "Member Function Documentation"
 .PP 
@@ -102,154 +102,154 @@ References proc\&.
 .PP
 Implements \fBConsoleBase\fP\&.
 .PP
-Definition at line 65 of file console_stdc\&.cpp\&.
+Definition at line 66 of file console_stdc\&.cpp\&.
 .PP
 References exit\&.
 .PP
 .nf
-66 {
-67     exit = true;
-68 }
+67 {
+68     exit = true;
+69 }
 .fi
 .SS "int StandardConsole::GetStackSize ()\fC [virtual]\fP"
 
 .PP
 Implements \fBThreadBase\fP\&.
 .PP
-Definition at line 44 of file console_stdc\&.cpp\&.
+Definition at line 45 of file console_stdc\&.cpp\&.
 .PP
 .nf
-45 {
-46     return 100000;
-47 }
+46 {
+47     return 100000;
+48 }
 .fi
 .SS "void StandardConsole::ReadLine ()\fC [private]\fP"
 
 .PP
-Definition at line 70 of file console_stdc\&.cpp\&.
+Definition at line 71 of file console_stdc\&.cpp\&.
 .PP
 References AnsiConoleEngine::GetLine(), AnsiConoleEngine::InputDone(), line, proc, AnsiConoleEngine::ProcessChar(), AnsiConoleEngine::StartInput(), and WriteString()\&.
 .PP
 Referenced by Run()\&.
 .PP
 .nf
-71 {
-72 #ifdef UNIX
-73     termios new_tio, old_tio;
-74     tcgetattr(STDIN_FILENO, &old_tio);
-75     new_tio = old_tio;
-76     new_tio\&.c_lflag &=(~ICANON & ~ECHO);
-77     tcsetattr(STDIN_FILENO, TCSANOW, &new_tio);
-78 #endif
-79 
-80     proc->StartInput();
-81 
-82     while (!proc->InputDone()) {
-83         unsigned char c = getchar();
-84         //printf("%d ",c);
-85         const char *out = proc->ProcessChar((char)c);
-86         WriteString(out);
-87     }
-88 
-89     line = proc->GetLine();
-90 
-91 #ifdef UNIX
-92     tcsetattr(STDIN_FILENO, TCSANOW, &old_tio);
-93 #endif
-94 }
+72 {
+73 #ifdef UNIX
+74     termios new_tio, old_tio;
+75     tcgetattr(STDIN_FILENO, &old_tio);
+76     new_tio = old_tio;
+77     new_tio\&.c_lflag &=(~ICANON & ~ECHO);
+78     tcsetattr(STDIN_FILENO, TCSANOW, &new_tio);
+79 #endif
+80 
+81     proc->StartInput();
+82 
+83     while (!proc->InputDone()) {
+84         unsigned char c = getchar();
+85         //printf("%d ",c);
+86         const char *out = proc->ProcessChar((char)c);
+87         WriteString(out);
+88     }
+89 
+90     line = proc->GetLine();
+91 
+92 #ifdef UNIX
+93     tcsetattr(STDIN_FILENO, TCSANOW, &old_tio);
+94 #endif
+95 }
 .fi
 .SS "void StandardConsole::Run ()\fC [virtual]\fP"
 
 .PP
 Implements \fBThreadBase\fP\&.
 .PP
-Definition at line 49 of file console_stdc\&.cpp\&.
+Definition at line 50 of file console_stdc\&.cpp\&.
 .PP
 References Evaluator::Evaluate(), Evaluator::Evaluator(), exit, Evaluator::GetResult(), line, ConsoleBase::Prompt(), ReadLine(), ConsoleBase::StartMessage(), StrLen(), and Write()\&.
 .PP
 .nf
-50 {
-51     exit = false;
-52     StartMessage();
-53 
-54     while(!exit) {
-55         Prompt();
-56         ReadLine();
-57         Evaluator *evaluator = new Evaluator(line);
-58         evaluator->Evaluate();
-59         const char *res = evaluator->GetResult();
-60         Write(res, StrLen(res));
-61         delete evaluator;
-62     }
-63 }
+51 {
+52     exit = false;
+53     StartMessage();
+54 
+55     while(!exit) {
+56         Prompt();
+57         ReadLine();
+58         Evaluator *evaluator = new Evaluator(line);
+59         evaluator->Evaluate();
+60         const char *res = evaluator->GetResult();
+61         Write(res, StrLen(res));
+62         delete evaluator;
+63     }
+64 }
 .fi
 .SS "void StandardConsole::SetPrompt (const char * string)\fC [virtual]\fP"
 
 .PP
 Reimplemented from \fBConsoleBase\fP\&.
 .PP
-Definition at line 112 of file console_stdc\&.cpp\&.
+Definition at line 113 of file console_stdc\&.cpp\&.
 .PP
 References proc, ConsoleBase::SetPrompt(), and AnsiConoleEngine::SetPrompt()\&.
 .PP
 .nf
-113 {
-114     ConsoleBase::SetPrompt(string);
-115     proc->SetPrompt(string);
-116 }
+114 {
+115     ConsoleBase::SetPrompt(string);
+116     proc->SetPrompt(string);
+117 }
 .fi
 .SS "void StandardConsole::Write (const char * string, unsigned int length)\fC [private]\fP"
 
 .PP
-Definition at line 101 of file console_stdc\&.cpp\&.
+Definition at line 102 of file console_stdc\&.cpp\&.
 .PP
 Referenced by Run(), and WriteString()\&.
 .PP
 .nf
-102 {
-103     unsigned int i = 0;
-104     while(i < length && string[i] != 0) {
-105         fputc(string[i], stdout);
-106         i++;
-107     }
-108 
-109     fflush(stdout);
-110 }
+103 {
+104     unsigned int i = 0;
+105     while(i < length && string[i] != 0) {
+106         fputc(string[i], stdout);
+107         i++;
+108     }
+109 
+110     fflush(stdout);
+111 }
 .fi
 .SS "void StandardConsole::WriteString (const char * string)\fC [virtual]\fP"
 
 .PP
 Implements \fBConsoleBase\fP\&.
 .PP
-Definition at line 96 of file console_stdc\&.cpp\&.
+Definition at line 97 of file console_stdc\&.cpp\&.
 .PP
 References StrLen(), and Write()\&.
 .PP
 Referenced by ReadLine()\&.
 .PP
 .nf
-97 {
-98     Write(string, StrLen(string));
-99 }
+98 {
+99     Write(string, StrLen(string));
+100 }
 .fi
 .SH "Member Data Documentation"
 .PP 
 .SS "\fBbool\fP StandardConsole::exit\fC [private]\fP"
 
 .PP
-Definition at line 59 of file console_stdc\&.h\&.
+Definition at line 60 of file console_stdc\&.h\&.
 .PP
 Referenced by Exit(), and Run()\&.
 .SS "const char* StandardConsole::line\fC [private]\fP"
 
 .PP
-Definition at line 58 of file console_stdc\&.h\&.
+Definition at line 59 of file console_stdc\&.h\&.
 .PP
 Referenced by ReadLine(), and Run()\&.
 .SS "\fBAnsiConoleEngine\fP* StandardConsole::proc\fC [private]\fP"
 
 .PP
-Definition at line 57 of file console_stdc\&.h\&.
+Definition at line 58 of file console_stdc\&.h\&.
 .PP
 Referenced by ReadLine(), SetPrompt(), StandardConsole(), and ~StandardConsole()\&.
 

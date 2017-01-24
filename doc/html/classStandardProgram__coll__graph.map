@@ -1,22 +1,23 @@
 <map id="StandardProgram" name="StandardProgram">
-<area shape="rect" id="node2" href="$classProgram.html" title="Master control class. " alt="" coords="1600,275,1671,301"/>
-<area shape="rect" id="node3" href="$classNumeralSystem.html" title="Base class for all numeral systems. " alt="" coords="299,67,415,93"/>
-<area shape="rect" id="node4" href="$classCharBuffer.html" title="Encapsulate an character array which can be used as a string. " alt="" coords="5,403,91,429"/>
-<area shape="rect" id="node12" href="$classUserFunction.html" title="A user defined function. " alt="" coords="700,280,800,307"/>
-<area shape="rect" id="node14" href="$classSyntaxNode.html" title="Base class for all nodes in a syntax tree. " alt="" coords="180,300,275,327"/>
-<area shape="rect" id="node16" href="$classFunctionList.html" title="A list of user defined functions. " alt="" coords="971,299,1064,325"/>
-<area shape="rect" id="node18" href="$classPreferencesBase.html" title="PreferencesBase" alt="" coords="824,508,947,535"/>
-<area shape="rect" id="node19" href="$classVariableList.html" title="A list of user defined variables. " alt="" coords="705,453,795,480"/>
-<area shape="rect" id="node5" href="$classConsoleBase.html" title="Abstract base class encapsulating console logic. " alt="" coords="1375,108,1475,135"/>
-<area shape="rect" id="node6" href="$classThreadBase.html" title="Abstract base class encapsulating runable component. " alt="" coords="1143,108,1235,135"/>
-<area shape="rect" id="node7" href="$structNumber.html" title="Number" alt="" coords="193,196,261,223"/>
-<area shape="rect" id="node11" href="$structRealNumber.html" title="Represent a real number with 15 siginificant digits. " alt="" coords="581,167,676,193"/>
-<area shape="rect" id="node13" href="$classExpressionNode.html" title="Base class for all nodes related to mathematical expressions. " alt="" coords="439,211,557,237"/>
-<area shape="rect" id="node15" href="$classVariable.html" title="A user defined variable. " alt="" coords="463,300,533,327"/>
-<area shape="rect" id="node8" href="$classGraphList.html" title="A list of open graph windows. " alt="" coords="1385,248,1464,275"/>
-<area shape="rect" id="node9" href="$classGraphWindow.html" title="GraphWindow" alt="" coords="1137,248,1241,275"/>
-<area shape="rect" id="node10" href="$classGrid.html" title="Grid" alt="" coords="994,248,1041,275"/>
-<area shape="rect" id="node17" href="$classFilesystemBase.html" title="Abstract base class encapsulating file system calls. " alt="" coords="1367,349,1483,376"/>
-<area shape="rect" id="node20" href="$classLanguage.html" title="Language" alt="" coords="1385,7,1464,33"/>
-<area shape="rect" id="node21" href="$structkeyworddef.html" title="Character representation of keyword tied with its symbol. " alt="" coords="1145,7,1234,33"/>
+<area shape="rect" id="node2" href="$classProgram.html" title="Master control class. " alt="" coords="1600,325,1671,352"/>
+<area shape="rect" id="node3" href="$classNumeralSystem.html" title="Base class for all numeral systems. " alt="" coords="299,121,415,148"/>
+<area shape="rect" id="node4" href="$classCharBuffer.html" title="Encapsulate an character array which can be used as a string. " alt="" coords="5,463,91,489"/>
+<area shape="rect" id="node12" href="$classUserFunction.html" title="A user defined function. " alt="" coords="700,340,800,367"/>
+<area shape="rect" id="node14" href="$classSyntaxNode.html" title="Base class for all nodes in a syntax tree. " alt="" coords="180,360,275,387"/>
+<area shape="rect" id="node16" href="$classFunctionList.html" title="A list of user defined functions. " alt="" coords="971,348,1064,375"/>
+<area shape="rect" id="node18" href="$classPreferencesBase.html" title="PreferencesBase" alt="" coords="824,568,947,595"/>
+<area shape="rect" id="node19" href="$classVariableList.html" title="A list of user defined variables. " alt="" coords="705,513,795,540"/>
+<area shape="rect" id="node5" href="$classConsoleBase.html" title="Abstract base class encapsulating console logic. " alt="" coords="1375,157,1475,184"/>
+<area shape="rect" id="node6" href="$classThreadBase.html" title="Abstract base class encapsulating runable component. " alt="" coords="1143,157,1235,184"/>
+<area shape="rect" id="node7" href="$structNumber.html" title="Number" alt="" coords="193,256,261,283"/>
+<area shape="rect" id="node11" href="$structRealNumber.html" title="Represent a real number with 15 siginificant digits. " alt="" coords="581,232,676,259"/>
+<area shape="rect" id="node13" href="$classExpressionNode.html" title="Base class for all nodes related to mathematical expressions. " alt="" coords="439,271,557,297"/>
+<area shape="rect" id="node15" href="$classVariable.html" title="A user defined variable. " alt="" coords="463,360,533,387"/>
+<area shape="rect" id="node8" href="$classGraphList.html" title="A list of open graph windows. " alt="" coords="1385,297,1464,324"/>
+<area shape="rect" id="node9" href="$classGraphWindow.html" title="GraphWindow" alt="" coords="1137,297,1241,324"/>
+<area shape="rect" id="node10" href="$classGrid.html" title="Grid" alt="" coords="994,297,1041,324"/>
+<area shape="rect" id="node17" href="$classFilesystemBase.html" title="Abstract base class encapsulating file system calls. " alt="" coords="1367,399,1483,425"/>
+<area shape="rect" id="node20" href="$classLanguage.html" title="Language" alt="" coords="1385,56,1464,83"/>
+<area shape="rect" id="node21" href="$classCharValidator.html" title="CharValidator" alt="" coords="1139,5,1240,32"/>
+<area shape="rect" id="node22" href="$structkeyworddef.html" title="Character representation of keyword tied with its symbol. " alt="" coords="1145,56,1234,83"/>
 </map>

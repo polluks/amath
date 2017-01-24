@@ -1,4 +1,4 @@
-.TH "StandardProgram" 3 "Sun Jan 22 2017" "Version 1.6.1" "amath" \" -*- nroff -*-
+.TH "StandardProgram" 3 "Tue Jan 24 2017" "Version 1.6.2" "amath" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -105,7 +105,7 @@ References CharBuffer::Append(), CharBuffer::CharBuffer(), Program::Console, Cha
 56 {
 57     if(argc < 2) {
 58         // STDC version only has a console
-59         Console = new StandardConsole(Preferences->GetPrompt());
+59         Console = new StandardConsole(Preferences->GetPrompt(), Language);
 60         return;
 61     }
 62 
@@ -125,7 +125,7 @@ References CharBuffer::Append(), CharBuffer::CharBuffer(), Program::Console, Cha
 76     line->DeleteLastChar();
 77 
 78     if (line->Is("shell")) {
-79         Console = new StandardConsole(Preferences->GetPrompt());
+79         Console = new StandardConsole(Preferences->GetPrompt(), Language);
 80     }
 81 }
 .fi

@@ -15,7 +15,7 @@ var searchData=
   ['language_5fposix_2eh',['language_posix.h',['../language__posix_8h.html',1,'']]],
   ['language_5fstdc_2ecpp',['language_stdc.cpp',['../language__stdc_8cpp.html',1,'']]],
   ['language_5fstdc_2eh',['language_stdc.h',['../language__stdc_8h.html',1,'']]],
-  ['last',['last',['../structToken.html#a0ea44230386ca31fabb9a4946249d53f',1,'Token::last()'],['../structMemoryList.html#afea5b720cf2a7c326cb53a604b90c354',1,'MemoryList::last()']]],
+  ['last',['last',['../structToken.html#a0ea44230386ca31fabb9a4946249d53f',1,'Token']]],
   ['lasttext',['lastText',['../classLanguage.html#ac4d2cf11e858e9d9a972b2cdf927f148',1,'Language']]],
   ['left',['left',['../classNumericOperator.html#a55da3c4075408deff978711030fa8258',1,'NumericOperator']]],
   ['leftbottom',['leftBottom',['../classSyntaxNode.html#ae0488f07ad7cc43143e44e89ec27bc40',1,'SyntaxNode']]],

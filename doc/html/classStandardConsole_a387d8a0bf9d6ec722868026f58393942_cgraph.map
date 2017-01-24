@@ -1,22 +1,23 @@
 <map id="StandardConsole::ReadLine" name="StandardConsole::ReadLine">
-<area shape="rect" id="node2" href="$classAnsiConoleEngine.html#ae3b0bd4c66cb82f4ff939b45bd6e7446" title="AnsiConoleEngine::GetLine" alt="" coords="254,42,437,69"/>
-<area shape="rect" id="node4" href="$classAnsiConoleEngine.html#ab136f725541608d36dedcd8ffa24e820" title="AnsiConoleEngine::InputDone" alt="" coords="247,372,444,398"/>
-<area shape="rect" id="node5" href="$classAnsiConoleEngine.html#a7bb2dea88ddc5ae76643d2303fcc4bf1" title="AnsiConoleEngine::ProcessChar" alt="" coords="239,169,452,196"/>
-<area shape="rect" id="node17" href="$classAnsiConoleEngine.html#a8ad01a2ddd3ee5182deb4a74f3d2a0c1" title="AnsiConoleEngine::StartInput" alt="" coords="248,422,443,449"/>
-<area shape="rect" id="node20" href="$classStandardConsole.html#a4357667b7d80d110aca730ccb1cdca13" title="StandardConsole::WriteString" alt="" coords="248,321,443,348"/>
-<area shape="rect" id="node3" href="$classCharBuffer.html#a7dfd3feaaf80f318ba44efe15b1ec44b" title="CharBuffer::GetString" alt="" coords="761,17,909,44"/>
-<area shape="rect" id="node6" href="$classCharBuffer.html#a045b38735f7b3007c1b98d3d7b7feafe" title="CharBuffer::Append" alt="" coords="766,118,903,145"/>
-<area shape="rect" id="node7" href="$classAnsiConoleEngine.html#ae359fe52bf227c3db6edc42b8fc884f0" title="AnsiConoleEngine::CopyLine" alt="" coords="503,68,695,94"/>
-<area shape="rect" id="node9" href="$classCharBuffer.html#abe39d3fd7d8b9c8ec343af2cae7adc96" title="CharBuffer::Empty" alt="" coords="769,220,900,246"/>
-<area shape="rect" id="node11" href="$classAnsiConoleEngine.html#afc441f10d1c52dba7b3ca1a5f2514e7c" title="AnsiConoleEngine::ShowLast" alt="" coords="502,169,697,196"/>
-<area shape="rect" id="node15" href="$classAnsiConoleEngine.html#a93c3eccd6c1458e1a82bdbf202948d90" title="AnsiConoleEngine::ShowNext" alt="" coords="500,270,699,297"/>
-<area shape="rect" id="node8" href="$alloccpy_8c.html#a5bed05c70cb17e541fee570b5dc32e1a" title="Allocate memory and copy a string into the array. " alt="" coords="782,68,887,94"/>
-<area shape="rect" id="node10" href="$classCharBuffer.html#ae742439a2d5d5a0ad64411dcbf4604c8" title="CharBuffer::EnsureMinimumSize" alt="" coords="971,220,1184,246"/>
-<area shape="rect" id="node12" href="$classCharBuffer.html#ad1907009b5ad136692b989fa96bf2f7e" title="Ensure a memory block of speficied size is allocated. " alt="" coords="997,270,1157,297"/>
-<area shape="rect" id="node14" href="$clib_8h.html#a67ec56eb98b49515d35005a5b3bf9a32" title="Get the length of a null terminated string. " alt="" coords="805,372,865,398"/>
-<area shape="rect" id="node13" href="$memcpy_8c.html#a09b7e057c69b9ddd4b481fc746997a7d" title="Copy a block of memory, handling overlap. " alt="" coords="1232,270,1315,297"/>
-<area shape="rect" id="node16" href="$classCharBuffer.html#a73c71d361110b37819a1d681a1504b0e" title="CharBuffer::EnsureGrowth" alt="" coords="747,321,923,348"/>
-<area shape="rect" id="node18" href="$classCharBuffer.html#a8c0927c2c05c954161151045f68581c6" title="Release memory and allocate new size. " alt="" coords="511,422,687,449"/>
-<area shape="rect" id="node19" href="$classCharBuffer.html#a0bcdd5708db4b04c887224e83a05086f" title="Release memory in buffer. " alt="" coords="755,422,914,449"/>
-<area shape="rect" id="node21" href="$classStandardConsole.html#a43844eb181d640c0e4860ef21c2e8fa7" title="StandardConsole::Write" alt="" coords="519,372,680,398"/>
+<area shape="rect" id="node2" href="$classAnsiConoleEngine.html#ae3b0bd4c66cb82f4ff939b45bd6e7446" title="AnsiConoleEngine::GetLine" alt="" coords="254,24,437,50"/>
+<area shape="rect" id="node4" href="$classAnsiConoleEngine.html#ab136f725541608d36dedcd8ffa24e820" title="AnsiConoleEngine::InputDone" alt="" coords="247,150,444,177"/>
+<area shape="rect" id="node5" href="$classAnsiConoleEngine.html#a7bb2dea88ddc5ae76643d2303fcc4bf1" title="AnsiConoleEngine::ProcessChar" alt="" coords="239,201,452,228"/>
+<area shape="rect" id="node18" href="$classAnsiConoleEngine.html#a8ad01a2ddd3ee5182deb4a74f3d2a0c1" title="AnsiConoleEngine::StartInput" alt="" coords="248,454,443,481"/>
+<area shape="rect" id="node21" href="$classStandardConsole.html#a4357667b7d80d110aca730ccb1cdca13" title="StandardConsole::WriteString" alt="" coords="248,378,443,405"/>
+<area shape="rect" id="node3" href="$classCharBuffer.html#a7dfd3feaaf80f318ba44efe15b1ec44b" title="CharBuffer::GetString" alt="" coords="761,74,909,101"/>
+<area shape="rect" id="node6" href="$classCharBuffer.html#a045b38735f7b3007c1b98d3d7b7feafe" title="CharBuffer::Append" alt="" coords="766,277,903,304"/>
+<area shape="rect" id="node7" href="$classAnsiConoleEngine.html#ae359fe52bf227c3db6edc42b8fc884f0" title="AnsiConoleEngine::CopyLine" alt="" coords="503,125,695,152"/>
+<area shape="rect" id="node9" href="$classCharBuffer.html#abe39d3fd7d8b9c8ec343af2cae7adc96" title="CharBuffer::Empty" alt="" coords="769,176,900,202"/>
+<area shape="rect" id="node11" href="$classAnsiConoleEngine.html#afc441f10d1c52dba7b3ca1a5f2514e7c" title="AnsiConoleEngine::ShowLast" alt="" coords="502,226,697,253"/>
+<area shape="rect" id="node15" href="$classAnsiConoleEngine.html#a93c3eccd6c1458e1a82bdbf202948d90" title="AnsiConoleEngine::ShowNext" alt="" coords="500,328,699,354"/>
+<area shape="rect" id="node17" href="$classCharValidator.html#a1bf637ca1d7c9b85b01fbbf799f30d9c" title="CharValidator::Validate" alt="" coords="521,74,677,101"/>
+<area shape="rect" id="node8" href="$alloccpy_8c.html#a5bed05c70cb17e541fee570b5dc32e1a" title="Allocate memory and copy a string into the array. " alt="" coords="782,125,887,152"/>
+<area shape="rect" id="node10" href="$classCharBuffer.html#ae742439a2d5d5a0ad64411dcbf4604c8" title="CharBuffer::EnsureMinimumSize" alt="" coords="971,176,1184,202"/>
+<area shape="rect" id="node12" href="$classCharBuffer.html#ad1907009b5ad136692b989fa96bf2f7e" title="Ensure a memory block of speficied size is allocated. " alt="" coords="997,378,1157,405"/>
+<area shape="rect" id="node14" href="$clib_8h.html#a67ec56eb98b49515d35005a5b3bf9a32" title="Get the length of a null terminated string. " alt="" coords="805,328,865,354"/>
+<area shape="rect" id="node13" href="$memcpy_8c.html#a09b7e057c69b9ddd4b481fc746997a7d" title="Copy a block of memory, handling overlap. " alt="" coords="1232,378,1315,405"/>
+<area shape="rect" id="node16" href="$classCharBuffer.html#a73c71d361110b37819a1d681a1504b0e" title="CharBuffer::EnsureGrowth" alt="" coords="747,429,923,456"/>
+<area shape="rect" id="node19" href="$classCharBuffer.html#a8c0927c2c05c954161151045f68581c6" title="Release memory and allocate new size. " alt="" coords="511,480,687,506"/>
+<area shape="rect" id="node20" href="$classCharBuffer.html#a0bcdd5708db4b04c887224e83a05086f" title="Release memory in buffer. " alt="" coords="755,480,914,506"/>
+<area shape="rect" id="node22" href="$classStandardConsole.html#a43844eb181d640c0e4860ef21c2e8fa7" title="StandardConsole::Write" alt="" coords="519,378,680,405"/>
 </map>

@@ -24,6 +24,7 @@ var searchData=
   ['cexp_2ec',['cexp.c',['../cexp_8c.html',1,'']]],
   ['charbuf_2ecpp',['charbuf.cpp',['../charbuf_8cpp.html',1,'']]],
   ['charbuf_2eh',['charbuf.h',['../charbuf_8h.html',1,'']]],
+  ['charval_2eh',['charval.h',['../charval_8h.html',1,'']]],
   ['clib_2eh',['clib.h',['../clib_8h.html',1,'']]],
   ['clog_2ec',['clog.c',['../clog_8c.html',1,'']]],
   ['clog10_2ec',['clog10.c',['../clog10_8c.html',1,'']]],

@@ -32,7 +32,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">amath
-   &#160;<span id="projectnumber">1.6.1</span>
+   &#160;<span id="projectnumber">1.6.2</span>
    </div>
    <div id="projectbrief">Simple command line calculator</div>
   </td>
@@ -119,7 +119,9 @@ $(document).ready(function(){initNavTree('classLanguage.html','');});
   <tr class="even"><td class="entry"><a class="el" href="classLanguage.html#a179619af0ab0e5159b9fd4158dcac3a9">CharIsAlpha</a>(unsigned long character)=0</td><td class="entry"><a class="el" href="classLanguage.html">Language</a></td><td class="entry"><span class="mlabel">pure virtual</span></td></tr>
   <tr><td class="entry"><a class="el" href="classLanguage.html#a392214aa8de840d1cf7b738945ce1799">CharIsCntrl</a>(unsigned long character)=0</td><td class="entry"><a class="el" href="classLanguage.html">Language</a></td><td class="entry"><span class="mlabel">pure virtual</span></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="classLanguage.html#a9f165e7098006b44eadd61e0c95f925b">CharIsDigit</a>(unsigned long character)=0</td><td class="entry"><a class="el" href="classLanguage.html">Language</a></td><td class="entry"><span class="mlabel">pure virtual</span></td></tr>
-  <tr><td class="entry"><a class="el" href="classLanguage.html#a7f94a1b716febb63aec10f9f10bed945">CharIsPunct</a>(unsigned long character)=0</td><td class="entry"><a class="el" href="classLanguage.html">Language</a></td><td class="entry"><span class="mlabel">pure virtual</span></td></tr>
+  <tr><td class="entry"><a class="el" href="classLanguage.html#a4a28e135813ff9f31938a1864d7cf87a">CharIsOperator</a>(unsigned long character)</td><td class="entry"><a class="el" href="classLanguage.html">Language</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classLanguage.html#a7f94a1b716febb63aec10f9f10bed945">CharIsPunct</a>(unsigned long character)=0</td><td class="entry"><a class="el" href="classLanguage.html">Language</a></td><td class="entry"><span class="mlabel">pure virtual</span></td></tr>
+  <tr><td class="entry"><a class="el" href="classLanguage.html#a036f62da16f77aa3ed38edd2c4202d0f">CharIsQuote</a>(unsigned long character)</td><td class="entry"><a class="el" href="classLanguage.html">Language</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="classLanguage.html#a1470832710ca9c4e4695bb442759c0a7">CharIsSpace</a>(unsigned long character)=0</td><td class="entry"><a class="el" href="classLanguage.html">Language</a></td><td class="entry"><span class="mlabel">pure virtual</span></td></tr>
   <tr><td class="entry"><a class="el" href="classLanguage.html#a14a991ea42d5d0482911d459ee68e8be">FindAlias</a>(const char *ident)</td><td class="entry"><a class="el" href="classLanguage.html">Language</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="classLanguage.html#a8a9aa7fef5a0c2c3626249705292e71a">FindKeyword</a>(const char *ident)</td><td class="entry"><a class="el" href="classLanguage.html">Language</a></td><td class="entry"></td></tr>
@@ -139,6 +141,8 @@ $(document).ready(function(){initNavTree('classLanguage.html','');});
   <tr class="even"><td class="entry"><a class="el" href="classLanguage.html#aa51c505262ca738bf4675fc87f96dbf6">Translate</a>(helptextdef *def)=0</td><td class="entry"><a class="el" href="classLanguage.html">Language</a></td><td class="entry"><span class="mlabel">protected</span><span class="mlabel">pure virtual</span></td></tr>
   <tr><td class="entry"><a class="el" href="classLanguage.html#a232a8b51c7866013363b9916fe89299c">Translate</a>(identhelpdef *def)=0</td><td class="entry"><a class="el" href="classLanguage.html">Language</a></td><td class="entry"><span class="mlabel">protected</span><span class="mlabel">pure virtual</span></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="classLanguage.html#a69c5b3269ec8570a2f8f28e8e632cf44">UntagText</a>(const char *text)</td><td class="entry"><a class="el" href="classLanguage.html">Language</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
+  <tr><td class="entry"><a class="el" href="classLanguage.html#aeecd96f23d63ac53038c9dfe7812280b">Validate</a>(char c)=0</td><td class="entry"><a class="el" href="classLanguage.html">Language</a></td><td class="entry"><span class="mlabel">pure virtual</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classCharValidator.html#a4a73fcccfc3ee204169a520468773366">~CharValidator</a>()</td><td class="entry"><a class="el" href="classCharValidator.html">CharValidator</a></td><td class="entry"><span class="mlabel">inline</span><span class="mlabel">virtual</span></td></tr>
   <tr><td class="entry"><a class="el" href="classLanguage.html#a1e78a8e5c6383032a157eef5b08ca942">~Language</a>()</td><td class="entry"><a class="el" href="classLanguage.html">Language</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
 </table></div><!-- contents -->
 </div><!-- doc-content -->

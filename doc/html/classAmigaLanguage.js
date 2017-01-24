@@ -13,6 +13,7 @@ var classAmigaLanguage =
     [ "Translate", "classAmigaLanguage.html#accf773d855875f669a9be99ef807ea0e", null ],
     [ "Translate", "classAmigaLanguage.html#a7ee105ba4936bb1782f5a367e920c2a7", null ],
     [ "Translate", "classAmigaLanguage.html#ab77fb07aebba5056bd84d6d8e0bf5a5b", null ],
+    [ "Validate", "classAmigaLanguage.html#a9811b283134970ebdced4593de357a68", null ],
     [ "helpcatalog", "classAmigaLanguage.html#ac0669a78cab7ed334b4b1a0fea654f99", null ],
     [ "identcatalog", "classAmigaLanguage.html#ae1cecac3020a1d4b4215140614b542e8", null ],
     [ "keywordcatalog", "classAmigaLanguage.html#a3ad331ae5de3cbd202c7effdee4fcfc8", null ],

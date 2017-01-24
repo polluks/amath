@@ -13,6 +13,7 @@ var classPosixLanguage =
     [ "Translate", "classPosixLanguage.html#af8a375ee3116dc2bc8970074f0cc5531", null ],
     [ "Translate", "classPosixLanguage.html#a188eddf1911e19c8bbe520f1637e9ae8", null ],
     [ "Translate", "classPosixLanguage.html#a7a7c9c1974b029707206bd2089afcd59", null ],
+    [ "Validate", "classPosixLanguage.html#a20f4c12b400004248ea74f169a1873ce", null ],
     [ "conv", "classPosixLanguage.html#ae3f849883e2e59c9beb832e0f8d32db9", null ],
     [ "locale", "classPosixLanguage.html#a51670668b4a1958b8974522daae6b4fa", null ]
 ];

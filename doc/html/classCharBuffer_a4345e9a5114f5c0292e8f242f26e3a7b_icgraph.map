@@ -1,5 +1,5 @@
 <map id="CharBuffer::CharBuffer" name="CharBuffer::CharBuffer">
-<area shape="rect" id="node2" href="$classAnsiConoleEngine.html#aac394a191db46deb09a08522bdf72218" title="AnsiConoleEngine::AnsiConole\lEngine" alt="" coords="223,5,427,47"/>
+<area shape="rect" id="node2" href="$classAnsiConoleEngine.html#aa3f89913781d2d22e6a86bb8f634acad" title="AnsiConoleEngine::AnsiConole\lEngine" alt="" coords="223,5,427,47"/>
 <area shape="rect" id="node5" href="$classErrorNode.html#a1c3d4afac02da7fcc0cec125a7ac03ba" title="ErrorNode::ErrorNode" alt="" coords="799,762,947,789"/>
 <area shape="rect" id="node22" href="$classEvaluator.html#a5eb7fa4c5ccc81b3f9e88980b9d62dd5" title="Evaluator::Evaluator" alt="" coords="2219,79,2359,106"/>
 <area shape="rect" id="node23" href="$classPromptStatement.html#ad315c8cc58132641e9b8a62902566318" title="PromptStatement::Execute" alt="" coords="235,173,415,199"/>
@@ -12,7 +12,7 @@
 <area shape="rect" id="node33" href="$classSyntaxNode.html#ac94372d402f38a118b4e8cd20ba7e520" title="SyntaxNode::SyntaxNode" alt="" coords="237,573,412,599"/>
 <area shape="rect" id="node99" href="$classUserFunction.html#a2a97a3aea348cdf553fe73add0f6926e" title="UserFunction::UserFunction" alt="" coords="231,623,418,650"/>
 <area shape="rect" id="node100" href="$classVariableList.html#ab1d9c24d3b93598ee87bc47c9b964ec0" title="VariableList::VariableList" alt="" coords="241,122,408,149"/>
-<area shape="rect" id="node3" href="$classStandardConsole.html#a8b2990d83e98f8c319894246384e71e1" title="StandardConsole::Standard\lConsole" alt="" coords="508,5,691,47"/>
+<area shape="rect" id="node3" href="$classStandardConsole.html#a93c07e11a1397ee9a6433efbe9718d92" title="StandardConsole::Standard\lConsole" alt="" coords="508,5,691,47"/>
 <area shape="rect" id="node4" href="$classStandardProgram.html#a9e887904df28471bc3801384e5a1f151" title="StandardProgram::Initialize" alt="" coords="783,13,962,39"/>
 <area shape="rect" id="node6" href="$classParser.html#a84af27a6f4e42888eba6ac36ccd0815c" title="Parser::ParseIdent" alt="" coords="1381,905,1511,931"/>
 <area shape="rect" id="node9" href="$classParser.html#a0e8b1f794af2b9923bc3fcb7498004f9" title="Parser::ParseFunctionDef" alt="" coords="1074,493,1247,519"/>

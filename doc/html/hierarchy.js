@@ -3,6 +3,13 @@ var hierarchy =
     [ "amathargs", "structamathargs.html", null ],
     [ "AnsiConoleEngine", "classAnsiConoleEngine.html", null ],
     [ "CharBuffer", "classCharBuffer.html", null ],
+    [ "CharValidator", "classCharValidator.html", [
+      [ "Language", "classLanguage.html", [
+        [ "AmigaLanguage", "classAmigaLanguage.html", null ],
+        [ "PosixLanguage", "classPosixLanguage.html", null ],
+        [ "StandardLanguage", "classStandardLanguage.html", null ]
+      ] ]
+    ] ],
     [ "complex", "unioncomplex.html", null ],
     [ "Evaluator", "classEvaluator.html", null ],
     [ "FilesystemBase", "classFilesystemBase.html", [
@@ -18,11 +25,6 @@ var hierarchy =
     [ "identhelpdef", "structidenthelpdef.html", null ],
     [ "ieee_float_shape_type", "unionieee__float__shape__type.html", null ],
     [ "keyworddef", "structkeyworddef.html", null ],
-    [ "Language", "classLanguage.html", [
-      [ "AmigaLanguage", "classAmigaLanguage.html", null ],
-      [ "PosixLanguage", "classPosixLanguage.html", null ],
-      [ "StandardLanguage", "classStandardLanguage.html", null ]
-    ] ],
     [ "Lexer", "classLexer.html", null ],
     [ "MemoryBlock", "structMemoryBlock.html", null ],
     [ "MemoryList", "structMemoryList.html", null ],

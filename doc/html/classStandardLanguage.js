@@ -18,6 +18,7 @@ var classStandardLanguage =
     [ "Translate", "classStandardLanguage.html#a0472d7747cfb0985f20b483756327fdc", null ],
     [ "Translate", "classStandardLanguage.html#a5a7011f9307a053509a28706f02f835f", null ],
     [ "Translate", "classStandardLanguage.html#a623162a4830eaec08bc266cd3fa6068e", null ],
+    [ "Validate", "classStandardLanguage.html#a3eafe24992d1377041087ad0a9c7edad", null ],
     [ "helpbase", "classStandardLanguage.html#a59e4ecff11a3a1f03aeff6af81004c2a", null ],
     [ "helpcatalog", "classStandardLanguage.html#a75febfaeb78c26265b46b77d6fc5869c", null ],
     [ "identbase", "classStandardLanguage.html#af3bade0473bfa891d45f7938043df84f", null ],

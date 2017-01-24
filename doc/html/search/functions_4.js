@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['dealloc_5ferror',['dealloc_error',['../mem_8c.html#a96cb78338e02e8381392c81761887323',1,'mem.c']]],
+  ['dealloc_5ferror',['dealloc_error',['../mem_8c.html#a26c8d9ae968420ae749b5a4582cabc4f',1,'mem.c']]],
   ['decimalsystem',['DecimalSystem',['../classDecimalSystem.html#a96bf562ac5934445ce10dd6d973a9db3',1,'DecimalSystem::DecimalSystem()'],['../classDecimalSystem.html#a726d1a38079ae571c54adfbd0724a0a3',1,'DecimalSystem::DecimalSystem(unsigned int digits)'],['../classDecimalSystem.html#a0622c834a7a4a0dc452ab4cab8d84902',1,'DecimalSystem::DecimalSystem(unsigned int digits, const char fractionpoint)']]],
   ['delete',['Delete',['../classFunctionList.html#ae0e646a32dd118de74ab8d06f3bb775a',1,'FunctionList::Delete()'],['../classVariableList.html#a6f9e2f3a5cb1f8b4e71b0d8123e98264',1,'VariableList::Delete()']]],
   ['deletelastchar',['DeleteLastChar',['../classCharBuffer.html#a8bc0eaf1a874ccf76c0034299f8459a7',1,'CharBuffer']]],

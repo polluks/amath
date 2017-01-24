@@ -1,4 +1,4 @@
-.TH "Language" 3 "Sun Jan 22 2017" "Version 1.6.1" "amath" \" -*- nroff -*-
+.TH "Language" 3 "Tue Jan 24 2017" "Version 1.6.2" "amath" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -8,6 +8,8 @@ Language \-
 .PP
 .PP
 \fC#include <language\&.h>\fP
+.PP
+Inherits \fBCharValidator\fP\&.
 .PP
 Inherited by \fBAmigaLanguage\fP, \fBPosixLanguage\fP, and \fBStandardLanguage\fP\&.
 .SS "Public Member Functions"
@@ -53,7 +55,16 @@ Inherited by \fBAmigaLanguage\fP, \fBPosixLanguage\fP, and \fBStandardLanguage\f
 .RI "virtual \fBbool\fP \fBCharIsCntrl\fP (unsigned long character)=0"
 .br
 .ti -1c
+.RI "virtual \fBbool\fP \fBCharIsQuote\fP (unsigned long character)"
+.br
+.ti -1c
+.RI "virtual \fBbool\fP \fBCharIsOperator\fP (unsigned long character)"
+.br
+.ti -1c
 .RI "virtual \fBbool\fP \fBStrIsEqualLoc\fP (const char *s1, const char *s2)=0"
+.br
+.ti -1c
+.RI "virtual \fBbool\fP \fBValidate\fP (char c)=0"
 .br
 .in -1c
 .SS "Protected Member Functions"
@@ -110,7 +121,7 @@ Inherited by \fBAmigaLanguage\fP, \fBPosixLanguage\fP, and \fBStandardLanguage\f
 .in -1c
 .SH "Detailed Description"
 .PP 
-Definition at line 36 of file language\&.h\&.
+Definition at line 37 of file language\&.h\&.
 .SH "Constructor & Destructor Documentation"
 .PP 
 .SS "Language::Language ()"
@@ -175,10 +186,39 @@ Referenced by Lexer::GetQuotedIdent(), and Lexer::ShouldSkip()\&.
 Implemented in \fBPosixLanguage\fP, \fBAmigaLanguage\fP, and \fBStandardLanguage\fP\&.
 .PP
 Referenced by Lexer::GetLitteral()\&.
+.SS "\fBbool\fP Language::CharIsOperator (unsigned long character)\fC [virtual]\fP"
+
+.PP
+Definition at line 169 of file language\&.cpp\&.
+.PP
+References operatordef::chr, and operators\&.
+.PP
+.nf
+170 {
+171     static const unsigned int count = sizeof(operators) / sizeof(operatordef);
+172     for (unsigned int i = 0; i < count; i++) {
+173         if (operators[i]\&.chr == (char)character) {
+174             return true;
+175         }
+176     }
+177 
+178     return false;
+179 }
+.fi
 .SS "virtual \fBbool\fP Language::CharIsPunct (unsigned long character)\fC [pure virtual]\fP"
 
 .PP
 Implemented in \fBPosixLanguage\fP, \fBAmigaLanguage\fP, and \fBStandardLanguage\fP\&.
+.SS "\fBbool\fP Language::CharIsQuote (unsigned long character)\fC [virtual]\fP"
+
+.PP
+Definition at line 164 of file language\&.cpp\&.
+.PP
+.nf
+165 {
+166     return (character == '"');
+167 }
+.fi
 .SS "virtual \fBbool\fP Language::CharIsSpace (unsigned long character)\fC [pure virtual]\fP"
 
 .PP
@@ -371,48 +411,54 @@ Referenced by GetHelpText(), and GetText()\&.
 161     return lastText;
 162 }
 .fi
+.SS "virtual \fBbool\fP Language::Validate (char c)\fC [pure virtual]\fP"
+
+.PP
+Implements \fBCharValidator\fP\&.
+.PP
+Implemented in \fBPosixLanguage\fP, \fBAmigaLanguage\fP, and \fBStandardLanguage\fP\&.
 .SH "Member Data Documentation"
 .PP 
 .SS "unsigned int Language::aliascount\fC [protected]\fP"
 
 .PP
-Definition at line 63 of file language\&.h\&.
+Definition at line 67 of file language\&.h\&.
 .PP
 Referenced by FindAlias(), and Language()\&.
 .SS "unsigned int Language::helpcount\fC [protected]\fP"
 
 .PP
-Definition at line 62 of file language\&.h\&.
+Definition at line 66 of file language\&.h\&.
 .PP
 Referenced by GetHelpText(), and Language()\&.
 .SS "unsigned int Language::identcount\fC [protected]\fP"
 
 .PP
-Definition at line 61 of file language\&.h\&.
+Definition at line 65 of file language\&.h\&.
 .PP
 Referenced by GetHelpText(), and Language()\&.
 .SS "unsigned int Language::keywordcount\fC [protected]\fP"
 
 .PP
-Definition at line 59 of file language\&.h\&.
+Definition at line 63 of file language\&.h\&.
 .PP
 Referenced by FindKeyword(), and Language()\&.
 .SS "\fBkeyworddef\fP* Language::keywordsloc\fC [protected]\fP"
 
 .PP
-Definition at line 58 of file language\&.h\&.
+Definition at line 62 of file language\&.h\&.
 .PP
 Referenced by FindKeyword(), Language(), and ~Language()\&.
 .SS "char* Language::lastText\fC [private]\fP"
 
 .PP
-Definition at line 68 of file language\&.h\&.
+Definition at line 72 of file language\&.h\&.
 .PP
 Referenced by Language(), UntagText(), and ~Language()\&.
 .SS "unsigned int Language::textcount\fC [protected]\fP"
 
 .PP
-Definition at line 60 of file language\&.h\&.
+Definition at line 64 of file language\&.h\&.
 .PP
 Referenced by GetText(), and Language()\&.
 

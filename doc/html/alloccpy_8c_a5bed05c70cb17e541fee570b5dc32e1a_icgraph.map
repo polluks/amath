@@ -1,5 +1,5 @@
 <map id="AllocAndCopy" name="AllocAndCopy">
-<area shape="rect" id="node2" href="$classAnsiConoleEngine.html#aac394a191db46deb09a08522bdf72218" title="AnsiConoleEngine::AnsiConole\lEngine" alt="" coords="165,5,369,47"/>
+<area shape="rect" id="node2" href="$classAnsiConoleEngine.html#aa3f89913781d2d22e6a86bb8f634acad" title="AnsiConoleEngine::AnsiConole\lEngine" alt="" coords="165,5,369,47"/>
 <area shape="rect" id="node5" href="$classCharBuffer.html#ac52ed7b91190240eb7db4cf43d1e2abb" title="Release memory, allocate and copy source. " alt="" coords="449,222,627,249"/>
 <area shape="rect" id="node14" href="$classConsoleBase.html#a69210c6548727255c817e70cdd167f84" title="ConsoleBase::ConsoleBase" alt="" coords="173,71,360,98"/>
 <area shape="rect" id="node15" href="$classAnsiConoleEngine.html#ae359fe52bf227c3db6edc42b8fc884f0" title="AnsiConoleEngine::CopyLine" alt="" coords="171,122,363,149"/>
@@ -24,7 +24,7 @@
 <area shape="rect" id="node65" href="$structToken.html#a5c78001ebd223017c11e5327667d458a" title="Token::Token" alt="" coords="215,374,318,401"/>
 <area shape="rect" id="node71" href="$classUserFunction.html#a2a97a3aea348cdf553fe73add0f6926e" title="UserFunction::UserFunction" alt="" coords="445,577,631,603"/>
 <area shape="rect" id="node72" href="$classVariable.html#a230014211eb4309bcec965df5799a7eb" title="Variable::Variable" alt="" coords="205,830,329,857"/>
-<area shape="rect" id="node3" href="$classStandardConsole.html#a8b2990d83e98f8c319894246384e71e1" title="StandardConsole::Standard\lConsole" alt="" coords="447,8,629,49"/>
+<area shape="rect" id="node3" href="$classStandardConsole.html#a93c07e11a1397ee9a6433efbe9718d92" title="StandardConsole::Standard\lConsole" alt="" coords="447,8,629,49"/>
 <area shape="rect" id="node4" href="$classStandardProgram.html#a9e887904df28471bc3801384e5a1f151" title="StandardProgram::Initialize" alt="" coords="723,15,901,42"/>
 <area shape="rect" id="node6" href="$classEvaluator.html#a40b30ece9d43c658877ee7f52aaec0a8" title="Evaluator::Evaluate" alt="" coords="3643,197,3779,223"/>
 <area shape="rect" id="node9" href="$classPromptStatement.html#ad315c8cc58132641e9b8a62902566318" title="PromptStatement::Execute" alt="" coords="722,602,902,629"/>

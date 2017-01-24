@@ -32,7 +32,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">amath
-   &#160;<span id="projectnumber">1.6.1</span>
+   &#160;<span id="projectnumber">1.6.2</span>
    </div>
    <div id="projectbrief">Simple command line calculator</div>
   </td>
@@ -114,12 +114,15 @@ $(document).ready(function(){initNavTree('structMemoryList.html','');});
 <div class="title">MemoryList Struct Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>List of allocated memory. Uses the LIFO principle.  
+ <a href="structMemoryList.html#details">More...</a></p>
 <div class="dynheader">
 Collaboration diagram for MemoryList:</div>
 <div class="dyncontent">
 <div class="center"><img src="structMemoryList__coll__graph.png" border="0" usemap="#MemoryList_coll__map" alt="Collaboration graph"/></div>
 <map name="MemoryList_coll__map" id="MemoryList_coll__map">
-<area shape="rect" id="node2" href="structMemoryBlock.html" title="MemoryBlock" alt="" coords="5,5,108,32"/>
+<area shape="rect" id="node2" href="structMemoryBlock.html" title="Block of allocated memory. " alt="" coords="5,5,108,32"/>
 </map>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
@@ -127,8 +130,6 @@ Collaboration diagram for MemoryList:</div>
 Public Attributes</h2></td></tr>
 <tr class="memitem:a0d47ad7371bb5f38e09ca5f35d85cecb"><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="structMemoryBlock.html">MemoryBlock</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structMemoryList.html#a0d47ad7371bb5f38e09ca5f35d85cecb">first</a></td></tr>
 <tr class="separator:a0d47ad7371bb5f38e09ca5f35d85cecb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afea5b720cf2a7c326cb53a604b90c354"><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="structMemoryBlock.html">MemoryBlock</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structMemoryList.html#afea5b720cf2a7c326cb53a604b90c354">last</a></td></tr>
-<tr class="separator:afea5b720cf2a7c326cb53a604b90c354"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af2065db30ea83a216adb77fbdb59e1e4"><td class="memItemLeft" align="right" valign="top">long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structMemoryList.html#af2065db30ea83a216adb77fbdb59e1e4">peak</a></td></tr>
 <tr class="separator:af2065db30ea83a216adb77fbdb59e1e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac481474722f97086e8316d62502c4881"><td class="memItemLeft" align="right" valign="top">long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structMemoryList.html#ac481474722f97086e8316d62502c4881">size</a></td></tr>
@@ -137,8 +138,9 @@ Public Attributes</h2></td></tr>
 <tr class="separator:a6b5a62d10829b019db9b45eaf1928151"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock">
-<p>Definition at line <a class="el" href="mem_8c_source.html#l00053">53</a> of file <a class="el" href="mem_8c_source.html">mem.c</a>.</p>
+<div class="textblock"><p>List of allocated memory. Uses the LIFO principle. </p>
+
+<p>Definition at line <a class="el" href="mem_8c_source.html#l00059">59</a> of file <a class="el" href="mem_8c_source.html">mem.c</a>.</p>
 </div><h2 class="groupheader">Member Data Documentation</h2>
 <a class="anchor" id="a6b5a62d10829b019db9b45eaf1928151"></a>
 <div class="memitem">
@@ -150,9 +152,9 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="mem_8c_source.html#l00059">59</a> of file <a class="el" href="mem_8c_source.html">mem.c</a>.</p>
+<p>Definition at line <a class="el" href="mem_8c_source.html#l00064">64</a> of file <a class="el" href="mem_8c_source.html">mem.c</a>.</p>
 
-<p>Referenced by <a class="el" href="mem_8c_source.html#l00067">AllocMemSafe()</a>, <a class="el" href="mem_8c_source.html#l00131">FreeMemSafe()</a>, and <a class="el" href="mem_8c_source.html#l00197">MemUsage()</a>.</p>
+<p>Referenced by <a class="el" href="mem_8c_source.html#l00078">AllocMemSafe()</a>, <a class="el" href="mem_8c_source.html#l00136">FreeMemSafe()</a>, and <a class="el" href="mem_8c_source.html#l00207">MemUsage()</a>.</p>
 
 </div>
 </div>
@@ -166,25 +168,9 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="mem_8c_source.html#l00055">55</a> of file <a class="el" href="mem_8c_source.html">mem.c</a>.</p>
+<p>Definition at line <a class="el" href="mem_8c_source.html#l00061">61</a> of file <a class="el" href="mem_8c_source.html">mem.c</a>.</p>
 
-<p>Referenced by <a class="el" href="mem_8c_source.html#l00067">AllocMemSafe()</a>, <a class="el" href="mem_8c_source.html#l00177">FreeAllSafe()</a>, and <a class="el" href="mem_8c_source.html#l00131">FreeMemSafe()</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="afea5b720cf2a7c326cb53a604b90c354"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">struct <a class="el" href="structMemoryBlock.html">MemoryBlock</a>* MemoryList::last</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="mem_8c_source.html#l00056">56</a> of file <a class="el" href="mem_8c_source.html">mem.c</a>.</p>
-
-<p>Referenced by <a class="el" href="mem_8c_source.html#l00067">AllocMemSafe()</a>, and <a class="el" href="mem_8c_source.html#l00131">FreeMemSafe()</a>.</p>
+<p>Referenced by <a class="el" href="mem_8c_source.html#l00078">AllocMemSafe()</a>, <a class="el" href="mem_8c_source.html#l00184">FreeAllSafe()</a>, and <a class="el" href="mem_8c_source.html#l00136">FreeMemSafe()</a>.</p>
 
 </div>
 </div>
@@ -198,9 +184,9 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="mem_8c_source.html#l00057">57</a> of file <a class="el" href="mem_8c_source.html">mem.c</a>.</p>
+<p>Definition at line <a class="el" href="mem_8c_source.html#l00062">62</a> of file <a class="el" href="mem_8c_source.html">mem.c</a>.</p>
 
-<p>Referenced by <a class="el" href="mem_8c_source.html#l00067">AllocMemSafe()</a>, and <a class="el" href="mem_8c_source.html#l00197">MemUsage()</a>.</p>
+<p>Referenced by <a class="el" href="mem_8c_source.html#l00078">AllocMemSafe()</a>, and <a class="el" href="mem_8c_source.html#l00207">MemUsage()</a>.</p>
 
 </div>
 </div>
@@ -214,9 +200,9 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="mem_8c_source.html#l00058">58</a> of file <a class="el" href="mem_8c_source.html">mem.c</a>.</p>
+<p>Definition at line <a class="el" href="mem_8c_source.html#l00063">63</a> of file <a class="el" href="mem_8c_source.html">mem.c</a>.</p>
 
-<p>Referenced by <a class="el" href="mem_8c_source.html#l00067">AllocMemSafe()</a>, and <a class="el" href="mem_8c_source.html#l00197">MemUsage()</a>.</p>
+<p>Referenced by <a class="el" href="mem_8c_source.html#l00078">AllocMemSafe()</a>, and <a class="el" href="mem_8c_source.html#l00207">MemUsage()</a>.</p>
 
 </div>
 </div>

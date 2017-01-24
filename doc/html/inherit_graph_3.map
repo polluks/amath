@@ -1,3 +1,7 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" href="$unioncomplex.html" title="complex" alt="" coords="5,5,76,32"/>
+<area shape="rect" id="node1" href="$classCharValidator.html" title="CharValidator" alt="" coords="5,56,107,83"/>
+<area shape="rect" id="node2" href="$classLanguage.html" title="Language" alt="" coords="155,56,233,83"/>
+<area shape="rect" id="node3" href="$classAmigaLanguage.html" title="AmigaLanguage" alt="" coords="289,5,404,32"/>
+<area shape="rect" id="node4" href="$classPosixLanguage.html" title="PosixLanguage" alt="" coords="291,56,402,83"/>
+<area shape="rect" id="node5" href="$classStandardLanguage.html" title="StandardLanguage" alt="" coords="281,107,412,133"/>
 </map>

@@ -29,6 +29,7 @@ var NAVTREE =
     ] ],
     [ "Release history", "release_page.html", [
       [ "Release history", "release_page.html#release_sec", [
+        [ "v1.6.2 January 24 2017", "release_page.html#version162", null ],
         [ "v1.6.1 January 21 2017", "release_page.html#version161", null ],
         [ "v1.6.0 April 7 2016", "release_page.html#version160", null ],
         [ "1.5.4 March 04 2015", "release_page.html#version154", null ],
@@ -74,16 +75,16 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "acos_8c.html",
-"classArcCotangentNode.html#aa67c2c4d48741e686b660c010c49bd41",
-"classGraphWindow.html#af84f61254f44fd2ef6b45ab703e45feb",
-"classParser.html#a38a55851f31c226c193090403dfbaff8",
-"classSubtractionNode.html",
-"cplex_2prim_8h.html#a5f3d17bf39f78da3422ca52e475d7724",
-"functiondefs_8h.html#a60118af1b6a3c96367614016418cc6ea",
-"ktan_8c.html",
-"platform_8h.html#a0740e3bf50964c04eeaa76ae5fe9c14c",
-"structComplexNumber.html#a922c244a14dbee2e17bd5dc6dbec7625",
-"text_8h.html#a93f9fea30130c8c7277e7ddcc6c1c7fa"
+"classArcCosineNode.html#a9f519aed56ef36e4bf6c1ffbe269a015",
+"classGraphWindow.html#a476a4a268feb290df84b6dc4eeac8af2",
+"classOutputStatement.html#a870c0d2b4bffb94e542d1e5890ec3c20",
+"classStatementBlockNode.html#ac896dd0efd4a59fca0a5d834d0e89022",
+"copysign_8c.html#ad8d1296592a3e783acdd0de21ff58e2e",
+"floor_8c.html#acbd466133274923cc0785707fbdeea9a",
+"ksin_8c.html#a701d1f7de8380226dbc8825672ae4ef0",
+"operators_8h_source.html",
+"structComplexNumber.html#a610e9db9ff0ddb0140e30d235ab64e44",
+"text_8h.html#a41dc28235b6f58dce65aac1e3b933f30"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

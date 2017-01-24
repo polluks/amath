@@ -5,7 +5,7 @@
 v1.6.2 January 24 2017
 - Fixed bug in memory allocation
 - Fixed bug in native keybord input
-- Include build options in executables
+- Included build options in executables
 
 v1.6.1 January 21 2017
 - Fixed language bug in Windows

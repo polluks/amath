@@ -86,8 +86,8 @@ var searchData=
   ['txtmemblocks',['TXTMEMBLOCKS',['../text_8h.html#abcd31bd5669011b77ecbea62103eebfd',1,'text.h']]],
   ['txtmemmaxsize',['TXTMEMMAXSIZE',['../text_8h.html#a9351a4edb0e5a7d13b78c016e5a964c4',1,'text.h']]],
   ['txtmemsize',['TXTMEMSIZE',['../text_8h.html#a6664fc01484a43ab07ff5c7ec761a637',1,'text.h']]],
+  ['txtoptmsg',['TXTOPTMSG',['../start_8h.html#a9aac5b376976b38ce1617d46da3cfdb6',1,'start.h']]],
   ['txtstartmsg',['TXTSTARTMSG',['../start_8h.html#accfad6945176e2f1f300e5bc5b2d0c7c',1,'start.h']]],
-  ['txttest',['TXTTEST',['../start_8h.html#a469e3f0c7ba767742da9650af5b0da8b',1,'start.h']]],
   ['txttitle',['TXTTITLE',['../start_8h.html#a125b73d026b0b5b528330dffcf8730ac',1,'start.h']]],
   ['txtversmsg',['TXTVERSMSG',['../start_8h.html#ae234346b29018ca0090efff3ff9661c1',1,'start.h']]],
   ['type',['type',['../classDeleteStatement.html#a46629e67cd652c61ccabfc79c4cc8e01',1,'DeleteStatement']]]
