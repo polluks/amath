@@ -1,4 +1,4 @@
-.TH "AnsiConoleEngine" 3 "Sun Jan 22 2017" "Version 1.6.1" "amath" \" -*- nroff -*-
+.TH "AnsiConoleEngine" 3 "Tue Jan 24 2017" "Version 1.6.2" "amath" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -13,7 +13,7 @@ AnsiConoleEngine \- ANSI console controller\&.
 
 .in +1c
 .ti -1c
-.RI "\fBAnsiConoleEngine\fP (const char *\fBprompt\fP)"
+.RI "\fBAnsiConoleEngine\fP (const char *\fBprompt\fP, \fBCharValidator\fP *\fBvalidator\fP)"
 .br
 .ti -1c
 .RI "\fB~AnsiConoleEngine\fP ()"
@@ -58,6 +58,9 @@ AnsiConoleEngine \- ANSI console controller\&.
 .br
 .ti -1c
 .RI "\fBCharBuffer\fP * \fBlinebuf\fP"
+.br
+.ti -1c
+.RI "\fBCharValidator\fP * \fBvalidator\fP"
 .br
 .ti -1c
 .RI "unsigned int \fBlen\fP"
@@ -112,497 +115,504 @@ ANSI console controller\&.
 
 More info on the ANSI console is available at Wikipedia: http://en.wikipedia.org/wiki/ANSI_escape_code 
 .PP
-Definition at line 44 of file aengine\&.h\&.
+Definition at line 45 of file aengine\&.h\&.
 .SH "Constructor & Destructor Documentation"
 .PP 
-.SS "AnsiConoleEngine::AnsiConoleEngine (const char * prompt)"
+.SS "AnsiConoleEngine::AnsiConoleEngine (const char * prompt, \fBCharValidator\fP * validator)"
 
 .PP
-Definition at line 31 of file aengine\&.cpp\&.
+Definition at line 32 of file aengine\&.cpp\&.
 .PP
-References AllocAndCopy(), CharBuffer::CharBuffer(), curline, editline, linebuf, lines, maxLines, out, and prompt\&.
+References AllocAndCopy(), CharBuffer::CharBuffer(), curline, editline, linebuf, lines, maxLines, out, prompt, and validator\&.
 .PP
 Referenced by StandardConsole::StandardConsole()\&.
 .PP
 .nf
-32 {
-33     AllocAndCopy(&this->prompt, prompt);
-34     linebuf = new CharBuffer();
-35     out = new CharBuffer();
-36 
-37     lines = new char*[maxLines];
+33 {
+34     this->validator = validator;
+35     AllocAndCopy(&this->prompt, prompt);
+36     linebuf = new CharBuffer();
+37     out = new CharBuffer();
 38 
-39     for (int i = 0; i < maxLines; i++) {
-40         lines[i] = NOMEM;
-41     }
-42 
-43     editline = NOMEM;
-44     curline = -1;
-45 }
+39     lines = new char*[maxLines];
+40 
+41     for (int i = 0; i < maxLines; i++) {
+42         lines[i] = NOMEM;
+43     }
+44 
+45     editline = NOMEM;
+46     curline = -1;
+47 }
 .fi
 .SS "AnsiConoleEngine::~AnsiConoleEngine ()"
 
 .PP
-Definition at line 47 of file aengine\&.cpp\&.
+Definition at line 49 of file aengine\&.cpp\&.
 .PP
 References linebuf, lines, maxLines, out, and prompt\&.
 .PP
 .nf
-48 {
-49     for (int i = 0; i < maxLines; i++) {
-50         if (lines[i] != NOMEM) {
-51             delete [] lines[i];
-52         }
-53     }
-54 
-55     delete [] lines;
-56     delete linebuf;
-57     delete out;
-58     delete prompt;
-59 }
+50 {
+51     for (int i = 0; i < maxLines; i++) {
+52         if (lines[i] != NOMEM) {
+53             delete [] lines[i];
+54         }
+55     }
+56 
+57     delete [] lines;
+58     delete linebuf;
+59     delete out;
+60     delete prompt;
+61 }
 .fi
 .SH "Member Function Documentation"
 .PP 
 .SS "void AnsiConoleEngine::CopyLine ()\fC [private]\fP"
 
 .PP
-Definition at line 214 of file aengine\&.cpp\&.
+Definition at line 216 of file aengine\&.cpp\&.
 .PP
 References AllocAndCopy(), curline, editline, CharBuffer::GetString(), linebuf, lines, and maxLines\&.
 .PP
 Referenced by ProcessChar()\&.
 .PP
 .nf
-215 {
-216     curline++;
-217 
-218     if (curline == maxLines) {
-219         curline--;
-220 
-221         delete [] lines[0];
-222         for (int i = 0; i < maxLines - 1; i++) {
-223             lines[i] = lines[i + 1];
-224         }
-225     }
-226 
-227     AllocAndCopy(&(lines[curline]), linebuf->GetString());
+217 {
+218     curline++;
+219 
+220     if (curline == maxLines) {
+221         curline--;
+222 
+223         delete [] lines[0];
+224         for (int i = 0; i < maxLines - 1; i++) {
+225             lines[i] = lines[i + 1];
+226         }
+227     }
 228 
-229     if (editline != NOMEM) {
-230         delete [] editline;
-231         editline = NOMEM;
-232     }
-233 }
+229     AllocAndCopy(&(lines[curline]), linebuf->GetString());
+230 
+231     if (editline != NOMEM) {
+232         delete [] editline;
+233         editline = NOMEM;
+234     }
+235 }
 .fi
 .SS "const char * AnsiConoleEngine::GetLine ()"
 
 .PP
-Definition at line 318 of file aengine\&.cpp\&.
+Definition at line 320 of file aengine\&.cpp\&.
 .PP
 References CharBuffer::GetString(), and linebuf\&.
 .PP
 Referenced by StandardConsole::ReadLine()\&.
 .PP
 .nf
-319 {
-320     return linebuf->GetString();
-321 }
+321 {
+322     return linebuf->GetString();
+323 }
 .fi
 .SS "\fBbool\fP AnsiConoleEngine::InputDone ()"
 
 .PP
-Definition at line 313 of file aengine\&.cpp\&.
+Definition at line 315 of file aengine\&.cpp\&.
 .PP
 References linedone\&.
 .PP
 Referenced by StandardConsole::ReadLine()\&.
 .PP
 .nf
-314 {
-315     return linedone;
-316 }
+316 {
+317     return linedone;
+318 }
 .fi
 .SS "const char * AnsiConoleEngine::ProcessChar (const unsigned char character)"
 
 .PP
-Definition at line 80 of file aengine\&.cpp\&.
+Definition at line 82 of file aengine\&.cpp\&.
 .PP
-References CharBuffer::Append(), CharBuffer::buf, CopyLine(), csimode, cursor, delmode, CharBuffer::Empty(), endpos, escmode, CharBuffer::GetString(), len, linebuf, linedone, out, CharBuffer::ptr, ShowLast(), and ShowNext()\&.
+References CharBuffer::Append(), CharBuffer::buf, CopyLine(), csimode, cursor, delmode, CharBuffer::Empty(), endpos, escmode, CharBuffer::GetString(), len, linebuf, linedone, out, CharBuffer::ptr, ShowLast(), ShowNext(), CharValidator::Validate(), and validator\&.
 .PP
 Referenced by StandardConsole::ReadLine()\&.
 .PP
 .nf
-81 {
-82     unsigned char ch = character;
-83     out->Empty();
-84 
-85     /*
-86     // -------------- DEUG ------------------
-87     Number *d = new RealNumber((int)ch);
-88     NumeralSystem *ns = new DecimalSystem(0);
-89     const char *dtext = ns->GetText(d);
-90     StrCopy(out->buf, dtext);
-91     StrConcat(out->buf, SPACE);
-92     delete ns;
-93     delete d;
-94     return out->buf;
-95     // -------------- DEUG ------------------
-96     */
-97 
-98     if (len == 0) {
-99         // TODO: double buffer
-100     }
-101 
-102     bool processed = false;
+83 {
+84     unsigned char ch = character;
+85     out->Empty();
+86 
+87     /*
+88     // -------------- DEUG ------------------
+89     Number *d = new RealNumber((int)ch);
+90     NumeralSystem *ns = new DecimalSystem(0);
+91     const char *dtext = ns->GetText(d);
+92     StrCopy(out->buf, dtext);
+93     StrConcat(out->buf, SPACE);
+94     delete ns;
+95     delete d;
+96     return out->buf;
+97     // -------------- DEUG ------------------
+98     */
+99 
+100     if (len == 0) {
+101         // TODO: double buffer
+102     }
 103 
-104     if (ch == 0) {
-105         processed = true;
-106     } else if (ch == 27) {
-107         escmode = true;
-108         processed = true;
-109     } else if (ch == 155 || (escmode && ch == 91)) {
-110         csimode = true;
-111         processed = true;
-112     } else if (csimode) {
-113         switch (ch) {
-114         case 65: // Arrow up (27 91 65)
-115             ShowLast();
-116             break;
-117         case 66: // Arrow down (27 91 66)
-118             ShowNext();
-119             break;
-120         case 67: // Arrow right (27 91 67)
-121             if (cursor != endpos) {
-122                 cursor++;
-123                 out->Append(CURSORFORWARD);
-124             }
-125             break;
-126         case 68: // Arrow left (27 91 68)
-127             if (cursor != linebuf->buf) {
-128                 cursor--;
-129                 out->Append(CURSORBACKWARD);
-130             }
-131             break;
-132         case 51: // DEL         27 91 51 126
-133             delmode = true;
-134         default:
-135             // F1          27 79 80
-136             // F2          27 79 81
-137             break;
-138         }
-139 
-140         escmode = false;
-141         csimode = false;
-142         processed = true;
-143     } else {
-144         escmode = false;
-145         csimode = false;
-146     }
-147 
-148     // Delete one character to the right
-149     if (delmode && ch == 126) {
-150         if (cursor != endpos) {
-151             char *i = cursor;
-152             do {
-153                 *i = *(i + 1);
-154                 i++;
-155             } while (i != endpos);
-156 
-157             len++;
-158             out->Append(DELETE1CHAR);
-159             endpos--;
-160             linebuf->ptr = endpos;
-161         }
-162 
-163         processed = true;
-164         delmode = false;
-165     }
-166 
-167     if (processed) {
-168         return out->GetString();
-169     }
-170 
-171     if (ch == 13 || ch == 10) {
-172         out->Append(NEWLINE);
-173         linebuf->ptr = endpos;
-174         CopyLine();
-175         linedone = true;
-176     } else if (cursor != linebuf->buf && (ch == 8 || ch == 127)) {
-177         // Deleting in middle of line
-178         if (cursor != endpos) {
-179             char *i = cursor - 1;
-180             do {
-181                 *i = *(i + 1);
-182                 i++;
-183             } while (i != endpos);
-184 
-185         }
+104     bool processed = false;
+105 
+106     if (ch == 0) {
+107         processed = true;
+108     } else if (ch == 27) {
+109         escmode = true;
+110         processed = true;
+111     } else if (ch == 155 || (escmode && ch == 91)) {
+112         csimode = true;
+113         processed = true;
+114     } else if (csimode) {
+115         switch (ch) {
+116         case 65: // Arrow up (27 91 65)
+117             ShowLast();
+118             break;
+119         case 66: // Arrow down (27 91 66)
+120             ShowNext();
+121             break;
+122         case 67: // Arrow right (27 91 67)
+123             if (cursor != endpos) {
+124                 cursor++;
+125                 out->Append(CURSORFORWARD);
+126             }
+127             break;
+128         case 68: // Arrow left (27 91 68)
+129             if (cursor != linebuf->buf) {
+130                 cursor--;
+131                 out->Append(CURSORBACKWARD);
+132             }
+133             break;
+134         case 51: // DEL         27 91 51 126
+135             delmode = true;
+136         default:
+137             // F1          27 79 80
+138             // F2          27 79 81
+139             break;
+140         }
+141 
+142         escmode = false;
+143         csimode = false;
+144         processed = true;
+145     } else {
+146         escmode = false;
+147         csimode = false;
+148     }
+149 
+150     // Delete one character to the right
+151     if (delmode && ch == 126) {
+152         if (cursor != endpos) {
+153             char *i = cursor;
+154             do {
+155                 *i = *(i + 1);
+156                 i++;
+157             } while (i != endpos);
+158 
+159             len++;
+160             out->Append(DELETE1CHAR);
+161             endpos--;
+162             linebuf->ptr = endpos;
+163         }
+164 
+165         processed = true;
+166         delmode = false;
+167     }
+168 
+169     if (processed) {
+170         return out->GetString();
+171     }
+172 
+173     if (ch == 13 || ch == 10) {
+174         out->Append(NEWLINE);
+175         linebuf->ptr = endpos;
+176         CopyLine();
+177         linedone = true;
+178     } else if (cursor != linebuf->buf && (ch == 8 || ch == 127)) {
+179         // Deleting in middle of line
+180         if (cursor != endpos) {
+181             char *i = cursor - 1;
+182             do {
+183                 *i = *(i + 1);
+184                 i++;
+185             } while (i != endpos);
 186 
-187         len++;
-188         out->Append(CURSORBACKWARD);
-189         out->Append(DELETE1CHAR);
-190         cursor--;
-191         endpos--;
-192         linebuf->ptr = endpos;
-193     } else if (ch >= 32 && ch <= 126) {
-194         // Insert in middle of line
-195         if (cursor != endpos) {
-196             char *i = endpos;
-197             do {
-198                 *i = *(i - 1);
-199                 i--;
-200             } while (i != cursor);
-201             out->Append(INSERT1CHAR);
-202         }
-203 
-204         len--;
-205         out->Append(ch);
-206         *cursor++ = ch;
-207         endpos++;
-208         linebuf->ptr = endpos;
-209     }
-210 
-211     return out->GetString();
-212 }
+187         }
+188 
+189         len++;
+190         out->Append(CURSORBACKWARD);
+191         out->Append(DELETE1CHAR);
+192         cursor--;
+193         endpos--;
+194         linebuf->ptr = endpos;
+195     } else if (validator->Validate(ch)) {
+196         // Insert in middle of line
+197         if (cursor != endpos) {
+198             char *i = endpos;
+199             do {
+200                 *i = *(i - 1);
+201                 i--;
+202             } while (i != cursor);
+203             out->Append(INSERT1CHAR);
+204         }
+205 
+206         len--;
+207         out->Append(ch);
+208         *cursor++ = ch;
+209         endpos++;
+210         linebuf->ptr = endpos;
+211     }
+212 
+213     return out->GetString();
+214 }
 .fi
 .SS "void AnsiConoleEngine::SetPrompt (const char * string)"
 
 .PP
-Definition at line 323 of file aengine\&.cpp\&.
+Definition at line 325 of file aengine\&.cpp\&.
 .PP
 References AllocAndCopy(), and prompt\&.
 .PP
 Referenced by StandardConsole::SetPrompt()\&.
 .PP
 .nf
-324 {
-325     delete prompt;
-326     AllocAndCopy(&prompt, string);
-327 }
+326 {
+327     delete prompt;
+328     AllocAndCopy(&prompt, string);
+329 }
 .fi
 .SS "void AnsiConoleEngine::ShowLast ()\fC [private]\fP"
 
 .PP
-Definition at line 235 of file aengine\&.cpp\&.
+Definition at line 237 of file aengine\&.cpp\&.
 .PP
 References AllocAndCopy(), CharBuffer::Append(), CharBuffer::buf, curline, cursor, editline, CharBuffer::Empty(), endpos, CharBuffer::EnsureSize(), CharBuffer::GetString(), len, linebuf, lines, lineSize, lineswap, out, prompt, showline, and StrLen()\&.
 .PP
 Referenced by ProcessChar()\&.
 .PP
 .nf
-236 {
-237     if (curline == -1) {
-238         return;
-239     }
-240 
-241     if (!lineswap) {
-242         AllocAndCopy(&editline, linebuf->GetString());
-243         lineswap = true;
-244         showline = curline + 1;
-245     } else if (showline == curline + 1) {
-246         delete editline;
-247         AllocAndCopy(&editline, linebuf->GetString());
-248     }
-249 
-250     showline--;
-251     if (showline < 0) {
-252         showline = 0;
-253     }
-254 
-255     out->Empty();
-256     out->EnsureSize(
-257         StrLen(DELETELINE) +
-258         StrLen(prompt) +
-259         StrLen(lines[showline]) + 1);
-260 
-261     out->Append(DELETELINE);
-262     out->Append(prompt);
-263     out->Append(lines[showline]);
-264 
-265     linebuf->Empty();
-266     linebuf->EnsureSize(StrLen(lines[showline]));
-267     linebuf->Append(lines[showline]);
-268 
-269     unsigned int linelen = StrLen(linebuf->GetString());
-270     cursor = linebuf->buf + linelen;
-271     endpos = cursor;
-272     len = lineSize - linelen;
-273 }
+238 {
+239     if (curline == -1) {
+240         return;
+241     }
+242 
+243     if (!lineswap) {
+244         AllocAndCopy(&editline, linebuf->GetString());
+245         lineswap = true;
+246         showline = curline + 1;
+247     } else if (showline == curline + 1) {
+248         delete editline;
+249         AllocAndCopy(&editline, linebuf->GetString());
+250     }
+251 
+252     showline--;
+253     if (showline < 0) {
+254         showline = 0;
+255     }
+256 
+257     out->Empty();
+258     out->EnsureSize(
+259         StrLen(DELETELINE) +
+260         StrLen(prompt) +
+261         StrLen(lines[showline]) + 1);
+262 
+263     out->Append(DELETELINE);
+264     out->Append(prompt);
+265     out->Append(lines[showline]);
+266 
+267     linebuf->Empty();
+268     linebuf->EnsureSize(StrLen(lines[showline]));
+269     linebuf->Append(lines[showline]);
+270 
+271     unsigned int linelen = StrLen(linebuf->GetString());
+272     cursor = linebuf->buf + linelen;
+273     endpos = cursor;
+274     len = lineSize - linelen;
+275 }
 .fi
 .SS "void AnsiConoleEngine::ShowNext ()\fC [private]\fP"
 
 .PP
-Definition at line 275 of file aengine\&.cpp\&.
+Definition at line 277 of file aengine\&.cpp\&.
 .PP
 References CharBuffer::Append(), CharBuffer::buf, curline, cursor, editline, CharBuffer::Empty(), endpos, CharBuffer::EnsureGrowth(), CharBuffer::EnsureSize(), CharBuffer::GetString(), len, linebuf, lines, lineSize, lineswap, out, prompt, showline, and StrLen()\&.
 .PP
 Referenced by ProcessChar()\&.
 .PP
 .nf
-276 {
-277     if (!lineswap) {
-278         return;
-279     }
-280 
-281     showline++;
-282     if (showline > curline + 1) {
-283         showline = curline + 1;
-284         return;
-285     }
-286 
-287     out->Empty();
-288     out->Append(DELETELINE);
-289     out->Append(prompt);
-290 
-291     if (showline > curline) {
-292         out->EnsureGrowth(StrLen(editline) + 1);
-293         out->Append(editline);
-294 
-295         linebuf->Empty();
-296         linebuf->EnsureSize(StrLen(editline));
-297         linebuf->Append(editline);
-298     } else {
-299         out->EnsureGrowth(StrLen(lines[showline]) + 1);
-300         out->Append(lines[showline]);
-301 
-302         linebuf->Empty();
-303         linebuf->EnsureSize(StrLen(lines[showline]));
-304         linebuf->Append(lines[showline]);
-305     }
-306 
-307     unsigned int linelen = StrLen(linebuf->GetString());
-308     cursor = linebuf->buf + linelen;
-309     endpos = cursor;
-310     len = lineSize - linelen;
-311 }
+278 {
+279     if (!lineswap) {
+280         return;
+281     }
+282 
+283     showline++;
+284     if (showline > curline + 1) {
+285         showline = curline + 1;
+286         return;
+287     }
+288 
+289     out->Empty();
+290     out->Append(DELETELINE);
+291     out->Append(prompt);
+292 
+293     if (showline > curline) {
+294         out->EnsureGrowth(StrLen(editline) + 1);
+295         out->Append(editline);
+296 
+297         linebuf->Empty();
+298         linebuf->EnsureSize(StrLen(editline));
+299         linebuf->Append(editline);
+300     } else {
+301         out->EnsureGrowth(StrLen(lines[showline]) + 1);
+302         out->Append(lines[showline]);
+303 
+304         linebuf->Empty();
+305         linebuf->EnsureSize(StrLen(lines[showline]));
+306         linebuf->Append(lines[showline]);
+307     }
+308 
+309     unsigned int linelen = StrLen(linebuf->GetString());
+310     cursor = linebuf->buf + linelen;
+311     endpos = cursor;
+312     len = lineSize - linelen;
+313 }
 .fi
 .SS "void AnsiConoleEngine::StartInput ()"
 
 .PP
-Definition at line 61 of file aengine\&.cpp\&.
+Definition at line 63 of file aengine\&.cpp\&.
 .PP
 References CharBuffer::buf, CharBuffer::ClearAndAlloc(), csimode, cursor, delmode, endpos, escmode, len, linebuf, linedone, lineSize, and lineswap\&.
 .PP
 Referenced by StandardConsole::ReadLine()\&.
 .PP
 .nf
-62 {
-63     linebuf->ClearAndAlloc(lineSize + 1);
-64     len = lineSize;
-65     cursor = linebuf->buf;
-66     endpos = cursor;
-67     *endpos = '\0';
-68 
-69     lineswap = false;
-70     escmode = false;
-71     csimode = false;
-72     delmode = false;
-73     linedone = false;
-74 }
+64 {
+65     linebuf->ClearAndAlloc(lineSize + 1);
+66     len = lineSize;
+67     cursor = linebuf->buf;
+68     endpos = cursor;
+69     *endpos = '\0';
+70 
+71     lineswap = false;
+72     escmode = false;
+73     csimode = false;
+74     delmode = false;
+75     linedone = false;
+76 }
 .fi
 .SH "Member Data Documentation"
 .PP 
 .SS "\fBbool\fP AnsiConoleEngine::csimode\fC [private]\fP"
 
 .PP
-Definition at line 76 of file aengine\&.h\&.
+Definition at line 78 of file aengine\&.h\&.
 .PP
 Referenced by ProcessChar(), and StartInput()\&.
 .SS "int AnsiConoleEngine::curline\fC [private]\fP"
 
 .PP
-Definition at line 70 of file aengine\&.h\&.
+Definition at line 72 of file aengine\&.h\&.
 .PP
 Referenced by AnsiConoleEngine(), CopyLine(), ShowLast(), and ShowNext()\&.
 .SS "char* AnsiConoleEngine::cursor\fC [private]\fP"
 
 .PP
-Definition at line 67 of file aengine\&.h\&.
+Definition at line 69 of file aengine\&.h\&.
 .PP
 Referenced by ProcessChar(), ShowLast(), ShowNext(), and StartInput()\&.
 .SS "\fBbool\fP AnsiConoleEngine::delmode\fC [private]\fP"
 
 .PP
-Definition at line 77 of file aengine\&.h\&.
+Definition at line 79 of file aengine\&.h\&.
 .PP
 Referenced by ProcessChar(), and StartInput()\&.
 .SS "char* AnsiConoleEngine::editline\fC [private]\fP"
 
 .PP
-Definition at line 73 of file aengine\&.h\&.
+Definition at line 75 of file aengine\&.h\&.
 .PP
 Referenced by AnsiConoleEngine(), CopyLine(), ShowLast(), and ShowNext()\&.
 .SS "char* AnsiConoleEngine::endpos\fC [private]\fP"
 
 .PP
-Definition at line 68 of file aengine\&.h\&.
+Definition at line 70 of file aengine\&.h\&.
 .PP
 Referenced by ProcessChar(), ShowLast(), ShowNext(), and StartInput()\&.
 .SS "\fBbool\fP AnsiConoleEngine::escmode\fC [private]\fP"
 
 .PP
-Definition at line 75 of file aengine\&.h\&.
+Definition at line 77 of file aengine\&.h\&.
 .PP
 Referenced by ProcessChar(), and StartInput()\&.
 .SS "unsigned int AnsiConoleEngine::len\fC [private]\fP"
 
 .PP
-Definition at line 66 of file aengine\&.h\&.
+Definition at line 68 of file aengine\&.h\&.
 .PP
 Referenced by ProcessChar(), ShowLast(), ShowNext(), and StartInput()\&.
 .SS "\fBCharBuffer\fP* AnsiConoleEngine::linebuf\fC [private]\fP"
 
 .PP
-Definition at line 65 of file aengine\&.h\&.
+Definition at line 66 of file aengine\&.h\&.
 .PP
 Referenced by AnsiConoleEngine(), CopyLine(), GetLine(), ProcessChar(), ShowLast(), ShowNext(), StartInput(), and ~AnsiConoleEngine()\&.
 .SS "\fBbool\fP AnsiConoleEngine::linedone\fC [private]\fP"
 
 .PP
-Definition at line 78 of file aengine\&.h\&.
+Definition at line 80 of file aengine\&.h\&.
 .PP
 Referenced by InputDone(), ProcessChar(), and StartInput()\&.
 .SS "char** AnsiConoleEngine::lines\fC [private]\fP"
 
 .PP
-Definition at line 64 of file aengine\&.h\&.
+Definition at line 65 of file aengine\&.h\&.
 .PP
 Referenced by AnsiConoleEngine(), CopyLine(), ShowLast(), ShowNext(), and ~AnsiConoleEngine()\&.
 .SS "const int AnsiConoleEngine::lineSize = 1024\fC [static]\fP, \fC [private]\fP"
 
 .PP
-Definition at line 63 of file aengine\&.h\&.
+Definition at line 64 of file aengine\&.h\&.
 .PP
 Referenced by ShowLast(), ShowNext(), and StartInput()\&.
 .SS "\fBbool\fP AnsiConoleEngine::lineswap\fC [private]\fP"
 
 .PP
-Definition at line 72 of file aengine\&.h\&.
+Definition at line 74 of file aengine\&.h\&.
 .PP
 Referenced by ShowLast(), ShowNext(), and StartInput()\&.
 .SS "const int AnsiConoleEngine::maxLines = 20\fC [static]\fP, \fC [private]\fP"
 
 .PP
-Definition at line 62 of file aengine\&.h\&.
+Definition at line 63 of file aengine\&.h\&.
 .PP
 Referenced by AnsiConoleEngine(), CopyLine(), and ~AnsiConoleEngine()\&.
 .SS "\fBCharBuffer\fP* AnsiConoleEngine::out\fC [private]\fP"
 
 .PP
-Definition at line 79 of file aengine\&.h\&.
+Definition at line 81 of file aengine\&.h\&.
 .PP
 Referenced by AnsiConoleEngine(), ProcessChar(), ShowLast(), ShowNext(), and ~AnsiConoleEngine()\&.
 .SS "char* AnsiConoleEngine::prompt\fC [private]\fP"
 
 .PP
-Definition at line 60 of file aengine\&.h\&.
+Definition at line 61 of file aengine\&.h\&.
 .PP
 Referenced by AnsiConoleEngine(), SetPrompt(), ShowLast(), ShowNext(), and ~AnsiConoleEngine()\&.
 .SS "int AnsiConoleEngine::showline\fC [private]\fP"
 
 .PP
-Definition at line 71 of file aengine\&.h\&.
+Definition at line 73 of file aengine\&.h\&.
 .PP
 Referenced by ShowLast(), and ShowNext()\&.
+.SS "\fBCharValidator\fP* AnsiConoleEngine::validator\fC [private]\fP"
+
+.PP
+Definition at line 67 of file aengine\&.h\&.
+.PP
+Referenced by AnsiConoleEngine(), and ProcessChar()\&.
 
 .SH "Author"
 .PP 

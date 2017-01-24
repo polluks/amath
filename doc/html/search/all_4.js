@@ -1,8 +1,8 @@
 var searchData=
 [
   ['d',['D',['../cbrt_8c.html#a412464ee5e4d4e873c365d926d1970bb',1,'cbrt.c']]],
-  ['dealloc_5ferror',['dealloc_error',['../mem_8c.html#a96cb78338e02e8381392c81761887323',1,'mem.c']]],
-  ['debug',['Debug',['../mem_8c.html#ac50c155efcb03f50543b3ae9cca8f09e',1,'mem.c']]],
+  ['dealloc_5ferror',['dealloc_error',['../mem_8c.html#a26c8d9ae968420ae749b5a4582cabc4f',1,'mem.c']]],
+  ['debug',['Debug',['../mem_8c.html#abaa6449165801b12601c9efa758cc37d',1,'mem.c']]],
   ['decimalsystem',['DecimalSystem',['../classDecimalSystem.html',1,'DecimalSystem'],['../structNumber.html#a78cb487a959b6767c06f83cb19aafc43',1,'Number::DecimalSystem()'],['../classDecimalSystem.html#a96bf562ac5934445ce10dd6d973a9db3',1,'DecimalSystem::DecimalSystem()'],['../classDecimalSystem.html#a726d1a38079ae571c54adfbd0724a0a3',1,'DecimalSystem::DecimalSystem(unsigned int digits)'],['../classDecimalSystem.html#a0622c834a7a4a0dc452ab4cab8d84902',1,'DecimalSystem::DecimalSystem(unsigned int digits, const char fractionpoint)']]],
   ['defition',['defition',['../classUserFunction.html#aa39d63ff3cb597dc0d97667743d21f77',1,'UserFunction']]],
   ['defname',['defname',['../classUserFunction.html#a722d65ef9f73e516689cb474e318b9f7',1,'UserFunction']]],

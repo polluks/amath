@@ -80,7 +80,7 @@ var searchData=
   ['sqrt_2ec',['sqrt.c',['../sqrt_8c.html',1,'']]],
   ['squareroot',['SquareRoot',['../structRealNumber.html#a721d2c6fb9b5f4a5a41de242909ef4da',1,'RealNumber::SquareRoot()'],['../structComplexNumber.html#a9c2d08c5faba8c3db38186264f2361a9',1,'ComplexNumber::SquareRoot()'],['../structNumber.html#a388fb639e9a8232cb4083e581352311c',1,'Number::SquareRoot()']]],
   ['squarerootnode',['SquareRootNode',['../classSquareRootNode.html',1,'SquareRootNode'],['../classSquareRootNode.html#a142f55df3e155f5611cf9c0c42d9312f',1,'SquareRootNode::SquareRootNode()']]],
-  ['standardconsole',['StandardConsole',['../classStandardConsole.html',1,'StandardConsole'],['../classStandardConsole.html#a8b2990d83e98f8c319894246384e71e1',1,'StandardConsole::StandardConsole()']]],
+  ['standardconsole',['StandardConsole',['../classStandardConsole.html',1,'StandardConsole'],['../classStandardConsole.html#a93c07e11a1397ee9a6433efbe9718d92',1,'StandardConsole::StandardConsole()']]],
   ['standardfilesystem',['StandardFilesystem',['../classStandardFilesystem.html',1,'']]],
   ['standardlanguage',['StandardLanguage',['../classStandardLanguage.html',1,'StandardLanguage'],['../classStandardLanguage.html#a0d604e2af2f2bf4dc4abbe7b18c05cea',1,'StandardLanguage::StandardLanguage()']]],
   ['standardpreferences',['StandardPreferences',['../classStandardPreferences.html',1,'']]],

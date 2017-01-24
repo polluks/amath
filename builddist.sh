@@ -11,39 +11,37 @@ make clean
 make
 cd ../..
 
-GCC295=Y
+#GCC295="Y"
 
-REGTEST=N
-./configure -m68000 m68k-amigaos- -noixemul
+REGTEST="N" ./configure -m68000 m68k-amigaos- -noixemul
 make
 mv amath dist/amath.000
 make clean
-./configure -m68020 m68k-amigaos- -noixemul
+REGTEST="N" ./configure -m68020 m68k-amigaos- -noixemul
 make
 mv amath dist/amath.020
 make clean
-./configure -m68030 m68k-amigaos- -noixemul
+REGTEST="N" ./configure -m68030 m68k-amigaos- -noixemul
 make
 mv amath dist/amath.030
 make clean
-./configure -m68040 m68k-amigaos- -noixemul
+REGTEST="N" ./configure -m68040 m68k-amigaos- -noixemul
 make
 mv amath dist/amath.040
 make clean
-./configure -m68060 m68k-amigaos- -noixemul
+REGTEST="N" ./configure -m68060 m68k-amigaos- -noixemul
 make
 mv amath dist/amath.060
 make clean
-./configure "-m68020 -m68881" m68k-amigaos- -noixemul
+REGTEST="N" ./configure "-m68020 -m68881" m68k-amigaos- -noixemul
 make
 mv amath dist/amath.020f
 make clean
-./configure "-m68030 -m68881" m68k-amigaos- -noixemul
+REGTEST="N" ./configure "-m68030 -m68881" m68k-amigaos- -noixemul
 make
 mv amath dist/amath.030f
 make clean
 
-REGTEST=Y
 ./configure -m68000 m68k-amigaos- -noixemul
 make
 mv amath dist/amath-test.000

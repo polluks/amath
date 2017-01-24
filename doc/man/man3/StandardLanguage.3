@@ -1,4 +1,4 @@
-.TH "StandardLanguage" 3 "Sun Jan 22 2017" "Version 1.6.1" "amath" \" -*- nroff -*-
+.TH "StandardLanguage" 3 "Tue Jan 24 2017" "Version 1.6.2" "amath" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -42,6 +42,9 @@ Inherits \fBLanguage\fP\&.
 .br
 .ti -1c
 .RI "\fBbool\fP \fBStrIsEqualLoc\fP (const char *s1, const char *s2)"
+.br
+.ti -1c
+.RI "\fBbool\fP \fBValidate\fP (char c)"
 .br
 .in -1c
 .SS "Protected Member Functions"
@@ -150,8 +153,7 @@ References helpbase, identbase, kwordbase, and textbase\&.
 58     if (kwordbase != NOMEM) {
 59         delete kwordbase;
 60     }
-61 
-62 }
+61 }
 .fi
 .SH "Member Function Documentation"
 .PP 
@@ -160,342 +162,354 @@ References helpbase, identbase, kwordbase, and textbase\&.
 .PP
 Implements \fBLanguage\fP\&.
 .PP
-Definition at line 90 of file language_stdc\&.cpp\&.
+Definition at line 89 of file language_stdc\&.cpp\&.
 .PP
 .nf
-91 {
-92     return (character >= 'a' && character <= 'z') ||
-93            (character >= 'A' && character <= 'Z') ||
-94            (character >= '0' && character <= '9');
-95 }
+90 {
+91     return (character >= 'a' && character <= 'z') ||
+92            (character >= 'A' && character <= 'Z') ||
+93            (character >= '0' && character <= '9');
+94 }
 .fi
 .SS "\fBbool\fP StandardLanguage::CharIsAlpha (unsigned long character)\fC [virtual]\fP"
 
 .PP
 Implements \fBLanguage\fP\&.
 .PP
-Definition at line 97 of file language_stdc\&.cpp\&.
+Definition at line 96 of file language_stdc\&.cpp\&.
 .PP
 .nf
-98 {
-99     return (character >= 'a' && character <= 'z') ||
-100            (character >= 'A' && character <= 'Z');
-101 }
+97 {
+98     return (character >= 'a' && character <= 'z') ||
+99            (character >= 'A' && character <= 'Z');
+100 }
 .fi
 .SS "\fBbool\fP StandardLanguage::CharIsCntrl (unsigned long character)\fC [virtual]\fP"
 
 .PP
 Implements \fBLanguage\fP\&.
 .PP
-Definition at line 118 of file language_stdc\&.cpp\&.
+Definition at line 117 of file language_stdc\&.cpp\&.
 .PP
 .nf
-119 {
-120     return (character < 32 || character > 125);
-121 }
+118 {
+119     return (character < 32 || character > 125);
+120 }
 .fi
 .SS "\fBbool\fP StandardLanguage::CharIsDigit (unsigned long character)\fC [virtual]\fP"
 
 .PP
 Implements \fBLanguage\fP\&.
 .PP
-Definition at line 103 of file language_stdc\&.cpp\&.
+Definition at line 102 of file language_stdc\&.cpp\&.
 .PP
 .nf
-104 {
-105     return (character >= '0' && character <= '9');
-106 }
+103 {
+104     return (character >= '0' && character <= '9');
+105 }
 .fi
 .SS "\fBbool\fP StandardLanguage::CharIsPunct (unsigned long character)\fC [virtual]\fP"
 
 .PP
 Implements \fBLanguage\fP\&.
 .PP
-Definition at line 108 of file language_stdc\&.cpp\&.
+Definition at line 107 of file language_stdc\&.cpp\&.
 .PP
 .nf
-109 {
-110     return (character == '\&.');
-111 }
+108 {
+109     return (character == '\&.');
+110 }
 .fi
 .SS "\fBbool\fP StandardLanguage::CharIsSpace (unsigned long character)\fC [virtual]\fP"
 
 .PP
 Implements \fBLanguage\fP\&.
 .PP
-Definition at line 113 of file language_stdc\&.cpp\&.
+Definition at line 112 of file language_stdc\&.cpp\&.
 .PP
 .nf
-114 {
-115     return (character == 32);
-116 }
+113 {
+114     return (character == 32);
+115 }
 .fi
 .SS "char StandardLanguage::GetFractionPoint ()\fC [virtual]\fP"
 
 .PP
 Implements \fBLanguage\fP\&.
 .PP
-Definition at line 85 of file language_stdc\&.cpp\&.
+Definition at line 84 of file language_stdc\&.cpp\&.
 .PP
 .nf
-86 {
-87     return '\&.';
-88 }
+85 {
+86     return '\&.';
+87 }
 .fi
 .SS "void StandardLanguage::GetNextLine ()\fC [private]\fP"
 
 .PP
-Definition at line 207 of file language_stdc\&.cpp\&.
+Definition at line 210 of file language_stdc\&.cpp\&.
 .PP
 References ptr\&.
 .PP
 Referenced by GetNextPair(), and SkipComments()\&.
 .PP
 .nf
-208 {
-209     while ((*ptr) != '\0' && (*ptr) != '\n') {
-210         ptr++;
-211     }
-212 
-213     if ((*ptr) == '\n') {
-214         *ptr++ = '\0';
-215     }
-216 }
+211 {
+212     while ((*ptr) != '\0' && (*ptr) != '\n') {
+213         ptr++;
+214     }
+215 
+216     if ((*ptr) == '\n') {
+217         *ptr++ = '\0';
+218     }
+219 }
 .fi
 .SS "void StandardLanguage::GetNextPair (const char ** key, const char ** value)\fC [private]\fP"
 
 .PP
-Definition at line 197 of file language_stdc\&.cpp\&.
+Definition at line 200 of file language_stdc\&.cpp\&.
 .PP
 References GetNextLine(), ptr, and SkipComments()\&.
 .PP
 .nf
-198 {
-199     SkipComments();
-200     *key = ptr;
-201     GetNextLine();
+201 {
 202     SkipComments();
-203     *value = ptr;
+203     *key = ptr;
 204     GetNextLine();
-205 }
+205     SkipComments();
+206     *value = ptr;
+207     GetNextLine();
+208 }
 .fi
 .SS "void StandardLanguage::LoadCatalog (char ** dest, const char * file)\fC [private]\fP"
 
 .PP
-Definition at line 181 of file language_stdc\&.cpp\&.
+Definition at line 184 of file language_stdc\&.cpp\&.
 .PP
 References AllocAndCopy(), CreateFilesystem(), CharBuffer::GetString(), FilesystemBase::LoadTextFile(), and ptr\&.
 .PP
 .nf
-182 {
-183     FilesystemBase *filesystem = CreateFilesystem();
-184     CharBuffer *cbuf = filesystem->LoadTextFile(file);
-185 
-186     if (cbuf != NOMEM) {
-187         AllocAndCopy(dest, cbuf->GetString());
-188         ptr = *dest;
-189         delete cbuf;
-190     } else {
-191         *dest = NOMEM;
-192     }
-193 
-194     delete filesystem;
-195 }
+185 {
+186     FilesystemBase *filesystem = CreateFilesystem();
+187     CharBuffer *cbuf = filesystem->LoadTextFile(file);
+188 
+189     if (cbuf != NOMEM) {
+190         AllocAndCopy(dest, cbuf->GetString());
+191         ptr = *dest;
+192         delete cbuf;
+193     } else {
+194         *dest = NOMEM;
+195     }
+196 
+197     delete filesystem;
+198 }
 .fi
 .SS "void StandardLanguage::LoadCatalogs ()\fC [private]\fP"
 
 .PP
-Definition at line 129 of file language_stdc\&.cpp\&.
+Definition at line 132 of file language_stdc\&.cpp\&.
 .PP
 Referenced by StandardLanguage()\&.
 .PP
 .nf
-130 {
-131     /* Just use english for now
-132 
-133     const char* key;
-134     const char* value;
+133 {
+134     /* Just use english for now
 135 
-136     LoadCatalog(&textbase, "utext/dk-text\&.dict");
-137     if (textbase != NOMEM) {
-138         textcatalog = new textdef[textcount];
-139         for (unsigned int j = 0; j < textcount; j++) {
-140             GetNextPair(&key, &value);
-141             textcatalog[j]\&.id = j;
-142             textcatalog[j]\&.text = value;
-143         }
-144     }
-145 
-146     LoadCatalog(&helpbase, "utext/dk-help\&.dict");
-147     if (helpbase != NOMEM) {
-148         helpcatalog = new helptextdef[helpcount];
-149         for (unsigned int j = 0; j < helpcount; j++) {
-150             GetNextPair(&key, &value);
-151             helpcatalog[j]\&.id = j;
-152             helpcatalog[j]\&.symbol = helptexts[j]\&.symbol;
-153             helpcatalog[j]\&.text = value;
-154         }
-155     }
-156 
-157     LoadCatalog(&identbase, "utext/dk-ident\&.dict");
-158     if (identbase != NOMEM) {
-159         identcatalog = new identhelpdef[identcount];
-160         for (unsigned int j = 0; j < identcount; j++) {
-161             GetNextPair(&key, &value);
-162             identcatalog[j]\&.id = j;
-163             identcatalog[j]\&.ident = key;
-164             identcatalog[j]\&.text = value;
-165         }
-166     }
-167 
-168     LoadCatalog(&kwordbase, "utext/dk-keyword\&.dict");
-169     if (kwordbase != NOMEM) {
-170         keywordsloc = new keyworddef[keywordcount];
-171         for (unsigned int j = 0; j < keywordcount; j++) {
-172             GetNextPair(&key, &value);
-173             keywordsloc[j]\&.id = j;
-174             keywordsloc[j]\&.name = value;
-175             keywordsloc[j]\&.symbol = keywords[j]\&.symbol;
-176         }
-177     }
-178     */
-179 }
+136     const char* key;
+137     const char* value;
+138 
+139     LoadCatalog(&textbase, "utext/dk-text\&.dict");
+140     if (textbase != NOMEM) {
+141         textcatalog = new textdef[textcount];
+142         for (unsigned int j = 0; j < textcount; j++) {
+143             GetNextPair(&key, &value);
+144             textcatalog[j]\&.id = j;
+145             textcatalog[j]\&.text = value;
+146         }
+147     }
+148 
+149     LoadCatalog(&helpbase, "utext/dk-help\&.dict");
+150     if (helpbase != NOMEM) {
+151         helpcatalog = new helptextdef[helpcount];
+152         for (unsigned int j = 0; j < helpcount; j++) {
+153             GetNextPair(&key, &value);
+154             helpcatalog[j]\&.id = j;
+155             helpcatalog[j]\&.symbol = helptexts[j]\&.symbol;
+156             helpcatalog[j]\&.text = value;
+157         }
+158     }
+159 
+160     LoadCatalog(&identbase, "utext/dk-ident\&.dict");
+161     if (identbase != NOMEM) {
+162         identcatalog = new identhelpdef[identcount];
+163         for (unsigned int j = 0; j < identcount; j++) {
+164             GetNextPair(&key, &value);
+165             identcatalog[j]\&.id = j;
+166             identcatalog[j]\&.ident = key;
+167             identcatalog[j]\&.text = value;
+168         }
+169     }
+170 
+171     LoadCatalog(&kwordbase, "utext/dk-keyword\&.dict");
+172     if (kwordbase != NOMEM) {
+173         keywordsloc = new keyworddef[keywordcount];
+174         for (unsigned int j = 0; j < keywordcount; j++) {
+175             GetNextPair(&key, &value);
+176             keywordsloc[j]\&.id = j;
+177             keywordsloc[j]\&.name = value;
+178             keywordsloc[j]\&.symbol = keywords[j]\&.symbol;
+179         }
+180     }
+181     */
+182 }
 .fi
 .SS "void StandardLanguage::SkipComments ()\fC [private]\fP"
 
 .PP
-Definition at line 218 of file language_stdc\&.cpp\&.
+Definition at line 221 of file language_stdc\&.cpp\&.
 .PP
 References GetNextLine(), and ptr\&.
 .PP
 Referenced by GetNextPair()\&.
 .PP
 .nf
-219 {
-220     bool skipping;
-221     do {
-222         if ((*ptr) == ';') {
-223             GetNextLine();
-224             skipping = true;
-225         } else if ((*ptr) == '#' && *(ptr + sizeof(char)) == '#') {
+222 {
+223     bool skipping;
+224     do {
+225         if ((*ptr) == ';') {
 226             GetNextLine();
 227             skipping = true;
-228         } else {
-229             skipping = false;
-230         }
-231     } while (skipping);
-232 }
+228         } else if ((*ptr) == '#' && *(ptr + sizeof(char)) == '#') {
+229             GetNextLine();
+230             skipping = true;
+231         } else {
+232             skipping = false;
+233         }
+234     } while (skipping);
+235 }
 .fi
 .SS "\fBbool\fP StandardLanguage::StrIsEqualLoc (const char * s1, const char * s2)\fC [virtual]\fP"
 
 .PP
 Implements \fBLanguage\fP\&.
 .PP
-Definition at line 123 of file language_stdc\&.cpp\&.
+Definition at line 122 of file language_stdc\&.cpp\&.
 .PP
 References StrIsEqual()\&.
 .PP
 .nf
-124 {
-125     return StrIsEqual(s1, s2);
-126 }
+123 {
+124     return StrIsEqual(s1, s2);
+125 }
 .fi
 .SS "char * StandardLanguage::Translate (\fBtextdef\fP * def)\fC [protected]\fP, \fC [virtual]\fP"
 
 .PP
 Implements \fBLanguage\fP\&.
 .PP
-Definition at line 64 of file language_stdc\&.cpp\&.
+Definition at line 63 of file language_stdc\&.cpp\&.
 .PP
 References textdef::id, textdef::text, and textcatalog\&.
 .PP
 .nf
-65 {
-66     return textcatalog == NOMEM ?
-67            (char*)def->text :
-68            (char*)textcatalog[def->id]\&.text;
-69 }
+64 {
+65     return textcatalog == NOMEM ?
+66            (char*)def->text :
+67            (char*)textcatalog[def->id]\&.text;
+68 }
 .fi
 .SS "char * StandardLanguage::Translate (\fBhelptextdef\fP * def)\fC [protected]\fP, \fC [virtual]\fP"
 
 .PP
 Implements \fBLanguage\fP\&.
 .PP
-Definition at line 71 of file language_stdc\&.cpp\&.
+Definition at line 70 of file language_stdc\&.cpp\&.
 .PP
 References helpcatalog, helptextdef::id, and helptextdef::text\&.
 .PP
 .nf
-72 {
-73     return helpcatalog == NOMEM ?
-74            (char*)def->text :
-75            (char*)helpcatalog[def->id]\&.text;
-76 }
+71 {
+72     return helpcatalog == NOMEM ?
+73            (char*)def->text :
+74            (char*)helpcatalog[def->id]\&.text;
+75 }
 .fi
 .SS "char * StandardLanguage::Translate (\fBidenthelpdef\fP * def)\fC [protected]\fP, \fC [virtual]\fP"
 
 .PP
 Implements \fBLanguage\fP\&.
 .PP
-Definition at line 78 of file language_stdc\&.cpp\&.
+Definition at line 77 of file language_stdc\&.cpp\&.
 .PP
 References identhelpdef::id, identcatalog, and identhelpdef::text\&.
 .PP
 .nf
-79 {
-80     return identcatalog == NOMEM ?
-81            (char*)def->text :
-82            (char*)identcatalog[def->id]\&.text;
-83 }
+78 {
+79     return identcatalog == NOMEM ?
+80            (char*)def->text :
+81            (char*)identcatalog[def->id]\&.text;
+82 }
+.fi
+.SS "\fBbool\fP StandardLanguage::Validate (char c)\fC [virtual]\fP"
+
+.PP
+Implements \fBLanguage\fP\&.
+.PP
+Definition at line 127 of file language_stdc\&.cpp\&.
+.PP
+.nf
+128 {
+129     return (c >= 32 && c <= 126);
+130 }
 .fi
 .SH "Member Data Documentation"
 .PP 
 .SS "char* StandardLanguage::helpbase\fC [private]\fP"
 
 .PP
-Definition at line 61 of file language_stdc\&.h\&.
+Definition at line 62 of file language_stdc\&.h\&.
 .PP
 Referenced by ~StandardLanguage()\&.
 .SS "\fBhelptextdef\fP* StandardLanguage::helpcatalog\fC [private]\fP"
 
 .PP
-Definition at line 67 of file language_stdc\&.h\&.
+Definition at line 68 of file language_stdc\&.h\&.
 .PP
 Referenced by Translate()\&.
 .SS "char* StandardLanguage::identbase\fC [private]\fP"
 
 .PP
-Definition at line 62 of file language_stdc\&.h\&.
+Definition at line 63 of file language_stdc\&.h\&.
 .PP
 Referenced by ~StandardLanguage()\&.
 .SS "\fBidenthelpdef\fP* StandardLanguage::identcatalog\fC [private]\fP"
 
 .PP
-Definition at line 68 of file language_stdc\&.h\&.
+Definition at line 69 of file language_stdc\&.h\&.
 .PP
 Referenced by Translate()\&.
 .SS "char* StandardLanguage::kwordbase\fC [private]\fP"
 
 .PP
-Definition at line 63 of file language_stdc\&.h\&.
+Definition at line 64 of file language_stdc\&.h\&.
 .PP
 Referenced by ~StandardLanguage()\&.
 .SS "char* StandardLanguage::ptr\fC [private]\fP"
 
 .PP
-Definition at line 65 of file language_stdc\&.h\&.
+Definition at line 66 of file language_stdc\&.h\&.
 .PP
 Referenced by GetNextLine(), GetNextPair(), LoadCatalog(), and SkipComments()\&.
 .SS "char* StandardLanguage::textbase\fC [private]\fP"
 
 .PP
-Definition at line 60 of file language_stdc\&.h\&.
+Definition at line 61 of file language_stdc\&.h\&.
 .PP
 Referenced by ~StandardLanguage()\&.
 .SS "\fBtextdef\fP* StandardLanguage::textcatalog\fC [private]\fP"
 
 .PP
-Definition at line 66 of file language_stdc\&.h\&.
+Definition at line 67 of file language_stdc\&.h\&.
 .PP
 Referenced by Translate()\&.
 

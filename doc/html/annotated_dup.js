@@ -18,6 +18,7 @@ var annotated_dup =
     [ "BinaryLogNode", "classBinaryLogNode.html", "classBinaryLogNode" ],
     [ "CeilingNode", "classCeilingNode.html", "classCeilingNode" ],
     [ "CharBuffer", "classCharBuffer.html", "classCharBuffer" ],
+    [ "CharValidator", "classCharValidator.html", "classCharValidator" ],
     [ "ClearStatement", "classClearStatement.html", "classClearStatement" ],
     [ "complex", "unioncomplex.html", "unioncomplex" ],
     [ "ComplexiNode", "classComplexiNode.html", "classComplexiNode" ],

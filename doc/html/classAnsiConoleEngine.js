@@ -1,6 +1,6 @@
 var classAnsiConoleEngine =
 [
-    [ "AnsiConoleEngine", "classAnsiConoleEngine.html#aac394a191db46deb09a08522bdf72218", null ],
+    [ "AnsiConoleEngine", "classAnsiConoleEngine.html#aa3f89913781d2d22e6a86bb8f634acad", null ],
     [ "~AnsiConoleEngine", "classAnsiConoleEngine.html#a2023846db9703224facd0c2015528dc3", null ],
     [ "CopyLine", "classAnsiConoleEngine.html#ae359fe52bf227c3db6edc42b8fc884f0", null ],
     [ "GetLine", "classAnsiConoleEngine.html#ae3b0bd4c66cb82f4ff939b45bd6e7446", null ],
@@ -26,5 +26,6 @@ var classAnsiConoleEngine =
     [ "maxLines", "classAnsiConoleEngine.html#a3f94786b1610ac3f038d5115fd8047a3", null ],
     [ "out", "classAnsiConoleEngine.html#ad6a604fc0a0f544907513076c72434f3", null ],
     [ "prompt", "classAnsiConoleEngine.html#a97ebef63ba0490711ed78733b6a87be5", null ],
-    [ "showline", "classAnsiConoleEngine.html#a24fe8cd3b3321c6dd4b26731cb1a8108", null ]
+    [ "showline", "classAnsiConoleEngine.html#a24fe8cd3b3321c6dd4b26731cb1a8108", null ],
+    [ "validator", "classAnsiConoleEngine.html#aff585623b4e6fa1342e45413ba106f96", null ]
 ];

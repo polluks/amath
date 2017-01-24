@@ -1,3 +1,3 @@
 <map id="MemoryList" name="MemoryList">
-<area shape="rect" id="node2" href="$structMemoryBlock.html" title="MemoryBlock" alt="" coords="5,5,108,32"/>
+<area shape="rect" id="node2" href="$structMemoryBlock.html" title="Block of allocated memory. " alt="" coords="5,5,108,32"/>
 </map>

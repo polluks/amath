@@ -5,6 +5,7 @@ var searchData=
   ['_7eamigaprogram',['~AmigaProgram',['../classAmigaProgram.html#aa93f40c4cba28c4a88c9854c4c5bea6a',1,'AmigaProgram']]],
   ['_7eansiconoleengine',['~AnsiConoleEngine',['../classAnsiConoleEngine.html#a2023846db9703224facd0c2015528dc3',1,'AnsiConoleEngine']]],
   ['_7echarbuffer',['~CharBuffer',['../classCharBuffer.html#a9e62778016bba5191fa9eaa6ea118926',1,'CharBuffer']]],
+  ['_7echarvalidator',['~CharValidator',['../classCharValidator.html#a4a73fcccfc3ee204169a520468773366',1,'CharValidator']]],
   ['_7eclearstatement',['~ClearStatement',['../classClearStatement.html#a30976bfeaef80491e7c75f40f17e7b05',1,'ClearStatement']]],
   ['_7ecomplexnumber',['~ComplexNumber',['../structComplexNumber.html#abc3b759a61e4964ccd712622ce00e0d1',1,'ComplexNumber']]],
   ['_7econsolebase',['~ConsoleBase',['../classConsoleBase.html#af249e9199923edc425c201c079d3c04a',1,'ConsoleBase']]],

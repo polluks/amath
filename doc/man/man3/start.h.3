@@ -1,4 +1,4 @@
-.TH "app/localize/start.h" 3 "Sun Jan 22 2017" "Version 1.6.1" "amath" \" -*- nroff -*-
+.TH "app/localize/start.h" 3 "Tue Jan 24 2017" "Version 1.6.2" "amath" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -14,22 +14,22 @@ app/localize/start.h \- Start message and version text\&.
 
 .in +1c
 .ti -1c
-.RI "#define \fBTXTTEST\fP   \fBEMPTYSTRING\fP"
-.br
-.ti -1c
 .RI "#define \fBTXTFPU\fP   \fBEMPTYSTRING\fP"
 .br
 .ti -1c
-.RI "#define \fBTXTARCH\fP   TXTCPU \fBTXTFPU\fP \fBTXTTEST\fP"
+.RI "#define \fBTXTOPTMSG\fP   \fBEMPTYSTRING\fP"
 .br
 .ti -1c
-.RI "#define \fBRELDATESTAMP\fP   '(21\-01\-2017)'"
+.RI "#define \fBTXTARCH\fP   TXTCPU \fBTXTFPU\fP"
 .br
 .ti -1c
-.RI "#define \fBTXTDOSVERSION\fP   '\\0$VER: amath 1\&.61' SPACE \fBRELDATESTAMP\fP \fBSPACE\fP \fBTXTARCH\fP"
+.RI "#define \fBRELDATESTAMP\fP   '(24\-01\-2017)'"
 .br
 .ti -1c
-.RI "#define \fBTXTTITLE\fP   'amath version 1\&.6\&.1'"
+.RI "#define \fBTXTDOSVERSION\fP   '\\0$VER: amath 1\&.62' SPACE \fBRELDATESTAMP\fP \fBSPACE\fP \fBTXTARCH\fP"
+.br
+.ti -1c
+.RI "#define \fBTXTTITLE\fP   'amath version 1\&.6\&.2'"
 .br
 .ti -1c
 .RI "#define \fBTXTCOPYRIGHT\fP   '(c) 2017 Carsten Sonne Larsen'"
@@ -41,7 +41,7 @@ app/localize/start.h \- Start message and version text\&.
 .RI "#define \fBTXTVERSMSG\fP   \fBTXTTITLE\fP \fBSPACE\fP \fBRELDATESTAMP\fP \fBSPACE\fP \fBTXTARCH\fP"
 .br
 .ti -1c
-.RI "#define \fBTXTCOMPMSG\fP   'Compiled with ' COMP_NAME \fBSPACE\fP COMP_VERS"
+.RI "#define \fBTXTCOMPMSG\fP   'Compiled with ' COMP_NAME \fBSPACE\fP COMP_VERS \fBTXTOPTMSG\fP"
 .br
 .ti -1c
 .RI "#define \fBTXTEXTCOPYRIGHT\fP"
@@ -56,26 +56,26 @@ Start message and version text\&.
 Definition in file \fBstart\&.h\fP\&.
 .SH "Macro Definition Documentation"
 .PP 
-.SS "#define RELDATESTAMP   '(21\-01\-2017)'"
+.SS "#define RELDATESTAMP   '(24\-01\-2017)'"
 
 .PP
-Definition at line 103 of file start\&.h\&.
-.SS "#define TXTARCH   TXTCPU \fBTXTFPU\fP \fBTXTTEST\fP"
+Definition at line 120 of file start\&.h\&.
+.SS "#define TXTARCH   TXTCPU \fBTXTFPU\fP"
 
 .PP
-Definition at line 102 of file start\&.h\&.
-.SS "#define TXTCOMPMSG   'Compiled with ' COMP_NAME \fBSPACE\fP COMP_VERS"
+Definition at line 119 of file start\&.h\&.
+.SS "#define TXTCOMPMSG   'Compiled with ' COMP_NAME \fBSPACE\fP COMP_VERS \fBTXTOPTMSG\fP"
 
 .PP
-Definition at line 110 of file start\&.h\&.
+Definition at line 127 of file start\&.h\&.
 .SS "#define TXTCOPYRIGHT   '(c) 2017 Carsten Sonne Larsen'"
 
 .PP
-Definition at line 106 of file start\&.h\&.
-.SS "#define TXTDOSVERSION   '\\0$VER: amath 1\&.61' SPACE \fBRELDATESTAMP\fP \fBSPACE\fP \fBTXTARCH\fP"
+Definition at line 123 of file start\&.h\&.
+.SS "#define TXTDOSVERSION   '\\0$VER: amath 1\&.62' SPACE \fBRELDATESTAMP\fP \fBSPACE\fP \fBTXTARCH\fP"
 
 .PP
-Definition at line 104 of file start\&.h\&.
+Definition at line 121 of file start\&.h\&.
 .SS "#define TXTEXTCOPYRIGHT"
 \fBValue:\fP
 .PP
@@ -89,27 +89,27 @@ Definition at line 104 of file start\&.h\&.
     "Ryan Juckett" NEWLINE "Chris Torek" NEWLINE "Mike Hibler"
 .fi
 .PP
-Definition at line 112 of file start\&.h\&.
+Definition at line 129 of file start\&.h\&.
 .SS "#define TXTFPU   \fBEMPTYSTRING\fP"
 
 .PP
-Definition at line 99 of file start\&.h\&.
+Definition at line 101 of file start\&.h\&.
+.SS "#define TXTOPTMSG   \fBEMPTYSTRING\fP"
+
+.PP
+Definition at line 116 of file start\&.h\&.
 .SS "#define TXTSTARTMSG   \fBTXTTITLE\fP \fBSPACE\fP \fBTXTCOPYRIGHT\fP"
 
 .PP
-Definition at line 107 of file start\&.h\&.
-.SS "#define TXTTEST   \fBEMPTYSTRING\fP"
+Definition at line 124 of file start\&.h\&.
+.SS "#define TXTTITLE   'amath version 1\&.6\&.2'"
 
 .PP
-Definition at line 93 of file start\&.h\&.
-.SS "#define TXTTITLE   'amath version 1\&.6\&.1'"
-
-.PP
-Definition at line 105 of file start\&.h\&.
+Definition at line 122 of file start\&.h\&.
 .SS "#define TXTVERSMSG   \fBTXTTITLE\fP \fBSPACE\fP \fBRELDATESTAMP\fP \fBSPACE\fP \fBTXTARCH\fP"
 
 .PP
-Definition at line 109 of file start\&.h\&.
+Definition at line 126 of file start\&.h\&.
 .SH "Author"
 .PP 
 Generated automatically by Doxygen for amath from the source code\&.

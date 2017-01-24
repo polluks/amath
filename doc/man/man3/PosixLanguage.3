@@ -1,4 +1,4 @@
-.TH "PosixLanguage" 3 "Sun Jan 22 2017" "Version 1.6.1" "amath" \" -*- nroff -*-
+.TH "PosixLanguage" 3 "Tue Jan 24 2017" "Version 1.6.2" "amath" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -42,6 +42,9 @@ Inherits \fBLanguage\fP\&.
 .br
 .ti -1c
 .RI "\fBbool\fP \fBStrIsEqualLoc\fP (const char *s1, const char *s2)"
+.br
+.ti -1c
+.RI "\fBbool\fP \fBValidate\fP (char c)"
 .br
 .in -1c
 .SS "Protected Member Functions"
@@ -266,18 +269,30 @@ References identhelpdef::text\&.
 107     return (char*)def->text;
 108 }
 .fi
+.SS "\fBbool\fP PosixLanguage::Validate (char c)\fC [virtual]\fP"
+
+.PP
+Implements \fBLanguage\fP\&.
+.PP
+Definition at line 120 of file language_posix\&.cpp\&.
+.PP
+.nf
+121 {
+122     return (c >= 32 && c <= 126);
+123 }
+.fi
 .SH "Member Data Documentation"
 .PP 
 .SS "struct lconv* PosixLanguage::conv\fC [private]\fP"
 
 .PP
-Definition at line 61 of file language_posix\&.h\&.
+Definition at line 62 of file language_posix\&.h\&.
 .PP
 Referenced by GetFractionPoint(), and PosixLanguage()\&.
 .SS "locale_t PosixLanguage::locale\fC [private]\fP"
 
 .PP
-Definition at line 60 of file language_posix\&.h\&.
+Definition at line 61 of file language_posix\&.h\&.
 .PP
 Referenced by CharIsAlNum(), CharIsAlpha(), CharIsCntrl(), CharIsDigit(), CharIsPunct(), CharIsSpace(), PosixLanguage(), and ~PosixLanguage()\&.
 

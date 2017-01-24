@@ -8,6 +8,9 @@ var dir_9dc6c7acf21934bbaaf79b41db58c4e7 =
     [ "charbuf.h", "charbuf_8h.html", [
       [ "CharBuffer", "classCharBuffer.html", "classCharBuffer" ]
     ] ],
+    [ "charval.h", "charval_8h.html", [
+      [ "CharValidator", "classCharValidator.html", "classCharValidator" ]
+    ] ],
     [ "cplex.cpp", "cplex_8cpp.html", null ],
     [ "cplex.h", "cplex_8h.html", [
       [ "ComplexNumber", "structComplexNumber.html", "structComplexNumber" ]

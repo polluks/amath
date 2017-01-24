@@ -1,8 +1,9 @@
-.TH "MemoryList" 3 "Sun Jan 22 2017" "Version 1.6.1" "amath" \" -*- nroff -*-
+.TH "MemoryList" 3 "Tue Jan 24 2017" "Version 1.6.2" "amath" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
-MemoryList \- 
+MemoryList \- List of allocated memory\&. Uses the LIFO principle\&.  
+
 .SH SYNOPSIS
 .br
 .PP
@@ -11,9 +12,6 @@ MemoryList \-
 .in +1c
 .ti -1c
 .RI "struct \fBMemoryBlock\fP * \fBfirst\fP"
-.br
-.ti -1c
-.RI "struct \fBMemoryBlock\fP * \fBlast\fP"
 .br
 .ti -1c
 .RI "long \fBpeak\fP"
@@ -27,37 +25,33 @@ MemoryList \-
 .in -1c
 .SH "Detailed Description"
 .PP 
-Definition at line 53 of file mem\&.c\&.
+List of allocated memory\&. Uses the LIFO principle\&. 
+.PP
+Definition at line 59 of file mem\&.c\&.
 .SH "Member Data Documentation"
 .PP 
 .SS "long MemoryList::count"
 
 .PP
-Definition at line 59 of file mem\&.c\&.
+Definition at line 64 of file mem\&.c\&.
 .PP
 Referenced by AllocMemSafe(), FreeMemSafe(), and MemUsage()\&.
 .SS "struct \fBMemoryBlock\fP* MemoryList::first"
 
 .PP
-Definition at line 55 of file mem\&.c\&.
+Definition at line 61 of file mem\&.c\&.
 .PP
 Referenced by AllocMemSafe(), FreeAllSafe(), and FreeMemSafe()\&.
-.SS "struct \fBMemoryBlock\fP* MemoryList::last"
-
-.PP
-Definition at line 56 of file mem\&.c\&.
-.PP
-Referenced by AllocMemSafe(), and FreeMemSafe()\&.
 .SS "long MemoryList::peak"
 
 .PP
-Definition at line 57 of file mem\&.c\&.
+Definition at line 62 of file mem\&.c\&.
 .PP
 Referenced by AllocMemSafe(), and MemUsage()\&.
 .SS "long MemoryList::size"
 
 .PP
-Definition at line 58 of file mem\&.c\&.
+Definition at line 63 of file mem\&.c\&.
 .PP
 Referenced by AllocMemSafe(), and MemUsage()\&.
 

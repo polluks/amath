@@ -1,8 +1,9 @@
-.TH "MemoryBlock" 3 "Sun Jan 22 2017" "Version 1.6.1" "amath" \" -*- nroff -*-
+.TH "MemoryBlock" 3 "Tue Jan 24 2017" "Version 1.6.2" "amath" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
-MemoryBlock \- 
+MemoryBlock \- Block of allocated memory\&.  
+
 .SH SYNOPSIS
 .br
 .PP
@@ -21,25 +22,27 @@ MemoryBlock \-
 .in -1c
 .SH "Detailed Description"
 .PP 
-Definition at line 46 of file mem\&.c\&.
+Block of allocated memory\&. 
+.PP
+Definition at line 49 of file mem\&.c\&.
 .SH "Member Data Documentation"
 .PP 
 .SS "void* MemoryBlock::address"
 
 .PP
-Definition at line 50 of file mem\&.c\&.
+Definition at line 53 of file mem\&.c\&.
 .PP
 Referenced by AllocMemSafe(), FreeAllSafe(), and FreeMemSafe()\&.
 .SS "struct \fBMemoryBlock\fP* MemoryBlock::next"
 
 .PP
-Definition at line 48 of file mem\&.c\&.
+Definition at line 51 of file mem\&.c\&.
 .PP
 Referenced by AllocMemSafe(), FreeAllSafe(), and FreeMemSafe()\&.
 .SS "size_t MemoryBlock::size"
 
 .PP
-Definition at line 49 of file mem\&.c\&.
+Definition at line 52 of file mem\&.c\&.
 
 .SH "Author"
 .PP 

@@ -7,7 +7,7 @@ var searchData=
   ['l5',['L5',['../pow_8c.html#ab38b66779c8f7671692724fc59abe942',1,'pow.c']]],
   ['l6',['L6',['../pow_8c.html#ab144a2b09d7235c795d751025442704f',1,'pow.c']]],
   ['language',['Language',['../classProgram.html#a7c82b4c429bbee984b8bb287b9e137f7',1,'Program']]],
-  ['last',['last',['../structToken.html#a0ea44230386ca31fabb9a4946249d53f',1,'Token::last()'],['../structMemoryList.html#afea5b720cf2a7c326cb53a604b90c354',1,'MemoryList::last()']]],
+  ['last',['last',['../structToken.html#a0ea44230386ca31fabb9a4946249d53f',1,'Token']]],
   ['lasttext',['lastText',['../classLanguage.html#ac4d2cf11e858e9d9a972b2cdf927f148',1,'Language']]],
   ['left',['left',['../classNumericOperator.html#a55da3c4075408deff978711030fa8258',1,'NumericOperator']]],
   ['leftbottom',['leftBottom',['../classSyntaxNode.html#ae0488f07ad7cc43143e44e89ec27bc40',1,'SyntaxNode']]],

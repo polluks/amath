@@ -4,7 +4,7 @@ var searchData=
   ['newline',['NEWLINE',['../platform_8h.html#a806511f4930171733227c99101dc0606',1,'platform.h']]],
   ['newpositionalinput',['NewPositionalInput',['../classProgram.html#aef8e1c957776e550081cb2c47a11d64b',1,'Program']]],
   ['newpositionaloutput',['NewPositionalOutput',['../classProgram.html#a38a8a4a116b01a1bce417488ee235ee7',1,'Program']]],
-  ['next',['next',['../structStatementBlockElement.html#aa6001c0b1578810f85004ae397da2387',1,'StatementBlockElement::next()'],['../structToken.html#a32f24a25af788c192e5b387dc8d67914',1,'Token::next()'],['../classGraphWindow.html#af84f61254f44fd2ef6b45ab703e45feb',1,'GraphWindow::next()'],['../structMemoryBlock.html#aead31940b4b95725f6f580e2db3cfb87',1,'MemoryBlock::next()'],['../classUserFunction.html#a5463f575d2ed50c0dbe069ec2841a5c9',1,'UserFunction::Next()'],['../classVariable.html#ac5662d23fccccf25e3565793841ce580',1,'Variable::Next()']]],
+  ['next',['Next',['../classUserFunction.html#a5463f575d2ed50c0dbe069ec2841a5c9',1,'UserFunction::Next()'],['../classVariable.html#ac5662d23fccccf25e3565793841ce580',1,'Variable::Next()'],['../structStatementBlockElement.html#aa6001c0b1578810f85004ae397da2387',1,'StatementBlockElement::next()'],['../structToken.html#a32f24a25af788c192e5b387dc8d67914',1,'Token::next()'],['../classGraphWindow.html#af84f61254f44fd2ef6b45ab703e45feb',1,'GraphWindow::next()'],['../structMemoryBlock.html#aead31940b4b95725f6f580e2db3cfb87',1,'MemoryBlock::next()']]],
   ['nextafter',['nextafter',['../nextafter_8c.html#abed1b7ee913471448c2dbe58dff28db3',1,'nextafter.c']]],
   ['nextafter_2ec',['nextafter.c',['../nextafter_8c.html',1,'']]],
   ['nodes_2ecpp',['nodes.cpp',['../nodes_8cpp.html',1,'']]],
