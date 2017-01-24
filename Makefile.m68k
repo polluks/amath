@@ -5,7 +5,7 @@ AR       = m68k-amigaos-ar
 RANLIB   = m68k-amigaos-ranlib
 CFLAGS   = -m68020  -DWITHTEST -noixemul 
 CXXFLAGS = -m68020  -DWITHTEST -noixemul -I.
-LFLAGS   = -lgcc -lamathapp -lcamath -lcomplex -lamath
+LFLAGS   = -lstdc++ -lamathapp -lcamath -lcomplex -lamath
 
 FLXCAT   = build/flexcat/flexcat
 MKDIR    = mkdir

@@ -109,7 +109,6 @@ make amigacatalogs
 
 #cp amath.readme dist/
 cp LICENSE dist/
-cp COPYRIGHT dist/
 cp HISTORY dist/
 
 mkdir dist/script
