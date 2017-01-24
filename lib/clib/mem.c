@@ -35,14 +35,17 @@
 #include <clib/exec_protos.h>
 #define ALLOC_MEM(x) AllocVec(x, MEMF_ANY | MEMF_CLEAR)
 #define FREE_MEM(x) FreeVec(x)
-#define Debug(x,y,z,w)
+#define Debug(x,y,z)
 #else
 # include <stdlib.h>
 # define ALLOC_MEM(x) calloc(1L,x)
 # define FREE_MEM(x) free(x)
-# define Debug(x,y,z,w)
+# define Debug(x,y,z)
 #endif
 
+/**
+ * @brief Block of allocated memory.
+ */
 struct MemoryBlock
 {
     struct MemoryBlock *next;
@@ -50,20 +53,28 @@ struct MemoryBlock
     void *address;
 };
 
+/**
+ * @brief List of allocated memory. Uses the LIFO principle.
+ */
 struct MemoryList
 {
     struct MemoryBlock *first;
-    struct MemoryBlock *last;
     long peak;
     long size;
     long count;
 };
 
+/**
+ * @brief Global list of allocated memory.
+ */
 struct MemoryList *list = NULL;
 
 void alloc_error(char*, size_t);
 void dealloc_error(char*, void*);
 
+/**
+ * @brief Allocate memory and add it to the global memory list.
+ */
 void* AllocMemSafe(size_t size)
 {
     struct MemoryBlock *newblock;
@@ -77,7 +88,6 @@ void* AllocMemSafe(size_t size)
         }
 
         list->first = NULL;
-        list->last = NULL;
         list->peak = 0;
         list->size = 0;
         list->count = 0;
@@ -105,16 +115,8 @@ void* AllocMemSafe(size_t size)
     }
 
     newblock->size = allocsize;
-    newblock->next = NULL;
-
-    if(list->first == NULL) {
-        list->first = newblock;
-        list->last = newblock;
-    } else {
-        list->last->next = newblock;
-        list->last = newblock;
-    }
-
+    newblock->next = list->first;
+    list->first = newblock;
     list->size += allocsize;
     list->count++;
 
@@ -128,9 +130,12 @@ void* AllocMemSafe(size_t size)
     return newblock->address;
 }
 
+/**
+ * @brief Deallocate memory from the global memory list.
+ */
 void FreeMemSafe(void* block)
 {
-    struct MemoryBlock *current, *last;
+    struct MemoryBlock *current, *previous;
 
     if (list == NULL || block == NULL) {
         dealloc_error("list", 0);
@@ -142,10 +147,10 @@ void FreeMemSafe(void* block)
         return;
     }
 
-    last = NULL;
+    previous = NULL;
     current = list->first;
     while (current != NULL && current->address != block) {
-        last = current;
+        previous = current;
         current = current->next;
     }
 
@@ -154,26 +159,28 @@ void FreeMemSafe(void* block)
         return;
     }
 
+    if (previous == NULL) {
+        list->first = current->next;
+    } else {
+        previous->next = current->next;
+    }
+
     list->size -= current->size;
     list->count--;
 
-    if (list->first == current) {
-        list->first = NULL;
-        list->last = NULL;
-    } else if (list->last == current) {
-        last->next = current->next;
-        list->last = last;
-    } else {
-        last->next = current->next;
-    }
-
     FREE_MEM(current->address);
+    current->address = NULL;
+    current->next = NULL;
+    current->size = 0;
     FREE_MEM(current);
 
     // DEBUG code
-    // Debug(NULL, "Mememory deallocated at address (%x)\n", block);
+    // Debug("Mememory deallocated at address (%x)\n", block);
 }
 
+/**
+ * @brief Deallocate all memory in the global memory list.
+ */
 void FreeAllSafe()
 {
     struct MemoryBlock *current, *next;
@@ -194,6 +201,9 @@ void FreeAllSafe()
     list = NULL;
 }
 
+/**
+ * @brief Get memory usage in the global memory list.
+ */
 void MemUsage(long *blocks, long *size, long *peak)
 {
     *blocks = list->count;
@@ -201,12 +211,18 @@ void MemUsage(long *blocks, long *size, long *peak)
     *peak = list->peak;;
 }
 
+/**
+ * @brief Log a mememory allocation error
+ */
 void alloc_error(char *descr, size_t size)
 {
-    Debug(NULL, "Mememory allocation error (%s) with size (%d)\n", descr, size);
+    Debug("Mememory allocation error (%s) with size (%d)\n", descr, size);
 }
 
+/**
+ * @brief Log a mememory deallocation error
+ */
 void dealloc_error(char *descr, void *p)
 {
-    Debug(NULL, "Mememory deallocation error (%s) address (%x)\n", descr, p);
+    Debug("Mememory deallocation error (%s) address (%x)\n", descr, p);
 }
