@@ -93,8 +93,7 @@
   <BR>
   FreeBSD: https://www.freshports.org/math/amath/<BR>
   <BR>
-  Included in the Icaros Desktop environment:<BR>
-  http://vmwaros.blogspot.com/
+  Included in the Icaros Desktop environment: http://vmwaros.blogspot.com/
 
   \subsection history History
   A full \ref release_page is available for amath.
