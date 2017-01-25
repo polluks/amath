@@ -92,7 +92,10 @@
   (SHA256 d3ba707f37ab27e90847d54839d65b0308124ac6ab61e1aac1deda44d87a7fad)<BR>
   <BR>
   FreeBSD: https://www.freshports.org/math/amath/<BR>
-  
+  <BR>
+  Included in the Icaros Desktop environment:<BR>
+  http://vmwaros.blogspot.com/
+
   \subsection history History
   A full \ref release_page is available for amath.
 
