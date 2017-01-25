@@ -8,3 +8,4 @@ amath-test
 catalog/flexcat
 *.vcxproj.user
 .vs
+*_.3
