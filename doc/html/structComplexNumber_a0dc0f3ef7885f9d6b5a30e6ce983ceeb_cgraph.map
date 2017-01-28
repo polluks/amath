@@ -1,7 +1,0 @@
-<map id="ComplexNumber::Signum" name="ComplexNumber::Signum">
-<area shape="rect" id="node2" href="$csgn_8c.html#aaab921fc8e26fcfee85a89e662e41a74" title="Complex signum. " alt="" coords="288,56,339,83"/>
-<area shape="rect" id="node5" href="$structRealNumber.html#a65924261adb775498f3b1b0f41f89091" title="RealNumber::RealNumber" alt="" coords="225,107,401,133"/>
-<area shape="rect" id="node3" href="$prim_8c.html#aa1fe0b9371befabef6c41ba73470774a" title="Imaginary part of complex number. " alt="" coords="482,5,539,32"/>
-<area shape="rect" id="node4" href="$prim_8c.html#a4a236b24c0197821e3489a35a72079ab" title="Real part of complex number. " alt="" coords="485,56,536,83"/>
-<area shape="rect" id="node6" href="$structNumber.html#afd3c2f9b4b288e339f741a6e4ae54593" title="Number::Number" alt="" coords="449,107,572,133"/>
-</map>

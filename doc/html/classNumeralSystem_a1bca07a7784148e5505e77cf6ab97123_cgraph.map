@@ -1,5 +1,0 @@
-<map id="NumeralSystem::NumeralSystem" name="NumeralSystem::NumeralSystem">
-<area shape="rect" id="node2" href="$classCharBuffer.html#a4345e9a5114f5c0292e8f242f26e3a7b" title="Initialize without allocating memory. " alt="" coords="272,5,428,32"/>
-<area shape="rect" id="node3" href="$classCharBuffer.html#abe39d3fd7d8b9c8ec343af2cae7adc96" title="CharBuffer::Empty" alt="" coords="285,56,415,83"/>
-<area shape="rect" id="node4" href="$classCharBuffer.html#ae742439a2d5d5a0ad64411dcbf4604c8" title="CharBuffer::EnsureMinimumSize" alt="" coords="476,56,689,83"/>
-</map>

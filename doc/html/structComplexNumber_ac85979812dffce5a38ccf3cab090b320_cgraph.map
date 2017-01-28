@@ -1,9 +1,0 @@
-<map id="ComplexNumber::Reciprocal" name="ComplexNumber::Reciprocal">
-<area shape="rect" id="node2" href="$structComplexNumber.html#a0d89581ead93385331befcef51698693" title="ComplexNumber::ComplexNumber" alt="" coords="244,31,471,57"/>
-<area shape="rect" id="node4" href="$prim_8c.html#a78cdeb0bf6f229c2be3065fc697dac68" title="Reciprocal value of complex number. " alt="" coords="332,107,383,133"/>
-<area shape="rect" id="node3" href="$structNumber.html#afd3c2f9b4b288e339f741a6e4ae54593" title="Number::Number" alt="" coords="519,5,641,32"/>
-<area shape="rect" id="node5" href="$prim_8c.html#aa1fe0b9371befabef6c41ba73470774a" title="Imaginary part of complex number. " alt="" coords="551,56,609,83"/>
-<area shape="rect" id="node6" href="$prim_8c.html#a8d08797ad03191874e9943144da189be" title="conj" alt="" coords="557,107,603,133"/>
-<area shape="rect" id="node7" href="$prim_8c.html#a980e6e049f7902b05fc9eb5614b07a5c" title="Pack two real numbers into a complex number. " alt="" coords="689,132,747,159"/>
-<area shape="rect" id="node8" href="$prim_8c.html#a4a236b24c0197821e3489a35a72079ab" title="Real part of complex number. " alt="" coords="555,208,605,235"/>
-</map>

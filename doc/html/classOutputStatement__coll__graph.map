@@ -1,5 +1,0 @@
-<map id="OutputStatement" name="OutputStatement">
-<area shape="rect" id="node2" href="$classStatementNode.html" title="Base class for all statements in a syntax tree. " alt="" coords="9,173,123,200"/>
-<area shape="rect" id="node3" href="$classSyntaxNode.html" title="Base class for all nodes in a syntax tree. " alt="" coords="19,96,113,123"/>
-<area shape="rect" id="node4" href="$classCharBuffer.html" title="Encapsulate an character array which can be used as a string. " alt="" coords="23,5,109,32"/>
-</map>

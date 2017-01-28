@@ -1,8 +1,0 @@
-<map id="ComplexNumber::Div" name="ComplexNumber::Div">
-<area shape="rect" id="node2" href="$prim_8c.html#afeb504d8fe89e8fc7dea6e6592af70f6" title="Division of two complex numbers. " alt="" coords="291,56,338,83"/>
-<area shape="rect" id="node4" href="$prim_8c.html#a980e6e049f7902b05fc9eb5614b07a5c" title="Pack two real numbers into a complex number. " alt="" coords="509,107,566,133"/>
-<area shape="rect" id="node6" href="$structComplexNumber.html#a0d89581ead93385331befcef51698693" title="ComplexNumber::ComplexNumber" alt="" coords="201,157,428,184"/>
-<area shape="rect" id="node3" href="$prim_8c.html#aa1fe0b9371befabef6c41ba73470774a" title="Imaginary part of complex number. " alt="" coords="509,5,566,32"/>
-<area shape="rect" id="node5" href="$prim_8c.html#a4a236b24c0197821e3489a35a72079ab" title="Real part of complex number. " alt="" coords="512,56,563,83"/>
-<area shape="rect" id="node7" href="$structNumber.html#afd3c2f9b4b288e339f741a6e4ae54593" title="Number::Number" alt="" coords="476,157,599,184"/>
-</map>

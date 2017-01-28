@@ -1,6 +1,0 @@
-<map id="FilesystemBase::LoadTextFile" name="FilesystemBase::LoadTextFile">
-<area shape="rect" id="node2" href="$classShowStatement.html#a8466ad7e0e61918cda0e399713abb6a8" title="ShowStatement::Execute" alt="" coords="272,5,443,32"/>
-<area shape="rect" id="node3" href="$classLoadStatement.html#ae3cbd157ad8de73551ff430fa3c089d9" title="LoadStatement::Execute" alt="" coords="274,56,441,83"/>
-<area shape="rect" id="node4" href="$classExecuteStatement.html#a8a3bbafeb8739749eab6eaf8a4b9969c" title="ExecuteStatement::Execute" alt="" coords="264,107,451,133"/>
-<area shape="rect" id="node5" href="$classStandardLanguage.html#a4fe22e49f3ce358690242d0b1058ccfa" title="StandardLanguage::LoadCatalog" alt="" coords="252,157,463,184"/>
-</map>

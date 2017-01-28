@@ -1,6 +1,0 @@
-<map id="PreferencesBase::GetDescription" name="PreferencesBase::GetDescription">
-<area shape="rect" id="node2" href="$classPrefsStatement.html#ac53922eb842ba389957300fef95cd98f" title="PrefsStatement::Execute" alt="" coords="271,5,440,32"/>
-<area shape="rect" id="node3" href="$classStandardPreferences.html#af4d99d40f18776348f76fc0b9f5cdda4" title="StandardPreferences\l::SavePrefs" alt="" coords="283,57,427,98"/>
-<area shape="rect" id="node4" href="$classStandardPreferences.html#a98a76348fca4d6519fb851b5d8382437" title="StandardPreferences\l::Keep" alt="" coords="488,23,632,65"/>
-<area shape="rect" id="node5" href="$classStandardPreferences.html#aa6a0a0f9746d2fba5d00cc896937b950" title="StandardPreferences\l::Save" alt="" coords="488,89,632,130"/>
-</map>

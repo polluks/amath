@@ -1,6 +1,0 @@
-<map id="CharValidator" name="CharValidator">
-<area shape="rect" id="node2" href="$classLanguage.html" title="Language" alt="" coords="161,80,239,107"/>
-<area shape="rect" id="node3" href="$classAmigaLanguage.html" title="AmigaLanguage" alt="" coords="5,155,120,181"/>
-<area shape="rect" id="node4" href="$classPosixLanguage.html" title="PosixLanguage" alt="" coords="145,155,255,181"/>
-<area shape="rect" id="node5" href="$classStandardLanguage.html" title="StandardLanguage" alt="" coords="280,155,411,181"/>
-</map>
