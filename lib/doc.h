@@ -81,19 +81,21 @@
   \subsection download Download
   Prebuild packages are available from gitlab.com <BR>
   <BR><B>Windows with ANSI support</B><BR>
-  https://gitlab.com/rnger/amath/raw/master/bin/amath-1.6.2-ansi-x86.exe (32 bit)<BR>
+  https://gitlab.com/rnger/amath-bin/raw/master/Windows/amath-1.6.2-ansi-x86.exe (32 bit)<BR>
   (SHA256 d308424862eef418d97e3b60c00b191f711349c6f856e12b4917b114ac2f6578)<BR>
-  https://gitlab.com/rnger/amath/raw/master/bin/amath-1.6.2-ansi-x64.exe (64 bit)<BR>
+  https://gitlab.com/rnger/amath-bin/raw/master/Windows/amath-1.6.2-ansi-x64.exe (64 bit)<BR>
   (SHA256 170c5246f0bd0cec3e1d4f64c7c685d75cdbd5a5da7acf0ea4641c21e2a7d5ea)<BR>
   <BR><B>Windows without ANSI support</B><BR>
-  https://gitlab.com/rnger/amath/raw/master/bin/amath-1.6.2-x86.exe (32 bit)<BR>
+  https://gitlab.com/rnger/amath-bin/raw/master/Windows/amath-1.6.2-x86.exe (32 bit)<BR>
   (SHA256 1ee22651fb09dc841b71062b8a6e9f6da285d807d3216e935a15eca9df5fd614)<BR>
-  https://gitlab.com/rnger/amath/raw/master/bin/amath-1.6.2-x64.exe (64 bit)<BR>
+  https://gitlab.com/rnger/amath-bin/raw/master/Windows/amath-1.6.2-x64.exe (64 bit)<BR>
   (SHA256 d3ba707f37ab27e90847d54839d65b0308124ac6ab61e1aac1deda44d87a7fad)<BR>
   <BR>
-  FreeBSD: https://www.freshports.org/math/amath/<BR>
+  FreeBSD: https://www.freshports.org/math/amath/ <BR>
   <BR>
-  Included in the Icaros Desktop environment: http://vmwaros.blogspot.com/
+  Included in the Icaros Desktop environment: http://vmwaros.blogspot.com/ <BR>
+  <BR>
+  Other packages: https://gitlab.com/rnger/amath-bin/tree/master <BR>
 
   \subsection history History
   A full \ref release_page is available for amath.
@@ -104,20 +106,23 @@
 
   \subsection command_stat Statements
   \verbatim
-  clear       Clear the console window.
+  clear       Clear console window.
   def         Define function.
   delete      Delete variable or function.
   digits      Set number of significant digits.
   eval        Evaluate arithmetic expression.
   execute     Execute statements in a file.
   functions   Show list of user defined functions.
+  input       Change numeral input system (experimental).
   help        Show basic help text.
-  list        Show the content of a directory.
-  show        Show the content of a file.
+  output      Change numeral output system (experimental).
+  list        Show content of a directory.
+  show        Show content of a file.
   load        Load variable and functions from file.
   save        Save variable and functions to file.
   variables   Show list of variables.
   version     Show version string.
+  memory      Show internal memory usage.
   exit        Exit program.
   \endverbatim
   \subsection command_func Base functions
@@ -163,6 +168,13 @@
   arccoth     Inverse hyperbolic cotangent function.
   arcsech     Inverse hyperbolic secant function.
   arccsch     Inverse hyperbolic cosecant function.
+  \endverbatim
+  \subsection command_vars Variables and constant
+  \verbatim
+  pi          Trigonometric constant.
+  e           Euler's number.
+  i           Imaginary unit.
+  ins         Result of last calculation.
   \endverbatim
   \subsection command_exfunc Example script
   \verbatim
