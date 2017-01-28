@@ -54,9 +54,9 @@
 </style>
 </head>
 <body>
-<!-- BUGDESC Assigned value is garbage or undefined -->
+<!-- BUGDESC The right operand of '*' is a garbage value -->
 
-<!-- BUGTYPE Assigned value is garbage or undefined -->
+<!-- BUGTYPE Result of operation is garbage or undefined -->
 
 <!-- BUGCATEGORY Logic error -->
 
@@ -66,21 +66,21 @@
 
 <!-- FUNCTIONNAME __kernel_rem_pio2 -->
 
-<!-- ISSUEHASHCONTENTOFLINEINCONTEXT a617612ea30c64b8d40584356d86a859 -->
+<!-- ISSUEHASHCONTENTOFLINEINCONTEXT ad318c1c8c17bc46aae35f4cab5ac3bb -->
 
-<!-- BUGLINE 346 -->
+<!-- BUGLINE 307 -->
 
 <!-- BUGCOLUMN 18 -->
 
-<!-- BUGPATHLENGTH 25 -->
+<!-- BUGPATHLENGTH 20 -->
 
 <!-- BUGMETAEND -->
 <!-- REPORTHEADER -->
 <h3>Bug Summary</h3>
 <table class="simpletable">
-<tr><td class="rowname">File:</td><td>lib/real/kremp2.c</td></tr>
-<tr><td class="rowname">Location:</td><td><a href="#EndPath">line 346, column 18</a></td></tr>
-<tr><td class="rowname">Description:</td><td>Assigned value is garbage or undefined</td></tr>
+<tr><td class="rowname">File:</td><td>real/kremp2.c</td></tr>
+<tr><td class="rowname">Location:</td><td><a href="#EndPath">line 307, column 18</a></td></tr>
+<tr><td class="rowname">Description:</td><td>The right operand of '*' is a garbage value</td></tr>
 </table>
 <!-- REPORTSUMMARYEXTRA -->
 <h3>Annotated Source Code</h3>
@@ -407,22 +407,22 @@
 <tr><td class="num" id="LN304">304</td><td class="line">    <span class='comment'>/* convert integer "bit" chunk to floating-point value */</span></td></tr>
 <tr><td class="num" id="LN305">305</td><td class="line">    fw = scalbn(one,q0);</td></tr>
 <tr><td class="num" id="LN306">306</td><td class="line">    <span class='keyword'>for</span>(i=jz; <span class="mrange">i&gt;=0</span>; i--) {</td></tr>
-<tr><td class="num"></td><td class="line"><div id="Path17" class="msg msgEvent" style="margin-left:15ex"><table class="msgT"><tr><td valign="top"><div class="PathIndex PathIndexEvent">17</div></td><td><div class="PathNav"><a href="#Path16" title="Previous event (16)">&#x2190;</a></div></td></td><td>Assuming 'i' is &lt; 0</td><td><div class="PathNav"><a href="#Path18" title="Next event (18)">&#x2192;</a></div></td></tr></table></div></td></tr>
-<tr><td class="num"></td><td class="line"><div id="Path18" class="msg msgControl" style="margin-left:5ex"><table class="msgT"><tr><td valign="top"><div class="PathIndex PathIndexControl">18</div></td><td><div class="PathNav"><a href="#Path17" title="Previous event (17)">&#x2190;</a></div></td></td><td>Loop condition is false. Execution continues on line 312</td><td><div class="PathNav"><a href="#Path19" title="Next event (19)">&#x2192;</a></div></td></tr></table></div></td></tr>
-<tr><td class="num" id="LN307">307</td><td class="line">        q[i] = fw*(<span class='keyword'>double</span>)iq[i];</td></tr>
+<tr><td class="num"></td><td class="line"><div id="Path17" class="msg msgEvent" style="margin-left:15ex"><table class="msgT"><tr><td valign="top"><div class="PathIndex PathIndexEvent">17</div></td><td><div class="PathNav"><a href="#Path16" title="Previous event (16)">&#x2190;</a></div></td></td><td>Assuming 'i' is &gt;= 0</td><td><div class="PathNav"><a href="#Path18" title="Next event (18)">&#x2192;</a></div></td></tr></table></div></td></tr>
+<tr><td class="num"></td><td class="line"><div id="Path18" class="msg msgControl" style="margin-left:5ex"><table class="msgT"><tr><td valign="top"><div class="PathIndex PathIndexControl">18</div></td><td><div class="PathNav"><a href="#Path17" title="Previous event (17)">&#x2190;</a></div></td></td><td>Loop condition is true.  Entering loop body</td><td><div class="PathNav"><a href="#Path19" title="Next event (19)">&#x2192;</a></div></td></tr></table></div></td></tr>
+<tr><td class="num"></td><td class="line"><div id="Path19" class="msg msgControl" style="margin-left:5ex"><table class="msgT"><tr><td valign="top"><div class="PathIndex PathIndexControl">19</div></td><td><div class="PathNav"><a href="#Path18" title="Previous event (18)">&#x2190;</a></div></td></td><td>Loop condition is true.  Entering loop body</td><td><div class="PathNav"><a href="#EndPath" title="Next event (20)">&#x2192;</a></div></td></tr></table></div></td></tr>
+<tr><td class="num" id="LN307">307</td><td class="line">        q[i] = fw*(<span class='keyword'>double</span>)<span class="mrange">iq[i]</span>;</td></tr>
+<tr><td class="num"></td><td class="line"><div id="EndPath" class="msg msgEvent" style="margin-left:18ex"><table class="msgT"><tr><td valign="top"><div class="PathIndex PathIndexEvent">20</div></td><td><div class="PathNav"><a href="#Path19" title="Previous event (19)">&#x2190;</a></div></td></td><td>The right operand of '*' is a garbage value</td></tr></table></div></td></tr>
 <tr><td class="num" id="LN308">308</td><td class="line">        fw*=twon24;</td></tr>
 <tr><td class="num" id="LN309">309</td><td class="line">    }</td></tr>
 <tr><td class="num" id="LN310">310</td><td class="line"> </td></tr>
 <tr><td class="num" id="LN311">311</td><td class="line">    <span class='comment'>/* compute PIo2[0,...,jp]*q[jz,...,0] */</span></td></tr>
 <tr><td class="num" id="LN312">312</td><td class="line">    <span class='keyword'>for</span>(i=jz; i&gt;=0; i--) {</td></tr>
-<tr><td class="num"></td><td class="line"><div id="Path19" class="msg msgControl" style="margin-left:5ex"><table class="msgT"><tr><td valign="top"><div class="PathIndex PathIndexControl">19</div></td><td><div class="PathNav"><a href="#Path18" title="Previous event (18)">&#x2190;</a></div></td></td><td>Loop condition is false. Execution continues on line 318</td><td><div class="PathNav"><a href="#Path20" title="Next event (20)">&#x2192;</a></div></td></tr></table></div></td></tr>
 <tr><td class="num" id="LN313">313</td><td class="line">        <span class='keyword'>for</span>(fw=0.0,k=0; k&lt;=jp&amp;&amp;k&lt;=jz-i; k++) fw += PIo2[k]*q[i+k];</td></tr>
 <tr><td class="num" id="LN314">314</td><td class="line">        fq[jz-i] = fw;</td></tr>
 <tr><td class="num" id="LN315">315</td><td class="line">    }</td></tr>
 <tr><td class="num" id="LN316">316</td><td class="line"> </td></tr>
 <tr><td class="num" id="LN317">317</td><td class="line">    <span class='comment'>/* compress fq[] into y[] */</span></td></tr>
 <tr><td class="num" id="LN318">318</td><td class="line">    <span class='keyword'>switch</span>(prec) {</td></tr>
-<tr><td class="num"></td><td class="line"><div id="Path20" class="msg msgControl" style="margin-left:5ex"><table class="msgT"><tr><td valign="top"><div class="PathIndex PathIndexControl">20</div></td><td><div class="PathNav"><a href="#Path19" title="Previous event (19)">&#x2190;</a></div></td></td><td>Control jumps to 'case 3:'  at line 333</td><td><div class="PathNav"><a href="#Path21" title="Next event (21)">&#x2192;</a></div></td></tr></table></div></td></tr>
 <tr><td class="num" id="LN319">319</td><td class="line">    <span class='keyword'>case</span> 0:</td></tr>
 <tr><td class="num" id="LN320">320</td><td class="line">        fw = 0.0;</td></tr>
 <tr><td class="num" id="LN321">321</td><td class="line">        <span class='keyword'>for</span> (i=jz; i&gt;=0; i--) fw += fq[i];</td></tr>
@@ -439,23 +439,18 @@
 <tr><td class="num" id="LN332">332</td><td class="line">        <span class='keyword'>break</span>;</td></tr>
 <tr><td class="num" id="LN333">333</td><td class="line">    <span class='keyword'>case</span> 3:	<span class='comment'>/* painful */</span></td></tr>
 <tr><td class="num" id="LN334">334</td><td class="line">        <span class='keyword'>for</span> (i=jz; i&gt;0; i--) {</td></tr>
-<tr><td class="num"></td><td class="line"><div id="Path21" class="msg msgControl" style="margin-left:9ex"><table class="msgT"><tr><td valign="top"><div class="PathIndex PathIndexControl">21</div></td><td><div class="PathNav"><a href="#Path20" title="Previous event (20)">&#x2190;</a></div></td></td><td>Loop condition is false. Execution continues on line 339</td><td><div class="PathNav"><a href="#Path22" title="Next event (22)">&#x2192;</a></div></td></tr></table></div></td></tr>
 <tr><td class="num" id="LN335">335</td><td class="line">            fw      = fq[i-1]+fq[i];</td></tr>
 <tr><td class="num" id="LN336">336</td><td class="line">            fq[i]  += fq[i-1]-fw;</td></tr>
 <tr><td class="num" id="LN337">337</td><td class="line">            fq[i-1] = fw;</td></tr>
 <tr><td class="num" id="LN338">338</td><td class="line">        }</td></tr>
 <tr><td class="num" id="LN339">339</td><td class="line">        <span class='keyword'>for</span> (i=jz; i&gt;1; i--) {</td></tr>
-<tr><td class="num"></td><td class="line"><div id="Path22" class="msg msgControl" style="margin-left:9ex"><table class="msgT"><tr><td valign="top"><div class="PathIndex PathIndexControl">22</div></td><td><div class="PathNav"><a href="#Path21" title="Previous event (21)">&#x2190;</a></div></td></td><td>Loop condition is false. Execution continues on line 344</td><td><div class="PathNav"><a href="#Path23" title="Next event (23)">&#x2192;</a></div></td></tr></table></div></td></tr>
 <tr><td class="num" id="LN340">340</td><td class="line">            fw      = fq[i-1]+fq[i];</td></tr>
 <tr><td class="num" id="LN341">341</td><td class="line">            fq[i]  += fq[i-1]-fw;</td></tr>
 <tr><td class="num" id="LN342">342</td><td class="line">            fq[i-1] = fw;</td></tr>
 <tr><td class="num" id="LN343">343</td><td class="line">        }</td></tr>
 <tr><td class="num" id="LN344">344</td><td class="line">        <span class='keyword'>for</span> (fw=0.0,i=jz; i&gt;=2; i--) fw += fq[i];</td></tr>
-<tr><td class="num"></td><td class="line"><div id="Path23" class="msg msgControl" style="margin-left:9ex"><table class="msgT"><tr><td valign="top"><div class="PathIndex PathIndexControl">23</div></td><td><div class="PathNav"><a href="#Path22" title="Previous event (22)">&#x2190;</a></div></td></td><td>Loop condition is false. Execution continues on line 345</td><td><div class="PathNav"><a href="#Path24" title="Next event (24)">&#x2192;</a></div></td></tr></table></div></td></tr>
 <tr><td class="num" id="LN345">345</td><td class="line">        <span class='keyword'>if</span>(ih==0) {</td></tr>
-<tr><td class="num"></td><td class="line"><div id="Path24" class="msg msgControl" style="margin-left:9ex"><table class="msgT"><tr><td valign="top"><div class="PathIndex PathIndexControl">24</div></td><td><div class="PathNav"><a href="#Path23" title="Previous event (23)">&#x2190;</a></div></td></td><td>Taking true branch</td><td><div class="PathNav"><a href="#EndPath" title="Next event (25)">&#x2192;</a></div></td></tr></table></div></td></tr>
-<tr><td class="num" id="LN346">346</td><td class="line">            y[0] =  <span class="mrange">fq[0]</span>;</td></tr>
-<tr><td class="num"></td><td class="line"><div id="EndPath" class="msg msgEvent" style="margin-left:18ex"><table class="msgT"><tr><td valign="top"><div class="PathIndex PathIndexEvent">25</div></td><td><div class="PathNav"><a href="#Path24" title="Previous event (24)">&#x2190;</a></div></td></td><td>Assigned value is garbage or undefined</td></tr></table></div></td></tr>
+<tr><td class="num" id="LN346">346</td><td class="line">            y[0] =  fq[0];</td></tr>
 <tr><td class="num" id="LN347">347</td><td class="line">            y[1] =  fq[1];</td></tr>
 <tr><td class="num" id="LN348">348</td><td class="line">            y[2] =  fw;</td></tr>
 <tr><td class="num" id="LN349">349</td><td class="line">        } <span class='keyword'>else</span> {</td></tr>
