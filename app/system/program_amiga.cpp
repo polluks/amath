@@ -41,6 +41,12 @@
 #ifdef AMIGA
 #define ARGS_FORMAT "SHELL/S,INPUT/F"
 
+#ifdef AOS3
+# define RDPTR LONG*
+#else
+# define RDPTR IPTR*
+#endif
+
 AmigaProgram::AmigaProgram()
     : Program()
 {
@@ -68,7 +74,7 @@ void AmigaProgram::Initialize(int argc, char **argv)
         return;
     }
 
-    rdargs = (RDArgs*)ReadArgs((const char*)ARGS_FORMAT, (IPTR)&args, 0);
+    rdargs = (RDArgs*)ReadArgs((const char*)ARGS_FORMAT, (RDPTR)&args, 0);
     if (!rdargs)
     {
         PrintFault(IoErr(), (STRPTR)argv[0]);

@@ -81,8 +81,8 @@ void AmigaWindow::Create()
     };
 
     succeed = true;
-    succeed = succeed && (writeport = CreatePort(PORTCR, 0)) != 0;
-    succeed = succeed && (readport = CreatePort(PORTCW, 0)) != 0;
+    succeed = succeed && (writeport = CreatePort((char*)PORTCR, 0)) != 0;
+    succeed = succeed && (readport = CreatePort((char*)PORTCW, 0)) != 0;
     succeed = succeed && (writereq.st = CreateExtIO(writeport, sizeof(IOStdReq))) != 0;
     succeed = succeed && (readreq.st = CreateExtIO(readport, sizeof(IOStdReq))) != 0;
     succeed = succeed && (window = OpenWindow(&nw)) != 0;
