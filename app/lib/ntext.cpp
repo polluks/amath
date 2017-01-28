@@ -207,7 +207,7 @@ const char* PositionalNumeralSystem::GetText(double number)
 
     int fragdigits = digits - intdigits;
     if (fragdigits > 0) {
-        buf->Append('.');
+        buf->Append(fractionpoint);
 
         // TODO: Fix fraction error (try 1.5439)
         double fraction = fabs(round((dnumber - round(dnumber)) * pow(base, fragdigits)));
@@ -305,7 +305,7 @@ Number* PositionalNumeralSystem::Parse(const char *text, unsigned int *length, c
 
     double fraction = 0.0;
     double divisor = 1.0;
-    if (*text == fractionpoint) {
+    if (*text == fractionpoint && fractionpoint != '\0') {
         text++;
         pos++;
 
@@ -357,7 +357,7 @@ DecimalSystem::DecimalSystem() :
 { }
 
 DecimalSystem::DecimalSystem(unsigned int digits) :
-    PositionalNumeralSystem(10, digits, '.')
+    PositionalNumeralSystem(10, digits, '\0')
 { }
 
 DecimalSystem::DecimalSystem(
