@@ -1,7 +1,0 @@
-<map id="FunctionDefinitionNode::FunctionDefinitionNode" name="FunctionDefinitionNode::FunctionDefinitionNode">
-<area shape="rect" id="node2" href="$classCharBuffer.html#abe39d3fd7d8b9c8ec343af2cae7adc96" title="CharBuffer::Empty" alt="" coords="261,5,391,32"/>
-<area shape="rect" id="node3" href="$classCharBuffer.html#ae742439a2d5d5a0ad64411dcbf4604c8" title="CharBuffer::EnsureMinimumSize" alt="" coords="480,31,693,57"/>
-<area shape="rect" id="node4" href="$classStatementNode.html#a586026d6009a39d087792d621de86360" title="StatementNode::StatementNode" alt="" coords="220,107,432,133"/>
-<area shape="rect" id="node5" href="$classSyntaxNode.html#ac94372d402f38a118b4e8cd20ba7e520" title="SyntaxNode::SyntaxNode" alt="" coords="499,107,674,133"/>
-<area shape="rect" id="node6" href="$classCharBuffer.html#a4345e9a5114f5c0292e8f242f26e3a7b" title="Initialize without allocating memory. " alt="" coords="741,107,897,133"/>
-</map>

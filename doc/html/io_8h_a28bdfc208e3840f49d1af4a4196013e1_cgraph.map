@@ -1,6 +1,0 @@
-<map id="CreateLanguage" name="CreateLanguage">
-<area shape="rect" id="node2" href="$classPosixLanguage.html#adec9134e7ac6b7519f9c0de05432a670" title="PosixLanguage::PosixLanguage" alt="" coords="171,5,379,32"/>
-<area shape="rect" id="node4" href="$classStandardLanguage.html#a0d604e2af2f2bf4dc4abbe7b18c05cea" title="StandardLanguage::Standard\lLanguage" alt="" coords="179,57,370,98"/>
-<area shape="rect" id="node3" href="$classLanguage.html#a09448361f9188bceaaeebc5576cd6896" title="Language::Language" alt="" coords="465,9,607,36"/>
-<area shape="rect" id="node5" href="$classStandardLanguage.html#afd0037d341b94b08497842470007e59b" title="StandardLanguage::LoadCatalogs" alt="" coords="427,64,645,91"/>
-</map>

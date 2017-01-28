@@ -1,7 +1,0 @@
-<map id="CeilingNode::Create" name="CeilingNode::Create">
-<area shape="rect" id="node2" href="$classCeilingNode.html#ab3c7e409e41fe1f5c6561e907ff4a5bf" title="CeilingNode::CeilingNode" alt="" coords="193,5,365,32"/>
-<area shape="rect" id="node3" href="$classFunctionNode.html#a41cb7db0162ffbec0902bd8ff7ea435f" title="FunctionNode::FunctionNode" alt="" coords="413,5,605,32"/>
-<area shape="rect" id="node4" href="$classExpressionNode.html#adc8888de5329d356224c8a93f3ce2b75" title="ExpressionNode::ExpressionNode" alt="" coords="653,5,876,32"/>
-<area shape="rect" id="node5" href="$classSyntaxNode.html#ac94372d402f38a118b4e8cd20ba7e520" title="SyntaxNode::SyntaxNode" alt="" coords="924,5,1099,32"/>
-<area shape="rect" id="node6" href="$classCharBuffer.html#a4345e9a5114f5c0292e8f242f26e3a7b" title="Initialize without allocating memory. " alt="" coords="1147,5,1303,32"/>
-</map>

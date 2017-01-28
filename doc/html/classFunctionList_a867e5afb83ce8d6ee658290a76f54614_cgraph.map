@@ -1,6 +1,0 @@
-<map id="FunctionList::GetFunctionDef" name="FunctionList::GetFunctionDef">
-<area shape="rect" id="node2" href="$classVariable.html#accf221d35cec8a9707e84891b715fb6c" title="Variable::GetName" alt="" coords="268,5,401,32"/>
-<area shape="rect" id="node3" href="$classUserFunction.html#a59c59ebf5b45c5bb4aaa200a1218549d" title="UserFunction::GetName" alt="" coords="253,56,417,83"/>
-<area shape="rect" id="node4" href="$classUserFunction.html#a4580afdaa5124951a523de07f3c454a6" title="UserFunction::GetVariable" alt="" coords="247,107,423,133"/>
-<area shape="rect" id="node5" href="$strcmp_8c.html#a2a1f39d11cbbaac992d42e67557dac4b" title="Compare two null terminated strings to each other. " alt="" coords="293,157,376,184"/>
-</map>

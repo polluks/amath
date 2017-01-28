@@ -1,6 +1,0 @@
-<map id="Untag" name="Untag">
-<area shape="rect" id="node2" href="$classLanguage.html#a69c5b3269ec8570a2f8f28e8e632cf44" title="Language::UntagText" alt="" coords="111,31,257,57"/>
-<area shape="rect" id="node3" href="$classLanguage.html#aaed350eac1a57388b010e73826e3ab83" title="Language::GetText" alt="" coords="319,5,452,32"/>
-<area shape="rect" id="node4" href="$classLanguage.html#a0044feceac32f8ce943b88165ade965e" title="Language::GetHelpText" alt="" coords="305,56,465,83"/>
-<area shape="rect" id="node5" href="$classHelpStatement.html#a733d3471c3bcfdd2d07d4766bbdbf6db" title="HelpStatement::Execute" alt="" coords="513,56,679,83"/>
-</map>

@@ -1,8 +1,0 @@
-<map id="app/system/proc_amiga.cpp" name="app/system/proc_amiga.cpp">
-<area shape="rect" id="node2" href="$clib_8h.html" title="C functions for manipulating strings and memory. " alt="" coords="19,155,72,181"/>
-<area shape="rect" id="node6" href="$task_8h.html" title="Generic task/process logic. " alt="" coords="161,155,266,181"/>
-<area shape="rect" id="node7" href="$thread_8h.html" title="Generic thread logic. " alt="" coords="139,229,287,256"/>
-<area shape="rect" id="node8" href="$proc__amiga_8h.html" title="system/proc_amiga.h" alt="" coords="60,80,207,107"/>
-<area shape="rect" id="node3" href="$platform_8h.html" title="platform.h" alt="" coords="5,229,85,256"/>
-<area shape="rect" id="node5" href="$mem_8h.html" title="mem.h" alt="" coords="49,304,111,331"/>
-</map>

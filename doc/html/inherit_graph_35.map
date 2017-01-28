@@ -1,5 +1,0 @@
-<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" href="$classThreadBase.html" title="Abstract base class encapsulating runable component. " alt="" coords="5,5,97,32"/>
-<area shape="rect" id="node2" href="$classConsoleBase.html" title="Abstract base class encapsulating console logic. " alt="" coords="145,5,245,32"/>
-<area shape="rect" id="node3" href="$classStandardConsole.html" title="Encapsulates the IO of a console using Standard C and termios. " alt="" coords="293,5,416,32"/>
-</map>

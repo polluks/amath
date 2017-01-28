@@ -1,8 +1,0 @@
-<map id="StandardLanguage" name="StandardLanguage">
-<area shape="rect" id="node2" href="$classLanguage.html" title="Language" alt="" coords="77,95,155,121"/>
-<area shape="rect" id="node3" href="$classCharValidator.html" title="CharValidator" alt="" coords="5,5,107,32"/>
-<area shape="rect" id="node4" href="$structkeyworddef.html" title="Character representation of keyword tied with its symbol. " alt="" coords="131,5,221,32"/>
-<area shape="rect" id="node5" href="$structidenthelpdef.html" title="identhelpdef" alt="" coords="179,95,271,121"/>
-<area shape="rect" id="node6" href="$structtextdef.html" title="textdef" alt="" coords="299,95,362,121"/>
-<area shape="rect" id="node7" href="$structhelptextdef.html" title="helptextdef" alt="" coords="387,95,474,121"/>
-</map>

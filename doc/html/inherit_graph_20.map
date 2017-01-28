@@ -1,5 +1,0 @@
-<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" href="$structNumber.html" title="Number" alt="" coords="5,31,73,57"/>
-<area shape="rect" id="node2" href="$structComplexNumber.html" title="Represent a complex number with 2 componts of 15 siginificant digits. " alt="" coords="121,5,241,32"/>
-<area shape="rect" id="node3" href="$structRealNumber.html" title="Represent a real number with 15 siginificant digits. " alt="" coords="134,56,229,83"/>
-</map>
