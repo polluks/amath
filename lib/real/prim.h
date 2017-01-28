@@ -76,7 +76,7 @@ int __kernel_rem_pio2(double *x, double *y, int e0, int nx, int prec, const int 
 #define __IEEE_LITTLE_ENDIAN
 #endif
 
-#if defined(PPCCPU) || defined(__PPC__) || defined(__powerpc__)
+#if defined(PPCCPU) || defined(__PPC__) || defined(__powerpc__) || defined(__powerpc64__)
 #define __IEEE_BIG_ENDIAN
 #endif
 
