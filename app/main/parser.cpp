@@ -76,12 +76,17 @@ SyntaxNode* Parser::Parse()
                 delete result;
             }
 
-            result = new ErrorNode(lexer->GetInput(), token->GetPos());
-            if (block != NOMEM) {
-                block->Add(result);
+            if (block == NOMEM) {
+                block = new StatementBlockNode();
             }
 
-            GetToken();
+            result = new ErrorNode(lexer->GetInput(), token->GetPos());
+            block->Add(result);
+
+            // Skip until next statement
+            do {
+                GetToken();
+            } while (token->symbol != symdelimiter && token->symbol != symend);
         }
 
         current = token;
