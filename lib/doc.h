@@ -295,10 +295,18 @@
   \page    release_page Release history
   \section release_sec  Release history
 
+  \subsection version163 v1.6.3 January 30 2017
+  - Improved error handling
+  - Fixed error in fraction point parsing
+  - Fixed typo in help text
+  - 64 bit PowerPC support
+  - Fix AROS build errors
+
   \subsection version162 v1.6.2 January 24 2017
   - Fixed bug in memory allocation
   - Fixed bug in native keybord input
   - Included build options in executables
+  - ARM support
 
   \subsection version161 v1.6.1 January 21 2017
   - Fixed language bug in Windows
