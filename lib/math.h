@@ -44,8 +44,12 @@
 
 #define PI         3.141592653589793238462643383279
 #define EULERS     2.718281828459045235360287471352
-#define sgn(x)     x > 0.0 ? 1.0 : x < 0.0 ? -1.0 : 0.0
+#define sgn(x)     (x > 0.0 ? 1.0 : x < 0.0 ? -1.0 : 0.0)
 #define log2p(x,y) log(x)/log(y)
+
+#ifdef AMIGA
+# define abs(x)    (x > 0 ? x : -x)
+#endif
 
 #ifdef __cplusplus
 extern "C" {
