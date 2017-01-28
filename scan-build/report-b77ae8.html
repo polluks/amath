@@ -66,20 +66,20 @@
 
 <!-- FUNCTIONNAME BigInt_DivideWithRemainder_MaxQuotient9 -->
 
-<!-- ISSUEHASHCONTENTOFLINEINCONTEXT b0a6c18bddcaeef03c3ba40feb5f7f2d -->
+<!-- ISSUEHASHCONTENTOFLINEINCONTEXT 5ef4a777ad41f715ff5ff9ff007ae69a -->
 
-<!-- BUGLINE 631 -->
+<!-- BUGLINE 660 -->
 
 <!-- BUGCOLUMN 51 -->
 
-<!-- BUGPATHLENGTH 38 -->
+<!-- BUGPATHLENGTH 39 -->
 
 <!-- BUGMETAEND -->
 <!-- REPORTHEADER -->
 <h3>Bug Summary</h3>
 <table class="simpletable">
-<tr><td class="rowname">File:</td><td>lib/dconv/dragon4.cpp</td></tr>
-<tr><td class="rowname">Location:</td><td><a href="#EndPath">line 631, column 51</a></td></tr>
+<tr><td class="rowname">File:</td><td>dconv/dragon4.cpp</td></tr>
+<tr><td class="rowname">Location:</td><td><a href="#EndPath">line 660, column 51</a></td></tr>
 <tr><td class="rowname">Description:</td><td>The left operand of '-' is a garbage value</td></tr>
 </table>
 <!-- REPORTSUMMARYEXTRA -->
@@ -706,8 +706,8 @@
 <tr><td class="num" id="LN616">616</td><td class="line"> </td></tr>
 <tr><td class="num" id="LN617">617</td><td class="line">    <span class='comment'>// Divide out the estimated quotient</span></td></tr>
 <tr><td class="num" id="LN618">618</td><td class="line">    <span class='keyword'>if</span> (<span class="mrange">quotient != 0</span>)</td></tr>
-<tr><td class="num"></td><td class="line"><div id="Path35" class="msg msgEvent" style="margin-left:9ex"><table class="msgT"><tr><td valign="top"><div class="PathIndex PathIndexEvent">35</div></td><td><div class="PathNav"><a href="#Path34" title="Previous event (34)">&#x2190;</a></div></td></td><td>Assuming 'quotient' is not equal to 0</td><td><div class="PathNav"><a href="#Path36" title="Next event (36)">&#x2192;</a></div></td></tr></table></div></td></tr>
-<tr><td class="num"></td><td class="line"><div id="Path36" class="msg msgControl" style="margin-left:5ex"><table class="msgT"><tr><td valign="top"><div class="PathIndex PathIndexControl">36</div></td><td><div class="PathNav"><a href="#Path35" title="Previous event (35)">&#x2190;</a></div></td></td><td>Taking true branch</td><td><div class="PathNav"><a href="#Path37" title="Next event (37)">&#x2192;</a></div></td></tr></table></div></td></tr>
+<tr><td class="num"></td><td class="line"><div id="Path35" class="msg msgEvent" style="margin-left:9ex"><table class="msgT"><tr><td valign="top"><div class="PathIndex PathIndexEvent">35</div></td><td><div class="PathNav"><a href="#Path34" title="Previous event (34)">&#x2190;</a></div></td></td><td>Assuming 'quotient' is equal to 0</td><td><div class="PathNav"><a href="#Path36" title="Next event (36)">&#x2192;</a></div></td></tr></table></div></td></tr>
+<tr><td class="num"></td><td class="line"><div id="Path36" class="msg msgControl" style="margin-left:5ex"><table class="msgT"><tr><td valign="top"><div class="PathIndex PathIndexControl">36</div></td><td><div class="PathNav"><a href="#Path35" title="Previous event (35)">&#x2190;</a></div></td></td><td>Taking false branch</td><td><div class="PathNav"><a href="#Path37" title="Next event (37)">&#x2192;</a></div></td></tr></table></div></td></tr>
 <tr><td class="num" id="LN619">619</td><td class="line">    {</td></tr>
 <tr><td class="num" id="LN620">620</td><td class="line">        <span class='comment'>// dividend = dividend - divisor*quotient</span></td></tr>
 <tr><td class="num" id="LN621">621</td><td class="line">        <span class='keyword'>const</span> tU32 *pDivisorCur = divisor.m_blocks;</td></tr>
@@ -716,13 +716,11 @@
 <tr><td class="num" id="LN624">624</td><td class="line">        tU64 borrow = 0;</td></tr>
 <tr><td class="num" id="LN625">625</td><td class="line">        tU64 carry = 0;</td></tr>
 <tr><td class="num" id="LN626">626</td><td class="line">        <span class='keyword'>do</span></td></tr>
-<tr><td class="num"></td><td class="line"><div id="Path37" class="msg msgControl" style="margin-left:9ex"><table class="msgT"><tr><td valign="top"><div class="PathIndex PathIndexControl">37</div></td><td><div class="PathNav"><a href="#Path36" title="Previous event (36)">&#x2190;</a></div></td></td><td>Loop condition is true. Execution continues on line 628</td><td><div class="PathNav"><a href="#EndPath" title="Next event (38)">&#x2192;</a></div></td></tr></table></div></td></tr>
 <tr><td class="num" id="LN627">627</td><td class="line">        {</td></tr>
 <tr><td class="num" id="LN628">628</td><td class="line">            tU64 product = (tU64)*pDivisorCur * (tU64)quotient + carry;</td></tr>
 <tr><td class="num" id="LN629">629</td><td class="line">            carry = product &gt;&gt; 32;</td></tr>
 <tr><td class="num" id="LN630">630</td><td class="line"> </td></tr>
-<tr><td class="num" id="LN631">631</td><td class="line">            tU64 difference = (tU64)<span class="mrange">*pDividendCur</span> - (product &amp; 0xFFFFFFFF) - borrow;</td></tr>
-<tr><td class="num"></td><td class="line"><div id="EndPath" class="msg msgEvent" style="margin-left:51ex"><table class="msgT"><tr><td valign="top"><div class="PathIndex PathIndexEvent">38</div></td><td><div class="PathNav"><a href="#Path37" title="Previous event (37)">&#x2190;</a></div></td></td><td>The left operand of '-' is a garbage value</td></tr></table></div></td></tr>
+<tr><td class="num" id="LN631">631</td><td class="line">            tU64 difference = (tU64)*pDividendCur - (product &amp; 0xFFFFFFFF) - borrow;</td></tr>
 <tr><td class="num" id="LN632">632</td><td class="line">            borrow = (difference &gt;&gt; 32) &amp; 1;</td></tr>
 <tr><td class="num" id="LN633">633</td><td class="line"> </td></tr>
 <tr><td class="num" id="LN634">634</td><td class="line">            *pDividendCur = difference &amp; 0xFFFFFFFF;</td></tr>
@@ -741,6 +739,7 @@
 <tr><td class="num" id="LN647">647</td><td class="line">    <span class='comment'>// If the dividend is still larger than the divisor, we overshot our estimate quotient. To correct,</span></td></tr>
 <tr><td class="num" id="LN648">648</td><td class="line">    <span class='comment'>// we increment the quotient and subtract one more divisor from the dividend.</span></td></tr>
 <tr><td class="num" id="LN649">649</td><td class="line">    <span class='keyword'>if</span> ( BigInt_Compare(*pDividend, divisor) &gt;= 0 )</td></tr>
+<tr><td class="num"></td><td class="line"><div id="Path37" class="msg msgControl" style="margin-left:5ex"><table class="msgT"><tr><td valign="top"><div class="PathIndex PathIndexControl">37</div></td><td><div class="PathNav"><a href="#Path36" title="Previous event (36)">&#x2190;</a></div></td></td><td>Taking true branch</td><td><div class="PathNav"><a href="#Path38" title="Next event (38)">&#x2192;</a></div></td></tr></table></div></td></tr>
 <tr><td class="num" id="LN650">650</td><td class="line">    {</td></tr>
 <tr><td class="num" id="LN651">651</td><td class="line">        ++quotient;</td></tr>
 <tr><td class="num" id="LN652">652</td><td class="line"> </td></tr>
@@ -750,8 +749,10 @@
 <tr><td class="num" id="LN656">656</td><td class="line"> </td></tr>
 <tr><td class="num" id="LN657">657</td><td class="line">        tU64 borrow = 0;</td></tr>
 <tr><td class="num" id="LN658">658</td><td class="line">        <span class='keyword'>do</span></td></tr>
+<tr><td class="num"></td><td class="line"><div id="Path38" class="msg msgControl" style="margin-left:9ex"><table class="msgT"><tr><td valign="top"><div class="PathIndex PathIndexControl">38</div></td><td><div class="PathNav"><a href="#Path37" title="Previous event (37)">&#x2190;</a></div></td></td><td>Loop condition is true. Execution continues on line 660</td><td><div class="PathNav"><a href="#EndPath" title="Next event (39)">&#x2192;</a></div></td></tr></table></div></td></tr>
 <tr><td class="num" id="LN659">659</td><td class="line">        {</td></tr>
-<tr><td class="num" id="LN660">660</td><td class="line">            tU64 difference = (tU64)*pDividendCur - (tU64)*pDivisorCur - borrow;</td></tr>
+<tr><td class="num" id="LN660">660</td><td class="line">            tU64 difference = (tU64)<span class="mrange">*pDividendCur</span> - (tU64)*pDivisorCur - borrow;</td></tr>
+<tr><td class="num"></td><td class="line"><div id="EndPath" class="msg msgEvent" style="margin-left:51ex"><table class="msgT"><tr><td valign="top"><div class="PathIndex PathIndexEvent">39</div></td><td><div class="PathNav"><a href="#Path38" title="Previous event (38)">&#x2190;</a></div></td></td><td>The left operand of '-' is a garbage value</td></tr></table></div></td></tr>
 <tr><td class="num" id="LN661">661</td><td class="line">            borrow = (difference &gt;&gt; 32) &amp; 1;</td></tr>
 <tr><td class="num" id="LN662">662</td><td class="line"> </td></tr>
 <tr><td class="num" id="LN663">663</td><td class="line">            *pDividendCur = difference &amp; 0xFFFFFFFF;</td></tr>
