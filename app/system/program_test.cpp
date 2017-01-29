@@ -78,6 +78,7 @@ void TestProgram::RunTests()
     RunTestset4();
     RunTestset5();
     RunTestset6();
+    RunTestset7();
 }
 
 void TestProgram::TestExpression(const char* expression, const char* result)
@@ -142,6 +143,7 @@ void TestProgram::RunTestset1()
     TestExpression("10.2^1.2", "10.2^1.2 = 16.230063");
     TestExpression("100^0.5", "100^0.5 = 10");
     TestExpression("100^-0.3", "100^(-0.3) = 0.251188643");
+    TestExpression("283500/1050", "283500/1050 = 270");
     TestExpression("|1-2|", "|1-2| = 1");
     TestExpression("|1-|1-5||", "|1-|1-5|| = 3");
     TestExpression("sgn(2.3)", "sgn(2.3) = 1");
@@ -172,7 +174,7 @@ void TestProgram::RunTestset1()
 
 void TestProgram::RunTestset2()
 {
-    Output->SetDigits(9);
+    Input->SetDigits(9);
     Output->SetDigits(14);
     //                                    12345678901234
     TestExpression("pi",          "pi = 3.1415926535898");
@@ -216,7 +218,7 @@ void TestProgram::RunTestset2()
 
 void TestProgram::RunTestset3()
 {
-    Output->SetDigits(9);
+    Input->SetDigits(9);
     Output->SetDigits(11);
 
     TestExpression("-(1-2i)", "-(1-2i) = -1+2i");
@@ -274,7 +276,7 @@ void TestProgram::RunTestset3()
 
 void TestProgram::RunTestset4()
 {
-    Output->SetDigits(9);
+    Input->SetDigits(9);
     Output->SetDigits(14);
 
     TestExpression("cos(1+2i)",       "cos(1+2i) = 2.0327230070197-3.0518977991518i");
@@ -382,6 +384,27 @@ void TestProgram::RunTestset6()
     TestExecution("memory");
     TestExecution("version");
     TestExecution("variables");
+}
+
+void TestProgram::RunTestset7()
+{
+    delete Input;
+    Input = new DecimalSystem(4, ',');
+    delete Output;
+    Output = new DecimalSystem(14, ',');
+
+    TestExpression("cos(0,5)",         "cos(0,5) = 0,87758256189037");
+    TestExpression("sin(0,5)",         "sin(0,5) = 0,4794255386042");
+
+    delete Output;
+    Output = new DecimalSystem(14, '.');
+    TestExpression("cos(0,5)",         "cos(0,5) = 0.87758256189037");
+    TestExpression("sin(0,5)",         "sin(0,5) = 0.4794255386042");
+
+    delete Input;
+    Input = new DecimalSystem(4, '.');
+    TestExpression("cos(0.5)",         "cos(0.5) = 0.87758256189037");
+    TestExpression("sin(0.5)",         "sin(0.5) = 0.4794255386042");
 }
 
 #endif
