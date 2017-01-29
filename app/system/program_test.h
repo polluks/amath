@@ -57,8 +57,10 @@ private:
     void RunTestset3();
     void RunTestset4();
     void RunTestset5();
+    void RunTestset6();
 
     void TestExpression(const char *expression, const char *result);
     void TestStatement(const char *statement, const char *result);
-    void PerformTest(const char *input, const char *result, bool show);
+    void PerformTest(const char *input, const char *result, bool show, bool check);
+    void TestExecution(const char* statement);
 };

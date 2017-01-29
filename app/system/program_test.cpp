@@ -77,19 +77,25 @@ void TestProgram::RunTests()
     RunTestset3();
     RunTestset4();
     RunTestset5();
+    RunTestset6();
 }
 
 void TestProgram::TestExpression(const char* expression, const char* result)
 {
-    PerformTest(expression, result, true);
+    PerformTest(expression, result, true, true);
 }
 
 void TestProgram::TestStatement(const char* statement, const char* result)
 {
-    PerformTest(statement, result, false);
+    PerformTest(statement, result, false, true);
 }
 
-void TestProgram::PerformTest(const char* input, const char* result, bool show)
+void TestProgram::TestExecution(const char* statement)
+{
+    PerformTest(statement, EMPTYSTRING, false, false);
+}
+
+void TestProgram::PerformTest(const char* input, const char* result, bool show, bool check)
 {
     Evaluator *evaluator = new Evaluator(input);
     evaluator->Evaluate();
@@ -100,7 +106,7 @@ void TestProgram::PerformTest(const char* input, const char* result, bool show)
     buf->RemoveTrailing(NEWLINE);
     delete evaluator;
 
-    if (buf->Is(result)) {
+    if (buf->Is(result) || !check) {
         pass++;
         printf("PASS: [%s]" NEWLINE, show ? result : input);
     } else {
@@ -337,6 +343,45 @@ void TestProgram::RunTestset5()
     TestStatement("eval d=d+1", "d=(d+1) = 3.1");
     TestStatement("eval d=d*2", "d=(d*2) = 6.2");
     TestStatement("vars", "a = 2" NEWLINE "b = 3" NEWLINE "c = 5" NEWLINE "d = 6.2");
+}
+
+void TestProgram::RunTestset6()
+{
+    TestExecution("help");
+    TestExecution("help functions");
+    TestExecution("help trigon");
+    TestExecution("help hyper");
+    TestExecution("help complex");
+    TestExecution("help statements"); // Error
+    TestExecution("help operators");
+    TestExecution("help sin");
+    TestExecution("help help");
+    TestExecution("input hex");
+    TestExecution("input dec");
+    TestExecution("input oct");
+    TestExecution("input bin");
+    TestExecution("input 25");
+    TestExecution("output hex");
+    TestExecution("output dec");
+    TestExecution("output oct");
+    TestExecution("output bin");
+    TestExecution("output 25");
+    TestExecution("digits 1");
+    TestExecution("digits 5");
+    TestExecution("digits 9");
+    TestExecution("digits 15");
+    TestExecution("digits 33");
+    TestExecution("input");
+    TestExecution("output");
+    TestExecution("digits");
+    TestExecution("eval 7+7");
+    TestExecution("delete x");
+    TestExecution("delete pi");
+    TestExecution("eval pi/2"); // Error
+    TestExecution("list");
+    TestExecution("memory");
+    TestExecution("version");
+    TestExecution("variables");
 }
 
 #endif
