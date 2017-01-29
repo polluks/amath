@@ -58,6 +58,7 @@ private:
     void RunTestset4();
     void RunTestset5();
     void RunTestset6();
+    void RunTestset7();
 
     void TestExpression(const char *expression, const char *result);
     void TestStatement(const char *statement, const char *result);
