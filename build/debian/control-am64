@@ -1,8 +1,8 @@
 Package: amath
 Version: 1.6.2
-Architecture: i386
+Architecture: amd64
 Maintainer: Carsten Larsen <cs@innolan.dk>
-Installed-Size: 265640
+Installed-Size: 276
 Depends: libc6
 Section: math
 Essential: no
