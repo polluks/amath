@@ -1,0 +1,17 @@
+Package: amath
+Version: 1.6.2
+Architecture: i386
+Maintainer: Carsten Larsen <cs@innolan.dk>
+Installed-Size: 265640
+Depends: libc6
+Section: math
+Essential: no
+Priority: optional
+Homepage: http://amath.innolan.net
+Built-Using: gcc-5.4
+Description: Simple command line calculator
+ Features a case sensitive command line interface, internal IEEE 754
+ calculations with 15 significant digits, calculations with real and
+ complex numbers, variables and user defined functions, logarithmic
+ and exponential functions, trigonometric and hyperbolic function
+ and selected mathematical constants and rounding functions.
