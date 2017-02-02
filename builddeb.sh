@@ -32,7 +32,7 @@ cp script/* amath/usr/local/share/amath/
 # Make the package
 cp build/debian/control-amd64 amath/DEBIAN/control
 dpkg-deb --build amath
-mv amath.deb amath-1.6.2_amd64.deb
+mv amath.deb amath-1.6.3_amd64.deb
 
 # Build a debian package for i386
 
@@ -66,7 +66,7 @@ cp script/* amath/usr/local/share/amath/
 # Make the package
 cp build/debian/control-i386 amath/DEBIAN/control
 dpkg-deb --build amath
-mv amath.deb amath-1.6.2_i386.deb
+mv amath.deb amath-1.6.3_i386.deb
 
 # Cleanup
 #rm -Rf amath
