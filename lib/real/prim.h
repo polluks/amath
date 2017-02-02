@@ -26,8 +26,8 @@
  *
  */
 
-#ifndef LIBAMATH_REAL_PRIM_H
-#define LIBAMATH_REAL_PRIM_H
+#ifndef AMATH_LIB_REAL_PRIM_H
+#define AMATH_LIB_REAL_PRIM_H
 
 /**
  * @file  prim.h
@@ -37,7 +37,7 @@
  * The original library can be downloaded at:
  * http://www.netlib.org/fdlibm/
  *
- * or from mirros site:
+ * or from mirror site:
  * http://www.hensa.ac.uk/
  *
  * All headers and dates are preserved.
@@ -57,31 +57,63 @@ double __kernel_sin(double x, double y, int iy);
 double __kernel_tan(double x, double y, int iy);
 int __kernel_rem_pio2(double *x, double *y, int e0, int nx, int prec, const int *ipio2);
 
-// ---------------------------------------------------------------------------
-// ------------------ Define endianness for IEEE arithmetic ------------------
-// ---------------------------------------------------------------------------
-
-#if defined(mc68000)|| defined(__mc68000) || defined(_M68000) || \
-    defined(mc68020)|| defined(__mc68020) || defined(_M68020) || \
-    defined(mc68030)|| defined(__mc68030) || defined(_M68030) || \
-    defined(mc68040)|| defined(__mc68040) || defined(_M68040) || \
-    defined(mc68060)|| defined(__mc68060) || defined(_M68060)
-#define __IEEE_BIG_ENDIAN
-#endif
-
-#if defined(INTELCPU) || defined(i386)     || defined(i486)    || \
-    defined(intel)    || defined(x86)      || defined(i86pc)   || \
-    defined(__i386__) || defined(__alpha)  || defined(__osf__) || \
-    defined(__x86_64__) || defined(_M_IX86) || defined(_M_AMD64)
+/* Detect ARM CPUs */
+#if !defined(__IEEE_LITTLE_ENDIAN) && !defined(__IEEE_BIG_ENDIAN)
+#if defined(__arm__)          || defined(__ARM_ARCH_2__)    || \
+    defined(__ARM_ARCH_3__)   || defined(__ARM_ARCH_3M__)   || \
+    defined(__ARM_ARCH_4T__)  || defined(__TARGET_ARM_4T)   || \
+    defined(__ARM_ARCH_5__)   || defined(__ARM_ARCH_5E__)   || \
+    defined(__ARM_ARCH_5T__)  || defined(__ARM_ARCH_5TE__)  || \
+    defined(__ARM_ARCH_6__)   || defined(__ARM_ARCH_6J__)   || \
+    defined(__ARM_ARCH_6K__)  || defined(__ARM_ARCH_6Z__)   || \
+    defined(__ARM_ARCH_6ZK__) || defined(__ARM_ARCH_6T2__)  || \
+    defined(__ARM_ARCH_7__)   || defined(__ARM_ARCH_7A__)   || \
+    defined(__ARM_ARCH_7R__)  || defined(__ARM_ARCH_7M__)   || \
+    defined(__ARM_ARCH_7S_)   || defined(__ARM_ARCH_5TEJ__) || \
+    defined(_M_ARM)           || defined(ARMCPU)            || \
+    defined(__aarch64__)
 #define __IEEE_LITTLE_ENDIAN
 #endif
-
-#if defined(PPCCPU) || defined(__PPC__) || defined(__powerpc__) || defined(__powerpc64__)
-#define __IEEE_BIG_ENDIAN
 #endif
 
-#if defined(ARMCPU) || defined(__aarch64__) || defined(__arm__) || defined(_M_ARM)
+/* Detect Motorola CPUs */
+#if !defined(__IEEE_LITTLE_ENDIAN) && !defined(__IEEE_BIG_ENDIAN)
+#if defined(mc68000) || defined(__mc68000) || defined(_M68000) || \
+    defined(mc68020) || defined(__mc68020) || defined(_M68020) || \
+    defined(mc68030) || defined(__mc68030) || defined(_M68030) || \
+    defined(mc68040) || defined(__mc68040) || defined(_M68040) || \
+    defined(mc68060) || defined(__mc68060) || defined(_M68060) || \
+    defined(__m68k__)
+#define __IEEE_BIG_ENDIAN
+#endif
+#endif
+
+/* Detect Intel CPUs */
+#if !defined(__IEEE_LITTLE_ENDIAN) && !defined(__IEEE_BIG_ENDIAN)
+#if defined(i386) || defined(__i386) || defined(__i386__) || \
+    defined(i386) || defined(__i486) || defined(__i486__) || \
+    defined(i386) || defined(__i586) || defined(__i586__) || \
+    defined(i386) || defined(__i686) || defined(__i686__) || \
+    defined(x86)  || defined(intel)  || defined(i86pc)    || \
+    defined(_M_IX86) || defined(_M_AMD64) || defined(__x86_64__)  || \
+    defined(INTELCPU)
 #define __IEEE_LITTLE_ENDIAN
+#endif
+#endif
+
+/* Detect other LE CPUs */
+#if !defined(__IEEE_LITTLE_ENDIAN) && !defined(__IEEE_BIG_ENDIAN)
+#if defined(__alpha)  || defined(__osf__)
+#define __IEEE_LITTLE_ENDIAN
+#endif
+#endif
+
+/* Detect other BE CPUs */
+#if !defined(__IEEE_LITTLE_ENDIAN) && !defined(__IEEE_BIG_ENDIAN)
+#if defined(PPCCPU)      || defined(__PPC__) || \
+    defined(__powerpc__) || defined(__powerpc64__)
+#define __IEEE_BIG_ENDIAN
+#endif
 #endif
 
 #ifndef __IEEE_BIG_ENDIAN
@@ -256,4 +288,4 @@ do {                               \
 // ------------------- End of real primitive definitions ---------------------
 // ---------------------------------------------------------------------------
 
-#endif
+#endif /* AMATH_LIB_REAL_PRIM_H */
