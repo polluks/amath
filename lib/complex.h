@@ -24,8 +24,8 @@
  *
  */
 
-#ifndef LIBAMATH_COMPLEX_H
-#define LIBAMATH_COMPLEX_H
+#ifndef AMATH_LIB_COMPLEX_H
+#define AMATH_LIB_COMPLEX_H
 
 /**
  * @file  complex.h
@@ -108,14 +108,4 @@ complex cacoth(complex z);
 }
 #endif
 
-#endif
-
-
-
-
-
-
-
-
-
-
+#endif /* AMATH_LIB_COMPLEX_H */

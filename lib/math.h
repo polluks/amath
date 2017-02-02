@@ -24,8 +24,8 @@
  *
  */
 
-#ifndef LIBAMATH_REAL_H
-#define LIBAMATH_REAL_H
+#ifndef AMATH_LIB_MATH_H
+#define AMATH_LIB_MATH_H
 
 /**
  * @file  math.h
@@ -45,7 +45,7 @@
 #define PI         3.141592653589793238462643383279
 #define EULERS     2.718281828459045235360287471352
 #define sgn(x)     (x > 0.0 ? 1.0 : x < 0.0 ? -1.0 : 0.0)
-#define log2p(x,y) log(x)/log(y)
+#define log2p(x,y) (log(x)/log(y))
 
 #ifdef AMIGA
 # define abs(x)    (x > 0 ? x : -x)
@@ -96,4 +96,4 @@ int rempio2(double x, double *y);
 }
 #endif
 
-#endif
+#endif /* AMATH_LIB_MATH_H*/

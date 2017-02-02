@@ -24,8 +24,8 @@
  *
  */
 
-#ifndef AMIGA_MEM_H
-#define AMIGA_MEM_H
+#ifndef AMATH_LIB_MEM_H
+#define AMATH_LIB_MEM_H
 
 #include <stddef.h>
 
@@ -40,4 +40,4 @@ void MemUsage(long*,long*,long*);
 }
 #endif
 
-#endif
+#endif /* AMATH_LIB_MEM_H */

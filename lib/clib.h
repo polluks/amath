@@ -24,8 +24,8 @@
  *
  */
 
-#ifndef AMATH_CLIB_H
-#define AMATH_CLIB_H
+#ifndef AMATH_LIB_CLIB_H
+#define AMATH_LIB_CLIB_H
 
 /**
  * @file  clib.h
@@ -56,5 +56,4 @@ void Untag(char *destination, const char *source,
 }
 #endif
 
-#endif
-
+#endif /* AMATH_LIB_CLIB_H */

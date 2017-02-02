@@ -24,8 +24,8 @@
  *
  */
 
-#ifndef LIBAMATH_COMPLEX_PRIM_H
-#define LIBAMATH_COMPLEX_PRIM_H
+#ifndef AMATH_LIB_COMPLEX_PRIM_H
+#define AMATH_LIB_COMPLEX_PRIM_H
 
 /**
  * @file  prim.h
@@ -52,4 +52,4 @@ double ctans(complex z);
 }
 #endif
 
-#endif
+#endif /* AMATH_LIB_COMPLEX_PRIM_H */

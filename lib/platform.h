@@ -24,8 +24,8 @@
  *
  */
 
-#ifndef AMATH_LIB_PLATFROM_H
-#define AMATH_LIB_PLATFROM_H
+#ifndef AMATH_LIB_PLATFORM_H
+#define AMATH_LIB_PLATFORM_H
 
 #include <stddef.h>
 #include "mem.h"
@@ -76,14 +76,37 @@ typedef int bool;
 # endif
 #endif
 
-// Check weather an AmigaOS compatible API is available
+#ifdef __HAIKU__
+# ifndef HAIKU
+# define HAIKU
+# endif
+#endif
+
 #if defined(AOS3) || defined(AOS4) || defined(AROS) || defined (MORPHOS)
 # ifndef AMIGA
-#  define AMIGA
+# define AMIGA
 # endif
+#endif
+
+#if defined(unix) || defined(__unix__) || defined(__unix)
+# ifndef UNIX
+# define UNIX
+# endif
+#endif
+
+#if defined(AMIGA) || defined(HAIKU) || defined(UNIX)
 # ifndef ANSICONSOLE
-#  define ANSICONSOLE
+# define ANSICONSOLE
 # endif
+#endif
+
+#if defined(__STDC__) && !defined(AMIGA)
+# ifndef STDLIBS
+# define STDLIBS
+# endif
+#endif
+
+#ifdef AMIGA
 # include <dos/var.h>
 # include <dos/exall.h>
 # include <exec/io.h>
@@ -97,29 +120,37 @@ typedef int bool;
 # include <devices/conunit.h>
 #endif
 
-// Check weather an POSIX compatible API is available
-#if defined(unix) || defined(__unix__) || defined(__unix)
-# ifndef UNIX
-#  define UNIX
-# endif
-# ifndef ANSICONSOLE
-#  define ANSICONSOLE
-# endif
+#ifdef STDLIBS
+# include <stdio.h>
+# include <stdint.h>
+# include <stdlib.h>
+#endif
+
+#ifdef HAIKU
+# include <unistd.h>
+# include <dirent.h>
+#endif
+
+#ifdef UNIX
 # include <unistd.h>
 # include <dirent.h>
 # include <termios.h>
 #endif
 
-#if !defined(AMIGA) && defined(__STDC__)
+#ifdef _WIN32
 # include <stdio.h>
 # include <stdint.h>
-# include <stdlib.h>
+#endif
+
+#ifdef AOS3
+# include <sys/types.h>
 #endif
 
 #ifdef AROS
 # include <stdint.h>
 # include <sys/types.h>
 #endif
+
 #ifdef MORPHOS
 # include <stdint.h>
 # include <sys/types.h>
@@ -129,64 +160,15 @@ typedef int bool;
 # error Includedes must be defined for Amiga OS 4+
 #endif
 
-/* GCC 2.95 */
-#if (__GNUC__ == 2 && __GNUC_MINOR__ == 95)
-# include <sys/types.h>
-typedef u_int8_t    uint8_t;
-typedef u_int16_t   uint16_t;
-typedef u_int32_t   uint32_t;
-typedef u_int64_t   uint64_t;
-# define IPTR LONG*
-#ifdef __cplusplus
-inline void* operator new (size_t size) {
-    return AllocMemSafe(size);
-}
-
-inline void* operator new[] (size_t size) {
-    return AllocMemSafe(size);
-}
-
-inline void  operator delete (void* ptr) {
-    FreeMemSafe(ptr);
-}
-
-inline void  operator delete[] (void* ptr) {
-    FreeMemSafe(ptr);
-}
-#endif
+#ifdef AOS3
+#define IPTR      LONG*
+typedef u_int8_t  uint8_t;
+typedef u_int16_t uint16_t;
+typedef u_int32_t uint32_t;
+typedef u_int64_t uint64_t;
 #endif
 
-#ifdef _WIN32
-# include <stdio.h>
-# include <stdint.h>
-#endif
-
-#ifdef __cplusplus
-#if (__GNUC__ > 2) || defined (_WIN32)
-#include <new>
-inline void* operator new (size_t size) throw(std::bad_alloc) {
-    return AllocMemSafe(size);
-}
-
-inline void* operator new[] (size_t size) throw(std::bad_alloc) {
-    return AllocMemSafe(size);
-}
-
-inline void  operator delete (void* ptr) throw() {
-    FreeMemSafe(ptr);
-}
-
-inline void  operator delete[] (void* ptr) throw() {
-    FreeMemSafe(ptr);
-}
-#endif
-#endif
-
-/**
- * @brief
- * https://sourceforge.net/p/predef/wiki/Compilers/
- */
-
+/* Compilers*/
 #if defined(__clang__)
 /* Clang */
 # if defined(__apple_build_version__)
@@ -204,14 +186,17 @@ inline void  operator delete[] (void* ptr) throw() {
 #  define COMP_VERS      CL_VER_STR(__clang_major__) DOT \
                          CL_VER_STR(__clang_minor__)
 # endif
+
 /* Intel ICC/ICPC */
 #elif defined(__ECC) || defined(__ICC) || defined(__INTEL_COMPILER)
 # define COMP_NAME       "Intel ICC/ICPC"
 # define COMP_VERS       __VERSION__
+
 /* IBM XL C/C++ */
 #elif defined(__IBMC__) || defined(__IBMCPP__)
 # define COMP_NAME       "IBM XL"
 # define COMP_VERS       __xlc__
+
 /* Microsoft Visual Studio */
 #elif defined(_MSC_VER)
 # define COMP_NAME       "MSVC++"
@@ -242,6 +227,7 @@ inline void  operator delete[] (void* ptr) throw() {
 #  define MSC_VER_STR(x) str(x)
 #  define COMP_VERS      MSC_VER_STR(_MSC_VER)
 # endif
+
 /* Portland Group PGCC/PGCPP */
 #elif defined(__PGI)
 # define COMP_NAME       "PGCC/PGCPP"
@@ -255,6 +241,7 @@ inline void  operator delete[] (void* ptr) throw() {
 #  define COMP_VERS      PGCC_VER_STR(__PGIC__) DOT \
                          PGCC_VER_STR(__PGIC_MINOR)
 # endif
+
 /* GNU GCC/G++ */
 #elif defined(__GNUC__) || defined(__GNUG__)
 # define COMP_NAME       "GCC"
@@ -268,6 +255,7 @@ inline void  operator delete[] (void* ptr) throw() {
 # endif
 #endif
 
+/* ANSI escape codes */
 #if defined(ANSICONSOLE)
 #define HEADLINE         "\x1B[1m"
 #ifdef UNIX
@@ -306,6 +294,28 @@ inline void  operator delete[] (void* ptr) throw() {
 #define DELETE1CHAR      EMPTYSTRING
 #define DELETELINE       EMPTYSTRING
 #define CLEARWINDOW      EMPTYSTRING
+#endif /* ANSICONSOLE */
+
+/* Memory allocation */
+#ifdef __cplusplus
+
+/* GCC 2.95 */
+#if (__GNUC__ == 2 && __GNUC_MINOR__ == 95)
+inline void* operator new (size_t size) { return AllocMemSafe(size); }
+inline void* operator new[] (size_t size) { return AllocMemSafe(size); }
+inline void  operator delete (void* ptr) { FreeMemSafe(ptr); }
+inline void  operator delete[] (void* ptr) { FreeMemSafe(ptr); }
 #endif
 
+/* GCC 3+ and Windows */
+#if (__GNUC__ > 2) || defined (_WIN32)
+#include <new>
+inline void* operator new (size_t size) throw(std::bad_alloc) { return AllocMemSafe(size); }
+inline void* operator new[] (size_t size) throw(std::bad_alloc) { return AllocMemSafe(size); }
+inline void  operator delete (void* ptr) throw() { FreeMemSafe(ptr); }
+inline void  operator delete[] (void* ptr) throw() { FreeMemSafe(ptr); }
 #endif
+
+#endif /* __cplusplus */
+
+#endif /* AMATH_LIB_PLATFORM_H */
