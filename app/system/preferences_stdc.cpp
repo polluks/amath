@@ -33,7 +33,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#ifdef UNIX
+#if defined(UNIX) && defined(HAIKU)
 static const char *tempname = "/tmp/amath.prefs";
 static const char *permname = "/usr/local/etc/amath.conf";
 #else
@@ -43,7 +43,7 @@ static const char *permname = "amath.conf";
 
 bool StandardPreferences::Load()
 {
-#ifdef UNIX
+#if defined(UNIX) && defined(HAIKU)
     FILE *file = fopen(tempname, "r");
     if (!file) {
         return false;
@@ -85,7 +85,7 @@ bool StandardPreferences::Save()
 
 bool StandardPreferences::SavePrefs(const char* name)
 {
-#ifdef UNIX
+#if defined(UNIX) && defined(HAIKU)
     FILE *file = fopen(name, "w");
     if (!file) {
         return false;

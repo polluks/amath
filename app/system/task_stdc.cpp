@@ -28,7 +28,7 @@
 #include "system/task_stdc.h"
 #include "system/base/thread.h"
 
-#ifdef UNIX
+#if defined(UNIX) || defined(HAIKU)
 #include <unistd.h>
 #include <sys/types.h>
 #include <sys/wait.h>

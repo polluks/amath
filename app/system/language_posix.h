@@ -27,6 +27,7 @@
 #ifndef _LANGUAGE_POSIX_H
 #define _LANGUAGE_POSIX_H
 
+#include "clib.h"
 #include "localize/lex.h"
 #include "localize/help.h"
 #include "localize/text.h"

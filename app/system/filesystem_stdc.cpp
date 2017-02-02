@@ -38,7 +38,7 @@
 
 CharBuffer* StandardFilesystem::ListDirectory(const char *path)
 {
-#ifdef UNIX
+#if defined(UNIX) || defined(HAIKU)
     CharBuffer *pathbuf = new CharBuffer();
     pathbuf->Empty();
     if (path == NOMEM) {
@@ -82,6 +82,9 @@ CharBuffer* StandardFilesystem::ListDirectory(const char *path)
 
         const char *type;
 
+#ifdef HAIKU
+        type = TXTLISTDIRTUNKNOWN;
+#else
         switch (entry->d_type) {
         case DT_REG:
             type = TXTLISTDIRTFILE;
@@ -92,6 +95,7 @@ CharBuffer* StandardFilesystem::ListDirectory(const char *path)
         default:
             type = TXTLISTDIRTUNKNOWN;
         }
+#endif
 
         const unsigned short colsize = 12;
         unsigned int a = StrLen(type) > colsize ? colsize : StrLen(type);
