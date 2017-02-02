@@ -51,7 +51,7 @@
 # define TXTCPU        "PowerPC"
 #endif
 /******************************************************************************/
-#if defined(__arm__) || defined(_M_ARM)
+#if defined(__arm__) || defined(_M_ARM) || defined(__ARM_ARCH_6__)
 # define TXTCPU        "arm"
 #endif
 #if defined(__aarch64__) || defined(_M_ARM64)
@@ -91,8 +91,8 @@
 #endif
 /******************************************************************************/
 #ifndef TXTCPU
-#error what cpu is this ?!
-//#define TXTCPU EMPTYSTRING
+//#error what cpu is this ?!
+# define TXTCPU EMPTYSTRING
 #endif
 /******************************************************************************/
 #if defined(TXTCPU) && defined(__HAVE_68881__)
