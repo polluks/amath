@@ -314,7 +314,11 @@
   - Fixed error in fraction point parsing
   - Fixed typo in help text
   - 64 bit PowerPC support
-  - Fix AROS build errors
+  - Fixed AROS build errors
+  - Fixed ARMv6 build errors
+  - Fixed 64 bit ARM build errors
+  - Debian support
+  - NetBSD support
 
   \subsection version162 v1.6.2 January 24 2017
   - Fixed bug in memory allocation
