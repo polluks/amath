@@ -93,6 +93,8 @@
   <BR>
   FreeBSD: https://www.freshports.org/math/amath/ <BR>
   <BR>
+  NetBSD: http://ftp.netbsd.org/pub/pkgsrc/current/pkgsrc/math/amath/README.html <BR>
+  <BR>
   Included in the Icaros Desktop environment: http://vmwaros.blogspot.com/ <BR>
   <BR>
   Other packages: https://gitlab.com/rnger/amath-bin/tree/master <BR>
