@@ -2,7 +2,7 @@
 ---                           amath change history                          ---
 -------------------------------------------------------------------------------
 
-v1.6.3 January 30 2017
+v1.6.3 February 03 2017
 - Improved error handling
 - Fixed error in fraction point parsing
 - Fixed typo in help text
