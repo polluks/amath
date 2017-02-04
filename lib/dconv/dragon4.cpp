@@ -1157,5 +1157,5 @@ tU32 Dragon4
 
     // return the number of digits output
     RJ_ASSERT(pCurDigit - pOutBuffer <= (tPtrDiff)bufferSize);
-    return pCurDigit - pOutBuffer;
+    return (tU32)(pCurDigit - pOutBuffer);
 }

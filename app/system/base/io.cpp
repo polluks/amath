@@ -63,6 +63,8 @@
 #include <clib/dos_protos.h>
 #include <clib/intuition_protos.h>
 #include <clib/locale_protos.h>
+#else
+#include <stdio.h>
 #endif
 
 const char *vers = TXTDOSVERSION;

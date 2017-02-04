@@ -100,12 +100,6 @@ typedef int bool;
 # endif
 #endif
 
-#if defined(__STDC__) && !defined(AMIGA)
-# ifndef STDLIBS
-# define STDLIBS
-# endif
-#endif
-
 #ifdef AMIGA
 # include <dos/var.h>
 # include <dos/exall.h>
@@ -120,25 +114,20 @@ typedef int bool;
 # include <devices/conunit.h>
 #endif
 
-#ifdef STDLIBS
-# include <stdio.h>
-# include <stdint.h>
-# include <stdlib.h>
-#endif
-
 #ifdef HAIKU
+# include <stdint.h>
 # include <unistd.h>
 # include <dirent.h>
 #endif
 
 #ifdef UNIX
+# include <stdint.h>
 # include <unistd.h>
 # include <dirent.h>
 # include <termios.h>
 #endif
 
 #ifdef _WIN32
-# include <stdio.h>
 # include <stdint.h>
 #endif
 
