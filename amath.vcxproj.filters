@@ -402,6 +402,9 @@
     <ClCompile Include="lib\real\trunc.c">
       <Filter>lib\real</Filter>
     </ClCompile>
+    <ClCompile Include="lib\clib\memoo.cpp">
+      <Filter>lib\clib</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="app\lib\aengine.h">

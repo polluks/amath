@@ -35,11 +35,20 @@ void  operator delete (void* ptr) { FreeMemSafe(ptr); }
 void  operator delete[] (void* ptr) { FreeMemSafe(ptr); }
 #endif
 
-/* GCC 3+ and Windows */
-#if (__GNUC__ > 2) || defined (_WIN32)
+/* GCC 3+ */
+#if (__GNUC__ > 2)
 #include <new>
 void* operator new (size_t size) throw(std::bad_alloc) { return AllocMemSafe(size); }
 void* operator new[] (size_t size) throw(std::bad_alloc) { return AllocMemSafe(size); }
 void  operator delete (void* ptr) throw() { FreeMemSafe(ptr); }
 void  operator delete[] (void* ptr) throw() { FreeMemSafe(ptr); }
+#endif
+
+/* MSVC++ */
+#if defined (_WIN32)
+#include <new>
+void* __CRTDECL operator new (size_t size) { return AllocMemSafe(size); }
+void* __CRTDECL operator new[] (size_t size) { return AllocMemSafe(size); }
+void  __CRTDECL operator delete (void* ptr) throw() { FreeMemSafe(ptr); }
+void  __CRTDECL operator delete[] (void* ptr) throw() { FreeMemSafe(ptr); }
 #endif
