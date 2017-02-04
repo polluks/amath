@@ -126,7 +126,7 @@ void CharBuffer::EnsureSize(unsigned int size)
         } else { // Buffer already in use.
             // Make at least double size
             cursize = cursize < tempsize * 2 ? tempsize * 2 : cursize;
-            unsigned int offset = ptr - buf;
+            unsigned int offset = (unsigned int)(ptr - buf);
             char *temp = new char[cursize];
             MemCopy(temp, buf, tempsize);
             delete [] buf;
@@ -144,7 +144,7 @@ void CharBuffer::EnsureSize(unsigned int blocksize, unsigned int blocks)
             buf = new char[cursize];
             ptr = buf;
         } else {
-            unsigned int tptr = ptr - buf;
+            unsigned int tptr = (unsigned int)(ptr - buf);
             char *temp = new char[blocksize * blocks];
             MemCopy(temp, buf, cursize);
             delete [] buf;
@@ -157,7 +157,7 @@ void CharBuffer::EnsureSize(unsigned int blocksize, unsigned int blocks)
 
 void CharBuffer::EnsureGrowth(unsigned int size)
 {
-    EnsureSize((ptr - buf) + size);
+    EnsureSize((unsigned int)((ptr - buf) + size));
 }
 
 bool CharBuffer::Is(const char* string)

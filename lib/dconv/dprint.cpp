@@ -388,7 +388,7 @@ tU32 FormatScientific
     RJ_ASSERT( bufferSize > 0 );
     pCurOut[0] = '\0';
 
-    return pCurOut - pOutBuffer;
+    return (tU32)(pCurOut - pOutBuffer);
 }
 
 //******************************************************************************
@@ -418,7 +418,7 @@ static tU32 PrintHex(tC8 * pOutBuffer, tU32 bufferSize, tU64 value, tU32 width)
     }
 
     *pCurOut = '\0';
-    return pCurOut - pOutBuffer;
+    return (tU32)(pCurOut - pOutBuffer);
 }
 
 //******************************************************************************

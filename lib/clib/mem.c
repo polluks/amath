@@ -213,8 +213,8 @@ void FreeAllSafe()
 void MemUsage(long *blocks, long *size, long *peak)
 {
     *blocks = list->count;
-    *size = list->size;
-    *peak = list->peak;;
+    *size = (long)list->size;
+    *peak = (long)list->peak;;
 }
 
 /**
