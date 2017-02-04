@@ -444,11 +444,14 @@ const char* DecimalSystem::GetRealText(double value)
     PrintFloat64(out, size, roundedvalue, format, formatdigits, fractionpoint);
     buf->EnsureGrowth(size);
     buf->Append(out);
-    while (buf->RemoveTrailing('0'))
-        ;
-    buf->RemoveTrailing(fractionpoint);
-    delete[] out;
 
+    if (fractionpoint != '\0' && buf->Contains(fractionpoint))
+    {
+        while (buf->RemoveTrailing('0'))
+            ;
+        buf->RemoveTrailing(fractionpoint);
+    }
+
+    delete[] out;
     return buf->GetString();
 }
-
