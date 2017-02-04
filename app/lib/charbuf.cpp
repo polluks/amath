@@ -165,6 +165,24 @@ bool CharBuffer::Is(const char* string)
     return StrIsEqual(GetString(), string);
 }
 
+bool CharBuffer::Contains(const char c)
+{
+    char* i = buf;
+
+    if (i == NOMEM || buf == ptr)
+        return false;
+
+    do
+    {
+        if (*i == c)
+            return true;
+
+        i++;
+    } while (i != ptr);
+
+    return false;
+}
+
 void CharBuffer::Empty()
 {
     if (buf == NOMEM) {

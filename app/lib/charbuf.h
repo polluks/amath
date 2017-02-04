@@ -59,6 +59,7 @@ public:
     * @brief Compare content of CharBuffer with string)
     */
     bool Is(const char *string);
+    bool Contains(const char c);
 
     void Copy(CharBuffer *buf);
     void Append(const char *source);
