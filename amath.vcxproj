@@ -64,6 +64,7 @@
     <ClCompile Include="lib\clib\alloccpy.c" />
     <ClCompile Include="lib\clib\mem.c" />
     <ClCompile Include="lib\clib\memcpy.c" />
+    <ClCompile Include="lib\clib\memoo.cpp" />
     <ClCompile Include="lib\clib\memset.c" />
     <ClCompile Include="lib\clib\strcmp.c" />
     <ClCompile Include="lib\clib\strlen.c" />
@@ -213,7 +214,7 @@
     <ProjectGuid>{21BD69A9-7F52-48D9-9846-6943E90A87A9}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
     <RootNamespace>amath</RootNamespace>
-    <WindowsTargetPlatformVersion>10.0.10586.0</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformVersion>10.0.10240.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -276,7 +277,7 @@
       </PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
-      <PreprocessorDefinitions>ANSICONSOLE;WITHTEST;WIN32;_DEBUG;_CONSOLE;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WITHTEST;WIN32;_DEBUG;_CONSOLE;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <AdditionalIncludeDirectories>app;lib</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
@@ -290,7 +291,7 @@
       </PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
-      <PreprocessorDefinitions>ANSICONSOLE;WITHTEST;WIN32;_DEBUG;_CONSOLE;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WITHTEST;WIN32;_DEBUG;_CONSOLE;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <AdditionalIncludeDirectories>app;lib</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
