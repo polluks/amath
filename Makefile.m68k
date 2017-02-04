@@ -5,7 +5,7 @@ AR       = m68k-amigaos-ar
 RANLIB   = m68k-amigaos-ranlib
 CFLAGS   = -m68020  -DWITHTEST -noixemul 
 CXXFLAGS = -m68020  -DWITHTEST -noixemul -I.
-LFLAGS   = -lstdc++ -lamathapp -lcamath -lcomplex -lamath
+LFLAGS   = -lamathapp -lcomplex -lamath -lcamath -lstdc++
 
 FLXCAT   = build/flexcat/flexcat
 MKDIR    = mkdir
@@ -386,6 +386,9 @@ dmath.o:	lib/dconv/dmath.cpp
 dprint.o:	lib/dconv/dprint.cpp
 	${CXX} -O3 ${CXXFLAGS} -m68020 -fno-builtin -Wall -Werror -Ilib -Ilib/dconv -c lib/dconv/dprint.cpp
 
+memoo.o:	lib/clib/memoo.cpp
+	${CXX} -O3 ${CXXFLAGS} -m68020 -fno-builtin -Wall -Werror -Ilib -Ilib/dconv -c lib/clib/memoo.cpp
+
 catalogsa:
 	${FLXCAT} text/keyword.cd app/localize/kword.h=text/keyword.sd
 	${FLXCAT} text/help.cd app/localize/help.h=text/help.sd
@@ -416,8 +419,8 @@ libcomplex:	 cacos.o cacosh.o cacot.o cacoth.o cacsc.o cacsch.o casec.o casech.o
 	${AR} rcs libcomplex.a  cacos.o cacosh.o cacot.o cacoth.o cacsc.o cacsch.o casec.o casech.o casin.o casinh.o catan.o catanh.o ccbrt.o ccos.o ccosh.o ccot.o ccoth.o ccsc.o ccsch.o cexp.o clog.o clog10.o clogb.o cpow.o csec.o csech.o csgn.o csin.o csinh.o csqrt.o ctan.o ctanh.o prim.o
 	${RANLIB} libcomplex.a
 
-libcamath:	 alloccpy.o mem.o memcpy.o memset.o strcmp.o strlen.o untag.o dragon4.o dmath.o dprint.o
-	${AR} rcs libcamath.a  alloccpy.o mem.o memcpy.o memset.o strcmp.o strlen.o untag.o dragon4.o dmath.o dprint.o
+libcamath:	 alloccpy.o mem.o memcpy.o memset.o strcmp.o strlen.o untag.o dragon4.o dmath.o dprint.o memoo.o
+	${AR} rcs libcamath.a  alloccpy.o mem.o memcpy.o memset.o strcmp.o strlen.o untag.o dragon4.o dmath.o dprint.o memoo.o
 	${RANLIB} libcamath.a
 
 app:	libs  evaluator.o functions.o graphlist.o lexer.o nodes.o operators.o optimizer.o parser.o statements.o token.o values.o viewer.o console.o console_amiga.o console_stdc.o filesystem_amiga.o filesystem_stdc.o graph.o graph_amiga.o graph_gtk.o language.o language_amiga.o language_posix.o language_stdc.o preferences.o preferences_amiga.o preferences_stdc.o proc_amiga.o program.o program_amiga.o program_stdc.o program_test.o task_amiga.o task_stdc.o window_amiga.o io.o main.o
@@ -441,10 +444,10 @@ amigacatalogs:
 	${FLXCAT} text/keyword.cd catalog/dansk/amath-keyword.ct CATALOG dist/catalog/dansk/amath-keyword.catalog
 
 clean:
-	${DEL}  aengine.o charbuf.o cplex.o fgrid.o ntext.o real.o  acos.o acosh.o asin.o asinh.o atan.o atan2.o atanh.o cbrt.o ceil.o copysign.o cos.o cosh.o exp.o expm1.o fabs.o finite.o floor.o fmod.o hypot.o isnan.o kcos.o kremp2.o ksin.o ktan.o log.o log10.o log1p.o pow.o remp2.o round.o scalbn.o sin.o sinh.o sqrt.o tan.o tanh.o trunc.o  cacos.o cacosh.o cacot.o cacoth.o cacsc.o cacsch.o casec.o casech.o casin.o casinh.o catan.o catanh.o ccbrt.o ccos.o ccosh.o ccot.o ccoth.o ccsc.o ccsch.o cexp.o clog.o clog10.o clogb.o cpow.o csec.o csech.o csgn.o csin.o csinh.o csqrt.o ctan.o ctanh.o prim.o  alloccpy.o mem.o memcpy.o memset.o strcmp.o strlen.o untag.o dragon4.o dmath.o dprint.o  evaluator.o functions.o graphlist.o lexer.o nodes.o operators.o optimizer.o parser.o statements.o token.o values.o viewer.o console.o console_amiga.o console_stdc.o filesystem_amiga.o filesystem_stdc.o graph.o graph_amiga.o graph_gtk.o language.o language_amiga.o language_posix.o language_stdc.o preferences.o preferences_amiga.o preferences_stdc.o proc_amiga.o program.o program_amiga.o program_stdc.o program_test.o task_amiga.o task_stdc.o window_amiga.o io.o main.o libamath.a libcamath.a libcomplex.a libamathapp.a amath
+	${DEL}  aengine.o charbuf.o cplex.o fgrid.o ntext.o real.o  acos.o acosh.o asin.o asinh.o atan.o atan2.o atanh.o cbrt.o ceil.o copysign.o cos.o cosh.o exp.o expm1.o fabs.o finite.o floor.o fmod.o hypot.o isnan.o kcos.o kremp2.o ksin.o ktan.o log.o log10.o log1p.o pow.o remp2.o round.o scalbn.o sin.o sinh.o sqrt.o tan.o tanh.o trunc.o  cacos.o cacosh.o cacot.o cacoth.o cacsc.o cacsch.o casec.o casech.o casin.o casinh.o catan.o catanh.o ccbrt.o ccos.o ccosh.o ccot.o ccoth.o ccsc.o ccsch.o cexp.o clog.o clog10.o clogb.o cpow.o csec.o csech.o csgn.o csin.o csinh.o csqrt.o ctan.o ctanh.o prim.o  alloccpy.o mem.o memcpy.o memset.o strcmp.o strlen.o untag.o dragon4.o dmath.o dprint.o memoo.o  evaluator.o functions.o graphlist.o lexer.o nodes.o operators.o optimizer.o parser.o statements.o token.o values.o viewer.o console.o console_amiga.o console_stdc.o filesystem_amiga.o filesystem_stdc.o graph.o graph_amiga.o graph_gtk.o language.o language_amiga.o language_posix.o language_stdc.o preferences.o preferences_amiga.o preferences_stdc.o proc_amiga.o program.o program_amiga.o program_stdc.o program_test.o task_amiga.o task_stdc.o window_amiga.o io.o main.o libamath.a libcamath.a libcomplex.a libamathapp.a amath
 
 distclean:
-	${DEL}  aengine.o charbuf.o cplex.o fgrid.o ntext.o real.o  acos.o acosh.o asin.o asinh.o atan.o atan2.o atanh.o cbrt.o ceil.o copysign.o cos.o cosh.o exp.o expm1.o fabs.o finite.o floor.o fmod.o hypot.o isnan.o kcos.o kremp2.o ksin.o ktan.o log.o log10.o log1p.o pow.o remp2.o round.o scalbn.o sin.o sinh.o sqrt.o tan.o tanh.o trunc.o  cacos.o cacosh.o cacot.o cacoth.o cacsc.o cacsch.o casec.o casech.o casin.o casinh.o catan.o catanh.o ccbrt.o ccos.o ccosh.o ccot.o ccoth.o ccsc.o ccsch.o cexp.o clog.o clog10.o clogb.o cpow.o csec.o csech.o csgn.o csin.o csinh.o csqrt.o ctan.o ctanh.o prim.o  alloccpy.o mem.o memcpy.o memset.o strcmp.o strlen.o untag.o dragon4.o dmath.o dprint.o  evaluator.o functions.o graphlist.o lexer.o nodes.o operators.o optimizer.o parser.o statements.o token.o values.o viewer.o console.o console_amiga.o console_stdc.o filesystem_amiga.o filesystem_stdc.o graph.o graph_amiga.o graph_gtk.o language.o language_amiga.o language_posix.o language_stdc.o preferences.o preferences_amiga.o preferences_stdc.o proc_amiga.o program.o program_amiga.o program_stdc.o program_test.o task_amiga.o task_stdc.o window_amiga.o io.o main.o libamath.a libcamath.a libcomplex.a libamathapp.a amath
+	${DEL}  aengine.o charbuf.o cplex.o fgrid.o ntext.o real.o  acos.o acosh.o asin.o asinh.o atan.o atan2.o atanh.o cbrt.o ceil.o copysign.o cos.o cosh.o exp.o expm1.o fabs.o finite.o floor.o fmod.o hypot.o isnan.o kcos.o kremp2.o ksin.o ktan.o log.o log10.o log1p.o pow.o remp2.o round.o scalbn.o sin.o sinh.o sqrt.o tan.o tanh.o trunc.o  cacos.o cacosh.o cacot.o cacoth.o cacsc.o cacsch.o casec.o casech.o casin.o casinh.o catan.o catanh.o ccbrt.o ccos.o ccosh.o ccot.o ccoth.o ccsc.o ccsch.o cexp.o clog.o clog10.o clogb.o cpow.o csec.o csech.o csgn.o csin.o csinh.o csqrt.o ctan.o ctanh.o prim.o  alloccpy.o mem.o memcpy.o memset.o strcmp.o strlen.o untag.o dragon4.o dmath.o dprint.o memoo.o  evaluator.o functions.o graphlist.o lexer.o nodes.o operators.o optimizer.o parser.o statements.o token.o values.o viewer.o console.o console_amiga.o console_stdc.o filesystem_amiga.o filesystem_stdc.o graph.o graph_amiga.o graph_gtk.o language.o language_amiga.o language_posix.o language_stdc.o preferences.o preferences_amiga.o preferences_stdc.o proc_amiga.o program.o program_amiga.o program_stdc.o program_test.o task_amiga.o task_stdc.o window_amiga.o io.o main.o libamath.a libcamath.a libcomplex.a libamathapp.a amath
 	${DELREC} dist
 
 depend:
