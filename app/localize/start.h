@@ -117,9 +117,9 @@
 #endif
 /******************************************************************************/
 #define TXTARCH        TXTCPU TXTFPU
-#define RELDATESTAMP   "(03-02-2017)"
-#define TXTDOSVERSION  "\0$VER: amath 1.63" SPACE RELDATESTAMP SPACE TXTARCH
-#define TXTTITLE       "amath version 1.6.3"
+#define RELDATESTAMP   "(04-02-2017)"
+#define TXTDOSVERSION  "\0$VER: amath 1.64" SPACE RELDATESTAMP SPACE TXTARCH
+#define TXTTITLE       "amath version 1.6.4"
 #define TXTCOPYRIGHT   "(c) 2017 Carsten Sonne Larsen"
 #define TXTSTARTMSG    TXTTITLE SPACE TXTCOPYRIGHT
 /******************************************************************************/

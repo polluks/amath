@@ -309,6 +309,10 @@
   \page    release_page Release history
   \section release_sec  Release history
 
+  \subsection version164 v1.6.4 February 04 2017
+  - Fixed Windows memory bugs
+  - Fixed 64 bit memory bugs
+
   \subsection version163 v1.6.3 January 30 2017
   - Improved error handling
   - Fixed error in fraction point parsing
