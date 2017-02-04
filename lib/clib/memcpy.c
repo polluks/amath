@@ -52,10 +52,12 @@
  * sizeof(word) MUST BE A POWER OF TWO
  * SO THAT wmask BELOW IS ALL ONES
  */
-#if defined(__x86_64__) || defined(__aarch64__) || defined(_M_AMD64) || defined(_M_ARM64) || defined(__powerpc64__)
-typedef uint64_t word;
-#else
 typedef uint32_t word;
+
+#ifdef _WIN32
+typedef unsigned long long mem_ptr;
+#else
+typedef unsigned long mem_ptr;
 #endif
 
 /**
@@ -77,13 +79,13 @@ void MemCopy(void *destination, const void *source, unsigned int length)
     if (length == 0 || dst == src) // nothing to do
         return;
 
-    if ((unsigned long)dst < (unsigned long)src) {
+    if ((mem_ptr)dst < (mem_ptr)src) {
         // Copy forward
-        t = (unsigned long)src; // only need low bits
-        if ((t | (unsigned long)dst) & wmask) {
+        t = (mem_ptr)src; // only need low bits
+        if ((t | (mem_ptr)dst) & wmask) {
 
             // Try to align operands.  This cannot be done unless the low bits match.
-            if ((t ^ (unsigned long)dst) & wmask || length < wsize)
+            if ((t ^ (mem_ptr)dst) & wmask || length < wsize)
                 t = length;
             else
                 t = wsize - (t & wmask);
@@ -105,10 +107,10 @@ void MemCopy(void *destination, const void *source, unsigned int length)
         // (t&wmask) bytes to align, not wsize-(t&wmask).
         src += length;
         dst += length;
-        t = (unsigned long)src;
-        if ((t | (unsigned long)dst) & wmask) {
+        t = (mem_ptr)src;
+        if ((t | (mem_ptr)dst) & wmask) {
 
-            if ((t ^ (unsigned long)dst) & wmask || length <= wsize)
+            if ((t ^ (mem_ptr)dst) & wmask || length <= wsize)
                 t = length;
             else
                 t &= wmask;

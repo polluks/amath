@@ -47,6 +47,12 @@
 #pragma GCC diagnostic ignored "-Wcast-align"
 #endif
 
+#ifdef _WIN32
+typedef unsigned long long mem_ptr;
+#else
+typedef unsigned long mem_ptr;
+#endif
+
 /**
  * @brief Fill block of memory with a constant value.
  */
@@ -87,7 +93,7 @@ void MemSet(void *dst0, int c0, unsigned int length)
     }
 
     /* Align destination by filling in bytes. */
-    if ((t = (long)dst & wmask) != 0) {
+    if ((t = (mem_ptr)dst & wmask) != 0) {
         t = wsize - t;
         length -= t;
         do {

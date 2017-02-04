@@ -43,6 +43,12 @@
 # define Debug(x,y,z)
 #endif
 
+#if defined(__x86_64__) || defined(__aarch64__) || \
+    defined(_M_AMD64)   || defined(_M_ARM64)    || \
+    defined(__powerpc64__)
+#define P64BIT
+#endif
+
 /**
  * @brief Block of allocated memory.
  */
@@ -59,8 +65,8 @@ struct MemoryBlock
 struct MemoryList
 {
     struct MemoryBlock *first;
-    long peak;
-    long size;
+    size_t peak;
+    size_t size;
     long count;
 };
 
@@ -93,7 +99,7 @@ void* AllocMemSafe(size_t size)
         list->count = 0;
     }
 
-#if defined(__x86_64__) || defined(__aarch64__) || defined(_M_AMD64) || defined(_M_ARM64) || defined(__powerpc64__)
+#ifdef P64BIT
     // Align to bytes of 8
     allocsize = (size + 7) & ~0x07;
 #else

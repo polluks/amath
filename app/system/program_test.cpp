@@ -357,7 +357,7 @@ void TestProgram::RunTestset6()
     TestExecution("help trigon");
     TestExecution("help hyper");
     TestExecution("help complex");
-    TestExecution("help statements"); // Error
+    TestExecution("help statements");
     TestExecution("help operators");
     TestExecution("help sin");
     TestExecution("help help");
@@ -382,7 +382,7 @@ void TestProgram::RunTestset6()
     TestExecution("eval 7+7");
     TestExecution("delete x");
     TestExecution("delete pi");
-    TestExecution("eval pi/2"); // Error
+    TestExecution("eval pi/2");
     TestExecution("list");
     TestExecution("memory");
     TestExecution("version");
