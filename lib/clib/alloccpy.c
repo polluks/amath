@@ -46,7 +46,7 @@ unsigned int AllocAndCopy(char **destination, const char *source)
     while (*i)
         i++;
 
-    n = i - s + 1;
+    n = (unsigned int)(i - s + 1);
     size = n;
     *destination = AllocMemSafe(size);
     d = *destination;

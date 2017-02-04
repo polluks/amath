@@ -24,15 +24,22 @@
  *
  */
 
-/**
- * @brief Get the length of a null terminated string.
- *
- */
-int StrLen(const char *string)
-{
-    char *i = (char*)string;
-    char *s = i;
-    while (*i)
-        i++;
-    return (int)(i - s);
-}
+#include "mem.h"
+#include "clib.h"
+
+/* GCC 2.95 */
+#if (__GNUC__ == 2 && __GNUC_MINOR__ == 95)
+void* operator new (size_t size) { return AllocMemSafe(size); }
+void* operator new[] (size_t size) { return AllocMemSafe(size); }
+void  operator delete (void* ptr) { FreeMemSafe(ptr); }
+void  operator delete[] (void* ptr) { FreeMemSafe(ptr); }
+#endif
+
+/* GCC 3+ and Windows */
+#if (__GNUC__ > 2) || defined (_WIN32)
+#include <new>
+void* operator new (size_t size) throw(std::bad_alloc) { return AllocMemSafe(size); }
+void* operator new[] (size_t size) throw(std::bad_alloc) { return AllocMemSafe(size); }
+void  operator delete (void* ptr) throw() { FreeMemSafe(ptr); }
+void  operator delete[] (void* ptr) throw() { FreeMemSafe(ptr); }
+#endif

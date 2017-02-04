@@ -296,26 +296,4 @@ typedef u_int64_t uint64_t;
 #define CLEARWINDOW      EMPTYSTRING
 #endif /* ANSICONSOLE */
 
-/* Memory allocation */
-#ifdef __cplusplus
-
-/* GCC 2.95 */
-#if (__GNUC__ == 2 && __GNUC_MINOR__ == 95)
-inline void* operator new (size_t size) { return AllocMemSafe(size); }
-inline void* operator new[] (size_t size) { return AllocMemSafe(size); }
-inline void  operator delete (void* ptr) { FreeMemSafe(ptr); }
-inline void  operator delete[] (void* ptr) { FreeMemSafe(ptr); }
-#endif
-
-/* GCC 3+ and Windows */
-#if (__GNUC__ > 2) || defined (_WIN32)
-#include <new>
-inline void* operator new (size_t size) throw(std::bad_alloc) { return AllocMemSafe(size); }
-inline void* operator new[] (size_t size) throw(std::bad_alloc) { return AllocMemSafe(size); }
-inline void  operator delete (void* ptr) throw() { FreeMemSafe(ptr); }
-inline void  operator delete[] (void* ptr) throw() { FreeMemSafe(ptr); }
-#endif
-
-#endif /* __cplusplus */
-
 #endif /* AMATH_LIB_PLATFORM_H */
