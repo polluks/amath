@@ -2,6 +2,10 @@
 ---                           amath change history                          ---
 -------------------------------------------------------------------------------
 
+v1.6.4 February 04 2017
+- Fixed Windows memory bugs
+- Fixed 64 bit memory bugs
+
 v1.6.3 February 03 2017
 - Improved error handling
 - Fixed error in fraction point parsing
