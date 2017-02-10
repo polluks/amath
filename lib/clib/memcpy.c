@@ -81,6 +81,9 @@ void MemCopy(void *destination, const void *source, unsigned int length)
 
     if ((mem_ptr)dst < (mem_ptr)src) {
         // Copy forward
+#ifdef AMIGA // Take advantage of exec
+        CopyMem((void*)source, destination, length);
+#else
         t = (mem_ptr)src; // only need low bits
         if ((t | (mem_ptr)dst) & wmask) {
 
@@ -100,7 +103,7 @@ void MemCopy(void *destination, const void *source, unsigned int length)
 
         t = length & wmask;
         TLOOP(*dst++ = *src++);
-
+#endif
     } else {
         // Copy backwards.  Otherwise essentially the same.
         // Alignment works as before, except that it takes

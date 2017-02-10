@@ -128,7 +128,7 @@ void CharBuffer::EnsureSize(unsigned int size)
             cursize = cursize < tempsize * 2 ? tempsize * 2 : cursize;
             unsigned int offset = (unsigned int)(ptr - buf);
             char *temp = new char[cursize];
-            MemCopy(temp, buf, tempsize);
+            MemCopyQuick(temp, buf, tempsize);
             delete [] buf;
             buf = temp;
             ptr = buf + offset;
@@ -146,7 +146,7 @@ void CharBuffer::EnsureSize(unsigned int blocksize, unsigned int blocks)
         } else {
             unsigned int tptr = (unsigned int)(ptr - buf);
             char *temp = new char[blocksize * blocks];
-            MemCopy(temp, buf, cursize);
+            MemCopyQuick(temp, buf, cursize);
             delete [] buf;
             cursize = blocksize * blocks;
             buf = temp;
@@ -270,4 +270,3 @@ char* CharBuffer::GetString()
     *ptr = '\0';
     return buf;
 }
-

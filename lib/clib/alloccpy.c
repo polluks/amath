@@ -51,8 +51,12 @@ unsigned int AllocAndCopy(char **destination, const char *source)
     *destination = AllocMemSafe(size);
     d = *destination;
 
+#ifdef AMIGA // Take advantage of exec
+    CopyMem(s, d, n);
+#else
     while (n--)
         *d++ = *s++;
+#endif
 
     return size;
 }
