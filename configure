@@ -246,10 +246,9 @@ if $VALID ; then
 	echo "LFLAGS   = -lamathapp${outext} -lcomplex${outext} -lamath${outext} -lcamath${outext} $gcclib"
 	echo
 	echo "FLXCAT   = build/flexcat/flexcat"
-	echo "MKDIR    = mkdir"
+	echo "MKDIR    = mkdir -p"
 	echo "COPY     = cp"
 	echo "DEL      = rm -f"
-	echo "DELREC   = rm -Rf"
 	echo
 	echo "all:	libs app"
 	echo
@@ -358,15 +357,7 @@ if $VALID ; then
 	echo "app:	libs ${l}"
 	echo "	\${CC} \${CFLAGS} ${ARCFLAG}${CROSSCOMPILEFLAGS}${exestrip} -L. -o amath${outext} ${l} \${LFLAGS}"
 	echo
-	echo "dist: app catalogs"
-#	echo "	\${MKDIR} dist"
-	echo "	\${COPY} amath dist/"
-	echo "	\${COPY} LICENSE dist/"
-	echo "	\${COPY} COPYRIGHT dist/"
-	echo
 	echo "amigacatalogs:"
-#	echo "	\${MKDIR}  dist"
-	echo "	\${MKDIR}  dist/catalog"
 	echo "	\${MKDIR}  dist/catalog/english"
 	echo "	\${FLXCAT} text/help.cd catalog/english/amath-help.ct CATALOG dist/catalog/english/amath-help.catalog"
 	echo "	\${FLXCAT} text/ident.cd catalog/english/amath-ident.ct CATALOG dist/catalog/english/amath-ident.catalog"
@@ -387,10 +378,6 @@ if $VALID ; then
 	echo
 	echo "clean:"
 	echo "	\${DEL} ${libapp} ${libamath} ${libcomplex} ${libc} ${l} libamath${outext}.a libcamath${outext}.a libcomplex${outext}.a libamathapp${outext}.a amath${outext}"
-	echo
-	echo "distclean:"
-	echo "	\${DEL} ${libapp} ${libamath} ${libcomplex} ${libc} ${l} libamath${outext}.a libcamath${outext}.a libcomplex${outext}.a libamathapp${outext}.a amath${outext}"
-	echo "	\${DELREC} dist"
 	echo
 	echo "depend:"
 	echo "	@echo Dependencies already done"
