@@ -157,6 +157,12 @@ typedef u_int32_t uint32_t;
 typedef u_int64_t uint64_t;
 #endif
 
+#ifdef AMIGA // Take advantage of exec
+# define MemCopyQuick(d,s,l) CopyMemQuick((void*)(s),d,l);
+#else
+# define MemCopyQuick(d,s,l) MemCopy(d,s,l);
+#endif
+
 /* Compilers*/
 #if defined(__clang__)
 /* Clang */
