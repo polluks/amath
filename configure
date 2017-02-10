@@ -377,6 +377,14 @@ if $VALID ; then
 	echo "	\${FLXCAT} text/text.cd catalog/dansk/amath-text.ct CATALOG dist/catalog/dansk/amath-text.catalog"
 	echo "	\${FLXCAT} text/keyword.cd catalog/dansk/amath-keyword.ct CATALOG dist/catalog/dansk/amath-keyword.catalog"
 	echo
+	echo ".PHONY: test"
+	echo "test: app"
+	echo "	./amath test"
+	echo
+	echo ".PHONY: install"
+	echo "install: app"
+	echo "	install -m 0755 amath \$(DESTDIR)\$(PREFIX)/bin"
+	echo
 	echo "clean:"
 	echo "	\${DEL} ${libapp} ${libamath} ${libcomplex} ${libc} ${l} libamath${outext}.a libcamath${outext}.a libcomplex${outext}.a libamathapp${outext}.a amath${outext}"
 	echo
