@@ -10,3 +10,4 @@ catalog/flexcat
 .vs
 *_.3
 doxygen.warn
+*.deb
