@@ -243,8 +243,6 @@ if $VALID ; then
 	echo "RANLIB   = ${CROSSCOMPILE}ranlib"
 	echo "CFLAGS   = ${ARCFLAG}$options ${CROSSCOMPILEFLAGS}"
 	echo "CXXFLAGS = ${ARCFLAG}$options ${CROSSCOMPILEFLAGS}-I."
-#	echo "CXXFLAGS = -Wno-inline-new-delete ${ARCFLAG}$options ${CROSSCOMPILEFLAGS}-I."
-#	echo "LFLAGS   = $gcclib -lamathapp${outext} -lcamath${outext} -lcomplex${outext} -lamath${outext}"
 	echo "LFLAGS   = -lamathapp${outext} -lcomplex${outext} -lamath${outext} -lcamath${outext} $gcclib"
 	echo
 	echo "FLXCAT   = build/flexcat/flexcat"
