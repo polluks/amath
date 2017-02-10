@@ -45,7 +45,7 @@
   (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF
   THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-  The origin source code can be obtained from:
+  The original source code can be obtained from:
   http://www.ryanjuckett.com/
 
 ******************************************************************************/
