@@ -8,10 +8,9 @@ CXXFLAGS = -m68020  -DWITHTEST -noixemul -I.
 LFLAGS   = -lamathapp -lcomplex -lamath -lcamath -lstdc++
 
 FLXCAT   = build/flexcat/flexcat
-MKDIR    = mkdir
+MKDIR    = mkdir -p
 COPY     = cp
 DEL      = rm -f
-DELREC   = rm -Rf
 
 all:	libs app
 
@@ -426,13 +425,7 @@ libcamath:	 alloccpy.o mem.o memcpy.o memset.o strcmp.o strlen.o untag.o dragon4
 app:	libs  evaluator.o functions.o graphlist.o lexer.o nodes.o operators.o optimizer.o parser.o statements.o token.o values.o viewer.o console.o console_amiga.o console_stdc.o filesystem_amiga.o filesystem_stdc.o graph.o graph_amiga.o graph_gtk.o language.o language_amiga.o language_posix.o language_stdc.o preferences.o preferences_amiga.o preferences_stdc.o proc_amiga.o program.o program_amiga.o program_stdc.o program_test.o task_amiga.o task_stdc.o window_amiga.o io.o main.o
 	${CC} ${CFLAGS} -m68020 -noixemul -s -L. -o amath  evaluator.o functions.o graphlist.o lexer.o nodes.o operators.o optimizer.o parser.o statements.o token.o values.o viewer.o console.o console_amiga.o console_stdc.o filesystem_amiga.o filesystem_stdc.o graph.o graph_amiga.o graph_gtk.o language.o language_amiga.o language_posix.o language_stdc.o preferences.o preferences_amiga.o preferences_stdc.o proc_amiga.o program.o program_amiga.o program_stdc.o program_test.o task_amiga.o task_stdc.o window_amiga.o io.o main.o ${LFLAGS}
 
-dist: app catalogs
-	${COPY} amath dist/
-	${COPY} LICENSE dist/
-	${COPY} COPYRIGHT dist/
-
 amigacatalogs:
-	${MKDIR}  dist/catalog
 	${MKDIR}  dist/catalog/english
 	${FLXCAT} text/help.cd catalog/english/amath-help.ct CATALOG dist/catalog/english/amath-help.catalog
 	${FLXCAT} text/ident.cd catalog/english/amath-ident.ct CATALOG dist/catalog/english/amath-ident.catalog
@@ -443,12 +436,16 @@ amigacatalogs:
 	${FLXCAT} text/text.cd catalog/dansk/amath-text.ct CATALOG dist/catalog/dansk/amath-text.catalog
 	${FLXCAT} text/keyword.cd catalog/dansk/amath-keyword.ct CATALOG dist/catalog/dansk/amath-keyword.catalog
 
+.PHONY: test
+test: app
+	./amath test
+
+.PHONY: install
+install: app
+	install -m 0755 amath $(DESTDIR)$(PREFIX)/bin
+
 clean:
 	${DEL}  aengine.o charbuf.o cplex.o fgrid.o ntext.o real.o  acos.o acosh.o asin.o asinh.o atan.o atan2.o atanh.o cbrt.o ceil.o copysign.o cos.o cosh.o exp.o expm1.o fabs.o finite.o floor.o fmod.o hypot.o isnan.o kcos.o kremp2.o ksin.o ktan.o log.o log10.o log1p.o pow.o remp2.o round.o scalbn.o sin.o sinh.o sqrt.o tan.o tanh.o trunc.o  cacos.o cacosh.o cacot.o cacoth.o cacsc.o cacsch.o casec.o casech.o casin.o casinh.o catan.o catanh.o ccbrt.o ccos.o ccosh.o ccot.o ccoth.o ccsc.o ccsch.o cexp.o clog.o clog10.o clogb.o cpow.o csec.o csech.o csgn.o csin.o csinh.o csqrt.o ctan.o ctanh.o prim.o  alloccpy.o mem.o memcpy.o memset.o strcmp.o strlen.o untag.o dragon4.o dmath.o dprint.o memoo.o  evaluator.o functions.o graphlist.o lexer.o nodes.o operators.o optimizer.o parser.o statements.o token.o values.o viewer.o console.o console_amiga.o console_stdc.o filesystem_amiga.o filesystem_stdc.o graph.o graph_amiga.o graph_gtk.o language.o language_amiga.o language_posix.o language_stdc.o preferences.o preferences_amiga.o preferences_stdc.o proc_amiga.o program.o program_amiga.o program_stdc.o program_test.o task_amiga.o task_stdc.o window_amiga.o io.o main.o libamath.a libcamath.a libcomplex.a libamathapp.a amath
-
-distclean:
-	${DEL}  aengine.o charbuf.o cplex.o fgrid.o ntext.o real.o  acos.o acosh.o asin.o asinh.o atan.o atan2.o atanh.o cbrt.o ceil.o copysign.o cos.o cosh.o exp.o expm1.o fabs.o finite.o floor.o fmod.o hypot.o isnan.o kcos.o kremp2.o ksin.o ktan.o log.o log10.o log1p.o pow.o remp2.o round.o scalbn.o sin.o sinh.o sqrt.o tan.o tanh.o trunc.o  cacos.o cacosh.o cacot.o cacoth.o cacsc.o cacsch.o casec.o casech.o casin.o casinh.o catan.o catanh.o ccbrt.o ccos.o ccosh.o ccot.o ccoth.o ccsc.o ccsch.o cexp.o clog.o clog10.o clogb.o cpow.o csec.o csech.o csgn.o csin.o csinh.o csqrt.o ctan.o ctanh.o prim.o  alloccpy.o mem.o memcpy.o memset.o strcmp.o strlen.o untag.o dragon4.o dmath.o dprint.o memoo.o  evaluator.o functions.o graphlist.o lexer.o nodes.o operators.o optimizer.o parser.o statements.o token.o values.o viewer.o console.o console_amiga.o console_stdc.o filesystem_amiga.o filesystem_stdc.o graph.o graph_amiga.o graph_gtk.o language.o language_amiga.o language_posix.o language_stdc.o preferences.o preferences_amiga.o preferences_stdc.o proc_amiga.o program.o program_amiga.o program_stdc.o program_test.o task_amiga.o task_stdc.o window_amiga.o io.o main.o libamath.a libcamath.a libcomplex.a libamathapp.a amath
-	${DELREC} dist
 
 depend:
 	@echo Dependencies already done
