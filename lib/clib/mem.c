@@ -37,10 +37,10 @@
 #define FREE_MEM(x) FreeVec(x)
 #define Debug(x,y,z)
 #else
-# include <stdlib.h>
-# define ALLOC_MEM(x) calloc(1L,x)
-# define FREE_MEM(x) free(x)
-# define Debug(x,y,z)
+#include <stdlib.h>
+#define ALLOC_MEM(x) calloc(1L,x)
+#define FREE_MEM(x) free(x)
+#define Debug(x,y,z)
 #endif
 
 #if defined(__x86_64__) || defined(__aarch64__) || \
@@ -130,9 +130,7 @@ void* AllocMemSafe(size_t size)
         list->peak = list->size;
     }
 
-    // DEBUG code
-    // Debug(NULL, "Mememory allocated at address (%x)\n", newblock->address);
-
+    // Memory allocated
     return newblock->address;
 }
 
@@ -179,9 +177,6 @@ void FreeMemSafe(void* block)
     current->next = NULL;
     current->size = 0;
     FREE_MEM(current);
-
-    // DEBUG code
-    // Debug("Mememory deallocated at address (%x)\n", block);
 }
 
 /**
@@ -218,17 +213,17 @@ void MemUsage(long *blocks, long *size, long *peak)
 }
 
 /**
- * @brief Log a mememory allocation error
+ * @brief Log a memory allocation error
  */
 void alloc_error(char *descr, size_t size)
 {
-    Debug("Mememory allocation error (%s) with size (%d)\n", descr, size);
+    Debug("Memory allocation error (%s) with size (%d)\n", descr, size);
 }
 
 /**
- * @brief Log a mememory deallocation error
+ * @brief Log a memory deallocation error
  */
 void dealloc_error(char *descr, void *p)
 {
-    Debug("Mememory deallocation error (%s) address (%x)\n", descr, p);
+    Debug("Memory deallocation error (%s) address (%x)\n", descr, p);
 }
