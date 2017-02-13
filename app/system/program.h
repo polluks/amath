@@ -64,6 +64,7 @@ public:
     void NewPositionalOutput(short unsigned int base, short unsigned int digits);
     void SetLastResult(Number *number);
     void SetPrompt(const char *text);
+    int GetExitStatus();
     struct Number* GetLastResult();
     class Language *Language;
     class ConsoleBase *Console;
@@ -74,6 +75,9 @@ public:
     class VariableList *Variables;
     class FunctionList *Functions;
     class GraphList *Graphs;
+
+protected:
+    int status;
 
 private:
     struct Number* ins;

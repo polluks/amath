@@ -33,5 +33,5 @@ int main(int argc, char **argv)
     Program->Initialize(argc, argv);
     Program->Run();
     Cleanup();
-    return 0;
+    return Program->GetExitStatus();
 }

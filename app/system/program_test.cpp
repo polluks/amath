@@ -33,9 +33,11 @@
 #include "system/base/io.h"
 #include <stdio.h>
 
-TestProgram::TestProgram()
+TestProgram::TestProgram(bool silent)
     : Program()
 {
+    this->silent = silent;
+
     // Ignore type of locale fraction point.
     delete Input;
     Input = new DecimalSystem(Preferences->GetDigits(), '.');
@@ -52,10 +54,11 @@ void TestProgram::Run()
     RunTests();
 
     if (fail == 0) {
-        printf("All tests passed (%i)." NEWLINE, pass);
+        printf("All tests passed (%i)" NEWLINE, pass);
     } else {
         printf("Something went wrong ..." NEWLINE);
         printf("Passed: %i, failed: %i" NEWLINE, pass, fail);
+        status = 5; // Set exit status 5
     }
 }
 
@@ -109,10 +112,14 @@ void TestProgram::PerformTest(const char* input, const char* result, bool show, 
 
     if (buf->Is(result) || !check) {
         pass++;
-        printf("PASS: [%s]" NEWLINE, show ? result : input);
+        if (!silent) {
+            printf("PASS: [%s]" NEWLINE, show ? result : input);
+        }
     } else {
         fail++;
-        printf("FAIL: [%s] expected [%s] but got [%s]" NEWLINE, input, result, buf->GetString());
+        if (!silent) {
+            printf("FAIL: [%s] expected [%s] but got [%s]" NEWLINE, input, result, buf->GetString());
+        }
     }
 
     delete buf;
@@ -332,16 +339,16 @@ void TestProgram::RunTestset4()
 void TestProgram::RunTestset5()
 {
     TestExecution("delete funtions");
-    TestStatement("f(x)=x*2+1", "");
-    TestStatement("g(y)=y^2+y*1.5+2", "");
-    TestStatement("h(x)=x^3-2*x^2-16*x+6", "");
-    TestStatement("a=2;b=3;c=a+b;", "");
+    TestStatement("f(x)=x*2+1", EMPTYSTRING);
+    TestStatement("g(y)=y^2+y*1.5+2", EMPTYSTRING);
+    TestStatement("h(x)=x^3-2*x^2-16*x+6", EMPTYSTRING);
+    TestStatement("a=2;b=3;c=a+b;", EMPTYSTRING);
     TestStatement("vars", "a = 2" NEWLINE "b = 3" NEWLINE "c = 5");
     TestStatement("funcs", "f(x)=x*2+1" NEWLINE "g(y)=y^2+y*1.5+2" NEWLINE "h(x)=x^3-2*x^2-16*x+6");
     TestStatement("f(2.2)", "f(2.2) = 5.4");
     TestStatement("h(8.3)", "h(8.3) = 307.207");
     TestStatement("c+1.1", "c+1.1 = 6.1");
-    TestStatement("d=1.1", "");
+    TestStatement("d=1.1", EMPTYSTRING);
     TestStatement("eval d=d+1", "d=(d+1) = 2.1");
     TestStatement("eval d=d+1", "d=(d+1) = 3.1");
     TestStatement("eval d=d*2", "d=(d*2) = 6.2");

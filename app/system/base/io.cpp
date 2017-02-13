@@ -79,7 +79,9 @@ static struct IntuitionBase *IntuitionBase = NULL;
 class Program* CreateProgram(int argc, char **argv) {
 #ifdef WITHTEST
     if (argc == 2 && StrIsEqual(argv[1], "test")) {
-        return new TestProgram();
+        return new TestProgram(false);
+    } else if (argc == 2 && StrIsEqual(argv[1], "testz")) {
+        return new TestProgram(true);
     } else
 #endif
     {
