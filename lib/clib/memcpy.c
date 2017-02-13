@@ -31,7 +31,7 @@
  */
 
 /**
- * @file  memcpy.h
+ * @file  memcpy.c
  * @brief Copy a block of memory, handling overlap.
  *
  * Code originate from FreeBSD base, revision 229286.

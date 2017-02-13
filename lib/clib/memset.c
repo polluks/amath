@@ -31,7 +31,7 @@
  */
 
 /**
- * @file  memset.h
+ * @file  memset.c
  * @brief Fill block of memory with a constant value.
  *
  * Code originate from FreeBSD base, revision 229286.
