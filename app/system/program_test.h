@@ -41,13 +41,14 @@
 */
 class TestProgram : public Program {
 public:
-    TestProgram();
+    TestProgram(bool silent);
     virtual ~TestProgram();
     virtual void Initialize(int argc, char **argv);
     virtual void Run();
     virtual void Exit();
 
 private:
+    bool silent;
     int pass;
     int fail;
 

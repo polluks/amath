@@ -438,7 +438,7 @@ amigacatalogs:
 
 .PHONY: test
 test: app
-	./amath test
+	./amath testz
 
 .PHONY: install
 install: app

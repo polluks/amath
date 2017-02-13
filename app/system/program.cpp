@@ -34,6 +34,7 @@
 
 Program::Program()
 {
+    status = 0;
     Variables = new VariableList();
     Functions = new FunctionList();
     Graphs = new GraphList();
@@ -103,4 +104,9 @@ void Program::SetLastResult(Number *number)
 {
     delete ins;
     ins = number->Clone();
+}
+
+int Program::GetExitStatus()
+{
+    return status;
 }
