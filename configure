@@ -1,6 +1,6 @@
 #!/bin/sh
 # 
-# Copyright (c) 2015-2017 Carsten Sonne Larsen  <cs@innolan.dk>
+# Copyright {c} 2014-2017 Carsten Sonne Larsen  <cs@innolan.net>
 # All rights reserved.
 # 
 # Redistribution and use in source and binary forms, with or without
@@ -17,375 +17,848 @@
 # IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
 # ARE DISCLAIMED.  IN NO EVENT SHALL AUTHOR OR CONTRIBUTORS BE LIABLE
 # FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
-# DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS
-# OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
+# DAMAGES {INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS
+# OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION}
 # HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
-# LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
+# LIABILITY, OR TORT {INCLUDING NEGLIGENCE OR OTHERWISE} ARISING IN ANY WAY
 # OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
 # SUCH DAMAGE.
 # 
 
 set -e
 
+clang=false
+debugsym=false
+regtest=true
+
+prefix="/usr"
+cflags=""
+cxxflags=""
+ldflags=""
+gcclib="-lstdc++"
+
+for arg in "$@"; do
+    case "$arg" in
+    --prefix=*)
+        prefix=`echo $arg | sed 's/--prefix=//'`
+        ;;
+
+    --cross-compile=*)
+        crosscompile=`echo $arg | sed 's/--cross-compile=//'`
+		crosscompile="${crosscompile}-"
+        ;;
+
+    --cflags=*)
+        cflags=`echo $arg | sed 's/--cflags=//'`
+		cflags="${cflags} "
+        ;;
+
+    --cxxflags=*)
+        cxxflags=`echo $arg | sed 's/--cxxflags=//'`
+		cxxflags="${cxxflags} "
+        ;;
+
+    --ldflags=*)
+        ldflags=`echo $arg | sed 's/--ldflags=//'`
+		ldflags="${ldflags} "
+        ;;
+		
+	--enable-clang)
+        clang=true;;
+    --disable-clang)
+        clang=false;;
+
+    --enable-debug)
+        debugsym=true;;
+    --disable-debug)
+        debugsym=false;;
+
+    --enable-test)
+        regtest=true;;
+    --disable-test)
+        regtest=false;;
+
+    --help)
+        echo 'usage: ./configure [options]'
+        echo 'options:'
+        echo '  --prefix=<path>: installation prefix'
+        echo '  --cflag=<flags>: additional compiler flags'
+        echo '  --cxxflag=<flags>: additional compiler flags'
+        echo '  --ldflag=<flags>: additional linker flags'
+        echo '  --cross-compile=<prefix>: cross compiler prefix'
+        echo '  --enable-debug: include debug symbols'
+        echo '  --disable-debug: do not include debug symbols'
+        echo '  --enable-test: build code with regression tests'
+        echo '  --disable-test: do not include regression test'
+        echo '  --enable-clang: build with clang compiler'
+        echo '  --disable-clang: do not build with clang compiler'
+        echo 'all invalid options are silently ignored'
+        exit 0
+        ;;
+    esac
+done
+
+if $clang; then
+	ccompiler="clang"
+	cxxcompiler="clang++"
+else
+	ccompiler="gcc"
+	cxxcompiler="g++"
+fi
+
+if $regtest; then
+	options=" -DWITHTEST"
+else
+	options=" "
+fi
+
+if $debugsym; then
+	appop="-O0 -g"
+	libop="-O0 -g"
+	exestrip=""
+else
+	appop="-O2"
+	libop="-O3"
+	exestrip="-s"
+fi
+
+cxxflags="${cflags} ${cxxflags}"
+
 APPSRCS='
-	app/main/evaluator.cpp
-	app/main/functions.cpp
-	app/main/graphlist.cpp
-	app/main/lexer.cpp
-	app/main/nodes.cpp
-	app/main/operators.cpp
-	app/main/optimizer.cpp
-	app/main/parser.cpp
-	app/main/statements.cpp
-	app/main/token.cpp
-	app/main/values.cpp
-	app/main/viewer.cpp
-	app/system/console.cpp
-	app/system/console_amiga.cpp
-	app/system/console_stdc.cpp
-	app/system/filesystem_amiga.cpp
-	app/system/filesystem_stdc.cpp
-	app/system/graph.cpp
-	app/system/graph_amiga.cpp
-	app/system/graph_gtk.cpp
-	app/system/language.cpp
-	app/system/language_amiga.cpp
-	app/system/language_posix.cpp
-	app/system/language_stdc.cpp
-	app/system/preferences.cpp
-	app/system/preferences_amiga.cpp
-	app/system/preferences_stdc.cpp
-	app/system/proc_amiga.cpp
-	app/system/program.cpp
-	app/system/program_amiga.cpp
-	app/system/program_stdc.cpp
-	app/system/program_test.cpp
-	app/system/task_amiga.cpp
-	app/system/task_stdc.cpp
-	app/system/window_amiga.cpp
-	app/system/base/io.cpp
-	app/main.cpp
+evaluator.cpp
+functionlist.cpp
+functions.cpp
+fgrid.cpp
+lexer.cpp
+nodes.cpp
+operators.cpp
+optimizer.cpp
+parser.cpp
+token.cpp
+userfunction.cpp
+values.cpp
+viewer.cpp
+'
+SYSSRCS='
+console.cpp
+console_amiga.cpp
+console_stdc.cpp
+filesystem_amiga.cpp
+filesystem_stdc.cpp
+graph.cpp
+graph_amiga.cpp
+graph_gtk.cpp
+language.cpp
+language_amiga.cpp
+language_posix.cpp
+language_stdc.cpp
+preferences.cpp
+preferences_amiga.cpp
+preferences_stdc.cpp
+proc_amiga.cpp
+program.cpp
+program_amiga.cpp
+program_stdc.cpp
+program_test.cpp
+task_amiga.cpp
+task_stdc.cpp
+window_amiga.cpp
+'
+FUNCTIONSRC='
+absolute.cpp
+aexcosecant.cpp
+aexsecant.cpp
+arccos.cpp
+arcsin.cpp
+arctan.cpp
+arccosecant.cpp
+arccotangent.cpp
+arcsecant.cpp
+ceil.cpp
+cosecant.cpp
+cosine.cpp
+cotangent.cpp
+covercos.cpp
+coversin.cpp
+cube.cpp
+excosecant.cpp
+exsecant.cpp
+floor.cpp
+hacovercos.cpp
+hacoversin.cpp
+havercos.cpp
+haversin.cpp
+ln.cpp
+log10.cpp
+log2.cpp
+node.cpp
+round.cpp
+secant.cpp
+signum.cpp
+sine.cpp
+square.cpp
+tangent.cpp
+trunc.cpp
+user.cpp
+vercos.cpp
+versin.cpp
+'
+STATEMENTSRCS='
+about.cpp
+clear.cpp
+delete.cpp
+digits.cpp
+draw.cpp
+empty.cpp
+eval.cpp
+execute.cpp
+exit.cpp
+funcdef.cpp
+funclist.cpp
+help.cpp
+input.cpp
+license.cpp
+list.cpp
+load.cpp
+memory.cpp
+node.cpp
+output.cpp
+plot.cpp
+prefs.cpp
+prompt.cpp
+save.cpp
+show.cpp
+silent.cpp
+version.cpp
 '
 LIBAPPSRCS='
-	app/lib/aengine.cpp
-	app/lib/charbuf.cpp
-	app/lib/cplex.cpp
-	app/lib/fgrid.cpp
-	app/lib/ntext.cpp
-	app/lib/real.cpp
+aengine.cpp
+charbuf.cpp
+integer.cpp
+cplex.cpp
+nnumb.cpp
+ntext.cpp
+real.cpp
 '
 LIBREALSRCS='
-	lib/real/acos.c
-	lib/real/acosh.c
-	lib/real/asin.c
-	lib/real/asinh.c
-	lib/real/atan.c
-	lib/real/atan2.c
-	lib/real/atanh.c
-	lib/real/cbrt.c
-	lib/real/ceil.c
-	lib/real/copysign.c
-	lib/real/cos.c
-	lib/real/cosh.c
-	lib/real/exp.c
-	lib/real/expm1.c
-	lib/real/fabs.c
-	lib/real/finite.c
-	lib/real/floor.c
-	lib/real/fmod.c
-	lib/real/hypot.c
-	lib/real/isnan.c
-	lib/real/kcos.c
-	lib/real/kremp2.c
-	lib/real/ksin.c
-	lib/real/ktan.c
-	lib/real/log.c
-	lib/real/log10.c
-	lib/real/log1p.c
-	lib/real/pow.c
-	lib/real/remp2.c
-	lib/real/round.c
-	lib/real/scalbn.c
-	lib/real/sin.c
-	lib/real/sinh.c
-	lib/real/sqrt.c
-	lib/real/tan.c
-	lib/real/tanh.c
-	lib/real/trunc.c
+acos.c
+acosh.c
+acvs.c
+ahv.c
+ahvc.c
+asin.c
+asinh.c
+atan.c
+atan2.c
+atanh.c
+aver.c
+cbrt.c
+ceil.c
+copysign.c
+cos.c
+cosh.c
+exp.c
+expm1.c
+fabs.c
+finite.c
+floor.c
+fmod.c
+hypot.c
+isnan.c
+kcos.c
+kremp2.c
+ksin.c
+ktan.c
+log.c
+log10.c
+log1p.c
+pow.c
+remp2.c
+round.c
+scalbn.c
+sin.c
+sinh.c
+sqrt.c
+tan.c
+tanh.c
+trunc.c
 '
 LIBCPLEXSRCS='
-	lib/cplex/cacos.c
-	lib/cplex/cacosh.c
-	lib/cplex/cacot.c
-	lib/cplex/cacoth.c
-	lib/cplex/cacsc.c
-	lib/cplex/cacsch.c
-	lib/cplex/casec.c
-	lib/cplex/casech.c
-	lib/cplex/casin.c
-	lib/cplex/casinh.c
-	lib/cplex/catan.c
-	lib/cplex/catanh.c
-	lib/cplex/ccbrt.c
-	lib/cplex/ccos.c
-	lib/cplex/ccosh.c
-	lib/cplex/ccot.c
-	lib/cplex/ccoth.c
-	lib/cplex/ccsc.c
-	lib/cplex/ccsch.c
-	lib/cplex/cexp.c
-	lib/cplex/clog.c
-	lib/cplex/clog10.c
-	lib/cplex/clogb.c
-	lib/cplex/cpow.c
-	lib/cplex/csec.c
-	lib/cplex/csech.c
-	lib/cplex/csgn.c
-	lib/cplex/csin.c
-	lib/cplex/csinh.c
-	lib/cplex/csqrt.c
-	lib/cplex/ctan.c
-	lib/cplex/ctanh.c
-	lib/cplex/prim.c
+cacos.c
+cacosh.c
+cacot.c
+cacoth.c
+cacsc.c
+cacsch.c
+casec.c
+casech.c
+casin.c
+casinh.c
+catan.c
+catanh.c
+ccbrt.c
+ccos.c
+ccosh.c
+ccot.c
+ccoth.c
+ccsc.c
+ccsch.c
+cexp.c
+clog.c
+clog10.c
+clogb.c
+cpow.c
+csec.c
+csech.c
+csgn.c
+csin.c
+csinh.c
+csqrt.c
+ctan.c
+ctanh.c
+prim.c
 '
 LIBC1SRCS='
-	lib/clib/alloccpy.c
-	lib/clib/mem.c
-	lib/clib/memcpy.c
-	lib/clib/memset.c
-	lib/clib/strcmp.c
-	lib/clib/strlen.c
-	lib/clib/untag.c
+alloccpy.c
+mem.c
+memcpy.c
+memset.c
+strcmp.c
+strlen.c
+untag.c
 '
 
-LIBC2SRCS='
-	lib/dconv/dragon4.cpp
-	lib/dconv/dmath.cpp
-	lib/dconv/dprint.cpp
-	lib/clib/memoo.cpp
-'
+amathc="amathc"
+amath="amath"
+amathcplex="amathcplex"
+amathapp="amathapp"
 
-if make -v 2>&1 | grep GNU > /dev/null 2>&1 ; then
-	echo "make(1) is GNU make."
-	VALID=true
-else
-	echo "make(1) is not GNU make."
-	VALID=true
-fi
+appmain="appmain"
+appfunction="functions"
+appstatement="statement"
+appsystem="appsystem"
+program="src/main"
 
-if $VALID ; then
-	if [ -n "$1" ];
-	then
-		ARCFLAG="$1 "
-	else
-		ARCFLAG=""
-	fi
+############################ Main Application ###########################
+{
+echo "CXX      = ${crosscompile}${cxxcompiler}"
+echo "CXXFLAGS = ${appop}${options} ${cxxflags}-I. -I.. -Wall"
+echo "AR       = ${crosscompile}ar"
+echo "RANLIB   = ${crosscompile}ranlib"
+echo "DEL      = rm -f"
+echo
+echo "all: lib"
+echo "static: lib"
+echo
 
-	if [ -n "$2" ];
-	then
-		CROSSCOMPILE="$2"
-	else
-		CROSSCOMPILE=""
-	fi
+files=""
+for f in ${APPSRCS}
+do
+	b=`basename $f .cpp`
+	echo "${b}.o:	${f}"
+	echo "	\${CXX} \${CXXFLAGS} -c ${f}"
+	echo
+	files="${files} ${b}.o"
+done
 
-	if [ -n "$3" ];
-	then
-		CROSSCOMPILEFLAGS="$3 "
-	else
-		CROSSCOMPILEFLAGS=""
-	fi
+echo "lib:	${files}"
+echo "	\${AR} rcs lib${appmain}.a ${files}"
+echo "	\${RANLIB} lib${appmain}.a"
+echo
+echo "clean:"
+echo "	\${DEL} lib${appmain}.a ${files}"
+echo
+} > src/main/Makefile
+#########################################################################
 
-	if [ -n "$GCC295" ];
-	then
-		if [ "$GCC295" = "y" ] || [ "$GCC295" = "Y" ];
-		then
-			gcclib="-lgcc"
-		fi
-	else
-		gcclib="-lstdc++"
-	fi
+########################### Functions Library ###########################
+{
+echo "CXX      = ${crosscompile}${cxxcompiler}"
+echo "CXXFLAGS = ${appop}${options} ${cxxflags}-I. -I../.. -Wall"
+echo "AR       = ${crosscompile}ar"
+echo "RANLIB   = ${crosscompile}ranlib"
+echo "DEL      = rm -f"
+echo
+echo "all: lib"
+echo "static: lib"
+echo
 
-	if [ -n "$REGTEST" ];
-	then
-		if [ "$REGTEST" = "n" ] || [ "$REGTEST" = "N" ];
-		then
-			options="${options}"
-		fi
-	else
-		options="${options} -DWITHTEST"
-	fi
+files=""
+for f in ${FUNCTIONSRC}
+do
+	b=`basename $f .cpp`
+	echo "${b}.o:	${f}"
+	echo "	\${CXX} \${CXXFLAGS} -c ${f}"
+	echo
+	files="${files} ${b}.o"
+done
 
-	if [ -n "$DEBUG" ];
-	then
-		if [ "$DEBUG" = "y" ] || [ "$DEBUG" = "Y" ];
-		then
-			appop="-O0 -g"
-			libop="-O0 -g"
-			exestrip=""
-		fi
-	else
-		appop="-O2"
-		libop="-O3"
-		exestrip="-s"
-	fi
+echo "lib:	${files}"
+echo "	\${AR} rcs lib${appfunction}.a ${files}"
+echo "	\${RANLIB} lib${appfunction}.a"
+echo
+echo "clean:"
+echo "	\${DEL} lib${appfunction}.a ${files}"
+echo
+} > src/main/function/Makefile
+#########################################################################
 
-	# Use under certain circumstances when GCC is causing problems with FPU
-	#nff="-fno-strict-aliasing -ffloat-store "
-	nff=" "
+########################### Statement Library ###########################
+{
+echo "CXX      = ${crosscompile}${cxxcompiler}"
+echo "CXXFLAGS = ${appop}${options} ${cxxflags}-I. -I../.. -Wall"
+echo "AR       = ${crosscompile}ar"
+echo "RANLIB   = ${crosscompile}ranlib"
+echo "DEL      = rm -f"
+echo
+echo "all: lib"
+echo "static: lib"
+echo
 
-	(
+files=""
+for f in ${STATEMENTSRCS}
+do
+	b=`basename $f .cpp`
+	echo "${b}.o:	${f}"
+	echo "	\${CXX} \${CXXFLAGS} -c ${f}"
 	echo
-	echo "CC       = ${CROSSCOMPILE}gcc"
-	echo "CXX      = ${CROSSCOMPILE}g++"
-#	echo "CC       = ${CROSSCOMPILE}clang"
-#	echo "CXX      = ${CROSSCOMPILE}clang++"
-	echo "AR       = ${CROSSCOMPILE}ar"
-	echo "RANLIB   = ${CROSSCOMPILE}ranlib"
-	echo "CFLAGS   = ${ARCFLAG}$options ${CROSSCOMPILEFLAGS}"
-	echo "CXXFLAGS = ${ARCFLAG}$options ${CROSSCOMPILEFLAGS}-I."
-	echo "LFLAGS   = -lamathapp${outext} -lcomplex${outext} -lamath${outext} -lcamath${outext} $gcclib"
-	echo
-	echo "FLXCAT   = build/flexcat/flexcat"
-	echo "MKDIR    = mkdir -p"
-	echo "COPY     = cp"
-	echo "DEL      = rm -f"
-	echo
-	echo "all:	libs app"
-	echo
-	echo "libs:	libamath libcomplex libcamath libamathapp"
-	echo
+	files="${files} ${b}.o"
+done
 
-	i=""
-	l=""
-	for f in ${APPSRCS}
-	do
-		b=`basename $f .cpp`
-#		i=`sed -n -e '/#include.*"/{
-#			s/"$//
-#			s/.*"//
-#			p
-#		}' $f | sort -u`
-		echo "${b}.o:	${f}" ${i}
-		echo "	\${CXX} ${appop} \${CXXFLAGS} -Ilib -Iapp -Wall -Werror -c ${f}"
-		echo
-		l="${l} ${b}.o"
-	done
+echo "lib:	${files}"
+echo "	\${AR} rcs lib${appstatement}.a ${files}"
+echo "	\${RANLIB} lib${appstatement}.a"
+echo
+echo "clean:"
+echo "	\${DEL} lib${appstatement}.a ${files}"
+echo
+} > src/main/statement/Makefile
+#########################################################################
 
-	libapp=""
-	for f in ${LIBAPPSRCS}
-	do
-		b=`basename $f .cpp`
-		echo "${b}.o:	${f}"
-		echo "	\${CC} ${appop} \${CXXFLAGS} -Ilib -Iapp -Wall -Werror -c ${f}"
-		echo
-		libapp="${libapp} ${b}.o"
-	done
+############################ System Library #############################
+{
+echo "CXX      = ${crosscompile}${cxxcompiler}"
+echo "CXXFLAGS = ${appop}${options} ${cxxflags}-I. -I.. -Wall"
+echo "AR       = ${crosscompile}ar"
+echo "RANLIB   = ${crosscompile}ranlib"
+echo "DEL      = rm -f"
+echo
+echo "all: lib"
+echo "static: lib"
+echo
 
-	libamath=""
-	for f in ${LIBREALSRCS}
-	do
-		b=`basename $f .c`
-		echo "${b}.o:	${f}"
-		echo "	\${CC} ${libop} -std=c9x \${CLAGS} ${ARCFLAG}-fno-builtin ${nff}-Wall -Werror -Ilib -Ilib/real -c ${f}"
-		echo
-		libamath="${libamath} ${b}.o"
-	done
+files=""
+for f in ${SYSSRCS}
+do
+	b=`basename $f .cpp`
+	echo "${b}.o:	${f}"
+	echo "	\${CXX} \${CXXFLAGS} -c ${f}"
+	echo
+	files="${files} ${b}.o"
+done
 
-	libcomplex=""
-	for f in ${LIBCPLEXSRCS}
-	do
-		b=`basename $f .c`
-		echo "${b}.o:	${f}"
-		echo "	\${CC} ${libop} -std=c9x \${CFLAGS} ${ARCFLAG}-fno-builtin -Wall -Werror -Ilib -Ilib/cplex -c ${f}"
-		echo
-		libcomplex="${libcomplex} ${b}.o"
-	done
+echo "lib:	${files}"
+echo "	\${AR} rcs lib${appsystem}.a ${files}"
+echo "	\${RANLIB} lib${appsystem}.a"
+echo
+echo "clean:"
+echo "	\${DEL} lib${appsystem}.a ${files}"
+echo
+} > src/system/Makefile
+#########################################################################
 
-	libc=""
-	for f in ${LIBC1SRCS}
-	do
-		b=`basename $f .c`
-		echo "${b}.o:	${f}"
-		echo "	\${CC} ${libop} -std=c9x \${CFLAGS} ${ARCFLAG}${ansicon}-fno-builtin -Wall -Werror -Ilib -c ${f}"
-		echo
-		libc="${libc} ${b}.o"
-	done
+########################## Application Library ##########################
+{
+echo "CXX      = ${crosscompile}${cxxcompiler}"
+echo "CXXFLAGS = ${libop}${options} ${cxxflags}-I. -I.. -Wall"
+echo "AR       = ${crosscompile}ar"
+echo "RANLIB   = ${crosscompile}ranlib"
+echo "MKDIR    = mkdir -p"
+echo "DEL      = rm -f"
+echo "INSTALL  = install -m 0644"
+echo "PREFIX   = ${prefix}"
+echo
+echo "alib     = lib${amathapp}.a"
+echo "solib    = lib${amathapp}.so"
+echo
+echo "all: static shared"
+echo
+echo "static: \${alib}"
+echo
+echo "shared: \${solib}"
+echo
 
-	for f in ${LIBC2SRCS}
-	do
-		b=`basename $f .cpp`
-		echo "${b}.o:	${f}"
-		echo "	\${CXX} ${libop} \${CXXFLAGS} ${ARCFLAG}-fno-builtin -Wall -Werror -Ilib -Ilib/dconv -c ${f}"
-		echo
-		libc="${libc} ${b}.o"
-	done
+files=""
+files2=""
+for f in ${LIBAPPSRCS}
+do
+	b=`basename $f .cpp`
+	echo "static/${b}.o:	${f}"
+	echo "	\${CXX} \${CXXFLAGS} -c ${f} -o static/${b}.o"
+	echo
+	echo "shared/${b}.o:	${f}"
+	echo "	\${CXX} \${CXXFLAGS} -fPIC -c ${f} -o shared/${b}.o"
+	echo
+	files="${files} static/${b}.o"
+	files2="${files2} shared/${b}.o"
+done
 
-	echo "catalogsa:" # Application catalogs
-	echo "	\${FLXCAT} text/keyword.cd app/localize/kword.h=text/keyword.sd"
-	echo "	\${FLXCAT} text/help.cd app/localize/help.h=text/help.sd"
-	echo "	\${FLXCAT} text/ident.cd app/localize/ident.h=text/ident.sd"
-	echo "	\${FLXCAT} text/text.cd app/localize/text.h=text/text.sd"
-	echo
-	echo "catalogsu:" # Unix catalogs
-	echo "	iconv -f ISO-8859-15 -t UTF-8 catalog/dansk/amath-help.ct >utext/dk-help.dict"
-	echo "	iconv -f ISO-8859-15 -t UTF-8 catalog/dansk/amath-ident.ct >utext/dk-ident.dict"
-	echo "	iconv -f ISO-8859-15 -t UTF-8 catalog/dansk/amath-text.ct >utext/dk-text.dict"
-	echo "	iconv -f ISO-8859-15 -t UTF-8 catalog/dansk/amath-keyword.ct >utext/dk-keyword.dict"
-	echo
-	echo "catalogsw:" # Windows catalogs
-	echo "	iconv -f ISO-8859-15 -t CP850 catalog/dansk/amath-help.ct >utext/dk-help.dict"
-	echo "	iconv -f ISO-8859-15 -t CP850 catalog/dansk/amath-ident.ct >utext/dk-ident.dict"
-	echo "	iconv -f ISO-8859-15 -t CP850 catalog/dansk/amath-text.ct >utext/dk-text.dict"
-	echo "	iconv -f ISO-8859-15 -t CP850 catalog/dansk/amath-keyword.ct >utext/dk-keyword.dict"
-	echo
-	echo "libamathapp:	${libapp}"
-	echo "	\${AR} rcs libamathapp${outext}.a ${libapp}"
-	echo "	\${RANLIB} libamathapp${outext}.a"
-	echo
-	echo "libamath:	${libamath}"
-	echo "	\${AR} rcs libamath${outext}.a ${libamath}"
-	echo "	\${RANLIB} libamath${outext}.a"
-	echo
-	echo "libcomplex:	${libcomplex}"
-	echo "	\${AR} rcs libcomplex${outext}.a ${libcomplex}"
-	echo "	\${RANLIB} libcomplex${outext}.a"
-	echo
-	echo "libcamath:	${libc}"
-	echo "	\${AR} rcs libcamath${outext}.a ${libc}"
-	echo "	\${RANLIB} libcamath${outext}.a"
-	echo
-	echo "app:	libs ${l}"
-	echo "	\${CC} \${CFLAGS} ${ARCFLAG}${CROSSCOMPILEFLAGS}${exestrip} -L. -o amath${outext} ${l} \${LFLAGS}"
-	echo
-	echo "amigacatalogs:"
-	echo "	\${MKDIR}  dist/catalog/english"
-	echo "	\${FLXCAT} text/help.cd catalog/english/amath-help.ct CATALOG dist/catalog/english/amath-help.catalog"
-	echo "	\${FLXCAT} text/ident.cd catalog/english/amath-ident.ct CATALOG dist/catalog/english/amath-ident.catalog"
-	echo "	\${FLXCAT} text/text.cd catalog/english/amath-text.ct CATALOG dist/catalog/english/amath-text.catalog"
-	echo "	\${MKDIR}  dist/catalog/dansk"
-	echo "	\${FLXCAT} text/help.cd catalog/dansk/amath-help.ct CATALOG dist/catalog/dansk/amath-help.catalog"
-	echo "	\${FLXCAT} text/ident.cd catalog/dansk/amath-ident.ct CATALOG dist/catalog/dansk/amath-ident.catalog"
-	echo "	\${FLXCAT} text/text.cd catalog/dansk/amath-text.ct CATALOG dist/catalog/dansk/amath-text.catalog"
-	echo "	\${FLXCAT} text/keyword.cd catalog/dansk/amath-keyword.ct CATALOG dist/catalog/dansk/amath-keyword.catalog"
-	echo
-	echo ".PHONY: test"
-	echo "test: app"
-	echo "	./amath test"
-	echo
-	echo ".PHONY: install"
-	echo "install: app"
-	echo "	install -m 0755 amath \$(DESTDIR)\$(PREFIX)/bin"
-	echo
-	echo "clean:"
-	echo "	\${DEL} ${libapp} ${libamath} ${libcomplex} ${libc} ${l} libamath${outext}.a libcamath${outext}.a libcomplex${outext}.a libamathapp${outext}.a amath${outext}"
-	echo
-	echo "depend:"
-	echo "	@echo Dependencies already done"
-	) > Makefile
+echo ".PHONY: build"
+echo "build:"
+echo "	\${MKDIR} static"
+echo "	\${MKDIR} shared"
+echo
+echo "\${solib}:	build ${files2}"
+echo "	\${CC} -shared -fPIC -Wl,-soname,\${solib} -o \${solib} ${files2}"
+echo
+echo "\${alib}:	build ${files}"
+echo "	\${AR} rcs static/\${alib} ${files}"
+echo "	\${RANLIB} static/\${alib}"
+echo
+echo ".PHONY:	install"
+echo "install: \${solib}"
+echo "	\${MKDIR} \${DESTDIR}\${PREFIX}/lib"
+echo "	\${INSTALL} \${solib} \${DESTDIR}\${PREFIX}/lib/\${solib}"
+echo
+echo ".PHONY:	uninstall"
+echo "uninstall:"
+echo "	\${DEL} \${DESTDIR}\${PREFIX}/lib/\${solib}"
+echo
+echo "clean:"
+echo "	\${DEL} static/\${alib} \${solib} ${files} ${files2}"
+echo
+} >  src/lib/Makefile
+#########################################################################
 
-	echo "Makefile generated${msg}"
-#	echo
-#	echo "Build with debug symbols in csh:"
-#	echo "DEBUG=\"Y\" make"
+############################### C Library ###############################
+{
+echo "CC       = ${crosscompile}${ccompiler}"
+echo "CFLAGS   = -std=c9x ${libop}${options} ${cflags}-I. -I.. -Wall"
+echo "AR       = ${crosscompile}ar"
+echo "RANLIB   = ${crosscompile}ranlib"
+echo "MKDIR    = mkdir -p"
+echo "DEL      = rm -f"
+echo "INSTALL  = install -m 0644"
+echo "PREFIX   = ${prefix}"
+echo
+echo "alib     = lib${amathc}.a"
+echo "solib    = lib${amathc}.so"
+echo
+echo "all: static shared"
+echo
+echo "static: \${alib}"
+echo
+echo "shared: \${solib}"
+echo
+
+libc=""
+libcs=""
+for f in ${LIBC1SRCS}
+do
+	b=`basename $f .c`
+	echo "static/${b}.o:	${f}"
+	echo "	\${CC} \${CFLAGS} -fno-builtin -c ${f} -o static/${b}.o"
 	echo
-fi
+	echo "shared/${b}.o:	${f}"
+	echo "	\${CC} \${CFLAGS} -fPIC -fno-builtin -c ${f} -o shared/${b}.o"
+	echo
+	libc="${libc} static/${b}.o"
+	libcs="${libcs} shared/${b}.o"
+done
+
+echo ".PHONY: build"
+echo "build:"
+echo "	\${MKDIR} static"
+echo "	\${MKDIR} shared"
+echo
+echo "\${solib}:	build ${libcs}"
+echo "	\${CC} -shared -fPIC -Wl,-soname,\${solib} -o \${solib} ${libcs} -lc"
+echo
+echo "\${alib}:	build ${libc}"
+echo "	\${AR} rcs static/\${alib} ${libc}"
+echo "	\${RANLIB} static/\${alib}"
+echo
+echo ".PHONY: install"
+echo "install:	\${alib} \${solib}"
+echo "	\${MKDIR} \${DESTDIR}\${PREFIX}/lib"
+echo "	\${MKDIR} \${DESTDIR}\${PREFIX}/include"
+echo "	\${INSTALL} static/\${alib} \${DESTDIR}\${PREFIX}/lib/\${alib}"
+echo "	\${INSTALL} \${solib} \${DESTDIR}\${PREFIX}/lib/\${solib}"
+echo "	\${INSTALL} ../amath.h \${DESTDIR}\${PREFIX}/include"
+echo "	\${INSTALL} ../amathc.h \${DESTDIR}\${PREFIX}/include"
+echo
+echo ".PHONY:	uninstall"
+echo "uninstall:"
+echo "	\${DEL} \${DESTDIR}\${PREFIX}/lib/\${alib}"
+echo "	\${DEL} \${DESTDIR}\${PREFIX}/lib/\${solib}"
+echo "	\${DEL} \${DESTDIR}\${PREFIX}/include/amath.h"
+echo "	\${DEL} \${DESTDIR}\${PREFIX}/include/amathc.h"
+echo
+echo "clean:"
+echo "	\${DEL} static/\${alib} \${solib} ${libc} ${libcs}"
+echo
+} >  src/clib/Makefile
+
+#########################################################################
+
+############################# Real Numbers ##############################
+{
+echo "CC       = ${crosscompile}${ccompiler}"
+echo "CFLAGS   = -std=c9x ${libop}${options} ${cflags}-I. -I.. -Wall"
+echo "AR       = ${crosscompile}ar"
+echo "RANLIB   = ${crosscompile}ranlib"
+echo "MKDIR    = mkdir -p"
+echo "DEL      = rm -f"
+echo "INSTALL  = install -m 0644"
+echo "PREFIX   = ${prefix}"
+echo
+echo "alib     = lib${amath}.a"
+echo "solib    = lib${amath}.so"
+echo
+echo "all: static shared"
+echo
+echo "static: \${alib}"
+echo
+echo "shared: \${solib}"
+echo
+
+libamath=""
+libamaths=""
+for f in ${LIBREALSRCS}
+do
+	b=`basename $f .c`
+	echo "static/${b}.o:	${f}"
+	echo "	\${CC} \${CFLAGS} -fno-builtin -c ${f} -o static/${b}.o"
+	echo
+	echo "shared/${b}.o:	${f}"
+	echo "	\${CC} \${CFLAGS} -fPIC -fno-builtin -c ${f} -o shared/${b}.o"
+	echo
+	libamath="${libamath} static/${b}.o"
+	libamaths="${libamaths} shared/${b}.o"
+done
+
+echo ".PHONY: build"
+echo "build:"
+echo "	\${MKDIR} static"
+echo "	\${MKDIR} shared"
+echo
+echo "\${solib}:	build ${libamaths}"
+echo "	\${CC} -shared -fPIC -Wl,-soname,\${solib} -o \${solib} ${libamaths}"
+echo
+echo "\${alib}:	build ${libamath}"
+echo "	\${AR} rcs static/\${alib} ${libamath}"
+echo "	\${RANLIB} static/\${alib}"
+echo
+echo ".PHONY: install"
+echo "install:	\${alib} \${solib}"
+echo "	\${MKDIR} \${DESTDIR}\${PREFIX}/lib"
+echo "	\${INSTALL} static/\${alib} \${DESTDIR}\${PREFIX}/lib/\${alib}"
+echo "	\${INSTALL} \${solib} \${DESTDIR}\${PREFIX}/lib/\${solib}"
+echo
+echo ".PHONY:	uninstall"
+echo "uninstall:"
+echo "	\${DEL} \${DESTDIR}\${PREFIX}/lib/\${alib}"
+echo "	\${DEL} \${DESTDIR}\${PREFIX}/lib/\${solib}"
+echo
+echo "clean:"
+echo "	\${DEL} static/\${alib} \${solib} ${libamath} ${libamaths}"
+echo
+} >  src/real/Makefile
+#########################################################################
+
+############################ Complex Numbers ############################
+{
+echo "CC       = ${crosscompile}${ccompiler}"
+echo "CFLAGS   = -std=c9x ${libop}${options} ${cxxflags}-I. -I.. -Wall"
+echo "AR       = ${crosscompile}ar"
+echo "RANLIB   = ${crosscompile}ranlib"
+echo "MKDIR    = mkdir -p"
+echo "DEL      = rm -f"
+echo "INSTALL  = install -m 0644"
+echo "PREFIX   = ${prefix}"
+echo
+echo "alib     = lib${amathcplex}.a"
+echo "solib    = lib${amathcplex}.so"
+echo
+echo "all: static shared"
+echo
+echo "static: \${alib}"
+echo
+echo "shared: \${solib}"
+echo
+
+libcomplex=""
+libcomplexs=""
+for f in ${LIBCPLEXSRCS}
+do
+	b=`basename $f .c`
+	echo "static/${b}.o:	${f}"
+	echo "	\${CC} \${CFLAGS} -fno-builtin -c ${f} -o static/${b}.o"
+	echo
+	echo "shared/${b}.o:	${f}"
+	echo "	\${CC} \${CFLAGS} -fPIC -fno-builtin -c ${f} -o shared/${b}.o"
+	echo
+	libcomplex="${libcomplex} static/${b}.o"
+	libcomplexs="${libcomplexs} shared/${b}.o"
+done
+
+echo ".PHONY: build"
+echo "build:"
+echo "	\${MKDIR} static"
+echo "	\${MKDIR} shared"
+echo
+echo "\${solib}:	build ${libcomplexs}"
+echo "	\${CC} -shared -fPIC -Wl,-soname,\${solib} -o \${solib} ${libcomplexs}"
+echo
+echo "\${alib}:	build ${libcomplex}"
+echo "	\${AR} rcs static/\${alib} ${libcomplex}"
+echo "	\${RANLIB} static/\${alib}"
+echo
+echo ".PHONY: install"
+echo "install:	\${alib} \${solib}"
+echo "	\${MKDIR} \${DESTDIR}\${PREFIX}/lib"
+echo "	\${INSTALL} static/\${alib} \${DESTDIR}\${PREFIX}/lib/\${alib}"
+echo "	\${INSTALL} \${solib} \${DESTDIR}\${PREFIX}/lib/\${solib}"
+echo "	\${INSTALL} ../complex.h \${DESTDIR}\${PREFIX}/include"
+echo
+echo ".PHONY: uninstall"
+echo "uninstall:"
+echo "	\${DEL} \${DESTDIR}\${PREFIX}/lib/\${alib}"
+echo "	\${DEL} \${DESTDIR}\${PREFIX}/lib/\${solib}"
+echo "	\${DEL} \${DESTDIR}\${PREFIX}/include/complex.h"
+echo
+echo "clean:"
+echo "	\${DEL} static/\${alib} \${solib} ${libcomplex} ${libcomplexs}"
+echo
+} >  src/cplex/Makefile
+#########################################################################
+
+################################# Main ##################################
+{
+echo
+echo "CC       = ${crosscompile}${ccompiler}"
+echo "CXX      = ${crosscompile}${cxxcompiler}"
+echo "CFLAGS   = ${appop}${options} ${cflags}-Wall -Isrc -Isrc/main"
+echo "CXXFLAGS = ${appop}${options} ${cxxflags}-Wall -Isrc -Isrc/main"
+echo "AR       = ${crosscompile}ar"
+echo "RANLIB   = ${crosscompile}ranlib"
+echo "LFLAGS   = ${ldflags}-l${appsystem} -l${appfunction} -l${appstatement} -l${appmain} -l${appfunction} -l${appstatement} -l${appmain} -l${amathapp} -l${amathcplex} -l${amath} -l${amathc} ${gcclib}"
+echo "LPATH    = -Lsrc/lib -Lsrc/clib -Lsrc/real -Lsrc/cplex -Lsrc/main/function -Lsrc/main/statement -Lsrc/main -Lsrc/system"
+echo "LPATHS   = -Lsrc/lib/static -Lsrc/clib/static -Lsrc/real/static -Lsrc/cplex/static -Lsrc/main/function -Lsrc/main/statement -Lsrc/main -Lsrc/system"
+echo "FLXCAT   = build/flexcat/flexcat"
+echo "MKDIR    = mkdir -p"
+echo "DEL      = rm -f"
+echo "INSTALL  = install -m 0755"
+echo "PREFIX   = ${prefix}"
+echo
+echo "all:	shared-app"
+echo "app:	${appmain} ${appfunction} ${appstatement} ${appsystem}"
+echo "libs:	${amathapp} ${amath} ${amathc} ${amathcplex}"
+echo
+echo "amath:	static-app"
+echo "static:	static-app"
+echo
+echo "${program}.o:	${program}.cpp"
+echo "	\${CXX} \${CXXFLAGS} -c ${program}.cpp -o ${program}.o"
+echo
+echo "${appmain}:"
+echo "	cd src/main && \${MAKE}"
+echo
+echo "${appsystem}:"
+echo "	cd src/system && \${MAKE}"
+echo
+echo "${appfunction}:"
+echo "	cd src/main/function && \${MAKE}"
+echo
+echo "${appstatement}:"
+echo "	cd src/main/statement && \${MAKE}"
+echo
+echo "${amathapp}:"
+echo "	cd src/lib && \${MAKE}"
+echo
+echo "${amath}:"
+echo "	cd src/real && \${MAKE}"
+echo	
+echo "${amathc}:"
+echo "	cd src/clib && \${MAKE}"
+echo	
+echo "${amathcplex}:"
+echo "	cd src/cplex && \${MAKE}"
+echo	
+echo "catalogsa:" # Application catalogs
+echo "	\${FLXCAT} text/keyword.cd src/localize/kword.h=text/keyword.sd"
+echo "	\${FLXCAT} text/help.cd src/localize/help.h=text/help.sd"
+echo "	\${FLXCAT} text/ident.cd src/localize/ident.h=text/ident.sd"
+echo "	\${FLXCAT} text/text.cd src/localize/text.h=text/text.sd"
+echo
+echo "catalogsu:" # Unix catalogs
+echo "	iconv -f ISO-8859-15 -t UTF-8 catalog/dansk/amath-help.ct >utext/dk-help.dict"
+echo "	iconv -f ISO-8859-15 -t UTF-8 catalog/dansk/amath-ident.ct >utext/dk-ident.dict"
+echo "	iconv -f ISO-8859-15 -t UTF-8 catalog/dansk/amath-text.ct >utext/dk-text.dict"
+echo "	iconv -f ISO-8859-15 -t UTF-8 catalog/dansk/amath-keyword.ct >utext/dk-keyword.dict"
+echo
+echo "catalogsw:" # Windows catalogs
+echo "	iconv -f ISO-8859-15 -t CP850 catalog/dansk/amath-help.ct >utext/dk-help.dict"
+echo "	iconv -f ISO-8859-15 -t CP850 catalog/dansk/amath-ident.ct >utext/dk-ident.dict"
+echo "	iconv -f ISO-8859-15 -t CP850 catalog/dansk/amath-text.ct >utext/dk-text.dict"
+echo "	iconv -f ISO-8859-15 -t CP850 catalog/dansk/amath-keyword.ct >utext/dk-keyword.dict"
+echo
+echo "amigacatalogs:"
+echo "	\${MKDIR}  dist/catalog/english"
+echo "	\${FLXCAT} text/help.cd catalog/english/amath-help.ct CATALOG dist/catalog/english/amath-help.catalog"
+echo "	\${FLXCAT} text/ident.cd catalog/english/amath-ident.ct CATALOG dist/catalog/english/amath-ident.catalog"
+echo "	\${FLXCAT} text/text.cd catalog/english/amath-text.ct CATALOG dist/catalog/english/amath-text.catalog"
+echo "	\${MKDIR}  dist/catalog/dansk"
+echo "	\${FLXCAT} text/help.cd catalog/dansk/amath-help.ct CATALOG dist/catalog/dansk/amath-help.catalog"
+echo "	\${FLXCAT} text/ident.cd catalog/dansk/amath-ident.ct CATALOG dist/catalog/dansk/amath-ident.catalog"
+echo "	\${FLXCAT} text/text.cd catalog/dansk/amath-text.ct CATALOG dist/catalog/dansk/amath-text.catalog"
+echo "	\${FLXCAT} text/keyword.cd catalog/dansk/amath-keyword.ct CATALOG dist/catalog/dansk/amath-keyword.catalog"
+echo
+echo "shared-app:	app libs ${program}.o"
+echo "	\${CC} \${CFLAGS} ${exestrip} ${program}.o -o amath \${LPATH} \${LFLAGS}"
+echo
+echo "static-app: ${program}.o"
+echo "	cd src/lib && \${MAKE} static"
+echo "	cd src/clib && \${MAKE} static"
+echo "	cd src/real && \${MAKE} static"
+echo "	cd src/cplex && \${MAKE} static"
+echo "	cd src/main && \${MAKE} static"
+echo "	cd src/system && \${MAKE} static"
+echo "	cd src/main/function && \${MAKE} static"
+echo "	cd src/main/statement && \${MAKE} static"
+echo "	\${CC} \${CFLAGS} ${exestrip} ${program}.o -o amath \${LPATHS} \${LFLAGS}"
+echo
+echo ".PHONY: test"
+echo "test: static-app"
+echo "	./amath test"
+echo
+echo ".PHONY: install"
+echo "install: amath"
+echo "	cd src/lib && \${MAKE} install"
+echo "	cd src/clib && \${MAKE} install"
+echo "	cd src/real && \${MAKE} install"
+echo "	cd src/cplex && \${MAKE} install"
+echo "	\${INSTALL} amath \${DESTDIR}\${PREFIX}/bin"
+echo
+echo ".PHONY: uninstall"
+echo "uninstall:"
+echo "	cd src/lib && \${MAKE} uninstall"
+echo "	cd src/clib && \${MAKE} uninstall"
+echo "	cd src/real && \${MAKE} uninstall"
+echo "	cd src/cplex && \${MAKE} uninstall"
+echo "	\${DEL} \${DESTDIR}\${PREFIX}/bin/amath"
+echo
+echo "clean:"
+echo "	cd src/lib && \${MAKE} clean"
+echo "	cd src/clib && \${MAKE} clean"
+echo "	cd src/real && \${MAKE} clean"
+echo "	cd src/cplex && \${MAKE} clean"
+echo "	cd src/main && \${MAKE} clean"
+echo "	cd src/system && \${MAKE} clean"
+echo "	cd src/main/function && \${MAKE} clean"
+echo "	cd src/main/statement && \${MAKE} clean"
+echo "	\${DEL} ${program}.o amath"
+echo
+} > Makefile
+#########################################################################
+echo "Makefile generated"

@@ -8,18 +8,18 @@
 ;## This file is published under Creative Common License. See:
 ;## http://creativecommons.org/licenses/by-sa/3.0/
 ;## Parts of the content came from wikipedia.org:
-;## http://en.wikipedia.org/wiki/Wikipedia:Copyrights#Re-use_of_text
+;## https://wikipedia.org/wiki/Wikipedia:Copyrights#Re-use_of_text
 ;#############################################################################
-; Partly from http://en.wikipedia.org/wiki/Absolute_value 
+; Partly from https://wikipedia.org/wiki/Absolute_value 
 abs
 The absolute value (or modulus) |x| of a real number x is the#NEWLINE#non-negative value of x without regard to its sign.#NEWLINE##SYNTAXHIGHLIGHT#Example: abs(-237.25)#NORMALTEXT##NEWLINE#
-; Partly from http://en.wikipedia.org/wiki/Sign_function
+; Partly from https://wikipedia.org/wiki/Sign_function
 sgn
 The sign function or signum function is used to extract the sign of a number.#NEWLINE#Thus sgn(x) is 1 when x is positive, and sgn(x) is -1 when x is negative.#NEWLINE##SYNTAXHIGHLIGHT#Example: sgn(-23.94)#NORMALTEXT##NEWLINE#
-; Partly from http://en.wikipedia.org/wiki/Rounding
+; Partly from https://wikipedia.org/wiki/Rounding
 round
 Rounding a numerical value means replacing it by another value that is#NEWLINE#approximately equal but has a shorter, simpler, or more explicit#NEWLINE#representation. Amath rounds a number to the nearest integer.#NEWLINE#
-; Partly from http://en.wikipedia.org/wiki/Rounding
+; Partly from https://wikipedia.org/wiki/Rounding
 trunc
 Truncation is limiting the number of digits right of the decimal point,#NEWLINE#by discarding the least significant ones. Amath truncates a number to#NEWLINE#the nearest integer.#NEWLINE##SYNTAXHIGHLIGHT#Example: trunc(-23.94#NEWLINE#
 floor
@@ -36,13 +36,13 @@ ln
 No help is available for this function.#NEWLINE#
 lg
 No help is available for this function.#NEWLINE#
-; Partly from http://en.wikipedia.org/wiki/Sine
+; Partly from https://wikipedia.org/wiki/Sine
 sin
 Sine is the trigonometric function that for an acute angle is the#NEWLINE#ratio between the leg opposite the angle when it is considered#NEWLINE#part of a right triangle and the hypotenuse.#NEWLINE#
-; Partly from http://en.wikipedia.org/wiki/Trigonometric_functions
+; Partly from https://wikipedia.org/wiki/Trigonometric_functions
 cos
 Cosine is the trigonometric function that for an acute angle is the#NEWLINE#ratio between the leg adjacent to the angle when it is considered#NEWLINE#part of a right triangle and the hypotenuse#NEWLINE#
-; Partly from http://en.wikipedia.org/wiki/Trigonometric_functions
+; Partly from https://wikipedia.org/wiki/Trigonometric_functions
 tan
 Tangent is one of the trigonometry functions. In a right triangle,#NEWLINE#the tangent of an angle is the opposite side over the adjacent side.#NEWLINE#
 cot

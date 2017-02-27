@@ -1,6 +1,6 @@
 ##stringtype C
 /*
- * Copyright (c) 2015-2017 Carsten Sonne Larsen  <cs@innolan.dk>
+ * Copyright (c) 2014-2017 Carsten Sonne Larsen <cs@innolan.net>
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -37,7 +37,8 @@
  * 
  */
 
-#include "clib.h"
+#include "amath.h"
+#include "platform.h"
 #include "localize/lex.h"
 
 #define symzero Symbol(0)

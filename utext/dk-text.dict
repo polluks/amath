@@ -2,7 +2,7 @@
 ## language dansk
 ## codeset 0
 ; #############################################################################
-; Copyright (c) 2015-2017 Carsten Sonne Larsen  <cs@innolan.dk>
+; Copyright (c) 2014-2017 Carsten Sonne Larsen <cs@innolan.net>
 ; All rights reserved.
 ; 
 ; Redistribution and use in source and binary forms, with or without
@@ -27,7 +27,7 @@
 ; OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 ; #############################################################################
 INTROMSG
-#NORMALTEXT##BOLD##STARTMSG##NEWLINE##NORMALTEXT##COLOR02#Skriv hj‘lp for at f† vist uddybende information.#NEWLINE#
+#NORMALTEXT##BOLD##STARTMSG##NEWLINE##NORMALTEXT##COLOR02#Skriv hjï¿½lp for at fï¿½ vist uddybende information.#NEWLINE#
 TXTLISTDIRHEADER
  Type       Navn#NEWLINE#-----------------------------------------------#NEWLINE#
 TXTLISTDIRTFILE
@@ -41,9 +41,9 @@ Allokerede blokke: #SPACE#
 TXTMEMSIZE
 Hukommelsesforbrug:#SPACE#
 TXTMEMMAXSIZE
-H›jeste forbrug:   #SPACE#
+Hï¿½jeste forbrug:   #SPACE#
 HELPNOHELP
-Der er ingen hj‘lp tilg‘ngelig om det emne.#NEWLINE#
+Der er ingen hjï¿½lp tilgï¿½ngelig om det emne.#NEWLINE#
 HELPSYNTAX
 Syntaktiske fejl:#SPACE#
 HELPUERROR
@@ -55,19 +55,19 @@ Funktionen er ikke defineret:#SPACE#
 HELPFUNRDEF
 Funktionen er allerede defineret:#SPACE#
 HELPPNUMERA
-Grundtallet skal v‘re mellem 2 og 32:#SPACE#
+Grundtallet skal vï¿½re mellem 2 og 32:#SPACE#
 HELPPDIGITS
-Antal betydende cifre skal v‘re mellem 0 og 15:#SPACE#
+Antal betydende cifre skal vï¿½re mellem 0 og 15:#SPACE#
 HELPINPUSHOW
-Talsystemet n†r computeren l‘ser ind er#SPACE#
+Talsystemet nï¿½r computeren lï¿½ser ind er#SPACE#
 HELPOUTPSHOW
-Talsystemet n†r computeren skriver ud er#SPACE#
+Talsystemet nï¿½r computeren skriver ud er#SPACE#
 HELPINPUSETT
-Talsystemet ved indl‘sning ‘ndret til#SPACE#
+Talsystemet ved indlï¿½sning ï¿½ndret til#SPACE#
 HELPOUTPSETT
-Talsystemet ved udskrivning ‘ndret til#SPACE#
+Talsystemet ved udskrivning ï¿½ndret til#SPACE#
 HELPDIGISETT
-Antal betydende cifre ‘ndret til#SPACE#
+Antal betydende cifre ï¿½ndret til#SPACE#
 HELPDIGISHOW
 Antal betydende cifre der vises er#SPACE#
 HELPVARSNDEF
@@ -75,7 +75,7 @@ Der er ikke defineret nogle variabler.#NEWLINE#
 HELPFUNCNDEF
 Der er ikke defineret nogle funktioner.#NEWLINE#
 HELPLOADSUCC
-Variabler og funktioner indl‘st fra fil.#NEWLINE#
+Variabler og funktioner indlï¿½st fra fil.#NEWLINE#
 HELPSAVESUCC
 Variabler og funktioner gemt til fil.#NEWLINE#
 HELPSAVEFAIL
@@ -83,14 +83,14 @@ Kan ikke gemme fil.#NEWLINE#
 HELPSAVENOTH
 Der er ikke noget og gemme.#NEWLINE#
 HELPPREFLOAD
-Pr‘ferencer blev indl‘st.#NEWLINE#
+Prï¿½ferencer blev indlï¿½st.#NEWLINE#
 HELPPREFNOLO
-Kunne ikke indl‘ses pr‘ferencer.#NEWLINE#
+Kunne ikke indlï¿½ses prï¿½ferencer.#NEWLINE#
 HELPPREFSAVE
-Pr‘ferencer blev gemt.#NEWLINE#
+Prï¿½ferencer blev gemt.#NEWLINE#
 HELPPREFNOSA
-Kunne ikke gemme pr‘ferencer.#NEWLINE#
+Kunne ikke gemme prï¿½ferencer.#NEWLINE#
 MSGNODIR
-Mappen kan ikke †bnes:#SPACE#
+Mappen kan ikke ï¿½bnes:#SPACE#
 MSGNOFILE
-Filen kan ikke †bnes.#NEWLINE#
+Filen kan ikke ï¿½bnes.#NEWLINE#
