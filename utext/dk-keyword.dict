@@ -2,7 +2,7 @@
 ## language dansk
 ## codeset 0
 ;#############################################################################
-; Copyright (c) 2015-2017 Carsten Sonne Larsen  <cs@innolan.dk>
+; Copyright (c) 2014-2017 Carsten Sonne Larsen <cs@innolan.net>
 ; All rights reserved.
 ; 
 ; Redistribution and use in source and binary forms, with or without
@@ -58,7 +58,7 @@ plot
 plot
 ;######### ExecuteStatement
 execute
-k›r
+kï¿½r
 ;######### ExitStatement
 exit
 afslut
@@ -90,7 +90,7 @@ hyperbolic
 hyperbolsk
 ;######### HelpStatement
 help
-hj‘lp
+hjï¿½lp
 ;######### PromptStatement
 prompt
 prompt
@@ -104,9 +104,9 @@ memory
 hukommelse
 ;######### PrefsStatement
 prefs
-pr‘f
+prï¿½f
 preferences
-pr‘ferencer
+prï¿½ferencer
 ;######### ListStatement and keyword
 list
 list
@@ -137,7 +137,7 @@ ud
 bin
 bin
 binary
-bin‘r
+binï¿½r
 ;######### Octal keyword
 oct
 okt

@@ -2,33 +2,43 @@
 ---                           amath change history                          ---
 -------------------------------------------------------------------------------
 
+v1.7.0 February 28 2017
+- Introduce scientific notation.
+- Introduce Not a Number (NaN).
+- Fixed bugs related to infinity (Inf).
+- Fixed bugs in log of complex numbers.
+- Fixed bugs in numeral systems.
+- Miscellaneous minor bug fixes.
+- Early trigonometric functions.
+- Static and dynamic libraries.
+
 v1.6.4 February 04 2017
-- Fixed Windows memory bugs
-- Fixed 64 bit memory bugs
+- Fixed Windows memory bugs.
+- Fixed 64 bit memory bugs.
 
 v1.6.3 February 03 2017
-- Improved error handling
-- Fixed error in fraction point parsing
-- Fixed typo in help text
-- 64 bit PowerPC support
-- Fixed AROS build errors
-- Fixed ARMv6 build errors
-- Fixed 64 bit ARM build errors
-- Debian support
-- NetBSD support
+- Improved error handling.
+- Fixed error in fraction point parsing.
+- Fixed typo in help text.
+- 64 bit PowerPC support.
+- Fixed AROS build errors.
+- Fixed ARMv6 build errors.
+- Fixed 64 bit ARM build errors.
+- Debian support.
+- NetBSD support.
 
 v1.6.2 January 24 2017
-- Fixed bug in memory allocation
-- Fixed bug in native keybord input
-- Included build options in executables
-- ARM support
+- Fixed bug in memory allocation.
+- Fixed bug in native keybord input.
+- Included build options in executables.
+- ARM support.
 
 v1.6.1 January 21 2017
-- Fixed language bug in Windows
-- Fixed potential memory bugs
-- Clang compiler support
-- Update copyright texts
-- New doxygen documentation
+- Fixed language bug in Windows.
+- Fixed potential memory bugs.
+- Clang compiler support.
+- Update copyright texts.
+- New doxygen documentation.
 
 v1.6.0 April 7 2016
 - Complete internal restructure of source code.
@@ -143,4 +153,3 @@ v1.1b July 13 2014
 
 v1.0b July 11 2014
 - First public release.
-
