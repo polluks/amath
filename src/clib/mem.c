@@ -22,8 +22,11 @@
  * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF
  * THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  *
+ * Project homepage:
+ * http://amath.innolan.net
+ * 
  */
-
+ 
 #include "amathc.h"
 
 #ifdef AMIGA

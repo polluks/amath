@@ -1,4 +1,4 @@
-/*
+/*-
  * Copyright (c) 2014-2017 Carsten Sonne Larsen <cs@innolan.net>
  * All rights reserved.
  *
@@ -25,6 +25,9 @@
  * Generated with FlexCat. For more information, see:
  * http://sourceforge.net/projects/flexcat/
  *
+ * Project homepage:
+ * http://amath.innolan.net
+ * 
  */
 
 #ifndef AMATH_LOCALIZE_KEYWORD_H
