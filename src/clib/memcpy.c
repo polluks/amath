@@ -36,7 +36,7 @@
  *
  * Code originate from FreeBSD base, revision 229286.
  *
- * Browse at:
+ * The original source code can be obtained from:
  * https://svnweb.freebsd.org/base/head/lib/libc/string/bcopy.c?revision=229286
  *
  */

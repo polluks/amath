@@ -1,4 +1,4 @@
-/*
+/*-
  * Copyright (c) 2014-2017 Carsten Sonne Larsen <cs@innolan.net>
  * All rights reserved.
  *
@@ -22,8 +22,11 @@
  * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF
  * THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  *
+ * Project homepage:
+ * http://amath.innolan.net
+ * 
  */
-
+ 
 #include "amath.h"
 #include "amathc.h"
 #include "localize/lex.h"
