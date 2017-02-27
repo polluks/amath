@@ -1,7 +1,7 @@
-CC       = x86_64-aros-gcc
+CC       = gcc
 CFLAGS   = -std=c9x -O3 -DWITHTEST  -I. -I.. -Wall
-AR       = x86_64-aros-ar
-RANLIB   = x86_64-aros-ranlib
+AR       = ar
+RANLIB   = ranlib
 MKDIR    = mkdir -p
 DEL      = rm -f
 INSTALL  = install -m 0644

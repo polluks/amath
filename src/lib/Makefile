@@ -1,7 +1,7 @@
-CXX      = x86_64-aros-g++
+CXX      = g++
 CXXFLAGS = -O3 -DWITHTEST  -I. -I.. -Wall
-AR       = x86_64-aros-ar
-RANLIB   = x86_64-aros-ranlib
+AR       = ar
+RANLIB   = ranlib
 MKDIR    = mkdir -p
 DEL      = rm -f
 INSTALL  = install -m 0644

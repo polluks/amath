@@ -1,7 +1,7 @@
-CXX      = x86_64-aros-g++
+CXX      = g++
 CXXFLAGS = -O2 -DWITHTEST  -I. -I../.. -Wall
-AR       = x86_64-aros-ar
-RANLIB   = x86_64-aros-ranlib
+AR       = ar
+RANLIB   = ranlib
 DEL      = rm -f
 
 all: lib
