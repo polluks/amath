@@ -38,7 +38,7 @@ public:
     explicit SaveStatement(const char* file);
     ~SaveStatement();
     char* Execute();
-    
+
 private:
     char* file;
 };

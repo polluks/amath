@@ -32,7 +32,12 @@
 
 AboutStatement::AboutStatement() :
     StatementNode(
-    "This ..." NEWLINE)
+        BOLD TXTVERSMSG NORMALTEXT NEWLINE TXTCOMPMSG NORMALTEXT NEWLINE NEWLINE
+        "amath features a case sensitive command line interface, internal IEEE 754" NEWLINE
+        "calculations with 15 significant digits, calculations with real and complex" NEWLINE
+        "numbers, variables and user defined functions, logarithmic and exponential" NEWLINE
+        "functions, trigonometric and hyperbolic function and selected mathematical" NEWLINE
+        "constants and rounding functions." NEWLINE)
 {
 }
 

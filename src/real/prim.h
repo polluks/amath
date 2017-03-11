@@ -31,7 +31,7 @@
 #define AMATH_LIB_REAL_PRIM_H
 
 /**
- * @file  prim.h
+ * @file  real/prim.h
  * @brief Primitives in math library for handling real numbers.
  *
  * The library is based on fdlib by Sun Microsystems.

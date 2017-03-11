@@ -382,7 +382,7 @@ Number* RealNumber::CubeRoot()
 Number* RealNumber::Reciprocal()
 {
     if (x != 0.0)
-        return new RealNumber(1 / x);
+        return new RealNumber(1.0 / x);
 
     return new NonNumber(nnnan);
 }
@@ -393,21 +393,7 @@ Number* RealNumber::Reciprocal()
  */
 Number* RealNumber::Factorial()
 {
-    int l = (int)trunc(x);
-    double r = 1;
-    int c;
-
-    // TODO: Fix
-    if (l < 0)
-        return new RealNumber(0);
-
-    if (l == 0)
-        return new RealNumber(1);
-
-    for (c = 1; c <= l; c++)
-        r = r * c;
-
-    return new RealNumber(r);
+    return new NonNumber(nnnimp);
 }
 
 /**
@@ -825,7 +811,7 @@ Number* RealNumber::ArcCoVerSine()
 {
     if (x < 0.0 || x > 2.0)
         return new NonNumber(nnnan);
-    
+
     return new RealNumber(acvs(x));
 }
 
@@ -838,7 +824,7 @@ Number* RealNumber::ArcHaVerSine()
 {
     if (x < 0.0 || x > 1.0)
         return new NonNumber(nnnan);
-    
+
     return new RealNumber(ahv(x));
 }
 
@@ -869,14 +855,12 @@ Number* RealNumber::ExCosecant()
 
 Number* RealNumber::ArcExSecant()
 {
-    if (x <= -2.0 || x >= 0.0)
-    {
-        double a = x * x + 2 * x;
-        double b = sqrt(a);
-        return new RealNumber(atan(b));
-    }
+    if (x > -2.0 && x < 0.0)
+        return new NonNumber(nnnan);
 
-    return new NonNumber(nnnan);
+    double a = x * x + 2 * x;
+    double b = sqrt(a);
+    return new RealNumber(atan(b));
 }
 
 Number* RealNumber::ArcExCosecant()

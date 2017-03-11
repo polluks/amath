@@ -74,4 +74,3 @@ void StatementNode::Detach(SyntaxNode* node)
 void StatementNode::Replace(SyntaxNode* n, SyntaxNode* x)
 {
 }
-    

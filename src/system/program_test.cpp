@@ -30,9 +30,9 @@
 #ifdef WITHTEST
 #include "amath.h"
 #include "amathc.h"
+#include "program_test.h"
 #include "lib/charbuf.h"
 #include "main/evaluator.h"
-#include "system/program_test.h"
 #include <stdio.h>
 
 TestProgram::TestProgram(bool silent)
@@ -42,7 +42,7 @@ TestProgram::TestProgram(bool silent)
     pass = 0;
     fail = 0;
 
-    // Ignore type of locale fraction point.
+// Ignore type of locale fraction point.
     delete Input;
     Input = new DecimalSystem(Preferences->GetDigits(), '.');
 
@@ -219,7 +219,7 @@ void TestProgram::RunTestset02()
     TestExpression("sin(pi/2)", "sin(pi/2) = 1");
     TestExpression("tan(pi)", "tan(pi) = 0");
     TestExpression("tan(-pi)", "tan(-pi) = 0");
-    //TestExpression("tan(pi/2)", "tan(pi/2) = Inf"); // FAIL
+    TestExpression("tan(pi/2)", "tan(pi/2) = Inf"); // FAIL
     TestExpression("sin(1/12*pi)", "sin(1/12*pi) = 0.25881904510252");
     TestExpression("sin(11/12*pi)", "sin(11/12*pi) = 0.25881904510252");
     TestExpression("sin(1/6*pi)", "sin(1/6*pi) = 0.5");
@@ -536,7 +536,7 @@ void TestProgram::RunTestset08()
     TestExpression("1i-1.0i", "1i-1i = 0");
     TestExpression("1.0i-1.0i", "1i-1i = 0");
 
-    // Mul, Div ...
+// Mul, Div ...
 }
 
 void TestProgram::RunTestset09()

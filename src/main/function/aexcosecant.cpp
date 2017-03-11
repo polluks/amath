@@ -42,5 +42,5 @@ FunctionNode* ArcExcosecantNode::Create(ExpressionNode* expression, char* text, 
 Number* ArcExcosecantNode::Evaluate()
 {
     result = expression->Evaluate()->ArcExCosecant();
-    return result;        
+    return result;
 }

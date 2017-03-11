@@ -33,7 +33,9 @@
 #include "amatht.h"
 
 static const identalias identaliases[] = {
+    {"squareroot", "sqrt"},
     {"sqr", "sqrt"},
+    {"cuberoot", "cbrt"},
     {"cbr", "cbrt"},
     {"log2", "lb"},
     {"log", "lg"},
@@ -41,6 +43,18 @@ static const identalias identaliases[] = {
     {"sine", "sin"},
     {"cosine", "cos"},
     {"tangent", "tan"},
+    {"secant", "sec"},
+    {"cosec", "csc"},
+    {"cosecant", "csc"},
+    {"ctg", "cot"},
+    {"ctn", "cot"},
+    {"cotangent", "cot"},   
+    {"arcsine", "asin"},
+    {"arccosine", "acos"},
+    {"arctangent", "atan"},
+    {"arccotangent", "acot"},
+    {"arcsecant", "asec"},
+    {"arccosecant", "acsc"},
     {"arsin", "asin"},
     {"arcos", "acos"},
     {"artan", "atan"},

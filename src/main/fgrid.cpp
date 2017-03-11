@@ -28,7 +28,6 @@
  */
 
 #include "fgrid.h"
-#include "functions.h"
 #include "lib/real.h"
 
 Grid::Grid(UserFunction* function) :

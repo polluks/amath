@@ -44,4 +44,3 @@ Number* TruncNode::Evaluate()
     result = expression->Evaluate()->Trunc();
     return result;
 }
-    

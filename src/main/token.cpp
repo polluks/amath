@@ -27,7 +27,6 @@
  * 
  */
 
-#include "amath.h"
 #include "amathc.h"
 #include "main/token.h"
 

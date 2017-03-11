@@ -1,14 +1,20 @@
-CC       = gcc
-CFLAGS   = -std=c9x -O3 -DWITHTEST -I. -I.. -Wall
-AR       = ar
-RANLIB   = ranlib
-MKDIR    = mkdir -p
-DEL      = rm -f
-INSTALL  = install -m 0644
-PREFIX   = /usr
-
-alib     = libamath.a
-solib    = libamath.so
+CC        = gcc
+CFLAGS    = -std=c9x -O3 -DWITHTEST -I. -I.. -Wall
+AR        = ar
+RANLIB    = ranlib
+MKDIR     = mkdir -p
+DEL       = rm -f
+INSTALL   = install -m 0644
+LDCONFIG  = ldconfig
+PREFIX    = /usr
+INSTDIR   = ${DESTDIR}${PREFIX}/lib/amath
+INSTDIRI  = ${DESTDIR}${PREFIX}/include/amath
+INSTDIRPC = ${DESTDIR}${PREFIX}/lib/pkgconfig
+INSTDIRM  = ${DESTDIR}${PREFIX}/share/man/man3
+alib      = libamath.a
+solib     = libamath.so
+pkgconfig = amathr.pc
+manpage   = amathr.3
 
 all: static shared
 
@@ -268,7 +274,7 @@ build:
 	${MKDIR} shared
 
 ${solib}:	build  shared/acos.o shared/acosh.o shared/acvs.o shared/ahv.o shared/ahvc.o shared/asin.o shared/asinh.o shared/atan.o shared/atan2.o shared/atanh.o shared/aver.o shared/cbrt.o shared/ceil.o shared/copysign.o shared/cos.o shared/cosh.o shared/exp.o shared/expm1.o shared/fabs.o shared/finite.o shared/floor.o shared/fmod.o shared/hypot.o shared/isnan.o shared/kcos.o shared/kremp2.o shared/ksin.o shared/ktan.o shared/log.o shared/log10.o shared/log1p.o shared/pow.o shared/remp2.o shared/round.o shared/scalbn.o shared/sin.o shared/sinh.o shared/sqrt.o shared/tan.o shared/tanh.o shared/trunc.o
-	${CC} -shared -fPIC -Wl,-soname,${solib} -o ${solib}  shared/acos.o shared/acosh.o shared/acvs.o shared/ahv.o shared/ahvc.o shared/asin.o shared/asinh.o shared/atan.o shared/atan2.o shared/atanh.o shared/aver.o shared/cbrt.o shared/ceil.o shared/copysign.o shared/cos.o shared/cosh.o shared/exp.o shared/expm1.o shared/fabs.o shared/finite.o shared/floor.o shared/fmod.o shared/hypot.o shared/isnan.o shared/kcos.o shared/kremp2.o shared/ksin.o shared/ktan.o shared/log.o shared/log10.o shared/log1p.o shared/pow.o shared/remp2.o shared/round.o shared/scalbn.o shared/sin.o shared/sinh.o shared/sqrt.o shared/tan.o shared/tanh.o shared/trunc.o
+	${CC} ${CFLAGS} -shared -s -fPIC -Wl,-soname,${solib}.1.7.0 -o ${solib}  shared/acos.o shared/acosh.o shared/acvs.o shared/ahv.o shared/ahvc.o shared/asin.o shared/asinh.o shared/atan.o shared/atan2.o shared/atanh.o shared/aver.o shared/cbrt.o shared/ceil.o shared/copysign.o shared/cos.o shared/cosh.o shared/exp.o shared/expm1.o shared/fabs.o shared/finite.o shared/floor.o shared/fmod.o shared/hypot.o shared/isnan.o shared/kcos.o shared/kremp2.o shared/ksin.o shared/ktan.o shared/log.o shared/log10.o shared/log1p.o shared/pow.o shared/remp2.o shared/round.o shared/scalbn.o shared/sin.o shared/sinh.o shared/sqrt.o shared/tan.o shared/tanh.o shared/trunc.o
 
 ${alib}:	build  static/acos.o static/acosh.o static/acvs.o static/ahv.o static/ahvc.o static/asin.o static/asinh.o static/atan.o static/atan2.o static/atanh.o static/aver.o static/cbrt.o static/ceil.o static/copysign.o static/cos.o static/cosh.o static/exp.o static/expm1.o static/fabs.o static/finite.o static/floor.o static/fmod.o static/hypot.o static/isnan.o static/kcos.o static/kremp2.o static/ksin.o static/ktan.o static/log.o static/log10.o static/log1p.o static/pow.o static/remp2.o static/round.o static/scalbn.o static/sin.o static/sinh.o static/sqrt.o static/tan.o static/tanh.o static/trunc.o
 	${AR} rcs static/${alib}  static/acos.o static/acosh.o static/acvs.o static/ahv.o static/ahvc.o static/asin.o static/asinh.o static/atan.o static/atan2.o static/atanh.o static/aver.o static/cbrt.o static/ceil.o static/copysign.o static/cos.o static/cosh.o static/exp.o static/expm1.o static/fabs.o static/finite.o static/floor.o static/fmod.o static/hypot.o static/isnan.o static/kcos.o static/kremp2.o static/ksin.o static/ktan.o static/log.o static/log10.o static/log1p.o static/pow.o static/remp2.o static/round.o static/scalbn.o static/sin.o static/sinh.o static/sqrt.o static/tan.o static/tanh.o static/trunc.o
@@ -276,14 +282,24 @@ ${alib}:	build  static/acos.o static/acosh.o static/acvs.o static/ahv.o static/a
 
 .PHONY: install
 install:	${alib} ${solib}
-	${MKDIR} ${DESTDIR}${PREFIX}/lib
-	${INSTALL} static/${alib} ${DESTDIR}${PREFIX}/lib/${alib}
-	${INSTALL} ${solib} ${DESTDIR}${PREFIX}/lib/${solib}
+	${MKDIR} ${INSTDIR}
+	${MKDIR} ${INSTDIRPC}
+	${MKDIR} ${INSTDIRI}
+	${INSTALL} static/${alib} ${INSTDIR}/${alib}
+	${INSTALL} ${solib} ${INSTDIR}/${solib}
+	${INSTALL} ${pkgconfig} ${INSTDIRPC}/${pkgconfig}
+	${INSTALL} ${manpage} ${INSTDIRM}/${manpage}
+	${INSTALL} ../math.h ${INSTDIRI}/amathr.h
+	${LDCONFIG} ${INSTDIR}
 
 .PHONY:	uninstall
 uninstall:
-	${DEL} ${DESTDIR}${PREFIX}/lib/${alib}
-	${DEL} ${DESTDIR}${PREFIX}/lib/${solib}
+	${DEL} ${INSTDIR}/${alib}
+	${DEL} ${INSTDIR}/${solib}
+	${DEL} ${INSTDIRPC}/${pkgconfig}
+	${DEL} ${INSTDIRM}/${manpage}
+	${DEL} ${INSTDIRI}/amathr.h
+	${LDCONFIG}
 
 clean:
 	${DEL} static/${alib} ${solib}  static/acos.o static/acosh.o static/acvs.o static/ahv.o static/ahvc.o static/asin.o static/asinh.o static/atan.o static/atan2.o static/atanh.o static/aver.o static/cbrt.o static/ceil.o static/copysign.o static/cos.o static/cosh.o static/exp.o static/expm1.o static/fabs.o static/finite.o static/floor.o static/fmod.o static/hypot.o static/isnan.o static/kcos.o static/kremp2.o static/ksin.o static/ktan.o static/log.o static/log10.o static/log1p.o static/pow.o static/remp2.o static/round.o static/scalbn.o static/sin.o static/sinh.o static/sqrt.o static/tan.o static/tanh.o static/trunc.o  shared/acos.o shared/acosh.o shared/acvs.o shared/ahv.o shared/ahvc.o shared/asin.o shared/asinh.o shared/atan.o shared/atan2.o shared/atanh.o shared/aver.o shared/cbrt.o shared/ceil.o shared/copysign.o shared/cos.o shared/cosh.o shared/exp.o shared/expm1.o shared/fabs.o shared/finite.o shared/floor.o shared/fmod.o shared/hypot.o shared/isnan.o shared/kcos.o shared/kremp2.o shared/ksin.o shared/ktan.o shared/log.o shared/log10.o shared/log1p.o shared/pow.o shared/remp2.o shared/round.o shared/scalbn.o shared/sin.o shared/sinh.o shared/sqrt.o shared/tan.o shared/tanh.o shared/trunc.o

@@ -29,6 +29,8 @@
 
 #include "amath.h"
 #include "amathc.h"
+#include "program.h"
+#include "language.h"
 #include "localize/lex.h"
 #include "localize/help.h"
 #include "localize/kword.h"
@@ -36,8 +38,6 @@
 #include "localize/text.h"
 #include "localize/tags.h"
 #include "localize/ialias.h"
-#include "system/language.h"
-#include "system/program.h"
 
 Language::Language()
 {

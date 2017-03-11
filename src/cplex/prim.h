@@ -31,7 +31,7 @@
 #define AMATH_LIB_COMPLEX_PRIM_H
 
 /**
- * @file  prim.h
+ * @file  cplex/prim.h
  * @brief Primitives in math library for handling complex numbers.
  *
  */

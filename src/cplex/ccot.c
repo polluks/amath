@@ -26,7 +26,7 @@
  * http://amath.innolan.net
  * 
  */
- 
+
 #include "prim.h"
 #include "math.h"
 #include "complex.h"
@@ -57,9 +57,12 @@ complex ccot(complex z)
     b = cimag(z);
     d = cosh(2.0 * b) - cos(2.0 * a);
 
-    if (d == 0.0) {
+    if (d == 0.0)
+    {
         w = cpack(D_INFP, D_INFP);
-    } else {
+    }
+    else
+    {
         w = cpack((sin(2.0 * a) / d), (-sinh(2.0 * b) / d));
     }
 

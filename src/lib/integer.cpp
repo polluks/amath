@@ -378,7 +378,6 @@ Number* IntegerNumber::Log()
  */
 Number* IntegerNumber::Log10()
 {
-
     if (i == 0)
         return new NonNumber(nnnan);
 

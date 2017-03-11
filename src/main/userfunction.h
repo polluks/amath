@@ -47,9 +47,9 @@ public:
     UserFunction(const char* name, const char* variable, ExpressionNode* expression);
     explicit UserFunction(const char* name);
     ~UserFunction();
-    
+
     UserFunction* Next;
-    
+
     char* GetName() const;
     char* GetDefitionName() const;
     char* GetDefitionText() const;
@@ -57,14 +57,14 @@ public:
     Variable* CreateVariable(const char* name);
     ExpressionNode* GetExpression() const;
     void SetExpression(ExpressionNode* expression);
-    
+
 private:
     char* name;
     Variable* variable;
     ExpressionNode* expression;
     bool chainDelete;
     friend bool FunctionList::Delete(const char* name, const char* argument);
-    
+
     void InitializeTexts() const;
     CharBuffer* defname;
     CharBuffer* defition;

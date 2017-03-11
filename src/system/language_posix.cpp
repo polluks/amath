@@ -26,17 +26,17 @@
  * http://amath.innolan.net
  * 
  */
- 
+
 #include "amath.h"
 #include "amathc.h"
+#include "program.h"
+#include "language_posix.h"
 #include "localize/lex.h"
 #include "localize/tags.h"
 #include "localize/help.h"
 #include "localize/text.h"
 #include "localize/ident.h"
 #include "localize/kword.h"
-#include "system/program.h"
-#include "system/language_posix.h"
 
 #ifdef UNIX
 #include <stdio.h>

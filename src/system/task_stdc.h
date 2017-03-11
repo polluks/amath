@@ -31,7 +31,7 @@
 #define AMATH_STANDARD_TASK
 
 /**
- * @file  ctask.h
+ * @file  task_stdc.h
  * @brief CLib compliant thread handling.
  *
  */
@@ -40,8 +40,8 @@
 #include "amathc.h"
 
 #ifndef AMIGA
-#include "system/task.h"
-#include "system/thread.h"
+#include "task.h"
+#include "thread.h"
 
 /**
 * @brief Encapsulates calls to POSIX task.

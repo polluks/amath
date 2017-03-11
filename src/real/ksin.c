@@ -57,6 +57,7 @@ S6  =  1.58969099521155010221e-10; /* 0x3DE5D93A, 0x5ACFD57C */
  * @date    95/01/18
  * @details
  *
+ * <pre>
  * Kernel sin function on [-pi/4, pi/4], pi/4 ~ 0.7854
  * Input x is assumed to be bounded by ~pi/4 in magnitude.
  * Input y is the tail of x.

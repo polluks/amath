@@ -29,15 +29,15 @@
 
 #include "amath.h"
 #include "amathc.h"
+#include "program.h"
+#include "language_stdc.h"
+#include "filesystem_stdc.h"
 #include "localize/lex.h"
 #include "localize/tags.h"
 #include "localize/help.h"
 #include "localize/text.h"
 #include "localize/ident.h"
 #include "localize/kword.h"
-#include "system/program.h"
-#include "system/language_stdc.h"
-#include "system/filesystem_stdc.h"
 
 #if !defined(AMIGA)
 

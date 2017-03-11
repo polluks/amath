@@ -1,5 +1,5 @@
 ##stringtype C
-/*
+/*-
  * Copyright (c) 2014-2017 Carsten Sonne Larsen <cs@innolan.net>
  * All rights reserved.
  *
@@ -26,26 +26,27 @@
  * Generated with FlexCat. For more information, see:
  * http://sourceforge.net/projects/flexcat/
  *
+ * Project homepage:
+ * http://amath.innolan.net
+ * 
  */
 
 #ifndef AMATH_LOCALIZE_TEXT_H
 #define AMATH_LOCALIZE_TEXT_H
 
 /**
- * @file  text.h
+ * @file  localize/text.h
  * @brief Static texts in amath.
- * 
+ *
  */
 
+#include "main.h"
 #include "amath.h"
-#include "platform.h"
+#include "amathc.h"
+#include "amatht.h"
+#include "system/program.h"
 
-#define %i Program->Language->GetText(%d)
-
-struct textdef {
-    int id;
-    const char *text;
-};
+#define %i (Program->Language->GetText(%d))
 
 static const textdef textdefs[] = {
     { %d, %s }, /* %i */

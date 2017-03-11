@@ -29,7 +29,7 @@
 
 #include "amathc.h"
 
-#ifdef AMIGA 
+#ifdef AMIGA
 #include <clib/exec_protos.h>
 #endif
 

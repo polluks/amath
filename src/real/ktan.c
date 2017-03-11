@@ -72,6 +72,7 @@ static const double xxx[] = {
  * @date    04/04/22
  * @details
  *
+ * <pre>
  * Kernel tan function on [-pi/4, pi/4], pi/4 ~ 0.7854
  * Input x is assumed to be bounded by ~pi/4 in magnitude.
  * Input y is the tail of x.

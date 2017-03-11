@@ -34,6 +34,30 @@ arccotangent.o:	arccotangent.cpp
 arcsecant.o:	arcsecant.cpp
 	${CXX} ${CXXFLAGS} -c arcsecant.cpp
 
+arccovercosine.o:	arccovercosine.cpp
+	${CXX} ${CXXFLAGS} -c arccovercosine.cpp
+
+arccoversine.o:	arccoversine.cpp
+	${CXX} ${CXXFLAGS} -c arccoversine.cpp
+
+archacovercosine.o:	archacovercosine.cpp
+	${CXX} ${CXXFLAGS} -c archacovercosine.cpp
+
+archacoversine.o:	archacoversine.cpp
+	${CXX} ${CXXFLAGS} -c archacoversine.cpp
+
+archavercosine.o:	archavercosine.cpp
+	${CXX} ${CXXFLAGS} -c archavercosine.cpp
+
+archaversine.o:	archaversine.cpp
+	${CXX} ${CXXFLAGS} -c archaversine.cpp
+
+arcvercosine.o:	arcvercosine.cpp
+	${CXX} ${CXXFLAGS} -c arcvercosine.cpp
+
+arcversine.o:	arcversine.cpp
+	${CXX} ${CXXFLAGS} -c arcversine.cpp
+
 ceil.o:	ceil.cpp
 	${CXX} ${CXXFLAGS} -c ceil.cpp
 
@@ -75,6 +99,42 @@ havercos.o:	havercos.cpp
 
 haversin.o:	haversin.cpp
 	${CXX} ${CXXFLAGS} -c haversin.cpp
+
+hyparccosecant.o:	hyparccosecant.cpp
+	${CXX} ${CXXFLAGS} -c hyparccosecant.cpp
+
+hyparccosine.o:	hyparccosine.cpp
+	${CXX} ${CXXFLAGS} -c hyparccosine.cpp
+
+hyparccotangent.o:	hyparccotangent.cpp
+	${CXX} ${CXXFLAGS} -c hyparccotangent.cpp
+
+hyparcsecant.o:	hyparcsecant.cpp
+	${CXX} ${CXXFLAGS} -c hyparcsecant.cpp
+
+hyparcsine.o:	hyparcsine.cpp
+	${CXX} ${CXXFLAGS} -c hyparcsine.cpp
+
+hyparctangent.o:	hyparctangent.cpp
+	${CXX} ${CXXFLAGS} -c hyparctangent.cpp
+
+hypcosecant.o:	hypcosecant.cpp
+	${CXX} ${CXXFLAGS} -c hypcosecant.cpp
+
+hypcosine.o:	hypcosine.cpp
+	${CXX} ${CXXFLAGS} -c hypcosine.cpp
+
+hypcotangent.o:	hypcotangent.cpp
+	${CXX} ${CXXFLAGS} -c hypcotangent.cpp
+
+hypsecant.o:	hypsecant.cpp
+	${CXX} ${CXXFLAGS} -c hypsecant.cpp
+
+hypsine.o:	hypsine.cpp
+	${CXX} ${CXXFLAGS} -c hypsine.cpp
+
+hyptangent.o:	hyptangent.cpp
+	${CXX} ${CXXFLAGS} -c hyptangent.cpp
 
 ln.o:	ln.cpp
 	${CXX} ${CXXFLAGS} -c ln.cpp
@@ -118,10 +178,10 @@ vercos.o:	vercos.cpp
 versin.o:	versin.cpp
 	${CXX} ${CXXFLAGS} -c versin.cpp
 
-lib:	 absolute.o aexcosecant.o aexsecant.o arccos.o arcsin.o arctan.o arccosecant.o arccotangent.o arcsecant.o ceil.o cosecant.o cosine.o cotangent.o covercos.o coversin.o cube.o excosecant.o exsecant.o floor.o hacovercos.o hacoversin.o havercos.o haversin.o ln.o log10.o log2.o node.o round.o secant.o signum.o sine.o square.o tangent.o trunc.o user.o vercos.o versin.o
-	${AR} rcs libfunctions.a  absolute.o aexcosecant.o aexsecant.o arccos.o arcsin.o arctan.o arccosecant.o arccotangent.o arcsecant.o ceil.o cosecant.o cosine.o cotangent.o covercos.o coversin.o cube.o excosecant.o exsecant.o floor.o hacovercos.o hacoversin.o havercos.o haversin.o ln.o log10.o log2.o node.o round.o secant.o signum.o sine.o square.o tangent.o trunc.o user.o vercos.o versin.o
+lib:	 absolute.o aexcosecant.o aexsecant.o arccos.o arcsin.o arctan.o arccosecant.o arccotangent.o arcsecant.o arccovercosine.o arccoversine.o archacovercosine.o archacoversine.o archavercosine.o archaversine.o arcvercosine.o arcversine.o ceil.o cosecant.o cosine.o cotangent.o covercos.o coversin.o cube.o excosecant.o exsecant.o floor.o hacovercos.o hacoversin.o havercos.o haversin.o hyparccosecant.o hyparccosine.o hyparccotangent.o hyparcsecant.o hyparcsine.o hyparctangent.o hypcosecant.o hypcosine.o hypcotangent.o hypsecant.o hypsine.o hyptangent.o ln.o log10.o log2.o node.o round.o secant.o signum.o sine.o square.o tangent.o trunc.o user.o vercos.o versin.o
+	${AR} rcs libfunctions.a  absolute.o aexcosecant.o aexsecant.o arccos.o arcsin.o arctan.o arccosecant.o arccotangent.o arcsecant.o arccovercosine.o arccoversine.o archacovercosine.o archacoversine.o archavercosine.o archaversine.o arcvercosine.o arcversine.o ceil.o cosecant.o cosine.o cotangent.o covercos.o coversin.o cube.o excosecant.o exsecant.o floor.o hacovercos.o hacoversin.o havercos.o haversin.o hyparccosecant.o hyparccosine.o hyparccotangent.o hyparcsecant.o hyparcsine.o hyparctangent.o hypcosecant.o hypcosine.o hypcotangent.o hypsecant.o hypsine.o hyptangent.o ln.o log10.o log2.o node.o round.o secant.o signum.o sine.o square.o tangent.o trunc.o user.o vercos.o versin.o
 	${RANLIB} libfunctions.a
 
 clean:
-	${DEL} libfunctions.a  absolute.o aexcosecant.o aexsecant.o arccos.o arcsin.o arctan.o arccosecant.o arccotangent.o arcsecant.o ceil.o cosecant.o cosine.o cotangent.o covercos.o coversin.o cube.o excosecant.o exsecant.o floor.o hacovercos.o hacoversin.o havercos.o haversin.o ln.o log10.o log2.o node.o round.o secant.o signum.o sine.o square.o tangent.o trunc.o user.o vercos.o versin.o
+	${DEL} libfunctions.a  absolute.o aexcosecant.o aexsecant.o arccos.o arcsin.o arctan.o arccosecant.o arccotangent.o arcsecant.o arccovercosine.o arccoversine.o archacovercosine.o archacoversine.o archavercosine.o archaversine.o arcvercosine.o arcversine.o ceil.o cosecant.o cosine.o cotangent.o covercos.o coversin.o cube.o excosecant.o exsecant.o floor.o hacovercos.o hacoversin.o havercos.o haversin.o hyparccosecant.o hyparccosine.o hyparccotangent.o hyparcsecant.o hyparcsine.o hyparctangent.o hypcosecant.o hypcosine.o hypcotangent.o hypsecant.o hypsine.o hyptangent.o ln.o log10.o log2.o node.o round.o secant.o signum.o sine.o square.o tangent.o trunc.o user.o vercos.o versin.o
 

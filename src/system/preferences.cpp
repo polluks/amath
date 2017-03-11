@@ -29,6 +29,7 @@
 
 #include "amath.h"
 #include "amathc.h"
+#include "preferences.h"
 #include "lib/numb.h"
 #include "lib/real.h"
 #include "lib/ntext.h"
@@ -36,7 +37,6 @@
 #include "main/lexer.h"
 #include "main/nodes.h"
 #include "main/parser.h"
-#include "system/preferences.h"
 
 PreferencesBase::PreferencesBase()
 {

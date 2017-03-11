@@ -27,75 +27,94 @@
 
 set -e
 
+version="1.7.0"
+
 clang=false
 debugsym=false
 regtest=true
 
 prefix="/usr"
+pkgconfigdir="lib/pkgconfig"
 cflags=""
 cxxflags=""
 ldflags=""
 gcclib="-lstdc++"
 
 for arg in "$@"; do
-    case "$arg" in
-    --prefix=*)
-        prefix=`echo $arg | sed 's/--prefix=//'`
-        ;;
+	case "$arg" in
+	--prefix=*)
+		prefix=`echo $arg | sed 's/--prefix=//'`
+		;;
 
-    --cross-compile=*)
-        crosscompile=`echo $arg | sed 's/--cross-compile=//'`
+	--pkgconfig=*)
+		pkgconfigdir=`echo $arg | sed 's/--pkgconfig=//'`
+		;;
+
+	--cross-compile=*)
+		crosscompile=`echo $arg | sed 's/--cross-compile=//'`
 		crosscompile="${crosscompile}-"
-        ;;
+		;;
 
-    --cflags=*)
-        cflags=`echo $arg | sed 's/--cflags=//'`
+	CFLAGS=*)
+		cflags=`echo $arg | sed 's/CFLAGS=//'`
 		cflags="${cflags} "
-        ;;
+		;;
 
-    --cxxflags=*)
-        cxxflags=`echo $arg | sed 's/--cxxflags=//'`
+	CXXFLAGS=*)
+		cxxflags=`echo $arg | sed 's/CXXFLAGS=//'`
 		cxxflags="${cxxflags} "
-        ;;
+		;;
 
-    --ldflags=*)
-        ldflags=`echo $arg | sed 's/--ldflags=//'`
+	LDFLAGS=*)
+		ldflags=`echo $arg | sed 's/LDFLAGS=//'`
 		ldflags="${ldflags} "
-        ;;
-		
+		;;
+
 	--enable-clang)
-        clang=true;;
-    --disable-clang)
-        clang=false;;
+		clang=true;;
+	--disable-clang)
+		clang=false;;
 
-    --enable-debug)
-        debugsym=true;;
-    --disable-debug)
-        debugsym=false;;
+	--enable-debug)
+		debugsym=true;;
+	--disable-debug)
+		debugsym=false;;
 
-    --enable-test)
-        regtest=true;;
-    --disable-test)
-        regtest=false;;
+	--enable-test)
+		regtest=true;;
+	--disable-test)
+		regtest=false;;
 
-    --help)
-        echo 'usage: ./configure [options]'
-        echo 'options:'
-        echo '  --prefix=<path>: installation prefix'
-        echo '  --cflag=<flags>: additional compiler flags'
-        echo '  --cxxflag=<flags>: additional compiler flags'
-        echo '  --ldflag=<flags>: additional linker flags'
-        echo '  --cross-compile=<prefix>: cross compiler prefix'
-        echo '  --enable-debug: include debug symbols'
-        echo '  --disable-debug: do not include debug symbols'
-        echo '  --enable-test: build code with regression tests'
-        echo '  --disable-test: do not include regression test'
-        echo '  --enable-clang: build with clang compiler'
-        echo '  --disable-clang: do not build with clang compiler'
-        echo 'all invalid options are silently ignored'
-        exit 0
-        ;;
-    esac
+	--enable-stdc++)
+		gcclib="-lstdc++";;
+	--disable-stdc++)
+		gcclib="";;
+
+	--help)
+		echo "amath configure script ${version}"
+		echo
+		echo 'usage: ./configure [options]'
+		echo 'options:'
+		echo '  --prefix=<path>: installation prefix'
+		echo '  --pkgconfig=<path>: pkg-config path (without prefix)'
+		echo '  --cross-compile=<prefix>: cross compiler prefix'
+		echo '  --enable-debug: include debug symbols'
+		echo '  --disable-debug: do not include debug symbols'
+		echo '  --enable-test: build code with regression tests'
+		echo '  --disable-test: do not include regression test'
+		echo '  --enable-clang: build with clang compiler'
+		echo '  --disable-clang: do not build with clang compiler'
+		echo '  --enable-stdc++: link with stdc++ library'
+		echo '  --disable-stdc++: do not link with stdc++ library'
+		echo
+		echo '  CFLAGS=<flags>: additional compiler flags'
+		echo '  CXXFLAGS=<flags>: additional compiler flags'
+		echo '  LDFLAGS=<flags>: additional linker flags'
+		echo
+		echo 'all invalid options are silently ignored'
+		exit 0
+		;;
+	esac
 done
 
 if $clang; then
@@ -127,7 +146,6 @@ cxxflags="${cflags} ${cxxflags}"
 APPSRCS='
 evaluator.cpp
 functionlist.cpp
-functions.cpp
 fgrid.cpp
 lexer.cpp
 nodes.cpp
@@ -145,9 +163,6 @@ console_amiga.cpp
 console_stdc.cpp
 filesystem_amiga.cpp
 filesystem_stdc.cpp
-graph.cpp
-graph_amiga.cpp
-graph_gtk.cpp
 language.cpp
 language_amiga.cpp
 language_posix.cpp
@@ -174,6 +189,14 @@ arctan.cpp
 arccosecant.cpp
 arccotangent.cpp
 arcsecant.cpp
+arccovercosine.cpp
+arccoversine.cpp
+archacovercosine.cpp
+archacoversine.cpp
+archavercosine.cpp
+archaversine.cpp
+arcvercosine.cpp
+arcversine.cpp
 ceil.cpp
 cosecant.cpp
 cosine.cpp
@@ -188,6 +211,18 @@ hacovercos.cpp
 hacoversin.cpp
 havercos.cpp
 haversin.cpp
+hyparccosecant.cpp
+hyparccosine.cpp
+hyparccotangent.cpp
+hyparcsecant.cpp
+hyparcsine.cpp
+hyparctangent.cpp
+hypcosecant.cpp
+hypcosine.cpp
+hypcotangent.cpp
+hypsecant.cpp
+hypsine.cpp
+hyptangent.cpp
 ln.cpp
 log10.cpp
 log2.cpp
@@ -326,6 +361,25 @@ memset.c
 strcmp.c
 strlen.c
 untag.c
+'
+FLXSRCS='
+asprintf.c
+createcat.c
+createcatsrc.c
+createct.c
+globals.c
+locale_other.c
+main.c
+openlibs.c
+readprefs.c
+scancd.c
+scanct.c
+scanpo.c
+showfuncs.c
+strptime.c
+swapfuncs.c
+utils.c
+vastubs.c
 '
 
 amathc="amathc"
@@ -469,17 +523,21 @@ echo
 
 ########################## Application Library ##########################
 {
-echo "CXX      = ${crosscompile}${cxxcompiler}"
-echo "CXXFLAGS = ${libop}${options} ${cxxflags}-I. -I.. -Wall"
-echo "AR       = ${crosscompile}ar"
-echo "RANLIB   = ${crosscompile}ranlib"
-echo "MKDIR    = mkdir -p"
-echo "DEL      = rm -f"
-echo "INSTALL  = install -m 0644"
-echo "PREFIX   = ${prefix}"
-echo
-echo "alib     = lib${amathapp}.a"
-echo "solib    = lib${amathapp}.so"
+echo "CXX       = ${crosscompile}${cxxcompiler}"
+echo "CXXFLAGS  = ${libop}${options} ${cxxflags}-I. -I.. -Wall"
+echo "AR        = ${crosscompile}ar"
+echo "RANLIB    = ${crosscompile}ranlib"
+echo "MKDIR     = mkdir -p"
+echo "DEL       = rm -f"
+echo "INSTALL   = install -m 0644"
+echo "LDCONFIG  = ldconfig"
+echo "PREFIX    = ${prefix}"
+echo "INSTDIR   = \${DESTDIR}\${PREFIX}/lib/amath"
+echo "INSTDIRI  = \${DESTDIR}\${PREFIX}/include/amath"
+echo "INSTDIRPC = \${DESTDIR}\${PREFIX}/${pkgconfigdir}"
+echo "alib      = lib${amathapp}.a"
+echo "solib     = lib${amathapp}.so"
+echo "pkgconfig = amatha.pc"
 echo
 echo "all: static shared"
 echo
@@ -509,20 +567,44 @@ echo "	\${MKDIR} static"
 echo "	\${MKDIR} shared"
 echo
 echo "\${solib}:	build ${files2}"
-echo "	\${CC} -shared -fPIC -Wl,-soname,\${solib} -o \${solib} ${files2}"
+echo "	\${CXX} \${CXXFLAGS} -shared ${exestrip} -fPIC -Wl,-soname,\${solib}.${version} -o \${solib} ${files2}"
 echo
 echo "\${alib}:	build ${files}"
 echo "	\${AR} rcs static/\${alib} ${files}"
 echo "	\${RANLIB} static/\${alib}"
 echo
-echo ".PHONY:	install"
-echo "install: \${solib}"
-echo "	\${MKDIR} \${DESTDIR}\${PREFIX}/lib"
-echo "	\${INSTALL} \${solib} \${DESTDIR}\${PREFIX}/lib/\${solib}"
+echo ".PHONY: install"
+echo "install:	\${alib} \${solib}"
+echo "	\${MKDIR} \${INSTDIR}"
+echo "	\${MKDIR} \${INSTDIRPC}"
+echo "	\${MKDIR} \${INSTDIRI}"
+echo "	\${INSTALL} static/\${alib} \${INSTDIR}/\${alib}"
+echo "	\${INSTALL} \${solib} \${INSTDIR}/\${solib}"
+echo "	\${INSTALL} \${pkgconfig} \${INSTDIRPC}/\${pkgconfig}"
+echo "	\${INSTALL} aengine.h \${INSTDIRI}/aengine.h"
+echo "	\${INSTALL} charbuf.h \${INSTDIRI}/charbuf.h"
+echo "	\${INSTALL} cplex.h \${INSTDIRI}/cplex.h"
+echo "	\${INSTALL} integer.h \${INSTDIRI}/integer.h"
+echo "	\${INSTALL} nnumb.h \${INSTDIRI}/nnumb.h"
+echo "	\${INSTALL} ntext.h \${INSTDIRI}/ntext.h"
+echo "	\${INSTALL} numb.h \${INSTDIRI}/numb.h"
+echo "	\${INSTALL} real.h \${INSTDIRI}/real.h"
+echo "	\${LDCONFIG} \${INSTDIR}"
 echo
 echo ".PHONY:	uninstall"
 echo "uninstall:"
-echo "	\${DEL} \${DESTDIR}\${PREFIX}/lib/\${solib}"
+echo "	\${DEL} \${INSTDIR}/\${alib}"
+echo "	\${DEL} \${INSTDIR}/\${solib}"
+echo "	\${DEL} \${INSTDIRPC}/\${pkgconfig}"
+echo "	\${DEL} \${INSTDIRI}/aengine.h"
+echo "	\${DEL} \${INSTDIRI}/charbuf.h"
+echo "	\${DEL} \${INSTDIRI}/cplex.h"
+echo "	\${DEL} \${INSTDIRI}/integer.h"
+echo "	\${DEL} \${INSTDIRI}/nnumb.h"
+echo "	\${DEL} \${INSTDIRI}/ntext.h"
+echo "	\${DEL} \${INSTDIRI}/numb.h"
+echo "	\${DEL} \${INSTDIRI}/real.h"
+echo "	\${LDCONFIG}"
 echo
 echo "clean:"
 echo "	\${DEL} static/\${alib} \${solib} ${files} ${files2}"
@@ -532,17 +614,23 @@ echo
 
 ############################### C Library ###############################
 {
-echo "CC       = ${crosscompile}${ccompiler}"
-echo "CFLAGS   = -std=c9x ${libop}${options} ${cflags}-I. -I.. -Wall"
-echo "AR       = ${crosscompile}ar"
-echo "RANLIB   = ${crosscompile}ranlib"
-echo "MKDIR    = mkdir -p"
-echo "DEL      = rm -f"
-echo "INSTALL  = install -m 0644"
-echo "PREFIX   = ${prefix}"
-echo
-echo "alib     = lib${amathc}.a"
-echo "solib    = lib${amathc}.so"
+echo "CC        = ${crosscompile}${ccompiler}"
+echo "CFLAGS    = -std=c9x ${libop}${options} ${cflags}-I. -I.. -Wall"
+echo "AR        = ${crosscompile}ar"
+echo "RANLIB    = ${crosscompile}ranlib"
+echo "MKDIR     = mkdir -p"
+echo "DEL       = rm -f"
+echo "INSTALL   = install -m 0644"
+echo "LDCONFIG  = ldconfig"
+echo "PREFIX    = ${prefix}"
+echo "INSTDIR   = \${DESTDIR}\${PREFIX}/lib/amath"
+echo "INSTDIRI  = \${DESTDIR}\${PREFIX}/include/amath"
+echo "INSTDIRPC = \${DESTDIR}\${PREFIX}/${pkgconfigdir}"
+echo "INSTDIRM  = \${DESTDIR}\${PREFIX}/share/man/man3"
+echo "alib      = lib${amathc}.a"
+echo "solib     = lib${amathc}.so"
+echo "pkgconfig = amathc.pc"
+echo "manpage   = amathc.3"
 echo
 echo "all: static shared"
 echo
@@ -572,7 +660,7 @@ echo "	\${MKDIR} static"
 echo "	\${MKDIR} shared"
 echo
 echo "\${solib}:	build ${libcs}"
-echo "	\${CC} -shared -fPIC -Wl,-soname,\${solib} -o \${solib} ${libcs} -lc"
+echo "	\${CC} \${CFLAGS} -shared ${exestrip} -fPIC -Wl,-soname,\${solib}.${version} -o \${solib} ${libcs} -lc"
 echo
 echo "\${alib}:	build ${libc}"
 echo "	\${AR} rcs static/\${alib} ${libc}"
@@ -580,19 +668,26 @@ echo "	\${RANLIB} static/\${alib}"
 echo
 echo ".PHONY: install"
 echo "install:	\${alib} \${solib}"
-echo "	\${MKDIR} \${DESTDIR}\${PREFIX}/lib"
-echo "	\${MKDIR} \${DESTDIR}\${PREFIX}/include"
-echo "	\${INSTALL} static/\${alib} \${DESTDIR}\${PREFIX}/lib/\${alib}"
-echo "	\${INSTALL} \${solib} \${DESTDIR}\${PREFIX}/lib/\${solib}"
-echo "	\${INSTALL} ../amath.h \${DESTDIR}\${PREFIX}/include"
-echo "	\${INSTALL} ../amathc.h \${DESTDIR}\${PREFIX}/include"
+echo "	\${MKDIR} \${INSTDIR}"
+echo "	\${MKDIR} \${INSTDIRPC}"
+echo "	\${MKDIR} \${INSTDIRI}"
+echo "	\${INSTALL} static/\${alib} \${INSTDIR}/\${alib}"
+echo "	\${INSTALL} \${solib} \${INSTDIR}/\${solib}"
+echo "	\${INSTALL} \${pkgconfig} \${INSTDIRPC}/\${pkgconfig}"
+echo "	\${INSTALL} \${manpage} \${INSTDIRM}/\${manpage}"
+echo "	\${INSTALL} ../amath.h \${INSTDIRI}"
+echo "	\${INSTALL} ../amathc.h \${INSTDIRI}"
+echo "	\${LDCONFIG} \${INSTDIR}"
 echo
 echo ".PHONY:	uninstall"
 echo "uninstall:"
-echo "	\${DEL} \${DESTDIR}\${PREFIX}/lib/\${alib}"
-echo "	\${DEL} \${DESTDIR}\${PREFIX}/lib/\${solib}"
-echo "	\${DEL} \${DESTDIR}\${PREFIX}/include/amath.h"
-echo "	\${DEL} \${DESTDIR}\${PREFIX}/include/amathc.h"
+echo "	\${DEL} \${INSTDIR}/\${alib}"
+echo "	\${DEL} \${INSTDIR}/\${solib}"
+echo "	\${DEL} \${INSTDIRPC}/\${pkgconfig}"
+echo "	\${DEL} \${INSTDIRM}/\${manpage}"
+echo "	\${DEL} \${INSTDIRI}/amath.h"
+echo "	\${DEL} \${INSTDIRI}/amathc.h"
+echo "	\${LDCONFIG}"
 echo
 echo "clean:"
 echo "	\${DEL} static/\${alib} \${solib} ${libc} ${libcs}"
@@ -603,17 +698,23 @@ echo
 
 ############################# Real Numbers ##############################
 {
-echo "CC       = ${crosscompile}${ccompiler}"
-echo "CFLAGS   = -std=c9x ${libop}${options} ${cflags}-I. -I.. -Wall"
-echo "AR       = ${crosscompile}ar"
-echo "RANLIB   = ${crosscompile}ranlib"
-echo "MKDIR    = mkdir -p"
-echo "DEL      = rm -f"
-echo "INSTALL  = install -m 0644"
-echo "PREFIX   = ${prefix}"
-echo
-echo "alib     = lib${amath}.a"
-echo "solib    = lib${amath}.so"
+echo "CC        = ${crosscompile}${ccompiler}"
+echo "CFLAGS    = -std=c9x ${libop}${options} ${cflags}-I. -I.. -Wall"
+echo "AR        = ${crosscompile}ar"
+echo "RANLIB    = ${crosscompile}ranlib"
+echo "MKDIR     = mkdir -p"
+echo "DEL       = rm -f"
+echo "INSTALL   = install -m 0644"
+echo "LDCONFIG  = ldconfig"
+echo "PREFIX    = ${prefix}"
+echo "INSTDIR   = \${DESTDIR}\${PREFIX}/lib/amath"
+echo "INSTDIRI  = \${DESTDIR}\${PREFIX}/include/amath"
+echo "INSTDIRPC = \${DESTDIR}\${PREFIX}/${pkgconfigdir}"
+echo "INSTDIRM  = \${DESTDIR}\${PREFIX}/share/man/man3"
+echo "alib      = lib${amath}.a"
+echo "solib     = lib${amath}.so"
+echo "pkgconfig = amathr.pc"
+echo "manpage   = amathr.3"
 echo
 echo "all: static shared"
 echo
@@ -643,7 +744,7 @@ echo "	\${MKDIR} static"
 echo "	\${MKDIR} shared"
 echo
 echo "\${solib}:	build ${libamaths}"
-echo "	\${CC} -shared -fPIC -Wl,-soname,\${solib} -o \${solib} ${libamaths}"
+echo "	\${CC} \${CFLAGS} -shared ${exestrip} -fPIC -Wl,-soname,\${solib}.${version} -o \${solib} ${libamaths}"
 echo
 echo "\${alib}:	build ${libamath}"
 echo "	\${AR} rcs static/\${alib} ${libamath}"
@@ -651,14 +752,24 @@ echo "	\${RANLIB} static/\${alib}"
 echo
 echo ".PHONY: install"
 echo "install:	\${alib} \${solib}"
-echo "	\${MKDIR} \${DESTDIR}\${PREFIX}/lib"
-echo "	\${INSTALL} static/\${alib} \${DESTDIR}\${PREFIX}/lib/\${alib}"
-echo "	\${INSTALL} \${solib} \${DESTDIR}\${PREFIX}/lib/\${solib}"
+echo "	\${MKDIR} \${INSTDIR}"
+echo "	\${MKDIR} \${INSTDIRPC}"
+echo "	\${MKDIR} \${INSTDIRI}"
+echo "	\${INSTALL} static/\${alib} \${INSTDIR}/\${alib}"
+echo "	\${INSTALL} \${solib} \${INSTDIR}/\${solib}"
+echo "	\${INSTALL} \${pkgconfig} \${INSTDIRPC}/\${pkgconfig}"
+echo "	\${INSTALL} \${manpage} \${INSTDIRM}/\${manpage}"
+echo "	\${INSTALL} ../math.h \${INSTDIRI}/amathr.h"
+echo "	\${LDCONFIG} \${INSTDIR}"
 echo
 echo ".PHONY:	uninstall"
 echo "uninstall:"
-echo "	\${DEL} \${DESTDIR}\${PREFIX}/lib/\${alib}"
-echo "	\${DEL} \${DESTDIR}\${PREFIX}/lib/\${solib}"
+echo "	\${DEL} \${INSTDIR}/\${alib}"
+echo "	\${DEL} \${INSTDIR}/\${solib}"
+echo "	\${DEL} \${INSTDIRPC}/\${pkgconfig}"
+echo "	\${DEL} \${INSTDIRM}/\${manpage}"
+echo "	\${DEL} \${INSTDIRI}/amathr.h"
+echo "	\${LDCONFIG}"
 echo
 echo "clean:"
 echo "	\${DEL} static/\${alib} \${solib} ${libamath} ${libamaths}"
@@ -668,17 +779,23 @@ echo
 
 ############################ Complex Numbers ############################
 {
-echo "CC       = ${crosscompile}${ccompiler}"
-echo "CFLAGS   = -std=c9x ${libop}${options} ${cxxflags}-I. -I.. -Wall"
-echo "AR       = ${crosscompile}ar"
-echo "RANLIB   = ${crosscompile}ranlib"
-echo "MKDIR    = mkdir -p"
-echo "DEL      = rm -f"
-echo "INSTALL  = install -m 0644"
-echo "PREFIX   = ${prefix}"
-echo
-echo "alib     = lib${amathcplex}.a"
-echo "solib    = lib${amathcplex}.so"
+echo "CC        = ${crosscompile}${ccompiler}"
+echo "CFLAGS    = -std=c9x ${libop}${options} ${cxxflags}-I. -I.. -Wall"
+echo "AR        = ${crosscompile}ar"
+echo "RANLIB    = ${crosscompile}ranlib"
+echo "MKDIR     = mkdir -p"
+echo "DEL       = rm -f"
+echo "INSTALL   = install -m 0644"
+echo "LDCONFIG  = ldconfig"
+echo "PREFIX    = ${prefix}"
+echo "INSTDIR   = \${DESTDIR}\${PREFIX}/lib/amath"
+echo "INSTDIRI  = \${DESTDIR}\${PREFIX}/include/amath"
+echo "INSTDIRPC = \${DESTDIR}\${PREFIX}/${pkgconfigdir}"
+echo "INSTDIRM  = \${DESTDIR}\${PREFIX}/share/man/man3"
+echo "alib      = lib${amathcplex}.a"
+echo "solib     = lib${amathcplex}.so"
+echo "pkgconfig = amathi.pc"
+echo "manpage   = amathi.3"
 echo
 echo "all: static shared"
 echo
@@ -708,7 +825,7 @@ echo "	\${MKDIR} static"
 echo "	\${MKDIR} shared"
 echo
 echo "\${solib}:	build ${libcomplexs}"
-echo "	\${CC} -shared -fPIC -Wl,-soname,\${solib} -o \${solib} ${libcomplexs}"
+echo "	\${CC} \${CFLAGS} -shared ${exestrip} -fPIC -Wl,-soname,\${solib}.${version} -o \${solib} ${libcomplexs}"
 echo
 echo "\${alib}:	build ${libcomplex}"
 echo "	\${AR} rcs static/\${alib} ${libcomplex}"
@@ -716,16 +833,25 @@ echo "	\${RANLIB} static/\${alib}"
 echo
 echo ".PHONY: install"
 echo "install:	\${alib} \${solib}"
-echo "	\${MKDIR} \${DESTDIR}\${PREFIX}/lib"
-echo "	\${INSTALL} static/\${alib} \${DESTDIR}\${PREFIX}/lib/\${alib}"
-echo "	\${INSTALL} \${solib} \${DESTDIR}\${PREFIX}/lib/\${solib}"
-echo "	\${INSTALL} ../complex.h \${DESTDIR}\${PREFIX}/include"
+echo "	\${MKDIR} \${INSTDIR}"
+echo "	\${MKDIR} \${INSTDIRPC}"
+echo "	\${MKDIR} \${INSTDIRI}"
+echo "	\${INSTALL} static/\${alib} \${INSTDIR}/\${alib}"
+echo "	\${INSTALL} \${solib} \${INSTDIR}/\${solib}"
+echo "	\${INSTALL} \${pkgconfig} \${INSTDIRPC}/\${pkgconfig}"
+echo "	\${INSTALL} \${manpage} \${INSTDIRM}/\${manpage}"
+echo "	\${INSTALL} ../complex.h \${INSTDIRI}/amathi.h"
+echo "	\${LDCONFIG} \${INSTDIR}"
 echo
 echo ".PHONY: uninstall"
 echo "uninstall:"
-echo "	\${DEL} \${DESTDIR}\${PREFIX}/lib/\${alib}"
-echo "	\${DEL} \${DESTDIR}\${PREFIX}/lib/\${solib}"
-echo "	\${DEL} \${DESTDIR}\${PREFIX}/include/complex.h"
+echo "	\${DEL} \${INSTDIR}/\${alib}"
+echo "	\${DEL} \${INSTDIR}/\${solib}"
+echo "	\${DEL} \${INSTDIRPC}/\${pkgconfig}"
+echo "	\${DEL} \${INSTDIRM}/\${manpage}"
+echo "	\${DEL} \${INSTDIRPC}/amathi.pc"
+echo "	\${DEL} \${INSTDIRI}/amathi.h"
+echo "	\${LDCONFIG}"
 echo
 echo "clean:"
 echo "	\${DEL} static/\${alib} \${solib} ${libcomplex} ${libcomplexs}"
@@ -748,8 +874,11 @@ echo "LPATHS   = -Lsrc/lib/static -Lsrc/clib/static -Lsrc/real/static -Lsrc/cple
 echo "FLXCAT   = build/flexcat/flexcat"
 echo "MKDIR    = mkdir -p"
 echo "DEL      = rm -f"
-echo "INSTALL  = install -m 0755"
+echo "INSTALLP = install -m 0755"
+echo "INSTALLM = install -m 0644"
 echo "PREFIX   = ${prefix}"
+echo "INSTDIRP  = \${DESTDIR}\${PREFIX}/bin"
+echo "INSTDIRM  = \${DESTDIR}\${PREFIX}/share/man/man1"
 echo
 echo "all:	shared-app"
 echo "app:	${appmain} ${appfunction} ${appstatement} ${appsystem}"
@@ -785,25 +914,15 @@ echo
 echo "${amathcplex}:"
 echo "	cd src/cplex && \${MAKE}"
 echo	
-echo "catalogsa:" # Application catalogs
+echo "localize:"
+echo "	cd build/flexcat && \${MAKE}"
 echo "	\${FLXCAT} text/keyword.cd src/localize/kword.h=text/keyword.sd"
 echo "	\${FLXCAT} text/help.cd src/localize/help.h=text/help.sd"
 echo "	\${FLXCAT} text/ident.cd src/localize/ident.h=text/ident.sd"
 echo "	\${FLXCAT} text/text.cd src/localize/text.h=text/text.sd"
 echo
-echo "catalogsu:" # Unix catalogs
-echo "	iconv -f ISO-8859-15 -t UTF-8 catalog/dansk/amath-help.ct >utext/dk-help.dict"
-echo "	iconv -f ISO-8859-15 -t UTF-8 catalog/dansk/amath-ident.ct >utext/dk-ident.dict"
-echo "	iconv -f ISO-8859-15 -t UTF-8 catalog/dansk/amath-text.ct >utext/dk-text.dict"
-echo "	iconv -f ISO-8859-15 -t UTF-8 catalog/dansk/amath-keyword.ct >utext/dk-keyword.dict"
-echo
-echo "catalogsw:" # Windows catalogs
-echo "	iconv -f ISO-8859-15 -t CP850 catalog/dansk/amath-help.ct >utext/dk-help.dict"
-echo "	iconv -f ISO-8859-15 -t CP850 catalog/dansk/amath-ident.ct >utext/dk-ident.dict"
-echo "	iconv -f ISO-8859-15 -t CP850 catalog/dansk/amath-text.ct >utext/dk-text.dict"
-echo "	iconv -f ISO-8859-15 -t CP850 catalog/dansk/amath-keyword.ct >utext/dk-keyword.dict"
-echo
-echo "amigacatalogs:"
+echo "catalogs:"
+echo "	cd build/flexcat && \${MAKE}"
 echo "	\${MKDIR}  dist/catalog/english"
 echo "	\${FLXCAT} text/help.cd catalog/english/amath-help.ct CATALOG dist/catalog/english/amath-help.catalog"
 echo "	\${FLXCAT} text/ident.cd catalog/english/amath-ident.ct CATALOG dist/catalog/english/amath-ident.catalog"
@@ -829,16 +948,18 @@ echo "	cd src/main/statement && \${MAKE} static"
 echo "	\${CC} \${CFLAGS} ${exestrip} ${program}.o -o amath \${LPATHS} \${LFLAGS}"
 echo
 echo ".PHONY: test"
-echo "test: static-app"
+echo "test: amath"
+echo "	LD_LIBRARY_PATH=src/clib/:src/lib:src/cplex:scr/real"
 echo "	./amath test"
 echo
 echo ".PHONY: install"
-echo "install: amath"
+echo "install: shared-app"
 echo "	cd src/lib && \${MAKE} install"
 echo "	cd src/clib && \${MAKE} install"
 echo "	cd src/real && \${MAKE} install"
 echo "	cd src/cplex && \${MAKE} install"
-echo "	\${INSTALL} amath \${DESTDIR}\${PREFIX}/bin"
+echo "	\${INSTALLP} amath \${INSTDIRP}/amath"
+echo "	\${INSTALLM} amath.1 \${INSTDIRM}/amath.1"
 echo
 echo ".PHONY: uninstall"
 echo "uninstall:"
@@ -846,8 +967,10 @@ echo "	cd src/lib && \${MAKE} uninstall"
 echo "	cd src/clib && \${MAKE} uninstall"
 echo "	cd src/real && \${MAKE} uninstall"
 echo "	cd src/cplex && \${MAKE} uninstall"
-echo "	\${DEL} \${DESTDIR}\${PREFIX}/bin/amath"
+echo "	\${DEL} \${INSTDIRP}/amath"
+echo "	\${DEL} \${INSTDIRM}/amath.1"
 echo
+echo ".PHONY: clean"
 echo "clean:"
 echo "	cd src/lib && \${MAKE} clean"
 echo "	cd src/clib && \${MAKE} clean"
@@ -857,8 +980,37 @@ echo "	cd src/main && \${MAKE} clean"
 echo "	cd src/system && \${MAKE} clean"
 echo "	cd src/main/function && \${MAKE} clean"
 echo "	cd src/main/statement && \${MAKE} clean"
+echo "	cd build/flexcat && \${MAKE} clean"
 echo "	\${DEL} ${program}.o amath"
 echo
 } > Makefile
 #########################################################################
+
+################################ Flexcat ################################
+{
+echo 'all:	flexcat'
+echo ''
+echo "CFLAGS += -I. -Wall"
+echo ''
+
+l=""
+for f in ${FLXSRCS}
+do
+	b=`basename $f .c`
+	echo "${b}.o:	${f}"
+	echo "	\${CC} \${CFLAGS} -c ${f}"
+	echo
+	l="${l} ${b}.o"
+done
+
+echo
+echo "flexcat:	${l}"
+echo "	\${CC} \${CFLAGS} -o flexcat ${l} -lm"
+echo
+echo "clean:"
+echo "	rm -f ${l} flexcat"
+echo
+} > build/flexcat/Makefile
+#########################################################################
+
 echo "Makefile generated"

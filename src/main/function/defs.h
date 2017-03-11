@@ -42,6 +42,14 @@
 #include "arccosecant.h"
 #include "arccotangent.h"
 #include "arcsecant.h"
+#include "arccovercosine.h"
+#include "arccoversine.h"
+#include "archacovercosine.h"
+#include "archacoversine.h"
+#include "archavercosine.h"
+#include "archaversine.h"
+#include "arcvercosine.h"
+#include "arcversine.h"
 #include "ceil.h"
 #include "cosecant.h"
 #include "cosine.h"
@@ -56,6 +64,18 @@
 #include "hacoversin.h"
 #include "havercos.h"
 #include "haversin.h"
+#include "hyparccosecant.h"
+#include "hyparccosine.h"
+#include "hyparccotangent.h"
+#include "hyparcsecant.h"
+#include "hyparcsine.h"
+#include "hyparctangent.h"
+#include "hypcosecant.h"
+#include "hypcosine.h"
+#include "hypcotangent.h"
+#include "hypsecant.h"
+#include "hypsine.h"
+#include "hyptangent.h"
 #include "ln.h"
 #include "log2.h"
 #include "log10.h"
@@ -70,10 +90,9 @@
 #include "versin.h"
 
 #include "main/nodes.h"
-#include "main/functions.h"
 
 class FunctionNode;
-typedef FunctionNode* (*CreateFunctionNode)(ExpressionNode*,char*,char*);
+typedef FunctionNode* (*CreateFunctionNode)(ExpressionNode*, char*, char*);
 
 /**
  * @brief Function definitions of known mathematical functions.
@@ -132,7 +151,15 @@ static const functiondef functiondefs[] = {
     {"hv", HaVersedSineNode::Create},
     {"hvc", HaVersedCosineNode::Create},
     {"hcv", HaCoversedSineNode::Create},
-    {"hcc", HaCoversedCosineNode::Create}
+    {"hcc", HaCoversedCosineNode::Create},
+    {"aver", ArcVersedSineNode::Create},
+    {"avcs", ArcVersedCosineNode::Create},
+    {"acvs", ArcCoversedSineNode::Create},
+    {"acvc", ArcCoversedCosineNode::Create},
+    {"ahv", ArcHaVersedSineNode::Create},
+    {"ahvc", ArcHaVersedCosineNode::Create},
+    {"ahcv", ArcHaCoversedSineNode::Create},
+    {"ahcc", ArcHaCoversedCosineNode::Create}
 };
 
 #endif

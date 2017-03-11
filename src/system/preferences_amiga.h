@@ -30,7 +30,7 @@
 #ifndef AMATH_PREFERENCES_AMIGA_H
 #define AMATH_PREFERENCES_AMIGA_H
 
-#include "system/preferences.h"
+#include "preferences.h"
 
 class AmigaPreferences : public PreferencesBase
 {

@@ -46,18 +46,18 @@ PrefsStatement::PrefsStatement(Symbol argument)
 char* PrefsStatement::Execute()
 {
     bool success;
-    
+
     if (argument == symsave)
     {
         success = Program->Preferences->Keep();
         success &= Program->Preferences->Save();
         return (success ? HELPPREFSAVE : HELPPREFNOSA);
     }
-    
+
     if (argument == symload)
     {
         success = Program->Preferences->Load();
-        
+
         if (success)
         {
             Program->Console->SetPrompt(Program->Preferences->GetPrompt());
@@ -65,9 +65,9 @@ char* PrefsStatement::Execute()
             Program->Output->SetDigits(Program->Preferences->GetDigits());
             return HELPPREFLOAD;
         }
-        
+
         return HELPPREFNOLO;
     }
-    
+
     return Program->Preferences->GetDescription();
 }

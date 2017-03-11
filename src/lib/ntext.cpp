@@ -135,7 +135,7 @@ const char* PositionalNumeralSystem::GetText(Number* number)
         buf->Append("NaN");
         return buf->GetString();
     }
-    
+
     if (number->IsNotImplemented())
     {
         buf->Empty();

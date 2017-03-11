@@ -13,9 +13,6 @@ evaluator.o:	evaluator.cpp
 functionlist.o:	functionlist.cpp
 	${CXX} ${CXXFLAGS} -c functionlist.cpp
 
-functions.o:	functions.cpp
-	${CXX} ${CXXFLAGS} -c functions.cpp
-
 fgrid.o:	fgrid.cpp
 	${CXX} ${CXXFLAGS} -c fgrid.cpp
 
@@ -46,10 +43,10 @@ values.o:	values.cpp
 viewer.o:	viewer.cpp
 	${CXX} ${CXXFLAGS} -c viewer.cpp
 
-lib:	 evaluator.o functionlist.o functions.o fgrid.o lexer.o nodes.o operators.o optimizer.o parser.o token.o userfunction.o values.o viewer.o
-	${AR} rcs libappmain.a  evaluator.o functionlist.o functions.o fgrid.o lexer.o nodes.o operators.o optimizer.o parser.o token.o userfunction.o values.o viewer.o
+lib:	 evaluator.o functionlist.o fgrid.o lexer.o nodes.o operators.o optimizer.o parser.o token.o userfunction.o values.o viewer.o
+	${AR} rcs libappmain.a  evaluator.o functionlist.o fgrid.o lexer.o nodes.o operators.o optimizer.o parser.o token.o userfunction.o values.o viewer.o
 	${RANLIB} libappmain.a
 
 clean:
-	${DEL} libappmain.a  evaluator.o functionlist.o functions.o fgrid.o lexer.o nodes.o operators.o optimizer.o parser.o token.o userfunction.o values.o viewer.o
+	${DEL} libappmain.a  evaluator.o functionlist.o fgrid.o lexer.o nodes.o operators.o optimizer.o parser.o token.o userfunction.o values.o viewer.o
 

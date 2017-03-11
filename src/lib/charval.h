@@ -30,9 +30,13 @@
 #ifndef AMATH_CHAR_VALIDATOR_H
 #define AMATH_CHAR_VALIDATOR_H
 
-class CharValidator {
+class CharValidator
+{
 public:
-    virtual ~CharValidator() {}
+    virtual ~CharValidator()
+    {
+    }
+
     virtual bool Validate(char c) = 0;
 };
 

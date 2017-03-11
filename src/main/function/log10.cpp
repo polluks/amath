@@ -44,4 +44,3 @@ Number* LogNode::Evaluate()
     result = expression->Evaluate()->Log10();
     return result;
 }
-    

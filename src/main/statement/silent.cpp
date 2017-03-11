@@ -28,7 +28,6 @@
  */
 
 #include "amath.h"
-#include "amathc.h"
 #include "silent.h"
 
 SilentStatement::SilentStatement(StatementNode* statement) :

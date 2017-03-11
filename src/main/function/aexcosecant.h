@@ -33,7 +33,7 @@
 #include "node.h"
 
 /**
- * @brief A inverse excosecant function in a syntax tree. 
+ * @brief An inverse excosecant function in a syntax tree. 
  * @details
  * More info on the excosecant function is available at [Wikipedia]:
  * https://wikipedia.org/wiki/Excosecant

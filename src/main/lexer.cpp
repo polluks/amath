@@ -27,7 +27,6 @@
  * 
  */
 
-#include "amath.h"
 #include "amathc.h"
 #include "lexer.h"
 #include "token.h"

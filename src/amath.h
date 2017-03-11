@@ -97,11 +97,12 @@
 /******************************************************************************/
 #ifdef AOS3
 # include <sys/types.h>
-# define IPTR     LONG*
-typedef u_int8_t  uint8_t;
-typedef u_int16_t uint16_t;
-typedef u_int32_t uint32_t;
-typedef u_int64_t uint64_t;
+# define IPTR      LONG*
+# define uintptr_t uint32_t
+typedef u_int8_t   uint8_t;
+typedef u_int16_t  uint16_t;
+typedef u_int32_t  uint32_t;
+typedef u_int64_t  uint64_t;
 #endif
 /******************************************************************************/
 #if defined(AROS) || defined(MORPHOS) || defined(AOS4)
@@ -287,7 +288,7 @@ typedef int bool;
 #endif
 /******************************************************************************/
 #define TXTARCH          TXTCPU TXTFPU
-#define RELDATESTAMP     "(28-02-2017)"
+#define RELDATESTAMP     "(12-03-2017)"
 #define TXTDOSVERSION    "\0$VER: amath 1.70" SPACE RELDATESTAMP SPACE TXTARCH
 #define TXTTITLE         "amath version 1.7.0"
 #define TXTCOPYRIGHT     "(c) 2017 Carsten Sonne Larsen"

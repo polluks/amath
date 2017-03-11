@@ -52,14 +52,16 @@ complex cpow(complex a, complex z)
     x = creal(z);
     y = cimag(z);
     absa = cabs(a);
-    if (absa == 0.0) {
+    if (absa == 0.0)
+    {
         return cpack(0.0, + 0.0);
     }
     arga = atan2(cimag(a), creal(a));
 
     r = pow(absa, x);
     theta = x * arga;
-    if (y != 0.0) {
+    if (y != 0.0)
+    {
         r = r * exp(-y * arga);
         theta = theta + y * log(absa);
     }

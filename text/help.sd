@@ -1,5 +1,5 @@
 ##stringtype C
-/*
+/*-
  * Copyright (c) 2014-2017 Carsten Sonne Larsen <cs@innolan.net>
  * All rights reserved.
  *
@@ -26,27 +26,32 @@
  * Generated with FlexCat. For more information, see:
  * http://sourceforge.net/projects/flexcat/
  *
+ * Project homepage:
+ * http://amath.innolan.net
+ * 
  */
 
 #ifndef AMATH_LOCALIZE_HELP_H
 #define AMATH_LOCALIZE_HELP_H
 
 /**
- * @file  help.h
+ * @file  localize/help.h
  * @brief Help texts for statement.
- * 
+ *
  */
 
 #include "amath.h"
-#include "platform.h"
+#include "amathc.h"
+#include "amatht.h"
 #include "localize/lex.h"
 
 #define symzero Symbol(0)
 
-struct helptextdef {
+struct helptextdef
+{
     int id;
     Symbol symbol;
-    const char *text;
+    const char* text;
 };
 
 static const helptextdef helptexts[] = {

@@ -31,16 +31,16 @@
 
 ArcExsecantNode::ArcExsecantNode(ExpressionNode* expression, char* text, char* sys) :
     FunctionNode(expression, text, sys)
-{   
+{
 }
 
 FunctionNode* ArcExsecantNode::Create(ExpressionNode* expression, char* text, char* sys)
 {
-    return new ArcExsecantNode(expression, text, sys);    
+    return new ArcExsecantNode(expression, text, sys);
 }
 
 Number* ArcExsecantNode::Evaluate()
 {
     result = expression->Evaluate()->ArcExSecant();
-    return result;    
+    return result;
 }

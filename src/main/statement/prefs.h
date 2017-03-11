@@ -44,7 +44,7 @@ public:
     PrefsStatement();
     explicit PrefsStatement(Symbol argument);
     char* Execute();
-    
+
 private:
     Symbol argument;
 };

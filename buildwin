@@ -1,30 +1,33 @@
 #!/bin/sh
 
+set -e
+
 version="1.7.0"
 
 echo "Building amath ${version} for Windows ..."
 
-touch hashkeys
+rm -f amath-${version}.zip
 rm -Rf amath
 rm -Rf dist
 mkdir dist
 
-./configure --enable-test --cross-compile="i686-w64-mingw32" --cflags="-D_WIN32" --ldflags="-static -static-libgcc -static-libstdc++"
+./configure --enable-test --cross-compile="i686-w64-mingw32" CFLAGS="-D_WIN32" LDFLAGS="-static -static-libgcc -static-libstdc++"
+make clean
 make static
 mv amath dist/amath-${version}-x86.exe
 make clean
 
-./configure --enable-test --cross-compile="x86_64-w64-mingw32" --cflags="-D_WIN32" --ldflags="-static -static-libgcc -static-libstdc++"
+./configure --enable-test --cross-compile="x86_64-w64-mingw32" CFLAGS="-D_WIN32" LDFLAGS="-static -static-libgcc -static-libstdc++"
 make static
 mv amath dist/amath-${version}-x64.exe
 make clean
 
-./configure --enable-test --cross-compile="i686-w64-mingw32" --cflags="-D_WIN32 -DANSICONSOLE" --ldflags="-static -static-libgcc -static-libstdc++"
+./configure --enable-test --cross-compile="i686-w64-mingw32" CFLAGS="-D_WIN32 -DANSICONSOLE" LDFLAGS="-static -static-libgcc -static-libstdc++"
 make static
 mv amath dist/amath-${version}-ansi-x86.exe
 make clean
 
-./configure --enable-test --cross-compile="x86_64-w64-mingw32" --cflags="-D_WIN32 -DANSICONSOLE" --ldflags="-static -static-libgcc -static-libstdc++"
+./configure --enable-test --cross-compile="x86_64-w64-mingw32" CFLAGS="-D_WIN32 -DANSICONSOLE" LDFLAGS="-static -static-libgcc -static-libstdc++"
 make static
 mv amath dist/amath-${version}-ansi-x64.exe
 make clean

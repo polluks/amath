@@ -2,6 +2,7 @@
 *.kdev4
 *.vcxproj.user
 *Debug/*
+*x64/*
 *.o
 *.obj
 *.a

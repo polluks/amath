@@ -30,8 +30,8 @@
 #include "amath.h"
 #include "amathc.h"
 #include "lib/charbuf.h"
-#include "system/preferences.h"
-#include "system/preferences_amiga.h"
+#include "preferences.h"
+#include "preferences_amiga.h"
 
 #ifdef AMIGA
 #include <clib/dos_protos.h>

@@ -44,7 +44,7 @@ class FunctionList
 public:
     FunctionList();
     ~FunctionList();
-    
+
     void Clear();
     bool Delete(const char* name, const char* argument);
     static bool IsSystemFunction(const char* name);
@@ -52,10 +52,10 @@ public:
     UserFunction* GetFunctionDef(const char* name);
     UserFunction* GetFunctionDef(const char* name, const char* argument) const;
     FunctionNode* GetFunctionCall(const char* function, ExpressionNode* value) const;
-    
+
     char* List() const;
     char* ListDefinitions() const;
-    
+
 private:
     char* ListContent(bool cmdFormat) const;
     CharBuffer* buf;

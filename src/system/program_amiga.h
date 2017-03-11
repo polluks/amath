@@ -27,7 +27,7 @@
  * 
  */
 
-#include "system/program.h"
+#include "program.h"
 
 struct RDArgs;
 

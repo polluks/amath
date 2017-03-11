@@ -39,7 +39,7 @@ public:
     PlotStatement(const char* name, const char* parameter);
     ~PlotStatement();
     char* Execute();
-    
+
 private:
     char* name;
     char* parameter;

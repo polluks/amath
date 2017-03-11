@@ -27,7 +27,6 @@
  * 
  */
 
-#include "amath.h"
 #include "empty.h"
 
 EmptyStatement::EmptyStatement() :

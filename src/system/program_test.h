@@ -33,7 +33,7 @@
  *
  */
 
-#include "system/program.h"
+#include "program.h"
 
 /**
 * @brief Test control class.

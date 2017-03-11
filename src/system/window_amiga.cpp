@@ -29,9 +29,9 @@
 
 #include "amath.h"
 #include "amathc.h"
+#include "window_amiga.h"
 #include "lib/aengine.h"
 #include "main/evaluator.h"
-#include "system/window_amiga.h"
 
 #ifdef AMIGA
 #include <clib/exec_protos.h>

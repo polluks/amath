@@ -44,13 +44,13 @@ class SilentStatement : public virtual StatementNode
 public:
     explicit SilentStatement(StatementNode* statement);
     ~SilentStatement();
-    
+
     char* Execute();
     SyntaxNode* GetNext();
     void Attach(SyntaxNode* node);
     void Detach(SyntaxNode* node);
     void Replace(SyntaxNode* n, SyntaxNode* x);
-    
+
 private:
     StatementNode* statement;
 };

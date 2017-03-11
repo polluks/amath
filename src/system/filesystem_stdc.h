@@ -38,8 +38,8 @@
 
 #include "amath.h"
 #include "amathc.h"
+#include "filesystem.h"
 #include "lib/charbuf.h"
-#include "system/filesystem.h"
 
 #if !defined(AMIGA)
 

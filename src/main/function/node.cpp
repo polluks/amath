@@ -44,12 +44,12 @@ FunctionNode::~FunctionNode()
     {
         delete expression;
     }
-    
+
     if (name != nullptr)
     {
         delete name;
     }
-    
+
     if (sysname != nullptr)
     {
         delete sysname;
@@ -65,22 +65,22 @@ char* FunctionNode::GetText()
 {
     const char* functionText = GetNodeText();
     const char* expText = expression->GetText();
-    
+
     output->EnsureSize(StrLen(functionText) + StrLen(expText) + 2 + 1);
     output->Empty();
     output->Append(functionText);
     output->Append("(");
     output->Append(expText);
     output->Append(")");
-    
+
     return output->GetString();
 }
 
 char* FunctionNode::GetNodeText()
 {
     return Program->Preferences->GetRefactorNames()
-        ? sysname
-        : name;
+               ? sysname
+               : name;
 }
 
 SyntaxNode* FunctionNode::GetNext()
@@ -90,8 +90,8 @@ SyntaxNode* FunctionNode::GetNext()
         iterator = expression;
         return expression;
     }
-    
-        return nullptr;
+
+    return nullptr;
 }
 
 void FunctionNode::Attach(SyntaxNode* node)
@@ -119,4 +119,3 @@ void FunctionNode::Replace(SyntaxNode* n, SyntaxNode* x)
         expression = static_cast<ExpressionNode*>(x);
     }
 }
-    

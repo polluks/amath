@@ -28,11 +28,10 @@
  */
 
 #include "amath.h"
-#include "amath.h"
 #include "amathc.h"
+#include "console.h"
+#include "program.h"
 #include "localize/text.h"
-#include "system/console.h"
-#include "system/program.h"
 
 ConsoleBase::ConsoleBase(const char* prompt)
 {

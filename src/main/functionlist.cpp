@@ -163,7 +163,7 @@ FunctionNode* FunctionList::GetFunctionCall(const char* function, ExpressionNode
     if (systemFunction != nullptr)
     {
         char* sysname = FindAlias(function);
-        return (systemFunction->create)(parameter, (char*)function, sysname);
+        return (systemFunction->create)(parameter, const_cast<char*>(function), sysname);
     }
 
     UserFunction* current = first;
@@ -265,6 +265,6 @@ char* FunctionList::FindAlias(const char* ident)
             return const_cast<char*>(identaliases[i].alias);
         }
     }
-    
+
     return const_cast<char*>(ident);
 }

@@ -26,7 +26,7 @@
  * http://amath.innolan.net
  * 
  */
- 
+
 #include "amathc.h"
 
 #ifdef AMIGA

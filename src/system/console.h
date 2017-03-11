@@ -36,7 +36,7 @@
  *
  */
 
-#include "system/thread.h"
+#include "thread.h"
 
 /**
  * @brief Abstract base class encapsulating console logic.

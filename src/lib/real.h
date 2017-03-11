@@ -123,7 +123,7 @@ public:
     Number* HaVerCosine();
     Number* HaCoVerSine();
     Number* HaCoVerCosine();
-    
+
     Number* ArcVerSine();
     Number* ArcVerCosine();
     Number* ArcCoVerSine();
@@ -132,7 +132,7 @@ public:
     Number* ArcHaVerCosine();
     Number* ArcHaCoVerSine();
     Number* ArcHaCoVerCosine();
-    
+
     Number* ExSecant();
     Number* ExCosecant();
     Number* ArcExSecant();

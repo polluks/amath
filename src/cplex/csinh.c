@@ -33,7 +33,7 @@
  * http://amath.innolan.net
  * 
  */
- 
+
 #include "prim.h"
 #include "math.h"
 #include "complex.h"

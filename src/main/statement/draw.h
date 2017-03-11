@@ -38,7 +38,7 @@ public:
     DrawStatement(const char* name, const char* parameter);
     ~DrawStatement();
     char* Execute();
-    
+
 private:
     char* name;
     char* parameter;

@@ -1,4 +1,4 @@
-## version $VER: amath-ident.catalog 1.60 (08.04.2015) English
+## version $VER: amath-ident.catalog 1.70 (28.02.2017) English
 ## language english
 ## codeset 0
 ;#############################################################################
@@ -86,4 +86,44 @@ No help is available for this function.#NEWLINE#
 asech
 No help is available for this function.#NEWLINE#
 acsch
+No help is available for this function.#NEWLINE#
+ver
+The versed sine is an early appearing trigonometric function.#NEWLINE#It is equal to one minus the cosine.#NEWLINE#ver(x) = 1 - cos(x)#NEWLINE#
+vcs
+The versed cosine is an early appearing trigonometric function.#NEWLINE#It is equal to one plus the cosine.#NEWLINE#ver(x) = 1 + cos(x)#NEWLINE#
+cvs
+The coversed sine is an early appearing trigonometric function.#NEWLINE#It is equal to one minus the sine.#NEWLINE#ver(x) = 1 - sin(x)#NEWLINE#
+cvc
+The coversed cosine is an early appearing trigonometric function.#NEWLINE#It is equal to one plus the sine.#NEWLINE#cvc(x) = 1 + sin(x)#NEWLINE#
+hv
+No help is available for the haversed sine function.#NEWLINE#
+hvc
+No help is available for the haversed cosine function.#NEWLINE#
+hcv
+No help is available for the hacoversed sine function.#NEWLINE#
+hcc
+No help is available for the hacoversed cosine function.#NEWLINE#
+aver
+No help is available for this function.#NEWLINE#
+avcs
+No help is available for this function.#NEWLINE#
+acvs
+No help is available for this function.#NEWLINE#
+acvc
+No help is available for this function.#NEWLINE#
+ahv
+No help is available for this function.#NEWLINE#
+ahvc
+No help is available for this function.#NEWLINE#
+ahcv
+No help is available for this function.#NEWLINE#
+ahcc
+No help is available for this function.#NEWLINE#
+exsec
+No help is available for this function.#NEWLINE#
+excsc
+No help is available for this function.#NEWLINE#
+aexsec
+No help is available for this function.#NEWLINE#
+aexcsc
 No help is available for this function.#NEWLINE#

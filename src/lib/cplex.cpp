@@ -273,8 +273,7 @@ Number* ComplexNumber::Raise(Number* exponent)
 
 Number* ComplexNumber::Factorial()
 {
-    // TODO
-    return new RealNumber(1);
+    return new NonNumber(nnnimp);
 }
 
 Number* ComplexNumber::Signum()

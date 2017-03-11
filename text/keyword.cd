@@ -5,7 +5,7 @@
 ; ## -------------------------------
 ; ##
 ; ## Generate code with:
-; ## flexcat kword.cd ../../src/localize/kword.h=kword.sd
+; ## flexcat keyword.cd ../src/localize/kword.h=keyword.sd
 ; ##
 ; ###################################################################################
 ; ## Copyright (c) 2014-2017 Carsten Sonne Larsen <cs@innolan.net>
@@ -95,6 +95,9 @@ hyper (//)
 symhyper
 hyperbolic (//)
 symhyper
+;######### Early keyword
+early (//)
+symearly
 ;######### HelpStatement
 help (//)
 symhelp

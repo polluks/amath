@@ -1,0 +1,123 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="casech.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="casin.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ccsc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ctan.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="clog10.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ccot.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="cacos.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ccoth.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="catanh.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="prim.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="cexp.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="csinh.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ccos.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="cacoth.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="cacsch.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="clogb.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="casec.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="csqrt.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="csech.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ccbrt.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ctanh.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="clog.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="cacsc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="cpow.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ccosh.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="cacosh.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="csgn.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="casinh.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="csin.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="csec.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="catan.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="cacot.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ccsch.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="prim.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

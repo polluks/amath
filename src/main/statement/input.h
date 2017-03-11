@@ -43,7 +43,7 @@ public:
     explicit InputStatement(unsigned int base);
     ~InputStatement();
     char* Execute();
-        
+
 private:
     unsigned int base;
 };

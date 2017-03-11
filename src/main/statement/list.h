@@ -39,7 +39,7 @@ public:
     explicit ListStatement(const char* directory);
     ~ListStatement();
     char* Execute();
-    
+
 private:
     char* directory;
 };

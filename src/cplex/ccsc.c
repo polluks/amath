@@ -57,9 +57,12 @@ complex ccsc(complex z)
     b = cimag(z);
     d = cosh(2.0 * b) - cos(2.0 * a);
 
-    if (d == 0.0) {
+    if (d == 0.0)
+    {
         w = cpack(D_INFP, D_INFP);
-    } else {
+    }
+    else
+    {
         w = cpack((2.0 * sin(a) * cosh(b) / d), (-2.0 * cos(a) * sinh(b) / d));
     }
 

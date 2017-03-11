@@ -40,11 +40,16 @@ double csgn(complex z)
 {
     double a = creal(z);
 
-    if (a > 0.0) {
+    if (a > 0.0)
+    {
         return 1.0;
-    } else if (a < 0.0) {
+    }
+    else if (a < 0.0)
+    {
         return -1.0;
-    } else {
+    }
+    else
+    {
         double b = cimag(z);
         return b > 0.0 ? 1.0 : b < 0.0 ? -1.0 : 0.0;
     }

@@ -29,16 +29,16 @@
 
 #include "amath.h"
 #include "amathc.h"
+#include "console.h"
+#include "filesystem.h"
+#include "program_amiga.h"
+#include "console_amiga.h"
+#include "window_amiga.h"
+#include "language_amiga.h"
+#include "filesystem_amiga.h"
+#include "preferences_amiga.h"
 #include "lib/charbuf.h"
 #include "main/evaluator.h"
-#include "system/console.h"
-#include "system/filesystem.h"
-#include "system/program_amiga.h"
-#include "system/console_amiga.h"
-#include "system/window_amiga.h"
-#include "system/language_amiga.h"
-#include "system/filesystem_amiga.h"
-#include "system/preferences_amiga.h"
 
 #ifdef AMIGA
 #define ARGS_FORMAT "SHELL/S,INPUT/F"
@@ -116,5 +116,3 @@ void AmigaProgram::Exit()
 }
 
 #endif
-
-

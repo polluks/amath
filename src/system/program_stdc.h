@@ -29,8 +29,8 @@
 
 #include "amath.h"
 #include "amathc.h"
+#include "program.h"
 #include "lib/charbuf.h"
-#include "system/program.h"
 
 #if !defined(AMIGA)
 

@@ -2,7 +2,7 @@
 ---                           amath change history                          ---
 -------------------------------------------------------------------------------
 
-v1.7.0 February 28 2017
+v1.7.0 March 12 2017
 - Introduce scientific notation.
 - Introduce Not a Number (NaN).
 - Fixed bugs related to infinity (Inf).
