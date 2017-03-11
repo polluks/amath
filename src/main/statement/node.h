@@ -33,9 +33,9 @@
 #include "../nodes.h"
 
 /**
- * @brief Base class for all statements in a syntax tree.
- *
- */
+* @brief Base class for all statements in a syntax tree.
+*
+*/
 class StatementNode : public SyntaxNode
 {
 public:
@@ -49,9 +49,9 @@ public:
     void Attach(SyntaxNode* node);
     void Detach(SyntaxNode* node);
     void Replace(SyntaxNode* n, SyntaxNode* x);
-    
+
 protected:
-    char* statementText;    
+    char* statementText;
 };
 
 #endif

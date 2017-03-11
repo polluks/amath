@@ -38,9 +38,9 @@
 
 #include "amath.h"
 #include "amathc.h"
+#include "console.h"
 #include "lib/charval.h"
 #include "lib/aengine.h"
-#include "system/console.h"
 
 #if !defined(AMIGA)
 

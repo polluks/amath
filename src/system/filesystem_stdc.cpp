@@ -30,11 +30,11 @@
 
 #include "amath.h"
 #include "amathc.h"
+#include "program.h"
+#include "filesystem.h"
+#include "filesystem_stdc.h"
 #include "lib/charbuf.h"
 #include "localize/text.h"
-#include "system/program.h"
-#include "system/filesystem.h"
-#include "system/filesystem_stdc.h"
 
 #if !defined(AMIGA)
 #include <stdio.h>

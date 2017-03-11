@@ -38,7 +38,7 @@
 
 #include "amath.h"
 #include "amathc.h"
-#include "system/filesystem.h"
+#include "filesystem.h"
 
 #ifdef AMIGA
 

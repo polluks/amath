@@ -43,7 +43,7 @@ public:
     explicit DigitsStatement(unsigned int digits);
     ~DigitsStatement();
     char* Execute();
-        
+
 private:
     bool show;
     unsigned int digits;

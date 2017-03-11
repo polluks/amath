@@ -29,14 +29,14 @@
 
 #include "amath.h"
 #include "amathc.h"
+#include "program.h"
+#include "language_amiga.h"
 #include "localize/lex.h"
 #include "localize/help.h"
 #include "localize/text.h"
 #include "localize/ident.h"
 #include "localize/kword.h"
 #include "localize/tags.h"
-#include "system/program.h"
-#include "system/language_amiga.h"
 
 #ifdef AMIGA
 #include <clib/locale_protos.h>
@@ -174,4 +174,3 @@ bool AmigaLanguage::Validate(char c)
 //#define CLOSEQUOTE	46	/* end of quoted block	 */
 
 #endif
-

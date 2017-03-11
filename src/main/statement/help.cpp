@@ -64,10 +64,60 @@ HelpStatement::~HelpStatement()
 
 char* HelpStatement::Execute()
 {
-    char* text = argument != symident
-                     ? Program->Language->GetHelpText(argument)
-                     : Program->Language->GetHelpText(ident);
+    if (argument == symstatement)
+    {
+        return StatementHelp();
+    }
+    else if (argument == symident)
+    {
+        char* text = Program->Language->GetHelpText(ident);
+        output->ClearAndCopy(text);
+        return output->GetString();
+    }
 
+    char* text = Program->Language->GetHelpText(argument);
     output->ClearAndCopy(text);
+    return output->GetString();
+}
+
+#define APPENDHELP(x) \
+    text = x; \
+    output->EnsureGrowth(StrLen(text)); \
+    output->Append(text);
+
+char* HelpStatement::StatementHelp() const
+{
+    char* text;
+    output->ClearBuffer();
+
+    APPENDHELP(STATEMENTLINE)
+#if defined(ANSICONSOLE)
+    APPENDHELP(STATEMENTCLEAR)
+#endif
+    APPENDHELP(STATEMENTDEF)
+    APPENDHELP(STATEMENTDELETE)
+    APPENDHELP(STATEMENTDIGITS)
+    APPENDHELP(STATEMENTDEF)
+    APPENDHELP(STATEMENTDELETE)
+    APPENDHELP(STATEMENTDIGITS)
+    APPENDHELP(STATEMENTEVAL)
+    APPENDHELP(STATEMENTEXECUTE)
+    APPENDHELP(STATEMENTFUNCS)
+    APPENDHELP(STATEMENTINPUT)
+    APPENDHELP(STATEMENTHELP)
+    APPENDHELP(STATEMENTOUTPUT)
+#if defined(UNIX) || defined(HAIKU) || defined(AMIGA)
+    APPENDHELP(STATEMENTLIST)
+#endif
+    APPENDHELP(STATEMENTSHOW)
+    APPENDHELP(STATEMENTLOAD)
+    APPENDHELP(STATEMENTSAVE)
+    APPENDHELP(STATEMENTVARS)
+    APPENDHELP(STATEMENTVERSION)
+    APPENDHELP(STATEMENTMEMORY)
+    APPENDHELP(STATEMENTEXIT)
+    APPENDHELP(STATEMENTLINE)
+    APPENDHELP(STATEMENTFOOTER)
+
     return output->GetString();
 }

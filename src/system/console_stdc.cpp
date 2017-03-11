@@ -29,9 +29,11 @@
 
 #include "amath.h"
 #include "amathc.h"
+#include "console.h"
+#include "console_stdc.h"
 #include "lib/charval.h"
+#include "lib/aengine.h"
 #include "main/evaluator.h"
-#include "system/console_stdc.h"
 
 #if !defined(AMIGA)
 #include <stdio.h>

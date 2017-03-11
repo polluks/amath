@@ -11,8 +11,11 @@ LPATHS   = -Lsrc/lib/static -Lsrc/clib/static -Lsrc/real/static -Lsrc/cplex/stat
 FLXCAT   = build/flexcat/flexcat
 MKDIR    = mkdir -p
 DEL      = rm -f
-INSTALL  = install -m 0755
+INSTALLP = install -m 0755
+INSTALLM = install -m 0644
 PREFIX   = /usr
+INSTDIRP  = ${DESTDIR}${PREFIX}/bin
+INSTDIRM  = ${DESTDIR}${PREFIX}/share/man/man1
 
 all:	shared-app
 app:	appmain functions statement appsystem
@@ -48,25 +51,15 @@ amathc:
 amathcplex:
 	cd src/cplex && ${MAKE}
 
-catalogsa:
+localize:
+	cd build/flexcat && ${MAKE}
 	${FLXCAT} text/keyword.cd src/localize/kword.h=text/keyword.sd
 	${FLXCAT} text/help.cd src/localize/help.h=text/help.sd
 	${FLXCAT} text/ident.cd src/localize/ident.h=text/ident.sd
 	${FLXCAT} text/text.cd src/localize/text.h=text/text.sd
 
-catalogsu:
-	iconv -f ISO-8859-15 -t UTF-8 catalog/dansk/amath-help.ct >utext/dk-help.dict
-	iconv -f ISO-8859-15 -t UTF-8 catalog/dansk/amath-ident.ct >utext/dk-ident.dict
-	iconv -f ISO-8859-15 -t UTF-8 catalog/dansk/amath-text.ct >utext/dk-text.dict
-	iconv -f ISO-8859-15 -t UTF-8 catalog/dansk/amath-keyword.ct >utext/dk-keyword.dict
-
-catalogsw:
-	iconv -f ISO-8859-15 -t CP850 catalog/dansk/amath-help.ct >utext/dk-help.dict
-	iconv -f ISO-8859-15 -t CP850 catalog/dansk/amath-ident.ct >utext/dk-ident.dict
-	iconv -f ISO-8859-15 -t CP850 catalog/dansk/amath-text.ct >utext/dk-text.dict
-	iconv -f ISO-8859-15 -t CP850 catalog/dansk/amath-keyword.ct >utext/dk-keyword.dict
-
-amigacatalogs:
+catalogs:
+	cd build/flexcat && ${MAKE}
 	${MKDIR}  dist/catalog/english
 	${FLXCAT} text/help.cd catalog/english/amath-help.ct CATALOG dist/catalog/english/amath-help.catalog
 	${FLXCAT} text/ident.cd catalog/english/amath-ident.ct CATALOG dist/catalog/english/amath-ident.catalog
@@ -92,16 +85,18 @@ static-app: src/main.o
 	${CC} ${CFLAGS} -s src/main.o -o amath ${LPATHS} ${LFLAGS}
 
 .PHONY: test
-test: static-app
+test: amath
+	LD_LIBRARY_PATH=src/clib/:src/lib:src/cplex:scr/real
 	./amath test
 
 .PHONY: install
-install: amath
+install: shared-app
 	cd src/lib && ${MAKE} install
 	cd src/clib && ${MAKE} install
 	cd src/real && ${MAKE} install
 	cd src/cplex && ${MAKE} install
-	${INSTALL} amath ${DESTDIR}${PREFIX}/bin
+	${INSTALLP} amath ${INSTDIRP}/amath
+	${INSTALLM} amath.1 ${INSTDIRM}/amath.1
 
 .PHONY: uninstall
 uninstall:
@@ -109,8 +104,10 @@ uninstall:
 	cd src/clib && ${MAKE} uninstall
 	cd src/real && ${MAKE} uninstall
 	cd src/cplex && ${MAKE} uninstall
-	${DEL} ${DESTDIR}${PREFIX}/bin/amath
+	${DEL} ${INSTDIRP}/amath
+	${DEL} ${INSTDIRM}/amath.1
 
+.PHONY: clean
 clean:
 	cd src/lib && ${MAKE} clean
 	cd src/clib && ${MAKE} clean
@@ -120,5 +117,6 @@ clean:
 	cd src/system && ${MAKE} clean
 	cd src/main/function && ${MAKE} clean
 	cd src/main/statement && ${MAKE} clean
+	cd build/flexcat && ${MAKE} clean
 	${DEL} src/main.o amath
 

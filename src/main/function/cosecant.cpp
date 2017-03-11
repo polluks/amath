@@ -44,4 +44,3 @@ Number* CosecantNode::Evaluate()
     result = expression->Evaluate()->Cosecant();
     return result;
 }
-                                

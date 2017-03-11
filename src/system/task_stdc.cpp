@@ -29,8 +29,8 @@
 
 #include "amath.h"
 #include "amathc.h"
-#include "system/thread.h"
-#include "system/task_stdc.h"
+#include "thread.h"
+#include "task_stdc.h"
 
 #if defined(UNIX) || defined(HAIKU)
 #include <unistd.h>

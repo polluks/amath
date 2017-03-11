@@ -31,7 +31,7 @@
 
 ExcosecantNode::ExcosecantNode(ExpressionNode* expression, char* text, char* sys) :
     FunctionNode(expression, text, sys)
-{   
+{
 }
 
 FunctionNode* ExcosecantNode::Create(ExpressionNode* expression, char* text, char* sys)
@@ -42,6 +42,5 @@ FunctionNode* ExcosecantNode::Create(ExpressionNode* expression, char* text, cha
 Number* ExcosecantNode::Evaluate()
 {
     result = expression->Evaluate()->ExCosecant();
-    return result;    
+    return result;
 }
-    

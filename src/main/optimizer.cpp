@@ -28,7 +28,6 @@
  */
 
 #include "amath.h"
-#include "amathc.h"
 #include "nodes.h"
 #include "values.h"
 #include "optimizer.h"
@@ -56,7 +55,7 @@ void Optimizer::Optimize() const
     TagStartNode(root);
 }
 
-void Optimizer::TagChildren(SyntaxNode* node) const
+void Optimizer::TagChildren(SyntaxNode* node)
 {
     SyntaxNode* current;
     node->ResetIterator();
@@ -67,7 +66,7 @@ void Optimizer::TagChildren(SyntaxNode* node) const
     }
 }
 
-void Optimizer::BalanceTree(SyntaxNode* node) const
+void Optimizer::BalanceTree(SyntaxNode* node)
 {
     if (node == nullptr)
         return;
@@ -113,7 +112,7 @@ void Optimizer::BalanceTree(SyntaxNode* node) const
     }
 }
 
-int Optimizer::GetTreeDepth(SyntaxNode* node, int depth) const
+int Optimizer::GetTreeDepth(SyntaxNode* node, int depth)
 {
     int max = depth;
     SyntaxNode* current;
@@ -131,7 +130,7 @@ int Optimizer::GetTreeDepth(SyntaxNode* node, int depth) const
     return max;
 }
 
-void Optimizer::ReduceUnaryNodes(SyntaxNode* node) const
+void Optimizer::ReduceUnaryNodes(SyntaxNode* node)
 {
     SyntaxNode* current;
     node->ResetIterator();
@@ -173,7 +172,7 @@ void Optimizer::ReduceUnaryNodes(SyntaxNode* node) const
     }
 }
 
-void Optimizer::ReduceValueNodes(SyntaxNode* node) const
+void Optimizer::ReduceValueNodes(SyntaxNode* node)
 {
     SyntaxNode* current;
     node->ResetIterator();
@@ -212,7 +211,7 @@ void Optimizer::ReduceValueNodes(SyntaxNode* node) const
     }
 }
 
-void Optimizer::TagStartNode(SyntaxNode* node) const
+void Optimizer::TagStartNode(SyntaxNode* node)
 {
     node->ResetIterator();
     SyntaxNode* next = node->GetNext();

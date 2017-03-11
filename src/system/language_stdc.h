@@ -32,9 +32,9 @@
 
 #include "amath.h"
 #include "amathc.h"
+#include "language.h"
 #include "localize/help.h"
 #include "localize/text.h"
-#include "system/language.h"
 
 #if !defined(AMIGA)
 

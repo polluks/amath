@@ -45,8 +45,10 @@ public:
     explicit HelpStatement(const char* ident);
     ~HelpStatement();
     char* Execute();
-    
+
 private:
+    char* StatementHelp() const;
+
     Symbol argument;
     char* ident;
 };

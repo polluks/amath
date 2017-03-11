@@ -66,9 +66,12 @@ complex ctan(complex z)
     b = cimag(z);
     d = cos(2.0 * a) + cosh(2.0 * b);
 
-    if (d == 0.0) {
+    if (d == 0.0)
+    {
         w = cpack(D_INFP, D_INFP);
-    } else {
+    }
+    else
+    {
         w = cpack((sin(2.0 * a) / d), (sinh(2.0 * b) / d));
     }
 

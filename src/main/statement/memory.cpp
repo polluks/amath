@@ -50,7 +50,7 @@ char* MemoryStatement::Execute()
     Number* a = new RealNumber(static_cast<int>(blocks));
     Number* b = new RealNumber(static_cast<int>(size));
     Number* c = new RealNumber(static_cast<int>(peak));
-    
+
     NumeralSystem* ns = new DecimalSystem(8);
     output->Empty();
     output->EnsureSize(
@@ -66,7 +66,7 @@ char* MemoryStatement::Execute()
     output->Append(TXTMEMMAXSIZE);
     output->Append(ns->GetText(c));
     output->Append(NEWLINE);
-    
+
     delete a;
     delete b;
     delete c;

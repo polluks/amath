@@ -117,7 +117,6 @@ static const double one = 1.0, tiny = 1.0e-300;
  *	sqrt(-ve) = NaN		... with invalid signal
  *	sqrt(NaN) = NaN		... with invalid signal for signaling NaN
  * </pre>
- * Other methods : see the @ref squareroot.
  *
  * @copyright Copyright (C) 1993 by Sun Microsystems, Inc. All rights reserved.
  * @license   Developed at SunSoft, a Sun Microsystems, Inc. business. Permission

@@ -29,10 +29,10 @@
 
 #include "amath.h"
 #include "amathc.h"
+#include "program.h"
+#include "filesystem_amiga.h"
 #include "lib/charbuf.h"
 #include "localize/text.h"
-#include "system/program.h"
-#include "system/filesystem_amiga.h"
 
 #ifdef AMIGA
 #include <clib/dos_protos.h>

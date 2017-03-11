@@ -29,8 +29,8 @@
 
 #include "amath.h"
 #include "amathc.h"
-#include "system/thread.h"
-#include "system/task_amiga.h"
+#include "thread.h"
+#include "task_amiga.h"
 
 #ifdef AMIGA
 #include <exec/io.h>

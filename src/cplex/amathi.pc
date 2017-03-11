@@ -1,0 +1,10 @@
+prefix=/usr
+exec_prefix=${prefix}
+includedir=${prefix}/include/amath
+libdir=${exec_prefix}/lib
+
+Name: amath complex library
+Description: Functions for handling complex numbers
+Version: 1.7.0
+Cflags: -I${includedir}
+Libs: -L${libdir} -lamathi

@@ -38,8 +38,8 @@
 
 #include "amath.h"
 #include "amathc.h"
-#include "system/task.h"
-#include "system/thread.h"
+#include "task.h"
+#include "thread.h"
 
 #ifdef AMIGA
 #include <exec/io.h>

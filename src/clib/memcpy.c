@@ -47,28 +47,26 @@
 #pragma GCC diagnostic ignored "-Wcast-align"
 #endif
 
-#ifdef AMIGA 
+#ifdef AMIGA
 #include <clib/exec_protos.h>
 #endif
 
 /**
- *
+ * @brief
  * sizeof(word) MUST BE A POWER OF TWO
  * SO THAT wmask BELOW IS ALL ONES
  */
 typedef uint32_t word;
-
-#ifdef _WIN32
-typedef unsigned long long mem_ptr;
-#else
-typedef unsigned long mem_ptr;
-#endif
+typedef uintptr_t mem_ptr;
 
 /**
- *
- * Macros: loop-t-times; and loop-t-times, t>0
+ * @brief loop-t-times
  */
 #define TLOOP(s)   if (t) TLOOP1(s)
+
+/**
+ * @brief loop-t-times, t>0
+ */
 #define TLOOP1(s)  do { s; } while (--t)
 
 /**

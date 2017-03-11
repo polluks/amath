@@ -46,7 +46,7 @@
 complex cacosh(complex z)
 {
     complex one = cpack(1.0, 0.0);
-    complex a = csub(cmul(z, z) , one);
+    complex a = csub(cmul(z, z), one);
     complex b = cadd(z, csqrt(a));
     complex w = clog(b);
     return w;

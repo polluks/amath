@@ -29,7 +29,6 @@
 
 #include "save.h"
 #include "amath.h"
-#include "amath.h"
 #include "localize/text.h"
 #include "system/program.h"
 

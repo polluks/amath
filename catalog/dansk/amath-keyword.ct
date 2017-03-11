@@ -88,6 +88,9 @@ hyper
 hyper
 hyperbolic
 hyperbolsk
+;######### Early keyword
+early
+tidlig
 ;######### HelpStatement
 help
 hj�lp
@@ -153,3 +156,9 @@ hex
 hex
 hexadecimal
 hexadecimal
+;######### AboutStatement and keyword
+about
+om
+;######### LicenseStatement and keyword
+license
+lisens

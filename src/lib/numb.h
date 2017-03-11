@@ -73,7 +73,7 @@ public:
     virtual bool IsTooSmall() = 0;
     virtual bool IsTooLarge() = 0;
     virtual bool IsNotImplemented() = 0;
-    
+
     virtual Number* Unary() = 0;
     virtual Number* Add(Number* other) = 0;
     virtual Number* Sub(Number* other) = 0;
@@ -132,7 +132,7 @@ public:
     virtual Number* HaVerCosine() = 0;
     virtual Number* HaCoVerSine() = 0;
     virtual Number* HaCoVerCosine() = 0;
-    
+
     virtual Number* ArcVerSine() = 0;
     virtual Number* ArcVerCosine() = 0;
     virtual Number* ArcCoVerSine() = 0;
@@ -141,7 +141,7 @@ public:
     virtual Number* ArcHaVerCosine() = 0;
     virtual Number* ArcHaCoVerSine() = 0;
     virtual Number* ArcHaCoVerCosine() = 0;
-    
+
     virtual Number* ExSecant() = 0;
     virtual Number* ExCosecant() = 0;
     virtual Number* ArcExSecant() = 0;

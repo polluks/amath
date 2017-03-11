@@ -168,7 +168,7 @@ SyntaxNode* Parser::ParseStatement()
     case symdef:
         res = ParseFunctionDef();
         break;
-#if defined(UNIX) || defined(HAIKU)
+#if defined(UNIX) || defined(HAIKU) || defined(AMIGA)
     case symlist:
         res = ParseListStatement();
         break;

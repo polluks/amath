@@ -29,9 +29,9 @@
 
 #include "amath.h"
 #include "amathc.h"
-#include "system/task.h"
-#include "system/thread.h"
-#include "system/proc_amiga.h"
+#include "task.h"
+#include "thread.h"
+#include "proc_amiga.h"
 
 #ifdef WITHTEST
 #ifdef AMIGA
@@ -55,16 +55,16 @@ AmigaProcess::AmigaProcess()
 
 AmigaProcess::~AmigaProcess()
 {
-    /*
-    if (proc != nullptr) {
-        Forbid();
-        DeleteTask(proc);
-        Permit();
-    }
-    */
+/*
+if (proc != nullptr) {
+    Forbid();
+    DeleteTask(proc);
+    Permit();
+}
+*/
 
-    // See: http://eab.abime.net/showthread.php?t=73783
-    // And AROS Stack swap: http://en.wikibooks.org/wiki/Aros/Developer/Docs/Examples/StackSwap
+// See: http://eab.abime.net/showthread.php?t=73783
+// And AROS Stack swap: http://en.wikibooks.org/wiki/Aros/Developer/Docs/Examples/StackSwap
     Forbid();
     FreeSignal(signal);
     Permit();

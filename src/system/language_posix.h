@@ -32,11 +32,11 @@
 
 #include "amath.h"
 #include "amathc.h"
+#include "language.h"
 #include "localize/lex.h"
 #include "localize/help.h"
 #include "localize/text.h"
 #include "localize/kword.h"
-#include "system/language.h"
 
 #ifdef UNIX
 #include <ctype.h>

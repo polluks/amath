@@ -46,10 +46,10 @@ public:
     void Attach(SyntaxNode* node);
     void Detach(SyntaxNode* node);
     void Replace(SyntaxNode* n, SyntaxNode* x);
-    
+
 protected:
     char* GetNodeText();
-    
+
 private:
     UserFunction* function;
 };

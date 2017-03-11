@@ -1,14 +1,20 @@
-CC       = gcc
-CFLAGS   = -std=c9x -O3 -DWITHTEST -I. -I.. -Wall
-AR       = ar
-RANLIB   = ranlib
-MKDIR    = mkdir -p
-DEL      = rm -f
-INSTALL  = install -m 0644
-PREFIX   = /usr
-
-alib     = libamathc.a
-solib    = libamathc.so
+CC        = gcc
+CFLAGS    = -std=c9x -O3 -DWITHTEST -I. -I.. -Wall
+AR        = ar
+RANLIB    = ranlib
+MKDIR     = mkdir -p
+DEL       = rm -f
+INSTALL   = install -m 0644
+LDCONFIG  = ldconfig
+PREFIX    = /usr
+INSTDIR   = ${DESTDIR}${PREFIX}/lib/amath
+INSTDIRI  = ${DESTDIR}${PREFIX}/include/amath
+INSTDIRPC = ${DESTDIR}${PREFIX}/lib/pkgconfig
+INSTDIRM  = ${DESTDIR}${PREFIX}/share/man/man3
+alib      = libamathc.a
+solib     = libamathc.so
+pkgconfig = amathc.pc
+manpage   = amathc.3
 
 all: static shared
 
@@ -64,7 +70,7 @@ build:
 	${MKDIR} shared
 
 ${solib}:	build  shared/alloccpy.o shared/mem.o shared/memcpy.o shared/memset.o shared/strcmp.o shared/strlen.o shared/untag.o
-	${CC} -shared -fPIC -Wl,-soname,${solib} -o ${solib}  shared/alloccpy.o shared/mem.o shared/memcpy.o shared/memset.o shared/strcmp.o shared/strlen.o shared/untag.o -lc
+	${CC} ${CFLAGS} -shared -s -fPIC -Wl,-soname,${solib}.1.7.0 -o ${solib}  shared/alloccpy.o shared/mem.o shared/memcpy.o shared/memset.o shared/strcmp.o shared/strlen.o shared/untag.o -lc
 
 ${alib}:	build  static/alloccpy.o static/mem.o static/memcpy.o static/memset.o static/strcmp.o static/strlen.o static/untag.o
 	${AR} rcs static/${alib}  static/alloccpy.o static/mem.o static/memcpy.o static/memset.o static/strcmp.o static/strlen.o static/untag.o
@@ -72,19 +78,26 @@ ${alib}:	build  static/alloccpy.o static/mem.o static/memcpy.o static/memset.o s
 
 .PHONY: install
 install:	${alib} ${solib}
-	${MKDIR} ${DESTDIR}${PREFIX}/lib
-	${MKDIR} ${DESTDIR}${PREFIX}/include
-	${INSTALL} static/${alib} ${DESTDIR}${PREFIX}/lib/${alib}
-	${INSTALL} ${solib} ${DESTDIR}${PREFIX}/lib/${solib}
-	${INSTALL} ../amath.h ${DESTDIR}${PREFIX}/include
-	${INSTALL} ../amathc.h ${DESTDIR}${PREFIX}/include
+	${MKDIR} ${INSTDIR}
+	${MKDIR} ${INSTDIRPC}
+	${MKDIR} ${INSTDIRI}
+	${INSTALL} static/${alib} ${INSTDIR}/${alib}
+	${INSTALL} ${solib} ${INSTDIR}/${solib}
+	${INSTALL} ${pkgconfig} ${INSTDIRPC}/${pkgconfig}
+	${INSTALL} ${manpage} ${INSTDIRM}/${manpage}
+	${INSTALL} ../amath.h ${INSTDIRI}
+	${INSTALL} ../amathc.h ${INSTDIRI}
+	${LDCONFIG} ${INSTDIR}
 
 .PHONY:	uninstall
 uninstall:
-	${DEL} ${DESTDIR}${PREFIX}/lib/${alib}
-	${DEL} ${DESTDIR}${PREFIX}/lib/${solib}
-	${DEL} ${DESTDIR}${PREFIX}/include/amath.h
-	${DEL} ${DESTDIR}${PREFIX}/include/amathc.h
+	${DEL} ${INSTDIR}/${alib}
+	${DEL} ${INSTDIR}/${solib}
+	${DEL} ${INSTDIRPC}/${pkgconfig}
+	${DEL} ${INSTDIRM}/${manpage}
+	${DEL} ${INSTDIRI}/amath.h
+	${DEL} ${INSTDIRI}/amathc.h
+	${LDCONFIG}
 
 clean:
 	${DEL} static/${alib} ${solib}  static/alloccpy.o static/mem.o static/memcpy.o static/memset.o static/strcmp.o static/strlen.o static/untag.o  shared/alloccpy.o shared/mem.o shared/memcpy.o shared/memset.o shared/strcmp.o shared/strlen.o shared/untag.o

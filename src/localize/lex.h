@@ -31,7 +31,7 @@
 #define AMATH_LOCALIZE_LEX_H
 
 /**
- * @file  lex.h
+ * @file  localize/lex.h
  * @brief Lexer defitions used by other classes.
  *
  */
@@ -73,6 +73,7 @@ typedef enum
     symvariable,
     symtrigon,
     symhyper,
+    symearly,
     symcomplex,
     syme,
     sympi,

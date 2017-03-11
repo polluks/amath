@@ -1,14 +1,20 @@
-CC       = gcc
-CFLAGS   = -std=c9x -O3 -DWITHTEST  -I. -I.. -Wall
-AR       = ar
-RANLIB   = ranlib
-MKDIR    = mkdir -p
-DEL      = rm -f
-INSTALL  = install -m 0644
-PREFIX   = /usr
-
-alib     = libamathcplex.a
-solib    = libamathcplex.so
+CC        = gcc
+CFLAGS    = -std=c9x -O3 -DWITHTEST  -I. -I.. -Wall
+AR        = ar
+RANLIB    = ranlib
+MKDIR     = mkdir -p
+DEL       = rm -f
+INSTALL   = install -m 0644
+LDCONFIG  = ldconfig
+PREFIX    = /usr
+INSTDIR   = ${DESTDIR}${PREFIX}/lib/amath
+INSTDIRI  = ${DESTDIR}${PREFIX}/include/amath
+INSTDIRPC = ${DESTDIR}${PREFIX}/lib/pkgconfig
+INSTDIRM  = ${DESTDIR}${PREFIX}/share/man/man3
+alib      = libamathcplex.a
+solib     = libamathcplex.so
+pkgconfig = amathi.pc
+manpage   = amathi.3
 
 all: static shared
 
@@ -220,7 +226,7 @@ build:
 	${MKDIR} shared
 
 ${solib}:	build  shared/cacos.o shared/cacosh.o shared/cacot.o shared/cacoth.o shared/cacsc.o shared/cacsch.o shared/casec.o shared/casech.o shared/casin.o shared/casinh.o shared/catan.o shared/catanh.o shared/ccbrt.o shared/ccos.o shared/ccosh.o shared/ccot.o shared/ccoth.o shared/ccsc.o shared/ccsch.o shared/cexp.o shared/clog.o shared/clog10.o shared/clogb.o shared/cpow.o shared/csec.o shared/csech.o shared/csgn.o shared/csin.o shared/csinh.o shared/csqrt.o shared/ctan.o shared/ctanh.o shared/prim.o
-	${CC} -shared -fPIC -Wl,-soname,${solib} -o ${solib}  shared/cacos.o shared/cacosh.o shared/cacot.o shared/cacoth.o shared/cacsc.o shared/cacsch.o shared/casec.o shared/casech.o shared/casin.o shared/casinh.o shared/catan.o shared/catanh.o shared/ccbrt.o shared/ccos.o shared/ccosh.o shared/ccot.o shared/ccoth.o shared/ccsc.o shared/ccsch.o shared/cexp.o shared/clog.o shared/clog10.o shared/clogb.o shared/cpow.o shared/csec.o shared/csech.o shared/csgn.o shared/csin.o shared/csinh.o shared/csqrt.o shared/ctan.o shared/ctanh.o shared/prim.o
+	${CC} ${CFLAGS} -shared -s -fPIC -Wl,-soname,${solib}.1.7.0 -o ${solib}  shared/cacos.o shared/cacosh.o shared/cacot.o shared/cacoth.o shared/cacsc.o shared/cacsch.o shared/casec.o shared/casech.o shared/casin.o shared/casinh.o shared/catan.o shared/catanh.o shared/ccbrt.o shared/ccos.o shared/ccosh.o shared/ccot.o shared/ccoth.o shared/ccsc.o shared/ccsch.o shared/cexp.o shared/clog.o shared/clog10.o shared/clogb.o shared/cpow.o shared/csec.o shared/csech.o shared/csgn.o shared/csin.o shared/csinh.o shared/csqrt.o shared/ctan.o shared/ctanh.o shared/prim.o
 
 ${alib}:	build  static/cacos.o static/cacosh.o static/cacot.o static/cacoth.o static/cacsc.o static/cacsch.o static/casec.o static/casech.o static/casin.o static/casinh.o static/catan.o static/catanh.o static/ccbrt.o static/ccos.o static/ccosh.o static/ccot.o static/ccoth.o static/ccsc.o static/ccsch.o static/cexp.o static/clog.o static/clog10.o static/clogb.o static/cpow.o static/csec.o static/csech.o static/csgn.o static/csin.o static/csinh.o static/csqrt.o static/ctan.o static/ctanh.o static/prim.o
 	${AR} rcs static/${alib}  static/cacos.o static/cacosh.o static/cacot.o static/cacoth.o static/cacsc.o static/cacsch.o static/casec.o static/casech.o static/casin.o static/casinh.o static/catan.o static/catanh.o static/ccbrt.o static/ccos.o static/ccosh.o static/ccot.o static/ccoth.o static/ccsc.o static/ccsch.o static/cexp.o static/clog.o static/clog10.o static/clogb.o static/cpow.o static/csec.o static/csech.o static/csgn.o static/csin.o static/csinh.o static/csqrt.o static/ctan.o static/ctanh.o static/prim.o
@@ -228,16 +234,25 @@ ${alib}:	build  static/cacos.o static/cacosh.o static/cacot.o static/cacoth.o st
 
 .PHONY: install
 install:	${alib} ${solib}
-	${MKDIR} ${DESTDIR}${PREFIX}/lib
-	${INSTALL} static/${alib} ${DESTDIR}${PREFIX}/lib/${alib}
-	${INSTALL} ${solib} ${DESTDIR}${PREFIX}/lib/${solib}
-	${INSTALL} ../complex.h ${DESTDIR}${PREFIX}/include
+	${MKDIR} ${INSTDIR}
+	${MKDIR} ${INSTDIRPC}
+	${MKDIR} ${INSTDIRI}
+	${INSTALL} static/${alib} ${INSTDIR}/${alib}
+	${INSTALL} ${solib} ${INSTDIR}/${solib}
+	${INSTALL} ${pkgconfig} ${INSTDIRPC}/${pkgconfig}
+	${INSTALL} ${manpage} ${INSTDIRM}/${manpage}
+	${INSTALL} ../complex.h ${INSTDIRI}/amathi.h
+	${LDCONFIG} ${INSTDIR}
 
 .PHONY: uninstall
 uninstall:
-	${DEL} ${DESTDIR}${PREFIX}/lib/${alib}
-	${DEL} ${DESTDIR}${PREFIX}/lib/${solib}
-	${DEL} ${DESTDIR}${PREFIX}/include/complex.h
+	${DEL} ${INSTDIR}/${alib}
+	${DEL} ${INSTDIR}/${solib}
+	${DEL} ${INSTDIRPC}/${pkgconfig}
+	${DEL} ${INSTDIRM}/${manpage}
+	${DEL} ${INSTDIRPC}/amathi.pc
+	${DEL} ${INSTDIRI}/amathi.h
+	${LDCONFIG}
 
 clean:
 	${DEL} static/${alib} ${solib}  static/cacos.o static/cacosh.o static/cacot.o static/cacoth.o static/cacsc.o static/cacsch.o static/casec.o static/casech.o static/casin.o static/casinh.o static/catan.o static/catanh.o static/ccbrt.o static/ccos.o static/ccosh.o static/ccot.o static/ccoth.o static/ccsc.o static/ccsch.o static/cexp.o static/clog.o static/clog10.o static/clogb.o static/cpow.o static/csec.o static/csech.o static/csgn.o static/csin.o static/csinh.o static/csqrt.o static/ctan.o static/ctanh.o static/prim.o  shared/cacos.o shared/cacosh.o shared/cacot.o shared/cacoth.o shared/cacsc.o shared/cacsch.o shared/casec.o shared/casech.o shared/casin.o shared/casinh.o shared/catan.o shared/catanh.o shared/ccbrt.o shared/ccos.o shared/ccosh.o shared/ccot.o shared/ccoth.o shared/ccsc.o shared/ccsch.o shared/cexp.o shared/clog.o shared/clog10.o shared/clogb.o shared/cpow.o shared/csec.o shared/csech.o shared/csgn.o shared/csin.o shared/csinh.o shared/csqrt.o shared/ctan.o shared/ctanh.o shared/prim.o

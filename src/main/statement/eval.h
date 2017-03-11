@@ -41,13 +41,13 @@ class EvalStatement : public virtual StatementNode
 public:
     explicit EvalStatement(ExpressionNode* expression);
     ~EvalStatement();
-    
+
     char* Execute();
     SyntaxNode* GetNext();
     void Attach(SyntaxNode* node);
     void Detach(SyntaxNode* node);
     void Replace(SyntaxNode* n, SyntaxNode* x);
-    
+
 private:
     ExpressionNode* expression;
 };

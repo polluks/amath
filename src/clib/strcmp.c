@@ -32,7 +32,7 @@
  */
 
 /**
- * @file  strcmp.h
+ * @file  strcmp.c
  * @brief Compare two null terminated strings to each other.
  *
  * Code originate from FreeBSD base, revision 229286.

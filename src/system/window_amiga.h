@@ -39,8 +39,8 @@
 
 #include "amath.h"
 #include "amathc.h"
+#include "console.h"
 #include "lib/aengine.h"
-#include "system/console.h"
 
 #ifdef AMIGA
 #include <libraries/dos.h>

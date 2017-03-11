@@ -45,7 +45,7 @@ public:
     DeleteStatement(const char* name, const char* argument);
     ~DeleteStatement();
     char* Execute();
-    
+
 private:
     Symbol type;
     char* name;

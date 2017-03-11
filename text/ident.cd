@@ -5,7 +5,7 @@
 ; ## ------------------------------------------
 ; ##
 ; ## Generate code with:
-; ## flexcat ident.cd ../../src/localize/ident.h=ident.sd
+; ## flexcat ident.cd ../src/localize/ident.h=ident.sd
 ; ##
 ; ###################################################################################
 ; ## Copyright (c) 2014-2017 Carsten Sonne Larsen <cs@innolan.net>
@@ -32,73 +32,116 @@
 ; ##  OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
 ; ##  OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 ; ###################################################################################
-abs (/40/)
+; message ID (ID number/min. string length/max. string length)
+; native string
+; ###################################################################################
+abs (/20/)
 No help is available for this function.#NEWLINE#
-sgn (/40/)
+sgn (/20/)
 No help is available for this function.#NEWLINE#
-round (/40/)
+round (/20/)
 No help is available for this function.#NEWLINE#
-trunc (/10/)
+trunc (/20/)
 No help is available for this function.#NEWLINE#
-floor (/10/)
+floor (/20/)
 No help is available for this function.#NEWLINE#
-ceil (/10/)
+ceil (/20/)
 No help is available for this function.#NEWLINE#
-sqr (/10/)
+sqr (/20/)
 No help is available for this function.#NEWLINE#
-cbr (/10/)
+cbr (/20/)
 No help is available for this function.#NEWLINE#
-lb (/10/)
+lb (/20/)
 No help is available for this function.#NEWLINE#
-ln (/10/)
+ln (/20/)
 No help is available for this function.#NEWLINE#
-lg (/10/)
+lg (/20/)
 No help is available for this function.#NEWLINE#
-sin (/10/)
+sin (/20/)
 No help is available for this function.#NEWLINE#
-cos (/10/)
+cos (/20/)
 No help is available for this function.#NEWLINE#
-tan (/10/)
+tan (/20/)
 No help is available for this function.#NEWLINE#
-cot (/10/)
+cot (/20/)
 No help is available for this function.#NEWLINE#
-sec (/10/)
+sec (/20/)
 No help is available for this function.#NEWLINE#
-csc (/10/)
+csc (/20/)
 No help is available for this function.#NEWLINE#
-asin (/10/)
+asin (/20/)
 No help is available for this function.#NEWLINE#
-acos (/10/)
+acos (/20/)
 No help is available for this function.#NEWLINE#
-atan (/10/)
+atan (/20/)
 No help is available for this function.#NEWLINE#
-acot (/10/)
+acot (/20/)
 No help is available for this function.#NEWLINE#
-asec (/10/)
+asec (/20/)
 No help is available for this function.#NEWLINE#
-acsc (/10/)
+acsc (/20/)
 No help is available for this function.#NEWLINE#
-sinh (/10/)
+sinh (/20/)
 No help is available for this function.#NEWLINE#
-cosh (/10/)
+cosh (/20/)
 No help is available for this function.#NEWLINE#
-tanh (/10/)
+tanh (/20/)
 No help is available for this function.#NEWLINE#
-coth (/10/)
+coth (/20/)
 No help is available for this function.#NEWLINE#
-sech (/10/)
+sech (/20/)
 No help is available for this function.#NEWLINE#
-csch (/10/)
+csch (/20/)
 No help is available for this function.#NEWLINE#
-asinh (/10/)
+asinh (/20/)
 No help is available for this function.#NEWLINE#
-acosh (/10/)
+acosh (/20/)
 No help is available for this function.#NEWLINE#
-atanh (/10/)
+atanh (/20/)
 No help is available for this function.#NEWLINE#
-acoth (/10/)
+acoth (/20/)
 No help is available for this function.#NEWLINE#
-asech (/10/)
+asech (/20/)
 No help is available for this function.#NEWLINE#
-acsch (/10/)
+acsch (/20/)
 No help is available for this function.#NEWLINE#
+ver (/20/)
+The versed sine is an early appearing trigonometric function.#NEWLINE#It is equal to one minus the cosine.#NEWLINE#ver(x) = 1 - cos(x)#NEWLINE#
+vcs (/20/)
+The versed cosine is an early appearing trigonometric function.#NEWLINE#It is equal to one plus the cosine.#NEWLINE#ver(x) = 1 + cos(x)#NEWLINE#
+cvs (/20/)
+The coversed sine is an early appearing trigonometric function.#NEWLINE#It is equal to one minus the sine.#NEWLINE#ver(x) = 1 - sin(x)#NEWLINE#
+cvc (/20/)
+The coversed cosine is an early appearing trigonometric function.#NEWLINE#It is equal to one plus the sine.#NEWLINE#cvc(x) = 1 + sin(x)#NEWLINE#
+hv (/20/)
+No help is available for the haversed sine function.#NEWLINE#
+hvc (/20/)
+No help is available for the haversed cosine function.#NEWLINE#
+hcv (/20/)
+No help is available for the hacoversed sine function.#NEWLINE#
+hcc (/20/)
+No help is available for the hacoversed cosine function.#NEWLINE#
+aver (/20/)
+No help is available for this function.#NEWLINE#
+avcs (/20/)
+No help is available for this function.#NEWLINE#
+acvs (/20/)
+No help is available for this function.#NEWLINE#
+acvc (/20/)
+No help is available for this function.#NEWLINE#
+ahv (/20/)
+No help is available for this function.#NEWLINE#
+ahvc (/20/)
+No help is available for this function.#NEWLINE#
+ahcv (/20/)
+The inverse hacoversed sine is not implemented in this version of amath.#NEWLINE#
+ahcc (/20/)
+The inverse hacoversed cosine is not implemented in this version of amath.#NEWLINE#
+exsec (/20/)
+No help is available for the exsecant function.#NEWLINE#
+excsc (/20/)
+No help is available for the excosecant function.#NEWLINE#
+aexsec (/20/)
+No help is available for the inverse exsecant function.#NEWLINE#
+aexcsc (/20/)
+No help is available for the inverse excosecant function.#NEWLINE#

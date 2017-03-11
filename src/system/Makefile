@@ -22,15 +22,6 @@ filesystem_amiga.o:	filesystem_amiga.cpp
 filesystem_stdc.o:	filesystem_stdc.cpp
 	${CXX} ${CXXFLAGS} -c filesystem_stdc.cpp
 
-graph.o:	graph.cpp
-	${CXX} ${CXXFLAGS} -c graph.cpp
-
-graph_amiga.o:	graph_amiga.cpp
-	${CXX} ${CXXFLAGS} -c graph_amiga.cpp
-
-graph_gtk.o:	graph_gtk.cpp
-	${CXX} ${CXXFLAGS} -c graph_gtk.cpp
-
 language.o:	language.cpp
 	${CXX} ${CXXFLAGS} -c language.cpp
 
@@ -76,10 +67,10 @@ task_stdc.o:	task_stdc.cpp
 window_amiga.o:	window_amiga.cpp
 	${CXX} ${CXXFLAGS} -c window_amiga.cpp
 
-lib:	 console.o console_amiga.o console_stdc.o filesystem_amiga.o filesystem_stdc.o graph.o graph_amiga.o graph_gtk.o language.o language_amiga.o language_posix.o language_stdc.o preferences.o preferences_amiga.o preferences_stdc.o proc_amiga.o program.o program_amiga.o program_stdc.o program_test.o task_amiga.o task_stdc.o window_amiga.o
-	${AR} rcs libappsystem.a  console.o console_amiga.o console_stdc.o filesystem_amiga.o filesystem_stdc.o graph.o graph_amiga.o graph_gtk.o language.o language_amiga.o language_posix.o language_stdc.o preferences.o preferences_amiga.o preferences_stdc.o proc_amiga.o program.o program_amiga.o program_stdc.o program_test.o task_amiga.o task_stdc.o window_amiga.o
+lib:	 console.o console_amiga.o console_stdc.o filesystem_amiga.o filesystem_stdc.o language.o language_amiga.o language_posix.o language_stdc.o preferences.o preferences_amiga.o preferences_stdc.o proc_amiga.o program.o program_amiga.o program_stdc.o program_test.o task_amiga.o task_stdc.o window_amiga.o
+	${AR} rcs libappsystem.a  console.o console_amiga.o console_stdc.o filesystem_amiga.o filesystem_stdc.o language.o language_amiga.o language_posix.o language_stdc.o preferences.o preferences_amiga.o preferences_stdc.o proc_amiga.o program.o program_amiga.o program_stdc.o program_test.o task_amiga.o task_stdc.o window_amiga.o
 	${RANLIB} libappsystem.a
 
 clean:
-	${DEL} libappsystem.a  console.o console_amiga.o console_stdc.o filesystem_amiga.o filesystem_stdc.o graph.o graph_amiga.o graph_gtk.o language.o language_amiga.o language_posix.o language_stdc.o preferences.o preferences_amiga.o preferences_stdc.o proc_amiga.o program.o program_amiga.o program_stdc.o program_test.o task_amiga.o task_stdc.o window_amiga.o
+	${DEL} libappsystem.a  console.o console_amiga.o console_stdc.o filesystem_amiga.o filesystem_stdc.o language.o language_amiga.o language_posix.o language_stdc.o preferences.o preferences_amiga.o preferences_stdc.o proc_amiga.o program.o program_amiga.o program_stdc.o program_test.o task_amiga.o task_stdc.o window_amiga.o
 

@@ -30,8 +30,8 @@
 #include "amath.h"
 #include "amathc.h"
 #include "lib/charbuf.h"
-#include "system/preferences.h"
-#include "system/preferences_stdc.h"
+#include "preferences.h"
+#include "preferences_stdc.h"
 
 #if !defined(AMIGA)
 #include <stdio.h>
@@ -41,8 +41,8 @@
 static const char *tempname = "/tmp/amath.prefs";
 static const char *permname = "/usr/local/etc/amath.conf";
 #else
-static const char *tempname = "amath.prefs";
-static const char *permname = "amath.conf";
+static const char* tempname = "amath.prefs";
+static const char* permname = "amath.conf";
 #endif
 
 bool StandardPreferences::Load()
@@ -103,4 +103,3 @@ bool StandardPreferences::SavePrefs(const char* name)
 }
 
 #endif
-

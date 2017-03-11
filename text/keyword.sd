@@ -1,5 +1,5 @@
 ##stringtype none
-/*
+/*-
  * Copyright (c) 2014-2017 Carsten Sonne Larsen <cs@innolan.net>
  * All rights reserved.
  *
@@ -26,29 +26,33 @@
  * Generated with FlexCat. For more information, see:
  * http://sourceforge.net/projects/flexcat/
  *
+ * Project homepage:
+ * http://amath.innolan.net
+ * 
  */
 
 #ifndef AMATH_LOCALIZE_KEYWORD_H
 #define AMATH_LOCALIZE_KEYWORD_H
 
 /**
- * @file  kword.h
+ * @file  localize/kword.h
  * @brief Keywords used by lexer.
  *
  */
 
 #include "amath.h"
-#include "platform.h"
+#include "amathc.h"
 #include "localize/lex.h"
 
 /**
  * @brief Character representation of keyword tied with its symbol.
  *
  */
-struct keyworddef {
+struct keyworddef
+{
     int id;
     Symbol symbol;
-    const char *name;
+    const char* name;
 };
 
 static const keyworddef keywords[] = {

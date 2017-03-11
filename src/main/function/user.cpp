@@ -54,7 +54,7 @@ SyntaxNode* UserFunctionNode::GetNext()
         iterator = function->GetExpression();
         return iterator;
     }
-    
+
     return nullptr;
 }
 

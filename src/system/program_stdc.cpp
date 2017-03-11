@@ -29,13 +29,11 @@
 
 #include "amath.h"
 #include "amathc.h"
+#include "program_stdc.h"
+#include "console_stdc.h"
+#include "preferences_stdc.h"
 #include "lib/charbuf.h"
 #include "main/evaluator.h"
-#include "system/program_stdc.h"
-#include "system/console_stdc.h"
-#include "system/language_stdc.h"
-#include "system/filesystem_stdc.h"
-#include "system/preferences_stdc.h"
 
 #if !defined(AMIGA)
 #include <stdio.h>

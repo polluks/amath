@@ -44,15 +44,15 @@ public:
 
     void Optimize() const;
     SyntaxNode* GetRoot() const;
-    int GetTreeDepth(SyntaxNode* node, int depth) const;
+    static int GetTreeDepth(SyntaxNode* node, int depth);
 
 private:
     SyntaxNode* root;
-    void TagChildren(SyntaxNode* node) const;
-    void BalanceTree(SyntaxNode* node) const;
-    void ReduceUnaryNodes(SyntaxNode* node) const;
-    void ReduceValueNodes(SyntaxNode* node) const;
-    void TagStartNode(SyntaxNode* node) const;
+    static void TagChildren(SyntaxNode* node);
+    static void BalanceTree(SyntaxNode* node);
+    static void ReduceUnaryNodes(SyntaxNode* node);
+    static void ReduceValueNodes(SyntaxNode* node);
+    static void TagStartNode(SyntaxNode* node);
 };
 
 #endif

@@ -48,11 +48,7 @@
 #pragma GCC diagnostic ignored "-Wcast-align"
 #endif
 
-#ifdef _WIN32
-typedef unsigned long long mem_ptr;
-#else
-typedef unsigned long mem_ptr;
-#endif
+typedef uintptr_t mem_ptr;
 
 /**
  * @brief Fill block of memory with a constant value.

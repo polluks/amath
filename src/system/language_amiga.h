@@ -30,11 +30,11 @@
 #ifndef AMATH_LANGUAGE_AMIGA_H
 #define AMATH_LANGUAGE_AMIGA_H
 
+#include "language.h"
 #include "localize/lex.h"
 #include "localize/help.h"
 #include "localize/text.h"
 #include "localize/kword.h"
-#include "system/language.h"
 
 class AmigaLanguage : public Language
 {

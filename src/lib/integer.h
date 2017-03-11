@@ -63,7 +63,7 @@ public:
     bool IsTooSmall();
     bool IsTooLarge();
     bool IsNotImplemented();
-    
+
     Number* Unary();
     Number* Add(Number* other);
     Number* Sub(Number* other);
@@ -120,7 +120,7 @@ public:
     Number* HaVerCosine();
     Number* HaCoVerSine();
     Number* HaCoVerCosine();
-    
+
     Number* ArcVerSine();
     Number* ArcVerCosine();
     Number* ArcCoVerSine();
@@ -129,7 +129,7 @@ public:
     Number* ArcHaVerCosine();
     Number* ArcHaCoVerSine();
     Number* ArcHaCoVerCosine();
-    
+
     Number* ExSecant();
     Number* ExCosecant();
     Number* ArcExSecant();

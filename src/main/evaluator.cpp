@@ -28,7 +28,6 @@
  */
 
 #include "amath.h"
-#include "amathc.h"
 #include "parser.h"
 #include "viewer.h"
 #include "optimizer.h"

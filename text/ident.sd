@@ -1,5 +1,5 @@
 ##stringtype C
-/*
+/*-
  * Copyright (c) 2014-2017 Carsten Sonne Larsen <cs@innolan.net>
  * All rights reserved.
  *
@@ -26,25 +26,23 @@
  * Generated with FlexCat. For more information, see:
  * http://sourceforge.net/projects/flexcat/
  *
+ * Project homepage:
+ * http://amath.innolan.net
+ * 
  */
 
 #ifndef AMATH_LOCALIZE_IDENT_H
 #define AMATH_LOCALIZE_IDENT_H
 
 /**
- * @file  ident.h
+ * @file  localize/ident.h
  * @brief Help texts for built-in functions.
- * 
+ *
  */
 
 #include "amath.h"
-#include "platform.h"
-
-struct identhelpdef {
-    int id;
-    const char *ident;
-    const char *text;
-};
+#include "amathc.h"
+#include "amatht.h"
 
 static const identhelpdef identtexts[] = {
     { %d, "%i", %s },

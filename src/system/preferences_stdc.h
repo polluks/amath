@@ -32,7 +32,7 @@
 
 #include "amath.h"
 #include "amathc.h"
-#include "system/preferences.h"
+#include "preferences.h"
 
 #if !defined(AMIGA)
 

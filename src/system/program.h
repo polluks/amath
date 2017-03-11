@@ -36,14 +36,14 @@
  *
  */
 
+#include "console.h"
+#include "language.h"
+#include "filesystem.h"
+#include "preferences.h"
 #include "lib/numb.h"
 #include "lib/ntext.h"
 #include "main/values.h"
 #include "main/functionlist.h"
-#include "system/console.h"
-#include "system/language.h"
-#include "system/filesystem.h"
-#include "system/preferences.h"
 
 /**
 * @brief Master control class.

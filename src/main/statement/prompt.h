@@ -43,7 +43,7 @@ public:
     PromptStatement(char* prompt);
     ~PromptStatement();
     char* Execute();
-    
+
 private:
     char* prompt;
 };

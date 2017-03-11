@@ -43,7 +43,7 @@
 
 #include "prim.h"
 
-#ifdef _WIN32
+#if defined(_MSC_VER)
 #pragma warning( disable : 4146 )
 #endif
 

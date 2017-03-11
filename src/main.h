@@ -105,75 +105,94 @@
 
   \subsection command_stat Statements
   \verbatim
-  clear       Clear console window.
-  def         Define function.
-  delete      Delete variable or function.
-  digits      Set number of significant digits.
-  eval        Evaluate arithmetic expression.
-  execute     Execute statements in a file.
-  functions   Show list of user defined functions.
-  input       Change numeral input system (experimental).
-  help        Show basic help text.
-  output      Change numeral output system (experimental).
-  list        Show content of a directory.
-  show        Show content of a file.
-  load        Load variable and functions from file.
-  save        Save variable and functions to file.
-  variables   Show list of variables.
-  version     Show version string.
-  memory      Show internal memory usage.
-  exit        Exit program.
+  clear       Clear console window
+  def         Define function
+  delete      Delete variable or function
+  digits      Set number of significant digits
+  eval        Evaluate arithmetic expression
+  execute     Execute statements in a file
+  functions   Show list of user defined functions
+  input       Change numeral input system
+  help        Show basic help text
+  output      Change numeral output system
+  list        Show content of a directory
+  show        Show content of a file
+  load        Load variable and functions from file
+  save        Save variable and functions to file
+  variables   Show list of variables
+  version     Show version string
+  memory      Show internal memory usage
+  exit        Exit program
   \endverbatim
   \subsection command_func Base functions
   \verbatim
-  abs         Absolute value of number.
-  sgn         Mathematical signum function.
-  round       Round to nearest integer number.
-  trunc       Discard fraction part of number.
-  floor       Mathematical floor function.
-  ceil        Mathematical ceiling function.
-  sqrt        Square root function (exp 1/2).
-  cbrt        Cube root function (exp 1/3).
-  lb          Binary logarithm function (base 2).
-  ln          Natural logarithm function (base e).
-  lg          Common logarithm function (base 10).
+  abs         Absolute value of number
+  sgn         Mathematical signum function
+  round       Round to nearest integer number
+  trunc       Discard fraction part of number
+  floor       Mathematical floor function
+  ceil        Mathematical ceiling function
+  sqrt        Square root function (exp 1/2)
+  cbrt        Cube root function (exp 1/3)
+  lb          Binary logarithm function (base 2)
+  ln          Natural logarithm function (base e)
+  lg          Common logarithm function (base 10)
   \endverbatim
   \subsection command_trig Trigonometric functions
   \verbatim
-  sin         Trigonometric sine function.
-  cos         Trigonometric cosine function.
-  tan         Trigonometric tangent function.
-  cot         Trigonometric cotangent function.
-  sec         Trigonometric secant function.
-  csc         Trigonometric cosecant function.
-  arcsin      Inverse trigonometric sine function.
-  arccos      Inverse trigonometric cosine function.
-  arctan      Inverse trigonometric tangent function.
-  arccot      Inverse trigonometric cotangent function.
-  arcsec      Inverse trigonometric secant function.
-  arccsc      Inverse trigonometric cosecant function.
+  sin         Trigonometric sine function
+  cos         Trigonometric cosine function
+  tan         Trigonometric tangent function
+  cot         Trigonometric cotangent function
+  sec         Trigonometric secant function
+  csc         Trigonometric cosecant function
+  arcsin      Inverse trigonometric sine function
+  arccos      Inverse trigonometric cosine function
+  arctan      Inverse trigonometric tangent function
+  arccot      Inverse trigonometric cotangent function
+  arcsec      Inverse trigonometric secant function
+  arccsc      Inverse trigonometric cosecant function
   \endverbatim
   \subsection command_hype Hyperbolic functions
   \verbatim
-  sinh        Hyperbolic sine function.
-  cosh        Hyperbolic cosine function.
-  tanh        Hyperbolic tangent function.
-  coth        Hyperbolic cotangent function.
-  sech        Hyperbolic secant function.
-  csch        Hyperbolic cosecant function.
-  arcsinh     Inverse hyperbolic sine function.
-  arccosh     Inverse hyperbolic cosine function.
-  arctanh     Inverse hyperbolic tangent function.
-  arccoth     Inverse hyperbolic cotangent function.
-  arcsech     Inverse hyperbolic secant function.
-  arccsch     Inverse hyperbolic cosecant function.
+  sinh        Hyperbolic sine function
+  cosh        Hyperbolic cosine function
+  tanh        Hyperbolic tangent function
+  coth        Hyperbolic cotangent function
+  sech        Hyperbolic secant function
+  csch        Hyperbolic cosecant function
+  arcsinh     Inverse hyperbolic sine function
+  arccosh     Inverse hyperbolic cosine function
+  arctanh     Inverse hyperbolic tangent function
+  arccoth     Inverse hyperbolic cotangent function
+  arcsech     Inverse hyperbolic secant function
+  arccsch     Inverse hyperbolic cosecant function
+  \endverbatim
+  \subsection command_earl Early trigonometric functions
+  \verbatim
+  ver         Versed sine function
+  vcs         Versed cosine function
+  cvs         Coversed sine function
+  cvc         Coversed cosine function
+  hv          Haversed sine function
+  hvc         Haversed cosine function
+  hcv         Hacoversed sine function
+  hcc         Hacoversed cosine function
+  arcver      Inverse versed sine function
+  arcvcs      Inverse versed cosine function
+  arccvs      Inverse coversed sine function
+  arccvc      Inverse coversed cosine function
+  archv       Inverse haversed sine function
+  archvc      Inverse haversed cosine function
+  archcv      Inverse hacoversed sine function
+  archcc      Inverse hacoversed cosine function
   \endverbatim
   \subsection command_vars Variables and constant
   \verbatim
-  pi          Trigonometric constant.
-  e           Euler's number.
-  i           Imaginary unit.
-  ins         Result of last calculation.
+  pi          Trigonometric constant
+  e           Euler's number
+  i           Imaginary unit
+  ins         Result of last calculation
   \endverbatim
   \subsection command_exfunc Example script
   \verbatim
@@ -250,7 +269,7 @@
   \page    release_page Release history
   \section release_sec  Release history
 
-  \subsection version170 v1.7.0 February 28 2017
+  \subsection version170 v1.7.0 March 12 2017
   - Introduce scientific notation.
   - Introduce Not a Number (NaN).
   - Fixed bugs related to infinity (Inf).

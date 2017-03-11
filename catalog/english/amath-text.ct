@@ -1,4 +1,4 @@
-## version $VER: amath-text.catalog 1.60 (08.04.2015) English
+## version $VER: amath-text.catalog 1.70 (28.02.2017) English
 ## language english
 ## codeset 0
 ; #############################################################################
@@ -31,6 +31,46 @@
 ; #############################################################################
 INTROMSG
 #NORMALTEXT##BOLD##STARTMSG##NEWLINE##NORMALTEXT##COLOR02#Type help to show info.#NEWLINE#
+STATEMENTLINE
+---------------------------------------------------------#NEWLINE#
+STATEMENTCLEAR
+clear      Clear console window.#NEWLINE#
+STATEMENTDEF
+def        Define function.#NEWLINE#
+STATEMENTDELETE
+delete     Delete variable or function.#NEWLINE#
+STATEMENTDIGITS
+digits     Set number of significant digits.#NEWLINE#
+STATEMENTEVAL
+eval       Evaluate arithmetic expression.#NEWLINE#
+STATEMENTEXECUTE
+execute    Execute statements in a file.#NEWLINE#
+STATEMENTFUNCS
+functions  Show list of user defined functions.#NEWLINE#
+STATEMENTINPUT
+input      Change numeral input system.#NEWLINE#
+STATEMENTHELP
+help       Show basic help text.#NEWLINE#
+STATEMENTOUTPUT
+output     Change numeral output system.#NEWLINE#
+STATEMENTLIST
+list       Show content of a directory.#NEWLINE#
+STATEMENTSHOW
+show       Show content of a file.#NEWLINE#
+STATEMENTLOAD
+load       Load variable and functions from file.#NEWLINE#
+STATEMENTSAVE
+save       Save variable and functions to file.#NEWLINE#
+STATEMENTVARS
+variables  Show list of variables.#NEWLINE#
+STATEMENTVERSION
+version    Show version string.#NEWLINE#
+STATEMENTMEMORY
+memory     Show internal memory usage.#NEWLINE#
+STATEMENTEXIT
+exit       Exit program.#NEWLINE#
+STATEMENTFOOTER
+The def and eval statements are optional. Functions and#NEWLINE#variables statements can be shorten to funcs and vars.#NEWLINE#
 TXTLISTDIRHEADER
 Type        Name#NEWLINE#-----------------------------------------------#NEWLINE#
 TXTLISTDIRTFILE
@@ -60,7 +100,7 @@ Function cannot be redefined:#SPACE#
 HELPPNUMERA
 Base value must be between 2 and 32:#SPACE#
 HELPPDIGITS
-Number of digits must be between 0 and 15:#SPACE#
+Number of digist must be between 0 and 15:#SPACE#
 HELPINPUSHOW
 Numeral input system is#SPACE#
 HELPOUTPSHOW
