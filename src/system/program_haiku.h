@@ -27,33 +27,27 @@
  * 
  */
 
-/**
- * @file  thread.h
- * @brief Generic thread logic.
- *
- */
+#include "program.h"
 
-#ifndef AMATH_THREAD_BASE_H
-#define AMATH_THREAD_BASE_H
+#if defined(HAIKU)
 
-/**
- * @brief Abstract base class encapsulating runable component.
- *
- */
-class ThreadBase
+#if __GNUC__ == 2
+#pragma GCC diagnostic ignored "-Wno-multichar"
+#endif
+
+#include <Application.h>
+
+class HaikuProgram : public Program, public BApplication
 {
 public:
-    ThreadBase()
-    {
-    }
+    HaikuProgram();
+    virtual ~HaikuProgram();
+    virtual void Initialize(int argc, char **argv);
+    virtual void Start();
 
-    virtual ~ThreadBase()
-    {
-    }
-
-    virtual void Run() = 0;
-    virtual const char* GetName() = 0;
-    virtual int GetStackSize() = 0;
+private:
+    CharBuffer *line;
+    bool app;
 };
 
 #endif

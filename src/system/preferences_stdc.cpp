@@ -37,9 +37,12 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#if defined(UNIX) && defined(HAIKU)
+#if defined(UNIX)
 static const char *tempname = "/tmp/amath.prefs";
 static const char *permname = "/usr/local/etc/amath.conf";
+#elif defined(HAIKU)
+static const char *tempname = "/tmp/amath.prefs";
+static const char *permname = "~/config/settings/amath/amath.conf";
 #else
 static const char* tempname = "amath.prefs";
 static const char* permname = "amath.conf";
@@ -63,11 +66,11 @@ bool StandardPreferences::Load()
 
     do {
         c = fgets(buf, bufsize, file);
-        if (c != NULL) {
+        if (c != nullptr) {
             text->EnsureSize(s++);
             text->Append(c);
         }
-    } while (c != NULL);
+    } while (c != nullptr);
 
     delete [] buf;
     fclose(file);

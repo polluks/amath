@@ -33,7 +33,6 @@
 #include "language_stdc.h"
 #include "filesystem_stdc.h"
 #include "localize/lex.h"
-#include "localize/tags.h"
 #include "localize/help.h"
 #include "localize/text.h"
 #include "localize/ident.h"

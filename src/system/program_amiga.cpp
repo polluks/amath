@@ -40,15 +40,9 @@
 #include "lib/charbuf.h"
 #include "main/evaluator.h"
 
-#ifdef AMIGA
-#define ARGS_FORMAT "SHELL/S,INPUT/F"
+#if defined(AMIGA)
+#define ARGS_FORMAT "SHELL/S,NOANSI/S,INPUT/F"
 #include <clib/dos_protos.h>
-
-void WriteToShell(const char* out)
-{
-    Write(Output(), (APTR)out, StrLen(out));
-    Write(Output(), (APTR)NORMALTEXT, StrLen(NORMALTEXT));
-}
 
 #ifdef AOS3
 # define RDPTR LONG*
@@ -59,27 +53,31 @@ void WriteToShell(const char* out)
 AmigaProgram::AmigaProgram()
     : Program()
 {
-    rdargs = NULL;
+    rdargs = nullptr;
     args.shell = FALSE;
-    args.input = NULL;
-    Console = NULL;
+    args.noansi = FALSE;
+    args.input = nullptr;
+    Console = nullptr;
 }
 
 AmigaProgram::~AmigaProgram()
 {
-    if (Console != NULL) {
+    if (Console != nullptr) {
+        Console->Close();
         delete Console;
     }
 
-    if (rdargs != NULL) {
+    if (rdargs != nullptr) {
         FreeArgs(rdargs);
     }
 }
 
 void AmigaProgram::Initialize(int argc, char **argv)
 {
-    if(argc < 2) {
+    if(argc < 2)
+    {
         Console = new AmigaWindow(Preferences->GetPrompt(), Language);
+        SetAnsiMode(true);
         return;
     }
 
@@ -87,32 +85,39 @@ void AmigaProgram::Initialize(int argc, char **argv)
     if (!rdargs)
     {
         PrintFault(IoErr(), (STRPTR)argv[0]);
-    }
-
-    if (args.shell) {
-        Console = new AmigaShellConsole(Preferences->GetPrompt());
         return;
     }
+
+    shellMode = args.shell ? true : false;
+    ansiMode = args.noansi ? false : true;
+
+    Console = new AmigaShellConsole(Preferences->GetPrompt());
+    InitAnsiMode();
 }
 
-void AmigaProgram::Run()
+void AmigaProgram::Start()
 {
+    if(Console == nullptr || !Console->Open())
+    {
+        return;
+    }
+
     Preferences->Load();
 
-    if (Console != NULL) {
-        Console->Run();
-    } else if (args.input != NULL) {
+    if (shellMode)
+    {
+        Console->Start();
+        return;
+    }
+
+    if (args.input != nullptr)
+    {
         Evaluator *evaluator = new Evaluator(args.input);
         evaluator->Evaluate();
         const char *res = evaluator->GetResult();
-        WriteToShell(res);
+        Console->WriteString(res);
         delete evaluator;
     }
-}
-
-void AmigaProgram::Exit()
-{
-    Console->Exit();
 }
 
 #endif

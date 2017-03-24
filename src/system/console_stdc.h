@@ -27,46 +27,42 @@
  * 
  */
 
-#ifndef AMATH_STANDARD_CONSOLE
-#define AMATH_STANDARD_CONSOLE
+#ifndef AMATH_STDC_CONSOLE
+#define AMATH_STDC_CONSOLE
 
 /**
  * @file  console_stdc.h
- * @brief Standard C and termios based console.
+ * @brief Standard C console.
  *
  */
 
 #include "amath.h"
-#include "amathc.h"
 #include "console.h"
-#include "lib/charval.h"
-#include "lib/aengine.h"
 
-#if !defined(AMIGA)
+#if defined(STDC_CONSOLE)
+#include <stdio.h>
 
 /**
- * @brief Encapsulates the IO of a console using Standard C and termios.
+ * @brief Encapsulates the IO of a Standard C console.
  *
  */
-class StandardConsole : public ConsoleBase
-{
+class StandardConsole : public ConsoleBase {
 public:
-    StandardConsole(const char* prompt, CharValidator* validator);
+    explicit StandardConsole(const char *prompt);
     virtual ~StandardConsole();
-    virtual int GetStackSize();
-    virtual void Run();
+    virtual void Start();
     virtual void Exit();
-    virtual void SetPrompt(const char* string);
-    virtual void WriteString(const char* string);
+    virtual void SetPrompt(const char *string);
+    virtual void WriteString(const char *string);
+    virtual bool SetAnsiMode(bool value);
 
 private:
     void ReadLine();
-    static void Write(const char* string, unsigned int length);
-    AnsiConoleEngine* proc;
-    const char* line;
+
     bool exit;
+    char *line;
+    static const unsigned int linesize = 1024;
 };
 
 #endif
-
 #endif

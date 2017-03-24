@@ -56,11 +56,11 @@ bool AmigaPreferences::Load()
 
     do {
         c = FGets(file, buf, bufsize);
-        if (c != NULL) {
+        if (c != nullptr) {
             text->EnsureSize(s++);
             text->Append(c);
         }
-    } while (c != NULL);
+    } while (c != nullptr);
 
     delete [] buf;
     Close(file);

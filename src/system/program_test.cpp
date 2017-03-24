@@ -31,6 +31,7 @@
 #include "amath.h"
 #include "amathc.h"
 #include "program_test.h"
+#include "console_stdc.h"
 #include "lib/charbuf.h"
 #include "main/evaluator.h"
 #include <stdio.h>
@@ -42,19 +43,19 @@ TestProgram::TestProgram(bool silent)
     pass = 0;
     fail = 0;
 
-// Ignore type of locale fraction point.
+    // Ignore type of locale fraction point.
     delete Input;
-    Input = new DecimalSystem(Preferences->GetDigits(), '.');
+    Input = new DecimalSystem(10, '.');
 
     delete Output;
-    Output = new DecimalSystem(Preferences->GetDigits(), '.');
+    Output = new DecimalSystem(10, '.');
 }
 
 TestProgram::~TestProgram()
 {
 }
 
-void TestProgram::Run()
+void TestProgram::Start()
 {
     printf("Testing " TXTVERSMSG NEWLINE);
     printf(TXTCOMPMSG NEWLINE);
@@ -446,7 +447,6 @@ void TestProgram::RunTestset06()
     TestExecution("eval pi/2");
     TestExecution("list");
     TestExecution("memory");
-    TestExecution("version");
     TestExecution("variables");
 }
 

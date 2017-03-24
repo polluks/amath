@@ -29,25 +29,32 @@
 
 #include "amath.h"
 #include "amathc.h"
-#include "program_stdc.h"
+#include "console.h"
+#include "filesystem.h"
+#include "program_haiku.h"
+#include "window_haiku.h"
 #include "console_posix.h"
-#include "console_stdc.h"
-#include "console_windows.h"
-#include "preferences_stdc.h"
 #include "lib/charbuf.h"
 #include "main/evaluator.h"
 
-#if !defined(AMIGA) && !defined(HAIKU)
+#if defined(HAIKU)
 
-StandardProgram::StandardProgram()
-    : Program()
+#if __GNUC__ == 2
+#pragma GCC diagnostic ignored "-Wno-multichar"
+#endif
+
+#include <stdio.h>
+#include <Application.h>
+
+HaikuProgram::HaikuProgram()
+    : Program(), BApplication("application/x-vnd.amath")
 {
     Console = nullptr;
     line = nullptr;
-    shellMode = true;
+    app = false;
 }
 
-StandardProgram::~StandardProgram()
+HaikuProgram::~HaikuProgram()
 {
     if (Console != nullptr)
     {
@@ -61,15 +68,17 @@ StandardProgram::~StandardProgram()
     }
 }
 
-void StandardProgram::Initialize(int argc, char** argv)
+void HaikuProgram::Initialize(int argc, char **argv)
 {
-#if defined(WINDOWS)
-        Console = new WindowsConsole(Preferences->GetPrompt(), Language);
-#elif defined(POSIX)
-        Console = new PosixConsole(Preferences->GetPrompt(), Language);
-#else
-        Console = new StandardConsole(Preferences->GetPrompt(), Language);
-#endif
+    if (argc < 2)
+    {
+        Console = new HaikuWindow(Preferences->GetPrompt(), Language);
+        SetAnsiMode(false);
+        app = true;
+        return;
+    }
+
+    Console = new PosixConsole(Preferences->GetPrompt(), Language);
     SetAnsiMode(true);
 
     line = new CharBuffer();
@@ -111,7 +120,7 @@ void StandardProgram::Initialize(int argc, char** argv)
     }
 }
 
-void StandardProgram::Start()
+void HaikuProgram::Start()
 {
     if(Console == nullptr || !Console->Open())
     {
@@ -126,9 +135,16 @@ void StandardProgram::Start()
         return;
     }
 
-    Evaluator* evaluator = new Evaluator(line->GetString());
+    if (app)
+    {
+        Console->Start();
+        Run();
+        return;
+    }
+
+    Evaluator *evaluator = new Evaluator(line->GetString());
     evaluator->Evaluate();
-    const char* res = evaluator->GetResult();
+    const char *res = evaluator->GetResult();
     Console->WriteString(res);
     delete evaluator;
 }

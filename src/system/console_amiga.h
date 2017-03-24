@@ -31,7 +31,7 @@
 #define AMATH_AMIGA_SHELL_CONSOLE
 
 /**
- * @file  console.h
+ * @file  console_amiga.h
  * @brief Amiga OS specific console.
  *
  */
@@ -40,14 +40,17 @@
 #include "amathc.h"
 #include "console.h"
 
-#ifdef AMIGA
+#if defined(AMIGA)
 
+/**
+ * @brief Encapsulates the IO of a console in Amiga OS.
+ *
+ */
 class AmigaShellConsole : public ConsoleBase {
 public:
     explicit AmigaShellConsole(const char *prompt);
     virtual ~AmigaShellConsole();
-    virtual int GetStackSize();
-    virtual void Run();
+    virtual void Start();
     virtual void Exit();
     virtual void SetPrompt(const char *string);
     virtual void WriteString(const char *string);

@@ -208,7 +208,7 @@ SyntaxNode* Parser::ParseStatement()
     case symexit:
         res = new ExitStatement();
         break;
-#if defined(ANSICONSOLE)
+#if !defined(STDC_CONSOLE)
     case symclear:
         res = new ClearStatement();
         break;

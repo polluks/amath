@@ -27,11 +27,11 @@
  * 
  */
 
-#include "amath.h"
 #include "version.h"
+#include "system/program.h"
 
 VersionStatement::VersionStatement() :
-    StatementNode(BOLD TXTVERSMSG NORMALTEXT NEWLINE TXTCOMPMSG NEWLINE)
+    StatementNode()
 {
 }
 
@@ -41,5 +41,6 @@ VersionStatement::~VersionStatement()
 
 char* VersionStatement::Execute()
 {
+    Program->Console->ShowVersion();
     return statementText;
 }

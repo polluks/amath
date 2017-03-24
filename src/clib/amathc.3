@@ -1,4 +1,4 @@
-.TH "amath/amathc.h" 3 "Wed Mar 1 2017" "Version 1.7.0" "amath" \" -*- nroff -*-
+.TH "amath/amathc.h" 3 "Wed Mar 1 2017" "Version 1.7.1" "amath" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -100,12 +100,8 @@ Definition at line 40 of file alloccpy\&.c\&.
 58     *destination = AllocMemSafe(size);
 59     d = *destination;
 60 
-61 #ifdef AMIGA // Take advantage of exec
-62     CopyMem(s, d, n);
-63 #else
 64     while (n--)
 65         *d++ = *s++;
-66 #endif
 67 
 68     return size;
 69 }
@@ -122,7 +118,7 @@ Definition at line 86 of file mem\&.c\&.
 88     struct MemoryBlock* newblock;
 89     size_t allocsize;
 90 
-91     if (list == NULL)
+91     if (list == nullptr)
 92     {
 93         list = (struct MemoryList*)ALLOC_MEM(sizeof(struct MemoryList));
 94         if (!list)
@@ -131,7 +127,7 @@ Definition at line 86 of file mem\&.c\&.
 97             return 0;
 98         }
 99 
-100         list->first = NULL;
+100         list->first = nullptr;
 101         list->peak = 0;
 102         list->size = 0;
 103         list->count = 0;
@@ -186,13 +182,13 @@ Definition at line 199 of file mem\&.c\&.
 200 {
 201     struct MemoryBlock *current, *next;
 202 
-203     if (list == NULL)
+203     if (list == nullptr)
 204     {
 205         return;
 206     }
 207 
 208     current = list->first;
-209     while (current != NULL)
+209     while (current != nullptr)
 210     {
 211         next = current->next;
 212         FREE_MEM(current->address);
@@ -201,7 +197,7 @@ Definition at line 199 of file mem\&.c\&.
 215     }
 216 
 217     FREE_MEM(list);
-218     list = NULL;
+218     list = nullptr;
 219 }
 .fi
 .SS "void FreeMemSafe (void *)"
@@ -215,33 +211,33 @@ Definition at line 147 of file mem\&.c\&.
 148 {
 149     struct MemoryBlock *current, *previous;
 150 
-151     if (list == NULL || block == NULL)
+151     if (list == nullptr || block == nullptr)
 152     {
 153         dealloc_error("list", 0);
 154         return;
 155     }
 156 
-157     if (block == NULL)
+157     if (block == nullptr)
 158     {
 159         dealloc_error("memory", 0);
 160         return;
 161     }
 162 
-163     previous = NULL;
+163     previous = nullptr;
 164     current = list->first;
-165     while (current != NULL && current->address != block)
+165     while (current != nullptr && current->address != block)
 166     {
 167         previous = current;
 168         current = current->next;
 169     }
 170 
-171     if (current == NULL)
+171     if (current == nullptr)
 172     {
 173         dealloc_error("address not found", block);
 174         return;
 175     }
 176 
-177     if (previous == NULL)
+177     if (previous == nullptr)
 178     {
 179         list->first = current->next;
 180     }
@@ -254,8 +250,8 @@ Definition at line 147 of file mem\&.c\&.
 187     list->count--;
 188 
 189     FREE_MEM(current->address);
-190     current->address = NULL;
-191     current->next = NULL;
+190     current->address = nullptr;
+191     current->next = nullptr;
 192     current->size = 0;
 193     FREE_MEM(current);
 194 }
@@ -279,9 +275,6 @@ Definition at line 77 of file memcpy\&.c\&.
 86     if ((mem_ptr)dst < (mem_ptr)src)
 87     {
 88         // Copy forward
-89 #ifdef AMIGA // Take advantage of exec
-90         CopyMem((void*)source, destination, length);
-91 #else
 92         t = (mem_ptr)src; // only need low bits
 93         if ((t | (mem_ptr)dst) & wmask)
 94         {

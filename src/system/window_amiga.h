@@ -42,7 +42,8 @@
 #include "console.h"
 #include "lib/aengine.h"
 
-#ifdef AMIGA
+#if defined(AMIGA)
+
 #include <libraries/dos.h>
 #include <devices/console.h>
 #include <graphics/gfxbase.h>
@@ -83,9 +84,7 @@ class AmigaWindow : public ConsoleBase {
 public:
     AmigaWindow(const char *prompt, CharValidator *validator);
     ~AmigaWindow();
-
-    int GetStackSize();
-    void Run();
+    void Start();
     void Exit();
     void SetPrompt(const char *string);
     void WriteString(const char *string);
@@ -112,7 +111,6 @@ private:
     unsigned long windowsig;
     AnsiConoleEngine *proc;
     const char *line;
-
 //AmigaMenu *menu;
 };
 

@@ -76,17 +76,7 @@
   https://gitlab.com/rnger/amath
 
   \subsection download Download
-  Prebuild packages are available from gitlab.com <BR>
-  <BR><B>Windows with ANSI support</B><BR>
-  https://gitlab.com/rnger/amath-bin/raw/master/Windows/amath-1.6.2-ansi-x86.exe (32 bit)<BR>
-  (SHA256 d308424862eef418d97e3b60c00b191f711349c6f856e12b4917b114ac2f6578)<BR>
-  https://gitlab.com/rnger/amath-bin/raw/master/Windows/amath-1.6.2-ansi-x64.exe (64 bit)<BR>
-  (SHA256 170c5246f0bd0cec3e1d4f64c7c685d75cdbd5a5da7acf0ea4641c21e2a7d5ea)<BR>
-  <BR><B>Windows without ANSI support</B><BR>
-  https://gitlab.com/rnger/amath-bin/raw/master/Windows/amath-1.6.2-x86.exe (32 bit)<BR>
-  (SHA256 1ee22651fb09dc841b71062b8a6e9f6da285d807d3216e935a15eca9df5fd614)<BR>
-  https://gitlab.com/rnger/amath-bin/raw/master/Windows/amath-1.6.2-x64.exe (64 bit)<BR>
-  (SHA256 d3ba707f37ab27e90847d54839d65b0308124ac6ab61e1aac1deda44d87a7fad)<BR>
+  Windows: https://gitlab.com/rnger/amath-bin/tree/master/Windows <BR>
   <BR>
   FreeBSD: https://www.freshports.org/math/amath/ <BR>
   <BR>
@@ -94,11 +84,9 @@
   <BR>
   Included in the Icaros Desktop environment: http://vmwaros.blogspot.com/ <BR>
   <BR>
-  Other packages: https://gitlab.com/rnger/amath-bin/tree/master <BR>
-
+  Other packages: https://gitlab.com/rnger/amath-bin/tree/master
   \subsection history History
   A full \ref release_page is available for amath.
-
 
   \page    command_page Statements and functions
   \section command_sec  Statements and functions
@@ -269,7 +257,12 @@
   \page    release_page Release history
   \section release_sec  Release history
 
-  \subsection version170 v1.7.0 March 12 2017
+  \subsection version171 v1.7.1 March 26 2017
+  - Haiku support.
+  - Unified ANSI console.
+  - Code cleanup.
+
+  \subsection version170 v1.7.1 March 12 2017
   - Introduce scientific notation.
   - Introduce Not a Number (NaN).
   - Fixed bugs related to infinity (Inf).

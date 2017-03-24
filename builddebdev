@@ -2,7 +2,7 @@
 
 set -e
 
-version="1.7.0"
+version="1.7.1"
 
 build_package () {
 
@@ -11,7 +11,7 @@ rm -f amath-${version}_$1.deb
 sh configure CFLAGS=$2
 make clean
 
-echo "Building $3 bit package of amath ${version} for Debian ..."
+echo "Building $3 bit package of amath-dev ${version} for Debian ..."
 make
 mv amath amath.tmp
 
@@ -91,7 +91,7 @@ chmod 644 amath/usr/share/amath/*
 
 # Create control file
 {
-echo "Package: amath"
+echo "Package: amath-dev"
 echo "Version: ${version}"
 echo "Architecture: $1"
 echo "Maintainer: Carsten Larsen <cs@innolan.net>"
@@ -113,7 +113,7 @@ chmod 0755 amath/DEBIAN/control
 # Create license file
 {
 echo "Format: http://www.debian.org/doc/packaging-manuals/copyright-format/1.0/"
-echo "Upstream-Name: amath"
+echo "Upstream-Name: amath-dev"
 echo "Source: http://amath.innolan.net"
 echo 
 echo "Files:     *"
@@ -191,7 +191,7 @@ echo "rm -f /usr/lib/libamathcplex.so.${version}"
 chmod 0755 amath/DEBIAN/postrm
 
 fakeroot dpkg-deb --build amath
-mv amath.deb amath-${version}_$1.deb
+mv amath.deb amath-dev-${version}_$1.deb
 rm -Rf amath
 }
 
