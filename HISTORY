@@ -7,7 +7,7 @@ v1.7.1 March 26 2017
 - Unified ANSI console.
 - Code cleanup.
 
-v1.7.1 March 12 2017
+v1.7.0 March 12 2017
 - Introduce scientific notation.
 - Introduce Not a Number (NaN).
 - Fixed bugs related to infinity (Inf).
