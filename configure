@@ -27,7 +27,7 @@
 
 set -e
 
-version="1.7.0"
+version="1.7.1"
 
 clang=false
 debugsym=false
@@ -85,9 +85,9 @@ for arg in "$@"; do
 	--disable-test)
 		regtest=false;;
 
-	--enable-stdc++)
+	--with-stdc++)
 		gcclib="-lstdc++";;
-	--disable-stdc++)
+	--without-stdc++)
 		gcclib="";;
 
 	--help)
@@ -104,14 +104,14 @@ for arg in "$@"; do
 		echo '  --disable-test: do not include regression test'
 		echo '  --enable-clang: build with clang compiler'
 		echo '  --disable-clang: do not build with clang compiler'
-		echo '  --enable-stdc++: link with stdc++ library'
-		echo '  --disable-stdc++: do not link with stdc++ library'
+		echo '  --with-stdc++: link with stdc++ library'
+		echo '  --without-stdc++: do not link with stdc++ library'
 		echo
 		echo '  CFLAGS=<flags>: additional compiler flags'
 		echo '  CXXFLAGS=<flags>: additional compiler flags'
 		echo '  LDFLAGS=<flags>: additional linker flags'
 		echo
-		echo 'all invalid options are silently ignored'
+		echo 'No warnings are shown for Invalid options.'
 		exit 0
 		;;
 	esac
@@ -161,6 +161,8 @@ SYSSRCS='
 console.cpp
 console_amiga.cpp
 console_stdc.cpp
+console_posix.cpp
+console_windows.cpp
 filesystem_amiga.cpp
 filesystem_stdc.cpp
 language.cpp
@@ -170,14 +172,13 @@ language_stdc.cpp
 preferences.cpp
 preferences_amiga.cpp
 preferences_stdc.cpp
-proc_amiga.cpp
 program.cpp
 program_amiga.cpp
+program_haiku.cpp
 program_stdc.cpp
 program_test.cpp
-task_amiga.cpp
-task_stdc.cpp
 window_amiga.cpp
+window_haiku.cpp
 '
 FUNCTIONSRC='
 absolute.cpp
@@ -693,7 +694,6 @@ echo "clean:"
 echo "	\${DEL} static/\${alib} \${solib} ${libc} ${libcs}"
 echo
 } >  src/clib/Makefile
-
 #########################################################################
 
 ############################# Real Numbers ##############################
@@ -907,13 +907,13 @@ echo "	cd src/lib && \${MAKE}"
 echo
 echo "${amath}:"
 echo "	cd src/real && \${MAKE}"
-echo	
+echo
 echo "${amathc}:"
 echo "	cd src/clib && \${MAKE}"
-echo	
+echo
 echo "${amathcplex}:"
 echo "	cd src/cplex && \${MAKE}"
-echo	
+echo
 echo "localize:"
 echo "	cd build/flexcat && \${MAKE}"
 echo "	\${FLXCAT} text/keyword.cd src/localize/kword.h=text/keyword.sd"
@@ -927,11 +927,6 @@ echo "	\${MKDIR}  dist/catalog/english"
 echo "	\${FLXCAT} text/help.cd catalog/english/amath-help.ct CATALOG dist/catalog/english/amath-help.catalog"
 echo "	\${FLXCAT} text/ident.cd catalog/english/amath-ident.ct CATALOG dist/catalog/english/amath-ident.catalog"
 echo "	\${FLXCAT} text/text.cd catalog/english/amath-text.ct CATALOG dist/catalog/english/amath-text.catalog"
-echo "	\${MKDIR}  dist/catalog/dansk"
-echo "	\${FLXCAT} text/help.cd catalog/dansk/amath-help.ct CATALOG dist/catalog/dansk/amath-help.catalog"
-echo "	\${FLXCAT} text/ident.cd catalog/dansk/amath-ident.ct CATALOG dist/catalog/dansk/amath-ident.catalog"
-echo "	\${FLXCAT} text/text.cd catalog/dansk/amath-text.ct CATALOG dist/catalog/dansk/amath-text.catalog"
-echo "	\${FLXCAT} text/keyword.cd catalog/dansk/amath-keyword.ct CATALOG dist/catalog/dansk/amath-keyword.catalog"
 echo
 echo "shared-app:	app libs ${program}.o"
 echo "	\${CC} \${CFLAGS} ${exestrip} ${program}.o -o amath \${LPATH} \${LFLAGS}"

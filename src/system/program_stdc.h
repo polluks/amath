@@ -28,11 +28,10 @@
  */
 
 #include "amath.h"
-#include "amathc.h"
 #include "program.h"
 #include "lib/charbuf.h"
 
-#if !defined(AMIGA)
+#if !defined(AMIGA) && !defined(HAIKU)
 
 class StandardProgram : public Program
 {
@@ -40,8 +39,7 @@ public:
     StandardProgram();
     virtual ~StandardProgram();
     virtual void Initialize(int argc, char** argv);
-    virtual void Run();
-    virtual void Exit();
+    virtual void Start();
 
 private:
     CharBuffer* line;

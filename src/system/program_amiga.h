@@ -29,11 +29,14 @@
 
 #include "program.h"
 
+#if defined(AMIGA)
+
 struct RDArgs;
 
 struct amathargs
 {
     long shell;
+    long noansi;
     char* input;
 };
 
@@ -43,10 +46,11 @@ public:
     AmigaProgram();
     virtual ~AmigaProgram();
     virtual void Initialize(int argc, char** argv);
-    virtual void Run();
-    virtual void Exit();
+    virtual void Start();
 
 private:
     RDArgs* rdargs;
     amathargs args;
 };
+
+#endif

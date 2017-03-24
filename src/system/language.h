@@ -57,6 +57,7 @@ public:
     virtual bool CharIsOperator(unsigned long character);
     virtual bool StrIsEqualLoc(const char* s1, const char* s2) = 0;
     virtual bool Validate(char c) = 0;
+    void SetAnsiMode(bool value);
 
 protected:
     virtual char* Translate(textdef* def) = 0;
@@ -74,6 +75,7 @@ private:
     char* FindAlias(const char* ident) const;
     char* UntagText(const char* text);
     char* lastText;
+    bool ansiMode;
 };
 
 #endif

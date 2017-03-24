@@ -27,17 +27,11 @@
  * 
  */
 
-#include "amath.h"
 #include "about.h"
+#include "system/program.h"
 
 AboutStatement::AboutStatement() :
-    StatementNode(
-        BOLD TXTVERSMSG NORMALTEXT NEWLINE TXTCOMPMSG NORMALTEXT NEWLINE NEWLINE
-        "amath features a case sensitive command line interface, internal IEEE 754" NEWLINE
-        "calculations with 15 significant digits, calculations with real and complex" NEWLINE
-        "numbers, variables and user defined functions, logarithmic and exponential" NEWLINE
-        "functions, trigonometric and hyperbolic function and selected mathematical" NEWLINE
-        "constants and rounding functions." NEWLINE)
+    StatementNode()
 {
 }
 
@@ -47,5 +41,6 @@ AboutStatement::~AboutStatement()
 
 char* AboutStatement::Execute()
 {
+    Program->Console->ShowAbout();
     return statementText;
 }

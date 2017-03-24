@@ -2,7 +2,7 @@
 
 set -e
 
-version="1.7.0"
+version="1.7.1"
 
 echo "Building amath ${version} for Windows ..."
 
@@ -11,37 +11,23 @@ rm -Rf amath
 rm -Rf dist
 mkdir dist
 
-./configure --enable-test --cross-compile="i686-w64-mingw32" CFLAGS="-D_WIN32" LDFLAGS="-static -static-libgcc -static-libstdc++"
+./configure --enable-test --cross-compile="i686-w64-mingw32" CFLAGS="-DWINDOWS" LDFLAGS="-static -static-libgcc -static-libstdc++"
 make clean
 make static
 mv amath dist/amath-${version}-x86.exe
 make clean
 
-./configure --enable-test --cross-compile="x86_64-w64-mingw32" CFLAGS="-D_WIN32" LDFLAGS="-static -static-libgcc -static-libstdc++"
+./configure --enable-test --cross-compile="x86_64-w64-mingw32" CFLAGS="-DWINDOWS" LDFLAGS="-static -static-libgcc -static-libstdc++"
 make static
 mv amath dist/amath-${version}-x64.exe
-make clean
-
-./configure --enable-test --cross-compile="i686-w64-mingw32" CFLAGS="-D_WIN32 -DANSICONSOLE" LDFLAGS="-static -static-libgcc -static-libstdc++"
-make static
-mv amath dist/amath-${version}-ansi-x86.exe
-make clean
-
-./configure --enable-test --cross-compile="x86_64-w64-mingw32" CFLAGS="-D_WIN32 -DANSICONSOLE" LDFLAGS="-static -static-libgcc -static-libstdc++"
-make static
-mv amath dist/amath-${version}-ansi-x64.exe
 make clean
 
 cd dist
 touch hashkeys
 sha1sum amath-${version}-x86.exe >>hashkeys
 sha1sum amath-${version}-x86.exe >>hashkeys
-sha1sum amath-${version}-ansi-x86.exe >>hashkeys
-sha1sum amath-${version}-ansi-x64.exe >>hashkeys
 sha256sum amath-${version}-x86.exe >>hashkeys
 sha256sum amath-${version}-x86.exe >>hashkeys
-sha256sum amath-${version}-ansi-x86.exe >>hashkeys
-sha256sum amath-${version}-ansi-x64.exe >>hashkeys
 cd ..
 
 cp LICENSE dist/

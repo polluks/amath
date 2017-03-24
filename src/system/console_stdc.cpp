@@ -28,47 +28,48 @@
  */
 
 #include "amath.h"
-#include "amathc.h"
-#include "console.h"
 #include "console_stdc.h"
-#include "lib/charval.h"
-#include "lib/aengine.h"
 #include "main/evaluator.h"
 
-#if !defined(AMIGA)
+#if defined(STDC_CONSOLE)
 #include <stdio.h>
 
-StandardConsole::StandardConsole(const char* prompt, CharValidator* validator) :
-    ConsoleBase(prompt)
+StandardConsole::StandardConsole(const char* prompt) :
+    ConsoleBase(prompt), exit(false)
 {
-    proc = new AnsiConoleEngine(prompt, validator);
-    line = nullptr;
-    exit = false;
+    line = new char[linesize];
 }
 
 StandardConsole::~StandardConsole()
 {
-    delete proc;
+    delete line;
 }
 
-int StandardConsole::GetStackSize()
+bool StandardConsole::SetAnsiMode(bool value)
 {
-    return 100000;
+    return false;
 }
 
-void StandardConsole::Run()
+void StandardConsole::Start()
 {
     exit = false;
+    fflush(stdin);
     StartMessage();
 
     while (!exit)
     {
         Prompt();
         ReadLine();
+
+        if (*line == '\0')
+        {
+            break;
+        }
+
         Evaluator* evaluator = new Evaluator(line);
         evaluator->Evaluate();
-        const char* res = evaluator->GetResult();
-        Write(res, StrLen(res));
+        const char* out = evaluator->GetResult();
+        WriteString(out);
         delete evaluator;
     }
 }
@@ -80,51 +81,19 @@ void StandardConsole::Exit()
 
 void StandardConsole::ReadLine()
 {
-#ifdef UNIX
-    termios new_tio, old_tio;
-    tcgetattr(STDIN_FILENO, &old_tio);
-    new_tio = old_tio;
-    new_tio.c_lflag &=(~ICANON & ~ECHO);
-    tcsetattr(STDIN_FILENO, TCSANOW, &new_tio);
-#endif
-
-    proc->StartInput();
-
-    while (!proc->InputDone())
-    {
-        unsigned char c = getchar();
-        const char* out = proc->ProcessChar(static_cast<char>(c));
-        WriteString(out);
-    }
-
-    line = proc->GetLine();
-
-#ifdef UNIX
-    tcsetattr(STDIN_FILENO, TCSANOW, &old_tio);
-#endif
+    fflush(stdin);
+    fgets(line, linesize, stdin);
 }
 
 void StandardConsole::WriteString(const char* string)
 {
-    Write(string, StrLen(string));
-}
-
-void StandardConsole::Write(const char* string, unsigned int length)
-{
-    unsigned int i = 0;
-    while (i < length && string[i] != 0)
-    {
-        fputc(string[i], stdout);
-        i++;
-    }
-
+    fputs(string, stdout);
     fflush(stdout);
 }
 
 void StandardConsole::SetPrompt(const char* string)
 {
     ConsoleBase::SetPrompt(string);
-    proc->SetPrompt(string);
 }
 
 #endif

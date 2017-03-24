@@ -36,8 +36,41 @@
 #include "localize/kword.h"
 #include "localize/ident.h"
 #include "localize/text.h"
-#include "localize/tags.h"
 #include "localize/ialias.h"
+
+static const texttag ansiTags[] = {
+    {"#HEADLINE#", "\x1B[1m"},
+#ifdef UNIX
+    {"#SYNTAXHIGHLIGHT#", "\x1B[3m\x1B[32m"},
+#else
+    {"#SYNTAXHIGHLIGHT#", "\x1B[32m"},
+#endif
+    {"#NORMALTEXT#", "\x1B[0m"},
+    {"#BOLD#", "\x1B[1m"},
+    {"#ITALICS#", "\x1B[3m"},
+    {"#UNDERLINE#", "\x1B[4m"},
+    {"#COLOR01#", "\x1B[31m"},
+    {"#COLOR02#", "\x1B[32m"},
+    {"#COLOR03#", "\x1B[33m"},
+    {"#SPACE#", SPACE},
+    {"#NEWLINE#", NEWLINE},
+    {"#STARTMSG#", TXTSTARTMSG}
+};
+
+static const texttag emptyTags[] = {
+    {"#HEADLINE#", EMPTYSTRING},
+    {"#SYNTAXHIGHLIGHT#", EMPTYSTRING},
+    {"#NORMALTEXT#", EMPTYSTRING},
+    {"#BOLD#", EMPTYSTRING},
+    {"#ITALICS#", EMPTYSTRING},
+    {"#UNDERLINE#", EMPTYSTRING},
+    {"#COLOR01#", EMPTYSTRING},
+    {"#COLOR02#", EMPTYSTRING},
+    {"#COLOR03#", EMPTYSTRING},
+    {"#SPACE#", SPACE},
+    {"#NEWLINE#", NEWLINE},
+    {"#STARTMSG#", TXTSTARTMSG}
+};
 
 Language::Language()
 {
@@ -61,6 +94,11 @@ Language::~Language()
     {
         delete [] keywordsloc;
     }
+}
+
+void Language::SetAnsiMode(bool value)
+{
+    ansiMode = value;
 }
 
 char* Language::FindAlias(const char* ident) const
@@ -170,9 +208,12 @@ char* Language::UntagText(const char* text)
         return nullptr;
     }
 
-    unsigned int count = sizeof(texttags) / sizeof(texttag);
+    unsigned int count = sizeof(ansiTags) / sizeof(texttag);
     char* untagged = new char[StrLen(text) * 2];
-    Untag(untagged, text, (texttag*)texttags, count);
+    texttag* tags = ansiMode
+        ? (texttag*)ansiTags
+        : (texttag*)emptyTags;
+    Untag(untagged, text, tags, count);
 
     unsigned int len = StrLen(untagged) + 1;
     lastText = new char[len];

@@ -32,6 +32,7 @@
 #include "system/program.h"
 #include "system/program_stdc.h"
 #include "system/program_amiga.h"
+#include "system/program_haiku.h"
 #include "system/program_test.h"
 
 const char* vers = TXTDOSVERSION;
@@ -64,7 +65,7 @@ void  operator delete[] (void* ptr) throw() { FreeMemSafe(ptr); }
 #endif
 
 /* MSVC++ */
-#if defined (_WIN32) && defined(_MSC_VER)
+#if defined(WINDOWS) && defined(_MSC_VER)
 #include <new>
 void* __CRTDECL operator new (size_t size) { return AllocMemSafe(size); }
 void* __CRTDECL operator new[] (size_t size) { return AllocMemSafe(size); }
@@ -74,7 +75,7 @@ void  __CRTDECL operator delete[] (void* ptr) throw() { FreeMemSafe(ptr); }
 
 int main(int argc, char** argv)
 {
-#ifdef WITHTEST
+#if defined(WITHTEST)
     if (argc == 2 && StrIsEqual(argv[1], "test"))
     {
         Program = new TestProgram(false);
@@ -86,23 +87,25 @@ int main(int argc, char** argv)
     else    
 #endif
     {
-#ifdef AMIGA
+#if defined(AMIGA)
         DosBase = (struct DosBase*)OpenLibrary(AMIGADOS_NAME, AMIGADOS_REV);
         IntuitionBase = (struct IntuitionBase*)OpenLibrary(INTUITION_NAME, INTUITION_REV);
         GfxBase = (struct GfxBase*)OpenLibrary(GRAPHICS_NAME, GRAPHICS_REV);
         LocaleBase = (struct LocaleBase*)OpenLibrary(LOCALE_NAME, LOCALE_REV);
         Program = new AmigaProgram();
+#elif defined(HAIKU)
+        Program = new HaikuProgram();
 #else
         Program = new StandardProgram();
 #endif
     }
     
     Program->Initialize(argc, argv);
-    Program->Run();
+    Program->Start();
     
     int exit = Program->GetExitStatus();
     
-#ifdef AMIGA
+#if defined(AMIGA)
     if (DosBase != nullptr)
         CloseLibrary((struct Library*)DosBase);
     

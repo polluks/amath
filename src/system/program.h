@@ -58,13 +58,15 @@ public:
     Program();
     virtual ~Program();
     virtual void Initialize(int argc, char** argv) = 0;
-    virtual void Run() = 0;
-    virtual void Exit() = 0;
+    virtual void Start() = 0;
+    virtual void Exit();
     void NewPositionalInput(short unsigned int base, short unsigned int digits);
     void NewPositionalOutput(short unsigned int base, short unsigned int digits);
     void SetLastResult(Number* number);
     void SetPrompt(const char* text) const;
     int GetExitStatus() const;
+    bool GetAnsiMode() const;
+    void SetAnsiMode(bool value);
     struct Number* GetLastResult() const;
     class Language* Language;
     class ConsoleBase* Console;
@@ -77,6 +79,9 @@ public:
     class GraphList* Graphs;
 
 protected:
+    void InitAnsiMode();
+    bool shellMode;
+    bool ansiMode;
     int status;
 
 private:

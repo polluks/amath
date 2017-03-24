@@ -33,6 +33,13 @@
 #include "charval.h"
 #include "aengine.h"
 
+#define CURSORFORWARD   "\x1B[1C"
+#define CURSORBACKWARD  "\x1B[1D"
+#define ERASEINLINE     "\x1B[K"
+#define INSERT1CHAR     "\x1B[1@"
+#define DELETE1CHAR     "\x1B[1P"
+#define DELETELINE      "\x0D\x1B[K"
+
 AnsiConoleEngine::AnsiConoleEngine(const char* prompt, CharValidator* validator)
 {
     this->validator = validator;
@@ -82,31 +89,15 @@ void AnsiConoleEngine::StartInput()
     linedone = false;
 }
 
-//#include <real.h>
-//#include <numb.h>
-//#include <ntext.h>
-
 const char* AnsiConoleEngine::ProcessChar(const unsigned char character)
 {
     unsigned char ch = character;
     out->Empty();
 
-    /*
-    // -------------- DEUG ------------------
-    Number *d = new RealNumber((int)ch);
-    NumeralSystem *ns = new DecimalSystem(0);
-    const char *dtext = ns->GetText(d);
-    StrCopy(out->buf, dtext);
-    StrConcat(out->buf, SPACE);
-    delete ns;
-    delete d;
-    return out->buf;
-    // -------------- DEUG ------------------
-    */
-
     if (len == 0)
     {
-        // TODO: double buffer
+        out->EnsureGrowth(lineSize);
+        len = lineSize;
     }
 
     bool processed = false;
@@ -120,7 +111,7 @@ const char* AnsiConoleEngine::ProcessChar(const unsigned char character)
         escmode = true;
         processed = true;
     }
-    else if (ch == 155 || (escmode && ch == 91))
+    else if (ch == 155 || (escmode && ch == 79) || (escmode && ch == 91))
     {
         csimode = true;
         processed = true;

@@ -51,6 +51,7 @@ typedef struct
 
 void* AllocMemSafe(size_t);
 void FreeMemSafe(void*);
+void DetachMemSafe(void*);
 void FreeAllSafe();
 void MemUsage(long*, long*, long*);
 

@@ -36,7 +36,6 @@
 #include "localize/text.h"
 #include "localize/ident.h"
 #include "localize/kword.h"
-#include "localize/tags.h"
 
 #ifdef AMIGA
 #include <clib/locale_protos.h>
@@ -44,17 +43,17 @@
 AmigaLanguage::AmigaLanguage() :
     Language::Language()
 {
-    locale = OpenLocale(NULL);
+    locale = OpenLocale(nullptr);
     helpcatalog    = OpenCatalog(locale, CATALOG_HELP, CATALOG_DEF, TAG_DONE);
     identcatalog   = OpenCatalog(locale, CATALOG_IDEN, CATALOG_DEF, TAG_DONE);
     textcatalog    = OpenCatalog(locale, CATALOG_TEXT, CATALOG_DEF, TAG_DONE);
     keywordcatalog = OpenCatalog(locale, CATALOG_KEYW, CATALOG_DEF, TAG_DONE);
 
-    if (keywordcatalog != NULL) {
+    if (keywordcatalog != nullptr) {
         keywordsloc = new keyworddef[keywordcount];
         for (unsigned int j = 0; j < keywordcount; j++) {
             keywordsloc[j].id = j;
-            keywordsloc[j].name = GetCatalogStr(keywordcatalog, j, NULL);
+            keywordsloc[j].name = GetCatalogStr(keywordcatalog, j, nullptr);
             keywordsloc[j].symbol = keywords[j].symbol;
         }
     }
@@ -62,23 +61,23 @@ AmigaLanguage::AmigaLanguage() :
 
 AmigaLanguage::~AmigaLanguage()
 {
-    if (helpcatalog != NULL) {
+    if (helpcatalog != nullptr) {
         CloseCatalog(helpcatalog);
     }
 
-    if (identcatalog != NULL) {
+    if (identcatalog != nullptr) {
         CloseCatalog(identcatalog);
     }
 
-    if (textcatalog != NULL) {
+    if (textcatalog != nullptr) {
         CloseCatalog(textcatalog);
     }
 
-    if (keywordcatalog != NULL) {
+    if (keywordcatalog != nullptr) {
         CloseCatalog(keywordcatalog);
     }
 
-    if (locale != NULL) {
+    if (locale != nullptr) {
         CloseLocale(locale);
     }
 }

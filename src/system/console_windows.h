@@ -27,77 +27,51 @@
  * 
  */
 
+#ifndef AMATH_WINDOWS_CONSOLE
+#define AMATH_WINDOWS_CONSOLE
+
+/**
+ * @file  console_windows.h
+ * @brief Windows based console.
+ *
+ */
+
 #include "amath.h"
 #include "amathc.h"
-#include "task.h"
-#include "thread.h"
-#include "proc_amiga.h"
+#include "console.h"
+#include "lib/charval.h"
+#include "lib/aengine.h"
 
-#ifdef WITHTEST
-#ifdef AMIGA
-#ifdef DEVNOTFINISH // Still under development
-#include <exec/io.h>
-#include <exec/memory.h>
-#include <intuition/intuition.h>
-#include <libraries/dos.h>
-#include <clib/exec_protos.h>
-#include <clib/alib_protos.h>
-#include <clib/dos_protos.h>
-#include <clib/intuition_protos.h>
-#include <dos/dostags.h>
+#if defined(WINDOWS)
+#include <windows.h>
 
-AmigaProcess::AmigaProcess()
+/**
+ * @brief Encapsulates the IO of a console in Windows.
+ *
+ */
+class WindowsConsole : public ConsoleBase
 {
-    proc = nullptr;
-    maintask = FindTask(NULL);
-    signal = AllocSignal(-1);
-}
+public:
+    WindowsConsole(const char* prompt, CharValidator* validator);
+    virtual ~WindowsConsole();
+    virtual bool Open();
+    virtual void Close();
+    virtual void Start();
+    virtual void Exit();
+    virtual void SetPrompt(const char* string);
+    virtual void WriteString(const char* string);
+    virtual bool SetAnsiMode(bool value);
 
-AmigaProcess::~AmigaProcess()
-{
-/*
-if (proc != nullptr) {
-    Forbid();
-    DeleteTask(proc);
-    Permit();
-}
-*/
+private:
+    void ReadLine();
+    static void Write(const char* string, unsigned int length);
 
-// See: http://eab.abime.net/showthread.php?t=73783
-// And AROS Stack swap: http://en.wikibooks.org/wiki/Aros/Developer/Docs/Examples/StackSwap
-    Forbid();
-    FreeSignal(signal);
-    Permit();
-}
+    AnsiConoleEngine* proc;
+    DWORD oldOutMode;
+    DWORD oldInMode;
+    const char* line;
+    bool exit;
+};
 
-ThreadStart procstart;
-
-void AmigaProcess::Start(ThreadBase *thread)
-{
-
-    procstart.thread = thread;
-    procstart.maintask = maintask;
-    procstart.signal = signal;
-
-    proc = CreateNewProcTags(NP_Entry, (ULONG) &AmigaProcess::Invoke,
-                             NP_Name, thread->GetName(),
-                             NP_Priority, 1,
-                             TAG_DONE);
-}
-
-void AmigaProcess::Invoke()
-{
-    ThreadStart invoked = procstart;
-
-    invoked.thread->Run();
-    Signal(invoked.maintask, 1U << invoked.signal);
-}
-
-void AmigaProcess::WaitExit()
-{
-    Wait(1U << signal | SIGBREAKF_CTRL_C | SIGBREAKF_CTRL_D);
-}
-
-#endif
 #endif
 #endif

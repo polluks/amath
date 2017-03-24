@@ -91,7 +91,7 @@ char* HelpStatement::StatementHelp() const
     output->ClearBuffer();
 
     APPENDHELP(STATEMENTLINE)
-#if defined(ANSICONSOLE)
+#if !defined(STDC_CONSOLE)
     APPENDHELP(STATEMENTCLEAR)
 #endif
     APPENDHELP(STATEMENTDEF)

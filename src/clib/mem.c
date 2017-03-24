@@ -75,7 +75,7 @@ struct MemoryList
 /**
  * @brief Global list of allocated memory.
  */
-struct MemoryList* list = NULL;
+struct MemoryList* list = nullptr;
 
 void alloc_error(char*, size_t);
 void dealloc_error(char*, void*);
@@ -88,7 +88,7 @@ void* AllocMemSafe(size_t size)
     struct MemoryBlock* newblock;
     size_t allocsize;
 
-    if (list == NULL)
+    if (list == nullptr)
     {
         list = (struct MemoryList*)ALLOC_MEM(sizeof(struct MemoryList));
         if (!list)
@@ -97,7 +97,7 @@ void* AllocMemSafe(size_t size)
             return 0;
         }
 
-        list->first = NULL;
+        list->first = nullptr;
         list->peak = 0;
         list->size = 0;
         list->count = 0;
@@ -141,40 +141,37 @@ void* AllocMemSafe(size_t size)
     return newblock->address;
 }
 
-/**
- * @brief Deallocate memory from the global memory list.
- */
-void FreeMemSafe(void* block)
+void RemoveMemSafe(void* block, bool deallocate)
 {
     struct MemoryBlock *current, *previous;
 
-    if (list == NULL || block == NULL)
+    if (list == nullptr || block == nullptr)
     {
         dealloc_error("list", 0);
         return;
     }
 
-    if (block == NULL)
+    if (block == nullptr)
     {
         dealloc_error("memory", 0);
         return;
     }
 
-    previous = NULL;
+    previous = nullptr;
     current = list->first;
-    while (current != NULL && current->address != block)
+    while (current != nullptr && current->address != block)
     {
         previous = current;
         current = current->next;
     }
 
-    if (current == NULL)
+    if (current == nullptr)
     {
         dealloc_error("address not found", block);
         return;
     }
 
-    if (previous == NULL)
+    if (previous == nullptr)
     {
         list->first = current->next;
     }
@@ -186,11 +183,32 @@ void FreeMemSafe(void* block)
     list->size -= current->size;
     list->count--;
 
-    FREE_MEM(current->address);
-    current->address = NULL;
-    current->next = NULL;
+    if (deallocate)
+    {
+        FREE_MEM(current->address);
+    }
+
+    current->address = nullptr;
+    current->next = nullptr;
     current->size = 0;
     FREE_MEM(current);
+}
+
+/**
+ * @brief Deallocate memory from the global memory list.
+ */
+void FreeMemSafe(void* block)
+{
+    RemoveMemSafe(block, true);
+}
+
+/**
+ * @brief   Detach an allocated memory from the global memory list.
+ * @details The memory block is only detached, not deallocated.
+ */
+void DetachMemSafe(void* block)
+{
+    RemoveMemSafe(block, false);
 }
 
 /**
@@ -200,13 +218,13 @@ void FreeAllSafe()
 {
     struct MemoryBlock *current, *next;
 
-    if (list == NULL)
+    if (list == nullptr)
     {
         return;
     }
 
     current = list->first;
-    while (current != NULL)
+    while (current != nullptr)
     {
         next = current->next;
         FREE_MEM(current->address);
@@ -215,7 +233,7 @@ void FreeAllSafe()
     }
 
     FREE_MEM(list);
-    list = NULL;
+    list = nullptr;
 }
 
 /**

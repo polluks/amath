@@ -27,55 +27,71 @@
  * 
  */
 
-#ifndef AMATH_AMIGA_TASK
-#define AMATH_AMIGA_TASK
-
-/**
- * @file  task_amiga.h
- * @brief Amiga OS specific sytem task calls.
- *
- */
+#ifndef AMATH_HAIKU_CONSOLE_WINDOW_H
+#define AMATH_HAIKU_CONSOLE_WINDOW_H
 
 #include "amath.h"
 #include "amathc.h"
-#include "task.h"
-#include "thread.h"
+#include "console.h"
+#include "lib/aengine.h"
 
-#ifdef AMIGA
-#include <exec/io.h>
-#include <exec/memory.h>
-#include <libraries/dos.h>
-#include <clib/exec_protos.h>
-#include <clib/alib_protos.h>
-#include <clib/dos_protos.h>
+#if defined(HAIKU)
 
-/**
-* @brief Infomations passed to a new task when started.
-*
-*/
-struct ThreadStart {
-    ThreadBase *thread;
-    Task *maintask;
-    unsigned int signal;
-};
+#if __GNUC__ == 2
+#pragma GCC diagnostic ignored "-Wno-multichar"
+#endif
 
-/**
-* @brief Encapsulates system calls to an Amiga OS task.
-*
-*/
-class AmigaTask : public TaskBase {
+#include <Window.h>
+#include <Entry.h>
+#include <FilePanel.h>
+#include <MenuBar.h>
+#include <String.h>
+#include <TextView.h>
+
+class HaikuTextView;
+
+class HaikuWindow : public ConsoleBase, public BWindow
+{
 public:
-    AmigaTask();
-    ~AmigaTask();
-    void Start(ThreadBase *thread);
-    void WaitExit();
+    HaikuWindow(const char *prompt, CharValidator *validator);
+    virtual ~HaikuWindow(void);
+    virtual void MessageReceived(BMessage* msg);
+    virtual void FrameResized(float w, float h);
+    virtual void UpdateTextRect(void);
+    virtual bool QuitRequested(void);
+    virtual void Start(void);
+    virtual void Exit(void);
+    virtual void Clear(void);
+    virtual void ShowAbout(void);
+    virtual void ShowLicense(void);
+    virtual void ShowVersion(void);
+    virtual void WriteString(const char *string);
+    void Execute(void);
+
+protected:
+    virtual void StartMessage(void);
 
 private:
-    static void Invoke();
-    unsigned int signal;
-    Task *maintask;
-    Task *task;
+    HaikuTextView *textView;
+};
+
+class HaikuTextView : public BTextView
+{
+public:
+    HaikuTextView(
+        HaikuWindow *window,
+        BRect frame,
+        const char *name,
+        BRect textRect,
+        const BFont *initialFont,
+        const rgb_color *initialColor);
+    virtual ~HaikuTextView(void);
+    virtual void KeyDown(const char *bytes, int32 numBytes);
+
+private:
+    HaikuWindow *window;
 };
 
 #endif
 #endif
+

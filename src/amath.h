@@ -60,6 +60,12 @@
 # endif
 #endif
 /******************************************************************************/
+#ifdef _WIN32
+# ifndef WINDOWS
+# define WINDOWS
+# endif
+#endif
+/******************************************************************************/
 #if defined(AOS3) || defined(AOS4) || defined(AROS) || defined (MORPHOS)
 # ifndef AMIGA
 # define AMIGA
@@ -72,30 +78,29 @@
 # endif
 #endif
 /******************************************************************************/
-#if defined(AMIGA) || defined(HAIKU) || defined(UNIX)
-# ifndef ANSICONSOLE
-# define ANSICONSOLE
+#if defined(HAIKU) || defined(UNIX)
+# ifndef POSIX
+# define POSIX
 # endif
 #endif
 /******************************************************************************/
-#ifdef HAIKU
+#if !defined(AMIGA) && !defined(POSIX) && !defined(WINDOWS)
+# ifndef STDC_CONSOLE
+# define STDC_CONSOLE
+# endif
+#endif
+/******************************************************************************/
+#if defined(POSIX)
 # include <stdint.h>
 # include <unistd.h>
 # include <dirent.h>
 #endif
 /******************************************************************************/
-#ifdef UNIX
-# include <stdint.h>
-# include <unistd.h>
-# include <dirent.h>
-# include <termios.h>
-#endif
-/******************************************************************************/
-#ifdef _WIN32
+#if defined(WINDOWS)
 # include <stdint.h>
 #endif
 /******************************************************************************/
-#ifdef AOS3
+#if defined(AOS3)
 # include <sys/types.h>
 # define IPTR      LONG*
 # define uintptr_t uint32_t
@@ -110,10 +115,9 @@ typedef u_int64_t  uint64_t;
 # include <sys/types.h>
 #endif
 /******************************************************************************/
-#if (__cplusplus <= 199711L && !defined(_WIN32)) || !defined(__cplusplus)
+#if (__cplusplus <= 199711L && !defined(WINDOWS)) || !defined(__cplusplus)
 #define nullptr 0
-#endif
-#if defined(__GNUC__) || defined(__GNUG__)
+#elif (__cplusplus <= 199711L) && (defined(__GNUC__) || defined(__GNUG__))
 #define nullptr 0
 #endif
 /******************************************************************************/
@@ -208,7 +212,7 @@ typedef u_int64_t  uint64_t;
 #define SPACE       " "
 #define DOT         "."
 /******************************************************************************/
-#ifdef _WIN32
+#ifdef WINDOWS
 #define NEWLINE     "\r\n"
 #else
 #define NEWLINE     "\n"
@@ -272,30 +276,22 @@ typedef int bool;
 # define TXTFPU EMPTYSTRING
 #endif
 /******************************************************************************/
-#if defined(WITHTEST) && !defined(ANSICONSOLE)
-# define TXTOPTS         "TEST"
-#endif
-#if !defined(WITHTEST) && defined(ANSICONSOLE)
-# define TXTOPTS         "ANSI"
-#endif
-#if defined(WITHTEST) && defined(ANSICONSOLE)
-# define TXTOPTS         "ANSI, TEST"
-#endif
-#ifdef TXTOPTS
-# define TXTOPTMSG       SPACE "(OPT: " TXTOPTS ")"
+#if defined(WITHTEST)
+# define TXTOPTMSG       SPACE "(test)"
 #else
 # define TXTOPTMSG       EMPTYSTRING
 #endif
 /******************************************************************************/
 #define TXTARCH          TXTCPU TXTFPU
-#define RELDATESTAMP     "(12-03-2017)"
-#define TXTDOSVERSION    "\0$VER: amath 1.70" SPACE RELDATESTAMP SPACE TXTARCH
-#define TXTTITLE         "amath version 1.7.0"
+#define RELDATESTAMP     "(10-04-2017)"
+#define TXTDOSVERSION    "\0$VER: amath 1.71" SPACE RELDATESTAMP SPACE TXTARCH
+#define TXTTITLE         "amath version 1.7.1"
 #define TXTCOPYRIGHT     "(c) 2017 Carsten Sonne Larsen"
 #define TXTSTARTMSG      TXTTITLE SPACE TXTCOPYRIGHT
 /******************************************************************************/
 #define TXTVERSMSG       TXTTITLE SPACE RELDATESTAMP SPACE TXTARCH
 #define TXTCOMPMSG       "Compiled with " COMP_NAME SPACE COMP_VERS TXTOPTMSG
+#define TXTCOMPSHTMSG    "Compiled with " COMP_NAME SPACE COMP_VERS
 /******************************************************************************/
 #define CPROCNAME        "amath_console"
 /******************************************************************************/
@@ -316,47 +312,6 @@ typedef int bool;
 #define CATALOG_TEXT     "amath-text.catalog"
 #define CATALOG_KEYW     "amath-keyword.catalog"
 #define CATALOG_DEF      OC_BuiltInLanguage, "english"
-#endif
-/******************************************************************************/
-#if defined(ANSICONSOLE)
-#define HEADLINE         "\x1B[1m"
-#ifdef UNIX
-#define SYNTAXHIGHLIGHT  "\x1B[3m\x1B[32m"
-#else
-#define SYNTAXHIGHLIGHT  "\x1B[32m"
-#endif
-#define NORMALTEXT       "\x1B[0m"
-#define BOLD             "\x1B[1m"
-#define ITALICS          "\x1B[3m"
-#define UNDERLINE        "\x1B[4m"
-#define COLOR01          "\x1B[31m"
-#define COLOR02          "\x1B[32m"
-#define COLOR03          "\x1B[33m"
-#define CURSORFORWARD    "\x1B[1C"
-#define CURSORBACKWARD   "\x1B[1D"
-#define ERASEINLINE      "\x1B[K"
-#define INSERT1CHAR      "\x1B[1@"
-#define DELETE1CHAR      "\x1B[1P"
-#define DELETELINE       "\x0D\x1B[K"
-#define CLEARWINDOW      "\x1B[1;1H\x1B[J"
-/******************************************************************************/
-#else
-#define HEADLINE         EMPTYSTRING
-#define SYNTAXHIGHLIGHT  EMPTYSTRING
-#define NORMALTEXT       EMPTYSTRING
-#define BOLD             EMPTYSTRING
-#define ITALICS          EMPTYSTRING
-#define UNDERLINE        EMPTYSTRING
-#define COLOR01          EMPTYSTRING
-#define COLOR02          EMPTYSTRING
-#define COLOR03          EMPTYSTRING
-#define CURSORFORWARD    EMPTYSTRING
-#define CURSORBACKWARD   EMPTYSTRING
-#define ERASEINLINE      EMPTYSTRING
-#define INSERT1CHAR      EMPTYSTRING
-#define DELETE1CHAR      EMPTYSTRING
-#define DELETELINE       EMPTYSTRING
-#define CLEARWINDOW      EMPTYSTRING
 #endif
 /******************************************************************************/
 #endif

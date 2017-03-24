@@ -46,10 +46,9 @@
 #include "main/values.h"
 #include "main/functionlist.h"
 
-Program::Program()
+Program::Program() :
+    Console(nullptr), shellMode(false), ansiMode(false), status(0)
 {
-    status = 0;
-    Console = nullptr;
     Variables = new VariableList();
     Functions = new FunctionList();
     ins = new IntegerNumber();
@@ -60,7 +59,7 @@ Program::Program()
 #elif defined(AMIGA)
     Language = new AmigaLanguage();
     Filesystem = new AmigaFilesystem();
-    Preferences =new AmigaPreferences();
+    Preferences = new AmigaPreferences();
 #else
     Language = new StandardLanguage();
     Filesystem = new StandardFilesystem();
@@ -139,4 +138,35 @@ void Program::SetLastResult(Number* number)
 int Program::GetExitStatus() const
 {
     return status;
+}
+
+void Program::InitAnsiMode()
+{
+    SetAnsiMode(ansiMode);
+}
+
+bool Program::GetAnsiMode() const
+{
+    return ansiMode;
+}
+
+void Program::SetAnsiMode(bool value)
+{
+    bool result = false;
+    if (Console != nullptr)
+    {
+        result = Console->SetAnsiMode(value);
+    }
+
+    if (Language != nullptr)
+    {
+        Language->SetAnsiMode(result);
+    }
+
+    ansiMode = result;
+}
+
+void Program::Exit()
+{
+    Console->Exit();
 }

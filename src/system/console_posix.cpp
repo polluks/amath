@@ -29,73 +29,107 @@
 
 #include "amath.h"
 #include "amathc.h"
-#include "console_amiga.h"
+#include "console.h"
+#include "console_posix.h"
+#include "lib/charval.h"
+#include "lib/aengine.h"
 #include "main/evaluator.h"
 
-#if defined(AMIGA)
-#include <clib/dos_protos.h>
+#if defined(POSIX)
+#include <stdio.h>
+#include <termios.h>
 
-AmigaShellConsole::AmigaShellConsole(const char* prompt) :
-    ConsoleBase(prompt), exit(false)
+PosixConsole::PosixConsole(const char* prompt, CharValidator* validator) :
+    ConsoleBase(prompt), line(nullptr), exit(false)
 {
-    line = new char[linesize];
+    proc = new AnsiConoleEngine(prompt, validator);
 }
 
-AmigaShellConsole::~AmigaShellConsole()
+PosixConsole::~PosixConsole()
 {
-    delete line;
+    delete proc;
 }
 
-void AmigaShellConsole::Start()
+bool PosixConsole::Open()
+{
+    if (tcgetattr(STDIN_FILENO, &oldAttr) != 0)
+    {
+        termError = true;
+        return false;
+    }
+
+    newAttr = oldAttr;
+    newAttr.c_lflag &=(~ICANON & ~ECHO);
+    newAttr.c_cc[VMIN] = 1;
+    newAttr.c_cc[VTIME] = 0;
+
+    return (tcsetattr(STDIN_FILENO, TCSANOW, &newAttr) != -1);
+}
+
+void PosixConsole::Close()
+{
+    if (!termError)
+    {
+        tcsetattr(STDIN_FILENO, TCSANOW, &oldAttr);
+    }
+}
+
+void PosixConsole::Start()
 {
     exit = false;
-    Flush(Input());
     StartMessage();
 
     while (!exit)
     {
         Prompt();
         ReadLine();
-
-        if (*line == '\0')
-        {
-            break;
-        }
-
         Evaluator* evaluator = new Evaluator(line);
         evaluator->Evaluate();
-        const char* out = evaluator->GetResult();
-        Write(Output(), (APTR)out, StrLen(out));
+        const char* res = evaluator->GetResult();
+        Write(res, StrLen(res));
         delete evaluator;
     }
 }
 
-void AmigaShellConsole::Exit()
+void PosixConsole::Exit()
 {
     exit = true;
 }
 
-void AmigaShellConsole::ReadLine()
+void PosixConsole::ReadLine()
 {
-    Flush(Input());
-    FGets(Input(), line, linesize);
+    proc->StartInput();
+    while (!proc->InputDone())
+    {
+        unsigned char c = getchar();
+        const char* out = proc->ProcessChar(static_cast<char>(c));
+        WriteString(out);
+    }
+
+    line = proc->GetLine();
 }
 
-void AmigaShellConsole::WriteString(const char* string)
+void PosixConsole::WriteString(const char* string)
 {
-    Write(Output(), (APTR)string, StrLen(string));
-    Flush(Output());
+    Write(string, StrLen(string));
 }
 
-void AmigaShellConsole::WriteString(const char* string, unsigned int length)
+void PosixConsole::Write(const char* string, unsigned int length)
 {
-    Write(Output(), (APTR)string, length);
-    Flush(Output());
+    unsigned int i = 0;
+    while (i < length && string[i] != 0)
+    {
+        fputc(string[i], stdout);
+        i++;
+    }
+
+    fflush(stdout);
 }
 
-void AmigaShellConsole::SetPrompt(const char* string)
+void PosixConsole::SetPrompt(const char* string)
 {
     ConsoleBase::SetPrompt(string);
+    proc->SetPrompt(string);
 }
 
 #endif

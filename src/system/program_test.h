@@ -47,7 +47,7 @@ public:
     explicit TestProgram(bool silent);
     virtual ~TestProgram();
     virtual void Initialize(int argc, char** argv);
-    virtual void Run();
+    virtual void Start();
     virtual void Exit();
 
 private:

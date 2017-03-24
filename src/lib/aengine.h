@@ -64,7 +64,7 @@ private:
 
     char* prompt;
 
-    static const int maxLines = 20;
+    static const int maxLines = 100;
     static const int lineSize = 1024;
     char** lines;
     CharBuffer* linebuf;

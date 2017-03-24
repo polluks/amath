@@ -53,7 +53,7 @@ CharBuffer* StandardFilesystem::ListDirectory(const char* path)
     }
 
     DIR *dir;
-    if ((dir = opendir(pathbuf->GetString())) == NULL) {
+    if ((dir = opendir(pathbuf->GetString())) == nullptr) {
         CharBuffer *res = new CharBuffer();
         const char *msg = MSGNODIR;
         res->EnsureSize(StrLen(msg) + StrLen(pathbuf->GetString()) + StrLen(NEWLINE) + 1);
@@ -71,7 +71,7 @@ CharBuffer* StandardFilesystem::ListDirectory(const char* path)
 
     bool first = true;
     struct dirent *entry;
-    while ((entry = readdir(dir)) != NULL) {
+    while ((entry = readdir(dir)) != nullptr) {
         if (StrIsEqual(entry->d_name, ".") || StrIsEqual(entry->d_name, "..")) {
             continue;
         }
@@ -126,7 +126,7 @@ CharBuffer* StandardFilesystem::LoadTextFile(const char* name)
 {
     FILE* file;
 
-#if !defined(_WIN32)
+#if !defined(WINDOWS)
     file = fopen(name, "r");
 #else
     fopen_s(&file, name, "r");
@@ -169,7 +169,7 @@ bool StandardFilesystem::SaveTextFile(const char* name, const char* text)
 {
     FILE* file;
 
-#if !defined(_WIN32)
+#if !defined(WINDOWS)
     file = fopen(name, "w");
 #else
     fopen_s(&file, name, "w");

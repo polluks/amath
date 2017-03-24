@@ -32,13 +32,12 @@
 #include "program.h"
 #include "language_posix.h"
 #include "localize/lex.h"
-#include "localize/tags.h"
 #include "localize/help.h"
 #include "localize/text.h"
 #include "localize/ident.h"
 #include "localize/kword.h"
 
-#ifdef UNIX
+#if defined(UNIX)
 #include <stdio.h>
 #include <ctype.h>     /*  http://pubs.opengroup.org/onlinepubs/9699919799/basedefs/ctype.h.html   */
 #include <locale.h>    /*  http://pubs.opengroup.org/onlinepubs/9699919799/basedefs/locale.h.html  */

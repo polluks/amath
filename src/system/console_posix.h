@@ -27,38 +27,50 @@
  * 
  */
 
+#ifndef AMATH_POSIX_CONSOLE
+#define AMATH_POSIX_CONSOLE
+
+/**
+ * @file  console_posix.h
+ * @brief Standard C and termios based console.
+ *
+ */
+
 #include "amath.h"
 #include "amathc.h"
-#include "thread.h"
-#include "task_stdc.h"
+#include "console.h"
+#include "lib/charval.h"
+#include "lib/aengine.h"
 
-#if defined(UNIX) || defined(HAIKU)
-#include <unistd.h>
-#include <sys/types.h>
-#include <sys/wait.h>
-#include <stdlib.h>
+#if defined(POSIX)
+#include <termios.h>
 
-StandardTask::StandardTask()
-{ }
-
-StandardTask::~StandardTask()
-{ }
-
-void StandardTask::Start(ThreadBase* thread)
+/**
+ * @brief Encapsulates the IO of a console using Standard C and termios.
+ *
+ */
+class PosixConsole : public ConsoleBase
 {
-    pid_t childpid = fork();
+public:
+    PosixConsole(const char* prompt, CharValidator* validator);
+    virtual ~PosixConsole();
+    virtual bool Open();
+    virtual void Close();
+    virtual void Start();
+    virtual void Exit();
+    virtual void SetPrompt(const char* string);
+    virtual void WriteString(const char* string);
 
-// fork() returns 0 to the child process
-    if (childpid == 0)
-    {
-        thread->Run();
-        exit(0);
-    }
-}
+private:
+    void ReadLine();
+    static void Write(const char* string, unsigned int length);
+    AnsiConoleEngine* proc;
+    const char* line;
+    bool exit;
+    bool termError;
+    struct termios oldAttr;
+    struct termios newAttr;
+};
 
-void StandardTask::WaitExit()
-{
-    wait(NULL);
-}
-
+#endif
 #endif

@@ -33,7 +33,8 @@
 #include "lib/aengine.h"
 #include "main/evaluator.h"
 
-#ifdef AMIGA
+#if defined(AMIGA)
+
 #include <clib/exec_protos.h>
 #include <clib/alib_protos.h>
 #include <clib/dos_protos.h>
@@ -50,12 +51,12 @@ AmigaWindow::AmigaWindow(const char *prompt, CharValidator *validator) :
     ConsoleBase(prompt)
 {
     proc = new AnsiConoleEngine(prompt, validator);
-    window = NULL;
-//menu = NULL;
-    writereq.st = NULL;
-    writeport = NULL;
-    readreq.st = NULL;
-    readport = NULL;
+    window = nullptr;
+    //menu = nullptr;
+    writereq.st = nullptr;
+    writeport = nullptr;
+    readreq.st = nullptr;
+    readport = nullptr;
     succeed = false;
     openconsole = false;
 }
@@ -64,11 +65,6 @@ AmigaWindow::~AmigaWindow()
 {
     Cleanup();
     delete proc;
-}
-
-int AmigaWindow::GetStackSize()
-{
-    return 100000;
 }
 
 void AmigaWindow::Create()
@@ -85,9 +81,9 @@ void AmigaWindow::Create()
         WFLG_CLOSEGADGET |
         WFLG_ACTIVATE |
         WFLG_SIMPLE_REFRESH,
-        NULL, NULL,           // user gadgets, user checkmark
+        nullptr, nullptr,     // user gadgets, user checkmark
         (UBYTE*) TXTTITLE,    // title
-        NULL, NULL,           // window screen, super bitmap
+        nullptr, nullptr,     // window screen, super bitmap
         400, 75,              // min width, height
         1600, 1050,           // max width, height
         WBENCHSCREEN          // open on workbench screen
@@ -112,12 +108,12 @@ void AmigaWindow::Create()
     readreq.st->io_Device = writereq.st->io_Device;
     readreq.st->io_Unit   = writereq.st->io_Unit;
 
-// Queue input
+    // Queue input
     ReadChar(readreq);
 
-// Do GUI stuff
-//menu = new AmigaMenu(window);
-//menu->Attach();
+    // Do GUI stuff
+    //menu = new AmigaMenu(window);
+    //menu->Attach();
 }
 
 void AmigaWindow::Cleanup()
@@ -134,36 +130,36 @@ void AmigaWindow::Cleanup()
 
     if(readreq.st) {
         DeleteExtIO(readreq.st);
-        readreq.st = NULL;
+        readreq.st = nullptr;
     }
 
     if(readport) {
         DeletePort(readport);
-        readport = NULL;
+        readport = nullptr;
     }
 
     if(writereq.st) {
         DeleteExtIO(writereq.st);
-        writereq.st = NULL;
+        writereq.st = nullptr;
     }
 
     if(writeport) {
         DeletePort(writeport);
-        writeport = NULL;
+        writeport = nullptr;
     }
 
-//if (menu) {
-//    delete menu;
-//    menu = NULL;
-//}
+    //if (menu) {
+    //    delete menu;
+    //    menu = nullptr;
+    //}
 
     if(window) {
         CloseWindow(window);
-        window = NULL;
+        window = nullptr;
     }
 }
 
-void AmigaWindow::Run()
+void AmigaWindow::Start()
 {
     Create();
     StartMessage();
@@ -216,9 +212,9 @@ void AmigaWindow::ReadLine()
                 case IDCMP_CLOSEWINDOW:
                     exit = true;
                     break;
-//case IDCMP_MENUPICK:
-//    menu->Process();
-//    break;
+                //case IDCMP_MENUPICK:
+                //    menu->Process();
+                //    break;
                 default:
                     break;
                 }

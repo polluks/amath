@@ -36,29 +36,40 @@
  *
  */
 
-#include "thread.h"
-
 /**
  * @brief Abstract base class encapsulating console logic.
  *
  */
-class ConsoleBase : public ThreadBase
+class ConsoleBase
 {
 public:
     explicit ConsoleBase(const char* prompt);
     virtual ~ConsoleBase();
     const char* GetName();
-    virtual void Clear();
+    virtual bool Open();
+    virtual void Close();
+    virtual void Start() = 0;
     virtual void Exit() = 0;
+    virtual void Clear();
+    virtual void ShowAbout();
+    virtual void ShowLicense();
+    virtual void ShowVersion();
     virtual void SetPrompt(const char* string);
     virtual void WriteString(const char* string) = 0;
+    virtual bool SetAnsiMode(bool value);
 
 protected:
-    void StartMessage();
+    virtual void StartMessage();
     void Prompt();
+    const char* GetVersionText();
+    const char* GetCompilerText();
+    char* prompt;
 
 private:
-    char* prompt;
+    void ResetConsole();
+    void AnsiItalics();
+    void AnsiBold();
+    bool ansiMode;
 };
 
 #endif
