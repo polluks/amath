@@ -5,7 +5,7 @@
 ; ## ---------------------
 ; ##
 ; ## Generate code with:
-; ## flexcat text.cd ../src/localize/text.h=text.sd
+; ## flexcat text.cd ../src/loc/text.h=text.sd
 ; ##
 ; ###################################################################################
 ; ## Copyright (c) 2014-2017 Carsten Sonne Larsen <cs@innolan.net>
@@ -32,111 +32,111 @@
 ; ##  OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
 ; ##  OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 ; ###################################################################################
-INTROMSG (/4/)
+INTROMSG (/8/)
 #NORMALTEXT##BOLD##STARTMSG##NEWLINE##NORMALTEXT##COLOR02#Type help to show info.#NEWLINE#
-STATEMENTLINE (/4/)
----------------------------------------------------------#NEWLINE#
-STATEMENTCLEAR (/4/)
-clear      Clear console window.#NEWLINE#
-STATEMENTDEF (/4/)
-def        Define function.#NEWLINE#
-STATEMENTDELETE (/4/)
-delete     Delete variable or function.#NEWLINE#
-STATEMENTDIGITS (/4/)
-digits     Set number of significant digits.#NEWLINE#
-STATEMENTEVAL (/4/)
-eval       Evaluate arithmetic expression.#NEWLINE#
-STATEMENTEXECUTE (/4/)
-execute    Execute statements in a file.#NEWLINE#
-STATEMENTFUNCS (/4/)
-functions  Show list of user defined functions.#NEWLINE#
-STATEMENTINPUT (/4/)
-input      Change numeral input system.#NEWLINE#
-STATEMENTHELP (/4/)
-help       Show basic help text.#NEWLINE#
-STATEMENTOUTPUT (/4/)
-output     Change numeral output system.#NEWLINE#
-STATEMENTLIST (/4/)
-list       Show content of a directory.#NEWLINE#
-STATEMENTSHOW (/4/)
-show       Show content of a file.#NEWLINE#
-STATEMENTLOAD (/4/)
-load       Load variable and functions from file.#NEWLINE#
-STATEMENTSAVE (/4/)
-save       Save variable and functions to file.#NEWLINE#
-STATEMENTVARS (/4/)
-variables  Show list of variables.#NEWLINE#
-STATEMENTVERSION (/4/)
-version    Show version string.#NEWLINE#
-STATEMENTMEMORY (/4/)
-memory     Show internal memory usage.#NEWLINE#
-STATEMENTEXIT (/4/)
-exit       Exit program.#NEWLINE#
-STATEMENTFOOTER (/4/)
+STATEMENTLINE (/10/)
+------------------------------------------------------------#NEWLINE#
+STATEMENTCLEAR (/10/)
+clear      Clear console window#NEWLINE#
+STATEMENTDEF (/10/)
+def        Define function#NEWLINE#
+STATEMENTDELETE (/10/)
+delete     Delete variable or function#NEWLINE#
+STATEMENTDIGITS (/10/)
+digits     Set number of significant digits#NEWLINE#
+STATEMENTEVAL (/10/)
+eval       Evaluate arithmetic expression#NEWLINE#
+STATEMENTEXECUTE (/10/)
+execute    Execute statements in a file#NEWLINE#
+STATEMENTFUNCS (/10/)
+functions  Show list of user defined functions#NEWLINE#
+STATEMENTINPUT (/10/)
+input      Change numeral input system#NEWLINE#
+STATEMENTHELP (/10/)
+help       Show basic help text#NEWLINE#
+STATEMENTOUTPUT (/10/)
+output     Change numeral output system#NEWLINE#
+STATEMENTLIST (/10/)
+list       Show content of a directory#NEWLINE#
+STATEMENTSHOW (/10/)
+show       Show content of a file#NEWLINE#
+STATEMENTLOAD (/10/)
+load       Load variable and functions from file#NEWLINE#
+STATEMENTSAVE (/10/)
+save       Save variable and functions to file#NEWLINE#
+STATEMENTVARS (/10/)
+variables  Show list of variables#NEWLINE#
+STATEMENTVERSION (/10/)
+version    Show version string#NEWLINE#
+STATEMENTMEMORY (/10/)
+memory     Show internal memory usage#NEWLINE#
+STATEMENTEXIT (/10/)
+exit       Exit program#NEWLINE#
+STATEMENTFOOTER (/10/)
 The def and eval statements are optional. Functions and#NEWLINE#variables statements can be shorten to funcs and vars.#NEWLINE#
-TXTLISTDIRHEADER (/4/)
-Type        Name#NEWLINE#-----------------------------------------------#NEWLINE#
+TXTLISTDIRHEADER (/10/)
+Type        Name#NEWLINE#--------------------------------------------------#NEWLINE#
 TXTLISTDIRTFILE (/4/)
 [file]
 TXTLISTDIRTDIR (/4/)
 [dir]
 TXTLISTDIRTUNKNOWN (/4/)
 [unknown]
-TXTMEMBLOCKS (/4/)
+TXTMEMBLOCKS (/8/)
 Allocated blocks:#SPACE#
-TXTMEMSIZE (/4/)
+TXTMEMSIZE (/8/)
 Memory usage:    #SPACE#
-TXTMEMMAXSIZE (/4/)
+TXTMEMMAXSIZE (/8/)
 Maximum usage:   #SPACE#
-HELPNOHELP (/4/)
+HELPNOHELP (/8/)
 No help is available for this topic.#NEWLINE#
-HELPSYNTAX (/4/)
+HELPSYNTAX (/8/)
 Syntax error:#SPACE#
-HELPUERROR (/4/)
+HELPUERROR (/8/)
 Unexpected error:#SPACE#
-HELPVARNDEF (/4/)
+HELPVARNDEF (/8/)
 Variable is not defined:#SPACE#
-HELPFUNNDEF (/4/)
+HELPFUNNDEF (/8/)
 Function is not defined:#SPACE#
-HELPFUNRDEF (/4/)
+HELPFUNRDEF (/8/)
 Function cannot be redefined:#SPACE#
-HELPPNUMERA (/4/)
+HELPPNUMERA (/8/)
 Base value must be between 2 and 32:#SPACE#
-HELPPDIGITS (/4/)
+HELPPDIGITS (/8/)
 Number of digist must be between 0 and 15:#SPACE#
-HELPINPUSHOW (/4/)
+HELPINPUSHOW (/8/)
 Numeral input system is#SPACE#
-HELPOUTPSHOW (/4/)
+HELPOUTPSHOW (/8/)
 Numeral output system is#SPACE#
-HELPINPUSETT (/4/)
+HELPINPUSETT (/8/)
 Input changed to#SPACE#
-HELPOUTPSETT (/4/)
+HELPOUTPSETT (/8/)
 Output changed to#SPACE#
-HELPDIGISETT (/4/)
+HELPDIGISETT (/8/)
 Number of digits changed to#SPACE#
-HELPDIGISHOW (/4/)
+HELPDIGISHOW (/8/)
 Number of digits shown are#SPACE#
-HELPVARSNDEF (/4/)
+HELPVARSNDEF (/8/)
 No variables are defined.#NEWLINE#
-HELPFUNCNDEF (/4/)
+HELPFUNCNDEF (/8/)
 No functions are defined.#NEWLINE#
-HELPLOADSUCC (/4/)
+HELPLOADSUCC (/8/)
 Variable and functions loaded from file.#NEWLINE#
-HELPSAVESUCC (/4/)
+HELPSAVESUCC (/8/)
 Variable and functions saved to file.#NEWLINE#
-HELPSAVEFAIL (/4/)
+HELPSAVEFAIL (/8/)
 Cannot save to file.#NEWLINE#
-HELPSAVENOTH (/4/)
+HELPSAVENOTH (/8/)
 Nothing to save.#NEWLINE#
-HELPPREFLOAD (/4/)
+HELPPREFLOAD (/8/)
 Preferences loaded.#NEWLINE#
-HELPPREFNOLO (/4/)
+HELPPREFNOLO (/8/)
 Preferences could not be loaded.#NEWLINE#
-HELPPREFSAVE (/4/)
+HELPPREFSAVE (/8/)
 Preferences saved to disk.#NEWLINE#
-HELPPREFNOSA (/4/)
+HELPPREFNOSA (/8/)
 Preferences could not be saved.#NEWLINE#
-MSGNODIR (/4/)
+MSGNODIR (/8/)
 Could not open directory:#SPACE#
-MSGNOFILE (/4/)
+MSGNOFILE (/8/)
 Cannot open file.#NEWLINE#

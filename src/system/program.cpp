@@ -41,8 +41,8 @@
 #include "preferences_stdc.h"
 #include "preferences_amiga.h"
 #include "lib/numb.h"
-#include "lib/ntext.h"
-#include "lib/integer.h"
+#include "lib/real.h"
+#include "lib/ntextd.h"
 #include "main/values.h"
 #include "main/functionlist.h"
 
@@ -51,7 +51,7 @@ Program::Program() :
 {
     Variables = new VariableList();
     Functions = new FunctionList();
-    ins = new IntegerNumber();
+    ins = new RealNumber();
 #if defined(UNIX)
     Language = new PosixLanguage();
     Filesystem = new StandardFilesystem();
@@ -87,15 +87,15 @@ void Program::NewPositionalInput(short unsigned int base, short unsigned int dig
 {
     delete Input;
 
-    char fractionpoint = Language->GetFractionPoint();
+    char fractionPoint = Language->GetFractionPoint();
 
     if (base == 10)
     {
-        Input = new DecimalSystem(digits, fractionpoint);
+        Input = new DecimalSystem(digits, fractionPoint);
     }
     else
     {
-        Input = new PositionalNumeralSystem(base, digits, fractionpoint);
+        Input = new PositionalNumeralSystem(base, digits, fractionPoint);
     }
 }
 
@@ -103,15 +103,15 @@ void Program::NewPositionalOutput(short unsigned int base, short unsigned int di
 {
     delete Output;
 
-    char fractionpoint = Language->GetFractionPoint();
+    char fractionPoint = Language->GetFractionPoint();
 
     if (base == 10)
     {
-        Output = new DecimalSystem(digits, fractionpoint);
+        Output = new DecimalSystem(digits, fractionPoint);
     }
     else
     {
-        Output = new PositionalNumeralSystem(base, digits, fractionpoint);
+        Output = new PositionalNumeralSystem(base, digits, fractionPoint);
     }
 }
 
@@ -152,18 +152,22 @@ bool Program::GetAnsiMode() const
 
 void Program::SetAnsiMode(bool value)
 {
-    bool result = false;
     if (Console != nullptr)
     {
-        result = Console->SetAnsiMode(value);
+        bool success = Console->SetAnsiMode(value);
+        if (!success)
+        {
+            Console->SetAnsiMode(ansiMode);
+            return;
+        }
     }
 
     if (Language != nullptr)
     {
-        Language->SetAnsiMode(result);
+        Language->SetAnsiMode(value);
     }
 
-    ansiMode = result;
+    ansiMode = value;
 }
 
 void Program::Exit()

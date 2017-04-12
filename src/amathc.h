@@ -32,8 +32,7 @@
 
 /**
  * @file  amathc.h
- * @brief C functions for manipulating strings and memory.
- *
+ * @brief C functions for manipulating strings and memory
  */
 
 #include <stddef.h>
@@ -54,7 +53,6 @@ void FreeMemSafe(void*);
 void DetachMemSafe(void*);
 void FreeAllSafe();
 void MemUsage(long*, long*, long*);
-
 int StrLen(const char* string);
 bool StrIsEqual(const char* s1, const char* s2);
 void MemSet(void* destination, int c0, unsigned int length);

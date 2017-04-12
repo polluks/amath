@@ -1,0 +1,60 @@
+#! /bin/sh
+
+# DO NOT USE THIS SCRIPT UNLESS YOU KNOW WHAT YOU ARE DOING !
+
+version='1.8.0'
+stamp="201704130000"
+#stamp="201704110000"
+srcdir="amath-rc"
+distdir="amath-${version}"
+cd ..
+
+rm -f amath-${version}.tar.gz
+rm -Rf amath-${version}
+
+mkdir -m 775 ${distdir}
+mkdir -m 775 ${distdir}/src/
+mkdir -m 775 ${distdir}/src/clib/
+mkdir -m 775 ${distdir}/src/cplex/
+mkdir -m 775 ${distdir}/src/lib/
+mkdir -m 775 ${distdir}/src/loc/
+mkdir -m 775 ${distdir}/src/real/
+mkdir -m 775 ${distdir}/src/system/
+mkdir -m 775 ${distdir}/src/main/
+mkdir -m 775 ${distdir}/src/main/function
+mkdir -m 775 ${distdir}/src/main/statement/
+mkdir -m 775 ${distdir}/script/
+mkdir -m 775 ${distdir}/text/
+mkdir -m 775 ${distdir}/catalog/
+mkdir -m 775 ${distdir}/catalog/english/
+mkdir -m 775 ${distdir}/build/
+mkdir -m 775 ${distdir}/build/flexcat/
+
+install -m 664 ${srcdir}/src/*.h ${distdir}/src/
+install -m 664 ${srcdir}/src/*.cpp ${distdir}/src/
+install -m 664 ${srcdir}/src/clib/* ${distdir}/src/clib/
+install -m 664 ${srcdir}/src/cplex/* ${distdir}/src/cplex/
+install -m 664 ${srcdir}/src/lib/* ${distdir}/src/lib/
+install -m 664 ${srcdir}/src/loc/* ${distdir}/src/loc/
+install -m 664 ${srcdir}/src/real/*  ${distdir}/src/real/
+install -m 664 ${srcdir}/src/system/* ${distdir}/src/system/
+install -m 664 ${srcdir}/src/main/*.h ${distdir}/src/main/
+install -m 664 ${srcdir}/src/main/*.cpp ${distdir}/src/main/
+install -m 664 ${srcdir}/src/main/function/* ${distdir}/src/main/function/
+install -m 664 ${srcdir}/src/main/statement/* ${distdir}/src/main/statement/
+install -m 664 ${srcdir}/script/* ${distdir}/script/
+install -m 664 ${srcdir}/text/* ${distdir}/text/
+install -m 664 ${srcdir}/catalog/english/* ${distdir}/catalog/english/
+install -m 664 ${srcdir}/build/flexcat/* ${distdir}/build/flexcat/
+install -m 664 ${srcdir}/HISTORY ${distdir}/
+install -m 664 ${srcdir}/LICENSE ${distdir}/
+install -m 664 ${srcdir}/README ${distdir}/
+install -m 664 ${srcdir}/amath.1 ${distdir}/
+install -m 775 ${srcdir}/configure ${distdir}/
+install -m 775 ${srcdir}/builddist ${distdir}/
+install -m 775 ${srcdir}/buildwin ${distdir}/
+
+chown -R 1000:1000 ${distdir}
+
+for f in $(find ${distdir} -name '*'); do touch -amt ${stamp}.00 $f; done
+tar --numeric-owner -cvzf amath-${version}.tar.gz ${distdir}

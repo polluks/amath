@@ -60,15 +60,15 @@ SyntaxNode* UserFunctionNode::GetNext()
 
 void UserFunctionNode::Attach(SyntaxNode* node)
 {
-    // TODO: Implement
+    // TODO: Implement Attach in UserFunctionNode
 }
 
 void UserFunctionNode::Detach(SyntaxNode* node)
 {
-    // TODO: Implement
+    // TODO: Implement Detach in UserFunctionNode
 }
 
 void UserFunctionNode::Replace(SyntaxNode* n, SyntaxNode* x)
 {
-    // TODO: Implement
+    // TODO: Implement Replace in UserFunctionNode
 }

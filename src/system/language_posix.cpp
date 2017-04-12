@@ -31,11 +31,10 @@
 #include "amathc.h"
 #include "program.h"
 #include "language_posix.h"
-#include "localize/lex.h"
-#include "localize/help.h"
-#include "localize/text.h"
-#include "localize/ident.h"
-#include "localize/kword.h"
+#include "loc/help.h"
+#include "loc/text.h"
+#include "loc/ident.h"
+#include "loc/kword.h"
 
 #if defined(UNIX)
 #include <stdio.h>

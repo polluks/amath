@@ -32,13 +32,9 @@
  */
 
 #include "prim.h"
-#include "math.h"
-#include "complex.h"
 
 /**
- * @brief   Cosine of complex number
- * @version 1.1
- * @date    2007/08/20
+ * @brief  Cosine of complex number
  * @details
  * <pre>
  * a+bi

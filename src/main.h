@@ -50,13 +50,13 @@
   \subsection usage Usage
   amath supply 50 \ref command_page combined with 7 arithmetic operators:
   \verbatim
-      +     Mathematical addition.
-      -     Mathematical subtraction.
-      *     Mathematical multiplication.
-      /     Mathematical division.
-      ^     Mathematical exponentiation.
-      =     Assignment of variable values.
-      |     Absolute value of number.
+      +     Mathematical addition
+      -     Mathematical subtraction
+      *     Mathematical multiplication
+      /     Mathematical division
+      ^     Mathematical exponentiation
+      =     Assignment of variable values
+      |     Absolute value of number
   \endverbatim
 
   Do a calculation in shell (CLI mode):
@@ -73,18 +73,23 @@
 
   \subsection license License
   amath is open source. The main repository is located at gitlab:<BR>
-  https://gitlab.com/rnger/amath
+  https://gitlab.com/rnger/amath <BR>
+  <BR>
+  Github has a mirror:<BR>
+  https://github.com/rainlance/amath
 
   \subsection download Download
-  Windows: https://gitlab.com/rnger/amath-bin/tree/master/Windows <BR>
+  Windows: http://amath.innolan.net/amath-1.8.0.zip <BR>
   <BR>
   FreeBSD: https://www.freshports.org/math/amath/ <BR>
   <BR>
   NetBSD: http://ftp.netbsd.org/pub/pkgsrc/current/pkgsrc/math/amath/README.html <BR>
   <BR>
+  Haiku: https://github.com/haikuports <BR>
+  <BR>
   Included in the Icaros Desktop environment: http://vmwaros.blogspot.com/ <BR>
   <BR>
-  Other packages: https://gitlab.com/rnger/amath-bin/tree/master
+  Other packages: https://ranger.innolan.net/rainlance/amath/releases
   \subsection history History
   A full \ref release_page is available for amath.
 
@@ -134,12 +139,18 @@
   cot         Trigonometric cotangent function
   sec         Trigonometric secant function
   csc         Trigonometric cosecant function
+  crd         Trigonometric chord function
+  exsec       Trigonometric exsecant function
+  excsc       Trigonometric excosecant function
   arcsin      Inverse trigonometric sine function
   arccos      Inverse trigonometric cosine function
   arctan      Inverse trigonometric tangent function
   arccot      Inverse trigonometric cotangent function
   arcsec      Inverse trigonometric secant function
   arccsc      Inverse trigonometric cosecant function
+  arccrd      Inverse trigonometric chord function
+  arcexsec    Inverse trigonometric exsecant function
+  arcexcsc    Inverse trigonometric excosecant function
   \endverbatim
   \subsection command_hype Hyperbolic functions
   \verbatim
@@ -219,12 +230,6 @@
   Copyright (c) 1990, 1993 The Regents of the University of California.
   All rights reserved.
 
-  This code is derived from software written by Stephen L. Moshier.
-  It is redistributed by the NetBSD Foundation by permission of the author.
-
-  This code is derived from software contributed to Berkeley by
-  Mike Hibler and Chris Torek.
-
   Redistribution and use in source and binary forms, with or without
   modification, are permitted provided that the following conditions are met:
 
@@ -253,18 +258,25 @@
   http://opensource.org/licenses/BSD-2-Clause<BR>
   https://wikipedia.org/wiki/BSD_licenses<BR>
 
-
   \page    release_page Release history
   \section release_sec  Release history
 
-  \subsection version171 v1.7.1 March 26 2017
+  \subsection version180 1.8.0 April 13 2017
+  - Fixed bugs in numeral systems.
+  - Fixed bugs related to infinity (Inf).
+  - Fixed bugs related to Not a Number (NaN).
+  - Updated and cleanup documentation.
+  - Cleaned up code structure.
+  - OpenLibm support.
+
+  \subsection version171 1.7.1 March 26 2017
   - Haiku support.
   - Unified ANSI console.
   - Code cleanup.
 
-  \subsection version170 v1.7.1 March 12 2017
-  - Introduce scientific notation.
-  - Introduce Not a Number (NaN).
+  \subsection version170 1.7.0 March 12 2017
+  - Introduced scientific notation.
+  - Introduced Not a Number (NaN).
   - Fixed bugs related to infinity (Inf).
   - Fixed bugs in log of complex numbers.
   - Fixed bugs in numeral systems.
@@ -272,11 +284,11 @@
   - Early trigonometric functions.
   - Static and dynamic libraries.
 
-  \subsection version164 v1.6.4 February 04 2017
+  \subsection version164 1.6.4 February 04 2017
   - Fixed Windows memory bugs.
   - Fixed 64 bit memory bugs.
 
-  \subsection version163 v1.6.3 January 30 2017
+  \subsection version163 1.6.3 January 30 2017
   - Improved error handling.
   - Fixed error in fraction point parsing.
   - Fixed typo in help text.
@@ -287,20 +299,20 @@
   - Debian support.
   - NetBSD support.
 
-  \subsection version162 v1.6.2 January 24 2017
+  \subsection version162 1.6.2 January 24 2017
   - Fixed bug in memory allocation.
-  - Fixed bug in native keybord input.
+  - Fixed bug in native keyboard input.
   - Included build options in executables.
   - ARM support.
 
-  \subsection version161 v1.6.1 January 21 2017
+  \subsection version161 1.6.1 January 21 2017
   - Fixed language bug in Windows.
   - Fixed potential memory bugs.
   - Clang compiler support.
   - Update copyright texts.
   - New doxygen documentation.
 
-  \subsection version160 v1.6.0 April 7 2016
+  \subsection version160 1.6.0 April 7 2016
   - Complete internal restructure of source code.
   - Fixed several minor bugs in calculation.
   - Support for Windows & Linux.
@@ -352,7 +364,7 @@
   - Fixed clear console bug on AROS.
   - Miscellaneous minor bug fixes.
 
-  \subsection version15 1.5 September 21 2014
+  \subsection version150 1.5.0 September 21 2014
   - Calculation with complex numbers.
   - Fixed command line version.
   - Miscellaneous bug fixed.
@@ -360,7 +372,7 @@
   - Documentation including class diagrams in HTML format.
   - Scripts for porting and building the source.
 
-  \subsection version14 1.4 August 24 2014
+  \subsection version140 1.4.0 August 24 2014
   - New math engine based on Sun Microsystems fdlibm (64 bit IEEE 754).
   - Support for positional numeral systems including binary, octal and hexadecimal.
   - Added pure command line version (CLI) as addition to the stand-alone version.
@@ -377,7 +389,7 @@
   \subsection version131 1.3.1 August 08 2014
   - AROS i386 version released.
 
-  \subsection version13 1.3 August 06 2014
+  \subsection version130 1.3.0 August 06 2014
   - All trigonometric and hyperbolic functions are now supported.
   - Runs in console window. amath no longer depends on a shell.
   - Hardened code. amath is no longer a beta version.

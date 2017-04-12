@@ -1,6 +1,4 @@
-/* @(#)k_rem_pio2.c 1.3 95/01/18 */
-
-/*
+/*-
  * Copyright (c) 2014-2017 Carsten Sonne Larsen <cs@innolan.net>
  * All rights reserved.
  *
@@ -24,24 +22,28 @@
  * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF
  * THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  *
- * The origin source code can be obtained from:
+ * Project homepage:
+ * http://amath.innolan.net
+ *
+ * The original source code can be obtained from:
  * http://www.netlib.org/fdlibm/k_rem_pio2.c
  * 
- */
-
-/*
- * ====================================================
+ * =================================================================
  * Copyright (C) 1993 by Sun Microsystems, Inc. All rights reserved.
  *
  * Developed at SunSoft, a Sun Microsystems, Inc. business.
  * Permission to use, copy, modify, and distribute this
  * software is freely granted, provided that this notice
  * is preserved.
- * ====================================================
+ * =================================================================
+ */
+
+/**
+ * @file  kremp2.c
+ * @brief Kernel reduction function
  */
 
 #include "prim.h"
-#include "math.h"
 
 /*
  * Constants:
@@ -71,9 +73,7 @@ two24   =  1.67772160000000000000e+07, /* 0x41700000, 0x00000000 */
 twon24  =  5.96046447753906250000e-08; /* 0x3E700000, 0x00000000 */
 
 /**
- * @brief   Kernel reduction function.
- * @version 1.4
- * @date    96/03/07
+ * @brief   Kernel reduction function
  * @details
  * <pre>
  * __kernel_rem_pio2(x,y,e0,nx,prec,ipio2)
@@ -179,14 +179,8 @@ twon24  =  5.96046447753906250000e-08; /* 0x3E700000, 0x00000000 */
  *
  *	ih	integer. If >0 it indicates q[] is >= 0.5, hence
  *		it also indicates the *sign* of the result.
- *
  * </pre>
- * @copyright Copyright (C) 1993 by Sun Microsystems, Inc. All rights reserved.
- * @license   Developed at SunSoft, a Sun Microsystems, Inc. business. Permission
- *            to use, copy, modify, and distribute this software is freely granted,
- *            provided that this notice is preserved.
  */
-
 int __kernel_rem_pio2(double *x, double *y, int e0, int nx, int prec, const int *ipio2)
 {
     int jz,jx,jv,jp,jk,carry,n,iq[20],i,j,k,m,q0,ih;

@@ -37,6 +37,7 @@
 #include "aexcosecant.h"
 #include "aexsecant.h"
 #include "arccos.h"
+#include "arcchord.h"
 #include "arcsin.h"
 #include "arctan.h"
 #include "arccosecant.h"
@@ -51,6 +52,7 @@
 #include "arcvercosine.h"
 #include "arcversine.h"
 #include "ceil.h"
+#include "chord.h"
 #include "cosecant.h"
 #include "cosine.h"
 #include "cotangent.h"
@@ -122,6 +124,7 @@ static const functiondef functiondefs[] = {
     {"cot", CotangentNode::Create},
     {"sec", SecantNode::Create},
     {"csc", CosecantNode::Create},
+    {"crd", ChordNode::Create},
     {"exsec", ExsecantNode::Create},
     {"excsc", ExcosecantNode::Create},
     {"asin", ArcSineNode::Create},
@@ -130,6 +133,7 @@ static const functiondef functiondefs[] = {
     {"acot", ArcCotangentNode::Create},
     {"asec", ArcSecantNode::Create},
     {"acsc", ArcCosecantNode::Create},
+    {"acrd", ArcChordNode::Create},
     {"aexsec", ArcExsecantNode::Create},
     {"aexcsc", ArcExcosecantNode::Create},
     {"sinh", HyperbolicSineNode::Create},

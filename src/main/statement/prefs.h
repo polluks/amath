@@ -32,7 +32,6 @@
 #define AMATH_STATEMENT_PREFS_H
 
 #include "node.h"
-#include "localize/lex.h"
 
 /**
  * @brief Load or save preferences.

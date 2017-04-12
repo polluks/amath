@@ -1,21 +1,37 @@
-.TH "amath" 1 "Wed Mar 15 2017" "Version 1.7.1" "amath" \" -*- nroff -*-
-.ad l
-.nh
+.\" Copyright (c) 2014-2017 Carsten Sonne Larsen <cs@innolan.net>
+.\" All rights reserved.
+.\" 
+.\" Redistribution and use in source and binary forms, with or without
+.\" modification, are permitted provided that the following conditions
+.\" are met:
+.\" 1. Redistributions of source code must retain the above copyright
+.\"    notice, this list of conditions and the following disclaimer.
+.\" 2. Redistributions in binary form must reproduce the above copyright
+.\"    notice, this list of conditions and the following disclaimer in the
+.\"    documentation and/or other materials provided with the distribution.
+.\" 
+.\" THIS SOFTWARE IS PROVIDED BY THE AUTHOR ``AS IS'' AND ANY EXPRESS OR
+.\" IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES
+.\" OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED.
+.\" IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY DIRECT, INDIRECT,
+.\" INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT
+.\" NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+.\" DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
+.\" THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+.\" (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF
+.\" THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+.TH amath 1 "Version 1.8.0" "April 13 2017"
 .SH NAME
 amath \- Simple command line calculator
-
 .SH SYNOPSIS
-\fCamath [ --shell | --noansi | expression ]\fP
-
-.SH Description
+\fC[ --noansi ] [ --shell | expression ]\fP
+.SH DESCRIPTION
 amath(1) features a case sensitive command line interface, internal
 IEEE 754 calculations with 15 significant digits, calculations with
 real and complex numbers, variables and user defined functions,
 logarithmic and exponential functions, trigonometric and hyperbolic
 function and selected mathematical constants and rounding functions.
-
-.SH "Statements"
-.PP
+.SH Statements
 .nf
 clear       Clear console window
 def         Define function
@@ -36,9 +52,7 @@ version     Show version string
 memory      Show internal memory usage
 exit        Exit program
 .fi
-
-.SH "Operators"
-.PP
+.SH Operators
 .nf
 +           Mathematical addition
 -           Mathematical subtraction
@@ -47,18 +61,14 @@ exit        Exit program
 ^           Mathematical exponentiation
 =           Assignment of variable values
 |           Absolute value of number
-
-.SH "Variables and constant"
-.PP
+.SH Variables and constant
 .nf
 pi          Trigonometric constant
 e           Euler's number
 i           Imaginary unit
 ins         Result of last calculation
 .fi
-
-.SH "Base functions"
-.PP
+.SH Base functions
 .nf
 abs         Absolute value of number
 sgn         Mathematical signum function
@@ -72,9 +82,7 @@ lb          Binary logarithm function (base 2)
 ln          Natural logarithm function (base e)
 lg          Common logarithm function (base 10)
 .fi
-
-.SH "Trigonometric functions"
-.PP
+.SH Trigonometric functions
 .nf
 sin         Trigonometric sine function
 cos         Trigonometric cosine function
@@ -82,16 +90,20 @@ tan         Trigonometric tangent function
 cot         Trigonometric cotangent function
 sec         Trigonometric secant function
 csc         Trigonometric cosecant function
+crd         Trigonometric chord function
+exsec       Trigonometric exsecant function
+excsc       Trigonometric excosecant function
 arcsin      Inverse trigonometric sine function
 arccos      Inverse trigonometric cosine function
 arctan      Inverse trigonometric tangent function
 arccot      Inverse trigonometric cotangent function
 arcsec      Inverse trigonometric secant function
 arccsc      Inverse trigonometric cosecant function
+arccrd      Inverse trigonometric chord function
+arcexsec    Inverse trigonometric exsecant function
+arcexcsc    Inverse trigonometric excosecant function
 .fi
-
-.SH "Hyperbolic functions"
-.PP
+.SH Hyperbolic functions
 .nf
 sinh        Hyperbolic sine function
 cosh        Hyperbolic cosine function
@@ -106,9 +118,7 @@ arccoth     Inverse hyperbolic cotangent function
 arcsech     Inverse hyperbolic secant function
 arccsch     Inverse hyperbolic cosecant function
 .fi
-
-.SH "Early trigonometric functions"
-.PP
+.SH Early trigonometric functions
 .nf
 ver         Versed sine function
 vcs         Versed cosine function
@@ -127,9 +137,7 @@ archvc      Inverse haversed cosine function
 archcv      Inverse hacoversed sine function
 archcc      Inverse hacoversed cosine function
 .fi
-
-.SH "Example script"
-.PP
+.SH Example script
 .nf
 round(1.5461);round(-1.5461);
 ceil(43.5461);ceil(-43.5461);
@@ -137,9 +145,7 @@ floor(39.9531);floor(-39.9531);
 trunc(23.827);trunc(-23.827);
 sqrt(100);sqrt(52.23);
 .fi
-
-.SH "Example script with functions"
-.PP
+.SH Example script with functions
 .nf
 f(x)=x*2+1;
 g(y)=y^2+y*1.5+2;
@@ -147,9 +153,7 @@ a=2;b=3;c=a+b;
 vars;funcs;
 f(2.2);c+1.1;
 .fi
-
-.SH "Example script with complex numbers"
-.PP
+.SH Example script with complex numbers
 .nf
 cos(1+2i);
 sin(1+2i);
@@ -158,7 +162,17 @@ coth(1+2i);
 sech(1+2i);
 csch(1+2i);
 .fi
-
-.SH "See also"
+.SH HOMEPAGE
+http://amath.innolan.net/
+.SH AUTHORS
 .PP
+Written by Carsten Sonne Larsen <cs@innolan.net>. The code in MemSet and
+MemCopy is derived from software contributed to Berkeley by Mike Hibler and
+Chris Torek. The code in complex calculations is derived from software
+written by Stephen L. Moshier.
+.SH COPYRIGHT
+Copyright (c) 2014-2017 Carsten Sonne Larsen <cs@innolan.net>
+.br
+Copyright (c) 1990, 1993 The Regents of the University of California
+.SH SEE ALSO
 amathc(3), amathr(3), amathi(3)

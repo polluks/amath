@@ -30,9 +30,8 @@
 #include "help.h"
 #include "amath.h"
 #include "amathc.h"
-#include "localize/lex.h"
-#include "localize/help.h"
-#include "localize/text.h"
+#include "loc/help.h"
+#include "loc/text.h"
 #include "system/program.h"
 
 HelpStatement::HelpStatement() :

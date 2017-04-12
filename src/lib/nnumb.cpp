@@ -70,24 +70,24 @@ int NonNumber::GetDefaultPrecedence()
     return 0;
 }
 
+bool NonNumber::IsNegative()
+{
+    return false;
+}
+
 bool NonNumber::IsZero()
 {
     return false;
 }
 
-bool NonNumber::IsTooSmall()
-{
-    return type == nnninf;
-}
-
-bool NonNumber::IsTooLarge()
-{
-    return type == nninf;
-}
-
 bool NonNumber::IsNaN()
 {
     return type == nnnan;
+}
+
+bool NonNumber::IsInfinite()
+{
+    return type == nnninf;
 }
 
 bool NonNumber::IsNotImplemented()
@@ -219,6 +219,11 @@ Number* NonNumber::Cotangent()
     return new NonNumber(type);
 }
 
+Number *NonNumber::Chord()
+{
+    return new NonNumber(type);
+}
+
 Number* NonNumber::HypSine()
 {
     return new NonNumber(type);
@@ -285,6 +290,11 @@ Number* NonNumber::ArcSine()
 }
 
 Number* NonNumber::ArcCosecant()
+{
+    return new NonNumber(type);
+}
+
+Number *NonNumber::ArcChord()
 {
     return new NonNumber(type);
 }

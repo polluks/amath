@@ -1,6 +1,4 @@
-/* @(#)e_rem_pio2.c 1.4 95/01/18 */
-
-/*
+/*-
  * Copyright (c) 2014-2017 Carsten Sonne Larsen <cs@innolan.net>
  * All rights reserved.
  *
@@ -24,25 +22,28 @@
  * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF
  * THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  *
- * The origin source code can be obtained from:
+ * Project homepage:
+ * http://amath.innolan.net
+ *
+ * The original source code can be obtained from:
  * http://www.netlib.org/fdlibm/e_rem_pio2.c
  * 
- */
-
-/*
- * ====================================================
+ * =================================================================
  * Copyright (C) 1993 by Sun Microsystems, Inc. All rights reserved.
  *
  * Developed at SunSoft, a Sun Microsystems, Inc. business.
  * Permission to use, copy, modify, and distribute this
  * software is freely granted, provided that this notice
  * is preserved.
- * ====================================================
- *
+ * =================================================================
  */
 
 #include "prim.h"
-#include "math.h"
+
+/**
+ * @file  remp2.c
+ * @brief
+ */
 
 /* rem_pio2(x,y)
  *
@@ -100,13 +101,13 @@ pio2_2t =  2.02226624879595063154e-21, /* 0x3BA3198A, 0x2E037073 */
 pio2_3  =  2.02226624871116645580e-21, /* 0x3BA3198A, 0x2E000000 */
 pio2_3t =  8.47842766036889956997e-32; /* 0x397B839A, 0x252049C1 */
 
-int rempio2(double x, double *y)
+int32_t rempio2(double x, double *y)
 {
     double z = 0.,w,t,r,fn;
     double tx[3];
-    sword i,j,n,ix,hx;
+    int32_t i,j,n,ix,hx;
     int e0,nx;
-    uword low;
+    uint32_t low;
 
     GET_HIGH_WORD(hx,x);		/* high word of x */
     ix = hx&0x7fffffff;
@@ -143,14 +144,14 @@ int rempio2(double x, double *y)
     }
     if(ix<=0x413921fb) { /* |x| ~<= 2^19*(pi/2), medium size */
         t  = fabs(x);
-        n  = (sword) (t*invpio2+half);
+        n  = (int32_t) (t*invpio2+half);
         fn = (double)n;
         r  = t-fn*pio2_1;
         w  = fn*pio2_1t;	/* 1st round good to 85 bit */
         if(n<32&&ix!=npio2_hw[n-1]) {
             y[0] = r-w;	/* quick check no cancellation */
         } else {
-            uword high;
+            uint32_t high;
 
             j  = ix>>20;
             y[0] = r-w;
@@ -191,10 +192,10 @@ int rempio2(double x, double *y)
     /* set z = scalbn(|x|,ilogb(x)-23) */
     GET_LOW_WORD(low,x);
     SET_LOW_WORD(z,low);
-    e0 	= (sword)(ix>>20)-1046;	/* e0 = ilogb(z)-23; */
+    e0 	= (int32_t)(ix>>20)-1046;	/* e0 = ilogb(z)-23; */
     SET_HIGH_WORD(z,ix - (e0<<20));
     for(i=0; i<2; i++) {
-        tx[i] = (double)((sword)(z));
+        tx[i] = (double)((int32_t)(z));
         z     = (z-tx[i])*two24;
     }
     tx[2] = z;

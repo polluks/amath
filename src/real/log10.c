@@ -1,6 +1,4 @@
-/* @(#)e_log10.c 1.3 95/01/18 */
-
-/*
+/*-
  * Copyright (c) 2014-2017 Carsten Sonne Larsen <cs@innolan.net>
  * All rights reserved.
  *
@@ -24,25 +22,28 @@
  * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF
  * THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  *
- * The origin source code can be obtained from:
+ * Project homepage:
+ * http://amath.innolan.net
+ *
+ * The original source code can be obtained from:
  * http://www.netlib.org/fdlibm/e_log10.c
  * 
- */
-
-/*
- * ====================================================
+ * =================================================================
  * Copyright (C) 1993 by Sun Microsystems, Inc. All rights reserved.
  *
  * Developed at SunSoft, a Sun Microsystems, Inc. business.
  * Permission to use, copy, modify, and distribute this
  * software is freely granted, provided that this notice
  * is preserved.
- * ====================================================
- *
+ * =================================================================
+ */
+
+/**
+ * @file  log10.c
+ * @brief Base 10 logarithm function
  */
 
 #include "prim.h"
-#include "math.h"
 
 static const double
 two54      =  1.80143985094819840000e+16, /* 0x43500000, 0x00000000 */
@@ -53,33 +54,34 @@ log10_2lo  =  3.69423907715893078616e-13; /* 0x3D59FEF3, 0x11F12B36 */
 static double zero   =  0.0;
 
 /**
- * @brief   Base 10 logarithm function.
- * @version 1.3
- * @date    95/01/18
+ * @brief   Base 10 logarithm function
  * @details
  * <pre>
- * Method :
- *	Let log10_2hi = leading 40 bits of log10(2) and
- *	    log10_2lo = log10(2) - log10_2hi,
- *	    ivln10   = 1/log(10) rounded.
- *	Then
- *		n = ilogb(x),
- *		if(n<0)  n = n+1;
- *		x = scalbn(x,-n);
- *		log10(x) := n*log10_2hi + (n*log10_2lo + ivln10*log(x))
+ * Method:
  *
- * Note 1:
- *	To guarantee log10(10**n)=n, where 10**n is normal, the rounding
- *	mode must set to Round-to-Nearest.
- * Note 2:
- *	[1/log(10)] rounded to 53 bits has error  .198   ulps;
- *	log10 is monotonic at all binary break points.
+ *     Let log10_2hi = leading 40 bits of log10(2) and
+ *         log10_2lo = log10(2) - log10_2hi,
+ *         ivln10    = 1/log(10) rounded.
+ *     Then
+ *         n = ilogb(x),
+ *         if(n<0)  n = n+1;
+ *         x = scalbn(x,-n);
+ *         log10(x) := n*log10_2hi + (n*log10_2lo + ivln10*log(x))
+ *
+ *     Note 1:
+ *     To guarantee log10(10**n)=n, where 10**n is normal, the rounding
+ *     mode must set to Round-to-Nearest.
+ * 
+ *     Note 2:
+ *     [1/log(10)] rounded to 53 bits has error .198 ulps;
+ *     log10 is monotonic at all binary break points.
  *
  * Special cases:
- *	log10(x) is NaN with signal if x < 0;
- *	log10(+INF) is +INF with no signal; log10(0) is -INF with signal;
- *	log10(NaN) is that NaN with no signal;
- *	log10(10**N) = N  for N=0,1,...,22.
+ *
+ *     log10(x) is NaN with signal if x < 0;
+ *     log10(+INF) is +INF with no signal; log10(0) is -INF with signal;
+ *     log10(NaN) is that NaN with no signal;
+ *     log10(10**N) = N  for N=0,1,...,22.
  *
  * Constants:
  * The hexadecimal values are the intended ones for the following constants.
@@ -87,16 +89,12 @@ static double zero   =  0.0;
  * from decimal to binary accurately enough to produce the hexadecimal values
  * shown.
  * </pre>
- * @copyright Copyright (C) 1993 by Sun Microsystems, Inc. All rights reserved.
- * @license   Developed at SunSoft, a Sun Microsystems, Inc. business. Permission
- *            to use, copy, modify, and distribute this software is freely granted,
- *            provided that this notice is preserved.
  */
 double log10(double x)
 {
     double y,z;
-    sword i,k,hx;
-    uword lx;
+    int32_t i,k,hx;
+    uint32_t lx;
 
     EXTRACT_WORDS(hx,lx,x);
 
@@ -111,7 +109,7 @@ double log10(double x)
     }
     if (hx >= 0x7ff00000) return x+x;
     k += (hx>>20)-1023;
-    i  = ((uword)k&0x80000000)>>31;
+    i  = ((uint32_t)k&0x80000000)>>31;
     hx = (hx&0x000fffff)|((0x3ff-i)<<20);
     y  = (double)(k+i);
     SET_HIGH_WORD(x,hx);

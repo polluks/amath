@@ -1,6 +1,12 @@
--------------------------------------------------------------------------------
----                           amath change history                          ---
--------------------------------------------------------------------------------
+amath release history
+
+v1.8.0 April 13 2017
+- Fixed bugs in numeral systems.
+- Fixed bugs related to infinity (Inf).
+- Fixed bugs related to Not a Number (NaN).
+- Updated and cleanup documentation.
+- Cleaned up code structure.
+- OpenLibm support.
 
 v1.7.1 March 26 2017
 - Haiku support.
@@ -8,8 +14,8 @@ v1.7.1 March 26 2017
 - Code cleanup.
 
 v1.7.0 March 12 2017
-- Introduce scientific notation.
-- Introduce Not a Number (NaN).
+- Introduced scientific notation.
+- Introduced Not a Number (NaN).
 - Fixed bugs related to infinity (Inf).
 - Fixed bugs in log of complex numbers.
 - Fixed bugs in numeral systems.
@@ -34,7 +40,7 @@ v1.6.3 February 03 2017
 
 v1.6.2 January 24 2017
 - Fixed bug in memory allocation.
-- Fixed bug in native keybord input.
+- Fixed bug in native keyboard input.
 - Included build options in executables.
 - ARM support.
 

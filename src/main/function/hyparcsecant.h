@@ -35,7 +35,7 @@
 /**
  * @brief An inverse hyperbolic secant function in a syntax tree. 
  * @details
- * More info on the inverse hyperbolic secant function is available at [Wikipedia]:
+ * More info on the inverse hyperbolic secant function is available at Wikipedia:
  * https://wikipedia.org/wiki/Inverse_hyperbolic_secant
  *
  */

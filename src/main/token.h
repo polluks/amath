@@ -36,7 +36,7 @@
  *
  */
 
-#include "localize/lex.h"
+#include "symbol.h"
 
 /**
  * @brief Tokens are created by the Lexical Analyzer and provides an intermediate

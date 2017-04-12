@@ -27,16 +27,13 @@
  * 
  */
 
-#include "math.h"
 #include "prim.h"
-#include "complex.h"
 
 #define REAL_PART(z) ((z).parts[0])
 #define IMAG_PART(z) ((z).parts[1])
 
 /**
- * @brief Real part of complex number.
- *
+ * @brief Real part of complex number
  */
 double creal(complex z)
 {
@@ -44,8 +41,7 @@ double creal(complex z)
 }
 
 /**
- * @brief Imaginary part of complex number.
- *
+ * @brief Imaginary part of complex number
  */
 double cimag(complex z)
 {
@@ -53,8 +49,7 @@ double cimag(complex z)
 }
 
 /**
- * @brief Absolute value of complex number.
- *
+ * @brief Absolute value of complex number
  */
 double cabs(complex z)
 {
@@ -68,8 +63,7 @@ complex conj(complex z)
 }
 
 /**
- * @brief Pack two real numbers into a complex number.
- *
+ * @brief Pack two real numbers into a complex number
  */
 complex cpack(double x, double y)
 {
@@ -81,8 +75,7 @@ complex cpack(double x, double y)
 }
 
 /**
- * @brief Truncated value of complex number.
- *
+ * @brief Truncated value of complex number
  */
 complex ctrunc(complex z)
 {
@@ -92,8 +85,7 @@ complex ctrunc(complex z)
 }
 
 /**
- * @brief Floor value of complex number.
- *
+ * @brief Floor value of complex number
  */
 complex cfloor(complex z)
 {
@@ -103,8 +95,7 @@ complex cfloor(complex z)
 }
 
 /**
- * @brief Ceiling value of complex number.
- *
+ * @brief Ceiling value of complex number
  */
 complex cceil(complex z)
 {
@@ -114,8 +105,7 @@ complex cceil(complex z)
 }
 
 /**
- * @brief Division of two complex numbers.
- *
+ * @brief Division of two complex numbers
  */
 complex cround(complex z)
 {
@@ -125,8 +115,7 @@ complex cround(complex z)
 }
 
 /**
- * @brief Addition of two complex numbers.
- *
+ * @brief Addition of two complex numbers
  */
 complex cadd(complex y, complex z)
 {
@@ -136,8 +125,7 @@ complex cadd(complex y, complex z)
 }
 
 /**
- * @brief Subtraction of two complex numbers.
- *
+ * @brief Subtraction of two complex numbers
  */
 complex csub(complex y, complex z)
 {
@@ -147,8 +135,7 @@ complex csub(complex y, complex z)
 }
 
 /**
- * @brief Multiplication of two complex numbers.
- *
+ * @brief Multiplication of two complex numbers
  */
 complex cmul(complex y, complex z)
 {
@@ -167,8 +154,7 @@ complex cmul(complex y, complex z)
 }
 
 /**
- * @brief Division of two complex numbers.
- *
+ * @brief Division of two complex numbers
  */
 complex cdiv(complex y, complex z)
 {
@@ -190,8 +176,7 @@ complex cdiv(complex y, complex z)
 }
 
 /**
- * @brief Reciprocal value of complex number.
- *
+ * @brief Reciprocal value of complex number
  */
 complex creci(complex z)
 {
@@ -208,7 +193,6 @@ complex creci(complex z)
 
 /**
  * @brief Calculate cosh and sinh
- *
  */
 void cchsh(double x, double* c, double* s)
 {
@@ -231,7 +215,6 @@ void cchsh(double x, double* c, double* s)
 
 /**
  * @brief Calculate cosh and cos
- *
  */
 void cchc(double x, double* ch, double* c)
 {

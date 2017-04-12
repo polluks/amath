@@ -38,7 +38,7 @@
  * Discard the number of digits right of the decimal point.
  * See Number for implementation.
  *
- * More info on the truncation function is available at [Wikipedia]:
+ * More info on the truncation function is available at Wikipedia:
  * https://wikipedia.org/wiki/Truncation
  *
  */

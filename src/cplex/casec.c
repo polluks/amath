@@ -28,13 +28,9 @@
  */
 
 #include "prim.h"
-#include "math.h"
-#include "complex.h"
 
 /**
  * @brief   Inverse secant expressed using complex logarithms:
- * @version 1.1
- * @date    14/10/01
  * @details
  * Inverse secant expressed using complex logarithms:
  * <pre>

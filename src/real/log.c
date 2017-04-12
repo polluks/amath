@@ -1,6 +1,4 @@
-/* @(#)e_log.c 1.4 96/03/07 */
-
-/*
+/*-
  * Copyright (c) 2014-2017 Carsten Sonne Larsen <cs@innolan.net>
  * All rights reserved.
  *
@@ -24,20 +22,20 @@
  * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF
  * THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  *
- * The origin source code can be obtained from:
+ * Project homepage:
+ * http://amath.innolan.net
+ *
+ * The original source code can be obtained from:
  * http://www.netlib.org/fdlibm/e_log.c
  * 
- */
-
-/*
- * ====================================================
+ * =================================================================
  * Copyright (C) 1993 by Sun Microsystems, Inc. All rights reserved.
  *
  * Developed at SunSoft, a Sun Microsystems, Inc. business.
  * Permission to use, copy, modify, and distribute this
  * software is freely granted, provided that this notice
  * is preserved.
- * ====================================================
+ * =================================================================
  */
 
 #include "prim.h"
@@ -57,12 +55,10 @@ Lg7 = 1.479819860511658591e-01;  /* 3FC2F112 DF3E5244 */
 static double zero = 0.0;
 
 /**
- * @brief   Natural logarithm function (base e).
- * @version 1.4
- * @date    96/03/07
+ * @brief   Natural logarithm function (base e)
  * @details
  * <pre>
- * Method :
+ * Method
  *   1. Argument Reduction: find k and f such that
  *			x = 2^k * (1+f),
  *	   where  sqrt(2)/2 < 1+f < sqrt(2) .
@@ -109,17 +105,12 @@ static double zero = 0.0;
  * compiler will convert from decimal to binary accurately enough
  * to produce the hexadecimal values shown.
  * </pre>
- * @copyright Copyright (C) 1993 by Sun Microsystems, Inc. All rights reserved.
- * @license   Developed at SunSoft, a Sun Microsystems, Inc. business. Permission
- *            to use, copy, modify, and distribute this software is freely granted,
- *            provided that this notice is preserved.
  */
-
 double log(double x)
 {
     double hfsq,f,s,z,R,w,t1,t2,dk;
-    sword k,hx,i,j;
-    uword lx;
+    int32_t k,hx,i,j;
+    uint32_t lx;
 
     EXTRACT_WORDS(hx,lx,x);
 

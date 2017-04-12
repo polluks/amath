@@ -1,6 +1,4 @@
-/* @(#)s_fabs.c 1.3 95/01/18 */
-
-/*
+/*-
  * Copyright (c) 2014-2017 Carsten Sonne Larsen <cs@innolan.net>
  * All rights reserved.
  *
@@ -24,34 +22,36 @@
  * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF
  * THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  *
- * The origin source code can be obtained from:
+ * Project homepage:
+ * http://amath.innolan.net
+ *
+ * The original source code can be obtained from:
  * http://www.netlib.org/fdlibm/s_fabs.c
  * 
- */
-
-/*
- * ====================================================
+ * =================================================================
  * Copyright (C) 1993 by Sun Microsystems, Inc. All rights reserved.
  *
  * Developed at SunSoft, a Sun Microsystems, Inc. business.
  * Permission to use, copy, modify, and distribute this
- * software is freely granted, provided that this notice 
+ * software is freely granted, provided that this notice
  * is preserved.
- * ====================================================
+ * =================================================================
+ */
+
+/**
+ * @file  fabs.c
+ * @brief Absolute value function
  */
 
 #include "prim.h"
 
 /**
- * @brief   Returns the absolute value of x.
- * @version 1.3
- * @date    95/01/18
- * @details
+ * @brief Returns the absolute value of x
  */
 double fabs(double x)
 {
-    uword hx;
-    GET_HIGH_WORD(hx,x);
+    uint32_t hx;
+    GET_HIGH_WORD(hx, x);
     SET_HIGH_WORD(x, hx & 0x7fffffff);
     return x;
 }

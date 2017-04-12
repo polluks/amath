@@ -32,16 +32,14 @@
 
 /**
  * @file  charbuf.h
- * @brief String and character array logic.
- *
+ * @brief String and character array logic
  */
 
 #include "aengine.h"
 
 /**
- * @brief   Encapsulate an character array which can be used as a string.
+ * @brief   Encapsulate an character array which can be used as a string
  * @details The CharBuffer class eases the task of allocating a releasing memory.
- *
  */
 class CharBuffer
 {
@@ -58,6 +56,8 @@ public:
     void EnsureGrowth(unsigned int size);
 
     void Empty();
+
+    bool IsEmpty() const;
 
     /**
     * @brief Compare content of CharBuffer with string)

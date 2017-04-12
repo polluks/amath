@@ -27,32 +27,40 @@
  * 
  */
 
-#include "math.h"
+#include "mathr.h"
 #include "amath.h"
 #include "numb.h"
 #include "real.h"
 #include "cplex.h"
 #include "nnumb.h"
-#include "integer.h"
 
-RealNumber::RealNumber() :
-    Number(nsysreal)
+RealNumber::RealNumber() : Number(nsysreal)
 {
     x = 0;
 }
 
-RealNumber::RealNumber(double x) :
-    Number(nsysreal)
+RealNumber::RealNumber(double x) : Number(nsysreal)
 {
     this->x = x;
 }
 
-RealNumber::RealNumber(double x, bool round) :
-    Number(nsysreal)
+RealNumber::RealNumber(double x, bool round) : Number(nsysreal)
 {
     if ((round && ((x > 0 && x < 1e-15) || (x < 0 && x > -1e-15))))
     {
         this->x = 0.0;
+    }
+    else if (round && x > 1e+16)
+    {
+        FloatUnion64 d;
+        d.integer = INFP;
+        this->x = d.floatingPoint;
+    }
+    else if (round && x < -1e+16)
+    {
+        FloatUnion64 d;
+        d.integer = INFN;
+        this->x = d.floatingPoint;
     }
     else
     {
@@ -60,14 +68,12 @@ RealNumber::RealNumber(double x, bool round) :
     }
 }
 
-RealNumber::RealNumber(signed int i) :
-    Number(nsysreal)
+RealNumber::RealNumber(signed int i) : Number(nsysreal)
 {
     x = i * 1.0;
 }
 
-RealNumber::RealNumber(unsigned int i) :
-    Number(nsysreal)
+RealNumber::RealNumber(unsigned int i) : Number(nsysreal)
 {
     x = i * 1.0;
 }
@@ -76,7 +82,7 @@ RealNumber::~RealNumber()
 {
 }
 
-Number* RealNumber::Clone()
+Number *RealNumber::Clone()
 {
     return new RealNumber(x);
 }
@@ -111,45 +117,51 @@ int RealNumber::GetDefaultPrecedence()
     return 0;
 }
 
+bool RealNumber::IsNegative()
+{
+    FloatUnion64 d;
+    d.floatingPoint = x;
+    return d.IsNegative();
+}
+
 /**
- * @brief Returns true if number is zero.
- *
+ * @brief Returns true if number is zero
  */
 bool RealNumber::IsZero()
 {
-    return x == 0.0;
+    FloatUnion64 d;
+    d.floatingPoint = x;
+    return d.IsZero();
 }
 
 /**
- * @brief Returns true if number is finite.
- *
- */
-bool RealNumber::IsTooSmall()
-{
-    return (x > 0 && x < D_INFN) || (x < 0 && x > -D_INFN);
-}
-
-/**
- * @brief Returns true if number is finite.
- *
- */
-bool RealNumber::IsTooLarge()
-{
-    return x > D_INFP;
-}
-
-/**
- * @brief Always return false for real numbers.
- *
+ * @brief Returns true if number is NaN
  */
 bool RealNumber::IsNaN()
 {
-    return false;
+    FloatUnion64 d;
+    d.floatingPoint = x;
+    return d.IsNaN();
 }
 
 /**
- * @brief Always return false for real numbers.
- *
+ * @brief Returns true if number is infinite
+ */
+bool RealNumber::IsInfinite()
+{
+    // Handle subnormal values
+    if ((x > 0 && x <= 1e-308) || (x < 0 && x >= -1e-308))
+    {
+        return true;
+    }
+
+    FloatUnion64 d;
+    d.floatingPoint = x;
+    return d.IsInf() || d.IsMaxPositive() || d.IsMaxNegative();
+}
+
+/**
+ * @brief Always returns false for real numbers
  */
 bool RealNumber::IsNotImplemented()
 {
@@ -157,229 +169,193 @@ bool RealNumber::IsNotImplemented()
 }
 
 /**
- * @brief Change sign of real number.
- *
+ * @brief Change sign of real number
  */
-Number* RealNumber::Unary()
+Number *RealNumber::Unary()
 {
     return new RealNumber(-x);
 }
 
 /**
- * @brief Addition of two real numbers.
- *
+ * @brief Addition of two real numbers
  */
-Number* RealNumber::Add(Number* other)
+Number *RealNumber::Add(Number *other)
 {
     if (other->IsNaN())
         return new NonNumber(nnnan);
 
     if (other->system == nsysreal)
     {
-        RealNumber* a = static_cast<RealNumber*>(other);
+        RealNumber *a = static_cast<RealNumber *>(other);
         return new RealNumber(x + a->x);
-    }
-
-    if (other->system == nsysinteger)
-    {
-        IntegerNumber* a = static_cast<IntegerNumber*>(other);
-        return new RealNumber(x + static_cast<double>(a->i));
     }
 
     return other->Add(this);
 }
 
 /**
- * @brief Subtraction of two real numbers.
- *
+ * @brief Subtraction of two real numbers
  */
-Number* RealNumber::Sub(Number* other)
+Number *RealNumber::Sub(Number *other)
 {
     if (other->IsNaN())
         return new NonNumber(nnnan);
 
     if (other->system == nsysreal)
     {
-        RealNumber* a = static_cast<RealNumber*>(other);
+        RealNumber *a = static_cast<RealNumber *>(other);
         return new RealNumber(x - a->x);
     }
 
-    if (other->system == nsysinteger)
-    {
-        IntegerNumber* a = static_cast<IntegerNumber*>(other);
-        return new RealNumber(x - static_cast<double>(a->i));
-    }
-
-    Number* y = other->Unary();
-    Number* q = y->Add(this);
+    Number *y = other->Unary();
+    Number *q = y->Add(this);
     delete y;
     return q;
 }
 
 /**
- * @brief Multiplication of two real numbers.
- *
+ * @brief Multiplication of two real numbers
  */
-Number* RealNumber::Mul(Number* other)
+Number *RealNumber::Mul(Number *other)
 {
     if (other->IsNaN())
         return new NonNumber(nnnan);
 
     if (other->system == nsysreal)
     {
-        RealNumber* a = static_cast<RealNumber*>(other);
+        RealNumber *a = static_cast<RealNumber *>(other);
         return new RealNumber(x * a->x);
-    }
-
-    if (other->system == nsysinteger)
-    {
-        IntegerNumber* a = static_cast<IntegerNumber*>(other);
-        return new RealNumber(x * static_cast<double>(a->i));
     }
 
     return other->Mul(this);
 }
 
 /**
- * @brief Division of two real numbers.
- *
+ * @brief Division of two real numbers
  */
-Number* RealNumber::Div(Number* other)
+Number *RealNumber::Div(Number *other)
 {
     if (other->IsZero() || other->IsNaN())
         return new NonNumber(nnnan);
 
     if (other->system == nsysreal)
     {
-        RealNumber* a = static_cast<RealNumber*>(other);
+        RealNumber *a = static_cast<RealNumber *>(other);
         return new RealNumber(x / a->x);
     }
 
-    if (other->system == nsysinteger)
-    {
-        IntegerNumber* a = static_cast<IntegerNumber*>(other);
-        return new RealNumber(x / static_cast<double>(a->i));
-    }
-
-    Number* y = other->Reciprocal();
-    Number* q = Mul(y);
+    Number *y = other->Reciprocal();
+    Number *q = Mul(y);
     delete y;
     return q;
 }
 
 /**
- * @brief Exponentiation function for real numbers.
- *
- * See implementation in pow(double, double)
+ * @brief   Exponentiation function for real numbers
+ * @details See implementation in pow(double, double)
  */
-Number* RealNumber::Raise(Number* exponent)
+Number *RealNumber::Raise(Number *exponent)
 {
     if (exponent->IsNaN())
         return new NonNumber(nnnan);
 
     if (exponent->system == nsysreal)
-        return new RealNumber(pow(x, static_cast<RealNumber*>(exponent)->x));
+        return new RealNumber(pow(x, static_cast<RealNumber *>(exponent)->x));
 
-    if (exponent->system == nsysinteger)
-        return new RealNumber(pow(x, static_cast<double>(static_cast<IntegerNumber*>(exponent)->i)));
-
-    ComplexNumber* y = new ComplexNumber(x, 0.0);
-    Number* q = y->Raise(exponent);
+    ComplexNumber *y = new ComplexNumber(x, 0.0);
+    Number *q = y->Raise(exponent);
     delete y;
     return q;
 }
 
 /**
- * @brief Mathematical sign function for real numbers.
- *
- * See implementation in sgn(double)
+ * @brief   Mathematical sign function for real numbers
+ * @details See implementation in sgn(double)
  */
-Number* RealNumber::Signum()
+Number *RealNumber::Signum()
 {
     return new RealNumber(sgn(x));
 }
 
 /**
- * @brief Mathematical trunc function for real numbers.
- *
- * See implementation in trunc(double)
+ * @brief   Mathematical trunc function for real numbers
+ * @details See implementation in trunc(double)
  */
-Number* RealNumber::Trunc()
+Number *RealNumber::Trunc()
 {
     return new RealNumber(trunc(x));
 }
 
 /**
- * @brief Mathematical round function for real numbers.
- *
- * See implementation in round(double)
+ * @brief   Mathematical round function for real numbers
+ * @details See implementation in round(double)
  */
-Number* RealNumber::Round()
+Number *RealNumber::Round()
 {
     return new RealNumber(round(x));
 }
 
 /**
- * @brief Mathematical floor function for real numbers.
- *
- * See implementation in floor(double)
+ * @brief   Mathematical floor function for real numbers
+ * @details See implementation in floor(double)
  */
-Number* RealNumber::Floor()
+Number *RealNumber::Floor()
 {
     return new RealNumber(floor(x));
 }
 
 /**
- * @brief Mathematical ceiling function for real numbers.
- *
- * See implementation in ceil(double)
+ * @brief   Mathematical ceiling function for real numbers
+ * @details See implementation in ceil(double)
  */
-Number* RealNumber::Ceiling()
+Number *RealNumber::Ceiling()
 {
     return new RealNumber(ceil(x));
 }
 
 /**
- * @brief Absolute value of number for real numbers.
- *
- * See implementation in fabs(double)
+ * @brief   Absolute value of number for real numbers
+ * @details See implementation in fabs(double)
  */
-Number* RealNumber::Absolute()
+Number *RealNumber::Absolute()
 {
     return new RealNumber(fabs(x));
 }
 
 /**
- * @brief Square root function for real numbers.
- *
- * See implementation of square root in sqrt(double)
+ * @brief   Square root function for real numbers
+ * @details See implementation of square root in sqrt(double)
  */
-Number* RealNumber::SquareRoot()
+Number *RealNumber::SquareRoot()
 {
     if (x > 0.0)
         return new RealNumber(sqrt(x));
 
-    Number* n = new ComplexNumber(x, 0);
-    Number* r = n->SquareRoot();
+    Number *n = new ComplexNumber(x, 0);
+    Number *r = n->SquareRoot();
     delete n;
     return r;
 }
 
 /**
- * @brief Cube root function for real numbers.
- *
- * See implementation of cube root in cbrt(double)
+ * @brief   Cube root function for real numbers
+ * @details See implementation of cube root in cbrt(double)
  */
-Number* RealNumber::CubeRoot()
+Number *RealNumber::CubeRoot()
 {
-    return new RealNumber(cbrt(x));
+    if (x >= 0.0)
+        return new RealNumber(cbrt(x));
+    
+    Number *n = new ComplexNumber(x, 0);
+    Number *r = n->CubeRoot();
+    delete n;
+    return r;
 }
 
 /**
- * @brief Reciprocal function for real numbers.
- *
+ * @brief Reciprocal function for real numbers
  */
-Number* RealNumber::Reciprocal()
+Number *RealNumber::Reciprocal()
 {
     if (x != 0.0)
         return new RealNumber(1.0 / x);
@@ -388,39 +364,37 @@ Number* RealNumber::Reciprocal()
 }
 
 /**
- * @brief Factorial function for real numbers.
- *
+ * @brief Factorial function for real numbers
  */
-Number* RealNumber::Factorial()
+Number *RealNumber::Factorial()
 {
     return new NonNumber(nnnimp);
 }
 
 /**
- * @brief Binary logarithm function (base 2) for real numbers.
- *
- * See implementation of natural logarithm in log(double)
+ * @brief   Binary logarithm function (base 2) for real numbers
+ * @details See implementation of natural logarithm in log(double)
  */
-Number* RealNumber::Log2()
+Number *RealNumber::Log2()
 {
+    static const double log2value = 0.69314718055994530942;
     if (x == 0.0)
         return new NonNumber(nnnan);
 
     if (x > 0.0)
-        return new RealNumber(log(x) / LOG2);
+        return new RealNumber(log(x) / log2value);
 
-    Number* n = new ComplexNumber(x, 0);
-    Number* r = n->Log2();
+    Number *n = new ComplexNumber(x, 0);
+    Number *r = n->Log2();
     delete n;
     return r;
 }
 
 /**
- * @brief Natural logarithm function (base e) for real numbers.
- *
- * See implementation of natural logarithm in log(double)
+ * @brief   Natural logarithm function (base e) for real numbers
+ * @details See implementation of natural logarithm in log(double)
  */
-Number* RealNumber::Log()
+Number *RealNumber::Log()
 {
     if (x == 0.0)
         return new NonNumber(nnnan);
@@ -428,18 +402,17 @@ Number* RealNumber::Log()
     if (x > 0.0)
         return new RealNumber(log(x));
 
-    Number* n = new ComplexNumber(x, 0);
-    Number* r = n->Log();
+    Number *n = new ComplexNumber(x, 0);
+    Number *r = n->Log();
     delete n;
     return r;
 }
 
 /**
- * @brief Base 10 logarithm function for real numbers.
- *
- * See implementation of base 10 logarithm in log10(double)
+ * @brief   Base 10 logarithm function for real numbers
+ * @details See implementation of base 10 logarithm in log10(double)
  */
-Number* RealNumber::Log10()
+Number *RealNumber::Log10()
 {
     if (x == 0.0)
         return new NonNumber(nnnan);
@@ -447,423 +420,482 @@ Number* RealNumber::Log10()
     if (x > 0.0)
         return new RealNumber(log10(x));
 
-    Number* n = new ComplexNumber(x, 0);
-    Number* r = n->Log10();
+    Number *n = new ComplexNumber(x, 0);
+    Number *r = n->Log10();
     delete n;
     return r;
 }
 
 /**
- * @brief Trigonometric cosine function for real numbers.
- *
- * See implementation of cosine function in cos(double)
+ * @brief   Trigonometric sine function for real numbers
+ * @details See implementation of sine function in sin(double)
  */
-Number* RealNumber::Cosine()
-{
-    return new RealNumber(cos(x), true);
-}
-
-/**
- * @brief Trigonometric secant function for real numbers.
- *
- * See implementation of cosine function in cos(double)
- */
-Number* RealNumber::Secant()
-{
-    double a = cos(x);
-
-    if (a == 0.0)
-        return new NonNumber(nnnan);
-
-    return new RealNumber(1.0 / a);
-}
-
-/**
- * @brief Trigonometric tangent function for real numbers.
- *
- * See implementation of tangent function in tan(double)
- */
-Number* RealNumber::Tangent()
-{
-    return new RealNumber(tan(x), true);
-}
-
-/**
- * @brief Trigonometric cotangent function for real numbers.
- *
- * See implementation of tangent function in tan(double)
- */
-Number* RealNumber::Cotangent()
-{
-    double a = tan(x);
-
-    if (a == 0.0)
-        return new NonNumber(nnnan);
-
-    return new RealNumber(1.0 / a);
-}
-
-/**
- * @brief Hyperbolic sine function for real numbers.
- *
- * See implementation of hyperbolic sine function in sinh(double)
- */
-Number* RealNumber::HypSine()
-{
-    return new RealNumber(sinh(x));
-}
-
-/**
- * @brief Hyperbolic cosecant function for real numbers.
- *
- * See implementation of hyperbolic sine function in sinh(double)
- */
-Number* RealNumber::HypCosecant()
-{
-    double a = sinh(x);
-
-    if (a == 0.0)
-        return new NonNumber(nnnan);
-
-    return new RealNumber(1.0 / a);
-}
-
-/**
- * @brief Hyperbolic cosine function for real numbers.
- *
- * See implementation of hyperbolic cosine function in cosh(double)
- */
-Number* RealNumber::HypCosine()
-{
-    return new RealNumber(cosh(x));
-}
-
-/**
- * @brief Hyperbolic secant function for real numbers.
- *
- * See implementation of hyperbolic cosine function in cosh(double)
- */
-Number* RealNumber::HypSecant()
-{
-    return new RealNumber(1.0 / cosh(x));
-}
-
-/**
- * @brief Hyperbolic tangent function for real numbers.
- *
- * See implementation of hyperbolic tangent function in tanh(double)
- */
-Number* RealNumber::HypTangent()
-{
-    return new RealNumber(tanh(x));
-}
-
-/**
- * @brief Hyperbolic cotangent function for real numbers.
- *
- * See implementation of hyperbolic tangent function in tanh(double)
- */
-Number* RealNumber::HypCotangent()
-{
-    if (x == 0.0)
-        return new NonNumber(nnnan);
-
-    return new RealNumber(1.0 / tanh(x));
-}
-
-/**
- * @brief Trigonometric sine function for real numbers.
- *
- * See implementation of sine function in sin(double)
- */
-Number* RealNumber::Sine()
+Number *RealNumber::Sine()
 {
     return new RealNumber(sin(x), true);
 }
 
 /**
- * @brief Trigonometric cosecant function for real numbers.
- *
- * See implementation of sine function in sin(double)
+ * @brief   Trigonometric cosine function for real numbers
+ * @details See implementation of cosine function in cos(double)
  */
-Number* RealNumber::Cosecant()
+Number *RealNumber::Cosine()
 {
-    double a = sin(x);
-
-    if (a == 0.0)
-        return new NonNumber(nnnan);
-
-    return new RealNumber(1.0 / a);
+    return new RealNumber(cos(x), true);
 }
 
 /**
- * @brief Inverse trigonometric cosine function for real numbers.
- *
- * See implementation of inverse trigonometric cosine in acos(double)
+ * @brief   Trigonometric tangent function for real numbers
+ * @details See implementation of tangent function in tan(double)
  */
-Number* RealNumber::ArcCosine()
+Number *RealNumber::Tangent()
 {
-    return new RealNumber(acos(x));
+    return new RealNumber(tan(x), true);
 }
 
 /**
- * @brief Inverse trigonometric secant function for real numbers.
- *
- * See implementation of inverse trigonometric cosine in acos(double)
+ * @brief   Trigonometric secant function for real numbers
+ * @details See implementation of secant function in sec(double)
  */
-Number* RealNumber::ArcSecant()
+Number *RealNumber::Secant()
 {
-    if (x == 0.0)
-        return new NonNumber(nnnan);
-
-    return new RealNumber(acos(1.0 / x));
+    double a = sec(x);
+    return a != NAN
+        ? (Number *)new RealNumber(a, true)
+        : (Number *)new NonNumber(nnnan);
 }
 
 /**
- * @brief Inverse trigonometric tangent function for real numbers.
- *
- * See implementation of inverse trigonometric tangent in atan(double)
+ * @brief   Trigonometric cosecant function for real numbers
+ * @details See implementation of cosecant function in csc(double)
  */
-Number* RealNumber::ArcTangent()
+Number *RealNumber::Cosecant()
 {
-    return new RealNumber(atan(x));
+    double a = csc(x);
+    return a != NAN
+        ? (Number *)new RealNumber(a, true)
+        : (Number *)new NonNumber(nnnan);
 }
 
 /**
- * @brief Inverse trigonometric cotangent function for real numbers.
- *
- * See implementation of inverse trigonometric tangent in atan(double)
+ * @brief   Trigonometric cotangent function for real numbers
+ * @details See implementation of cotangent function in cot(double)
  */
-Number* RealNumber::ArcCotangent()
+Number *RealNumber::Cotangent()
 {
-    if (x == 0.0)
-        return new NonNumber(nnnan);
-
-    return new RealNumber(atan(1.0 / x));
+    double a = cot(x);
+    return a != NAN
+        ? (Number *)new RealNumber(a, true)
+        : (Number *)new NonNumber(nnnan);
 }
 
 /**
- * @brief Inverse trigonometric sine function for real numbers.
- *
- * See implementation of inverse trigonometric sine in asin(double)
+ * @brief   Trigonometric chord function for real numbers
+ * @details See implementation of chord function in crd(double)
  */
-Number* RealNumber::ArcSine()
+Number *RealNumber::Chord()
 {
-    return new RealNumber(asin(x));
+    return new RealNumber(crd(x), true);
 }
 
 /**
- * @brief Inverse trigonometric cosecant function for real numbers.
- *
- * See implementation of inverse trigonometric sine in asin(double)
+ * @brief   Trigonometric exsecant function for real numbers
+ * @details See implementation of exsecant function in exs(double)
  */
-Number* RealNumber::ArcCosecant()
+Number *RealNumber::ExSecant()
 {
-    if (x == 0.0)
-        return new NonNumber(nnnan);
-
-    return new RealNumber(asin(1.0 / x));
+    return new RealNumber(exs(x), true);
 }
 
 /**
- * @brief Inverse hyperbolic cosine function for real numbers.
- *
- * See implementation of inverse hyperbolic cosine in acosh(double)
+ * @brief   Trigonometric excosecant function for real numbers
+ * @details See implementation of excosecant function in exc(double)
  */
-Number* RealNumber::HypArcCosine()
+Number *RealNumber::ExCosecant()
 {
-    return new RealNumber(acosh(x));
+    return new RealNumber(exc(x), true);
 }
 
 /**
- * @brief Inverse hyperbolic secant function for real numbers.
- *
- * See implementation of inverse hyperbolic cosine in acosh(double)
+ * @brief   Inverse trigonometric sine function for real numbers
+ * @details See implementation of inverse trigonometric sine in asin(double)
  */
-Number* RealNumber::HypArcSecant()
+Number *RealNumber::ArcSine()
 {
-    if (x == 0.0)
-        return new NonNumber(nnnan);
-
-    return new RealNumber(acosh(1.0 / x));
+    return new RealNumber(asin(x), true);
 }
 
 /**
- * @brief Inverse hyperbolic sine function for real numbers.
- *
- * See implementation of inverse hyperbolic sine in asinh(double)
+ * @brief   Inverse trigonometric cosine function for real numbers
+ * @details See implementation of inverse trigonometric cosine in acos(double)
  */
-Number* RealNumber::HypArcSine()
+Number *RealNumber::ArcCosine()
 {
-    return new RealNumber(asinh(x));
+    return new RealNumber(acos(x), true);
 }
 
 /**
- * @brief Inverse hyperbolic cosecant function for real numbers.
- *
- * See implementation of inverse hyperbolic sine in asinh(double)
+ * @brief   Inverse trigonometric tangent function for real numbers
+ * @details See implementation of inverse trigonometric tangent in atan(double)
  */
-Number* RealNumber::HypArcCosecant()
+Number *RealNumber::ArcTangent()
 {
-    if (x == 0.0)
-        return new NonNumber(nnnan);
-
-    return new RealNumber(asinh(1.0 / x));
+    return new RealNumber(atan(x), true);
 }
 
 /**
- * @brief Inverse hyperbolic tangent function for real numbers.
- *
- * See implementation of hyperbolic tangent in atanh(double)
+ * @brief   Inverse trigonometric secant function for real numbers
+ * @details See implementation of inverse trigonometric secant in asec(double)
  */
-Number* RealNumber::HypArcTangent()
+Number *RealNumber::ArcSecant()
 {
-    return new RealNumber(atanh(x));
+    double a = asec(x);
+    return a != NAN
+        ? (Number *)new RealNumber(a, true)
+        : (Number *)new NonNumber(nnnan);
 }
 
 /**
- * @brief Inverse hyperbolic cotangent function for real numbers.
- *
- * See implementation of hyperbolic tangent in atanh(double)
+ * @brief   Inverse trigonometric cosecant function for real numbers
+ * @details See implementation of inverse trigonometric cosecant in acsc(double)
  */
-Number* RealNumber::HypArcCotangent()
+Number *RealNumber::ArcCosecant()
 {
-    if (x == 0.0)
-        return new NonNumber(nnnan);
-
-    return new RealNumber(atanh(1.0 / x));
+    double a = acsc(x);
+    return a != NAN
+        ? (Number *)new RealNumber(a, true)
+        : (Number *)new NonNumber(nnnan);
 }
 
 /**
- * @brief Versed sine function for real numbers.
- *
- * See implementation of cosine in cos(double)
+ * @brief   Inverse trigonometric cotangent function for real numbers
+ * @details See implementation of inverse trigonometric cotangent in acot(double)
  */
-Number* RealNumber::VerSine()
+Number *RealNumber::ArcCotangent()
 {
-    return new RealNumber(1.0 - cos(x), true);
+    double a = acot(x);
+    return a != NAN
+        ? (Number *)new RealNumber(a, true)
+        : (Number *)new NonNumber(nnnan);
 }
 
 /**
- * @brief Versed cosine function for real numbers.
- *
- * See implementation of cosine in cos(double)
+ * @brief   Inverse trigonometric chord function for real numbers
+ * @details See implementation of Inverse chord function in acrd(double)
  */
-Number* RealNumber::VerCosine()
+Number *RealNumber::ArcChord()
 {
-    return new RealNumber(1.0 + cos(x), true);
+    return new RealNumber(acrd(x), true);
 }
 
 /**
- * @brief Coversed sine function for real numbers.
- *
- * See implementation of sine in sin(double)
+ * @brief   Inverse trigonometric exsecant function for real numbers
+ * @details See implementation of Inverse exsecant function in aexs(double)
  */
-Number* RealNumber::CoVerSine()
+Number *RealNumber::ArcExSecant()
 {
-    return new RealNumber(1.0 - sin(x), true);
+    return new RealNumber(aexs(x), true);
 }
 
 /**
- * @brief Coversed cosine function for real numbers.
- *
- * See implementation of sine in sin(double)
+ * @brief   Inverse trigonometric excosecant function for real numbers
+ * @details See implementation of Inverse excosecant function in aexc(double)
  */
-Number* RealNumber::CoVerCosine()
+Number *RealNumber::ArcExCosecant()
 {
-    return new RealNumber(1.0 + sin(x), true);
+    return new RealNumber(aexc(x), true);
 }
 
-Number* RealNumber::HaVerSine()
+/**
+ * @brief   Hyperbolic sine function for real numbers
+ * @details See implementation of hyperbolic sine function in sinh(double)
+ */
+Number *RealNumber::HypSine()
 {
-    return new RealNumber((1.0 - cos(x)) / 2.0, true);
+    return new RealNumber(sinh(x), true);
 }
 
-Number* RealNumber::HaVerCosine()
+/**
+ * @brief   Hyperbolic cosine function for real numbers
+ * @details See implementation of hyperbolic cosine function in cosh(double)
+ */
+Number *RealNumber::HypCosine()
 {
-    return new RealNumber((1.0 + cos(x)) / 2.0, true);
+    return new RealNumber(cosh(x), true);
 }
 
-Number* RealNumber::HaCoVerSine()
+/**
+ * @brief   Hyperbolic tangent function for real numbers
+ * @details See implementation of hyperbolic tangent function in tanh(double)
+ */
+Number *RealNumber::HypTangent()
 {
-    return new RealNumber((1.0 - sin(x)) / 2.0, true);
+    return new RealNumber(tanh(x), true);
 }
 
-Number* RealNumber::HaCoVerCosine()
+/**
+ * @brief   Hyperbolic secant function for real numbers
+ * @details See implementation of hyperbolic secant function in sech(double)
+ */
+Number *RealNumber::HypSecant()
 {
-    return new RealNumber((1.0 + sin(x)) / 2.0, true);
+    double a = sech(x);
+    return a != NAN
+        ? (Number *)new RealNumber(a, true)
+        : (Number *)new NonNumber(nnnan);
 }
 
-Number* RealNumber::ArcVerSine()
+/**
+ * @brief   Hyperbolic cosecant function for real numbers
+ * @details See implementation of hyperbolic sine function in csch(double)
+ */
+Number *RealNumber::HypCosecant()
 {
-    if (x < 0.0 || x > 2.0)
-        return new NonNumber(nnnan);
-
-    return new RealNumber(aver(x));
+    double a = csch(x);
+    return a != NAN
+        ? (Number *)new RealNumber(a, true)
+        : (Number *)new NonNumber(nnnan);
 }
 
-Number* RealNumber::ArcVerCosine()
+/**
+ * @brief   Hyperbolic cotangent function for real numbers
+ * @details See implementation of hyperbolic tangent function in coth(double)
+ */
+Number *RealNumber::HypCotangent()
 {
-    return new RealNumber(acos(1.0 + x));
+    double a = coth(x);
+    return a != NAN
+        ? (Number *)new RealNumber(a, true)
+        : (Number *)new NonNumber(nnnan);
 }
 
-Number* RealNumber::ArcCoVerSine()
+/**
+ * @brief   Inverse hyperbolic sine function for real numbers
+ * @details See implementation of inverse hyperbolic sine in asinh(double)
+ */
+Number *RealNumber::HypArcSine()
 {
-    if (x < 0.0 || x > 2.0)
-        return new NonNumber(nnnan);
-
-    return new RealNumber(acvs(x));
+    return new RealNumber(asinh(x), true);
 }
 
-Number* RealNumber::ArcCoVerCosine()
+/**
+ * @brief   Inverse hyperbolic cosine function for real numbers
+ * @details See implementation of inverse hyperbolic cosine in acosh(double)
+ */
+Number *RealNumber::HypArcCosine()
 {
-    return new RealNumber(asin(1.0 + x));
+    return new RealNumber(acosh(x), true);
 }
 
-Number* RealNumber::ArcHaVerSine()
+/**
+ * @brief   Inverse hyperbolic tangent function for real numbers
+ * @details See implementation of hyperbolic tangent in atanh(double)
+ */
+Number *RealNumber::HypArcTangent()
 {
-    if (x < 0.0 || x > 1.0)
-        return new NonNumber(nnnan);
-
-    return new RealNumber(ahv(x));
+    return new RealNumber(atanh(x), true);
 }
 
-Number* RealNumber::ArcHaVerCosine()
+/**
+ * @brief   Inverse hyperbolic secant function for real numbers
+ * @details See implementation of inverse hyperbolic secant in asech(double)
+ */
+Number *RealNumber::HypArcSecant()
 {
-    return new RealNumber(ahvc(x));
+    double a = asech(x);
+    return a != NAN
+        ? (Number *)new RealNumber(a, true)
+        : (Number *)new NonNumber(nnnan);
 }
 
-Number* RealNumber::ArcHaCoVerSine()
+/**
+ * @brief   Inverse hyperbolic cosecant function for real numbers
+ * @details See implementation of inverse hyperbolic cosecant in acsch(double)
+ */
+Number *RealNumber::HypArcCosecant()
 {
-    return new NonNumber(nnnimp);
+    double a = acsch(x);
+    return a != NAN
+        ? (Number *)new RealNumber(a, true)
+        : (Number *)new NonNumber(nnnan);
 }
 
-Number* RealNumber::ArcHaCoVerCosine()
+/**
+ * @brief   Inverse hyperbolic cotangent function for real numbers
+ * @details See implementation of hyperbolic cotangent in acoth(double)
+ */
+Number *RealNumber::HypArcCotangent()
 {
-    return new NonNumber(nnnimp);
+    double a = acoth(x);
+    return a != NAN
+        ? (Number *)new RealNumber(a, true)
+        : (Number *)new NonNumber(nnnan);
 }
 
-Number* RealNumber::ExSecant()
+/**
+ * @brief   Versed sine function for real numbers
+ * @details See implementation of versed sine in ver(double)
+ */
+Number *RealNumber::VerSine()
 {
-    return new RealNumber(1.0 / cos(x) - 1);
+    return new RealNumber(ver(x), true);
 }
 
-Number* RealNumber::ExCosecant()
+/**
+ * @brief   Versed cosine function for real numbers
+ * @details See implementation of versed cosine in vcs(double)
+ */
+Number *RealNumber::VerCosine()
 {
-    return new RealNumber(1.0 / sin(x) - 1);
+    return new RealNumber(vcs(x), true);
 }
 
-Number* RealNumber::ArcExSecant()
+/**
+ * @brief   Coversed sine function for real numbers
+ * @details See implementation of coversed sine in cvs(double)
+ */
+Number *RealNumber::CoVerSine()
 {
-    if (x > -2.0 && x < 0.0)
-        return new NonNumber(nnnan);
-
-    double a = x * x + 2 * x;
-    double b = sqrt(a);
-    return new RealNumber(atan(b));
+    return new RealNumber(cvs(x), true);
 }
 
-Number* RealNumber::ArcExCosecant()
+/**
+ * @brief   Coversed cosine function for real numbers
+ * @details See implementation of coversed cosine in cvc(double)
+ */
+Number *RealNumber::CoVerCosine()
 {
-    return new RealNumber(asin(1.0 / (x + 1)));
+    return new RealNumber(cvc(x), true);
+}
+
+/**
+ * @brief   Haversed sine function for real numbers
+ * @details See implementation of haversed sine in hv(double)
+ */
+Number *RealNumber::HaVerSine()
+{
+    return new RealNumber(hv(x), true);
+}
+
+/**
+ * @brief   Haversed cosine function for real numbers
+ * @details See implementation of haversed cosine in hvc(double)
+ */
+Number *RealNumber::HaVerCosine()
+{
+    return new RealNumber(hvc(x), true);
+}
+
+/**
+ * @brief   Hacoversed sine function for real numbers
+ * @details See implementation of hacoversed cosine in hcv(double)
+ */
+Number *RealNumber::HaCoVerSine()
+{
+    return new RealNumber(hcv(x), true);
+}
+
+/**
+ * @brief   Hacoversed cosine function for real numbers
+ * @details See implementation of hacoversed cosine in hcc(double)
+ */
+Number *RealNumber::HaCoVerCosine()
+{
+    return new RealNumber(hcc(x), true);
+}
+
+/**
+ * @brief   Inverse versed sine function for real numbers
+ * @details See implementation of inverse versed sine in aver(double)
+ */
+Number *RealNumber::ArcVerSine()
+{
+    double a = aver(x);
+    return a != NAN
+        ? (Number *)new RealNumber(a, true)
+        : (Number *)new NonNumber(nnnan);
+}
+
+/**
+ * @brief   Inverse versed cosine function for real numbers
+ * @details See implementation of inverse versed cosine sine in avcs(double)
+ */
+Number *RealNumber::ArcVerCosine()
+{
+    double a = avcs(x);
+    return a != NAN
+        ? (Number *)new RealNumber(a, true)
+        : (Number *)new NonNumber(nnnan);
+}
+
+/**
+ * @brief   Inverse coversed sine function for real numbers
+ * @details See implementation of inverse coversed sine in acvs(double)
+ */
+Number *RealNumber::ArcCoVerSine()
+{
+    double a = acvs(x);
+    return a != NAN
+        ? (Number *)new RealNumber(a, true)
+        : (Number *)new NonNumber(nnnan);
+}
+
+/**
+ * @brief   Inverse coversed cosine function for real numbers
+ * @details See implementation of inverse coversed cosine in acvc(double)
+ */
+Number *RealNumber::ArcCoVerCosine()
+{
+    double a = acvc(x);
+    return a != NAN
+        ? (Number *)new RealNumber(a, true)
+        : (Number *)new NonNumber(nnnan);
+}
+
+/**
+ * @brief   Inverse haversed sine function for real numbers
+ * @details See implementation of inverse haversed sine in ahv(double)
+ */
+Number *RealNumber::ArcHaVerSine()
+{
+    double a = ahv(x);
+    return a != NAN
+        ? (Number *)new RealNumber(a, true)
+        : (Number *)new NonNumber(nnnan);
+}
+
+/**
+ * @brief   Inverse haversed cosine function for real numbers
+ * @details See implementation of inverse haversed cosine in ahvc(double)
+ */
+Number *RealNumber::ArcHaVerCosine()
+{
+    double a = ahvc(x);
+    return a != NAN
+        ? (Number *)new RealNumber(a, true)
+        : (Number *)new NonNumber(nnnan);
+}
+
+/**
+ * @brief   Inverse hacoversed sine function for real numbers
+ * @details See implementation of inverse hacoversed sine in ahcv(double)
+ */
+Number *RealNumber::ArcHaCoVerSine()
+{
+    double a = ahcv(x);
+    return a != NAN
+        ? (Number *)new RealNumber(a, true)
+        : (Number *)new NonNumber(nnnan);
+}
+
+/**
+ * @brief   Inverse hacoversed cosine function for real numbers
+ * @details See implementation of inverse hacoversed cosine in ahcc(double)
+ */
+Number *RealNumber::ArcHaCoVerCosine()
+{
+    double a = ahcc(x);
+    return a != NAN
+        ? (Number *)new RealNumber(a, true)
+        : (Number *)new NonNumber(nnnan);
 }

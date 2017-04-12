@@ -1,21 +1,37 @@
-.TH "amath/amathi.h" 3 "Wed Mar 1 2017" "Version 1.7.1" "amath" \" -*- nroff -*-
-.ad l
-.nh
+.\" Copyright (c) 2014-2017 Carsten Sonne Larsen <cs@innolan.net>
+.\" All rights reserved.
+.\" 
+.\" Redistribution and use in source and binary forms, with or without
+.\" modification, are permitted provided that the following conditions
+.\" are met:
+.\" 1. Redistributions of source code must retain the above copyright
+.\"    notice, this list of conditions and the following disclaimer.
+.\" 2. Redistributions in binary form must reproduce the above copyright
+.\"    notice, this list of conditions and the following disclaimer in the
+.\"    documentation and/or other materials provided with the distribution.
+.\" 
+.\" THIS SOFTWARE IS PROVIDED BY THE AUTHOR ``AS IS'' AND ANY EXPRESS OR
+.\" IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES
+.\" OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED.
+.\" IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY DIRECT, INDIRECT,
+.\" INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT
+.\" NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+.\" DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
+.\" THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+.\" (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF
+.\" THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+.TH "mathi.h" 3 "Version 1.8.0" "April 13 2017"
 .SH NAME
-amathi.h \- Complex numbers math library
-
+mathi.h \- Complex numbers math library
 .SH SYNOPSIS
 .br
-.PP
-.SS "Classes"
-
+.SS "Data Structures"
 .in +1c
 .ti -1c
 .RI "union \fBcomplex\fP"
 .br
 .in -1c
 .SS "Functions"
-
 .in +1c
 .ti -1c
 .RI "double \fBcsgn\fP (\fBcomplex\fP z)"
@@ -33,25 +49,6 @@ amathi.h \- Complex numbers math library
 .RI "double \fBcimag\fP (\fBcomplex\fP z)"
 .br
 .RI "\fIImaginary part of complex number\&. \fP"
-.ti -1c
-.RI "\fBcomplex\fP \fBcexp\fP (\fBcomplex\fP z)"
-.br
-.RI "\fIReturns e to the power of a complex number\&. \fP"
-.ti -1c
-.RI "\fBcomplex\fP \fBclog\fP (\fBcomplex\fP z)"
-.br
-.RI "\fINatural logarithm of a complex number\&. \fP"
-.ti -1c
-.RI "\fBcomplex\fP \fBconj\fP (\fBcomplex\fP z)"
-.br
-.ti -1c
-.RI "\fBcomplex\fP \fBcsqrt\fP (\fBcomplex\fP z)"
-.br
-.RI "\fISquare root of complex number\&. \fP"
-.ti -1c
-.RI "\fBcomplex\fP \fBcpow\fP (\fBcomplex\fP x, \fBcomplex\fP z)"
-.br
-.RI "\fIComplex number raised to a power\&. \fP"
 .ti -1c
 .RI "\fBcomplex\fP \fBcpack\fP (double x, double y)"
 .br
@@ -73,6 +70,10 @@ amathi.h \- Complex numbers math library
 .br
 .RI "\fIDivision of two complex numbers\&. \fP"
 .ti -1c
+.RI "\fBcomplex\fP \fBcpow\fP (\fBcomplex\fP x, \fBcomplex\fP z)"
+.br
+.RI "\fIComplex number raised to a power\&. \fP"
+.ti -1c
 .RI "\fBcomplex\fP \fBcceil\fP (\fBcomplex\fP z)"
 .br
 .RI "\fICeiling value of complex number\&. \fP"
@@ -93,9 +94,24 @@ amathi.h \- Complex numbers math library
 .br
 .RI "\fIReciprocal value of complex number\&. \fP"
 .ti -1c
+.RI "\fBcomplex\fP \fBconj\fP (\fBcomplex\fP z)"
+.br
+.ti -1c
+.RI "\fBcomplex\fP \fBcexp\fP (\fBcomplex\fP z)"
+.br
+.RI "\fIReturns e to the power of a complex number\&. \fP"
+.ti -1c
+.RI "\fBcomplex\fP \fBcsqrt\fP (\fBcomplex\fP z)"
+.br
+.RI "\fISquare root of complex number\&. \fP"
+.ti -1c
 .RI "\fBcomplex\fP \fBccbrt\fP (\fBcomplex\fP z)"
 .br
 .RI "\fICube root of complex number\&. \fP"
+.ti -1c
+.RI "\fBcomplex\fP \fBclog\fP (\fBcomplex\fP z)"
+.br
+.RI "\fINatural logarithm of a complex number\&. \fP"
 .ti -1c
 .RI "\fBcomplex\fP \fBclogb\fP (\fBcomplex\fP z)"
 .br
@@ -203,29 +219,26 @@ amathi.h \- Complex numbers math library
 .in -1c
 .SH "Detailed Description"
 .PP 
-Functions in math library for handling complex numbers\&. 
-
-
+Functions for handling complex numbers\&. 
+Mostly as specified in IEEE Std 1003\&.1, 2013 Edition:
+.br
+http://pubs.opengroup.org/onlinepubs/9699919799/basedefs/complex.h.html 
 .PP
-Definition in file \fBcomplex\&.h\fP\&.
+Definition in file \fBmathi\&.h\fP\&.
 .SH "Function Documentation"
 .PP 
 .SS "double cabs (\fBcomplex\fP z)"
-
 .PP
 Absolute value of complex number\&. 
 .PP
-Definition at line 59 of file prim\&.c\&.
-.PP
-References cimag(), creal(), and hypot()\&.
+Definition at line 57 of file prim\&.c\&.
 .PP
 .nf
-60 {
-61     return hypot(creal(z), cimag(z));
-62 }
+58 {
+59     return hypot(creal(z), cimag(z));
+60 }
 .fi
 .SS "\fBcomplex\fP cacos (\fBcomplex\fP z)"
-
 .PP
 Inverse cosine of complex number\&. 
 .PP
@@ -242,7 +255,6 @@ Inverse cosine of complex number\&.
 Inverse cosine expressed using complex logarithms: 
 .PP
 .nf
-
 arccos z = -i * log(z + i * sqrt(1 - z * z))
 .fi
 .PP
@@ -250,23 +262,20 @@ arccos z = -i * log(z + i * sqrt(1 - z * z))
 .br
  https://wikipedia.org/wiki/Inverse_trigonometric_functions#Logarithmic_forms 
 .PP
-Definition at line 46 of file cacos\&.c\&.
-.PP
-References cadd(), clog(), cmul(), cpack(), csqrt(), and csub()\&.
+Definition at line 44 of file cacos\&.c\&.
 .PP
 .nf
-47 {
-48     complex a = cpack(1\&.0, 0\&.0);
-49     complex i = cpack(0\&.0, 1\&.0);
-50     complex j = cpack(0\&.0, -1\&.0);
-51     complex p = csub(a, cmul(z, z));
-52     complex q = clog(cadd(z, cmul(i, csqrt(p))));
-53     complex w = cmul(j, q);
-54     return w;
-55 }
+45 {
+46     complex a = cpack(1\&.0, 0\&.0);
+47     complex i = cpack(0\&.0, 1\&.0);
+48     complex j = cpack(0\&.0, -1\&.0);
+49     complex p = csub(a, cmul(z, z));
+50     complex q = clog(cadd(z, cmul(i, csqrt(p))));
+51     complex w = cmul(j, q);
+52     return w;
+53 }
 .fi
 .SS "\fBcomplex\fP cacosh (\fBcomplex\fP z)"
-
 .PP
 Inverse hyperbolic cosine of complex number\&. 
 .PP
@@ -283,7 +292,6 @@ Inverse hyperbolic cosine of complex number\&.
 Inverse hyperbolic cosine expressed using complex logarithms: 
 .PP
 .nf
-
 acosh(z) = log(z + sqrt(z*z - 1))
 .fi
 .PP
@@ -291,21 +299,18 @@ acosh(z) = log(z + sqrt(z*z - 1))
 .br
  https://wikipedia.org/wiki/Inverse_hyperbolic_function#Logarithmic_representation 
 .PP
-Definition at line 46 of file cacosh\&.c\&.
-.PP
-References cadd(), clog(), cmul(), cpack(), csqrt(), and csub()\&.
+Definition at line 44 of file cacosh\&.c\&.
 .PP
 .nf
-47 {
-48     complex one = cpack(1\&.0, 0\&.0);
-49     complex a = csub(cmul(z, z), one);
-50     complex b = cadd(z, csqrt(a));
-51     complex w = clog(b);
-52     return w;
-53 }
+45 {
+46     complex one = cpack(1\&.0, 0\&.0);
+47     complex a = csub(cmul(z, z), one);
+48     complex b = cadd(z, csqrt(a));
+49     complex w = clog(b);
+50     return w;
+51 }
 .fi
 .SS "\fBcomplex\fP cacot (\fBcomplex\fP z)"
-
 .PP
 Inverse cotangent of complex number\&. 
 .PP
@@ -322,7 +327,6 @@ Inverse cotangent of complex number\&.
 Inverse cotangent expressed using complex logarithms: 
 .PP
 .nf
-
 arccot z = i/2 * (log(1 - i/z) - log(1 + i/z))
 .fi
 .PP
@@ -330,24 +334,21 @@ arccot z = i/2 * (log(1 - i/z) - log(1 + i/z))
 .br
  https://wikipedia.org/wiki/Inverse_trigonometric_functions#Logarithmic_forms 
 .PP
-Definition at line 46 of file cacot\&.c\&.
-.PP
-References cadd(), cdiv(), clog(), cmul(), cpack(), and csub()\&.
+Definition at line 44 of file cacot\&.c\&.
 .PP
 .nf
-47 {
-48     complex one = cpack(1\&.0, 0\&.0);
-49     complex two = cpack(2\&.0, 0\&.0);
-50     complex i = cpack(0\&.0, 1\&.0);
-51     complex iz = cdiv(i, z);
-52     complex p = clog(csub(one, iz));
-53     complex q = clog(cadd(one, iz));
-54     complex w = cmul(cdiv(i, two), csub(p, q));
-55     return w;
-56 }
+45 {
+46     complex one = cpack(1\&.0, 0\&.0);
+47     complex two = cpack(2\&.0, 0\&.0);
+48     complex i = cpack(0\&.0, 1\&.0);
+49     complex iz = cdiv(i, z);
+50     complex p = clog(csub(one, iz));
+51     complex q = clog(cadd(one, iz));
+52     complex w = cmul(cdiv(i, two), csub(p, q));
+53     return w;
+54 }
 .fi
 .SS "\fBcomplex\fP cacoth (\fBcomplex\fP z)"
-
 .PP
 Inverse hyperbolic cotangent of complex number\&. 
 .PP
@@ -364,7 +365,6 @@ Inverse hyperbolic cotangent of complex number\&.
 Inverse hyperbolic cotangent expressed using complex logarithms: 
 .PP
 .nf
-
 acoth(z) = 1/2 * ((log(z + 1) - log(z - 1))
 .fi
 .PP
@@ -372,23 +372,20 @@ acoth(z) = 1/2 * ((log(z + 1) - log(z - 1))
 .br
  https://wikipedia.org/wiki/Inverse_hyperbolic_function#Logarithmic_representation 
 .PP
-Definition at line 46 of file cacoth\&.c\&.
-.PP
-References cadd(), clog(), cmul(), cpack(), and csub()\&.
+Definition at line 44 of file cacoth\&.c\&.
 .PP
 .nf
-47 {
-48     complex half = cpack(0\&.5, 0\&.0);
-49     complex one = cpack(1\&.0, 0\&.0);
-50     complex a = clog(cadd(z, one));
-51     complex b = clog(csub(z, one));
-52     complex c = csub(a, b);
-53     complex w = cmul(half, c);
-54     return w;
-55 }
+45 {
+46     complex half = cpack(0\&.5, 0\&.0);
+47     complex one = cpack(1\&.0, 0\&.0);
+48     complex a = clog(cadd(z, one));
+49     complex b = clog(csub(z, one));
+50     complex c = csub(a, b);
+51     complex w = cmul(half, c);
+52     return w;
+53 }
 .fi
 .SS "\fBcomplex\fP cacsc (\fBcomplex\fP z)"
-
 .PP
 Inverse cosecant of complex number\&. 
 .PP
@@ -405,7 +402,6 @@ Inverse cosecant of complex number\&.
 Inverse cosecant expressed using complex logarithms: 
 .PP
 .nf
-
 arccsc z = -i * log(sqr(1 - 1/(z*z)) + i/z)
 .fi
 .PP
@@ -413,25 +409,22 @@ arccsc z = -i * log(sqr(1 - 1/(z*z)) + i/z)
 .br
  https://wikipedia.org/wiki/Inverse_trigonometric_functions#Logarithmic_forms 
 .PP
-Definition at line 46 of file cacsc\&.c\&.
-.PP
-References cadd(), cdiv(), clog(), cmul(), cpack(), csqrt(), and csub()\&.
+Definition at line 44 of file cacsc\&.c\&.
 .PP
 .nf
-47 {
-48     complex one = cpack(1\&.0, 0\&.0);
-49     complex i = cpack(0\&.0, 1\&.0);
-50     complex j = cpack(0\&.0, -1\&.0);
-51     complex iz = cdiv(i, z);
-52     complex z2 = cmul(z, z);
-53     complex p = cdiv(one, z2);
-54     complex q = csqrt(csub(one, p));
-55     complex w = cmul(j, clog(cadd(q, iz)));
-56     return w;
-57 }
+45 {
+46     complex one = cpack(1\&.0, 0\&.0);
+47     complex i = cpack(0\&.0, 1\&.0);
+48     complex j = cpack(0\&.0, -1\&.0);
+49     complex iz = cdiv(i, z);
+50     complex z2 = cmul(z, z);
+51     complex p = cdiv(one, z2);
+52     complex q = csqrt(csub(one, p));
+53     complex w = cmul(j, clog(cadd(q, iz)));
+54     return w;
+55 }
 .fi
 .SS "\fBcomplex\fP cacsch (\fBcomplex\fP z)"
-
 .PP
 Inverse hyperbolic cosecant of complex number\&. 
 .PP
@@ -448,7 +441,6 @@ Inverse hyperbolic cosecant of complex number\&.
 Inverse hyperbolic cosecant expressed using complex logarithms: 
 .PP
 .nf
-
 acsch(z) = log(sqrt(1 + 1 / (z * z)) + 1/z)
 .fi
 .PP
@@ -456,38 +448,32 @@ acsch(z) = log(sqrt(1 + 1 / (z * z)) + 1/z)
 .br
  https://wikipedia.org/wiki/Inverse_hyperbolic_function#Logarithmic_representation 
 .PP
-Definition at line 46 of file cacsch\&.c\&.
-.PP
-References cadd(), clog(), cmul(), cpack(), creci(), and csqrt()\&.
+Definition at line 44 of file cacsch\&.c\&.
 .PP
 .nf
-47 {
-48     complex one = cpack(1\&.0, 0\&.0);
-49     complex a = creci(cmul(z, z));
-50     complex b = csqrt(cadd(one, a));
-51     complex c = cadd(b, creci(z));
-52     complex w = clog(c);
-53     return w;
-54 }
+45 {
+46     complex one = cpack(1\&.0, 0\&.0);
+47     complex a = creci(cmul(z, z));
+48     complex b = csqrt(cadd(one, a));
+49     complex c = cadd(b, creci(z));
+50     complex w = clog(c);
+51     return w;
+52 }
 .fi
 .SS "\fBcomplex\fP cadd (\fBcomplex\fP a, \fBcomplex\fP z)"
-
 .PP
 Addition of two complex numbers\&. 
 .PP
-Definition at line 131 of file prim\&.c\&.
-.PP
-References cimag(), cpack(), and creal()\&.
+Definition at line 129 of file prim\&.c\&.
 .PP
 .nf
-132 {
-133     complex w;
-134     w = cpack(creal(y) + creal(z), cimag(y) + cimag(z));
-135     return w;
-136 }
+130 {
+131     complex w;
+132     w = cpack(creal(y) + creal(z), cimag(y) + cimag(z));
+133     return w;
+134 }
 .fi
 .SS "\fBcomplex\fP casec (\fBcomplex\fP z)"
-
 .PP
 Inverse secant expressed using complex logarithms: 
 .PP
@@ -504,7 +490,6 @@ Inverse secant expressed using complex logarithms:
 Inverse secant expressed using complex logarithms: 
 .PP
 .nf
-
 arcsec z = -i * log(i * sqr(1 - 1/(z*z)) + 1/z)
 .fi
 .PP
@@ -512,25 +497,22 @@ arcsec z = -i * log(i * sqr(1 - 1/(z*z)) + 1/z)
 .br
  https://wikipedia.org/wiki/Inverse_trigonometric_functions#Logarithmic_forms 
 .PP
-Definition at line 46 of file casec\&.c\&.
-.PP
-References cadd(), cdiv(), clog(), cmul(), cpack(), creci(), csqrt(), and csub()\&.
+Definition at line 44 of file casec\&.c\&.
 .PP
 .nf
-47 {
-48     complex one = cpack(1\&.0, 0\&.0);
-49     complex i = cpack(0\&.0, 1\&.0);
-50     complex j = cpack(0\&.0, -1\&.0);
-51     complex rz = creci(z);
-52     complex z2 = cmul(z, z);
-53     complex p = cdiv(one, z2);
-54     complex q = csqrt(csub(one, p));
-55     complex w = cmul(j, clog(cadd(cmul(i, q), rz)));
-56     return w;
-57 }
+45 {
+46     complex one = cpack(1\&.0, 0\&.0);
+47     complex i = cpack(0\&.0, 1\&.0);
+48     complex j = cpack(0\&.0, -1\&.0);
+49     complex rz = creci(z);
+50     complex z2 = cmul(z, z);
+51     complex p = cdiv(one, z2);
+52     complex q = csqrt(csub(one, p));
+53     complex w = cmul(j, clog(cadd(cmul(i, q), rz)));
+54     return w;
+55 }
 .fi
 .SS "\fBcomplex\fP casech (\fBcomplex\fP z)"
-
 .PP
 Inverse hyperbolic secant of complex numbers\&. 
 .PP
@@ -547,7 +529,6 @@ Inverse hyperbolic secant of complex numbers\&.
 Inverse hyperbolic secant expressed using complex logarithms: 
 .PP
 .nf
-
 asech(z) = log(sqrt(1 / (z * z) - 1) + 1/z)
 .fi
 .PP
@@ -560,22 +541,19 @@ asech(z) = log(sqrt(1 / (z * z) - 1) + 1/z)
 .br
  https://wikipedia.org/wiki/Inverse_hyperbolic_function#Logarithmic_representation 
 .PP
-Definition at line 47 of file casech\&.c\&.
-.PP
-References cadd(), clog(), cmul(), cpack(), creci(), csqrt(), and csub()\&.
+Definition at line 45 of file casech\&.c\&.
 .PP
 .nf
-48 {
-49     complex one = cpack(1\&.0, 0\&.0);
-50     complex a = creci(cmul(z, z));
-51     complex b = csqrt(csub(a, one));
-52     complex c = cadd(b, creci(z));
-53     complex w = clog(c);
-54     return w;
-55 }
+46 {
+47     complex one = cpack(1\&.0, 0\&.0);
+48     complex a = creci(cmul(z, z));
+49     complex b = csqrt(csub(a, one));
+50     complex c = cadd(b, creci(z));
+51     complex w = clog(c);
+52     return w;
+53 }
 .fi
 .SS "\fBcomplex\fP casin (\fBcomplex\fP z)"
-
 .PP
 Inverse sine of complex number\&. 
 .PP
@@ -592,7 +570,6 @@ Inverse sine of complex number\&.
 Inverse sine expressed using complex logarithms: 
 .PP
 .nf
-
 arcsin z = -i * log(iz + sqrt(1 - z*z))
 .fi
 .PP
@@ -600,25 +577,22 @@ arcsin z = -i * log(iz + sqrt(1 - z*z))
 .br
  https://wikipedia.org/wiki/Inverse_trigonometric_functions#Logarithmic_forms 
 .PP
-Definition at line 46 of file casin\&.c\&.
-.PP
-References cadd(), clog(), cmul(), cpack(), csqrt(), and csub()\&.
+Definition at line 44 of file casin\&.c\&.
 .PP
 .nf
-47 {
-48     complex one = cpack(1\&.0, 0\&.0);
-49     complex i = cpack(0\&.0, 1\&.0);
-50     complex j = cpack(0\&.0, -1\&.0);
-51     complex iz = cmul(i, z);
-52     complex z2 = cmul(z, z);
-53     complex p = csqrt(csub(one, z2));
-54     complex q = clog(cadd(iz, p));
-55     complex w = cmul(j, q);
-56     return w;
-57 }
+45 {
+46     complex one = cpack(1\&.0, 0\&.0);
+47     complex i = cpack(0\&.0, 1\&.0);
+48     complex j = cpack(0\&.0, -1\&.0);
+49     complex iz = cmul(i, z);
+50     complex z2 = cmul(z, z);
+51     complex p = csqrt(csub(one, z2));
+52     complex q = clog(cadd(iz, p));
+53     complex w = cmul(j, q);
+54     return w;
+55 }
 .fi
 .SS "\fBcomplex\fP casinh (\fBcomplex\fP z)"
-
 .PP
 Inverse hyperbolic sine of complex number\&. 
 .PP
@@ -635,7 +609,6 @@ Inverse hyperbolic sine of complex number\&.
 Inverse hyperbolic sine expressed using complex logarithms: 
 .PP
 .nf
-
 asinh(z) = log(z + sqrt(z*z + 1))
 .fi
 .PP
@@ -656,21 +629,18 @@ Range:  -INF to INF
 .br
  https://wikipedia.org/wiki/Inverse_hyperbolic_function#Logarithmic_representation 
 .PP
-Definition at line 51 of file casinh\&.c\&.
-.PP
-References cadd(), clog(), cmul(), cpack(), and csqrt()\&.
+Definition at line 49 of file casinh\&.c\&.
 .PP
 .nf
-52 {
-53     complex one = cpack(1\&.0, 0\&.0);
-54     complex a = cadd(cmul(z, z), one);
-55     complex b = cadd(z, csqrt(a));
-56     complex w = clog(b);
-57     return w;
-58 }
+50 {
+51     complex one = cpack(1\&.0, 0\&.0);
+52     complex a = cadd(cmul(z, z), one);
+53     complex b = cadd(z, csqrt(a));
+54     complex w = clog(b);
+55     return w;
+56 }
 .fi
 .SS "\fBcomplex\fP catan (\fBcomplex\fP z)"
-
 .PP
 Inverse tangent of complex number\&. 
 .PP
@@ -687,7 +657,6 @@ Inverse tangent of complex number\&.
 Inverse tangent expressed using complex logarithms: 
 .PP
 .nf
-
 atan(z) = i/2 * (log(1 - i * z) - log(1 + i * z))
 .fi
 .PP
@@ -695,24 +664,21 @@ atan(z) = i/2 * (log(1 - i * z) - log(1 + i * z))
 .br
  https://wikipedia.org/wiki/Inverse_trigonometric_functions#Logarithmic_forms 
 .PP
-Definition at line 46 of file catan\&.c\&.
-.PP
-References cadd(), cdiv(), clog(), cmul(), cpack(), and csub()\&.
+Definition at line 44 of file catan\&.c\&.
 .PP
 .nf
-47 {
-48     complex one = cpack(1\&.0, 0\&.0);
-49     complex two = cpack(2\&.0, 0\&.0);
-50     complex i = cpack(0\&.0, 1\&.0);
-51     complex iz = cmul(i, z);
-52     complex p = clog(csub(one, iz));
-53     complex q = clog(cadd(one, iz));
-54     complex w = cmul(cdiv(i, two), csub(p, q));
-55     return w;
-56 }
+45 {
+46     complex one = cpack(1\&.0, 0\&.0);
+47     complex two = cpack(2\&.0, 0\&.0);
+48     complex i = cpack(0\&.0, 1\&.0);
+49     complex iz = cmul(i, z);
+50     complex p = clog(csub(one, iz));
+51     complex q = clog(cadd(one, iz));
+52     complex w = cmul(cdiv(i, two), csub(p, q));
+53     return w;
+54 }
 .fi
 .SS "\fBcomplex\fP catanh (\fBcomplex\fP z)"
-
 .PP
 Inverse hyperbolic tangent of complex number\&. 
 .PP
@@ -729,7 +695,6 @@ Inverse hyperbolic tangent of complex number\&.
 Inverse hyperbolic tangent expressed using complex logarithms: 
 .PP
 .nf
-
 atanh(z) = 1/2 * ((log(1 + z) - log(1 - z))
 .fi
 .PP
@@ -737,28 +702,24 @@ atanh(z) = 1/2 * ((log(1 + z) - log(1 - z))
 .br
  https://wikipedia.org/wiki/Inverse_hyperbolic_function#Logarithmic_representation 
 .PP
-Definition at line 46 of file catanh\&.c\&.
-.PP
-References cadd(), clog(), cmul(), cpack(), and csub()\&.
+Definition at line 44 of file catanh\&.c\&.
 .PP
 .nf
-47 {
-48     complex half = cpack(0\&.5, 0\&.0);
-49     complex one = cpack(1\&.0, 0\&.0);
-50     complex a = clog(cadd(one, z));
-51     complex b = clog(csub(one, z));
-52     complex c = csub(a, b);
-53     complex w = cmul(half, c);
-54     return w;
-55 }
+45 {
+46     complex half = cpack(0\&.5, 0\&.0);
+47     complex one = cpack(1\&.0, 0\&.0);
+48     complex a = clog(cadd(one, z));
+49     complex b = clog(csub(one, z));
+50     complex c = csub(a, b);
+51     complex w = cmul(half, c);
+52     return w;
+53 }
 .fi
 .SS "\fBcomplex\fP ccbrt (\fBcomplex\fP z)"
-
 .PP
 Cube root of complex number\&. 
 .PP
 .nf
-
 cbrt z = exp(1/3 * log(z))
 .fi
 .PP
@@ -766,36 +727,30 @@ cbrt z = exp(1/3 * log(z))
 .br
  https://wikipedia.org/wiki/Cube_root 
 .PP
-Definition at line 43 of file ccbrt\&.c\&.
-.PP
-References cexp(), clog(), cmul(), and cpack()\&.
+Definition at line 41 of file ccbrt\&.c\&.
 .PP
 .nf
-44 {
-45     complex onethird = cpack(1\&.0 / 3\&.0, 0\&.0);
-46     complex a = cmul(onethird, clog(z));
-47     complex w = cexp(a);
-48     return w;
-49 }
+42 {
+43     complex onethird = cpack(1\&.0 / 3\&.0, 0\&.0);
+44     complex a = cmul(onethird, clog(z));
+45     complex w = cexp(a);
+46     return w;
+47 }
 .fi
 .SS "\fBcomplex\fP cceil (\fBcomplex\fP z)"
-
 .PP
 Ceiling value of complex number\&. 
 .PP
-Definition at line 109 of file prim\&.c\&.
-.PP
-References cimag(), cpack(), and creal()\&.
+Definition at line 107 of file prim\&.c\&.
 .PP
 .nf
-110 {
-111     complex w;
-112     w = cpack(ceil(creal(z)), ceil(cimag(z)));
-113     return w;
-114 }
+108 {
+109     complex w;
+110     w = cpack(ceil(creal(z)), ceil(cimag(z)));
+111     return w;
+112 }
 .fi
 .SS "\fBcomplex\fP ccos (\fBcomplex\fP z)"
-
 .PP
 Cosine of complex number\&. 
 .PP
@@ -811,34 +766,29 @@ Cosine of complex number\&.
 .PP
 .PP
 .nf
-
 a+bi
 real =  cos(a) * cosh(b)
 imag = -sin(a) * sinh(b)
 .fi
 .PP
- 
 .PP
-Definition at line 49 of file ccos\&.c\&.
-.PP
-References cchsh(), cimag(), cos(), cpack(), creal(), and sin()\&.
+Definition at line 47 of file ccos\&.c\&.
 .PP
 .nf
-50 {
-51     complex w;
-52     double a, b;
-53     double ch, sh;
-54 
-55     a = creal(z);
-56     b = cimag(z);
-57     cchsh(b, &ch, &sh);
-58     w = cpack((cos(a) * ch), (-sin(a) * sh));
-59 
-60     return w;
-61 }
+48 {
+49     complex w;
+50     double a, b;
+51     double ch, sh;
+52 
+53     a = creal(z);
+54     b = cimag(z);
+55     cchsh(b, &ch, &sh);
+56     w = cpack((cos(a) * ch), (-sin(a) * sh));
+57 
+58     return w;
+59 }
 .fi
 .SS "\fBcomplex\fP ccosh (\fBcomplex\fP z)"
-
 .PP
 Hyperbolic cosine of a complex number\&. 
 .PP
@@ -852,48 +802,38 @@ Hyperbolic cosine of a complex number\&.
 2007/08/20
 .RE
 .PP
-.PP
 .nf
-
 a+bi
 real = cosh(a) * cos(b)
 imag = sinh(a) * sin(b)
 .fi
 .PP
- 
-.PP
-Definition at line 52 of file ccosh\&.c\&.
-.PP
-References cchsh(), cimag(), cos(), cpack(), creal(), and sin()\&.
+Definition at line 50 of file ccosh\&.c\&.
 .PP
 .nf
-53 {
-54     complex w;
-55     double a, b;
-56     double ch, sh;
-57 
-58     a = creal(z);
-59     b = cimag(z);
-60     cchsh(a, &ch, &sh);
-61     w = cpack(cos(b) * ch, sin(b) * sh);
-62 
-63     return w;
-64 }
+51 {
+52     complex w;
+53     double a, b;
+54     double ch, sh;
+55 
+56     a = creal(z);
+57     b = cimag(z);
+58     cchsh(a, &ch, &sh);
+59     w = cpack(cos(b) * ch, sin(b) * sh);
+60 
+61     return w;
+62 }
 .fi
 .SS "\fBcomplex\fP ccot (\fBcomplex\fP z)"
-
 .PP
 Cotangent of a complex number\&. Calculated as in Open Office: 
 .PP
 .nf
-
 a+bi
                 sin(2\&.0 * a)
 real  = ------------------------------
          cosh(2\&.0 * b) - cos(2\&.0 * a)
 .fi
-.PP
-.PP
 .PP
 .nf
                -sinh(2\&.0 * b)
@@ -903,31 +843,29 @@ imag  = ------------------------------
 .PP
  https://wiki.openoffice.org/wiki/Documentation/How_Tos/Calc:_IMCOT_function 
 .PP
-Definition at line 50 of file ccot\&.c\&.
-.PP
-References cimag(), cos(), cosh(), cpack(), creal(), sin(), and sinh()\&.
+Definition at line 48 of file ccot\&.c\&.
 .PP
 .nf
-51 {
-52     complex w;
-53     double a, b;
-54     double d;
-55 
-56     a = creal(z);
-57     b = cimag(z);
-58     d = cosh(2\&.0 * b) - cos(2\&.0 * a);
-59 
-60     if (d == 0\&.0)
-61     {
-62         w = cpack(D_INFP, D_INFP);
-63     }
-64     else
-65     {
-66         w = cpack((sin(2\&.0 * a) / d), (-sinh(2\&.0 * b) / d));
-67     }
-68 
-69     return w;
-70 }
+49 {
+50     complex w;
+51     double a, b;
+52     double d;
+53 
+54     a = creal(z);
+55     b = cimag(z);
+56     d = cosh(2\&.0 * b) - cos(2\&.0 * a);
+57 
+58     if (d == 0\&.0)
+59     {
+60         w = cpack((double)INFP, (double)INFP);
+61     }
+62     else
+63     {
+64         w = cpack((sin(2\&.0 * a) / d), (-sinh(2\&.0 * b) / d));
+65     }
+66 
+67     return w;
+68 }
 .fi
 .SS "\fBcomplex\fP ccoth (\fBcomplex\fP z)"
 
@@ -959,23 +897,21 @@ imag  = ------------------------------
 .PP
  
 .PP
-Definition at line 52 of file ccoth\&.c\&.
-.PP
-References cimag(), cos(), cosh(), cpack(), creal(), sin(), and sinh()\&.
+Definition at line 50 of file ccoth\&.c\&.
 .PP
 .nf
-53 {
-54     complex w;
-55     double a, b;
-56     double d;
-57 
-58     a = creal(z);
-59     b = cimag(z);
-60     d = cosh(2\&.0 * a) - cos(2\&.0 * b);
-61     w = cpack(sinh(2\&.0 * a) / d, -sin(2\&.0 * b) / d);
-62 
-63     return w;
-64 }
+51 {
+52     complex w;
+53     double a, b;
+54     double d;
+55 
+56     a = creal(z);
+57     b = cimag(z);
+58     d = cosh(2\&.0 * a) - cos(2\&.0 * b);
+59     w = cpack(sinh(2\&.0 * a) / d, -sin(2\&.0 * b) / d);
+60 
+61     return w;
+62 }
 .fi
 .SS "\fBcomplex\fP ccsc (\fBcomplex\fP z)"
 
@@ -1000,39 +936,38 @@ imag  = ------------------------------
 .PP
  https://wiki.openoffice.org/wiki/Documentation/How_Tos/Calc:_IMCSC_function 
 .PP
-Definition at line 50 of file ccsc\&.c\&.
-.PP
-References cimag(), cos(), cosh(), cpack(), creal(), sin(), and sinh()\&.
+Definition at line 48 of file ccsc\&.c\&.
 .PP
 .nf
-51 {
-52     complex w;
-53     double a, b;
-54     double d;
-55 
-56     a = creal(z);
-57     b = cimag(z);
-58     d = cosh(2\&.0 * b) - cos(2\&.0 * a);
-59 
-60     if (d == 0\&.0)
-61     {
-62         w = cpack(D_INFP, D_INFP);
-63     }
-64     else
-65     {
-66         w = cpack((2\&.0 * sin(a) * cosh(b) / d), (-2\&.0 * cos(a) * sinh(b) / d));
-67     }
-68 
-69     return w;
-70 }
+49 {
+50     complex w;
+51     double a, b;
+52     double d;
+53 
+54     a = creal(z);
+55     b = cimag(z);
+56     d = cosh(2\&.0 * b) - cos(2\&.0 * a);
+57 
+58     if (d == 0\&.0)
+59     {
+60         w = cpack((double)INFP, (double)INFP);
+61     }
+62     else
+63     {
+64         w = cpack((2\&.0 * sin(a) * cosh(b) / d), (-2\&.0 * cos(a) * sinh(b) / d));
+65     }
+66 
+67     return w;
+68 }
 .fi
 .SS "\fBcomplex\fP ccsch (\fBcomplex\fP z)"
 
 .PP
-Hyperbolic secant of a complex number\&. Calculated as in Open Office: 
+Hyperbolic secant of a complex number\&. Calculated as in Open Office:
+.br
+https://wiki.openoffice.org/wiki/Documentation/How_Tos/Calc:_IMCSCH_function 
 .PP
 .nf
-
 a+bi
             2\&.0 * sinh(a) * cos(b)
 real  = ------------------------------
@@ -1046,54 +981,47 @@ real  = ------------------------------
 imag  = ------------------------------
          cosh(2\&.0 * a) - cos(2\&.0 * b)
 .fi
-.PP
- https://wiki.openoffice.org/wiki/Documentation/How_Tos/Calc:_IMCSCH_function 
-.PP
-Definition at line 50 of file ccsch\&.c\&.
-.PP
-References cimag(), cos(), cosh(), cpack(), creal(), sin(), and sinh()\&.
+Definition at line 48 of file ccsch\&.c\&.
 .PP
 .nf
-51 {
-52     complex w;
-53     double a, b;
-54     double d;
-55 
-56     a = creal(z);
-57     b = cimag(z);
-58     d = cosh(2\&.0 * a) - cos(2\&.0 * b);
-59     w = cpack((2\&.0 * sinh(a) * cos(b) / d), (-2\&.0 * cosh(a) * sin(b) / d));
-60 
-61     return w;
-62 }
+49 {
+50     complex w;
+51     double a, b;
+52     double d;
+53 
+54     a = creal(z);
+55     b = cimag(z);
+56     d = cosh(2\&.0 * a) - cos(2\&.0 * b);
+57     w = cpack((2\&.0 * sinh(a) * cos(b) / d), (-2\&.0 * cosh(a) * sin(b) / d));
+58 
+59     return w;
+60 }
 .fi
 .SS "\fBcomplex\fP cdiv (\fBcomplex\fP a, \fBcomplex\fP z)"
 
 .PP
 Division of two complex numbers\&. 
 .PP
-Definition at line 173 of file prim\&.c\&.
-.PP
-References cimag(), cpack(), and creal()\&.
+Definition at line 171 of file prim\&.c\&.
 .PP
 .nf
-174 {
-175     complex w;
-176     double a, b, c, d;
-177     double q, v, x;
-178 
-179     a = creal(y);
-180     b = cimag(y);
-181     c = creal(z);
-182     d = cimag(z);
-183 
-184     q = c * c + d * d;
-185     v = a * c + b * d;
-186     x = b * c - a * d;
-187 
-188     w = cpack(v / q, x / q);
-189     return w;
-190 }
+172 {
+173     complex w;
+174     double a, b, c, d;
+175     double q, v, x;
+176 
+177     a = creal(y);
+178     b = cimag(y);
+179     c = creal(z);
+180     d = cimag(z);
+181 
+182     q = c * c + d * d;
+183     v = a * c + b * d;
+184     x = b * c - a * d;
+185 
+186     w = cpack(v / q, x / q);
+187     return w;
+188 }
 .fi
 .SS "\fBcomplex\fP cexp (\fBcomplex\fP z)"
 
@@ -1112,48 +1040,44 @@ Returns e to the power of a complex number\&.
 .PP
 
 .PP
-Definition at line 47 of file cexp\&.c\&.
-.PP
-References cimag(), cos(), cpack(), creal(), exp(), and sin()\&.
+Definition at line 45 of file cexp\&.c\&.
 .PP
 .nf
-48 {
-49     complex w;
-50     double r, x, y;
-51     x = creal(z);
-52     y = cimag(z);
-53     r = exp(x);
-54     w = cpack(r * cos(y), r * sin(y));
-55     return w;
-56 }
+46 {
+47     complex w;
+48     double r, x, y;
+49     x = creal(z);
+50     y = cimag(z);
+51     r = exp(x);
+52     w = cpack(r * cos(y), r * sin(y));
+53     return w;
+54 }
 .fi
 .SS "\fBcomplex\fP cfloor (\fBcomplex\fP z)"
 
 .PP
 Floor value of complex number\&. 
 .PP
-Definition at line 98 of file prim\&.c\&.
-.PP
-References cimag(), cpack(), and creal()\&.
+Definition at line 96 of file prim\&.c\&.
 .PP
 .nf
-99 {
-100     complex w;
-101     w = cpack(floor(creal(z)), floor(cimag(z)));
-102     return w;
-103 }
+97 {
+98     complex w;
+99     w = cpack(floor(creal(z)), floor(cimag(z)));
+100     return w;
+101 }
 .fi
 .SS "double cimag (\fBcomplex\fP z)"
 
 .PP
 Imaginary part of complex number\&. 
 .PP
-Definition at line 50 of file prim\&.c\&.
+Definition at line 48 of file prim\&.c\&.
 .PP
 .nf
-51 {
-52     return (IMAG_PART(z));
-53 }
+49 {
+50     return (IMAG_PART(z));
+51 }
 .fi
 .SS "\fBcomplex\fP clog (\fBcomplex\fP z)"
 
@@ -1172,19 +1096,17 @@ Natural logarithm of a complex number\&.
 .PP
 
 .PP
-Definition at line 47 of file clog\&.c\&.
-.PP
-References atan2(), cabs(), cimag(), cpack(), and creal()\&.
+Definition at line 45 of file clog\&.c\&.
 .PP
 .nf
-48 {
-49     complex w;
-50     double p, q;
-51     p = log(cabs(z));
-52     q = atan2(cimag(z), creal(z));
-53     w = cpack(p, q);
-54     return w;
-55 }
+46 {
+47     complex w;
+48     double p, q;
+49     p = log(cabs(z));
+50     q = atan2(cimag(z), creal(z));
+51     w = cpack(p, q);
+52     return w;
+53 }
 .fi
 .SS "\fBcomplex\fP clog10 (\fBcomplex\fP z)"
 
@@ -1200,16 +1122,14 @@ log z = log(z) / log(10)
 .br
  https://wikipedia.org/wiki/Complex_logarithm 
 .PP
-Definition at line 42 of file clog10\&.c\&.
-.PP
-References cdiv(), clog(), and cpack()\&.
+Definition at line 41 of file clog10\&.c\&.
 .PP
 .nf
-43 {
-44     complex teen = cpack(10\&.0, 0\&.0);
-45     complex w = cdiv(clog(z), clog(teen));
-46     return w;
-47 }
+42 {
+43     complex teen = cpack(10\&.0, 0\&.0);
+44     complex w = cdiv(clog(z), clog(teen));
+45     return w;
+46 }
 .fi
 .SS "\fBcomplex\fP clogb (\fBcomplex\fP z)"
 
@@ -1225,70 +1145,64 @@ lb z = log(z) / log(2)
 .br
  https://wikipedia.org/wiki/Complex_logarithm 
 .PP
-Definition at line 42 of file clogb\&.c\&.
-.PP
-References cdiv(), clog(), and cpack()\&.
+Definition at line 41 of file clogb\&.c\&.
 .PP
 .nf
-43 {
-44     complex two = cpack(2\&.0, 0\&.0);
-45     complex w = cdiv(clog(z), clog(two));
-46     return w;
-47 }
+42 {
+43     complex two = cpack(2\&.0, 0\&.0);
+44     complex w = cdiv(clog(z), clog(two));
+45     return w;
+46 }
 .fi
 .SS "\fBcomplex\fP cmul (\fBcomplex\fP a, \fBcomplex\fP z)"
 
 .PP
 Multiplication of two complex numbers\&. 
 .PP
-Definition at line 153 of file prim\&.c\&.
-.PP
-References cimag(), cpack(), and creal()\&.
+Definition at line 151 of file prim\&.c\&.
 .PP
 .nf
-154 {
-155     complex w;
-156     double a, b, c, d;
-157 
-158     // (a+bi)(c+di)
-159     a = creal(y);
-160     b = cimag(y);
-161     c = creal(z);
-162     d = cimag(z);
-163 
-164     // (ac -bd) + (ad + bc)i
-165     w = cpack(a * c - b * d, a * d + b * c);
-166     return w;
-167 }
+152 {
+153     complex w;
+154     double a, b, c, d;
+155 
+156     // (a+bi)(c+di)
+157     a = creal(y);
+158     b = cimag(y);
+159     c = creal(z);
+160     d = cimag(z);
+161 
+162     // (ac -bd) + (ad + bc)i
+163     w = cpack(a * c - b * d, a * d + b * c);
+164     return w;
+165 }
 .fi
 .SS "\fBcomplex\fP conj (\fBcomplex\fP z)"
 
 .PP
-Definition at line 64 of file prim\&.c\&.
-.PP
-References cpack()\&.
+Definition at line 62 of file prim\&.c\&.
 .PP
 .nf
-65 {
-66     IMAG_PART(z) = -IMAG_PART(z);
-67     return cpack(REAL_PART(z), IMAG_PART(z));
-68 }
+63 {
+64     IMAG_PART(z) = -IMAG_PART(z);
+65     return cpack(REAL_PART(z), IMAG_PART(z));
+66 }
 .fi
 .SS "\fBcomplex\fP cpack (double x, double y)"
 
 .PP
 Pack two real numbers into a complex number\&. 
 .PP
-Definition at line 74 of file prim\&.c\&.
+Definition at line 72 of file prim\&.c\&.
 .PP
 .nf
-75 {
-76     complex z;
-77 
-78     REAL_PART(z) = x;
-79     IMAG_PART(z) = y;
-80     return (z);
-81 }
+73 {
+74     complex z;
+75 
+76     REAL_PART(z) = x;
+77     IMAG_PART(z) = y;
+78     return (z);
+79 }
 .fi
 .SS "\fBcomplex\fP cpow (\fBcomplex\fP a, \fBcomplex\fP z)"
 
@@ -1307,85 +1221,79 @@ Complex number raised to a power\&.
 .PP
 
 .PP
-Definition at line 47 of file cpow\&.c\&.
-.PP
-References atan2(), cabs(), cimag(), cos(), cpack(), creal(), exp(), pow(), and sin()\&.
+Definition at line 45 of file cpow\&.c\&.
 .PP
 .nf
-48 {
-49     complex w;
-50     double x, y, r, theta, absa, arga;
-51 
-52     x = creal(z);
-53     y = cimag(z);
-54     absa = cabs(a);
-55     if (absa == 0\&.0)
-56     {
-57         return cpack(0\&.0, + 0\&.0);
-58     }
-59     arga = atan2(cimag(a), creal(a));
-60 
-61     r = pow(absa, x);
-62     theta = x * arga;
-63     if (y != 0\&.0)
-64     {
-65         r = r * exp(-y * arga);
-66         theta = theta + y * log(absa);
-67     }
-68 
-69     w = cpack(r * cos(theta), r * sin(theta));
-70     return w;
-71 }
+46 {
+47     complex w;
+48     double x, y, r, theta, absa, arga;
+49 
+50     x = creal(z);
+51     y = cimag(z);
+52     absa = cabs(a);
+53     if (absa == 0\&.0)
+54     {
+55         return cpack(0\&.0, + 0\&.0);
+56     }
+57     arga = atan2(cimag(a), creal(a));
+58 
+59     r = pow(absa, x);
+60     theta = x * arga;
+61     if (y != 0\&.0)
+62     {
+63         r = r * exp(-y * arga);
+64         theta = theta + y * log(absa);
+65     }
+66 
+67     w = cpack(r * cos(theta), r * sin(theta));
+68     return w;
+69 }
 .fi
 .SS "double creal (\fBcomplex\fP z)"
 
 .PP
 Real part of complex number\&. 
 .PP
-Definition at line 41 of file prim\&.c\&.
+Definition at line 39 of file prim\&.c\&.
 .PP
 .nf
-42 {
-43     return (REAL_PART(z));
-44 }
+40 {
+41     return (REAL_PART(z));
+42 }
 .fi
 .SS "\fBcomplex\fP creci (\fBcomplex\fP z)"
 
 .PP
 Reciprocal value of complex number\&. 
 .PP
-Definition at line 196 of file prim\&.c\&.
-.PP
-References cimag(), conj(), cpack(), and creal()\&.
+Definition at line 194 of file prim\&.c\&.
 .PP
 .nf
-197 {
-198     complex w;
-199     double q, a, b;
-200 
-201     a = creal(z);
-202     b = cimag(conj(z));
-203     q = a * a + b * b;
-204     w = cpack(a / q, b / q);
-205 
-206     return w;
-207 }
+195 {
+196     complex w;
+197     double q, a, b;
+198 
+199     a = creal(z);
+200     b = cimag(conj(z));
+201     q = a * a + b * b;
+202     w = cpack(a / q, b / q);
+203 
+204     return w;
+205 }
 .fi
 .SS "\fBcomplex\fP cround (\fBcomplex\fP z)"
 
 .PP
 Division of two complex numbers\&. 
 .PP
-Definition at line 120 of file prim\&.c\&.
-.PP
-References cimag(), cpack(), creal(), and round()\&.
+Definition at line 118 of file prim\&.c\&.
 .PP
 .nf
-121 {
-122     complex w;
-123     w = cpack(round(creal(z)), round(cimag(z)));
-124     return w;
-125 }
+119 {
+120     complex w;
+121     w = cpack(round(creal(z)), round(cimag(z)));
+122     return w;
+123 }
 .fi
 .SS "\fBcomplex\fP csec (\fBcomplex\fP z)"
 
@@ -1412,31 +1320,29 @@ imag  = ------------------------------
 .PP
  
 .PP
-Definition at line 50 of file csec\&.c\&.
-.PP
-References cimag(), cos(), cosh(), cpack(), creal(), sin(), and sinh()\&.
+Definition at line 48 of file csec\&.c\&.
 .PP
 .nf
-51 {
-52     complex w;
-53     double a, b;
-54     double d;
-55 
-56     a = creal(z);
-57     b = cimag(z);
-58     d = cosh(2\&.0 * b) + cos(2\&.0 * a);
-59 
-60     if (d == 0\&.0)
-61     {
-62         w = cpack(D_INFP, D_INFP);
-63     }
-64     else
-65     {
-66         w = cpack((2\&.0 * cos(a) * cosh(b) / d), (2\&.0 * sin(a) * sinh(b) / d));
-67     }
-68 
-69     return w;
-70 }
+49 {
+50     complex w;
+51     double a, b;
+52     double d;
+53 
+54     a = creal(z);
+55     b = cimag(z);
+56     d = cosh(2\&.0 * b) + cos(2\&.0 * a);
+57 
+58     if (d == 0\&.0)
+59     {
+60         w = cpack((double)INFP, (double)INFP);
+61     }
+62     else
+63     {
+64         w = cpack((2\&.0 * cos(a) * cosh(b) / d), (2\&.0 * sin(a) * sinh(b) / d));
+65     }
+66 
+67     return w;
+68 }
 .fi
 .SS "\fBcomplex\fP csech (\fBcomplex\fP z)"
 
@@ -1463,36 +1369,30 @@ imag  = ------------------------------
 .PP
  
 .PP
-Definition at line 50 of file csech\&.c\&.
-.PP
-References cimag(), cos(), cosh(), cpack(), creal(), sin(), and sinh()\&.
+Definition at line 48 of file csech\&.c\&.
 .PP
 .nf
-51 {
-52     complex w;
-53     double a, b;
-54     double d;
-55 
-56     a = creal(z);
-57     b = cimag(z);
-58     d = cosh(2\&.0 * a) + cos(2\&.0 * b);
-59     w = cpack((2\&.0 * cosh(a) * cos(b) / d), (-2\&.0 * sinh(a) * sin(b) / d));
-60 
-61     return w;
-62 }
+49 {
+50     complex w;
+51     double a, b;
+52     double d;
+53 
+54     a = creal(z);
+55     b = cimag(z);
+56     d = cosh(2\&.0 * a) + cos(2\&.0 * b);
+57     w = cpack((2\&.0 * cosh(a) * cos(b) / d), (-2\&.0 * sinh(a) * sin(b) / d));
+58 
+59     return w;
+60 }
 .fi
 .SS "double csgn (\fBcomplex\fP z)"
 
 .PP
-Complex signum\&. Mostly as specified in [IEEE Std 1003\&.1, 2013 Edition]: http://pubs.opengroup.org/onlinepubs/9699919799/basedefs/complex.h.html
-.PP
-More info is available at Wikipedia: 
+Complex signum\&. More info is available at Wikipedia: 
 .br
  https://wikipedia.org/wiki/Sign_function#Complex_signum 
 .PP
 Definition at line 39 of file csgn\&.c\&.
-.PP
-References cimag(), and creal()\&.
 .PP
 .nf
 40 {
@@ -1541,23 +1441,21 @@ imag = cos(a) * sinh(b)
 .PP
  
 .PP
-Definition at line 54 of file csin\&.c\&.
-.PP
-References cchsh(), cimag(), cos(), cpack(), creal(), and sin()\&.
+Definition at line 52 of file csin\&.c\&.
 .PP
 .nf
-55 {
-56     complex w;
-57     double a, b;
-58     double ch, sh;
-59 
-60     a = creal(z);
-61     b = cimag(z);
-62     cchsh(b, &ch, &sh);
-63     w = cpack((sin(a) * ch), (cos(a) * sh));
-64 
-65     return w;
-66 }
+53 {
+54     complex w;
+55     double a, b;
+56     double ch, sh;
+57 
+58     a = creal(z);
+59     b = cimag(z);
+60     cchsh(b, &ch, &sh);
+61     w = cpack((sin(a) * ch), (cos(a) * sh));
+62 
+63     return w;
+64 }
 .fi
 .SS "\fBcomplex\fP csinh (\fBcomplex\fP z)"
 
@@ -1587,23 +1485,21 @@ imag = cosh(a) * sin(b)
 .PP
  
 .PP
-Definition at line 54 of file csinh\&.c\&.
-.PP
-References cchsh(), cimag(), cos(), cpack(), creal(), and sin()\&.
+Definition at line 52 of file csinh\&.c\&.
 .PP
 .nf
-55 {
-56     complex w;
-57     double a, b;
-58     double ch, sh;
-59 
-60     a = creal(z);
-61     b = cimag(z);
-62     cchsh(a, &ch, &sh);
-63     w = cpack(cos(b) * sh, sin(b) * ch);
-64 
-65     return w;
-66 }
+53 {
+54     complex w;
+55     double a, b;
+56     double ch, sh;
+57 
+58     a = creal(z);
+59     b = cimag(z);
+60     cchsh(a, &ch, &sh);
+61     w = cpack(cos(b) * sh, sin(b) * ch);
+62 
+63     return w;
+64 }
 .fi
 .SS "\fBcomplex\fP csqrt (\fBcomplex\fP z)"
 
@@ -1622,104 +1518,100 @@ Square root of complex number\&.
 .PP
 
 .PP
-Definition at line 47 of file csqrt\&.c\&.
-.PP
-References cabs(), cimag(), cpack(), creal(), and sqrt()\&.
+Definition at line 45 of file csqrt\&.c\&.
 .PP
 .nf
-48 {
-49     complex w;
-50     double x, y, r, t, scale;
-51 
-52     x = creal(z);
-53     y = cimag(z);
-54 
-55     if (y == 0\&.0)
-56     {
-57         if (x == 0\&.0)
-58         {
-59             w = cpack(0\&.0, y);
-60         }
-61         else
-62         {
-63             r = fabs(x);
-64             r = sqrt(r);
-65             if (x < 0\&.0)
-66             {
-67                 w = cpack(0\&.0, r);
-68             }
-69             else
-70             {
-71                 w = cpack(r, y);
-72             }
-73         }
-74         return w;
-75     }
-76     if (x == 0\&.0)
-77     {
-78         r = fabs(y);
-79         r = sqrt(0\&.5 * r);
-80         if (y > 0)
-81             w = cpack(r, r);
-82         else
-83             w = cpack(r, -r);
-84         return w;
-85     }
-86     /* Rescale to avoid internal overflow or underflow\&.  */
-87     if ((fabs(x) > 4\&.0) || (fabs(y) > 4\&.0))
-88     {
-89         x *= 0\&.25;
-90         y *= 0\&.25;
-91         scale = 2\&.0;
-92     }
-93     else
-94     {
-95 #if 1
-96         x *= 1\&.8014398509481984e16; /* 2^54 */
-97         y *= 1\&.8014398509481984e16;
-98         scale = 7\&.450580596923828125e-9; /* 2^-27 */
-99 #else
-100         x *= 4\&.0;
-101         y *= 4\&.0;
-102         scale = 0\&.5;
-103 #endif
-104     }
-105     w = cpack(x, y);
-106     r = cabs(w);
-107     if (x > 0)
-108     {
-109         t = sqrt(0\&.5 * r + 0\&.5 * x);
-110         r = scale * fabs((0\&.5 * y) / t);
-111         t *= scale;
-112     }
-113     else
-114     {
-115         r = sqrt(0\&.5 * r - 0\&.5 * x);
-116         t = scale * fabs((0\&.5 * y) / r);
-117         r *= scale;
-118     }
-119     if (y < 0)
-120         w = cpack(t, -r);
-121     else
-122         w = cpack(t, r);
-123     return w;
-124 }
+46 {
+47     complex w;
+48     double x, y, r, t, scale;
+49 
+50     x = creal(z);
+51     y = cimag(z);
+52 
+53     if (y == 0\&.0)
+54     {
+55         if (x == 0\&.0)
+56         {
+57             w = cpack(0\&.0, y);
+58         }
+59         else
+60         {
+61             r = fabs(x);
+62             r = sqrt(r);
+63             if (x < 0\&.0)
+64             {
+65                 w = cpack(0\&.0, r);
+66             }
+67             else
+68             {
+69                 w = cpack(r, y);
+70             }
+71         }
+72         return w;
+73     }
+74     if (x == 0\&.0)
+75     {
+76         r = fabs(y);
+77         r = sqrt(0\&.5 * r);
+78         if (y > 0)
+79             w = cpack(r, r);
+80         else
+81             w = cpack(r, -r);
+82         return w;
+83     }
+84     /* Rescale to avoid internal overflow or underflow\&.  */
+85     if ((fabs(x) > 4\&.0) || (fabs(y) > 4\&.0))
+86     {
+87         x *= 0\&.25;
+88         y *= 0\&.25;
+89         scale = 2\&.0;
+90     }
+91     else
+92     {
+93 #if 1
+94         x *= 1\&.8014398509481984e16; /* 2^54 */
+95         y *= 1\&.8014398509481984e16;
+96         scale = 7\&.450580596923828125e-9; /* 2^-27 */
+97 #else
+98         x *= 4\&.0;
+99         y *= 4\&.0;
+100         scale = 0\&.5;
+101 #endif
+102     }
+103     w = cpack(x, y);
+104     r = cabs(w);
+105     if (x > 0)
+106     {
+107         t = sqrt(0\&.5 * r + 0\&.5 * x);
+108         r = scale * fabs((0\&.5 * y) / t);
+109         t *= scale;
+110     }
+111     else
+112     {
+113         r = sqrt(0\&.5 * r - 0\&.5 * x);
+114         t = scale * fabs((0\&.5 * y) / r);
+115         r *= scale;
+116     }
+117     if (y < 0)
+118         w = cpack(t, -r);
+119     else
+120         w = cpack(t, r);
+121     return w;
+122 }
 .fi
 .SS "\fBcomplex\fP csub (\fBcomplex\fP a, \fBcomplex\fP z)"
 
 .PP
 Subtraction of two complex numbers\&. 
 .PP
-Definition at line 142 of file prim\&.c\&.
-.PP
-References cimag(), cpack(), and creal()\&.
+Definition at line 140 of file prim\&.c\&.
 .PP
 .nf
-143 {
-144     complex w;
-145     w = cpack(creal(y) - creal(z), cimag(y) - cimag(z));
-146     return w;
-147 }
+141 {
+142     complex w;
+143     w = cpack(creal(y) - creal(z), cimag(y) - cimag(z));
+144     return w;
+145 }
 .fi
 .SS "\fBcomplex\fP ctan (\fBcomplex\fP z)"
 
@@ -1758,31 +1650,29 @@ imag  = ------------------------------
 .PP
  
 .PP
-Definition at line 59 of file ctan\&.c\&.
-.PP
-References cimag(), cos(), cosh(), cpack(), creal(), sin(), and sinh()\&.
+Definition at line 57 of file ctan\&.c\&.
 .PP
 .nf
-60 {
-61     complex w;
-62     double a, b;
-63     double d;
-64 
-65     a = creal(z);
-66     b = cimag(z);
-67     d = cos(2\&.0 * a) + cosh(2\&.0 * b);
-68 
-69     if (d == 0\&.0)
-70     {
-71         w = cpack(D_INFP, D_INFP);
-72     }
-73     else
-74     {
-75         w = cpack((sin(2\&.0 * a) / d), (sinh(2\&.0 * b) / d));
-76     }
-77 
-78     return w;
-79 }
+58 {
+59     complex w;
+60     double a, b;
+61     double d;
+62 
+63     a = creal(z);
+64     b = cimag(z);
+65     d = cos(2\&.0 * a) + cosh(2\&.0 * b);
+66 
+67     if (d == 0\&.0)
+68     {
+69         w = cpack((double)INFP, (double)INFP);
+70     }
+71     else
+72     {
+73         w = cpack((sin(2\&.0 * a) / d), (sinh(2\&.0 * b) / d));
+74     }
+75 
+76     return w;
+77 }
 .fi
 .SS "\fBcomplex\fP ctanh (\fBcomplex\fP z)"
 
@@ -1818,40 +1708,45 @@ imag  = ------------------------------
 .PP
  
 .PP
-Definition at line 57 of file ctanh\&.c\&.
-.PP
-References cimag(), cos(), cosh(), cpack(), creal(), sin(), and sinh()\&.
+Definition at line 55 of file ctanh\&.c\&.
 .PP
 .nf
-58 {
-59     complex w;
-60     double a, b;
-61     double d;
-62 
-63     a = creal(z);
-64     b = cimag(z);
-65     d = cosh(2\&.0 * a) + cos(2\&.0 * b);
-66     w = cpack((sinh(2\&.0 * a) / d), (sin(2\&.0 * b) / d));
-67 
-68     return w;
-69 }
+56 {
+57     complex w;
+58     double a, b;
+59     double d;
+60 
+61     a = creal(z);
+62     b = cimag(z);
+63     d = cosh(2\&.0 * a) + cos(2\&.0 * b);
+64     w = cpack((sinh(2\&.0 * a) / d), (sin(2\&.0 * b) / d));
+65 
+66     return w;
+67 }
 .fi
 .SS "\fBcomplex\fP ctrunc (\fBcomplex\fP z)"
 
 .PP
 Truncated value of complex number\&. 
 .PP
-Definition at line 87 of file prim\&.c\&.
-.PP
-References cimag(), cpack(), creal(), and trunc()\&.
+Definition at line 85 of file prim\&.c\&.
 .PP
 .nf
-88 {
-89     complex w;
-90     w = cpack(trunc(creal(z)), trunc(cimag(z)));
-91     return w;
-92 }
+86 {
+87     complex w;
+88     w = cpack(trunc(creal(z)), trunc(cimag(z)));
+89     return w;
+90 }
 .fi
-.SH "See also"
+.SH HOMEPAGE
+http://amath.innolan.net/
+.SH AUTHORS
 .PP
+Written by Carsten Sonne Larsen <cs@innolan.net>. Some code in the
+library is derived from software written by Stephen L. Moshier.
+.SH COPYRIGHT
+Copyright (c) 2014-2017 Carsten Sonne Larsen <cs@innolan.net>
+.br
+Copyright (c) 2007 The NetBSD Foundation, Inc.
+.SH "See also"
 amath(1), amathc(3), amathr(3)

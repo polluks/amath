@@ -51,12 +51,14 @@ public:
     virtual void Start() = 0;
     virtual void Exit() = 0;
     virtual void Clear();
+    virtual void ShowHelp();
     virtual void ShowAbout();
     virtual void ShowLicense();
     virtual void ShowVersion();
     virtual void SetPrompt(const char* string);
     virtual void WriteString(const char* string) = 0;
     virtual bool SetAnsiMode(bool value);
+    virtual void ResetConsole();
 
 protected:
     virtual void StartMessage();
@@ -64,12 +66,11 @@ protected:
     const char* GetVersionText();
     const char* GetCompilerText();
     char* prompt;
+    bool ansiMode;
 
 private:
-    void ResetConsole();
     void AnsiItalics();
     void AnsiBold();
-    bool ansiMode;
 };
 
 #endif

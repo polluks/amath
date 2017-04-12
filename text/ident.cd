@@ -5,7 +5,7 @@
 ; ## ------------------------------------------
 ; ##
 ; ## Generate code with:
-; ## flexcat ident.cd ../src/localize/ident.h=ident.sd
+; ## flexcat ident.cd ../src/loc/ident.h=ident.sd
 ; ##
 ; ###################################################################################
 ; ## Copyright (c) 2014-2017 Carsten Sonne Larsen <cs@innolan.net>

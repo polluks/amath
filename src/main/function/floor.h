@@ -35,7 +35,7 @@
 /**
  * @brief A floor function in a syntax tree. 
  * @details
- * More info on the floor function is available at [Wikipedia]:
+ * More info on the floor function is available at Wikipedia:
  * https://wikipedia.org/wiki/Floor_function
  *
  */

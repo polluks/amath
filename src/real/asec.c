@@ -1,6 +1,4 @@
-/* @(#)s_copysign.c 1.3 95/01/18 */
-
-/*
+/*-
  * Copyright (c) 2014-2017 Carsten Sonne Larsen <cs@innolan.net>
  * All rights reserved.
  *
@@ -24,36 +22,29 @@
  * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF
  * THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  *
- * The origin source code can be obtained from:
- * http://www.netlib.org/fdlibm/s_copysign.c
+ * Project homepage:
+ * http://amath.innolan.net
  * 
  */
 
-/*
- * ====================================================
- * Copyright (C) 1993 by Sun Microsystems, Inc. All rights reserved.
- *
- * Developed at SunSoft, a Sun Microsystems, Inc. business.
- * Permission to use, copy, modify, and distribute this
- * software is freely granted, provided that this notice 
- * is preserved.
- * ====================================================
+/**
+ * @file  asec.c
+ * @brief Inverse secant function
  */
 
 #include "prim.h"
 
 /**
- * @brief   Returns a value with the magnitude of x and
- *          with the sign bit of y.
- * @version 1.3
- * @date    95/01/18
- * @details 
+ * @brief   Inverse secant function
+ * @details
+ * <pre>
+ * Method
+ *     arcsec(x) = arccos(1/x)
+ * </pre>
  */
-double copysign(double x, double y)
+double asec(double x)
 {
-    uword hx, hy;
-    GET_HIGH_WORD(hx, x);
-    GET_HIGH_WORD(hy, y);
-    SET_HIGH_WORD(x, (hx&0x7fffffff)|(hy&0x80000000));
-    return x;
+    double a = 1.0 / x;
+    double b = acos(a);
+    return b;
 }

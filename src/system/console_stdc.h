@@ -40,7 +40,6 @@
 #include "console.h"
 
 #if defined(STDC_CONSOLE)
-#include <stdio.h>
 
 /**
  * @brief Encapsulates the IO of a Standard C console.

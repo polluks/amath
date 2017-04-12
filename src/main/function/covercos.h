@@ -35,7 +35,7 @@
 /**
  * @brief A coversed cosine function in a syntax tree. 
  * @details
- * More info on the coversed cosine function is available at [Wikipedia]:
+ * More info on the coversed cosine function is available at Wikipedia:
  * https://wikipedia.org/wiki/Covercosine
  *
  */

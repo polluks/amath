@@ -1,6 +1,4 @@
-/* @(#)e_acosh.c 1.3 95/01/18 */
-
-/*
+/*-
  * Copyright (c) 2014-2017 Carsten Sonne Larsen <cs@innolan.net>
  * All rights reserved.
  *
@@ -24,75 +22,91 @@
  * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF
  * THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  *
- * The origin source code can be obtained from:
+ * Project homepage:
+ * http://amath.innolan.net
+ *
+ * The original source code can be obtained from:
  * http://www.netlib.org/fdlibm/e_acosh.c
  * 
- */
-
-/*
- * ====================================================
+ * =================================================================
  * Copyright (C) 1993 by Sun Microsystems, Inc. All rights reserved.
  *
  * Developed at SunSoft, a Sun Microsystems, Inc. business.
  * Permission to use, copy, modify, and distribute this
  * software is freely granted, provided that this notice
  * is preserved.
- * ====================================================
- *
+ * =================================================================
+ */
+
+/**
+ * @file  acosh.c
+ * @brief Inverse hyperbolic cosine function
  */
 
 #include "prim.h"
-#include "math.h"
 
 static const double
-one = 1.0,
-ln2 = 6.93147180559945286227e-01;  /* 0x3FE62E42, 0xFEFA39EF */
+    one = 1.0,
+    ln2 = 6.93147180559945286227e-01; /* 0x3FE62E42, 0xFEFA39EF */
 
 /**
- * @brief     Inverse hyperbolic cosine function.
- * @version   1.3
- * @date      95/01/18
+ * @brief   Inverse hyperbolic cosine function
  * @details
  * <pre>
- * Method :
- *	Based on
- *		acosh(x) = log [ x + sqrt(x*x-1) ]
- *	we have
- *		acosh(x) := log(x)+ln2,	if x is large; else
- *		acosh(x) := log(2x-1/(sqrt(x*x-1)+x)) if x>2; else
- *		acosh(x) := log1p(t+sqrt(2.0*t+t*t)); where t=x-1.
+ * Based on
+ *     acosh(x) = log [ x + sqrt(x*x-1) ]
+ * 
+ * we have
+ *     acosh(x) = log(x)+ln2, if x is large; else
+ *     acosh(x) = log(2x-1/(sqrt(x*x-1)+x)) if x>2; else
+ *     acosh(x) = log1p(t+sqrt(2.0*t+t*t)); where t=x-1
  *
- * Special cases:
- *	acosh(x) is NaN with signal if x<1.
- *	acosh(NaN) is NaN without signal.
+ * Special cases
+ *     acosh(x) is NaN if x<1
+ *     acosh(NaN) is NaN
  * </pre>
- * @copyright Copyright (C) 1993 by Sun Microsystems, Inc. All rights reserved.
- * @license   Developed at SunSoft, a Sun Microsystems, Inc. business. Permission
- *            to use, copy, modify, and distribute this software is freely granted,
- *            provided that this notice is preserved.
  */
-
 double acosh(double x)
 {
     double t;
-    sword hx, lx;
-    GET_HIGH_WORD(hx,x);
-    GET_LOW_WORD(lx,x);
+    int32_t hx, lx;
 
-    if(hx<0x3ff00000) {		/* x < 1 */
-        return (x-x)/(x-x);
-    } else if(hx >=0x41b00000) {	/* x > 2**28 */
-        if(hx >=0x7ff00000) {	/* x is inf of NaN */
-            return x+x;
-        } else
-            return log(x)+ln2;	/* acosh(huge)=log(2x) */
-    } else if(((hx-0x3ff00000)|lx)==0) {
-        return 0.0;			/* acosh(1) = 0 */
-    } else if (hx > 0x40000000) {	/* 2**28 > x > 2 */
-        t=x*x;
-        return log(2.0*x-one/(x+sqrt(t-one)));
-    } else {			/* 1<x<2 */
-        t = x-one;
-        return log1p(t+sqrt(2.0*t+t*t));
+    GET_HIGH_WORD(hx, x);
+    GET_LOW_WORD(lx, x);
+
+    // x < 1
+    if (hx < 0x3FF00000)
+    {
+        return NAN;
     }
+
+    // x > 2**28
+    if (hx >= 0x41B00000)
+    {
+        // x is inf or NaN
+        if (hx >= 0x7FF00000)
+        {
+            return NAN;
+        }
+
+        // acosh(huge) = log(2x)
+        return log(x) + ln2;
+    }
+
+    // acosh(1) = 0
+    if (((hx - 0x3FF00000) | lx) == 0)
+    {
+        return 0.0;
+    }
+
+    // 2**28 > x > 2
+    if (hx > 0x40000000)
+    {
+        t = x * x;
+        return log(2.0 * x - one / (x + sqrt(t - one)));
+    }
+
+    // 1 < x < 2
+    t = x - one;
+    return log1p(t + sqrt(2.0 * t + t * t));
 }

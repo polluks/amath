@@ -1,6 +1,4 @@
-/* @(#)s_ceil.c 1.3 95/01/18 */
-
-/*
+/*-
  * Copyright (c) 2014-2017 Carsten Sonne Larsen <cs@innolan.net>
  * All rights reserved.
  *
@@ -24,21 +22,25 @@
  * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF
  * THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  *
- * The origin source code can be obtained from:
+ * Project homepage:
+ * http://amath.innolan.net
+ *
+ * The original source code can be obtained from:
  * http://www.netlib.org/fdlibm/s_ceil.c
  * 
- */
-
-/*
- * ====================================================
+ * =================================================================
  * Copyright (C) 1993 by Sun Microsystems, Inc. All rights reserved.
  *
  * Developed at SunSoft, a Sun Microsystems, Inc. business.
  * Permission to use, copy, modify, and distribute this
  * software is freely granted, provided that this notice
  * is preserved.
- * ====================================================
- *
+ * =================================================================
+ */
+
+/**
+ * @file  ceil.c
+ * @brief Ceiling function
  */
 
 #include "prim.h"
@@ -46,26 +48,22 @@
 static const double huge = 1.0e300;
 
 /**
- * @brief   Mathematical ceiling function.
- * @version 1.3
- * @date    95/01/18
+ * @brief   Ceiling function
+ * @param   x
+ * @returns x rounded toward -inf to integral value
  * @details
  * <pre>
- * Return x rounded toward -inf to integral value
- * Method:
- *	Bit twiddling.
- * Exception:
- *	Inexact flag raised if x not equal to ceil(x).
+ * Method
+ *     Bit twiddling
+ * 
+ * Exception
+ *     Inexact flag raised if x not equal to ceil(x).
  * </pre>
- * @copyright Copyright (C) 1993 by Sun Microsystems, Inc. All rights reserved.
- * @license   Developed at SunSoft, a Sun Microsystems, Inc. business. Permission
- *            to use, copy, modify, and distribute this software is freely granted,
- *            provided that this notice is preserved.
  */
 double ceil(double x)
 {
-    sword i0,i1,j0;
-    uword i,j;
+    int32_t i0,i1,j0;
+    uint32_t i,j;
     EXTRACT_WORDS(i0,i1,x);
     j0 = ((i0>>20)&0x7ff)-0x3ff;
     if(j0<20) {
@@ -93,7 +91,7 @@ double ceil(double x)
         if(j0==0x400) return x+x;	/* inf or NaN */
         else return x;			/* x is integral */
     } else {
-        i = ((uword)(0xffffffff))>>(j0-20);
+        i = ((uint32_t)(0xffffffff))>>(j0-20);
         if((i1&i)==0) return x;		/* x is integral */
         if(huge+x>0.0) { 		/* raise inexact flag */
             if(i0>0) {
@@ -101,7 +99,7 @@ double ceil(double x)
                 else {
                     j = i1 + (1<<(52-j0));
                     // NOTICE: Is this a correct cast?
-                    if((sword)j<(sword)i1) i0+=1;	/* got a carry */
+                    if((int32_t)j<(int32_t)i1) i0+=1;	/* got a carry */
                     i1 = j;
                 }
             }

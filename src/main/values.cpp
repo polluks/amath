@@ -27,7 +27,7 @@
  * 
  */
 
-#include "math.h"
+#include "mathr.h"
 #include "amath.h"
 #include "amathc.h"
 #include "nodes.h"
@@ -36,7 +36,7 @@
 #include "lib/real.h"
 #include "lib/cplex.h"
 #include "lib/charbuf.h"
-#include "localize/text.h"
+#include "loc/text.h"
 #include "system/program.h"
 
 // -----------------------------------------------------

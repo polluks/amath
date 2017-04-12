@@ -32,17 +32,16 @@
 
 /**
  * @file  aengine.h
- * @brief ANSI Console Engine.
- *
+ * @brief ANSI Console Engine
  */
 
 class CharBuffer;
 class CharValidator;
 
 /**
- * @brief   ANSI console controller.
+ * @brief   ANSI console controller
  * @details
- * More info on the ANSI console is available at [Wikipedia]:
+ * More info on the ANSI console is available at Wikipedia:
  * https://wikipedia.org/wiki/ANSI_escape_code
  */
 class AnsiConoleEngine
@@ -56,6 +55,8 @@ public:
     const char* GetLine() const;
     void SetPrompt(const char* string);
     const char* ProcessChar(const unsigned char character);
+    void Enable();
+    void Disable();
 
 private:
     void CopyLine();
@@ -63,6 +64,7 @@ private:
     void ShowNext();
 
     char* prompt;
+    bool enabled;
 
     static const int maxLines = 100;
     static const int lineSize = 1024;

@@ -32,7 +32,7 @@
 #include "nodes.h"
 #include "lib/numb.h"
 #include "lib/charbuf.h"
-#include "localize/text.h"
+#include "loc/text.h"
 #include "system/program.h"
 
 // -----------------------------------------------------
@@ -291,7 +291,8 @@ char* StatementBlockNode::Execute()
 
 SyntaxNode* StatementBlockNode::GetNext()
 {
-    return nullptr; // TODO: Implement
+    // TODO: Implement GetNext in StatementBlockNode
+    return nullptr;
 }
 
 void StatementBlockNode::Attach(SyntaxNode* node)
@@ -300,10 +301,10 @@ void StatementBlockNode::Attach(SyntaxNode* node)
 
 void StatementBlockNode::Detach(SyntaxNode* node)
 {
-    // TODO: IMPLEMENT
+    // TODO: Implement Detach in StatementBlockNode
 }
 
 void StatementBlockNode::Replace(SyntaxNode* n, SyntaxNode* x)
 {
-    // TODO: IMPLEMENT
+    // TODO: Implement Replace in StatementBlockNode
 }

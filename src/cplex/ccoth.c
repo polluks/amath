@@ -28,11 +28,9 @@
  */
 
 #include "prim.h"
-#include "math.h"
-#include "complex.h"
 
 /**
- * @brief   Hyperbolic cotangent of a complex number
+ * @brief  Hyperbolic cotangent of a complex number
  * @details
  * <pre>
  * acoth(z) = 0.5 * (log(1 + 1/z) - log(1 - 1/z))

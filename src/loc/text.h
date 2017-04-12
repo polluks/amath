@@ -30,13 +30,12 @@
  * 
  */
 
-#ifndef AMATH_LOCALIZE_TEXT_H
-#define AMATH_LOCALIZE_TEXT_H
+#ifndef AMATH_LOCALE_TEXT_H
+#define AMATH_LOCALE_TEXT_H
 
 /**
- * @file  localize/text.h
- * @brief Static texts in amath.
- *
+ * @file  loc/text.h
+ * @brief Static texts in amath
  */
 
 #include "main.h"
@@ -102,27 +101,27 @@
 
 static const textdef textdefs[] = {
     { 0, "#NORMALTEXT##BOLD##STARTMSG##NEWLINE##NORMALTEXT##COLOR02#Type help to show info.#NEWLINE#" }, /* INTROMSG */
-    { 1, "---------------------------------------------------------#NEWLINE#" }, /* STATEMENTLINE */
-    { 2, "clear      Clear console window.#NEWLINE#" }, /* STATEMENTCLEAR */
-    { 3, "def        Define function.#NEWLINE#" }, /* STATEMENTDEF */
-    { 4, "delete     Delete variable or function.#NEWLINE#" }, /* STATEMENTDELETE */
-    { 5, "digits     Set number of significant digits.#NEWLINE#" }, /* STATEMENTDIGITS */
-    { 6, "eval       Evaluate arithmetic expression.#NEWLINE#" }, /* STATEMENTEVAL */
-    { 7, "execute    Execute statements in a file.#NEWLINE#" }, /* STATEMENTEXECUTE */
-    { 8, "functions  Show list of user defined functions.#NEWLINE#" }, /* STATEMENTFUNCS */
-    { 9, "input      Change numeral input system.#NEWLINE#" }, /* STATEMENTINPUT */
-    { 10, "help       Show basic help text.#NEWLINE#" }, /* STATEMENTHELP */
-    { 11, "output     Change numeral output system.#NEWLINE#" }, /* STATEMENTOUTPUT */
-    { 12, "list       Show content of a directory.#NEWLINE#" }, /* STATEMENTLIST */
-    { 13, "show       Show content of a file.#NEWLINE#" }, /* STATEMENTSHOW */
-    { 14, "load       Load variable and functions from file.#NEWLINE#" }, /* STATEMENTLOAD */
-    { 15, "save       Save variable and functions to file.#NEWLINE#" }, /* STATEMENTSAVE */
-    { 16, "variables  Show list of variables.#NEWLINE#" }, /* STATEMENTVARS */
-    { 17, "version    Show version string.#NEWLINE#" }, /* STATEMENTVERSION */
-    { 18, "memory     Show internal memory usage.#NEWLINE#" }, /* STATEMENTMEMORY */
-    { 19, "exit       Exit program.#NEWLINE#" }, /* STATEMENTEXIT */
+    { 1, "------------------------------------------------------------#NEWLINE#" }, /* STATEMENTLINE */
+    { 2, "clear      Clear console window#NEWLINE#" }, /* STATEMENTCLEAR */
+    { 3, "def        Define function#NEWLINE#" }, /* STATEMENTDEF */
+    { 4, "delete     Delete variable or function#NEWLINE#" }, /* STATEMENTDELETE */
+    { 5, "digits     Set number of significant digits#NEWLINE#" }, /* STATEMENTDIGITS */
+    { 6, "eval       Evaluate arithmetic expression#NEWLINE#" }, /* STATEMENTEVAL */
+    { 7, "execute    Execute statements in a file#NEWLINE#" }, /* STATEMENTEXECUTE */
+    { 8, "functions  Show list of user defined functions#NEWLINE#" }, /* STATEMENTFUNCS */
+    { 9, "input      Change numeral input system#NEWLINE#" }, /* STATEMENTINPUT */
+    { 10, "help       Show basic help text#NEWLINE#" }, /* STATEMENTHELP */
+    { 11, "output     Change numeral output system#NEWLINE#" }, /* STATEMENTOUTPUT */
+    { 12, "list       Show content of a directory#NEWLINE#" }, /* STATEMENTLIST */
+    { 13, "show       Show content of a file#NEWLINE#" }, /* STATEMENTSHOW */
+    { 14, "load       Load variable and functions from file#NEWLINE#" }, /* STATEMENTLOAD */
+    { 15, "save       Save variable and functions to file#NEWLINE#" }, /* STATEMENTSAVE */
+    { 16, "variables  Show list of variables#NEWLINE#" }, /* STATEMENTVARS */
+    { 17, "version    Show version string#NEWLINE#" }, /* STATEMENTVERSION */
+    { 18, "memory     Show internal memory usage#NEWLINE#" }, /* STATEMENTMEMORY */
+    { 19, "exit       Exit program#NEWLINE#" }, /* STATEMENTEXIT */
     { 20, "The def and eval statements are optional. Functions and#NEWLINE#variables statements can be shorten to funcs and vars.#NEWLINE#" }, /* STATEMENTFOOTER */
-    { 21, "Type        Name#NEWLINE#-----------------------------------------------#NEWLINE#" }, /* TXTLISTDIRHEADER */
+    { 21, "Type        Name#NEWLINE#--------------------------------------------------#NEWLINE#" }, /* TXTLISTDIRHEADER */
     { 22, "[file]" }, /* TXTLISTDIRTFILE */
     { 23, "[dir]" }, /* TXTLISTDIRTDIR */
     { 24, "[unknown]" }, /* TXTLISTDIRTUNKNOWN */

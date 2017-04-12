@@ -27,10 +27,19 @@
  * 
  */
 
-#include "prim.h"
-#include "math.h"
+/**
+ * @file  round.c
+ * @brief Round function
+ */
 
+#include "prim.h"
+
+/**
+ * @brief Round function
+ */
 double round(double x)
 {
-    return x > 0.0 ? floor(x + 0.5) : ceil(x - 0.5);
+    return x > 0.0
+               ? floor(x + 0.5)
+               : ceil(x - 0.5);
 }

@@ -35,13 +35,9 @@
  */
 
 #include "prim.h"
-#include "math.h"
-#include "complex.h"
 
 /**
- * @brief   Hyperbolic tangent of a complex number
- * @version 1.1
- * @date    2007/08/20
+ * @brief  Hyperbolic tangent of a complex number
  * @details
  * <pre>
  * a+bi

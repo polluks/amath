@@ -35,13 +35,9 @@
  */
 
 #include "prim.h"
-#include "math.h"
-#include "complex.h"
 
 /**
- * @brief   Hyperbolic sine of a complex number
- * @version 1.1
- * @date    2007/08/20
+ * @brief  Hyperbolic sine of a complex number
  * @details
  * Calculated as in Open Office:<BR>
  * https://wiki.openoffice.org/wiki/Documentation/How_Tos/Calc:_IMSINH_function

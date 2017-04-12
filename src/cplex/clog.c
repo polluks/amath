@@ -35,14 +35,9 @@
  */
 
 #include "prim.h"
-#include "math.h"
-#include "complex.h"
 
 /**
- * @brief   Natural logarithm of a complex number
- * @version 1.1
- * @date    2007/08/20
- * @details
+ * @brief Natural logarithm of a complex number
  */
 complex clog(complex z)
 {

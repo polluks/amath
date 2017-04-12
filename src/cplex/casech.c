@@ -28,18 +28,13 @@
  */
 
 #include "prim.h"
-#include "math.h"
-#include "complex.h"
 
 /**
- * @brief   Inverse hyperbolic secant of complex numbers
- * @version 1.1
- * @date    15/03/03
+ * @brief  Inverse hyperbolic secant of complex numbers
  * @details
  * Inverse hyperbolic secant expressed using complex logarithms:
  * <pre>
  * asech(z) = log(sqrt(1 / (z * z) - 1) + 1/z)
- *
  * </pre>
  * More info is available at Wikipedia: <BR>
  * https://wikipedia.org/wiki/Inverse_hyperbolic_function#Logarithmic_representation

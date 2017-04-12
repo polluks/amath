@@ -30,6 +30,7 @@
 #include "plot.h"
 #include "amath.h"
 #include "amathc.h"
+#include "lib/ntextd.h"
 #include "system/program.h"
 #include "../fgrid.h"
 #include "../userfunction.h"

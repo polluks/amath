@@ -35,7 +35,7 @@
 /**
  * @brief A arctangent function in a syntax tree. 
  * @details
- * More info on the arctangent function is available at [Wikipedia]:
+ * More info on the arctangent function is available at Wikipedia:
  * https://wikipedia.org/wiki/Arctangent
  *
  */

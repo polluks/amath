@@ -70,6 +70,7 @@ void StandardConsole::Start()
         evaluator->Evaluate();
         const char* out = evaluator->GetResult();
         WriteString(out);
+        ResetConsole();
         delete evaluator;
     }
 }

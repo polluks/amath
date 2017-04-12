@@ -27,15 +27,15 @@
  * 
  */
 
-#ifndef AMATH_FUNCTION_ARCOSINE_H
-#define AMATH_FUNCTION_ARCOSINE_H
+#ifndef AMATH_FUNCTION_ARCCOSINE_H
+#define AMATH_FUNCTION_ARCCOSINE_H
 
 #include "node.h"
 
 /**
  * @brief A arccosine function in a syntax tree. 
  * @details
- * More info on the arccosine function is available at [Wikipedia]:
+ * More info on the arccosine function is available at Wikipedia:
  * https://wikipedia.org/wiki/Arccosine
  *
  */

@@ -98,12 +98,19 @@ void PosixConsole::Exit()
 
 void PosixConsole::ReadLine()
 {
+    char c;
     proc->StartInput();
     while (!proc->InputDone())
     {
-        unsigned char c = getchar();
-        const char* out = proc->ProcessChar(static_cast<char>(c));
+        ssize_t res = read(STDIN_FILENO, &c, sizeof(char));
+        if (res != 1)
+        {
+            break;
+        }
+
+        const char* out = proc->ProcessChar(c);
         WriteString(out);
+        ResetConsole();
     }
 
     line = proc->GetLine();
@@ -116,14 +123,11 @@ void PosixConsole::WriteString(const char* string)
 
 void PosixConsole::Write(const char* string, unsigned int length)
 {
-    unsigned int i = 0;
-    while (i < length && string[i] != 0)
+    ssize_t res = write(STDOUT_FILENO, string, length);
+    if (res != length)
     {
-        fputc(string[i], stdout);
-        i++;
+        exit = true;
     }
-
-    fflush(stdout);
 }
 
 void PosixConsole::SetPrompt(const char* string)

@@ -35,7 +35,7 @@
 /**
  * @brief A hyperbolic secant function in a syntax tree. 
  * @details
- * More info on the hyperbolic secant function is available at [Wikipedia]:
+ * More info on the hyperbolic secant function is available at Wikipedia:
  * https://wikipedia.org/wiki/Hyperbolic_secant
  *
  */

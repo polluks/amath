@@ -5,7 +5,7 @@
 ; ## -------------------------------
 ; ##
 ; ## Generate code with:
-; ## flexcat keyword.cd ../src/localize/kword.h=keyword.sd
+; ## flexcat keyword.cd ../src/loc/kword.h=keyword.sd
 ; ##
 ; ###################################################################################
 ; ## Copyright (c) 2014-2017 Carsten Sonne Larsen <cs@innolan.net>

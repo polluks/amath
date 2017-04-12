@@ -31,22 +31,20 @@
  * 
  */
 
-#ifndef AMATH_LOCALIZE_KEYWORD_H
-#define AMATH_LOCALIZE_KEYWORD_H
+#ifndef AMATH_LOCALE_KEYWORD_H
+#define AMATH_LOCALE_KEYWORD_H
 
 /**
- * @file  localize/kword.h
- * @brief Keywords used by lexer.
- *
+ * @file  loc/kword.h
+ * @brief Keywords used by lexer
  */
 
 #include "amath.h"
 #include "amathc.h"
-#include "localize/lex.h"
+#include "main/symbol.h"
 
 /**
- * @brief Character representation of keyword tied with its symbol.
- *
+ * @brief Character representation of keyword tied with its symbol
  */
 struct keyworddef
 {

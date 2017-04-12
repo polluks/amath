@@ -1,6 +1,4 @@
-/* @(#)k_cos.c 1.4 96/03/07 */
-
-/*
+/*-
  * Copyright (c) 2014-2017 Carsten Sonne Larsen <cs@innolan.net>
  * All rights reserved.
  *
@@ -24,40 +22,41 @@
  * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF
  * THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  *
- * The origin source code can be obtained from:
+ * Project homepage:
+ * http://amath.innolan.net
+ *
+ * The original source code can be obtained from:
  * http://www.netlib.org/fdlibm/k_cos.c
  * 
- */
-
-/*
- * ====================================================
+ * =================================================================
  * Copyright (C) 1993 by Sun Microsystems, Inc. All rights reserved.
  *
  * Developed at SunSoft, a Sun Microsystems, Inc. business.
  * Permission to use, copy, modify, and distribute this
  * software is freely granted, provided that this notice
  * is preserved.
- * ====================================================
+ * =================================================================
+ */
+
+/**
+ * @file  kcos.c
+ * @brief Kernel cosine function
  */
 
 #include "prim.h"
-#include "math.h"
 
 static const double
-one =  1.00000000000000000000e+00, /* 0x3FF00000, 0x00000000 */
-C1  =  4.16666666666666019037e-02, /* 0x3FA55555, 0x5555554C */
-C2  = -1.38888888888741095749e-03, /* 0xBF56C16C, 0x16C15177 */
-C3  =  2.48015872894767294178e-05, /* 0x3EFA01A0, 0x19CB1590 */
-C4  = -2.75573143513906633035e-07, /* 0xBE927E4F, 0x809C52AD */
-C5  =  2.08757232129817482790e-09, /* 0x3E21EE9E, 0xBDB4B1C4 */
-C6  = -1.13596475577881948265e-11; /* 0xBDA8FAE9, 0xBE8838D4 */
+    one = 1.00000000000000000000e+00, /* 0x3FF00000, 0x00000000 */
+    C1 = 4.16666666666666019037e-02,  /* 0x3FA55555, 0x5555554C */
+    C2 = -1.38888888888741095749e-03, /* 0xBF56C16C, 0x16C15177 */
+    C3 = 2.48015872894767294178e-05,  /* 0x3EFA01A0, 0x19CB1590 */
+    C4 = -2.75573143513906633035e-07, /* 0xBE927E4F, 0x809C52AD */
+    C5 = 2.08757232129817482790e-09,  /* 0x3E21EE9E, 0xBDB4B1C4 */
+    C6 = -1.13596475577881948265e-11; /* 0xBDA8FAE9, 0xBE8838D4 */
 
 /**
- * @brief   Kernel cos function.
- * @version 1.4
- * @date    96/03/07
+ * @brief   Kernel cosine function
  * @details
- *
  * <pre>
  * Kernel cos function on [-pi/4, pi/4], pi/4 ~ 0.785398164
  * Input x is assumed to be bounded by ~pi/4 in magnitude.
@@ -91,34 +90,45 @@ C6  = -1.13596475577881948265e-11; /* 0xBDA8FAE9, 0xBE8838D4 */
  *	   magnitude of the latter is at least a quarter of x*x/2,
  *	   thus, reducing the rounding error in the subtraction.
  * </pre>
- * @copyright Copyright (C) 1993 by Sun Microsystems, Inc. All rights reserved.
- * @license   Developed at SunSoft, a Sun Microsystems, Inc. business. Permission
- *            to use, copy, modify, and distribute this software is freely granted,
- *            provided that this notice is preserved.
  */
-
 double __kernel_cos(double x, double y)
 {
-    double a,hz,z,r,qx;
-    sword ix;
-    GET_HIGH_WORD(ix, x);
-    ix &= 0x7fffffff;	/* ix = |x|'s high word*/
-    if(ix<0x3e400000) {			/* if x < 2**27 */
-        if(((int)x)==0) return one;		/* generate inexact */
-    }
-    z  = x*x;
-    r  = z*(C1+z*(C2+z*(C3+z*(C4+z*(C5+z*C6)))));
-    if(ix < 0x3FD33333) 			/* if |x| < 0.3 */
-        return one - (0.5*z - (z*r - x*y));
-    else {
-        if(ix > 0x3fe90000) {		/* x > 0.78125 */
-            qx = 0.28125;
-        } else {
-            INSERT_WORDS(qx,ix-0x00200000,0);
-        }
-        hz = 0.5*z-qx;
-        a  = one-qx;
-        return a - (hz - (z*r-x*y));
-    }
-}
+    double a, hz, z, r, qx;
+    int32_t ix;
 
+    GET_HIGH_WORD(ix, x);
+    ix &= 0x7FFFFFFF;
+
+    // if x < 2**27
+    if (ix < 0x3E400000)
+    {
+        // generate inexact
+        if ((int)x == 0)
+        {
+            return one;
+        }
+    }
+
+    z = x * x;
+    r = z * (C1 + z * (C2 + z * (C3 + z * (C4 + z * (C5 + z * C6)))));
+
+    // |x| < 0.3
+    if (ix < 0x3FD33333)
+    {
+        return one - (0.5 * z - (z * r - x * y));
+    }
+
+    // x > 0.78125
+    if (ix > 0x3FE90000)
+    {
+        qx = 0.28125;
+    }
+    else
+    {
+        INSERT_WORDS(qx, ix - 0x00200000, 0);
+    }
+
+    hz = 0.5 * z - qx;
+    a = one - qx;
+    return a - (hz - (z * r - x * y));
+}

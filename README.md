@@ -29,7 +29,4 @@ Install by copying the desired amath binary to C: or any other appropriate locat
     > amath version
 
     Run regression tests:
-    > amath-test test
-
-    Load amath into memory:
-    > resident amath pure
+    > amath test

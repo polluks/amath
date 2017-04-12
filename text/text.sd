@@ -31,13 +31,12 @@
  * 
  */
 
-#ifndef AMATH_LOCALIZE_TEXT_H
-#define AMATH_LOCALIZE_TEXT_H
+#ifndef AMATH_LOCALE_TEXT_H
+#define AMATH_LOCALE_TEXT_H
 
 /**
- * @file  localize/text.h
- * @brief Static texts in amath.
- *
+ * @file  loc/text.h
+ * @brief Static texts in amath
  */
 
 #include "main.h"

@@ -41,7 +41,7 @@
 /**
  * @brief Encapsulates an lexical analyzer. Provides token for the parser.
  * @details
- * More info on lexical analysis is available at [Wikipedia]:
+ * More info on lexical analysis is available at Wikipedia:
  * https://wikipedia.org/wiki/Lexical_analysis
  *
  */

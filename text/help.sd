@@ -31,19 +31,18 @@
  * 
  */
 
-#ifndef AMATH_LOCALIZE_HELP_H
-#define AMATH_LOCALIZE_HELP_H
+#ifndef AMATH_LOCALE_HELP_H
+#define AMATH_LOCALE_HELP_H
 
 /**
- * @file  localize/help.h
- * @brief Help texts for statement.
- *
+ * @file  loc/help.h
+ * @brief Help texts for statement
  */
 
 #include "amath.h"
 #include "amathc.h"
 #include "amatht.h"
-#include "localize/lex.h"
+#include "main/symbol.h"
 
 #define symzero Symbol(0)
 

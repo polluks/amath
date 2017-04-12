@@ -73,6 +73,12 @@ void  __CRTDECL operator delete (void* ptr) throw() { FreeMemSafe(ptr); }
 void  __CRTDECL operator delete[] (void* ptr) throw() { FreeMemSafe(ptr); }
 #endif
 
+#if defined(WITHTEST)
+#include <stdio.h>
+void WriteOut(const char *string) { printf("%s", string); }
+void WriteOutInt(int value) { printf("%i", value); }
+#endif
+
 int main(int argc, char** argv)
 {
 #if defined(WITHTEST)

@@ -31,23 +31,21 @@
 #define AMATH_LIB_REAL_PRIM_H
 
 /**
- * @file  real/prim.h
- * @brief Primitives in math library for handling real numbers.
- *
+ * @file    real/prim.h
+ * @brief   Primitives in math library for handling real numbers
+ * @details
  * The library is based on fdlib by Sun Microsystems.
  * The original library can be downloaded at:
  * http://www.netlib.org/fdlibm/
  *
  * or from mirror site:
  * http://www.hensa.ac.uk/
- *
- * All headers and dates are preserved.
- *
  */
 
-// ---------------------------------------------------------------------------
-// ------------------------- High precision constants ------------------------
-// ---------------------------------------------------------------------------
+#include "../amath.h"
+#include "../mathr.h"
+
+#define TRIG_INEXACT(x) ((x >= 0.0 && x < 1e-15) || (x <= 0.0 && x > -1e-15))
 
 double __kernel_cos(double x, double y);
 double __kernel_sin(double x, double y, int iy);
@@ -119,66 +117,40 @@ int __kernel_rem_pio2(double* x, double* y, int e0, int nx, int prec, const int*
 #endif
 #endif
 
-// ---------------------------------------------------------------------------
-// -------------- Endianness implementation for IEEE arithmetic --------------
-// ---------------------------------------------------------------------------
-
-/**
- * @brief 32 bit unsigned integer.
- *
- */
-typedef unsigned int uword;
-
-/**
- * @brief 32 bit signed integer.
- *
- */
-typedef signed int sword;
-
 #ifdef __IEEE_BIG_ENDIAN
 /**
- * @brief A union which permits us to convert between a double and two 32 bit ints.
- *
- * Big endian version.
- *
+ * @brief   A union which permits us to convert between a double and two 32 bit ints
+ * @details Big endian version
  */
 typedef union
 {
     double value;
     struct
     {
-        uword msw;
-        uword lsw;
+        uint32_t msw;
+        uint32_t lsw;
     } parts;
 } ieee_double_shape_type;
 #endif
 
 #ifdef __IEEE_LITTLE_ENDIAN
 /**
- * @brief A union which permits us to convert between a double and two 32 bit ints.
- *
- * Little endian version.
- *
+ * @brief   A union which permits us to convert between a double and two 32 bit ints
+ * @details Little endian version
  */
 typedef union
 {
     double value;
-
     struct
     {
-        uword lsw;
-        uword msw;
+        uint32_t lsw;
+        uint32_t msw;
     } parts;
 } ieee_double_shape_type;
 #endif
 
-// ---------------------------------------------------------------------------
-// ---------- Endianness implementation for 64 bit IEEE arithmetic -----------
-// ---------------------------------------------------------------------------
-
 /**
- * @brief Get two 32 bit ints from a double.
- *
+ * @brief Get two 32 bit ints from a double
  */
 #define EXTRACT_WORDS(ix0,ix1,d)   \
   do {                             \
@@ -189,8 +161,7 @@ typedef union
   } while (0)
 
 /**
- * @brief Get the more significant 32 bit int from a double.
- *
+ * @brief Get the more significant 32 bit int from a double
  */
 #define GET_HIGH_WORD(i,d)         \
   do {                             \
@@ -200,8 +171,7 @@ typedef union
   } while (0)
 
 /**
- * @brief Get the less significant 32 bit int from a double.
- *
+ * @brief Get the less significant 32 bit int from a double
  */
 #define GET_LOW_WORD(i,d)          \
   do {                             \
@@ -211,8 +181,7 @@ typedef union
   } while (0)
 
 /**
- * @brief Set a double from two 32 bit ints.
- *
+ * @brief Set a double from two 32 bit ints
  */
 #define INSERT_WORDS(d,ix0,ix1)    \
   do {                             \
@@ -223,8 +192,7 @@ typedef union
   } while (0)
 
 /**
- * @brief Set the more significant 32 bits of a double from an int.
- *
+ * @brief Set the more significant 32 bits of a double from an int
  */
 #define SET_HIGH_WORD(d,v)         \
   do {                             \
@@ -235,8 +203,7 @@ typedef union
   } while (0)
 
 /**
- * @brief Set the less significant 32 bits of a double from an int.
- *
+ * @brief Set the less significant 32 bits of a double from an int
  */
 #define SET_LOW_WORD(d,v)          \
   do {                             \
@@ -245,45 +212,5 @@ typedef union
     sl_u.parts.lsw = (v);          \
     (d) = sl_u.value;              \
   } while (0)
-
-// ---------------------------------------------------------------------------
-// ---------- Endianness implementation for 32 bit IEEE arithmetic -----------
-// ---------------------------------------------------------------------------
-
-/**
- * @brief A union which permits us to convert between a float and a 32 bit int.
- *
- */
-typedef union
-{
-    float value;
-    uword word;
-} ieee_float_shape_type;
-
-/**
- * @brief Get a 32 bit int from a float.
- *
- */
-#define GET_FLOAT_WORD(i,d)        \
-do {                               \
-  ieee_float_shape_type gf_u;      \
-  gf_u.value = (d);                \
-  (i) = gf_u.word;                 \
-} while (0)
-
-/**
- * @brief Set a float from a 32 bit int.
- *
- */
-#define SET_FLOAT_WORD(d,i)        \
-do {                               \
-  ieee_float_shape_type sf_u;      \
-  sf_u.word = (i);                 \
-  (d) = sf_u.value;                \
-} while (0)
-
-// ---------------------------------------------------------------------------
-// ------------------- End of real primitive definitions ---------------------
-// ---------------------------------------------------------------------------
 
 #endif

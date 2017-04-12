@@ -27,9 +27,9 @@
  * 
  */
 
+#include "node.h"
 #include "prefs.h"
-#include "localize/lex.h"
-#include "localize/help.h"
+#include "loc/help.h"
 #include "system/program.h"
 
 PrefsStatement::PrefsStatement()

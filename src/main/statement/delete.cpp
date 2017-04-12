@@ -30,7 +30,7 @@
 #include "delete.h"
 #include "amath.h"
 #include "amathc.h"
-#include "localize/text.h"
+#include "loc/text.h"
 #include "system/program.h"
 
 /**

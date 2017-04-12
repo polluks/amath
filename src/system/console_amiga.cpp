@@ -66,6 +66,7 @@ void AmigaShellConsole::Start()
         evaluator->Evaluate();
         const char* out = evaluator->GetResult();
         Write(Output(), (APTR)out, StrLen(out));
+        ResetConsole();
         delete evaluator;
     }
 }

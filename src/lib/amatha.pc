@@ -5,6 +5,6 @@ libdir=${exec_prefix}/lib
 
 Name: amath application library
 Description: C++ library for handling numbers
-Version: 1.7.1
+Version: 1.8.0
 Cflags: -I${includedir}
 Libs: -L${libdir} -lamathapp -lamathr -lamathi -lamathc

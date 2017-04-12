@@ -28,13 +28,9 @@
  */
 
 #include "prim.h"
-#include "math.h"
-#include "complex.h"
 
 /**
- * @brief   Inverse sine of complex number
- * @version 1.1
- * @date    14/10/01
+ * @brief  Inverse sine of complex number
  * @details
  * Inverse sine expressed using complex logarithms:
  * <pre>

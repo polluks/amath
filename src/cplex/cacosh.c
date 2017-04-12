@@ -28,13 +28,9 @@
  */
 
 #include "prim.h"
-#include "math.h"
-#include "complex.h"
 
 /**
- * @brief   Inverse hyperbolic cosine of complex number
- * @version 1.1
- * @date    15/03/03
+ * @brief  Inverse hyperbolic cosine of complex number
  * @details
  * Inverse hyperbolic cosine expressed using complex logarithms:
  * <pre>

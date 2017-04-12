@@ -39,7 +39,7 @@
  * cosine (cos) and also user defined functions. The function node represents
  * a function call and not a function definition.
  *
- * A formal description of mathematical functions can be found at [Wikipedia]:
+ * A formal description of mathematical functions can be found at Wikipedia:
  * https://wikipedia.org/wiki/Function_(mathematics)
  *
  * When instantiating a function node an argument must be supplied. The argument

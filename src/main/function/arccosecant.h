@@ -35,7 +35,7 @@
 /**
  * @brief A arccosecant function in a syntax tree. 
  * @details
- * More info on the arccosecant function is available at [Wikipedia]:
+ * More info on the arccosecant function is available at Wikipedia:
  * https://wikipedia.org/wiki/Arccosecant
  *
  */

@@ -34,7 +34,7 @@
 #include "filesystem.h"
 #include "filesystem_stdc.h"
 #include "lib/charbuf.h"
-#include "localize/text.h"
+#include "loc/text.h"
 
 #if !defined(AMIGA)
 #include <stdio.h>
