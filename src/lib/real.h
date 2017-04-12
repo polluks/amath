@@ -32,17 +32,15 @@
 
 /**
  * @file  real.h
- * @brief Class based handling of real numbers.
- *
+ * @brief Class based handling of real numbers
  */
 
 #include "numb.h"
 
 /**
- * @brief Represent a real number with 15 significant digits.
+ * @brief Represent a real number with 15 significant digits
  * @details
  * Calculations are done using 64 bit IEEE 754 arithmetics.
- *
  */
 struct RealNumber : public Number
 {
@@ -61,10 +59,10 @@ public:
     bool PureComplexValue();
     int GetPrecedence();
     int GetDefaultPrecedence();
+    bool IsNegative();
     bool IsZero();
     bool IsNaN();
-    bool IsTooSmall();
-    bool IsTooLarge();
+    bool IsInfinite();
     bool IsNotImplemented();
 
     Number* Unary();
@@ -95,12 +93,18 @@ public:
     Number* Cosecant();
     Number* Secant();
     Number* Cotangent();
+    Number* Chord();
+    Number* ExSecant();
+    Number* ExCosecant();
     Number* ArcSine();
     Number* ArcCosine();
     Number* ArcTangent();
     Number* ArcCosecant();
-    Number* ArcSecant();
     Number* ArcCotangent();
+    Number* ArcSecant();
+    Number* ArcChord();
+    Number* ArcExSecant();
+    Number* ArcExCosecant();
 
     Number* HypSine();
     Number* HypCosine();
@@ -132,11 +136,6 @@ public:
     Number* ArcHaVerCosine();
     Number* ArcHaCoVerSine();
     Number* ArcHaCoVerCosine();
-
-    Number* ExSecant();
-    Number* ExCosecant();
-    Number* ArcExSecant();
-    Number* ArcExCosecant();
 
     friend struct ComplexNumber;
 

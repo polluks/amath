@@ -39,6 +39,7 @@
 #define INSERT1CHAR     "\x1B[1@"
 #define DELETE1CHAR     "\x1B[1P"
 #define DELETELINE      "\x0D\x1B[K"
+#define DELETE1CHARASC  "\b \b"
 
 AnsiConoleEngine::AnsiConoleEngine(const char* prompt, CharValidator* validator)
 {
@@ -56,6 +57,7 @@ AnsiConoleEngine::AnsiConoleEngine(const char* prompt, CharValidator* validator)
 
     editline = nullptr;
     curline = -1;
+    enabled = true;
 }
 
 AnsiConoleEngine::~AnsiConoleEngine()
@@ -72,6 +74,16 @@ AnsiConoleEngine::~AnsiConoleEngine()
     delete linebuf;
     delete out;
     delete prompt;
+}
+
+void AnsiConoleEngine::Enable()
+{
+    enabled = true;
+}
+
+void AnsiConoleEngine::Disable()
+{
+    enabled = false;
 }
 
 void AnsiConoleEngine::StartInput()
@@ -172,7 +184,14 @@ const char* AnsiConoleEngine::ProcessChar(const unsigned char character)
             while (i != endpos);
 
             len++;
-            out->Append(DELETE1CHAR);
+            if (enabled)
+            {
+                out->Append(DELETE1CHAR);
+            }
+            else
+            {
+                out->Append(DELETE1CHARASC);                
+            }
             endpos--;
             linebuf->ptr = endpos;
         }
@@ -208,8 +227,15 @@ const char* AnsiConoleEngine::ProcessChar(const unsigned char character)
         }
 
         len++;
-        out->Append(CURSORBACKWARD);
-        out->Append(DELETE1CHAR);
+        if (enabled)
+        {
+            out->Append(CURSORBACKWARD);
+            out->Append(DELETE1CHAR);
+        }
+        else
+        {
+            out->Append(DELETE1CHARASC);                
+        }
         cursor--;
         endpos--;
         linebuf->ptr = endpos;

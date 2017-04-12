@@ -31,7 +31,6 @@
 #define AMATH_STATEMENT_DELETE_H
 
 #include "node.h"
-#include "localize/lex.h"
 
 /**
  * @brief Delete variable or function.

@@ -37,7 +37,7 @@
  * @details
  * Extracts the sign of a real number. See Number for implementation.
  *
- * More info on the signum function is available at [Wikipedia]:
+ * More info on the signum function is available at Wikipedia:
  * https://wikipedia.org/wiki/Sign_function
  *
  */

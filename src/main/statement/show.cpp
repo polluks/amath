@@ -29,7 +29,7 @@
 
 #include "show.h"
 #include "amathc.h"
-#include "localize/text.h"
+#include "loc/text.h"
 #include "system/program.h"
 
 ShowStatement::ShowStatement(const char* file)

@@ -171,6 +171,26 @@ void CharBuffer::EnsureGrowth(unsigned int size)
     EnsureSize((unsigned int)((ptr - buf) + size));
 }
 
+bool CharBuffer::IsEmpty() const
+{
+    char* i = buf;
+
+    if (i == nullptr || buf == ptr)
+        return true;
+
+    do
+    {
+        // Blank space characters
+        if (*i != ' ' && *i != '\t' && *i != '\r' && *i != '\n')
+            return false;
+
+        i++;
+    }
+    while (i != ptr);
+
+    return true;
+}
+
 bool CharBuffer::Is(const char* string) const
 {
     return StrIsEqual(GetString(), string);

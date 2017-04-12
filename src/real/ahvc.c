@@ -27,14 +27,20 @@
  * 
  */
 
-#include "math.h"
+/**
+ * @file  ahvc.c
+ * @brief Inverse haversed cosine
+ */
+
 #include "prim.h"
 
+/**
+ * @brief Inverse haversed cosine
+ */
 double ahvc(double x)
 {
     double a = sqrt(x);
     double b = acos(a);
-    double c = 2.0 * b;
-    
+    double c = 2.0 * b;    
     return c;
 }

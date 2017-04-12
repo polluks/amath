@@ -28,13 +28,9 @@
  */
 
 #include "prim.h"
-#include "math.h"
-#include "complex.h"
 
 /**
- * @brief   Inverse hyperbolic sine of complex number
- * @version 1.0
- * @date    14/09/15
+ * @brief  Inverse hyperbolic sine of complex number
  * @details
  * Inverse hyperbolic sine expressed using complex logarithms:
  * <pre>
@@ -50,6 +46,7 @@
  */
 complex casinh(complex z)
 {
+    // TODO: Fix branch cuts
     complex one = cpack(1.0, 0.0);
     complex a = cadd(cmul(z, z), one);
     complex b = cadd(z, csqrt(a));

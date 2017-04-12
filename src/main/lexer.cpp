@@ -30,8 +30,9 @@
 #include "amathc.h"
 #include "lexer.h"
 #include "token.h"
-#include "localize/lex.h"
-#include "localize/kword.h"
+#include "symbol.h"
+#include "loc/kword.h"
+#include "operatordefs.h"
 #include "system/program.h"
 
 Lexer::Lexer(const char* input)

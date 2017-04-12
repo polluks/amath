@@ -32,7 +32,7 @@
 #include "program.h"
 #include "filesystem_amiga.h"
 #include "lib/charbuf.h"
-#include "localize/text.h"
+#include "loc/text.h"
 
 #ifdef AMIGA
 #include <clib/dos_protos.h>

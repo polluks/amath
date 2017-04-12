@@ -31,7 +31,7 @@
 #include "amathc.h"
 #include "console.h"
 #include "program.h"
-#include "localize/text.h"
+#include "loc/text.h"
 
 static const char *version = TXTVERSMSG;
 static const char *compiler = TXTCOMPMSG;
@@ -41,7 +41,10 @@ static const char *about = NEWLINE NEWLINE
     "numbers, variables and user defined functions, logarithmic and exponential" NEWLINE
     "functions, trigonometric and hyperbolic function and selected mathematical" NEWLINE
     "constants and rounding functions." NEWLINE;
-static const char *copyright = "Copyright (c) 2014-2017 Carsten Sonne Larsen <cs@innolan.net>";
+static const char *help =
+    "usage: amath [noansi] [shell|expression]" NEWLINE;
+static const char *copyright =
+    "Copyright (c) 2014-2017 Carsten Sonne Larsen <cs@innolan.net>";
 static const char *license =
     "Copyright (c) 2007 The NetBSD Foundation, Inc." NEWLINE
     "Copyright (c) 1990, 1993 The Regents of the University of California." NEWLINE
@@ -150,6 +153,11 @@ void ConsoleBase::Clear()
         WriteString(msg);
         WriteString(NEWLINE);
     }
+}
+
+void ConsoleBase::ShowHelp()
+{
+    WriteString(help);
 }
 
 void ConsoleBase::ShowVersion()

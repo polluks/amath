@@ -36,6 +36,7 @@
 #include "lib/charval.h"
 #include "lib/aengine.h"
 #include "main/evaluator.h"
+#include "loc/text.h"
 #include <windows.h>
 
 #ifndef ENABLE_VIRTUAL_TERMINAL_PROCESSING
@@ -70,6 +71,12 @@
     ENABLE_WRAP_AT_EOL_OUTPUT | \
     ENABLE_VIRTUAL_TERMINAL_PROCESSING
 
+#define OUT_WHITE \
+    FOREGROUND_INTENSITY | \
+    FOREGROUND_RED | \
+    FOREGROUND_GREEN | \
+    FOREGROUND_BLUE
+
 WindowsConsole::WindowsConsole(const char* prompt, CharValidator* validator) :
     ConsoleBase(prompt), line(nullptr), exit(false)
 {
@@ -78,6 +85,110 @@ WindowsConsole::WindowsConsole(const char* prompt, CharValidator* validator) :
 
 WindowsConsole::~WindowsConsole()
 {
+}
+
+void WindowsConsole::Clear()
+{
+    if (ansiMode)
+    {
+        ConsoleBase::Clear();
+    }
+    else
+    {
+        HANDLE in = GetStdHandle(STD_INPUT_HANDLE);
+        HANDLE out = GetStdHandle(STD_OUTPUT_HANDLE);
+        if (in == INVALID_HANDLE_VALUE || out == INVALID_HANDLE_VALUE)
+        {
+            return;
+        }
+
+        system("cls");
+        SetConsoleMode(in, IN_DEFAULT);
+        SetConsoleMode(out, OUT_DEFAULT);
+    }
+}
+
+void WindowsConsole::StartMessage()
+{
+    if (ansiMode)
+    {
+        ConsoleBase::StartMessage();
+    }
+    else
+    {
+        CONSOLE_SCREEN_BUFFER_INFO old;
+        WORD oldColor;
+
+        HANDLE out = GetStdHandle(STD_OUTPUT_HANDLE);
+        if (out == INVALID_HANDLE_VALUE)
+        {
+            ConsoleBase::StartMessage();
+            return;
+        }
+
+        if (!GetConsoleScreenBufferInfo(out, &old)) 
+        {
+            ConsoleBase::StartMessage();
+            return;
+        }
+
+        oldColor = old.wAttributes; 
+
+        if (!SetConsoleTextAttribute(out, OUT_WHITE))
+        {
+            ConsoleBase::StartMessage();
+            return;
+        }
+
+        WriteString(INTROMSG);
+        ResetConsole();
+
+        SetConsoleTextAttribute(out, oldColor);
+    }
+}
+
+void WindowsConsole::ShowVersion()
+{
+ if (ansiMode)
+    {
+        ConsoleBase::ShowVersion();
+    }
+    else
+    {
+        CONSOLE_SCREEN_BUFFER_INFO old;
+        WORD oldColor;
+
+        HANDLE out = GetStdHandle(STD_OUTPUT_HANDLE);
+        if (out == INVALID_HANDLE_VALUE)
+        {
+            ConsoleBase::ShowVersion();
+            return;
+        }
+
+        if (!GetConsoleScreenBufferInfo(out, &old)) 
+        {
+            ConsoleBase::ShowVersion();
+            return;
+        }
+
+        oldColor = old.wAttributes; 
+
+        if (!SetConsoleTextAttribute(out, OUT_WHITE))
+        {
+            ConsoleBase::ShowVersion();
+            return;
+        }
+
+        WriteString(GetVersionText());
+        ResetConsole();
+
+        SetConsoleTextAttribute(out, oldColor);
+
+        WriteString(NEWLINE);
+        WriteString(GetCompilerText());
+        WriteString(NEWLINE);
+        ResetConsole();
+    }
 }
 
 bool WindowsConsole::Open()
@@ -156,6 +267,7 @@ bool WindowsConsole::SetAnsiMode(bool value)
         SetConsoleMode(in, IN_DEFAULT);
         SetConsoleMode(out, OUT_DEFAULT);
         ConsoleBase::SetAnsiMode(false);
+        proc->Disable();
         return true;
     }
 
@@ -175,7 +287,15 @@ bool WindowsConsole::SetAnsiMode(bool value)
         success = false;
     }
 
+    if (!success)
+    {
+        SetConsoleMode(in, IN_DEFAULT);
+        SetConsoleMode(out, OUT_DEFAULT);
+        proc->Disable();
+    }
+
     ConsoleBase::SetAnsiMode(success);
+    proc->Enable();
     return success;
 }
 
@@ -192,6 +312,7 @@ void WindowsConsole::Start()
         evaluator->Evaluate();
         const char* res = evaluator->GetResult();
         Write(res, StrLen(res));
+        ResetConsole();
         delete evaluator;
     }
 }
@@ -242,7 +363,7 @@ void WindowsConsole::Write(const char* string, unsigned int length)
         return;
     }
 
-    WriteConsole(out, string, length, &count, nullptr);
+    WriteConsoleA(out, string, length, &count, nullptr);
 }
 
 #endif

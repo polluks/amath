@@ -37,7 +37,7 @@
  * @details
  * Round to nearest integer. See Number for implementation.
  *
- * More info on the rounding function is available at [Wikipedia]:
+ * More info on the rounding function is available at Wikipedia:
  * https://wikipedia.org/wiki/Rounding
  *
  */

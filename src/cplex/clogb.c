@@ -28,10 +28,9 @@
  */
 
 #include "prim.h"
-#include "complex.h"
 
 /**
- * @brief   Base 2 logarithmic value of complex number.
+ * @brief  Base 2 logarithmic value of complex number
  * @details
  * <pre>
  * lb z = log(z) / log(2)

@@ -35,7 +35,7 @@
 /**
  * @brief An inverse haversed cosine function in a syntax tree. 
  * @details
- * More info on the haversed cosine function is available at [Wikipedia]:
+ * More info on the haversed cosine function is available at Wikipedia:
  * https://wikipedia.org/wiki/Havercosine
  *
  */

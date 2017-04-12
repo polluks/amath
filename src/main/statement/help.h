@@ -31,7 +31,6 @@
 #define AMATH_STATEMENT_HELP_H
 
 #include "node.h"
-#include "localize/lex.h"
 
 /**
  * @brief Logic related to the help statement.

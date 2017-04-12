@@ -27,15 +27,34 @@
  * 
  */
 
-#include "math.h"
+/**
+ * @file  aver.c
+ * @brief Inverse versed sine function
+ */
+
 #include "prim.h"
 
+/**
+ * @brief Inverse versed sine function
+ */
 double aver(double x)
 {
-    double a = 2.0 * x - x * x;
-    double b = sqrt(a);
-    double c = 1.0 - x;
-    double d = atan(b / c);
-    
+    double a, b, c, d;
+
+    if (x < 0.0 || x > 2.0)
+    {
+        return NAN;
+    }
+
+    a = 2.0 * x - x * x;
+    b = sqrt(a);
+    c = 1.0 - x;
+
+    if (TRIG_INEXACT(c))
+    {
+        return INFP;
+    }
+
+    d = atan(b / c);
     return d;
 }

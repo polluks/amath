@@ -35,7 +35,7 @@
 /**
  * @brief A ceiling function in a syntax tree. 
  * @details
- * More info on the ceiling function is available at [Wikipedia]:
+ * More info on the ceiling function is available at Wikipedia:
  * https://wikipedia.org/wiki/Ceiling_function
  *
  */

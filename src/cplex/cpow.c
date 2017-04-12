@@ -35,14 +35,9 @@
  */
 
 #include "prim.h"
-#include "math.h"
-#include "complex.h"
 
 /**
- * @brief   Complex number raised to a power
- * @version 1.1
- * @date    2007/08/20
- * @details
+ * @brief Complex number raised to a power
  */
 complex cpow(complex a, complex z)
 {

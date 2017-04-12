@@ -31,10 +31,10 @@
 #include "amathc.h"
 #include "functionlist.h"
 #include "userfunction.h"
+#include "functionalias.h"
 #include "function/defs.h"
 #include "function/user.h"
-#include "localize/text.h"
-#include "localize/ialias.h"
+#include "loc/text.h"
 
 FunctionList::FunctionList()
 {

@@ -31,13 +31,12 @@
  * 
  */
 
-#ifndef AMATH_LOCALIZE_IDENT_H
-#define AMATH_LOCALIZE_IDENT_H
+#ifndef AMATH_LOCALE_IDENT_H
+#define AMATH_LOCALE_IDENT_H
 
 /**
- * @file  localize/ident.h
- * @brief Help texts for built-in functions.
- *
+ * @file  loc/ident.h
+ * @brief Help texts for built-in functions
  */
 
 #include "amath.h"

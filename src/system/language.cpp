@@ -31,12 +31,13 @@
 #include "amathc.h"
 #include "program.h"
 #include "language.h"
-#include "localize/lex.h"
-#include "localize/help.h"
-#include "localize/kword.h"
-#include "localize/ident.h"
-#include "localize/text.h"
-#include "localize/ialias.h"
+#include "loc/help.h"
+#include "loc/kword.h"
+#include "loc/ident.h"
+#include "loc/text.h"
+#include "main/symbol.h"
+#include "main/operatordefs.h"
+#include "main/functionalias.h"
 
 static const texttag ansiTags[] = {
     {"#HEADLINE#", "\x1B[1m"},
@@ -226,6 +227,27 @@ char* Language::UntagText(const char* text)
 bool Language::CharIsQuote(unsigned long character)
 {
     return (character == '"');
+}
+
+bool Language::CharIsBlank(unsigned long character)
+{
+#if !defined(APPLE)
+    if (character == '\r')
+    {
+        return true;
+    }
+#endif
+
+    return (character == ' ' || character == '\t');
+}
+
+bool Language::CharIsNewLine(unsigned long character)
+{
+#if defined(APPLE)
+    return (character == '\r');
+#else
+    return (character == '\n');
+#endif
 }
 
 bool Language::CharIsOperator(unsigned long character)

@@ -28,11 +28,9 @@
  */
 
 #include "prim.h"
-#include "math.h"
-#include "complex.h"
 
 /**
- * @brief   Hyperbolic secant of a complex number
+ * @brief  Hyperbolic secant of a complex number
  * @details
  * Calculated as in Open Office:<BR>
  * https://wiki.openoffice.org/wiki/Documentation/How_Tos/Calc:_IMSECH_function

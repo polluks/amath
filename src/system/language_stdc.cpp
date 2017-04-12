@@ -32,11 +32,11 @@
 #include "program.h"
 #include "language_stdc.h"
 #include "filesystem_stdc.h"
-#include "localize/lex.h"
-#include "localize/help.h"
-#include "localize/text.h"
-#include "localize/ident.h"
-#include "localize/kword.h"
+#include "main/symbol.h"
+#include "loc/help.h"
+#include "loc/text.h"
+#include "loc/ident.h"
+#include "loc/kword.h"
 
 #if !defined(AMIGA)
 

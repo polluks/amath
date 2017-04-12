@@ -58,7 +58,7 @@ typedef enum
 /**
 * @brief Base class for all nodes in a syntax tree.
 * @details
-* More info is available at [Wikipedia]:
+* More info is available at Wikipedia:
 * https://wikipedia.org/wiki/Abstract_syntax_tree
 *
 */

@@ -31,9 +31,10 @@
 #define AMATH_LIB_COMPLEX_H
 
 /**
- * @file  complex.h
- * @brief Functions in math library for handling complex numbers.
- *
+ * @file    mathi.h
+ * @brief   Complex numbers math library
+ * @details Mostly as specified in [IEEE Std 1003.1, 2013 Edition]:
+ * http://pubs.opengroup.org/onlinepubs/9699919799/basedefs/complex.h.html
  */
 
 #ifdef __cplusplus
@@ -45,40 +46,29 @@ typedef union
     double parts[2];
 } complex;
 
-/**
- * Mostly as specified in [IEEE Std 1003.1, 2013 Edition]:
- * http://pubs.opengroup.org/onlinepubs/9699919799/basedefs/complex.h.html
- *
- */
 double csgn(complex z);
 double cabs(complex z);
 double creal(complex z);
 double cimag(complex z);
 double cabs(complex z);
-complex cexp(complex z);
-complex clog(complex z);
-complex conj(complex z);
-complex csqrt(complex z);
-complex cpow(complex x, complex z);
 complex cpack(double x, double y);
-
-/* Internal functions */
 complex cadd(complex a, complex z);
 complex csub(complex a, complex z);
 complex cmul(complex a, complex z);
 complex cdiv(complex a, complex z);
-
-/* Standard math functions */
+complex cpow(complex x, complex z);
 complex cceil(complex z);
 complex cfloor(complex z);
 complex ctrunc(complex z);
 complex cround(complex z);
 complex creci(complex z);
+complex conj(complex z);
+complex cexp(complex z);
+complex csqrt(complex z);
 complex ccbrt(complex z);
+complex clog(complex z);
 complex clogb(complex z);
 complex clog10(complex z);
-
-/* Trigonometric functions */
 complex ccos(complex z);
 complex csin(complex z);
 complex ctan(complex z);
@@ -91,8 +81,6 @@ complex catan(complex z);
 complex casec(complex z);
 complex cacsc(complex z);
 complex cacot(complex z);
-
-/* Hyperbolic functions */
 complex ccosh(complex z);
 complex csinh(complex z);
 complex ctanh(complex z);

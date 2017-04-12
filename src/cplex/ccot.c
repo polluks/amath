@@ -28,11 +28,9 @@
  */
 
 #include "prim.h"
-#include "math.h"
-#include "complex.h"
 
 /**
- * @brief   Cotangent of a complex number
+ * @brief  Cotangent of a complex number
  * @details
  * Calculated as in Open Office:
  * <pre>
@@ -59,7 +57,7 @@ complex ccot(complex z)
 
     if (d == 0.0)
     {
-        w = cpack(D_INFP, D_INFP);
+        w = cpack((double)INFP, (double)INFP);
     }
     else
     {

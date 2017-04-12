@@ -31,6 +31,7 @@
 #define AMATH_STATEMENT_NODE_H
 
 #include "../nodes.h"
+#include "../symbol.h"
 
 /**
 * @brief Base class for all statements in a syntax tree.

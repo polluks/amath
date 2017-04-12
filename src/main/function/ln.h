@@ -35,7 +35,7 @@
 /**
  * @brief A natural logarithm function in a syntax tree. 
  * @details
- * More info on the natural logarithm function is available at [Wikipedia]:
+ * More info on the natural logarithm function is available at Wikipedia:
  * https://wikipedia.org/wiki/Natural_logarithm
  *
  */

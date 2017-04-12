@@ -28,13 +28,9 @@
  */
 
 #include "prim.h"
-#include "math.h"
-#include "complex.h"
 
 /**
- * @brief   Inverse cosecant of complex number
- * @version 1.1
- * @date    14/10/01
+ * @brief  Inverse cosecant of complex number
  * @details
  * Inverse cosecant expressed using complex logarithms:
  * <pre>

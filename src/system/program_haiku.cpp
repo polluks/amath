@@ -43,7 +43,6 @@
 #pragma GCC diagnostic ignored "-Wno-multichar"
 #endif
 
-#include <stdio.h>
 #include <Application.h>
 
 HaikuProgram::HaikuProgram()
@@ -146,6 +145,7 @@ void HaikuProgram::Start()
     evaluator->Evaluate();
     const char *res = evaluator->GetResult();
     Console->WriteString(res);
+    Console->ResetConsole();
     delete evaluator;
 }
 

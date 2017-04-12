@@ -35,13 +35,9 @@
  */
 
 #include "prim.h"
-#include "math.h"
-#include "complex.h"
 
 /**
- * @brief   Tangent of a complex number
- * @version 1.1
- * @date    2007/08/20
+ * @brief  Tangent of a complex number
  * @details
  * Calculated as in Open Office:<BR>
  * https://wiki.openoffice.org/wiki/Documentation/How_Tos/Calc:_IMTAN_function
@@ -68,7 +64,7 @@ complex ctan(complex z)
 
     if (d == 0.0)
     {
-        w = cpack(D_INFP, D_INFP);
+        w = cpack((double)INFP, (double)INFP);
     }
     else
     {

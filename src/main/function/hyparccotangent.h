@@ -35,7 +35,7 @@
 /**
  * @brief An inverse hyperbolic cotangent function in a syntax tree. 
  * @details
- * More info on the inverse hyperbolic cotangent function is available at [Wikipedia]:
+ * More info on the inverse hyperbolic cotangent function is available at Wikipedia:
  * https://wikipedia.org/wiki/Inverse_hyperbolic_cotangent
  *
  */

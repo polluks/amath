@@ -27,15 +27,21 @@
  * 
  */
 
-#include "math.h"
+/**
+ * @file  acvs.c
+ * @brief Inverse coversed sine function
+ */
+
 #include "prim.h"
 
+/**
+ * @brief Inverse coversed sine function
+ */
 double acvs(double x)
 {
     double a = 1.0 - x;
     double b = 2.0 * x - x * x;
     double c = sqrt(b);
-    double d = atan(a / c);
-    
+    double d = atan(a / c);  
     return d;
 }

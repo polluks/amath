@@ -30,7 +30,7 @@
 #include "amath.h"
 #include "amathc.h"
 #include "execute.h"
-#include "localize/text.h"
+#include "loc/text.h"
 #include "system/program.h"
 #include "../parser.h"
 

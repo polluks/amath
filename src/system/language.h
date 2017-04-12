@@ -31,11 +31,11 @@
 #define AMATH_LANGUAGE_BASE_H
 
 #include "lib/charval.h"
-#include "localize/lex.h"
-#include "localize/help.h"
-#include "localize/text.h"
-#include "localize/ident.h"
-#include "localize/kword.h"
+#include "main/symbol.h"
+#include "loc/help.h"
+#include "loc/text.h"
+#include "loc/ident.h"
+#include "loc/kword.h"
 
 class Language : public CharValidator
 {
@@ -54,6 +54,8 @@ public:
     virtual bool CharIsSpace(unsigned long character) = 0;
     virtual bool CharIsCntrl(unsigned long character) = 0;
     virtual bool CharIsQuote(unsigned long character);
+    virtual bool CharIsBlank(unsigned long character);
+    virtual bool CharIsNewLine(unsigned long character);
     virtual bool CharIsOperator(unsigned long character);
     virtual bool StrIsEqualLoc(const char* s1, const char* s2) = 0;
     virtual bool Validate(char c) = 0;

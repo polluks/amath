@@ -35,14 +35,9 @@
  */
 
 #include "prim.h"
-#include "math.h"
-#include "complex.h"
 
 /**
- * @brief   Square root of complex number
- * @version 1.1
- * @date    2007/08/20
- * @details
+ * @brief Square root of complex number
  */
 complex csqrt(complex z)
 {

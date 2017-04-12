@@ -31,7 +31,8 @@
 #include "amathc.h"
 #include "digits.h"
 #include "lib/real.h"
-#include "localize/text.h"
+#include "lib/ntextd.h"
+#include "loc/text.h"
 #include "system/program.h"
 
 /**

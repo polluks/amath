@@ -74,13 +74,6 @@ AmigaProgram::~AmigaProgram()
 
 void AmigaProgram::Initialize(int argc, char **argv)
 {
-    if(argc < 2)
-    {
-        Console = new AmigaWindow(Preferences->GetPrompt(), Language);
-        SetAnsiMode(true);
-        return;
-    }
-
     rdargs = (RDArgs*)ReadArgs((const char*)ARGS_FORMAT, (RDPTR)&args, 0);
     if (!rdargs)
     {
@@ -90,8 +83,16 @@ void AmigaProgram::Initialize(int argc, char **argv)
 
     shellMode = args.shell ? true : false;
     ansiMode = args.noansi ? false : true;
-
-    Console = new AmigaShellConsole(Preferences->GetPrompt());
+    
+    if (shellMode || args.input != nullptr)
+    {
+        Console = new AmigaShellConsole(Preferences->GetPrompt());
+    }
+    else
+    {
+        Console = new AmigaWindow(Preferences->GetPrompt(), Language);
+    }
+    
     InitAnsiMode();
 }
 
@@ -104,20 +105,19 @@ void AmigaProgram::Start()
 
     Preferences->Load();
 
-    if (shellMode)
-    {
-        Console->Start();
-        return;
-    }
-
     if (args.input != nullptr)
     {
         Evaluator *evaluator = new Evaluator(args.input);
         evaluator->Evaluate();
         const char *res = evaluator->GetResult();
         Console->WriteString(res);
+        Console->ResetConsole();
         delete evaluator;
+        return;
     }
+
+    Console->Start();
+    return;
 }
 
 #endif

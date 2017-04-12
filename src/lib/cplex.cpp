@@ -27,27 +27,23 @@
  * 
  */
 
-#include "math.h"
-#include "complex.h"
+#include "mathr.h"
+#include "mathi.h"
 #include "real.h"
 #include "cplex.h"
 #include "nnumb.h"
-#include "integer.h"
 
-ComplexNumber::ComplexNumber() :
-    Number(nsyscomplex)
+ComplexNumber::ComplexNumber() : Number(nsyscomplex)
 {
     z = cpack(0.0, 0.0);
 }
 
-ComplexNumber::ComplexNumber(complex z) :
-    Number(nsyscomplex)
+ComplexNumber::ComplexNumber(complex z) : Number(nsyscomplex)
 {
     this->z = z;
 }
 
-ComplexNumber::ComplexNumber(double real, double imag) :
-    Number(nsyscomplex)
+ComplexNumber::ComplexNumber(double real, double imag) : Number(nsyscomplex)
 {
     z = cpack(real, imag);
 }
@@ -56,7 +52,7 @@ ComplexNumber::~ComplexNumber()
 {
 }
 
-Number* ComplexNumber::Clone()
+Number *ComplexNumber::Clone()
 {
     return new ComplexNumber(z);
 }
@@ -107,27 +103,57 @@ int ComplexNumber::GetDefaultPrecedence()
     return (creal(z) != 0.0 && cimag(z) != 0.0) ? 2 : 0;
 }
 
+bool ComplexNumber::IsNegative()
+{
+    FloatUnion64 d, e;
+    d.floatingPoint = creal(z);
+    e.floatingPoint = cimag(z);
+    return d.IsNegative() && e.IsNegative();
+}
+
 bool ComplexNumber::IsZero()
 {
-    return (creal(z) == 0.0 && cimag(z) == 0.0);
+    FloatUnion64 d, e;
+    d.floatingPoint = creal(z);
+    e.floatingPoint = cimag(z);
+    return d.IsZero() && e.IsZero();
 }
 
-bool ComplexNumber::IsTooSmall()
-{
-    return (creal(z) > 0 && creal(z) < D_INFN) ||
-        (creal(z) < 0 && creal(z) > -D_INFN) ||
-        (cimag(z) > 0 && cimag(z) < D_INFN) ||
-        (cimag(z) < 0 && cimag(z) > -D_INFN);
-}
-
-bool ComplexNumber::IsTooLarge()
-{
-    return (creal(z) > D_INFP) || (cimag(z) > D_INFP);
-}
-
+/**
+ * @brief Returns true if number is NaN
+ */
 bool ComplexNumber::IsNaN()
 {
-    return false;
+    FloatUnion64 d, e;
+    d.floatingPoint = creal(z);
+    e.floatingPoint = cimag(z);
+    return d.IsNaN() || e.IsNaN();
+}
+
+/**
+ * @brief Returns true if number is infinite
+ */
+bool ComplexNumber::IsInfinite()
+{
+    double a = creal(z);
+    double b = cimag(z);
+
+    // Handle subnormal values
+    bool subInf = 
+        (a > 0 && a <= 1e-308) || (a < 0 && a >= -1e-308) ||
+        (b > 0 && b <= 1e-308) || (b < 0 && b >= -1e-308);
+
+    if (subInf)
+    {
+        return true;
+    }
+
+    FloatUnion64 d, e;
+    d.floatingPoint = a;
+    e.floatingPoint = b;
+    return d.IsInf() || e.IsInf() ||
+           d.IsMaxPositive() || d.IsMaxNegative() ||
+           e.IsMaxPositive() || e.IsMaxNegative();
 }
 
 bool ComplexNumber::IsNotImplemented()
@@ -135,193 +161,163 @@ bool ComplexNumber::IsNotImplemented()
     return false;
 }
 
-Number* ComplexNumber::Unary()
+Number *ComplexNumber::Unary()
 {
     complex w = cpack(-creal(z), -cimag(z));
     return new ComplexNumber(w);
 }
 
-Number* ComplexNumber::Add(Number* other)
+Number *ComplexNumber::Add(Number *other)
 {
     if (other->IsNaN())
         return new NonNumber(nnnan);
 
     if (other->system == nsyscomplex)
     {
-        ComplexNumber* w = static_cast<ComplexNumber*>(other);
+        ComplexNumber *w = static_cast<ComplexNumber *>(other);
         return new ComplexNumber(cadd(z, w->z));
     }
 
     if (other->system == nsysreal)
     {
-        RealNumber* a = static_cast<RealNumber*>(other);
+        RealNumber *a = static_cast<RealNumber *>(other);
         return new ComplexNumber(cadd(z, cpack(a->x, 0.0)));
-    }
-
-    if (other->system == nsysinteger)
-    {
-        IntegerNumber* a = static_cast<IntegerNumber*>(other);
-        return new ComplexNumber(cadd(z, cpack(static_cast<double>(a->i), 0.0)));
     }
 
     return new ComplexNumber();
 }
 
-Number* ComplexNumber::Sub(Number* other)
+Number *ComplexNumber::Sub(Number *other)
 {
     if (other->IsNaN())
         return new NonNumber(nnnan);
 
     if (other->system == nsyscomplex)
     {
-        ComplexNumber* w = static_cast<ComplexNumber*>(other);
+        ComplexNumber *w = static_cast<ComplexNumber *>(other);
         return new ComplexNumber(csub(z, w->z));
     }
 
     if (other->system == nsysreal)
     {
-        RealNumber* a = static_cast<RealNumber*>(other);
+        RealNumber *a = static_cast<RealNumber *>(other);
         return new ComplexNumber(csub(z, cpack(a->x, 0.0)));
-    }
-
-    if (other->system == nsysinteger)
-    {
-        IntegerNumber* a = static_cast<IntegerNumber*>(other);
-        return new ComplexNumber(csub(z, cpack(static_cast<double>(a->i), 0.0)));
     }
 
     return new ComplexNumber();
 }
 
-Number* ComplexNumber::Mul(Number* other)
+Number *ComplexNumber::Mul(Number *other)
 {
     if (other->IsNaN())
         return new NonNumber(nnnan);
 
     if (other->system == nsyscomplex)
     {
-        ComplexNumber* w = static_cast<ComplexNumber*>(other);
+        ComplexNumber *w = static_cast<ComplexNumber *>(other);
         return new ComplexNumber(cmul(z, w->z));
     }
 
     if (other->system == nsysreal)
     {
-        RealNumber* a = static_cast<RealNumber*>(other);
+        RealNumber *a = static_cast<RealNumber *>(other);
         return new ComplexNumber(cmul(z, cpack(a->x, 0.0)));
-    }
-
-    if (other->system == nsysinteger)
-    {
-        IntegerNumber* a = static_cast<IntegerNumber*>(other);
-        return new ComplexNumber(cmul(z, cpack(static_cast<double>(a->i), 0.0)));
     }
 
     return new ComplexNumber();
 }
 
-Number* ComplexNumber::Div(Number* other)
+Number *ComplexNumber::Div(Number *other)
 {
     if (other->IsZero() || other->IsNaN())
         return new NonNumber(nnnan);
 
     if (other->system == nsyscomplex)
     {
-        ComplexNumber* w = static_cast<ComplexNumber*>(other);
+        ComplexNumber *w = static_cast<ComplexNumber *>(other);
         return new ComplexNumber(cdiv(z, w->z));
     }
 
     if (other->system == nsysreal)
     {
-        RealNumber* a = static_cast<RealNumber*>(other);
+        RealNumber *a = static_cast<RealNumber *>(other);
         return new ComplexNumber(cdiv(z, cpack(a->x, 0.0)));
-    }
-
-    if (other->system == nsysinteger)
-    {
-        IntegerNumber* a = static_cast<IntegerNumber*>(other);
-        return new ComplexNumber(cdiv(z, cpack(static_cast<double>(a->i), 0.0)));
     }
 
     return new ComplexNumber();
 }
 
-Number* ComplexNumber::Raise(Number* exponent)
+Number *ComplexNumber::Raise(Number *exponent)
 {
     if (exponent->IsNaN())
         return new NonNumber(nnnan);
 
     if (exponent->system == nsyscomplex)
     {
-        ComplexNumber* w = static_cast<ComplexNumber*>(exponent);
+        ComplexNumber *w = static_cast<ComplexNumber *>(exponent);
         return new ComplexNumber(cpow(z, w->z));
     }
 
     if (exponent->system == nsysreal)
     {
-        RealNumber* a = static_cast<RealNumber*>(exponent);
+        RealNumber *a = static_cast<RealNumber *>(exponent);
         return new ComplexNumber(cpow(z, cpack(a->x, 0.0)));
-    }
-
-    if (exponent->system == nsysinteger)
-    {
-        IntegerNumber* a = static_cast<IntegerNumber*>(exponent);
-        return new ComplexNumber(cpow(z, cpack(static_cast<double>(a->i), 0.0)));
     }
 
     return new ComplexNumber();
 }
 
-Number* ComplexNumber::Factorial()
+Number *ComplexNumber::Factorial()
 {
     return new NonNumber(nnnimp);
 }
 
-Number* ComplexNumber::Signum()
+Number *ComplexNumber::Signum()
 {
     return new RealNumber(csgn(z));
 }
 
-Number* ComplexNumber::Absolute()
+Number *ComplexNumber::Absolute()
 {
     return new RealNumber(cabs(z));
 }
 
-Number* ComplexNumber::Trunc()
+Number *ComplexNumber::Trunc()
 {
     return new ComplexNumber(ctrunc(z));
 }
 
-Number* ComplexNumber::Round()
+Number *ComplexNumber::Round()
 {
     return new ComplexNumber(cround(z));
 }
 
-Number* ComplexNumber::Floor()
+Number *ComplexNumber::Floor()
 {
     return new ComplexNumber(cfloor(z));
 }
 
-Number* ComplexNumber::Ceiling()
+Number *ComplexNumber::Ceiling()
 {
     return new ComplexNumber(cceil(z));
 }
 
-Number* ComplexNumber::SquareRoot()
+Number *ComplexNumber::SquareRoot()
 {
     return new ComplexNumber(csqrt(z));
 }
 
-Number* ComplexNumber::Reciprocal()
+Number *ComplexNumber::Reciprocal()
 {
     return new ComplexNumber(creci(z));
 }
 
-Number* ComplexNumber::CubeRoot()
+Number *ComplexNumber::CubeRoot()
 {
     return new ComplexNumber(ccbrt(z));
 }
 
-Number* ComplexNumber::Log()
+Number *ComplexNumber::Log()
 {
     if (creal(z) == 0.0 && cimag(z) == 0.0)
         return new NonNumber(nnnan);
@@ -329,7 +325,7 @@ Number* ComplexNumber::Log()
     return new ComplexNumber(clog(z));
 }
 
-Number* ComplexNumber::Log2()
+Number *ComplexNumber::Log2()
 {
     if (creal(z) == 0.0 && cimag(z) == 0.0)
         return new NonNumber(nnnan);
@@ -337,7 +333,7 @@ Number* ComplexNumber::Log2()
     return new ComplexNumber(clogb(z));
 }
 
-Number* ComplexNumber::Log10()
+Number *ComplexNumber::Log10()
 {
     if (creal(z) == 0.0 && cimag(z) == 0.0)
         return new NonNumber(nnnan);
@@ -345,222 +341,232 @@ Number* ComplexNumber::Log10()
     return new ComplexNumber(clog10(z));
 }
 
-Number* ComplexNumber::Sine()
+Number *ComplexNumber::Sine()
 {
     return new ComplexNumber(csin(z));
 }
 
-Number* ComplexNumber::Cosine()
+Number *ComplexNumber::Cosine()
 {
     return new ComplexNumber(ccos(z));
 }
 
-Number* ComplexNumber::Tangent()
+Number *ComplexNumber::Tangent()
 {
     return new ComplexNumber(ctan(z));
 }
 
-Number* ComplexNumber::Secant()
+Number *ComplexNumber::Secant()
 {
     return new ComplexNumber(csec(z));
 }
 
-Number* ComplexNumber::Cosecant()
+Number *ComplexNumber::Cosecant()
 {
     return new ComplexNumber(ccsc(z));
 }
 
-Number* ComplexNumber::Cotangent()
+Number *ComplexNumber::Cotangent()
 {
     return new ComplexNumber(ccot(z));
 }
 
-Number* ComplexNumber::ArcSine()
+Number *ComplexNumber::Chord()
+{
+    return new NonNumber(nnnimp);
+}
+
+Number *ComplexNumber::ExSecant()
+{
+    return new NonNumber(nnnimp);
+}
+
+Number *ComplexNumber::ExCosecant()
+{
+    return new NonNumber(nnnimp);
+}
+
+Number *ComplexNumber::ArcSine()
 {
     return new ComplexNumber(casin(z));
 }
 
-Number* ComplexNumber::ArcCosine()
+Number *ComplexNumber::ArcCosine()
 {
     return new ComplexNumber(cacos(z));
 }
 
-Number* ComplexNumber::ArcTangent()
+Number *ComplexNumber::ArcTangent()
 {
     return new ComplexNumber(catan(z));
 }
 
-Number* ComplexNumber::ArcSecant()
+Number *ComplexNumber::ArcSecant()
 {
     return new ComplexNumber(casec(z));
 }
 
-Number* ComplexNumber::ArcCosecant()
+Number *ComplexNumber::ArcCosecant()
 {
     return new ComplexNumber(cacsc(z));
 }
 
-Number* ComplexNumber::ArcCotangent()
+Number *ComplexNumber::ArcCotangent()
 {
     return new ComplexNumber(cacot(z));
 }
 
-Number* ComplexNumber::HypSine()
+Number *ComplexNumber::ArcChord()
+{
+    return new NonNumber(nnnimp);
+}
+
+Number *ComplexNumber::ArcExSecant()
+{
+    return new NonNumber(nnnimp);
+}
+
+Number *ComplexNumber::ArcExCosecant()
+{
+    return new NonNumber(nnnimp);
+}
+
+Number *ComplexNumber::HypSine()
 {
     return new ComplexNumber(csinh(z));
 }
 
-Number* ComplexNumber::HypCosine()
+Number *ComplexNumber::HypCosine()
 {
     return new ComplexNumber(ccosh(z));
 }
 
-Number* ComplexNumber::HypTangent()
+Number *ComplexNumber::HypTangent()
 {
     return new ComplexNumber(ctanh(z));
 }
 
-Number* ComplexNumber::HypSecant()
+Number *ComplexNumber::HypSecant()
 {
     return new ComplexNumber(csech(z));
 }
 
-Number* ComplexNumber::HypCosecant()
+Number *ComplexNumber::HypCosecant()
 {
     return new ComplexNumber(ccsch(z));
 }
 
-Number* ComplexNumber::HypCotangent()
+Number *ComplexNumber::HypCotangent()
 {
     return new ComplexNumber(ccoth(z));
 }
 
-Number* ComplexNumber::HypArcSine()
+Number *ComplexNumber::HypArcSine()
 {
     return new ComplexNumber(casinh(z));
 }
 
-Number* ComplexNumber::HypArcCosine()
+Number *ComplexNumber::HypArcCosine()
 {
     return new ComplexNumber(cacosh(z));
 }
 
-Number* ComplexNumber::HypArcTangent()
+Number *ComplexNumber::HypArcTangent()
 {
     return new ComplexNumber(catanh(z));
 }
 
-Number* ComplexNumber::HypArcSecant()
+Number *ComplexNumber::HypArcSecant()
 {
     return new ComplexNumber(casech(z));
 }
 
-Number* ComplexNumber::HypArcCosecant()
+Number *ComplexNumber::HypArcCosecant()
 {
     return new ComplexNumber(cacsch(z));
 }
 
-Number* ComplexNumber::HypArcCotangent()
+Number *ComplexNumber::HypArcCotangent()
 {
     return new ComplexNumber(cacoth(z));
 }
 
-Number* ComplexNumber::VerSine()
+Number *ComplexNumber::VerSine()
 {
     return new NonNumber(nnnimp);
 }
 
-Number* ComplexNumber::VerCosine()
+Number *ComplexNumber::VerCosine()
 {
     return new NonNumber(nnnimp);
 }
 
-Number* ComplexNumber::CoVerSine()
+Number *ComplexNumber::CoVerSine()
 {
     return new NonNumber(nnnimp);
 }
 
-Number* ComplexNumber::CoVerCosine()
+Number *ComplexNumber::CoVerCosine()
 {
     return new NonNumber(nnnimp);
 }
 
-Number* ComplexNumber::HaVerSine()
+Number *ComplexNumber::HaVerSine()
 {
     return new NonNumber(nnnimp);
 }
 
-Number* ComplexNumber::HaVerCosine()
+Number *ComplexNumber::HaVerCosine()
 {
     return new NonNumber(nnnimp);
 }
 
-Number* ComplexNumber::HaCoVerSine()
+Number *ComplexNumber::HaCoVerSine()
 {
     return new NonNumber(nnnimp);
 }
 
-Number* ComplexNumber::HaCoVerCosine()
+Number *ComplexNumber::HaCoVerCosine()
 {
     return new NonNumber(nnnimp);
 }
 
-Number* ComplexNumber::ArcVerSine()
+Number *ComplexNumber::ArcVerSine()
 {
     return new NonNumber(nnnimp);
 }
 
-Number* ComplexNumber::ArcVerCosine()
+Number *ComplexNumber::ArcVerCosine()
 {
     return new NonNumber(nnnimp);
 }
 
-Number* ComplexNumber::ArcCoVerSine()
+Number *ComplexNumber::ArcCoVerSine()
 {
     return new NonNumber(nnnimp);
 }
 
-Number* ComplexNumber::ArcCoVerCosine()
+Number *ComplexNumber::ArcCoVerCosine()
 {
     return new NonNumber(nnnimp);
 }
 
-Number* ComplexNumber::ArcHaVerSine()
+Number *ComplexNumber::ArcHaVerSine()
 {
     return new NonNumber(nnnimp);
 }
 
-Number* ComplexNumber::ArcHaVerCosine()
+Number *ComplexNumber::ArcHaVerCosine()
 {
     return new NonNumber(nnnimp);
 }
 
-Number* ComplexNumber::ArcHaCoVerSine()
+Number *ComplexNumber::ArcHaCoVerSine()
 {
     return new NonNumber(nnnimp);
 }
 
-Number* ComplexNumber::ArcHaCoVerCosine()
-{
-    return new NonNumber(nnnimp);
-}
-
-Number* ComplexNumber::ExSecant()
-{
-    return new NonNumber(nnnimp);
-}
-
-Number* ComplexNumber::ExCosecant()
-{
-    return new NonNumber(nnnimp);
-}
-
-Number* ComplexNumber::ArcExSecant()
-{
-    return new NonNumber(nnnimp);
-}
-
-Number* ComplexNumber::ArcExCosecant()
+Number *ComplexNumber::ArcHaCoVerCosine()
 {
     return new NonNumber(nnnimp);
 }

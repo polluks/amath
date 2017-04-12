@@ -32,19 +32,16 @@
 
 /**
  * @file  cplex.h
- * @brief Class based handling of complex numbers.
- *
+ * @brief Class based handling of complex numbers
  */
 
-#include "complex.h"
 #include "numb.h"
+#include "mathi.h"
 
 /**
- * @brief Represent a complex number with 2 components of 15
- *        significant digits.
+ * @brief Represent a complex number with 2 components of 15 significant digits
  * @details
  * Calculations are done using 64 bit IEEE 754 arithmetics.
- *
  */
 struct ComplexNumber : public Number
 {
@@ -62,10 +59,10 @@ public:
     bool PureComplexValue();
     int GetPrecedence();
     int GetDefaultPrecedence();
+    bool IsNegative();
     bool IsZero();
     bool IsNaN();
-    bool IsTooSmall();
-    bool IsTooLarge();
+    bool IsInfinite();
     bool IsNotImplemented();
 
     Number* Unary();
@@ -96,12 +93,18 @@ public:
     Number* Cosecant();
     Number* Secant();
     Number* Cotangent();
+    Number* Chord();
+    Number* ExSecant();
+    Number* ExCosecant();
     Number* ArcSine();
     Number* ArcCosine();
     Number* ArcTangent();
     Number* ArcCosecant();
     Number* ArcSecant();
     Number* ArcCotangent();
+    Number* ArcExSecant();
+    Number* ArcExCosecant();
+    Number* ArcChord();
 
     Number* HypSine();
     Number* HypCosine();
@@ -133,11 +136,6 @@ public:
     Number* ArcHaVerCosine();
     Number* ArcHaCoVerSine();
     Number* ArcHaCoVerCosine();
-
-    Number* ExSecant();
-    Number* ExCosecant();
-    Number* ArcExSecant();
-    Number* ArcExCosecant();
 
 private:
     complex z;

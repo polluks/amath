@@ -35,13 +35,9 @@
  */
 
 #include "prim.h"
-#include "math.h"
-#include "complex.h"
 
 /**
- * @brief   Sine of a complex number
- * @version 1.1
- * @date    2007/08/20
+ * @brief  Sine of a complex number
  * @details
  * Calculated according to description at wikipedia:<BR>
  * https://wikipedia.org/wiki/Sine#Sine_with_a_complex_argument

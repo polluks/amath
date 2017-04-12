@@ -63,7 +63,7 @@ public:
 
 private:
     void ReadLine();
-    static void Write(const char* string, unsigned int length);
+    void Write(const char* string, unsigned int length);
     AnsiConoleEngine* proc;
     const char* line;
     bool exit;

@@ -35,7 +35,7 @@
 /**
  * @brief A arcsine function in a syntax tree. 
  * @details
- * More info on the arcsine function is available at [Wikipedia]:
+ * More info on the arcsine function is available at Wikipedia:
  * https://wikipedia.org/wiki/Arcsine
  *
  */

@@ -28,11 +28,9 @@
  */
 
 #include "prim.h"
-#include "math.h"
-#include "complex.h"
 
 /**
- * @brief   Cube root of complex number
+ * @brief  Cube root of complex number
  * @details
  * <pre>
  * cbrt z = exp(1/3 * log(z))

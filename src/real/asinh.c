@@ -1,6 +1,4 @@
-/* @(#)s_asinh.c 1.3 95/01/18 */
-
-/*
+/*-
  * Copyright (c) 2014-2017 Carsten Sonne Larsen <cs@innolan.net>
  * All rights reserved.
  *
@@ -24,71 +22,78 @@
  * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF
  * THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  *
- * The origin source code can be obtained from:
+ * Project homepage:
+ * http://amath.innolan.net
+ *
+ * The original source code can be obtained from:
  * http://www.netlib.org/fdlibm/s_asinh.c
  * 
- */
-
-/*
- * ====================================================
+ * =================================================================
  * Copyright (C) 1993 by Sun Microsystems, Inc. All rights reserved.
  *
  * Developed at SunSoft, a Sun Microsystems, Inc. business.
  * Permission to use, copy, modify, and distribute this
  * software is freely granted, provided that this notice
  * is preserved.
- * ====================================================
- *
+ * =================================================================
+ */
+
+/**
+ * @file  asinh.c
+ * @brief Inverse hyperbolic sine function
  */
 
 #include "prim.h"
-#include "math.h"
 
 static const double
-one =  1.00000000000000000000e+00, /* 0x3FF00000, 0x00000000 */
-ln2 =  6.93147180559945286227e-01, /* 0x3FE62E42, 0xFEFA39EF */
-huge=  1.00000000000000000000e+300;
+    one = 1.00000000000000000000e+00, /* 0x3FF00000, 0x00000000 */
+    ln2 = 6.93147180559945286227e-01, /* 0x3FE62E42, 0xFEFA39EF */
+    huge = 1.00000000000000000000e+300;
 
 /**
- * @brief     Inverse hyperbolic sine function.
- * @version   1.3
- * @date      95/01/18
+ * @brief   Inverse hyperbolic sine function
  * @details
  * <pre>
- * Method :
- *	Based on
- *		asinh(x) = sign(x) * log [ |x| + sqrt(x*x+1) ]
- *	we have
- *	asinh(x) := x  if  1+x*x=1,
- *		 := sign(x)*(log(x)+ln2)) for large |x|, else
- *		 := sign(x)*log(2|x|+1/(|x|+sqrt(x*x+1))) if|x|>2, else
- *		 := sign(x)*log1p(|x| + x^2/(1 + sqrt(1+x^2)))
+ * Method
+ *     Based on
+ *     asinh(x) = sign(x) * log [ |x| + sqrt(x*x+1) ]
+ * 
+ *     we have
+ *     asinh(x) = x  if  1+x*x=1,
+ *              = sign(x)*(log(x)+ln2)) for large |x|, else
+ *              = sign(x)*log(2|x|+1/(|x|+sqrt(x*x+1))) if|x|>2, else
+ *              = sign(x)*log1p(|x| + x^2/(1 + sqrt(1+x^2)))
  * </pre>
- * @copyright Copyright (C) 1993 by Sun Microsystems, Inc. All rights reserved.
- * @license   Developed at SunSoft, a Sun Microsystems, Inc. business. Permission
- *            to use, copy, modify, and distribute this software is freely granted,
- *            provided that this notice is preserved.
  */
-
 double asinh(double x)
 {
-    double t,w;
-    sword hx,ix;
-    GET_HIGH_WORD(hx,x);
-    ix = hx&0x7fffffff;
-    if(ix>=0x7ff00000) return x+x;	/* x is inf or NaN */
-    if(ix< 0x3e300000) {	/* |x|<2**-28 */
-        if(huge+x>one) return x;	/* return x inexact except 0 */
+    double t, w;
+    int32_t hx, ix;
+    GET_HIGH_WORD(hx, x);
+    ix = hx & 0x7fffffff;
+    if (ix >= 0x7ff00000)
+        return x + x; /* x is inf or NaN */
+    if (ix < 0x3e300000)
+    { /* |x|<2**-28 */
+        if (huge + x > one)
+            return x; /* return x inexact except 0 */
     }
-    if(ix>0x41b00000) {	/* |x| > 2**28 */
-        w = log(fabs(x))+ln2;
-    } else if (ix>0x40000000) {	/* 2**28 > |x| > 2.0 */
+    if (ix > 0x41b00000)
+    { /* |x| > 2**28 */
+        w = log(fabs(x)) + ln2;
+    }
+    else if (ix > 0x40000000)
+    { /* 2**28 > |x| > 2.0 */
         t = fabs(x);
-        w = log(2.0*t+one/(sqrt(x*x+one)+t));
-    } else {		/* 2.0 > |x| > 2**-28 */
-        t = x*x;
-        w =log1p(fabs(x)+t/(one+sqrt(one+t)));
+        w = log(2.0 * t + one / (sqrt(x * x + one) + t));
     }
-    if(hx>0) return w;
-    else return -w;
+    else
+    { /* 2.0 > |x| > 2**-28 */
+        t = x * x;
+        w = log1p(fabs(x) + t / (one + sqrt(one + t)));
+    }
+    if (hx > 0)
+        return w;
+    else
+        return -w;
 }

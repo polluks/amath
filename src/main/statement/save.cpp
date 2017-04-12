@@ -29,7 +29,7 @@
 
 #include "save.h"
 #include "amath.h"
-#include "localize/text.h"
+#include "loc/text.h"
 #include "system/program.h"
 
 SaveStatement::SaveStatement(const char* file)

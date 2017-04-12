@@ -27,8 +27,8 @@
  * 
  */
 
-#ifndef AMATH_LOCALIZE_IDENT_ALIAS_H
-#define AMATH_LOCALIZE_IDENT_ALIAS_H
+#ifndef AMATH_FUNCTIONALIAS_H
+#define AMATH_FUNCTIONALIAS_H
 
 #include "amatht.h"
 
@@ -48,25 +48,29 @@ static const identalias identaliases[] = {
     {"cosecant", "csc"},
     {"ctg", "cot"},
     {"ctn", "cot"},
-    {"cotangent", "cot"},   
+    {"cotangent", "cot"},
+    {"chord", "crd"},
     {"arcsine", "asin"},
     {"arccosine", "acos"},
     {"arctangent", "atan"},
     {"arccotangent", "acot"},
     {"arcsecant", "asec"},
     {"arccosecant", "acsc"},
+    {"arcchord", "acrd"},
     {"arsin", "asin"},
     {"arcos", "acos"},
     {"artan", "atan"},
     {"arcot", "acot"},
     {"arsec", "asec"},
     {"arcsc", "acsc"},
+    {"arcrd", "acrd"},
     {"arcsin", "asin"},
     {"arccos", "acos"},
     {"arctan", "atan"},
     {"arccot", "acot"},
     {"arcsec", "asec"},
     {"arccsc", "acsc"},
+    {"arccrd", "acrd"},
     {"arsinh", "asinh"},
     {"arcosh", "acosh"},
     {"artanh", "atanh"},
@@ -217,7 +221,17 @@ static const identalias identaliases[] = {
     {"excosecant", "excsc"},
     {"excosec", "excsc"},
     {"coexsec", "excsc"},
-    {"exc", "excsc"}
+    {"exc", "excsc"},
+    // inverse exsecant
+    {"arcexsecant", "aexsec"},
+    {"arcexsec", "aexsec"},
+    {"aexsec", "aexsec"},
+    {"aexs", "aexsec"},
+    // inverse excosecant
+    {"arcexcosecant", "aexcsc"},
+    {"arcexcosec", "aexcsc"},
+    {"arcexcsc", "aexcsc"},
+    {"aexc", "aexcsc"}
 };
 
 #endif

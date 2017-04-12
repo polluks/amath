@@ -32,21 +32,19 @@
 
 /**
  * @file  ntext.h
- * @brief Text to numbers handling.
+ * @brief Text to numbers handling
  * @details
  * Converts both between text and numbers AND between numbers and text.
- *
  */
 
 #include "numb.h"
 #include "charbuf.h"
 
 /**
-* @brief Base class for all numeral systems.
+* @brief   Base class for all numeral systems
 * @details
-* More info on numeral systems is available at [Wikipedia]:
+* More info on numeral systems is available at Wikipedia:
 * https://wikipedia.org/wiki/Numeral_system
-*
 */
 class NumeralSystem
 {
@@ -58,55 +56,13 @@ public:
     virtual unsigned int GetDigits() = 0;
     virtual void SetDigits(unsigned int digits) = 0;
     virtual const char GetFractionPoint() = 0;
-    virtual void SetFractionPoint(const char fractionpoint) = 0;
+    virtual void SetFractionPoint(const char fractionPoint) = 0;
     virtual const char* GetText(Number* number) = 0;
     virtual Number* Parse(const char* text, unsigned int* length, char** end) = 0;
     virtual Number* Parse(const char* text);
 
 protected:
     CharBuffer* buf;
-};
-
-/**
-* @brief Base class for all numeral systems with a
-*        positional notation.
-* @details
-* More info on positional notation is available at [Wikipedia]:
-* https://wikipedia.org/wiki/Positional_notation
-*
-*/
-class PositionalNumeralSystem : public NumeralSystem
-{
-public:
-    PositionalNumeralSystem(unsigned int base, unsigned int digits, const char fractionpoint);
-    ~PositionalNumeralSystem();
-
-    virtual const char* GetName();
-    virtual const char* GetPrefix();
-    virtual unsigned int GetDigits();
-    virtual void SetDigits(unsigned int digits);
-    virtual const char GetFractionPoint();
-    virtual void SetFractionPoint(const char fractionpoint);
-    virtual const char* GetText(Number* number);
-    virtual Number* Parse(const char* text, unsigned int* length, char** end);
-
-protected:
-    double base;
-    unsigned int digits;
-    char fractionpoint;
-
-private:
-    const char* GetText(double number) const;
-    void IntegerToBuffer(double value, unsigned int digits, int* outdigits) const;
-};
-
-class DecimalSystem : public PositionalNumeralSystem
-{
-public:
-    DecimalSystem();
-    DecimalSystem(unsigned int digits, const char fractionpoint);
-    explicit DecimalSystem(unsigned int digits);
-    ~DecimalSystem();
 };
 
 #endif

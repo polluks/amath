@@ -35,7 +35,7 @@
 /**
  * @brief A binary logarithm function in a syntax tree.
  * @details
- * More info on the binary logarithm function is available at [Wikipedia]:
+ * More info on the binary logarithm function is available at Wikipedia:
  * https://wikipedia.org/wiki/Binary_logarithm
  *
  */

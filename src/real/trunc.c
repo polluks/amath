@@ -27,10 +27,47 @@
  * 
  */
 
-#include "prim.h"
-#include "math.h"
+/**
+ * @file  trunc.c
+ * @brief Truncate function
+ */
 
+#include "prim.h"
+
+/**
+ * @brief   Truncate function
+ * @details
+ * <pre>
+ * when x > 0
+ * trunc(0)   = floor(x)
+ *
+ * when x < 0
+ * trunc(x)   = ceil(x)
+ *
+ * Special case
+ * trunc(0)   = 0
+ * trunc(NaN) = NaN
+ * </pre>
+ */
 double trunc(double x)
 {
-    return x > 0.0 ? floor(x) : ceil(x);
+    uint32_t hx, lx;
+    GET_HIGH_WORD(hx, x);
+    if ((hx & 0x7FF00000) == 0x7FF00000)
+    {
+        return NAN;
+    }
+
+    GET_LOW_WORD(lx, x);
+    if (hx == 0 && lx == 0)
+    {
+        return 0.0;
+    }
+
+    if ((hx & 0x80000000) != 0x80000000)
+    {
+        return floor(x);
+    }
+
+    return ceil(x);
 }

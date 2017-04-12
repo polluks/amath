@@ -44,7 +44,7 @@ StandardProgram::StandardProgram()
 {
     Console = nullptr;
     line = nullptr;
-    shellMode = true;
+    shellMode = false;
 }
 
 StandardProgram::~StandardProgram()
@@ -120,17 +120,29 @@ void StandardProgram::Start()
 
     Preferences->Load();
 
+    if (!line->IsEmpty())
+    {
+        Evaluator* evaluator = new Evaluator(line->GetString());
+        evaluator->Evaluate();
+        const char* res = evaluator->GetResult();
+        Console->WriteString(res);
+        Console->ResetConsole();
+        delete evaluator;
+        return;
+    }
+
+#if defined(WINDOWS)
+    Console->Start();
+#else
     if (shellMode)
     {
         Console->Start();
         return;
     }
 
-    Evaluator* evaluator = new Evaluator(line->GetString());
-    evaluator->Evaluate();
-    const char* res = evaluator->GetResult();
-    Console->WriteString(res);
-    delete evaluator;
+    SetAnsiMode(false);
+    Console->ShowHelp();
+#endif
 }
 
 #endif

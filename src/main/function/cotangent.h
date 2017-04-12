@@ -35,7 +35,7 @@
 /**
  * @brief A cotangent function in a syntax tree.
  * @details
- * More info on the cotangent function is available at [Wikipedia]:
+ * More info on the cotangent function is available at Wikipedia:
  * https://wikipedia.org/wiki/Cotangent
  *
  */

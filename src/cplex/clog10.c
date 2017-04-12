@@ -28,10 +28,9 @@
  */
 
 #include "prim.h"
-#include "complex.h"
 
 /**
- * @brief   Base 10 logarithmic value of complex number.
+ * @brief  Base 10 logarithmic value of complex number
  * @details
  * <pre>
  * log z = log(z) / log(10)

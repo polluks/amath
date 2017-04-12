@@ -58,9 +58,14 @@ public:
     virtual void Close();
     virtual void Start();
     virtual void Exit();
+    virtual void Clear();
     virtual void SetPrompt(const char* string);
     virtual void WriteString(const char* string);
     virtual bool SetAnsiMode(bool value);
+    virtual void ShowVersion();
+
+protected:
+    virtual void StartMessage();
 
 private:
     void ReadLine();

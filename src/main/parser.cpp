@@ -36,7 +36,8 @@
 #include "userfunction.h"
 #include "lib/numb.h"
 #include "lib/cplex.h"
-#include "localize/text.h"
+#include "lib/ntextd.h"
+#include "loc/text.h"
 #include "system/program.h"
 
 Parser::Parser(const char* input)

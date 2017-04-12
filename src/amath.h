@@ -60,7 +60,13 @@
 # endif
 #endif
 /******************************************************************************/
-#ifdef _WIN32
+#ifdef __APPLE__
+# ifndef APPLE
+# define APPLE
+# endif
+#endif
+/******************************************************************************/
+#if defined(_WIN32) || defined(_WIN64)
 # ifndef WINDOWS
 # define WINDOWS
 # endif
@@ -78,7 +84,7 @@
 # endif
 #endif
 /******************************************************************************/
-#if defined(HAIKU) || defined(UNIX)
+#if defined(HAIKU) || defined(UNIX) || defined(APPLE) || defined(_POSIX_VERSION)
 # ifndef POSIX
 # define POSIX
 # endif
@@ -110,16 +116,22 @@ typedef u_int32_t  uint32_t;
 typedef u_int64_t  uint64_t;
 #endif
 /******************************************************************************/
-#if defined(AROS) || defined(MORPHOS) || defined(AOS4)
+#if defined(AROS) || defined(MORPHOS) || defined(AOS4) || defined(APPLE)
 # include <stdint.h>
 # include <sys/types.h>
 #endif
 /******************************************************************************/
 #if (__cplusplus <= 199711L && !defined(WINDOWS)) || !defined(__cplusplus)
-#define nullptr 0
-#elif (__cplusplus <= 199711L) && (defined(__GNUC__) || defined(__GNUG__))
+#ifndef nullptr
 #define nullptr 0
 #endif
+#elif (__cplusplus <= 199711L) && (defined(__GNUC__) || defined(__GNUG__))
+#ifndef nullptr
+#define nullptr 0
+#endif
+#endif
+/******************************************************************************/
+#define assert(x)
 /******************************************************************************/
 /* Compilers*/
 #if defined(__clang__)
@@ -212,8 +224,10 @@ typedef u_int64_t  uint64_t;
 #define SPACE       " "
 #define DOT         "."
 /******************************************************************************/
-#ifdef WINDOWS
+#if defined(WINDOWS)
 #define NEWLINE     "\r\n"
+#elif defined(APPLE)
+#define NEWLINE     "\r"
 #else
 #define NEWLINE     "\n"
 #endif
@@ -276,22 +290,15 @@ typedef int bool;
 # define TXTFPU EMPTYSTRING
 #endif
 /******************************************************************************/
-#if defined(WITHTEST)
-# define TXTOPTMSG       SPACE "(test)"
-#else
-# define TXTOPTMSG       EMPTYSTRING
-#endif
-/******************************************************************************/
 #define TXTARCH          TXTCPU TXTFPU
-#define RELDATESTAMP     "(10-04-2017)"
-#define TXTDOSVERSION    "\0$VER: amath 1.71" SPACE RELDATESTAMP SPACE TXTARCH
-#define TXTTITLE         "amath version 1.7.1"
+#define RELDATESTAMP     "(13-04-2017)"
+#define TXTDOSVERSION    "\0$VER: amath 1.80" SPACE RELDATESTAMP SPACE TXTARCH
+#define TXTTITLE         "amath version 1.8.0"
 #define TXTCOPYRIGHT     "(c) 2017 Carsten Sonne Larsen"
 #define TXTSTARTMSG      TXTTITLE SPACE TXTCOPYRIGHT
 /******************************************************************************/
 #define TXTVERSMSG       TXTTITLE SPACE RELDATESTAMP SPACE TXTARCH
-#define TXTCOMPMSG       "Compiled with " COMP_NAME SPACE COMP_VERS TXTOPTMSG
-#define TXTCOMPSHTMSG    "Compiled with " COMP_NAME SPACE COMP_VERS
+#define TXTCOMPMSG       "Compiled with " COMP_NAME SPACE COMP_VERS
 /******************************************************************************/
 #define CPROCNAME        "amath_console"
 /******************************************************************************/

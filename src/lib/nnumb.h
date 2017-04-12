@@ -32,8 +32,7 @@
 
 /**
  * @file  nnumb.h
- * @brief Class based handling of Infinity and Not A Number.
- *
+ * @brief Class based handling of Infinity and Not A Number
  */
 
 #include "numb.h"
@@ -47,8 +46,7 @@ typedef enum
 } NonNumberType;
 
 /**
- * @brief Represent a number which does not exists.
- *
+ * @brief Represent a number which does not exists
  */
 struct NonNumber : public Number
 {
@@ -62,10 +60,10 @@ public:
     bool PureComplexValue();
     int GetPrecedence();
     int GetDefaultPrecedence();
+    bool IsNegative();
     bool IsZero();
     bool IsNaN();
-    bool IsTooSmall();
-    bool IsTooLarge();
+    bool IsInfinite();
     bool IsNotImplemented();
 
     Number* Unary();
@@ -96,12 +94,18 @@ public:
     Number* Cosecant();
     Number* Secant();
     Number* Cotangent();
+    Number* Chord();
+    Number* ExSecant();
+    Number* ExCosecant();
     Number* ArcSine();
     Number* ArcCosine();
     Number* ArcTangent();
     Number* ArcCosecant();
     Number* ArcSecant();
     Number* ArcCotangent();
+    Number* ArcExSecant();
+    Number* ArcExCosecant();
+    Number* ArcChord();
 
     Number* HypSine();
     Number* HypCosine();
@@ -133,11 +137,6 @@ public:
     Number* ArcHaVerCosine();
     Number* ArcHaCoVerSine();
     Number* ArcHaCoVerCosine();
-
-    Number* ExSecant();
-    Number* ExCosecant();
-    Number* ArcExSecant();
-    Number* ArcExCosecant();
 
 private:
     NonNumberType type;

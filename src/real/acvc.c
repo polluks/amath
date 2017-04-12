@@ -1,6 +1,4 @@
-/* @(#)s_isnan.c 1.3 95/01/18 */
-
-/*
+/*-
  * Copyright (c) 2014-2017 Carsten Sonne Larsen <cs@innolan.net>
  * All rights reserved.
  *
@@ -24,30 +22,27 @@
  * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF
  * THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  *
- * The origin source code can be obtained from:
- * http://www.netlib.org/fdlibm/s_isnan.c
+ * Project homepage:
+ * http://amath.innolan.net
  * 
  */
 
-/*
- * ====================================================
- * Copyright (C) 1993 by Sun Microsystems, Inc. All rights reserved.
- *
- * Developed at SunSoft, a Sun Microsystems, Inc. business.
- * Permission to use, copy, modify, and distribute this
- * software is freely granted, provided that this notice 
- * is preserved.
- * ====================================================
+/**
+ * @file  acvc.c
+ * @brief Inverse versed cosine
  */
+
+#include "prim.h"
 
 /**
- * @brief   isnan(x) returns 1 is x is nan, else 0.
- * @version 1.3
- * @date    95/01/18
- * @details NOTICE: No branching!
+ * @brief   Inverse versed cosine
+ * @details
+ * <pre>
+ * Method
+ *     acvc(x) = asin(1+x)
+ * </pre>
  */
-int isnan(double x)
+double acvc(double x)
 {
-    return ((x) != (x));
+    return asin(1.0 + x);
 }
-

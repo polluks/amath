@@ -35,7 +35,7 @@
 /**
  * @brief A secant function in a syntax tree.
  * @details
- * More info on the secant function is available at [Wikipedia]:
+ * More info on the secant function is available at Wikipedia:
  * https://wikipedia.org/wiki/Secant_function
  *
  */

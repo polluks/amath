@@ -32,7 +32,7 @@
 #include "preferences.h"
 #include "lib/numb.h"
 #include "lib/real.h"
-#include "lib/ntext.h"
+#include "lib/ntextd.h"
 #include "lib/charbuf.h"
 #include "main/lexer.h"
 #include "main/nodes.h"

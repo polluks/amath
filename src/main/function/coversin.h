@@ -35,7 +35,7 @@
 /**
  * @brief A coversed sine function in a syntax tree. 
  * @details
- * More info on the coversed sine function is available at [Wikipedia]:
+ * More info on the coversed sine function is available at Wikipedia:
  * https://wikipedia.org/wiki/Coversine
  *
  */

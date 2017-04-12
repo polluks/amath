@@ -31,10 +31,9 @@
 #define AMATH_LANGUAGE_AMIGA_H
 
 #include "language.h"
-#include "localize/lex.h"
-#include "localize/help.h"
-#include "localize/text.h"
-#include "localize/kword.h"
+#include "loc/help.h"
+#include "loc/text.h"
+#include "loc/kword.h"
 
 class AmigaLanguage : public Language
 {

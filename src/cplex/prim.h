@@ -36,8 +36,8 @@
  *
  */
 
-#include "math.h"
-#include "complex.h"
+#include "../mathr.h"
+#include "../mathi.h"
 
 #ifdef __cplusplus
 extern "C" {

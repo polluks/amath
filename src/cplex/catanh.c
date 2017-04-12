@@ -28,13 +28,9 @@
  */
 
 #include "prim.h"
-#include "math.h"
-#include "complex.h"
 
 /**
- * @brief   Inverse hyperbolic tangent of complex number
- * @version 1.0
- * @date    14/09/15
+ * @brief  Inverse hyperbolic tangent of complex number
  * @details
  * Inverse hyperbolic tangent expressed using complex logarithms:
  * <pre>

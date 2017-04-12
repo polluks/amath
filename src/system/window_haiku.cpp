@@ -33,7 +33,7 @@
 #include "lib/charbuf.h"
 #include "lib/aengine.h"
 #include "main/evaluator.h"
-#include "localize/text.h"
+#include "loc/text.h"
 
 //http://git.netsurf-browser.org/netsurf.git/plain/frontends/beos/about.cpp
 //https://notabug.org/Tsyesika/Runyu/src/master/RunyuWindow.cpp
@@ -163,7 +163,7 @@ void HaikuWindow::ShowAbout(void)
 
 void HaikuWindow::ShowLicense(void)
 {
-    // TODO
+    // TODO: Show license in colors
     ConsoleBase::ShowLicense();
 }
 

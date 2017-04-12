@@ -1,6 +1,4 @@
-/* @(#)s_finite.c 1.3 95/01/18 */
-
-/*
+/*-
  * Copyright (c) 2014-2017 Carsten Sonne Larsen <cs@innolan.net>
  * All rights reserved.
  *
@@ -24,35 +22,31 @@
  * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF
  * THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  *
- * The origin source code can be obtained from:
- * http://www.netlib.org/fdlibm/s_finite.c
+ * Project homepage:
+ * http://amath.innolan.net
  * 
  */
 
-/*
- * ====================================================
- * Copyright (C) 1993 by Sun Microsystems, Inc. All rights reserved.
- *
- * Developed at SunSoft, a Sun Microsystems, Inc. business.
- * Permission to use, copy, modify, and distribute this
- * software is freely granted, provided that this notice 
- * is preserved.
- * ====================================================
+/**
+ * @file  sech.c
+ * @brief Hyperbolic secant function
  */
 
 #include "prim.h"
 
 /**
- * @brief   Finite or infinite number.
- * @version 1.3
- * @date    95/01/18
+ * @brief   Hyperbolic secant function
  * @details
- * finite(x) returns 1 is x is finite, else 0.
- * NOTICE: No branching!
+ * <pre>
+ * sech(x) = 1/cosh(x)
+ * </pre>
  */
-int finite(double x)
+double sech(double x)
 {
-    uword hx;
-    GET_HIGH_WORD(hx,x);
-    return (unsigned)((hx&0x7fffffff)-0x7ff00000)>>31;
+    double a = cosh(x);
+    if (TRIG_INEXACT(a))
+    {
+        return NAN;
+    }
+    return 1.0 / a;
 }

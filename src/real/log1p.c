@@ -1,6 +1,4 @@
-/* @(#)s_log1p.c 1.4 96/03/07 */
-
-/*
+/*-
  * Copyright (c) 2014-2017 Carsten Sonne Larsen <cs@innolan.net>
  * All rights reserved.
  *
@@ -24,24 +22,23 @@
  * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF
  * THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  *
- * The origin source code can be obtained from:
+ * Project homepage:
+ * http://amath.innolan.net
+ *
+ * The original source code can be obtained from:
  * http://www.netlib.org/fdlibm/s_log1p.c
  * 
- */
-
-/*
- * ====================================================
+ * =================================================================
  * Copyright (C) 1993 by Sun Microsystems, Inc. All rights reserved.
  *
  * Developed at SunSoft, a Sun Microsystems, Inc. business.
  * Permission to use, copy, modify, and distribute this
  * software is freely granted, provided that this notice
  * is preserved.
- * ====================================================
+ * =================================================================
  */
 
 #include "prim.h"
-#include "math.h"
 
 /* double log1p(double x)
  *
@@ -125,7 +122,7 @@ static double zero = 0.0;
 double log1p(double x)
 {
     double hfsq,f,c,s,z,R,u;
-    sword k,hx,hu,ax;
+    int32_t k,hx,hu,ax;
 
     f = 0.0;
     c = 0.0;

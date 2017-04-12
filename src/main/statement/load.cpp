@@ -29,7 +29,7 @@
 
 #include "load.h"
 #include "amath.h"
-#include "localize/text.h"
+#include "loc/text.h"
 #include "system/program.h"
 #include "../parser.h"
 

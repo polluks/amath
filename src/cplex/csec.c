@@ -28,11 +28,9 @@
  */
 
 #include "prim.h"
-#include "math.h"
-#include "complex.h"
 
 /**
- * @brief   Secant of a complex number
+ * @brief  Secant of a complex number
  * @details
  * Calculated as in Open Office:<BR>
  * https://wiki.openoffice.org/wiki/Documentation/How_Tos/Calc:_IMSEC_function
@@ -59,7 +57,7 @@ complex csec(complex z)
 
     if (d == 0.0)
     {
-        w = cpack(D_INFP, D_INFP);
+        w = cpack((double)INFP, (double)INFP);
     }
     else
     {

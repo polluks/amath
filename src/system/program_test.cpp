@@ -27,14 +27,18 @@
  * 
  */
 
-#ifdef WITHTEST
+#if defined(WITHTEST)
 #include "amath.h"
 #include "amathc.h"
 #include "program_test.h"
 #include "console_stdc.h"
 #include "lib/charbuf.h"
+#include "lib/ntext.h"
+#include "lib/ntextd.h"
 #include "main/evaluator.h"
-#include <stdio.h>
+
+void WriteOut(const char *string);
+void WriteOutInt(int value);
 
 TestProgram::TestProgram(bool silent)
     : Program()
@@ -57,19 +61,25 @@ TestProgram::~TestProgram()
 
 void TestProgram::Start()
 {
-    printf("Testing " TXTVERSMSG NEWLINE);
-    printf(TXTCOMPMSG NEWLINE);
-    printf(NEWLINE);
+    WriteOut("Testing " TXTVERSMSG NEWLINE);
+    WriteOut(TXTCOMPMSG NEWLINE);
+    WriteOut(NEWLINE);
 
     RunTests();
 
     if (fail == 0)
     {
-        printf("All tests passed (%i)" NEWLINE, pass);
+        WriteOut("All tests passed(");
+        WriteOutInt(pass);
+        WriteOut(")" NEWLINE);
     }
     else
     {
-        printf("Passed: %i, failed: %i" NEWLINE, pass, fail);
+        WriteOut("Passed: ");
+        WriteOutInt(pass);
+        WriteOut(", failed: ");
+        WriteOutInt(fail);
+        WriteOut(NEWLINE);
         status = 5; // Set exit status 5
     }
 }
@@ -133,7 +143,9 @@ void TestProgram::PerformTest(const char* input, const char* result, bool show, 
         pass++;
         if (!silent)
         {
-            printf("PASS: [%s]" NEWLINE, show ? result : input);
+            WriteOut("PASS: [");
+            WriteOut(show ? result : input);
+            WriteOut("]" NEWLINE);
         }
     }
     else
@@ -141,7 +153,13 @@ void TestProgram::PerformTest(const char* input, const char* result, bool show, 
         fail++;
         if (!silent)
         {
-            printf("FAIL: [%s] expected [%s] but got [%s]" NEWLINE, input, result, buf->GetString());
+            WriteOut("FAIL: [");
+            WriteOut(input);
+            WriteOut("] expected [");
+            WriteOut(result);
+            WriteOut("] but got [");
+            WriteOut(buf->GetString());
+            WriteOut("]" NEWLINE);
         }
     }
 
@@ -202,6 +220,10 @@ void TestProgram::RunTestset01()
     TestExpression("sqrt(-43.5)", "sqrt(-43.5) = 6.59545298i");
     TestExpression("cbrt(1000)", "cbrt(1000) = 10");
     TestExpression("cbrt(52.23)", "cbrt(52.23) = 3.73800612");
+    TestExpression("cbrt(1/0)", "cbrt(1/0) = NaN");
+    TestExpression("cbrt(tan(pi/2))", "cbrt(tan(pi/2)) = Inf");
+    TestExpression("cbrt(1e-20)", "cbrt(1e-20) = 0.00000021544347");
+    TestExpression("cbrt(-1e-20)", "cbrt(-1e-20) = 0.00000010772173+0.00000018657952i");
 }
 
 void TestProgram::RunTestset02()
@@ -220,7 +242,8 @@ void TestProgram::RunTestset02()
     TestExpression("sin(pi/2)", "sin(pi/2) = 1");
     TestExpression("tan(pi)", "tan(pi) = 0");
     TestExpression("tan(-pi)", "tan(-pi) = 0");
-    TestExpression("tan(pi/2)", "tan(pi/2) = Inf"); // FAIL
+    TestExpression("tan(pi/2)", "tan(pi/2) = Inf");
+    TestExpression("tan(-pi/2)", "tan(-pi/2) = -Inf");
     TestExpression("sin(1/12*pi)", "sin(1/12*pi) = 0.25881904510252");
     TestExpression("sin(11/12*pi)", "sin(11/12*pi) = 0.25881904510252");
     TestExpression("sin(1/6*pi)", "sin(1/6*pi) = 0.5");
@@ -237,6 +260,7 @@ void TestProgram::RunTestset02()
     TestExpression("cot(0.5)", "cot(0.5) = 1.8304877217125");
     TestExpression("sec(0.5)", "sec(0.5) = 1.1394939273245");
     TestExpression("csc(0.5)", "csc(0.5) = 2.0858296429335");
+    TestExpression("crd(0.5)", "crd(0.5) = 0.49480791850905"); // Check
     TestExpression("exsec(0.5)", "exsec(0.5) = 0.13949392732455");
     TestExpression("excsc(0.5)", "excsc(0.5) = 1.0858296429335");
     TestExpression("arccos(0.35)", "acos(0.35) = 1.2132252231494");
@@ -245,6 +269,7 @@ void TestProgram::RunTestset02()
     TestExpression("arccot(0.41)", "acot(0.41) = 1.1816990957396");
     TestExpression("arcsec(1.41)", "asec(1.41) = 0.78240533832346");
     TestExpression("arccsc(1.41)", "acsc(1.41) = 0.78839098847143");
+    TestExpression("arccrd(1.41)", "acrd(1.41) = 1.5648462916869"); // Check
     TestExpression("cosh(0.56)", "cosh(0.56) = 1.1609407820725");
     TestExpression("sinh(0.56)", "sinh(0.56) = 0.58973171822364");
     TestExpression("tanh(0.56)", "tanh(0.56) = 0.5079774328979");
@@ -286,7 +311,7 @@ void TestProgram::RunTestset03()
     TestExpression("2.3i*(-1.27)", "2.3i*(-1.27) = -2.921i");
     TestExpression("4.3/3.3i", "4.3/3.3i = -1.303030303i");
     TestExpression("4.3i/3.3", "4.3i/3.3 = 1.303030303i");
-    TestExpression("1/(12+7i)", "1/(12+7i) = 0.0621761658-0.03626943005i");
+    TestExpression("1/(12+7i)", "1/(12+7i) = 0.062176165803-0.036269430052i");
     TestExpression("4.3i/(2.3i+1.1)", "4.3i/(1.1+2.3i) = 1.5215384615+0.72769230769i");
     TestExpression("(2+3.2i)*(4+7i)", "(2+3.2i)*(4+7i) = -14.4+26.8i");
     TestExpression("(2-3i)*(4-7i)", "(2-3i)*(4-7i) = -13-26i");
@@ -313,9 +338,9 @@ void TestProgram::RunTestset03()
     TestExpression("floor(-39.9531-2.57i)", "floor(-39.9531-2.57i) = -40-3i");
     TestExpression("trunc(23.827+2.57i)", "trunc(23.827+2.57i) = 23+2i");
     TestExpression("trunc(-23.827-2.57i)", "trunc(-23.827-2.57i) = -23-2i");
-    TestExpression("2^2.2i", "2^2.2i = 0.04585644308+0.99894804i");
+    TestExpression("2^2.2i", "2^2.2i = 0.045856443079+0.99894804i");
     TestExpression("3i^4.4", "3i^4.4 = 101.6930248+73.884307317i");
-    TestExpression("(2+4i)^2.2i", "(2+4i)^2.2i = -0.08650199375-0.01340218842i");
+    TestExpression("(2+4i)^2.2i", "(2+4i)^2.2i = -0.086501993747-0.013402188424i");
     TestExpression("(2-4i)^(2.2i-2)", "(2-4i)^(-2+2.2i) = 0.40864788198-0.39910321822i");
     TestExpression("sqrt(20+50i)", "sqrt(20+50i) = 6.0766622447+4.1141006351i");
     TestExpression("sqrt(20-50i)", "sqrt(20-50i) = 6.0766622447-4.1141006351i");
@@ -475,7 +500,7 @@ void TestProgram::RunTestset08()
 {
     Input->SetDigits(9);
     Output->SetDigits(9);
-
+    
     TestExpression("1/0", "1/0 = NaN");
     TestExpression("1.0/0", "1/0 = NaN");
     TestExpression("1i/0", "1i/0 = NaN");
@@ -551,9 +576,13 @@ void TestProgram::RunTestset09()
     TestExpression("ln(0i)", "ln(0) = NaN");
     TestExpression("lg(0i)", "lg(0) = NaN");
     TestExpression("tan(0)", "tan(0) = 0");
+    TestExpression("tan(pi)", "tan(pi) = 0");
     TestExpression("cot(0)", "cot(0) = NaN");
+    TestExpression("cot(pi)", "cot(pi) = NaN");
     TestExpression("sec(0)", "sec(0) = 1");
+    TestExpression("sec(pi)", "sec(pi) = 1");
     TestExpression("csc(0)", "csc(0) = NaN");
+    TestExpression("csc(pi)", "csc(pi) = NaN");
     TestExpression("exsec(0)", "exsec(0) = 0");
     TestExpression("excsc(0)", "excsc(0) = Inf");
     TestExpression("arcsin(0)", "asin(0) = 0");
@@ -572,25 +601,6 @@ void TestProgram::RunTestset09()
     TestExpression("arccoth(0)", "acoth(0) = NaN");
     TestExpression("arcsech(0)", "asech(0) = NaN");
     TestExpression("arccsch(0)", "acsch(0) = NaN");
-    TestExpression("tan(0.0)", "tan(0) = 0");
-    TestExpression("cot(0.0)", "cot(0) = NaN");
-    TestExpression("sec(0.0)", "sec(0) = 1");
-    TestExpression("csc(0.0)", "csc(0) = NaN");
-    TestExpression("arcsin(0.0)", "asin(0) = 0");
-    TestExpression("arctan(0.0)", "atan(0) = 0");
-    TestExpression("arcsec(0.0)", "asec(0) = NaN");
-    TestExpression("arccsc(0.0)", "acsc(0) = NaN");
-    TestExpression("cosh(0.0)", "cosh(0) = 1");
-    TestExpression("sinh(0.0)", "sinh(0) = 0");
-    TestExpression("tanh(0.0)", "tanh(0) = 0");
-    TestExpression("coth(0.0)", "coth(0) = NaN");
-    TestExpression("sech(0.0)", "sech(0) = 1");
-    TestExpression("csch(0.0)", "csch(0) = NaN");
-    TestExpression("arcsinh(0.0)", "asinh(0) = 0");
-    TestExpression("arctanh(0.0)", "atanh(0) = 0");
-    TestExpression("arccoth(0.0)", "acoth(0) = NaN");
-    TestExpression("arcsech(0.0)", "asech(0) = NaN");
-    TestExpression("arccsch(0.0)", "acsch(0) = NaN");
 }
 
 void TestProgram::RunTestset10()
@@ -598,8 +608,11 @@ void TestProgram::RunTestset10()
     Input->SetDigits(9);
     Output->SetDigits(9);
 
-    TestExpression("1e-309", "-Inf = -Inf");
-    TestExpression("1e-308", "1e-308 = 1e-308");
+    TestExpression("-1e-309", "-Inf = -Inf");
+    TestExpression("-1e-308", "-Inf = -Inf");
+    TestExpression("1e-309", "Inf = Inf");
+    TestExpression("1e-308", "Inf = Inf");
+    TestExpression("1e-307", "1e-307 = 1e-307");
     TestExpression("1e-300", "1e-300 = 1e-300");
     TestExpression("1e-267", "1e-267 = 1e-267");
     TestExpression("1e-165", "1e-165 = 1e-165");
@@ -654,8 +667,14 @@ void TestProgram::RunTestset10()
     TestExpression("1e+165", "1e+165 = 1e+165");
     TestExpression("1e+267", "1e+267 = 1e+267");
     TestExpression("1e+300", "1e+300 = 1e+300");
+    TestExpression("1e+306", "1e+306 = 1e+306");
+    TestExpression("1e+307", "1e+307 = 1e+307");
     TestExpression("1e+308", "1e+308 = 1e+308");
     TestExpression("1e+309", "Inf = Inf");
+    TestExpression("1e+310", "Inf = Inf");
+    TestExpression("-1e+308", "-1e+308 = -1e+308");
+    TestExpression("-1e+309", "-Inf = -Inf");
+    TestExpression("-1e+310", "-Inf = -Inf");
     TestExpression("1.7e-20", "1.7e-20 = 1.7e-20");
     TestExpression("1.7e-19", "1.7e-19 = 1.7e-19");
     TestExpression("1.7e-18", "1.7e-18 = 1.7e-18");
@@ -698,6 +717,48 @@ void TestProgram::RunTestset10()
     TestExpression("1.7e+18", "1.7e+18 = 1.7e+18");
     TestExpression("1.7e+19", "1.7e+19 = 1.7e+19");
     TestExpression("1.7e+20", "1.7e+20 = 1.7e+20");
+    TestExpression("-1.7e-20", "-1.7e-20 = -1.7e-20");
+    TestExpression("-1.7e-19", "-1.7e-19 = -1.7e-19");
+    TestExpression("-1.7e-18", "-1.7e-18 = -1.7e-18");
+    TestExpression("-1.7e-17", "-1.7e-17 = -1.7e-17");
+    TestExpression("-1.7e-16", "-1.7e-16 = -1.7e-16");
+    TestExpression("-1.7e-15", "-1.7e-15 = -1.7e-15");
+    TestExpression("-1.7e-14", "-1.7e-14 = -1.7e-14");
+    TestExpression("-1.7e-13", "-1.7e-13 = -1.7e-13");
+    TestExpression("-1.7e-12", "-1.7e-12 = -1.7e-12");
+    TestExpression("-1.7e-11", "-1.7e-11 = -1.7e-11");
+    TestExpression("-1.7e-10", "-1.7e-10 = -1.7e-10");
+    TestExpression("-1.7e-9", "-1.7e-9 = -1.7e-9");
+    TestExpression("-1.7e-8", "-0.000000017 = -0.000000017");
+    TestExpression("-1.7e-7", "-0.00000017 = -0.00000017");
+    TestExpression("-1.7e-6", "-0.0000017 = -0.0000017");
+    TestExpression("-1.7e-5", "-0.000017 = -0.000017");
+    TestExpression("-1.7e-4", "-0.00017 = -0.00017");
+    TestExpression("-1.7e-3", "-0.0017 = -0.0017");
+    TestExpression("-1.7e-2", "-0.017 = -0.017");
+    TestExpression("-1.7e-1", "-0.17 = -0.17");
+    TestExpression("-1.7e-0", "-1.7 = -1.7");
+    TestExpression("-1.7e+0", "-1.7 = -1.7");
+    TestExpression("-1.7e+1", "-17 = -17");
+    TestExpression("-1.7e+2", "-170 = -170");
+    TestExpression("-1.7e+3", "-1700 = -1700");
+    TestExpression("-1.7e+4", "-17000 = -17000");
+    TestExpression("-1.7e+5", "-170000 = -170000");
+    TestExpression("-1.7e+6", "-1700000 = -1700000");
+    TestExpression("-1.7e+7", "-17000000 = -17000000");
+    TestExpression("-1.7e+8", "-170000000 = -170000000");
+    TestExpression("-1.7e+9", "-1.7e+9 = -1.7e+9");
+    TestExpression("-1.7e+10", "-1.7e+10 = -1.7e+10");
+    TestExpression("-1.7e+11", "-1.7e+11 = -1.7e+11");
+    TestExpression("-1.7e+12", "-1.7e+12 = -1.7e+12");
+    TestExpression("-1.7e+13", "-1.7e+13 = -1.7e+13");
+    TestExpression("-1.7e+14", "-1.7e+14 = -1.7e+14");
+    TestExpression("-1.7e+15", "-1.7e+15 = -1.7e+15");
+    TestExpression("-1.7e+16", "-1.7e+16 = -1.7e+16");
+    TestExpression("-1.7e+17", "-1.7e+17 = -1.7e+17");
+    TestExpression("-1.7e+18", "-1.7e+18 = -1.7e+18");
+    TestExpression("-1.7e+19", "-1.7e+19 = -1.7e+19");
+    TestExpression("-1.7e+20", "-1.7e+20 = -1.7e+20");
 }
 
 void TestProgram::RunTestset11()

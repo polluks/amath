@@ -27,15 +27,21 @@
  * 
  */
 
-#include "math.h"
+/**
+ * @file  ahv.c
+ * @brief Inverse haversed sine
+ */
+
 #include "prim.h"
 
+/**
+ * @brief Inverse haversed sine
+ */
 double ahv(double x)
 {
     double a = x - x * x;
     double b = 2.0 * sqrt(a);
     double c = 1.0 - 2.0 * x;
-    double d = atan(b / c);
-    
+    double d = atan(b / c);   
     return d;
 }

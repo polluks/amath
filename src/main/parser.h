@@ -42,7 +42,7 @@
 /**
  * @brief Encapsulates a recursive descent parser.
  * @details
- * More info on recursive descent parsers is available at [Wikipedia]:
+ * More info on recursive descent parsers is available at Wikipedia:
  * https://wikipedia.org/wiki/Recursive_descent_parser
  *
  */

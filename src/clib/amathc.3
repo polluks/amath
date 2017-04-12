@@ -1,26 +1,39 @@
-.TH "amath/amathc.h" 3 "Wed Mar 1 2017" "Version 1.7.1" "amath" \" -*- nroff -*-
-.ad l
-.nh
+.\" Copyright (c) 2014-2017 Carsten Sonne Larsen <cs@innolan.net>
+.\" All rights reserved.
+.\" 
+.\" Redistribution and use in source and binary forms, with or without
+.\" modification, are permitted provided that the following conditions
+.\" are met:
+.\" 1. Redistributions of source code must retain the above copyright
+.\"    notice, this list of conditions and the following disclaimer.
+.\" 2. Redistributions in binary form must reproduce the above copyright
+.\"    notice, this list of conditions and the following disclaimer in the
+.\"    documentation and/or other materials provided with the distribution.
+.\" 
+.\" THIS SOFTWARE IS PROVIDED BY THE AUTHOR ``AS IS'' AND ANY EXPRESS OR
+.\" IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES
+.\" OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED.
+.\" IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY DIRECT, INDIRECT,
+.\" INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT
+.\" NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+.\" DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
+.\" THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+.\" (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF
+.\" THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+.TH "amathc.h" 3 "Version 1.8.0" "April 13 2017"
 .SH NAME
 amathc.h \- C functions for manipulating strings and memory
-
 .SH SYNOPSIS
 .br
 .PP
-\fC#include <stddef\&.h>\fP
-.br
-\fC#include 'amath\&.h'\fP
-.br
-
-.SS "Classes"
-
+\fC#include \fB"amathc\&.h"\fP
+.SS "Data Structures"
 .in +1c
 .ti -1c
 .RI "struct \fBtexttag\fP"
 .br
 .in -1c
 .SS "Functions"
-
 .in +1c
 .ti -1c
 .RI "void * \fBAllocMemSafe\fP (size_t)"
@@ -30,6 +43,10 @@ amathc.h \- C functions for manipulating strings and memory
 .RI "void \fBFreeMemSafe\fP (void *)"
 .br
 .RI "\fIDeallocate memory from the global memory list\&. \fP"
+.ti -1c
+.RI "void \fBDetachMemSafe\fP (void *)"
+.br
+.RI "\fIDetach an allocated memory from the global memory list\&. \fP"
 .ti -1c
 .RI "void \fBFreeAllSafe\fP ()"
 .br
@@ -43,7 +60,7 @@ amathc.h \- C functions for manipulating strings and memory
 .br
 .RI "\fIGet the length of a null terminated string\&. \fP"
 .ti -1c
-.RI "\fBbool\fP \fBStrIsEqual\fP (const char *s1, const char *s2)"
+.RI "bool \fBStrIsEqual\fP (const char *s1, const char *s2)"
 .br
 .RI "\fICompare two null terminated strings to each other\&. \fP"
 .ti -1c
@@ -61,21 +78,11 @@ amathc.h \- C functions for manipulating strings and memory
 .ti -1c
 .RI "void \fBUntag\fP (char *destination, const char *source, \fBtexttag\fP tags[], unsigned int tagcount)"
 .br
-.in -1c
-.SH "Detailed Description"
-.PP
-C functions for manipulating strings and memory\&.
-
-
-.PP
-Definition in file \fBamathc\&.h\fP\&.
-.SH "Function Documentation"
-.br
+.SH DESCRIPTION
 .PP
 .SS "unsigned int AllocAndCopy (char ** destination, const char * source)"
-.br
 .PP
-Allocate memory and copy a string into the array\&.
+Allocate memory and copy a string into the array\&. 
 .PP
 Definition at line 40 of file alloccpy\&.c\&.
 .PP
@@ -107,7 +114,6 @@ Definition at line 40 of file alloccpy\&.c\&.
 69 }
 .fi
 .SS "void* AllocMemSafe (size_t)"
-
 .PP
 Allocate memory and add it to the global memory list\&. 
 .PP
@@ -171,251 +177,211 @@ Definition at line 86 of file mem\&.c\&.
 141     return newblock->address;
 142 }
 .fi
+.SS "void DetachMemSafe (void * block)"
+.PP
+Detach an allocated memory from the global memory list\&. The memory block is only detached, not deallocated\&. 
+.PP
+Definition at line 209 of file mem\&.c\&.
+.PP
+.nf
+210 {
+211     RemoveMemSafe(block, false);
+212 }
+.fi
 .SS "void FreeAllSafe ()"
-
 .PP
 Deallocate all memory in the global memory list\&. 
 .PP
-Definition at line 199 of file mem\&.c\&.
+Definition at line 217 of file mem\&.c\&.
 .PP
 .nf
-200 {
-201     struct MemoryBlock *current, *next;
-202 
-203     if (list == nullptr)
-204     {
-205         return;
-206     }
-207 
-208     current = list->first;
-209     while (current != nullptr)
-210     {
-211         next = current->next;
-212         FREE_MEM(current->address);
-213         FREE_MEM(current);
-214         current = next;
-215     }
-216 
-217     FREE_MEM(list);
-218     list = nullptr;
-219 }
+218 {
+219     struct MemoryBlock *current, *next;
+220 
+221     if (list == nullptr)
+222     {
+223         return;
+224     }
+225 
+226     current = list->first;
+227     while (current != nullptr)
+228     {
+229         next = current->next;
+230         FREE_MEM(current->address);
+231         FREE_MEM(current);
+232         current = next;
+233     }
+234 
+235     FREE_MEM(list);
+236     list = nullptr;
+237 }
 .fi
 .SS "void FreeMemSafe (void *)"
-
 .PP
 Deallocate memory from the global memory list\&. 
 .PP
-Definition at line 147 of file mem\&.c\&.
+Definition at line 200 of file mem\&.c\&.
 .PP
 .nf
-148 {
-149     struct MemoryBlock *current, *previous;
-150 
-151     if (list == nullptr || block == nullptr)
-152     {
-153         dealloc_error("list", 0);
-154         return;
-155     }
-156 
-157     if (block == nullptr)
-158     {
-159         dealloc_error("memory", 0);
-160         return;
-161     }
-162 
-163     previous = nullptr;
-164     current = list->first;
-165     while (current != nullptr && current->address != block)
-166     {
-167         previous = current;
-168         current = current->next;
-169     }
-170 
-171     if (current == nullptr)
-172     {
-173         dealloc_error("address not found", block);
-174         return;
-175     }
-176 
-177     if (previous == nullptr)
-178     {
-179         list->first = current->next;
-180     }
-181     else
-182     {
-183         previous->next = current->next;
-184     }
-185 
-186     list->size -= current->size;
-187     list->count--;
-188 
-189     FREE_MEM(current->address);
-190     current->address = nullptr;
-191     current->next = nullptr;
-192     current->size = 0;
-193     FREE_MEM(current);
-194 }
+201 {
+202     RemoveMemSafe(block, true);
+203 }
 .fi
 .SS "void MemCopy (void * destination, const void * source, unsigned int length)"
-
 .PP
 Copy a block of memory, handling overlap\&. 
 .PP
-Definition at line 77 of file memcpy\&.c\&.
+Definition at line 75 of file memcpy\&.c\&.
 .PP
 .nf
-78 {
-79     char* dst = (char*) destination;
-80     const char* src = (const char*) source;
-81     unsigned int t;
-82 
-83     if (length == 0 || dst == src) // nothing to do
-84         return;
-85 
-86     if ((mem_ptr)dst < (mem_ptr)src)
-87     {
-88         // Copy forward
-92         t = (mem_ptr)src; // only need low bits
-93         if ((t | (mem_ptr)dst) & wmask)
-94         {
-95             // Try to align operands\&.  This cannot be done unless the low bits match\&.
-96             if ((t ^ (mem_ptr)dst) & wmask || length < wsize)
-97                 t = length;
-98             else
-99                 t = wsize - (t & wmask);
-100             length -= t;
-101 
-102             TLOOP1(*dst++ = *src++);
-103         }
-104 
-105         // Copy whole words, then mop up any trailing bytes\&.
-106         t = length / wsize;
-107         TLOOP(*(word *)dst = *(word *)src; src += wsize; dst += wsize);
-108 
-109         t = length & wmask;
-110         TLOOP(*dst++ = *src++);
-111 #endif
-112     }
-113     else
-114     {
-115         // Copy backwards\&.  Otherwise essentially the same\&.
-116         // Alignment works as before, except that it takes
-117         // (t&wmask) bytes to align, not wsize-(t&wmask)\&.
-118         src += length;
-119         dst += length;
-120         t = (mem_ptr)src;
-121         if ((t | (mem_ptr)dst) & wmask)
-122         {
-123             if ((t ^ (mem_ptr)dst) & wmask || length <= wsize)
-124                 t = length;
-125             else
-126                 t &= wmask;
-127             length -= t;
-128 
-129             TLOOP1(*--dst = *--src);
-130         }
-131 
-132         t = length / wsize;
-133         TLOOP(src -= wsize; dst -= wsize; *(word *)dst = *(word *)src);
-134 
-135         t = length & wmask;
-136         TLOOP(*--dst = *--src);
-137     }
-138 }
+76 {
+77     char* dst = (char*) destination;
+78     const char* src = (const char*) source;
+79     unsigned int t;
+80 
+81     if (length == 0 || dst == src) // nothing to do
+82         return;
+83 
+84     if ((mem_ptr)dst < (mem_ptr)src)
+85     {
+86         // Copy forward
+90         t = (mem_ptr)src; // only need low bits
+91         if ((t | (mem_ptr)dst) & wmask)
+92         {
+93             // Try to align operands\&.  This cannot be done unless the low bits match\&.
+94             if ((t ^ (mem_ptr)dst) & wmask || length < wsize)
+95                 t = length;
+96             else
+97                 t = wsize - (t & wmask);
+98             length -= t;
+99 
+100             TLOOP1(*dst++ = *src++);
+101         }
+102 
+103         // Copy whole words, then mop up any trailing bytes\&.
+104         t = length / wsize;
+105         TLOOP(*(word *)dst = *(word *)src; src += wsize; dst += wsize);
+106 
+107         t = length & wmask;
+108         TLOOP(*dst++ = *src++);
+110     }
+111     else
+112     {
+113         // Copy backwards\&.  Otherwise essentially the same\&.
+114         // Alignment works as before, except that it takes
+115         // (t&wmask) bytes to align, not wsize-(t&wmask)\&.
+116         src += length;
+117         dst += length;
+118         t = (mem_ptr)src;
+119         if ((t | (mem_ptr)dst) & wmask)
+120         {
+121             if ((t ^ (mem_ptr)dst) & wmask || length <= wsize)
+122                 t = length;
+123             else
+124                 t &= wmask;
+125             length -= t;
+126 
+127             TLOOP1(*--dst = *--src);
+128         }
+129 
+130         t = length / wsize;
+131         TLOOP(src -= wsize; dst -= wsize; *(word *)dst = *(word *)src);
+132 
+133         t = length & wmask;
+134         TLOOP(*--dst = *--src);
+135     }
+136 }
 .fi
 .SS "void MemSet (void * destination, int c0, unsigned int length)"
-
 .PP
 Fill block of memory with a constant value\&. 
 .PP
-Definition at line 60 of file memset\&.c\&.
+Definition at line 56 of file memset\&.c\&.
 .PP
 .nf
-61 {
-62     unsigned char* dst = (unsigned char*) dst0;
-63     unsigned int t;
-64     unsigned int c;
-65 
-66     /*
-67      * If not enough words, just fill bytes\&.  A length >= 2 words
-68      * guarantees that at least one of them is `complete' after
-69      * any necessary alignment\&.  For instance:
-70      *
-71      *  |-----------|-----------|-----------|
-72      *  |00|01|02|03|04|05|06|07|08|09|0A|00|
-73      *            ^---------------------^
-74      *       dst         dst+length-1
-75      *
-76      * but we use a minimum of 3 here since the overhead of the code
-77      * to do word writes is substantial\&.
-78      */
-79     if (length < 3 * wsize)
-80     {
-81         while (length != 0)
-82         {
-83             *dst++ = c0;
-84             --length;
-85         }
-86     }
-87 
-88     if ((c = (unsigned char)c0) != 0)
-89     { /* Fill the word\&. */
-90         c = (c << 8) | c; /* u_int is 16 bits\&. */
-91 #if UINT_MAX > 0xffff
-92         c = (c << 16) | c;  /* u_int is 32 bits\&. */
-93 #endif
-94 #if UINT_MAX > 0xffffffff
-95         c = (c << 32) | c;  /* u_int is 64 bits\&. */
-96 #endif
-97     }
-98 
-99     /* Align destination by filling in bytes\&. */
-100     if ((t = (mem_ptr)dst & wmask) != 0)
-101     {
-102         t = wsize - t;
-103         length -= t;
-104         do
-105         {
-106             *dst++ = c0;
-107         }
-108         while (--t != 0);
-109     }
-110 
-111     /* Fill words\&.  Length was >= 2*words so we know t >= 1 here\&. */
-112     t = length / wsize;
-113     do
-114     {
-115         *(unsigned int*)dst = c;
-116         dst += wsize;
-117     }
-118     while (--t != 0);
-119 
-120     /* Mop up trailing bytes, if any\&. */
-121     t = length & wmask;
-122     if (t != 0)
-123         do
-124         {
-125             *dst++ = c0;
-126         }
-127         while (--t != 0);
-128 }
+57 {
+58     unsigned char* dst = (unsigned char*) dst0;
+59     unsigned int t;
+60     unsigned int c;
+61 
+62     /*
+63      * If not enough words, just fill bytes\&.  A length >= 2 words
+64      * guarantees that at least one of them is `complete' after
+65      * any necessary alignment\&.  For instance:
+66      *
+67      *  |-----------|-----------|-----------|
+68      *  |00|01|02|03|04|05|06|07|08|09|0A|00|
+69      *            ^---------------------^
+70      *       dst         dst+length-1
+71      *
+72      * but we use a minimum of 3 here since the overhead of the code
+73      * to do word writes is substantial\&.
+74      */
+75     if (length < 3 * wsize)
+76     {
+77         while (length != 0)
+78         {
+79             *dst++ = c0;
+80             --length;
+81         }
+82     }
+83 
+84     if ((c = (unsigned char)c0) != 0)
+85     { /* Fill the word\&. */
+86         c = (c << 8) | c; /* u_int is 16 bits\&. */
+87 #if UINT_MAX > 0xffff
+88         c = (c << 16) | c;  /* u_int is 32 bits\&. */
+89 #endif
+90 #if UINT_MAX > 0xffffffff
+91         c = (c << 32) | c;  /* u_int is 64 bits\&. */
+92 #endif
+93     }
+94 
+95     /* Align destination by filling in bytes\&. */
+96     if ((t = (mem_ptr)dst & wmask) != 0)
+97     {
+98         t = wsize - t;
+99         length -= t;
+100         do
+101         {
+102             *dst++ = c0;
+103         }
+104         while (--t != 0);
+105     }
+106 
+107     /* Fill words\&.  Length was >= 2*words so we know t >= 1 here\&. */
+108     t = length / wsize;
+109     do
+110     {
+111         *(unsigned int*)dst = c;
+112         dst += wsize;
+113     }
+114     while (--t != 0);
+115 
+116     /* Mop up trailing bytes, if any\&. */
+117     t = length & wmask;
+118     if (t != 0)
+119         do
+120         {
+121             *dst++ = c0;
+122         }
+123         while (--t != 0);
+124 }
 .fi
 .SS "void MemUsage (long *, long *, long *)"
-
 .PP
 Get memory usage in the global memory list\&. 
 .PP
-Definition at line 224 of file mem\&.c\&.
+Definition at line 242 of file mem\&.c\&.
 .PP
 .nf
-225 {
-226     *blocks = list->count;
-227     *size = (long)list->size;
-228     *peak = (long)list->peak;;
-229 }
+243 {
+244     *blocks = list->count;
+245     *size = (long)list->size;
+246     *peak = (long)list->peak;;
+247 }
 .fi
-.SS "\fBbool\fP StrIsEqual (const char * s1, const char * s2)"
-
+.SS "bool StrIsEqual (const char * s1, const char * s2)"
 .PP
 Compare two null terminated strings to each other\&. 
 .PP
@@ -435,7 +401,6 @@ Definition at line 50 of file strcmp\&.c\&.
 61 }
 .fi
 .SS "int StrLen (const char * string)"
-
 .PP
 Get the length of a null terminated string\&. 
 .PP
@@ -451,7 +416,6 @@ Definition at line 34 of file strlen\&.c\&.
 41 }
 .fi
 .SS "void Untag (char * destination, const char * source, \fBtexttag\fP tags[], unsigned int tagcount)"
-
 .PP
 Definition at line 32 of file untag\&.c\&.
 .PP
@@ -507,6 +471,18 @@ Definition at line 32 of file untag\&.c\&.
 81     *dest = '\0';
 82 }
 .fi
-.SH "See also"
-.PP 
+.SH HOMEPAGE
+http://amath.innolan.net/
+.SH AUTHORS
+.PP
+Written by Carsten Sonne Larsen <cs@innolan.net>. The code in MemSet and
+MemCopy is derived from software contributed to Berkeley by Mike Hibler and
+Chris Torek.
+.SH COPYRIGHT
+Copyright (c) 2014-2017 Carsten Sonne Larsen <cs@innolan.net>
+.br
+Copyright (c) 2007 The NetBSD Foundation, Inc.
+.br
+Copyright (c) 1990, 1993 The Regents of the University of California
+.SH SEE ALSO
 amath(1), amathr(3), amathi(3)

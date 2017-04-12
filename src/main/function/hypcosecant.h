@@ -35,7 +35,7 @@
 /**
  * @brief A hyperbolic cosecant function in a syntax tree. 
  * @details
- * More info on the hyperbolic cosecant function is available at [Wikipedia]:
+ * More info on the hyperbolic cosecant function is available at Wikipedia:
  * https://wikipedia.org/wiki/Hyperbolic_cosecant
  *
  */

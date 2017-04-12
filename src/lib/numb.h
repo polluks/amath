@@ -36,14 +36,27 @@
 
 /**
  * @file  numb.h
- * @brief Class base handling of numbers.
- *
+ * @brief Class base handling of numbers
  */
+
+#include "amath.h"
+
+union FloatUnion64 {
+    bool IsNegative() const { return (integer >> 63) != 0; }
+    bool IsZero() const { return integer == 0; }
+    bool IsInf() const { return GetExponent() == 0x7FF && GetMantissa() == 0; }
+    bool IsNaN() const { return GetExponent() == 0x7FF && GetMantissa() != 0; }
+    bool IsMaxPositive() const { return integer == 0x7EFFFFFFFFFFFFFFull; }
+    bool IsMaxNegative() const { return integer == 0x7FFFFFFFFFFFFFFFull; }
+    int32_t GetExponent() const { return (integer >> 52) & 0x7FF; }
+    uint64_t GetMantissa() const { return integer & 0xFFFFFFFFFFFFFull; }
+    double floatingPoint;
+    uint64_t integer;
+};
 
 typedef enum
 {
     nsysnatural,
-    nsysinteger,
     nsysrational,
     nsysreal,
     nsyscomplex,
@@ -68,10 +81,10 @@ public:
     virtual bool PureComplexValue() = 0;
     virtual int GetPrecedence() = 0;
     virtual int GetDefaultPrecedence() = 0;
+    virtual bool IsNegative() = 0;
     virtual bool IsZero() = 0;
     virtual bool IsNaN() = 0;
-    virtual bool IsTooSmall() = 0;
-    virtual bool IsTooLarge() = 0;
+    virtual bool IsInfinite() = 0;
     virtual bool IsNotImplemented() = 0;
 
     virtual Number* Unary() = 0;
@@ -102,6 +115,9 @@ public:
     virtual Number* Cosecant() = 0;
     virtual Number* Secant() = 0;
     virtual Number* Cotangent() = 0;
+    virtual Number* Chord() = 0;
+    virtual Number* ExSecant() = 0;
+    virtual Number* ExCosecant() = 0;
 
     virtual Number* ArcSine() = 0;
     virtual Number* ArcCosine() = 0;
@@ -109,6 +125,9 @@ public:
     virtual Number* ArcCosecant() = 0;
     virtual Number* ArcSecant() = 0;
     virtual Number* ArcCotangent() = 0;
+    virtual Number* ArcChord() = 0;
+    virtual Number* ArcExSecant() = 0;
+    virtual Number* ArcExCosecant() = 0;
 
     virtual Number* HypSine() = 0;
     virtual Number* HypCosine() = 0;
@@ -141,11 +160,6 @@ public:
     virtual Number* ArcHaVerCosine() = 0;
     virtual Number* ArcHaCoVerSine() = 0;
     virtual Number* ArcHaCoVerCosine() = 0;
-
-    virtual Number* ExSecant() = 0;
-    virtual Number* ExCosecant() = 0;
-    virtual Number* ArcExSecant() = 0;
-    virtual Number* ArcExCosecant() = 0;
 
     friend class PositionalNumeralSystem;
     friend class DecimalSystem;

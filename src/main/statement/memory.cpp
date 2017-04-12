@@ -31,8 +31,8 @@
 #include "amathc.h"
 #include "memory.h"
 #include "lib/real.h"
-#include "lib/ntext.h"
-#include "localize/text.h"
+#include "lib/ntextd.h"
+#include "loc/text.h"
 
 MemoryStatement::MemoryStatement()
     : StatementNode()

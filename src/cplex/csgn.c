@@ -30,11 +30,10 @@
 #include "prim.h"
 
 /**
- * @brief   Complex signum
+ * @brief  Complex signum
  * @details
  * More info is available at Wikipedia: <BR>
  * https://wikipedia.org/wiki/Sign_function#Complex_signum
- *
  */
 double csgn(complex z)
 {
