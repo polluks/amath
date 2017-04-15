@@ -33,7 +33,7 @@
 #include "preferences.h"
 #include "preferences_amiga.h"
 
-#ifdef AMIGA
+#if defined(AMIGA)
 #include <clib/dos_protos.h>
 
 static const char *tempname = "ENV:amath.prefs";

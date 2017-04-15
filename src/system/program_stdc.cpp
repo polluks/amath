@@ -30,8 +30,8 @@
 #include "amath.h"
 #include "amathc.h"
 #include "program_stdc.h"
-#include "console_posix.h"
 #include "console_stdc.h"
+#include "console_termios.h"
 #include "console_windows.h"
 #include "preferences_stdc.h"
 #include "lib/charbuf.h"
@@ -65,8 +65,8 @@ void StandardProgram::Initialize(int argc, char** argv)
 {
 #if defined(WINDOWS)
         Console = new WindowsConsole(Preferences->GetPrompt(), Language);
-#elif defined(POSIX)
-        Console = new PosixConsole(Preferences->GetPrompt(), Language);
+#elif defined(TERMIOS)
+        Console = new TermiosConsole(Preferences->GetPrompt(), Language);
 #else
         Console = new StandardConsole(Preferences->GetPrompt(), Language);
 #endif

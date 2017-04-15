@@ -30,27 +30,27 @@
 #include "amath.h"
 #include "amathc.h"
 #include "console.h"
-#include "console_posix.h"
+#include "console_termios.h"
 #include "lib/charval.h"
 #include "lib/aengine.h"
 #include "main/evaluator.h"
 
-#if defined(POSIX)
+#if defined(TERMIOS)
 #include <stdio.h>
 #include <termios.h>
 
-PosixConsole::PosixConsole(const char* prompt, CharValidator* validator) :
+TermiosConsole::TermiosConsole(const char* prompt, CharValidator* validator) :
     ConsoleBase(prompt), line(nullptr), exit(false)
 {
     proc = new AnsiConoleEngine(prompt, validator);
 }
 
-PosixConsole::~PosixConsole()
+TermiosConsole::~TermiosConsole()
 {
     delete proc;
 }
 
-bool PosixConsole::Open()
+bool TermiosConsole::Open()
 {
     if (tcgetattr(STDIN_FILENO, &oldAttr) != 0)
     {
@@ -66,7 +66,7 @@ bool PosixConsole::Open()
     return (tcsetattr(STDIN_FILENO, TCSANOW, &newAttr) != -1);
 }
 
-void PosixConsole::Close()
+void TermiosConsole::Close()
 {
     if (!termError)
     {
@@ -74,7 +74,7 @@ void PosixConsole::Close()
     }
 }
 
-void PosixConsole::Start()
+void TermiosConsole::Start()
 {
     exit = false;
     StartMessage();
@@ -91,12 +91,12 @@ void PosixConsole::Start()
     }
 }
 
-void PosixConsole::Exit()
+void TermiosConsole::Exit()
 {
     exit = true;
 }
 
-void PosixConsole::ReadLine()
+void TermiosConsole::ReadLine()
 {
     char c;
     proc->StartInput();
@@ -116,12 +116,12 @@ void PosixConsole::ReadLine()
     line = proc->GetLine();
 }
 
-void PosixConsole::WriteString(const char* string)
+void TermiosConsole::WriteString(const char* string)
 {
     Write(string, StrLen(string));
 }
 
-void PosixConsole::Write(const char* string, unsigned int length)
+void TermiosConsole::Write(const char* string, unsigned int length)
 {
     ssize_t res = write(STDOUT_FILENO, string, length);
     if (res != length)
@@ -130,7 +130,7 @@ void PosixConsole::Write(const char* string, unsigned int length)
     }
 }
 
-void PosixConsole::SetPrompt(const char* string)
+void TermiosConsole::SetPrompt(const char* string)
 {
     ConsoleBase::SetPrompt(string);
     proc->SetPrompt(string);

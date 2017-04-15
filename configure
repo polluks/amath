@@ -278,13 +278,12 @@ SYSSRCS='
 console.cpp
 console_amiga.cpp
 console_stdc.cpp
-console_posix.cpp
+console_termios.cpp
 console_windows.cpp
 filesystem_amiga.cpp
 filesystem_stdc.cpp
 language.cpp
 language_amiga.cpp
-language_posix.cpp
 language_stdc.cpp
 preferences.cpp
 preferences_amiga.cpp

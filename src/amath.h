@@ -84,26 +84,21 @@
 # endif
 #endif
 /******************************************************************************/
-#if defined(HAIKU) || defined(UNIX) || defined(APPLE) || defined(_POSIX_VERSION)
-# ifndef POSIX
-# define POSIX
+#if defined(HAIKU) || defined(UNIX) || defined(APPLE)
+# ifndef TERMIOS
+# define TERMIOS
 # endif
-#endif
-/******************************************************************************/
-#if !defined(AMIGA) && !defined(POSIX) && !defined(WINDOWS)
-# ifndef STDC_CONSOLE
-# define STDC_CONSOLE
-# endif
-#endif
-/******************************************************************************/
-#if defined(POSIX)
 # include <stdint.h>
 # include <unistd.h>
-# include <dirent.h>
 #endif
 /******************************************************************************/
 #if defined(WINDOWS)
 # include <stdint.h>
+#endif
+/******************************************************************************/
+#if defined(AROS) || defined(MORPHOS) || defined(AOS4)
+# include <stdint.h>
+# include <sys/types.h>
 #endif
 /******************************************************************************/
 #if defined(AOS3)
@@ -114,11 +109,6 @@ typedef u_int8_t   uint8_t;
 typedef u_int16_t  uint16_t;
 typedef u_int32_t  uint32_t;
 typedef u_int64_t  uint64_t;
-#endif
-/******************************************************************************/
-#if defined(AROS) || defined(MORPHOS) || defined(AOS4) || defined(APPLE)
-# include <stdint.h>
-# include <sys/types.h>
 #endif
 /******************************************************************************/
 #if (__cplusplus <= 199711L && !defined(WINDOWS)) || !defined(__cplusplus)

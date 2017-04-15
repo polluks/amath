@@ -33,7 +33,7 @@
 #include "filesystem.h"
 #include "program_haiku.h"
 #include "window_haiku.h"
-#include "console_posix.h"
+#include "console_termios.h"
 #include "lib/charbuf.h"
 #include "main/evaluator.h"
 
@@ -77,7 +77,7 @@ void HaikuProgram::Initialize(int argc, char **argv)
         return;
     }
 
-    Console = new PosixConsole(Preferences->GetPrompt(), Language);
+    Console = new TermiosConsole(Preferences->GetPrompt(), Language);
     SetAnsiMode(true);
 
     line = new CharBuffer();

@@ -40,6 +40,10 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+#if defined(UNIX) || defined(HAIKU)
+#include <dirent.h>
+#endif
+
 CharBuffer* StandardFilesystem::ListDirectory(const char* path)
 {
 #if defined(UNIX) || defined(HAIKU)
@@ -86,7 +90,7 @@ CharBuffer* StandardFilesystem::ListDirectory(const char* path)
 
         const char *type;
 
-#ifdef HAIKU
+#if defined(HAIKU)
         type = TXTLISTDIRTUNKNOWN;
 #else
         switch (entry->d_type) {

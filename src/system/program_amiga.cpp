@@ -44,7 +44,7 @@
 #define ARGS_FORMAT "SHELL/S,NOANSI/S,INPUT/F"
 #include <clib/dos_protos.h>
 
-#ifdef AOS3
+#if defined(AOS3)
 # define RDPTR LONG*
 #else
 # define RDPTR IPTR*

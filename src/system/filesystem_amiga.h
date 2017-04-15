@@ -32,15 +32,14 @@
 
 /**
  * @file  filesystem_amiga.h
- * @brief Amiga OS specific file system calls.
- *
+ * @brief Amiga OS specific file system calls
  */
 
 #include "amath.h"
 #include "amathc.h"
 #include "filesystem.h"
 
-#ifdef AMIGA
+#if defined(AMIGA)
 
 class AmigaFilesystem : public FilesystemBase
 {

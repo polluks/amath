@@ -39,7 +39,7 @@
 #include "amath.h"
 #include "console.h"
 
-#if defined(STDC_CONSOLE)
+#if !defined(AMIGA) && !defined(TERMIOS) && !defined(WINDOWS)
 
 /**
  * @brief Encapsulates the IO of a Standard C console.

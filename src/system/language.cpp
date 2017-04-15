@@ -41,7 +41,7 @@
 
 static const texttag ansiTags[] = {
     {"#HEADLINE#", "\x1B[1m"},
-#ifdef UNIX
+#if defined(UNIX)
     {"#SYNTAXHIGHLIGHT#", "\x1B[3m\x1B[32m"},
 #else
     {"#SYNTAXHIGHLIGHT#", "\x1B[32m"},

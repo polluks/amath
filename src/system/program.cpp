@@ -33,7 +33,6 @@
 #include "language.h"
 #include "language_stdc.h"
 #include "language_amiga.h"
-#include "language_posix.h"
 #include "filesystem.h"
 #include "filesystem_stdc.h"
 #include "filesystem_amiga.h"
@@ -52,11 +51,7 @@ Program::Program() :
     Variables = new VariableList();
     Functions = new FunctionList();
     ins = new RealNumber();
-#if defined(UNIX)
-    Language = new PosixLanguage();
-    Filesystem = new StandardFilesystem();
-    Preferences = new StandardPreferences();
-#elif defined(AMIGA)
+#if defined(AMIGA)
     Language = new AmigaLanguage();
     Filesystem = new AmigaFilesystem();
     Preferences = new AmigaPreferences();

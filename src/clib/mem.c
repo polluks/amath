@@ -29,7 +29,7 @@
 
 #include "amathc.h"
 
-#ifdef AMIGA
+#if defined(AMIGA)
 #include <stddef.h>
 #include <exec/types.h>
 #include <exec/memory.h>

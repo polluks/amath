@@ -39,13 +39,12 @@
 #include "nodes.h"
 #include "lib/charbuf.h"
 
-#ifdef DEBUGTREE
+#if defined(DEBUGTREE)
 
 /**
  * @brief Control class displaying a syntax tree
  * @details
  * Define DEBUGTREE to enable the tree viewer.
- *
  */
 class Viewer
 {
