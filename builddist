@@ -7,29 +7,29 @@ rm -Rf amath
 rm -Rf dist
 mkdir dist
 
-./configure --disable-test --cross-compile="m68k-amigaos" CFLAGS="-m68000 -noixemul"
+./configure --disable-test --disable-pic --cross-compile="m68k-amigaos" CFLAGS="-m68000 -noixemul"
 make clean
 make static
 mv amath dist/amath.000
 make clean
-./configure --disable-test --cross-compile="m68k-amigaos" CFLAGS="-m68020 -noixemul"
+./configure --disable-test --disable-pic --cross-compile="m68k-amigaos" CFLAGS="-m68020 -noixemul"
 make static
 mv amath dist/amath.020
 make clean
-./configure --disable-test --cross-compile="m68k-amigaos" CFLAGS="-m68030 -noixemul"
+./configure --disable-test --disable-pic --cross-compile="m68k-amigaos" CFLAGS="-m68030 -noixemul"
 make static
 mv amath dist/amath.030
 make clean
 
-./configure --enable-test --cross-compile="m68k-amigaos" CFLAGS="-m68000 -noixemul"
+./configure --enable-test --disable-pic --cross-compile="m68k-amigaos" CFLAGS="-m68000 -noixemul"
 make static
 mv amath dist/amath-test.000
 make clean
-./configure --enable-test --cross-compile="m68k-amigaos" CFLAGS="-m68020 -noixemul"
+./configure --enable-test --disable-pic --cross-compile="m68k-amigaos" CFLAGS="-m68020 -noixemul"
 make static
 mv amath dist/amath-test.020
 make clean
-./configure --enable-test --cross-compile="m68k-amigaos" CFLAGS="-m68030 -noixemul"
+./configure --enable-test --disable-pic --cross-compile="m68k-amigaos" CFLAGS="-m68030 -noixemul"
 make static
 mv amath dist/amath-test.030
 make clean

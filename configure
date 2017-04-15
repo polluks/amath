@@ -36,6 +36,7 @@ openlibm=false
 stdlibm=false
 stdlibc=false
 useldconfig=false
+fpic=true
 
 prefix="/usr"
 pkgconfigdir="lib/pkgconfig"
@@ -184,6 +185,8 @@ for arg in "$@"; do
 		echo '  --disable-clang: do not build with clang compiler'
 		echo '  --enable-ldconfig: use ldconfig to registre libraries'
 		echo '  --disable-ldconfig: do not use ldconfig to registre libraries'
+		echo '  --enable-pic: build with Position Independent Code (-fPIC)'
+		echo '  --disable-pic: do not build static libraries with Position Independent Code'
 		echo '  --with-libm: link with libm library (-lm)'
 		echo '  --without-libm: do not link with libm library'
 		echo '  --with-openlibm: link with openlibm library (-lopenlibm)'
@@ -255,6 +258,12 @@ fi
 
 if $stdlibc; then
 	gcclib="${gcclib} -lc"
+fi
+
+if $fpic; then
+	fPIC=" -fPIC"
+else
+	fPIC=""
 fi
 
 cflags="${cflags}${debugflag}${mflags}"
@@ -566,7 +575,7 @@ ldlibflags="-l${amathapp} ${libm}-l${amathcplex} ${libm}-l${amath} -l${amathc} $
 ############################ Main Application ###########################
 {
 echo "CXX      = ${crosscompile}${cxxcompiler}"
-echo "CXXFLAGS = ${appop}${options} ${cxxflags}-I. -I.. -Wall"
+echo "CXXFLAGS = ${appop}${options} ${cxxflags}${fPIC} -I. -I.. -Wall"
 echo "AR       = ${crosscompile}ar"
 echo "RANLIB   = ${crosscompile}ranlib"
 echo "DEL      = rm -f"
@@ -598,7 +607,7 @@ echo
 ########################### Functions Library ###########################
 {
 echo "CXX      = ${crosscompile}${cxxcompiler}"
-echo "CXXFLAGS = ${appop}${options} ${cxxflags}-I. -I../.. -Wall"
+echo "CXXFLAGS = ${appop}${options} ${cxxflags}${fPIC} -I. -I../.. -Wall"
 echo "AR       = ${crosscompile}ar"
 echo "RANLIB   = ${crosscompile}ranlib"
 echo "DEL      = rm -f"
@@ -630,7 +639,7 @@ echo
 ########################### Statement Library ###########################
 {
 echo "CXX      = ${crosscompile}${cxxcompiler}"
-echo "CXXFLAGS = ${appop}${options} ${cxxflags}-I. -I../.. -Wall"
+echo "CXXFLAGS = ${appop}${options} ${cxxflags}${fPIC} -I. -I../.. -Wall"
 echo "AR       = ${crosscompile}ar"
 echo "RANLIB   = ${crosscompile}ranlib"
 echo "DEL      = rm -f"
@@ -662,7 +671,7 @@ echo
 ############################ System Library #############################
 {
 echo "CXX      = ${crosscompile}${cxxcompiler}"
-echo "CXXFLAGS = ${appop}${options} ${cxxflags}-I. -I.. -Wall"
+echo "CXXFLAGS = ${appop}${options} ${cxxflags}${fPIC} -I. -I.. -Wall"
 echo "AR       = ${crosscompile}ar"
 echo "RANLIB   = ${crosscompile}ranlib"
 echo "DEL      = rm -f"
@@ -724,7 +733,7 @@ for f in ${LIBAPPSRCS}
 do
 	b=`basename $f .cpp`
 	echo "static/${b}.o:	${f}"
-	echo "	\${CXX} \${CXXFLAGS} -c ${f} -o static/${b}.o"
+	echo "	\${CXX} \${CXXFLAGS}${fPIC} -c ${f} -o static/${b}.o"
 	echo
 	echo "shared/${b}.o:	${f}"
 	echo "	\${CXX} \${CXXFLAGS} -fPIC -c ${f} -o shared/${b}.o"
@@ -835,7 +844,7 @@ for f in ${LIBC1SRCS}
 do
 	b=`basename $f .c`
 	echo "static/${b}.o:	${f}"
-	echo "	\${CC} \${CFLAGS} -fno-builtin -c ${f} -o static/${b}.o"
+	echo "	\${CC} \${CFLAGS}${fPIC} -fno-builtin -c ${f} -o static/${b}.o"
 	echo
 	echo "shared/${b}.o:	${f}"
 	echo "	\${CC} \${CFLAGS} -fPIC -fno-builtin -c ${f} -o shared/${b}.o"
@@ -934,7 +943,7 @@ for f in ${LIBREALSRCS}
 do
 	b=`basename $f .c`
 	echo "static/${b}.o:	${f}"
-	echo "	\${CC} \${CFLAGS} -fno-builtin -c ${f} -o static/${b}.o"
+	echo "	\${CC} \${CFLAGS}${fPIC} -fno-builtin -c ${f} -o static/${b}.o"
 	echo
 	echo "shared/${b}.o:	${f}"
 	echo "	\${CC} \${CFLAGS} -fPIC -fno-builtin -c ${f} -o shared/${b}.o"
@@ -1031,7 +1040,7 @@ for f in ${LIBCPLEXSRCS}
 do
 	b=`basename $f .c`
 	echo "static/${b}.o:	${f}"
-	echo "	\${CC} \${CFLAGS} -fno-builtin -c ${f} -o static/${b}.o"
+	echo "	\${CC} \${CFLAGS}${fPIC} -fno-builtin -c ${f} -o static/${b}.o"
 	echo
 	echo "shared/${b}.o:	${f}"
 	echo "	\${CC} \${CFLAGS} -fPIC -fno-builtin -c ${f} -o shared/${b}.o"
