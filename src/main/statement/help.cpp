@@ -90,7 +90,7 @@ char* HelpStatement::StatementHelp() const
     output->ClearBuffer();
 
     APPENDHELP(STATEMENTLINE)
-#if !defined(AMIGA) && !defined(TERMIOS) && !defined(WINDOWS)
+#if defined(AMIGA) || defined(TERMIOS) || defined(WINDOWS)
     APPENDHELP(STATEMENTCLEAR)
 #endif
     APPENDHELP(STATEMENTDEF)
