@@ -2,7 +2,7 @@
 
 set -e
 
-version="1.8.0"
+version="1.8.1"
 
 echo "Building amath ${version} for Windows ..."
 

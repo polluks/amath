@@ -27,7 +27,7 @@
 
 set -e
 
-version="1.8.0"
+version="1.8.1"
 
 clang=false
 debugsym=false
