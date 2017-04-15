@@ -34,14 +34,12 @@
 #include "lib/charbuf.h"
 #include "loc/text.h"
 
-#ifdef AMIGA
+#if defined(AMIGA)
 #include <clib/dos_protos.h>
 
 /**
  * @brief
- *
  * http://en.wikibooks.org/wiki/Aros/Developer/Docs/Libraries/DOS#Examine_Files_or_Directories
- *
  */
 CharBuffer* AmigaFilesystem::ListDirectory(const char* path)
 {

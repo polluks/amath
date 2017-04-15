@@ -32,7 +32,7 @@
 #include "viewer.h"
 #include "lib/charbuf.h"
 
-#ifdef DEBUGTREE
+#if defined(DEBUGTREE)
 
 Viewer::Viewer(SyntaxNode* root)
 {

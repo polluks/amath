@@ -55,7 +55,7 @@ void Evaluator::Evaluate() const
     SyntaxNode* node = parser->Parse();
     delete parser;
 
-#ifdef DEBUGTREE
+#if defined(DEBUGTREE)
     Viewer* viewer = new Viewer(node);
     const char* vout = viewer->GetTree();
     output->EnsureGrowth(StrLen(vout));
@@ -68,7 +68,7 @@ void Evaluator::Evaluate() const
     node = optimizer->GetRoot();
     delete optimizer;
 
-#ifdef DEBUGTREE
+#if defined(DEBUGTREE)
     viewer = new Viewer(node);
     vout = viewer->GetTree();
     output->EnsureGrowth(StrLen(vout));

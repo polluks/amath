@@ -32,7 +32,7 @@
 
 /**
  * @file  filesystem_stdc.h
- * @brief Standard C compliant file system calls.
+ * @brief Standard C compliant file system calls
  *
  */
 
@@ -55,5 +55,4 @@ private:
 };
 
 #endif
-
 #endif

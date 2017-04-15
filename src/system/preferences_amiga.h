@@ -30,7 +30,10 @@
 #ifndef AMATH_PREFERENCES_AMIGA_H
 #define AMATH_PREFERENCES_AMIGA_H
 
+#include "amath.h"
 #include "preferences.h"
+
+#if defined(AMIGA)
 
 class AmigaPreferences : public PreferencesBase
 {
@@ -43,4 +46,5 @@ private:
     bool SavePrefs(const char* file);
 };
 
+#endif
 #endif

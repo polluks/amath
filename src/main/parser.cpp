@@ -209,7 +209,7 @@ SyntaxNode* Parser::ParseStatement()
     case symexit:
         res = new ExitStatement();
         break;
-#if !defined(STDC_CONSOLE)
+#if !defined(AMIGA) && !defined(TERMIOS) && !defined(WINDOWS)
     case symclear:
         res = new ClearStatement();
         break;

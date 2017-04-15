@@ -36,7 +36,7 @@
 #include "loc/ident.h"
 #include "loc/kword.h"
 
-#ifdef AMIGA
+#if defined(AMIGA)
 #include <clib/locale_protos.h>
 
 AmigaLanguage::AmigaLanguage() :

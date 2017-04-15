@@ -29,7 +29,7 @@
 
 #include "amathc.h"
 
-#ifdef AMIGA
+#if defined(AMIGA)
 #include <clib/exec_protos.h>
 #endif
 
@@ -58,7 +58,7 @@ unsigned int AllocAndCopy(char** destination, const char* source)
     *destination = AllocMemSafe(size);
     d = *destination;
 
-#ifdef AMIGA // Take advantage of exec
+#if defined(AMIGA) // Take advantage of exec
     CopyMem(s, d, n);
 #else
     while (n--)

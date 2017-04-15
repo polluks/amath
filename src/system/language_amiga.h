@@ -30,10 +30,13 @@
 #ifndef AMATH_LANGUAGE_AMIGA_H
 #define AMATH_LANGUAGE_AMIGA_H
 
+#include "amath.h"
 #include "language.h"
 #include "loc/help.h"
 #include "loc/text.h"
 #include "loc/kword.h"
+
+#if defined(AMIGA)
 
 class AmigaLanguage : public Language
 {
@@ -63,4 +66,5 @@ private:
     struct Catalog* keywordcatalog;
 };
 
+#endif
 #endif

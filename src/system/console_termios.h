@@ -27,11 +27,11 @@
  * 
  */
 
-#ifndef AMATH_POSIX_CONSOLE
-#define AMATH_POSIX_CONSOLE
+#ifndef AMATH_TERMIOS_CONSOLE
+#define AMATH_TERMIOS_CONSOLE
 
 /**
- * @file  console_posix.h
+ * @file  console_termios.h
  * @brief Standard C and termios based console.
  *
  */
@@ -42,18 +42,18 @@
 #include "lib/charval.h"
 #include "lib/aengine.h"
 
-#if defined(POSIX)
+#if defined(TERMIOS)
 #include <termios.h>
 
 /**
  * @brief Encapsulates the IO of a console using Standard C and termios.
  *
  */
-class PosixConsole : public ConsoleBase
+class TermiosConsole : public ConsoleBase
 {
 public:
-    PosixConsole(const char* prompt, CharValidator* validator);
-    virtual ~PosixConsole();
+    TermiosConsole(const char* prompt, CharValidator* validator);
+    virtual ~TermiosConsole();
     virtual bool Open();
     virtual void Close();
     virtual void Start();

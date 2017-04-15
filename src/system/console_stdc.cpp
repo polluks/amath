@@ -31,7 +31,7 @@
 #include "console_stdc.h"
 #include "main/evaluator.h"
 
-#if defined(STDC_CONSOLE)
+#if !defined(AMIGA) && !defined(TERMIOS) && !defined(WINDOWS)
 #include <stdio.h>
 
 StandardConsole::StandardConsole(const char* prompt) :

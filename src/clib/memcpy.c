@@ -47,7 +47,7 @@
 #pragma GCC diagnostic ignored "-Wcast-align"
 #endif
 
-#ifdef AMIGA
+#if defined(AMIGA)
 #include <clib/exec_protos.h>
 #endif
 
@@ -84,7 +84,7 @@ void MemCopy(void* destination, const void* source, unsigned int length)
     if ((mem_ptr)dst < (mem_ptr)src)
     {
         // Copy forward
-#ifdef AMIGA // Take advantage of exec
+#if defined(AMIGA) // Take advantage of exec
         CopyMem((void*)source, destination, length);
 #else
         t = (mem_ptr)src; // only need low bits

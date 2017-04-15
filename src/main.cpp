@@ -39,7 +39,7 @@ const char* vers = TXTDOSVERSION;
 
 class Program* Program = nullptr;
 
-#ifdef AMIGA
+#if defined(AMIGA)
 #include <clib/exec_protos.h>
 static struct DosBase *DosBase             = nullptr;
 static struct GfxBase *GfxBase             = nullptr;
