@@ -261,6 +261,9 @@
   \page    release_page Release history
   \section release_sec  Release history
 
+  \subsection version181 1.8.1 May 1 2017
+  - OpenBSD support
+
   \subsection version180 1.8.0 April 13 2017
   - Fixed bugs in numeral systems.
   - Fixed bugs related to infinity (Inf).
