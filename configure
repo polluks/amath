@@ -36,7 +36,7 @@ openlibm=false
 stdlibm=false
 stdlibc=false
 useldconfig=false
-fpic=true
+fpic=false
 
 prefix="/usr"
 pkgconfigdir="lib/pkgconfig"
@@ -46,6 +46,7 @@ cxxflags=""
 ldflags=""
 gcclib="-lstdc++"
 libm=""
+libc=""
 
 for arg in "$@"; do
 	unknown=true
@@ -108,6 +109,17 @@ for arg in "$@"; do
 		useldconfig=false
 		unknown=false
 		;;
+
+	--enable-pic)
+		fpic=true
+		unknown=false
+		;;
+
+	--disable-pic)
+		fpic=false
+		unknown=false
+		;;
+
 	--enable-debug)
 		debugsym=true
 		unknown=false
@@ -258,6 +270,7 @@ fi
 
 if $stdlibc; then
 	gcclib="${gcclib} -lc"
+	libc="-lc"
 fi
 
 if $fpic; then
@@ -859,7 +872,7 @@ echo "	\${MKDIR} static"
 echo "	\${MKDIR} shared"
 echo
 echo "\${solib}:	build ${libcs}"
-echo "	\${CC} \${CFLAGS} -shared ${exestrip} -fPIC -Wl,-soname,\${solib}${soverion} -o \${solib} ${libcs} -lc"
+echo "	\${CC} \${CFLAGS} -shared ${exestrip} -fPIC -Wl,-soname,\${solib}${soverion} -o \${solib} ${libcs} ${libc}"
 echo
 echo "\${alib}:	build ${libc}"
 echo "	\${AR} rcs static/\${alib} ${libc}"
