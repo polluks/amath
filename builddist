@@ -61,3 +61,7 @@ date -Ru >dist/build_date
 
 mv dist amath
 #lha-ac a amath.lha amath
+
+# GCC 6.x
+#./configure --enable-test --cross-compile="/opt/m68k-amigaos6/bin/m68k-amigaos" CFLAGS="-m68000 -noixemul" LDFLAGS="-Xlinker --allow-multiple-definition"
+#make static
