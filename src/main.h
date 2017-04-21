@@ -261,8 +261,9 @@
   \page    release_page Release history
   \section release_sec  Release history
 
-  \subsection version181 1.8.1 May 1 2017
+  \subsection version181 1.8.1 April 22 2017
   - OpenBSD support
+  - Fixed Haiku bug
 
   \subsection version180 1.8.0 April 13 2017
   - Fixed bugs in numeral systems.

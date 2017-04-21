@@ -1,7 +1,8 @@
 amath release history
 
-v1.8.1 May 1 2017
-- OpenBSD support
+v1.8.1 April 22 2017
+- OpenBSD support.
+- Fixed Haiku bug.
 
 v1.8.0 April 13 2017
 - Fixed bugs in numeral systems.
