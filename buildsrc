@@ -3,7 +3,7 @@
 # DO NOT USE THIS SCRIPT UNLESS YOU KNOW WHAT YOU ARE DOING !
 
 version='1.8.1'
-stamp="201704130000"
+stamp="201704220000"
 #stamp="201704110000"
 srcdir="amath-rc"
 distdir="amath-${version}"
