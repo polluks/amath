@@ -142,7 +142,7 @@ void HaikuWindow::ShowAbout(void)
 
     CharBuffer *buf = new CharBuffer();
     static const char* version = TXTTITLE SPACE RELDATESTAMP;
-    static const char* compiler = TXTCOMPSHTMSG;
+    static const char* compiler = TXTCOMPMSG;
     static const char* footer = "Details specified in license.";
     int len = StrLen(version) + StrLen(compiler) + StrLen(footer) + 10;
 
