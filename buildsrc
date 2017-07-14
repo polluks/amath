@@ -2,7 +2,7 @@
 
 # DO NOT USE THIS SCRIPT UNLESS YOU KNOW WHAT YOU ARE DOING !
 
-version='1.8.1'
+version='1.8.2'
 stamp="201704220000"
 #stamp="201704110000"
 srcdir="amath-rc"

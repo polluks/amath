@@ -1,7 +1,7 @@
 
 DOXYFILE_ENCODING      = UTF-8
 PROJECT_NAME           = "amathr"
-PROJECT_NUMBER         = "1.8.1"
+PROJECT_NUMBER         = "1.8.2"
 PROJECT_BRIEF          = "Real numbers math library"
 PROJECT_LOGO           =
 OUTPUT_DIRECTORY       = 

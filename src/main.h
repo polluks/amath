@@ -261,6 +261,10 @@
   \page    release_page Release history
   \section release_sec  Release history
 
+  \subsection version182 1.8.2 July 14 2017
+  - MIPS support
+  - Better endianness detection
+
   \subsection version181 1.8.1 April 22 2017
   - OpenBSD support
   - Fixed Haiku bug
