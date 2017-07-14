@@ -66,6 +66,15 @@ for arg in "$@"; do
 		unknown=false
 		;;
 
+	--man-dir=*)
+		mandir=`echo $arg | sed 's/--mandir=//'`
+		unknown=false
+		;;
+
+	--doc-dir=*)
+		unknown=false
+		;;
+
 	--cross-compile=*)
 		crosscompile=`echo $arg | sed 's/--cross-compile=//'`
 		crosscompile="${crosscompile}-"
