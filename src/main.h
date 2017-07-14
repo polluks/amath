@@ -263,7 +263,8 @@
 
   \subsection version182 1.8.2 July 14 2017
   - MIPS support
-  - Better endianness detection
+  - Improved endianness detection
+  - Fixed configuration errors
 
   \subsection version181 1.8.1 April 22 2017
   - OpenBSD support
