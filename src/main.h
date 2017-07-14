@@ -23,7 +23,7 @@
  * THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  *
  * Project homepage:
- * http://amath.innolan.net
+ * https://amath.innolan.net
  * 
  */
 
@@ -79,7 +79,7 @@
   https://github.com/rainlance/amath
 
   \subsection download Download
-  Windows: http://amath.innolan.net/amath-1.8.0.zip <BR>
+  Windows: https://amath.innolan.net/amath-1.8.0.zip <BR>
   <BR>
   FreeBSD: https://www.freshports.org/math/amath/ <BR>
   <BR>

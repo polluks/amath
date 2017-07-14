@@ -30,7 +30,7 @@
  * http://cvsweb.netbsd.org/bsdweb.cgi/src/lib/libm/complex/ccosh.c?rev=1.1
  *
  * Project homepage:
- * http://amath.innolan.net
+ * https://amath.innolan.net
  * 
  */
 

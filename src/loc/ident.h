@@ -26,7 +26,7 @@
  * http://sourceforge.net/projects/flexcat/
  *
  * Project homepage:
- * http://amath.innolan.net
+ * https://amath.innolan.net
  * 
  */
 

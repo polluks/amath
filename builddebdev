@@ -99,7 +99,7 @@ echo "Installed-Size: $4"
 echo "Depends: libc6"
 echo "Section: math"
 echo "Priority: optional"
-echo "Homepage: http://amath.innolan.net"
+echo "Homepage: https://amath.innolan.net"
 echo "Built-Using: gcc-5.4"
 echo "Description: Simple command line calculator"
 echo " Features a case sensitive command line interface, internal IEEE 754"
@@ -114,7 +114,7 @@ chmod 0755 amath/DEBIAN/control
 {
 echo "Format: http://www.debian.org/doc/packaging-manuals/copyright-format/1.0/"
 echo "Upstream-Name: amath-dev"
-echo "Source: http://amath.innolan.net"
+echo "Source: https://amath.innolan.net"
 echo 
 echo "Files:     *"
 echo "Copyright: 2014-2017 Carsten Sonne Larsen <cs@innolan.net>"
