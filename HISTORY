@@ -1,5 +1,9 @@
 amath release history
 
+v1.8.2 July 14 2017
+- MIPS support
+- Better endianness detection
+
 v1.8.1 April 22 2017
 - OpenBSD support.
 - Fixed Haiku bug.

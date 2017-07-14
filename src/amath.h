@@ -281,9 +281,9 @@ typedef int bool;
 #endif
 /******************************************************************************/
 #define TXTARCH          TXTCPU TXTFPU
-#define RELDATESTAMP     "(22-04-2017)"
-#define TXTDOSVERSION    "\0$VER: amath 1.81" SPACE RELDATESTAMP SPACE TXTARCH
-#define TXTTITLE         "amath version 1.8.1"
+#define RELDATESTAMP     "(14-07-2017)"
+#define TXTDOSVERSION    "\0$VER: amath 1.82" SPACE RELDATESTAMP SPACE TXTARCH
+#define TXTTITLE         "amath version 1.8.2"
 #define TXTCOPYRIGHT     "(c) 2017 Carsten Sonne Larsen"
 #define TXTSTARTMSG      TXTTITLE SPACE TXTCOPYRIGHT
 /******************************************************************************/
