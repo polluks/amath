@@ -881,7 +881,7 @@ echo "	\${MKDIR} static"
 echo "	\${MKDIR} shared"
 echo
 echo "\${solib}:	build ${libcs}"
-echo "	\${CC} \${CFLAGS} -shared ${exestrip} -fPIC -Wl,-soname,\${solib}${soverion} -o \${solib} ${libcs} ${libc}"
+echo "	\${CC} \${CFLAGS} -shared ${exestrip} -fPIC -Wl,-soname,\${solib}${soverion} -o \${solib} ${libcs}"
 echo
 echo "\${alib}:	build ${libc}"
 echo "	\${AR} rcs static/\${alib} ${libc}"
