@@ -23,7 +23,7 @@
  * THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  *
  * Project homepage:
- * http://amath.innolan.net
+ * https://amath.innolan.net
  * 
  */
 
@@ -66,7 +66,7 @@ private:
     void GetNextToken();
     bool GetOperator();
     bool GetQuotedIdent();
-    bool GetLitteral();
+    bool GetLiteral();
     bool GetDigitValue();
     static bool ShouldSkip(char character);
     static Symbol FindKeyword(const char* ident);

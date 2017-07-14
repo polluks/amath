@@ -23,7 +23,7 @@
  * THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  *
  * Project homepage:
- * http://amath.innolan.net
+ * https://amath.innolan.net
  * 
  */
 
@@ -51,8 +51,8 @@ public:
     UserFunction* Next;
 
     char* GetName() const;
-    char* GetDefitionName() const;
-    char* GetDefitionText() const;
+    char* GetDefinitionName() const;
+    char* GetDefinitionText() const;
     Variable* GetVariable() const;
     Variable* CreateVariable(const char* name);
     ExpressionNode* GetExpression() const;
@@ -67,7 +67,7 @@ private:
 
     void InitializeTexts() const;
     CharBuffer* defname;
-    CharBuffer* defition;
+    CharBuffer* definition;
 };
 
 #endif

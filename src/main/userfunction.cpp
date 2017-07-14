@@ -23,7 +23,7 @@
  * THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  *
  * Project homepage:
- * http://amath.innolan.net
+ * https://amath.innolan.net
  * 
  */
 
@@ -39,7 +39,7 @@ UserFunction::UserFunction(const char* name, const char* variable, ExpressionNod
     this->Next = nullptr;
 
     defname = new CharBuffer();
-    defition = new CharBuffer();
+    definition = new CharBuffer();
     InitializeTexts();
 
     chainDelete = true;
@@ -53,7 +53,7 @@ UserFunction::UserFunction(const char* name)
     this->Next = nullptr;
 
     defname = new CharBuffer();
-    defition = new CharBuffer();
+    definition = new CharBuffer();
 
     chainDelete = true;
 }
@@ -62,7 +62,7 @@ UserFunction::~UserFunction()
 {
     delete [] name;
     delete defname;
-    delete defition;
+    delete definition;
 
     if (variable != nullptr)
     {
@@ -88,10 +88,10 @@ void UserFunction::InitializeTexts() const
     defname->Append(variable != nullptr ? variable->GetName() : EMPTYSTRING);
     defname->Append(')');
 
-    defition->Empty();
-    defition->Append(defname->GetString());
-    defition->Append('=');
-    defition->Append(expression != nullptr ? expression->GetText() : EMPTYSTRING);
+    definition->Empty();
+    definition->Append(defname->GetString());
+    definition->Append('=');
+    definition->Append(expression != nullptr ? expression->GetText() : EMPTYSTRING);
 }
 
 char* UserFunction::GetName() const
@@ -99,14 +99,14 @@ char* UserFunction::GetName() const
     return name;
 }
 
-char* UserFunction::GetDefitionName() const
+char* UserFunction::GetDefinitionName() const
 {
     return defname->GetString();
 }
 
-char* UserFunction::GetDefitionText() const
+char* UserFunction::GetDefinitionText() const
 {
-    return defition->GetString();
+    return definition->GetString();
 }
 
 Variable* UserFunction::GetVariable() const

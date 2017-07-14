@@ -27,7 +27,7 @@
  * http://cvsweb.netbsd.org/bsdweb.cgi/src/lib/libm/complex/ccos.c?rev=1.1
  *
  * Project homepage:
- * http://amath.innolan.net
+ * https://amath.innolan.net
  * 
  */
 

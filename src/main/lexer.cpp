@@ -23,7 +23,7 @@
  * THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  *
  * Project homepage:
- * http://amath.innolan.net
+ * https://amath.innolan.net
  * 
  */
 
@@ -101,7 +101,7 @@ void Lexer::GetNextToken()
         return;
     }
 
-    if (GetOperator() || GetQuotedIdent() || GetDigitValue() || GetLitteral())
+    if (GetOperator() || GetQuotedIdent() || GetDigitValue() || GetLiteral())
         return;
 
     str++;
@@ -163,7 +163,7 @@ bool Lexer::GetQuotedIdent()
     return true;
 }
 
-bool Lexer::GetLitteral()
+bool Lexer::GetLiteral()
 {
     const char* start = str;
     const unsigned int startPos = pos;
