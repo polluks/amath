@@ -52,6 +52,20 @@ double __kernel_sin(double x, double y, int iy);
 double __kernel_tan(double x, double y, int iy);
 int __kernel_rem_pio2(double* x, double* y, int e0, int nx, int prec, const int* ipio2);
 
+/* Detect LE CPUs using compiler macro */
+#if !defined(__IEEE_LITTLE_ENDIAN) && !defined(__IEEE_BIG_ENDIAN)
+#if __BYTE_ORDER__ == __ORDER_LITTLE_ENDIAN__
+#define __IEEE_LITTLE_ENDIAN
+#endif
+#endif
+
+/* Detect BE CPUs using compiler macro */
+#if !defined(__IEEE_LITTLE_ENDIAN) && !defined(__IEEE_BIG_ENDIAN)
+#if __BYTE_ORDER__ == __ORDER_BIG_ENDIAN__
+#define __IEEE_BIG_ENDIAN
+#endif
+#endif
+
 /* Detect ARM CPUs */
 #if !defined(__IEEE_LITTLE_ENDIAN) && !defined(__IEEE_BIG_ENDIAN)
 #if defined(__arm__)          || defined(__ARM_ARCH_2__)    || \
@@ -106,7 +120,8 @@ int __kernel_rem_pio2(double* x, double* y, int e0, int nx, int prec, const int*
 /* Detect other BE CPUs */
 #if !defined(__IEEE_LITTLE_ENDIAN) && !defined(__IEEE_BIG_ENDIAN)
 #if defined(PPCCPU)      || defined(__PPC__) || \
-    defined(__powerpc__) || defined(__powerpc64__)
+    defined(__powerpc__) || defined(__powerpc64__) \
+    defined(__mips__) || defined(__mips)
 #define __IEEE_BIG_ENDIAN
 #endif
 #endif
