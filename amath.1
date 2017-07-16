@@ -162,6 +162,12 @@ coth(1+2i);
 sech(1+2i);
 csch(1+2i);
 .fi
+.SH KNOWN BUGS
+.IP \[bu] 2
+If amath(1) is linked with system libraries (-lm) sometimes the real part
+of a result of arccosh of a complex number, is negative instead of positive.
+.IP \[bu]
+coth() with complex numbers is inaccurate on the 14th digit.
 .SH HOMEPAGE
 https://amath.innolan.net/
 .SH AUTHORS
