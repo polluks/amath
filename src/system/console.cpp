@@ -109,7 +109,7 @@ void ConsoleBase::Close()
 bool ConsoleBase::SetAnsiMode(bool value)
 {
     ansiMode = value;
-    return value;
+    return true;
 }
 
 void ConsoleBase::ResetConsole()
