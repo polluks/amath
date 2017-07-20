@@ -117,7 +117,7 @@
   memory      Show internal memory usage
   exit        Exit program
   \endverbatim
-  \subsection command_func Base functions
+  \subsection command_func Miscellaneous functions
   \verbatim
   abs         Absolute value of number
   sgn         Mathematical signum function

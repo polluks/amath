@@ -42,7 +42,7 @@ static const char *about = NEWLINE NEWLINE
     "functions, trigonometric and hyperbolic function and selected mathematical" NEWLINE
     "constants and rounding functions." NEWLINE;
 static const char *help =
-    "usage: amath [noansi] [shell|expression]" NEWLINE;
+    "usage: amath [ --noansi ] [ --shell | expression ]" NEWLINE;
 static const char *copyright =
     "Copyright (c) 2014-2017 Carsten Sonne Larsen <cs@innolan.net>";
 static const char *license =
