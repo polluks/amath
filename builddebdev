@@ -1,8 +1,10 @@
 #!/bin/sh
 
+# THIS SCRIPT IS NOT READY FOR PRODUCTION
+
 set -e
 
-version="1.8.2"
+version="1.8.3"
 
 build_package () {
 

@@ -2,9 +2,8 @@
 
 # DO NOT USE THIS SCRIPT UNLESS YOU KNOW WHAT YOU ARE DOING !
 
-version='1.8.2'
-stamp="201704220000"
-#stamp="201704110000"
+version='1.8.3'
+stamp="201707210000"
 srcdir="amath-rc"
 distdir="amath-${version}"
 cd ..

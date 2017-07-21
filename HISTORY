@@ -1,5 +1,9 @@
 amath release history
 
+v1.8.3 July 21 2017
+- Updated help texts and man page.
+- Fixed bug in ANSI switch.
+
 v1.8.2 July 14 2017
 - MIPS support.
 - Improved endianness detection.
