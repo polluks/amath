@@ -31,38 +31,42 @@ No help is available for this function.#NEWLINE#
 cbr
 No help is available for this function.#NEWLINE#
 lb
-No help is available for this function.#NEWLINE#
+Binary logarithm function.#NEWLINE#
 ln
-No help is available for this function.#NEWLINE#
+Natural logarithm function.#NEWLINE#
 lg
-No help is available for this function.#NEWLINE#
+Common logarithm function.#NEWLINE#
 ; Partly from https://wikipedia.org/wiki/Sine
 sin
 Sine is the trigonometric function that for an acute angle is the#NEWLINE#ratio between the leg opposite the angle when it is considered#NEWLINE#part of a right triangle and the hypotenuse.#NEWLINE#
 ; Partly from https://wikipedia.org/wiki/Trigonometric_functions
 cos
-Cosine is the trigonometric function that for an acute angle is the#NEWLINE#ratio between the leg adjacent to the angle when it is considered#NEWLINE#part of a right triangle and the hypotenuse#NEWLINE#
+Cosine is the trigonometric function that for an acute angle is the#NEWLINE#ratio between the leg adjacent to the angle when it is considered#NEWLINE#part of a right triangle and the hypotenuse.#NEWLINE#
 ; Partly from https://wikipedia.org/wiki/Trigonometric_functions
 tan
 Tangent is one of the trigonometry functions. In a right triangle,#NEWLINE#the tangent of an angle is the opposite side over the adjacent side.#NEWLINE#
+; Partly from https://wikipedia.org/wiki/Trigonometric_functions
 cot
-No help is available for this function.#NEWLINE#
+The cotangent cot(x), ctg(x) or ctn(x), is the reciprocal of tan(x).#NEWLINE#The cotangent is the ratio of the length of the adjacent side to the length of the opposite side.#NEWLINE#
+; Partly from https://wikipedia.org/wiki/Trigonometric_functions
 sec
-No help is available for this function.#NEWLINE#
+The secant sec(x) is the reciprocal of cos(x).#NEWLINE#The secant is the ratio of the length of the hypotenuse to the length of the adjacent side.#NEWLINE#So called because it is the tangent of the complementary or co-angle.#NEWLINE#
+; Partly from https://wikipedia.org/wiki/Trigonometric_functions
 csc
-No help is available for this function.#NEWLINE#
+The cosecant csc(x) or cosec(x), is the reciprocal of sin(x).#NEWLINE#The cosecant is the ratio of the length of the hypotenuse to the length of the opposite side.#NEWLINE#So called because it is the secant of the complementary or co-angle.#NEWLINE#
+; Partly from https://wikipedia.org/wiki/Trigonometric_functions
 asin
-No help is available for this function.#NEWLINE#
+arc sine function.#NEWLINE#
 acos
-No help is available for this function.#NEWLINE#
+arc cosine function.#NEWLINE#
 atan
-No help is available for this function.#NEWLINE#
+arc tangent function of one variable.#NEWLINE#
 acot
-No help is available for this function.#NEWLINE#
+arc cotangent function.#NEWLINE#
 asec
-No help is available for this function.#NEWLINE#
+arc secant function.#NEWLINE#
 acsc
-No help is available for this function.#NEWLINE#
+arc cosecant function.#NEWLINE#
 sinh
 No help is available for this function.#NEWLINE#
 cosh
@@ -116,14 +120,14 @@ No help is available for this function.#NEWLINE#
 ahvc
 No help is available for this function.#NEWLINE#
 ahcv
-No help is available for this function.#NEWLINE#
+The inverse hacoversed sine is not implemented in this version of amath.#NEWLINE#
 ahcc
-No help is available for this function.#NEWLINE#
+The inverse hacoversed cosine is not implemented in this version of amath.#NEWLINE#
 exsec
-No help is available for this function.#NEWLINE#
+exsecant function.#NEWLINE#
 excsc
-No help is available for this function.#NEWLINE#
+excosecant function.#NEWLINE#
 aexsec
-No help is available for this function.#NEWLINE#
+inverse exsecant function.#NEWLINE#
 aexcsc
-No help is available for this function.#NEWLINE#
+inverse excosecant function.#NEWLINE#
