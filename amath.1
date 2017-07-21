@@ -28,7 +28,7 @@ amath \- Simple command line calculator
 .IR expression
 ]
 .SH DESCRIPTION
-amath(1) features a case sensitive command line interface, internal
+\fBamath\fP features a case sensitive command line interface, internal
 IEEE 754 calculations with 15 significant digits, calculations with
 real and complex numbers, variables and user defined functions,
 logarithmic and exponential functions, trigonometric and hyperbolic
@@ -148,7 +148,7 @@ memory      Show internal memory usage
 exit        Exit program
 .fi
 .SH EXIT STATUS
-amath(1) exits 0 on success and >0 if an error occurs.
+\fBamath\fP exits 0 on success and >0 if an error occurs.
 .SH EXAMPLES
 Add two numbers:
 .RS
@@ -165,7 +165,7 @@ Find square root of minus 25:
 $ amath "sqrt(-25)"
 .RE
 .PP
-Show only 5 digits of a division:
+Show only 5 digits in the result of a division:
 .RS
 $ amath "digits 5;34/11"
 .RE
@@ -190,24 +190,23 @@ a=2;b=3;c=a+b;
 f(2.2);c+1.1;
 .fi
 .RE
-.SH KNOWN BUGS
+.SH BUGS
 .IP \[bu] 2
-If amath(1) is linked with system libraries (-lm) sometimes the real part
+If \fBamath\fP is linked with system libraries (-lm) sometimes the real part
 of a result of arccosh of a complex number, is negative instead of positive.
 .IP \[bu]
 coth() with complex numbers is inaccurate on the 14th digit.
+.sp
+Please report any other bugs that you encounter via:
+.br
+\fIhttps://gitlab.com/rnger/amath/issues\fR.
 .SH HOMEPAGE
 https://amath.innolan.net/
+.SH SEE ALSO
+amathc(3), amathr(3), amathi(3)
 .SH AUTHORS
-.PP
 Written by Carsten Sonne Larsen <cs@innolan.net>. Floating point to string
 conversion is based on software written by Ryan Juckett. The code in complex
 calculations is derived from software written by Stephen L. Moshier. The code
 in MemSet and MemCopy is derived from software contributed to Berkeley by
 Mike Hibler and Chris Torek.
-.SH COPYRIGHT
-Copyright (c) 2014-2017 Carsten Sonne Larsen <cs@innolan.net>
-.br
-Copyright (c) 1990, 1993 The Regents of the University of California
-.SH SEE ALSO
-amathc(3), amathr(3), amathi(3)
