@@ -261,14 +261,18 @@
   \page    release_page Release history
   \section release_sec  Release history
 
+  \subsection version182 1.8.3 July 21 2017
+  - Updated help texts and man page.
+  - Fixed bug in ANSI switch.
+
   \subsection version182 1.8.2 July 14 2017
-  - MIPS support
-  - Improved endianness detection
-  - Fixed configuration errors
+  - MIPS support.
+  - Improved endianness detection.
+  - Fixed configuration errors.
 
   \subsection version181 1.8.1 April 22 2017
-  - OpenBSD support
-  - Fixed Haiku bug
+  - OpenBSD support.
+  - Fixed Haiku bug.
 
   \subsection version180 1.8.0 April 13 2017
   - Fixed bugs in numeral systems.

@@ -1,7 +1,7 @@
 
 DOXYFILE_ENCODING      = UTF-8
 PROJECT_NAME           = "amath"
-PROJECT_NUMBER         = "1.8.2"
+PROJECT_NUMBER         = "1.8.3"
 PROJECT_BRIEF          = "Simple command line calculator"
 PROJECT_LOGO           =
 OUTPUT_DIRECTORY       = ../amath-doc
