@@ -1,6 +1,34 @@
 #!/bin/sh
+# 
+# Copyright {c} 2014-2017 Carsten Sonne Larsen  <cs@innolan.net>
+# All rights reserved.
+# 
+# Redistribution and use in source and binary forms, with or without
+# modification, are permitted provided that the following conditions
+# are met:
+# 1. Redistributions of source code must retain the above copyright
+#    notice, this list of conditions and the following disclaimer.
+# 2. Redistributions in binary form must reproduce the above copyright
+#    notice, this list of conditions and the following disclaimer in the
+#    documentation and/or other materials provided with the distribution.
+# 
+# THIS SOFTWARE IS PROVIDED BY THE AUTHOR AND CONTRIBUTORS ``AS IS'' AND
+# ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+# IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+# ARE DISCLAIMED.  IN NO EVENT SHALL AUTHOR OR CONTRIBUTORS BE LIABLE
+# FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+# DAMAGES {INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS
+# OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION}
+# HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
+# LIABILITY, OR TORT {INCLUDING NEGLIGENCE OR OTHERWISE} ARISING IN ANY WAY
+# OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
+# SUCH DAMAGE.
+# 
+# Project homepage:
+# https://amath.innolan.net
+# 
 
-# THIS SCRIPT IS NOT READY FOR PRODUCTION
+# THIS SCRIPT IS NOT READY FOR PRODUCTION !
 
 set -e
 
@@ -9,7 +37,8 @@ version="1.8.3"
 build_package () {
 
 rm -Rf amath
-rm -f amath-${version}_$1.deb
+rm -f amath.deb
+rm -f amath-dev-${version}_$1.deb
 sh configure CFLAGS=$2
 make clean
 
@@ -31,7 +60,7 @@ mkdir -m 755 amath/usr/share/man
 mkdir -m 755 amath/usr/share/man/man1
 mkdir -m 755 amath/usr/share/man/man3
 mkdir -m 755 amath/usr/share/doc
-mkdir -m 755 amath/usr/share/doc/amath
+mkdir -m 755 amath/usr/share/doc/amath-dev
 
 # Copy binaries
 mv amath.tmp amath/usr/bin/amath
@@ -64,15 +93,16 @@ chmod 644 amath/usr/lib/pkgconfig/*
 cp src/amath.h amath/usr/include/amath.h
 cp src/amathc.h amath/usr/include/amathc.h
 cp src/amatht.h amath/usr/include/amatht.h
-cp src/complex.h amath/usr/include/amathi.h
+cp src/mathi.h amath/usr/include/amathi.h
+cp src/mathr.h amath/usr/include/amathr.h
 chmod 644 amath/usr/include/*
 
 # Copy documentation
-cp HISTORY amath/usr/share/doc/amath/
-gzip --best -n amath/usr/share/doc/amath/HISTORY
-cp README amath/usr/share/doc/amath/
-gzip --best -n amath/usr/share/doc/amath/README
-chmod 644 amath/usr/share/doc/amath/*
+cp HISTORY amath/usr/share/doc/amath-dev/changelog
+gzip --best -n amath/usr/share/doc/amath-dev/changelog
+cp README amath/usr/share/doc/amath-dev/
+gzip --best -n amath/usr/share/doc/amath-dev/README
+chmod 644 amath/usr/share/doc/amath-dev/*
 
 # Copy man pages
 cp amath.1 amath/usr/share/man/man1/amath.1
@@ -96,7 +126,7 @@ chmod 644 amath/usr/share/amath/*
 echo "Package: amath-dev"
 echo "Version: ${version}"
 echo "Architecture: $1"
-echo "Maintainer: Carsten Larsen <cs@innolan.net>"
+echo "Maintainer: Carsten Sonne Larsen <cs@innolan.net>"
 echo "Installed-Size: $4"
 echo "Depends: libc6"
 echo "Section: math"
@@ -143,20 +173,8 @@ echo " SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVE
 echo " CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,"
 echo " OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE"
 echo " OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE."
-} >amath/DEBIAN/copyright
-gzip --best -n amath/DEBIAN/copyright
-chmod 0755 amath/DEBIAN/copyright.gz
-
-# Create change log
-{
-echo "amath (${version}) unstable; urgency=low"
-echo
-echo "  * Initial Debian Release."
-echo
-echo " -- Carsten Larsen <cs@innolan.net> Sat, 04 Mar 2017 19:49:07 +0100"
-} >amath/DEBIAN/changelog.Debian
-gzip --best -n amath/DEBIAN/changelog.Debian
-chmod 0755 amath/DEBIAN/changelog.Debian.gz
+} >amath/usr/share/doc/amath-dev/copyright
+chmod 644 amath/usr/share/doc/amath-dev/copyright
 
 {
 echo "libamath ${version}"
