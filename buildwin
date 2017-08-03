@@ -1,4 +1,10 @@
 #!/bin/sh
+# 
+# This file is public domain
+# 
+# Project homepage:
+# https://amath.innolan.net
+# 
 
 set -e
 
