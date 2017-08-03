@@ -1,0 +1,115 @@
+#!/bin/sh
+
+# THIS SCRIPT IS NOT READY FOR PRODUCTION
+
+set -e
+
+version="1.8.3"
+
+build_package () {
+
+rm -Rf amath
+rm -f amath-${version}_$1.deb
+sh configure CFLAGS=$2
+make clean
+
+echo "Building $3 bit package of amath ${version} for Debian ..."
+make static
+mv amath amath.tmp
+
+# Create filesystem layout
+mkdir -m 755 amath
+mkdir -m 755 amath/DEBIAN
+mkdir -m 755 amath/usr/
+mkdir -m 755 amath/usr/bin
+mkdir -m 755 amath/usr/share
+mkdir -m 755 amath/usr/share/amath
+mkdir -m 755 amath/usr/share/man
+mkdir -m 755 amath/usr/share/man/man1
+mkdir -m 755 amath/usr/share/man/man3
+mkdir -m 755 amath/usr/share/doc
+mkdir -m 755 amath/usr/share/doc/amath
+
+# Copy binaries
+mv amath.tmp amath/usr/bin/amath
+chmod 0755 amath/usr/bin/amath
+
+# Copy documentation
+cp HISTORY amath/usr/share/doc/amath/changelog
+gzip --best -n amath/usr/share/doc/amath/changelog
+cp README amath/usr/share/doc/amath/
+gzip --best -n amath/usr/share/doc/amath/README
+chmod 644 amath/usr/share/doc/amath/*
+
+# Copy man pages
+cat amath.1 | sed '/SEE ALSO/,+1 d' > amath/usr/share/man/man1/amath.1
+gzip --best -n amath/usr/share/man/man1/amath.1
+chmod 644 amath/usr/share/man/man1/*
+
+# Copy scripts
+cp script/* amath/usr/share/amath/
+chmod 644 amath/usr/share/amath/*
+
+# Create control file
+{
+echo "Package: amath"
+echo "Version: ${version}"
+echo "Architecture: $1"
+echo "Maintainer: Carsten Sonne Larsen <cs@innolan.net>"
+echo "Installed-Size: $4"
+echo "Depends: libc6"
+echo "Section: math"
+echo "Priority: optional"
+echo "Homepage: https://amath.innolan.net"
+echo "Built-Using: gcc-5.4"
+echo "Description: Simple command line calculator"
+echo " Features a case sensitive command line interface, internal IEEE 754"
+echo " calculations with 15 significant digits, calculations with real and"
+echo " complex numbers, variables and user defined functions, logarithmic"
+echo " and exponential functions, trigonometric and hyperbolic function"
+echo " and selected mathematical constants and rounding functions."
+} >amath/DEBIAN/control
+chmod 0755 amath/DEBIAN/control
+
+# Create copyright file
+# Refer to https://www.debian.org/doc/debian-policy/ch-docs.html#s-copyrightfile
+{
+echo "Format: http://www.debian.org/doc/packaging-manuals/copyright-format/1.0/"
+echo "Upstream-Name: amath"
+echo "Source: https://amath.innolan.net"
+echo 
+echo "Files:     *"
+echo "Copyright: 2014-2017 Carsten Sonne Larsen <cs@innolan.net>"
+echo "           2007 The NetBSD Foundation, Inc."
+echo "           1990, 1993 The Regents of the University of California."
+echo "License:   BSD-2-Clause"
+echo " Redistribution and use in source and binary forms, with or without"
+echo " modification, are permitted provided that the following conditions are met:"
+echo " ."
+echo " Redistributions of source code must retain the above copyright notice, this"
+echo " list of conditions and the following disclaimer."
+echo " ."
+echo " Redistributions in binary form must reproduce the above copyright notice,"
+echo " this list of conditions and the following disclaimer in the documentation"
+echo " and/or other materials provided with the distribution."
+echo " ."
+echo " THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS \"AS IS\""
+echo " AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE"
+echo " IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE"
+echo " DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE"
+echo " FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL"
+echo " DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR"
+echo " SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER"
+echo " CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,"
+echo " OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE"
+echo " OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE."
+} >amath/usr/share/doc/amath/copyright
+chmod 644 amath/usr/share/doc/amath/*
+
+fakeroot dpkg-deb --build amath
+mv amath.deb amath-${version}_$1.deb
+rm -Rf amath
+}
+
+build_package 'amd64' '' 64 320
+build_package 'i386' '-m32' 32 322
