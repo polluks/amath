@@ -1,5 +1,5 @@
 /*-
- * Copyright (c) 2014-2017 Carsten Sonne Larsen <cs@innolan.net>
+ * Copyright (c) 2014-2018 Carsten Sonne Larsen <cs@innolan.net>
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -284,7 +284,7 @@ typedef int bool;
 #define RELDATESTAMP     "(21-07-2017)"
 #define TXTDOSVERSION    "\0$VER: amath 1.83" SPACE RELDATESTAMP SPACE TXTARCH
 #define TXTTITLE         "amath version 1.8.3"
-#define TXTCOPYRIGHT     "(c) 2017 Carsten Sonne Larsen"
+#define TXTCOPYRIGHT     "(c) 2018 Carsten Sonne Larsen"
 #define TXTSTARTMSG      TXTTITLE SPACE TXTCOPYRIGHT
 /******************************************************************************/
 #define TXTVERSMSG       TXTTITLE SPACE RELDATESTAMP SPACE TXTARCH

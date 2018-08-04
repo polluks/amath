@@ -1,6 +1,6 @@
 #!/bin/sh
 # 
-# Copyright {c} 2014-2017 Carsten Sonne Larsen  <cs@innolan.net>
+# Copyright {c} 2014-2018 Carsten Sonne Larsen  <cs@innolan.net>
 # All rights reserved.
 # 
 # Redistribution and use in source and binary forms, with or without
@@ -105,7 +105,7 @@ echo "Upstream-Name: amath"
 echo "Source: https://amath.innolan.net"
 echo 
 echo "Files:     *"
-echo "Copyright: 2014-2017 Carsten Sonne Larsen <cs@innolan.net>"
+echo "Copyright: 2014-2018 Carsten Sonne Larsen <cs@innolan.net>"
 echo "           2007 The NetBSD Foundation, Inc."
 echo "           1990, 1993 The Regents of the University of California."
 echo "License:   BSD-2-Clause"

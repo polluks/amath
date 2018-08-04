@@ -1,5 +1,5 @@
 /*-
- * Copyright (c) 2014-2017 Carsten Sonne Larsen <cs@innolan.net>
+ * Copyright (c) 2014-2018 Carsten Sonne Larsen <cs@innolan.net>
  * Copyright (c) 2007 The NetBSD Foundation, Inc.
  * All rights reserved.
  *

@@ -1,5 +1,5 @@
 /*-
- * Copyright (c) 2014-2017 Carsten Sonne Larsen <cs@innolan.net>
+ * Copyright (c) 2014-2018 Carsten Sonne Larsen <cs@innolan.net>
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -44,7 +44,7 @@ static const char *about = NEWLINE NEWLINE
 static const char *help =
     "usage: amath [ --noansi ] [ --shell | expression ]" NEWLINE;
 static const char *copyright =
-    "Copyright (c) 2014-2017 Carsten Sonne Larsen <cs@innolan.net>";
+    "Copyright (c) 2014-2018 Carsten Sonne Larsen <cs@innolan.net>";
 static const char *license =
     "Copyright (c) 2007 The NetBSD Foundation, Inc." NEWLINE
     "Copyright (c) 1990, 1993 The Regents of the University of California." NEWLINE

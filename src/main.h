@@ -1,5 +1,5 @@
 /*-
- * Copyright (c) 2014-2017 Carsten Sonne Larsen <cs@innolan.net>
+ * Copyright (c) 2014-2018 Carsten Sonne Larsen <cs@innolan.net>
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -225,7 +225,7 @@
 
   \subsection license_bsd  BSD License  
   <BLOCKQUOTE><PRE>
-  Copyright (c) 2014-2017 Carsten Sonne Larsen <cs@innolan.net>
+  Copyright (c) 2014-2018 Carsten Sonne Larsen <cs@innolan.net>
   Copyright (c) 2007 The NetBSD Foundation, Inc.
   Copyright (c) 1990, 1993 The Regents of the University of California.
   All rights reserved.
