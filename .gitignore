@@ -11,6 +11,7 @@ amath
 amath-test
 catalog/flexcat
 catalog/flexcat/flexcat
+build/flexcat/flexcat
 *_.3
 doxygen.warn
 *.deb
