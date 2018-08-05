@@ -1,5 +1,8 @@
 amath release history
 
+v1.8.4 August 05 2017
+- Ignore casing in hexadecimal numbers.
+
 v1.8.3 July 21 2017
 - Updated help texts and man page.
 - Fixed bug in ANSI switch.

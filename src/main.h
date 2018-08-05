@@ -261,7 +261,10 @@
   \page    release_page Release history
   \section release_sec  Release history
 
-  \subsection version182 1.8.3 July 21 2017
+  \subsection version184 1.8.4 August 05 2017
+  - Ignore casing in hexadecimal numbers.
+
+  \subsection version183 1.8.3 July 21 2017
   - Updated help texts and man page.
   - Fixed bug in ANSI switch.
 
