@@ -57,12 +57,18 @@ protected:
     const char* GetSpecialCase(Number *number);
     void IntegerToBuffer(double value, unsigned int digits, int* outdigits) const;
 
-    double base;
+    double baseDouble;
     unsigned int digits;
     char fractionPoint;
 
 private:
     const char* GetText(double number) const;
+    bool IsDigit(char *digit);
+
+    unsigned int baseInteger;
+    char maxNumeric;
+    char maxAlphaLower;
+    char maxAlphaUpper;
 };
 
 #endif

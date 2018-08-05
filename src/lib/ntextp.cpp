@@ -40,18 +40,28 @@
 PositionalNumeralSystem::PositionalNumeralSystem(
     unsigned int base,
     unsigned int digits,
-    const char fractionPoint) : base(base * 1.0), digits(digits)
+    const char fractionPoint) : digits(digits)
 {
     this->fractionPoint = fractionPoint;
+    this->baseInteger = base;
+    this->baseDouble = base * 1.0;
+    this->maxNumeric = (base > 10 ? 10 : base) + '0' - 1;
+    this->maxAlphaLower = base > 10 ? base + 'a' - 11 : 0;
+    this->maxAlphaUpper = base > 10 ? base + 'A' - 11 : 0;
 }
 
 PositionalNumeralSystem::~PositionalNumeralSystem()
 {
 }
 
+bool PositionalNumeralSystem::IsDigit(char *digit)
+{
+    return true;
+}
+
 const char *PositionalNumeralSystem::GetName()
 {
-    switch (static_cast<int>(base))
+    switch (baseInteger)
     {
     case 2:
         return "binary";
@@ -64,7 +74,7 @@ const char *PositionalNumeralSystem::GetName()
     }
 
     const char *text = "base ";
-    Number *n = new RealNumber(base);
+    Number *n = new RealNumber(baseInteger);
     NumeralSystem *ns = new DecimalSystem(2);
     const char *numtext = ns->GetText(n);
 
@@ -211,21 +221,21 @@ const char *PositionalNumeralSystem::GetText(double number) const
         dnumber = -dnumber;
     }
 
-    double expbor = log2p(base, dnumber);
+    double expbor = log2p(baseDouble, dnumber);
     double expacc = expbor > 0.0 ? 4e-14 : -1e-15;
     double expborder = trunc(expbor + expacc);
 
     int exponent = 0;
     double rounding;
 
-    double bordermax = trunc(9.0 * 10 / base);
-    double bordermin = trunc(-8.0 * 10 / base);
+    double bordermax = trunc(9.0 * 10 / baseDouble);
+    double bordermin = trunc(-8.0 * 10 / baseDouble);
 
     // Find exponent
     if (expborder >= bordermax || expborder <= bordermin)
     {
-        double dexp = trunc(log2p(base, dnumber) + expacc);
-        dnumber = dnumber * pow(base, -dexp);
+        double dexp = trunc(log2p(baseDouble, dnumber) + expacc);
+        dnumber = dnumber * pow(baseDouble, -dexp);
 
         // pow is inaccurate on small and large numbers
         if (dexp > 15 || dexp < -15)
@@ -237,7 +247,7 @@ const char *PositionalNumeralSystem::GetText(double number) const
         if (dnumber < 1.0)
         {
             dexp--;
-            dnumber *= base;
+            dnumber *= baseDouble;
         }
 
         exponent = static_cast<int>(dexp);
@@ -246,7 +256,7 @@ const char *PositionalNumeralSystem::GetText(double number) const
     else
     {
         double acc = exponent > 0 ? 15 : -15;
-        rounding = pow(base, exponent + acc);
+        rounding = pow(baseDouble, exponent + acc);
     }
 
     int digitout;
@@ -260,8 +270,8 @@ const char *PositionalNumeralSystem::GetText(double number) const
     {
         buf->Append(fractionPoint);
 
-        double fraction = fabs(round((dnumber - intvalue) * pow(base, fragdigits)));
-        double temp1 = log2p(base, fraction);
+        double fraction = fabs(round((dnumber - intvalue) * pow(baseDouble, fragdigits)));
+        double temp1 = log2p(baseDouble, fraction);
         FloatUnion64 temp2;
         temp2.floatingPoint = temp1;
         bool fin = !temp2.IsInf();
@@ -274,7 +284,7 @@ const char *PositionalNumeralSystem::GetText(double number) const
             buf->Append('0');
         }
 
-        intvalue = static_cast<int64_t>(trunc(fraction * base) / base);
+        intvalue = static_cast<int64_t>(trunc(fraction * baseDouble) / baseDouble);
         IntegerToBuffer(intvalue, fragdigits, &digitout);
 
         // Remove trailing zeros
@@ -313,9 +323,9 @@ void PositionalNumeralSystem::IntegerToBuffer(double value, unsigned int digits,
     do
     {
         count++;
-        unsigned int intremainder = static_cast<unsigned int>(trunc(fmod(value, base)));
+        unsigned int intremainder = static_cast<unsigned int>(trunc(fmod(value, baseDouble)));
         *chars++ = alphaNumerics[intremainder];
-        value /= base;
+        value /= baseDouble;
     } while (value >= 1.0);
 
     unsigned int n = count;
@@ -339,50 +349,99 @@ void PositionalNumeralSystem::IntegerToBuffer(double value, unsigned int digits,
 
 Number *PositionalNumeralSystem::Parse(const char *text, unsigned int *length, char **end)
 {
-    unsigned int intbase = static_cast<unsigned int>(base);
-    char maxNumeric = (intbase > 10 ? 10 : intbase) + '0' - 1;
-    char maxAlpha = intbase > 10 ? intbase + 'A' - 11 : 0;
-
     unsigned int pos = 0;
     double integer = 0;
-    double addition;
+    bool done = false;
 
-    while (*text != '\0' && ((*text >= '0' && *text <= maxNumeric) || (maxAlpha != 0 && *text >= 'A' && *text <= maxAlpha)))
+    // Parse integer part of number
+    do
     {
-        addition = ((*text >= '0' && *text <= maxNumeric) ? (*text - '0') : (*text - 'A' + 10)) * 1.0;
-        integer = integer * base + addition;
+        double addition;
+        if (*text == '\0')
+        {
+            done = true;
+            continue;
+        }
+
+        if (*text >= '0' && *text <= maxNumeric)
+        {
+            addition = (*text - '0') * 1.0;
+        }
+        else if (maxAlphaUpper != 0 && *text >= 'A' && *text <= maxAlphaUpper)
+        {
+            addition = (*text - 'A' + 10) * 1.0;
+        }
+        else if (maxAlphaLower != 0 && *text >= 'a' && *text <= maxAlphaLower)
+        {
+            addition = (*text - 'a' + 10) * 1.0;
+        }
+        else
+        {
+            done = true;
+            continue;
+        }
+
+        integer = integer * baseDouble + addition;
         text++;
         pos++;
-    }
+    } while (!done);
 
     // Digits not found
     if (pos == 0)
     {
         *length = 0;
-        *end = const_cast<char*>(text);
+        *end = const_cast<char *>(text);
         return new RealNumber();
     }
 
+    // Parse fraction part of number
     double fraction = 0.0;
     double divisor = 1.0;
     if (*text == fractionPoint && fractionPoint != '\0')
     {
+        done = false;
+        double addition;
         text++;
         pos++;
 
-        while (*text != '\0' && ((*text >= '0' && *text <= maxNumeric) || (maxAlpha != '\0' && *text >= 'A' && *text <= maxAlpha)))
+        do
         {
-            addition = ((*text >= '0' && *text <= maxNumeric) ? (*text - '0') : (*text - 'A' + 10));
-            fraction = fraction * base + addition;
-            divisor *= base;
+            if (*text == '\0')
+            {
+                done = true;
+                continue;
+            }
+
+            if (*text >= '0' && *text <= maxNumeric)
+            {
+                addition = (*text - '0') * 1.0;
+            }
+            else if (maxAlphaUpper != 0 && *text >= 'A' && *text <= maxAlphaUpper)
+            {
+                addition = (*text - 'A' + 10) * 1.0;
+            }
+            else if (maxAlphaLower != 0 && *text >= 'a' && *text <= maxAlphaLower)
+            {
+                addition = (*text - 'a' + 10) * 1.0;
+            }
+            else
+            {
+                done = true;
+                continue;
+            }
+
+            fraction = fraction * baseDouble + addition;
+            divisor *= baseDouble;
             text++;
             pos++;
-        }
+        } while (!done);
     }
 
+    // Parse exponent part of number
     double exp = 0.0;
     if (*text == 'e' || *text == 'E')
     {
+        double addition;
         text++;
         pos++;
 
@@ -390,17 +449,40 @@ Number *PositionalNumeralSystem::Parse(const char *text, unsigned int *length, c
 
         if (sign != 0.0)
         {
+            done = false;
             text++;
             pos++;
 
-            while (*text != '\0' && ((*text >= '0' && *text <= maxNumeric) || (maxAlpha != 0 && *text >= 'A' && *text <= maxAlpha)))
+            do
             {
-                addition = ((*text >= '0' && *text <= maxNumeric) ? (*text - '0') : (*text - 'A' + 10)) * 1.0;
-                exp = exp * base + addition;
+                if (*text == '\0')
+                {
+                    done = true;
+                    continue;
+                }
+
+                if (*text >= '0' && *text <= maxNumeric)
+                {
+                    addition = (*text - '0') * 1.0;
+                }
+                else if (maxAlphaUpper != 0 && *text >= 'A' && *text <= maxAlphaUpper)
+                {
+                    addition = (*text - 'A' + 10) * 1.0;
+                }
+                else if (maxAlphaLower != 0 && *text >= 'a' && *text <= maxAlphaLower)
+                {
+                    addition = (*text - 'a' + 10) * 1.0;
+                }
+                else
+                {
+                    done = true;
+                    continue;
+                }
+
+                exp = exp * baseDouble + addition;
                 text++;
                 pos++;
-            }
-
+            } while (!done);
             exp *= sign;
         }
         else
@@ -411,14 +493,14 @@ Number *PositionalNumeralSystem::Parse(const char *text, unsigned int *length, c
     }
 
     *length = pos;
-    *end = const_cast<char*>(text);
+    *end = const_cast<char *>(text);
 
     double dnumber = (integer + (fraction / divisor));
 
     if (exp != 0.0)
     {
         // pow seems a bit off
-        dnumber *= pow(base, exp + 4e-15);
+        dnumber *= pow(baseDouble, exp + 4e-15);
     }
 
     return new RealNumber(dnumber);
