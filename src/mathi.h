@@ -30,6 +30,10 @@
 #ifndef AMATH_LIB_COMPLEX_H
 #define AMATH_LIB_COMPLEX_H
 
+#if __GNUC__ > 2
+#pragma GCC diagnostic ignored "-Wbuiltin-declaration-mismatch"
+#endif
+
 /**
  * @file    mathi.h
  * @brief   Complex numbers math library

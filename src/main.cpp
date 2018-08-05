@@ -57,11 +57,29 @@ void  operator delete[] (void* ptr) { FreeMemSafe(ptr); }
 
 /* GCC 3+ */
 #if (__GNUC__ > 2)
+/* C++11 */
+#if __cplusplus > 199711L
 #include <new>
-void* operator new (size_t size) throw(std::bad_alloc) { return AllocMemSafe(size); }
-void* operator new[] (size_t size) throw(std::bad_alloc) { return AllocMemSafe(size); }
-void  operator delete (void* ptr) throw() { FreeMemSafe(ptr); }
-void  operator delete[] (void* ptr) throw() { FreeMemSafe(ptr); }
+void* operator new (std::size_t size) { return AllocMemSafe(size); }
+void* operator new (std::size_t size, const std::nothrow_t& nothrow_value) noexcept { return AllocMemSafe(size); }
+void* operator new[] (std::size_t size) { return AllocMemSafe(size); }
+void* operator new[] (std::size_t size, const std::nothrow_t& nothrow_value) noexcept { return AllocMemSafe(size); }
+void operator delete (void* ptr) noexcept { FreeMemSafe(ptr); }
+void operator delete (void* ptr, const std::nothrow_t& nothrow_constant) noexcept { FreeMemSafe(ptr); }
+void operator delete[] (void* ptr) noexcept { FreeMemSafe(ptr); }
+void operator delete[] (void* ptr, const std::nothrow_t& nothrow_constant) noexcept { FreeMemSafe(ptr); }
+#else
+/* C++98 */
+#include <new>
+void* operator new (std::size_t size) throw (std::bad_alloc) { return AllocMemSafe(size); }
+void* operator new (std::size_t size, const std::nothrow_t& nothrow_value) throw() { return AllocMemSafe(size); }
+void* operator new[] (std::size_t size) throw (std::bad_alloc) { return AllocMemSafe(size); }
+void* operator new[] (std::size_t size, const std::nothrow_t& nothrow_value) throw() { return AllocMemSafe(size); }
+void operator delete (void* ptr) throw() { FreeMemSafe(ptr); }
+void operator delete (void* ptr, const std::nothrow_t& nothrow_constant) throw() { FreeMemSafe(ptr); }
+void operator delete[] (void* ptr) throw() { FreeMemSafe(ptr); }
+void operator delete[] (void* ptr, const std::nothrow_t& nothrow_constant) throw() { FreeMemSafe(ptr); }
+#endif
 #endif
 
 /* MSVC++ */
@@ -82,11 +100,11 @@ void WriteOutInt(int value) { printf("%i", value); }
 int main(int argc, char** argv)
 {
 #if defined(WITHTEST)
-    if (argc == 2 && StrIsEqual(argv[1], "test"))
+    if (argc == 2 && StrIsEqual(argv[1], "--test"))
     {
         Program = new TestProgram(false);
     }
-    else if (argc == 2 && StrIsEqual(argv[1], "testz"))
+    else if (argc == 2 && StrIsEqual(argv[1], "--testz"))
     {
         Program = new TestProgram(true);
     }
