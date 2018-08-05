@@ -30,7 +30,7 @@
 
 set -e
 
-version="1.8.3"
+version="1.8.4"
 
 build_package () {
 
@@ -87,7 +87,7 @@ echo "Depends: libc6"
 echo "Section: math"
 echo "Priority: optional"
 echo "Homepage: https://amath.innolan.net"
-echo "Built-Using: gcc-5.4"
+echo "Built-Using: gcc-7.3"
 echo "Description: Simple command line calculator"
 echo " Features a case sensitive command line interface, internal IEEE 754"
 echo " calculations with 15 significant digits, calculations with real and"

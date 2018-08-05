@@ -32,7 +32,7 @@
 
 set -e
 
-version="1.8.3"
+version="1.8.4"
 
 build_package () {
 

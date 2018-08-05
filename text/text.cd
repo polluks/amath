@@ -36,6 +36,8 @@ INTROMSG (/8/)
 #NORMALTEXT##BOLD##STARTMSG##NEWLINE##NORMALTEXT##COLOR02#Type help to show info.#NEWLINE#
 STATEMENTLINE (/10/)
 ------------------------------------------------------------#NEWLINE#
+STATEMENTABOUT (/10/)
+about      Show about text#NEWLINE#
 STATEMENTCLEAR (/10/)
 clear      Clear console window#NEWLINE#
 STATEMENTDEF (/10/)
@@ -68,6 +70,8 @@ STATEMENTVARS (/10/)
 variables  Show list of variables#NEWLINE#
 STATEMENTVERSION (/10/)
 version    Show version string#NEWLINE#
+STATEMENTLICENSE (/10/)
+license    Show copyright and license texts#NEWLINE#
 STATEMENTMEMORY (/10/)
 memory     Show internal memory usage#NEWLINE#
 STATEMENTEXIT (/10/)

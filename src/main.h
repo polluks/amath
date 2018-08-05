@@ -79,17 +79,13 @@
   https://github.com/rainlance/amath
 
   \subsection download Download
-  Windows: https://amath.innolan.net/amath-1.8.0.zip <BR>
-  <BR>
-  FreeBSD: https://www.freshports.org/math/amath/ <BR>
-  <BR>
-  NetBSD: http://ftp.netbsd.org/pub/pkgsrc/current/pkgsrc/math/amath/README.html <BR>
-  <BR>
-  Haiku: https://github.com/haikuports <BR>
-  <BR>
-  Included in the Icaros Desktop environment: http://vmwaros.blogspot.com/ <BR>
-  <BR>
-  Other packages: https://ranger.innolan.net/rainlance/amath/releases
+  FreeBSD: <a href="https://www.freshports.org/math/amath/">freshports.org</a><BR>
+  Haiku OS: <a href="https://depot.haiku-os.org/#!/pkg/amath/haikuports/1/8/3/-/1/x86_gcc2">depot.haiku-os.org</a><BR>
+  Mac OS X and Linux: <a href="https://pkgsrc.joyent.com">pkgsrc.joyent.com</a><<BR>
+  NetBSD:  <a href="http://ftp.netbsd.org/pub/pkgsrc/current/pkgsrc/math/amath/README.html">netbsd.org</a> and
+           <a href="http://pkgsrc.se/math/amath">pkgsrc.se</a><BR>
+  Windows: <a href="http://amath.innolan.net/amath-1.8.3-win.zip">amath.innolan.net</a><BR>
+  Other packages: <a href="http://ftp.innolan.net/pub/amath/">ftp.innolan.net</a>
   \subsection history History
   A full \ref release_page is available for amath.
 
@@ -98,6 +94,8 @@
 
   \subsection command_stat Statements
   \verbatim
+
+  about       Show about text
   clear       Clear console window
   def         Define function
   delete      Delete variable or function
@@ -114,6 +112,7 @@
   save        Save variable and functions to file
   variables   Show list of variables
   version     Show version string
+  license     Show copyright and license texts
   memory      Show internal memory usage
   exit        Exit program
   \endverbatim
