@@ -124,7 +124,7 @@ void TermiosConsole::WriteString(const char* string)
 void TermiosConsole::Write(const char* string, unsigned int length)
 {
     ssize_t res = write(STDOUT_FILENO, string, length);
-    if (res != length)
+    if (res != (ssize_t)length)
     {
         exit = true;
     }
