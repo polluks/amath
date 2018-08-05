@@ -15,4 +15,5 @@ build/flexcat/flexcat
 *_.3
 doxygen.warn
 *.deb
+*.zip
 Makefile
