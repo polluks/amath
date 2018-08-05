@@ -1219,7 +1219,7 @@ echo
 echo ".PHONY: test"
 echo "test: amath"
 echo "	LD_LIBRARY_PATH=src/clib/:src/lib:src/cplex:scr/real"
-echo "	./amath test"
+echo "	./amath --test"
 echo
 echo ".PHONY: install"
 echo "install:"

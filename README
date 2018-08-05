@@ -26,4 +26,4 @@ Show version string:
 > amath version
 
 Run regression tests:
-> amath test
+> amath --test
