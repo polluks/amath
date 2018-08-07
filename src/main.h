@@ -260,6 +260,9 @@
   \page    release_page Release history
   \section release_sec  Release history
 
+  \subsection version185 1.8.5 August 07 2017
+  - Fix build on compilers with broken endian detection.
+
   \subsection version184 1.8.4 August 05 2017
   - Ignore casing in hexadecimal numbers.
 
