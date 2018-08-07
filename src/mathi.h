@@ -30,7 +30,7 @@
 #ifndef AMATH_LIB_COMPLEX_H
 #define AMATH_LIB_COMPLEX_H
 
-#if __GNUC__ > 2
+#if __GNUC__ > 6
 #pragma GCC diagnostic ignored "-Wbuiltin-declaration-mismatch"
 #endif
 
