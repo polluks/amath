@@ -1,9 +1,9 @@
 amath release history
 
-v1.8.5 August 07 2017
+v1.8.5 August 07 2018
 - Fix build on compilers with broken endian detection.
 
-v1.8.4 August 05 2017
+v1.8.4 August 05 2018
 - Ignore casing in hexadecimal numbers.
 
 v1.8.3 July 21 2017
